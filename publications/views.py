@@ -177,6 +177,11 @@ class ProjectDetailView(LoginRequiredMixin, DetailView):
             'abstract'
         ]
 
+        comp_env_array = [site for site in models.ComputerEnvironment.objects.filter(project__id=project.id)]
+        sdi_array = [site for site in models.SourceDataInternal.objects.filter(project__id=project.id)]
+        sde_array = [site for site in models.SourceDataExternal.objects.filter(project__id=project.id)]
+        spatial_array = [site for site in models.SpatialManagementDesignation.objects.filter(project__id=project.id)]
+        spatial_product_array = [site for site in models.SpatialDataProduct.objects.filter(project__id=project.id)]
         site_array = [site for site in models.Site.objects.filter(project__id=project.id)]
         pub_array = [pub for pub in models.Publication.objects.filter(project__id=project.id)]
         print(str(project.id) + ": " + str(site_array))
@@ -186,6 +191,31 @@ class ProjectDetailView(LoginRequiredMixin, DetailView):
             #     "label": "Division",
             #     "list": project.division
             # },
+            {
+                "url": "computer_environment",
+                "label": "Computer Environment(s)",
+                "list": comp_env_array
+            },
+            {
+                "url": "spatial",
+                "label": "Spatial Management Designation(s)",
+                "list": spatial_array
+            },
+            {
+                "url": "spatialproduct",
+                "label": "Spatial Data Product(s)",
+                "list": spatial_product_array
+            },
+            {
+                "url": "sourceinternal",
+                "label": "Source Data Internal",
+                "list": sdi_array
+            },
+            {
+                "url": "sourceexternal",
+                "label": "Source Data External",
+                "list": sde_array
+            },
             {
                 "url": "site",
                 "label": "Site(s)",
@@ -205,14 +235,19 @@ class ProjectDetailView(LoginRequiredMixin, DetailView):
                 "list": models.Theme.objects.filter(project__id=project.id).order_by("name")
             },
             {
+                "url": "pillar",
+                "label": "Pillar of sustainability",
+                "list": models.Pillar.objects.filter(project__id=project.id).order_by("name")
+            },
+            {
                 "url": "human",
                 "label": "Human Component",
-                "list": models.HumanComponents.objects.filter(project__id=project.id).order_by("name")
+                "list": models.HumanComponent.objects.filter(project__id=project.id).order_by("name")
             },
             {
                 "url": "ecosystem",
                 "label": "Ecosystem Component",
-                "list": models.EcosystemComponents.objects.filter(project__id=project.id).order_by("name")
+                "list": models.EcosystemComponent.objects.filter(project__id=project.id).order_by("name")
             },
             {
                 "url": "linkage",

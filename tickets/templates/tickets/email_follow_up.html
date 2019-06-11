@@ -1,0 +1,24 @@
+<h1>A follow-up has been added to ticket #{{ object.ticket.id }} / un suivi a été ajouté à votre billet no. {{ object.ticket.id }}: </h1>
+
+<p><b>
+    Created on / créé sur:
+</b><br>
+    {{ object.created_date }}
+</p>
+
+<p><b>
+    Created by / créé par:
+</b><br>
+    {{ object.created_by.first_name }} {{ object.created_by.last_name }}
+</p>
+
+<p><b>
+    Message:
+</b><br>
+    {{ object.message }}
+</p>
+
+<p>
+    Click <a href="http://glf-sci-dm{% url 'tickets:detail' object.ticket.id %}">HERE</a> to view the ticket.
+    / cliquez <a href="http://glf-sci-dm{% url 'tickets:detail' object.ticket.id %}">ICI</a> pour voir le billet.
+</p>

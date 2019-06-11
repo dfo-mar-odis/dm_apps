@@ -1,0 +1,48 @@
+{% extends 'pop_base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+{% load i18n %}
+
+{% block body %}
+
+    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+    <script>
+        window.resizeTo(width = 1000, height = 650);
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+        $(document).ready(function() {
+            // Stuff to do as soon as the DOM is ready
+            $("#id_title")[0].focus()
+        });
+    </script>
+
+    <style>
+        .ms-container {
+            width: 100%;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+    <div class="container-fluid">
+        <h1>
+            {% trans "Feedback / Bug Form" %}
+        </h1><br>
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% for field in form %}
+                {% bootstrap_field field size="small" layout="horizontal" placeholder="" %}
+            {% endfor %}
+            {% buttons %}
+                <button type="submit" class="btn btn-success" onclick="refreshParent()">Submit</button>
+                <a href="#" class="btn btn-secondary" onclick="refreshParent(); window.close()">Close</a>
+
+            {% endbuttons %}
+        </form>
+    </div>
+
+{% endblock %}

@@ -45,7 +45,7 @@ except RuntimeError:
     print("not connecting inventory app")
 
 try:
-    urlpatterns += i18n_patterns(path('dm-tickets/', include('dm_tickets.urls')), prefix_default_language=True)
+    urlpatterns += i18n_patterns(path('dm-tickets/', include('tickets.urls')), prefix_default_language=True)
 except RuntimeError:
     print("not connecting ticket app")
 

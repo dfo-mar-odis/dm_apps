@@ -1,0 +1,153 @@
+{% extends "tickets/tickets_base.html" %}
+
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'tickets:list' %}">Tickets</a></li>
+            {% if object %}
+                <li class="breadcrumb-item"><a href="{% url 'tickets:detail' object.id %}">{{ object }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">New</li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen"
+          type="text/css">
+    <style>
+        .ms-container {
+            width: 100%;
+        }
+    label{
+        font-weight: bold;
+    }
+    </style>
+
+    <div class="container">
+
+        <div class="neighbours" style="padding-right: 100px">
+            {# Load js file to allow for popout window #}
+            {% load static %}
+            <script type="text/javascript" src="{% static "js/popItOut.js" %}"></script>
+
+            <h1>
+                {% if object %}
+                    {{ object.title }}
+                {% else %}
+                    New Ticket
+                {% endif %}
+            </h1>
+            {% bootstrap_form_errors form %}
+
+        </div>
+
+
+        <div class="neighbours">
+            {% if not object %}
+                <div class="dropdown ">
+                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Load template
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" id="prefill-monitor">monitor</a>
+                        <a class="dropdown-item" href="#" id="prefill-computer">computer</a>
+                        <a class="dropdown-item" href="#" id="prefill-software">software</a>
+                        <a class="dropdown-item" href="#" id="prefill-security-exemption">IT security exemption</a>
+                    </div>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                {% if object.id %}
+                    <a class="btn btn-secondary" href="{% url 'tickets:detail' object.id %}">Cancel</a>
+                {% else %}
+                    <a class="btn btn-secondary" href="{% url 'tickets:list' %}">Cancel</a>
+                {% endif %}
+            </div>
+            <br><br>
+            {# {% bootstrap_form form %} #}
+            {% for field in form %}
+                {% bootstrap_field field %}
+            {% endfor %}
+
+            <script type="text/javascript">
+                var user_name = "{{ user }}";
+            </script>
+
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                {% if object.id %}
+                    <a class="btn btn-secondary" href="{% url 'tickets:detail' object.id %}">Cancel</a>
+                {% else %}
+                    <a class="btn btn-secondary" href="{% url 'tickets:list' %}">Cancel</a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
+    <script type="application/javascript">
+        {#$("#id_dm_assigned").multiSelect()#}
+    </script>
+
+    <script type="text/javascript">
+        //
+
+        $("#prefill-monitor").click(function () {
+            $("#id_title").val("Request for new monitor")
+            $("#id_description").val("Request for new monitor")
+            $("#id_sd_description").val("Request for new monitor; Please see attached documentation.")
+            $("#id_sd_primary_contact").val("50")
+            $("#id_financial_coding").val("xxx-xxx-xxx-0930-xxx")
+            $("#id_request_type").val("6")
+            $("#id_generic_file_to_load").val("monitor")
+        })
+
+
+        $("#prefill-computer").click(function () {
+            $("#id_title").val("Request for NEW / REPLACEMENT computer")
+            $("#id_description").val("Request for NEW / REPLACEMENT computer")
+            $("#id_sd_description").val("NEW / REPLACEMENT computer; Please see attached documentation.")
+            $("#id_sd_primary_contact").val("50")
+            $("#id_financial_coding").val("xxx-xxx-xxx-0930-xxx")
+            $("#id_request_type").val("6")
+            $("#id_generic_file_to_load").val("computer")
+        })
+
+        $("#prefill-software").click(function () {
+            $("#id_title").val("Request for software XXXXXXXXXXXXX")
+            $("#id_description").val("Request for software XXXXXXXXXXXXX")
+            $("#id_sd_description").val("SOFTWARE REQUEST; Please see attached documentation")
+            $("#id_sd_primary_contact").val("50")
+            $("#id_financial_coding").val("xxx-xxx-xxx-0931-xxx")
+            $("#id_request_type").val("1")
+            $("#id_generic_file_to_load").val("software")
+        })
+
+        $("#prefill-security-exemption").click(function () {
+            $("#id_title").val("Request for DFO IT security exemption")
+            $("#id_description").val("DFO IT security exemption being requested for XXXXXXXXXXXXXX")
+            $("#id_sd_description").val("Request for DFO IT security exemption. Please see attached documentation")
+            $("#id_sd_primary_contact").val("50")
+            $("#id_request_type").val("15")
+            $("#id_generic_file_to_load").val("security_exemption")
+        })
+
+
+    </script>
+
+{% endblock content %}

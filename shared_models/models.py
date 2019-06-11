@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.utils.translation import gettext as _
 
 
-# CONNECTED APPS: dm_tickets, travel, projects, sci_fi
+# CONNECTED APPS: tickets, travel, projects, sci_fi
 class FiscalYear(models.Model):
     full = models.TextField(blank=True, null=True)
     short = models.TextField(blank=True, null=True)
@@ -130,7 +130,7 @@ class Division(models.Model):
         ordering = ['name', ]
 
 
-# CONNECTED APPS: dm_tickets, travel, projects, inventory
+# CONNECTED APPS: tickets, travel, projects, inventory
 class Section(models.Model):
     name = models.CharField(max_length=255, verbose_name=_("name (English)"))
     nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (French)"))

@@ -688,10 +688,10 @@ def construct(my_resource, pretty=True):
                  "revision; révision")
 
     # Custodians
-    citedResponsibleParty = SubElement(CI_Citation, 'gmd:citedResponsibleParty')
     # for each point of contact
     for person in my_resource.resource_people.all():
         if person.role.id == 1:
+            citedResponsibleParty = SubElement(CI_Citation, 'gmd:citedResponsibleParty')
             citedResponsibleParty.append(ci_responsible_party(person))
 
     # abstract

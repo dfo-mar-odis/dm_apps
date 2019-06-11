@@ -28,55 +28,121 @@ def process_lookup(file_name, mod):
         except DataError:
             print("String too long:\n'" + str(val) + "'\n")
 
+
+def add_text(model, val_array, mod_name):
+    print("Adding " + mod_name + " to project: " + str(project))
+    for val in val_array:
+        try:
+            if val and not model.objects.filter(project=project, value=val).exists():
+                mod = model(project=project, value=val)
+                mod.save()
+        except DataError:
+            print("Error adding " + mod_name + ": " )
+            print(val)
+
+
+def add_lookup(model, val_array, var):
+    dirty = False
+    for val in val_array:
+        if not val:
+            continue
+
+        obj = model.objects.get(name__exact=val)
+        try:
+            var.get(id=obj.id)
+        except model.DoesNotExist:
+            var.add(obj)
+            dirty = True
+
+    return dirty
+
+
 data_theme_file_name = r'E:\Projects\Python\publications-inventory\Themes.csv'
 process_lookup(data_theme_file_name, models.Theme)
 
 data_human_file_name = r'E:\Projects\Python\publications-inventory\HumanComponents.csv'
-process_lookup(data_human_file_name, models.HumanComponents)
+process_lookup(data_human_file_name, models.HumanComponent)
+
+data_pillars_file_name = r'E:\Projects\Python\publications-inventory\pillars.csv'
+process_lookup(data_pillars_file_name, models.Pillar)
 
 data_linkage_file_name = r'E:\Projects\Python\publications-inventory\Linkage.csv'
-process_lookup(data_linkage_file_name, models.EcosystemComponents)
+process_lookup(data_linkage_file_name, models.ProgramLinkage)
 
 data_ecosystem_file_name = r'E:\Projects\Python\publications-inventory\Ecosystem.csv'
-process_lookup(data_ecosystem_file_name, models.ProgramLinkage)
+process_lookup(data_ecosystem_file_name, models.EcosystemComponent)
 
-data_tp_file_name = r'E:\Projects\Python\publications-inventory\pub_data.csv'
+data_tp_file_name = r'E:\Projects\Python\publications-inventory\pub_data2.csv'
 
 tp_reader = csv.reader(open(data_tp_file_name, encoding='utf-8'), delimiter=',')
 
 # skip the header line
 next(tp_reader, None)
 
-# 0 Projects
-# 1 Description
-# 2 Pub year
-# 3 Themes
-# 4 Human Component
-# 5 Linkage to Program
-# 6 Ecosystem Component
-# 7 Sites
-# 8 Publications
+# 0 Projects_id - not used
+# *1 Themes
+# *2 Project title
+# *3 Human Component
+# *4 Ecosystem Component
+# *5 Spatial Management
+# *6 Pillar of sustainability
+# *7 Linkage to Program
+# *8 Description
+# *9 Source data (external)
+# 10 Source data year (external) - ignore for now
+# *11 Source data (internal)
+# 12 Source data year (internal) - ignore for now
+# *13 Spatial data product
+# 14 Spatial data product year
+# *15 Computer environment
+# 16 Software Libraries
+# 17 Method of approach
+# 18 FGP Link
+# 19 code or data site
+# 20 contact (keep as free text)
+# 21 DFO Contact (create code list)
+# 22 Geographic scope
+# 23 Geographic coordinates
+# 24 Spatial Scale
+# *25 Pub year
+# 26 Organization
+# 27 DFO Region
+# 28 DFO Division
+# *29 Sites
+# *30 Publications
 for line in tp_reader:
 
-    project_title = line[0].replace("\"", "")
+    project_title = line[2].replace("\"", "")
 
-    description = line[1].replace("\"", "").replace('\\n', '\n')
+    themes = [t.strip().upper() for t in line[1].split(' | ')]
 
-    year = line[2]
+    humans = [h.strip().upper() for h in line[3].split(' | ')]
+
+    ecosystems = [e.strip().upper() for e in line[4].split(' | ')]
+
+    spatial_management = [sm.strip() for sm in line[5].split(' | ')]
+
+    pillars = [p.strip().upper() for p in line[6].split(' | ')]
+
+    linkages = [l.strip().upper() for l in line[7].split(' | ')]
+
+    description = line[8].replace("\"", "").replace('\\n', '\n')
+
+    source_internal = [sm.strip() for sm in line[9].split(' | ')]
+
+    source_external = [sm.strip() for sm in line[11].split(' | ')]
+
+    spatial_data_product = [sm.strip() for sm in line[13].split(' | ')]
+
+    computer_environment = [sm.strip() for sm in line[15].split(' | ')]
+
+    year = line[25]
     if '-' in year:
         year = year.split('-')[1]
 
-    themes = [t.strip().upper() for t in line[3].split(' | ')]
+    sites = [s.strip() for s in line[29].split(' | ')]
 
-    humans = [h.strip().upper() for h in line[4].split(' | ')]
-
-    linkages = [l.strip().upper() for l in line[5].split(' | ')]
-
-    ecosystems = [e.strip().upper() for e in line[6].split(' | ')]
-
-    sites = [s.strip() for s in line[7].split(' | ')]
-
-    publications = [p.strip() for p in line[8].split(' | ')]
+    publications = [p.strip() for p in line[30].split(' | ')]
 
     try:
         project = models.Project.objects.get(title=project_title)
@@ -88,74 +154,31 @@ for line in tp_reader:
         project = models.Project(title=project_title, abstract=description)
         project.save()
 
-    dirty = False
-    for t in themes:
-        if not t:
-            # skip any blank lines
-            continue
-
-        theme = models.Theme.objects.get(name__exact=t)
-        try:
-            project.theme.get(id=theme.id)
-        except models.Theme.DoesNotExist:
-            project.theme.add(theme)
-            dirty = True
-
-    for h in humans:
-        if not h:
-            continue
-
-        human = models.HumanComponents.objects.get(name__exact=h)
-        try:
-            project.human_component.get(id=human.id)
-        except models.HumanComponents.DoesNotExist:
-            project.human_component.add(human)
-            dirty = True
-
-    for l in linkages:
-        if not l:
-            continue
-
-        link = models.ProgramLinkage.objects.get(name__exact=l)
-        try:
-            project.program_linkage.get(id=link.id)
-        except models.ProgramLinkage.DoesNotExist:
-            project.program_linkage.add(link)
-            dirty = True
-
-    for e in ecosystems:
-        if not e:
-            continue
-
-        try:
-            ecosystem = models.EcosystemComponents.objects.get(name__exact=e)
-        except models.EcosystemComponents.DoesNotExist:
-            print("Ecosystem does not exist: '" + str(e) + "'")
-
-        try:
-            project.ecosystem_component.get(id=ecosystem.id)
-        except models.EcosystemComponents.DoesNotExist:
-            project.ecosystem_component.add(ecosystem)
-            dirty = True
-
-    if dirty:
+    print("Adding Themes")
+    if add_lookup(models.Theme, themes, project.theme):
         project.save()
-        dirty = False
+
+    print("Adding Human Components")
+    if add_lookup(models.HumanComponent, humans, project.human_component):
+        project.save()
+
+    print("Adding Pillars")
+    if add_lookup(models.Pillar, pillars, project.sustainability_pillar):
+        project.save()
+
+    print("Adding Linkages")
+    if add_lookup(models.ProgramLinkage, linkages, project.program_linkage):
+        project.save()
+
+    print("Adding Ecosystems")
+    if add_lookup(models.EcosystemComponent, ecosystems, project.ecosystem_component):
+        project.save()
 
     if project:
-        print("Adding sites to project: " + str(project))
-        for s in sites:
-            try:
-                site = models.Site(project=project, value=s)
-                site.save()
-            except DataError:
-                print("Error adding publication: " )
-                print(s)
-
-        for p in publications:
-            try:
-                publication = models.Publication(project=project, value=p)
-                publication.save()
-            except DataError:
-                print("Error adding publication: " )
-                print(p)
+        add_text(models.ComputerEnvironment, computer_environment, "computer environment")
+        add_text(models.SourceDataInternal, source_internal, "source data (internal)")
+        add_text(models.SourceDataExternal, source_external, "source data (external)")
+        add_text(models.SpatialDataProduct, spatial_data_product, "spatial data product")
+        add_text(models.SpatialManagementDesignation, spatial_management, "spatial management")
+        add_text(models.Site, sites, "sites")
+        add_text(models.Publication, publications, "publications")

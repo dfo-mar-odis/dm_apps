@@ -79,7 +79,7 @@ INSTALLED_APPS = [
     'accounts',
     'lib',
     'shared_models',
-    'dm_tickets',
+    'tickets',
 ] + local_conf.MY_INSTALLED_APPS
 
 MIDDLEWARE = [

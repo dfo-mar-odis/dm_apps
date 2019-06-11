@@ -1,0 +1,250 @@
+{% extends "tickets/tickets_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load humanize %}
+{% load verbose_names %}
+{% block content %}
+    {#  <script type="text/javascript" src="{% static "js/popItOut.js" %}"></script>#}
+
+    <style>
+        .label {
+            font-weight: bold;
+        }
+
+        .title-block {
+            text-align: center;
+        }
+
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'tickets:router' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="title-block">
+
+            <h1>{{ object.title }} ({{ object.id }})</h1>
+            <div class="btn-group">
+
+                <a href="{% url 'tickets:update' object.id %}" class="btn btn-sm btn-warning">Edit</a>
+                {% if user.is_staff %}
+                    <a href="{% url 'tickets:delete' object.id %}" class="btn btn-sm btn-danger">Delete</a>
+                {% endif %}
+                <a href="{% url 'tickets:new_note' object.id %}" class="btn btn-sm btn-primary">Edit Notes</a>
+                {# function popitup(url,windowName, height=500, width=500,top=50,left=200) #}
+
+            </div>
+
+            {# staff menu #}
+            {% if user.is_staff %}
+                <div class="btn-group">
+                    {% if object.status.id == 2 %}
+                        <a href="{% url "tickets:ticket_resolved" object.id %}" class="btn btn-sm btn-outline-dark">
+                            Mark as Resolved {% if object.github_issue_number %}(Connected to Github){% endif %}
+                        </a>
+                    {% else %}
+                        <a href="{% url "tickets:ticket_reopened"  object.id %}" class="btn btn-sm btn-outline-dark">
+                            Re-open Ticket {% if object.github_issue_number %}(Connected to Github){% endif %}
+                        </a>
+                    {% endif %}
+
+                    {% if object.status.id == 1 and object.resolved_email_date == None %}
+                        <a href="#" class="btn btn-sm btn-outline-dark" data-toggle="modal" data-target="#notify-client">Notify Client</a>
+
+                    {% endif %}
+
+                    {% if not object.github_issue_number %}
+                        <a href="{% url "tickets:git_create"  object.id %}" class="btn btn-sm btn-outline-primary">Create as Issue in GitHub</a>
+                    {% else %}
+                        <a href="https://github.com/dfo-mar-odis/dm_apps/issues/{{ object.github_issue_number }}" target="_blank"
+                           class="btn btn-sm btn-outline-primary">
+                            View on GitHub
+                        </a>
+
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <div class="col-2">
+                {% for field in field_group_1 %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+
+
+                <p>
+                    <b>Service Desk Ticket</b> (<a href="http://assystSelfService.ent.dfo-mpo.ca/assystnet"
+                                                   target="_blank">AssystNet</a>):<br>
+                    <!-- Trigger/Open The Modal -->
+                    {% if object.sd_ref_number %}
+                        <a href="#" class="" data-toggle="modal" data-target="#sd_ticket_modal">{{ object.sd_ref_number }}</a>(logged:
+                        {{ object.sd_date_logged|naturaltime }})
+
+                    {% else %}
+                        None
+                    {% endif %}
+                </p>
+
+            </div>
+            <div class="col">
+
+                {% for field in field_group_2 %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+
+
+            </div>
+            <div class="col">
+                <div class="neighbours">
+                    <b>Updates / Follow Ups:</b>
+                </div>
+
+                {# function popitup(url,windowName, height=500, width=500,top=50,left=200) #}
+                <div class="neighbours">
+                    <a class="btn btn-sm btn-light"
+                       onclick="return popitup('{% url 'tickets:followup_create' ticket.id %}','FileCreate',500,1000)" data-toggle="tooltip"
+                       title="Add a follow-up"> <i
+                            class="material-icons">add</i></a>
+                </div>
+
+
+                <ul>
+                    {% for msg in object.follow_ups.all %}
+                        <li>
+                            {{ msg|safe }}
+                            (<a href="#" pop-href="{% url 'tickets:followup_edit' msg.id %}">edit</a>)
+                            (<a href="#" pop-href="{% url 'tickets:followup_delete' msg.id %}">delete</a>)
+                        </li>
+                    {% empty %}
+                        <br>
+                        <span class="">  <em>No follow-ups have been added to this ticket.</em></span>
+
+                    {% endfor %}
+                </ul>
+                <br>
+                <div class="neighbours">
+                    <b>Files:</b>
+                </div>
+
+                {# function popitup(url,windowName, height=500, width=500,top=50,left=200) #}
+                <div class="neighbours">
+                    <a class="btn btn-sm btn-light"
+                       onclick="return popitup('{% url 'tickets:file_create' ticket.id %}','FileCreate',500,1000)"
+                       data-toggle="tooltip" title="add a file"> <i
+                            class="material-icons">add</i></a>
+                </div>
+
+                <div class="dropdown neighbours">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add Template File
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{% url 'tickets:add_generic_file' object.id 'monitor' %}">monitor</a>
+                        <a class="dropdown-item" href="{% url 'tickets:add_generic_file' object.id 'computer' %}">computer</a>
+                        <a class="dropdown-item" href="{% url 'tickets:add_generic_file' object.id 'software' %}">software</a>
+                        <a class="dropdown-item" href="{% url 'tickets:add_generic_file' object.id 'security_exemption' %}">IT security
+                            exemption</a>
+                    </div>
+                </div>
+
+
+                <ul>
+                    {% for file in object.files.all %}
+                        <li>
+                            <a href="."
+                               onclick="return popitup('{% url 'tickets:file_detail' ticket=object.id pk=file.id %}','FileDetail',500,1000)">{{ file.caption }}</a>
+                            (uploaded on: {{ file.date_created|date:"F d Y" }})
+                        </li>
+                    {% empty %}
+                        <br>
+                        <span class="">  <em>There are no files attached to this ticket.</em></span>
+
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="col-2">
+                {% for field in field_group_3 %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    {#<!-- modal_label MODAL -->#}
+    <div class="modal fade" id="sd_ticket_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Service Desk Ticket Details </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% include "tickets/_sd_detail.html" %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a class="btn btn-warning" href="#" target="_blank">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {#<!-- Notify Client MODAL -->#}
+    <div class="modal fade" id="notify-client" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Review Email </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td><b>From</b></td>
+                            <td>{{ email.from_email }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>To</b></td>
+                            <td>{{ email.to_list }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Subject</b></td>
+                            <td>{{ email.subject }}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Message</b></td>
+                            <td>{{ email.message }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <a href="{% url 'tickets:send_resolved_email' object.id %}" class="btn btn-lg btn-warning">Send Away!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+{% endblock content %}

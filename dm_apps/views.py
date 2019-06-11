@@ -7,7 +7,7 @@ from django.utils.translation import gettext as _
 # check to see if there is a user-defined local configuration file
 # if there is, we we use this as our local configuration, otherwise we use the default
 try:
-    from . import my_conf as local_conf
+    from bio_sci_site.dm_apps import my_conf as local_conf
 except ModuleNotFoundError and ImportError:
     from . import default_conf as local_conf
 
@@ -56,7 +56,7 @@ def get_app_dict(request):
                 "status": "production",
                 "access": "open",
                 "url": reverse('tickets:router'),
-                "icon_path": 'img/icons/tickets.svg',
+                "icon_path": 'img/icons/flowchart.svg',
                 "region": "all",
             }
         except NoReverseMatch:
@@ -108,7 +108,7 @@ def get_app_dict(request):
             "status": "production",
             "access": "login-required",
             "url": reverse('camp:index'),
-            "icon_path": 'img/icons/coral.svg',
+            "icon_path": 'img/icons/seine.svg',
             "region": "gulf",
         }
     except NoReverseMatch:
@@ -134,8 +134,8 @@ def get_app_dict(request):
             "status": "beta",
             "access": "permission-required",
             "url": reverse('scifi:index'),
-            "icon_path": 'img/icons/stats.svg',
-            "region": "gulf",
+            "icon_path": 'img/icons/money1.svg',
+            "region": "all",
         }
     except NoReverseMatch:
         pass
@@ -233,8 +233,8 @@ def get_app_dict(request):
 
     try:
         app_dict["publications"] = {
-            "title": _("Project Publications Inventory"),
-            "description": _("Tool for publishing and viewing publications related to completed projects."),
+            "title": _("Project Inventory"),
+            "description": _("Tools for viewing information on completed projects"),
             "status": "dev",
             "access": "login-required",
             "url": reverse('publications:index'),
