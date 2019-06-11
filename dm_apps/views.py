@@ -244,6 +244,19 @@ def get_app_dict(request):
     except NoReverseMatch:
         pass
 
+    try:
+        app_dict["staff"] = {
+            "title": _("Staff Planning Tool"),
+            "description": _("Tool for staff planning."),
+            "status": "dev",
+            "access": "login-required",
+            "url": reverse('staff:index'),
+            "icon_path": 'img/icons/staff.svg',
+            "region": "gulf",
+        }
+    except NoReverseMatch:
+        pass
+
     return OrderedDict(app_dict)
 
 
