@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+from shared_models import models as shared_models
+
 # Create your models here.
 
 
@@ -14,7 +16,8 @@ LANGUAGE_CHOICES = (
 )
 
 
-class StaffingPlanStatus(models.Model):
+class Lookup(models.Model):
+
     code = models.CharField(max_length=255, blank=True, null=True)
     name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
 
@@ -22,29 +25,48 @@ class StaffingPlanStatus(models.Model):
         return "{} ({})".format(self.code, self.name)
 
     class Meta:
+        abstract = True
         ordering = ['name', ]
 
 
-class FiscalYear(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
+class StaffingPlanStatus(Lookup):
+    pass
 
 
-class EmployeeClassesLevel(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
+class FiscalYear(Lookup):
+    pass
 
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
 
-    class Meta:
-        ordering = ['name', ]
+class EmployeeClassesLevel(Lookup):
+    pass
+
+
+class PositionStaffingOption(Lookup):
+    pass
+
+
+class PositionTenure(Lookup):
+    pass
+
+
+class PositionSecurity(Lookup):
+    pass
+
+
+class PositionLinguisticRequirement(Lookup):
+    pass
+
+
+class PositionEmploymentEquityRequirement(Lookup):
+    pass
+
+
+class FundingType(Lookup):
+    pass
+
+
+class WorkLocation(Lookup):
+    pass
 
 
 class EmployeeClassesLevelsPayRate(models.Model):
@@ -60,141 +82,13 @@ class EmployeeClassesLevelsPayRate(models.Model):
         ordering = ['employee_class_level', 'pay_increment']
 
 
-class PositionStaffingOption(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class PositionTenure(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class PositionSecurity(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class PositionLinguisticRequirement(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class PositionEmploymentEquityRequirement(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class Branch(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class Division(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-    branch = models.ForeignKey(Branch, on_delete=models.DO_NOTHING, blank=True, null=True,
-                               verbose_name='branch')
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class Section(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-    division = models.ForeignKey(Division, on_delete=models.DO_NOTHING, blank=True, null=True,
-                                 verbose_name="division")
-
-    def __str__(self):
-        return "{} ({})".format(self.division, self.code, self.name)
-
-    class Meta:
-        ordering = ['division', 'name', ]
-
-
-class ResponsibilityCenter(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-    manager = models.ForeignKey(User,
-                                on_delete=models.DO_NOTHING,
-                                related_name='manager')
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class FundingType(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class WorkLocation(models.Model):
-    code = models.CharField(max_length=255, blank=True, null=True)
-    name = models.CharField(max_length=255, blank=True, null=True, verbose_name="name")
-
-    def __str__(self):
-        return "{} ({})".format(self.code, self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
 class StaffingPlan(models.Model):
     fiscal_year = models.ForeignKey(FiscalYear, on_delete=models.DO_NOTHING, blank=True, null=True,
                                     verbose_name="fiscal year")
     name = models.CharField(max_length=255, blank=True, null=True, verbose_name='short name for planned staffing (<255 characters)')
-    section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, blank=True, null=True,
+    section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, blank=True, null=True,
                                 verbose_name="section")
-    responsibility_center = models.ForeignKey(ResponsibilityCenter, on_delete=models.DO_NOTHING,
+    responsibility_center = models.ForeignKey(shared_models.ResponsibilityCenter, on_delete=models.DO_NOTHING,
                                               blank=True,
                                               null=True,
                                               verbose_name="responsibility center (if known)")

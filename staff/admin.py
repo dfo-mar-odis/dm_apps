@@ -1,9 +1,10 @@
 from django.contrib import admin
 from .models import StaffingPlanStatus, EmployeeClassesLevel, EmployeeClassesLevelsPayRate, PositionStaffingOption, PositionTenure, \
     PositionSecurity, \
-    PositionLinguisticRequirement, PositionEmploymentEquityRequirement, FiscalYear, Section, \
-    ResponsibilityCenter, FundingType, Division, Branch, WorkLocation, StaffingPlan, StaffingPlanFunding
+    PositionLinguisticRequirement, PositionEmploymentEquityRequirement, FiscalYear, \
+    FundingType, WorkLocation, StaffingPlan, StaffingPlanFunding
 
+from shared_models.models import ResponsibilityCenter, Division, Branch, Section
 
 # admin.site.register(EmployeeClassesLevel)
 # admin.site.register(EmployeeClassesLevelsPayRate)
@@ -86,40 +87,6 @@ class PositionEmploymentEquityRequirementAdmin(admin.ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name',)
     ordering = ('name',)
-
-
-@admin.register(Branch)
-class BranchAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name')
-    list_filter = ('name',)
-    search_fields = ('name',)
-    ordering = ('name',)
-
-
-@admin.register(Division)
-class DivisionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'branch')
-    list_filter = ('name', 'branch')
-    search_fields = ('name', 'branch__code', 'branch__name')
-    ordering = ('branch', 'name')
-
-
-@admin.register(Section)
-class SectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'division')
-    list_filter = ('name', 'division')
-    search_fields = ('name', 'division__code', 'division__name')
-    raw_id_fields = ('division',)
-    ordering = ('division', 'name')
-
-
-@admin.register(ResponsibilityCenter)
-class ResponsibilityCenterAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'manager')
-    list_filter = ('code', 'name', 'manager')
-    search_fields = ('code', 'name', 'manager__name',)
-    raw_id_fields = ('manager',)
-    ordering = ('code',)
 
 
 @admin.register(FundingType)

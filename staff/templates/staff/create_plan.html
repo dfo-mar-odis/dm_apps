@@ -10,6 +10,9 @@ Staff Planning
 {% endblock title %}
 
 {% block body %}
-<a href="{% url 'staff:create_plan' %}">Create a new plan</a>
+    <div class="container">
+    {% for field in form %}
+        {% bootstrap_field field placeholder="" %}
+    {% endfor %}
+    </div>
 {% endblock body %}
-
