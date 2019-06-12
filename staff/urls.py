@@ -6,6 +6,6 @@ app_name = 'staff'
 
 urlpatterns = [
     path('', views.IndexTemplateView.as_view(), name="index"),
-    path('new_plan', views.CreatePlan.as_view(), name="create_plan"),
+    path('planning/<int:pk>', views.CreatePlan.as_view(), name="create_plan"),
 
 ]

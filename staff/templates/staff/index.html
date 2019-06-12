@@ -1,15 +1,85 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bootstrap4 %}
-{% load verbose_names %}
+{% load humanize %}
 {% load custom_filters %}
 {% load i18n %}
 
-{% block title %}
-Staff Planning
-{% endblock title %}
-
 {% block body %}
-<a href="{% url 'staff:create_plan' %}">Create a new plan</a>
+    {% get_current_language as LANG %}
+    {% load bootstrap4 %}
+
+    <style>
+        form, input {
+            font-size: small;
+        }
+
+        table, td {
+            font-size: 14px;
+        }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">
+                {% trans "All Projects" %}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="indent-lg">
+        <h1>
+            {% trans "All Projects:" %}
+        </h1>
+
+        <form class="form" action="." method="get" id="filter-form">
+            <div class="row">
+
+                {% for field in filter.form %}
+                    {# {{field.label}}: &nbsp; {{field}}&nbsp;&nbsp; #}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+
+                {% endfor %}
+                <div class="col">
+                    <br>
+                    <input type="submit" value="Filter" class="btn btn-warning btn-sm">
+                    <a href="." class="btn btn-sm btn-info">Clear</a>
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col">
+                {% trans "(click on a header to sort table)" %}
+            </div>
+            <div class="col" style="text-align: center">
+                <em>{% trans "displaying all records" %}</em>
+            </div>
+            <div class="col" style="text-align: right; padding-bottom: 10px">
+                <a href="{% url 'staff:create_plan' 0 %}" class="btn btn-sm btn-primary">{% trans "New Project" %}</a>
+            </div>
+        </div>
+
+        <table class="table table-hover table-sm sortable">
+            <thead>
+            <th scope="col" style="width: 50%">
+                {% trans "Title" %}
+            </th>
+            </thead>
+            <tbody>
+
+            {% for obj in filter.qs %}
+                <tr href="{% url 'publications:create_plan' obj.id %}">
+                    <td>{{ obj.title }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <b>
+            TOTAL: {{ object_list.count }}
+        </b>
+    </div>
+
 {% endblock body %}
 
