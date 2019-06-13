@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% block title %}
+Staff Planning
+{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <h1>
+            {% if object.id == 0 %}
+                {% trans "New Staffing Plan" %}
+            {% else %}
+                {{ object }}
+            {% endif %}
+        </h1>
+        <br><br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% buttons %}
+                <div class="btn-group">
+                    {% if object.id %}
+                        <button type="submit" class="btn btn-primary">
+                            {% trans "Update" %}
+                        </button>
+                    {% else %}
+                        <button type="submit" class="btn btn-primary">
+                            {% trans "Add" %}
+                        </button>
+                    {% endif %}
+
+                    {% if object.id %}
+                        <a class="btn btn-secondary" href="{% url 'projects:project_detail' object.id %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% else %}
+                        <a class="btn btn-secondary" href="{% url 'projects:my_project_list' %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endbuttons %}
+
+            {% for field in form %}
+                {% bootstrap_field field placeholder="" %}
+            {% endfor %}
+        </form>
+    </div>
+{% endblock body %}

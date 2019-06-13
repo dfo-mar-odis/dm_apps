@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import StaffingPlanStatus, EmployeeClassesLevel, EmployeeClassesLevelsPayRate, PositionStaffingOption, PositionTenure, \
-    PositionSecurity, \
-    PositionLinguisticRequirement, PositionEmploymentEquityRequirement, FiscalYear, \
+from .models import StaffingPlanStatus, EmployeeClassesLevel, EmployeeClassesLevelsPayRate, PositionStaffingOption, \
+    PositionTenure, PositionSecurity, PositionLinguisticRequirement, PositionEmploymentEquityRequirement, \
     FundingType, WorkLocation, StaffingPlan, StaffingPlanFunding
 
-from shared_models.models import ResponsibilityCenter, Division, Branch, Section
+from shared_models.models import ResponsibilityCenter, Division, Branch, Section, FiscalYear
 
 # admin.site.register(EmployeeClassesLevel)
 # admin.site.register(EmployeeClassesLevelsPayRate)
@@ -22,14 +21,6 @@ class StaffingPlanStatusAdmin(admin.ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name',)
     ordering = ('code', 'name',)
-
-
-@admin.register(FiscalYear)
-class FiscalYearAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name')
-    list_filter = ('name',)
-    search_fields = ('name',)
-    ordering = ('name',)
 
 
 @admin.register(EmployeeClassesLevel)

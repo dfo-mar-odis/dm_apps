@@ -16,3 +16,18 @@ class NewStaffingForm(forms.ModelForm):
     class Meta:
         model = models.StaffingPlan
         exclude = []
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if 'initial' not in kwargs or 'object' not in kwargs['initial']:
+            return
+
+        obj = kwargs['initial']['object']
+        if obj:
+            attrs = [[str(o).replace("_id", ""), vars(obj)[o]] for o in vars(obj)]
+            for i in range(2, len(attrs)):
+                key = attrs[i][0]
+                if key != 'last_modified_by' and key != 'date_last_modified':
+                    val = attrs[i][1]
+                    self.fields[key].initial = val

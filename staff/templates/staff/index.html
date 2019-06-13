@@ -3,6 +3,7 @@
 {% load humanize %}
 {% load custom_filters %}
 {% load i18n %}
+{% load verbose_names %}
 
 {% block body %}
     {% get_current_language as LANG %}
@@ -21,14 +22,14 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page">
-                {% trans "All Projects" %}
+                {% trans "All Staffing Plans" %}
             </li>
         </ol>
     </nav>
 
     <div class="indent-lg">
         <h1>
-            {% trans "All Projects:" %}
+            {% trans "All Staffing Plans:" %}
         </h1>
 
         <form class="form" action="." method="get" id="filter-form">
@@ -36,7 +37,7 @@
 
                 {% for field in filter.form %}
                     {# {{field.label}}: &nbsp; {{field}}&nbsp;&nbsp; #}
-                    <div class="col">
+                    <div class="col-3">
                         {% bootstrap_field field placeholder="" size="small" %}
                     </div>
 
@@ -57,21 +58,25 @@
                 <em>{% trans "displaying all records" %}</em>
             </div>
             <div class="col" style="text-align: right; padding-bottom: 10px">
-                <a href="{% url 'staff:create_plan' 0 %}" class="btn btn-sm btn-primary">{% trans "New Project" %}</a>
+                <a href="{% url 'staff:create_plan' %}" class="btn btn-sm btn-primary">{% trans "New Plan" %}</a>
             </div>
         </div>
 
         <table class="table table-hover table-sm sortable">
             <thead>
-            <th scope="col" style="width: 50%">
-                {% trans "Title" %}
-            </th>
+            {% for field in filter.form %}
+                <th scope="col" style="width: 50%">
+                    {% trans field.label %} <br />
+                </th>
+            {% endfor %}
             </thead>
             <tbody>
 
             {% for obj in filter.qs %}
-                <tr href="{% url 'publications:create_plan' obj.id %}">
-                    <td>{{ obj.title }}</td>
+                <tr href="{% url 'staff:update_plan' obj.id %}">
+                {% for field in filter.form %}
+                    <td class="col-3">{% get_field_value obj field.name %}</td>
+                {% endfor %}
                 </tr>
             {% endfor %}
             </tbody>

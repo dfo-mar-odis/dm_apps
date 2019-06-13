@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 from shared_models import models as shared_models
+from projects import models as project_models
 
 # Create your models here.
 
@@ -30,10 +31,6 @@ class Lookup(models.Model):
 
 
 class StaffingPlanStatus(Lookup):
-    pass
-
-
-class FiscalYear(Lookup):
     pass
 
 
@@ -83,7 +80,7 @@ class EmployeeClassesLevelsPayRate(models.Model):
 
 
 class StaffingPlan(models.Model):
-    fiscal_year = models.ForeignKey(FiscalYear, on_delete=models.DO_NOTHING, blank=True, null=True,
+    fiscal_year = models.ForeignKey(shared_models.FiscalYear, on_delete=models.DO_NOTHING, blank=True, null=True,
                                     verbose_name="fiscal year")
     name = models.CharField(max_length=255, blank=True, null=True, verbose_name='short name for planned staffing (<255 characters)')
     section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, blank=True, null=True,
@@ -96,7 +93,7 @@ class StaffingPlan(models.Model):
                                              blank=True,
                                              null=True,
                                              verbose_name="staffing plan status")
-    funding_type = models.ForeignKey(FundingType, on_delete=models.DO_NOTHING,
+    funding_type = models.ForeignKey(project_models.FundingSource, on_delete=models.DO_NOTHING,
                                      blank=True,
                                      null=True,
                                      verbose_name="funding type")
