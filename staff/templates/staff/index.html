@@ -65,7 +65,7 @@
         <table class="table table-hover table-sm sortable">
             <thead>
             {% for field in filter.form %}
-                <th scope="col" style="width: 50%">
+                <th scope="col" class="col-3">
                     {% trans field.label %} <br />
                 </th>
             {% endfor %}
@@ -75,7 +75,7 @@
             {% for obj in filter.qs %}
                 <tr href="{% url 'staff:update_plan' obj.id %}">
                 {% for field in filter.form %}
-                    <td class="col-3">{% get_field_value obj field.name %}</td>
+                    <td>{% get_field_value obj field.name %}</td>
                 {% endfor %}
                 </tr>
             {% endfor %}
