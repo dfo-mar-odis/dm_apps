@@ -42,15 +42,9 @@ Staff Planning
                         </button>
                     {% endif %}
 
-                    {% if object.id %}
-                        <a class="btn btn-secondary" href="{% url 'projects:project_detail' object.id %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% else %}
-                        <a class="btn btn-secondary" href="{% url 'projects:my_project_list' %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% endif %}
+                    <a class="btn btn-secondary" href="{% url 'staff:index' %}">
+                        {% trans "Cancel" %}
+                    </a>
                 </div>
             {% endbuttons %}
 
@@ -70,15 +64,9 @@ Staff Planning
                         </button>
                     {% endif %}
 
-                    {% if object.id %}
-                        <a class="btn btn-secondary" href="{% url 'projects:project_detail' object.id %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% else %}
-                        <a class="btn btn-secondary" href="{% url 'projects:my_project_list' %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% endif %}
+                    <a class="btn btn-secondary" href="{% url 'staff:index' %}">
+                        {% trans "Cancel" %}
+                    </a>
                 </div>
             {% endbuttons %}
         </form>
