@@ -118,6 +118,26 @@ def draft_ca_file_directory_path(instance, filename):
     return 'spot/{0}/{0}_draft_contribution_agreement.{1}'.format(instance.id, suffix)
 
 
+
+class ActivityType(models.Model):
+    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
+    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (French)"))
+    descr_eng = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("description (English)"))
+    descr_fre = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("description (French)"))
+
+    def __str__(self):
+        # check to see if a french value is given
+        if getattr(self, str(_("name"))):
+            return "{}".format(getattr(self, str(_("name"))))
+        # if there is no translated term, just pull from the english field
+        else:
+            return "{}".format(self.name)
+
+    class Meta:
+        ordering = [_('name'), ]
+
+
+
 class Project(models.Model):
     path_number = models.CharField(max_length=50, blank=True, null=True, verbose_name=_("DFO PATH #"))
     program_reference_number = models.CharField(max_length=50, blank=True, null=True)
@@ -147,6 +167,7 @@ class Project(models.Model):
     requested_funding_y3 = models.FloatField(blank=True, null=True, verbose_name=_("requested funding (year 3)"))
     requested_funding_y4 = models.FloatField(blank=True, null=True, verbose_name=_("requested funding (year 4)"))
     requested_funding_y5 = models.FloatField(blank=True, null=True, verbose_name=_("requested funding (year 5)"))
+    overview = models.TextField(blank=True, null=True, verbose_name=_("project overview"))
 
     ## Regional Review
     regional_score = models.DecimalField(max_digits=18, decimal_places=0, blank=True, null=True, verbose_name=_("regional score"))
@@ -193,6 +214,7 @@ class Project(models.Model):
     last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("last modified by"),
                                          related_name="gc_projects")
     people = models.ManyToManyField(ml_models.Person, through="ProjectPerson", blank=True)
+    activity_types = models.ManyToManyField(ActivityType, blank=True)
 
     def __str__(self):
         return "{} ({})".format(truncate(self.title, 50), self.organization.abbrev)
@@ -247,6 +269,29 @@ class Project(models.Model):
     def end_year(self):
         return self.years.order_by("fiscal_year").last().fiscal_year.full
 
+    @property
+    def pp(self):
+        if self.project_people.filter(role=1).count() == 0:
+            return '<span class="red-font">MISSING</span>'
+        else:
+            # this is an issue if there are two pp's
+            my_person = self.project_people.filter(role=1).first().person
+            return "{} {}".format(
+                my_person.first_name,
+                my_person.last_name,
+            )
+
+    @property
+    def gc_officer(self):
+        if self.project_people.filter(role=7).count() == 0:
+            return '<span class="red-font">MISSING</span>'
+        else:
+            # this is an issue if there are two pp's
+            my_person = self.project_people.filter(role=7).first().person
+            return "{} {}".format(
+                my_person.first_name,
+                my_person.last_name,
+            )
 
 
 class Role(models.Model):
@@ -282,6 +327,7 @@ class ProjectPerson(models.Model):
     class Meta:
         unique_together = ['project', 'person', 'role']
         ordering = ['project', 'role', 'person']
+
 
 
 class ContributionAgreementChecklist(models.Model):
@@ -353,7 +399,6 @@ class ContributionAgreementChecklist(models.Model):
 class ExpressionOfInterest(models.Model):
     project = models.OneToOneField(Project, on_delete=models.CASCADE, related_name="eoi")
     date_received = models.DateTimeField(blank=True, null=True, verbose_name=_("date received"))
-    title = models.TextField(blank=True, null=True, verbose_name=_("title"))
     description = models.TextField(blank=True, null=True, verbose_name=_("description"))
     coordinator_notified = models.DateTimeField(blank=True, null=True, verbose_name=_("coordinator was notified"))
     project_eligible = models.NullBooleanField(verbose_name=_("is the project eligible?"))

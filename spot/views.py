@@ -16,6 +16,7 @@ from lib.functions.custom_functions import nz
 from . import models
 from . import forms
 from . import filters
+from . import emails
 from . import reports
 from masterlist import models as ml_models
 
@@ -677,7 +678,7 @@ class TrackingUpdateView(SpotAccessRequiredMixin, UpdateView):
 
     def get_queryset(self, *args, **kwargs):
         if self.kwargs["step"] == "initiation" or self.kwargs["step"] == "review" or self.kwargs["step"] == "negotiations" or self.kwargs[
-            "step"] == "ca-admin":
+            "step"] == "ca-admin" or self.kwargs["step"] == "activities":
             return models.Project.objects.all()
         elif self.kwargs["step"] == "my-update":
             return models.ProjectYear.objects.all()
@@ -693,20 +694,27 @@ class TrackingUpdateView(SpotAccessRequiredMixin, UpdateView):
             return forms.NegotiationForm
         elif self.kwargs["step"] == "ca-admin":
             return forms.CAAdministrationForm
+        elif self.kwargs["step"] == "activities":
+            return forms.ActivitiesForm
         else:
             return forms.ProjectYearForm
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
+        my_object = models.Project.objects.get(pk=self.kwargs["pk"])
         step_name = self.kwargs["step"]
         if step_name == "initiation":
             step_name = "Initiation"
+            context["email"] = emails.EOIAcknowledgement(my_object)
+            print(context["email"])
         elif step_name == "review":
             step_name = "Regional Review"
         elif step_name == "negotiations":
             step_name = "Negotiations"
         elif step_name == "ca-admin":
             step_name = "CA Administration"
+        elif step_name == "activities":
+            step_name = "Activity Types"
         context["step_name"] = step_name
         return context
 

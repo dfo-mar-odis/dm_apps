@@ -1,19 +1,26 @@
 from django.template import loader
 
-from_email = 'DoNotReply@iHub.com'
-admin_email = 'david.fishman@dfo-mpo.gc.ca'
-stacy_email = 'Stacy.Adeogba@dfo-mpo.gc.ca'
+from_email = 'test@dfo-mpo.gc.ca'
+admin_email = 'test@dfo-mpo.gc.ca'
+stacy_email = 'test@dfo-mpo.gc.ca'
 
 
-class NewEntryEmail:
+class EOIAcknowledgement:
     def __init__(self, object):
-        self.subject = 'a new entry has been made in the iHub web app'
+        self.title = 'EOI Receipt Acknowledgement Email'
+        if object.language_id == 2:
+            self.subject = 'Accusé de réception de votre déclaration d’intérêt'
+        else:
+            self.subject = "Expressions of Interest Receipt Acknowledgement"
         self.message = self.load_html_template(object)
         self.from_email = from_email
         self.to_list = [stacy_email]
 
     def load_html_template(self, object):
-        t = loader.get_template('ihub/email_new_entry.html')
+        t = loader.get_template('spot/emails/acknowledgement_of_receipt.html')
         context = {'object': object}
         rendered = t.render(context)
         return rendered
+
+    def __str__(self):
+        return "FROM: {}\nTO: {}\nSUBJECT: {}\nMESSAGE:{}".format(self.from_email, self.to_list, self.subject, self.message)

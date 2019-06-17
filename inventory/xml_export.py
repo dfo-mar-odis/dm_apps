@@ -306,7 +306,7 @@ class KeywordGroup:
             thesaurusName = SubElement(MD_Keywords, 'gmd:thesaurusName')
             CI_Citation = SubElement(thesaurusName, 'gmd:CI_Citation')
             charstring(CI_Citation, 'gmd:title', "Integrated Taxonomic Information System (ITIS)",
-                       "Integrated Taxonomic Information System (ITIS)")
+                       "Système d'information taxonomique intégré (SITI)")
             # revision date
             date = SubElement(CI_Citation, 'gmd:date')
             CI_Date = SubElement(date, 'gmd:CI_Date')
@@ -331,7 +331,7 @@ class KeywordGroup:
             citedResponsibleParty = SubElement(CI_Citation, 'gmd:citedResponsibleParty')
             CI_ResponsibleParty = SubElement(citedResponsibleParty, 'gmd:CI_ResponsibleParty')
             charstring(CI_ResponsibleParty, 'gmd:organisationName', 'Integrated Taxonomic Information System (ITIS)',
-                       'Integrated Taxonomic Information System (ITIS)')
+                       "Système d'information taxonomique intégré (SITI)")
             contactInfo = SubElement(CI_ResponsibleParty, 'gmd:contactInfo')
             CI_Contact = SubElement(contactInfo, 'gmd:CI_Contact')
             onlineResource = SubElement(CI_Contact, 'gmd:onlineResource')

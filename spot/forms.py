@@ -9,12 +9,12 @@ attr_chosen_contains = {"class": "chosen-select-contains"}
 attr_chosen = {"class": "chosen-select"}
 attr_fp_date = {"class": "fp-date", "placeholder": "Select Date.."}
 attr_fp_date_time = {"class": "fp-date-time", "placeholder": "Select Date and Time.."}
+multi_select_js = {"class": "multi-select"}
 
 YES_NO_CHOICES = (
     (True, _("Yes")),
     (False, _("No")),
 )
-
 
 class OrganizationForm(forms.ModelForm):
     class Meta:
@@ -113,11 +113,8 @@ class NewPersonForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         org_choices = [(o.id, "{} ({})".format(str(o), o.abbrev)) for o in ml_models.Organization.objects.all()]
-        org_choices.insert(0,(None, "------"))
+        org_choices.insert(0, (None, "------"))
         self.fields['organization'].choices = org_choices
-
-
-
 
 
 class ProjectForm(forms.ModelForm):
@@ -155,7 +152,7 @@ class ProjectForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         org_choices = [(o.id, "{} ({})".format(str(o), o.abbrev)) for o in ml_models.Organization.objects.all()]
-        org_choices.insert(0,(None, "------"))
+        org_choices.insert(0, (None, "------"))
         self.fields['organization'].choices = org_choices
 
 
@@ -246,6 +243,7 @@ class InitiationForm(forms.ModelForm):
             'requested_funding_y3',
             'requested_funding_y4',
             'requested_funding_y5',
+            'overview',
             'notes',
             'last_modified_by',
         ]
@@ -264,7 +262,6 @@ class EOIForm(forms.ModelForm):
         fields = [
             'project',
             'date_received',
-            'title',
             'description',
             'coordinator_notified',
             'project_eligible',
@@ -278,7 +275,7 @@ class EOIForm(forms.ModelForm):
 
             'feedback': forms.Textarea(attrs={"rows": 5}),
             'coordinator_notified': forms.DateInput(attrs=attr_fp_date_time),
-            'date_received': forms.DateInput(attrs={"type":"date"}),
+            'date_received': forms.DateInput(attrs={"type": "date"}),
             'feedback_sent': forms.DateInput(attrs=attr_fp_date),
         }
 
@@ -385,6 +382,21 @@ class CAAdministrationForm(forms.ModelForm):
             'final_ca_sent_to_nhq': forms.DateInput(attrs=attr_fp_date),
             'advance_payment_sent_to_nhq': forms.DateInput(attrs=attr_fp_date),
             'final_ca_nhq_signed': forms.DateInput(attrs=attr_fp_date),
+        }
+
+
+class ActivitiesForm(forms.ModelForm):
+    class Meta:
+        model = models.Project
+        fields = [
+            'last_modified_by',
+            'activity_types',
+            'notes',
+        ]
+        widgets = {
+            'last_modified_by': forms.HiddenInput(),
+            'notes': forms.Textarea(attrs={"rows": 4}),
+            'activity_types': forms.SelectMultiple(attrs=multi_select_js),
         }
 
 

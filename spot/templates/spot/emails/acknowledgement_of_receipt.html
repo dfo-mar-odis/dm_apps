@@ -1,0 +1,38 @@
+{%  autoescape off %}
+{% if object.language == 2 %}
+
+    {# FRENCH VERSION #}
+
+    <p>
+        {{ object.pp }},
+    </p>
+    <p>
+        Nous vous remercions de votre intérêt pour le {{ object.program }}. Nous tenons à confirmer que votre demande intitulée :
+        <em>{{ object.title }}</em> a été reçue dans le délai de soumission et il est en cours d’examen. Vous serez informé une fois que le
+        processus
+        d'examen est terminé. Si vous avez des questions,
+        s'il vous plaît communiquez avec {{ object.gc_officer.person }}.
+    </p>
+    <p>
+        Cordialement,<br>
+        Pêches et Océans Canada - Unité de financement de la Région du Golfe"
+    </p>
+
+
+{% else %}
+    {# ENGLISH VERSION #}
+    <p>
+        {{ object.pp }},
+    </p>
+    <p>
+        Thank you for your interest in the {{ object.program }}. This message is to confirm that your
+        application entitled: <em>{{ object.title }}</em> was received within the submission deadline and is currently undergoing review.
+        You
+        will be notified once the review process is complete. If you have any questions, please contact {{ object.gc_officer }}.
+    </p>
+    <p>
+        Best regards, <br>Fisheries and Oceans Canada - Gulf Region - Funding Team"
+    </p>
+
+{% endif %}
+{% endautoescape %}
