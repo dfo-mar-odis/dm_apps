@@ -50,6 +50,9 @@ Staff Planning
 
             {% for field in form %}
                 {% bootstrap_field field placeholder="" %}
+                {% if field.name == "estimated_start_date" %}
+                    {% include "staff/_staff_funding_table.html" %}
+                {% endif %}
             {% endfor %}
 
             {% buttons %}

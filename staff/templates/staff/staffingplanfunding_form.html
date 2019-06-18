@@ -1,0 +1,38 @@
+{% extends 'pop_base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load static %}
+{% load custom_filters %}
+
+{% block body %}
+
+    <div class="container">
+        <h3>
+            {% trans "Funding for Staff Plan:" %} {{ object }}
+        </h3>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {% for field in form %}
+                {% bootstrap_field field placeholder="" %}
+            {% endfor %}
+            {% buttons %}
+                <button type="submit" class="btn btn-success" onclick="refreshParent()">
+                    {% trans "Submit" %}
+                </button>
+                <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                    {% trans "Close" %}
+                </a>
+            {% endbuttons %}
+        </form>
+    </div>
+
+{% endblock body %}
+
+<script type="application/javascript">
+    $(document).ready(function () {
+        // Stuff to do as soon as the DOM is ready
+        checkFields();
+    });
+</script>

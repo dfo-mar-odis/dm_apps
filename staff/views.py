@@ -2,7 +2,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import UpdateView, CreateView
 from django_filters.views import FilterView
-from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 
 from . import forms
@@ -14,6 +13,25 @@ from . import filters
 class IndexTemplateView(FilterView):
     filterset_class = filters.StaffingPlanFilter
     template_name = 'staff/index.html'
+
+
+class CreateFunding(LoginRequiredMixin, CreateView):
+    model = models.StaffingPlanFunding
+    form_class = forms.FundingForm
+    success_url = reverse_lazy("#")
+
+    def get_initial(self):
+        ret = {'last_modified_by': self.request.user}
+
+        if self.kwargs['pk'] and self.kwargs['pk'] != 0:
+            ret['object'] = models.StaffingPlan.objects.get(id=self.kwargs['pk'])
+
+        return ret
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+
+        return context
 
 
 class CreatePlan(LoginRequiredMixin, CreateView):

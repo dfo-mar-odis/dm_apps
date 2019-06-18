@@ -85,6 +85,9 @@ class StaffingPlan(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True, verbose_name='short name for planned staffing (<255 characters)')
     section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, blank=True, null=True,
                                 verbose_name="section")
+    employee_class_level = models.ForeignKey(EmployeeClassesLevel, on_delete=models.DO_NOTHING, blank=True, null=True,
+                                             verbose_name="employee class and level")
+
     responsibility_center = models.ForeignKey(shared_models.ResponsibilityCenter, on_delete=models.DO_NOTHING,
                                               blank=True,
                                               null=True,
@@ -125,6 +128,7 @@ class StaffingPlan(models.Model):
                                    related_name='reports_to_manager',
                                    verbose_name='manager')
     estimated_start_date = models.DateField(blank=True, null=True, verbose_name="start date (estimated)")
+    # financial information goes here.
     start_date = models.DateField(blank=True, null=True, verbose_name="start date (actual)")
     end_date = models.DateField(blank=True, null=True, verbose_name="end date (actual)")
     duration_temporary_coverage = models.IntegerField(blank=True, null=True,
@@ -147,7 +151,7 @@ class StaffingPlan(models.Model):
 
 
 class StaffingPlanFunding(models.Model):
-    staffing_plan = models.ForeignKey(StaffingPlan, on_delete=models.DO_NOTHING, blank=False, null=False,
+    staffing_plan = models.ForeignKey(StaffingPlan, related_name="staff_funding", on_delete=models.DO_NOTHING, blank=False, null=False,
                                       verbose_name='staffing_plan')
     financial_coding = models.CharField(max_length=255, blank=True, null=True, verbose_name='financial coding')
     funding_amount = models.FloatField(blank=False, null=False, verbose_name='funding amount ($)')
