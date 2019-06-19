@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% block title %}
+Staff Planning Details
+{% endblock title %}
+
+{% block body %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'staff:index' %}">
+                {% trans "All Staffing Plans" %}
+            </a></li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1>
+            {% if object.id == 0 %}
+                {% trans "New Staffing Plan" %}
+            {% else %}
+                {{ object }}
+            {% endif %}
+        </h1>
+
+        <div class="btn-group">
+            <a href="{% url 'staff:update_plan' object.id %}" class="btn btn-primary">
+                {% trans "Update" %}
+            </a>
+        </div>
+
+        <table class="table table-sm table-striped" style="width:auto;">
+            <th class="gone" style="width: 250px; padding: 0px; margin: 0px;"></th>
+            {% for field in field_list %}
+            {% verbose_td_display object field %}
+            {% endfor %}
+        </table>
+
+        {% include "staff/_staff_funding_table.html" %}
+
+    </div>
+{% endblock body %}

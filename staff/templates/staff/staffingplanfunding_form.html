@@ -11,6 +11,11 @@
             {% trans "Funding for Staff Plan:" %} {{ object }}
         </h3>
 
+        <table class="table table-sm table-strip">
+            <tr><th colspan="2">Allotment</th></tr>
+            <tr><th>{% trans "Min" %}</th><th>{% trans "Max" %}</th></tr>
+            <tr><td>{{ min_allotment }}</td><td>{{ max_allotment }}</td></tr>
+        </table>
         <form method="post" class="form">
             {% csrf_token %}
 
@@ -18,10 +23,10 @@
                 {% bootstrap_field field placeholder="" %}
             {% endfor %}
             {% buttons %}
-                <button type="submit" class="btn btn-success" onclick="refreshParent()">
+                <button type="submit" class="btn btn-success" onclick="refreshAndClose()">
                     {% trans "Submit" %}
                 </button>
-                <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                <a class="btn btn-secondary" onclick="window.close()" href="#">
                     {% trans "Close" %}
                 </a>
             {% endbuttons %}
@@ -30,9 +35,11 @@
 
 {% endblock body %}
 
-<script type="application/javascript">
-    $(document).ready(function () {
-        // Stuff to do as soon as the DOM is ready
-        checkFields();
-    });
+{% block body_js %}
+ <script type="application/javascript">
+    function refreshAndClose() {
+        window.opener.location.reload(true);
+        window.close();
+    }
 </script>
+{% endblock body_js %}

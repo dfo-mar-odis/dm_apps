@@ -153,11 +153,22 @@ class StaffingPlan(models.Model):
 class StaffingPlanFunding(models.Model):
     staffing_plan = models.ForeignKey(StaffingPlan, related_name="staff_funding", on_delete=models.DO_NOTHING, blank=False, null=False,
                                       verbose_name='staffing_plan')
-    financial_coding = models.CharField(max_length=255, blank=True, null=True, verbose_name='financial coding')
+    responsibility_center = models.ForeignKey(shared_models.ResponsibilityCenter, on_delete=models.DO_NOTHING, related_name='transactions')
+    business_line = models.ForeignKey(shared_models.BusinessLine, on_delete=models.DO_NOTHING,
+                                      related_name='transactions')
+    allotment_code = models.ForeignKey(shared_models.AllotmentCode, on_delete=models.DO_NOTHING,
+                                       related_name='transactions')
+    line_object = models.ForeignKey(shared_models.LineObject, on_delete=models.DO_NOTHING, blank=True, null=True,
+                                    related_name='transactions')
+    project = models.ForeignKey(shared_models.Project, on_delete=models.DO_NOTHING, related_name="transactions")
+
+    # financial_coding = models.CharField(max_length=255, blank=True, null=True, verbose_name='financial coding')
     funding_amount = models.FloatField(blank=False, null=False, verbose_name='funding amount ($)')
 
     def __str__(self):
-        return "{} ({})".format(self.staffing_plan, self.financial_coding, self.funding_amount)
+        return "{} ({})".format(self.staffing_plan, self.responsibility_center, self.business_line,
+                                self.allotment_code, self.line_object, self.project, self.funding_amount)
 
     class Meta:
-        ordering = ['staffing_plan', 'financial_coding', 'funding_amount']
+        ordering = ['staffing_plan', 'responsibility_center', 'business_line', 'allotment_code', 'line_object',
+                    'project', 'funding_amount']

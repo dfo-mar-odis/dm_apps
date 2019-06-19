@@ -26,52 +26,169 @@ Staff Planning
                 {{ object }}
             {% endif %}
         </h1>
-        <br><br>
 
         <form method="post" class="form">
             {% csrf_token %}
-            {% buttons %}
-                <div class="btn-group">
-                    {% if object.id %}
-                        <button type="submit" class="btn btn-primary">
-                            {% trans "Update" %}
-                        </button>
-                    {% else %}
-                        <button type="submit" class="btn btn-primary">
-                            {% trans "Add" %}
-                        </button>
-                    {% endif %}
-
+            <div class="btn-group">
+                {% if object.id %}
+                    <button type="submit" class="btn btn-primary">
+                        {% trans "Save" %}
+                    </button>
+                    <a class="btn btn-secondary" href="{% url 'staff:detail_plan' object.id %}">
+                        {% trans "Cancel" %}
+                    </a>
+                {% else %}
+                    <button type="submit" class="btn btn-primary">
+                        {% trans "Add" %}
+                    </button>
                     <a class="btn btn-secondary" href="{% url 'staff:index' %}">
                         {% trans "Cancel" %}
                     </a>
-                </div>
-            {% endbuttons %}
+                {% endif %}
+            </div>
 
             {% for field in form %}
                 {% bootstrap_field field placeholder="" %}
-                {% if field.name == "estimated_start_date" %}
-                    {% include "staff/_staff_funding_table.html" %}
-                {% endif %}
             {% endfor %}
 
-            {% buttons %}
-                <div class="btn-group">
-                    {% if object.id %}
-                        <button type="submit" class="btn btn-primary">
-                            {% trans "Update" %}
-                        </button>
-                    {% else %}
-                        <button type="submit" class="btn btn-primary">
-                            {% trans "Add" %}
-                        </button>
-                    {% endif %}
-
+            <div class="btn-group">
+                {% if object.id %}
+                    <button type="submit" class="btn btn-primary">
+                        {% trans "Save" %}
+                    </button>
+                    <a class="btn btn-secondary" href="{% url 'staff:detail_plan' object.id %}">
+                        {% trans "Cancel" %}
+                    </a>
+                {% else %}
+                    <button type="submit" class="btn btn-primary">
+                        {% trans "Add" %}
+                    </button>
                     <a class="btn btn-secondary" href="{% url 'staff:index' %}">
                         {% trans "Cancel" %}
                     </a>
-                </div>
-            {% endbuttons %}
+                {% endif %}
+            </div>
         </form>
     </div>
 {% endblock body %}
+
+{% block body_js %}
+    <script type="application/javascript">
+
+    divisionObj = {{ division_json|safe }};
+    sectionObj = {{ section_json|safe }};
+
+    $(document).ready(function () {
+        // Stuff to do as soon as the DOM is ready
+        resetFields()
+    });
+
+    function resetFields() {
+        // if the region is null, clear and disable both subsequent fields
+        if ($("#id_region").val() == "") {
+            $("#id_division").val("")
+            $("#id_division").prop('disabled', true)
+            $("#id_division").empty();
+
+            $("#id_section").val("")
+            $("#id_section").prop('disabled', true)
+            $("#id_section").empty();
+            // if the division is null, clear and disable section field
+        } else if ($("#id_division").val() == "") {
+            $("#id_section").val("")
+            $("#id_section").prop('disabled', true)
+            $("#id_section").empty();
+        }
+    }
+
+    $("#id_region").change(function () {
+        if ($(this).val() != "") {
+            // enable the division field
+            $("#id_division").prop('disabled', false);
+
+            // define options based on region selection
+            var newOptions = {"---": ""};
+            for (var i = 0; i < Object.keys(divisionObj).length; i++) {
+                var key = Object.keys(divisionObj)[i];
+                var searchTerm = $("#id_region option:selected").val();
+                if (divisionObj[key].region_id == searchTerm) {
+                    newOptions[divisionObj[key].display] = key
+                }
+            }
+            var $el = $("#id_division");
+            $el.empty(); // remove old options
+            $.each(newOptions, function (key, value) {
+                $el.append($("<option></option>")
+                    .attr("value", value).text(key));
+            });
+
+            // disable the section field again, empty choices
+            $("#id_section").val("")
+            $("#id_section").prop('disabled', true)
+            var $el = $("#id_section");
+            $el.empty(); // remove old options
+
+            // sort the options
+            // https://stackoverflow.com/questions/12073270/sorting-options-elements-alphabetically-using-jquery
+            var options = $('#id_division option');
+            var arr = options.map(function (_, o) {
+                return {t: $(o).text(), v: o.value};
+            }).get();
+            arr.sort(function (o1, o2) {
+                return o1.t > o2.t ? 1 : o1.t < o2.t ? -1 : 0;
+            });
+            options.each(function (i, o) {
+                o.value = arr[i].v;
+                $(o).text(arr[i].t);
+            });
+
+
+        } else {
+            resetFields()
+        }
+    });
+
+
+    $("#id_division").change(function () {
+        if ($(this).val() != "") {
+            // enable the section field
+            $("#id_section").prop('disabled', false);
+
+            // define options based on division selection
+            var newOptions = {"---": ""};
+
+            for (var i = 0; i < Object.keys(sectionObj).length; i++) {
+                var key = Object.keys(sectionObj)[i];
+                var searchTerm = $("#id_division option:selected").val();
+                if (sectionObj[key].division_id == searchTerm) {
+                    newOptions[sectionObj[key].display] = key
+                }
+            }
+            var $el = $("#id_section");
+            $el.empty(); // remove old options
+            $.each(newOptions, function (key, value) {
+                $el.append($("<option></option>")
+                    .attr("value", value).text(key));
+            });
+
+            // sort the options
+            // https://stackoverflow.com/questions/12073270/sorting-options-elements-alphabetically-using-jquery
+            var options = $('#id_section option');
+            var arr = options.map(function (_, o) {
+                return {t: $(o).text(), v: o.value};
+            }).get();
+            arr.sort(function (o1, o2) {
+                return o1.t > o2.t ? 1 : o1.t < o2.t ? -1 : 0;
+            });
+            options.each(function (i, o) {
+                o.value = arr[i].v;
+                $(o).text(arr[i].t);
+            });
+
+        } else {
+            resetFields()
+        }
+    });
+
+    </script>
+{% endblock body_js %}

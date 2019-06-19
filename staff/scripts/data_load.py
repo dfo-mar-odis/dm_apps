@@ -71,3 +71,4 @@ loadModel(CPositionStaffingOption, staff_models.PositionStaffingOption)
 loadModel(CPositionTenure, staff_models.PositionTenure)
 loadModel(CPositionSecurity, staff_models.PositionSecurity)
 loadModel(CPositionLinguisticRequirement, staff_models.PositionLinguisticRequirement)
+

@@ -56,7 +56,7 @@
                        href="{% url 'staff:index' %}" class="hidden"></a>
                 </td>
 
-                <td>{{ obj.financial_coding }}</td>
+                <td>{{ obj.responsibility_center.code }}-{{ obj.business_line.code }}-{{ obj.allotment_code.code }}-{{ obj.line_object.code }}-{{ obj.project.code }}</td>
 
                 <td> {{ obj.funding_amount }}</td>
             </tr>

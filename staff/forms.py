@@ -1,4 +1,6 @@
 from django import forms
+
+from . import views
 from . import models
 
 
@@ -25,11 +27,14 @@ class FundingForm(forms.ModelForm):
 
 class NewStaffingForm(forms.ModelForm):
 
+    region = forms.ChoiceField()
+    division = forms.ChoiceField()
+
     field_order = [
-        "fiscal_year", "section", "name", "employee_class_level", "responsibility_center", "staffing_plan_status", "funding_type",
-        "work_location", "position_staffing_option", "position_tenure", "position_security", "position_linguistic",
-        "position_employment_equity", "position_number", "position_title", "is_key_position", "employee_last_name",
-        "employee_first_name", "reports_to", "estimated_start_date", "start_date", "end_date",
+        "fiscal_year", "region", "division", "section", "name", "employee_class_level", "responsibility_center", "staffing_plan_status",
+        "funding_type", "work_location", "position_staffing_option", "position_tenure", "position_security",
+        "position_linguistic", "position_employment_equity", "position_number", "position_title", "is_key_position",
+        "employee_last_name", "employee_first_name", "reports_to", "estimated_start_date", "start_date", "end_date",
         "duration_temporary_coverage", "potential_rollover_date", "allocation", "rd_approval_number",
         "description", "date_last_modified", "last_modified_by",
     ]
@@ -37,9 +42,30 @@ class NewStaffingForm(forms.ModelForm):
     class Meta:
         model = models.StaffingPlan
         exclude = []
+        widgets = {
+            'estimated_start_date': forms.DateInput(attrs={"type": "date"}),
+            'start_date': forms.DateInput(attrs={"type": "date"}),
+            'end_date': forms.DateInput(attrs={"type": "date"}),
+            'potential_rollover_date': forms.DateInput(attrs={"type": "date"}),
+            'date_last_modified': forms.HiddenInput(),
+            'last_modified_by': forms.HiddenInput(),
+
+        }
 
     def __init__(self, *args, **kwargs):
+        region_choices = views.get_region_choices(all=True)
+        region_choices.insert(0, tuple((None, "---")))
+        division_choices = views.get_division_choices(all=True)
+        division_choices.insert(0, tuple((None, "---")))
+        section_choices = views.get_section_choices(all=True)
+        section_choices.insert(0, tuple((None, "---")))
+
         super().__init__(*args, **kwargs)
+        self.fields['region'].choices = region_choices
+
+        # even though these are overwritten by js scripts you have to define these so that the validation kicks in properly
+        self.fields['division'].choices = division_choices
+        self.fields['section'].choices = section_choices
 
         if 'initial' not in kwargs or 'object' not in kwargs['initial']:
             return

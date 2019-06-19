@@ -73,7 +73,7 @@
             <tbody>
 
             {% for obj in filter.qs %}
-                <tr href="{% url 'staff:update_plan' obj.id %}">
+                <tr href="{% url 'staff:detail_plan' obj.id %}">
                 {% for field in filter.form %}
                     <td>{% get_field_value obj field.name %}</td>
                 {% endfor %}

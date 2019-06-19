@@ -134,11 +134,14 @@ class StaffingPlanAdmin(admin.ModelAdmin):
 
 @admin.register(StaffingPlanFunding)
 class StaffingPlanFundingAdmin(admin.ModelAdmin):
+
     list_display = (
-        'staffing_plan', 'financial_coding', 'funding_amount')
+        'staffing_plan', 'responsibility_center', 'business_line', 'allotment_code', 'line_object', 'project',
+        'funding_amount')
     list_filter = (
-        'staffing_plan', 'financial_coding')
+        'staffing_plan', 'responsibility_center', 'business_line', 'allotment_code', 'line_object', 'project')
     search_fields = (
-        'staffing_plan', 'financial_coding')
+        'staffing_plan', 'responsibility_center', 'business_line', 'allotment_code', 'line_object', 'project')
     raw_id_fields = ('staffing_plan',)
-    ordering = ('staffing_plan', 'financial_coding', 'funding_amount')
+    ordering = ('staffing_plan', 'responsibility_center', 'business_line', 'allotment_code', 'line_object', 'project',
+                'funding_amount')
