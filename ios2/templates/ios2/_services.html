@@ -1,0 +1,98 @@
+{% load static %}
+{% load custom_filters %}
+{% load humanize %}
+{% load i18n %}
+{% get_current_language as LANG %}
+
+<style>
+    table, td {
+        font-size: small;
+    }
+</style>
+
+<h4>
+    {% trans "Service History:" %}
+</h4>
+{% if not object.submitted and not report_mode %}
+    <div class="btn-group">
+        <a class="btn btn-sm btn-primary" href="#"
+           onclick="return popitup('{% url 'ios2:service_new' object.id %}','popoutWindow')">
+            {% trans "Add Service" %}
+        </a>
+
+    </div>
+    <br><br>
+{% endif %}
+
+{% if object.service.count == 0 %}
+    <em>
+        {% trans "No Service Record" %}
+    </em><br>
+{% else %}
+
+    <table class="table table-hover table-sm sortable" style="width: auto">
+        <thead>
+        {% if not report_mode %}
+            <th></th>
+        {% endif %}
+        <th>
+            {% trans "Service Type" %}
+        </th>
+        <th>
+            {% trans "Service Date" %}
+        </th>
+
+        <th>
+            {% trans "Next Service Date" %}
+        </th>
+        <th>
+            {% trans "Comments" %}
+        </th>
+
+
+        </thead>
+        <tbody>
+        {% for obj in object.service.all %}
+            <tr id="sv-{{ obj.id }}"
+                    {% if not object.submitted and not report_mode %}
+                href="{% url 'ios2:service_edit' obj.id %}" pop
+                data-toggle="tooltip" title="Edit"
+                    {% endif %}
+                style="background-color: {{ obj.funding_source.color }}">
+                {% if not report_mode %}
+
+                    <td>
+                        {% if not object.submitted and not report_mode %}
+                            <a class="sv-delete-me" href="#" val="{{ obj.id }}">
+                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                     title="Delete">
+                            </a>
+                            <a id="sv-secrect-delete-btn-{{ obj.id }}"
+                               href="{% url 'ios2:service_delete' obj.id %}" class="hidden"></a>
+                        {% endif %}
+                    </td>
+                {% endif %}
+                <td>{{ obj }}</td>
+                <td> {{ obj.service_date }}</td>
+                <td> {{ obj.next_service_date }}</td>
+                <td> {{ obj.comments }}</td>
+
+                {% if not report_mode %}
+                    <td>
+                        {% if not object.submitted %}
+
+                        {% endif %}
+                    </td>
+                {% endif %}
+
+                <td style="text-align: center">{{ obj.budget_requested|currency }}</td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<br>
+
+

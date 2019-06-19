@@ -1,0 +1,69 @@
+{% extends "ios2/instrument_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'ios2:mooring_list' %}">
+                {% trans "Instruments" %}
+            </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'ios2:mooring_detail' object.id %}">{{ object }}</a>
+            </li>
+            {% if object.submitted %}
+                <li class="breadcrumb-item active" aria-current="page">
+                    {% trans "Unsubmit" %}
+                </li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">
+                    {% trans "Submit" %}
+                </li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1>
+            {% if object.submitted %}
+                {% trans "Are you sure you want to unsubmit the this project?" %}
+            {% else %}
+                {% trans "Are you sure you want to submit the following project?" %}
+            {% endif %}
+        </h1>
+        <br><br>
+
+        {% if not object.submitted %}
+            {% include "ios2/mooring_report.html" %}
+            <br><br>
+        {% endif %}
+
+
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+
+            {% for field in form %}
+                {% bootstrap_field field placeholder="" %}
+            {% endfor %}
+
+
+
+
+            {% buttons %}
+                <button type="submit" class="btn btn-success">
+                    {% trans "OK" %}
+                </button>
+                <a class="btn btn-secondary" href="{% url 'ios2:mooring_detail' object.id %}">
+                    {% trans "Cancel" %}
+                </a>
+            {% endbuttons %}
+        </form>
+
+    </div>
+
+{% endblock content %}

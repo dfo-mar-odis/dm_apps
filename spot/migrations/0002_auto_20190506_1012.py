@@ -90,7 +90,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('caption', models.CharField(max_length=255)),
-                ('file', models.FileField(upload_to=spot.models.photo_directory_path)),
+                ('file', models.FileField(upload_to=spot.models.file_directory_path)),
                 ('date_created', models.DateTimeField(default=django.utils.timezone.now)),
             ],
             options={

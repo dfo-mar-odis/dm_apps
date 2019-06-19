@@ -1,0 +1,67 @@
+{% load bootstrap4 %}
+{% load i18n %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <link rel="stylesheet" href="{% static 'css/master.css' %}">
+        {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+
+{#        <link rel="stylesheet" href="{% static 'dropzone/dist/dropzone.css' %}">#}
+{#        <script src="{% static 'dropzone/dist/dropzone.js' %}"></script>#}
+
+        <script>
+            window.resizeTo(width = 800, height = 500);
+
+            window.onunload = refreshParent;
+
+            function refreshParent() {
+                window.opener.location.reload();
+            }
+
+            $(document).ready(function () {
+                // Stuff to do as soon as the DOM is ready
+                $("#id_digestion_level")[0].focus()
+            });
+        </script>
+        <style>
+            label {
+                font-weight: bold;
+            }
+        </style>
+        <h3>
+            {% if object %}
+                {% trans "Editing File" %}
+
+            {% else %}
+                {% trans "Adding New File" %}
+            {% endif %}
+        </h3>
+        <br>
+        <form method="post" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {% bootstrap_field field placeholder="" size="small" %}
+            {% endfor %}
+
+            {% buttons %}
+                <button type="submit" class="btn btn-success" onclick="refreshParent()">
+                    {% trans "Submit" %}
+                </button>
+                {% if object %}
+                    <a class="btn btn-danger" href="{% url 'spot:file_delete' object.id %}">
+                        {% trans "Delete" %}
+                    </a>
+                {% endif %}
+                <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                    {% trans "Close" %}
+                </a>
+            {% endbuttons %}
+        </form>
+
+
+    </div>
+
+{% endblock content %}

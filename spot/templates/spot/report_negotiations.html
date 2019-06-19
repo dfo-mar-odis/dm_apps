@@ -1,0 +1,102 @@
+{% extends "spot/spot_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load el_pagination_tags %}
+{% load i18n %}
+{% block content %}
+
+    <style>
+
+        table, td, th {
+            font-size: small;
+        }
+
+        #filter-form {
+            font-size: small;
+            width: 75%;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'spot:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Projects</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+
+        <h1 class="big-header">Projects </h1>
+        <p>TOTAL: {{ object_list.count }}</p>
+
+        <form class="form" action="." method="get" id="filter-form">
+            <div class="row">
+                {% for field in filter.form %}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+                {% endfor %}
+                <div class="col-2">
+                    <br>
+                    <input type="submit" value="Filter" class="btn btn-sm btn-warning">
+                </div>
+            </div>
+        </form>
+
+        <br>
+
+
+        {% paginate 100 filter.qs as filter_list %}
+
+
+        <div class="row">
+            <div class="col">
+                (click on a header to sort table)
+            </div>
+            <div class="col" style="text-align: center">
+                {% show_pages %}
+                <em>displaying {{ filter_list.count }} of {{ filter.qs.count }}</em>
+            </div>
+            <div class="col" style="text-align: right; padding-bottom: 10px">
+                <a href="{% url 'spot:project_new' %}" class="btn btn-sm btn-primary">New Project</a>
+
+            </div>
+        </div>
+
+        <table class="table table-sm table-hover sortable">
+            <thead>
+            <tr>
+                {% for field in field_list %}
+                    {% if field == "start_year" %}
+                        <th scope="col" style="width: 100px">{% get_verbose_label my_object field %}</th>
+                    {% else %}
+                        <th scope="col">{% get_verbose_label my_object field %}</th>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in filter_list %}
+                {% url 'spot:project_detail' object.id as my_url %}
+                <tr href="{{ my_url }}">
+                    {% for field in field_list %}
+                        {% if field == "status" %}
+                            <td style="background-color: {{ object.status.color }}">{% get_field_value object field %}</td>
+                        {% else %}
+                            <td>{% get_field_value object field %}</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+{% endblock content %}

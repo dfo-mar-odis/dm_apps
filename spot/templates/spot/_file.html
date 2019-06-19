@@ -1,0 +1,68 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+{% load custom_filters %}
+
+<div class="">
+    <h4>
+        {% trans "Files:" %}
+    </h4>
+</div>
+
+{% if object.files.count == 0 %}
+    <em>
+        {% trans "No files have been added to this project" %}
+    </em><br>
+{% else %}
+    <table class="table table-hover table-sm" style="width: auto">
+        <tr>
+            <th>
+                {% trans "Link" %}
+            </th>
+            <th>
+                {% trans "Type" %}
+            </th>
+            <th>
+                {% trans "Caption" %}
+            </th>
+            <th>
+                {% trans "Date Modified" %}
+            </th>
+
+        </tr>
+        <tbody>
+        {% for obj in object.files.all %}
+            <tr pop href="{% url 'spot:file_edit' obj.id %}">
+                <td>
+                    <a href="{{ obj.file.url }}" class="stop_prop">
+                        <img src="{% static "/img/paperclip-34593.svg" %}" style="width:40px">
+                    </a>
+                </td>
+                <td>
+                    {{ obj.file_type }}
+                </td>
+                <td>
+                    {{ obj.caption }}
+                </td>
+                <td>
+                    {{ obj.date_modified|date:"F d, Y" }}
+                </td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<a class="" href="#" pop-href="{% url 'spot:file_new' object.id %}">
+    {% trans "(Add a file)" %}
+</a>
+
+<br>
+<br>
+
+<script type="application/javascript">
+    $(".stop_prop").click(function (e) {
+        e.stopImmediatePropagation()
+    })
+</script>

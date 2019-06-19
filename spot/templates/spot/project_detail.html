@@ -55,7 +55,7 @@
                         {% trans "Negotiations" %}
                     </a>
                      <a class="btn btn-outline-dark" href="#" pop-href="{% url 'spot:tracking' object.id 'activities' %}">
-                        {% trans "Activity Types" %}
+                        {% trans "Activities" %}
                     </a>
                     <a class="btn btn-outline-dark" href="#" pop-href="{% url 'spot:ca_checklist' object.id %}">
                         {% trans "CA Checklist" %}
@@ -80,6 +80,7 @@
                     <div class="col-5">
                         {% include "spot/_project_years.html" %}
                         {% include "spot/_project_people.html" %}
+                        {% include "spot/_file.html" %}
                     </div>
                     <div class="col">
                         <h4>Project Summary:</h4>

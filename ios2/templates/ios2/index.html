@@ -1,0 +1,54 @@
+{% extends "ios2/instrument_base.html" %}
+{% load static %}
+
+{% block title %}Docs{% endblock title %}
+
+{% block content %}
+     <style>
+        body {
+            background-image: url("{% static 'img/matt-hardy-562566-unsplash_lite.jpg' %}");
+            background-size: cover;
+        }
+
+    </style>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>
+                <img src="{% static '/img/icons/sailor.svg' %}"
+                     style="max-width:8%">
+                Welcome to the IOS Instrument Tracking App!
+
+            </h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Please select among the following items:</h2>
+        <table class="table table-hover">
+            <tbody>
+
+            <tr href="{% url 'ios2:instrument_list' %}">
+                <td>View all Instruments</td>
+            </tr>
+            <tr href="{% url 'ios2:mooring_list' %}">
+                <td>View all Moorings</td>
+            </tr>
+            </tbody>
+        </table>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+           href="https://unsplash.com/@matthardy?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+           target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Matt Hardy"><span
+                style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                  style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+                                                                  viewBox="0 0 32 32"><title>unsplash-logo</title><path
+                d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Matt Hardy</span></a>
+    </div>
+
+
+
+{% endblock content %}
+
+

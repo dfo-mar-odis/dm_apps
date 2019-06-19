@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import UpdateView, DeleteView, CreateView, DetailView, FormView, TemplateView
 ###
-from lib.functions.custom_functions import fiscal_year
+from lib.functions.custom_functions import fiscal_year, listrify
 from lib.functions.custom_functions import nz
 from . import models
 from . import forms
@@ -274,7 +274,7 @@ class PersonDetailView(SpotAccessRequiredMixin, DetailView):
 
 class PersonUpdateView(SpotAccessRequiredMixin, UpdateView):
     model = ml_models.Person
-    template_name = 'spot/person_form_popout.html'
+    template_name = 'spot/person_form.html'
     form_class = forms.PersonForm
 
     def get_initial(self):
@@ -699,18 +699,18 @@ class TrackingUpdateView(SpotAccessRequiredMixin, UpdateView):
         else:
             return forms.ProjectYearForm
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
         my_object = models.Project.objects.get(pk=self.kwargs["pk"])
         step_name = self.kwargs["step"]
         if step_name == "initiation":
             step_name = "Initiation"
-            context["email"] = emails.EOIAcknowledgement(my_object)
-            print(context["email"])
+            context["email"] = emails.MasterEmail(my_object, "eoi_acknowledgement")
         elif step_name == "review":
             step_name = "Regional Review"
         elif step_name == "negotiations":
             step_name = "Negotiations"
+            context["email"] = emails.MasterEmail(my_object, "negotiations")
         elif step_name == "ca-admin":
             step_name = "CA Administration"
         elif step_name == "activities":
@@ -859,7 +859,7 @@ class PaymentCreateView(SpotAccessRequiredMixin, CreateView):
 class PaymentDeleteView(SpotAccessRequiredMixin, DeleteView):
     template_name = 'spot/payment_confirm_delete.html'
     model = models.Payment
-    success_message = 'The payment year was deleted successfully!'
+    success_message = 'The payment was deleted successfully!'
 
     def get_success_url(self):
         return reverse_lazy('spot:close_me')
@@ -867,3 +867,121 @@ class PaymentDeleteView(SpotAccessRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super().delete(request, *args, **kwargs)
+
+
+
+# FILE #
+########
+
+class FileCreateView(SpotAccessRequiredMixin, CreateView):
+    model = models.File
+    template_name = 'spot/file_form_popout.html'
+    form_class = forms.FileForm
+    success_url = reverse_lazy('spot:close_me')
+
+    def get_initial(self):
+        super().get_initial()
+        my_project = models.Project.objects.get(pk=self.kwargs['project'])
+        my_dict = {
+              'project': my_project,
+              'uploaded_by': self.request.user,
+          }
+        if self.kwargs.get("type"):
+            my_dict['file_type'] = models.FileType.objects.get(pk=self.kwargs.get("type"))
+        return my_dict
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        my_project = models.Project.objects.get(id=self.kwargs['project'])
+        context['project'] = my_project
+        return context
+
+    def form_valid(self, form):
+        object = form.save()
+        return HttpResponseRedirect(reverse('spot:close_me'))
+
+class FileUpdateView(SpotAccessRequiredMixin, UpdateView):
+    model = models.File
+    template_name = 'spot/file_form_popout.html'
+    form_class = forms.FileForm
+    login_url = '/accounts/login_required/'
+
+    def form_valid(self, form):
+        object = form.save()
+        return HttpResponseRedirect(reverse('spot:close_me'))
+
+    def get_initial(self):
+        return {
+            'date_modified': timezone.now(),
+            'uploaded_by': self.request.user,
+        }
+
+
+class FileDeleteView(SpotAccessRequiredMixin, DeleteView):
+    template_name = 'spot/file_confirm_delete.html'
+    model = models.File
+    success_message = 'The file was deleted successfully!'
+
+    def get_success_url(self):
+        return reverse_lazy('spot:close_me')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)
+
+
+
+# REPORTS #
+###########
+
+class ReportSearchFormView(SpotAccessRequiredMixin, FormView):
+    template_name = 'spot/report_search.html'
+    form_class = forms.ReportSearchForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def form_valid(self, form):
+        fiscal_year = str(form.cleaned_data["fiscal_year"])
+        report = int(form.cleaned_data["report"])
+        programs = listrify(form.cleaned_data["programs"])
+
+        if programs == "":
+            sections = "None"
+
+        if report == 1:
+            return HttpResponseRedirect(reverse("projects:report_neg", kwargs={
+                'fy': fiscal_year,
+                'programs': programs,
+            }))
+        else:
+            messages.error(self.request, "Report is not available. Please select another report.")
+            return HttpResponseRedirect(reverse("ihub:report_search"))
+
+
+class NegotiationReport(SpotAccessRequiredMixin, TemplateView):
+    template_name = 'masterlist/report_search.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def form_valid(self, form):
+        fiscal_year = str(form.cleaned_data["fiscal_year"])
+        report = int(form.cleaned_data["report"])
+        programs = listrify(form.cleaned_data["programs"])
+
+        if programs == "":
+            sections = "None"
+
+        if report == 1:
+            return HttpResponseRedirect(reverse("projects:report_neg", kwargs={
+                'fy': fiscal_year,
+                'programs': programs,
+            }))
+        else:
+            messages.error(self.request, "Report is not available. Please select another report.")
+            return HttpResponseRedirect(reverse("ihub:report_search"))
+

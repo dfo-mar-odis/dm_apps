@@ -1,0 +1,151 @@
+{% extends "ios2/instrument_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% block content %}
+
+    <style>
+        .label {
+            font-weight: bold;
+        }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'ios2:mooring_list' %}">
+                {% trans "All Moorings" %}
+            </a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ object.mooring }} {{ object.mooring_number}} </li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+
+        <h1>{{ object }} -
+            {% if object.submitted %}
+                {% trans "SUBMITTED" %}
+            {% else %}
+                <span class="red-font">
+                {% trans "DRAFT VERSION" %}
+                </span>
+            {% endif %}
+        </h1>
+
+
+        <div class="btn-group">
+            {% if not report_mode %}
+<!--                {% if object.submitted %}-->
+<!--                    <a class="btn btn-secondary btn-sm" href="{% url 'ios2:mooring_submit' object.id %}">-->
+<!--                        {% trans "Unsubmit Mooring" %}-->
+<!--                    </a>-->
+<!--                {% else %}-->
+<!--                    <a class="btn btn-success btn-sm" href="{% url 'ios2:mooring_submit' object.id %}">-->
+<!--                        {% trans "Submit Mooring" %}-->
+<!--                    </a>-->
+<!--                {% endif %}-->
+            {% else %}
+                <span data-toggle="tooltip"
+                      title="{% trans "Cannot submit/unsumbit instruments that do not belong to you or your section." %}">
+
+<!--                {% if object.submitted %}-->
+<!--                    <a class="btn btn-secondary btn-sm disabled" href="{% url 'ios2:mooring_submit' object.id %}">-->
+<!--                        {% trans "Unsubmit Mooring" %}-->
+<!--                    </a>-->
+<!--                {% else %}-->
+<!--                    <a class="btn btn-success btn-sm disabled" href="{% url 'ios2:mooring_submit' object.id %}">-->
+<!--                        {% trans "Submit Mooring" %}-->
+<!--                    </a>-->
+<!--                {% endif %}-->
+                </span>
+
+            {% endif %}
+
+
+
+            {% if not report_mode %}
+                {% if object.mooring != 'HOME' %}
+                    <a class="btn btn-danger btn-sm" href="{% url 'ios2:mooring_delete' object.id %}">
+                        {% trans "Delete" %}
+                    </a>
+                {% endif %}
+            {% else %}
+                <span data-toggle="tooltip" title="{% trans "Cannot delete projects that do not belong to you or your section." %}">
+                    <a class="btn btn-danger btn-sm disabled" href="#">{% trans "Delete" %}</a>
+                </span>
+            {% endif %}
+
+            <a class="btn btn-dark btn-sm" href="{% url 'ios2:mooring_print' object.id %}">
+                {% trans "Export PDF" %}
+            </a>
+
+        </div>
+
+
+        <br><br><br>
+
+        <h3>
+            {% trans "Mooring Summary:" %}
+        </h3>
+
+        <!--<div class="btn-group">-->
+            <!--{% if not object.submitted and not report_mode %}-->
+<!--                <a class="btn btn-primary btn-sm" href="{% url 'ios2:mooring_edit' object.id %}">-->
+        <a class="btn btn-sm btn-primary" href="#"
+           onclick="return popitup('{% url 'ios2:mooring_edit' object.id %}','popoutWindow')">
+                    {% trans "Add/Edit Mooring Details" %}
+                </a>
+
+
+            <!--{% endif %}-->
+        <!--</div>-->
+
+        <br><br>
+        <div class="row">
+            <div class="col-4">
+                {% for field in field_list %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+            </div>
+            <div class="col-8">
+                {% for field in field_list_1 %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <br>
+
+
+
+        {% include "ios2/_instruments.html" %}
+
+
+
+    </div>
+
+
+
+    <script type="application/javascript">
+
+
+        $(".om-delete-me").click(function () {
+            var objectId = $(this)[0].getAttribute("val");
+
+            var userInput = "";
+            userInput = confirm("{% trans "Are you sure you want to delete this instrument from the mooring?" %}");
+            if (userInput === true) {
+                $("#om-secrect-delete-btn-" + objectId)[0].click();
+            }
+        })
+
+        ;
+
+    </script>
+
+
+{% endblock content %}

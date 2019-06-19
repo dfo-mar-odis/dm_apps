@@ -10,31 +10,86 @@
         }
     </style>
 
-    <script>
-        window.resizeTo(width = 700, height = 850);
-        window.onunload = refreshParent;
-        $(document).ready(function () {
-            // Stuff to do as soon as the DOM is ready
-            {#$("#id_advance_amount")[0].focus()#}
-        });
 
-        function refreshParent() {
-            window.opener.location.reload();
-        }
-    </script>
     <div class="container-fluid">
 
         <h3>
             {% trans "Tracking: " %} {{ step_name }}
         </h3>
         <br>
-        <form method="post" class="form" {% if view.kwargs.step == "ca-admin" %}enctype="multipart/form-data"{% endif %}>
-
+        <form method="post" class="form" {% if view.kwargs.step == "ca-admin" %}enctype="multipart/form-data"{% endif %}
+        >
             {% csrf_token %}
 
             {% for field in form %}
-                {% bootstrap_field field size='small' placeholder="" %}
+                {% if field.name == "date_received" %}
+                    {% bootstrap_field field size='small' placeholder="" %}
+                    <p>
+                        <b>
+                            {% trans "EOI file uploaded?" %}
+                        </b>
+                        {% if object.file %}
+                            <a href="{{ object.file.file.url }}">Yes</a>
+                        {% else %}
+                            <span class="red-font">No, click <a href="#" pop-href="{% url 'spot:file_new' object.id 3 %}">here</a> to upload it.</span>
+                        {% endif %}
+                    </p>
+                {% elif field.name == "application_submission_date" %}
+                    {% bootstrap_field field size='small' placeholder="" %}
+                    <p>
+                        <b>
+                            {% trans "Application file uploaded?" %}
+                        </b>
+                        {% if object.application_file %}
+                            <a href="{{ object.application_file.file.url }}">Yes</a>
+
+                        {% else %}
+                            <span class="red-font">No, click  <a href="#" pop-href="{% url 'spot:file_new' object.id 6 %}">here</a> to upload it.</span>
+                        {% endif %}
+                    </p>
+                {% elif field.name == "risk_assessment_score" %}
+                    {% bootstrap_field field size='small' placeholder="" %}
+                    <p>
+                        <b>
+                            {% trans "Risk assessment file uploaded?" %}
+                        </b>
+                        {% if object.risk_assessment_file %}
+                            <a href="{{ object.risk_assessment_file.file.url }}">Yes</a>
+                        {% else %}
+                            <span class="red-font">No, click  <a href="#" pop-href="{% url 'spot:file_new' object.id 4 %}">here</a> to upload it.</span>
+                        {% endif %}
+                    </p>
+                {% elif field.name == "draft_ca_sent_to_proponent" %}
+                    {% bootstrap_field field size='small' placeholder="" %}
+                    <p>
+                        <b>
+                            {% trans "Draft CA file uploaded?" %}
+                        </b>
+                        {% if object.draft_ca_file %}
+                            <a href="{{ object.draft_ca_file.file.url }}">Yes</a>
+                        {% else %}
+                            <span class="red-font">No, click  <a href="#" pop-href="{% url 'spot:file_new' object.id 1 %}">here</a> to upload it.</span>
+                        {% endif %}
+                    </p>
+                {% elif field.name == "final_ca_nhq_signed" %}
+                    {% bootstrap_field field size='small' placeholder="" %}
+                    <p>
+                        <b>
+                            {% trans "Fully signed CA file uploaded?" %}
+                        </b>
+                        {% if object.fully_signed_ca_file %}
+                            <a href="{{ object.fully_signed_ca_file.file.url }}">Yes</a>
+                        {% else %}
+                            <span class="red-font">No, click  <a href="#" pop-href="{% url 'spot:file_new' object.id 2 %}">here</a> to upload it.</span>
+                        {% endif %}
+                    </p>
+                {% else %}
+                    {% bootstrap_field field size='small' placeholder="" %}
+                {% endif %}
+
             {% endfor %}
+
+
             <div class="btn-group">
                 <button type="submit" class="btn btn-primary" onclick="refreshParent()">
                     {% trans "Submit" %}
@@ -90,7 +145,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Nevermind</button>
-                    <a href="#" class="btn btn-lg btn-warning float-center">Send Away!</a>
+                    <a href="#" class="btn btn-lg btn-warning float-center {% if email.something_missing %}disabled{% endif %}">
+                        {% trans "Send Away!" %}
+                    </a>
 
                 </div>
             </div>
@@ -99,11 +156,29 @@
 
     {% block body_js %}
 
+        <script>
+            {% if view.kwargs.step == "activities" %}
+                window.resizeTo(width = 1200, height = 850);
+            {% else %}
+                window.resizeTo(width = 1000, height = 850);
+            {% endif %}
+            window.onunload = refreshParent;
+            $(document).ready(function () {
+                // Stuff to do as soon as the DOM is ready
+                {#$("#id_advance_amount")[0].focus()#}
+            });
+
+            function refreshParent() {
+                window.opener.location.reload();
+            }
+        </script>
+
 
         <script type="application/javascript">
             $(document).ready(function () {
                 // Stuff to do as soon as the DOM is ready
                 $("#id_initiation_acknowledgement_sent").attr("data-toggle", "modal").attr("data-target", "#email_1");
+                $("#id_negotiation_letter_sent").attr("data-toggle", "modal").attr("data-target", "#email_1");
 
             });
         </script>

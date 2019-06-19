@@ -69,10 +69,20 @@ urlpatterns = [
     path('payment/<int:pk>/edit/', views.PaymentUpdateView.as_view(), name="payment_edit"),
     path('payment/<int:pk>/delete/', views.PaymentDeleteView.as_view(), name="payment_delete"),
 
+    # FILE #
+    ########
+    path('project/<int:project>/file/new/', views.FileCreateView.as_view(), name="file_new"),
+    path('project/<int:project>/file/new/file-type/<int:type>/', views.FileCreateView.as_view(), name="file_new"),
+    path('file/<int:pk>/edit/', views.FileUpdateView.as_view(), name="file_edit"),
+    path('file/<int:pk>/delete/', views.FileDeleteView.as_view(), name="file_delete"),
+
+    # path('file/<int:pk>/delete/', views.file_delete, name="file_delete"),
+
     #
-    # # Reports #
-    # ###########
-    # path('reports/search/', views.ReportSearchFormView.as_view(), name="report_search"),
+    # Reports #
+    ###########
+    path('reports/search/', views.ReportSearchFormView.as_view(), name="report_search"),
+    path('reports/negotiations/<int:fy>/<str:programs>/', views.NegotiationReport.as_view(), name="report_neg"),
     # path('reports/export-custom-list/<str:provinces>/<str:groupings>/<str:sectors>/<str:regions>/<int:is_indigenous>/<str:species>', views.export_custom_list, name="export_custom_list"),
 
 

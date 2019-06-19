@@ -161,6 +161,11 @@
     color: blue;
 }
 
+
+.green-borders {
+    border: 2px solid #00c600;
+}
+
 .resolved {
     background-color: mediumpurple;
 }

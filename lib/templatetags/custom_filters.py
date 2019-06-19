@@ -21,6 +21,15 @@ def nz(value, arg):
     else:
         return value
 
+@register.filter
+def nmissing(value):
+    """if a value is equal to None, this function will return arg instead"""
+    if value is None or value == "":
+        return '<span class="red-font" style="font-size: large">MISSING</span>'
+    else:
+        return value
+
+
 
 @register.filter
 def zero2val(value, arg):

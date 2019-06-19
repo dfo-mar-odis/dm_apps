@@ -1,0 +1,53 @@
+{% load custom_filters %}
+{% autoescape off %}
+    {% if object.language.id == 2 %}
+        {# FRENCH VERSION #}
+        Not yet developed in French...
+
+    {% else %}
+        {# ENGLISH VERSION #}
+
+        <p>
+            Hi {{ object.pp.first_name|nmissing }},
+        </p>
+        <p>
+            This email is to thank you once again for your application to the {{ object.program.full_eng }}
+            regarding your project: “<b>{{ object.title }}</b>” and to provide you with additional information on the development of
+            your {{ object.program.abbrev_eng }}
+            Contribution Agreement (CA).
+        </p>
+        <p>
+            The release of {{ object.program.abbrev_eng }} funding is contingent on the development of a CA that includes a detailed work plan
+            and budget consistent with {{ object.program.abbrev_eng }} funding requirements. This includes maintaining other sources of support,
+            to meet the program’s stacking requirements.
+        </p>
+        <p>
+            To facilitate the development of your {{ object.program.abbrev_eng }} CA, DFO will develop a draft of the agreement based on the
+            information and budget in your proposal. I hope to provide you with a draft in the coming weeks. If there have been changes to
+            your project (e.g., in your budget) since your application was submitted please inform me as soon as possible to ensure that
+            these are reflected in the draft CA. Once you have received the draft, you will need to review Schedule 5, which contains the
+            details of your project’s activities and budget for accuracy and feasibility.
+        </p>
+        <p>
+            In order to expedite the process, I will fill in as much information as possible into Schedule 5 based on the information you
+            provided in your proposal. I will indicate directly in the Schedule 5 if I need clarification on items and/or if I need
+            additional information. To assist you with the Schedule 5, I’ve also re-attached your Application Form. Should you require
+            guidance on the completion of Schedule 5, please contact me by email or at the phone number provided below.
+        </p>
+        <p>
+            Going forward, I will be your DFO contact for the development of your CA. Please let me know as soon as possible if your project
+            or organization has time sensitivities or other factors that require a CA draft to be completed by DFO in a shorter timeframe
+            and I will do my best to accommodate.
+        </p>
+        <p>
+            In the meantime, please contact me with any questions or concerns you might have.
+        </p>
+
+        <p>
+            {{ object.gc_officer.full_name }}
+            <br><br>
+            {{ object.gc_officer.email_block|nmissing }}
+        </p>
+{{ ready }}
+    {% endif %}
+{% endautoescape %}

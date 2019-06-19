@@ -1,0 +1,146 @@
+{% extends "ios2/instrument_base.html" %}
+{% load static %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% block content %}
+    {% get_current_language as LANG %}
+    {% load bootstrap4 %}
+
+    <style>
+        form, input {
+            font-size: small;
+        }
+
+        table, td {
+            font-size: 14px;
+        }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">
+                {% trans "All moorings" %}
+            </li>
+            {#            <li class="breadcrumb-item"><a href="{% url 'ios2:index' %}">Home</a></li>#}
+        </ol>
+    </nav>
+
+    <div class="indent-lg">
+        <h1>
+            {% trans "All Moorings:" %}
+        </h1>
+
+        <form class="form" action="." method="get" id="filter-form">
+            <div class="row">
+
+                {% for field in filter.form %}
+                    {# {{field.label}}: &nbsp; {{field}}&nbsp;&nbsp; #}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+
+                {% endfor %}
+                <div class="col">
+                    <br>
+                    <input type="submit" value="Filter" class="btn btn-warning btn-sm">
+
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col">
+                {% trans "(click on a header to sort table)" %}
+            </div>
+            <div class="col" style="text-align: center">
+                <em>{% trans "displaying all records" %}</em>
+            </div>
+            <div class="col" style="text-align: right; padding-bottom: 10px">
+                <a href="{% url 'ios2:mooring_new' %}" class="btn btn-sm btn-primary">{% trans "New Mooring" %}</a>
+            </div>
+        </div>
+
+        <table class="table table-hover table-sm sortable">
+            <thead>
+<!--            <th scope="col" style="width: 120px;">-->
+<!--                {% trans "Purchase Date" %}-->
+<!--            </th>-->
+            <th scope="col">
+                {% trans "Mooring Name" %}
+            </th>
+            <th scope="col">
+                {% trans "Mooring Number" %}
+            </th>
+<!--            <th scope="col">-->
+<!--                {% trans "Section" %}-->
+<!--            </th>-->
+<!--            <th scope="col" style="width: 50%">-->
+<!--                <th scope="col">-->
+<!--                {% trans "Instrument Type" %}-->
+<!--            </th>-->
+<!--            <th scope="col">-->
+<!--                {% trans "Serial ID" %}-->
+<!--            </th>-->
+            <th scope="col">
+                {% trans "Deploy time" %}
+            </th>
+            <th scope="col">
+                {% trans "Recover time" %}
+            </th>
+                        <th scope="col">
+                {% trans "Submitted" %}
+            </th>
+            </thead>
+            <tbody>
+
+            {% for obj in filter.qs %}
+                <tr href="{% url 'ios2:mooring_detail' obj.id %}">
+<!--                    <td>{{ obj.year }}</td>-->
+<!--                    <td>{{ obj.purchase_date|date:"Y-M-d"}}</td>-->
+                    <td>{{ obj.mooring }}</td>
+                    <td>{{ obj.mooring_number }}</td>
+
+<!--                    <td>{{ obj.instruments.instrument_type }}</td>-->
+<!--                    <td>{{ obj.instruments.serial_number }}</td>-->
+                    <td>{{ obj.deploy_time |date:"Y-M-d"}}</td>
+                    <td>{{ obj.recover_time |date:"Y-M-d"}}</td>
+
+
+<!--                    {% if LANG == "fr" %}-->
+<!--                        <td>{{ obj.section.division.nom }}</td>-->
+<!--                        <td>{{ obj.section.nom }}</td>-->
+<!--                    {% else %}-->
+<!--                        <td>{{ obj.section.division.name }}</td>-->
+<!--                        <td>{{ obj.section.name }}</td>-->
+<!--                    {% endif %}-->
+<!--                    <td>-->
+<!--                        {{ obj.project_title }}-->
+<!--                    </td>-->
+<!--                    <td>{{ obj.date_of_last_service |date:"Y-M-d"}}</td>-->
+<!--                    <td>{{ obj.date_of_next_service |date:"Y-M-d"}}</td>-->
+<!--                    <td>-->
+<!--                        {% for staff in obj.staff_members.all %}-->
+<!--                            {% if staff.lead %}-->
+<!--                                {% if staff.user_id %}-->
+<!--                                    {{ staff.user.first_name }} {{ staff.user.last_name }}-->
+<!--                                {% else %}-->
+<!--                                    {{ staff.name }}-->
+<!--                                {% endif %}-->
+<!--                                <br>-->
+<!--                            {% endif %}-->
+<!--                        {% endfor %}-->
+<!--                    </td>-->
+                    <td>{{ obj.submitted|yesno:_("yes,no") }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <b>
+            TOTAL: {{ object_list.count }}
+        </b>
+    </div>
+
+{% endblock content %}
+

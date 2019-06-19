@@ -1,0 +1,41 @@
+{% load bootstrap4 %}
+{% load i18n %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+    <script>
+        window.resizeTo(width = 600, height = 500);
+
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+    </script>
+    <div class="text-center">
+        <div class="container">
+            <h1>
+                Deleting File
+            </h1>
+            <br>
+            <h3>
+                Are you sure you want to delete <em>{{ object }} ?</em>
+            </h3>
+            <br><br>
+
+            <br><br>
+
+            <form method="post" class="form">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Confirm</button>
+                <a class="btn btn-secondary" href="{% url 'spot:close_me' %}">Cancel</a>
+            </form>
+        </div>
+
+    </div>
+
+
+{% endblock content %}

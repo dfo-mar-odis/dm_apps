@@ -1,0 +1,35 @@
+{% load verbose_names %}
+{% load bootstrap4 %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% bootstrap_css %}
+
+<style>
+    .label {
+        font-weight: bold;
+    }
+
+    table, td, th {
+        font-size: small;
+        border: 1px solid black;
+        text-align: left;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        padding-top: 1px;
+    }
+
+    th {
+        background-color: lightgray;
+        color: black;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+</style>
+
+{% include "ios2/_instrument_content.html" %}

@@ -1,0 +1,107 @@
+{% extends "ios2/instrument_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+    <style>
+    label{
+        font-weight: bold;
+    }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'ios2:instrument_list' %}">
+                {% trans "All Instruments" %}
+            </a></li>
+            {% if object %}
+                <li class="breadcrumb-item"><a href="{% url 'ios2:instrument_detail' object.id %}">{{ object }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    {% trans "Edit" %}
+                </li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">
+                    {% trans "New Instrument" %}
+                </li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1>
+            {% if object.id %}
+                {{ object }}
+            {% else %}
+                {% trans "New Instrument" %}
+            {% endif %}
+        </h1>
+        <br><br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {% buttons %}
+                <div class="btn-group">
+                    {% if object.id %}
+                        <button type="submit" class="btn btn-primary">
+                            {% trans "Update" %}
+                        </button>
+                    {% else %}
+                        <button type="submit" class="btn btn-primary">
+                            {% trans "Add" %}
+                        </button>
+                    {% endif %}
+
+                    {% if object.id %}
+                        <a class="btn btn-secondary" href="{% url 'ios2:instrument_detail' object.id %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% else %}
+                        <a class="btn btn-secondary" href="{% url 'ios2:instrument_list' %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endbuttons %}
+
+            {% for field in form %}
+                {#                {% if field.name == "cruise" %}#}
+                {#                    {% bootstrap_field field placeholder="" %}#}
+                {#                    <a href="{% url 'ios2:cruise_new'  %}" target="_blank">(add new cruise)</a><br><br> {# should produce a popout window... #}
+                {#                {% else %}#}
+                {% bootstrap_field field placeholder="" %}
+
+                {#                {% endif %}#}
+            {% endfor %}
+
+
+            {% buttons %}
+                <div class="btn-group">
+                    {% if object.id %}
+                        <button type="submit" class="btn btn-primary">
+                            {% trans "Update" %}
+                        </button>
+                    {% else %}
+                        <button type="submit" class="btn btn-primary">
+                            {% trans "Add" %}
+                        </button>
+                    {% endif %}
+
+                    {% if object.id %}
+                        <a class="btn btn-secondary" href="{% url 'ios2:instrument_detail' object.id %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% else %}
+                        <a class="btn btn-secondary" href="{% url 'ios2:instrument_list' %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% endif %}
+                </div>
+            {% endbuttons %}
+        </form>
+
+    </div>
+
+{% endblock content %}

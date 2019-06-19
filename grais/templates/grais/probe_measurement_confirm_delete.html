@@ -8,7 +8,7 @@
             <li class="breadcrumb-item"><a href="{% url 'grais:index' %}"> Home </a></li>
             <li class="breadcrumb-item"><a href="{% url 'grais:sample_list' %}"> All samples </a></li>
             <li class="breadcrumb-item"><a
-                    href="{% url 'grais:sample_detail' object.line.sample.id %}"> {{ object.line.sample }} </a></li>
+                    href="{% url 'grais:sample_detail' object.sample.id %}"> {{ object.sample }} </a></li>
             <li class="breadcrumb-item"><a
                     href="{% url 'grais:probe_measurement_detail' object.id %}"> {{ object }} </a></li>
             <li class="breadcrumb-item active" aria-current="page"> Delete</li>

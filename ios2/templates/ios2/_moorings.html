@@ -1,0 +1,131 @@
+{% load static %}
+{% load custom_filters %}
+{% load humanize %}
+{% load i18n %}
+{% get_current_language as LANG %}
+
+<style>
+    table, td {
+        font-size: small;
+    }
+</style>
+
+<h4>
+    {% trans "Mooring history for" %} {{object}}
+</h4>
+{% if not object.submitted and not report_mode %}
+    <div class="btn-group">
+        <a class="btn btn-sm btn-primary" href="#"
+           onclick="return popitup('{% url 'ios2:add_deployment' object.id %}','popoutWindow')">
+            {% trans "Add Mooring" %}
+        </a>
+
+    </div>
+    <br><br>
+{% endif %}
+
+
+
+{% if object.instrudeploy.count == 0 %}
+    <em>
+        {% trans "No Mooring History" %}
+    </em><br>
+{% else %}
+
+    <table class="table table-hover table-sm sortable" style="width: auto">
+        <thead>
+        {% if not report_mode %}
+            <th></th>
+        {% endif %}
+
+        <th>
+            {% trans "Instrument Type" %}
+        </th>
+        <th>
+            {% trans "Serial #" %}
+        </th>
+        <th>
+            {% trans "Mooring" %}
+        </th>
+        <th>
+            {% trans "Mooring #" %}
+        </th>
+        <th>
+            {% trans "Lat" %}
+        </th>
+        <th>
+            {% trans "Lon" %}
+        </th>
+        <th>
+            {% trans "Depth (m)" %}
+        </th>
+         <th>
+            {% trans "Deploy Time" %}
+        </th>
+         <th>
+            {% trans "Recover Time" %}
+        </th>
+         <th>
+            {% trans "Comments" %}
+        </th>
+        </thead>
+        <tbody>
+        {% for obj in object.instrudeploy.all %}
+
+            <tr id="om-{{ obj.id }}"
+                    {% if not object.submitted and not report_mode %}
+                href="{% url 'ios2:instrumentmooring_edit' obj.id %}" pop
+                data-toggle="tooltip" title="Edit"
+                    {% endif %}
+                style="background-color: {{ obj.funding_source.color }}">
+                {% if not report_mode %}
+
+                    <td>
+                        {% if not object.submitted and not report_mode %}
+                            <a class="om-delete-me" href="#" val="{{ obj.id }}">
+                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                     title="Delete">
+                            </a>
+                            <a id="om-secrect-delete-btn-{{ obj.id }}"
+                               href="{% url 'ios2:mooringtoinstrument_delete' obj.id %}" class="hidden"></a>
+                        {% endif %}
+                    </td>
+                {% endif %}
+                <td>{{ obj.instrument.instrument_type }}</td>
+
+                    <td>{{ obj.instrument.serial_number }}</td>
+                <td> {{ obj.mooring.mooring }}</td>
+                <td> {{ obj.mooring.mooring_number }}</td>
+
+                <td> {{ obj.mooring.lat }}</td>
+                <td> {{ obj.mooring.lon }}</td>
+                <td> {{ obj.depth }}</td>
+                <td> {{ obj.mooring.deploy_time }}</td>
+                <td> {{ obj.mooring.recover_time }}</td>
+                <td> {{ obj.comments }}</td>
+
+
+                {% if  report_mode %}
+                    <td>
+                        {% if not object.submitted %}
+                            <a class="toggle-source" href="#" type="om" pk="{{ obj.id }}">
+                                <img src="{% static "/lou-multi-select-e052211/img/switch.png" %}" data-toggle="tooltip"
+                                     title="click to toggle funding source">
+                            </a>
+                            <a id="om-secrect-toggle-btn-{{ obj.id }}" href="{% url 'ios2:mooring_detail'  obj.id %}"
+                               class="hidden"></a>
+                        {% endif %}
+                    </td>
+                {% endif %}
+
+                <td style="text-align: center">{{ obj.budget_requested|currency }}</td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+<br>
+
+

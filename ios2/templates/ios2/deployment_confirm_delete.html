@@ -1,0 +1,47 @@
+{% extends "ios2/instrument_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'ios2:mooring_list' %}">
+                {% trans "Moorings" %}
+            </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'ios2:mooring_detail' object.id %}">
+                {% trans "Mooring Detail" %}
+            </a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {% trans "Delete Project" %}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1>
+            {% blocktrans with o=object %}
+                Are you sure you want to delete the mooring: <em>{{ o }}</em> from the database?
+            {% endblocktrans %}
+        </h1>
+        <p>
+        </p>
+
+        <br><br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+                {% trans "Delete" %}
+            </button>
+            <a class="btn btn-secondary" href="{% url 'ios2:mooring_detail' object.id %}">
+                {% trans "Cancel" %}
+            </a>
+        </form>
+
+    </div>
+
+
+{% endblock content %}

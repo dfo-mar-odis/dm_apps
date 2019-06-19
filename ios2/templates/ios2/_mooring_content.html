@@ -1,0 +1,32 @@
+{% load verbose_names %}
+{% load bootstrap4 %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% bootstrap_css %}
+
+<h1>{{ object }}
+{#    ({{ object.id }})#}
+    {% if not object_list %}
+        -
+        {% if object.submitted %}
+            {% trans "SUBMITTED" %}
+        {% else %}
+            <span class="red-font">
+                {% trans "DRAFT VERSION" %}
+                </span>
+        {% endif %}
+    {% endif %}
+
+</h1>
+
+<hr>
+<br>
+{% for field in field_list %}
+    {% verbose_field_display object field %}
+{% endfor %}
+<hr>
+
+{% include "ios2/_instruments.html" %}
+

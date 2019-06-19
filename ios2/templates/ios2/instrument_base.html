@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load bootstrap4 %}
+{% block bug_create %}{% url 'tickets:bug_create' 'ios2' %}{% endblock bug_create %}
+
+
+
+
+
+{% block title %}
+    {% trans "Instrument Tracking" %}
+{% endblock title %}
+
+{% block body %}
+    {% block content %}{% endblock content %}
+{% endblock body %}
+
+{% block left_unauth %}
+{% endblock left_unauth %}
+
+{% block left_auth %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'ios2:index' %}">
+        {% trans "Home" %}
+
+    <li class="nav-item"><a class="nav-link" href="{% url 'ios2:instrument_list' %}">
+        {% trans "All Instruments" %}
+
+    <li class="nav-item"><a class="nav-link" href="{% url 'ios2:mooring_list' %}">
+        {% trans "All Moorings" %}
+    </a></li>
+
+
+
+{% endblock left_auth %}
+{% block left_admin %}
+{% endblock left_admin %}

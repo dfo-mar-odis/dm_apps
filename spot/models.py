@@ -49,6 +49,14 @@ class Program(models.Model):
         #     return "{}".format(self.name)
         return "{} ({})".format(self.name, self.abbrev_eng)
 
+    @property
+    def full_eng(self):
+        return "{} ({})".format(self.name, self.abbrev_eng)
+
+    @property
+    def full_fre(self):
+        return "{} ({})".format(self.nom, self.abbrev_fre)
+
     class Meta:
         ordering = [_('name'), ]
 
@@ -89,9 +97,11 @@ class PriorityAreaOrThreat(models.Model):
     # choices for type
     THREAT = 1
     PRIORITY = 2
+    SPECIES = 3
     TYPE_CHOICES = (
         (THREAT, _("Threat")),
         (PRIORITY, _("Priority area")),
+        (SPECIES, _("Priority species")),
     )
     name = models.CharField(max_length=255, verbose_name=_("name (English)"))
     nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (French)"))
@@ -118,24 +128,28 @@ def draft_ca_file_directory_path(instance, filename):
     return 'spot/{0}/{0}_draft_contribution_agreement.{1}'.format(instance.id, suffix)
 
 
-
-class ActivityType(models.Model):
+class Activity(models.Model):
     name = models.CharField(max_length=255, verbose_name=_("name (English)"))
     nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (French)"))
-    descr_eng = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("description (English)"))
-    descr_fre = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("description (French)"))
+    program = models.ForeignKey(Program, on_delete=models.DO_NOTHING, related_name="activities", verbose_name=_("funding program"),
+                                blank=True, null=True)
+    category_eng = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("description (English)"))
+    category_fre = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("description (French)"))
 
     def __str__(self):
         # check to see if a french value is given
         if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
+            if getattr(self, str(_("category_eng"))):
+                return "{} - {}".format(getattr(self, str(_("category_eng"))), getattr(self, str(_("name"))))
+            else:
+                return "{} - {}".format(self.category_eng, getattr(self, str(_("name"))))
+
         # if there is no translated term, just pull from the english field
         else:
-            return "{}".format(self.name)
+            return "{} - {}".format(self.category_eng, self.name)
 
     class Meta:
-        ordering = [_('name'), ]
-
+        ordering = [_('category_eng'), _('name'), ]
 
 
 class Project(models.Model):
@@ -158,9 +172,10 @@ class Project(models.Model):
     title = models.TextField()
     title_abbrev = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("title abbreviation"))
     initiation_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
-    initiation_type = models.ForeignKey(InitiationType, on_delete=models.DO_NOTHING, related_name="projects", blank=True, null=True, verbose_name=_("type of initiation"))
-    priority_area_or_threat = models.ForeignKey(PriorityAreaOrThreat, on_delete=models.DO_NOTHING, related_name="projects", blank=True,
-                                                null=True, verbose_name=_("priority area or threat"))
+    initiation_type = models.ForeignKey(InitiationType, on_delete=models.DO_NOTHING, related_name="projects", blank=True, null=True,
+                                        verbose_name=_("type of initiation"))
+    priority_area_or_threats = models.ManyToManyField(PriorityAreaOrThreat, related_name="projects", blank=True,
+                                                      verbose_name=_("priority areas or threats"))
     initiation_acknowledgement_sent = models.DateTimeField(blank=True, null=True, verbose_name=_("acknowledgement email sent"))
     requested_funding_y1 = models.FloatField(blank=True, null=True, verbose_name=_("requested funding (year 1)"))
     requested_funding_y2 = models.FloatField(blank=True, null=True, verbose_name=_("requested funding (year 2)"))
@@ -181,7 +196,8 @@ class Project(models.Model):
     recommended_funding_y4 = models.FloatField(blank=True, null=True, verbose_name=_("recommended funding amount - Year 4"))
     recommended_funding_y5 = models.FloatField(blank=True, null=True, verbose_name=_("recommended funding amount - Year 5"))
     recommended_overprogramming = models.FloatField(blank=True, null=True, verbose_name=_("recommended amount for over-programming"))
-    regrets_or_op_letter_sent_date = models.DateTimeField(blank=True, null=True, verbose_name=_("client notification sent (OP or Regrets only)"))
+    regrets_or_op_letter_sent_date = models.DateTimeField(blank=True, null=True,
+                                                          verbose_name=_("client notification sent (OP or Regrets only)"))
 
     ## Negotiations
     risk_assessment_score = models.ForeignKey(RiskAssessmentScore, on_delete=models.DO_NOTHING, related_name="projects", blank=True,
@@ -199,7 +215,6 @@ class Project(models.Model):
     ## CA Checklist stuff
     draft_ca_sent_to_manager = models.DateTimeField(blank=True, null=True, verbose_name=_("draft CA sent to manager"))
     draft_ca_manager_approved = models.DateTimeField(blank=True, null=True, verbose_name=_("draft CA approved by manager"))
-    draft_ca = models.FileField(blank=True, null=True, verbose_name=_("draft CA"), upload_to=draft_ca_file_directory_path)
     draft_ca_sent_to_nhq = models.DateTimeField(blank=True, null=True, verbose_name=_("draft CA sent to NHQ"))
     aip_received = models.DateTimeField(blank=True, null=True, verbose_name=_("approve-in-principal (AIP) received"))
     final_ca_received = models.DateTimeField(blank=True, null=True, verbose_name=_("final CA received from NHQ"))
@@ -214,7 +229,7 @@ class Project(models.Model):
     last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("last modified by"),
                                          related_name="gc_projects")
     people = models.ManyToManyField(ml_models.Person, through="ProjectPerson", blank=True)
-    activity_types = models.ManyToManyField(ActivityType, blank=True)
+    activities = models.ManyToManyField(Activity, blank=True)
 
     def __str__(self):
         return "{} ({})".format(truncate(self.title, 50), self.organization.abbrev)
@@ -269,29 +284,31 @@ class Project(models.Model):
     def end_year(self):
         return self.years.order_by("fiscal_year").last().fiscal_year.full
 
+    #PEOPLE
     @property
     def pp(self):
-        if self.project_people.filter(role=1).count() == 0:
-            return '<span class="red-font">MISSING</span>'
-        else:
-            # this is an issue if there are two pp's
-            my_person = self.project_people.filter(role=1).first().person
-            return "{} {}".format(
-                my_person.first_name,
-                my_person.last_name,
-            )
+        return self.project_people.get(role=1).person
 
     @property
     def gc_officer(self):
-        if self.project_people.filter(role=7).count() == 0:
-            return '<span class="red-font">MISSING</span>'
-        else:
-            # this is an issue if there are two pp's
-            my_person = self.project_people.filter(role=7).first().person
-            return "{} {}".format(
-                my_person.first_name,
-                my_person.last_name,
-            )
+        return self.project_people.get(role=7).person
+
+    # FILES
+    @property
+    def application_file(self):
+        return File.objects.get(project=self, file_type_id=6)
+
+    @property
+    def risk_assessment_file(self):
+        return File.objects.get(project=self, file_type_id=4)
+
+    @property
+    def draft_ca_file(self):
+        return File.objects.get(project=self, file_type_id=1)
+
+    @property
+    def fully_signed_ca_file(self):
+        return File.objects.get(project=self, file_type_id=2)
 
 
 class Role(models.Model):
@@ -327,7 +344,6 @@ class ProjectPerson(models.Model):
     class Meta:
         unique_together = ['project', 'person', 'role']
         ordering = ['project', 'role', 'person']
-
 
 
 class ContributionAgreementChecklist(models.Model):
@@ -412,6 +428,10 @@ class ExpressionOfInterest(models.Model):
     def save(self, *args, **kwargs):
         self.date_last_modified = timezone.now()
         return super().save(*args, **kwargs)
+
+    @property
+    def file(self):
+        return File.objects.get(project=self.project, file_type_id=3)
 
 
 class ProjectYear(models.Model):
@@ -675,15 +695,15 @@ class Site(models.Model):
         ordering = [_('name'), ]
 
 
-def photo_directory_path(instance, filename):
+def file_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/entry_<id>/<filename>
-    return 'spot/{0}/{1}'.format(instance.entry.id, filename)
+    return 'spot/{0}/{1}'.format(instance.project.id, filename)
 
 
 class Photo(models.Model):
     caption = models.CharField(max_length=255)
     site_visit = models.ForeignKey(SiteVisit, related_name="photos", on_delete=models.CASCADE)
-    file = models.FileField(upload_to=photo_directory_path)
+    file = models.FileField(upload_to=file_directory_path)
     # meta
     date_created = models.DateTimeField(default=timezone.now)
     uploaded_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("uploaded"))
@@ -694,6 +714,44 @@ class Photo(models.Model):
     def __str__(self):
         return self.caption
 
+
+class FileType(models.Model):
+    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
+    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (French)"))
+
+    def __str__(self):
+        # check to see if a french value is given
+        if getattr(self, str(_("name"))):
+            return "{}".format(getattr(self, str(_("name"))))
+        # if there is no translated term, just pull from the english field
+        else:
+            return "{}".format(self.name)
+
+    class Meta:
+        ordering = [_('name'), ]
+
+
+class File(models.Model):
+    project = models.ForeignKey(Project, related_name="files", on_delete=models.CASCADE)
+    caption = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("file caption (optional)"))
+    file_type = models.ForeignKey(FileType, related_name="files", on_delete=models.DO_NOTHING)
+    file = models.FileField(upload_to=file_directory_path)
+    # meta
+    date_modified = models.DateTimeField(default=timezone.now)
+    uploaded_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("uploaded by"))
+
+    class Meta:
+        ordering = ['file_type']
+
+    def __str__(self):
+        my_str = str(self.file_type)
+        if self.caption:
+            my_str = "{} - {}".format(my_str, self.caption)
+        return my_str
+
+    def save(self, *args, **kwargs):
+        self.date_modified = timezone.now()
+        return super().save(*args, **kwargs)
 
 
 class Payment(models.Model):
@@ -735,25 +793,25 @@ def determine_project_status(project):
     else:
         # start backwards
         if project.date_completed:
-        # means project is over
+            # means project is over
             return 13
         elif project.final_ca_nhq_signed:
-        # means there is a signed agreement inplace. Status should be changed to 'active'
+            # means there is a signed agreement inplace. Status should be changed to 'active'
             return 10
         elif nz(project.recommended_overprogramming, 0) > 0:
-        # means project is on OP
+            # means project is on OP
             return 8
         elif project.total_recommended_funding > 0:
-        # means funding has been recommended
+            # means funding has been recommended
             return 9
         elif project.submission_accepted == False:
-        # means submission has not been accepted
+            # means submission has not been accepted
             return 5
         elif project.submission_accepted == True:
-        # means submission was successful
+            # means submission was successful
             return 6
         elif ExpressionOfInterest.objects.filter(project=project).count() > 0:
-        # means an eoi was submitted
+            # means an eoi was submitted
             if project.eoi.project_eligible == False:
                 # means project was deemed eligible
                 return 2
@@ -766,6 +824,7 @@ def determine_project_status(project):
             print("returning default status")
             return project.status_id
 
+
 def determine_project_length(project, status_id):
     # depending on the status, we should set the project length
     my_length = 0
@@ -775,15 +834,15 @@ def determine_project_length(project, status_id):
         my_length = 1
     elif status_id == 9:
         # recommended project will be based on the number of years recommended
-        if nz(project.recommended_funding_y1,0) > 0:
+        if nz(project.recommended_funding_y1, 0) > 0:
             my_length += 1
-        if nz(project.recommended_funding_y2,0) > 0:
+        if nz(project.recommended_funding_y2, 0) > 0:
             my_length += 1
-        if nz(project.recommended_funding_y3,0) > 0:
+        if nz(project.recommended_funding_y3, 0) > 0:
             my_length += 1
-        if nz(project.recommended_funding_y4,0) > 0:
+        if nz(project.recommended_funding_y4, 0) > 0:
             my_length += 1
-        if nz(project.recommended_funding_y5,0) > 0:
+        if nz(project.recommended_funding_y5, 0) > 0:
             my_length += 1
     elif status_id == 10:
         # active project will be based on the number of project-years
@@ -795,40 +854,40 @@ def determine_project_length(project, status_id):
     return my_length
 
 
-
-@receiver(models.signals.post_delete, sender=Project)
-def auto_delete_draft_ca_on_delete(sender, instance, **kwargs):
-    """
-    Deletes file from filesystem
-    when corresponding `MediaFile` object is deleted.
-    """
-    # for draft ca
-    if instance.draft_ca:
-        if os.path.isfile(instance.draft_ca.path):
-            os.remove(instance.draft_ca.path)
-
-
-@receiver(models.signals.pre_save, sender=Project)
-def auto_delete_draft_ca_on_change(sender, instance, **kwargs):
-    """
-    Deletes old file from filesystem
-    when corresponding `MediaFile` object is updated
-    with new file.
-    """
-    if not instance.pk:
-        return False
-
-    # for draft ca
-    try:
-        old_file = Project.objects.get(pk=instance.pk).draft_ca
-    except Project.DoesNotExist:
-        return False
-
-    if old_file:
-        new_file = instance.draft_ca
-        if not old_file == new_file:
-            if os.path.isfile(old_file.path):
-                os.remove(old_file.path)
+#
+# @receiver(models.signals.post_delete, sender=Project)
+# def auto_delete_draft_ca_on_delete(sender, instance, **kwargs):
+#     """
+#     Deletes file from filesystem
+#     when corresponding `MediaFile` object is deleted.
+#     """
+#     # for draft ca
+#     if instance.draft_ca:
+#         if os.path.isfile(instance.draft_ca.path):
+#             os.remove(instance.draft_ca.path)
+#
+#
+# @receiver(models.signals.pre_save, sender=Project)
+# def auto_delete_draft_ca_on_change(sender, instance, **kwargs):
+#     """
+#     Deletes old file from filesystem
+#     when corresponding `MediaFile` object is updated
+#     with new file.
+#     """
+#     if not instance.pk:
+#         return False
+#
+#     # for draft ca
+#     try:
+#         old_file = Project.objects.get(pk=instance.pk).draft_ca
+#     except Project.DoesNotExist:
+#         return False
+#
+#     if old_file:
+#         new_file = instance.draft_ca
+#         if not old_file == new_file:
+#             if os.path.isfile(old_file.path):
+#                 os.remove(old_file.path)
 
 
 @receiver(models.signals.post_delete, sender=Photo)
@@ -855,6 +914,39 @@ def auto_delete_photo_on_change(sender, instance, **kwargs):
     try:
         old_file = Photo.objects.get(pk=instance.pk).file
     except Photo.DoesNotExist:
+        return False
+
+    if old_file:
+        new_file = instance.file
+        if not old_file == new_file:
+            if os.path.isfile(old_file.path):
+                os.remove(old_file.path)
+
+
+@receiver(models.signals.post_delete, sender=File)
+def auto_delete_file_on_delete(sender, instance, **kwargs):
+    """
+    Deletes file from filesystem
+    when corresponding `MediaFile` object is deleted.
+    """
+    if instance.file:
+        if os.path.isfile(instance.file.path):
+            os.remove(instance.file.path)
+
+
+@receiver(models.signals.pre_save, sender=File)
+def auto_delete_file_on_change(sender, instance, **kwargs):
+    """
+    Deletes old file from filesystem
+    when corresponding `MediaFile` object is updated
+    with new file.
+    """
+    if not instance.pk:
+        return False
+
+    try:
+        old_file = File.objects.get(pk=instance.pk).file
+    except File.DoesNotExist:
         return False
 
     if old_file:

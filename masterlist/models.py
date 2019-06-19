@@ -128,6 +128,7 @@ class Person(models.Model):
     fax = models.CharField(max_length=100, blank=True, null=True, verbose_name=_("fax"))
     language = models.ForeignKey(shared_models.Language, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("language preference"))
     notes = models.TextField(blank=True, null=True, verbose_name=_("notes"))
+    email_block = models.TextField(blank=True, null=True, verbose_name=_("email block"))
     organizations = models.ManyToManyField(Organization, through="OrganizationMember", verbose_name=_("membership"), blank=True)
     # metadata
     date_last_modified = models.DateTimeField(blank=True, null=True, default=timezone.now, verbose_name=_("date last modified"))
@@ -154,6 +155,10 @@ class Person(models.Model):
     def display_name(self):
         my_str = "{}".format(self)
         return my_str
+
+    @property
+    def full_name(self):
+        return "{} {}".format(self.first_name, self.last_name)
 
     @property
     def contact_card_no_name(self):
