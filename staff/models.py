@@ -153,14 +153,11 @@ class StaffingPlan(models.Model):
 class StaffingPlanFunding(models.Model):
     staffing_plan = models.ForeignKey(StaffingPlan, related_name="staff_funding", on_delete=models.DO_NOTHING, blank=False, null=False,
                                       verbose_name='staffing_plan')
-    responsibility_center = models.ForeignKey(shared_models.ResponsibilityCenter, on_delete=models.DO_NOTHING, related_name='transactions')
-    business_line = models.ForeignKey(shared_models.BusinessLine, on_delete=models.DO_NOTHING,
-                                      related_name='transactions')
-    allotment_code = models.ForeignKey(shared_models.AllotmentCode, on_delete=models.DO_NOTHING,
-                                       related_name='transactions')
-    line_object = models.ForeignKey(shared_models.LineObject, on_delete=models.DO_NOTHING, blank=True, null=True,
-                                    related_name='transactions')
-    project = models.ForeignKey(shared_models.Project, on_delete=models.DO_NOTHING, related_name="transactions")
+    responsibility_center = models.ForeignKey(shared_models.ResponsibilityCenter, on_delete=models.DO_NOTHING)
+    business_line = models.ForeignKey(shared_models.BusinessLine, on_delete=models.DO_NOTHING)
+    allotment_code = models.ForeignKey(shared_models.AllotmentCode, on_delete=models.DO_NOTHING)
+    line_object = models.ForeignKey(shared_models.LineObject, on_delete=models.DO_NOTHING, blank=True, null=True)
+    project = models.ForeignKey(shared_models.Project, on_delete=models.DO_NOTHING)
 
     # financial_coding = models.CharField(max_length=255, blank=True, null=True, verbose_name='financial coding')
     funding_amount = models.FloatField(blank=False, null=False, verbose_name='funding amount ($)')
