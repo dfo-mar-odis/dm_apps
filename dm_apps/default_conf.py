@@ -57,6 +57,7 @@ APP_DICT = {
     'travel': 'Travel Management System',
     'spot': 'Grants & Contributions (Spot)',  # dependency on masterlist
     'ios2': 'Instruments',
+    'staff': "Staff Planning Tool",
 }
 MY_INSTALLED_APPS = [app for app in APP_DICT]
 SHOW_TICKETS_APP = True
