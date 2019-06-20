@@ -1,3 +1,5 @@
+import os
+
 from django.db import models
 from staff import models as staff_models
 
@@ -72,3 +74,27 @@ loadModel(CPositionTenure, staff_models.PositionTenure)
 loadModel(CPositionSecurity, staff_models.PositionSecurity)
 loadModel(CPositionLinguisticRequirement, staff_models.PositionLinguisticRequirement)
 
+script_dir = os.path.dirname(__file__)
+data_funding = r'data\FundingCodes.csv'
+f = open(os.path.join(script_dir, data_funding))
+
+header = False
+for l in f:
+    if not header:
+        header = True
+        continue
+
+    array = l.replace("\n", "").split(",")
+    key = array[0]
+
+    ep_level = staff_models.EmployeeClassesLevel.objects.get(code=key)
+    for r in range(1, len(array)):
+        if array[r]:
+            try:
+                ep_rate = staff_models.EmployeeClassesLevelsPayRate.objects.get(employee_class_level=ep_level,
+                                                                                pay_increment=r)
+                ep_rate.pay_amount = float(array[r])
+            except staff_models.EmployeeClassesLevelsPayRate.DoesNotExist:
+                ep_rate = staff_models.EmployeeClassesLevelsPayRate(employee_class_level=ep_level, pay_increment=r,
+                                                                    pay_amount=float(array[r]))
+            ep_rate.save()

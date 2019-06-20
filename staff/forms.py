@@ -20,9 +20,16 @@ class FundingForm(forms.ModelForm):
             return
 
         obj = kwargs['initial']['object']
-        print(obj)
-        print(self.fields)
-        self.fields['staffing_plan'].initial = obj
+        if isinstance(obj, models.StaffingPlan):
+            self.fields['staffing_plan'].initial = obj
+        elif obj:
+            self.fields['staffing_plan'].initial = obj.staffing_plan
+            self.fields['responsibility_center'].initial = obj.responsibility_center
+            self.fields['business_line'].initial = obj.business_line
+            self.fields['allotment_code'].initial = obj.allotment_code
+            self.fields['line_object'].initial = obj.line_object
+            self.fields['project'].initial = obj.project
+            self.fields['funding_amount'].initial = obj.funding_amount
 
 
 class NewStaffingForm(forms.ModelForm):

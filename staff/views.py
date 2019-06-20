@@ -1,9 +1,10 @@
 import json
 
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import UpdateView, CreateView, DetailView
+from django.views.generic import UpdateView, CreateView, DetailView, TemplateView
 from django_filters.views import FilterView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
 from django.utils.translation import gettext as _
@@ -75,6 +76,21 @@ def get_region_choices(all=False):
             )]
 
 
+def fc_delete(request, pk):
+    try:
+        object = models.StaffingPlanFunding.objects.get(pk=pk)
+        object.delete()
+        messages.success(request, _("The coding has been successfully deleted."))
+        return HttpResponseRedirect(reverse_lazy("staff:detail_plan", kwargs={"pk": object.staffing_plan.id}))
+    except models.StaffingPlanFunding.DoesNotExist:
+        return HttpResponseRedirect(reverse_lazy("index"))
+
+
+# Create your views here.
+class CloserTemplateView(TemplateView):
+    template_name = 'projects/close_me.html'
+
+
 # Create your views here.
 class IndexTemplateView(FilterView):
     filterset_class = filters.StaffingPlanFilter
@@ -90,17 +106,96 @@ class CreateFunding(LoginRequiredMixin, CreateView):
         ret = {'last_modified_by': self.request.user}
 
         if self.kwargs['pk'] and self.kwargs['pk'] != 0:
-            ret['object'] = models.StaffingPlan.objects.get(id=self.kwargs['pk'])
+            ret['object'] = models.StaffingPlan.objects.get(id=self.kwargs['pk'], )
 
         return ret
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
 
-        context["min_allotment"] = 0
-        context["max_allotment"] = 10
+        if self.kwargs['pk'] and self.kwargs['pk'] != 0:
+            obj = models.StaffingPlan.objects.get(id=self.kwargs['pk'])
+            context["title"] = str(obj)
+
+        if obj:
+            rates = models.EmployeeClassesLevelsPayRate.objects.filter(employee_class_level=obj.employee_class_level)\
+                .order_by("pay_increment").values_list()
+
+            min = obj.allocation * rates[0][3]
+            max = obj.allocation * rates[len(rates)-1][3]
+
+            context["min_allotment"] = field_value = '${:,.2f}'.format(float(min))
+            context["max_allotment"] = field_value = '${:,.2f}'.format(float(max))
+
+            funding_list = [spf.funding_amount for spf in models.StaffingPlanFunding.objects.filter(staffing_plan=obj)]
+            if funding_list:
+                context["total"] = '${:,.2f}'.format(float(sum(funding_list)))
+
         return context
 
+    def form_valid(self, form):
+        form.save()
+
+        return HttpResponseRedirect(reverse('staff:close_me'))
+
+
+class UpdateFunding(LoginRequiredMixin, UpdateView):
+    model = models.StaffingPlanFunding
+    form_class = forms.FundingForm
+    success_url = reverse_lazy("staff:index")
+
+    def get_initial(self):
+        ret = {'last_modified_by': self.request.user}
+
+        if self.kwargs['pk'] and self.kwargs['pk'] != 0:
+            ret['object'] = models.StaffingPlanFunding.objects.get(id=self.kwargs['pk'])
+
+        return ret
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+
+        if self.kwargs['pk'] and self.kwargs['pk'] != 0:
+            obj = models.StaffingPlanFunding.objects.get(id=self.kwargs['pk']).staffing_plan
+            context["title"] = str(obj)
+
+        return context
+
+    def form_valid(self, form):
+        form.save()
+
+        return HttpResponseRedirect(reverse('staff:close_me'))
+
+
+def get_funding_allotments(p_key):
+    context = {}
+    context["min_allotment"] = field_value = '${:,.2f}'.format(float(0.0))
+    context["max_allotment"] = field_value = '${:,.2f}'.format(float(0.0))
+    context["total"] = '${:,.2f}'.format(float(0.0))
+    try:
+        sp = models.StaffingPlan.objects.get(id=p_key)
+    except models.StaffingPlan.DoesNotExist:
+        return context
+
+
+    return context
+
+
+def get_allotment(sp, context):
+    rates = models.EmployeeClassesLevelsPayRate.objects.filter(employee_class_level=sp.employee_class_level) \
+        .order_by("pay_increment").values_list()
+
+    min = sp.allocation * rates[0][3]
+    max = sp.allocation * rates[len(rates) - 1][3]
+
+    context["min_allotment"] = '${:,.2f}'.format(float(min))
+    context["max_allotment"] = '${:,.2f}'.format(float(max))
+
+    funding_list = [spf.funding_amount for spf in models.StaffingPlanFunding.objects.filter(staffing_plan=sp)]
+    if funding_list:
+        context["total"] = '${:,.2f}'.format(float(sum(funding_list)))
+
+    return context
 
 class DetailPlan(LoginRequiredMixin, DetailView):
     model = models.StaffingPlan
@@ -110,7 +205,9 @@ class DetailPlan(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context["field_list"] = plan_field_list
 
-        print(context)
+        if self.kwargs['pk'] and self.kwargs['pk'] != 0:
+            sp = models.StaffingPlan.objects.get(id=self.kwargs['pk'])
+            context = get_allotment(sp, context)
 
         return context
 

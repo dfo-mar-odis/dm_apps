@@ -10,7 +10,13 @@ Staff Planning Details
 {% endblock title %}
 
 {% block body %}
-    <nav aria-label="breadcrumb">
+     <style>
+        table, td {
+            font-size: small;
+        }
+    </style>
+
+   <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'staff:index' %}">
                 {% trans "All Staffing Plans" %}
@@ -19,29 +25,101 @@ Staff Planning Details
     </nav>
 
     <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>{{ object }} </h2>
+                <div class="btn-group">
+                    <a href="{% url 'staff:update_plan' object.id %}" class="btn btn-primary">
+                        {% trans "Update" %}
+                    </a>
+                </div>
 
-        <h1>
-            {% if object.id == 0 %}
-                {% trans "New Staffing Plan" %}
+                <table class="table table-sm table-striped" style="width:auto;">
+                    <th class="gone" style="width: 250px; padding: 0px; margin: 0px;"></th>
+                    {% for field in field_list %}
+                    {% verbose_td_display object field %}
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-4">
+                <h2>
+                    {% trans "Financial Coding:" %}
+                </h2>
+                <h4>Annual salary for min and max increments for employee class and level</h4>
+                <table class="table table-sm table-strip">
+                    <tr><th>{% trans "Min" %}</th><th>{% trans "Max" %}</th></tr>
+                    <tr><td>{{ min_allotment }}</td><td>{{ max_allotment }}</td></tr>
+                </table>
+
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="#"
+                       onclick="return popitup('{% url 'staff:new_funding' object.id %}','popoutWindow')">
+                        {% trans "Add Staff Funding" %}
+                    </a>
+                </div>
+
+            {% if object.staff_funding.count == 0 %}
+                <div>
+                    <em>
+                        {% trans "No Financial Coding" %}
+                    </em>
+                </div>
             {% else %}
-                {{ object }}
+
+                <table class="table table-hover table-sm sortable" style="width: auto">
+                    <thead>
+                    <th> </th>
+                    <th>
+                        {% trans "Coding" %}
+                    </th>
+                    <th>
+                        {% trans "Amount" %}
+                    </th>
+
+                    </thead>
+                    <tbody>
+                    {% for obj in object.staff_funding.all %}
+                        <tr id="fc-{{ obj.id }}"
+                            {% if not object.submitted and not report_mode %}
+                                href="{% url 'staff:update_funding' obj.id%}" pop data-toggle="tooltip" title="Edit"
+                            {% endif %}
+                        >
+                            <td>
+                                <a class="fc-delete-me" href="#" val="{{ obj.id }}">
+                                    <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                         title="Delete">
+                                </a>
+                                <a id="fc-secrect-delete-btn-{{ obj.id }}"
+                                   href="{% url 'staff:delete_funding' obj.id  %}" class="hidden"></a>
+                            </td>
+
+                            <td>{{ obj.responsibility_center.code }}-{{ obj.business_line.code }}-{{ obj.allotment_code.code }}-{{ obj.line_object.code }}-{{ obj.project.code }}</td>
+
+                            <td> {{ obj.funding_amount }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
             {% endif %}
-        </h1>
-
-        <div class="btn-group">
-            <a href="{% url 'staff:update_plan' object.id %}" class="btn btn-primary">
-                {% trans "Update" %}
-            </a>
+                <strong>{% trans "Total Allocated: " %} {{total}}</strong>
+            </div>
         </div>
-
-        <table class="table table-sm table-striped" style="width:auto;">
-            <th class="gone" style="width: 250px; padding: 0px; margin: 0px;"></th>
-            {% for field in field_list %}
-            {% verbose_td_display object field %}
-            {% endfor %}
-        </table>
-
-        {% include "staff/_staff_funding_table.html" %}
 
     </div>
 {% endblock body %}
+
+{% block body_js %}
+    <script type="application/javascript">
+
+        $(".fc-delete-me").click(function (e) {
+            var objectId = $(this)[0].getAttribute("val");
+
+            var userInput = "";
+            userInput = confirm("{% trans "Are you sure you want to delete this financial coding from the plan?" %}");
+            if (userInput === true) {
+                document.location.href = $("#fc-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+            }
+            e.stopImmediatePropagation();
+        });
+    </script>
+{% endblock body_js %}

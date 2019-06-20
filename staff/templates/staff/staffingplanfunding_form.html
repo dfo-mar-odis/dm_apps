@@ -4,18 +4,14 @@
 {% load static %}
 {% load custom_filters %}
 
+
 {% block body %}
 
     <div class="container">
-        <h3>
-            {% trans "Funding for Staff Plan:" %} {{ object }}
-        </h3>
+        <h2>
+            {% trans "Funding for Staff Plan:" %} {{ title }}
+        </h2>
 
-        <table class="table table-sm table-strip">
-            <tr><th colspan="2">Allotment</th></tr>
-            <tr><th>{% trans "Min" %}</th><th>{% trans "Max" %}</th></tr>
-            <tr><td>{{ min_allotment }}</td><td>{{ max_allotment }}</td></tr>
-        </table>
         <form method="post" class="form">
             {% csrf_token %}
 
@@ -39,7 +35,7 @@
  <script type="application/javascript">
     function refreshAndClose() {
         window.opener.location.reload(true);
-        window.close();
+        //window.close();
     }
 </script>
 {% endblock body_js %}

@@ -166,7 +166,7 @@ class StaffingPlanFunding(models.Model):
     funding_amount = models.FloatField(blank=False, null=False, verbose_name='funding amount ($)')
 
     def __str__(self):
-        return "{} ({})".format(self.staffing_plan, self.responsibility_center, self.business_line,
+        return "{} ({}-{}-{}-{}-{}): {}".format(self.staffing_plan, self.responsibility_center, self.business_line,
                                 self.allotment_code, self.line_object, self.project, self.funding_amount)
 
     class Meta:
