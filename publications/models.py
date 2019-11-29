@@ -193,6 +193,17 @@ class GeoCoordinate(models.Model):
         return "[{}°N, {}°E]".format(self.north_south, self.east_west)
 
 
+class Polygon(models.Model):
+    geoscope = models.ForeignKey(GeographicScope, verbose_name=_("Polygon Name"), blank=False, null=False,
+                             on_delete=models.CASCADE)
+    order = models.IntegerField(verbose_name=_("Point order"))
+    latitude = models.FloatField(verbose_name=_("Latitude"))
+    longitude = models.FloatField(verbose_name=_("Longitude"))
+
+    def __str__(self):
+        return "{}: [{}, {}]".format(self.order, self.longitude, self.latitude)
+
+
 class Project(models.Model):
     # year
     # title

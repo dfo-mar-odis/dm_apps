@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
+from django.contrib.auth.mixins import PermissionRequiredMixin
+
 from django.contrib import messages
 from django.utils.translation import gettext as _
 from django_filters.views import FilterView
@@ -217,18 +218,38 @@ class SiteDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
-class ProjectDetailView(LoginRequiredMixin, DetailView):
+class ProjectDetailView(DetailView):
+    permission_required = 'publications.publications_admin'
     template_name = 'publications/pub_detail.html'
     model = models.Project
-    login_url = '/accounts/login_required/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         project = self.object
 
+        context["has_admin"] = "publications_admin" in [v for k,v in self.request.user.groups.all().values_list()]
         context["coordinates"] = models.GeoCoordinate.objects.filter(project__id=project.id)
         context["divisions"] = shared_models.Division.objects.filter(project__id=project.id)
-        print(str(context["divisions"]))
+
+        if len(context["coordinates"]) == 1:
+            context["center"] = {
+                "lat": context["coordinates"][0].north_south,
+                "lon": context["coordinates"][0].east_west
+            }
+        elif len(context["coordinates"]) > 2:
+            lat = 0;
+            lon = 0;
+            for i in range(0, len(context["coordinates"])):
+                cor = context["coordinates"][i]
+                lat = lat + cor.north_south
+                lon = lon + cor.east_west
+            context["center"] = {
+                "lat": (lat/len(context["coordinates"])),
+                "lon": (lon/len(context["coordinates"]))
+            }
+        else:
+            context["center"] = {"lat": 44.0, "lon": -60.0}
+
         context["abstract"] = [
             'abstract',
             'method'
@@ -358,11 +379,23 @@ class ProjectDetailView(LoginRequiredMixin, DetailView):
             'program_linkage',
         ]
 
+        if models.GeographicScope.objects.filter(project__id=project.id):
+            geo = models.GeographicScope.objects.filter(project__id=project.id)
+            context["polygon"] = []
+            for g in geo:
+                poly_points = models.Polygon.objects.filter(geoscope=g)
+                if poly_points:
+                    poly = {
+                        'name': str(g),
+                        'points': []
+                    }
+                    for point in poly_points:
+                        poly['points'].append(point)
+                    context["polygon"].append(poly)
         return context
 
 
-class ProjectListView(LoginRequiredMixin, FilterView):
-    login_url = '/accounts/login_required/'
+class ProjectListView(FilterView):
     template_name = 'publications/pub_list.html'
     model = models.Project
     filterset_class = filters.ProjectFilter

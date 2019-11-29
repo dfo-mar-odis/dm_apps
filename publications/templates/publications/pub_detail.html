@@ -8,6 +8,11 @@
 {% block content %}
 
     <style>
+        /* Set the size of the div element that contains the map */
+        #map, #lineMap {
+            height: 300px; /* The height is 400 pixels */
+            width: 100%; /* The width is the width of the web page */
+        }
         .label {
             font-weight: bold;
         }
@@ -23,8 +28,7 @@
     </nav>
 
     <div class="container">
-
-
+       {% if has_admin %}
         <div class="btn-group">
             <span data-toggle="tooltip"
                   title="{% trans "Cannot submit/unsumbit projects that do not belong to you or your section." %}">
@@ -39,15 +43,19 @@
             </span>
 
         </div>
+        {% endif %}
 
         <h2>{{ object }}</h2>
 
         <div class="row">
             <div class="col-8">
                 <div><span class="label">{% trans "Year" %}:</span> {{ object.year }}</div>
-                {% for coord in coordinates %}
-                    <div><span class="label">{% trans "Location" %}:</span> {{ coord }} </div>
-                {% endfor %}
+                {% if coordinates %}
+                    <div><span class="label">{% trans "Location" %}:</span>
+                        {% for coord in coordinates %}
+                            {{coord}}
+                        {% endfor %}</div>
+                {% endif %}
                 {% for div in divisions %}
                     <div><span class="label">{% trans "Division" %}:</span> {{ div }} </div>
                 {% endfor %}
@@ -58,6 +66,7 @@
                     <table class="table table-hover table-borderless table-sm no-gutters" style="width: auto">
                         <thead>
                             <tr><th>
+                               {% if has_admin %}
                                 <span>
                                     {% with "Add "|add:lookup.label as btn_label %}
                                     <a class="btn btn-primary" href="#"
@@ -65,6 +74,7 @@
                                     title="{% trans btn_label%}">+</a>
                                     {% endwith %}
                                 </span>
+                                {% endif %}
                                 {% with lookup.label|add:":" as lst_label %}
                                 {% trans lst_label %}
                                 {% endwith %}
@@ -74,12 +84,14 @@
                         {% for val in lookup.list %}
                             <tr id="{{lookup.url}}-{{ val.id }}">
                                 <td>
+                                    {% if has_admin %}
                                     <a class="delete-me" href="#" val="{{ val.id }}">
                                         <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
                                              title="Delete">
                                     </a>
                                     <a id="secrect-delete-btn-{{ val.id }}"
                                        href="{% url 'publications:lookup_delete' lookup.url object.id val.id %}" class="hidden"></a>
+                                    {% endif %}
 
                                     {{ val }}</td>
                             </tr>
@@ -89,17 +101,21 @@
                 {% endfor %}
             </div>
             <div class="col-4">
+                <div id="map"></div>
+                <div id="lineMap"></div>
                 {% for lookup in lookups %}
                 <table class="table table-hover table-borderless table-sm no-gutters" style="width: auto">
                     <thead>
                         <tr><th>
-                            <span>
+                           {% if has_admin %}
+                           <span>
                                 {% with "Add "|add:lookup.label as btn_label %}
                                 <a class="btn btn-primary" href="#"
                                    onclick="return popitup('{% url 'publications:lookup_add' object.id lookup.url %}','popoutWindow')"
                                     title="{% trans btn_label%}">+</a>
                                 {% endwith %}
                             </span>
+                            {% endif %}
                             {% with lookup.label|add:":" as lst_label %}
                             {% trans lst_label %}
                             {% endwith %}
@@ -109,13 +125,14 @@
                     {% for val in lookup.list %}
                         <tr id="{{lookup.url}}-{{ val.id }}">
                             <td>
+                                {% if has_admin %}
                                 <a class="delete-me" href="#" val="{{ val.id }}">
                                     <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
                                          title="Delete">
                                 </a>
                                 <a id="secrect-delete-btn-{{ val.id }}"
                                    href="{% url 'publications:lookup_delete' lookup.url object.id val.id %}" class="hidden"></a>
-
+                                {% endif %}
                                 {{ val }}</td>
                         </tr>
                     {% endfor %}
@@ -126,8 +143,7 @@
         </div>
     </div>
 
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js"></script>
     <script type="application/javascript">
 
 
@@ -140,6 +156,68 @@
             }
             e.stopImmediatePropagation();
         });
+
+        function initialize() {
+            var mapElement = document.getElementById('map');
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                {% if center %}
+                center: {lat: {{center.lat}}, lng: {{center.lon}} },
+                {% else %}
+                center: {lat: 24.886, lng: -70.268},
+                {% endif %}
+                mapTypeId: 'terrain'
+            });
+            var iw = new google.maps.InfoWindow();
+            var bounds = new google.maps.LatLngBounds();
+
+            var oms = new OverlappingMarkerSpiderfier(map, {
+                markersWontMove: true,
+                markersWontHide: true,
+                basicFormatEvents: true
+            });
+
+            // Define the LatLng coordinates for the polygon's path.
+            {% for poly in polygon %}
+            var shape_coord = [
+                {% for point in poly.points %}
+                    {lat: {{point.latitude}}, lng: {{point.longitude}} },
+                {% endfor %}
+            ];
+
+            // Construct the polygon.
+            var polygon = new google.maps.Polygon({
+              paths: shape_coord,
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.35
+            });
+            polygon.setMap(map);
+
+            google.maps.event.addListener(polygon, 'mouseover', function (e) {
+                iw.setContent("{{ poly.name }}");
+                var latLng = e.latLng;
+                iw.setPosition(latLng);
+                iw.open(map);
+             });
+
+            google.maps.event.addListener(polygon, 'mouseout', function () {
+                iw.close(map);
+             });
+            {% endfor %}
+
+        }
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initialize";
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadScript();
 
     </script>
 

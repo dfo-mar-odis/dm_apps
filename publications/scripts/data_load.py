@@ -1,9 +1,12 @@
 import csv
+import logging
+
 from django.db.utils import IntegrityError, DataError
-import datetime
+
 from publications import models
 from shared_models import models as shared_models
 
+logging.basicConfig(level=logging.WARNING, filename="data_load.log", filemode="w")
 
 def process_lookup(file_name, mod, delim=",", complex_parse=False, uppercase=True):
     # This method is intended to work with a file that is ONLY themes
@@ -32,7 +35,7 @@ def process_lookup(file_name, mod, delim=",", complex_parse=False, uppercase=Tru
         except IntegrityError:
             pass
         except DataError:
-            print("String too long:\n'" + str(val) + "'\n")
+            logging.error("String too long:\n'" + str(val) + "'\n")
 
 
 def add_text(model, val_array):
@@ -40,12 +43,12 @@ def add_text(model, val_array):
     for val in val_array:
         try:
             if val and not model.objects.filter(project=project, value=val).exists():
-                print("Adding " + model._meta.verbose_name + " to project: " + str(project))
+                logging.debug("Adding " + model._meta.verbose_name + " to project: " + str(project))
                 mod = model(project=project, value=val)
                 mod.save()
         except DataError:
-            print("Error adding " + model._meta.verbose_name + ": " )
-            print(val)
+            logging.error("Error adding " + model._meta.verbose_name + ": ")
+            logging.error(val)
 
 
 def add_lookup(model, val_array, var):
@@ -60,11 +63,18 @@ def add_lookup(model, val_array, var):
             try:
                 var.get(id=obj.id)
             except model.DoesNotExist:
-                print("Adding " + model._meta.verbose_name + " to project: " + str(project))
+                logging.debug("Adding " + model._meta.verbose_name + " to project: " + str(project))
                 var.add(obj)
                 dirty = True
         except model.DoesNotExist:
-            print("=========================== Err " + model._meta.verbose_name + ": Could not find value matching: " + str(val))
+            logging.error("=========================== Err " + model._meta.verbose_name + ": Could not find value matching: " + str(val))
+            logging.error("Attempting to add")
+            try:
+                model(name=val).save()
+                add_lookup(model, val_array, var)
+                logging.error("Success")
+            except:
+                logging.error("Fail")
             # exit()
 
     if dirty:
@@ -98,7 +108,7 @@ process_lookup(data_organization_file_name, models.Organization, delim="|", comp
 data_spatial_scale_file_name = r'E:\Projects\Python\publications-inventory\spatial-scale.txt'
 process_lookup(data_spatial_scale_file_name, models.SpatialScale)
 
-data_tp_file_name = r'E:\Projects\Python\publications-inventory\pub_data.csv'
+data_tp_file_name = r'E:\Projects\Python\publications-inventory\pub_data4.csv'
 
 tp_reader = csv.reader(open(data_tp_file_name, encoding='utf-8'), delimiter=',')
 
@@ -201,27 +211,27 @@ for line in tp_reader:
     try:
         project = models.Project.objects.get(title=project_title)
     except models.Project.MultipleObjectsReturned:
-        print("found multiple projects matching:\n\n'" + project_title + "'\n\n")
+        logging.error("found multiple projects matching:\n\n'" + project_title + "'\n\n")
         exit()
     except models.Project.DoesNotExist:
-        print("Creating new publication: " + project_title)
+        logging.error("Creating new publication: " + project_title)
         project = models.Project(title=project_title, abstract=description)
         project.save()
 
     if year:
-        print("Setting year")
+        logging.debug("Setting year")
         project.year = year
         project.save()
 
     if coordinates:
-        print("coordinates" + str(coordinates))
+        logging.debug("coordinates" + str(coordinates))
         coord = models.GeoCoordinate(north_south=coordinates[0], east_west=coordinates[1])
         coord.save()
         project.coordinates = coord
         project.save()
 
     if not project.method and method:
-        print("Setting Method")
+        logging.debug("Setting Method")
         project.method = method
         project.save()
 
@@ -253,14 +263,14 @@ for line in tp_reader:
             proj_div = [div for div in project.division.values_list()]
             dirty = False
             for division in divisions:
-                print("division: " + str(division))
+                logging.debug("division: " + str(division))
                 try:
                     div = shared_models.Division.objects.get(abbrev=division)
                     if not div in proj_div:
                         project.division.add(div)
                         dirty = True
                 except shared_models.Division.DoesNotExist:
-                    print("============ Division " + division + " doesn't exist")
+                    logging.error("============ Division " + division + " doesn't exist")
 
             if dirty:
                 project.save()
