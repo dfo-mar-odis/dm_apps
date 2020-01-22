@@ -31,6 +31,11 @@ urlpatterns = [
     path('file/<int:pk>/edit/', views.FileUpdateView.as_view(), name='file_edit'),
     path('file/<int:pk>/delete/', views.FileDeleteView.as_view(), name='file_delete'),
 
+    # SETTINGS #
+    ############
+    path('settings/help-text/', views.manage_help_text, name="manage_help_text"),
+    path('settings/help-text/<int:pk>/delete/', views.delete_help_text, name="delete_help_text"),
+
 ]
 
  # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

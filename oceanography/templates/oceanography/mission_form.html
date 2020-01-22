@@ -1,6 +1,8 @@
 {% extends "oceanography/oceanography_base.html" %}
 {% load bootstrap4 %}
-
+{% load static %}
+{% load i18n %}
+{% load custom_filters %}
 
 {% block content %}
     <nav aria-label="breadcrumb">
@@ -25,6 +27,8 @@
 
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
+
+
             <div class="btn-group">
                 {% if editable %}
                     <input type="submit" class="btn btn-primary" value="Submit">
@@ -37,8 +41,22 @@
             </div>
             <br><br>
 
+
             <fieldset {% if not editable %}disabled   {% endif %}>
-                {% bootstrap_form form %}
+                {% for field in form %}
+                    {% if field.name in help_text_dict %}
+                        {% bootstrap_label field.label %}
+                        {% with help_text_dict|lookup:field.name as help_text %}
+                            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
+                                 title="{{ field.label }}"
+                                 data-content="{{ help_text }}">
+                            {% bootstrap_field field placeholder="" show_label=False %}
+                        {% endwith %}
+                    {% else %}
+                        {% bootstrap_field field placeholder="" %}
+                    {% endif %}
+                {% endfor %}
+
             </fieldset>
 
         </form>

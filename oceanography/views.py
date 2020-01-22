@@ -1,6 +1,8 @@
 import csv
 from django.conf import settings
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib import messages
 from django.db.models import TextField
 from django.db.models.functions import Concat
 from django.http import HttpResponse, HttpResponseRedirect
@@ -8,15 +10,13 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView, DeleteView
 from django.utils import timezone
 from django.utils.text import slugify
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django_filters.views import FilterView
 
 from . import models
 from . import filters
 from . import forms
 from shared_models import models as shared_models
-
-
 
 # open basic access up to anybody who is logged in
 def in_oceanography_group(user):
@@ -61,6 +61,12 @@ class OceanographyAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 class IndexTemplateView(TemplateView):
     template_name = "oceanography/index.html"
 
+def get_help_text_dict():
+    my_dict = {}
+    for obj in models.HelpText.objects.all():
+        my_dict[obj.field_name] = str(obj)
+
+    return my_dict
 
 # MISSIONS #
 ############
@@ -86,10 +92,6 @@ class MissionListView(OceanographyAccessRequiredMixin, FilterView):
             'season',
         ]
         return context
-
-
-
-
 
 class MissionDetailView(OceanographyAccessRequiredMixin, DetailView):
     template_name = "oceanography/mission_detail.html"
@@ -131,7 +133,7 @@ class MissionUpdateView(OceanographyAdminRequiredMixin, UpdateView):
     def get_context_data(self, **kwargs):
         # get context
         context = super().get_context_data(**kwargs)
-
+        context['help_text_dict'] = get_help_text_dict()
         context["editable"] = True
         return context
 
@@ -148,7 +150,7 @@ class MissionCreateView(OceanographyAdminRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         # get context
         context = super().get_context_data(**kwargs)
-
+        context['help_text_dict'] = get_help_text_dict()
         context["editable"] = True
         return context
 
@@ -337,3 +339,45 @@ class FileDeleteView(OceanographyAdminRequiredMixin, DeleteView):
 
     def get_success_url(self, **kwargs):
         return reverse_lazy("oceanography:mission_detail", kwargs={"pk": self.object.mission.id})
+
+# SETTINGS #
+############
+def in_ocean_admin_group(user):
+    """
+    Will return True if user is in project_admin group
+    """
+    if user:
+        return user.groups.filter(name='oceanography_admin').count() != 0
+
+@login_required(login_url='/accounts/login_required/')
+@user_passes_test(in_ocean_admin_group, login_url='/accounts/denied/')
+def delete_help_text(request, pk):
+    my_obj = models.HelpText.objects.get(pk=pk)
+    my_obj.delete()
+    return HttpResponseRedirect(reverse("projects:manage_help_text"))
+
+
+@login_required(login_url='/accounts/login_required/')
+@user_passes_test(in_ocean_admin_group, login_url='/accounts/denied/')
+def manage_help_text(request):
+    qs = models.HelpText.objects.all()
+    if request.method == 'POST':
+        formset = forms.HelpTextFormSet(request.POST, )
+        if formset.is_valid():
+            formset.save()
+            # do something with the formset.cleaned_data
+            messages.success(request, "Items have been successfully updated")
+            return HttpResponseRedirect(reverse("projects:manage_help_text"))
+    else:
+        formset = forms.HelpTextFormSet(
+            queryset=qs)
+    context = {}
+    context["my_object"] = qs.first()
+    context["field_list"] = [
+        'field_name',
+        'eng_text',
+        'fra_text',
+    ]
+    context['title'] = "Manage Help Text"
+    context['formset'] = formset
+    return render(request, 'oceanography/manage_settings_small.html', context)

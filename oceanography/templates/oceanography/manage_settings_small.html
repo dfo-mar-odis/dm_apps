@@ -1,0 +1,169 @@
+{% extends "projects/projects_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load i18n %}
+{% block content %}
+    <style>
+        .indent-lg {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        table {
+            width: auto;
+        }
+
+        th, td, table {
+            font-size: small;
+            padding-right: 10px;
+        }
+
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'oceanography:index' %}">
+                {% trans "Home" %}
+            </a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+        <h1>
+            {{ title }}
+        </h1>
+        <br>
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {{ formset.management_form }}
+            {% bootstrap_formset_errors formset %}
+            <div class="btn-group">
+                <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" href="{% url 'oceanography:index' %}">Back</a>
+            </div>
+            <br><br>
+            <table class="table sortable" style="width: auto">
+                <thead>
+                {% if "program" in title|lower %}
+                    <th scope="col">Program ID</th>
+                {% endif %}
+                {% for field in field_list %}
+                    <th scope="col">{% get_verbose_label my_object field %}</th>
+                {% endfor %}
+                {% if "program" in title|lower %}
+                    <th></th>
+                    <th scope="col">Number of projects tagged with this program?</th>
+                {% endif %}
+
+                </thead>
+                <tbody>
+                {% for form in formset %}
+                    <tr>
+                        {% if "program" in title|lower and form.instance.id %}
+                            <td class="center-col">{{ form.instance.id }}</td>
+                        {% else %}
+                            {% if "program" in title|lower %}
+                                <td class="center-col"></td>
+                            {% endif %}
+                        {% endif %}
+                        {% for field in form %}
+
+                            {% if "program" in title|lower %}
+                                {% if "_fr" in field.name %}
+                                    {# DO NOTHING #}
+                                {% elif field.name == "national_responsibility_eng" %}
+                                    <td>
+                                        English:
+                                        {{ field }}
+                                        <br>
+                                        {% for field in form %}
+                                            {% if field.name == "national_responsibility_fra" %}
+                                                French:
+                                                {{ field }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                {% elif field.name == "regional_program_name_eng" %}
+                                    <td>
+                                        English:
+                                        {{ field }}
+                                        <br>
+                                        {% for field in form %}
+                                            {% if field.name == "regional_program_name_fra" %}
+                                                French:
+                                                {{ field }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                {% else %}
+
+                                    <td {% if field.name == "color" %}class="color-cell" color-value="{{ form.instance.color }}"{% endif %}>
+                                        {% bootstrap_field field size='small' show_label=False placeholder="" %}
+                                    </td>
+                                {% endif %}
+
+
+                            {% else %}
+
+                                <td {% if field.name == "color" %}class="color-cell" color-value="{{ form.instance.color }}"{% endif %}>
+                                    {% bootstrap_field field size='small' show_label=False placeholder="" %}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                        {% if "program" in title|lower and form.instance.id %}
+                            <td class="center-col">
+                                {{ form.instance.projects.count }}
+                                ({{ form.instance.regions }})
+
+
+                            </td>
+                        {% endif %}
+                        {% if form.instance.id %}
+
+                            <td>
+
+                                {% url 'oceanography:delete_help_text' form.instance.id as my_delete_url %}
+
+                                <a class="delete-btn" href="#" delete_url="{{ my_delete_url }}">
+                                    <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
+                                </a>
+                            </td>
+                        {% else %}
+                            <td>(new record)</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+            <div class="btn-group">
+                <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" href="{% url 'oceanography:index' %}">Back</a>
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}
+{% block body_js %}
+    <script type="application/javascript">
+
+        $(".delete-btn").click(function () {
+            input = confirm("Are you sure you want to delete this line?")
+            if (input) {
+                window.location.href = $(this).attr("delete_url")
+            }
+        });
+
+        $(".color-cell").each(function () {
+            let myColor = $(this).attr("color-value");
+            $(this).children().children("input").css("background-color", myColor);
+        });
+
+
+    </script>
+
+{% endblock %}

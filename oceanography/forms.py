@@ -3,7 +3,8 @@ from django.core import validators
 from . import models
 from django.utils.safestring import mark_safe
 from shared_models import models as shared_models
-
+from django.forms import modelformset_factory
+from lib.templatetags.verbose_names import get_verbose_label
 
 class DocForm(forms.ModelForm):
     class Meta:
@@ -58,3 +59,18 @@ class FileForm(forms.ModelForm):
             'mission':forms.HiddenInput(),
             # 'end_date':forms.DateInput(attrs={'type': 'date'}),
         }
+class HelpTextForm(forms.ModelForm):
+    class Meta:
+        model = models.HelpText
+        fields = "__all__"
+        widgets = {
+            'eng_text': forms.Textarea(attrs={"rows": 4}),
+            'fra_text': forms.Textarea(attrs={"rows": 4}),
+        }
+
+
+HelpTextFormSet = modelformset_factory(
+    model=models.HelpText,
+    form=HelpTextForm,
+    extra=1,
+)
