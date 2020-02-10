@@ -6,24 +6,24 @@
 #                                 1) manage.py shell
 #                                 2) exec(open('file_name.py').read())
 # """
-from django.conf import settings
-settings.configure()
-import csv
-from vault.models import Items
-
-CSV_PATH = 'vault\misc\Items.csv'      # Csv file path
-
-contSuccess = 0
-# Remove all data from Table
-Items.objects.all().delete()
-
-with open(CSV_PATH, newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=',', quotechar='""')
-    print('Loading...')
-    for row in spamreader:
-        Items.objects.create(unique_id=row[0], item_name=row[1], description=row[2], owner=row[3], size=row[4], container_space=row[5], category=row[6], type=row[7])
-        contSuccess += 1
-    print(f'{str(contSuccess)} inserted successfully! ')
+# from django.conf import settings
+# settings.configure()
+# import csv
+# from vault.models import Items
+#
+# CSV_PATH = 'vault\misc\Items.csv'      # Csv file path
+#
+# contSuccess = 0
+# # Remove all data from Table
+# Items.objects.all().delete()
+#
+# with open(CSV_PATH, newline='') as csvfile:
+#     spamreader = csv.reader(csvfile, delimiter=',', quotechar='""')
+#     print('Loading...')
+#     for row in spamreader:
+#         Items.objects.create(unique_id=row[0], item_name=row[1], description=row[2], owner=row[3], size=row[4], container_space=row[5], category=row[6], type=row[7])
+#         contSuccess += 1
+#     print(f'{str(contSuccess)} inserted successfully! ')
 
 # from django.db import models
 # from vault.models import Items
