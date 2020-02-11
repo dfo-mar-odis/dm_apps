@@ -100,7 +100,25 @@ class ItemsListView(VaultAccessRequired, FilterView):
     template_name = "vault/item_list.html"
     filterset_class = filters.ItemsFilter
     queryset = models.Items.objects.annotate(
-        search_term=Concat('unique_id', 'item_name', 'description', 'owner', 'size', 'container_space', 'category', 'type', output_field=TextField()))
+        search_term=Concat('id', 'unique_id', 'item_name', 'description', 'owner', 'size', 'container_space', 'category', 'type', output_field=TextField()))
+
+class ItemsDetailView(VaultAccessRequired, DetailView):
+    model = models.Items
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["field_list"] = [
+            'id',
+            'unique_id',
+            'item_name',
+            'description',
+            'owner',
+            'size',
+            'container_space',
+            'category',
+            'type',
+        ]
+        return context
 
 class SpeciesListView(VaultAccessRequired, FilterView):
     template_name = "vault/species_list.html"
@@ -108,7 +126,7 @@ class SpeciesListView(VaultAccessRequired, FilterView):
     queryset = models.Species.objects.annotate(
         search_term=Concat('code', 'english_name', 'french_name', 'latin_name', 'id', output_field=TextField()))
 
-#
+
 class SpeciesDetailView(VaultAccessRequired, DetailView):
     model = models.Species
 

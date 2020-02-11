@@ -19,6 +19,7 @@
         <table class="table table-hover table-sm sortable" style="width: auto">
             <thead>
                 <th scope="col">ID</th>
+                <th scope="col">Unique ID</th>
 				<th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Owner</th>
@@ -27,21 +28,22 @@
                 <th scope="col">Category</th>
                 <th scope="col">Type</th>
             </thead>
-<!--            <tbody>-->
-<!--            {% for object in filter.qs %}-->
-<!--                <tr href="{% url 'vault:item_detail' object.id %}">-->
-<!--                    <td>{{ object.unique_id }}</td>-->
-<!--					<td>{{ object.item_name }}</td>-->
-<!--                    <td>{{ object.description }}</td>-->
-<!--                    <td>{{ object.owner }}</td>-->
-<!--                    <td>{{ object.size }}</td>-->
-<!--                    <td>{{ object.container_space }}</td>-->
-<!--                    <td>{{ object.category }}</td>-->
-<!--                    <td>{{ object.type }}</td>-->
-<!--                </tr>-->
-<!--            {% endfor %}-->
-<!--            <br>-->
-<!--            </tbody>-->
+            <tbody>
+            {% for object in filter.qs %}
+                <tr href="{% url 'vault:item_detail' object.id %}">
+                    <td>{{ object.id }}</td>
+                    <td>{{ object.unique_id }}</td>
+					<td>{{ object.item_name }}</td>
+                    <td>{{ object.description }}</td>
+                    <td>{{ object.owner }}</td>
+                    <td>{{ object.size }}</td>
+                    <td>{{ object.container_space }}</td>
+                    <td>{{ object.category }}</td>
+                    <td>{{ object.type }}</td>
+                </tr>
+            {% endfor %}
+            <br>
+            </tbody>
         </table>
 
 

@@ -20,7 +20,8 @@ urlpatterns = [
     path('species/<int:pk>/view/', views.SpeciesDetailView.as_view(), name="species_detail"),
 #     # path('species/<int:pk>/edit/', views.SpeciesUpdateView.as_view(), name="species_edit"),
 #     # path('species/<int:pk>/delete/', views.SpeciesDeleteView.as_view(), name="species_delete"),
-    path('item_list/', views.ItemsListView.as_view(), name="item_list")
+    path('item_list/', views.ItemsListView.as_view(), name="item_list"),
+    path('item_detail/<int:pk>/view/', views.ItemsDetailView.as_view(), name="item_detail")
     #
 
     # # PREDATORS #
