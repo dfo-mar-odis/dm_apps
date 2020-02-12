@@ -1,0 +1,56 @@
+{% load custom_filters %}
+{% load static %}
+
+<style>
+    table,td{
+        font-size: small;
+    }
+</style>
+
+<div class="">
+    <h3>Prey Items:</h3>
+</div>
+<table class="table table-bordered table-sm">
+    <tr>
+        <th>Species</th>
+        <th>Digestion Level</th>
+        <th>Body Weight (g)</th>
+        <th>Body Length (mm)</th>
+        <th>Comments</th>
+    </tr>
+    <tbody>
+    {% for obj in predator.prey_items.all %}
+            <tr>
+                <td>{{ obj.species.common_name_eng }}</td>
+                <td>{{ obj.digestion_level }}</td>
+                <td>{{ obj.somatic_wt_g }}</td>
+                <td>{{ obj.somatic_length_mm }}</td>
+                <td>{{ obj.comments|nz:"n/a" }}</td>
+                <td>
+                    <a href="#"
+                       onclick="return popitup('{% url 'diets:prey_edit' obj.id %}','popoutWindow')">
+                        <img src="{% static "/admin/img/icon-changelink.svg" %}" data-toggle="tooltip"
+                             title="Edit">
+                    </a>
+                </td>
+                <td>
+                    <a class="delete-me" href="#" val="{{ obj.id }}">
+                        <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                             title="Delete">
+                    </a>
+                    <a id="secrect-delete-btn-{{ obj.id }}"
+                       href="
+                    {% if object %}
+                        {% url 'diets:prey_delete' obj.id "detail" %}
+                    {% else %}
+                        {% url 'diets:prey_delete' obj.id "insert" %}
+                    {% endif %}
+                       " class="hidden"></a>
+                </td>
+            </tr>
+    {% endfor %}
+    <tr style="font-weight: bold;">
+        <td>TOTAL COUNT: <span style="margin-left: 15px">{{ predator.prey_items.count }}</span></td>
+    </tr>
+    </tbody>
+</table>

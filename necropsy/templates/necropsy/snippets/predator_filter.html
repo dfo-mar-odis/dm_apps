@@ -1,0 +1,83 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load el_pagination_tags %}
+{% load verbose_names %}
+{% load i18n %}
+
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diets:predator_filter' %}">Predators</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Results</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="big-header">Predators</h1>
+
+        <form class="form" action="." method="get" style="font-size: small">
+            <div class="row">
+                {% for field in filter.form %}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+                {% endfor %}
+                <div class="col">
+                    <br>
+                    <input type="submit" value="Filter" class="btn btn-sm btn-warning">
+                    <a href="." class="btn btn-sm btn-info">Clear</a>
+                </div>
+            </div>
+        </form>
+
+        {% paginate 100 filter.qs as filter_list %}
+        <br>
+
+
+        <div class="row">
+            <div class="col">
+                {% trans "(click on a header to sort table)" %}
+            </div>
+            <div class="col" style="text-align: center">
+                {% show_pages %}
+                <em>{% trans "displaying" %} {{ filter_list.count }} {% trans "of" %} {{ filter.qs.count }}</em>
+            </div>
+            <div class="col" style="text-align: right; padding-bottom: 10px">
+                <a href="{% url 'diets:predator_new' %}" class="btn btn-sm btn-primary">New Predator</a>
+            </div>
+        </div>
+
+        {% if filter.qs.count > 0 %}
+            <table class="table table-sm table-hover sortable">
+                <thead>
+                <tr>
+                    {% for field in field_list %}
+                        <th scope="col">{% get_verbose_label my_object field %}</th>
+                    {% endfor %}
+                    <th scope="col">Prey items</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for object in filter_list %}
+                    {% url 'diets:predator_detail' object.id as my_url %}
+                    <tr href="{{ my_url }}">
+                        {% for field in field_list %}
+                            <td>{% get_field_value object field %}</td>
+                        {% endfor %}
+                        <td>{{ object.prey_items.count }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <em>No records to display.</em>
+        {% endif %}
+
+    </div>
+
+{% endblock content %}

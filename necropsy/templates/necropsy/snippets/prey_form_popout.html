@@ -1,0 +1,48 @@
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+
+{# A script to refresh the parent window; to be called in when the buttons are pushed #}
+<script>
+window.resizeTo(width=700, height=900);
+
+window.onunload = refreshParent;
+function refreshParent() {
+  window.opener.location.reload();
+}
+
+$(document).ready(function() {
+    // Stuff to do as soon as the DOM is ready
+    $("#id_digestion_level")[0].focus()
+});
+</script>
+
+<div class="container">
+  {% if object %}
+  <h1>{{object.predator}}</h1>
+    <h3>Editing {{object.species}} </h3>
+
+  {% else %}
+  <h1>{{predator}}</h1>
+  <hr>
+    <h3>Adding {{species.common_name_eng}}</h3>
+
+  {% endif %}<br>
+
+  <form method="post" class="form" >
+      {% csrf_token %}
+
+        {% for field in form %}
+            {% bootstrap_field field placeholder="" %}
+        {% endfor %}
+
+      {% buttons %}
+          <button type="submit" class="btn btn-success" onclick="refreshParent()">Submit</button>
+          <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">Close</a>
+      {% endbuttons %}
+  </form>
+</div>
+{% endblock content %}

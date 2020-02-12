@@ -1,0 +1,112 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load custom_filters %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diets:predator_filter' %}">Predators</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diets:predator_detail' predator.id %}">{{ predator }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Prey</li>
+        </ol>
+    </nav>
+
+    <div class="indent-med">
+
+
+        <div class="row">
+
+            <div class="col-4" style="font-size: .9em">
+
+                <label for="user_input">What prey species would you like to add? (enter any part of name)</label>
+                <input type="text" id="user_input" class="form-control"></input>
+
+                <br><br>
+                <h5>Results <br>(common eng / common fre / latin / id):</h5>
+                <hr>
+                <div id="species-list" class="" style="font: 0.85em;"></div>
+                <hr>
+                <br>
+                Species not in list? Click <a class="" href="{% url 'diets:species_new' %}" target="_blank">here</a>
+                to add a new one.
+
+
+            </div>
+            <div class="col-1">
+            </div>
+            <div class="col-6">
+
+
+                {% include "diets/_prey_list.html" %}
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
+    <script type="application/javascript">
+        var speciesList = {{ species_list |safe }}
+
+
+            $(".delete-me").click(function () {
+                var objectId = $(this)[0].getAttribute("val");
+
+                var userInput = "";
+                while (userInput !== "n" && userInput !== "y") {
+                    userInput = prompt("Are you sure you want to delete this prey item from the predator? \n\n Please respond with 'y' for yes and 'n' for no.").toLocaleLowerCase();
+                }
+                if (userInput === "y") {
+                    $("#secrect-delete-btn-" + objectId)[0].click();
+                }
+            })
+
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("#user_input").focus()
+
+
+        });
+
+        $("#user_input").keydown(function (event) {
+            if (event.key == "Enter") {
+                $(".add-btn")[0].click()
+            }
+        })
+
+        $("#user_input").keyup(function (e) {
+            $("#species-list").html("")
+            if ((this.value.length >= 2 && this.value.match(/^\d+$/)) || this.value.length >= 3) {
+                for (var i = 0; i < speciesList.length; i++) {
+                    // console.log(123);
+                    var re = new RegExp(this.value, 'gi');
+
+                    if (speciesList[i].match(re)) {
+                        $("#species-list").html(
+                            $("#species-list").html() + speciesList[i] + '<br>')
+                    }
+                }
+                $(".add-btn").click(function () {
+                    $("#user_input").val("")
+                    $("#species-list").html("")
+                    $("#user_input").focus()
+                    var targetURL = this.getAttribute("target-url")
+                    popitup(targetURL, "popoutWindow")
+                })
+
+            }
+        });
+
+
+    </script>
+
+{% endblock content %}

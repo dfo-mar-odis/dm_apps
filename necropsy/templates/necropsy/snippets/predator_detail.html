@@ -1,0 +1,59 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load verbose_names %}
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diets:predator_filter' %}">Predators</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
+        </ol>
+    </nav>
+
+    <style type="text/css">
+        .label {
+            font-weight: bold;
+        }
+    </style>
+
+
+
+    <div class="container-fluid">
+
+        <br>
+        <h1>{{ object }}</h1>
+        <h2>{{ object.species.common_name_eng }} (<em>{{ object.species.scientific_name }}</em>)</h2>
+
+        <div class="btn-group">
+            <a class="btn btn-warning" href="{% url 'diets:predator_edit' object.id %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'diets:predator_delete' object.id %}">Delete</a>
+        </div>
+        <a class="btn btn-success" href="{% url 'diets:predator_new' object.cruise.id %}" id="new">New Predator (Ctrl+A)</a>
+
+        <br><br>
+        <div class="row">
+            <div class="col-3">
+                {# Detail about the sample #}
+
+                {% for field in field_list %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+
+            </div>
+            <div class="col">
+                {% include "diets/_prey_species_list.html" %}
+            </div>
+        </div>
+    </div>
+    <script type="application/javascript">
+        document.addEventListener("keydown", function (zEvent) {
+            if (zEvent.ctrlKey && zEvent.code === "KeyA") {
+                zEvent.preventDefault()
+                $("#new")[0].click();
+            }
+        });
+    </script>
+
+{% endblock content %}
+

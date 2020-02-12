@@ -1,0 +1,50 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load custom_tags %}
+{% load custom_filters %}
+{% block content %}
+
+    <div class="indent-med">
+
+        <p>
+{#            <a href="{% url 'diets:export_prey_summary' view.kwargs.year %}" class="btn btn-success btn-sm">Export to Spreadsheet</a>#}
+            <a href="#" class="btn btn-success btn-sm under-dev">Export to Spreadsheet</a>
+        </p>
+        (click on a header to sort)
+        <table class="table table-hover table-sm sortable">
+            <thead>
+            <th scope="col" style="width: 15%">Species (scientific name) </th>
+            <th scope="col">Code</th>
+            <th scope="col">In Which Stomaches</th>
+            </thead>
+            <tbody>
+            {% for species in prey_spp_list %}
+                <tr href="{% url 'diets:species_detail' species.id %}">
+                    <td>
+                        <em>
+                            {{ species.scientific_name }}
+                        </em>
+                    </td>
+                    <td>{{ species.id }}</td>
+                    <td>
+                        {% for pred in prey_dict|lookup:species.id %}
+                            {% url 'diets:predator_detail' pred.id as pred_url  %}
+                            <a href="{{pred_url}}">
+                                {{ pred.stomach_id }}
+                            </a>,
+                        {% endfor %}
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <br>
+
+
+
+    </div>
+
+{% endblock content %}

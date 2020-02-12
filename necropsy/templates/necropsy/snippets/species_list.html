@@ -1,0 +1,66 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Species List</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="big-header">Species List </h1>
+        <p>TOTAL: {{ object_list.count }}</p>
+
+
+        <form class="form" action="." method="get">
+            <div class="row">
+                {% for field in filter.form %}
+                    <div class="col-3">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+                {% endfor %}
+                <div class="col-3">
+                    <br>
+                    <input type="submit" value="Filter" class="btn btn-sm btn-warning">
+                    <a href="{% url 'diets:species_new' %}" class="btn btn-sm btn-success">New Species</a><br>
+                </div>
+
+            </div>
+
+
+        </form>
+
+
+        <table class="table table-hover table-sm sortable" style="width: auto">
+            <thead>
+                <th scope="col">Code</th>
+                <th scope="col">Common name (English)</th>
+                <th scope="col">Common name (French)</th>
+                <th scope="col">Scientific name</th>
+{#                <th scope="col">ITIS TSN</th>#}
+{#                <th scope="col">AphiaID</th>#}
+            </thead>
+            <tbody>
+            {% for object in filter.qs %}
+                <tr href="{% url 'diets:species_detail' object.id %}">
+                    <td>{{ object.id }}</td>
+                    <td>{{ object.common_name_eng }}</td>
+                    <td>{{ object.common_name_fre }}</td>
+                    <td><em>{{ object.scientific_name }}</em></td>
+{#                    <td>{{ object.tsn }}</td>#}
+{#                    <td>{{ object.aphia_id }}</td>#}
+                </tr>
+            {% endfor %}
+            <br>
+            </tbody>
+        </table>
+
+
+    </div>
+
+{% endblock content %}

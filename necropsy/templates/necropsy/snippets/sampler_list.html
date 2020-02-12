@@ -1,0 +1,55 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load custom_filters %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Samplers</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="big-header">Samplers </h1>
+        <p>TOTAL: {{ object_list.count }}</p>
+        <a href="{% url 'diets:sampler_new' %}" class="btn btn-sm btn-success">New Sampler</a><br>
+
+
+        <table class="table table-hover table-sm" style="width: auto">
+            <thead>
+            <tr>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Notes</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+                <tr href="{% url 'diets:sampler_edit' object.id %}">
+                    <td>{{ object.first_name }}</td>
+                    <td>{{ object.last_name }}</td>
+                    <td>{{ object.notes|nz:"" }}</td>
+
+                    <td>
+                        <a class="delete-me" href="{% url 'diets:sampler_delete' object.id %}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                 title="Delete">
+                        </a>
+
+                    </td>
+
+                </tr>
+            {% endfor %}
+            <br>
+            </tbody>
+        </table>
+
+
+    </div>
+
+{% endblock content %}
