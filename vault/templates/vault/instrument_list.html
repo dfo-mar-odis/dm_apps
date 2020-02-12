@@ -17,13 +17,13 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'vault:index' %}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Species List</li>
+            <li class="breadcrumb-item active" aria-current="page">Instrument List</li>
         </ol>
     </nav>
 
     <div class="container-fluid">
 
-        <h1 class="big-header">Species list </h1>
+        <h1 class="big-header">Instrument list </h1>
 
         <form class="form" action="." method="get" id="filter-form">
             <div class="row">
@@ -53,7 +53,7 @@
                         <em>displaying all {{ filter.qs.count }} records</em>
                     </div>
                     <div class="col" style="text-align: right; padding-bottom: 10px">
-                        <a href="{% url 'vault:species_new' %}" class="btn btn-sm btn-primary">New Species</a>
+                        <a href="{% url 'vault:instrument_new' %}" class="btn btn-sm btn-primary">New Instrument</a>
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@
                     </thead>
                     <tbody>
                     {% for object in filter.qs %}
-                        {% url 'vault:species_detail' object.id as my_url %}
+                        {% url 'vault:instrument_detail' object.id as my_url %}
                         <tr href="{{ my_url }}">
 
 
