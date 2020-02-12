@@ -1,7 +1,7 @@
-{% extends "vault/vault_base.html" %}
+{% extends "necropsy/necropsy_base.html" %}
 {% load bootstrap4 %}
 {% load static %}
-{% block title %}vault db{% endblock title %}
+{% block title %}Necropsy{% endblock title %}
 {% load i18n %}
 
 {% block content %}
@@ -9,7 +9,7 @@
 
     <style>
         body{
-            background-image: url({% static "/img/vault/whales.png" %});
+            background-image: url({% static "/img/necropsy/whalecalf.jpg" %});
             background-size: cover;
         }
 
@@ -72,22 +72,22 @@
     {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
     <div class="container">
         <div class="jumbotron">
-            <h1>Marine Megafauna Media Vault</h1>
+            <h1>Necropsy Tools and Marine Mammal Inventory</h1>
         </div>
     </div>
     </div>
 
 {#    <div align="center">#}
-{#        <img src="{% static "/img/vault/whales.png" %}" class="rounded" width="95%" alt="...">#}
+{#        <img src="{% static "/img/vault/whalecalf.jpg" %}" class="rounded" width="95%" alt="...">#}
 {##}
 {#    </div>#}
     <div align="center">
-        <p style="font-size: small">Photo by guille pozzi on Unsplash</p>
+        <p style="font-size: small">Photo by ??</p>
     </div>
 
 <div class="card">
     <div class="card-img">
-        <img class="card-img-top" src="{% static 'img/vault/orca-binoculars.jpg' %}" alt="Card image" style="width: 85%">
+        <img class="card-img-top" src="{% static 'img/necropsy/orca-binoculars.jpg' %}" alt="Card image" style="width: 85%">
     </div>
 <div class="card-body">
         <h4 class="card-title">
@@ -95,7 +95,7 @@
         </h4>
 
         <div class="btns">
-            <a href="{% url 'vault:item_list' %}" class="btn my-btn btn btn-primary">Items</a>
+            <a href="{% url 'necropsy:item_list' %}" class="btn my-btn btn btn-primary">Items</a>
         </div>
         <br>
     </div>

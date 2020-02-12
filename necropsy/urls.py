@@ -12,7 +12,7 @@ urlpatterns = [
 
 #     # Inventory #
 #     ###########
-    path('species_list/', views.SpeciesListView.as_view(), name="species_list"),
+#     path('species_list/', views.SpeciesListView.as_view(), name="species_list"),
     path('item_list/', views.ItemsListView.as_view(), name="item_list"),
     path('item_detail/<int:pk>/view/', views.ItemsDetailView.as_view(), name="item_detail")
 #     # path('species/new/', views.SpeciesCreateView.as_view(), name="item_new"),
