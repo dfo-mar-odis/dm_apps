@@ -31,7 +31,6 @@ def in_trapnet_group(user):
 
 
 class TrapNetAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_trapnet_group(self.request.user)
@@ -49,7 +48,6 @@ def in_trapnet_admin_group(user):
 
 
 class TrapNetAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_trapnet_admin_group(self.request.user)

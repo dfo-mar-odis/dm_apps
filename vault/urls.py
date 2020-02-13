@@ -6,6 +6,8 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name = 'vault'
+
 urlpatterns = [
     path('', views.index, name="index"),
 
@@ -26,6 +28,15 @@ urlpatterns = [
     path('instrument/<int:pk>/edit/', views.InstrumentUpdateView.as_view(), name="instrument_edit"),
     path('instrument/<int:pk>/delete/', views.InstrumentDeleteView.as_view(), name="instrument_delete"),
 
+    #
+
+    # # OBSERVAION PLATFORMS #
+    # #############
+    path('observationplatform-list/', views.ObservationPlatformListView.as_view(), name="observationplatform_list"),
+    path('observationplatform/new/', views.ObservationPlatformCreateView.as_view(), name="observationplatform_new"),
+    path('observationplatform/<int:pk>/view/', views.ObservationPlatformDetailView.as_view(), name="observationplatform_detail"),
+    path('observationplatform/<int:pk>/edit/', views.ObservationPlatformUpdateView.as_view(), name="observationplatform_edit"),
+    path('observationplatform/<int:pk>/delete/', views.ObservationPlatformDeleteView.as_view(), name="observationplatform_delete"),
+
 ]
 
-app_name = 'vault'

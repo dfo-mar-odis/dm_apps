@@ -1,17 +1,26 @@
 {% extends "pop_base.html" %}
 {% load static %}
 {% load bootstrap4 %}
+{% load i18n %}
 
 {% block body %}
 
     <div class="container">
-        <h1>Are you sure you want to delete <em>{{ object.user }}</em> as a traveller from this request?</h1>
+        <h1>
+            {% blocktrans with object.user as the_user %}
+                Are you sure you want to delete <em>{{ the_user }}</em> as a traveller from this request?
+            {% endblocktrans  %}
+        </h1>
 
         <br><br>
         <form method="post" class="form">
             {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Delete</button>
-            <a class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+            <button type="submit" class="btn btn-danger">
+                {% trans "Delete" %}
+            </button>
+            <a class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">
+                {% trans "Cancel" %}
+            </a>
         </form>
     </div>
 

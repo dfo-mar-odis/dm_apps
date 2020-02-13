@@ -7,9 +7,9 @@
 1. Clone project: `git clone https://github.com/dfo-mar-odis/dm_apps`
 1. navigate into the project director: `cd dm_apps`
 1. Install the Python packages required by the DM APPS application: `pip install -r requirements.txt`
-1. Next, try running the following: `pip install -r special_requirements.txt`
-    If you get an error, you will have to download a precompiled version of `mysqlclient` and `shapely`. 
-    - The binary versions of these packages are available here:
+    - If you get an error when installing this, you will have to open the requirements.txt and comment out the lines for `mysqlclient` and `shapely`.
+    - Rerun the package installation line above
+    - You will have to download a precompiled version of `mysqlclient` and `shapely`. The binary versions of these packages are available here:
         - [mysqlclient](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient). Be sure to select the file that matches your system configuration.
         - [shapely](https://www.lfd.uci.edu/~gohlke/pythonlibs/#shapely). Be sure to select the file that matches your system configuration.
     - So, for example, if your a running python 3.6 on an AMD64 processor, you would download the file called 'mysqlclient‑1.x.x‑cp36‑cp36m‑win_amd64.whl.'.

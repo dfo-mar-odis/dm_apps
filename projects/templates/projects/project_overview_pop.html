@@ -17,7 +17,10 @@
             </h1>
         </div>
         <hr>
-
+        <a class="btn btn-outline-dark btn-sm float-right" href="{% url 'projects:project_print' object.id %}">
+            {% trans "Export PDF" %} &nbsp;
+            <img src="{% static 'img/icons/pdf.svg' %}" alt="" width="20px">
+        </a>
         {% if can_edit %}
             <div class="btn-group mb-5">
                 {% if not object.approved %}

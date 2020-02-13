@@ -7,7 +7,7 @@ from . import models
 import os
 
 
-def generate_cfts_spreadsheet(fiscal_year=None, trip_request=None):
+def generate_cfts_spreadsheet(fiscal_year=None, trip_request=None, trip=None):
     # figure out the filename
     target_dir = os.path.join(settings.BASE_DIR, 'media', 'travel', 'temp')
     target_file = "temp_export.xlsx"
@@ -27,7 +27,7 @@ def generate_cfts_spreadsheet(fiscal_year=None, trip_request=None):
     # spreadsheet: Project List #
     #############################
 
-    # get a project list for the year
+    # get a request list
     if trip_request:
         my_trip_request = models.TripRequest.objects.get(pk=trip_request)
         if my_trip_request.is_group_request:
@@ -36,12 +36,13 @@ def generate_cfts_spreadsheet(fiscal_year=None, trip_request=None):
         else:
             is_group = False
             trip_request_list = models.TripRequest.objects.filter(pk=trip_request)
-    else:
-        is_group = False
-        my_trip_request = None
-        trip_request_list = None
 
-    # non_group_trip_list = models.Trip.objects.all()
+    elif trip:
+        my_trip = models.Conference.objects.get(pk=trip)
+        trip_request_list = my_trip.get_connected_requests()
+    else:
+        trip_request_list = None
+        # non_group_trip_list = models.Trip.objects.all()
 
     # we need a list of ADM unapproved but recommended
     # group travellers need to be on one row
@@ -67,58 +68,119 @@ def generate_cfts_spreadsheet(fiscal_year=None, trip_request=None):
 
     ws.write_row(0, 0, header, header_format)
 
-    i = 1
-    for trip_request in trip_request_list:
+    if trip_request_list:
+        i = 1
+        for tr in trip_request_list:
 
-        notes = "TRAVELLER COST BREAKDOWN: " + trip_request.cost_breakdown
+            # Build the Notes field
+            notes = "TRAVELLER COST BREAKDOWN: " + tr.cost_breakdown
 
-        if my_trip_request.non_dfo_org:
-            notes += "\n\nORGANIZATIONS PAYING NON-DFO COSTS: " + my_trip_request.non_dfo_org
+            if tr.parent_request:
+                if tr.parent_request.non_dfo_org:
+                    notes += "\n\nORGANIZATIONS PAYING NON-DFO COSTS: " + tr.parent_request.non_dfo_org
+            else:
+                if tr.non_dfo_org:
+                    notes += "\n\nORGANIZATIONS PAYING NON-DFO COSTS: " + tr.non_dfo_org
 
-        if my_trip_request.late_justification:
-            notes += "\n\nJUSTIFICATION FOR LATE SUBMISSION: " + my_trip_request.late_justification
+            if tr.parent_request:
+                if tr.parent_request.late_justification:
+                    notes += "\n\nJUSTIFICATION FOR LATE SUBMISSION: " + tr.parent_request.late_justification
+            else:
+                if tr.late_justification:
+                    notes += "\n\nJUSTIFICATION FOR LATE SUBMISSION: " + tr.late_justification
 
-        if my_trip_request.funding_source:
-            notes += "\n\nFUNDING SOURCE: {}".format(my_trip_request.funding_source)
+            if tr.parent_request:
+                if tr.parent_request.funding_source:
+                    notes += "\n\nFUNDING SOURCE: {}".format(tr.parent_request.funding_source)
+            else:
+                if tr.funding_source:
+                    notes += "\n\nFUNDING SOURCE: {}".format(tr.funding_source)
 
-        my_role = "{} - {}".format(
-            nz(trip_request.role, "MISSING"),
-            nz(trip_request.role_of_participant, "No description provided")
-        )
+            # REASON
+            if tr.parent_request:
+                my_reason = str(tr.parent_request.reason) if tr.parent_request.reason else "n/a"
+            else:
+                my_reason = str(tr.reason) if tr.reason else "n/a"
 
-        data_row = [
-            "{}, {}".format(trip_request.last_name, trip_request.first_name),
-            str(trip_request.region) if trip_request.region else "n/a",
-            my_role,
-            str(my_trip_request.reason) if my_trip_request.reason else "n/a",
-            my_trip_request.trip.tname,
-            my_trip_request.destination,
-            my_trip_request.start_date.strftime("%d/%m/%Y"),
-            my_trip_request.end_date.strftime("%d/%m/%Y"),
-            trip_request.total_cost,
-            nz(trip_request.non_dfo_costs, 0),
-            my_trip_request.purpose_long_text,
-            notes,
-        ]
+            # TRIP NAME
+            if tr.parent_request:
+                my_trip_name = str(tr.parent_request.trip) if tr.parent_request.trip else "n/a"
+            else:
+                my_trip_name = str(tr.trip) if tr.trip else "n/a"
 
-        # adjust the width of the columns based on the max string length in each col
-        ## replace col_max[j] if str length j is bigger than stored value
+            # DESTINATION
+            if tr.parent_request:
+                my_dest = str(tr.parent_request.destination) if tr.parent_request.destination else "n/a"
+            else:
+                my_dest = str(tr.destination) if tr.destination else "n/a"
 
-        j = 0
-        for d in data_row:
-            # if new value > stored value... replace stored value
-            if len(str(d)) > col_max[j]:
-                if len(str(d)) < 100:
-                    col_max[j] = len(str(d))
-                else:
-                    col_max[j] = 100
-            j += 1
+            # START DATE OF TRAVEL
+            if tr.parent_request:
+                my_start = tr.parent_request.start_date.strftime("%d/%m/%Y") if tr.parent_request.start_date else "n/a"
+            else:
+                my_start = tr.start_date.strftime("%d/%m/%Y") if tr.start_date else "n/a"
 
-        ws.write_row(i, 0, data_row, normal_format)
-        i += 1
+            # END DATE OF TRAVEL
+            if tr.parent_request:
+                my_end = tr.parent_request.end_date.strftime("%d/%m/%Y") if tr.parent_request.end_date else "n/a"
+            else:
+                my_end = tr.end_date.strftime("%d/%m/%Y") if tr.end_date else "n/a"
 
-    for j in range(0, len(col_max)):
-        ws.set_column(j, j, width=col_max[j] * 1.1)
+            # NON DFO COSTS
+            if tr.parent_request:
+                my_non_dfo_costs = nz(tr.parent_request.non_dfo_costs, 0)
+            else:
+                my_non_dfo_costs = nz(tr.non_dfo_costs, 0)
+
+            # PURPOSE
+            if tr.parent_request:
+                my_purpose = tr.parent_request.purpose_long_text
+            else:
+                my_purpose = tr.purpose_long_text
+
+
+            my_role = "{} - {}".format(
+                nz(tr.role, "MISSING"),
+                nz(tr.role_of_participant, "No description provided")
+            )
+
+            my_name = "{}, {}".format(tr.last_name, tr.first_name)
+            if tr.is_research_scientist:
+                my_name += " (RES)"
+
+            data_row = [
+                my_name,
+                str(tr.region) if tr.region else "n/a",
+                my_role,
+                my_reason,
+                my_trip_name,
+                my_dest,
+                my_start,
+                my_end,
+                tr.total_cost,
+                my_non_dfo_costs,
+                my_purpose,
+                notes,
+            ]
+
+            # adjust the width of the columns based on the max string length in each col
+            ## replace col_max[j] if str length j is bigger than stored value
+
+            j = 0
+            for d in data_row:
+                # if new value > stored value... replace stored value
+                if len(str(d)) > col_max[j]:
+                    if len(str(d)) < 100:
+                        col_max[j] = len(str(d))
+                    else:
+                        col_max[j] = 100
+                j += 1
+
+            ws.write_row(i, 0, data_row, normal_format)
+            i += 1
+
+        for j in range(0, len(col_max)):
+            ws.set_column(j, j, width=col_max[j] * 1.1)
 
     workbook.close()
     return target_url

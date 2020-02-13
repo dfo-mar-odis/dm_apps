@@ -1,0 +1,52 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+{#  BASIC DETAIL #}
+<h3 class="neighbours mb-3">
+    {% trans "Request Detail" %}
+</h3>
+<div class="neighbours mb-3">
+    {% with help_text_dict|lookup:"trip_request_header" as help_text %}
+        <img src="{% static 'img/icons/information.png' %}" style="width: 30px" data-toggle="popover"
+             data-trigger="hover"
+             title="{% trans "Trip Request Details" %}"
+             data-content="{{ help_text }}">
+    {% endwith %}
+</div>
+
+<table class="table table-sm table-striped" style="width: 100%">
+    {% for field in field_list %}
+        {% if "status" in field %}
+            <tr>
+                <th>{% get_verbose_label triprequest field %}</th>
+                <td style="background-color: {{ triprequest.status.color }};">{% get_field_value triprequest field %}</td>
+            </tr>
+
+        {% elif "section" in field %}
+            <tr>
+                <th>{% get_verbose_label triprequest field %}</th>
+                <td>{{ triprequest.section.full_name }}</td>
+            </tr>
+            {#            {% verbose_td_display trip field format="currency" th_width="20%" nullmark=not_sure date_format="%B %d, %Y" %}#}
+        {% else %}
+
+            {% verbose_td_display triprequest field format="currency" th_width="20%" nullmark="<span class='highlight'> &nbsp; n/a &nbsp;  </span>" date_format="%B %d, %Y" %}
+        {% endif %}
+    {% endfor %}
+
+    <tr>
+        <th>
+            {% trans "Total travellers (excluding BTA)" %}
+        </th>
+        <td>
+            {% if triprequest.is_group_request %}
+                {{ triprequest.children_requests.count }}
+            {% else %}
+                1
+            {% endif %}
+
+        </td>
+    </tr>
+</table>
+<br><br>

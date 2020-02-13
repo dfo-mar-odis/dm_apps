@@ -1,13 +1,20 @@
 {% load verbose_names %}
+<style>
+    table, th, td {
+        text-align: left;
+        border: 1px solid black;
+    }
+</style>
 
 <p>
     There was a new trip created in the Travel Management System:
 </p>
 
-{% for field in field_list %}
-    {% verbose_field_display event field %}
-{% endfor %}
-
+<table>
+    {% for field in field_list %}
+        {% verbose_td_display event field %}
+    {% endfor %}
+</table>
 <p>
     To change or modify the meeting information, please click <a href="http://dmapps{% url 'travel:trip_detail' event.id %}">HERE</a>.
 </p>

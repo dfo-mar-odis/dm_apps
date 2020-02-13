@@ -1,0 +1,143 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+{#  TRIP DETAIL  #}
+{% if triprequest.trip %}
+    <div class="float-right mb-3">
+        <a class="btn btn-sm btn-outline-dark" href="{% url 'travel:export_cfts_trip' triprequest.trip.id %}">
+            {% trans "CFTS Report for Trip" %} &nbsp; <img src="{% static 'img/icons/excel.svg' %}" alt="" width="20px">
+        </a>
+    </div>
+
+    <div class="neighbours mb-3">
+        <h3>
+            {% trans "Trip Detail" %}
+        </h3>
+    </div>
+    <div class="neighbours mb-3">
+        {% with help_text_dict|lookup:"trip_header" as help_text %}
+            <img src="{% static 'img/icons/information.png' %}" style="width: 30px" data-toggle="popover"
+                 data-trigger="hover"
+                 title="{% trans "Trip Summary" %}"
+                 data-content="{{ help_text }}">
+        {% endwith %}
+    </div>
+    {% if not triprequest.trip %}
+        <em class="red-font blink-me">{% trans "It was indicated above that this trip request is a conference/meeting however no conference or meeting was selected." %}</em>
+    {% else %}
+
+
+        <table class="table table-sm table-striped">
+            {% for field in conf_field_list %}
+                {% if "has_event_template" in field %}
+                    {% trans "Unsure" as not_sure %}
+                    {% verbose_td_display triprequest.trip field format="currency" th_width="30%" nullmark=not_sure date_format="%B %d, %Y" %}
+                {% else %}
+                    {% verbose_td_display triprequest.trip field format="currency" th_width="30%" date_format="%B %d, %Y" %}
+                {% endif %}
+
+            {% endfor %}
+            <tr>
+                <th>{% trans "Connected requests" %}</th>
+                <td>
+                    <ul>
+                        {% for obj in triprequest.trip.trip_requests.all %}
+                            {% url 'travel:request_detail' obj.id as my_url %}
+                            <li>
+                                <a href="{% if obj.id != triprequest.id %}{{ my_url }}{% endif %}">{{ obj }}</a> by {{ obj.user }}
+                                (STATUS: <span style="background-color: {{ triprequest.status.color }}">{{ obj.status }}</span>)
+                                {% if obj.id == triprequest.id %}
+                                    <span class="purple-font">({% trans "CURRENT TRIP REQUEST" %})</span>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {% trans "Total list of travellers (all trip requests and BTA included)" %}
+                </th>
+                <td>
+                    <table class="plainjane" style="width: 75%;">
+                        <tr class="plainjane">
+                            <th rowspan="2" class="plainjane">{% trans "Name" %}</th>
+                            <th colspan="2"
+                                class="plainjane center-col">{% trans "Trips requiring the approval of ADM" %}</th>
+                        </tr>
+                        <tr class="plainjane">
+                            <th class="plainjane center-col">{{ triprequest.trip.fiscal_year }}</th>
+                            <th class="plainjane center-col">Total</th>
+                        </tr>
+                        {% for traveller in triprequest.trip.total_traveller_list %}
+                            {% with triprequest.trip.get_summary_dict|lookup:traveller as d %}
+                                <tr class="plainjane">
+                                    <td class="plainjane">
+                                        {{ traveller }}
+                                        {% if traveller in triprequest.trip.bta_traveller_list %}{% trans "(BTA)" %}{% endif %}
+                                    </td>
+                                    <td class="plainjane center-col">
+                                        {% if traveller.id %}
+                                            {{ d.fy_list|length }}
+                                            {% if d.fy_list|length %}
+                                                &nbsp;
+                                                {% with d.fy_list as my_list %}
+                                                    <button class="badge" data-toggle="popover"
+                                                            title="{{ traveller.first_name }}'s Total Requests for {{ triprequest.trip.fiscal_year }}"
+                                                            data-content="{% include "travel/_user_trip_request_list.html" %}">
+                                                        {% trans "show" %}
+                                                    </button>
+                                                {% endwith %}
+                                            {% endif %}
+                                        {% else %}
+                                            <em>
+                                                ----
+                                            </em>
+                                        {% endif %}
+                                    </td>
+
+                                    <td class="plainjane center-col">
+                                        {% if traveller.id %}
+                                            {{ d.total_list|length }}
+                                            {% if d.total_list|length %}
+                                                &nbsp;
+                                                {% with d.total_list as my_list %}
+                                                    <button class="badge" data-toggle="popover"
+                                                            title="{{ user.first_name }}'s Total Requests"
+                                                            data-content="{% include "travel/_user_trip_request_list.html" %}">
+                                                        {% trans "show" %}
+                                                    </button>
+                                                {% endwith %}
+                                            {% endif %}
+                                        {% else %}
+                                            <em>
+                                                {{ d.total_list }}
+                                            </em>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endwith %}
+                        {% endfor %}
+                        <tr>
+                            <th colspan="3">{% trans "TOTAL NUMBER OF TRAVELLERS" %}
+                                = {{ triprequest.trip.total_traveller_list|length }}</th>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <th>
+                    {% trans "Total cost (from all connected trips, excluding BTA travel)" %}
+                </th>
+                <td>
+                    {{ triprequest.trip.total_cost|currency:"True" }}
+                </td>
+            </tr>
+        </table>
+    {% endif %}
+{% endif %}
+<br><br>

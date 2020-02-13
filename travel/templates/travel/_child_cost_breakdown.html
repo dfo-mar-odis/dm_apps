@@ -3,46 +3,7 @@
 {#<table class='table table-bordered' style='font-size: small'>#}
 {#{{ child.cost_breakdown_html }}#}
 
-
-<b>{% get_verbose_label child "air" %}</b>: {% get_field_value child "air" format="currency" nullmark="n/a"%}
-<br>
-<b>{% get_verbose_label child "rail" %}</b>: {% get_field_value child "rail" format="currency" nullmark="n/a"%}
-<br>
-<b>{% get_verbose_label child "rental_motor_vehicle" %}</b>: {% get_field_value child "rental_motor_vehicle" format="currency" nullmark="n/a"%}
-<br>
-<b>{% get_verbose_label child "personal_motor_vehicle" %}</b>: {% get_field_value child "personal_motor_vehicle" format="currency" nullmark="n/a"%}
-<br>
-<b>{% get_verbose_label child "taxi" %}</b>: {% get_field_value child "taxi" format="currency" nullmark="n/a"%}
-<br>
-<b>{% get_verbose_label child "other_transport" %}</b>: {% get_field_value child "other_transport" format="currency" nullmark="n/a"%}
-<br>
-<b>{% get_verbose_label child "accommodations" %}</b>: {% get_field_value child "accommodations" format="currency" nullmark="n/a"%}
-<br>
-
-{% get_field_value child "no_breakfasts" nullmark="0" as nb %}
-<b>{% get_verbose_label child "breakfasts" %}</b>:  {{ nb|floatformat }} &times; {% get_field_value child "breakfasts_rate" nullmark="0"%} = {% get_field_value child "breakfasts" format="currency" nullmark="n/a"%}
-<br>
-
-{% get_field_value child "no_lunches" nullmark="0" as nl %}
-<b>{% get_verbose_label child "lunches" %}</b>:  {{ nl|floatformat }} &times; {% get_field_value child "lunches_rate" nullmark="0"%} = {% get_field_value child "lunches" format="currency" nullmark="n/a"%}
-<br>
-
-{% get_field_value child "no_suppers" nullmark="0" as ns %}
-<b>{% get_verbose_label child "suppers" %}</b>:  {{ ns|floatformat }} &times; {% get_field_value child "suppers_rate" nullmark="0"%} = {% get_field_value child "suppers" format="currency" nullmark="n/a"%}
-<br>
-
-
-{% get_field_value child "no_incidentals" nullmark="0" as ni %}
-<b>{% get_verbose_label child "incidentals" %}</b>:  {{ ni|floatformat }} &times; {% get_field_value child "incidentals_rate" nullmark="0"%} = {% get_field_value child "incidentals" format="currency" nullmark="n/a"%}
-<br>
-
-
-
-
-<b>{% get_verbose_label child "registration" %}</b>: {% get_field_value child "registration" format="currency" nullmark="n/a"%}
-<br>
-<b>{% get_verbose_label child "other" %}</b>: {% get_field_value child "other" format="currency" nullmark="n/a"%}
-<br>
+{{child.cost_breakdown_html}}
 <hr>
 <b>{% trans "TOTAL" %}: {% get_field_value child "total_request_cost" format="currency" nullmark="n/a"%}</b>
 <br>

@@ -134,7 +134,7 @@ class IndexTemplateView(TemplateView):
 class ProjectCreateView(LoginRequiredMixin, CreateView):
     template_name = 'publications/pub_form.html'
     model = models.Project
-    login_url = '/accounts/login_required/'
+
     form_class = forms.NewProjectForm
 
     def get_context_data(self, **kwargs):
@@ -164,7 +164,7 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
 
 class ProjectSubmitUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Project
-    login_url = '/accounts/login_required/'
+
     form_class = forms.ProjectSubmitForm
     template_name = "publications/pub_submit_form.html"
 
@@ -182,7 +182,7 @@ class ProjectSubmitUpdateView(LoginRequiredMixin, UpdateView):
 
 class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Project
-    login_url = '/accounts/login_required/'
+
     form_class = forms.NewProjectForm
     template_name = "publications/pub_form.html"
 
@@ -201,7 +201,7 @@ class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('publications:index')
     success_message = _('The project was successfully deleted!')
     template_name = 'publications/pub_confirm_delete.html'
-    login_url = '/accounts/login_required/'
+
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)

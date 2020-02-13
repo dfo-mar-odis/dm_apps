@@ -71,11 +71,11 @@ def can_modify(user, transaction_id):
 
 class SciFiAccessRequiredMixin(LoginRequiredMixin):
     # everyone who is logged in should be able to access scifi
-    login_url = '/accounts/login_required/'
+    login_url = '/accounts/login/'
 
 
 class OnlyThoseAllowedToEditMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return can_modify(self.request.user, self.kwargs["pk"])
@@ -83,12 +83,12 @@ class OnlyThoseAllowedToEditMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect('/accounts/denied/scifi/')
+            return HttpResponseRedirect(reverse("accounts:denied_access"))
         return super().dispatch(request, *args, **kwargs)
 
 
 class SciFiAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_scifi_admin_group(self.request.user)
@@ -518,7 +518,7 @@ class TransactionBasicListView(SciFiAccessRequiredMixin, FilterView):
         return kwargs
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_scifi_admin_group, login_url='/accounts/denied/')
 def toggle_mrs(request, pk, query=None):
     # get instance of transaction
@@ -738,7 +738,7 @@ class CustomTransactionCreateView(SciFiAccessRequiredMixin, CreateView):
         # create a new email object
         email = emails.NewEntryEmail(self.object)
         # send the email object
-        if settings.PRODUCTION_SERVER and email.to_list:
+        if settings.DEBUG and email.to_list:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
             messages.success(self.request,
@@ -893,7 +893,7 @@ class ImportFileView(SciFiAdminRequiredMixin, CreateView):
 
 class ReportSearchFormView(SciFiAccessRequiredMixin, FormView):
     template_name = 'scifi/report_search.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.ReportSearchForm
 
     def get_initial(self):

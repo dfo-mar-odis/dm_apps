@@ -1,0 +1,79 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+
+{#  GROUP TRAVELLERS  #}
+{% if triprequest.is_group_request %}
+
+    <h3 class="neighbours mb-3">
+        {% trans "Group Travellers Associated with this Request" %}
+    </h3>
+    {% if not report_mode %}
+        <div class="neighbours mb-3">
+            {% with help_text_dict|lookup:"group_travellers_header" as help_text %}
+                <img src="{% static 'img/icons/information.png' %}" style="width: 30px" data-toggle="popover"
+                     data-trigger="hover"
+                     title="{% trans "Group Traveller Information" %}"
+                     data-content="{{ help_text }}">
+            {% endwith %}
+        &nbsp;
+            <a href="#" pop-href="{% url 'travel:request_new' triprequest.id %}" class="btn btn-sm btn-primary">Add Traveller</a>
+        </div>
+
+
+    {% endif %}
+    <br>
+    <table class="table table-sm sortable {% if not report_mode %}table-hover{% else %}table-striped{% endif %}" style="width: 100%">
+        <thead>
+        <tr>
+            {% for field in child_field_list %}
+                {% if "cost_breakdown" in field or "purpose_long" in field %}
+                    <th>{% get_verbose_label triprequest field %}</th>
+                {% elif "role_of" in field %}
+                    <th>{% get_verbose_label triprequest field %}</th>
+                {% elif "_date" in field %}
+                    <th>{% get_verbose_label triprequest field %}</th>
+                {% else %}
+                    <th scope="col">{% get_verbose_label triprequest field %}</th>
+                {% endif %}
+            {% endfor %}
+            <th>{% trans "Cost breakdown" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for child in triprequest.children_requests.all %}
+
+            <tr {% if not report_mode %}pop href="{% url 'travel:request_edit' child.id "pop" %}" {% endif %}
+                class="{% if child.total_cost == 0 %}bad{% endif %}"
+                data-toggle="tooltip" title="{% trans "Click on a row to edit traveller informations." %}">
+
+                {% for field in child_field_list %}
+                    <td>{% get_field_value child field format="currency" safe=True %}</td>
+
+                {% endfor %}
+                <td>
+                    <button class="badge cost-breakdown-btn" data-toggle="popover"
+                            title="{{ child.first_name }}'s Costs Breakdown"
+                            data-content="{% include "travel/_child_cost_breakdown.html" %}">
+                        {% trans "show" %}
+                    </button>
+                </td>
+                {% if not report_mode %}
+                    <td>
+                        <a class="btn btn-sm btn-warning stop-pop" href="{% url 'travel:child_duplicate_event' child.id  'pop' %}">
+                            {% trans "Clone" %}
+                        </a>
+                    </td>
+                {% endif %}
+
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tr>
+            <th colspan="{{ child_field_list|length|add:-1|floatformat }}" style="text-align: right">{% trans "TOTAL COST:" %}</th>
+            <th style="width: 8%;">{{ triprequest.total_request_cost|currency:"True" }}</th>
+        </tr>
+    </table>
+    <br><br><br>
+{% endif %}

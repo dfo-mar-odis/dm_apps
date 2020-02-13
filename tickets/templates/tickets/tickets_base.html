@@ -4,7 +4,9 @@
 {% block bug_create %}{% url 'tickets:bug_create' "tickets" %}{% endblock bug_create %}
 
 
-{% block title %}Tickets{% endblock title %}
+{% block title %}
+    Tickets {% block subtitle %}{% endblock %}
+{% endblock title %}
 
 {% block body %}
     {% block content %}{% endblock content %}

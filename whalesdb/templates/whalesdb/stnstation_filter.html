@@ -1,0 +1,70 @@
+{% extends "whalesdb/whale_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block title %}
+    {% trans lookup.label|add:" Code List" %}
+{% endblock title %}
+
+{% block body %}
+
+<div class="container mt-1" >
+    <h2>{% trans 'Stations' %}</h2>
+    <div>
+        <form class="form" action="stn" method="get" id="filter-form" style="width: 90%; font-size: small">
+            <div class="row">
+
+                {% for field in filter.form %}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+
+                {% endfor %}
+                <div class="col">
+                    <br>
+                    <div class="btn-group">
+                        <input type="submit" value="Filter" class="btn btn-warning btn-sm">
+                        <a href="stn" class="btn btn-success btn-sm">Clear</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            <a class="btn btn-primary" href="#"
+               onclick="return popitup('{% url 'whalesdb:create_stn' %}','popoutWindow')"
+                title="{% trans 'Add Station' %}">+</a>
+        </div>
+    </div>
+
+    <div class="container mt-1 nl-n1">
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    {% for field in fields %}
+                    <th>{% get_verbose_label filter.qs.first field %}</th>
+                    {% endfor %}
+                    <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for station in filter.qs %}
+                        <tr>
+                        {% for field in fields %}
+                        <td>{% get_field_value station field %}</td>
+                        {% endfor %}
+                            <td><a class="btn btn-primary btn-sm" href="{% url 'whalesdb:details_stn' station.pk %}">{% trans 'Details' %}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock body %}

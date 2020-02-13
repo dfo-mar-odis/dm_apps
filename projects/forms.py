@@ -367,6 +367,11 @@ class ReportSearchForm(forms.Form):
         (17, _("Data management summary")),
 
         (None, ""),
+        (None, "----- Funding ------"),
+        (18, _("Funding (PDF)")),
+        (19, _("Funding (MS Excel)")),
+
+        (None, ""),
         (None, "----- GULF ------"),
         (10, _("Weeks Worked by Employees (PDF)")),
         (11, _("Total Overtime Hours Requested (PDF)")),
@@ -383,6 +388,7 @@ class ReportSearchForm(forms.Form):
     report = forms.ChoiceField(required=True, choices=REPORT_CHOICES)
     fiscal_year = forms.ChoiceField(required=False)
     region = forms.MultipleChoiceField(required=False, label="Regions (Leave blank to select all)")
+    funding_src = forms.ChoiceField(required=False, label=_("Funding Source"))
     division = forms.MultipleChoiceField(required=False, label="Divisions (Leave blank to select all)")
     section = forms.MultipleChoiceField(required=False, label="Sections (Leave blank to select all)")
 
@@ -391,6 +397,7 @@ class ReportSearchForm(forms.Form):
 
         fy_choices = [(fy.id, str(fy)) for fy in shared_models.FiscalYear.objects.all() if fy.projects.count() > 0]
         fy_choices.insert(0, (None, "-----"))
+        self.fields['funding_src'].choices = views.get_funding_sources()
         self.fields['region'].choices = views.get_region_choices()
         self.fields['division'].choices = views.get_division_choices()
         self.fields["section"].choices = views.get_section_choices()

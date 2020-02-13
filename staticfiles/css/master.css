@@ -1,0 +1,296 @@
+
+* {
+    font-family: 'Roboto', sans-serif;
+    /*font-size: small;*/
+}
+
+.bigbrand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.two-em {
+    font-size: 2em;
+}
+
+.three-em {
+    font-size: 3em;
+}
+
+.med-header {
+    font-size: 6em;
+}
+
+.center-col {
+    text-align: center;
+}
+
+/*.modal {*/
+/*display: none; !* Hidden by default *!*/
+/*position: fixed; !* Stay in place *!*/
+/*z-index: 1; !* Sit on top *!*/
+/*padding-top: 100px; !* Location of the box *!*/
+/*left: 0;*/
+/*top: 0;*/
+/*width: 100%; !* Full width *!*/
+/*height: 100%; !* Full height *!*/
+/*overflow: auto; !* Enable scroll if needed *!*/
+/*background-color: rgb(0,0,0); !* Fallback color *!*/
+/*background-color: rgba(0,0,0,0.4); !* Black w/ opacity *!*/
+/*}*/
+
+/* Modal Content */
+/*.modal-content {*/
+/*background-color: #fefefe;*/
+/*margin: auto;*/
+/*padding: 20px;*/
+/*border: 1px solid #888;*/
+/*width: 60%;*/
+/*}*/
+
+.float-right {
+    float: right;
+}
+
+.left-border {
+    border-left: solid 1px #999999;
+}
+
+.draw-attention {
+    background-color: #e040fb;
+}
+
+.highlight {
+    background-color: #fecd11;
+}
+
+.petri {
+    background-color: wheat;
+}
+
+.plate {
+    background-color: lightgreen;
+}
+
+.nav-map {
+    font-size: 1.25em;
+    margin-left: 4em;
+}
+
+.indent {
+    margin: .75em;
+}
+
+.indent-med {
+    margin: 2em;
+}
+
+.indent-lg {
+    margin-left: 7em;
+    margin-right: 7em;
+}
+
+.scroll-med {
+    height: 30em;
+    width: 500px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+
+}
+
+.scroll-lg {
+    height: 35em;
+    width: 50em;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    font-size: small;
+}
+
+.scroll-lg {
+    height: 35em;
+    width: 80em;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    font-size: small;
+}
+
+.bad {
+    background-color: pink;
+    color: black;
+}
+
+.good {
+    background-color: lightgreen;
+    color: black;
+}
+
+.concern {
+    background-color: darkorange;
+}
+
+.mild-concern {
+    background-color: khaki;
+}
+
+.wide-left {
+    margin-left: 1em;
+}
+
+.red-font {
+    color: red;
+}
+
+.purple-font {
+    color: #bc00bc;
+}
+
+.green-font {
+    color: green;
+}
+
+.blue-font {
+    color: blue;
+}
+
+.orange-font {
+    color: #ff730b;
+}
+
+.green-borders {
+    border: 2px solid #00c600;
+}
+
+.resolved {
+    background-color: mediumpurple;
+}
+
+.active1 {
+    background-color: lightgreen;
+}
+
+.idle {
+    background-color: khaki;
+}
+
+.unresolved {
+    background-color: pink;
+}
+
+.major-error {
+    background-color: red;
+    color: yellow;
+    font-weight: bold;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.neighbours {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 20px;
+}
+
+.gone {
+    visibility: hidden;
+    width: 0%;
+    height: 0px;
+    padding: 0px;
+}
+
+
+.blink-me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+.awesome {
+    /*width: 100%;*/
+
+    /*margin: 0 auto;*/
+    /*text-align: center;*/
+
+    color: #313131;
+    /*background-color: white;*/
+    /*font-size: 45px;*/
+    font-weight: bold;
+    /*position: absolute;*/
+    -webkit-animation: colorchange 20s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+    0% {
+
+        color: #ea4544;
+    }
+
+    10% {
+
+        color: #ff8209;
+    }
+
+    20% {
+
+        color: #36fff8;
+    }
+
+    30% {
+
+        color: #ff37e0;
+    }
+
+    40% {
+
+        color: blue;
+    }
+
+    50% {
+
+        color: #00c600;
+    }
+
+    60% {
+
+        color: blue;
+    }
+
+    70% {
+
+        color: #2980b9;
+    }
+    80% {
+
+        color: #f1c40f;
+    }
+
+    90% {
+
+        color: #2980b9;
+    }
+
+    100% {
+
+        color: pink;
+    }
+}

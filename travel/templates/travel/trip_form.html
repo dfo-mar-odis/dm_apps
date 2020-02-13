@@ -17,7 +17,7 @@
                 {% trans "Trips" %}
             </a></li>
             {% if object %}
-                <li class="breadcrumb-item"><a href="{% url 'travel:request_detail' object.id %}">{{ object }}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'travel:trip_detail' object.id %}">{{ object }}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">
                 {% trans "Edit" %}
                 </li>
@@ -66,10 +66,10 @@
             {% buttons %}
                 {% if object %}
                     <button type="submit" class="btn btn-success">Update</button>
-                    <a class="btn btn-secondary" href="{% url 'travel:request_detail' object.id %}">Cancel</a>
+                    <a class="btn btn-secondary" href="{% url 'travel:trip_detail' object.id %}">Cancel</a>
                 {% else %}
                     <button type="submit" class="btn btn-success">Add</button>
-                    <a class="btn btn-secondary" href="{% url 'travel:request_list' %}">Cancel</a>
+                    <a class="btn btn-secondary" href="{% url 'travel:trip_list' %}">Cancel</a>
                 {% endif %}
 
 

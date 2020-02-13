@@ -1,0 +1,154 @@
+{% load verbose_names %}
+{% load bootstrap4 %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% block extra_style %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+{% endblock %}
+
+<style>
+    .label {
+        font-weight: bold;
+    }
+
+    table, td, th {
+        border: 0px solid black;
+        text-align: left;
+        border-collapse: collapse;
+    }
+
+    td, th {
+        padding: 2px;
+    }
+
+    th, .head{
+        width: 250px;
+        background-color: lightblue;
+        {#color: white;#} border: 1px solid black;
+        font-size: 11px;
+        font-weight: bold;
+        padding: 0px;
+        margin: 5px;
+    }
+
+    .total {
+        background-color: lightgray;
+        color: black;
+    }
+
+
+    h1 {
+        font-size: 24px;
+    }
+
+    div.h3, span.h3 {
+        font-size: 11px;
+        font-weight: bold;
+    }
+
+    @page {
+        size: A4;
+        margin: 1cm;
+        @frame footer {
+            -pdf-frame-content: footerContent;
+            bottom: 0cm;
+            margin-left: 18cm;
+            margin-right: 0cm;
+            height: 1cm;
+        }
+    }
+
+</style>
+
+
+<div id="footerContent">
+    {% block page_foot %}
+        <pdf:pagenumber/>
+    {% endblock %}
+</div>
+
+{% for project in project_list %}
+<h1>{{ fy }} – SARA Funding ({{ funding_src }})</h1>
+
+<div>
+    <span class="h3">{% trans 'Project ID'%} : </span>
+    <span>{{project.pk|nz:0}}</span>
+</div>
+<div>
+    <span class="h3">{% trans 'Project title'%} : </span>
+    <span>{{project.project_title}}</span>
+</div>
+<div class="row">
+<div>
+    <span class="col h3">{% trans 'Salary Cost'%} : </span>
+    <span class="col" >${{sal_cost|lookup:project.id|floatformat:2|intcomma|nz:0}}</span>
+</div>
+<div>
+    <span class="col h3">{% trans 'O&M Cost'%} : </span>
+    <span class="col">${{om_cost|lookup:project.id|floatformat:2|intcomma|nz:0}}</span>
+</div>
+<div>
+    <span class="col h3">{% trans 'Capital Cost'%} : </span>
+    <span class="col">${{cap_cost|lookup:project.id|floatformat:2|intcomma|nz:0}}</span>
+</div>
+<div>
+    <span class="col h3">{% trans 'Total Estimated Cost'%} : </span>
+    <span class="col">${{total_est|lookup:project.id|floatformat:2|intcomma|nz:0}}</span>
+</div>
+</div>
+<div>
+    <span class="h3">{% trans 'Project lead'%} : </span>
+    <span>{{project_leads|lookup:project.id}}</span>
+</div>
+<div>
+    <div class="h3">{% trans 'Species and SARA justification'%} : </div>
+    <div>{{project.priorities|html_to_text|safe}}</div>
+</div>
+<div>
+    <div>
+    <h4>{% trans 'Brief project description'%} : </h4>
+
+    <h3>{% trans 'Project Objectives & Description' %}</h3>
+    {{ project.description|html_to_text|safe}}
+
+    <h3>{% trans 'Project Deliverables / Activities' %}</h3>
+    {{ project.deliverables|html_to_text|safe}}
+
+    <h3>{% trans 'Milestones' %}</h3>
+    {% with milestone|lookup:project.id as mile %}
+        {% if mile %}
+            {% for m in mile %}
+                <h5>{{m.name}}</h5>
+                <div>{{ m.description|html_to_text|safe}}</div>
+
+            {% endfor %}
+        {% else %}
+            <div>---</div>
+        {% endif %}
+    {% endwith %}
+    </div>
+</div>
+<div>
+    <span class="h3">{% trans 'End Date of Project' %}</span>
+    <span>{{ project.end_date|date:"SHORT_DATE_FORMAT"}}</span>
+</div>
+<br />
+<div>
+    <span>
+        <div class="h3">{% trans "Quarterly Reporting Mechanisms" %}</div>
+        <div class="h3">{% trans "Description of Future Funding Needs" %}</div>
+        <div class="h3">{% trans "Other Relevant Information" %}</div>
+    </span>
+    <span>
+        {{ project.notes|html_to_text|safe}}
+    </span>
+</div>
+
+<div>
+    <pdf:nextpage />
+</div>
+{% endfor %}
+
+

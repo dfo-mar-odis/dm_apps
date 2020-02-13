@@ -6,7 +6,7 @@
 
 
 {% block title %}
-    {% trans "Travel Plans" %}
+    {% trans "Travel Plans" %} {% block subtitle %}{% endblock %}
 {% endblock title %}
 
 {% block body %}
@@ -25,42 +25,42 @@
 
 {% block left_auth %}
 
-{#    <li class="nav-item dropdown">#}
-{#        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"#}
-{#           aria-haspopup="true" aria-expanded="false">#}
-{#            {% trans "Trips" %}#}
-{#        </a>#}
-{#        <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
-{##}
-{#            <a class="dropdown-item" href="{% url 'travel:request_new' %}">#}
-{#                {% trans "New" %}#}
-{#            </a>#}
-{#            <a class="dropdown-item" href="{% url 'travel:request_list' %}">#}
-{#                {% trans "All" %}#}
-{#            </a>#}
-{#            {% if user.user_trip_requests.count > 0 %}#}
-{#                <a class="dropdown-item" href="{% url 'travel:request_list' %}?user={{ user.id }}">#}
-{#                    {% trans "Your Trips" %}#}
-{#                </a>#}
-{#            {% endif %}#}
-{#            {% if user.reviewers.count > 0 %}#}
-{#                <a class="dropdown-item" href="{% url 'travel:request_review_list' "awaiting" %}">#}
-{#                    {% trans "Awaiting your Review" %}#}
-{#                </a>#}
-{#                <a class="dropdown-item" href="{% url 'travel:request_review_list' %}">#}
-{#                    {% trans "Assigned to You" %}#}
-{#                </a>#}
-{#            {% endif %}#}
-{#            {% for group in user.groups.all %}#}
-{#                {% if group.name == "travel_admin" %}#}
-{#                    <a class="dropdown-item" href="{% url 'travel:admin_approval_list' %}">#}
-{#                        {% trans "Awaiting your Admin Approval" %}#}
-{#                    </a>#}
-{#                {% endif %}#}
-{#            {% endfor %}#}
-{##}
-{#        </div>#}
-{#    </li>#}
+    {#    <li class="nav-item dropdown">#}
+    {#        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"#}
+    {#           aria-haspopup="true" aria-expanded="false">#}
+    {#            {% trans "Trips" %}#}
+    {#        </a>#}
+    {#        <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+    {##}
+    {#            <a class="dropdown-item" href="{% url 'travel:request_new' %}">#}
+    {#                {% trans "New" %}#}
+    {#            </a>#}
+    {#            <a class="dropdown-item" href="{% url 'travel:request_list' %}">#}
+    {#                {% trans "All" %}#}
+    {#            </a>#}
+    {#            {% if user.user_trip_requests.count > 0 %}#}
+    {#                <a class="dropdown-item" href="{% url 'travel:request_list' %}?user={{ user.id }}">#}
+    {#                    {% trans "Your Trips" %}#}
+    {#                </a>#}
+    {#            {% endif %}#}
+    {#            {% if user.reviewers.count > 0 %}#}
+    {#                <a class="dropdown-item" href="{% url 'travel:request_review_list' "awaiting" %}">#}
+    {#                    {% trans "Awaiting your Review" %}#}
+    {#                </a>#}
+    {#                <a class="dropdown-item" href="{% url 'travel:request_review_list' %}">#}
+    {#                    {% trans "Assigned to You" %}#}
+    {#                </a>#}
+    {#            {% endif %}#}
+    {#            {% for group in user.groups.all %}#}
+    {#                {% if group.name == "travel_admin" %}#}
+    {#                    <a class="dropdown-item" href="{% url 'travel:admin_approval_list' %}">#}
+    {#                        {% trans "Awaiting your Admin Approval" %}#}
+    {#                    </a>#}
+    {#                {% endif %}#}
+    {#            {% endfor %}#}
+    {##}
+    {#        </div>#}
+    {#    </li>#}
 
     <li class="nav-item"><a class="nav-link" href="{% url 'travel:trip_list' %}">
         {% trans "Trips" %}
@@ -80,12 +80,20 @@
                     {% trans "Settings" %}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
+                    <a class="dropdown-item" href="{% url 'travel:manage_njc_rates' %}">
+                        {% trans "Manage NJC Rates" %}
+                    </a>
                     <a class="dropdown-item" href="{% url 'travel:manage_statuses' %}">
                         {% trans "Manage Statuses" %}
                     </a>
                     <a class="dropdown-item" href="{% url 'travel:manage_help_text' %}">
                         {% trans "Manage Help Text" %}
+                    </a>
+                    <a class="dropdown-item" href="{% url 'travel:manage_cost_categories' %}">
+                        {% trans "Manage Cost Categories" %}
+                    </a>
+                    <a class="dropdown-item" href="{% url 'travel:manage_costs' %}">
+                        {% trans "Manage Costs" %}
                     </a>
 
                 </div>

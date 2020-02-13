@@ -24,7 +24,7 @@ class Species(models.Model):
             return "{}".format(self.english_name)
 
     def get_absolute_url(self):
-        return reverse("vault:species_detail", kwargs={"pk": self.id})
+        return reverse("vault:species_detail", kwargs={"pk":self.id})
 
 class Role(models.Model):
     name = models.CharField(max_length=255)

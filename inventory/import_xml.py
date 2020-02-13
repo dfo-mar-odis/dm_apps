@@ -22,11 +22,12 @@ def create_user(email):
         is_active=0,
         email=email,
     )
+    print("new user created:", my_user.email)
     return my_user
 
 
 def restart():
-    models.Resource.objects.filter(section_id=59).delete()
+    models.Resource.objects.filter(section_id=61).delete()
 
 
 def check_uuids():
@@ -58,26 +59,13 @@ def import_xml():
     #     section_id = 51
     # with open(os.path.join(target_dir, "PED_Records_Output_v3.xml"), 'r', encoding="utf8") as xml_file:
     #     section_id = 59
-    with open(os.path.join(target_dir, "BondSRecords_Output.xml"), 'r', encoding="utf8") as xml_file:
-        section_id = 60
-        if section_id == 52:
-            uuid_list = [
-                "22fe66a9-f619-4014-8701-0a29740d61e1",
-                "592b58ac-06e9-11ea-8df6-f48c505b2a29",
-
-                "9d2958d0-3b90-48e8-8f19-46adac3ffbb9",
-                "74c914ba-06e9-11ea-af8d-f48c505b2a29",
-
-                "b052a68e-61f8-4d3f-909f-cb658d903372",
-                "872cd03a-06e9-11ea-b8ef-f48c505b2a29",
-                "90059268-06e9-11ea-9320-f48c505b2a29",
-                "99fd4d6e-06e9-11ea-b9bf-f48c505b2a29",
-
-                "cba41a6f-6000-4d5c-8761-6340d24c9079",
-                "a906d1de-06e9-11ea-ac0e-f48c505b2a29",
-                "ae0d86c0-06e9-11ea-a0dc-f48c505b2a29",
-            ]
-        elif section_id == 51:
+    # with open(os.path.join(target_dir, "BondSRecords_Output.xml"), 'r', encoding="utf8") as xml_file:
+    #     section_id = 60
+    with open(os.path.join(target_dir, "MetadataCardosoD_20200205a.xml"), 'r', encoding="utf8") as xml_file:
+        section_id = 61
+    # with open(os.path.join(target_dir, "MetadataKraskaP_20200206a.xml"), 'r', encoding="utf8") as xml_file:
+    #     section_id = 62
+        if section_id == 51:
             uuid_list = [
                 "3659734a-3b89-4f9a-8558-f5dde61a7350",  # 2
                 "",
@@ -161,7 +149,6 @@ def import_xml():
         time_period_list = []
         org_list = []
         count = 0
-
         for record in recordset:
             # identifying fields; these should never change, no matter how many times we do the import
             uuid = record.find("record_uuid").text
@@ -295,6 +282,7 @@ def import_xml():
                             start_day = int(start_list[2]) if int(start_list[2]) <= 31 else None
 
                         else:
+                            print(start_list)
                             # # there is special case when two full years are provided
                             start_list = start.split(" ")
 

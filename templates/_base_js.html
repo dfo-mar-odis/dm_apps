@@ -55,8 +55,9 @@
     for (var selector in config) {
         $(selector).chosen(config[selector]);
     }
-    $("select.chosen-select-contains").attr("tabindex",-1)
-    $("select.chosen-select").attr("tabindex",-1)
+    $("select.chosen-select-contains").attr("tabindex",-1);
+    $("select.chosen-select").attr("tabindex",-1);
+    $(".chosen-container").css("width","100%");
 
     var fpConfig = {
         '.fp-date': {},

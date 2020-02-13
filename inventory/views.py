@@ -28,7 +28,7 @@ from . import reports
 from shared_models import models as shared_models
 
 
-# @login_required(login_url='/accounts/login_required/')
+# @login_required(login_url='/accounts/login/')
 # @user_passes_test(in_herring_group, login_url='/accounts/denied/')
 
 def in_inventory_dm_group(user):
@@ -58,7 +58,7 @@ def is_custodian_or_admin(user, resource_id):
 
 
 class CustodianRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return is_custodian_or_admin(self.request.user, self.kwargs["pk"])
@@ -66,12 +66,13 @@ class CustodianRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect('/accounts/denied/custodians-only/')
+            return HttpResponseRedirect(reverse("accounts:denied_access", kwargs={
+                "message": _("Sorry, only custodians and system administrators have access to this view.")}))
         return super().dispatch(request, *args, **kwargs)
 
 
 class InventoryDMRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_inventory_dm_group(self.request.user)
@@ -93,7 +94,7 @@ class CloserTemplateView(TemplateView):
 
 class ResourceListView(FilterView):
     filterset_class = filters.ResourceFilter
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/resource_list.html'
     # queryset = models.Resource.objects.all().order_by("-status", "title_eng")
     queryset = models.Resource.objects.order_by("-status", "title_eng").annotate(
@@ -116,7 +117,7 @@ class ResourceListView(FilterView):
 
 class MyResourceListView(LoginRequiredMixin, ListView):
     model = models.Resource
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/my_resource_list.html'
 
     def get_queryset(self):
@@ -188,7 +189,7 @@ class ResourceFullDetailView(UpdateView):
 class ResourceUpdateView(CustodianRequiredMixin, UpdateView):
     model = models.Resource
     form_class = forms.ResourceForm
-    login_url = '/accounts/login_required/'
+
 
     def get_initial(self):
         return {
@@ -213,7 +214,7 @@ class ResourceUpdateView(CustodianRequiredMixin, UpdateView):
 class ResourceCreateView(LoginRequiredMixin, CreateView):
     model = models.Resource
     form_class = forms.ResourceCreateForm
-    login_url = '/accounts/login_required/'
+
 
     def get_initial(self):
         return {
@@ -247,7 +248,7 @@ class ResourceDeleteView(CustodianRequiredMixin, DeleteView):
     model = models.Resource
     success_url = reverse_lazy('inventory:resource_list')
     success_message = 'The data resource was successfully deleted!'
-    login_url = '/accounts/login_required/'
+
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
@@ -256,7 +257,7 @@ class ResourceDeleteView(CustodianRequiredMixin, DeleteView):
 
 class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Resource
-    login_url = '/accounts/login_required/'
+
     template_name = "inventory/resource_flag_deletion.html"
     form_class = forms.ResourceFlagging
 
@@ -275,7 +276,7 @@ class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
         if object.flagged_4_deletion:
             email = emails.FlagForDeletionEmail(self.object, self.request.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
+            if settings.USE_EMAIL:
                 send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                           recipient_list=email.to_list, fail_silently=False, )
             else:
@@ -292,7 +293,7 @@ class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
 
 class ResourcePublicationFlagUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Resource
-    login_url = '/accounts/login_required/'
+
     template_name = "inventory/resource_flag_publication.html"
     form_class = forms.ResourceFlagging
 
@@ -311,7 +312,7 @@ class ResourcePublicationFlagUpdateView(LoginRequiredMixin, UpdateView):
         if object.flagged_4_publication:
             email = emails.FlagForPublicationEmail(self.object, self.request.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
+            if settings.USE_EMAIL:
                 send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                           recipient_list=email.to_list, fail_silently=False, )
             else:
@@ -375,7 +376,7 @@ class ResourcePersonCreateView(CustodianRequiredMixin, CreateView):
         if object.role.id == 1:
             email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
+            if settings.USE_EMAIL:
                 send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                           recipient_list=email.to_list, fail_silently=False, )
             else:
@@ -406,7 +407,7 @@ class ResourcePersonUpdateView(CustodianRequiredMixin, UpdateView):
         if object.role.id == 1:
             email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
+            if settings.USE_EMAIL:
                 send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                           recipient_list=email.to_list, fail_silently=False, )
             else:
@@ -439,7 +440,7 @@ class ResourcePersonDeleteView(CustodianRequiredMixin, DeleteView):
 
             email = emails.RemovedAsCustodianEmail(object.resource, object.person.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
+            if settings.USE_EMAIL:
                 send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                           recipient_list=email.to_list, fail_silently=False, )
             else:
@@ -956,7 +957,7 @@ class CitationCreateView(LoginRequiredMixin, CreateView):
         return HttpResponseRedirect(reverse('inventory:resource_detail', kwargs={'pk': self.kwargs['resource']}))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 def citation_delete(request, resource, citation):
     my_citation = models.Citation.objects.get(pk=citation)
     my_citation.delete()
@@ -970,7 +971,7 @@ def citation_delete(request, resource, citation):
 class PublicationCreateView(LoginRequiredMixin, CreateView):
     model = models.Publication
     fields = "__all__"
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/publication_form_popout.html'
 
     def form_valid(self, form):
@@ -1027,7 +1028,7 @@ class DataManagementHomeTemplateView(InventoryDMRequiredMixin, TemplateView):
 
 
 class DataManagementCustodianListView(InventoryDMRequiredMixin, TemplateView):
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/dm_custodian_list.html'
 
     def get_context_data(self, **kwargs):
@@ -1054,7 +1055,7 @@ class DataManagementCustodianListView(InventoryDMRequiredMixin, TemplateView):
 
 
 class DataManagementCustodianDetailView(InventoryDMRequiredMixin, DetailView):
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/dm_custodian_detail.html'
     model = models.Person
 
@@ -1077,7 +1078,7 @@ def send_certification_request(request, person):
     me = models.Person.objects.get(user=User.objects.get(pk=self.request.user.id))
     email = emails.CertificationRequestEmail(me, my_person)
     # send the email object
-    if settings.PRODUCTION_SERVER:
+    if settings.USE_EMAIL:
         send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                   recipient_list=email.to_list, fail_silently=False, )
     else:
@@ -1207,7 +1208,7 @@ def send_section_report(request, section):
     me = models.Person.objects.get(user=request.user)
     email = emails.SectionReportEmail(me, head, my_section)
     # send the email object
-    if settings.PRODUCTION_SERVER:
+    if settings.USE_EMAIL:
         send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                   recipient_list=email.to_list, fail_silently=False, )
     else:
@@ -1446,7 +1447,7 @@ class DataResourceDeleteView(CustodianRequiredMixin, DeleteView):
         return reverse_lazy("inventory:resource_detail", kwargs={"pk": self.object.resource.id})
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 def data_resource_clone(request, pk):
     my_object = models.DataResource.objects.get(pk=pk)
     if is_custodian_or_admin(request.user, my_object.resource.id):
@@ -1514,7 +1515,7 @@ class WebServiceDeleteView(CustodianRequiredMixin, DeleteView):
         return reverse_lazy("inventory:resource_detail", kwargs={"pk": self.object.resource.id})
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 def web_service_clone(request, pk):
     my_object = models.WebService.objects.get(pk=pk)
     if is_custodian_or_admin(request.user, my_object.resource.id):
@@ -1523,7 +1524,6 @@ def web_service_clone(request, pk):
     else:
         messages.error(request, _("Sorry, you do not have permissions to do this."))
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
 
 
 # REPORTS #
@@ -1584,7 +1584,7 @@ def export_batch_xml(request, sections):
 
 
 # this is a temp view DJF created to walkover the `program` field to the new `programs` field
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_inventory_dm_group, login_url='/accounts/denied/')
 def temp_formset(request, section):
     context = {}

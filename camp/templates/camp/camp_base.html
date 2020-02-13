@@ -3,7 +3,7 @@
 {% load bootstrap4 %}
 {% block bug_create %}{% url 'tickets:bug_create' 'camp' %}{% endblock bug_create %}
 
-{% block title %}CAMP{% endblock title %}
+{% block title %}CAMP {% block subtitle %}{% endblock %}{% endblock title %}
 
 {% block body %}
   {% block content %}{% endblock content %}

@@ -1,0 +1,29 @@
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    {#  Include all css files  #}
+    {% include "_base_css.html" %}
+
+
+    <title>{% block title %}{% endblock title %}</title>
+
+</head>
+
+<body>
+{% autoescape off %}
+    {% bootstrap_messages size='small' %}
+{% endautoescape %}
+
+{% block body %}{% endblock body %}
+
+{% include "_base_js.html" %}
+{% block body_js %}{% endblock body_js %}
+
+</body>
+</html>

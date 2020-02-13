@@ -20,10 +20,21 @@ USING_LOCAL_DB = False
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ########################################################################
 
+# Should Microsoft Azure AD be used for authentication? By default, if a file called `oauth_settings.yml' is in the root dir, azure aad will be turned on
+# this is a manual override. Uncomment to turn off AAD regardless of the presence of the above mentioned file.
+# AZURE_AD = False
 
+# Should the ticketing app be displayed on the main index page?
+SHOW_TICKETING_APP = True
+
+# Should DEBUG mode be turned on? Uncomment the line below to turn on debugging
+# DEBUG = True
+
+# To add any custom hosts to this application's list of allowed hosts, provide them here
+ALLOWED_HOSTS_TO_ADD = []
 
 # If the line below is uncommented, you will connect to the dev database even if production database strings are present
-FORCE_DEV_DB = True
+# FORCE_DEV_DB = True
 
 # check to see if the which databases are available:
 IS_PROD_DB_AVAILABLE = is_connection_available("PROD")
@@ -45,18 +56,6 @@ elif IS_DEV_DB_AVAILABLE:
 else:
     USING_PRODUCTION_DB = False
     USING_LOCAL_DB = True
-
-
-# Specific which mode you are running in. If this file is on the production server, this setting should be True
-# if this setting = False, static and mediafiles will be served by the development server.
-PRODUCTION_SERVER = False
-
-# this property is only looked at if PRODUCTION_SERVER = True. By setting DEBUG = True, you will override the default programming to set
-# DEBUG = False when using a prod server
-DEBUG = False
-
-# add your hostname here.
-ALLOWED_HOSTS = ['127.0.0.1', ]
 
 # add new applications to this dictionary; grey out any app you do not want
 # the dict key should be the actual name of the app
@@ -85,7 +84,6 @@ APP_DICT = {
 }
 
 MY_INSTALLED_APPS = [app for app in APP_DICT]
-SHOW_TICKETS_APP = True
 
 # Specify your database connection details
 if USING_LOCAL_DB:

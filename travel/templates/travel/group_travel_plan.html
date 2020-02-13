@@ -91,8 +91,8 @@
                 <table class="real">
                     <tr class="real">
                         <th style="width: 200px; text-align: right;" class="real">Date of Crew Change or Group Travel:</th>
-                        <td style="width: 200px; text-align: center;" class="real">{{ object.start_date|date:"F d, Y" }}
-                            to {{ object.end_date|date:"F d, Y" }}</td>
+                        <td style="width: 200px; text-align: center;" class="real">{{ parent.start_date|date:"F d, Y" }}
+                            to {{ parent.end_date|date:"F d, Y" }}</td>
                     </tr>
                 </table>
             </div>
@@ -100,7 +100,7 @@
                 <table class="real">
                     <tr class="real">
                         <th style="width: 200px; text-align: right;" class="real">Plan number (optional):</th>
-                        <td style="width: 200px; text-align: center;" class="real">{{ object.plan_number }}</td>
+                        <td style="width: 200px; text-align: center;" class="real">{{ parent.plan_number }}</td>
                     </tr>
                 </table>
             </div>
@@ -118,11 +118,11 @@
                     <tr>
                         <th style="width: 200px; text-align: right;" class="real">Region/Sector/Branch/<br>Directorate/Section:</th>
                         <td style="width: 400px; text-align: left;"
-                            class="real">{{ object.section.division.branch.region.name }}/{{ object.section.division.branch.name }}/{{ object.section.division.name }}/{{ object.section.name }}</td>
+                            class="real">{{ parent.section.division.branch.region.name }}/{{ parent.section.division.branch.name }}/{{ parent.section.division.name }}/{{ parent.section.name }}</td>
                     </tr>
                     <tr>
                         <th style="width: 200px; text-align: right;" class="real">Trip Purpose:</th>
-                        <td style="width: 400px; text-align: left;" class="real">{{ object.purpose|nz:"n/a" }}</td>
+                        <td style="width: 400px; text-align: left;" class="real">{{ parent.purpose|nz:"n/a" }}</td>
                     </tr>
                     <tr>
                         <th style="width: 200px; text-align: right;" class="real">If "Other" is chosen, provide a detailed explanation:</th>
@@ -132,11 +132,11 @@
                         <th style="width: 200px; text-align: right;" class="real">Trip objective and justification for not using
                             telepresence or other alternative to travel:
                         </th>
-                        <td style="width: 400px; text-align: left;" class="real">{{ object.objective_of_event }}</td>
+                        <td style="width: 400px; text-align: left;" class="real">{{ parent.objective_of_event }}</td>
                     </tr>
                     <tr>
                         <th style="width: 200px; text-align: right;" class="real">Justification for the number of travellers:</th>
-                        <td style="width: 400px; text-align: left;" class="real">{{ object.multiple_attendee_rationale }}</td>
+                        <td style="width: 400px; text-align: left;" class="real">{{ parent.multiple_attendee_rationale }}</td>
                     </tr>
 
                 </table>
@@ -174,16 +174,16 @@
             <th rowspan="1" colspan="2" class="real center" style="text-align: center;">Event</th>
         </tr>
         <tr class="real">
-            <th class="real center" style="text-align: center;">Air</th>
-            <th class="real center" style="text-align: center;">Rail</th>
-            <th class="real center" style="text-align: center;">Rental Motor Vehicle</th>
-            <th class="real center" style="text-align: center;">Personal Motor Vehicle</th>
-            <th class="real center" style="text-align: center;">Taxi</th>
-            <th class="real center" style="text-align: center;">Other Transport</th>
-            <th class="real center" style="text-align: center;">Accommo-<br>dation</th>
-            <th class="real center" style="text-align: center;">Meals</th>
-            <th class="real center" style="text-align: center;">Incidentals</th>
-            <th class="real center" style="text-align: center;">Other</th>
+            {% with object_list.first  as random_object %}
+                {% for key in my_dict|lookup:random_object %}
+                    {% if "accom" in key.name|lower %}
+                        <th class="real center">Accommo-<br>dation</th>
+                    {% else %}
+                        <th class="real center">{{ key }}</th>
+                    {% endif %}
+                {% endfor %}
+            {% endwith %}
+
             <th class="real center" style="text-align: center;">Total Trip Amount</th>
             <th class="real center">Is the trip part of an Event?</th>
             <th class="real center">Event number (optional)</th>
@@ -195,30 +195,22 @@
             <tr>
                 <th class="real center" style="text-align: center;">{{ forloop.counter }}</th>
                 <td class="real center">{{ child.first_name }} {{ child.last_name }}</td>
-                <td class="real center">{{ child.departure_location }} to {{ object.destination }}</td>
+                <td class="real center">{{ child.departure_location }} to {{ parent.destination }}</td>
                 <td class="real center" style="text-align: center;">{{ child.is_public_servant|yesno }}</td>
-                <td class="real center" style="text-align: center;">{{ child.air|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.rail|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.rental_motor_vehicle|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.personal_motor_vehicle|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.taxi|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.other_transport|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.accommodations|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.meals|zero2val:""|currency|nz:"" }}</td>
-                <td class="real center" style="text-align: center;">{{ child.incidentals|zero2val:""|currency|nz:"" }}</td>
-                {% with child.other|nz:0 as other %}
-                    {% with child.registration|nz:0 as reg %}
-                        <td class="real center" style="text-align: center;">{{ other|add:reg|zero2val:""|currency|zero2val:"" }}</td>
-                    {% endwith %}
-                {% endwith %}
-                <td class="real center" style="text-align: center;">{{ child.total_cost|zero2val:""|currency|nz:"" }}</td>
-                {#                <td class="real center">{{ object.total_cost|currency|nz:"" }}</td>#}
-                {% if object.trip %}
-                    <td class="real center">{{ object.trip.has_event_template|yesno:"yes,no,unknown" }}</td>
+                {% for key in my_dict|lookup:child %}
+                    <td class="real center"
+                        style="text-align: center;">{{ my_dict|lookup:child|lookup:key|zero2val:"---"|currency|nz:"---" }}</td>
+                {% endfor %}
+
+
+                <td class="real center" style="text-align: center;">{{ child.total_cost|zero2val:"---"|currency|nz:"---" }}</td>
+                {#                <td class="real center">{{ parent.total_cost|currency|nz:"" }}</td>#}
+                {% if parent.trip %}
+                    <td class="real center">{{ parent.trip.has_event_template|yesno:"yes,no,unknown" }}</td>
                 {% else %}
                     <td class="real center">no</td>
                 {% endif %}
-                <td class="real center">{{ object.trip.number|nz:"" }}</td>
+                <td class="real center">{{ parent.trip.number|nz:"---" }}</td>
 
             </tr>
 
@@ -231,11 +223,14 @@
             <td class="center" style="width: 50px"></td>
 
             {# starting with AIR #}
-            {% for key in key_list %}
-                <td class="real center wset"
-                    style="text-align: center; font-weight: bold">{{ total_dict|lookup:key|zero2val:""|currency }}</td>
+            {% for cat in my_dict.totals %}
+                {% if not cat == "total" %}
+                    <td class="real center wset"
+                        style="text-align: center; font-weight: bold">{{ my_dict.totals|lookup:cat|zero2val:"---"|currency }}</td>
+                {% endif %}
             {% endfor %}
-
+            <td class="real center wset"
+                style="text-align: center; font-weight: bold">{{ my_dict.totals|lookup:"total"|zero2val:"---"|currency }}</td>
             <td class="center wset"></td>
             <td class="center wset"></td>
         </tr>
@@ -252,15 +247,15 @@
                     <th class="right wide-cell">Expenditure Initiation approved by (Print):</th>
                     <td class="left wide-cell" colspan="3">
                         {#                        <u>Serge Doucet, Regional Director General, Gulf Region___</u>#}
-                        {{ object.rdg.user|nz:"n/a" }}
-                        {% if object.rdg %} | Regional Director General | {{ object.rdg.user.shared_models_regions.first }}
+                        {{ parent.rdg.user|nz:"n/a" }}
+                        {% if parent.rdg %} | Regional Director General | {{ parent.rdg.user.shared_models_regions.first }}
                         {% endif %}
                     </td>
                 </tr>
                 <tr>
-                    {% if object.rdg.status_id == 2 %}
+                    {% if parent.rdg.status_id == 2 %}
                         <th class="right wide-cell" style="width: 500px;"></th>
-                        <td class="left wide-cell" style="width: 500px; font-size: 18px">Approved on {{ object.rdg.status_date }}</td>
+                        <td class="left wide-cell" style="width: 500px; font-size: 18px">Approved on {{ parent.rdg.status_date }}</td>
                         <th class="right wide-cell" style="width: 100px;"></th>
                         <td class="left wide-cell" style="width: 200px;"></td>
                     {% else %}
@@ -274,7 +269,7 @@
         </td>
         <td>
             <table style="width: 50%;">
-                {% for r in object.recommenders %}
+                {% for r in parent.recommenders %}
                     {% if not r.status_id == 21 %}
                         <tr>
                             <th class="right wide-cell">Recommended by:</th>
@@ -289,11 +284,11 @@
                         </tr>
                     {% endif %}
                 {% endfor %}
-                {% if object.adm.status_id == 2 %}
+                {% if parent.adm.status_id == 2 %}
                     <tr>
                         <th class="right wide-cell">Approved by:</th>
                         <td rowspan="1" class="left wide-cell">
-                            {{ object.adm.user }} on {{ object.adm.status_date }}
+                            {{ parent.adm.user }} on {{ parent.adm.status_date }}
                         </td>
                     </tr>
                 {% endif %}
@@ -302,3 +297,12 @@
     </table>
 </div>
 
+
+<div class="block">
+    <strong>Additional Notes</strong><br>
+    DETAILED COST BREAKDOWN PER TRAVELLER:<br>
+    {% for object in object_list %}
+        {{ object.first_name }} {{ object.last_name }} &rarr; {{ object.cost_breakdown }}<br>
+    {% endfor %}
+
+</div>

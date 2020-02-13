@@ -17,6 +17,12 @@ from decouple import config, UndefinedValueError
 # Custom variables
 WEB_APP_NAME = "DMApps"
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+
 # check to see if there is a user-defined local configuration file
 # if there is, we we use this as our local configuration, otherwise we use the default
 try:
@@ -28,14 +34,43 @@ except ModuleNotFoundError and ImportError:
 else:
     print("using custom configuration file: 'my_conf.py'.")
 
-PRODUCTION_SERVER = local_conf.PRODUCTION_SERVER
+
+try:
+    DEBUG = local_conf.DEBUG
+except AttributeError:
+    DEBUG = False
+
+try:
+    SHOW_TICKETING_APP = local_conf.SHOW_TICKETING_APP
+except AttributeError:
+    SHOW_TICKETING_APP = True
+
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'dmapps', 'dmapps.ent.dfo-mpo.ca', 'dmapps-dev.azurewebsites.net']
+try:
+    extend_list = local_conf.ALLOWED_HOSTS_TO_ADD
+    if len(extend_list):
+        ALLOWED_HOSTS.extend(local_conf.ALLOWED_HOSTS_TO_ADD)
+        print("The following hostnames are being added to the ALLOWED_HOSTS variable", local_conf.ALLOWED_HOSTS_TO_ADD)
+except AttributeError:
+    pass
+
+
+if os.path.exists(os.path.join(BASE_DIR, 'oauth_settings.yml')):
+    # check to see if a manual override is provided in local configuration file
+    try:
+        AZURE_AD = local_conf.AZURE_AD
+        if not AZURE_AD:
+            print("oauth_setting.yml file present but local settings file manually overriding use of Azure Active Directory authentication")
+    except AttributeError:
+        print("oauth_setting.yml file present. Using Azure Active Directory authentication.")
+        AZURE_AD = True
+else:
+    AZURE_AD = False
+
+
 USING_PRODUCTION_DB = local_conf.USING_PRODUCTION_DB
 USING_LOCAL_DB = local_conf.USING_LOCAL_DB
-try:
-    DEBUG_ON = local_conf.DEBUG
-except AttributeError:
-    DEBUG_ON = False
-
 DEV_DB_NAME = local_conf.DEV_DB_NAME
 DEV_DB_HOST = local_conf.DEV_DB_HOST
 
@@ -50,12 +85,6 @@ if not GOOGLE_API_KEY:
     GOOGLE_API_KEY = ""
     print("no google api key file found.")
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-MEDIA_DIR = os.path.join(BASE_DIR, 'media')
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -65,18 +94,9 @@ try:
 except UndefinedValueError:
     SECRET_KEY = "fdsgfsdf3erdewf232343242fw#ERD$#F#$F$#DD"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-
-# If in production mode, turn off debugging
-if PRODUCTION_SERVER and not DEBUG_ON:
-    DEBUG = False
-else:
-    DEBUG = True
-
-ALLOWED_HOSTS = local_conf.ALLOWED_HOSTS
 
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = 'accounts/login/'
+LOGIN_URL = '/accounts/login/'
 
 # Application definition
 INSTALLED_APPS = [
@@ -99,6 +119,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'tracking.middleware.VisitorTrackingMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -155,14 +176,21 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Email settings
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-# EMAIL_PORT = 587
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
+
+try:
+    EMAIL_HOST = config('EMAIL_HOST', str)
+    EMAIL_HOST_USER = config('EMAIL_HOST_USER', str)
+    EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', str)
+    EMAIL_PORT = config('EMAIL_PORT', int)
+    EMAIL_USE_TLS = config('EMAIL_USE_TLS', bool)
+
+    if not EMAIL_HOST or EMAIL_HOST == "":
+        USE_EMAIL = False
+    else:
+        USE_EMAIL = True
+except UndefinedValueError:
+    print("No email service credentials found in system config.")
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -194,12 +222,12 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 # STATIC_ROOT = STATIC_DIR
 
-if PRODUCTION_SERVER:
-    STATIC_ROOT = STATIC_DIR
-else:
-    STATICFILES_DIRS = [
-        STATIC_DIR,
-    ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # This setting should allow for submitting forms with lots of fields. This is especially relevent when using formsets as in ihub > settings > orgs...
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10000

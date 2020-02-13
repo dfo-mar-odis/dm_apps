@@ -139,7 +139,7 @@ class MyAssignedTicketListView(LoginRequiredMixin, FilterView):
 
 class TicketDetailView(LoginRequiredMixin, DetailView):
     model = models.Ticket
-    login_url = '/accounts/login_required/'
+
     template_name = "tickets/ticket_detail.html"
 
     # form_class = forms.TicketDetailForm
@@ -186,7 +186,7 @@ def send_resolved_email(request, ticket):
     # create a new email object
     email = emails.TicketResolvedEmail(my_ticket)
     # send the email object
-    if settings.PRODUCTION_SERVER:
+    if settings.USE_EMAIL:
         send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email, recipient_list=email.to_list,
                   fail_silently=False, )
     else:
@@ -227,7 +227,7 @@ def mark_ticket_active(request, ticket):
 class TicketUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Ticket
     template_name = "tickets/ticket_form.html"
-    login_url = '/accounts/login_required/'
+
     form_class = forms.TicketForm
 
     def get_context_data(self, **kwargs):
@@ -252,12 +252,12 @@ class TicketUpdateView(LoginRequiredMixin, UpdateView):
 class TicketDeleteView(LoginRequiredMixin, DeleteView):
     model = models.Ticket
     success_url = reverse_lazy('tickets:list')
-    login_url = '/accounts/login_required/'
+
 
 
 class TicketCreateView(LoginRequiredMixin, CreateView):
     model = models.Ticket
-    login_url = '/accounts/login_required/'
+
     form_class = forms.TicketForm
 
     def get_initial(self):
@@ -278,7 +278,7 @@ class TicketCreateView(LoginRequiredMixin, CreateView):
         # create a new email object
         email = emails.NewTicketEmail(self.object)
         # send the email object
-        if settings.PRODUCTION_SERVER:
+        if settings.USE_EMAIL:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
         else:
@@ -299,7 +299,7 @@ class TicketCreateView(LoginRequiredMixin, CreateView):
 
 class TicketCreateViewPopout(LoginRequiredMixin, CreateView):
     model = models.Ticket
-    login_url = '/accounts/login_required/'
+
     form_class = forms.FeedbackForm
     template_name = "tickets/ticket_form_popout.html"
 
@@ -328,7 +328,7 @@ class TicketCreateViewPopout(LoginRequiredMixin, CreateView):
         # create a new email object
         email = emails.NewTicketEmail(self.object)
         # send the email object
-        if settings.PRODUCTION_SERVER:
+        if settings.USE_EMAIL:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
         else:
@@ -379,7 +379,7 @@ class TicketDetailViewPopout(LoginRequiredMixin, DetailView):
 class TicketNoteUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Ticket
     template_name = "tickets/ticket_note_form.html"
-    login_url = '/accounts/login_required/'
+
     form_class = forms.TicketNoteForm
 
 
@@ -390,7 +390,7 @@ class FileCreateView(LoginRequiredMixin, CreateView):
     model = models.File
     # fields = '__all__'
     template_name = 'tickets/file_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.FileForm
 
     def get_initial(self):
@@ -403,7 +403,7 @@ class FileCreateView(LoginRequiredMixin, CreateView):
         # create a new email object
         email = emails.NewFileAddedEmail(self.object)
         # send the email object
-        if settings.PRODUCTION_SERVER:
+        if settings.USE_EMAIL:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
         else:
@@ -480,7 +480,7 @@ class FollowUpCreateView(LoginRequiredMixin, CreateView):
     model = models.FollowUp
     # fields = '__all__'
     template_name = 'tickets/followup_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.FollowUpForm
 
     def get_context_data(self, *args, **kwargs):
@@ -502,7 +502,7 @@ class FollowUpCreateView(LoginRequiredMixin, CreateView):
         # create a new email object
         email = emails.NewFollowUpEmail(self.object)
         # send the email object
-        if settings.PRODUCTION_SERVER:
+        if settings.USE_EMAIL:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
         else:
@@ -539,7 +539,7 @@ class FollowUpUpdateView(LoginRequiredMixin, UpdateView):
         # create a new email object
         email = emails.NewFollowUpEmail(self.object)
         # send the email object
-        if settings.PRODUCTION_SERVER:
+        if settings.USE_EMAIL:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
         else:

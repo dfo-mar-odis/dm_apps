@@ -1,7 +1,10 @@
 from django.conf import settings
+from django.contrib import messages
 from django.core.mail import send_mail
 from django.db import IntegrityError
 from django.utils import timezone
+from django.utils.translation import gettext as _
+from Levenshtein import distance
 
 from . import models
 from . import emails
@@ -119,7 +122,7 @@ def set_request_status(trip_request):
             # send an email to the trip_request owner
             my_email = emails.StatusUpdateEmail(trip_request)
             # # send the email object
-            if settings.PRODUCTION_SERVER:
+            if settings.USE_EMAIL:
                 send_mail(message='', subject=my_email.subject, html_message=my_email.message, from_email=my_email.from_email,
                           recipient_list=my_email.to_list, fail_silently=False, )
             else:
@@ -136,7 +139,7 @@ def set_request_status(trip_request):
             # send an email to the trip_request owner
             my_email = emails.StatusUpdateEmail(trip_request)
             # # send the email object
-            if settings.PRODUCTION_SERVER:
+            if settings.USE_EMAIL:
                 send_mail(message='', subject=my_email.subject, html_message=my_email.message, from_email=my_email.from_email,
                           recipient_list=my_email.to_list, fail_silently=False, )
             else:
@@ -206,7 +209,7 @@ def approval_seeker(trip_request):
 
             if my_email:
                 # send the email object
-                if settings.PRODUCTION_SERVER:
+                if settings.USE_EMAIL:
                     send_mail(message='', subject=my_email.subject, html_message=my_email.message, from_email=my_email.from_email,
                               recipient_list=my_email.to_list, fail_silently=False, )
                 else:
@@ -214,3 +217,96 @@ def approval_seeker(trip_request):
 
             # Then, lets set the trip_request status again to account for the fact that something happened
             set_request_status(trip_request)
+
+
+def populate_trip_request_costs(request, trip_request):
+    for obj in models.Cost.objects.all():
+        new_item, created = models.TripRequestCost.objects.get_or_create(trip_request=trip_request, cost=obj)
+        if created:
+            # breakfast
+            if new_item.cost_id == 9:
+                try:
+                    new_item.rate_cad = models.NJCRates.objects.get(pk=1).amount
+                    new_item.save()
+                except models.NJCRates.DoesNotExist:
+                    messages.warning(request,
+                                     _("NJC rates for breakfast missing from database. Please let your system administrator know."))
+            # lunch
+            elif new_item.cost_id == 10:
+                try:
+                    new_item.rate_cad = models.NJCRates.objects.get(pk=2).amount
+                    new_item.save()
+                except models.NJCRates.DoesNotExist:
+                    messages.warning(request, _("NJC rates for lunch missing from database. Please let your system administrator know."))
+            # supper
+            elif new_item.cost_id == 11:
+                try:
+                    new_item.rate_cad = models.NJCRates.objects.get(pk=3).amount
+                    new_item.save()
+                except models.NJCRates.DoesNotExist:
+                    messages.warning(request, _("NJC rates for supper missing from database. Please let your system administrator know."))
+            # incidentals
+            elif new_item.cost_id == 12:
+                try:
+                    new_item.rate_cad = models.NJCRates.objects.get(pk=4).amount
+                    new_item.save()
+                except models.NJCRates.DoesNotExist:
+                    messages.warning(request,
+                                     _("NJC rates for incidentals missing from database. Please let your system administrator know."))
+
+    messages.success(request, _("All costs have been added to this project."))
+
+
+def clear_empty_trip_request_costs(trip_request):
+    for obj in models.Cost.objects.all():
+        for cost in models.TripRequestCost.objects.filter(trip_request=trip_request, cost=obj):
+            if (cost.amount_cad is None or cost.amount_cad == 0):
+                cost.delete()
+
+
+def compare_strings(str1, str2):
+    def __strip_string__(string):
+        return str(string.lower().replace(" ", "").split(",")[0])
+
+    try:
+        return distance(__strip_string__(str1), __strip_string__(str2))
+    except AttributeError:
+        return 9999
+
+
+def manage_trip_warning(trip):
+    """
+    This function will decide if sending an email to NCR is necessary based on
+    1) the total costs accrued for a trip
+    2) whether or not a warning has already been sent
+
+    :param trip: an instance of Trip
+    :return: NoneObject
+    """
+
+    # first make sure we are not receiving a NoneObject
+    try:
+        trip.non_res_total_cost
+    except AttributeError:
+        pass
+    else:
+
+        # If the trip cost is below 10k, make sure the warning field is null and an then do nothing more :)
+        if trip.non_res_total_cost < 10000:
+            if trip.cost_warning_sent:
+                trip.cost_warning_sent = None
+                trip.save()
+
+        # if the trip is >= 10K, we simply need to send an email to NCR
+        else:
+            if not trip.cost_warning_sent:
+
+                my_email = emails.TripCostWarningEmail(trip)
+                # # send the email object
+                if settings.USE_EMAIL:
+                    send_mail(message='', subject=my_email.subject, html_message=my_email.message, from_email=my_email.from_email,
+                              recipient_list=my_email.to_list, fail_silently=False, )
+                else:
+                    print(my_email)
+                trip.cost_warning_sent = timezone.now()
+                trip.save()

@@ -1,10 +1,18 @@
-EMM_MAKE,EMM_MODEL,EMM_DEPTH_RATING,EMM_DESCRIPTION,EQT_NAME,PRM_NAME
-Akoostix,Guardbuoy,200,Akoostix autonomous recorder ,Acoustic recorder,Acoustic
-AURAL,M2,200,Multi-Electronique Autonomous Underwater Recorder for Acoustic Listening,Acoustic recorder,Acoustic
-Cornell,MARU,2000,Marine Autonomous Recording Unit (pop-up),Acoustic recorder,Acoustic
-JASCO,AMAR G3A-AL-2X,2500,Autonomous Multichannel Acoustic Recorder (Generation 3) - Deep,Acoustic recorder,Acoustic
-JASCO,AMAR G3A-AL-4X,2500,Autonomous Multichannel Acoustic Recorder (Generation 3) - Extended Deep,Acoustic recorder,Acoustic
-JASCO,AMAR G3-PVC-2X,250,Autonomous Multichannel Acoustic Recorder (Generation 3) - Shallow,Acoustic recorder,Acoustic
-JASCO,AMAR G4A-AL-6.5,2500,Autonomous Multichannel Acoustic Recorder (Generation 4) - Extended Deep,Acoustic recorder,Acoustic
-JASCO,AMAR G4-PVC-2X-6.5,250,Autonomous Multichannel Acoustic Recorder (Generation 4) - Shallow,Acoustic recorder,Acoustic
-JASCO,AMAR UD-G4,6700,Autonomous Multichannel Acoustic Recorder (Generation 4) - Ultra Deep,Acoustic recorder,Acoustic
+EMM_MAKE,EMM_MODEL,EMM_DEPTH_RATING,EMM_DESCRIPTION,EQT_NAME,PRM,ERT_RECORDER_TYPE,Internal Hydrophone
+Akoostix,Guardbuoy,200,Akoostix autonomous recorder ,Acoustic recorder,,Guardbuoy,yes
+AURAL,M2,200,Multi-Electronique Autonomous Underwater Recorder for Acoustic Listening,Acoustic recorder,,AURAL,yes
+Cornell,MARU,2000,Marine Autonomous Recording Unit (pop-up),Acoustic recorder,,MARU,yes
+JASCO,AMAR G3A-AL-2X,2500,Autonomous Multichannel Acoustic Recorder (Generation 3) - Deep,Acoustic recorder,,AMAR,no
+JASCO,AMAR G3A-AL-4X,2500,Autonomous Multichannel Acoustic Recorder (Generation 3) - Extended Deep,Acoustic recorder,,AMAR,no
+JASCO,AMAR G3-PVC-2X,250,Autonomous Multichannel Acoustic Recorder (Generation 3) - Shallow,Acoustic recorder,,AMAR,no
+JASCO,AMAR G4A-AL-6.5,2500,Autonomous Multichannel Acoustic Recorder (Generation 4) - Extended Deep,Acoustic recorder,,AMAR,no
+JASCO,AMAR G4-PVC-2X-6.5,250,Autonomous Multichannel Acoustic Recorder (Generation 4) - Shallow,Acoustic recorder,,AMAR,no
+JASCO,AMAR UD-G4,6700,Autonomous Multichannel Acoustic Recorder (Generation 4) - Ultra Deep,Acoustic recorder,,AMAR,no
+GeoSpectrum,M36-V35-100,2500,GeoSpectrum Hydrophone,Hydrophone,,,
+GeoSpectrum,M8E,,GeoSpectrum Hydrophone,Hydrophone,,,
+GeoSpectrum,M8E-51,,GeoSpectrum Hydrophone,Hydrophone,,,
+GeoSpectrum,M8EV35dB,,GeoSpectrum Hydrophone,Hydrophone,,,
+GeoSpectrum,M8Q-51,3500,GeoSpectrum Hydrophone,Hydrophone,,,
+GeoSpectrum,M8Q-51-1M,3500,GeoSpectrum Hydrophone,Hydrophone,,,
+High Tech Inc,HTI-99-HF,2000,HTI Hydrophone - High-Frequency,Hydrophone,,,
+High Tech Inc,HTI-96-MIN,3048,HTI Hydrophone,Hydrophone,,,

@@ -65,13 +65,16 @@ my_dev.cnf
 # PyCharm settings and maps #
 #############################
 /.IDEA/*
+.idea/*
 
 # prod.cnf file should not be in the repo since it has the credentials + connection strings for the production db #
 ###################################################################################################################
 prod.cnf
-my_dev.cnf
-my_stable_reqs.txt
-.env
+
+
+# Ignore all files dealing with enviornment variables except the sample file
+.env*
+!.env_sample
 
 # Google API key #
 ##################
@@ -84,3 +87,8 @@ temp/
 # Shell scripts #
 #################
 *.sh
+
+
+# AZURE AD #
+############
+oauth_settings.yml

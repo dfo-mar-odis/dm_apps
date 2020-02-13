@@ -25,7 +25,7 @@ def in_oceanography_group(user):
         return True
 
 class OceanographyAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_oceanography_group(self.request.user)
@@ -43,7 +43,7 @@ def in_oceanography_admin_group(user):
 
 
 class OceanographyAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_oceanography_admin_group(self.request.user)
@@ -140,7 +140,7 @@ class MissionCreateView(OceanographyAdminRequiredMixin, CreateView):
     template_name = "oceanography/mission_form.html"
     model = shared_models.Cruise
     form_class = forms.MissionForm
-    login_url = '/accounts/login_required/'
+
 
     def get_success_url(self, **kwargs):
         return reverse_lazy("oceanography:mission_detail", kwargs={"pk": self.object.id})
@@ -187,7 +187,7 @@ class BottleUpdateView(OceanographyAdminRequiredMixin, UpdateView):
     template_name = "oceanography/bottle_form.html"
     model = models.Bottle
     form_class = forms.BottleForm
-    login_url = '/accounts/login_required/'
+
 
     def get_success_url(self, **kwargs):
         return reverse_lazy("oceanography:bottle_detail", kwargs={"pk": self.object.id})

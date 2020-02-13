@@ -118,7 +118,81 @@ class SpeciesDeleteView(VaultAccessRequired, DeleteView):
         messages.success(self.request, self.success_message)
         return super().delete(request, *args, **kwargs)
 
+=======
 #
+#
+# #
+# # # OBSERVATIONPLAFORM #
+# # ###########
+# #
+#
+class ObservationPlatformListView(VaultAccessRequired, FilterView):
+    template_name = "vault/observationplatform_list.html"
+    filterset_class = filters.ObservationPlatformFilter
+    queryset = models.ObservationPlatform.objects.annotate(
+        search_term=Concat('authority', 'owner', 'make_model', 'name', 'longname', 'id', output_field=TextField()))
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["my_object"] = models.ObservationPlatform.objects.first()
+        context["field_list"] = [
+            'id',
+            'observation_platform_type',
+            'authority',
+            'make_model',
+            'owner',
+            'name',
+            'longname',
+        ]
+        return context
+
+#
+class ObservationPlatformDetailView(VaultAccessRequired, DetailView):
+    model = models.ObservationPlatform
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["field_list"] = [
+            'id',
+            'observation_platform_type',
+            'authority',
+            'make_model',
+            'owner',
+            'name',
+            'longname',
+        ]
+        return context
+
+#
+class ObservationPlatformUpdateView(VaultAccessRequired, UpdateView):
+    model = models.ObservationPlatform
+    form_class = forms.ObservationPlatformForm
+
+    def form_valid(self, form):
+        messages.success(self.request, _("ObservationPlatform record successfully updated for : {}".format(self.object)))
+        return super().form_valid(form)
+
+
+class ObservationPlatformCreateView(VaultAccessRequired, CreateView):
+    model = models.ObservationPlatform
+    form_class = forms.ObservationPlatformForm
+
+    def form_valid(self, form):
+        messages.success(self.request, _("ObservationPlatform record successfully created for : {}".format(self.object)))
+        return super().form_valid(form)
+
+
+class ObservationPlatformDeleteView(VaultAccessRequired, DeleteView):
+    model = models.ObservationPlatform
+    permission_required = "__all__"
+    success_url = reverse_lazy('vault:observationplatform_list')
+    success_message = 'The observation plaform was successfully deleted!'
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)
+
+
 # #
 # # # INSTRUMENTS #
 # # ###########

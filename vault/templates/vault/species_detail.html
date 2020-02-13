@@ -21,19 +21,18 @@
     <div class="container">
         <br>
         <h1>{{ object }}</h1>
-        <p>
+        <div class="btn-group">
             <a class="btn btn-warning" href="{% url 'vault:species_edit' object.id %}">Edit</a>
             <a class="btn btn-danger" href="{% url 'vault:species_delete' object.id %}">Delete</a>
-        </p>
+        </div>
 
         <br><br>
 
         <div class="row">
             <div class="col-6">
-
                 <table class="table table-striped">
                 {% for field in field_list %}
-                    {% verbose_field_display object field %}
+                    {% verbose_td_display object field %}
                 {% endfor %}
                 </table>
             </div>

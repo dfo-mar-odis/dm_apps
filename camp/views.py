@@ -35,7 +35,7 @@ def in_camp_group(user):
 
 
 class CampAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_camp_group(self.request.user)
@@ -54,7 +54,7 @@ def in_camp_admin_group(user):
 
 
 class CampAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_camp_admin_group(self.request.user)

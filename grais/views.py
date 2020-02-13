@@ -33,7 +33,7 @@ def in_grais_admin_group(user):
 
 
 class GraisAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_grais_group(self.request.user)
@@ -46,7 +46,7 @@ class GraisAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
 
 class GraisAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_grais_admin_group(self.request.user)
@@ -152,7 +152,7 @@ class SampleNoteCreateView(GraisAccessRequiredMixin, CreateView):
         }
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def sample_note_delete(request, pk):
     note = models.SampleNote.objects.get(pk=pk)
@@ -606,7 +606,7 @@ class SpeciesObservationUpdatePopoutView(GraisAdminRequiredMixin, UpdateView):
         return HttpResponseRedirect(reverse('grais:close_me'))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def species_observation_delete(request, type, pk, backto):
     if type == "sample":
@@ -855,7 +855,7 @@ class FollowUpCreateView(GraisAccessRequiredMixin, CreateView):
         }
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def follow_up_delete(request, pk):
     followup = models.FollowUp.objects.get(pk=pk)
@@ -1260,7 +1260,7 @@ class CrabUpdateViewPopout(GraisAdminRequiredMixin, UpdateView):
         return HttpResponseRedirect(reverse('grais:close_me'))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def crab_delete(request, pk):
     crab = models.Crab.objects.get(pk=pk)
@@ -1314,7 +1314,7 @@ class BycatchUpdateViewPopout(GraisAdminRequiredMixin, CreateView):
         return HttpResponseRedirect(reverse('grais:close_me'))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def bycatch_delete(request, pk):
     bycatch = models.Bycatch.objects.get(pk=pk)

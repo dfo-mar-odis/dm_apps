@@ -3,7 +3,7 @@
 {% load bootstrap4 %}
 {% block bug_create %}{% url 'tickets:bug_create' 'oceanography' %}{% endblock bug_create %}
 
-{% block title %}Oceanography{% endblock title %}
+{% block title %}Oceanography {% block subtitle %}{% endblock %}{% endblock title %}
 
 {% block body %}
   {% block content %}{% endblock content %}

@@ -45,7 +45,7 @@ def in_ihub_admin_group(user):
 
 
 class iHubAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_ihub_admin_group(self.request.user)
@@ -65,7 +65,7 @@ def in_ihub_edit_group(user):
 
 
 class iHubEditRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_ihub_edit_group(self.request.user)
@@ -78,7 +78,7 @@ class iHubEditRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
 
 class SiteLoginRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return True
@@ -336,7 +336,7 @@ class OrganizationDeleteView(iHubAdminRequiredMixin, DeleteView):
 class MemberCreateView(iHubEditRequiredMixin, CreateView):
     model = ml_models.OrganizationMember
     template_name = 'ihub/member_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.MemberForm
 
     def get_initial(self):
@@ -371,7 +371,7 @@ class MemberUpdateView(iHubEditRequiredMixin, UpdateView):
     model = ml_models.OrganizationMember
     template_name = 'ihub/member_form_popout.html'
     form_class = forms.MemberForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         object = form.save()
@@ -481,7 +481,7 @@ class EntryCreateView(iHubEditRequiredMixin, CreateView):
         email = emails.NewEntryEmail(object)
         # send the email object
 
-        if settings.PRODUCTION_SERVER:
+        if settings.USE_EMAIL:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
         else:
@@ -543,7 +543,7 @@ class NoteUpdateView(iHubEditRequiredMixin, UpdateView):
         return HttpResponseRedirect(reverse('ihub:close_me'))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_edit_group, login_url='/accounts/denied/')
 def note_delete(request, pk):
     object = models.EntryNote.objects.get(pk=pk)
@@ -558,7 +558,7 @@ def note_delete(request, pk):
 class EntryPersonCreateView(iHubEditRequiredMixin, CreateView):
     model = models.EntryPerson
     template_name = 'ihub/entry_person_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.EntryPersonForm
 
     def get_initial(self):
@@ -582,14 +582,14 @@ class EntryPersonUpdateView(iHubEditRequiredMixin, UpdateView):
     model = models.EntryPerson
     template_name = 'ihub/entry_person_form_popout.html'
     form_class = forms.EntryPersonForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         object = form.save()
         return HttpResponseRedirect(reverse('ihub:close_me'))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_edit_group, login_url='/accounts/denied/')
 def entry_person_delete(request, pk):
     object = models.EntryPerson.objects.get(pk=pk)
@@ -604,7 +604,7 @@ def entry_person_delete(request, pk):
 class FileCreateView(iHubEditRequiredMixin, CreateView):
     model = models.File
     template_name = 'ihub/file_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.FileForm
     success_url = reverse_lazy('ihub:close_me')
 
@@ -625,7 +625,7 @@ class FileUpdateView(iHubEditRequiredMixin, UpdateView):
     model = models.File
     template_name = 'ihub/file_form_popout.html'
     form_class = forms.FileForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         object = form.save()
@@ -638,7 +638,7 @@ class FileUpdateView(iHubEditRequiredMixin, UpdateView):
         }
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_edit_group, login_url='/accounts/denied/')
 def file_delete(request, pk):
     object = models.File.objects.get(pk=pk)
@@ -834,7 +834,7 @@ class OrganizationCueCard(PDFTemplateView):
 
 
 class PDFSummaryReport(PDFTemplateView):
-    login_url = '/accounts/login_required/'
+
     template_name = "ihub/report_pdf_summary.html"
 
     def get_pdf_filename(self):
@@ -934,7 +934,7 @@ class PDFSummaryReport(PDFTemplateView):
 
 
 class ConsultationLogPDFTemplateView(PDFTemplateView):
-    login_url = '/accounts/login_required/'
+
     template_name = "ihub/report_consultation_log.html"
 
     # def get_pdf_filename(self):
@@ -1001,7 +1001,7 @@ class ConsultationLogPDFTemplateView(PDFTemplateView):
 
 # SETTINGS #
 ############
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_sectors(request):
     if request.method == 'POST':
@@ -1026,7 +1026,7 @@ def manage_sectors(request):
     return render(request, 'ihub/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_orgs(request):
     if request.method == 'POST':
@@ -1052,7 +1052,7 @@ def delete_status(request, pk):
     return HttpResponseRedirect(reverse("ihub:manage_statuses"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_statuses(request):
     if request.method == 'POST':
@@ -1084,7 +1084,7 @@ def delete_entry_type(request, pk):
     return HttpResponseRedirect(reverse("ihub:manage_entry_types"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_entry_types(request):
     if request.method == 'POST':
@@ -1116,7 +1116,7 @@ def delete_funding_purpose(request, pk):
     return HttpResponseRedirect(reverse("ihub:manage_funding_purposes"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_funding_purposes(request):
     if request.method == 'POST':
@@ -1147,7 +1147,7 @@ def delete_reserve(request, pk):
     return HttpResponseRedirect(reverse("ihub:manage_reserves"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_reserves(request):
     if request.method == 'POST':
@@ -1177,7 +1177,7 @@ def delete_nation(request, pk):
     return HttpResponseRedirect(reverse("ihub:manage_nations"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_nations(request):
     if request.method == 'POST':
@@ -1207,7 +1207,7 @@ def delete_program(request, pk):
     return HttpResponseRedirect(reverse("ihub:manage_programs"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def manage_programs(request):
     if request.method == 'POST':

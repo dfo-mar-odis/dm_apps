@@ -1,0 +1,50 @@
+{% extends "vault/vault_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'vault:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Species List</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="big-header">Species List </h1>
+
+
+        <table class="table table-hover table-sm sortable" style="width: auto">
+            <thead>
+                <th scope="col">ID</th>
+				<th scope="col">Code</th>
+                <th scope="col">Common name (English)</th>
+                <th scope="col">Common name (French)</th>
+                <th scope="col">Scientific name</th>
+                <th scope="col">VOR code</th>
+                <th scope="col">Quebec code</th>
+{#                <th scope="col">AphiaID</th>#}
+            </thead>
+            <tbody>
+            {% for object in filter.qs %}
+                <tr href="{% url 'vault:species_detail' object.id %}">
+                    <td>{{ object.id }}</td>
+					<td>{{ object.code }}</td>
+                    <td>{{ object.english_name }}</td>
+                    <td>{{ object.french_name }}</td>
+                    <td><em>{{ object.latin_name }}</em></td>
+                    <td>{{ object.vor_code }}</td>
+                    <td>{{ object.quebec_code }}</td>
+{#                    <td>{{ object.aphia_id }}</td>#}
+                </tr>
+            {% endfor %}
+            <br>
+            </tbody>
+        </table>
+
+
+    </div>
+
+{% endblock content %}

@@ -31,7 +31,7 @@ def in_shares_group(user):
 
 
 class SharesAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_shares_group(self.request.user)
@@ -49,7 +49,7 @@ def in_shares_admin_group(user):
 
 
 class SharesAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_shares_admin_group(self.request.user)
@@ -201,7 +201,7 @@ def send_instructions(request, pk):
     my_user = models.User.objects.get(pk=pk)
     email = emails.SendInstructionsEmail(my_user)
     # send the email object
-    if settings.PRODUCTION_SERVER:
+    if settings.USE_EMAIL:
         send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                   recipient_list=email.to_list, fail_silently=False, )
     else:

@@ -36,7 +36,7 @@ def in_spot_group(user):
 
 
 class SpotAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_spot_group(self.request.user)
@@ -54,7 +54,7 @@ def in_spot_admin_group(user):
 
 
 class SpotAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_spot_admin_group(self.request.user)
@@ -162,7 +162,7 @@ class OrganizationDeleteView(SpotAccessRequiredMixin, DeleteView):
 class MemberCreateView(SpotAccessRequiredMixin, CreateView):
     model = ml_models.OrganizationMember
     template_name = 'spot/member_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.MemberForm
 
     def get_initial(self):
@@ -197,7 +197,7 @@ class MemberUpdateView(SpotAccessRequiredMixin, UpdateView):
     model = ml_models.OrganizationMember
     template_name = 'spot/member_form_popout.html'
     form_class = forms.MemberForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         object = form.save()
@@ -472,7 +472,7 @@ class ProjectDeleteView(SpotAdminRequiredMixin, DeleteView):
 class ProjectPersonCreateView(SpotAccessRequiredMixin, CreateView):
     model = models.ProjectPerson
     template_name = 'spot/project_person_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.ProjectPersonForm
 
     def get_initial(self):
@@ -521,7 +521,7 @@ class ProjectPersonUpdateView(SpotAccessRequiredMixin, UpdateView):
     model = models.ProjectPerson
     template_name = 'spot/project_person_form_popout.html'
     form_class = forms.ProjectPersonForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         my_object = form.save()
@@ -918,7 +918,7 @@ class FileUpdateView(SpotAccessRequiredMixin, UpdateView):
     model = models.File
     template_name = 'spot/file_form_popout.html'
     form_class = forms.FileForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         object = form.save()
@@ -949,7 +949,7 @@ class FileDeleteView(SpotAccessRequiredMixin, DeleteView):
 class SiteCreateView(SpotAccessRequiredMixin, CreateView):
     model = models.Site
     template_name = 'spot/site_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.SiteForm
 
     def get_initial(self):
@@ -974,7 +974,7 @@ class SiteUpdateView(SpotAccessRequiredMixin, UpdateView):
     model = models.Site
     template_name = 'spot/site_form_popout.html'
     form_class = forms.SiteForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         my_object = form.save()
@@ -1057,7 +1057,7 @@ class NegotiationReport(SpotAccessRequiredMixin, TemplateView):
 
 # SETTINGS #
 ############
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_spot_admin_group, login_url='/accounts/denied/')
 def manage_activities(request):
     qs = models.Activity.objects.all()
@@ -1086,7 +1086,7 @@ def manage_activities(request):
     return render(request, 'spot/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_spot_admin_group, login_url='/accounts/denied/')
 def delete_activity(request, pk):
     my_obj = models.Activity.objects.get(pk=pk)
@@ -1094,7 +1094,7 @@ def delete_activity(request, pk):
     return HttpResponseRedirect(reverse("spot:manage_activities"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_spot_admin_group, login_url='/accounts/denied/')
 def manage_watersheds(request):
     qs = models.Watershed.objects.all()
@@ -1122,7 +1122,7 @@ def manage_watersheds(request):
     return render(request, 'spot/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_spot_admin_group, login_url='/accounts/denied/')
 def delete_watershed(request, pk):
     my_obj = models.Watershed.objects.get(pk=pk)
@@ -1130,7 +1130,7 @@ def delete_watershed(request, pk):
     return HttpResponseRedirect(reverse("spot:manage_watersheds"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_spot_admin_group, login_url='/accounts/denied/')
 def manage_basins(request):
     qs = models.DrainageBasin.objects.all()
@@ -1155,7 +1155,7 @@ def manage_basins(request):
     return render(request, 'spot/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_spot_admin_group, login_url='/accounts/denied/')
 def delete_basin(request, pk):
     my_obj = models.DrainageBasin.objects.get(pk=pk)

@@ -1,6 +1,13 @@
 {% load i18n %}
 {% load verbose_names %}
 
+<style>
+    .btn-xsm{
+        font-size: small;
+        padding: 3px;
+    }
+</style>
+
 <div class="projects">
     <div class="mb-3">
         <h2>{% trans "By Approval Status" %}</h2>
@@ -28,9 +35,9 @@
                             {% for field in field_list %}
                                 <td>{% get_field_value object field %}</td>
                             {% endfor %}
-                            <td>
+                            <td style="width: 100px">
                                 <a href="#" pop-href="{% url 'projects:project_approve' object.id %}"
-                                   class="stop-pop btn btn-sm btn-danger">
+                                   class="stop-pop btn btn-xsm btn-danger">
                                     {% trans "unapprove" %}
                                 </a>
                             </td>
@@ -72,14 +79,14 @@
                             {% for field in field_list %}
                                 <td>{% get_field_value object field %}</td>
                             {% endfor %}
-                            <td>
+                            <td style="width: 150px">
                                 <a href="#" pop-href="{% url 'projects:project_submit' object.id 1 %}"
-                                   class="stop-pop btn btn-sm btn-warning">
+                                   class="stop-pop btn btn-xsm btn-warning">
                                     {% trans "un-submit" %}
                                 </a>
 
                                 <a href="#" pop-href="{% url 'projects:project_approve' object.id %}"
-                                   class="stop-pop btn btn-sm btn-success">
+                                   class="stop-pop btn btn-xsm btn-success">
                                     {% trans "approve" %}
                                 </a>
                             </td>
@@ -120,13 +127,13 @@
                             {% for field in field_list %}
                                 <td>{% get_field_value object field %}</td>
                             {% endfor %}
-                            <td>
+                            <td style="width: 150px">
                                 <a href="#" pop-href="{% url 'projects:project_submit' object.id 1 %}"
-                                   class="stop-pop btn btn-sm btn-warning">
+                                   class="stop-pop btn btn-xsm btn-warning">
                                     {% trans "submit" %}
                                 </a>
                                 <a href="#" pop-href="{% url 'projects:project_delete' object.id 1 %}"
-                                   class="stop-pop btn btn-sm btn-danger">
+                                   class="stop-pop btn btn-xsm btn-danger">
                                     {% trans "delete" %}
                                 </a>
                             </td>

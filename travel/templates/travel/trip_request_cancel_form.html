@@ -1,0 +1,96 @@
+{% extends "travel/travel_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+
+
+
+{% block subtitle %}
+    -
+    {% if object.status.id == 22 %}
+        {% trans "Un-cancel request" %}
+    {% else %}
+        {% trans "Cancel request" %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if object.status.id == 22 %}
+        {% trans "Un-cancel request" as my_text %}
+        {% trans "un-cancel" as my_action %}
+    {% else %}
+        {% trans "Cancel request" as my_text %}
+        {% trans "cancel" as my_action %}
+    {% endif %}
+    <style>
+        .label {
+            font-weight: bold;
+        }
+
+        table, td {
+            font-size: small;
+        }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">
+                {% trans "Home" %}
+            </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'travel:request_list' %}">
+                {% trans "Trip Requests" %}
+            </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'travel:request_detail' object.id %}">{{ object }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ my_text }}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1>
+            <b>
+                {% blocktrans with my_action as my_action %}
+                    Do you wish to {{ my_action }} the following request?
+                {% endblocktrans %}
+            </b>
+        </h1>
+        <br>
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% for field in form %}
+                {% bootstrap_field field placeholder="" %}
+
+            {% endfor %}
+
+            <div class="">
+
+
+                <input type="submit" class="btn btn-lg btn-danger" value="Yes">
+
+                <a class="btn btn-lg btn-secondary" href="{% url 'travel:request_detail' object.id %}">
+                    {% trans "Back" %}
+                </a>
+            </div>
+        </form>
+
+        <br>
+        <hr>
+        {% include "travel/_trip_request_detail.html" %}
+
+
+    </div>
+
+
+    <br><br><br>
+{% endblock content %}
+{% block body_js %}
+
+    <script type="application/javascript">
+
+    </script>
+
+{% endblock %}

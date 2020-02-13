@@ -16,6 +16,117 @@ from . import models
 import os
 from shared_models import models as shared_models
 
+
+def generate_funding_spreadsheet(fiscal_year, funding, regions, divisions, sections):
+    # figure out the filename
+    target_dir = os.path.join(settings.BASE_DIR, 'media', 'projects', 'temp')
+    target_file = "temp_export.xlsx"
+    target_file_path = os.path.join(target_dir, target_file)
+    target_url = os.path.join(settings.MEDIA_ROOT, 'projects', 'temp', target_file)
+
+    # create workbook and worksheets
+    workbook = xlsxwriter.Workbook(target_file_path)
+
+    # create formatting
+    header_format = workbook.add_format(
+        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#9ae0f5', "align": 'normal',
+         "text_wrap": True})
+    normal_format = workbook.add_format({"valign": 'top', "align": 'left', "text_wrap": True, 'border': 1,
+                                         'border_color': 'black', })
+
+    number_format = workbook.add_format({"valign": 'top', "align": 'left', 'border': 1,
+                                         'border_color': 'black', })
+    number_format.set_num_format(8)
+
+    # need to assemble a section list
+    #  first look at the sections arg; if not null, we don't need anything else
+    if sections != "None":
+        section_list = shared_models.Section.objects.filter(id__in=sections.split(","))
+    #  next look at the divisions arg; if not null, we don't need anything else
+    elif divisions != "None":
+        section_list = shared_models.Section.objects.filter(division_id__in=divisions.split(","))
+    #  next look at the divisions arg; if not null, we don't need anything else
+    elif regions != "None":
+        section_list = shared_models.Section.objects.filter(division__branch__region_id__in=regions.split(","))
+    else:
+        section_list = shared_models.Section.objects.all()
+
+    # We're only using B-Base funding
+    # funding_type = models.FundingSourceType.objects.get(pk=funding)
+    # funding_src = models.FundingSource.objects.filter(name="SARA", funding_source_type=funding_type)
+    funding_src = models.FundingSource.objects.get(pk=funding)
+
+    project_list = models.Project.objects.filter(year=fiscal_year, section__in=section_list, default_funding_source=funding_src)
+
+    # Use the header key as the col label, then use the array[0] for the col format and array[1] for col size
+    header = {
+        "Project ID": [normal_format, 20],
+        "Project Title": [normal_format, 20],
+        "Salary": [number_format, 20],
+        "O&M Cost": [number_format, 20],
+        "Capital Cost": [number_format, 20],
+        "Project Staff": [normal_format, 20],
+        "Start Date of Project": [normal_format, 20],
+        "End Date of Project": [normal_format, 20],
+        "Project-Specific Priorities": [normal_format, 150],
+        "Project Objectives & Description": [normal_format, 150],
+        "Project Deliverables / Activities": [normal_format, 150],
+        "Milestones": [normal_format, 150],
+        "Additional Notes": [normal_format, 150],
+    }
+
+    worksheet1 = workbook.add_worksheet(name="Submitted Projects")
+    write_funding_sheet(worksheet1, header_format, header, project_list.filter(approved=False), funding_src)
+
+    worksheet2 = workbook.add_worksheet(name="Approved Projects")
+    write_funding_sheet(worksheet2, header_format, header, project_list.filter(approved=True), funding_src)
+
+    workbook.close()
+
+    return target_url
+
+
+# used to generate a common sheet format
+def write_funding_sheet(worksheet, header_format, header, projects, funding):
+    keys = [k for k in header.keys()]
+    worksheet.write_row(0, 0, keys, header_format)
+
+    for i in range(0, len(keys)):
+        worksheet.set_column(i, i, header[keys[i]][1], header[keys[i]][0])
+
+    row = 1
+    for project in projects:
+
+        om_cost = project.om_costs.filter(funding_source=funding).aggregate(Sum("budget_requested"))
+
+        staff_list = project.staff_members.all()
+
+        staff_names = listrify([(staff.user if staff.user else staff.name) for staff in staff_list])
+        staff_cost = staff_list.filter(funding_source=funding).aggregate(Sum('cost'))
+
+        capital_cost = project.capital_costs.filter(funding_source=funding).aggregate(Sum("budget_requested"))
+
+        milestone = listrify([m.name + ": " + m.description for m in project.milestones.all()], "\n\n*")
+
+        data = [
+            project.id,
+            project.project_title,
+            nz(staff_cost['cost__sum'], 0),
+            nz(om_cost['budget_requested__sum'], 0),
+            nz(capital_cost['budget_requested__sum'], 0),
+            staff_names,
+            project.start_date.strftime('%Y-%m-%d') if project.start_date else "---",
+            project.end_date.strftime('%Y-%m-%d') if project.end_date else "---",
+            html2text.html2text(project.priorities).replace("\n\n", "[_EOL_]").replace("\n", " ").replace("[_EOL_]", "\n\n"),
+            html2text.html2text(project.description).replace("\n\n", "[_EOL_]").replace("\n", " ").replace("[_EOL_]", "\n\n"),
+            html2text.html2text(project.deliverables).replace("\n\n", "[_EOL_]").replace("\n", " ").replace("[_EOL_]", "\n\n"),
+            milestone,
+            project.notes]
+        worksheet.write_row(row, 0, data)
+
+        row += 1
+
+
 def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
 
     # Upson, P - used by those weird Maritimes people because they have to be different <insert eye roll>
@@ -882,10 +993,10 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
                 # exclude full time employees
                 if staff.employee_type.id != 1 or staff.employee_type.id != 6:
                     # if salary
-                    if staff.employee_type.cost_type is 1:
+                    if staff.employee_type.cost_type == 1:
                         salary_total += nz(staff.cost, 0)
                     # if o&M
-                    elif staff.employee_type.cost_type is 2:
+                    elif staff.employee_type.cost_type == 2:
                         om_total += nz(staff.cost, 0)
 
                 # include only FTEs

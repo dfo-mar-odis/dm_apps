@@ -1,0 +1,29 @@
+{% load bootstrap4 %}
+{% load i18n %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+<script type=" text/javascript" src="{% static "js/popItOut.js" %}"></script>
+
+{% block content %}
+<div class="container">
+    <h2>{% trans title %} {% trans "Station Entry" %}</h2>
+
+    <form method="post" class="form">
+        {% csrf_token %}
+
+        {% for field in form %}
+            {% bootstrap_field field placeholder="" size="small" %}
+        {% endfor %}
+
+        {% buttons %}
+            <button type="submit" class="btn btn-success" onclick="refreshParent()">
+                {% trans "Submit" %}
+            </button>
+            <a class="btn btn-secondary" onclick="window.close()" href="#">
+                {% trans "Close" %}
+            </a>
+        {% endbuttons %}
+    </form>
+</div>
+{% endblock content %}

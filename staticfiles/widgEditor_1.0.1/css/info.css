@@ -1,0 +1,65 @@
+/* HTML TAGS */
+h1
+{
+	float: left;
+	width: 154px;
+	height: 105px;
+	margin: 0 4em 0 0;
+	padding: 0;
+	background-image: url(../images/logo.gif);
+	background-repeat: no-repeat;
+	font-size: 100%
+}
+
+
+h1 a
+{
+	display: block;
+	height: 105px;
+}
+
+dl
+{
+	float: left;
+	margin: 0;
+	padding: 10px 4em 1em 0;
+}
+
+dt
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+dd
+{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+/* OBJECTS */
+
+#experimentInfo
+{
+	height: 105px;
+	margin-bottom: 2em;
+	background-image: url(../images/header_bg.gif);
+	background-repeat: repeat-x;
+	color: #0066CC;
+	text-align: left;
+}
+
+
+
+
+/* CLASSES */
+
+.hidden
+{
+	position: absolute;
+	left: -10000px;
+}

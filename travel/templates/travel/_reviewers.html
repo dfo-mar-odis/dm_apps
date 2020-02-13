@@ -1,0 +1,88 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+
+{#  REVIEWERS  #}
+<h3 class="neighbours mb-3">
+    {% trans "Reviewers, Recommenders and Approvers" %}
+</h3>
+
+<div class="neighbours mb-3">
+    {% with help_text_dict|lookup:"reviewers_header" as help_text %}
+        <img src="{% static 'img/icons/information.png' %}" style="width: 30px" data-toggle="popover"
+             data-trigger="hover"
+             title="{% trans "Trip Request Reviewers" %}"
+             data-content="{{ help_text }}">
+    {% endwith %}
+</div>
+
+{% if not report_mode %}
+    <div class="neighbours">
+        <div class="btn-group">
+            {% if object.submitted %}
+                <span data-toggle="tooltip" title="{% trans "You cannot reset the reviewers while a request is submitted." %}">
+            {% endif %}
+            <a href="{% url 'travel:reset_reviewers' triprequest.id %}"
+               class="btn btn-sm btn-warning {% if object.submitted %}disabled{% endif %}"
+               id="reset-btn">Reset</a>
+            {% if object.submitted %}
+                </span>
+            {% endif %}
+            <a href="{% url 'travel:manage_reviewers' triprequest.id %}" class="btn btn-sm btn-primary">Modify</a>
+        </div>
+    </div>
+{% endif %}
+
+{% if triprequest.reviewers.count > 0 %}
+    <br>
+    <table class="table table-sm sortable table-striped" style="width: 100%">
+        <thead>
+        {% for field in reviewer_field_list %}
+            {% if "status" in field %}
+                <th style="width: 10%;">{% get_verbose_label triprequest.reviewers.first field %}</th>
+            {% else %}
+                <th scope="col">{% get_verbose_label triprequest.reviewers.first field %}</th>
+            {% endif %}
+        {% endfor %}
+        </thead>
+        <tbody>
+        {% for obj in triprequest.reviewers.all %}
+            {#                        {% url 'shared_models:group_detail' obj.id %}#}
+            <tr>
+                {% for field in reviewer_field_list %}
+                    {% if field == "status" %}
+                        <td style="background-color: {{ obj.status.color }}">
+                            {% get_field_value obj field %}
+                        </td>
+                    {% else %}
+                        <td>{% get_field_value obj field safe=True %}</td>
+                    {% endif %}
+                {% endfor %}
+                {# Only recommenders and reviewers should be allowed to be skipped. And the ability to skip is only given to system admins #}
+                {% if obj.status_id == 1 and is_admin %}
+                    {% if obj.role.id == 1 or obj.role.id == 2 %}
+                        <td>
+                            <a href="#" pop-href="{% url 'travel:reviewer_skip' obj.id %}" class="btn btn-sm btn-danger">
+                                {% trans "Skip" %}
+                            </a>
+                        </td>
+
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                {% else %}
+                    <td></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <br>
+    <em>
+        {% trans "No reviewers, recommenders or approvers have been added to this project." %}
+    </em>
+{% endif %}
+<br><br>

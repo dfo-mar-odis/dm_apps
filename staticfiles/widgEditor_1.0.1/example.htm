@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+
+
+
+<head>
+
+<title>The Man in Blue &gt; Experiments &gt; widgEditor</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="author" content="The Man in Blue" />
+<meta name="robots" content="all" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<style type="text/css" media="all">
+	@import "css/info.css";
+	@import "css/main.css";
+	@import "css/widgEditor.css";
+</style>
+
+<script type="text/javascript" src="scripts/widgEditor.js"></script>
+
+</head>
+
+
+
+<body>
+	<div id="experimentInfo">
+		<h1>
+			<a href="http://www.themaninblue.com/" title="Go to The Man in Blue"><span class="hidden">The Man in Blue</span></a>
+		</h1>
+		<dl>
+			<dt>
+				<a href="http://www.themaninblue.com/experiment/">Experiment</a>
+			</dt>
+			<dd>
+				widgEditor
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				Date created
+			</dt>
+			<dd>
+				16 January, 2005
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				Date last modified
+			</dt>
+			<dd>
+				1 March, 2008
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				Discussion
+			</dt>
+			<dd>
+				<a href="http://www.themaninblue.com/writing/perspective/2005/01/27/">Visit the discussion</a>
+			</dd>
+		</dl>
+	</div>
+<!-- END experimentInfo -->
+	<div id="content">
+		<h2>
+			widgEditor
+		</h2>
+		<p>
+			widgEditor is an easily installed, easily customisable WYSIWYG editor for simple content. It
+			replaces existing textareas with an improved editing pane using JavaScript, therefore if you don't have
+			JavaScript (or your browser doesn't support HTML editing) it degrades gracefully. Try it out by typing below, and submit to see the processed output.
+		</p>
+		<p>
+			The widgEditor code is released under a <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>. However, if you are planning to use or modify the code for
+			usage on a web site, a donation is greatly appreciated.
+			<a href="https://www.paypal.com/xclick/business=ckahobbes%40rocketmail.com&amp;no_shipping=1&amp;return=http%3A//www.themaninblue.com/donation/&amp;cancel_return=http%3A//www.themaninblue.com/writing/&amp;no_note=1&amp;tax=0&amp;currency_code=USD">Click here to donate via PayPal</a>.
+		</p>
+		<p>
+			<a href="http://code.google.com/p/widgeditor/downloads/list">Download the most recent widgEditor files at its Google Code page</a>.
+		</p>
+		<form action="submit.php" onsubmit="alert('Your submitted HTML was:\n\n' + document.getElementById('noise').value); return false;">
+			<fieldset>
+				<label for="noise">
+					Make some noise:
+				</label>
+				<textarea id="noise" name="noise" class="widgEditor nothing">&lt;p&gt;widgEditor &lt;strong&gt;automatically&lt;/strong&gt; integrates the content that was in the textarea!&lt;/p&gt;</textarea>
+			</fieldset>
+			<fieldset class="submit">
+				<input type="submit" value="Check the submitted code" />
+			</fieldset>
+		</form>
+	</div>
+<!-- END content -->
+</body>
+
+
+
+
+</html>

@@ -3,7 +3,9 @@
 {% load bootstrap4 %}
 {% load verbose_names %}
 {% load i18n %}
-
+ {% block subtitle %}
+     - {% trans "Trip requests" %}
+ {% endblock %}
 {% block content %}
 
     <style>

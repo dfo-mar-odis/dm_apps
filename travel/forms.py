@@ -195,7 +195,17 @@ class AdminTripRequestForm(forms.ModelForm):
             self.fields.get("adm_approval_status").choices = status_choices
 
 
+class TripRequestAdminNotesForm(forms.ModelForm):
+    class Meta:
+        model = models.TripRequest
+        fields = [
+            "admin_notes",
+        ]
+
+
 class ChildTripRequestForm(forms.ModelForm):
+    stay_on_page = forms.BooleanField(widget=forms.HiddenInput(), required=False)
+
     class Meta:
         model = models.TripRequest
         fields = [
@@ -215,26 +225,6 @@ class ChildTripRequestForm(forms.ModelForm):
             'role',
             'role_of_participant',
 
-            # costs
-            'air',
-            'rail',
-            'rental_motor_vehicle',
-            'personal_motor_vehicle',
-            'taxi',
-            'other_transport',
-            'accommodations',
-
-            'no_breakfasts',
-            'breakfasts_rate',
-            'no_lunches',
-            'lunches_rate',
-            'no_suppers',
-            'suppers_rate',
-            'no_incidentals',
-            'incidentals_rate',
-
-            'registration',
-            'other',
             'parent_request',
         ]
         widgets = {
@@ -243,34 +233,18 @@ class ChildTripRequestForm(forms.ModelForm):
             'start_date': forms.DateInput(attrs=attr_fp_date),
             'end_date': forms.DateInput(attrs=attr_fp_date),
             'role_of_participant': forms.Textarea(attrs=attr_row4),
-            # costs
-            'air': forms.NumberInput(attrs=attr_cost),
-            'rail': forms.NumberInput(attrs=attr_cost),
-            'rental_motor_vehicle': forms.NumberInput(attrs=attr_cost),
-            'personal_motor_vehicle': forms.NumberInput(attrs=attr_cost),
-            'taxi': forms.NumberInput(attrs=attr_cost),
-            'other_transport': forms.NumberInput(attrs=attr_cost),
-            'accommodations': forms.NumberInput(attrs=attr_cost),
 
-            'no_breakfasts': forms.NumberInput(attrs=attr_cost),
-            'breakfasts_rate': forms.NumberInput(attrs=attr_cost),
-            'no_lunches': forms.NumberInput(attrs=attr_cost),
-            'lunches_rate': forms.NumberInput(attrs=attr_cost),
-            'no_suppers': forms.NumberInput(attrs=attr_cost),
-            'suppers_rate': forms.NumberInput(attrs=attr_cost),
-            'no_incidentals': forms.NumberInput(attrs=attr_cost),
-            'incidentals_rate': forms.NumberInput(attrs=attr_cost),
-
-            'registration': forms.NumberInput(attrs=attr_cost),
-            'other': forms.NumberInput(attrs=attr_cost),
             'first_name': forms.TextInput(attrs=attr_user_info),
             'last_name': forms.TextInput(attrs=attr_user_info),
             'email': forms.EmailInput(attrs=attr_user_info),
         }
 
     def __init__(self, *args, **kwargs):
-        parent_request = kwargs.get("initial").get("parent_request") if kwargs.get("initial") else None
-        print(parent_request)
+        try:
+            parent_request = kwargs.get("initial").get("parent_request")
+        except AttributeError:
+            parent_request = None
+
         if not parent_request:
             parent_request = kwargs.get("instance").parent_request
 
@@ -288,7 +262,7 @@ class ChildTripRequestForm(forms.ModelForm):
 class TripForm(forms.ModelForm):
     class Meta:
         model = models.Conference
-        fields = "__all__"
+        exclude = ["fiscal_year", "is_verified", "verified_by", "cost_warning_sent" ]
         widgets = {
             'start_date': forms.DateInput(attrs=attr_fp_date),
             'end_date': forms.DateInput(attrs=attr_fp_date),
@@ -424,3 +398,55 @@ HelpTextFormSet = modelformset_factory(
     form=HelpTextForm,
     extra=1,
 )
+
+
+class CostForm(forms.ModelForm):
+    class Meta:
+        model = models.Cost
+        fields = "__all__"
+
+
+CostFormSet = modelformset_factory(
+    model=models.Cost,
+    form=CostForm,
+    extra=1,
+)
+
+
+class CostCategoryForm(forms.ModelForm):
+    class Meta:
+        model = models.CostCategory
+        fields = "__all__"
+
+
+CostCategoryFormSet = modelformset_factory(
+    model=models.CostCategory,
+    form=CostCategoryForm,
+    extra=1,
+)
+
+
+class NJCRatesForm(forms.ModelForm):
+    class Meta:
+        model = models.NJCRates
+        exclude = ['last_modified', ]
+
+
+NJCRatesFormSet = modelformset_factory(
+    model=models.NJCRates,
+    form=NJCRatesForm,
+    extra=0,
+)
+
+
+class TripRequestCostForm(forms.ModelForm):
+    class Meta:
+        model = models.TripRequestCost
+        fields = "__all__"
+        widgets = {
+            'trip_request': forms.HiddenInput(),
+            'rate_cad': forms.NumberInput(attrs={"class": "by-rate"}),
+            'number_of_days': forms.NumberInput(attrs={"class": "by-rate"}),
+            'amount_cad': forms.NumberInput(attrs={"class": "by-amount"}),
+            # 'cost': forms.Select(attrs=chosen_js),
+        }

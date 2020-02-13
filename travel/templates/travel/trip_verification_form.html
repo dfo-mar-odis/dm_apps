@@ -1,0 +1,279 @@
+{% extends "travel/travel_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load custom_filters %}
+{% load verbose_names %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block subtitle %}
+    - {% trans "Verify Trip" %}
+{% endblock %}
+{% block content %}
+    <style>
+        table, th, td {
+            font-size: 14px;
+        }
+    h4{
+        font-weight: bold;
+    }
+    </style>
+
+    {% trans "Verify Trip" as my_title %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">
+                {% trans "Home" %}
+            </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'travel:admin_trip_verification_list' %}">
+                {% trans "Trips Awaiting Verfication" %}
+            </a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ my_title }}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="container">
+        <div class="mb-5">
+            <h1>
+                {{ my_title }}
+            </h1>
+
+        </div>
+
+        <div class="mb-5">
+            <h4>
+                Are there any other {{ object.fiscal_year }} trips that have similar sounding NAMES?
+            </h4>
+            <table class="table table-bordered">
+                <tr>
+                    <th style="width: 40%">My Trip</th>
+                    <th style="width: 60%">Other Trips</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{ object.tname }}
+                        <button class="badge" data-toggle="popover" title="{{ object.tname }}" data-content="{{ object.html_block }}">
+                            {% trans "View details" %}
+                        </button>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for trip in same_name_trips %}
+                                <li>
+                                    {{ trip.tname }}
+                                    <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
+                                            data-content="{{ trip.html_block }}">
+                                        {% trans "View details" %}
+                                    </button>
+                                </li>
+                            {% empty %}
+                                <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="mb-5">
+            <h4>
+                Are there any other {{ object.fiscal_year }} trips that are STARTING or ENDING on the same day?
+            </h4>
+            <table class="table table-bordered">
+                <tr>
+                    <th style="width: 40%">My Trip</th>
+                    <th style="width: 60%">Other Trips</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{ object.tname }}
+                        <button class="badge" data-toggle="popover" title="{{ object.tname }}" data-content="{{ object.html_block }}">
+                            {% trans "View details" %}
+                        </button>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for trip in same_day_trips %}
+                                <li>
+                                    {{ trip.tname }}
+                                    <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
+                                            data-content="{{ trip.html_block }}">
+                                        {% trans "View details" %}
+                                    </button>
+                                </li>
+                            {% empty %}
+                                <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="mb-5">
+            <h4>
+                Are there any other {{ object.fiscal_year }} trips that are happening at similar sounding LOCATIONS?
+            </h4>
+
+            <table class="table table-bordered">
+                <tr>
+                    <th style="width: 40%">My Trip</th>
+                    <th style="width: 60%">Other Trips</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{ object.tname }}
+                        <button class="badge" data-toggle="popover" title="{{ object.tname }}" data-content="{{ object.html_block }}">
+                            {% trans "View details" %}
+                        </button>
+                    </td>
+                    <td>
+                        <ul>
+                            {% for trip in same_location_trips %}
+                                <li>
+                                    {{ trip.tname }}
+                                    <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
+                                            data-content="{{ trip.html_block }}">
+                                        {% trans "View details" %}
+                                    </button>
+                                </li>
+                            {% empty %}
+                                <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="mb-5">
+            <div class="mb-3">
+                <div class="float-right">
+                    <a href="{% url 'travel:trip_detail' object.id %}" class="btn btn-warning" target="_blank">
+                        Edit Trip Details
+                    </a>
+                </div>
+                <h4>
+                    Do the trip details look complete?
+                </h4>
+            </div>
+
+            <table class="table table-sm">
+                {% for field in conf_field_list %}
+                    {% if "total" in field %}
+                        {% verbose_td_display object field th_width="30%" format="currency" %}
+                    {% else %}
+                        {% verbose_td_display object field th_width="30%" %}
+                    {% endif %}
+                {% endfor %}
+
+                <th>
+                    {% trans "Connected Travel Requests:" %}
+                </th>
+                <td>
+                    <ul>
+                        {% for triprequest in object.trip_requests.all %}
+                            <li>
+                                <a href="{% url 'travel:request_detail' triprequest.id %}">{{ triprequest }}</a> by {{ triprequest.user }}
+                                (STATUS: <span style="background-color: {{ triprequest.status.color }}">{{ triprequest.status }}</span>)
+
+                            </li>
+                        {% empty %}
+                            <em>
+                                {% trans "There are no requests connected to this trip." %}
+                            </em>
+                        {% endfor %}
+                    </ul>
+                </td>
+
+            </table>
+        </div>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% for field in form %}
+
+                {% if field.name in help_text_dict and "_date" not in field.name %}
+                    {% bootstrap_label field.label %}
+                    {% with help_text_dict|lookup:field.name as help_text %}
+                        <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
+                             title="{{ field.label }}"
+                             data-content="{{ help_text }}">
+                        {% bootstrap_field field placeholder="" show_label=False %}
+                    {% endwith %}
+                {% else %}
+                    {% bootstrap_field field placeholder="" %}
+                {% endif %}
+
+
+                {#                {% bootstrap_field field placeholder="" %}#}
+
+            {% endfor %}
+
+            <div class="center-col">
+                {% buttons %}
+                    <button type="submit" class="btn btn-lg btn-success">Yes, looks good!</button>
+                    <a class="btn btn-secondary btn-lg" href="{% url 'travel:admin_trip_verification_list' %}">Cancel</a>
+                    {% if object.trip_requests.count %}
+                        {% echo "disabled" as disabled_var %}
+                        {% trans "Cannot delete a trip that has requests attached to it." as tip_text %}
+                    {% endif %}
+                    <span data-toggle="tooltip" title="{{ tip_text }}">
+                    <a class="btn btn-danger btn-lg {{ disabled_var }}" href="{% url 'travel:trip_delete' object.id %}">Delete</a>
+                    </span>
+                {% endbuttons %}
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </form>
+
+    </div>
+{% endblock content %}
+
+{% block body_js %}
+
+    <script type="application/javascript">
+        var userObj = {{ user_json|safe }};
+        var sectionObj = {{ section_json|safe }};
+        var myId = "";
+
+        function refreshUserInfo() {
+            myId = $("#id_user").val();
+            $("#id_first_name").val(userObj[myId]["first_name"]);
+            $("#id_last_name").val(userObj[myId]["last_name"]);
+            $("#id_email").val(userObj[myId]["email"]);
+        }
+
+
+        $("#id_user").change(function () {
+            refreshUserInfo();
+        });
+
+
+        $("#id_section").change(function () {
+            mySectionId = $(this).val();
+            $("#id_recommender_1").val(sectionObj[mySectionId]["recommender_1"]);
+            $("#id_recommender_2").val(sectionObj[mySectionId]["recommender_2"]);
+            $("#id_recommender_3").val(sectionObj[mySectionId]["recommender_3"]);
+            $("#id_approver").val(sectionObj[mySectionId]["approver"]);
+            $('select').trigger("chosen:updated");
+        });
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            refreshUserInfo();
+        });
+
+
+    </script>
+{% endblock %}
+
+

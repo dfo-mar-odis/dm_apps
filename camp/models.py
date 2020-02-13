@@ -22,7 +22,10 @@ class Site(models.Model):
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return "{} ({})".format(self.site, self.province.tabbrev)
+        if self.province:
+            return "{} ({})".format(self.site, self.province.tabbrev)
+        else:
+            return "{}".format(self.site)
 
     class Meta:
         ordering = ['province', 'site']
@@ -33,8 +36,7 @@ class Site(models.Model):
 
 class Station(models.Model):
     name = models.CharField(max_length=255)
-    site = models.ForeignKey('Site', on_delete=models.DO_NOTHING, related_name='stations', blank=True,
-                             null=True)
+    site = models.ForeignKey('Site', on_delete=models.DO_NOTHING, related_name='stations', null=True)
     latitude_n = models.FloatField(blank=True, null=True)
     longitude_w = models.FloatField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
@@ -44,7 +46,10 @@ class Station(models.Model):
         return reverse("camp:station_detail", kwargs={"pk": self.id})
 
     def __str__(self):
-        return "{} ({})".format(self.name, self.site.site)
+        if self.site:
+            return "{} ({})".format(self.name, self.site.site)
+        else:
+            return "{}".format(self.name)
 
     class Meta:
         ordering = ['name', ]

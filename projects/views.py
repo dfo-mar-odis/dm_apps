@@ -138,7 +138,6 @@ def is_admin_or_project_manager(user, project):
 
 
 class ProjectLeadRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         # the assumption is that either we are passing in a Project object or an object that has a project as an attribute
@@ -157,12 +156,11 @@ class ProjectLeadRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+            return HttpResponseRedirect(reverse('accounts:denied_access'))
         return super().dispatch(request, *args, **kwargs)
 
 
 class AdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_projects_admin_group(self.request.user)
@@ -170,12 +168,12 @@ class AdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('accounts:denied_section_heads_only'))
+            return HttpResponseRedirect(reverse('accounts:denied_access', kwargs={
+                "message": _("Sorry, you need to be a manager of this project in order to access this page.")}))
         return super().dispatch(request, *args, **kwargs)
 
 
 class ManagerOrAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return is_management_or_admin(self.request.user)
@@ -183,12 +181,12 @@ class ManagerOrAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('accounts:denied_section_heads_only'))
+            return HttpResponseRedirect(reverse('accounts:denied_access', kwargs={
+                "message": _("Sorry, you need to be a manager of this project in order to access this page.")}))
         return super().dispatch(request, *args, **kwargs)
 
 
 class CanModifyProjectRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         # the assumption is that either we are passing in a Project object or an object that has a project as an attribute
@@ -207,7 +205,7 @@ class CanModifyProjectRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+            return HttpResponseRedirect(reverse('accounts:denied_access'))
         return super().dispatch(request, *args, **kwargs)
 
 
@@ -323,24 +321,24 @@ def pdf_financial_summary_data(project):
             # if the staff member is being paid from bbase...
             if staff.funding_source.id == 1:
                 # if salary
-                if staff.employee_type.cost_type is 1:
+                if staff.employee_type.cost_type == 1:
                     salary_abase += nz(staff.cost, 0)
                 # if o&M
-                elif staff.employee_type.cost_type is 2:
+                elif staff.employee_type.cost_type == 2:
                     om_abase += nz(staff.cost, 0)
             elif staff.funding_source.id == 2:
                 # if salary
-                if staff.employee_type.cost_type is 1:
+                if staff.employee_type.cost_type == 1:
                     salary_bbase += nz(staff.cost, 0)
                 # if o&M
-                elif staff.employee_type.cost_type is 2:
+                elif staff.employee_type.cost_type == 2:
                     om_bbase += nz(staff.cost, 0)
             elif staff.funding_source.id == 3:
                 # if salary
-                if staff.employee_type.cost_type is 1:
+                if staff.employee_type.cost_type == 1:
                     salary_cbase += nz(staff.cost, 0)
                 # if o&M
-                elif staff.employee_type.cost_type is 2:
+                elif staff.employee_type.cost_type == 2:
                     om_cbase += nz(staff.cost, 0)
 
     # O&M costs
@@ -493,6 +491,10 @@ def get_region_choices(all=False):
             )]
 
 
+def get_funding_sources(all=False):
+    return [(fs.id, str(fs)) for fs in models.FundingSource.objects.all()]
+
+
 # Create your views here.
 class CloserTemplateView(TemplateView):
     template_name = 'projects/close_me.html'
@@ -539,7 +541,6 @@ class IndexTemplateView(TemplateView):
 # PROJECTS #
 ############
 class MyProjectListView(LoginRequiredMixin, FilterView):
-    login_url = '/accounts/login_required/'
     template_name = 'projects/my_project_list.html'
     filterset_class = filters.MyProjectFilter
 
@@ -590,7 +591,6 @@ class MyProjectListView(LoginRequiredMixin, FilterView):
 
 
 class SectionListView(LoginRequiredMixin, FilterView):
-    login_url = '/accounts/login_required/'
     template_name = 'projects/section_project_list.html'
     filterset_class = filters.SectionFilter
 
@@ -708,7 +708,6 @@ class SectionListView(LoginRequiredMixin, FilterView):
 
 
 class MySectionListView(LoginRequiredMixin, FilterView):
-    login_url = '/accounts/login_required/'
     template_name = 'projects/my_section_list.html'
     filterset_class = filters.MySectionFilter
 
@@ -728,7 +727,6 @@ class MySectionListView(LoginRequiredMixin, FilterView):
 
 
 class ProjectListView(LoginRequiredMixin, FilterView):
-    login_url = '/accounts/login_required/'
     template_name = 'projects/project_list.html'
     queryset = models.Project.objects.filter(
         is_hidden=False, submitted=True,
@@ -753,7 +751,6 @@ class ProjectListView(LoginRequiredMixin, FilterView):
 
 class ProjectDetailView(LoginRequiredMixin, DetailView):
     model = models.Project
-    login_url = '/accounts/login_required/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -789,7 +786,6 @@ class ProjectOverviewDetailView(ProjectDetailView):
 
 class ProjectPrintDetailView(LoginRequiredMixin, PDFTemplateView):
     model = models.Project
-    login_url = '/accounts/login_required/'
     template_name = "projects/project_report.html"
 
     def get_pdf_filename(self):
@@ -909,7 +905,7 @@ class ProjectSubmitUpdateView(ProjectLeadRequiredMixin, UpdateView):
                 # create a new email object
                 email = emails.ProjectSubmissionEmail(self.object)
                 # send the email object
-                if settings.PRODUCTION_SERVER:
+                if settings.USE_EMAIL:
                     send_mail(message='', subject=email.subject, html_message=email.message,
                               from_email=email.from_email,
                               recipient_list=email.to_list, fail_silently=False, )
@@ -970,7 +966,6 @@ class ProjectApprovalUpdateView(CanModifyProjectRequiredMixin, UpdateView):
 
 class ProjectCreateView(LoginRequiredMixin, CreateView):
     model = models.Project
-    login_url = '/accounts/login_required/'
     form_class = forms.NewProjectForm
 
     def get_context_data(self, **kwargs):
@@ -1208,11 +1203,10 @@ def staff_delete(request, pk):
         messages.success(request, _("The staff member has been successfully deleted from project."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 class OverTimeCalculatorTemplateView(LoginRequiredMixin, UpdateView):
-    login_url = '/accounts/login_required/'
     template_name = 'projects/overtime_calculator_popout.html'
     form_class = forms.OTForm
     model = models.Staff
@@ -1248,7 +1242,7 @@ class OverTimeCalculatorTemplateView(LoginRequiredMixin, UpdateView):
 
 
 # this is a temp view DJF created to walkover the `program` field to the new `programs` field
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def temp_formset(request, region, fy, section_str=None):
     context = {}
@@ -1347,7 +1341,7 @@ def collaborator_delete(request, pk):
         messages.success(request, _("The collaborator has been successfully deleted from project."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 # AGREEMENTS #
@@ -1392,7 +1386,7 @@ def agreement_delete(request, pk):
         messages.success(request, _("The agreement has been successfully deleted."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 # OM COSTS #
@@ -1444,7 +1438,7 @@ def om_cost_delete(request, pk):
         messages.success(request, _("The cost has been successfully deleted."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 def om_cost_clear(request, project):
@@ -1459,7 +1453,7 @@ def om_cost_clear(request, project):
         messages.success(request, _("All empty O&M lines have been cleared."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 def om_cost_populate(request, project):
@@ -1473,7 +1467,7 @@ def om_cost_populate(request, project):
         messages.success(request, _("All O&M categories have been added to this project."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 # CAPITAL COSTS #
@@ -1525,7 +1519,7 @@ def capital_cost_delete(request, pk):
         messages.success(request, _("The cost has been successfully deleted."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 # GC COSTS #
@@ -1576,7 +1570,7 @@ def gc_cost_delete(request, pk):
         messages.success(request, _("The cost has been successfully deleted."))
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 # FILES #
@@ -1647,7 +1641,6 @@ class FileDeleteView(CanModifyProjectRequiredMixin, DeleteView):
 class UserCreateView(LoginRequiredMixin, FormView):
     form_class = forms.UserCreateForm
     template_name = 'projects/user_form.html'
-    login_url = '/accounts/login_required/'
 
     def get_success_url(self):
         return reverse_lazy('projects:close_me')
@@ -1671,7 +1664,7 @@ class UserCreateView(LoginRequiredMixin, FormView):
         email = emails.UserCreationEmail(my_user)
 
         # send the email object
-        if settings.PRODUCTION_SERVER:
+        if settings.USE_EMAIL:
             send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
                       recipient_list=email.to_list, fail_silently=False, )
         else:
@@ -1688,7 +1681,7 @@ class UserCreateView(LoginRequiredMixin, FormView):
 # SETTINGS #
 ############
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_funding_source(request, pk):
     my_obj = models.FundingSource.objects.get(pk=pk)
@@ -1696,7 +1689,7 @@ def delete_funding_source(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_funding_sources"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_funding_sources(request):
     qs = models.FundingSource.objects.all()
@@ -1722,7 +1715,7 @@ def manage_funding_sources(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_om_cat(request, pk):
     my_obj = models.OMCategory.objects.get(pk=pk)
@@ -1730,7 +1723,7 @@ def delete_om_cat(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_om_cats"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_om_cats(request):
     qs = models.OMCategory.objects.all()
@@ -1757,7 +1750,7 @@ def manage_om_cats(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_employee_type(request, pk):
     my_obj = models.EmployeeType.objects.get(pk=pk)
@@ -1765,7 +1758,7 @@ def delete_employee_type(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_employee_types"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_employee_types(request):
     qs = models.EmployeeType.objects.all()
@@ -1792,7 +1785,7 @@ def manage_employee_types(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_status(request, pk):
     my_obj = models.Status.objects.get(pk=pk)
@@ -1800,7 +1793,7 @@ def delete_status(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_statuses"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_statuses(request):
     qs = models.Status.objects.all()
@@ -1828,7 +1821,7 @@ def manage_statuses(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_tag(request, pk):
     my_obj = models.Tag.objects.get(pk=pk)
@@ -1836,7 +1829,7 @@ def delete_tag(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_tags"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_tags(request):
     qs = models.Tag.objects.all()
@@ -1861,7 +1854,7 @@ def manage_tags(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_help_text(request, pk):
     my_obj = models.HelpText.objects.get(pk=pk)
@@ -1869,7 +1862,7 @@ def delete_help_text(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_help_text"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_help_text(request):
     qs = models.HelpText.objects.all()
@@ -1895,7 +1888,7 @@ def manage_help_text(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_level(request, pk):
     my_obj = models.Level.objects.get(pk=pk)
@@ -1903,7 +1896,7 @@ def delete_level(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_levels"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_levels(request):
     qs = models.Level.objects.all()
@@ -1927,7 +1920,7 @@ def manage_levels(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_program(request, pk):
     my_obj = models.Program.objects.get(pk=pk)
@@ -1935,7 +1928,7 @@ def delete_program(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_programs"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_programs(request):
     qs = models.Program.objects.all().order_by("regional_program_name_eng")
@@ -1966,7 +1959,7 @@ def manage_programs(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_activity_type(request, pk):
     my_obj = models.ActivityType.objects.get(pk=pk)
@@ -1974,7 +1967,7 @@ def delete_activity_type(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_activity_types"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_activity_types(request):
     qs = models.ActivityType.objects.all()
@@ -1999,7 +1992,7 @@ def manage_activity_types(request):
     return render(request, 'projects/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def delete_theme(request, pk):
     my_obj = models.Theme.objects.get(pk=pk)
@@ -2007,7 +2000,7 @@ def delete_theme(request, pk):
     return HttpResponseRedirect(reverse("projects:manage_functional_groups"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_projects_admin_group, login_url='/accounts/denied/')
 def manage_themes(request):
     qs = models.Theme.objects.all()
@@ -2214,7 +2207,7 @@ class StatusReportDeleteView(CanModifyProjectRequiredMixin, DeleteView):
 
 class StatusReportPrintDetailView(LoginRequiredMixin, PDFTemplateView):
     model = models.Project
-    login_url = '/accounts/login_required/'
+
     template_name = "projects/status_report_pdf.html"
 
     def get_pdf_filename(self):
@@ -2296,7 +2289,7 @@ def milestone_delete(request, pk):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
     else:
-        return HttpResponseRedirect(reverse('accounts:denied_project_leads_only'))
+        return HttpResponseRedirect(reverse('accounts:denied_access'))
 
 
 # MILESTONE UPDATE #
@@ -2330,7 +2323,7 @@ class ReportSearchFormView(ManagerOrAdminRequiredMixin, FormView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
+        print("Search Form Context")
         division_dict = {}
         for d in get_division_choices():
             my_division = shared_models.Division.objects.get(pk=d[0])
@@ -2351,6 +2344,7 @@ class ReportSearchFormView(ManagerOrAdminRequiredMixin, FormView):
 
     def form_valid(self, form):
         fiscal_year = str(form.cleaned_data["fiscal_year"])
+        funding = int(form.cleaned_data['funding_src'])
         report = int(form.cleaned_data["report"])
         regions = listrify(form.cleaned_data["region"])
         divisions = listrify(form.cleaned_data["division"])
@@ -2358,8 +2352,10 @@ class ReportSearchFormView(ManagerOrAdminRequiredMixin, FormView):
 
         if regions == "":
             regions = "None"
+
         if divisions == "":
             divisions = "None"
+
         if sections == "":
             sections = "None"
 
@@ -2443,6 +2439,22 @@ class ReportSearchFormView(ManagerOrAdminRequiredMixin, FormView):
                 'divisions': divisions,
                 'sections': sections,
             }))
+        elif report == 18:
+            return HttpResponseRedirect(reverse("projects:pdf_funding", kwargs={
+                'funding': funding,
+                'fiscal_year': fiscal_year,
+                'regions': regions,
+                'divisions': divisions,
+                'sections': sections,
+            }))
+        elif report == 19:
+            return HttpResponseRedirect(reverse("projects:xls_funding", kwargs={
+                'funding': funding,
+                'fiscal_year': fiscal_year,
+                'regions': regions,
+                'divisions': divisions,
+                'sections': sections,
+            }))
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
             return HttpResponseRedirect(reverse("projects:report_search"))
@@ -2489,7 +2501,7 @@ def dougs_spreadsheet(request, fiscal_year, regions=None, divisions=None, sectio
 
 
 class PDFReportTemplate(LoginRequiredMixin, PDFTemplateView):
-    login_url = '/accounts/login_required/'
+
 
     section_list = []
     division_list = []
@@ -2533,6 +2545,77 @@ class PDFReportTemplate(LoginRequiredMixin, PDFTemplateView):
         self.project_list = self.project_list.order_by("id")
 
         return context
+
+
+class PDFFundingReport(PDFReportTemplate):
+    template_name = "projects/report_pdf_funding.html"
+    funding_src = None
+
+    def get_pdf_filename(self):
+        fy = shared_models.FiscalYear.objects.get(pk=self.kwargs["fiscal_year"])
+        pdf_filename = "{} {} Funding Report.pdf".format(fy, self.funding_src)
+        return pdf_filename
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["field_list"] = project_field_list
+
+        funding = int(self.kwargs["funding"])
+        self.funding_src = models.FundingSource.objects.get(pk=funding)
+        context["project_list"] = self.project_list.order_by("project_title").filter(
+            default_funding_source=self.funding_src)
+
+        context["milestone"] = {}
+        context["sal_cost"] = {}
+        context["om_cost"] = {}
+        context["cap_cost"] = {}
+        context['project_leads'] = {}
+        context['total_est'] = {}
+        for project in context["project_list"]:
+            context["milestone"][project.pk] = project.milestones.all()
+            # Filter staff, om and capital cost to make sure we're only getting the component that is related
+            # to what funding source is being reported on
+            context['sal_cost'][project.pk] = \
+                project.staff_members.filter(funding_source=self.funding_src).aggregate(Sum('cost'))['cost__sum']
+            context['om_cost'][project.pk] = \
+                project.om_costs.filter(funding_source=self.funding_src).aggregate(Sum('budget_requested'))[
+                    'budget_requested__sum']
+            context['cap_cost'][project.pk] = \
+                project.capital_costs.filter(funding_source=self.funding_src).aggregate(Sum('budget_requested'))[
+                    'budget_requested__sum']
+
+            context['total_est'][project.pk] = 0
+            context['total_est'][project.pk] += context['sal_cost'][project.pk] if context['sal_cost'][
+                project.pk] else 0
+            context['total_est'][project.pk] += context['om_cost'][project.pk] if context['om_cost'][project.pk] else 0
+            context['total_est'][project.pk] += context['cap_cost'][project.pk] if context['cap_cost'][
+                project.pk] else 0
+
+            context['project_leads'][project.pk] = listrify(
+                [(l.user if l.user else l.name) for l in project.staff_members.all().filter(lead=True)])
+        return context
+
+
+def funding_spreadsheet(request, fiscal_year, funding, regions=None, divisions=None, sections=None):
+    # sections arg will be coming in as None from the my_section view
+    if regions is None:
+        regions = "None"
+    if divisions is None:
+        divisions = "None"
+    if sections is None:
+        sections = "None"
+
+    file_url = reports.generate_funding_spreadsheet(fiscal_year, funding, regions, divisions, sections)
+
+    funding_src = models.FundingSource.objects.get(pk=funding)
+
+    if os.path.exists(file_url):
+        with open(file_url, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = 'inline; filename="{} {} Funding.xlsx"'.format(
+                fiscal_year, funding_src)
+            return response
+    raise Http404
 
 
 class PDFProjectSummaryReport(PDFReportTemplate):
@@ -2708,7 +2791,7 @@ def export_program_list(request):
 
 
 class PDFCollaboratorReport(PDFReportTemplate):
-    login_url = '/accounts/login_required/'
+
     template_name = "projects/report_pdf_collaborators.html"
 
     # def get_pdf_filename(self):
@@ -3022,8 +3105,10 @@ class IWGroupList(ManagerOrAdminRequiredMixin, TemplateView):
             big_list = models.Theme.objects.filter(functional_groups__projects__in=project_list).distinct().order_by()
             small_list = None
         else:
-            big_list = shared_models.Division.objects.filter(sections__projects__in=project_list).distinct().order_by("name")
-            small_list = shared_models.Section.objects.filter(projects__in=project_list).distinct().order_by("division", "name")
+            big_list = shared_models.Division.objects.filter(sections__projects__in=project_list).distinct().order_by(
+                "name")
+            small_list = shared_models.Section.objects.filter(projects__in=project_list).distinct().order_by("division",
+                                                                                                             "name")
 
         my_dict = {}
         for big_item in big_list:
@@ -3047,8 +3132,9 @@ class IWGroupList(ManagerOrAdminRequiredMixin, TemplateView):
                     # get a list of project leads
                     leads = listrify(
                         list(set([str(staff.user) for staff in
-                                  models.Staff.objects.filter(project__in=temp_project_list.filter(functional_group=group),
-                                                              lead=True) if
+                                  models.Staff.objects.filter(
+                                      project__in=temp_project_list.filter(functional_group=group),
+                                      lead=True) if
                                   staff.user])))
                     my_dict[big_item]['all']["groups"][group]["leads"] = leads
             else:
@@ -3088,8 +3174,9 @@ class IWGroupList(ManagerOrAdminRequiredMixin, TemplateView):
                                 # get a list of project leads
                                 leads = listrify(
                                     list(set([str(staff.user) for staff in
-                                              models.Staff.objects.filter(project__in=temp_project_list.filter(functional_group=group),
-                                                                          lead=True) if
+                                              models.Staff.objects.filter(
+                                                  project__in=temp_project_list.filter(functional_group=group),
+                                                  lead=True) if
                                               staff.user])))
                                 my_dict[big_item][small_item]["groups"][group]["leads"] = leads
         context['my_dict'] = my_dict
@@ -3130,7 +3217,8 @@ class IWProjectList(ManagerOrAdminRequiredMixin, TemplateView):
         else:
             section = shared_models.Section.objects.get(id=self.kwargs.get("section"))
 
-        functional_group = models.FunctionalGroup.objects.get(id=self.kwargs.get("group")) if self.kwargs.get("group") else None
+        functional_group = models.FunctionalGroup.objects.get(id=self.kwargs.get("group")) if self.kwargs.get(
+            "group") else None
         context['fy'] = fy
         context['region'] = region
         context['section'] = section

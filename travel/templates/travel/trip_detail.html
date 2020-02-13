@@ -32,7 +32,11 @@
 
         <h1>{{ object }}</h1>
 
-
+        <div class="float-right">
+             <a class="btn btn-outline-dark" href="{% url 'travel:export_cfts_trip' trip.id %}">
+                    CFTS Report &nbsp; <img src="{% static 'img/icons/excel.svg' %}" alt="" width="20px">
+                </a>
+        </div>
         <div class="btn-group">
             <a class="btn btn-warning" href="{% url 'travel:trip_edit' object.id %}">
                 {% trans "Edit" %}
@@ -89,21 +93,6 @@
 
                 <br>
                 <br>
-{#                <h3>#}
-{#                    {% trans "List of Travellers:" %}#}
-{#                </h3>#}
-{##}
-{#                <ul>#}
-{#                    {% for traveller in object.total_traveller_list %}#}
-{#                        <li>#}
-{#                            {{ traveller }} {% if traveller in object.bta_traveller_list %}(BTA){% endif %}#}
-{#                        </li>#}
-{#                    {% empty %}#}
-{#                        <em>#}
-{#                        {% trans "There is nobody travelling to this event." %}#}
-{#                        </em>#}
-{#                    {% endfor %}#}
-{#                </ul>#}
 
 
                 <h3>

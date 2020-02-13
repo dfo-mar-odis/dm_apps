@@ -3,7 +3,7 @@
 {% load bootstrap4 %}
 {% block bug_create %}{% url 'tickets:bug_create' 'trapnet' %}{% endblock bug_create %}
 
-{% block title %}TrapNet{% endblock title %}
+{% block title %}TrapNet {% block subtitle %}{% endblock %}{% endblock title %}
 
 {% block body %}
     {% block content %}{% endblock content %}

@@ -1,6 +1,8 @@
 import textile
 from django import template
+from django.template.defaultfilters import stringfilter
 from django.utils.safestring import mark_safe
+from html2text import html2text
 
 register = template.Library()
 
@@ -110,13 +112,19 @@ def tohtml(value):
 
 
 @register.filter
+def html_to_text(value):
+    val = value.replace("</p>", "\n").replace("<p>", "").replace("<p.*\">", "")
+    return val
+
+
+@register.filter
 def currency(value, with_sign=False):
     """returns 'value' into a currency format """
     try:
         value = float(value)
         # if not able to cast, then just return 'value'
     except (ValueError, TypeError):
-        return ""
+        return value
     else:
         if with_sign:
             return "$ {0:,.2f}".format(value)
