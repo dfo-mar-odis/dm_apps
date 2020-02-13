@@ -135,10 +135,10 @@ class InstrumentListView(VaultAccessRequired, FilterView):
         context["my_object"] = models.Instrument.objects.first()
         context["field_list"] = [
             'id',
+            'instrument_type',
             'name',
             'nom',
-            'metadata',
-            # 'instrument_type',
+            #'metadata',
 
         ]
         return context
@@ -153,8 +153,8 @@ class InstrumentDetailView(VaultAccessRequired, DetailView):
             'id',
             'name',
             'nom',
-            'metadata',
-            # 'instrument_type',
+            # 'metadata',
+            'instrument_type',
 
         ]
         return context

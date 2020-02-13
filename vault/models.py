@@ -93,30 +93,9 @@ class MetadataFieldCategory(models.Model):
         ordering = ['code', ]
         unique_together = ['metadata_field', 'code']
 
-# class InstrumentType(models.Model):
-#     # instrument = models.ForeignKey(Instrument, on_delete=models.DO_NOTHING, related_name="instrument_type_field", verbose_name=_("Type of instrument"))
-#     instrument_field = models.ForeignKey("InstrumentField", on_delete=models.CASCADE, related_name="instrument_type_field")
-#     name = models.CharField(max_length=255, verbose_name=_("English name"))
-#     nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("French name"))
-#
-#     def __str__(self):
-#         # check to see if a french value is given
-#         if getattr(self, str(_("name"))):
-#
-#             return "{}".format(getattr(self, str(_("name"))))
-#         # if there is no translated term, just pull from the english field
-#         else:
-#             return "{}".format(self.name)
-#
-#     class Meta:
-#         ordering = ['id', ]
-
-class Instrument(models.Model):
-    # instrument_type = models.ManyToManyField("InstrumentField", through="InstrumentType", verbose_name=_("Type of Instrument"))
+class InstrumentType(models.Model):
     name = models.CharField(max_length=255, verbose_name=_("English name"))
     nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("French name"))
-    metadata = models.ManyToManyField("MetadataField", through="InstrumentMetadatum",  verbose_name=_("Metadata"))
-
 
     def __str__(self):
         # check to see if a french value is given
@@ -127,6 +106,22 @@ class Instrument(models.Model):
         else:
             return "{}".format(self.name)
 
+
+class Instrument(models.Model):
+    instrument_type = models.ForeignKey(InstrumentType, on_delete=models.DO_NOTHING, related_name="instruments",
+                                                  verbose_name=_("Type of instrument"))
+    name = models.CharField(max_length=255, verbose_name=_("English name"))
+    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("French name"))
+    #metadata = models.ManyToManyField("MetadataField", through="InstrumentMetadatum",  verbose_name=_("Metadata"))
+
+    def __str__(self):
+        # check to see if a french value is given
+        if getattr(self, str(_("name"))):
+
+            return "{}".format(getattr(self, str(_("name"))))
+        # if there is no translated term, just pull from the english field
+        else:
+            return "{}".format(self.name)
 
     def get_absolute_url(self):
         return reverse("vault:instrument_detail", kwargs={"pk": self.id})
