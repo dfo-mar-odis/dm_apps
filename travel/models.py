@@ -386,6 +386,32 @@ class Conference(models.Model):
 class TripRequest(models.Model):
     fiscal_year = models.ForeignKey(shared_models.FiscalYear, on_delete=models.DO_NOTHING, verbose_name=_("fiscal year"),
                                     default=fiscal_year(sap_style=True), blank=True, null=True, related_name="trip_requests")
+    # Trip Details
+    is_group_request = models.BooleanField(default=False,
+                                           verbose_name=_("Is this a group request (i.e., a request for multiple individuals)?"))
+    purpose = models.ForeignKey(Purpose, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("purpose of travel"))
+    reason = models.ForeignKey(Reason, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("reason for travel"))
+    trip = models.ForeignKey(Conference, on_delete=models.DO_NOTHING, null=True, verbose_name=_("trip"), related_name="trip_requests")
+
+    departure_location = models.CharField(max_length=1000, verbose_name=_("departure location (city, province, country)"), blank=True,
+                                          null=True)
+    destination = models.CharField(max_length=1000, verbose_name=_("destination location (city, province, country)"), blank=True,
+                                   null=True)
+    start_date = models.DateTimeField(verbose_name=_("start date of travel"), null=True, blank=True)
+    end_date = models.DateTimeField(verbose_name=_("end date of travel"), null=True, blank=True)
+    multiple_attendee_rationale = models.TextField(blank=True, null=True, verbose_name=_(
+        "rationale for multiple travelers"))
+
+    #############
+    # these two fields should be deleted eventually if the event planning peice happens through this app...
+    # has_event_template = models.NullBooleanField(default=False,
+    #                                              verbose_name=_(
+    #                                                  "Is there an event template being completed for this trip or meeting?"))
+    # event_lead = models.ForeignKey(shared_models.Region, on_delete=models.DO_NOTHING, verbose_name=_("Regional event lead"),
+    #                                related_name="trip_events", blank=True, null=True)
+    ################
+    role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("role of traveller"))
+
     # traveller info
     user = models.ForeignKey(AuthUser, on_delete=models.DO_NOTHING, null=True, blank=True, related_name="user_trip_requests",
                              verbose_name=_("DM Apps user"))
@@ -405,30 +431,6 @@ class TripRequest(models.Model):
                                null=True, blank=True)
     # trip_title = models.CharField(max_length=1000, verbose_name=_("trip title"))
 
-    # Trip Details
-    is_group_request = models.BooleanField(default=False,
-                                           verbose_name=_("Is this a group request (i.e., a request for multiple individuals)?"))
-    purpose = models.ForeignKey(Purpose, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("purpose of travel"))
-    reason = models.ForeignKey(Reason, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("reason for travel"))
-    trip = models.ForeignKey(Conference, on_delete=models.DO_NOTHING, null=True, verbose_name=_("trip"), related_name="trip_requests")
-
-    departure_location = models.CharField(max_length=1000, verbose_name=_("departure location (city, province, country)"), blank=True,
-                                          null=True)
-    destination = models.CharField(max_length=1000, verbose_name=_("destination location (city, province, country)"), blank=True,
-                                   null=True)
-    start_date = models.DateTimeField(verbose_name=_("start date of travel"), null=True, blank=True)
-    end_date = models.DateTimeField(verbose_name=_("end date of travel"), null=True, blank=True)
-
-    #############
-    # these two fields should be deleted eventually if the event planning peice happens through this app...
-    # has_event_template = models.NullBooleanField(default=False,
-    #                                              verbose_name=_(
-    #                                                  "Is there an event template being completed for this trip or meeting?"))
-    # event_lead = models.ForeignKey(shared_models.Region, on_delete=models.DO_NOTHING, verbose_name=_("Regional event lead"),
-    #                                related_name="trip_events", blank=True, null=True)
-    ################
-    role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("role of traveller"))
-
     # purpose
     role_of_participant = models.TextField(blank=True, null=True, verbose_name=_("role description"))
     objective_of_event = models.TextField(blank=True, null=True, verbose_name=_("objective of the trip"))
@@ -436,8 +438,6 @@ class TripRequest(models.Model):
     multiple_conferences_rationale = models.TextField(blank=True, null=True,
                                                       verbose_name=_("rationale for individual attending multiple conferences"))
     bta_attendees = models.ManyToManyField(AuthUser, blank=True, verbose_name=_("Other attendees covered under BTA"))
-    multiple_attendee_rationale = models.TextField(blank=True, null=True, verbose_name=_(
-        "rationale for multiple travelers"))
     late_justification = models.TextField(blank=True, null=True, verbose_name=_("Justification for late submissions"))
     funding_source = models.TextField(blank=True, null=True, verbose_name=_("funding source"))
     notes = models.TextField(blank=True, null=True, verbose_name=_("optional notes"))

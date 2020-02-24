@@ -208,16 +208,16 @@ class TripRequestForm(forms.ModelForm):
         self.fields['destination'].group = request_detail_label
         self.fields['start_date'].group = request_detail_label
         self.fields['end_date'].group = request_detail_label
-        self.fields['bta_attendees'].group = purpose_label
+        self.fields['role'].group = request_detail_label
+        self.fields['multiple_attendee_rationale'].group = request_detail_label
 
         # purpose
         purpose_label = _('Details of Trip Request')
-        self.fields['role'].group = request_detail_label
+        self.fields['bta_attendees'].group = purpose_label
         self.fields['role_of_participant'].group = purpose_label
         self.fields['objective_of_event'].group = purpose_label
         self.fields['benefit_to_dfo'].group = purpose_label
         self.fields['multiple_conferences_rationale'].group = purpose_label
-        self.fields['multiple_attendee_rationale'].group = request_detail_label
         self.fields['late_justification'].group = purpose_label
         self.fields['funding_source'].group = purpose_label
         self.fields['notes'].group = purpose_label
