@@ -393,6 +393,8 @@ class Resource(models.Model):
     translation_needed = models.BooleanField(default=True, verbose_name=_("translation needed"))
     publication_fy = models.ForeignKey(shared_models.FiscalYear, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False,
                                        verbose_name=_("FY of latest publication"))
+    is_at_risk = models.BooleanField(default=False, verbose_name=_("Is your dataset at risk?"))
+
 
     def get_absolute_url(self):
         return reverse('inventory:resource_detail', kwargs={'pk': self.pk})
