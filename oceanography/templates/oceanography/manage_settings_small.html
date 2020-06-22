@@ -1,4 +1,4 @@
-{% extends "projects/projects_base.html" %}
+{% extends "oceanography/oceanography_base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
@@ -47,16 +47,11 @@
             <br><br>
             <table class="table sortable" style="width: auto">
                 <thead>
-                {% if "program" in title|lower %}
-                    <th scope="col">Program ID</th>
-                {% endif %}
+
                 {% for field in field_list %}
                     <th scope="col">{% get_verbose_label my_object field %}</th>
                 {% endfor %}
-                {% if "program" in title|lower %}
-                    <th></th>
-                    <th scope="col">Number of projects tagged with this program?</th>
-                {% endif %}
+
 
                 </thead>
                 <tbody>
@@ -113,14 +108,7 @@
                                 </td>
                             {% endif %}
                         {% endfor %}
-                        {% if "program" in title|lower and form.instance.id %}
-                            <td class="center-col">
-                                {{ form.instance.projects.count }}
-                                ({{ form.instance.regions }})
 
-
-                            </td>
-                        {% endif %}
                         {% if form.instance.id %}
 
                             <td>
