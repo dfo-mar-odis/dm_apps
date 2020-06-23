@@ -1,0 +1,90 @@
+{% extends "vault/vault_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block content %}
+
+    <style>
+        .indent-lg {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'vault:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Instrument List</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+
+        <h1 class="big-header">Instrument list </h1>
+
+        <form class="form" action="." method="get" id="filter-form">
+            <div class="row">
+
+                {% for field in filter.form %}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+
+                {% endfor %}
+                <div class="col">
+                    <br>
+                    <input type="submit" value="Filter" class="btn btn-warning btn-sm">
+
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-12">
+
+                <div class="row">
+                    <div class="col">
+                        {% trans "(click on a header to sort table)" %}
+                    </div>
+                    <div class="col" style="text-align: center">
+                        <em>displaying all {{ filter.qs.count }} records</em>
+                    </div>
+                    <div class="col" style="text-align: right; padding-bottom: 10px">
+                        <a href="{% url 'vault:instrument_new' %}" class="btn btn-sm btn-primary">New Instrument</a>
+                    </div>
+                </div>
+
+
+                <table class="table table-sm table-hover sortable" style="font-size: small">
+                    <thead>
+                    <tr>
+                        {% for field in field_list %}
+                                <th scope="col">{% get_verbose_label my_object field %}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for object in filter.qs %}
+                        {% url 'vault:instrument_detail' object.id as my_url %}
+                        <tr href="{{ my_url }}">
+
+
+                            {% for field in field_list %}
+                                    <td>{% get_field_value object field %}</td>
+
+                            {% endfor %}
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}

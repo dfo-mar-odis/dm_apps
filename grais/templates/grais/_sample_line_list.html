@@ -1,46 +1,36 @@
 {#  COLLECTOR LINES #}
-        <h4>
-          <b style="padding-right: 1.1em">Lines Deployed</b>
-          <a class="btn btn-sm btn-outline-primary" href="{% url 'grais:line_new' object.id %}"> Add </a>
-        </h4>
-        <table class="table table-hover table-sm">
-          <thead>
-            <th>Tag #</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th style="text-align: center">No. surfaces</th>
-            <th style="text-align: center">Species count</th>
-            <th style="text-align: center">Was lost?</th>
-          </thead>
-          <tbody>
-            {% for l in object.lines.all  %}
-              <tr href="{% url 'grais:line_detail' l.id %}">
-                {% if l.collector %}
-                  <td>{{l.collector}}</td>
-                {% else %}
-                  <td>n/a</td>
-                {% endif %}
+{% load custom_filters %}
 
-                {% if l.latitude_n %}
-                  <td>{{l.latitude_n|floatformat:6}}</td>
-                {% else %}
-                  <td>n/a</td>
-                {% endif %}
-                {% if l.longitude_w %}
-                  <td>{{l.longitude_w|floatformat:6}}</td>
-                {% else %}
-                  <td>n/a</td>
-                {% endif %}
-                <td style="text-align: center">{{l.surfaces.count}}</td>
-                <td style="text-align: center">{{l.surface_species_count}}</td>
-                <td  style="text-align: center" {% if l.is_lost %}class="red-font"{% endif %}>{{l.is_lost|yesno}}</td>
+<h4>
+    <b style="padding-right: 1.1em">Lines Deployed</b>
+    <a class="btn btn-sm btn-outline-primary" href="{% url 'grais:line_new' object.id %}"> Add </a>
+</h4>
+<table class="table table-hover table-sm" style="width: 80%;">
+    <thead>
+    <th>#</th>
+    <th>Tag</th>
+    <th>Lat/ Long</th>
+    <th style="text-align: center">No. surfaces</th>
+    <th style="text-align: center">Species count</th>
+    <th style="text-align: center">Has invasive species?</th>
+    <th style="text-align: center">Was lost?</th>
+    </thead>
+    <tbody>
+    {% for l in object.lines.all %}
+        <tr href="{% url 'grais:line_detail' l.id %}">
+            <td>{{ forloop.counter}}</td>
+            <td>{{ l.collector }}</td>
+            <td>
+                {{ l.latitude_n|nz:"---"|floatformat:6 }} / {{ l.longitude_w|nz:"---"|floatformat:6 }}
+            </td>
+            <td style="text-align: center">{{ l.surfaces.count }}</td>
+            <td style="text-align: center">{{ l.surface_species_count }}</td>
+            <td style="text-align: center">{{ l.has_invasive_spp|yesno }}</td>
+            <td style="text-align: center" {% if l.is_lost %}class="red-font"{% endif %}>{{ l.is_lost|yesno }}</td>
 
-              </tr>
-            {% empty %}
-              {# empty #}
-            {% endfor %}
-          </tbody>
-        </table>
-        <p>
-          <b>TOTAL: {{object.lines.count}}</b>
-        </p>
+        </tr>
+    {% empty %}
+        {# empty #}
+    {% endfor %}
+    </tbody>
+</table>

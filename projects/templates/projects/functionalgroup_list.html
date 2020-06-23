@@ -1,0 +1,91 @@
+{% extends "projects/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'projects:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Functional Groups</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="big-header">Functional Groups </h1>
+
+        <form class="form" action="." method="get" id="filter-form">
+            <div class="row">
+
+                {% for field in filter.form %}
+                    {# {{field.label}}: &nbsp; {{field}}&nbsp;&nbsp; #}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+
+                {% endfor %}
+                <div class="col">
+                    <br>
+                    <input type="submit" value="{% trans "Filter" %}" class="btn btn-warning btn-sm">
+
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col">
+                {% trans "(click on a header to sort table)" %}
+            </div>
+
+            <div class="col" style="text-align: right; padding-bottom: 10px">
+                <a href="{% url 'projects:group_new' %}" class="btn btn-sm btn-primary">
+                    {% trans "New" %}
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover table-sm sortable" style="font-size: small">
+                    <thead>
+                    {% for field in field_list %}
+                        <th>
+                            {% get_verbose_label object_list.first field %}
+                        </th>
+                    {% endfor %}
+
+                    </thead>
+                    <tbody>
+                    {% for object in object_list %}
+                        <tr href="{% url 'projects:group_edit' object.id %}">
+                            {% for field in field_list %}
+                                <td>
+                                    {% if field == "sections" %}
+                                        <ul>
+
+                                            {% for section in object.sections.all %}
+                                                <li>{{ section }} ({{ section.division.branch.region }})</li>
+                                            {% endfor %}
+                                        </ul>
+
+                                    {% else %}
+                                        {% get_field_value object field %}
+                                    {% endif %}
+
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    <br>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock content %}

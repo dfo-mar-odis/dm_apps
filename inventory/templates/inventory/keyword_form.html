@@ -1,16 +1,14 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 
 {% load bootstrap4 %}
 
 {% block content %}
 
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+        {% url 'inventory:index' as home_url %}
 
+
+    <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
@@ -28,8 +26,6 @@
             {% endif %}
         </ol>
     </nav>
-
-    <div class="container">
 
         {% load static %}
         {# Load js file to allow for popout window #}
@@ -51,7 +47,7 @@
                     <a class="btn btn-secondary" href="{% url 'inventory:keyword_detail' resource.id object.id %}">Cancel</a>
                 {% else %}
                     <a class="btn btn-secondary"
-                       href="{% url 'inventory:resource_keyword_filter' resource.id %}">Cancel</a>
+                       href="{{ request.META.HTTP_REFERER }}">Cancel</a>
                 {% endif %}
             </p>
         </form>

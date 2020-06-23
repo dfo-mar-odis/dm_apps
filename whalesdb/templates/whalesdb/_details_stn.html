@@ -1,0 +1,29 @@
+{% load verbose_names %}
+
+<style>
+    /* Set the size of the div element that contains the map */
+    #map, #lineMap {
+        height: 300px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+    }
+    .label {
+        font-weight: bold;
+    }
+</style>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-sm">
+            <div><span class="font-weight-bold">{% get_verbose_label stn 'stn_name' %} : </span><span>{% get_field_value stn 'stn_name' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label stn 'stn_code' %} : </span><span>{% get_field_value stn 'stn_code' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label stn 'stn_revision' %} : </span><span>{% get_field_value stn 'stn_revision' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label stn 'stn_planned_lat' %} : </span><span>{% get_field_value stn 'stn_planned_lat' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label stn 'stn_planned_lon' %} : </span><span>{% get_field_value stn 'stn_planned_lon' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label stn 'stn_planned_depth' %} : </span><span>{% get_field_value stn 'stn_planned_depth' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label stn 'stn_notes' %} : </span><span>{% get_field_value stn 'stn_notes' %}</span></div>
+        </div>
+        <div class="col-sm">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>

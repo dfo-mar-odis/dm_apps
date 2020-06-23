@@ -1,0 +1,27 @@
+{% extends "shared_models/generic_base.html" %}
+
+{% block bug_create %}
+    {% include "inventory/base/_bug_url.html" %}
+{% endblock %}
+
+{% block title %}
+    {% include "inventory/base/_app_title.html" %}
+    {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock %}
+
+{% block header %}
+    {{ block.super }}
+    {% include "inventory/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+    {{ block.super }}
+{% endblock %}
+
+{% block left_auth %}
+    {% include "inventory/base/_nav_left_auth.html" %}
+{% endblock %}
+
+{% block left_all %}
+    {% include "inventory/base/_nav_left_all.html" %}
+{% endblock %}

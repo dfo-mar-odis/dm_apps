@@ -1,0 +1,45 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load verbose_names %}
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diets:cruise_list' %}">Cruises</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
+        </ol>
+    </nav>
+
+
+    <style type="text/css">
+        .label {
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="container">
+        <br>
+        <h1>{{ object }}</h1>
+        <p>
+            <a class="btn btn-warning" href="{% url 'diets:cruise_edit' object.id %}">Edit</a>
+            {% if user.is_superuser %}
+                <a class="btn btn-danger" href="{% url 'diets:cruise_delete' object.id %}">Delete</a>
+            {% else %}
+                <a class="btn btn-danger disabled" href="{% url 'diets:cruise_delete' object.id %}">Delete</a>
+            {% endif %}
+        </p>
+
+        <br><br>
+
+        <div class="row">
+            <div class="col-3">
+                {% for field in field_list %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

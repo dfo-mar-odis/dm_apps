@@ -1,3 +1,5 @@
+{% load static %}
+{% load custom_tags %}
 <h4>
     <b style="padding-right: 1.1em">Surfaces</b>
     <a class="btn btn-sm btn-outline-primary" href="{% url 'grais:surface_new' object.id %}"> Add</a>
@@ -5,8 +7,9 @@
 
 <table class="table table-sm table-hover">
     <thead>
+    <th>#</th>
     <th>Surface</th>
-    {#          <th>Invasive spp.</th>#}
+    <th>Has invasive spp.</th>
     <th>Total spp.</th>
     <th>Thumbnail</th>
     <th>Was lost?</th>
@@ -14,16 +17,16 @@
     <tbody>
     {% for s in object.surfaces.all %}
         <tr href="{% url 'grais:surface_detail' s.id %}">
-
-
             {% if s.surface_type == 'pe' %}
-                <td class="petri">
+                {% echo "petri" as my_color_class %}
                     {% else %}
-                <td class="plate">
+                {% echo "plate" as my_color_class %}
             {% endif %}
-            {{ s.label }}
-            </td>
 
+            <td>{{ forloop.counter}}</td>
+            <td class="{{my_color_class}}">{{ s.label }}</td>
+
+            <td>{{ s.has_invasive_spp|yesno }}</td>
             <td>{{ s.species.count }}</td>
 
             {#              <td>{{s.species.count}}</td>#}
@@ -31,7 +34,7 @@
             {% if s.image %}
                 <td>
                     <a href="{{ s.image.url }}">
-                        <img src="{{ s.image.url }}" alt="cannot find {{ s.image.url }}" width="75 em">
+                        <img src="{{ s.image.url }}" alt="Image not found..." width="150 em">
                     </a>
                 </td>
             {% else %}
@@ -44,6 +47,3 @@
     {% endfor %}
     </tbody>
 </table>
-<p>
-    <b>TOTAL: {{ object.surfaces.count }}</b>
-</p>

@@ -1,0 +1,68 @@
+{% extends "shared_models/shared_entry_form.html" %}
+{% load i18n %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+    <div class="container mt-1">
+        <div class="container card border border-dark text-center mt-2 pt-1">
+            <div class="card-header bg-transparent">
+                <h1>{% trans title %}</h1>
+            </div>
+        </div>
+
+        <div class="container card border border-dark mt-2 pt-1">
+            <div class="card-body">
+                <form method="post" class="form" enctype='multipart/form-data' >
+                    {% csrf_token %}
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="row">
+                                {% for field in form %}
+                                    <div class="col-6">
+                                        {% if field.field.create_url %}
+                                            <div>
+                                                {% bootstrap_label field.label %}
+                                            </div>
+                                            <div class="row col pl-0">
+                                                <!-- <span class="col"> -->
+                                                {% bootstrap_field field placeholder="" size="small" show_label=false %}
+                                                <!-- </span><span class="col-1"> -->
+                                                <button class="btn btn-primary"
+                                                        onclick="return pop('{% url ''|add:field.field.create_url 'pop' %}',
+                                                        'id_{{field.name}}' )" >+</button>
+                                                <!-- </span> -->
+                                            </div>
+                                        {% else %}
+                                            {% bootstrap_field field placeholder="" size="small" %}
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    {# ============================================================================================== #}
+                    {# if the user is in Staff-Users group and has permissions to input New Requests #}
+                    {% if csas_admin %}
+                        <br>
+                        <!-- <div class="col-3"><a class="btn btn-secondary btn-lg" href="{% url 'csas:create_req'%}">{% trans "New Request" %}</a></div> -->
+                        <div class="col-12"><a class="btn btn-primary btn-lg" >
+                            {% trans "The following part will be filled by the Super Users" %}</a></div> <br>
+                        <div class="col-12"><a class="btn btn-outline-primary btn-lg" >
+                            {% trans "This part is still under construction" %}</a></div>
+                        <br><br>
+                    {% endif %}
+                    {# ============================================================================================== #}
+
+                    {% buttons %}
+                        <button type="submit" class="btn btn-success" onclick="saveForm();">
+                            {% trans "Submit" %}
+                        </button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "csas/csas_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block title %}
+    {% trans title %}
+{% endblock title %}
+
+{% block body %}
+
+<br><br>
+<div class="container mt-1" >
+    <div class="jumbotron">
+    <h2>{% trans title %}</h2><br>
+    <a class="btn btn-secondary" href="{% url ''|add:list_url %}">{% trans 'Back to list' %}</a>
+    <a class="btn btn-secondary" href="#" onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')" title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+
+    {% block field_override %}
+        <h2>{{ object.prj_name }}</h2>
+        {% for field in fields %}
+        <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span><span>{% get_field_value object field%}</span></div>
+        </div>
+        {% endfor %}
+    {% endblock field_override %}
+    </div>
+</div>
+{% endblock %}

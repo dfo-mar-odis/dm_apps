@@ -1,0 +1,27 @@
+{% load verbose_names %}
+<style>
+    table, th, td {
+        text-align: left;
+        border: 1px solid black;
+    }
+</style>
+
+<p>
+    This is an automated message to inform you that the following trip is accruing costs upwards of $ 10,000 CAD of <b>non-RES costs</b>:
+</p>
+
+<table>
+    {% for field in field_list %}
+        {% verbose_td_display trip field %}
+    {% endfor %}
+</table>
+
+<p>
+    To change or modify the meeting information, please click <a href="{{SITE_FULL_URL}}{% url 'travel:trip_detail' trip.id "all" %}">HERE</a>.
+</p>
+
+<style media="screen">
+    table, td {
+        border: solid 1px black;
+    }
+</style>

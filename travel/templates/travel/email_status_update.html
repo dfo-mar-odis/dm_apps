@@ -1,19 +1,38 @@
 {% load verbose_names %}
+
+<style>
+    table, th, td {
+        text-align: left;
+        border: 1px solid black;
+    }
+</style>
+
 <em>
     *** un message français suivra
 </em>
 <br><br>
 
 <p>
-    Your trip request has been  {{trip_object.status.name}}.
+    {{ triprequest.user.first_name }},
     <br><br>
-    You can click <a href="http://dmapps{% url 'travel:trip_detail' trip.id %}">HERE</a> to access the trip. Here are the trip details:
+    Your trip request has been
+    {% if triprequest.status.id != 11 %}
+        {{ triprequest.status.name }}.
+    {% else %}
+        {{ triprequest.status.name }} by the RDG.
+        <u style="color: red">
+            You may now create your travel request in HRG in order to have travel authority.
+        </u>
+    {% endif %}
+    <br><br>
+    You can click <a href="{{SITE_FULL_URL}}{% url 'travel:request_detail' triprequest.id triprequest.user|slugify %}">HERE</a> to access the request. Here are the
+    details:
     <br><br>
 </p>
 
 <table>
     {% for field in field_list %}
-        {% verbose_td_display trip field %}
+        {% verbose_td_display triprequest field %}
     {% endfor %}
 </table>
 
@@ -22,17 +41,25 @@
 </p>
 
 <p>
-    {{ trip.user.first_name }},
+    {{ triprequest.user.first_name }},
     <br><br>
-    Votre demande de voyage a été {{trip_object.status.nom}}.
+    Votre demande de voyage a été
+    {% if triprequest.status.id != 11 %}
+        {{ triprequest.status.nom }}.
+    {% else %}
+        {{ triprequest.status.name }} par le DGR.
+        <u style="color: red">
+            Tu peux maintenant faire ta demande de voyage dans HRG pour te donner l’autorité de voyager.
+        </u>
+    {% endif %}
     <br><br>
-    Vous pouvez cliquer <a href="http://dmapps{% url 'travel:trip_detail' trip.id %}">ICI</a> pour accéder la voyage.
+    Vous pouvez cliquer <a href="{{SITE_FULL_URL}}{% url 'travel:request_detail' triprequest.id triprequest.user|slugify %}">ICI</a> pour accéder la voyage.
     Voici les détails du voyage:
 </p>
 
 <table>
     {% for field in field_list %}
-        {% verbose_td_display trip field %}
+        {% verbose_td_display triprequest field %}
     {% endfor %}
 </table>
 

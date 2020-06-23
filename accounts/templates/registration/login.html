@@ -1,15 +1,27 @@
 {% extends "accounts/accounts_base.html" %}
 {% load bootstrap4 %}
 {% load i18n %}
-
+{% load static %}
 {% block content %}
     <style>
         .popover-header {
-            background-color: rgba(239, 255, 59, 0.55);
+            background-color: rgba(239, 255, 59, 0.75);
         }
 
         .popover-body {
             background-color: #feffeb;
+        }
+
+        body {
+            background-image: url("{% static 'img/waves1.jpg' %}");
+            background-size: cover;
+        }
+
+        .jumbotron {
+            background-color: rgba(255, 255, 255, 0.6);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        {#background-color: rgba(71, 71, 71, 0.6);#}{#color: white;#}
         }
     </style>
 
@@ -17,13 +29,13 @@
         <h3>{% bootstrap_alert message alert_type='danger' %}</h3>
     {% endif %}
     <div class="container">
+        <br>
+        <br>
         <div class="jumbotron">
 
             <h1 class="big-header">
                 {% trans "Sign In" %}
             </h1>
-            <hr>
-
 
             {% if user.is_authenticated %}
 

@@ -1,0 +1,129 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load humanize %}
+<style>
+    .card {
+        background-color: #ebebeb;
+    }
+</style>
+
+<div class="card">
+    <div class="card-body">
+
+        <div class="mb-3">
+            <h4 class="card-title">
+                {% trans "Upcoming Dates" %}
+            </h4>
+            {% if upcoming_dates.count %}
+
+                <table class="table table-sm">
+                    <thead>
+                    {% for field in upcoming_dates_field_list %}
+                        {% if field == "date" %}
+                            <th style="width: 150px">
+                                {% get_verbose_label upcoming_dates.first field %}
+                            </th>
+                        {% else %}
+                            <th>
+                                {% get_verbose_label upcoming_dates.first field %}
+                            </th>
+                        {% endif %}
+                    {% endfor %}
+                    </thead>
+                    <tbody>
+                    {% for upcoming_date  in upcoming_dates %}
+                        <tr {% if upcoming_date.is_deadline %}class="red-font"{% endif %}>
+                            {% for field in upcoming_dates_field_list %}
+
+                                <td>
+                                    {% if field == "date" %}
+                                        {{ upcoming_date.date|date }}<br>
+                                        ({{ upcoming_date.date|timeuntil }})
+
+                                    {% else %}
+                                        {% get_field_value upcoming_date field %}
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            {% else %}
+                {% trans "There are no upcoming dates in the system" %}
+            {% endif %}
+            (<a href="#" class="" data-toggle="modal" data-target="#past_dates">{% trans "View past dates" %}</a>)
+
+            {#<!-- View past dates MODAL -->#}
+            <div class="modal fade" id="past_dates" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"> {% trans "Past Dates" %} </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <table class="table table-sm">
+                                <thead>
+                                {% for field in upcoming_dates_field_list %}
+                                    {% if field == "date" %}
+                                        <th style="width: 150px">
+                                            {% get_verbose_label upcoming_dates.first field %}
+                                        </th>
+                                    {% else %}
+                                        <th>
+                                            {% get_verbose_label upcoming_dates.first field %}
+                                        </th>
+                                    {% endif %}
+                                {% endfor %}
+                                </thead>
+                                <tbody>
+                                {% for past_date  in past_dates %}
+                                    <tr {% if past_date.is_deadline %}class="red-font"{% endif %}>
+                                        {% for field in upcoming_dates_field_list %}
+                                            <td>
+                                                {% if field == "date" %}
+                                                    {{ past_date.date|date }}
+                                                {% else %}
+                                                    {% get_field_value past_date field %}
+                                                {% endif %}
+                                            </td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <h4 class="card-title">
+                {% trans "Reference Materials:" %}
+            </h4>
+            <ul>
+                {% for obj in reference_materials %}
+                    <li>
+                        <a class="" href="{{ obj.file.url }}">
+                            {{ obj }}
+                        </a> ({{ obj.date_modified }})
+                    </li>
+                {% endfor %}
+
+
+            </ul>
+        </div>
+    </div>
+</div>

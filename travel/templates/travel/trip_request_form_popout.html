@@ -1,0 +1,235 @@
+{% extends 'pop_base.html' %}
+
+{% block jquery_import %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>{% endblock %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+{% load static %}
+
+{% block body %}
+
+    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+    <style>
+        input.cost {
+            font-size: small;
+            width: 100%;
+        }
+
+        select:invalid {
+            height: 0px !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            display: flex !important;
+        }
+    </style>
+
+    <div class="container mb-3">
+        <h3>
+            {% if object %}
+                {% if cloned %}
+                    {% trans "CLONING:" %}
+                {% endif %}
+
+                {% blocktrans with o=object %}
+                    {{ o }}
+                {% endblocktrans %}
+            {% else %}
+                {% trans "Add a Traveller" %}
+            {% endif %}
+        </h3>
+    </div>
+
+    <form method="post" class="form">
+        <div class="container mb-3">
+            {% bootstrap_form_errors form %}
+            {% csrf_token %}
+            <div class="btn-group mb-3">
+                <button type="submit" class="btn btn-primary" onclick="refreshParent()">
+                    {% trans "Update" %}
+                </button>
+                {% if object and not cloned %}
+                    <a class="btn btn-danger" href="{% url 'travel:request_delete' object.id 'pop' %}">
+                        {% trans "Delete" %}
+                    </a>
+                {% endif %}
+                <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                    {% trans "Close" %}
+                </a>
+            </div>
+            <br>
+
+
+            {# Fields without a label; Will serve as a catch all but also to bring in hidden fields #}
+            {% for field in form %}
+                {% if field.field.group == 0 %}
+                    {% bootstrap_field field placeholder="" %}
+                {% endif %}
+            {% endfor %}
+
+            {# GENERAL DETAILS #}
+            <div class="card mb-2">
+                <h2 class="card-header text-white bg-dark">
+                    {% trans "General Trip Information" %}
+                </h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {% for field in form %}
+                            {% if field.field.group == 1 %}
+                                {% include "travel/_trip_request_form_layout.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {# TRAVELLER #}
+            <div class="card mb-2">
+                <h2 class="card-header text-white bg-dark" id="group2-text-h2">
+                    {% trans "Traveller Information" %}
+                </h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {% for field in form %}
+                            {% if field.field.group == 2 %}
+                                {% include "travel/_trip_request_form_layout.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {# JUSTIFICATION #}
+            <div class="card mb-2">
+                <h2 class="card-header text-white bg-dark">
+                    {% trans "Trip Justification" %}
+                </h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {% for field in form %}
+                            {% if field.field.group == 3 %}
+                                {% include "travel/_trip_request_form_layout.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container mb-3">
+
+            {% if object and not cloned %}
+                {% include "travel/_costs.html" %}
+            {% endif %}
+
+
+        </div>
+        <div class="container mb-4">
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary" onclick="refreshParent()">
+                    {% trans "Update" %}
+                </button>
+                {% if object and not cloned %}
+                    <a class="btn btn-danger" href="{% url 'travel:request_delete' object.id 'pop' %}">
+                        {% trans "Delete" %}
+                    </a>
+                {% endif %}
+                <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                    {% trans "Close" %}
+                </a>
+            </div>
+        </div>
+
+
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+{% endblock %}
+
+{% block body_js %}
+
+
+    <script type="application/javascript">
+        var userObj = {{ user_json|safe }};
+        var sectionObj = {{ section_json|safe|nz:"{}" }};
+        var myId = "";
+
+        function refreshCosts() {
+
+            //console.log($("#id_cost").html());
+            $("#id_cost").load("# #id_cost>*", costReloaded);
+        }
+
+        function load_js() {
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = '{% static "js/clickableTableRows.js" %}';
+            head.appendChild(script);
+        }
+
+
+        function costReloaded() {
+            console.log("cost reloaded");
+            load_js();
+
+
+        }
+
+        function refreshUserInfo() {
+            myId = $("#id_user").val();
+            if (myId == "") {
+                $("#id_first_name").prop("required", true);
+                $("#id_last_name").prop("required", true);
+                $("#id_email").prop("required", true);
+                $(".disappear-if-user").removeClass("gone");
+            } else {
+                $(".disappear-if-user").addClass("gone");
+                $("#id_first_name").val(userObj[myId]["first_name"]);
+                $("#id_last_name").val(userObj[myId]["last_name"]);
+                $("#id_email").val(userObj[myId]["email"]);
+
+            }
+        }
+
+
+        $("#id_user").change(function () {
+            refreshUserInfo();
+        });
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            refreshUserInfo();
+        });
+
+    </script>
+
+
+    <script>
+        window.resizeTo(width = 1500, height = 800);
+
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("#id_user")[0].focus()
+        });
+
+        $("#predefined-addresses").change(function () {
+            $myInput = $(this);
+            $("#id_address").val($myInput.val());
+        });
+
+    </script>
+{% endblock %}

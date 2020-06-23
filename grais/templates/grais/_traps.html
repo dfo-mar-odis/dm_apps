@@ -9,8 +9,9 @@
     <th>Type</th>
     <th>Latitude (N)</th>
     <th>Longitude (W)</th>
-    <th>Crab count</th>
-    <th>Bycatch species count</th>
+    <th>Invasive Crab count</th>
+    <th>Non-invasive Crab count</th>
+    <th>Bycatch count</th>
     <th>Total green crab weight (kg)</th>
     </thead>
     <tbody>
@@ -29,8 +30,9 @@
             {% else %}
                 <td>n/a</td>
             {% endif %}
-            <td>{{ trap.crabs.count }}</td>
-            <td>{{ trap.bycatch.count }}</td>
+            <td>{{ trap.get_invasive_crabs.count }}</td>
+            <td>{{ trap.get_noninvasive_crabs.count }}</td>
+            <td>{{ trap.get_bycatch.count }}</td>
             <td>{{ trap.total_green_crab_wt_kg }}</td>
             {#            <td>{{ l.surfaces.count }}</td>#}
 

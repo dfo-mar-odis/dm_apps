@@ -1,0 +1,87 @@
+{% extends 'pop_base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_tags %}
+{% load custom_filters %}
+{% block body %}
+
+    {% crash_if_none "h1" h1 %}
+
+    <div class="container">
+        <div class="mb-3">
+            <h1>
+                {{ h1 }}
+            </h1>
+        </div>
+        {% if h2 %}
+            <div class="mb-3">
+                <h2>
+                    {{ h2 }}
+                </h2>
+            </div>
+        {% endif %}
+        {% if h3 %}
+            <div class="mb-3">
+                <h3>
+                    {{ h3 }}
+                </h3>
+            </div>
+        {% endif %}
+
+        <div class="mb-3">
+            {% block pre_form_div %}{% endblock %}
+        </div>
+
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            <div id="fields">
+
+                {% block form_fields %}
+                    {% for field in form %}
+                        {% bootstrap_field field placeholder="" %}
+                    {% endfor %}
+                {% endblock %}
+
+                {% block form_buttons %}
+                    <div class="btns">
+                        {% trans "Save" as submit_btn_text %}
+                        <input type="submit" class="btn {% block submit_btn_class %}btn-success{% endblock %}" onclick="refreshParent()"
+                               value="{{ submit_text|nz:submit_btn_text }}" \>
+                        <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                            {% trans "Close" %}
+                        </a>
+                    </div>
+                {% endblock %}
+            </div>
+
+        </form>
+        <div class="mb-3">
+            {% block post_form_div %}{% endblock %}
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+{% block body_js %}
+    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+    <script>
+
+        window.resizeTo(width = {{width|nz:900}}, height = {{height|nz:500}});
+
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("input").first().select();
+        });
+
+    </script>
+{% endblock %}

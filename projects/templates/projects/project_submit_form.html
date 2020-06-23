@@ -1,39 +1,15 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load i18n %}
 
-{% block content %}
+{% block subcontent %}
 
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'projects:my_project_list' %}">
-                {% trans "My Projects" %}
-            </a></li>
-            <li class="breadcrumb-item"><a href="{% url 'projects:project_detail' object.id %}">{{ object }}</a>
-            </li>
-            {% if object.submitted %}
-                <li class="breadcrumb-item active" aria-current="page">
-                    {% trans "Unsubmit" %}
-                </li>
-            {% else %}
-                <li class="breadcrumb-item active" aria-current="page">
-                    {% trans "Submit" %}
-                </li>
-            {% endif %}
-        </ol>
-    </nav>
 
     <div class="container">
 
-        <h1>
-            {% if object.submitted %}
-                {% trans "Are you sure you want to unsubmit the this project?" %}
-            {% else %}
-                {% trans "Are you sure you want to submit the following project?" %}
-            {% endif %}
-        </h1>
+
         <br><br>
 
         {% if not object.submitted %}
@@ -66,4 +42,4 @@
 
     </div>
 
-{% endblock content %}
+{% endblock %}

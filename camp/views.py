@@ -35,7 +35,7 @@ def in_camp_group(user):
 
 
 class CampAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_camp_group(self.request.user)
@@ -54,7 +54,7 @@ def in_camp_admin_group(user):
 
 
 class CampAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_camp_admin_group(self.request.user)
@@ -72,103 +72,111 @@ class IndexTemplateView(CampAccessRequiredMixin, TemplateView):
 
 # SAMPLE #
 ##########
-
-class SearchFormView(CampAccessRequiredMixin, FormView):
-    template_name = 'camp/sample_search.html'
-
-    form_class = forms.SearchForm
-
-    # def get_initial(self):
-    #     return {'year':timezone.now().year-1}
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        station_list = []
-        for obj in models.Station.objects.all():
-            station_list.append({"site": obj.site_id, "val": obj.id, "text": obj.name})
-
-        context["station_list"] = station_list
-        return context
-
-    def form_valid(self, form):
-        year = form.cleaned_data["year"]
-        month = form.cleaned_data["month"]
-        site = nz(form.cleaned_data["site"], None)
-        station = nz(form.cleaned_data["station"], None)
-        species = nz(form.cleaned_data["species"], None)
-
-        # check to see how many results will be returned
-        qs = models.Sample.objects.all()
-        if year:
-            qs = qs.filter(year=year)
-        if month:
-            qs = qs.filter(month=month)
-        if station:
-            qs = qs.filter(station=station)
-        if site and not station:
-            qs = qs.filter(station__site=site)
-        if species:
-            qs = qs.filter(sample_spp__species=species)
-
-        if qs.count() < 1000:
-            return HttpResponseRedirect(reverse("camp:sample_list",
-                                                kwargs={"year": year, "month": month, "site": site, "station": station,
-                                                        "species": species, }))
-        else:
-            messages.error(self.request, "The search requested has returned too many results. Please try again.")
-            return HttpResponseRedirect(reverse("camp:sample_search"))
+#
+# class SearchFormView(CampAccessRequiredMixin, FormView):
+#     template_name = 'camp/sample_search.html'
+#
+#     form_class = forms.SearchForm
+#
+#     # def get_initial(self):
+#     #     return {'year':timezone.now().year-1}
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#
+#         station_list = []
+#         for obj in models.Station.objects.all():
+#             station_list.append({"site": obj.site_id, "val": obj.id, "text": obj.name})
+#
+#         context["station_list"] = station_list
+#         return context
+#
+#     def form_valid(self, form):
+#         year = form.cleaned_data["year"]
+#         month = form.cleaned_data["month"]
+#         sample_id = form.cleaned_data["sample_id"]
+#         site = nz(form.cleaned_data["site"], None)
+#         station = nz(form.cleaned_data["station"], None)
+#         species = nz(form.cleaned_data["species"], None)
+#
+#         # check to see how many results will be returned
+#         qs = models.Sample.objects.all()
+#         if year:
+#             qs = qs.filter(year=year)
+#         if month:
+#             qs = qs.filter(month=month)
+#         if sample_id:
+#             qs = qs.filter(id__icontains=sample_id)
+#         if station:
+#             qs = qs.filter(station=station)
+#         if site and not station:
+#             qs = qs.filter(station__site=site)
+#         if species:
+#             qs = qs.filter(sample_spp__species=species)
+#
+#         return HttpResponseRedirect(reverse("camp:sample_list",
+#                                                 kwargs={"year": year, "month": month, "site": site, "station": station,
+#                                                         "species": species, }))
 
 
 # class CloserTemplateView(TemplateView):
 #     template_name = 'grais/close_me.html'
 
 
-class SampleListView(CampAccessRequiredMixin, ListView):
-    template_name = "camp/sample_list.html"
-
-
-    def get_queryset(self):
-        year = nz(self.kwargs["year"])
-        month = nz(self.kwargs["month"])
-        site = nz(self.kwargs["site"])
-        station = nz(self.kwargs["station"])
-        species = nz(self.kwargs["species"])
-
-        qs = models.Sample.objects.all()
-        try:
-            qs = qs.filter(year=year)
-        except ValueError:
-            pass
-        try:
-            qs = qs.filter(month=month)
-        except ValueError:
-            pass
-        try:
-            qs = qs.filter(station=station)
-        except ValueError:
-            pass
-        try:
-            qs = qs.filter(station__site=site)
-        except ValueError:
-            pass
-        try:
-            qs = qs.filter(sample_spp__species=species)
-        except ValueError:
-            pass
-
-        return qs
+# class SampleListView(CampAccessRequiredMixin, FilterView):
+#     template_name = "camp/sample_list.html"
+#     filterset_class = filters.SampleFilter
+#
+#
+#     def get_queryset(self):
+#         year = nz(self.kwargs["year"])
+#         month = nz(self.kwargs["month"])
+#         site = nz(self.kwargs["site"])
+#         station = nz(self.kwargs["station"])
+#         species = nz(self.kwargs["species"])
+#
+#         qs = models.Sample.objects.all()
+#         try:
+#             qs = qs.filter(year=year)
+#         except ValueError:
+#             pass
+#         try:
+#             qs = qs.filter(month=month)
+#         except ValueError:
+#             pass
+#         try:
+#             qs = qs.filter(station=station)
+#         except ValueError:
+#             pass
+#         try:
+#             qs = qs.filter(station__site=site)
+#         except ValueError:
+#             pass
+#         try:
+#             qs = qs.filter(sample_spp__species=species)
+#         except ValueError:
+#             pass
+#
+#         return qs
 
 
 class SampleFilterView(CampAccessRequiredMixin, FilterView):
     filterset_class = filters.SampleFilter
-    template_name = "camp/sample_filter.html"
+    template_name = "camp/sample_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['random_object'] = models.Sample.objects.first()
+        context["field_list"] = [
+            'id',
+            'nutrient_sample_id',
+            'station.site|Site',
+            'station',
+            'start_date|Start date',
+            'sample_spp.count|Sample count',
+        ]
+        return context
 
 
-    def get_filterset_kwargs(self, filterset_class):
-        kwargs = super().get_filterset_kwargs(filterset_class)
-        if kwargs["data"] is None:
-            kwargs["data"] = {"SeasonExact": timezone.now().year - 1}
-        return kwargs
 
 
 class SampleDetailView(CampAccessRequiredMixin, DetailView):
@@ -254,7 +262,7 @@ class SampleCreateView(CampAdminRequiredMixin, CreateView):
 
 class SampleDeleteView(CampAdminRequiredMixin, DeleteView):
     model = models.Sample
-    success_url = reverse_lazy('camp:sample_filter')
+    success_url = reverse_lazy('camp:sample_list')
     success_message = 'The sample was successfully deleted!'
 
     def delete(self, request, *args, **kwargs):

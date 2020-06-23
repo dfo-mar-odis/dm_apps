@@ -1,0 +1,72 @@
+{% extends "shared_models/generic_filter.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% load verbose_names %}
+
+
+{% block header %}
+    {{ block.super }}
+    <style>
+        table, th, td {
+            font-size: small;
+        }
+    </style>
+{% endblock %}
+{% block head %}
+
+    {% for field in field_list %}
+        <th class="{{ field.class }}" {% if field.width %}style="width: {{ field.width }}"{% endif %}>
+
+            {% if 'region' in field.name %}
+                {{ region|model_verbose_name }}
+
+            {% elif 'branch' in field.name %}
+                {{ branch|model_verbose_name }}
+
+            {% elif 'division' in field.name %}
+                {{ division|model_verbose_name }}
+
+            {% elif 'section' in field.name %}
+                {{ section|model_verbose_name }}
+            {% else %}
+                {% get_verbose_label random_object field.name %}
+
+            {% endif %}
+        </th>
+    {% endfor %}
+{% endblock %}
+
+
+{% block table_tr %}
+    {% url row_object_url_name object.id as my_url %}
+    <tr href="{{ my_url }}">
+
+        {% for field in field_list %}
+            <td>
+
+                {% if 'region' in field.name and "section" in model_name|lower %}
+                    {{ object.division.branch.region.tname }}
+                {% elif 'region' in field.name and "division" in model_name|lower %}
+                    {{ object.branch.region.tname }}
+                {% elif 'region' in field.name and "branch" in model_name|lower %}
+                    {{ object.region.tname }}
+
+                {% elif 'branch' in field.name and "section" in model_name|lower %}
+                    {{ object.division.branch.tname }}
+                {% elif 'branch' in field.name and "division" in model_name|lower %}
+                    {{ object.branch.tname }}
+
+                {% elif 'division' in field.name and "section" in model_name|lower %}
+                    {{ object.division.tname }}
+                {% else %}
+
+                    {% get_field_value object field.name %}
+                {% endif %}
+            </td>
+        {% endfor %}
+    </tr>
+{% endblock %}
+

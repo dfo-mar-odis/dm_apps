@@ -5,19 +5,24 @@ from django.contrib.auth import views as auth_views
 app_name = 'inventory'
 
 urlpatterns = [
-    path('close/', views.CloserTemplateView.as_view(), name="close_me"),
 
     # RESOURCE #
     ############
-    path('', views.ResourceListView.as_view(), name="resource_list"),
+    path('', views.Index.as_view(), name="index"),
+    path('list/', views.ResourceListView.as_view(), name="resource_list"),
     path('my-list/', views.MyResourceListView.as_view(), name="my_resource_list"),
     path('<int:pk>/view/', views.ResourceDetailView.as_view(), name="resource_detail"),
+    path('<int:pk>/pdf/', views.ResourceDetailPDFView.as_view(), name="resource_pdf"),
     path('<int:pk>/full-view/', views.ResourceFullDetailView.as_view(), name="resource_full_detail"),
     path('<int:pk>/edit/', views.ResourceUpdateView.as_view(), name="resource_edit"),
     path('<int:pk>/delete/', views.ResourceDeleteView.as_view(), name="resource_delete"),
     path('new/', views.ResourceCreateView.as_view(), name="resource_new"),
     path('<int:pk>/flag-for-deletion/', views.ResourceDeleteFlagUpdateView.as_view(), name="resource_flag_delete"),
     path('<int:pk>/flag-for-publication/', views.ResourcePublicationFlagUpdateView.as_view(), name="resource_flag_publication"),
+
+    # Open Data
+    path('open-data-dashboard/', views.OpenDataDashboardTemplateView.as_view(), name="open_data_dashboard"),
+
 
     # RESOURCE PERSON #
     ###################
@@ -75,7 +80,6 @@ urlpatterns = [
     # XML GOODNESS #
     ################
     path('<int:resource>/xml/export/publish-<slug:publish>/', views.export_resource_xml, name="export_xml"),
-    path('<int:resource>/xml/export/', views.export_resource_xml, name="export_xml"),
 
     # DATA MANAGEMENT ADMIN #
     #########################
@@ -116,6 +120,7 @@ urlpatterns = [
     path('resource/<int:resource>/data-resource/new/', views.DataResourceCreateView.as_view(), name='data_resource_create'),
     path('data-resource/<int:pk>/edit/', views.DataResourceUpdateView.as_view(), name='data_resource_edit'),
     path('data-resource/<int:pk>/delete/', views.DataResourceDeleteView.as_view(), name='data_resource_delete'),
+    path('data-resource/<int:pk>/clone/', views.data_resource_clone, name='data_resource_clone'),
 
     # WEB SERVICES #
     #################
@@ -123,11 +128,13 @@ urlpatterns = [
          name='web_service_create'),
     path('web-service/<int:pk>/edit/', views.WebServiceUpdateView.as_view(), name='web_service_edit'),
     path('web-service/<int:pk>/delete/', views.WebServiceDeleteView.as_view(), name='web_service_delete'),
+    path('web-service/<int:pk>/clone/', views.web_service_clone, name='web_service_clone'),
 
     # Reports #
     ###########
     path('reports/search/', views.ReportSearchFormView.as_view(), name="report_search"),
     path('reports/export-batch-xml/<str:sections>/', views.export_batch_xml, name="export_batch_xml"),
+    path('reports/odi-report/', views.export_odi_report, name="export_odi_report"),
 
 
     # TEMP #

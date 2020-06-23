@@ -1,0 +1,47 @@
+{% load i18n %}
+{% load custom_filters %}
+{% load verbose_names %}
+<div class="projects">
+    <div class="mb-3">
+        <h2>{% trans "By Primary Funding Source" %}</h2>
+        <h6>({% trans "Recommended projects" %}) </h6>
+    </div>
+
+    {% for item in fs_dict %}
+        {% with fs_dict|lookup:item as qs %}
+            <div class="mb-3">
+                <h5>
+                    <a href="#fs-project-list-{{ item.id }}" data-toggle="collapse">
+                        {{ item|nz:"Not specified" }} ({{ qs.count }})
+                    </a>
+                </h5>
+            </div>
+            <div class="collapse" id="fs-project-list-{{ item.id }}">
+                <table class="table table-sm table-hover project-table sortable">
+                    <thead>
+                    {% for field in field_list %}
+                        <th>{% get_verbose_label random_project field %}</th>
+                    {% endfor %}
+                    </thead>
+                    {% for object in qs %}
+                        <tr pop href="{% url 'projects:project_overview' object.id 1 %}">
+                            {% for field in field_list %}
+                                <td>{% get_field_value object field %}</td>
+                            {% endfor %}
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td><em>{% trans "None" %}</em></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+
+
+        {% endwith %}
+
+    {% endfor %}
+
+
+</div>

@@ -24,6 +24,8 @@ class Status(models.Model):
     old_id = models.IntegerField(blank=True, null=True)
     description_text = models.CharField(max_length=250, blank=True, null=True)
 
+
+
     def __str__(self):
         # check to see if a french value is given
         if getattr(self, str(_("name"))):

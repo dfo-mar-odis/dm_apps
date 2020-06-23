@@ -1,0 +1,23 @@
+{% extends "shared_models/generic_base.html" %}
+
+{% block bug_create %}
+    {% include "projects/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+    {% include "projects/base/_app_title.html" %}
+    {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block header %}
+    {{ block.super }}
+    {% include "projects/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+    {{ block.super }}
+{% endblock body %}
+
+{% block left_auth %}
+    {% include "projects/base/_nav_left_auth.html" %}
+{% endblock left_auth %}

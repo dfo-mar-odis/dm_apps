@@ -1,0 +1,305 @@
+{% extends "spring_cleanup/spring_cleanup_base.html" %}
+{% load static %}
+{% load i18n %}
+{% load verbose_names %}
+{% block header %}
+    {#    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">#}
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+    <style>
+        body {
+            background-image: url("{% static 'spring_cleanup/img/sky.jpg' %}");
+            background-size: cover;
+        }
+
+        .mytitle {
+            font-family: 'Gloria Hallelujah', cursive;
+
+        }
+
+        #map {
+            height: 300px;
+        }
+
+        .breadcrumb {
+            opacity: 70%;
+        }
+
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'spring_cleanup:index' %}">
+                    {% trans "Home" %}
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ object }}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="mb-5 center-col">
+            <h1 class="mytitle" style="font-size: 50px">
+                {{ object }}
+            </h1>
+
+            <div class="mb-3">
+
+                {# sign up / remove btn #}
+                {% if user in object.current_outing.users.all %}
+                    <a href="{% url 'spring_cleanup:sign_up_or_remove_user_from_route' object.id %}"
+                       class="btn btn-danger btn-lg">{% trans "Remove me from this route!!" %}</a>
+                {% else %}
+                    <a href="{% url 'spring_cleanup:sign_up_or_remove_user_from_route' object.id %}"
+                       class="btn btn-success btn-lg">{% trans "Sign me up for this route!!" %}</a>
+                {% endif %}
+
+                {# current outing #}
+                {% if object.current_outing and user in object.current_outing.users.all %}
+                    <a href="{% url 'spring_cleanup:outing_edit' object.current_outing.id %}"
+                       class="btn btn-warning btn-lg"> {% trans "Outing report form" %} ({{ object.current_outing.fiscal_year }}) </a>
+
+                {% endif %}
+
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="">
+
+                    <h3>
+                        {% trans "Route Info" %}
+                    </h3>
+                    <table class="table" style="width: 80%">
+                        {% for field in field_list %}
+                            {% if "area" in field %}
+                                <tr>
+                                    <th>
+                                        {% get_verbose_label object field %}
+                                    </th>
+                                    <td>
+                                        {{ object.area_km2|floatformat:2 }}
+                                    </td>
+                                </tr>
+                            {% else %}
+                                {% verbose_td_display object field td_width="60%" th_width="30%" %}
+                            {% endif %}
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3>
+                    {% trans "Who's already signed up?" %}
+                </h3>
+
+                {% if not object.current_outing.users.count %}
+                    <em>{% trans "Be the first to sign up..." %}</em>
+                {% else %}
+                    <ul>
+                        {% for u in object.current_outing.users.all %}
+                            <li>
+                                {{ u }}
+                                {% if u == user %}
+                                    <a class="red-font" href="{% url 'spring_cleanup:sign_up_or_remove_user_from_route' object.id %}">
+                                        (remove me)
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                {% endif %}
+
+            </div>
+            <div class="col">
+                <h3>
+                    {% trans "Outing history" %}
+                </h3>
+
+                {% if not object.outings.count %}
+                    <em>{% trans "No outing have occurred yet at this site :(" %}</em>
+                {% else %}
+                    <ul>
+                        {% for outing in object.outings.all %}
+                            <li>
+                                <a href="#" class="" data-toggle="modal" data-target="#modal_id{{ outing.id }}"> {{ outing }} </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+            </div>
+            <div class="col">
+                <h3>
+                    {% trans "Birds observed on this route" %}
+                </h3>
+
+                {% if object.birds|length == 0 %}
+                    <em>{% trans "No birds have been observed on this route..." %}</em>
+                {% else %}
+                    <ul>
+                    {% for bird in object.birds %}
+                        <li>{{ bird }}</li>
+                    {% endfor %}
+
+                    </ul>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+
+    {% for outing in object.outings.all %}
+
+        {#<!-- modal_label MODAL -->#}
+        <div class="modal fade" id="modal_id{{ outing.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"> {{outing}} </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {% for field in outing_field_list %}
+                            {% verbose_field_display outing field %}
+                        {% endfor %}
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Close" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% endfor %}
+
+
+
+
+
+
+{% endblock %}
+{% block body_js %}
+
+    <script>
+        function initialize() {
+
+            window.map = new google.maps.Map(document.getElementById('map'), {
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
+            });
+            var infowindow = new google.maps.InfoWindow();
+            var bounds = new google.maps.LatLngBounds();
+
+            {% if object.polygon %}
+                var localBounds{{ forloop.counter0 }} = new google.maps.LatLngBounds();
+
+                // extend bounds var
+                {% for coord in object.coords %}
+                    bounds.extend(new google.maps.LatLng({{coord.1}}, {{ coord.0 }}));
+                    localBounds{{ forloop.parentloop.counter0 }}.extend(new google.maps.LatLng({{coord.1}}, {{ coord.0 }}));
+                {% endfor %}
+
+                // Define the LatLng coordinates for the polygon's path.
+                var polygonCoords = [
+                    {% for coord in object.coords %}
+                        {lat: {{coord.1}}, lng: {{coord.0}}, order: {{forloop.counter0}}},
+                    {% endfor %}
+                ];
+
+                // Construct the stratum.
+                var color = '#ea4544';
+                var myPolygon = new google.maps.Polygon({
+                    paths: polygonCoords,
+                    strokeColor: 'white',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: color,
+                    fillOpacity: 0.35,
+                    label: "test"
+                });
+
+                myPolygon.setMap(map);
+
+                marker{{ forloop.counter0 }} = new google.maps.Marker({
+                    position: new google.maps.LatLng(localBounds{{ forloop.counter0 }}.getCenter().lat, localBounds{{ forloop.counter0 }}.getCenter().long),
+                    map: map,
+                });
+
+                marker{{ forloop.counter0 }}.setMap(map);
+
+                google.maps.event.addListener(myPolygon, 'click', function (event) {
+                    map.setCenter(localBounds{{ forloop.counter0 }}.getCenter());
+                    map.setZoom(20);
+                    window.location.href = "{% url 'index'  %}";
+                    {#infowindow.setContent("{{object.id}}");#}
+                    {#infowindow.open(map, marker{{ forloop.counter0 }});#}
+                });
+
+
+                map.fitBounds(bounds);
+                // add a click event on the polygon
+            {% endif %}
+
+
+            map.fitBounds(bounds);
+
+        }
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initialize";
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadScript();
+
+    </script>
+    {#    #}
+    {##}
+    {#    <script>#}
+    {##}
+    {#        // Initialize and add the map#}
+    {#        function initMap() {#}
+    {#            var gfc = {lat: 46.100329, lng: -64.785304};#}
+    {#            // The map, centered at Uluru#}
+    {#            var map = new google.maps.Map(#}
+    {#                document.getElementById('map'), {#}
+    {#                    zoom: 17,#}
+    {#                    center: gfc,#}
+    {#                    mapTypeId: 'satellite',#}
+    {#                });#}
+    {#            // The marker, positioned at Uluru#}
+    {#            var marker = new google.maps.Marker({position: gfc, map: map});#}
+    {#            marker.addListener('click', function () {#}
+    {#map.setZoom(8);#}
+    {#map.setCenter(marker.getPosition());#}
+    {#                alert("you just clicked")#}
+    {#            });#}
+    {#        }#}
+    {#    </script>#}
+    {#    <script async defer#}
+    {#            src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&callback=initMap">#}
+    {#    </script>#}
+{% endblock %}

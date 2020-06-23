@@ -1,0 +1,43 @@
+{% load static %}
+{% load i18n %}
+{% load verbose_names %}
+
+ <div class="neighbours mb-2">
+        <h4>
+            {% trans "Project Details" %}
+        </h4>
+    </div>
+    {% if can_edit %}
+        <div class="neighbours mb-3">
+            <a class="btn btn-sm btn-outline-primary" href="#" pop-href="{% url 'projects:project_edit' object.id %}">
+                {% trans "Edit Project Details" %}
+            </a>
+        </div>
+
+    {% endif %}
+
+    <table class="table table-sm table-striped" style="width: auto">
+        {# cheating here to adjust header width #}
+
+        {% for field in field_list %}
+            {% if field == "programs" %}
+                <tr>
+                    <th>{% get_verbose_label object field %}</th>
+                    <td>
+                        {% if object.programs.count > 0 %}
+                            {% get_field_value object field %}
+                        {% else %}
+                            <span class="red-font blink-me">{% trans "MISSING PROGRAM INFORMATION" %}</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                {% verbose_td_display object field th_width="30%" td_width="80%" %}
+            {% endif %}
+        {% endfor %}
+        {% verbose_td_display object "recommended_for_funding" %}
+        {% verbose_td_display object "approved" %}
+        {% verbose_td_display object "allocated_budget" %}
+        {% verbose_td_display object "meeting_notes" %}
+
+    </table>

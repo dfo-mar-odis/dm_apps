@@ -1,0 +1,40 @@
+<!-- Create a navigation bar on the top (black color): "Home CSAS (Site Admin) Login/Logout ..." -->
+{% load i18n %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'csas:index' %}"> Home</a></li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            {% trans "CSAS" %}
+        </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'csas:list_req' %}">
+            {% trans "Requests for Science Advice" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'csas:list_met' %}">
+            {% trans "Schedule of Meetings" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'csas:list_pub' %}">
+            {% trans "Publications" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'csas:list_con' %}">
+            {% trans "Contacts" %}
+        </a>
+    </div>
+</li>
+
+<!-- EXAMPLE FOR CREATING NEW TOP LEVEL MENU -->
+<!--  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        TOP LEVEL MENU LABEL HERE
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">
+            first sub-menu label here
+        </a>
+        <a class="dropdown-item" href="#">
+            Second sub-menu label here
+        </a>
+    </div>
+</li> -->

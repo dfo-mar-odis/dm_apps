@@ -1,44 +1,95 @@
 {% extends "camp/camp_base.html" %}
 {% load static %}
+{% load el_pagination_tags %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load i18n %}
+
 {% block content %}
 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'camp:index'  %}">
+                    Home
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                All samples
+            </li>
 
-<div class="container">
+        </ol>
+    </nav>
 
-  <h1 class="big-header">CAMP Samples </h1>
-  <p>TOTAL: {{object_list.count}}</p>
-  <p>
-  </p>
-
-  <a href="{% url 'camp:sample_search' %}" class="btn btn-sm btn-warning">Back to Search</a>
-  <br>
-  <table class="table table-hover table-sm sortable">
-    <thead>
-        <th scope="col">Sample #</th>
-        <th scope="col">Nutrient Sample ID</th>
-        <th scope="col">Site</th>
-        <th scope="col">Station</th>
-        <th scope="col">Sample Date</th>
-        <th scope="col">Number of spp.</th>
-    </thead>
-    <tbody>
-      {% for sample in object_list  %}
-        <tr href="{% url 'camp:sample_detail' sample.id %}">
-          <td>{{sample.id}}</td>
-          <td>{{sample.nutrient_sample_id}}</td>
-          <td>{{sample.station.site}}</td>
-          <td>{{sample.station}}</td>
-          <td>{{sample.start_date|date:'F d, Y'}}</td>
-          <td>{{sample.sample_spp.count}}</td>
-
-        </tr>
-      {% endfor %}
-      <br>
-
-      </tbody>
-    </table>
+    {% paginate 50 filter.qs as filter_list %}
+    <div class="container">
+        <div class="mb-3">
+            <h1 class="big-header">CAMP Samples </h1>
+        </div>
 
 
-  </div>
+        <div class="mb-3">
+            <form class="form" action="." method="get" id="filter-form">
+                <div class="row">
+                    {% for field in filter.form %}
+                        <div class="col">
+                            {% bootstrap_field field placeholder="" size="small" %}
+                        </div>
+                    {% endfor %}
+                    <div class="col"><br><input type="submit" value="Filter" class="btn btn-warning btn-sm"></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% trans "(click on a header to sort table)" %}
+            </div>
+            <div class="col" style="text-align: center">
+                {% show_pages %}
+                <em>{% trans 'displaying' %} {{ filter_list.count }} {% trans 'of' %} {{ filter.qs.count }}</em>
+            </div>
+            <div class="col" style="text-align: right; padding-bottom: 10px">
+                <a href="{% url 'camp:sample_new' %}" class="btn btn-sm btn-primary">{% trans 'New' %}</a>
+
+            </div>
+        </div>
+
+
+        <table class="table table-hover table-sm sortable">
+            <thead>
+            {% for field in field_list %}
+                <th>
+                    {% get_verbose_label random_object field %}
+                </th>
+            {% endfor %}
+
+            </thead>
+
+            <tbody>
+
+            {% for obj in filter_list %}
+                <tr href="{% url 'camp:sample_detail' obj.id %}">
+                    {% for field in field_list %}
+                        {% if "site" in field %}
+                            <td>
+                                {{obj.station.site}}
+                            </td>
+                            {% elif "count" in field %}
+                            <td>
+                                {{obj.sample_spp.count}}
+                            </td>
+                        {% else %}
+                            <td>
+                                {% get_field_value obj field %}
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
 
 {% endblock content %}

@@ -4,7 +4,6 @@
 {% load custom_filters %}
 {% load i18n %}
 
-{% bootstrap_css %}
 
 <style>
     .label {
@@ -31,5 +30,14 @@
         font-size: 24px;
     }
 </style>
+
+
+<div class="mb-3">
+    <h1>
+        {{ object }} ({{ object.id }})
+    </h1>
+</div>
+
+<hr>
 
 {% include "projects/_project_content.html" %}

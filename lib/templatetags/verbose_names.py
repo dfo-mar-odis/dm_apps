@@ -1,7 +1,10 @@
 from django import template
+from django.conf import settings
 from django.core.exceptions import FieldDoesNotExist
 from django.template.defaultfilters import yesno
 from django.utils.safestring import SafeString, mark_safe
+from django.utils.translation import gettext_lazy as _
+
 import markdown
 
 from lib.templatetags.custom_filters import tohtml
@@ -46,7 +49,7 @@ def get_verbose_label(instance, field_name):
 
     # at the end of the day, if the user is sending in a custom label, our work is done.
     elif len(field_name.split("|")) > 1:
-        verbose_name = field_name.split("|")[1]
+        verbose_name = _(str(field_name.split("|")[1]))
 
     # check to see if there were any arguments passed in with the field name
     # this means the field is a foreign key so we will need to separate the first part preceding the "."
@@ -122,7 +125,8 @@ def get_field_value(instance, field_name, format=None, display_time=False, hyper
             try:
                 field_value = getattr(instance, field_name)
             except AttributeError:
-                print("Could not evaluate field value for '" + str(field_name) + "' for object '" + str(type(instance)) + "'")
+                if settings.DB_MODE == "DEV":
+                    print(f"Could not evaluate field value for '{field_name} for object {type(instance)}")
         else:
 
             # first check if there is a value :
@@ -150,7 +154,7 @@ def get_field_value(instance, field_name, format=None, display_time=False, hyper
 
                 # check to see if it is a url
                 elif str(getattr(instance, field_name)).startswith("http"):
-                    field_value = '<a href="{url}">{url}</a>'.format(url=getattr(instance, field_name))
+                    field_value = '<a href="{url}" target="_blank">{url}</a>'.format(url=getattr(instance, field_name))
 
                 # check to see if it is a BooleanField
                 elif field_instance.get_internal_type() == 'BooleanField' or field_instance.get_internal_type() == 'NullBooleanField':
@@ -218,8 +222,17 @@ def verbose_td_display(instance, field_name, format=None, display_time=False, ur
     td_tag_opener = '<td style="width: {};">'.format(td_width) if td_width else '<td>'
 
     if url and field_value != "n/a":
-        html_block = '<tr>{}{}</th>{}<a href="{}">{}</a></td></tr>'.format(th_tag_opener, verbose_name, td_tag_opener, url, field_value)
+        html_block = f'<tr>{th_tag_opener}{verbose_name}</th>{td_tag_opener}<a href="{url}">{field_value}</a></td></tr>'
     else:
         html_block = '<tr>{}{}</th>{}{}</td></tr>'.format(th_tag_opener, verbose_name, td_tag_opener, field_value)
-
     return SafeString(html_block)
+
+
+
+@register.filter
+def model_verbose_name(instance):
+    """send in a model object and it will send back out the verbose name of the model"""
+    try:
+        return type(instance)._meta.verbose_name
+    except AttributeError:
+        return "---"

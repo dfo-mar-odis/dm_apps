@@ -17,7 +17,7 @@
   <ul>
 
     <li>
-      Connectez-vous au <a href="http://dmapps">site Web de gestion des données</a>.
+      Connectez-vous au <a href="{{SITE_FULL_URL}}">site Web de gestion des données</a>.
       {% if  object.user.password == "pbkdf2_sha256$100000$aDyHhz2nhW58$yZBIrsyRWd8S+ILHmG8pEvSzkO+SwIkNbvME0VS2OdA=" %}
         Si vous ne vous êtes jamais connecté auparavant, votre nom d'utilisateur par défaut est <b><u>{{object.user.username}}</u></b> et votre mot de passe temporaire est <b><u>Welcome1</u></b>.
           Une fois connecté, vous pouvez changer votre mot de passe dans les paramètres du compte.
@@ -26,7 +26,7 @@
 
     <li>
       Sur la page d'accueil du site, cliquez sur l'application « Regional Data Inventory ».
-      Cela vous mènera à «<a href="http://dmapps{% url "inventory:my_resource_list" %}">My Items</a>», votre inventaire personnalisé.
+      Cela vous mènera à «<a href="{{SITE_FULL_URL}}{% url "inventory:my_resource_list" %}">My Items</a>», votre inventaire personnalisé.
 
     </li>
     <li>
@@ -75,7 +75,7 @@
   <ul>
     <li>
       Log into the
-      <a href="http://dmapps">Data Management website</a>.
+      <a href="{{SITE_FULL_URL}}">Data Management website</a>.
 
       {% if  object.user.password == "pbkdf2_sha256$100000$aDyHhz2nhW58$yZBIrsyRWd8S+ILHmG8pEvSzkO+SwIkNbvME0VS2OdA=" %}
         If you have never signed on before, your default username is <b><u>{{object.user.username}}</u></b> and your temporary password is <b><u>Welcome1</u></b>.
@@ -85,7 +85,7 @@
     </li>
     <li>
       From the Data Management website homepage, click on the "Regional Data Inventory "App.
-      This will take you to “<a href="http://dmapps{% url "inventory:my_resource_list" %}">My Items</a>”, your personalized inventory.
+      This will take you to “<a href="{{SITE_FULL_URL}}{% url "inventory:my_resource_list" %}">My Items</a>”, your personalized inventory.
     </li>
     <li>
       From your list, click on a title to enter that record.

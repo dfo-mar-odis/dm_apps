@@ -356,3 +356,16 @@ FundingProgramFormSet = modelformset_factory(
     form=FundingProgramForm,
     extra=1,
 )
+
+
+class RelationshipRatingForm(forms.ModelForm):
+    class Meta:
+        model = ml_models.RelationshipRating
+        fields = "__all__"
+
+
+RelationshipRatingFormSet = modelformset_factory(
+    model=ml_models.RelationshipRating,
+    form=RelationshipRatingForm,
+    extra=1,
+)

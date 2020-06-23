@@ -1,0 +1,57 @@
+{% load custom_filters %}
+{% load i18n %}
+{% with trip.get_cost_comparison_dict as cc_dict %}
+    {% with cc_dict|lookup:"costs" as cost_dict %}
+        {% with cc_dict|lookup:"trip_requests" as trip_requests_dict %}
+            <table class="plainjane" style="width: 95%;">
+                <tr class="plainjane">
+                    <th class="plainjane" rowspan="2" style="width: 120px">{% trans "Traveller" %}</th>
+                    <th class="center-col plainjane" colspan="{{ cost_dict|length }}">
+                        {% trans "Costs (CAD)" %}
+                    </th>
+                </tr>
+                <tr class="plainjane">
+                    {% for cost in cost_dict %}
+                        {% if cost != "total" %}
+                            <th class="center-col plainjane">{{ cost }}</th>
+                        {% endif %}
+                    {% endfor %}
+                    <th class="center-col plainjane">{% trans "TOTAL" %}</th>
+                </tr>
+                {% for tr in trip_requests_dict %}
+                    <tr class="plainjane">
+                        <td>{{ tr.requester_name }}</td>
+                        {% for cost in cost_dict %}
+                            {% if cost != "total" %}
+                                <td class="center-col">
+                                    {% if trip_requests_dict|lookup:tr|lookup:cost %}
+                                        {{ trip_requests_dict|lookup:tr|lookup:cost|currency }}
+                                    {% else %}
+                                        ---
+                                    {% endif %}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                        <td class="center-col">
+                            {{ trip_requests_dict|lookup:tr|lookup:"total"|currency }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr class="plainjane">
+                    <th>{% trans "TOTAL" %} ({{ trip_requests_dict|length }})</th>
+                    {% for cost in cost_dict %}
+                        {% if cost != "total" %}
+                            <th class="center-col">
+                                {{ cost_dict|lookup:cost|currency }}
+                            </th>
+                        {% endif %}
+                    {% endfor %}
+                    <th class="center-col">
+                        {{ cost_dict|lookup:"total"|currency }}
+                    </th>
+                </tr>
+            </table>
+
+        {% endwith %}
+    {% endwith %}
+{% endwith %}

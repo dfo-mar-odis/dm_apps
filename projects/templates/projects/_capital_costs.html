@@ -2,33 +2,31 @@
 {% load custom_filters %}
 {% load humanize %}
 {% load i18n %}
-<style>
-    table, td {
-        font-size: small;
-    }
-</style>
-
+<div class="mb-2 neighbours">
 <h4>
-    {% trans "Capital Costs:" %}
+    {% trans "Capital Costs" %}
 </h4>
-{% if not object.submitted and not report_mode %}
-    <a class="btn btn-sm btn-primary" href="#"
-       onclick="return popitup('{% url 'projects:capital_new' object.id %}','popoutWindow')">
-        {% trans "Add Capital" %}
-    </a>
-    <br><br>
+</div>
+{% if can_edit %}
+    <div class="mb-3 neighbours">
+        <a class="btn btn-sm btn-outline-primary" href="#" pop-href="{% url 'projects:capital_new' object.id %}">
+            {% trans "Add Capital" %}
+        </a>
+    </div>
 {% endif %}
 
 {% if object.capital_costs.count == 0 %}
-    <em>
-        {% trans "No Capital Costs" %}...
-    </em><br>
+    <div class="mb-3">
+        <em>
+            {% trans "No Capital Costs" %}...
+        </em>
+    </div>
 {% else %}
 
 
     <table class="table table-hover table-sm" style="width: auto">
         <tr>
-            {% if not report_mode %}
+            {% if can_edit %}
                 <th></th>
             {% endif %}
             <th>
@@ -37,7 +35,7 @@
             <th>
                 {% trans "Description" %}
             </th>
-            <th {% if not report_mode %} colspan="2" {% endif %} style="text-align: center">
+            <th class="center-col">
                 {% trans "Funding Source" %}
             </th>
             <th>
@@ -48,41 +46,26 @@
         <tbody>
         {% for obj in object.capital_costs.all %}
             <tr id="capital-{{ obj.id }}"
-                    {% if not object.submitted and not report_mode %}
-                href="{% url 'projects:capital_edit' obj.id %}" pop
-                data-toggle="tooltip" title="Edit" {% endif %}>
-                {% if not report_mode %}
+                {% if can_edit %}href="{% url 'projects:capital_edit' obj.id %}" pop  data-toggle="tooltip" title="Edit" {% endif %}>
+                {% if can_edit %}
                     <td>
-                        {% if not object.submitted and not report_mode %}
-                            <a class="capital-delete-me" href="#" val="{{ obj.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
-                                     title="Delete">
-                            </a>
-                            <a id="capital-secrect-delete-btn-{{ obj.id }}"
-                               href="{% url 'projects:capital_delete' obj.id %}" class="hidden"></a>
-                        {% endif %}
+                        <a class="capital-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                 title="Delete" width="20px">
+                        </a>
+                        <a id="capital-secrect-delete-btn-{{ obj.id }}"
+                           href="{% url 'projects:capital_delete' obj.id %}" class="hidden"></a>
                     </td>
                 {% endif %}
                 <td>{{ obj.get_category_display }}</td>
                 <td>{{ obj.description|nz:"-----" }}</td>
 
-                <td style="text-align: center; background-color: {{ obj.funding_source.color }}">
-                    {{ obj.funding_source }}
+                <td class="center-col" style="background-color: {{ obj.funding_source.funding_source_type.color }}">
+                    {{ obj.funding_source.tname }}
                 </td>
-                {% if not report_mode %}
-                    <td style="text-align: center">
-                        {% if not object.submitted %}
-                            <a class="toggle-source" href="#" type="capital" pk="{{ obj.id }}">
-                                <img src="{% static "/lou-multi-select-e052211/img/switch.png" %}" data-toggle="tooltip"
-                                     title="click to toggle funding source">
-                            </a>
-                            <a id="capital-secrect-toggle-btn-{{ obj.id }}" href="{% url 'projects:toggle_source' "capital" obj.id %}"
-                               class="hidden"></a>
-                        {% endif %}
-                    </td>
-                {% endif %}
 
-                <td style="text-align: center" class="{% if not obj.budget_requested %} major-error{% endif %}">
+
+                <td class="center-col {% if not obj.budget_requested %} major-error{% endif %}">
                     {{ obj.budget_requested|currency }}
                 </td>
 
@@ -92,5 +75,4 @@
         </tbody>
     </table>
 {% endif %}
-<br>
 

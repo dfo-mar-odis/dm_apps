@@ -1,4 +1,4 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load bootstrap4 %}
 
 {% block content %}
@@ -17,7 +17,7 @@
     {% csrf_token %}
     <p>
       <button type="submit" class="btn btn-lg btn-danger">Delete</button>
-      <a class="btn btn-lg btn-secondary" href="{% url 'inventory:resource_detail' object.resource.id %}">Cancel</a>
+      <a class="btn btn-lg btn-secondary" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
     </p>
 </form>
 </div>

@@ -14,7 +14,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'grais:index' %}"> Home </a></li>
             <li class="breadcrumb-item"><a href="{% url 'grais:species_list' %}"> All Species </a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ object.scientific_name }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
         </ol>
     </nav>
 
@@ -22,7 +22,7 @@
     <div class="container">
 
         <br>
-        <h1>{{ object }} (<em>{{ object.scientific_name }}</em>)</h1>
+        <h1>{{ object }}</h1>
         <p>
             {# <a class="btn btn-secondary" href="{% url 'grais:sample_list' %}">Back to List</a> #}
             <a class="btn btn-warning" href="{% url 'grais:species_edit' object.id %}">Edit</a>
@@ -35,71 +35,71 @@
 
         <br><br>
 
-        <div class="row">
-            <div class="col">
-
-                {% for field in field_list %}
-                    {% verbose_field_display object field %}
-                {% endfor %}
-
-
-                <p><b>
+        <table class="table table-sm table-bordered" style="width: 75%;">
+            {% for field in field_list %}
+                {% verbose_td_display object field %}
+            {% endfor %}
+            <tr>
+                <th>
                     Taxonomic Serial No. (<a href="https://www.itis.gov">www.itis.gov</a>)
-                </b><br>
+                </th>
+                <td>
                     <a href="https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value={{ object.tsn }}#null">{{ object.tsn }}</a>
-                </p>
-                <p><b>
+                </td>
+            </tr>
+            <tr>
+                <th>
                     AphiaID (<a href="http://www.marinespecies.org/">www.marinespecies.org</a>)
-                </b><br>
+                </th>
+                <td>
                     <a href="http://www.marinespecies.org/aphia.php?p=taxdetails&id={{ object.aphia_id }}">{{ object.aphia_id }}</a>
-                </p>
+                </td>
+            </tr>
 
-                <p><b>Last modified by:</b><br>
+            <tr>
+                <th>Last modified by:</th>
+                <td>
                     {% if object.last_modified_by %}
                         @{{ object.last_modified_by }}
                     {% else %}
                         n/a
                     {% endif %}
-                </p>
-            </div>
-            <div class="col-8">
+                </td>
+            </tr>
 
-                {% if object.surface_spp.count == 0 and object.sample_spp.count == 0 and object.line_spp.count == 0 and object.bycatch_set.count == 0 and object.crab_set.count == 0 and object.incidentalreport_set.count == 0 %}
-                    <p><em>This species is not present in the database.</em></p>
-                {% else %}
-                    <ul>
-                        <li>
-                            This species has occured {{ object.sample_spp.count }} time{{ object.sample_spp.count|pluralize }} on
-                            biofouling samples.
-                        </li>
-                        <li>
-                            This species has occured {{ object.line_spp.count }} time{{ object.line_spp.count|pluralize }} on
-                            biofouling lines.
-                        </li>
-                        <li>
-                            This species has occured {{ object.surface_spp.count }} time{{ object.surface_spp.count|pluralize }} on
-                            biofouling collector
-                            surfaces.
-                        </li>
-                        <li>
-                            This species has occured {{ object.bycatch_set.count }} time{{ object.bycatch_set.count|pluralize }} as bycatch
-                            in the
-                            Green Crab Monitoring dataset.
-                        </li>
-                        <li>
-                            This species has occured {{ object.crab_set.count }} time{{ object.crab_set.count|pluralize }} as a crab
-                            in the Green Crab Monitoring dataset.
-                        </li>
-                        <li>
-                            This species has occured {{ object.incidentalreport_set.count }}
-                            time{{ object.incidentalreport_set.count|pluralize }} in the
-                            Incidental Reports dataset.
-                        </li>
-                    </ul>
+        </table>
 
-                {% endif %}
-            </div>
-        </div>
+
+        {% if object.surface_spp.count == 0 and object.sample_spp.count == 0 and object.line_spp.count == 0 and object.bycatch_set.count == 0 and object.crab_set.count == 0 and object.incidentalreport_set.count == 0 %}
+            <p><em>This species is not present in the database.</em></p>
+        {% else %}
+            <ul>
+                <li>
+                    This species has occurred {{ object.sample_spp.count }} time{{ object.sample_spp.count|pluralize }} on
+                    biofouling samples.
+                </li>
+                <li>
+                    This species has occurred {{ object.line_spp.count }} time{{ object.line_spp.count|pluralize }} on
+                    biofouling lines.
+                </li>
+                <li>
+                    This species has occurred {{ object.surface_spp.count }} time{{ object.surface_spp.count|pluralize }} on
+                    biofouling collector surfaces.
+                </li>
+                <li>
+                    This species has occurred {{ object.catch_set.count }} time{{ object.catch_set.count|pluralize }}
+                    in the Green Crab Monitoring dataset.
+                </li>
+                <li>
+                    This species has occurred {{ object.incidentalreport_set.count }}
+                    time{{ object.incidentalreport_set.count|pluralize }} in the
+                    Incidental Reports dataset.
+                </li>
+            </ul>
+
+        {% endif %}
+    </div>
+    </div>
 
 
     </div>

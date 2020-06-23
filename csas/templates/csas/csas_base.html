@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+{% block bug_create %}{% url 'tickets:bug_create' 'csas' %}{% endblock bug_create %}
+
+{% block title %}Canadian Science Advisory Secretariat{% endblock title %}
+
+{% block body %}
+    {% block content %}{% endblock content %}
+{% endblock body %}
+
+{% block header %}
+    <style>
+        body {
+            background-image: url("{% static 'img/csas/csas_background.webp' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .card, .jumbotron {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+
+{% endblock %}
+{% block left_all %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'csas:index' %}"> Home</a></li>
+{% endblock left_all %}
+
+
+{% block left_unauth %}
+{% endblock left_unauth %}
+
+{% block left_admin %}
+{% endblock left_admin %}

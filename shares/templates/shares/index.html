@@ -40,28 +40,34 @@
                 </h3>
                 <ul>
                     <li>
-                        Add new user to this database. Also, add them to the shares they will want to access.
+                        Add a
+                        <a href="{% url 'shares:user_new'  %}">new user</a>
+                        to this database. <b>New users should be added to glfscidm002 server!!</b> (regardless of which share they want to access)
                     </li>
                     <li>
-                        Create user on glfscidm002 using shell script:
-                        <code>~/create_smb_user.sh my_new_user</code>
+                        In this app, add the new user to the shares they want to access: <a href="{% url 'shares:share_list'  %}">Shares </a> > [share(s) of interest] > Edit > add the user.
                     </li>
                     <li>
-                        Open /etc/samba/smb.conf file: <code>sudo nano /etc/samba/smb.conf</code>. add the user to the appropriate share(s):
-                        <code><br>
-                            ################# <br>
-                            # glfsciherring # <br>
-                            ################# <br>
-                            [my_new_share]<br>
-                            comment = this is just an example <br>
-                            path = /mnt/glfsciherring/my_new_share
-                            browseable = no <br>
-                            writeable = yes <br>
-                            guest ok = no <br>
-                            valid users = admin, ..., my_new_user <br>
-                        </code>
+                        Follow the remaining steps which are outlined in the user's detail page in this app.
+{#                        <code>~/create_smb_user.sh my_new_user</code>#}
                     </li>
-                    <li>Update the user status to "activated"</li>
+{#                    <li>#}
+{#                        Open /etc/samba/smb.conf file: <code>sudo nano /etc/samba/smb.conf</code>.#}
+{#                        add the user to the appropriate share(s):#}
+{#                        <code><br>#}
+{#                            ################# <br>#}
+{#                            # glfsciherring # <br>#}
+{#                            ################# <br>#}
+{#                            [my_new_share]<br>#}
+{#                            comment = this is just an example <br>#}
+{#                            path = /mnt/glfsciherring/my_new_share#}
+{#                            browseable = no <br>#}
+{#                            writeable = yes <br>#}
+{#                            guest ok = no <br>#}
+{#                            valid users = admin, ..., my_new_user <br>#}
+{#                        </code>#}
+{#                    </li>#}
+{#                    <li>Update the user status to "activated"</li>#}
                 </ul>
             </div>
             <br>

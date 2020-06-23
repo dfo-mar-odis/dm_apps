@@ -1,266 +1,27 @@
-from django.views.generic import TemplateView, CreateView, ListView, DetailView, UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView, CreateView, DetailView, UpdateView
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.urls import reverse, reverse_lazy
+from django.conf import settings
+
+from django.urls import reverse_lazy
 from django_filters.views import FilterView
 from django.utils.translation import gettext_lazy as _
 
+from whalesdb import forms, models, filters, utils
+from shared_models.views import CommonAuthCreateView, CommonAuthUpdateView, CommonAuthFilterView
+
 import json
-import datetime
-
-from . import forms
-from . import models
-from . import filters
 
 
-def get_id(model, sort):
-    obj = model.objects.all().order_by('-' + sort).values_list()
-
-    n_id = 1
-    if obj and obj[0][0]:
-        n_id = int(obj[0][0]) + 1
-
-    return n_id
-
-
-# Parameter deletion
-def par_delete(request, url, emm_id, prm_id):
-    try:
-        emm = models.EmmMakeModel.objects.get(emm_id=emm_id)
-        prm = models.PrmParameterCode.objects.get(prm_id=prm_id)
-
-        prm_obj = models.EprEquipmentParameter.objects.get(emm=emm, prm=prm)
-
-        prm_obj.delete()
-
-    finally:
-        return HttpResponseRedirect(reverse("whalesdb:details_"+url, kwargs={'pk': emm_id}))
-
-
-# Channel Deletion
-def ecp_delete(request, ecp_id):
-    try:
-        ecp = models.EcpChannelProperty.objects.get(ecp_id=ecp_id)
-        emm_id = ecp.emm.emm_id
-        ecp.delete()
-    finally:
-        return HttpResponseRedirect(reverse("whalesdb:details_eqr", kwargs={'pk': emm_id}))
-
-
-def get_fields(labels):
-    fields = []
-    for key in labels.keys():
-        fields.append({
-            'label': labels[key],
-            'key': key
-        })
-
-    return fields
-
-
-def get_model_object(obj_name):
-    obj_def = {}
-
-    ''' 
-    The object definition tells the CodeEditView, or similar class, how to process a code list object.
-    It also tells the code_list.html, or similar list view, how to display the codelist
-    
-    obj_def = {
-        'label': "ADC-Bits",            <- Label used as the title of the code entry dialog and list heading
-        'url': obj_name,                <- Object name, same name used in the URL for the code entry and list
-        'order': "eqa_id",              <- The column query results are sorted by
-        'model': models.EqaAdcBitsCode, <- The model to use when creating a DB column row
-        'entry': "code_entry",          <- Default should be code_entry, but specify if a different url.py name is used
-        'fields': [_("ID"), _("Value")] <- Fields to display on the code list page
-    }
-    '''
-
-    if obj_name == 'eqa':
-        obj_def = {
-            'label': "ADC-Bits",
-            'url': obj_name,
-            'order': "eqa_id",
-            'model': models.EqaAdcBitsCode,
-            'entry': obj_name,
-            'fields': [_("ID"), _("Value")]
-        }
-    elif obj_name == 'eqt':
-        obj_def = {
-            'label': "Equipment Type",
-            'url': obj_name,
-            'order': "eqt_id",
-            'model': models.EqtEquipmentTypeCode,
-            'entry': obj_name,
-            'fields': [_("ID"), _("Value")]
-        }
-    elif obj_name == 'prm':
-        obj_def = {
-            'label': "Equipment Parameter",
-            'url': obj_name,
-            'order': "prm_id",
-            'model': models.PrmParameterCode,
-            'entry': obj_name,
-            'fields': [_("ID"), _("Value")]
-        }
-    elif obj_name == 'set':
-        obj_def = {
-            'label': "Station Event",
-            'url': obj_name,
-            'order': "set_id",
-            'model': models.SetStationEventCode,
-            'entry': obj_name,
-            'fields': [_("ID"), _("Name"), _("Description")]
-        }
-    elif obj_name == 'tea':
-        obj_def = {
-            'label': "Team Member",
-            'url': obj_name,
-            'order': "tea_last_name",
-            'model': models.TeaTeamMember,
-            'entry': obj_name,
-            'fields': [_("ID"), _("Abbv."), _("Last Name"), _("First Name")]
-        }
-    elif obj_name == 'rtt':
-        obj_def = {
-            'label': "Time Zone",
-            'url': obj_name,
-            'order': "rtt_offset",
-            'model': models.RttTimezoneCode,
-            'entry': obj_name,
-            'fields': [_("ID"), _("Abbreviation"), _("Name"), _("Offset from GMT")]
-        }
-
-    return obj_def
-
-
-def get_smart_object(obj_name):
-    obj_def = {}
-
-    ''' 
-    The smart object definition tells the CreateSmartForm, UpdateSmartForm and List smart classes how to process a 
-    model object.
-
-    obj_def = {
-        'model': models.StnStation, <-- The model represented by the obj_name
-        'form_class': forms.StationForm, <-- The form to use when the 'Crete New' button is checked on the list page
-
-        'filter_class': filters.StnFilter, <-- the filter class to use on the list page
-        'title': "Stations", <-- the human readable title to use on the list page
-    }
-    '''
-
-    if obj_name == 'crs':
-        obj_def = {
-            'model': models.CrsCruise,
-            'form_class': forms.CrsForm,
-
-            'filter_class': filters.CrsFilter,
-            'title': "Cruises",
-        }
-    elif obj_name == 'dep':
-        obj_def = {
-            'model': models.DepDeployment,
-            'form_class': forms.DepForm,
-
-            'filter_class': filters.DepFilter,
-            'title': "Deployments",
-        }
-    elif obj_name == 'eda':
-        obj_def = {
-            'model': models.EdaEquipmentAttachment,
-            'form_class': forms.EdaForm,
-
-            'filter_class': filters.EdaFilter,
-            'title': "Equipment Attachements",
-        }
-    elif obj_name == 'edh':
-        obj_def = {
-            'model': models.EhaHydrophoneAttachment,
-            'form_class': forms.EdhForm,
-
-            'filter_class': filters.EdhFilter,
-            'title': "Hydrophone Attachements",
-        }
-    elif obj_name == 'eqh':
-        obj_def = {
-            'model': models.EqhHydrophoneProperty,
-            'filterset_class': filters.EqhFilter,
-
-            'create_link': 'whalesdb:create_eqh',
-            'detail_link': 'whalesdb:details_eqh',
-            'title': 'Hydrophone Equipment',
-        }
-    elif obj_name == 'eqp':
-        obj_def = {
-            'model': models.EqpEquipment,
-            'form_class': forms.EqpForm,
-
-            'filter_class': filters.EqpFilter,
-            'title': "Equipment",
-        }
-    elif obj_name == 'mor':
-        obj_def = {
-            'model': models.MorMooringSetup,
-            'form_class': forms.MorForm,
-
-            'filter_class': filters.MorFilter,
-            'title': "Mooring Setups",
-        }
-    elif obj_name == 'prj':
-        obj_def = {
-            'model': models.PrjProject,
-            'form_class': forms.PrjForm,
-
-            'filter_class': filters.PrjFilter,
-            'title': "Projects",
-        }
-    elif obj_name == 'rec':
-        obj_def = {
-            'model': models.RecRecordingEvent,
-            'form_class': forms.RecForm,
-
-            'filter_class': filters.RecFilter,
-            'title': "Recording Events",
-        }
-    elif obj_name == 'rsc':
-        obj_def = {
-            'model': models.RscRecordingSchedule,
-            'form_class': forms.RscForm,
-
-            'filter_class': filters.RscFilter,
-            'title': "Recording Schedules",
-        }
-    elif obj_name == 'rst':
-        obj_def = {
-            'model': models.RstRecordingStage,
-            'form_class': forms.RstForm,
-
-            'filter_class': filters.RstFilter,
-            'title': "Recording Stages",
-        }
-    elif obj_name == 'ste':
-        obj_def = {
-            'model': models.SteStationEvent,
-            'form_class': forms.SteForm,
-
-            'filter_class': filters.SteFilter,
-            'title': "Station Events",
-        }
-    elif obj_name == 'stn':
-        obj_def = {
-            'model': models.StnStation,
-            'form_class': forms.StnForm,
-
-            'filter_class': filters.StnFilter,
-            'title': "Stations",
-        }
-
+def rst_delete(request, pk):
+    rst = models.RstRecordingStage.objects.get(pk=pk)
+    if utils.whales_authorized(request.user):
+        rst.delete()
+        messages.success(request, _("The recording stage has been successfully deleted."))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
-        raise Exception("No get_smart_object named '" + obj_name + "'")
-
-    obj_def['obj_name'] = obj_name
-
-    return obj_def
+        return HttpResponseRedirect(reverse_lazy('accounts:denied_access'))
 
 
 class IndexView(TemplateView):
@@ -268,611 +29,675 @@ class IndexView(TemplateView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data()
-        context['section'] = [
-            {
-                'title': 'Deployment',
-                'forms': [
-                    {
-                        'obj_name': 'stn',
-                        'title': "Stations",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/station.svg",
-                    },
-                    {
-                        'obj_name': 'prj',
-                        'title': "Project",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/project.svg",
-                    },
-                    {
-                        'obj_name': 'mor',
-                        'title': "Mooring Setup",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/mooring.svg",
-                    },
-                    {
-                        'obj_name': 'crs',
-                        'title': "Cruise",
-                        'url': "whalesdb:list_obj",
-                        'icon': 'img/icons/boat.svg',
-                    },
-                    {
-                        'obj_name': 'dep',
-                        'title': "Deployment",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/deployment.svg",
-                    },
-                    {
-                        'obj_name': 'ste',
-                        'title': "Station Event",
-                        'url': "whalesdb:list_obj",
-                        'icon': 'img/icons/boat.svg',
-                    },
-                ],
-                'code': [
-                    {
-                        'type': 'codelist',
-                        'title': "Station Event Code Table",
-                        'url': "set",
-                        'icon': "img/whales/station.svg",
-                    },
-                ]
-            },
-            {
-                'title': 'Recording',
-                'forms': [
-                    {
-                        'obj_name': 'rec',
-                        'title': "Recording Event",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/record.svg"
-                    },
-                    {
-                        'obj_name': 'rsc',
-                        'title': "Recording Schedules",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/record_schedule.svg"
-                    },
-                    {
-                        'obj_name': 'rst',
-                        'title': "Recording Stage",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/record_stage.svg"
-                    },
-                ],
-                'code': [
-                    {
-                        'type': 'codelist',
-                        'title': "Team Member",
-                        'url': "tea",
-                        'icon': "img/whales/team.svg"
-                    },
-                    {
-                        'type': 'codelist',
-                        'title': 'Time Zone',
-                        'url': 'rtt',
-                        'icon': "img/whales/clock.svg"
-                    }
-                ]
-            },
-            {
-                'title': 'Equipment Inventory',
-                'forms': [
-                    {
-                        'title': "Hydrophone",
-                        'url': "whalesdb:list_eqh",
-                        'icon': "img/whales/microphone.svg",
-                    },
-                    {
-                        'title': "Recorder",
-                        'url': "whalesdb:list_eqr",
-                        'icon': "img/whales/record.svg",
-                    },
-                    {
-                        'title': "General Make&Model",
-                        'url': "whalesdb:list_emm",
-                        'icon': "img/whales/record.svg",
-                    },
-                    {
-                        'obj_name': "eqp",
-                        'title': "Equipment",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/equipment.svg",
-                    },
-                    {
-                        'obj_name': "eda",
-                        'title': "Equipment Attachments",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/record_attach.svg",
-                    },
-                    {
-                        'obj_name': "edh",
-                        'title': "Hydrophone Attachments",
-                        'url': "whalesdb:list_obj",
-                        'icon': "img/whales/microphone_attach.svg",
-                    },
-                ],
-                'code': [
-                    {
-                        'type': 'codelist',
-                        'title': "ADC Bits Code Table",
-                        'url': "eqa",
-                        'icon': "img/whales/transfer.svg",
-                    },
-                    {
-                        'type': 'codelist',
-                        'title': "Parameter Code Table",
-                        'url': "prm",
-                        'icon': "img/whales/function.svg",
-                    },
-                    {
-                        'type': 'codelist',
-                        'title': "Equipment Type Code Table",
-                        'url': "eqt",
-                        'icon': "img/whales/equipment_type.svg",
-                    },
-                ]
-            },
-        ]
+
+        # for the most part if the user is authorized then the content is editable
+        # but extending classes can choose to make content not editable even if the user is authorized
+        context['auth'] = context['editable'] = utils.whales_authorized(self.request.user)
 
         return context
 
 
-class CloserTemplateView(TemplateView):
-    template_name = 'whalesdb/close_me.html'
+# CommonCreate Extends the UserPassesTestMixin used to determine if a user has
+# has the correct privileges to interact with Creation Views
+class CommonCreate(CommonAuthCreateView):
+
+    nav_menu = 'whalesdb/whale_nav_menu.html'
+    site_css = 'whalesdb/whales_css.css'
+    home_url_name = "whalesdb:index"
+
+    def get_nav_menu(self):
+        if self.kwargs.get("pop"):
+            return None
+
+        return self.nav_menu
+
+    # Upon success most creation views will be redirected to their respective 'CommonList' view. To send
+    # a successful creation view somewhere else, override this method
+    def get_success_url(self):
+        success_url = self.success_url if self.success_url else reverse_lazy("whalesdb:list_{}".format(self.key))
+
+        if self.kwargs.get("pop"):
+            # create views intended to be pop out windows should close the window upon success
+            success_url = reverse_lazy("shared_models:close_me_no_refresh")
+
+        return success_url
+
+    # overrides the UserPassesTestMixin test to check that a user belongs to the whalesdb_admin group
+    def test_func(self):
+        return self.request.user.groups.filter(name='whalesdb_admin').exists()
+
+    # Get context returns elements used on the page. Make sure when extending to call
+    # context = super().get_context_data(**kwargs) so that elements created in the parent
+    # class are inherited by the extending class.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['editable'] = context['auth']
+        return context
 
 
-class CloserNoRefreshTemplateView(TemplateView):
-    template_name = 'whalesdb/close_me_no_refresh.html'
-
-
-class UpdateTemplate(UpdateView):
-    template_name = "whalesdb/create_default.html"
-    success_url = "#"
-    cancel_url = "whalesdb:index"
-
-    def get_initial(self):
-        if 'pop' in self.kwargs and self.kwargs['pop']=='pop':
-            self.template_name = "whalesdb/create_default_no_head.html"
+class DepCreate(CommonCreate):
+    key = 'dep'
+    model = models.DepDeployment
+    form_class = forms.DepForm
+    title = _("Create Deployment")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["cancel_url"] = self.cancel_url
 
-        if hasattr(self, 'obj_name'):
-            context['obj_name'] = self.obj_name
+        station_dict = [{"pk": v[0], "stn_code": v[2]} for v in
+                        models.StnStation.objects.all().order_by('pk').values_list()]
 
-        if 'pop' in self.kwargs and self.kwargs['pop']=='pop':
-            context["pop"] = True
+        context['station_json'] = json.dumps(station_dict)
+        context['java_script'] = 'whalesdb/_entry_dep_js.html'
 
         return context
 
 
-class CreateTemplate(CreateView):
-    template_name = "whalesdb/create_default.html"
-    success_url = "#"
-    cancel_url = "whalesdb:index"
+class EdaCreate(CommonCreate):
+    key = 'eda'
+    model = models.EdaEquipmentAttachment
+    form_class = forms.EdaForm
+    title = _("Select Equipment")
 
     def get_initial(self):
-        if 'pop' in self.kwargs and self.kwargs['pop']=='pop':
-            self.template_name = "whalesdb/create_default_no_head.html"
-            self.success_url = reverse_lazy("whalesdb:close_me")
+        initial = super().get_initial()
+        initial['dep'] = self.kwargs['dep']
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["cancel_url"] = self.cancel_url
-
-        if hasattr(self, 'obj_name'):
-            context['obj_name'] = self.obj_name
-
-        if 'pop' in self.kwargs and self.kwargs['pop']=='pop':
-            context["pop"] = True
-
-        return context
+        return initial
 
 
-class CreateSmartForm(LoginRequiredMixin, CreateTemplate):
-
-    login_url = '/accounts/login_required/'
-
-    def setup(self, request, *args, **kwargs):
-        obj_def = get_smart_object(kwargs['obj_name'])
-
-        self.model = obj_def['model']
-        self.form_class = obj_def['form_class']
-        self.success_url = reverse_lazy('whalesdb:list_obj', kwargs={'obj_name': kwargs['obj_name']})
-        self.cancel_url = obj_def['url'] if 'url' in obj_def else 'whalesdb:list_obj'
-        self.obj_name = kwargs['obj_name']
-
-        super().setup(request, *args, **kwargs)
-
-
-class UpdateSmartForm(LoginRequiredMixin, UpdateTemplate):
-
-    login_url = '/accounts/login_required/'
-
-    def setup(self, request, *args, **kwargs):
-
-        obj_def = get_smart_object(kwargs['obj_name'])
-
-        self.model = obj_def['model']
-        self.form_class = obj_def['form_class']
-        self.success_url = reverse_lazy('whalesdb:list_obj', kwargs={'obj_name': kwargs['obj_name']})
-        self.cancel_url = obj_def['url'] if 'url' in obj_def else 'whalesdb:list_obj'
-        self.obj_name = kwargs['obj_name']
-
-        super().setup(request, *args, **kwargs)
-
-
-class CreatePrmParameter(CreateTemplate):
-    form_class = forms.EprForm
-
-    def form_valid(self, form):
-        form.save(commit=False)
-
-        emm_id = self.kwargs['emm_id']
-        emm = models.EmmMakeModel.objects.get(pk=emm_id)
-
-        epr = models.EprEquipmentParameter(emm=emm, prm=form.cleaned_data['prm'])
-
-        epr.save()
-
-        return HttpResponseRedirect(reverse("whalesdb:close_me"))
-
-
-class CreateChannel(CreateTemplate):
-    form_class = forms.EcpChannelPropertiesForm
-
-    def form_valid(self, form):
-        form.save(commit=False)
-
-        emm_id = self.kwargs['emm_id']
-        emm = models.EmmMakeModel.objects.get(pk=emm_id)
-
-        ecp = models.EcpChannelProperty(emm=emm, ecp_channel_no=form.cleaned_data['ecp_channel_no'],
-                                        eqa_adc_bits=form.cleaned_data['eqa_adc_bits'],
-                                        ecp_voltage_range_min=form.cleaned_data['ecp_voltage_range_min'],
-                                        ecp_voltage_range_max=form.cleaned_data['ecp_voltage_range_max'],
-                                        ecp_gain=form.cleaned_data['ecp_gain'])
-
-        ecp.save()
-
-        return HttpResponseRedirect(reverse("whalesdb:close_me"))
-
-
-class CreateEMM(CreateChannel):
-
-    def form_valid(self, form):
-        form.save(commit=False)
-
-        emm = models.EmmMakeModel(eqt=models.EqtEquipmentTypeCode.objects.get(pk=form.cleaned_data['eqt']),
-                                  emm_make=form.cleaned_data['emm_make'],
-                                  emm_model=form.cleaned_data['emm_model'],
-                                  emm_depth_rating=form.cleaned_data['emm_depth_rating'],
-                                  emm_description=form.cleaned_data['emm_description'])
-
-        emm.save(force_insert=True)
-
-        ''' for some reason I cannot use the emm object I just created. Trying to use it to create the
-            hydrophone properties object will result in a "ValueObject" error. I assume that's because
-            the emm.emm_id isn't set until the object has been inserted into the database, even after the insert
-            this *object* doesn't have the emm.emm_id.
-
-            To compensate I query the DB and get the most recently inserted emm object '''
-
-        return models.EmmMakeModel.objects.all().order_by("-pk")[0]
-
-
-class CreateMakeModel(CreateEMM):
+class EmmCreate(CommonCreate):
+    key = 'emm'
+    model = models.EmmMakeModel
     form_class = forms.EmmForm
-    success_url = "whalesdb:list_emm"
-    cancel_url = success_url
+    title = _("Create Make/Model")
 
     def form_valid(self, form):
-        emm = super().form_valid(form)
+        emm = form.save()
 
-        print("EQT: " + str(emm.eqt))
-
-        return HttpResponseRedirect(reverse('whalesdb:details_emm', kwargs={'pk': emm.pk}))
-
-
-class CreateRecorder(CreateEMM):
-    form_class = forms.EqrForm
-    success_url = "whalesdb:list_eqr"
-    cancel_url = success_url
-
-
-class CreateHydrophone(CreateEMM):
-    form_class = forms.EqhForm
-    success_url = "whalesdb:list_eqh"
-    cancel_url = success_url
-
-    def form_valid(self, form):
-        emm = super().form_valid(form)
-
-        eqh = models.EqhHydrophoneProperty(emm=emm,
-                                           eqh_range_min=form.cleaned_data['eqh_range_min'],
-                                           eqh_range_max=form.cleaned_data['eqh_range_max'])
-        eqh.save()
-
-        return HttpResponseRedirect(reverse('whalesdb:details_eqh', kwargs={'pk': eqh.pk}))
-
-
-class CreateDeployment(LoginRequiredMixin, CreateTemplate):
-    model = models.DepDeployment
-    template_name = "whalesdb/create_deployment.html"
-    success_url = "#"
-    cancel_url = "whalesdb:index"
-    form_class = forms.DepForm
-
-    def get_initial(self):
-        initial = super().get_initial()
-
-        if initial:
-            initial = initial.copy()
+        if emm.eqt.pk == 4:
+            return HttpResponseRedirect(reverse_lazy('whalesdb:details_emm', args=(emm.pk,)))
         else:
-            initial = {}
-
-        now = datetime.datetime.now()
-
-        initial['dep_year'] = now.year
-        initial['dep_month'] = now.month
-
-        return initial
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        station_dict = [{"stn_id": v[0], "stn_code": v[2]} for v in models.StnStation.objects.all().order_by('stn_id').values_list()]
-
-        context['station_json'] = json.dumps(station_dict)
-        return context
+            return HttpResponseRedirect(self.get_success_url())
 
 
-class UpdateDeployment(LoginRequiredMixin, UpdateTemplate):
-    model = models.DepDeployment
-    template_name = "whalesdb/create_deployment.html"
-    success_url = "#"
-    cancel_url = "whalesdb:index"
-    form_class = forms.DepForm
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        station_dict = [{"stn_id": v[0], "stn_code": v[2]} for v in models.StnStation.objects.all().order_by('stn_id').values_list()]
-
-        context['station_json'] = json.dumps(station_dict)
-        return context
-
-
-class DetailsMakeModel(DetailView):
-    template_name = "whalesdb/details_make_model.html"
-
-    def get_emm(self):
-        return models.EmmMakeModel.objects.get(pk=self.kwargs['pk'])
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['objects'] = []
-
-        if hasattr(kwargs['object'], 'emm'):
-            labels = forms.get_descriptions(models.EmmMakeModel)
-            context['objects'].append({
-                "object": kwargs['object'].emm,
-                "fields": get_fields(labels)
-            })
-
-        labels = forms.get_short_labels(models.EprEquipmentParameter)
-        context['parameter_fields'] = get_fields(labels)
-        context['parameter'] = [p for p in models.EprEquipmentParameter.objects.filter(emm=self.get_emm())]
-
-        return context
-
-
-class DetailsRecorder(DetailsMakeModel):
-    model = models.EmmMakeModel
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        labels = forms.get_descriptions(models.EmmMakeModel)
-        context['objects'].append({
-            "object": kwargs['object'],
-            "fields": get_fields(labels)
-        })
-
-        labels = forms.get_short_labels(models.EcpChannelProperty)
-        context['channel_fields'] = get_fields(labels)
-        context['channels'] = [c for c in models.EcpChannelProperty.objects.filter(emm=kwargs['object'])]
-        context['url'] = 'eqr'
-
-        # labels = forms.get_short_labels(models.EprEquipmentParameter)
-        # context['parameter_fields'] = get_fields(labels)
-        # context['parameter'] = [p for p in models.EprEquipmentParameter.objects.filter(emm=kwargs['object'])]
-
-        return context
-
-
-class DetailsHydrophone(DetailsMakeModel):
+class EqhCreate(CommonCreate):
+    key = 'eqh'
     model = models.EqhHydrophoneProperty
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        labels = forms.get_descriptions(models.EqhHydrophoneProperty)
-        context['objects'].append({
-            "object": kwargs['object'],
-            "fields": get_fields(labels)
-        })
-        context['url'] = 'eqh'
-
-        return context
-
-
-class ListGeneric(FilterView):
-    template_name = 'whalesdb/filter_inventory.html'
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(object_list=object_list, **kwargs)
-        labels = forms.get_short_labels(self.model)
-        context['fields'] = get_fields(labels)
-        context['new_object'] = self.create_link
-        context['detail_object'] = self.detail_link if hasattr(self, 'detail_link') else self.create_link
-        context["detail_type"] = self.detail_type if hasattr(self, 'detail_type') else 'general'
-        context["title"] = self.title
-
-        if hasattr(self, 'obj_name'):
-            context['obj_name'] = self.obj_name
-
-        return context
-
-
-class ListEMM(ListGeneric):
-    detail_type = 'emm'
-
-
-class ListMakeModel(ListEMM):
-    model = models.EmmMakeModel
-    filterset_class = filters.EmmFilter
-    detail_type = 'general'
-    create_link = "whalesdb:create_emm"
-    detail_link = "whalesdb:details_emm"
-    title = "General Make & Model"
-
-
-class ListRecorder(ListEMM):
-    model = models.EmmMakeModel
-    filterset_class = filters.EmmFilter
-    detail_type = 'general'
-    create_link = "whalesdb:create_eqr"
-    detail_link = "whalesdb:details_eqr"
-    title = "Recorder Equipment"
-
-    def get_queryset(self):
-        return self.model.objects.filter(eqt=1)
-
-
-class ListHydrophone(ListEMM):
-    model = models.EqhHydrophoneProperty
-    filterset_class = filters.EqhFilter
-    create_link = "whalesdb:create_eqh"
-    detail_link = "whalesdb:details_eqh"
-    title = "Hydrophone Equipment"
-
-
-class ListSmart(ListGeneric):
-
-    def setup(self, request, *args, **kwargs):
-        obj_def = get_smart_object(kwargs['obj_name'])
-        self.model = obj_def['model']
-        self.filterset_class = obj_def['filter_class']
-        self.create_link = obj_def['create_link'] if 'create_link' in obj_def else 'whalesdb:create_obj'
-        self.title = obj_def['title']
-
-        if 'obj_name' in obj_def:
-            self.obj_name = obj_def['obj_name']
-
-        return super().setup(request, *args, **kwargs)
-
-
-class CodeListView(ListView):
-    template_name = "whalesdb/code_list.html"
-    model = models.EqaAdcBitsCode
-
-    def get_queryset(self):
-        obj_def = get_model_object(self.kwargs['lookup'])
-        qs = obj_def['model'].objects.all().order_by(obj_def['order']).values_list()
-        return qs
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['lookup'] = get_model_object(self.kwargs['lookup'])
-        return context
-
-
-class SimpleEditView(LoginRequiredMixin, CreateView):
-    login_url = '/accounts/login_required/'
-    template_name = "whalesdb/code_entry.html"
-
-    success_url = reverse_lazy('whalesdb:close_me')
-
-    def get_initial(self):
-        return super().get_initial()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        obj_def = get_model_object(self.view_code)
-
-        context["title"] = obj_def["label"]
-        return context
-
-
-class PrmCodeEditView(SimpleEditView):
-
-    form_class = forms.PrmForm
-    view_code = "prm"
+    form_class = forms.EqhForm
+    title = _("Hydrophone Properties")
 
     def get_initial(self):
         initial = super().get_initial()
-
-        initial['prm_id'] = get_id(models.PrmParameterCode, 'prm_id')
+        initial['emm'] = self.kwargs['pk']
 
         return initial
 
 
-class EqaCodeEditView(SimpleEditView):
+class EqoCreate(CommonCreate):
+    key = 'eqo'
+    model = models.EqoOwner
+    form_class = forms.EqoForm
+    title = _("Create Equipment Owner")
 
-    form_class = forms.EqaForm
-    view_code = "eqa"
+
+class EqpCreate(CommonCreate):
+    # This key is used by CommonCreate to create the 'whalesdb:list_eqp' name in the get_success_url method
+    key = 'eqp'
+
+    # The model this class uses
+    model = models.EqpEquipment
+
+    # The form class this model uses
+    form_class = forms.EqpForm
+
+    # the title to use on this views creation template
+    title = _("Create Equipment")
+
+
+class EqrCreate(CommonCreate):
+    key = 'eqr'
+    model = models.EqrRecorderProperties
+    form_class = forms.EqrForm
+    title = _("Recorder Properties")
 
     def get_initial(self):
         initial = super().get_initial()
-
-        initial['eqa_id'] = get_id(models.EqaAdcBitsCode, 'eqa_id')
+        initial['emm'] = self.kwargs['pk']
 
         return initial
 
 
-class EqtCodeEditView(SimpleEditView):
+class MorCreate(CommonCreate):
+    key = 'mor'
+    model = models.MorMooringSetup
+    form_class = forms.MorForm
+    title = _("Create Mooring Setup")
 
-    form_class = forms.EqtForm
-    view_code = "eqt"
+
+class PrjCreate(CommonCreate):
+    key = 'prj'
+    model = models.PrjProject
+    form_class = forms.PrjForm
+    title = _("Create Project")
+
+
+class RciCreate(CommonCreate):
+    key = 'rci'
+    model = models.RciChannelInfo
+    form_class = forms.RciForm
+    title = _("Channel Information")
+
+    def get_initial(self):
+        init = super().get_initial()
+        if 'rec_id' in self.kwargs and models.RecDataset.objects.filter(pk=self.kwargs['rec_id']):
+            init['rec_id'] = models.RecDataset.objects.get(pk=self.kwargs['rec_id'])
+
+        return init
+
+
+class RecCreate(CommonCreate):
+    key = 'rec'
+    model = models.RecDataset
+    form_class = forms.RecForm
+    title = _("Dataset")
+
+
+class ReeCreate(CommonCreate):
+    key = 'ree'
+    model = models.ReeRecordingEvent
+    form_class = forms.ReeForm
+    title = _("Recording Events")
+
+    def get_initial(self):
+        init = super().get_initial()
+        if 'rec_id' in self.kwargs and models.RecDataset.objects.filter(pk=self.kwargs['rec_id']):
+            init['rec_id'] = models.RecDataset.objects.get(pk=self.kwargs['rec_id'])
+
+        return init
+
+
+class RscCreate(CommonCreate):
+    key = 'rsc'
+    model = models.RscRecordingSchedule
+    form_class = forms.RscForm
+    title = _("Create Recording Schedule")
+
+    def form_valid(self, form):
+        obj = form.save()
+
+        return HttpResponseRedirect(reverse_lazy("whalesdb:details_rsc", kwargs={"pk": obj.pk}))
+
+
+class RstCreate(CommonCreate):
+    key = 'rst'
+    model = models.RstRecordingStage
+    form_class = forms.RstForm
+    title = _("Create Recording Stage")
 
     def get_initial(self):
         initial = super().get_initial()
-
-        initial['eqt_id'] = get_id(models.EqtEquipmentTypeCode, 'eqt_id')
+        initial['rsc'] = self.kwargs['rsc']
 
         return initial
 
 
-class RttCodeEditView(SimpleEditView):
+class RttCreate(CommonCreate):
+    key = 'rtt'
+    model = models.RttTimezoneCode
     form_class = forms.RttForm
-    view_code = "rtt"
+    title = _("Time Zone")
+
+
+class SteCreate(CommonCreate):
+    key = 'ste'
+    model = models.SteStationEvent
+    form_class = forms.SteForm
+    title = _("Create Station Event")
 
     def get_initial(self):
-        initial = super().get_initial()
+        init = super().get_initial()
+        if 'dep_id' in self.kwargs and models.DepDeployment.objects.filter(pk=self.kwargs['dep_id']):
+            init['dep'] = models.DepDeployment.objects.get(pk=self.kwargs['dep_id'])
 
-        initial['rtt_id'] = get_id(models.RttTimezoneCode, 'rtt_id')
-
-        return initial
-
-
-class SetCodeEditView(SimpleEditView):
-
-    form_class = forms.SetForm
-    view_code = "set"
-
-    def get_initial(self):
-        initial = super().get_initial()
-
-        initial['set_id'] = get_id(models.SetStationEventCode, 'set_id')
-
-        return initial
+        if 'set_id' in self.kwargs and models.SetStationEventCode.objects.filter(pk=self.kwargs['set_id']):
+            init['set_type'] = models.SetStationEventCode.objects.get(pk=self.kwargs['set_id'])
+        return init
 
 
-class TeaCodeEditView(SimpleEditView):
+class StnCreate(CommonCreate):
+    key = 'stn'
+    model = models.StnStation
+    form_class = forms.StnForm
+    title = _("Create Station")
+
+
+class TeaCreate(CommonCreate):
+    key = 'tea'
+    model = models.TeaTeamMember
     form_class = forms.TeaForm
-    view_code = "tea"
+    title = _("Create Team Member")
+
+
+class CommonUpdate(CommonAuthUpdateView):
+
+    nav_menu = 'whalesdb/whale_nav_menu.html'
+    site_css = 'whalesdb/whales_css.css'
+    home_url_name = "whalesdb:index"
+
+    # update views are all intended to be pop out windows so upon success close the window
+    success_url = reverse_lazy("shared_models:close_me_no_refresh")
+
+    def get_nav_menu(self):
+        if self.kwargs.get("pop"):
+            return None
+
+        return self.nav_menu
+
+    # this function overrides UserPassesTestMixin.test_func() to determine if
+    # the user should have access to this content, if the user is logged in
+    # This function could be overridden in extending classes to preform further testing to see if
+    # an object is editable
+    def test_func(self):
+        return self.request.user.groups.filter(name='whalesdb_admin').exists()
+
+    # Get context returns elements used on the page. Make sure when extending to call
+    # context = super().get_context_data(**kwargs) so that elements created in the parent
+    # class are inherited by the extending class.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['editable'] = context['auth']
+        return context
+
+
+class DepUpdate(CommonUpdate):
+    model = models.DepDeployment
+    form_class = forms.DepForm
+    title = _("Update Deployment")
+
+    def test_func(self):
+        auth = super().test_func()
+        if auth:
+            # editable if the object has no station events
+            auth = self.model.objects.get(pk=self.kwargs['pk']).station_events.count() <= 0
+
+        return auth
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        station_dict = [{"stn_id": v[0], "stn_code": v[2]} for v in
+                        models.StnStation.objects.all().order_by('pk').values_list()]
+
+        context['station_json'] = json.dumps(station_dict)
+        context['java_script'] = 'whalesdb/_entry_dep_js.html'
+
+        return context
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:list_dep")
+
+
+class EmmUpdate(CommonUpdate):
+    model = models.EmmMakeModel
+    form_class = forms.EmmForm
+    title = _("Update Make/Model")
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:list_emm")
+
+
+class EqhUpdate(CommonUpdate):
+    model = models.EqhHydrophoneProperty
+    form_class = forms.EqhForm
+    title = _("Hydrophone Properties")
+
+
+class EqpUpdate(CommonUpdate):
+    model = models.EqpEquipment
+    form_class = forms.EqpForm
+    title = _("Update Equipment")
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:list_eqp")
+
+
+class EqrUpdate(CommonUpdate):
+    model = models.EqrRecorderProperties
+    form_class = forms.EqrForm
+    title = _("Recorder Properties")
+
+
+class MorUpdate(CommonUpdate):
+    model = models.MorMooringSetup
+    form_class = forms.MorForm
+    title = _("Update Mooring Setup")
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:list_mor")
+
+
+class PrjUpdate(CommonUpdate):
+    model = models.PrjProject
+    form_class = forms.PrjForm
+    title = _("Update Project")
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:list_prj")
+
+
+class RecUpdate(CommonUpdate):
+    model = models.RecDataset
+    form_class = forms.RecForm
+    title = _("Update Dataset")
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:details_rec", args=(self.kwargs['pk'],))
+
+
+class StnUpdate(CommonUpdate):
+    model = models.StnStation
+    form_class = forms.StnForm
+    title = _("Update Station")
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:list_stn")
+
+
+class CommonDetails(DetailView):
+    # default template to use to create a details view
+    template_name = "whalesdb/whales_details.html"
+
+    # title to display on the list page
+    title = None
+
+    # key used for creating default list and update URLs in the get_context_data method
+    key = None
+
+    # URL linking the details page back to the proper list
+    list_url = None
+    update_url = None
+
+    # By default detail objects are editable, set to false to remove update buttons
+    editable = True
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        if self.title:
+            context['title'] = self.title
+
+        if self.fields:
+            context['fields'] = self.fields
+
+        context['list_url'] = self.list_url if self.list_url else "whalesdb:list_{}".format(self.key)
+        context['update_url'] = self.update_url if self.update_url else "whalesdb:update_{}".format(self.key)
+        # for the most part if the user is authorized then the content is editable
+        # but extending classes can choose to make content not editable even if the user is authorized
+        context['auth'] = utils.whales_authorized(self.request.user)
+        context['editable'] = context['auth'] and self.editable
+
+        return context
+
+
+class DepDetails(CommonDetails):
+    key = "dep"
+    model = models.DepDeployment
+    template_name = 'whalesdb/details_dep.html'
+    title = _("Deployment Details")
+    fields = ['dep_name', 'dep_year', 'dep_month', 'stn', 'prj', 'mor']
+
+    def test_func(self):
+        # editable if the object has no station events
+        auth = self.model.objects.get(pk=self.kwargs['pk']).station_events.count() <= 0
+
+        return auth
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['google_api_key'] = settings.GOOGLE_API_KEY
+        # auth is set in the CommonDetails.get_context_data function.
+        # So if the user has auth AND the object is editable set auth to true
+        context['editable'] = self.test_func() and context['auth']
+
+        return context
+
+
+class EmmDetails(CommonDetails):
+    key = "emm"
+    model = models.EmmMakeModel
+    template_name = 'whalesdb/details_emm.html'
+    title = _("Make/Model Details")
+    fields = ['eqt', 'emm_make', 'emm_model', 'emm_depth_rating', 'emm_description']
+
+
+class EqpDetails(CommonDetails):
+    key = "eqp"
+    template_name = "whalesdb/details_eqp.html"
+    model = models.EqpEquipment
+    title = _("Equipment Details")
+    fields = ['emm', 'eqp_serial', 'eqp_asset_id', 'eqp_date_purchase', 'eqp_notes', 'eqp_retired', 'eqo_owned_by']
+
+
+class MorDetails(CommonDetails):
+    key = "mor"
+    model = models.MorMooringSetup
+    template_name = 'whalesdb/details_mor.html'
+    title = _("Mooring Setup Details")
+    fields = ["mor_name", "mor_max_depth", "mor_link_setup_image", "mor_additional_equipment",
+              "mor_general_moor_description", "mor_notes"]
+    creation_form_height = 600
+
+
+class PrjDetails(CommonDetails):
+    key = 'prj'
+    model = models.PrjProject
+    title = _("Project Details")
+    fields = ['name', 'description_en', 'prj_url']
+    creation_form_height = 725
+
+
+class RecDetails(CommonDetails):
+    key = 'rec'
+    model = models.RecDataset
+    title = _("Dataset")
+    template_name = "whalesdb/details_rec.html"
+    fields = ['eda_id', 'rsc_id', 'rtt_dataset', 'rtt_in_water', 'rec_start_date', 'rec_start_time', 'rec_end_date',
+              'rec_end_time', 'rec_backup_hd_1', 'rec_backup_hd_2', 'rec_notes', ]
+
+
+class RscDetails(CommonDetails):
+    key = 'rsc'
+    model = models.RscRecordingSchedule
+    title = _("Recording Schedule Details")
+    template_name = "whalesdb/details_rsc.html"
+    fields = ['rsc_name', 'rsc_period']
+    editable = False
+
+
+class RttDetails(CommonDetails):
+    key = 'rtt'
+    model = models.RttTimezoneCode
+    title = _("Time Zone")
+    template_name = "whalesdb/details_rtt.html"
+    fields = ['rtt_name', 'rtt_abb', 'rtt_period']
+
+
+class StnDetails(CommonDetails):
+    key = 'stn'
+    model = models.StnStation
+    title = _("Station Details")
+    template_name = 'whalesdb/details_stn.html'
+    fields = ['stn_name', 'stn_code', 'stn_revision', 'stn_planned_lat', 'stn_planned_lon',
+              'stn_planned_depth', 'stn_notes']
+    creation_form_height = 400
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['google_api_key'] = settings.GOOGLE_API_KEY
+
+        return context
+
+
+class CommonList(CommonAuthFilterView):
+
+    nav_menu = 'whalesdb/whale_nav_menu.html'
+    site_css = 'whalesdb/whales_css.css'
+    home_url_name = "whalesdb:index"
+
+    # fields to be used as columns to display an object in the filter view table
+    fields = []
+
+    # URL to use to create a new object to be added to the filter view
+    create_url = None
+
+    # URL to use for the details button element in the filter view's list
+    details_url = None
+
+    # URL to use for the update button element in the filter view's list
+    update_url = None
+
+    # The height of the popup dialog used to display the creation/update form
+    # if not set by the extending class the default popup height will be used
+    creation_form_height = None
+
+    # By default Listed objects will have an update button, set editable to false in extending classes to disable
+    editable = True
+
+    def get_fields(self):
+        if self.fields:
+            return self.fields
+
+        return ['tname|Name', 'tdescription|Description']
+
+    def get_create_url(self):
+        return self.create_url if self.create_url is not None else "whalesdb:create_{}".format(self.key)
+
+    def get_details_url(self):
+        return self.details_url if self.details_url is not None else "whalesdb:details_{}".format(self.key)
+
+    def get_update_url(self):
+        return self.update_url if self.update_url is not None else "whalesdb:update_{}".format(self.key)
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, object_list=object_list, **kwargs)
+
+        context['fields'] = self.get_fields()
+
+        # if the url is not None, use the value specified by the url variable.
+        # if the url is None, create a url using the views key
+        # this way if no URL, say details_url, is provided it's assumed the default RUL will be 'whalesdb:details_key'
+        # if the details_url = False in the extending view then False will be passed to the context['detials_url']
+        # variable and in the template where the variable is used for buttons and links the button and/or links can
+        # be left out without causing URL Not Found issues.
+        context['create_url'] = self.get_create_url()
+        context['details_url'] = self.get_details_url()
+        context['update_url'] = self.get_update_url()
+
+        # for the most part if the user is authorized then the content is editable
+        # but extending classes can choose to make content not editable even if the user is authorized
+        context['auth'] = utils.whales_authorized(self.request.user)
+        context['editable'] = context['auth'] and self.editable
+
+        if self.creation_form_height:
+            context['height'] = self.creation_form_height
+
+        return context
+
+
+class DepList(CommonList):
+    key = 'dep'
+    model = models.DepDeployment
+    filterset_class = filters.DepFilter
+    fields = ['dep_name', 'dep_year', 'dep_month', 'stn', 'prj', 'mor']
+    title = _("Deployment List")
+    creation_form_height = 600
+
+    def get_context_data(self, *args, object_list=None, **kwargs):
+        context = super().get_context_data(*args, object_list=object_list, **kwargs)
+        context['editable'] = False
+        return context
+
+
+class EmmList(CommonList):
+    key = 'emm'
+    model = models.EmmMakeModel
+    filterset_class = filters.EmmFilter
+    fields = ['eqt', 'emm_make', 'emm_model', 'emm_depth_rating']
+    title = _("Make/Model List")
+
+
+class EqpList(CommonList):
+    key = 'eqp'
+    model = models.EqpEquipment
+    filterset_class = filters.EqpFilter
+    fields = ['emm', 'eqp_serial', 'eqp_date_purchase', 'eqo_owned_by', 'eqp_retired', "eqp_deployed"]
+    title = _("Equipment List")
+
+
+class MorList(CommonList):
+    key = 'mor'
+    model = models.MorMooringSetup
+    filterset_class = filters.MorFilter
+    fields = ['mor_name', 'mor_max_depth', 'mor_notes']
+    title = _("Mooring Setup List")
+    creation_form_height = 725
+
+
+class PrjList(CommonList):
+    key = 'prj'
+    model = models.PrjProject
+    filterset_class = filters.PrjFilter
+    title = _("Project List")
+    creation_form_height = 400
+    fields = ['tname|Name', 'tdescription|Description']
+
+
+class RecList(CommonList):
+    key = 'rec'
+    model = models.RecDataset
+    filterset_class = filters.RecFilter
+    title = _("Dataset")
+    fields = ['eda_id', 'rsc_id', 'rec_start_date', 'rec_end_date']
+
+
+class RscList(CommonList):
+    key = 'rsc'
+    model = models.RscRecordingSchedule
+    filterset_class = filters.RscFilter
+    title = _("Recording Schedule List")
+    fields = ['rsc_name', 'rsc_period']
+    editable = False
+
+
+class RttList(CommonList):
+    key = 'rtt'
+    model = models.RttTimezoneCode
+    filterset_class = filters.RttFilter
+    title = _("Time Zone")
+    fields = ['rtt_name', 'rtt_abb', 'rtt_offset']
+    editable = False
+
+    def get_details_url(self):
+        return None
+
+
+class StnList(CommonList):
+    key = 'stn'
+    model = models.StnStation
+    filterset_class = filters.StnFilter
+    fields = ['stn_name', 'stn_code', 'stn_revision']
+    title = _("Station List")
+
+
+class TeaList(CommonList):
+    key = 'tea'
+    model = models.TeaTeamMember
+    filterset_class = filters.TeaFilter
+    fields = ["tea_abb", "tea_last_name", "tea_first_name"]
+    title = _("Team Member List")
+
+    details_url = False
+    update_url = False

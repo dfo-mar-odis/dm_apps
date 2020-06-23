@@ -1,0 +1,50 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diets:sampler_list' %}">Samplers</a></li>
+
+            {% if object %}
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">New</li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        {% if object %}
+            <h1>{{ object }}</h1>
+        {% else %}
+            New Sampler
+        {% endif %}
+
+        <br><br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+
+            {% buttons %}
+                {% if object %}
+                    <button type="submit" class="btn btn-success">Submit</button>
+                {% else %}
+                    <button type="submit" class="btn btn-success">Add</button>
+                {% endif %}
+
+                <a class="btn btn-secondary" href="{% url 'diets:sampler_list' %}">Cancel</a>
+
+            {% endbuttons %}
+        </form>
+
+    </div>
+
+{% endblock content %}

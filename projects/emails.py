@@ -1,5 +1,31 @@
+from django.conf import settings
 from django.template import loader
-from_email = 'DoNotReply@DMApps.com'
+
+from_email = settings.SITE_FROM_EMAIL
+
+
+
+class ProjectApprovalEmail:
+    def __init__(self, project):
+        if project.approved:
+            self.subject = 'Your project has been approved / Votre projet a été approuvé'
+        else:
+            self.subject = "Your project has not been approved / Votre projet n'a pas été approuvé"
+
+        self.message = self.load_html_template(project)
+        self.from_email = from_email
+        self.to_list = [u.email for u in project.project_leads_as_users]
+
+    def __str__(self):
+        return "FROM: {}\nTO: {}\nSUBJECT: {}\nMESSAGE:{}".format(self.from_email, self.to_list, self.subject, self.message)
+
+    def load_html_template(self, project):
+        t = loader.get_template('projects/email_project_approved.html')
+        context = {'object': project,}
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        rendered = t.render(context)
+        return rendered
+
 
 class ProjectSubmissionEmail:
     def __init__(self, object):
@@ -27,8 +53,8 @@ class ProjectSubmissionEmail:
             'section',
             'project_leads|project_leads',
         ]
-
         context = {'object': object, 'field_list':project_field_list}
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
         rendered = t.render(context)
         return rendered
 
@@ -53,5 +79,6 @@ class UserCreationEmail:
     def load_html_template(self, object):
         t = loader.get_template('projects/email_user_creation.html')
         context = {'object': object,}
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
         rendered = t.render(context)
         return rendered

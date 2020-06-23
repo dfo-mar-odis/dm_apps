@@ -1,0 +1,139 @@
+{% load i18n %}
+
+<h2 class="center-col">
+    {% trans "An Overview of the Travel App" %}
+</h2>
+{% with "" as w %}
+    {% if is_adm_admin %}
+        <div class="mb-3 mt-5 center-col">
+            <h3>{% trans "Submission Deadlines" %} </h3>
+            <p class="">
+                (currently visible only to ADM admin group)
+            </p>
+        </div>
+        <div class="container" style="padding-right: {{ w }};padding-left: {{ w }}">
+            <div class="text-black">
+                <p>
+                    {% blocktrans %}
+                        Travel requests can be submitted up to <b>180 days in advance of any potential trip</b>, regardless of the purpose
+                        and across fiscal years.
+                    {% endblocktrans %}
+                </p>
+                <p>
+                    {% blocktrans %}
+                        Requests to participate in <b>conferences</b> must be submitted at least <b>90 days before</b> the registration or
+                        abstract deadline (whichever is earlier). No requests will be accepted after the review process has started.
+                    {% endblocktrans %}
+                </p>
+                <p>
+                    {% blocktrans %}
+                        Requests for <b> all other types </b> of travel (i.e. not related to a conference) must be submitted at least
+                        <b>60 days prior </b> to the date of travel. Late requests will only be considered in very exceptional
+                        circumstances.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+
+
+        <div class="mb-3 mt-3 center-col">
+            <h3>{% trans "Service Standards" %}</h3>
+        </div>
+        <div class="container" style="padding-right: {{ w }};padding-left: {{ w }}">
+            <p class="text-black">
+                {% blocktrans %}
+                    All decisions regarding travel will be communicated at least 14 days before:
+                    The trip start date (for training, field work, or operational trips)
+                    <b>OR</b>
+                    The conference abstract or registration deadline – whichever is earliest
+                {% endblocktrans %}
+            </p>
+        </div>
+    {% endif %}
+
+
+    <div id="app">
+        <v-app id="inspire">
+            <div class="mt-3 ml-3 mr-3">
+                {% for process in processes %}
+
+                    <div class="mb-5 mt-5 center-col">
+                        <h3>{{ process.first.get_stage_display|title }}</h3>
+                    </div>
+                    <v-timeline
+                            :align-top="alignTop"
+                            :dense="dense"
+                            :reverse="reverse"
+                    >
+
+                        {% for step in process %}
+                            <v-timeline-item
+                                    :key="n"
+                                    :fill-dot="fillDot"
+                                    :hide-dot="hideDot"
+                                    :icon="icon ? 'mdi-star' : ''"
+                                    :icon-color=" iconColor ? 'deep-orange' : ''"
+                                    :left="left"
+                                    :right="right"
+                                    :small="small"
+                            >
+
+                                <template v-slot:icon>
+                                    <v-avatar v-if="avatar">
+                                        <img src="http://i.pravatar.cc/64">
+                                    </v-avatar>
+                                </template>
+                                <v-card class="elevation-2">
+                                    <v-card-title class="headline">{{ step.tname }}</v-card-title>
+                                    <v-card-text>
+                                        {{ step.tdescription }}
+                                    </v-card-text>
+                                </v-card>
+                            </v-timeline-item>
+
+                        {% endfor %}
+                    </v-timeline>
+
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                {% endfor %}
+            </div>
+        </v-app>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <script type="application/javascript">
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: () => ({
+                alignTop: false,
+                avatar: false,
+                dense: false,
+                fillDot: false,
+                hideDot: false,
+                icon: false,
+                iconColor: false,
+                left: false,
+                reverse: false,
+                right: false,
+                small: false,
+            }),
+        })
+
+    </script>
+
+{% endwith %}
+
+
+
+
+

@@ -1,108 +1,41 @@
-{% extends "travel/travel_base.html" %}
-{% load static %}
-{% load bootstrap4 %}
+{% extends "travel/list.html" %}
+
 {% load verbose_names %}
-{% load i18n %}
+{% load custom_filters %}
+{% load humanize %}
+{% load custom_tags %}
 
-{% block content %}
+{% block table_tr %}
+    {% url row_object_url_name object.id view.kwargs.type as my_url %}
 
-    <style>
-        .indent-lg {
-            margin-left: 5em;
-            margin-right: 5em;
-        }
+    <tr href="{{ my_url }}">
+        {% for field in field_list %}
+            <td class="{{ field.class }}">
+                {% if "adm_approval" in field.name %}
+                    <span class="{% if object.is_adm_approval_required %}red-font{% endif %}">{% get_field_value object field.name safe=True %}</span>
+                {% elif "deadline" in field.name and "abstract" not in field.name and "registration" not in field.name %}
+                    {% if object.days_until_adm_review_deadline > 45 %}
+                        {% echo "success" as btn_color %}
+                    {% elif object.days_until_adm_review_deadline >= 15 %}
+                        {% echo "warning" as btn_color %}
+                    {% else %}
+                        {% echo "danger" as btn_color %}
+                    {% endif %}
 
-    </style>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Trips</li>
-        </ol>
-    </nav>
-
-    <div class="container-fluid">
-
-        <h1 class="big-header">Trips </h1>
-
-        <form class="form" action="." method="get" id="filter-form">
-            <div class="row">
-
-                {% for field in filter.form %}
-                    {# {{field.label}}: &nbsp; {{field}}&nbsp;&nbsp; #}
-                    <div class="col">
-                        {% bootstrap_field field placeholder="" size="small" %}
-                    </div>
-
-                {% endfor %}
-                <div class="col">
-                    <br>
-                    <input type="submit" value="Filter" class="btn btn-warning btn-sm">
-
-                </div>
-            </div>
-        </form>
-        <br>
-        <div class="row">
-            <div class="col-12">
-
-                <div class="row">
-                    <div class="col">
-                        {% trans "(click on a header to sort table)" %}
-                    </div>
-                    <div class="col" style="text-align: center">
-                        <em>displaying all {{ filter.qs.count }} records</em>
-                    </div>
-                    <div class="col" style="text-align: right; padding-bottom: 10px">
-                        <a href="{% url 'travel:trip_new' %}" class="btn btn-sm btn-primary">New Trip</a>
-                    </div>
-                </div>
+                    <span class="btn-{{ btn_color }}">{{ object.adm_review_deadline|date:"Y-m-d" }}</span>
+                    <br>({{ object.adm_review_deadline|naturaltime }})
+                {% elif "total_travellers" in field.name %}
+                    {{ object.total_traveller_list|length|zero2val:"---" }}
+                {% elif "connected_request" in field.name %}
+                    {{ object.trip_requests.count|zero2val:"---" }}
+                {% elif "status" in field.name %}
+                    <span style="background-color: {{ object.status.color }}">{% get_field_value object field.name %}</span>
+                {% else %}
+                    {% get_field_value object field.name safe=True %}
+                {% endif %}
+            </td>
+        {% endfor %}
+    </tr>
+{% endblock %}
 
 
-                <table class="table table-sm table-hover sortable" style="font-size: small">
-                    <thead>
-                    <tr>
-                        {% for field in field_list %}
-                            {% if "is_group" in field %}
-                                <th scope="col">Type</th>
-                            {% elif "year" in field %}
-                                <th style="width: 4%;" scope="col">{% get_verbose_label my_object field %}</th>
-                            {% elif "status" in field %}
-                                <th style="width: 8%;" scope="col">{% get_verbose_label my_object field %}</th>
-                            {% elif "title" in field %}
-                                <th style="width: 25%;" scope="col">{% get_verbose_label my_object field %}</th>
-                            {% else %}
-                                <th scope="col">{% get_verbose_label my_object field %}</th>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for object in filter.qs %}
-                        {% url 'travel:trip_detail' object.id as my_url %}
-                        <tr href="{{ my_url }}">
-
-
-                            {% for field in field_list %}
-                                {% if "is_group" in field %}
-                                    <td>{{ object.is_group_trip|yesno:"Group,Individual" }}</td>
-                                {% elif "status" in field %}
-                                    <td style="background-color: {{ object.status.color }}">{% get_field_value object field format="currency" %}</td>
-
-                                {% else %}
-                                    <td>{% get_field_value object field format="currency" %}</td>
-                                {% endif %}
-
-                            {% endfor %}
-
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-
-
-{% endblock content %}

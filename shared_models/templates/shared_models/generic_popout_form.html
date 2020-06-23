@@ -1,0 +1,66 @@
+{% extends 'pop_base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_tags %}
+{% load custom_filters %}
+{% block body %}
+
+    {#  You can use content block to remove any of the busy-ness down below  #}
+    <div class="{% block container_class %}{% if container_class %}{{ container_class }}{% else %}container{% endif %}{% endblock %}">
+
+        {% block title_area %}
+            {% include "shared_models/_generic_title_area.html" %}
+        {% endblock %}
+
+        <div class="mb-3">
+            {% block pre_form_div %}{% endblock %}
+        </div>
+
+        <form method="post" class="form" {% if is_multipart_form_data %}enctype="multipart/form-data"{% endif %}>
+            {% csrf_token %}
+
+            {% block form_fields %}
+                {% for field in form %}
+                    {% bootstrap_field field placeholder="" %}
+                {% endfor %}
+            {% endblock %}
+
+            {% block form_buttons %}
+                <div class="mt-3 mb-3">
+                    {% trans "Submit" as default_submit_text %}
+                    {% trans "Cancel" as default_cancel_text %}
+                    {% echo request.META.HTTP_REFERER as default_cancel_url %}
+                    <input type="submit" class="btn btn-lg {% block submit_btn_class %}{{ submit_btn_class|nz:"btn-warning" }}{% endblock %}"
+                           value="{{ submit_text|nz:default_submit_text }}">
+                    <a class="btn btn-lg btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                        {% trans "Close" %}
+                    </a>
+
+                </div>
+            {% endblock %}
+        </form>
+
+        {% block post_form_div %}{% endblock %}
+
+    </div>
+
+{% endblock %}
+
+{% block body_js %}
+    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+    <script>
+
+        window.resizeTo(width = {{width|nz:900}}, height = {{height|nz:650}});
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("input").first().select();
+        });
+
+    </script>
+{% endblock %}

@@ -1,35 +1,39 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load bootstrap4 %}
-
-
+{% load i18n %}
 {% block content %}
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+    {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            {% if object %}
-                <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' object.resource.id %}">{{ object.resource.truncated_title }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit File</li>
-            {% else %}
-                <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Add a File...</li>
-            {% endif %}
-        </ol>
-    </nav>
-
-    <br><br>
 
     <div class="container">
-        {% if object.id %}
-            <h1>{{ object.caption }}</h1>
-        {% else %}
-            <h1>New File</h1>
-        {% endif %}
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                {% if object %}
+                    <li class="breadcrumb-item"><a
+                            href="{% url 'inventory:resource_detail' object.resource.id %}">{{ object.resource.truncated_title }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit File</li>
+                {% else %}
+                    <li class="breadcrumb-item"><a
+                            href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add a File...</li>
+                {% endif %}
+            </ol>
+        </nav>
+        <div class="mb-3">
+            {% if object.id %}
+                <h1>{{ object.caption }}</h1>
+            {% else %}
+                <h1>New File</h1>
+            {% endif %}
+        </div>
+        <div class="mb-5">
+
+            <h4>
+                {% trans "NOTE: to add a thumbnail, simply upload an image and ensure the caption contains the word 'thumbnail'" %}
+            </h4>
+        </div>
 
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
@@ -43,10 +47,10 @@
 
                 {% endif %}
                 {% if object.id %}
-                    <a href="{% url "inventory:resource_detail" object.resource.id %}"
+                    <a href="{{ request.META.HTTP_REFERER }}"
                        class="btn btn-secondary">Back</a>
                 {% else %}
-                    <a href="{% url "inventory:resource_detail" view.kwargs.resource %}"
+                    <a href="{{ request.META.HTTP_REFERER }}"
                        class="btn btn-secondary">Back</a>
                 {% endif %}
             </div>

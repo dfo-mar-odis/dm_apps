@@ -1,0 +1,56 @@
+{% load i18n %}
+{% load custom_filters %}
+{% load verbose_names %}
+<div class="projects">
+
+    <div class="mb-3">
+        <h2>{% trans "Financial Summary" %} ({{ object_list.first.year }})</h2>
+        {#        <h6>({% trans "Submitted & Approved Projects" %})</h6>#}
+    </div>
+
+
+    <table class="table table-bordered table-sm" style="width: auto">
+        <tr>
+            <th style="width: 150px;">
+                {% trans "Type" %}
+            </th>
+            <th style="width: 150px;">
+                {% trans "Funding source" %}
+            </th>
+            <th style="width: 150px;">
+                {% trans "Salary (excluding FTE)" %}
+            </th>
+            <th style="width: 150px;">
+                {% trans "O & M" %}
+            </th>
+            <th style="width: 150px;">
+                {% trans "Captial" %}
+            </th>
+            <th style="width: 150px;">
+                {% trans "Total" %}
+            </th>
+        </tr>
+        <tbody>
+        {% with "---" as na %}
+            {% for fs in financials_dict %}
+                {% with financials_dict|lookup:fs  as fs_dict %}
+                    <tr style="background-color: {{ fs.funding_source_type.color }}">
+                        <td>{{ fs.funding_source_type|nz:_("Total") }}</td>
+                        <td>{{ fs.tname|nz:"---" }}</td>
+                        <td>{{ fs_dict|lookup:"salary"|kmark:"2,False" }}</td>
+                        <td>{{ fs_dict|lookup:"om"|kmark:"2,False" }}</td>
+                        <td>{{ fs_dict|lookup:"capital"|kmark:"2,False" }}</td>
+                        <td>{{ fs_dict|lookup:"total"|kmark:"2,False" }}</td>
+                    </tr>
+                {% endwith %}
+            {% endfor %}
+        {% endwith %}
+
+        </tbody>
+    </table>
+
+</div>
+
+
+
+

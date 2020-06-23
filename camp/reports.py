@@ -96,7 +96,7 @@ LEGEND_FONT_SIZE = '10pt'
 def generate_annual_watershed_report(site, year):
     # start assigning files and by cleaning the temp dir
     # base_dir = os.path.dirname(os.path.abspath(__file__))
-    target_dir = os.path.join(settings.BASE_DIR, 'static', 'img', 'camp', 'temp')
+    target_dir = os.path.join(settings.BASE_DIR, 'media', 'camp', 'temp')
     target_file_pie = os.path.join(target_dir, 'pie_chart.png')
     target_file_richness1 = os.path.join(target_dir, 'species_richness1.png')
     target_file_richness2 = os.path.join(target_dir, 'species_richness2.png')
@@ -210,9 +210,9 @@ def generate_sub_species_richness_1(site, target_file):
     site_name_fre = "{} ({})".format(models.Site.objects.get(pk=site).site, models.Site.objects.get(pk=site).province.abbrev_fre)
 
     title_fre = "Comparaison annuelle de la diversité des espèces à chaque station d’échantillonnage du PSCA à"
-    title_fre1 = "{} pour le mois de juin seulement".format(site_name_fre)
+    title_fre1 = "{} pour le mois de juin ou juillet seulement".format(site_name_fre)
     sub_title_fre = "La diversité cumulative des espèces pour toutes les stations et le nombre de stations échantillonnées sont aussi indiqués."
-    title_eng = "Annual comparison of species richness at each CAMP sampling station in {} for June only".format(site_name)
+    title_eng = "Annual comparison of species richness at each CAMP sampling station in {} for June or July only".format(site_name)
     sub_title_eng = "Cumulative species richness of all stations and number of stations sampled are also indicated."
 
     p = figure(
@@ -465,10 +465,10 @@ def generate_sub_do_1(site, target_file):
     site_name_fre = "{} ({})".format(models.Site.objects.get(pk=site).site, models.Site.objects.get(pk=site).province.abbrev_fre)
 
     title_eng = "Annual comparison of dissolved oxygen concentrations at each CAMP sampling station in {}".format(site_name)
-    title_eng1 = "for June only".format(site_name)
+    title_eng1 = "for June or July only".format(site_name)
     sub_title_eng = "Number of stations sampled is indicated."
     title_fre = "Comparaison annuelle de la concentration d’oxygène dissous à chaque station du PSCA à {} pour".format(site_name_fre)
-    title_fre1 = "le mois de juin seulement"
+    title_fre1 = "le mois de juin ou juillet seulement"
     sub_title_fre = "Le nombre de stations échantillonnées est indiqué."
 
     p = figure(
@@ -724,10 +724,10 @@ def generate_sub_green_crab_1(site, target_file):
     site_name = str(models.Site.objects.get(pk=site))
     site_name_fre = "{} ({})".format(models.Site.objects.get(pk=site).site, models.Site.objects.get(pk=site).province.abbrev_fre)
 
-    title_eng = "Annual comparison of Green Crab abundance observed during CAMP sampling in {} for June only".format(site_name)
+    title_eng = "Annual comparison of Green Crab abundance observed during CAMP sampling in {} for June or July only".format(site_name)
     sub_title_eng = "Number of stations sampled is indicated above columns."
     title_fre = "Comparaison annuelle de l’abondance de Crabes verts observée durant l’échantillonnage du PSCA à "
-    title_fre1 = "{} pour le mois de juin seulement".format(site_name_fre)
+    title_fre1 = "{} pour le mois de juin ou juillet seulement".format(site_name_fre)
     sub_title_fre = "Le nombre de stations échantillonnées est indiqué au-dessus des colonnes."
 
     color = palettes.BuGn[5][2]
@@ -977,10 +977,10 @@ def generate_annual_watershed_spreadsheet(site, year):
         data_row.append(len(species_set))
 
         # total count
-        total = models.SpeciesObservation.objects.filter(sample=s).filter(species__sav=False).values(
+        total = models.SpeciesObservation.objects.filter(sample=s, species__sav=False).values(
             'sample_id'
-        ).distinct().annotate(dsum=Sum('total_non_sav'))
-        data_row.append(total[0]['dsum'])
+        ).aggregate(dsum=Sum('total_non_sav'))
+        data_row.append(total['dsum'])
 
         # store data_row in a dataframe
         my_df = my_df.append(pandas.DataFrame([data_row, ], columns=[i for i in range(0, len(data_row))]),
@@ -1012,7 +1012,7 @@ def generate_annual_watershed_spreadsheet(site, year):
     count = 0
     for j in my_df[my_df.shape[1] - 1]:
         if count > 1:
-            total_sum = total_sum + j
+            total_sum = total_sum + nz(j, 0)
         count += 1
     worksheet1.write(my_df.shape[0], my_df.shape[1] - 2, "TOTAL", bold_format)
     worksheet1.write(my_df.shape[0], my_df.shape[1] - 1, total_sum, bold_format)
@@ -1295,8 +1295,6 @@ def generate_open_data_wms_report(lang=1):
                                  qs.filter(sample__station=station, species__sav=False).order_by("species").values("species").distinct()])
             vas_list = listrify([models.Species.objects.get(pk=obj["species"]).common_name_fre for obj in
                                  qs.filter(sample__station=station, species__sav=True).order_by("species").values("species").distinct()])
-
-
 
         total_freq = qs.filter(sample__station=station, ).values("total_non_sav").order_by("total_non_sav").aggregate(
             dsum=Sum("total_non_sav"))["dsum"]

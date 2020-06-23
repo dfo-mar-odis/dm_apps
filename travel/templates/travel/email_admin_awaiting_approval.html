@@ -1,4 +1,5 @@
 {% load verbose_names %}
+{% load custom_tags %}
 
 <style media="screen">
     table, td, th, tr {
@@ -9,17 +10,21 @@
 </style>
 
 <h1>
-    A trip is awaiting the approval of {{ trip.current_reviewer.user }} as {{ trip.current_reviewer.role }}.
+    A request is awaiting the approval of {{ triprequest.current_reviewer.user }} as {{ triprequest.current_reviewer.role }}.
 </h1>
+{% if reviewer_role_id == 5 %}
+    {% echo "adm" as my_type %}
+{% elif reviewer_role_id == 6 %}
+    {% echo "rdg" as my_type %}
+{% endif %}
 
 <p>
-    You can manage approvals via the <a href="http://dmapps{% url 'travel:admin_approval_list' %}">TMS admin console</a>.
-{#    To view the trips awaiting your approval, please click <a href="">HERE</a>. Here are the trip details:#}
+    You can manage approvals via the <a href="{{ SITE_FULL_URL }}{% url 'travel:admin_approval_list' my_type %}">TMS admin console</a>.
+    {#    To view the trips awaiting your approval, please click <a href="">HERE</a>. Here are the trip details:#}
 </p>
-
 <table>
     {% for field in field_list %}
-        {% verbose_td_display trip field %}
+        {% verbose_td_display triprequest field %}
     {% endfor %}
 </table>
 

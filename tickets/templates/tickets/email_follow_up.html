@@ -19,6 +19,6 @@
 </p>
 
 <p>
-    Click <a href="http://dmapps{% url 'tickets:detail' object.ticket.id %}">HERE</a> to view the ticket.
-    / cliquez <a href="http://dmapps{% url 'tickets:detail' object.ticket.id %}">ICI</a> pour voir le billet.
+    Click <a href="{{SITE_FULL_URL}}{% url 'tickets:detail' object.ticket.id %}">HERE</a> to view the ticket.
+    / cliquez <a href="{{SITE_FULL_URL}}{% url 'tickets:detail' object.ticket.id %}">ICI</a> pour voir le billet.
 </p>

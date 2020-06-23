@@ -1,0 +1,21 @@
+{% extends "travel/list.html" %}
+
+{% load verbose_names %}
+
+
+{% block table_tr %}
+    {% url row_object_url_name object.id view.kwargs.type as my_url %}
+    <tr href="{{ my_url }}">
+        {% for field in field_list %}
+            <td class="{{ field.class }}">
+                {% if "is_group" in field.name %}
+                    {{ object.is_group_request|yesno:"Group,Individual" }}
+                {% elif "status" in field.name %}
+                    <span style="background-color: {{ object.status.color }}">{% get_field_value object field.name format="currency" %}</span>
+                {% else %}
+                    {% get_field_value object field.name %}
+                {% endif %}
+            </td>
+        {% endfor %}
+    </tr>
+{% endblock %}

@@ -9,7 +9,9 @@ $("tr").each(function () {
             href = $(this)[0].getAttribute("href")
 
             if ($(this)[0].hasAttribute("pop")) {
-                popitup(href, 'popoutWindow' + Date.now())
+                popitup(href, 'popoutWindow' + Date.now());
+            } else if ($(this)[0].hasAttribute("newtab")) {
+                window.open(href, '_blank')
             } else {
                 document.location.href = href
             }

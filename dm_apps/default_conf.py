@@ -1,45 +1,17 @@
 # INSTRUCTIONS:  #
 ##################
-
-# Duplicate this file and rename it to my_conf.py
-# The 'my_conf.py' file is in the .gitignore
-# create a file called prod.cnf in the root project dir to specify connection to production db server
-# The 'prod.cnf' file is also in the .gitignore
-# It is recommended to leave this file unmodified unless you are making improvements
+# please refer to the README and the project wiki for the most up-to-update information.
+# If you want to customize this app, duplicate this file and rename it to my_conf.py and make changes
+# through that file. The 'my_conf.py' file is in the .gitignore
+# As this file in a part of the repository, please do not make any customizations here
 
 import os
+from decouple import config
+from .utils import db_connection_values_exist, get_db_connection_dict
 
-# DO NOT CHANGE THESE VARIABLES
-FORCE_DEV_DB = False
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# This is the name of the production database connection file; if missing, we will use dev.cnf with is included in the repo
-MY_CNF = os.path.join(BASE_DIR, 'prod.cnf')
-
-# uncomment this line if you want to connect to the production database instead of the default dev database (assuming prod.cnf is present)
-FORCE_DEV_DB = True
-
-# checking to see if the which database to connect to:
-# if prod.cnf exists and we are not forcing dev mode...
-if os.path.isfile(MY_CNF) and not FORCE_DEV_DB:
-    USING_PRODUCTION_DB = True
-# otherwise we are in dev mode
-else:
-    if os.path.isfile(MY_CNF):
-        print("production connection string is present however running dev mode since FORCE_DEV_MODE setting is set to True")
-    MY_CNF = os.path.join(BASE_DIR, 'dev.cnf')
-    # this variable is used in base.html to indicate which database you are connected to
-    USING_PRODUCTION_DB = False
-
-# Specific which mode you are running in. If this file is on the production server, this setting should be True
-# if this setting = False, static and mediafiles will be served by the development server.
-PRODUCTION_SERVER = False
-
-# this property is only looked at if PRODUCTION_SERVER = True. By setting DEBUG = True, you will override the default programming to set
-# DEBUG = False when using a prod server
-DEBUG = False
-
-# add your hostname here.
-ALLOWED_HOSTS = ['127.0.0.1', ]
+########
+# APPS #
+########
 
 # add new applications to this dictionary; grey out any app you do not want
 # the dict key should be the actual name of the app
@@ -65,27 +37,93 @@ APP_DICT = {
     'publications': "Project Publications Inventory",
     'trapnet': "TrapNet",
     'whalesdb': "Whale Equipment Deployment Inventory",
+	'csas': "Canadian Science Advisory Secretariat",
+    'vault': "Marine Megafauna Media Vault",
+    'spring_cleanup': "Gulf Region Spring Cleanup",
+    'shiny': "DM Apps Shiny App Collection",
 }
 
-MY_INSTALLED_APPS = [app for app in APP_DICT]
-SHOW_TICKETS_APP = True
+# This variable is used to employ a preconfiguartion of applications for Azure deployment
+DEPLOYMENT_STAGE = config("DEPLOYMENT_STAGE", cast=str, default="").upper()
 
-# Specify your database connection details
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
+### Deploying application in production - don't change, unless you know what you're doing
+if DEPLOYMENT_STAGE == 'PROD':
+    # overwrite app_dict with only the applications to be deployed to PROD
+    APP_DICT = {
+        'travel': 'Travel Management System'
+    }
+
+### Deploying application in test environment
+elif DEPLOYMENT_STAGE == 'TEST':
+    # overwrite app_dict with only the applications to be deployed to TEST
+    APP_DICT = {
+        'travel': 'Travel Management System'
+    }
+
+
+elif DEPLOYMENT_STAGE == 'DEV':
+    # no changes to make, just a placeholder
+    pass
+
+MY_INSTALLED_APPS = [app for app in APP_DICT]
+
+#############
+# DATABASES #
+#############
+
+# By default, the application will use the setting from the environment variables (or .env file).
+# If those variables are not set, the local db will be created. If you would like to use a local db
+# disrespective of the environment variables, set it to True
+USE_LOCAL_DB = False
+# If the GEODJANGO setting is set to True, make sure to use the spatially enabled db api wrappers
+GEODJANGO = config("GEODJANGO", cast=bool, default=False)
+
+# get the connection information from the env; if not all values present, default to local db
+db_connections = get_db_connection_dict()
+if not db_connection_values_exist(db_connections):
+    USE_LOCAL_DB = True
+    print("DB connection values are not specified. Can not connect to the database. Connecting to local db instead.")
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if USE_LOCAL_DB:
+    my_default_db = {
+        'ENGINE': 'django.contrib.gis.db.backends.spatialite' if GEODJANGO else 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+    DB_MODE = "LOCAL"
+    DB_NAME = "db.sqlite3"
+    DB_HOST = "local"
+else:
+
+    my_default_db = {
+        # 'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.contrib.gis.db.backends.mysql' if GEODJANGO else 'django.db.backends.mysql',
         'TIME_ZONE': 'America/Halifax',
-        'OPTIONS': {
-            'read_default_file': MY_CNF,
-            'init_command': 'SET default_storage_engine=INNODB',
-        },
-    },
-    # 'whalesdb': {
-    #     'ENGINE': 'django.db.backends.oracle',
-    #     'NAME': 'DTRAN',
-    #     'USER': 'whale_amd',
-    #     'PASSWORD': 'BigSpla3h#',
-    #     'HOST': 'VSNSBIOD78.ENT.DFO-MPO.CA',
-    #     'PORT': '1521'
-    # },
+
+        'HOST': db_connections["DB_HOST"],
+        'PORT': db_connections["DB_PORT"],
+        'NAME': db_connections["DB_NAME"],
+        'USER': db_connections["DB_USER"],
+        'PASSWORD': db_connections["DB_PASSWORD"],
+        'INIT_COMMAND': 'SET default_storage_engine=INNODB',
+        }
+
+    # if we have a connection, get the names of db and host to pass in as context processors
+    DB_NAME = db_connections["DB_NAME"]
+    DB_HOST = db_connections["DB_HOST"]
+
+    # give the user an option to not define the db mode. If not provided, it will be guessed at from the host name
+    if not db_connections["DB_MODE"]:
+        # Determine which DB we are using from the host name"
+        if "dmapps-dev-db" in db_connections["DB_HOST"] and db_connections["DB_NAME"] == "dmapps":
+            DB_MODE = "DEV"
+        elif "dmapps-dev-db" in db_connections["DB_HOST"] and db_connections["DB_NAME"] == "dmapps-test":
+            DB_MODE = "TEST"
+        elif "dmapps-prod-db" in db_connections["DB_HOST"]:
+            DB_MODE = "PROD"
+    else:
+        DB_MODE = db_connections["DB_MODE"]
+
+DATABASES = {
+    'default': my_default_db,
 }

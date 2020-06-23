@@ -33,6 +33,7 @@
             {% trans "Feedback / Bug Form" %}
         </h1><br>
         <form method="post" class="form">
+            {% bootstrap_form_errors form %}
             {% csrf_token %}
             {% for field in form %}
                 {% bootstrap_field field size="small" layout="horizontal" placeholder="" %}

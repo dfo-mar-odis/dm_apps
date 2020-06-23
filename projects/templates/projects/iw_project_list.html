@@ -1,0 +1,254 @@
+{% extends "projects/base.html" %}
+{% load static %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+{% load verbose_names %}
+
+{% block crumbs %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'projects:index' %}">
+                    {% trans "Home" %}
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'projects:iw_group_list' region.id|nz:0 division.id|nz:0 section.id|nz:0 fy.id view.kwargs.type %}">
+                    {% trans "Functional Group Summary" %}
+                    ({{ big_unit }}{% if small_unit %}/{{ small_unit }}{% endif %})
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Projects from {{ small_item }} Section
+                {% if functional_group %}
+                    under {{ functional_group }}
+                {% endif %}
+            </li>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block title_area %}
+    <h3 class="highlight">
+        {% if section %}
+            {% blocktrans with section=section region=region %}
+                Showing only projects from {{ section }} section ({{ region }})
+            {% endblocktrans %}
+        {% elif division %}
+            {% blocktrans with region=region division=division.tname %}
+                Showing only projects from {{ division }} division ({{ region }})
+            {% endblocktrans %}
+        {% endif %}
+    </h3>
+    <div class="">
+
+
+        <h2>
+            {% if type == 'theme' %}
+                Projects from {{ functional_group.theme }}
+                under {{ functional_group }}
+            {% elif type == 'funding_source' %}
+                Projects from {{ small_item }} Funding Source
+                {% if functional_group %}
+                    under {{ functional_group }}
+                {% endif %}
+            {% else %}
+                Projects from {{ small_item }} section
+                {% if functional_group %}
+                    under {{ functional_group }}
+                {% endif %}
+            {% endif %}
+        </h2>
+        <h3>
+            (Recommended)
+        </h3>
+
+
+    </div>
+{% endblock %}
+
+{% block subcontent %}
+    {% get_current_language as LANG %}
+
+    <style>
+        table, td {
+            font-size: 12px;
+        }
+
+        .abase {
+            background-color: {{abase}};
+        }
+
+        .bbase {
+            background-color: {{bbase}};
+        }
+
+        .cbase {
+            background-color: {{cbase}};
+        }
+
+        .total {
+            font-weight: bold;
+        }
+
+    </style>
+
+    {% if view.kwargs.type == "theme" %}
+        {% trans "Theme" as big_unit %}
+    {% elif view.kwargs.type == "funding_source" %}
+        {% trans "Funding type" as big_unit %}
+        {% trans "Source" as small_unit %}
+    {% else %}
+        {% trans "Division" as big_unit %}
+        {% trans "Section" as small_unit %}
+    {% endif %}
+
+
+    <div class="container-fluid">
+        {{ get_current_language }}
+
+
+        <br>
+
+        {% if note %}
+            <div class="float-right">
+                <a href="#" pop-href="{% url 'projects:note_edit' note.id %}" class="btn btn-sm btn-outline-dark">
+                    <img src="{% static 'admin/img/icon-changelink.svg' %}" alt="">
+                </a>
+            </div>
+
+            <div class="mb-3">
+                <div class="mb-3">
+                    <h4>{% get_verbose_label note "summary" %}</h4>
+                    <p>{% get_field_value note "summary_html" nullmark="<em>n/a</em>" safe=True %}</p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <h4>{% get_verbose_label note "pressures" %}</h4>
+                    <p>{% get_field_value note "pressures_html" nullmark="<em>n/a</em>" safe=True %} </p>
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="mb-3">
+            <div class="mb-3">
+                <h4>{% trans "Financial summary" %}</h4>
+            </div>
+
+            <table class="table table-bordered table-sm" style="width: auto">
+                <tr>
+                    <th style="width: 150px;">
+                        {% trans "Type" %}
+                    </th>
+                    <th style="width: 150px;">
+                        {% trans "Funding source" %}
+                    </th>
+                    <th style="width: 150px;">
+                        {% trans "Salary (excluding FTE)" %}
+                    </th>
+                    <th style="width: 150px;">
+                        {% trans "O & M" %}
+                    </th>
+                    <th style="width: 150px;">
+                        {% trans "Captial" %}
+                    </th>
+                    <th style="width: 150px;">
+                        {% trans "Total" %}
+                    </th>
+                </tr>
+                <tbody>
+                {% with "---" as na %}
+                    {% for fs in financials_dict %}
+                        {% with financials_dict|lookup:fs  as fs_dict %}
+                            <tr style="background-color: {{ fs.funding_source_type.color }}">
+                                <td>{{ fs.funding_source_type|nz:_("Total") }}</td>
+                                <td>{{ fs.tname|nz:"---" }}</td>
+                                <td>{{ fs_dict|lookup:"salary"|kmark:"2,False" }}</td>
+                                <td>{{ fs_dict|lookup:"om"|kmark:"2,False" }}</td>
+                                <td>{{ fs_dict|lookup:"capital"|kmark:"2,False" }}</td>
+                                <td>{{ fs_dict|lookup:"total"|kmark:"2,False" }}</td>
+                            </tr>
+                        {% endwith %}
+                    {% endfor %}
+                {% endwith %}
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="mb-3">
+            <div class="mb-3">
+                <h4>{% trans "Projects" %}</h4>
+            </div>
+
+            <table class="table table-hover table-bordered table-sm sortable">
+                <thead>
+                <tr>
+                    {% for field in field_list %}
+                        {% if field == "project_title" %}
+                            <th style="width: 25%">
+                                {% get_verbose_label project_list.first field %}
+                            </th>
+                        {% elif "total_" in field %}
+                            <th style="width: 75px">
+                                {% get_verbose_label project_list.first field %}
+                            </th>
+                        {% elif field == "meeting_notes" %}
+                            <th style="width: 15%">
+                                {% get_verbose_label project_list.first field %}
+                            </th>
+
+                        {% else %}
+                            <th>
+                                {% get_verbose_label project_list.first field %}
+                            </th>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {% for p in project_list %}
+                    <tr pop href="{% url 'projects:project_overview' p.id 1 %}">
+                        {% for field in field_list %}
+                            {% if "total_fte" in field %}
+                                <td>
+                                    {% get_field_value p field as my_val %}
+                                    {{ my_val|zero2val:"---"|floatformat:0 }}
+                                </td>
+
+                            {% elif "total_om" in field  or "total_salary" in field %}
+                                <td>
+                                    {% get_field_value p field as my_val %}
+                                    {{ my_val|zero2val:"---"|kmark:"2,True" }}
+                                </td>
+                            {% else %}
+                                <td>
+                                    {% get_field_value p field %}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                        <td style="width: 10%;">
+                            <a href="#" pop-href="{% url 'projects:project_notes' p.id %}"
+                               class="stop-pop btn btn-sm btn-outline-dark">
+                                <img src="{% static 'admin/img/icon-changelink.svg' %}" alt=""> &nbsp;
+                                {% trans "notes" %}
+                            </a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <br>
+
+    </div>
+
+{% endblock %}

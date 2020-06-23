@@ -1,0 +1,66 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cruises</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="big-header">Cruise List </h1>
+        <p>TOTAL: {{ object_list.count }}</p>
+        <a href="{% url 'diets:cruise_new' %}" class="btn btn-sm btn-success">New Cruise</a><br>
+
+        <table class="table table-sm table-hover sortable">
+            <thead>
+            <tr>
+                {% for field in field_list %}
+                    <th scope="col">{% get_verbose_label my_object field %}</th>
+                {% endfor %}
+                <th scope="col">Prey items</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+                {% url 'diets:cruise_detail' object.id as my_url %}
+                <tr href="{{ my_url }}">
+                    {% for field in field_list %}
+                        <td>{% get_field_value object field %}</td>
+                    {% endfor %}
+                    <td>{{ object.prey_items.count }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {#    #}
+        {#        <table class="table table-hover table-sm sortable" style="width: auto">#}
+        {#            <thead>#}
+        {#                <th scope="col">Year</th>#}
+        {#                <th scope="col">Cruise Number</th>#}
+        {#                <th scope="col">Predators sampled</th>#}
+        {##}
+        {#            </thead>#}
+        {#            <tbody>#}
+        {#            {% for object in object_list %}#}
+        {#                <tr href="{% url 'diets:cruise_detail' object.id %}">#}
+        {#                    <td>{{ object.start_date.year }}</td>#}
+        {#                    <td>{{ object.cruise_number }}</td>#}
+        {#                    <td>{{ object.predators.count }}</td>#}
+        {#                </tr>#}
+        {#            {% endfor %}#}
+        {#            <br>#}
+        {#            </tbody>#}
+        {#        </table>#}
+
+
+    </div>
+
+{% endblock content %}

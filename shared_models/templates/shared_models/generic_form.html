@@ -1,0 +1,50 @@
+{% extends "shared_models/generic_base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block subcontent %}
+    <div class="mb-3">
+        {% block pre_form_div %}{% endblock %}
+    </div>
+
+    {% block form %}
+        <form method="post" class="form" {% if is_multipart_form_data %}enctype="multipart/form-data"{% endif %}>
+            {% csrf_token %}
+
+            {% block form_fields %}
+                {% for field in form %}
+                    {% block form_field %}
+                        {% bootstrap_field field placeholder="" %}
+                    {% endblock %}
+                {% endfor %}
+            {% endblock %}
+
+            {% block form_buttons %}
+                <div class="mt-3 mb-3">
+                    {% trans "Submit" as default_submit_text %}
+                    {% trans "Cancel" as default_cancel_text %}
+                    {% echo request.META.HTTP_REFERER as default_cancel_url %}
+                    <span data-toggle="tooltip" title="{% block submit_btn_tip_text %}{% endblock %}">
+                <input type="submit" class="btn btn-lg {% block submit_btn_class %}btn-warning{% endblock %}"
+                        {% block submit_btn_props %}{% endblock %}
+                       value="{{ submit_text|nz:default_submit_text }}">
+                </span>
+                    <a class="btn btn-lg btn-secondary" href="{{ cancel_url|nz:default_cancel_url }}">
+                        {{ cancel_text|nz:default_cancel_text }}
+                    </a>
+                </div>
+            {% endblock %}
+        </form>
+    {% endblock %}
+
+
+    <div class="mb-3">
+        {% block post_form_div %}{% endblock %}
+    </div>
+
+
+{% endblock %}
+
+

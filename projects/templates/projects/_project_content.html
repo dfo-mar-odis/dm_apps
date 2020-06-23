@@ -4,94 +4,133 @@
 {% load custom_filters %}
 {% load i18n %}
 
-{% bootstrap_css %}
+{#{% bootstrap_css %}#}
 
-<h1>{{ object }} ({{ object.id }})
-    {#    ({{ object.id }})#}
-    {% if not object_list %}
-        -
-        {% if object.submitted %}
-            {% trans "SUBMITTED" %}
-        {% else %}
-            <span class="red-font">
-                {% trans "UNSUBMITTED" %}
-                </span>
-        {% endif %}
-    {% endif %}
-
-</h1>
-
-<hr>
+<style>
+    table, td {
+        font-size: small;
+    }
+</style>
 <br>
-<table class="table table-sm table-striped" style="width: auto">
-    {# cheating here to adjust header width #}
-
-    {% for field in field_list %}
-        {% if field == "programs" %}
-            <tr>
-                <th>{% get_verbose_label object field %}</th>
-                <td>
-                {% if object.programs.count > 0 %}
-                    {% get_field_value object field %}
-                {% else %}
-                    <span class="red-font blink-me">{% trans "MISSING PROGRAM INFORMATION" %}</span>
-                {% endif %}
-                </td>
-            </tr>
-        {% else %}
-            {% verbose_td_display object field th_width="30%" td_width="80%" %}
-        {% endif %}
-    {% endfor %}
-    {% verbose_td_display object "section_head_approved" %}
-    {% verbose_td_display object "section_head_feedback" %}
-    {% verbose_td_display object "manager_approved" %}
-    {% verbose_td_display object "manager_feedback" %}
-    {% verbose_td_display object "rds_approved" %}
-    {% verbose_td_display object "rds_feedback" %}
-</table>
-<hr>
-
+{% include "projects/_project_details.html" %}
+<br>
 {% include "projects/_staff.html" %}
+<br>
 {% include "projects/_om_costs.html" %}
+<br>
 {% include "projects/_capital_costs.html" %}
+<br>
 {% include "projects/_gc_costs.html" %}
+<br>
 {% include "projects/_collaborators.html" %}
+<br>
 {% include "projects/_agreements.html" %}
+<br>
 {% include "projects/_milestones.html" %}
-{% if object_list %}
-    {% with financial_summary_data|lookup:object.id|lookup:"salary_abase" as salary_abase %}
-        {% with financial_summary_data|lookup:object.id|lookup:"salary_bbase" as salary_bbase %}
-            {% with financial_summary_data|lookup:object.id|lookup:"salary_cbase" as salary_cbase %}
-                {% with financial_summary_data|lookup:object.id|lookup:"salary_total" as salary_total %}
-                    {% with financial_summary_data|lookup:object.id|lookup:"om_abase" as om_abase %}
-                        {% with financial_summary_data|lookup:object.id|lookup:"om_bbase" as om_bbase %}
-                            {% with financial_summary_data|lookup:object.id|lookup:"om_cbase" as om_cbase %}
-                                {% with financial_summary_data|lookup:object.id|lookup:"om_total" as om_total %}
-                                    {% with financial_summary_data|lookup:object.id|lookup:"capital_abase" as capital_abase %}
-                                        {% with financial_summary_data|lookup:object.id|lookup:"capital_bbase" as capital_bbase %}
-                                            {% with financial_summary_data|lookup:object.id|lookup:"capital_cbase" as capital_cbase %}
-                                                {% with financial_summary_data|lookup:object.id|lookup:"capital_total" as capital_total %}
-                                                    {% with financial_summary_data|lookup:object.id|lookup:"abase" as abase %}
-                                                        {% with financial_summary_data|lookup:object.id|lookup:"bbase" as bbase %}
-                                                            {% with financial_summary_data|lookup:object.id|lookup:"cbase" as cbase %}
-                                                                {% include "projects/_financial.html" %}
-                                                            {% endwith %}
-                                                        {% endwith %}
-                                                    {% endwith %}
-                                                {% endwith %}
-                                            {% endwith %}
-                                        {% endwith %}
-                                    {% endwith %}
-                                {% endwith %}
-                            {% endwith %}
-                        {% endwith %}
-                    {% endwith %}
-                {% endwith %}
-            {% endwith %}
-        {% endwith %}
-    {% endwith %}
+<br>
 
-{% else %}
-    {% include "projects/_financial.html" %}
+{% include "projects/_files.html" %}
+<br>
+
+{% if project.submitted %}
+    {% include "projects/_status_reports.html" %}
+    <br>
 {% endif %}
 
+{% include "projects/_financial.html" %}
+
+<script type="application/javascript">
+
+
+    $(".staff-delete-me").click(function (e) {
+        var objectId = $(this).attr("val");
+        var currentUserID = "{{ user.id }}";
+        var deleteUserID = $(this).attr("user_id");
+
+        var msg = "{% trans "Are you sure you want to delete this staff member from the project?" %}";
+        if (currentUserID == deleteUserID) {
+            msg = "{% trans 'WARNING: YOU ARE ABOUT TO DELETE YOURSELF FROM THIS PROJECT!!!' %}\n\n" + msg;
+        }
+        var userInput = "";
+        userInput = confirm(msg);
+        if (userInput === true) {
+            document.location.href = $("#staff-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+        }
+        e.stopImmediatePropagation();
+    });
+
+    $(".collab-delete-me").click(function (e) {
+        var objectId = $(this)[0].getAttribute("val");
+
+        var userInput = "";
+        userInput = confirm("{% trans "Are you sure you want to delete this collaborator from the project?" %}");
+        if (userInput === true) {
+            document.location.href = $("#collab-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+        }
+        e.stopImmediatePropagation();
+    });
+
+    $(".agreement-delete-me").click(function (e) {
+        var objectId = $(this)[0].getAttribute("val");
+
+        var userInput = "";
+        userInput = confirm("{% trans "Are you sure you want to delete this agreement from the project?" %}");
+        if (userInput === true) {
+            document.location.href = $("#agreement-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+        }
+        e.stopImmediatePropagation();
+    });
+
+    $(".om-delete-me").click(function (e) {
+        var objectId = $(this)[0].getAttribute("val");
+
+        var userInput = "";
+        userInput = confirm("{% trans "Are you sure you want to delete this o&m request from the project?" %}");
+        if (userInput === true) {
+            document.location.href = $("#om-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+        }
+        e.stopImmediatePropagation();
+    });
+
+    $(".capital-delete-me").click(function (e) {
+        var objectId = $(this)[0].getAttribute("val");
+
+        var userInput = "";
+        userInput = confirm("{% trans "Are you sure you want to delete this capital request from the project?" %}");
+        if (userInput === true) {
+            document.location.href = $("#capital-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+        }
+        e.stopImmediatePropagation();
+    });
+
+    $(".gc-delete-me").click(function (e) {
+        var objectId = $(this)[0].getAttribute("val");
+
+        var userInput = "";
+        userInput = confirm("{% trans "Are you sure you want to delete this G&C request from the project?" %}");
+        if (userInput === true) {
+            document.location.href = $("#gc-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+        }
+        e.stopImmediatePropagation();
+    });
+
+    $(".milestone-delete-me").click(function (e) {
+        var objectId = $(this)[0].getAttribute("val");
+
+        var userInput = "";
+        userInput = confirm("{% trans "Are you sure you want to delete this milestone request from the project?" %}");
+        if (userInput === true) {
+            document.location.href = $("#milestone-secrect-delete-btn-" + objectId)[0].getAttribute("href");
+        }
+        e.stopImmediatePropagation();
+    });
+
+    $(".toggle-source").click(function (e) {
+        e.stopImmediatePropagation();
+        var objectId = $(this)[0].getAttribute("pk");
+        var objectType = $(this)[0].getAttribute("type");
+        window.location.href = $("#" + objectType + "-secrect-toggle-btn-" + objectId)[0].getAttribute("href")
+
+    });
+
+</script>

@@ -1,0 +1,99 @@
+{% extends "pop_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+{% block body %}
+
+
+    <style>
+        .label {
+            font-weight: bold;
+        }
+
+        table, td {
+            font-size: small;
+        }
+    </style>
+
+
+    <div class="container">
+        <br>
+        <div class="mb-4">
+            <h1>
+                {% trans "Are you certain you wish to skip" %} {{ object.user }}?
+
+            </h1>
+        </div>
+
+        <div class="mb-3">
+            <form method="post" class="form">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    {% bootstrap_field field placeholder="" %}
+                {% endfor %}
+
+                <div class="mb-3">
+                    <a class="btn btn-lg btn-danger" id="yes" href="#">
+                        {% trans "Yes" %}
+                    </a>
+                    <a class="btn btn-lg btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                        {% trans "Cancel" %}
+                    </a>
+
+                    <input type="submit" class="hidden">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
+{% block body_js %}
+
+    <script>
+        window.resizeTo(width = 800, height = 600);
+
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("#id_user")[0].focus()
+        });
+
+        $(".address-btn").click(function (e) {
+            e.preventDefault();
+            $myBtn = $(this);
+            $("#id_address").val($myBtn.text());
+        });
+
+    </script>
+
+    <script type="application/javascript">
+        $("#yes").click(function () {
+            $("#id_is_approved").val(true);
+            $("form").submit();
+        });
+        $("#no").click(function () {
+            $("#id_is_approved").val(false);
+            $("form").submit();
+        });
+        $("#save").click(function () {
+            $("#id_stay_on_page").val(1);
+            $("form").submit();
+        });
+        $("#request_changes").click(function () {
+            $("#id_changes_requested").val(true);
+            $("form").submit();
+        });
+
+    </script>
+
+{% endblock %}

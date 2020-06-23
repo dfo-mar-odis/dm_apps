@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block jquery_import %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>{% endblock %}
+
+{# include css style elements in here #}
+{% block header %}
+{% if site_css %}
+<style>
+{% include ''|add:site_css %}
+</style>
+{% endif %}
+{% endblock %}
+
+{% block navigation %}
+{# if the nav_menu object is not set, this displays the default navigation #}
+{# if the nav_menu object is set, but is none or False, default navigation is hidden #}
+{% with show_nav=nav_menu %}
+{{ block.super }}
+{% endwith %}
+{% endblock %}
+
+{% if nav_menu %}
+{# include navigation elements in here #}
+{% block left_all %}
+{% include ''|add:nav_menu %}
+{% endblock left_all %}
+{% endif %}
+
+{% block title %}
+{# include css style elements in here #}
+{% if title %}{{ title }}{% endif %}
+{% endblock title %}
+
+{% block body %}{% block content %}{% endblock content %}{% endblock body %}
+
+{% block body_js %}
+
+{# if the view includes a path to a javascript file in a java_script context variable, include it here #}
+{% if java_script %}
+{% include ''|add:java_script %}
+{% endif %}
+
+{% endblock body_js %}

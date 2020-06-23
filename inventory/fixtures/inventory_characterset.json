@@ -1,0 +1,1 @@
+[{"model": "inventory.characterset", "pk": 1, "fields": {"label": "utf8", "code": "RI_458", "notes": "8-bit variable size UCS Transfer Format, based on ISO/IEC 10646"}}, {"model": "inventory.characterset", "pk": 2, "fields": {"label": "usAscii", "code": "RI_478", "notes": "united states ASCII code set (ISO 646 US)"}}]

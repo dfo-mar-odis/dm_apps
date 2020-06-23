@@ -1,141 +1,119 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/form.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load i18n %}
 {% load custom_filters %}
 
-{% block content %}
-    <style>
-        label {
-            font-weight: bold;
-        }
-    </style>
+{##}
+{#    <div class="container">#}
+{#        <h1>#}
+{#            {% if cloned %}#}
+{#                {% trans "Please enter the new project details..." %}#}
+{#            {% else %}#}
+{#                {% if object.id %}#}
+{#                    {{ object }}#}
+{#                {% else %}#}
+{#                    {% trans "New Project" %}#}
+{#                {% endif %}#}
+{#            {% endif %}#}
+{#        </h1>#}
+{#        <br><br>#}
+{##}
+{#        <form method="post" class="form">#}
+{#            {% bootstrap_form_errors form %}#}
+{#            {% csrf_token %}#}
+{#            {% buttons %}#}
+{#                <div class="btn-group">#}
+{#                    <button type="submit" class="btn btn-primary">#}
+{#                        {% if cloned or not object.id %}#}
+{#                            {% trans "Add" %}#}
+{#                        {% else %}#}
+{#                            {% trans "Update" %}#}
+{#                        {% endif %}#}
+{#                    </button>#}
+{##}
+{#                    {% if object.id %}#}
+{#                        <a class="btn btn-secondary" href="{% url 'projects:project_detail' object.id %}">#}
+{#                            {% trans "Cancel" %}#}
+{#                        </a>#}
+{#                    {% else %}#}
+{#                        <a class="btn btn-secondary" href="{% url 'projects:my_project_list' %}">#}
+{#                            {% trans "Cancel" %}#}
+{#                        </a>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            {% endbuttons %}#}
+{##}
+{#            {% for field in form %}#}
+
+{% block form_field %}
+    {% if 'editable' in field.field.widget.attrs|lookup:"class" %}
+
+        {% if field.name in help_text_dict %}
+            {% bootstrap_label field.label %}
+            {% with help_text_dict|lookup:field.name as help_text %}
+                <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover"
+                     data-trigger="hover"
+                     title="{{ field.label }}"
+                     data-content="{{ help_text }}">
+                {{ field }}<br>
+
+            {% endwith %}
+
+        {% else %}
+
+            {% bootstrap_label field.label %}
+            {{ field }}<br>
+        {% endif %}
 
 
 
+    {% else %}
+        {% if field.name in help_text_dict %}
+            {% bootstrap_label field.label %}
+            {% with help_text_dict|lookup:field.name as help_text %}
+                <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover"
+                     data-trigger="hover"
+                     title="{{ field.label }}"
+                     data-content="{{ help_text }}">
+                {% bootstrap_field field placeholder="" show_label=False %}
+            {% endwith %}
 
+        {% else %}
+            {% bootstrap_field field placeholder="" %}
+        {% endif %}
+    {% endif %}
+{% endblock %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'projects:my_project_list' %}">
-                {% trans "My Projects" %}
-            </a></li>
-            {% if object %}
-                <li class="breadcrumb-item"><a href="{% url 'projects:project_detail' object.id %}">{{ object }}</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    {% trans "Edit" %}
-                </li>
-            {% else %}
-                <li class="breadcrumb-item active" aria-current="page">
-                    {% trans "New Project" %}
-                </li>
-            {% endif %}
-        </ol>
-    </nav>
+{##}
+{##}
+{#            {% buttons %}#}
+{#                <div class="btn-group">#}
+{#                    <button type="submit" class="btn btn-primary">#}
+{#                        {% if cloned or not object.id %}#}
+{#                            {% trans "Add" %}#}
+{#                        {% else %}#}
+{#                            {% trans "Update" %}#}
+{#                        {% endif %}#}
+{#                    </button>#}
+{##}
+{#                    {% if object.id %}#}
+{#                        <a class="btn btn-secondary" href="{% url 'projects:project_detail' object.id %}">#}
+{#                            {% trans "Cancel" %}#}
+{#                        </a>#}
+{#                    {% else %}#}
+{#                        <a class="btn btn-secondary" href="{% url 'projects:my_project_list' %}">#}
+{#                            {% trans "Cancel" %}#}
+{#                        </a>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            {% endbuttons %}#}
+{#        </form>#}
+{##}
+{##}
+{#    </div>#}
 
-    <div class="container">
-        <h1>
-            {% if cloned %}
-                {% trans "Please enter the new project details..." %}
-            {% else %}
-                {% if object.id %}
-                    {{ object }}
-                {% else %}
-                    {% trans "New Project" %}
-                {% endif %}
-            {% endif %}
-        </h1>
-        <br><br>
-
-        <form method="post" class="form">
-            {% bootstrap_form_errors form %}
-            {% csrf_token %}
-            {% buttons %}
-                <div class="btn-group">
-                    <button type="submit" class="btn btn-primary">
-                        {% if cloned or not object.id %}
-                            {% trans "Add" %}
-                        {% else %}
-                            {% trans "Update" %}
-                        {% endif %}
-                    </button>
-
-                    {% if object.id %}
-                        <a class="btn btn-secondary" href="{% url 'projects:project_detail' object.id %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% else %}
-                        <a class="btn btn-secondary" href="{% url 'projects:my_project_list' %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% endif %}
-                </div>
-            {% endbuttons %}
-
-            {% for field in form %}
-                {% if 'editable' in field.field.widget.attrs|lookup:"class" %}
-
-                    {% if field.name in help_text_dict %}
-                        {% bootstrap_label field.label %}
-                        {% with help_text_dict|lookup:field.name as help_text %}
-                            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
-                                 title="{{ field.label }}"
-                                 data-content="{{ help_text }}">
-                            {{ field }}<br>
-
-                        {% endwith %}
-
-                    {% else %}
-
-                        {% bootstrap_label field.label %}
-                        {{ field }}<br>
-                    {% endif %}
-
-
-
-                {% else %}
-                    {% if field.name in help_text_dict %}
-                        {% bootstrap_label field.label %}
-                        {% with help_text_dict|lookup:field.name as help_text %}
-                            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
-                                 title="{{ field.label }}"
-                                 data-content="{{ help_text }}">
-                            {% bootstrap_field field placeholder="" show_label=False %}
-                        {% endwith %}
-
-                    {% else %}
-                        {% bootstrap_field field placeholder="" %}
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
-
-
-            {% buttons %}
-                 <div class="btn-group">
-                    <button type="submit" class="btn btn-primary">
-                        {% if cloned or not object.id %}
-                            {% trans "Add" %}
-                        {% else %}
-                            {% trans "Update" %}
-                        {% endif %}
-                    </button>
-
-                    {% if object.id %}
-                        <a class="btn btn-secondary" href="{% url 'projects:project_detail' object.id %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% else %}
-                        <a class="btn btn-secondary" href="{% url 'projects:my_project_list' %}">
-                            {% trans "Cancel" %}
-                        </a>
-                    {% endif %}
-                </div>
-            {% endbuttons %}
-        </form>
-
-
-    </div>
+{% block body_js %}
     {# only do this if we are in the project create view #}
     {% if not object %}
         <script type="application/javascript">
@@ -151,18 +129,13 @@
             function resetFields() {
                 // if the region is null, clear and disable both subsequent fields
                 if ($("#id_region").val() == "") {
-                    $("#id_division").val("")
-                    $("#id_division").prop('disabled', true)
-                    $("#id_division").empty();
+                    $("#id_division").val("").prop('disabled', true).empty();
 
-                    $("#id_section").val("")
-                    $("#id_section").prop('disabled', true)
-                    $("#id_section").empty();
+                    $("#id_section").val("").prop('disabled', true).empty();
+
                     // if the division is null, clear and disable section field
                 } else if ($("#id_division").val() == "") {
-                    $("#id_section").val("")
-                    $("#id_section").prop('disabled', true)
-                    $("#id_section").empty();
+                    $("#id_section").val("").prop('disabled', true).empty();
                 }
             }
 
@@ -188,8 +161,7 @@
                     });
 
                     // disable the section field again, empty choices
-                    $("#id_section").val("")
-                    $("#id_section").prop('disabled', true)
+                    $("#id_section").val("").prop('disabled', true);
                     var $el = $("#id_section");
                     $el.empty(); // remove old options
 
@@ -282,9 +254,7 @@
 
 
 
-{% endblock content %}
 
 
-{% block body_js %}
     <script type="text/javascript" src="{% static 'widgEditor_1.0.1/scripts/widgEditor.js' %}"></script>
 {% endblock %}

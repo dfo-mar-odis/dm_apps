@@ -1,4 +1,4 @@
-{% extends "travel/travel_base.html" %}
+{% extends "travel/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
@@ -65,6 +65,7 @@
                             </td>
                         {% endfor %}
                         {% if form.instance.id %}
+                            <td>{{ form.instance.last_modified }}</td>
 
                             <td>
 
@@ -72,6 +73,12 @@
                                     {% url 'travel:delete_status' form.instance.id as my_delete_url %}
                                 {% elif "help" in title|lower %}
                                     {% url 'travel:delete_help_text' form.instance.id as my_delete_url %}
+                                {% elif "cost categories" in title|lower %}
+                                    {% url 'travel:delete_cost_category' form.instance.id as my_delete_url %}
+                                {% elif "costs" in title|lower %}
+                                    {% url 'travel:delete_cost' form.instance.id as my_delete_url %}
+                                {% elif "njc" in title|lower %}
+{#                                    {% url 'travel:delete_njc_rate' form.instance.id as my_delete_url %}#}
                                 {% endif %}
 
                                 <a class="delete-btn" href="#" delete_url="{{ my_delete_url }}">

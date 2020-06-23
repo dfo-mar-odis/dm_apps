@@ -35,7 +35,8 @@
         <div class="btn-group">
             <a class="btn btn-warning" href="{% url 'sar_search:region_edit' object.id %}">Edit</a>
             <a class="btn btn-danger" href="{% url 'sar_search:region_delete' object.id %}">Delete</a>
-            <a class="btn btn-success" href="#" pop-href="{% url 'sar_search:region_polygon_file_import' object.id  %}">Add Polygon from CSV</a>
+            <a class="btn btn-success" href="#" pop-href="{% url 'sar_search:region_polygon_file_import' object.id %}">Add Polygon from
+                CSV</a>
         </div>
 
         <br><br>
@@ -97,35 +98,74 @@
             {% for polygon in object.polygons.all %}
                 {% if polygon.coords %}
 
-                    // extend bounds var
-                    {% for point in polygon.points.all %}
-                        bounds.extend(new google.maps.LatLng({{point.latitude}}, {{ point.longitude }}));
-                    {% endfor %}
 
-                    // Define the LatLng coordinates for the polygon's path.
-                    var polygonCoords = [
+                    {% if object.type == 2 %}
+                        // extend bounds var
                         {% for point in polygon.points.all %}
-                            {lat: {{point.latitude}}, lng: {{point.longitude}}, {% if point.order %}order: {{point.order}}{% endif %}},
+                            bounds.extend(new google.maps.LatLng({{point.latitude}}, {{ point.longitude }}));
                         {% endfor %}
-                    ];
 
-                    // Construct the stratum.
-                    var color = '#ea4544';
-                    var myPolygon = new google.maps.Polygon({
-                        paths: polygonCoords,
-                        strokeColor: 'white',
-                        strokeOpacity: 0.8,
-                        strokeWeight: 2,
-                        fillColor: color,
-                        fillOpacity: 0.35,
-                        label: "test"
-                    });
+                        // Define the LatLng coordinates for the polygon's path.
+                        var lineCoords = [
+                            {% for point in polygon.points.all %}
+                                {lat: {{point.latitude}}, lng: {{point.longitude}}},
+                            {% endfor %}
+                        ];
 
-                    myPolygon.setMap(map);
-                    {#bounds.extend(myPolygon.getBounds());#}
+                        // Construct the stratum.
+                        var color = '#ea4544';
+                        var myLine = new google.maps.Polyline({
+                            path: lineCoords,
+                            strokeColor: 'red',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 3,
+                            {#fillColor: color,#}
+                            {#fillOpacity: 0.35#}
+                        });
+                        myLine.setMap(map);
+                        {#bounds.extend(myPolygon.getBounds());#}
 
-                    map.fitBounds(bounds);
-                    // add a click event on the polygon
+                        map.fitBounds(bounds);
+                        // add a click event on the polygon
+
+
+                    {% else %}
+
+                        // extend bounds var
+                        {% for point in polygon.points.all %}
+                            bounds.extend(new google.maps.LatLng({{point.latitude}}, {{ point.longitude }}));
+                        {% endfor %}
+
+
+
+
+
+
+                        // Define the LatLng coordinates for the polygon's path.
+                        var polygonCoords = [
+                            {% for point in polygon.points.all %}
+                                {lat: {{point.latitude}}, lng: {{point.longitude}}, {% if point.order %}order: {{point.order}}{% endif %}},
+                            {% endfor %}
+                        ];
+
+                        // Construct the stratum.
+                        var color = '#ea4544';
+                        var myPolygon = new google.maps.Polygon({
+                            paths: polygonCoords,
+                            strokeColor: 'white',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: color,
+                            fillOpacity: 0.35,
+                            label: "test"
+                        });
+
+                        myPolygon.setMap(map);
+                        {#bounds.extend(myPolygon.getBounds());#}
+
+                        map.fitBounds(bounds);
+                        // add a click event on the polygon
+                    {% endif %}
                 {% endif %}
 
             {% endfor %}

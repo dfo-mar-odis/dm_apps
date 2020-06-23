@@ -1,0 +1,34 @@
+{% extends "travel/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+
+
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">{% trans "Home" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'travel:default_reviewer_list' %}">{% trans "Set Default Reviewers" %}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{% trans "Delete" %} {{ object }} {% trans " as a default reviewer" %}</li>
+            </ol>
+        </nav>
+
+        <h1>
+            {% blocktrans with object as object %}
+                Are you sure you want to delete {{ object }} as a default reviewer
+            {% endblocktrans  %}
+        </h1>
+
+        <br><br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">{% trans "Delete" %}</button>
+            <a class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+        </form>
+
+    </div>
+
+
+{% endblock content %}

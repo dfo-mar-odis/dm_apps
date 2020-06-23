@@ -1,0 +1,76 @@
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+
+    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+    <script>
+        window.resizeTo(width = 900, height = 1100);
+
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("#id_digestion_level")[0].focus()
+        });
+    </script>
+
+    <div class="container">
+        <h3>
+            {% trans "Editing note for group:" %}
+            {{ object.functional_group }} ({{object.section}} Section)
+        </h3>
+        <br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {% for field in form %}
+                {% bootstrap_field field placeholder="" size="small" %}
+            {% endfor %}
+
+            {% buttons %}
+                <button type="submit" class="btn btn-success" onclick="refreshParent()">
+                    {% trans "Save" %}
+                </button>
+                <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                    {% trans "Close" %}
+                </a>
+            {% endbuttons %}
+        </form>
+    </div>
+    {#    <script type="application/javascript">#}
+    {#        $(document).ready(function () {#}
+    {#            // Stuff to do as soon as the DOM is ready#}
+    {#            checkUser()#}
+    {#        });#}
+    {##}
+    {#        $("#id_user").change(function () {#}
+    {#            checkUser()#}
+    {#        });#}
+    {##}
+    {#        $("#id_name").change(function () {#}
+    {#            checkUser()#}
+    {#        });#}
+    {##}
+    {#        function checkUser() {#}
+    {#            if ($("#id_user").val() != "") {#}
+    {#                $("#id_name").prop("disabled", true)#}
+    {#            } else {#}
+    {#                $("#id_name").prop("disabled", false)#}
+    {##}
+    {#            }#}
+    {#        }#}
+    {##}
+    {##}
+    {#    </script>#}
+
+
+{% endblock content %}

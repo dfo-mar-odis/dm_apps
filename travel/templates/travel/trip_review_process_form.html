@@ -1,0 +1,18 @@
+{% extends "travel/form.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% block post_form_div %}
+    <hr>
+    {% include "travel/_trip_detail.html" %}
+
+
+    {% if is_adm_admin %}
+        {% if trip.is_adm_approval_required %}
+            {% include "travel/_trip_reviewers.html" %}
+        {% endif %}
+    {% endif %}
+{% endblock %}

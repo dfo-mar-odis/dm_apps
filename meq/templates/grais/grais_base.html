@@ -3,7 +3,7 @@
 {% load bootstrap4 %}
 {% block bug_create %}{% url 'tickets:bug_create' 'grais' %}{% endblock bug_create %}
 
-{% block title %}grAIS{% endblock title %}
+{% block title %}grAIS {% block subtitle %}{% endblock %}{% endblock title %}
 
 {% block body %}
   {% block content %}{% endblock content %}

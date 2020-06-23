@@ -10,18 +10,19 @@
                 </a>&nbsp;
                 <a href="#" class="red-font">&times;</a>
             {% else %}
-                <em>None</em>
+                <em>n/a</em>
             {% endif %}
         </li>
         <li>
             Children:
+            <br>
             {% for item in object.children.all %}
                 <a href="{% url 'inventory:resource_detail' item.id %}">
                     {{ item }}
                 </a>&nbsp;
-                <a href="#" class="red-font">&times;</a>, &nbsp;
+                <a href="#" class="red-font">&times;</a><br>
             {% empty %}
-                <em>None</em>
+                <em>n/a</em>
             {% endfor %}
         </li>
     {% endif %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block bug_create %}{% url 'tickets:bug_create' 'vault' %}{% endblock bug_create %}
+
+{% block title %}Marine Megafauna Media Vault{% endblock title %}
+
+{% block body %}
+    {% block content %}{% endblock content %}
+{% endblock body %}
+
+{% block left_all %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'vault:index' %}">Vault Home</a></li>
+{% endblock left_all %}
+
+{% block left_unauth %}
+
+{% endblock left_unauth %}
+
+{% block left_auth %}
+
+    {# Browse #}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            Base tables
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <a class="dropdown-item" href="{% url 'vault:species_list' %}">Species</a>
+            <a class="dropdown-item" href="{% url 'vault:observationplatform_list' %}">Observations platforms</a>
+            <a class="dropdown-item" href="{% url 'vault:instrument_list' %}">Instrument List</a>
+
+        </div>
+    </li>
+
+<!--    {# Process #}-->
+<!--    <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+<!--           aria-haspopup="true" aria-expanded="false">-->
+<!--            Process-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+
+<!--			<a class="dropdown-item">Add an outing</a>-->
+<!--			<a class="dropdown-item">RPAS ground-truthing</a>-->
+<!--			<a class="dropdown-item">Belly cams ground-truthing</a>-->
+
+<!--        </div>-->
+<!--    </li>-->
+
+
+<!--    {# Reports #}-->
+<!--    <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+<!--           aria-haspopup="true" aria-expanded="false">-->
+<!--            Reports-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+
+<!--			<a class="dropdown-item">Summary of sightings</a>-->
+<!--			<a class="dropdown-item">Summary of image holdings</a>-->
+
+<!--        </div>-->
+<!--    </li>-->
+
+
+<!--    {# Manage #}-->
+<!--    <li class="nav-item dropdown">-->
+<!--        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"-->
+<!--           aria-haspopup="true" aria-expanded="false">-->
+<!--            Manage-->
+<!--        </a>-->
+<!--        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+
+<!--			<a class="dropdown-item">Update database table(s)</a>-->
+<!--			<a class="dropdown-item">NEAQ submission</a>-->
+
+<!--        </div>-->
+<!--    </li>-->
+
+{% endblock left_auth %}
+
+{% block left_admin %}
+{% endblock left_admin %}

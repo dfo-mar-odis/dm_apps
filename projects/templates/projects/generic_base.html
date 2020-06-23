@@ -1,0 +1,48 @@
+{% extends "projects/base.html" %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+<style>
+    .label {
+        font-weight: bold;
+    }
+
+    table, td {
+        font-size: small;
+    }
+</style>
+
+
+<div class="{% if container_class %}{{ container_class }}{% else %}container{% endif %}">
+
+
+    {% block area_above_h1 %}{% endblock %}
+
+    <div class="mb-3">
+        <h1>{{ h1|safe }}</h1>
+    </div>
+
+    {% if h2 %}
+        <div class="mb-3">
+            <h2>{{ h2|safe }}</h2>
+        </div>
+    {% endif %}
+
+    {% if h3 %}
+        <div class="mb-3">
+            <h3>{{ h3|safe }}</h3>
+        </div>
+    {% endif %}
+
+    {% block subcontent %}
+
+
+
+
+
+        {% endblock %}
+
+</div>
+

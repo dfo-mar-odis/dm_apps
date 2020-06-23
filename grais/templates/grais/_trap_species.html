@@ -2,106 +2,150 @@
 {% load static %}
 {% load custom_filters %}
 {% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_tags %}
 
+<div class="my-form mb-4">
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            {% for field in form %}
+                <div class="col-7">
+                    <label for="species">What species would you like to report from this trap? (enter any part of name)</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <div class="col-2">
+                <br>
+                <input type="submit" value="Add" id="submit" class="btn btn-sm btn-success">
+            </div>
+        </div>
+    </form>
+</div>
 
-<div style="font-size: .9em; width: 50%">
-
-    <label for="user_input">What species would you like to report from this trap? (enter any part of name)</label>
-    <input type="text" id="user_input" class="form-control"></input>
-
-    <div id="results">
-        <br><br>
-        <h5>Results (common / latin / abbreviation):</h5>
-        <hr>
-        <div id="species-list" class="" style="font: 0.85em;"></div>
-        <hr>
-        <br>
-        Species not in list? Click <a class="" href="{% url 'grais:species_create' %}" target="_blank">here</a>
-        to add a new one.
+<div class="mb-4">
+    {% if not object.get_invasive_crabs.count %}
+        {% echo "disabled" as my_disabled_var_1 %}
+    {% endif %}
+    <div class="float-right">
+        <a href="{% url 'grais:manage_catch' object.id "invasive" %}" class="btn btn-sm btn-primary {{ my_disabled_var_1 }}">Tabular Edit</a>
     </div>
+
+    <h4>
+        <b style="padding-right: 1.1em">Invasive Crabs ({{ object.get_invasive_crabs.count }})</b>
+    </h4>
+    {% if object.get_invasive_crabs.count == 0 %}
+        <em>No invasive crab observations have been logged.</em>
+    {% else %}
+        <table class="table table-hover table-sm">
+            <thead>
+            {% for field in crab_field_list %}
+                <th>{% get_verbose_label random_catch_object field %}</th>
+
+            {% endfor %}
+            </thead>
+            <tbody>
+            {% for obj in object.get_invasive_crabs.all %}
+                <tr href="{% url 'grais:catch_edit' obj.id %}" pop>
+                    {% for field in crab_field_list %}
+                        <td>{% get_field_value obj field safe=True %}</td>
+                    {% endfor %}
+                    <td>
+                        <a class="catch-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
+                        </a>
+                        <a id="secrect-catch-delete-btn-{{ obj.id }}" href="{% url 'grais:catch_delete' obj.id %}" class="hidden"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    {% endif %}
 
 </div>
+<div class="mb-4">
+    {% if not object.get_noninvasive_crabs.count %}
+        {% echo "disabled" as my_disabled_var_2 %}
+    {% endif %}
+    <div class="float-right">
+        <a href="{% url 'grais:manage_catch' object.id "noninvasive" %}" class="btn btn-sm btn-primary {{ my_disabled_var_2 }}">Tabular Edit</a>
+    </div>
+    <h4>
+        <b style="padding-right: 1.1em">Non-invasive Crabs ({{ object.get_noninvasive_crabs.count }})</b>
+    </h4>
+    {% if object.get_noninvasive_crabs.count == 0 %}
+        <em>No non-invasive crab observations have been logged.</em>
+    {% else %}
+        <table class="table table-hover table-sm">
+            <thead>
+            {% for field in crab_field_list %}
+                <th>{% get_verbose_label random_catch_object field %}</th>
+
+            {% endfor %}
+            </thead>
+            <tbody>
+            {% for obj in object.get_noninvasive_crabs.all %}
+                <tr href="{% url 'grais:catch_edit' obj.id %}" pop>
+                    {% for field in crab_field_list %}
+                        <td>{% get_field_value obj field safe=True %}</td>
+                    {% endfor %}
+                    <td>
+                        <a class="catch-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
+                        </a>
+                        <a id="secrect-catch-delete-btn-{{ obj.id }}" href="{% url 'grais:catch_delete' obj.id %}" class="hidden"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+<div class="mb-4">
+    {% if not object.get_bycatch.count %}
+        {% echo "disabled" as my_disabled_var_3 %}
+    {% endif %}
+    <div class="float-right">
+        <a href="{% url 'grais:manage_catch' object.id "bycatch" %}" class="btn btn-sm btn-primary {{ my_disabled_var_3 }}">Tabular Edit</a>
+    </div>
+    <h4>
+        <b style="padding-right: 1.1em">Bycatch ({{ object.get_bycatch.count }})</b>
+    </h4>
+    {% if object.get_bycatch.count == 0 %}
+        <em>No bycatch observations have been logged.</em>
+    {% else %}
+        <table class="table table-hover table-sm" style="width: 50%">
+            <thead>
+            {% for field in bycatch_field_list %}
+                <th>{% get_verbose_label random_catch_object field %}</th>
+            {% endfor %}
+            </thead>
+            <tbody>
+            {% for obj in object.get_bycatch.all %}
+                <tr href="{% url 'grais:catch_edit' obj.id %}" pop>
+                    {% for field in bycatch_field_list %}
+                        <td>{% get_field_value obj field safe=True %}</td>
+                    {% endfor %}
+                    <td>
+                        <a class="catch-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
+                        </a>
+                        <a id="secrect-catch-delete-btn-{{ obj.id }}" href="{% url 'grais:catch_delete' obj.id %}" class="hidden"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+
+
 <br><br>
 
-<div class="row">
-    <div class="col">
-        <h4>
-            <b style="padding-right: 1.1em">Crabs ({{ object.crabs.count }})</b>
-        </h4>
-        {% if object.crabs.count == 0 %}
-            <em>No crab observations have been logged.</em>
-        {% else %}
-            <table class="table table-hover table-sm" style="width: auto">
-                <thead>
-                <th>Species</th>
-                <th>Width</th>
-                <th>Sex</th>
-                <th>Carapace Color</th>
-                <th>Abdomen Color</th>
-                <th>Egg Color</th>
-                </thead>
-                <tbody>
-                {% for obj in object.crabs.all %}
-                    <tr href="{% url 'grais:crab_edit_pop' obj.id %}" pop>
-                        <td>{{ obj.species }}</td>
-                        <td>{{ obj.width }}</td>
-                        <td>{{ obj.get_sex_display }}</td>
-                        <td>{{ obj.carapace_color }}</td>
-                        <td>{{ obj.abdomen_color }}</td>
-                        <td>{{ obj.egg_color }}</td>
-                        <td>
-                            <a class="crab-delete-me" href="#" val="{{ obj.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
-                            </a>
-                            <a id="secrect-crab-delete-btn-{{ obj.id }}" href="{% url 'grais:crab_delete' obj.id %}" class="hidden"></a>
-                        </td>
-                    </tr>
-                {% endfor %}
-
-                </tbody>
-            </table>
-        {% endif %}
-    </div>
-    <div class="col">
-        <h4>
-            <b style="padding-right: 1.1em">Bycatch ({{ object.bycatch.count }})</b>
-        </h4>
-        {% if object.bycatch.count == 0 %}
-            <em>No bycatch observations have been logged.</em>
-        {% else %}
-            <table class="table table-hover table-sm" style="width: auto">
-                <thead>
-                <th>Species</th>
-                <th>Count</th>
-                </thead>
-                <tbody>
-                {% for obj in object.bycatch.all %}
-                    <tr href="{% url 'grais:bycatch_edit_pop' obj.id %}" pop>
-                        <td>{{ obj.species }}</td>
-                        <td>{{ obj.count }}</td>
-                        <td>
-                            <a class="bycatch-delete-me" href="#" val="{{ obj.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
-                            </a>
-                            <a id="secrect-bycatch-delete-btn-{{ obj.id }}" href="{% url 'grais:bycatch_delete' obj.id %}"
-                               class="hidden"></a>
-                        </td>
-                    </tr>
-                {% endfor %}
-
-                </tbody>
-            </table>
-        {% endif %}
-    </div>
-
-
-    <br><br>
-
-
-    <script type="application/javascript">
-        var speciesList = {{ species_list |safe }};
-
-        $(".crab-delete-me").click(function (e) {
+<script type="application/javascript">
+        $(".catch-delete-me").click(function (e) {
             e.stopImmediatePropagation()
             var objectId = $(this)[0].getAttribute("val");
 
@@ -111,68 +155,7 @@
 
             }
             if (userInput === "y") {
-                document.location.href = $("#secrect-crab-delete-btn-" + objectId)[0].getAttribute('href');
+                document.location.href = $("#secrect-catch-delete-btn-" + objectId)[0].getAttribute('href');
             }
         });
-        $(".bycatch-delete-me").click(function (e) {
-            e.stopImmediatePropagation()
-            var objectId = $(this)[0].getAttribute("val");
-
-            var userInput = "";
-            while (userInput !== "n" && userInput !== "y") {
-                userInput = prompt("Are you sure you want to delete this species? \n\n Please respond with 'y' for yes and 'n' for no.").toLocaleLowerCase();
-
-            }
-            if (userInput === "y") {
-                document.location.href = $("#secrect-bycatch-delete-btn-" + objectId)[0].getAttribute('href');
-            }
-        });
-
-
-        $(document).ready(function () {
-            // Stuff to do as soon as the DOM is ready
-            $("#user_input").focus()
-            $("#results").addClass("gone")
-
-        });
-
-        $("#user_input").keydown(function (event) {
-            if (event.key == "Enter") {
-                $(".add-btn")[0].click()
-            }
-        })
-
-        $("#user_input").keyup(function (e) {
-            $("#species-list").html("")
-            if (this.value.length >= 2) {
-                for (var i = 0; i < speciesList.length; i++) {
-                    // console.log(123);
-                    var re = new RegExp(this.value, 'gi');
-
-                    if (speciesList[i].match(re)) {
-                        $("#species-list").html(
-                            $("#species-list").html() + speciesList[i] + '<br>')
-                    }
-                }
-                $(".add-btn").click(function () {
-                    $("#user_input").val("")
-                    $("#species-list").html("")
-                    $("#user_input").focus()
-                    var targetURL = this.getAttribute("target-url")
-                    popitup(targetURL, "popWindow")
-                    // window.location.href = targetURL
-                })
-
-            }
-            if ($("#user_input").val() != "") {
-                $("#results").removeClass("gone")
-            } else {
-                $("#results").addClass("gone")
-            }
-
-        });
-
-
-    </script>
-
-
+</script>

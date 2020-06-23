@@ -22,7 +22,10 @@ class Site(models.Model):
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return "{} ({})".format(self.site, self.province.tabbrev)
+        if self.province:
+            return "{} ({})".format(self.site, self.province.tabbrev)
+        else:
+            return "{}".format(self.site)
 
     class Meta:
         ordering = ['province', 'site']
@@ -33,8 +36,7 @@ class Site(models.Model):
 
 class Station(models.Model):
     name = models.CharField(max_length=255)
-    site = models.ForeignKey('Site', on_delete=models.DO_NOTHING, related_name='stations', blank=True,
-                             null=True)
+    site = models.ForeignKey('Site', on_delete=models.DO_NOTHING, related_name='stations', null=True)
     latitude_n = models.FloatField(blank=True, null=True)
     longitude_w = models.FloatField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
@@ -44,7 +46,10 @@ class Station(models.Model):
         return reverse("camp:station_detail", kwargs={"pk": self.id})
 
     def __str__(self):
-        return "{} ({})".format(self.name, self.site.site)
+        if self.site:
+            return "{} ({})".format(self.name, self.site.site)
+        else:
+            return "{}".format(self.name)
 
     class Meta:
         ordering = ['name', ]
@@ -111,8 +116,8 @@ class Sample(models.Model):
     nutrient_sample_id = models.IntegerField(blank=True, null=True, verbose_name="nutrient sample ID", unique=True)
     station = models.ForeignKey(Station, related_name='samples', on_delete=models.DO_NOTHING)
     timezone = models.CharField(max_length=5, choices=TIMEZONE_CHOICES, blank=True, null=True)
-    start_date = models.DateTimeField(verbose_name="Start date / time (yyyy-mm-dd hh:mm:ss)")
-    end_date = models.DateTimeField(blank=True, null=True, verbose_name="End date / time (yyyy-mm-dd hh:mm:ss)")
+    start_date = models.DateTimeField(verbose_name="Start date / time (yyyy-mm-dd hh:mm)")
+    end_date = models.DateTimeField(blank=True, null=True, verbose_name="End date / time (yyyy-mm-dd hh:mm)")
     weather_notes = models.CharField(max_length=1000, blank=True, null=True)
     rain_past_24_hours = models.BooleanField(default=False, verbose_name="Has it rained in the past 24 h?")
     h2o_temperature_c = models.FloatField(null=True, blank=True, verbose_name="Water temperature (°C)")

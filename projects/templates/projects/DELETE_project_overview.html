@@ -1,0 +1,90 @@
+{% extends "projects/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block title %}
+    {{ object.project_title }}
+{% endblock %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'projects:index' %}">
+                    {% trans "Home" %}
+                </a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'projects:section_project_list' object.section.id %}">
+                    {{ object.section }}
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ object.project_title }}
+            </li>
+        </ol>
+    </nav>
+
+
+    <div class="container">
+
+        <div class="mb-3">
+            <h4>
+                {% trans "PROJECT OVERVIEW" %}
+            </h4>
+
+            <h1>
+                {{ object }} ({{ object.id }})
+            </h1>
+        </div>
+
+        <hr>
+
+        {% if can_edit %}
+            <div class="btn-group mb-5">
+                {% if not object.approved %}
+                    <a class="btn btn-sm btn-{% if object.submitted %}danger{% else %}success{% endif %}"
+                       href="#" pop-href="{% url 'projects:project_submit' object.id 1 %}">
+                        {% if object.submitted %}{% trans "Unsubmit" %}{% else %}{% trans "Submit" %}{% endif %}
+                    </a>
+                {% endif %}
+
+                {% if object.submitted %}
+                    <a class="btn btn-sm btn-{% if object.approved %}danger{% else %}success{% endif %}"
+                       href="#" pop-href="{% url 'projects:project_recommend' object.id %}">
+                        {% if object.approved %}{% trans "Unapprove" %}{% else %}{% trans "Approve" %}{% endif %}
+                    </a>
+                {% endif %}
+
+
+                <a href="{% url 'projects:project_clone' object.id %}" class="btn btn-sm btn-warning" data-toggle="tooltip"
+                   title="{% trans "Use this project as a template for a new project" %}">
+                    {% trans "Clone" %}
+                </a>
+
+{#                <a class="btn btn-danger btn-sm {% if object.submitted %}disabled{% endif %}"#}
+{#                   href="#" pop-href="{% url 'projects:project_delete' object.id 1 %}">#}
+{#                    {% trans "Delete" %}#}
+{#                </a>#}
+
+                {% if object.submitted %}
+                        <a href="#" pop-href="{% url 'projects:report_new' object.id %}" class="btn btn-sm btn-primary"
+                           data-toggle="tooltip"
+                           title="{% trans "Create a new status report for this project" %}">
+                            {% trans "New Status Report" %}
+                        </a>
+                {% endif %}
+
+            </div>
+        {% endif %}
+
+    </div>
+
+    <div class="container">
+        {% include "projects/_project_content.html" %}
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "travel/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">{% trans "Home" %}</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'travel:default_reviewer_list' %}">{% trans "Set Default Reviewers" %}</a></li>
+                {% if object %}
+                    <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
+                {% else %}
+                    <li class="breadcrumb-item active" aria-current="page">{% trans "New Default Reviewer" %}</li>
+                {% endif %}
+            </ol>
+        </nav>
+
+        <h1>
+            {% if object %}
+                {{ object }}
+            {% else %}
+                {% trans "New Default Reviewer" %}
+            {% endif %}
+        </h1>
+
+        <br><br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+
+            {% buttons %}
+                {% if object %}
+                    <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
+                    <a href="{% url 'travel:default_reviewer_delete' object.id  %}" class="btn btn-danger">{% trans "Delete" %}</a>
+                {% else %}
+                    <button type="submit" class="btn btn-success">{% trans "Add" %}</button>
+                {% endif %}
+
+                <a class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+
+            {% endbuttons %}
+        </form>
+
+    </div>
+
+{% endblock content %}

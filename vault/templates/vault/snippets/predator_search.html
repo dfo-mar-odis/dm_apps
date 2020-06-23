@@ -1,0 +1,44 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+{# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Please enter the search criteria:</h1>
+  </div>
+</div>
+
+<div class="container">
+    <form method="post">
+
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-6">
+                {% bootstrap_form form layout='horizontal' %}
+            </div>
+        </div>
+        <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Search">
+    </form>
+    <br>
+    <p>
+        <a href="{% url 'diets:predator_new'  %}" class="btn btn-success">New Predator</a>
+    </p>
+
+
+
+</div>
+
+<script type="application/javascript">
+
+    $("form").submit(function () {
+        $("#submit").val("Searching...")
+        $("#submit").addClass("disabled")
+    })
+
+
+</script>
+
+{% endblock content %}

@@ -1,11 +1,15 @@
-{% extends "travel/travel_base.html" %}
+{% extends "travel/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
-
+{% load i18n %}
 {% block content %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        body {
+            background-image: url("{% static 'img/ross-parmly-25230-unsplash.jpg' %}");
+            background-size: cover;
+        }
+
         label {
             font-weight: bold;
         }
@@ -38,51 +42,36 @@
                 transform: rotate(360deg);
             }
         }
+    label{
+        text-align: right;
+    }
     </style>
 
-    <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen"
-          type="text/css">
-    <style>
-        .ms-container {
-            width: 700px;
-        }
-    </style>
-
+    <br>
     {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
     <div class="container">
         <div class="jumbotron">
-            <h1>Please enter the Report Details:</h1>
+            <h2>
+                {% trans "Please select the report" %}
+            </h2>
+            <hr>
+            <form method="post" style="width: auto">
+
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="{{ field.name }}_div">
+                        {% bootstrap_field field layout="horizontal" %}
+                    </div>
+                {% endfor %}
+            <div class="mt-3 center-col">
+                <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
+            </div>
+
+
+            </form>
+
+            <div class="loader hidden"></div>
         </div>
-    </div>
-
-    <div class="container">
-        <form method="post">
-
-            {% csrf_token %}
-            {% for field in form %}
-
-                {% if field.name == "fiscal_year" %}
-                    <div class="fiscal_year_div">
-                        {% bootstrap_field field %}
-                    </div>
-                {% elif field.name == "user" %}
-                    <div class="user_div">
-                        {% bootstrap_field field %}
-                    </div>
-
-                {% else %}
-                    {% bootstrap_field field %}
-                {% endif %}
-            {% endfor %}
-            <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
-
-
-        </form>
-        <br>
-        <p>
-        </p>
-
-        <div class="loader hidden"></div>
     </div>
 
     <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
@@ -91,41 +80,77 @@
         function hideAll() {
             $(".fiscal_year_div").addClass("gone");
             $(".user_div").addClass("gone");
+            $(".region_div").addClass("gone");
+            $(".adm_div").addClass("gone");
+            $(".trip_div").addClass("gone");
+            $(".from_date_div").addClass("gone");
+            $(".to_date_div").addClass("gone");
 
-            $("#id_fiscal_year").prop('required', true);
-            $("#id_user").prop('required', false);
 
         }
 
         function configureForm() {
             var reportChoice = $("#id_report")[0].value;
-            // species count report
+            // cfts report
             if (reportChoice == 1) {
                 $(".fiscal_year_div").removeClass("gone");
+                $(".region_div").removeClass("gone");
                 $(".user_div").removeClass("gone");
+                $(".trip_div").removeClass("gone");
+                $(".from_date_div").removeClass("gone");
+                $(".to_date_div").removeClass("gone");
+                $("label[for='id_from_date']").html("From date<br>(filters on trip request start date)");
+                $("label[for='id_to_date']").html("To date<br>(filters on trip request start date)");
+
             }
-            if (reportChoice == 2) {
+            // trip list
+            if (reportChoice == 3) {
                 $(".fiscal_year_div").removeClass("gone");
-                $(".user_div").removeClass("gone");
+                $(".region_div").removeClass("gone");
+                $(".adm_div").removeClass("gone");
+                $(".from_date_div").removeClass("gone");
+                $(".to_date_div").removeClass("gone");
+                $("label[for='id_from_date']").html("From date<br>(filters on trip start date)");
+                $("label[for='id_to_date']").html("To date<br>(filters on trip start date)");
 
             }
-
         }
 
         $(document).ready(function () {
             // Stuff to do as soon as the DOM is ready
-            hideAll()
-            configureForm()
+            hideAll();
+            configureForm();
         });
 
+        $("#id_from_date").change(function () {
+                if ($(this).val()) {
+                    $("#id_fiscal_year").val("");
+                }
+            }
+        );
+        $("#id_to_date").change(function () {
+                if ($(this).val()) {
+                    $("#id_fiscal_year").val("");
+                }
+            }
+        );
+        $("#id_fiscal_year").change(function () {
+                if ($(this).val()) {
+                    $("#id_from_date").val("");
+                    $("#id_to_date").val("");
+                }
+            }
+        );
+
         $("#id_report").change(function () {
-            hideAll()
-            configureForm()
+            hideAll();
+            configureForm();
         });
 
         $("form").submit(function () {
             var reportChoice = $("#id_report")[0].value;
             // species count report
+
             if (reportChoice != 4) {
                 $(this).addClass("hidden");
                 $(".loader").removeClass("hidden");

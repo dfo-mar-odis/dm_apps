@@ -11,6 +11,10 @@
         <td>{{ object.id }}</td>
     </tr>
     <tr>
+        <td><b>Primary Contact:</b></td>
+        <td>{{ object.primary_contact }}</td>
+    </tr>
+    <tr>
         <td><b>Title:</b></td>
         <td>{{ object.title }}</td>
     </tr>
@@ -39,7 +43,7 @@
 </table>
 <p>
     A data manager will be in touch with you shortly. At any point, more information about this ticket can be viewed <a
-        href="http://dmapps{% url 'tickets:detail' object.id %}">HERE</a>.
+        href="{{SITE_FULL_URL}}{% url 'tickets:detail' object.id %}">HERE</a>.
 </p>
 
 <hr>
@@ -55,6 +59,10 @@
     <tr>
         <td><b>Titre:</b></td>
         <td>{{ object.title }}</td>
+    </tr>
+    <tr>
+        <td><b>Contact principal:</b></td>
+        <td>{{ object.primary_contact }}</td>
     </tr>
     <tr>
         <td><b>Description:</b></td>
@@ -81,7 +89,7 @@
 </table>
 <p>
     Un gestionnaire de données régional vous contactera sous peu. A tout moment, plus d'informations sur ce billet peuvent être consultées
-    <a href="http://dmapps{% url 'tickets:detail' object.id %}">ICI</a>.
+    <a href="{{SITE_FULL_URL}}{% url 'tickets:detail' object.id %}">ICI</a>.
 </p>
 
 <style media="screen">

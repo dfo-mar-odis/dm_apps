@@ -1,0 +1,169 @@
+{% load verbose_names %}
+{% load custom_filters %}
+<style>
+    table, th td {
+        text-align: left;
+        border: 1px solid black;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+</style>
+<h1>DFO Metadata Record</h1>
+<p>(<em>Report generated on {{ now }} using DM Apps - Metadata Inventory App</em>)</p>
+<table class="table">
+    {% for field in field_list %}
+        <tr>
+
+            <th width="200px">
+                {% get_verbose_label object field %}
+            </th>
+            <td>
+                {% get_field_value object field %}
+            </td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <th>
+            People
+        </th>
+        <td>
+            <ul>
+                {% for item in object.resource_people.all %}
+                    <li>
+                        {{ item.person.user }} - {{ item.role }}
+                    </li>
+                {% empty %}
+                    <em>No people</em>
+                {% endfor %}
+            </ul>
+
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Keywords
+        </th>
+        <td>
+            <ul>
+
+                {% if object.keywords.count == 0 %}
+                    <em>No keywords</em>
+                {% else %}
+                    <li>
+                        ISO Topic Categories:
+                        {% for item in object.keywords.all %}
+                            {% if item.keyword_domain.id == 8 %}
+                                {{ item }}
+                            {% endif %}
+                        {% endfor %}
+                    </li>
+                    <li>
+                        GC Core Subjects:
+                        {% for item in object.keywords.all %}
+                            {% if item.keyword_domain.id == 6 %}
+                                {{ item }}
+                            {% endif %}
+                        {% endfor %}
+                    </li>
+                    <li>
+                        Taxonomic:
+                        {% for item in object.keywords.all %}
+                            {% if item.is_taxonomic %}
+                                <em>{{ item }} ({{ item.keyword_domain.abbrev }})</em>
+                            {% endif %}
+                        {% endfor %}
+                    </li>
+                    <li>
+                        DFO Area:
+                        {% for item in object.keywords.all %}
+                            {% if item.keyword_domain.id == 7 %}
+                                {{ item }}
+                            {% endif %}
+                        {% endfor %}
+                    </li>
+                    <li>
+                        Other:
+                        {% for item in object.keywords.all %}
+                            {% if item.is_taxonomic == False and item.keyword_domain.id != 6 and item.keyword_domain.id != 8 and item.keyword_domain.id != 7 %}
+                                {{ item }} ({{ item.keyword_domain.abbrev }})
+                            {% endif %}
+                        {% endfor %}
+                    </li>
+                {% endif %}
+            </ul>
+
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Citations
+        </th>
+        <td>
+            <ul>
+                {% if object.citations.count == 0 %}
+                    <em>No citations</em>
+                {% else %}
+                    {% for item in object.citations.all %}
+                        <li style="font-size: small;">
+                            {{ item.short_citation_html|safe }}
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Related Records
+        </th>
+        <td>
+            <ul>
+                {% if object.children.count == 0 and object.parent == None %}
+                    <em>No related records</em>
+                {% else %}
+                    <li>
+                        Parent:
+                        {% if object.parent.id %}
+                            {{ object.parent }}
+                        {% else %}
+                            <em>n/a</em>
+                        {% endif %}
+                    </li>
+                    <li>
+                        Children:
+                        <br>
+                        {% for item in object.children.all %}
+                            {{ item }}
+                        {% empty %}
+                            <em>n/a</em>
+                        {% endfor %}
+                    </li>
+                {% endif %}
+            </ul>
+
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Certification History
+        </th>
+        <td>
+            <ul>
+                {% for item in object.certification_history.all %}
+                    <li>
+                        {{ item.certification_date|date:"F d, Y" }} by @{{ item.certifying_user }} - <em>{{ item.notes|nz:"n/a" }}</em>
+                        {# (<a href="{% url 'inventory:citation_detail' object.id item.id %}">details</a>)&nbsp; #}
+                    </li>
+                {% empty %}
+                    <em>
+                        This record has never been certified.
+                    </em>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+
+
+</table>

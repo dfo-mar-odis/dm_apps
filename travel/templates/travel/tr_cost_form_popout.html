@@ -1,0 +1,190 @@
+{% extends 'pop_base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="mb-3">
+            <h1>
+                {% if object %}
+                    {% blocktrans with ct=cost_type o=object.cost %}
+                        Editing {{ o }}
+                    {% endblocktrans %}
+                {% else %}
+                    {% blocktrans with ct=cost_type %}
+                        Adding New Cost
+                    {% endblocktrans %}
+                {% endif %}
+            </h1>
+        </div>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% bootstrap_form_errors form %}
+
+            <div id="fields">
+                {% for field in form %}
+                    {% if field.name == "cost" %}
+                        <h3>Please select a cost:</h3>
+                        {% bootstrap_field field placeholder="" size="small" show_label=False %}
+                        <h3>Do you want to enter cost by rate or total amount?</h3>
+                        <div class="mb-3">
+                            <button class="btn btn-lg btn-outline-primary special" id="by-amount">By Total Amount</button>
+                            <button class="btn btn-lg btn-outline-primary special" id="by-rate">By Rates</button>
+                        </div>
+                    {% elif "by-rate" in field.field.widget.attrs.class %}
+                        <div class="by-rate">
+                            {% if field.name == "rate_cad" %}
+                                <div class="mb-3">
+                                    {% blocktrans %}
+                                        Per diem rates for breakfast, lunch, supper and incidentals should follow the
+                                        <a href="https://www.njc-cnm.gc.ca/" target="_blank">National Joint Council</a> Travel Directive.
+                                        For travel within Canada and
+                                        USA, please refer to
+                                        <a href="https://www.njc-cnm.gc.ca/directive/d10/v238/s659/en" target="_blank">Appendix C</a>
+                                        and for all other travel please refer to
+                                        <a href="https://www.njc-cnm.gc.ca/directive/app_d.php?lang=en" target="_blank">Appendix D</a>.
+                                        <span class="red-font">Please note that all expenses for this request should be entered in Canadian dollars.</span>
+                                    {% endblocktrans %}
+                                </div>
+                                {% bootstrap_field field placeholder="" size="small" %}
+                            {% else %}
+                                {% bootstrap_field field placeholder="" size="small" %}
+                            {% endif %}
+
+
+                        </div>
+                    {% elif "by-amount" in field.field.widget.attrs.class %}
+                        <div class="by-amount">
+                            {% bootstrap_field field placeholder="" size="small" %}
+                        </div>
+                    {% else %}
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    {% endif %}
+
+                {% endfor %}
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-success" onclick="$('form').submit(); window.opener.refreshCosts();">
+                        {% trans "Save" %}
+                    </button>
+                    <a class="btn btn-secondary" onclick="window.close();" href="#">
+                        {% trans "Close" %}
+                    </a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block body_js %}
+    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+    <script>
+        var $amountCAD = $("#id_amount_cad");
+        var $rates = $("#id_rate_cad");
+        var $days = $("#id_number_of_days");
+
+        window.resizeTo(width = 900, height = 800);
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            {#$("#by-amount").click();#}
+            {#$("#id_cost").select();#}
+            refreshForm();
+
+        });
+
+
+        function refreshForm() {
+            var hasRates = false;
+            var hasDays = false;
+            var hasAmount = false;
+
+            // start out simple. all fields required, nothing showing.
+            $(".by-amount").addClass("gone");
+            $(".by-rate").addClass("gone");
+            $("input").prop("required", true);
+
+
+            if ($rates.val() != null && Number($rates.val()) != 0) {
+                hasRates = true;
+            }
+            if ($days.val() != null && Number($days.val()) != 0) {
+                hasDays = true;
+            }
+            if ($amountCAD.val() != null && Number($amountCAD.val()) != 0) {
+                hasAmount = true;
+            }
+
+            if (hasRates) {
+                $("#by-rate").click();
+                if (hasDays == false) {
+                    {% if object.trip_request.parent_request %}
+                        $days.val({{object.trip_request.parent_request.trip.number_of_days}});
+                    {% else %}
+                        $days.val({{object.trip_request.trip.number_of_days}});
+                    {% endif %}
+                }
+            } else {
+                $("#by-amount").click();
+            }
+        }
+
+        $(".special").click(function (e) {
+            e.preventDefault();
+            var wasOff = $(this).hasClass("btn-outline-primary");
+
+            // reset all special btns
+            $(".special").removeClass("btn-primary").addClass("btn-outline-primary");
+
+            // if the special btn was off, turn it on now
+            if (wasOff) {
+                $(this).removeClass("btn-outline-primary");
+                $(this).addClass("btn-primary");
+            }
+
+            // now we have to decide which fields to show
+            if (wasOff) {
+                // it will now be ON
+                var myID = $(this).attr("id");
+                if (myID == "by-rate") {
+                    console.log(123)
+                    $(".by-amount").addClass("gone");
+                    $(".by-amount").prop("required", false);
+                    $(".by-amount").prop("disabled", true);
+
+                    $(".by-rate").removeClass("gone");
+                    $(".by-rate").prop("required", true);
+                    $(".by-rate").prop("disabled", false);
+
+                    $("#id_rate_cad").select();
+
+                } else {
+                    $(".by-rate").addClass("gone");
+                    $(".by-rate").prop("required", false);
+                    $(".by-rate").prop("disabled", true);
+
+                    $(".by-amount").removeClass("gone");
+                    $(".by-amount").prop("required", true);
+                    $(".by-amount").prop("disabled", false);
+
+                    $("#id_amount_cad").select();
+                }
+            }
+
+        });
+
+        $(document).keydown(function (event) {
+            if (event.key == 'Enter') {
+                event.preventDefault();
+                $("form").submit();
+                window.opener.refreshCosts();
+            }
+        });
+
+
+    </script>
+{% endblock %}

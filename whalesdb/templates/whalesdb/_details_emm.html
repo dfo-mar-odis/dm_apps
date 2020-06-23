@@ -1,0 +1,106 @@
+{% load i18n %}
+{% load verbose_names %}
+{% load bootstrap4 %}
+
+    <div class="card border border-dark my-1">
+        <h5 class="card-header">{% trans title %}</h5>
+        <div class="card-body">
+        {% for field in fields %}
+            <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label emm field %} : </span><span>{% get_field_value emm field %}</span></div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% if emm.eqt.pk == 4 %}
+    <div class="card border border-dark my-1" id="hydro">
+        <h5 class="card-header">
+                <div class="row align-items-center">
+                    <span class="col">
+                        {% trans "Hydrophone Properties" %}
+                    </span>
+                    {% if editable %}
+                    <span class="px-1">
+                        {% if not emm.hydrophones %}
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_eqh' emm.pk 'pop' %}','hydro')" title="{% trans 'Add' %}">{% trans 'Add' %}</a>
+                        {% else %}
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:update_eqh' emm.pk 'pop' %}','hydro')" title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+                    </span>
+                    {% endif %}
+                </div>
+        </h5>
+        <div class="card-body">
+        {% if emm.hydrophones %}
+            {% with emm.hydrophones as hydro %}
+            <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label hydro 'eqh_range_min' %} : </span><span>{% get_field_value hydro 'eqh_range_min' %}</span></div>
+            </div>
+            <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label hydro 'eqh_range_max' %} : </span><span>{% get_field_value hydro 'eqh_range_max' %}</span></div>
+            </div>
+            {% endwith %}
+        {% endif %}
+        </div>
+    </div>
+    {% elif emm.eqt.pk == 1 %}
+    <div class="card border border-dark my-1" id="rec">
+        <h5 class="card-header">
+                <div class="row align-items-center">
+                    <span class="col">
+                        {% trans "Recorder Properties" %}
+                    </span>
+                    {% if editable %}
+                    <span class="px-1">
+                        {% if not emm.recorder %}
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_eqr' emm.pk 'pop' %}','rec')" title="{% trans 'Add' %}">{% trans 'Add' %}</a>
+                        {% else %}
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:update_eqr' emm.pk 'pop' %}','rec')" title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+                    </span>
+                    {% endif %}
+                </div>
+        </h5>
+        <div class="card-body">
+        {% if emm.recorder %}
+            {% with emm.recorder as recorder %}
+            <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label recorder 'ert' %} : </span><span>{% get_field_value recorder 'ert' %}</span></div>
+            </div>
+            <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label recorder 'eqr_internal_hydro' %} : </span><span>{% get_field_value recorder 'eqr_internal_hydro' %}</span></div>
+            </div>
+            {% endwith %}
+        {% endif %}
+        </div>
+    </div>
+
+    <div class="card border border-dark my-1" id="channel">
+        <h5 class="card-header">
+            <div class="row align-items-center">
+                <span class="col">
+                    {% trans "Channel Properties" %}
+                </span>
+                {% if editable %}
+                <span class="px-1">
+                    <a class="btn btn-primary" href="#" onclick="" title="{% trans 'Add' %}">{% trans 'Add' %}</a>
+                </span>
+                {% endif %}
+            </div>
+        </h5>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr><th>{% trans 'Channel No.'%}</th><th>{% trans 'ADC Bits'%}</th><th>{% trans 'Voltage (max)'%}</th><th>{% trans 'Voltage (min)'%}</th></tr>
+                </thead>
+                <tbody>
+            {% for ecp in emm.recorder.channels.all %}
+                    <tr>
+                        <td>{{ecp.ecp_channel_no}}</td><td>{{ecp.eqa_adc_bits}}</td><td>{{ecp.ecp_voltage_range_min}}</td><td>{{ecp.ecp_voltage_range_max}}</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+    {% endif %}

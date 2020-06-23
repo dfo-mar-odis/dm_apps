@@ -58,7 +58,7 @@
 
         }
         if (userInput === "y") {
-            $("#secrect-delete-btn-" + objectId)[0].click();
+            window.location.href = $("#secrect-delete-btn-" + objectId).attr("href");
         }
     })
 

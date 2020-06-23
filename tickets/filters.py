@@ -6,14 +6,19 @@ from shared_models import models as shared_models
 from . import models
 from . import forms as ticket_forms
 
-chosen_js = {"class":"chosen-select-contains"}
+try:
+    from dm_apps import my_conf as local_conf
+except (ModuleNotFoundError, ImportError):
+    from dm_apps import default_conf as local_conf
+
+chosen_js = {"class": "chosen-select-contains"}
+
 
 class TicketFilter(django_filters.FilterSet):
     search_term = django_filters.CharFilter(field_name='search_term', label="Search term (Id, title, etc.):",
                                             lookup_expr='icontains', widget=forms.TextInput())
     app = django_filters.ChoiceFilter(
         field_name="app",
-        choices=models.Ticket.APP_CHOICES,
         widget=forms.Select(attrs=chosen_js),
     )
     status = django_filters.ModelChoiceFilter(
@@ -26,6 +31,19 @@ class TicketFilter(django_filters.FilterSet):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # choices for app
+        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
+        APP_CHOICES.insert(0, ("esee", "ESEE (not part of site)"))
+        APP_CHOICES.insert(0, ("plankton", "Plankton Net (not part of site)"))
+        APP_CHOICES.insert(0, ("tickets", "Data Management Tickets"))
+        APP_CHOICES.sort()
+        APP_CHOICES.insert(0, ("general", "n/a"))
+        self.filters['app'] = django_filters.ChoiceFilter(
+            field_name="app",
+            choices=APP_CHOICES,
+            widget=forms.Select(attrs=chosen_js),
+        )
+
         section_choices = [(s.id, s.shortish_name) for s in shared_models.Section.objects.all().order_by(
             "division__branch__region", "division__branch", "division", "name")]
         staff_choices = [(dm.id, "{} {}".format(dm.first_name, dm.last_name)) for dm in User.objects.filter(is_staff=True)]
@@ -47,7 +65,6 @@ class MyTicketFilter(django_filters.FilterSet):
                                             lookup_expr='icontains', widget=forms.TextInput())
     app = django_filters.ChoiceFilter(
         field_name="app",
-        choices=models.Ticket.APP_CHOICES,
         widget=forms.Select(attrs={"class": "chosen-select-contains"}),
     )
 
@@ -56,6 +73,20 @@ class MyTicketFilter(django_filters.FilterSet):
         queryset=models.Status.objects.all(),
         widget=forms.Select(attrs={"class": "chosen-select-contains"}),
     )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
+        APP_CHOICES.insert(0, ("esee", "ESEE (not part of site)"))
+        APP_CHOICES.insert(0, ("plankton", "Plankton Net (not part of site)"))
+        APP_CHOICES.insert(0, ("tickets", "Data Management Tickets"))
+        APP_CHOICES.sort()
+        APP_CHOICES.insert(0, ("general", "n/a"))
+        self.filters['app'] = django_filters.ChoiceFilter(
+            field_name="app",
+            choices=APP_CHOICES,
+            widget=forms.Select(attrs=chosen_js),
+        )
 
 
 class FiscalFilter(django_filters.FilterSet):

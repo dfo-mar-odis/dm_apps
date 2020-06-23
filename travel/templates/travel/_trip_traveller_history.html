@@ -1,0 +1,183 @@
+{% load i18n %}
+{% load custom_filters %}
+{% load verbose_names %}
+
+<ul>
+    {% for traveller in trip.total_traveller_list %}
+        <li>
+            <a href="#" class="" data-toggle="modal" data-target="#{{ traveller|slugify }}">
+                {{ traveller }} {% if traveller in trip.bta_traveller_list %}{% trans "(BTA)" %}{% endif %}
+            </a>
+        </li>
+
+        {#<!-- modal_label MODAL -->#}
+        <div class="modal fade" id="{{ traveller|slugify }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"> {{ traveller }} </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {% if traveller in trip.bta_traveller_list %}
+                            {% trans "no additional information about this traveller can be provided since they are travelling on BTA" %}
+                        {% else %}
+                            <table class="table table-sm table-bordered">
+                                {% with trip.get_summary_dict|lookup:traveller as d %}
+                                    <tr>
+                                        <th>{% trans "Associated trip request" %}</th>
+                                        <td>
+                                            {% if d.trip_request.id %}
+                                                {% if d.trip_request.parent_request %}
+                                                    <a href="{% url 'travel:request_detail' d.trip_request.parent_request.id "all" %}">{{ d.trip_request.parent_request }}</a>
+                                                {% else %}
+                                                    <a href="{% url 'travel:request_detail' d.trip_request.id "all" %}">{{ d.trip_request }}</a>
+                                                {% endif %}
+                                                ({{ d.trip_request.smart_status.status_colored_span }})
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+
+                                    {% for field in traveller_field_list %}
+
+                                        {% if field == "start_date" %}
+
+                                            <tr>
+                                                <th>{% get_verbose_label d.trip_request field %}</th>
+                                                <td>
+                                                    {{ d.trip_request.start_date|date }} (compared to start date of trip
+                                                    &rarr; {{ trip.start_date|date }})
+                                                </td>
+                                            </tr>
+                                        {% elif field == "end_date" %}
+
+                                            <tr>
+                                                <th>{% get_verbose_label d.trip_request field %}</th>
+                                                <td>
+                                                    {{ d.trip_request.end_date|date }} (compared to end date of trip
+                                                    &rarr; {{ trip.end_date|date }})
+                                                </td>
+                                            </tr>
+
+
+                                            {# SMART ONES#}
+
+                                        {% elif field == "objective_of_event" %}
+
+                                            <tr>
+                                                <th>{% get_verbose_label d.trip_request field %}</th>
+                                                <td>
+                                                    {{ d.trip_request.smart_objective_of_event|nz:"n/a" }}
+                                                </td>
+                                            </tr>
+                                        {% elif field == "benefit_to_dfo" %}
+
+                                            <tr>
+                                                <th>{% get_verbose_label d.trip_request field %}</th>
+                                                <td>
+                                                    {{ d.trip_request.smart_benefit_to_dfo|nz:"n/a" }}
+                                                </td>
+                                            </tr>
+                                        {% elif field == "funding_source" %}
+
+                                            <tr>
+                                                <th>{% get_verbose_label d.trip_request field %}</th>
+                                                <td>
+                                                    {{ d.trip_request.smart_funding_source|nz:"n/a" }}
+                                                </td>
+                                            </tr>
+
+                                        {% else %}
+                                            {% verbose_td_display d.trip_request field format="currency" %}
+                                        {% endif %}
+
+                                    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+                                    <tr>
+                                        <th>{% trans "History of trips requiring the approval of ADM" %}</th>
+                                        <td>
+                                            {% if traveller.id %}
+                                                {% if d.total_list|length %}
+                                                    {% with d.total_list as my_list %}
+
+                                                        <ol>
+                                                            {% for obj in my_list %}
+                                                                <li>
+                                                                    <b>{{ obj.fiscal_year }}</b> -
+                                                                    {% if obj.id == triprequest.id %}
+                                                                        {{ obj.trip }} -
+                                                                        <span class='purple-font'>{% trans "CURRENT REQUEST" %}</span>
+                                                                    {% elif obj.trip.id == trip.id %}
+                                                                        {{ obj.trip }} -
+                                                                        <span class='purple-font'>{% trans "CURRENT TRIP" %}</span>
+                                                                    {% else %}
+                                                                        <a href='{% url 'travel:request_detail' obj.id "all" %}'
+                                                                           target='_blank'>{{ obj.trip }}</a>
+                                                                    {% endif %}
+                                                                    <em>({{ obj.status.status_colored_span }})</em>
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ol>
+
+                                                    {% endwith %}
+                                                {% endif %}
+                                            {% else %}
+                                                <em>
+                                                    {{ d.total_list }}
+                                                </em>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endwith %}
+
+                            </table>
+                        {% endif %}
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    {% endfor %}
+</ul>
+
+{##}
+{#<table class="plainjane" style="width: 75%;">#}
+{#    <tr class="plainjane">#}
+{#        <th rowspan="2" class="plainjane">{% trans "Name" %}</th>#}
+{#        <th colspan="2"#}
+{#            class="plainjane center-col">{% trans "Trips requiring the approval of ADM" %}</th>#}
+{#    </tr>#}
+{#    <tr class="plainjane">#}
+{#        <th class="plainjane center-col">{{ trip.fiscal_year }}</th>#}
+{#        <th class="plainjane center-col">Total</th>#}
+{#    </tr>#}
+{#    {% for traveller in trip.total_traveller_list %}#}
+
+{#    {% endfor %}#}
+{#    <tr>#}
+{#        <th colspan="3">{% trans "TOTAL NUMBER OF TRAVELLERS" %}#}
+{#            = {{ trip.total_traveller_list|length }}</th>#}
+{#    </tr>#}
+{##}
+{##}
+{#</table>#}

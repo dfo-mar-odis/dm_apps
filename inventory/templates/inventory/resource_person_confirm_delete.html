@@ -1,4 +1,4 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 
@@ -8,24 +8,20 @@
     {% endif %}
 
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+    {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            <li class="breadcrumb-item"><a
-                    href="{% url 'inventory:resource_detail' object.resource.id %}">{{ object.resource.truncated_title }}</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">Remove {{ object.person.full_name }}
-                as {{ object.role }}</li>
-        </ol>
-    </nav>
 
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                <li class="breadcrumb-item"><a
+                        href="{% url 'inventory:resource_detail' object.resource.id %}">{{ object.resource.truncated_title }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Remove {{ object.person.full_name }}
+                    as {{ object.role }}</li>
+            </ol>
+        </nav>
 
         <h1>Are you sure you want to remove <em>{{ object.person.full_name }}</em> as "{{ object.role }}"?</h1>
         <br>

@@ -1,0 +1,128 @@
+{% extends "shared_models/shared_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block title %}
+    {% trans title %}
+{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid mt-1" >
+    <div class="row mt-2 pt-1">
+        <div class="container-fluid card border border-dark text-center">
+            <div class="card-header bg-transparent">
+                <div class="row">
+                    <div class="col-lg">
+                        <h1>{% trans title %}</h1>
+                    </div>
+                    <div class="col-1 pt-1">
+                        {# if the user is authenticated and has permissions show the add button #}
+                        {% if auth %}
+                        <a class="btn btn-secondary btn" href="{% url ''|add:create_url %}" title="{% trans 'Add' %}">+</a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col card border border-dark">
+            <div class="card-body">
+            <form class="form" action="." method="get" id="filter-form" style="width: 90%; font-size: medium">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="row">
+                    {% for field in filter.form %}
+                        <div class="col-2">
+                            {% bootstrap_field field placeholder="" size="small" %}
+                        </div>
+
+                    {% endfor %}
+                            </div>
+                        </div>
+                    <div class="col-1 mt-4">
+                        <div class="btn-group">
+                            <input type="submit" value="Filter" class="btn btn-warning btn-sm">
+                            <a href="." class="btn btn-success btn">Clear</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-2">
+        <div class="card border border-dark container-fluid">
+            <table class="table" id="details_table">
+                <thead>
+                <tr>
+                    {% for field in fields %}
+                    <th>{% get_verbose_label filter.qs.first field %}</th>
+                    {% endfor %}
+                    {% if details_url %}
+                    <th></th>
+                    {% endif %}
+                    {% if editable and update_url %}
+                    <th></th>
+                    {% endif %}
+                </tr>
+                </thead>
+                <tbody>
+                    {% for obj in filter.qs %}
+                        <tr>
+                        {% for field in fields %}
+                        <td>{% get_field_value obj field %}</td>
+                        {% endfor %}
+                            {% if details_url %}
+                            <td><a class="btn btn-secondary btn-sm" href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a></td>
+                            {% endif %}
+                            {% if editable and update_url%}
+                                {# if the update url contains /pop/ then open the url in a popup window #}
+                                {% if '/pop/' in update_url %}
+                                    <td><a class="btn btn-secondary btn-sm" href="#" onclick="return pop('{% url ''|add:update_url obj.pk 'pop' %}', 'details_table')" title="{% trans 'Update' %}">{% trans 'Update' %}</a></td>
+                                {% else %}
+                                    <td><a class="btn btn-secondary btn-sm" href="{% url ''|add:update_url obj.pk %}" title="{% trans 'Update' %}">{% trans 'Update' %}</a></td>
+                                {% endif %}
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block body_js %}
+<script>
+
+// This is a method of opening a child window and testing to see if/when it closes
+// upon closing the drop menu the window is associated with is updated adding the new element
+// and setting it as the selected option
+function pop(url, tag) {
+    child = window.open(url, tag,'toolbar=0,status=0,height=500,width=600');
+    child.onbeforeunload = function() {
+        if(child.refresh && $('.is-invalid').length <= 0) {
+            refreshTag(tag);
+        }
+    }
+
+    return false;
+}
+
+function refreshTag(tag) {
+    console.log("refresh called on: '" + tag + "'");
+    var id_tag = "#"+tag;
+    $(id_tag).load("# "+id_tag+">*");
+}
+</script>
+{% endblock %}

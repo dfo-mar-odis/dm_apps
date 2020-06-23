@@ -24,7 +24,7 @@
     </nav>
 
 
-    <div class="container">
+    <div class="container-fluid">
         <h1>{{ object }}</h1>
         <div class="btn-group">
             <a class="btn btn-warning" href="{% url 'grais:line_edit' object.id %}">Edit</a>
@@ -33,7 +33,7 @@
 
 
         <div class="row">
-            <div class="col">
+            <div class="col-4">
                 <br><br>
                 {# Detail about the line #}
                 <p>
@@ -78,15 +78,13 @@
         {#  Surfaces #}
         <br><br>
 
-        <div class="row">
 
-            <div class="col">
-                {% include "grais/_line_surface_list.html" %}
-            </div>
-            <div class="col">
-                {% include "grais/_species_obs_list.html" %}
-            </div>
-
+        <div class="col-7">
+            {% include "grais/_line_surface_list.html" %}
+        </div>
+        <br>
+        <div class="col">
+            {% include "grais/_species_obs_list.html" %}
         </div>
 
 
@@ -96,19 +94,22 @@
     <script>
         function initialize() {
             var locations = [
-                {% if object.latitude_n and object.longitude_w %}
-                    ['<a href="{% url 'grais:line_detail' line.id %}">Line {{line.id}}</a>', {{line.latitude_n}}, {{line.longitude_w}}, '{% static "/img/grais/yellow_MarkerL.png" %}'],
-                    {% for line in object.sample.lines.all %}
-                        {% if line.id != object.id %}
-                            ['<a href="{% url 'grais:line_detail' line.id %}">Line {{line.id}}</a>', {{line.latitude_n}}, {{line.longitude_w}}, '{% static "/img/grais/red_MarkerL.png" %}'],
-                        {% endif %}
-                    {% endfor %}
-                {% else %}
-                    ['<a href="{% url 'grais:station_detail' object.sample.station.id %}">Station {{object.sample.station.id}}</a>', {{object.station.latitude_n}}, {{object.station.longitude_w}}, '{% static "/img/grais/blue_MarkerS.png" %}'],
+                {% if object.sample.station.latitude_n and object.sample.station.longitude_w %}
+                    ['<a href="{% url 'grais:station_detail' object.sample.station.id %}">{{object.sample.station}}</a>', {{object.sample.station.latitude_n}}, {{object.sample.station.longitude_w}}, '{% static "/grais/blue_MarkerS.png" %}'],
                 {% endif %}
 
+                {% for line in object.sample.lines.all %}
+                    {% if line.latitude_n and line.longitude_w %}
+                        {% if line == object %}
+                            ['{{line}} (CURRENT)', {{line.latitude_n}}, {{line.longitude_w}}, '{% static "grais/green_MarkerL.png" %}'],
+                        {% else %}
+                            ['<a href="{% url 'grais:line_detail' line.id %}">{{line}}</a>', {{line.latitude_n}}, {{line.longitude_w}}, '{% static "grais/red_MarkerL.png" %}'],
+                        {% endif %}
+
+                    {% endif %}
+                {% endfor %}
             ];
-            console.log(locations);
+
             window.map = new google.maps.Map(document.getElementById('map'), {
                 mapTypeId: google.maps.MapTypeId.SATELLITE
             });
@@ -126,7 +127,7 @@
 
                 bounds.extend(marker.position);
 
-                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
                     return function () {
                         infowindow.setContent(locations[i][0]);
                         infowindow.open(map, marker);

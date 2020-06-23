@@ -1,0 +1,12 @@
+{% load i18n %}
+
+{% for group in user.groups.all %}
+    {% if group.name == "inventory_dm" %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'inventory:dm_home' %}">
+            {% trans "Data Manager Admin" %}
+        </a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'inventory:report_search' %}">
+            {% trans "Reports" %}
+        </a></li>
+    {% endif %}
+{% endfor %}

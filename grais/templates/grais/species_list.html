@@ -1,6 +1,7 @@
 {% extends "grais/grais_base.html" %}
 {% load static %}
-
+{% load verbose_names %}
+{% load i18n %}
 {% block content %}
     <div class="indent-med">
 
@@ -30,38 +31,37 @@
         <table class="table table-hover table-sm sortable">
             <thead>
             <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Common name (eng)</th>
-                <th scope="col">Common name (fra)</th>
-                <th scope="col">Scientific name</th>
-                <th scope="col">Abbreviation</th>
-                <th scope="col">Epibiont type</th>
-                <th scope="col">ITIS TSN</th>
-                <th scope="col">AphiaID</th>
-                <th scope="col">Has color morph?</th>
-                <th scope="col">Invasive?</th>
-                <th scope="col">Has occurred in db?</th>
+                {% for field in field_list %}
+                    <th>{% get_verbose_label object_list.first field %}</th>
+                {% endfor %}
+
             </tr>
             </thead>
             <tbody>
             {% for object in filter.qs %}
                 <tr href="{% url 'grais:species_detail' object.id %}">
-                    <td>{{ object.id }}</td>
-                    <td>{{ object.common_name }}</td>
-                    <td>{{ object.common_name_fra }}</td>
-                    <td><em>{{ object.scientific_name }}</em></td>
-                    <td>{{ object.abbrev }}</td>
-                    <td>{{ object.get_epibiont_type_display}}</td>
-                    <td>{{ object.tsn }}</td>
-                    <td>{{ object.aphia_id }}</td>
-                    <td>{{ object.color_morph|yesno }}</td>
-                    <td>{{ object.invasive|yesno }}</td>
+                    {% for field in field_list %}
+                        <td>
+                            {% if "occurred" in field %}
+                                {% if object.surface_spp.count > 0 %}
+                                    {% trans "yes" %}
+                                {% else %}
+                                    {% trans "no" %}
+                                {% endif %}
+                            {% elif "scientific" in field %}
+                                <em>{% get_field_value object field %}</em>
+                            {% else %}
+                                {% get_field_value object field %}
+                            {% endif %}
+                        </td>
+
+                    {% endfor %}
+
+
+
+
                     <td>
-                        {% if object.surface_spp.count > 0 %}
-                            yes
-                        {% else %}
-                            no
-                        {% endif %}
+
                     </td>
                 </tr>
             {% endfor %}
@@ -75,5 +75,5 @@
     <script type="application/javascript">
         $("#id_search_term")[0].focus()
     </script>
-    
+
 {% endblock content %}

@@ -74,13 +74,17 @@
 
 
             <div class="btn-group">
-                <button type="submit" class="btn btn-primary" onclick="refreshParent()">
-                    {% trans "Save" %}
-                </button>
-                {% if object %}
-                    <a class="btn btn-danger" href="{% url 'projects:report_delete' object.id %}">
-                        {% trans "Delete" %}
-                    </a>
+                {% if can_edit or is_lead %}
+
+
+                    <button type="submit" class="btn btn-primary" onclick="refreshParent()">
+                        {% trans "Save" %}
+                    </button>
+                    {% if object %}
+                        <a class="btn btn-danger" href="{% url 'projects:report_delete' object.id %}">
+                            {% trans "Delete" %}
+                        </a>
+                    {% endif %}
                 {% endif %}
                 <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
                     {% trans "Close" %}

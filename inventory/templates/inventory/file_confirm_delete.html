@@ -1,25 +1,25 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load bootstrap4 %}
 
 {% block content %}
 
-<div class="container">
+    <div class="container">
 
-{% load static %}
-{# Load js file to allow for popout window #}
-<h1>Are you sure you want to delete file:
+        {% load static %}
+        {# Load js file to allow for popout window #}
+        <h1>Are you sure you want to delete file:
 
-  <br><br> {{object.caption}}?</h1>
-  <p>(This action is permanent.)</p>
-  <br>
+            <br><br> {{ object.caption }}?</h1>
+        <p>(This action is permanent.)</p>
+        <br>
 
-<form method="post" class="form">
-    {% csrf_token %}
-    <p>
-      <button type="submit" class="btn btn-lg btn-danger">Delete</button>
-      <a class="btn btn-lg btn-secondary" href="{% url 'inventory:file_detail' object.id %}">Cancel</a>
-    </p>
-</form>
-</div>
+        <form method="post" class="form">
+            {% csrf_token %}
+            <p>
+                <button type="submit" class="btn btn-lg btn-danger">Delete</button>
+                <a class="btn btn-lg btn-secondary" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
+            </p>
+        </form>
+    </div>
 
 {% endblock content %}

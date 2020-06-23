@@ -27,7 +27,7 @@ def in_diets_group(user):
 
 
 class DietsAccessRequired(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_diets_group(self.request.user)
@@ -39,7 +39,7 @@ class DietsAccessRequired(LoginRequiredMixin, UserPassesTestMixin):
         return super().dispatch(request, *args, **kwargs)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_diets_group, login_url='/accounts/denied/')
 def index(request):
     return render(request, 'diets/index.html')

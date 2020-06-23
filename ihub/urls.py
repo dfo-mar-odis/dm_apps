@@ -85,7 +85,9 @@ urlpatterns = [
     path('settings/reserves/', views.manage_reserves, name="manage_reserves"),
     path('settings/nations/', views.manage_nations, name="manage_nations"),
     path('settings/funding-programs/', views.manage_programs, name="manage_programs"),
+    path('settings/relationship-ratings/', views.manage_ratings, name="manage_ratings"),
 
+    path('settings/relationship-rating/<int:pk>/delete/', views.delete_rating, name="delete_rating"),
     path('settings/status/<int:pk>/delete/', views.delete_status, name="delete_status"),
     path('settings/entry-type/<int:pk>/delete/', views.delete_entry_type, name="delete_entry_type"),
     path('settings/funding-purpose/<int:pk>/delete/', views.delete_funding_purpose, name="delete_funding_purpose"),

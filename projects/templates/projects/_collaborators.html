@@ -1,39 +1,37 @@
 {% load static %}
 {% load i18n %}
-<style>
-    table, td {
-        font-size: small;
-    }
-</style>
 
+<div class="mb-2 neighbours">
 <h4>
-    {% trans "External Collaborators:" %}
+    {% trans "External Collaborators" %}
 </h4>
-{% if not object.submitted and not report_mode %}
-    <a class="btn btn-sm btn-primary" href="#"
-       onclick="return popitup('{% url 'projects:collab_new' object.id %}','popoutWindow')">
-        {% trans "Add Collaborator" %}
-    </a><br><br>
+</div>
+{% if can_edit %}
+    <div class="mb-3 neighbours">
+        <a class="btn btn-sm btn-outline-primary" href="#"
+           onclick="return popitup('{% url 'projects:collab_new' object.id %}','popoutWindow')">
+            {% trans "Add Collaborator" %}
+        </a>
+    </div>
 {% endif %}
 
 {% if object.collaborators.count == 0 %}
-    <em>
-        {% trans "No Collaborators" %}...
-    </em><br>
+    <div class="mb-3">
+        <em>
+            {% trans "No Collaborators" %}...
+        </em>
+    </div>
 {% else %}
 
     <table class="table table-hover table-sm" style="width: auto">
         <tr>
-            {% if not report_mode %}
+            {% if can_edit %}
                 <th></th>
             {% endif %}
             <th>
                 {% trans "Name" %}
             </th>
-            <th>
-                {% trans "Type" %}
-            </th>
-            <th style="text-align: center">
+            <th class="center-col">
                 {% trans "Critical to project?" %}
             </th>
             <th>
@@ -44,29 +42,23 @@
         </tr>
         <tbody>
         {% for obj in object.collaborators.all %}
-            <tr {% if not object.submitted and not report_mode %}
-                data-toggle="tooltip" title="Edit" href="{% url 'projects:collab_edit' obj.id %}" pop
-            {% endif %}
-            >
-                {% if not report_mode %}
+            <tr {% if can_edit %}data-toggle="tooltip" title="Edit" href="{% url 'projects:collab_edit' obj.id %}" pop{% endif %}>
+                {% if can_edit %}
+
                     <td>
-                        {% if not object.submitted and not report_mode %}
-                            <a class="collab-delete-me" href="#" val="{{ obj.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
-                                     title="Delete">
-                            </a>
-                            <a id="collab-secrect-delete-btn-{{ obj.id }}"
-                               href="{% url 'projects:collab_delete' obj.id %}" class="hidden"></a>
-                        {% endif %}
+                        <a class="collab-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                 title="Delete" width="20px">
+                        </a>
+                        <a id="collab-secrect-delete-btn-{{ obj.id }}"
+                           href="{% url 'projects:collab_delete' obj.id %}" class="hidden"></a>
                     </td>
                 {% endif %}
                 <td>{{ obj.name }}</td>
-                <td>{{ obj.get_type_display }}</td>
-                <td style="text-align: center">{{ obj.critical|yesno }}</td>
+                <td class="center-col">{{ obj.critical|yesno }}</td>
                 <td>{{ obj.notes }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 {% endif %}
-<br>

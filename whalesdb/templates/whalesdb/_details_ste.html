@@ -1,0 +1,25 @@
+{% load verbose_names %}
+{% load i18n %}
+
+<div class="container" >
+    <div class="row">
+        <div class="col-sm">
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_lat_ship' %} : </span><span>{% get_field_value evt 'ste_lat_ship' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_lon_ship' %} : </span><span>{% get_field_value evt 'ste_lon_ship' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_depth_ship' %} : </span><span>{% get_field_value evt 'ste_depth_ship' %}</span></div>
+            <hr />
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_lat_mcal' %} : </span><span>{% get_field_value evt 'ste_lat_mcal' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_lon_mcal' %} : </span><span>{% get_field_value evt 'ste_lon_mcal' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_depth_mcal' %} : </span><span>{% get_field_value evt 'ste_depth_mcal' %}</span></div>
+            <hr />
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_team' %} : </span><span>{% get_field_value evt 'ste_team' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_instrument_cond' %} : </span><span>{% get_field_value evt 'ste_instrument_cond' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_weather_cond' %} : </span><span>{% get_field_value evt 'ste_weather_cond' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_logs' %} : </span><span>{% if evt.ste_logs %}{{ evt.ste_logs }}{% else %} --- {% endif %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evt 'ste_notes' %} : </span><span>{% get_field_value evt 'ste_notes' %}</span></div>
+        </div>
+        <div class="col-sm">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>

@@ -40,107 +40,129 @@ urlpatterns += i18n_patterns(
          name='password_reset_confirm'),
     prefix_default_language=True)
 
-try:
+if settings.INSTALLED_APPS.count("inventory"):
     urlpatterns += i18n_patterns(path('inventory/', include('inventory.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting inventory app")
 
-try:
+if settings.INSTALLED_APPS.count("tickets"):
     urlpatterns += i18n_patterns(path('dm-tickets/', include('tickets.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting ticket app")
 
-try:
+if settings.INSTALLED_APPS.count("oceanography"):
     urlpatterns += i18n_patterns(path('oceanography/', include('oceanography.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting oceanography app")
 
-try:
+if settings.INSTALLED_APPS.count("grais"):
     urlpatterns += i18n_patterns(path('grais/', include('grais.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting grais app")
 
-try:
+if settings.INSTALLED_APPS.count("herring"):
     urlpatterns += i18n_patterns(path('hermorrhage/', include('herring.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting hermorrhage app")
 
-try:
+if settings.INSTALLED_APPS.count("camp"):
     urlpatterns += i18n_patterns(path('camp/', include('camp.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting camp app")
 
-try:
+if settings.INSTALLED_APPS.count("diets"):
     urlpatterns += i18n_patterns(path('diets/', include('diets.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting diets app")
 
-try:
+if settings.INSTALLED_APPS.count("projects"):
     urlpatterns += i18n_patterns(path('projects/', include('projects.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting projects app")
 
-try:
+if settings.INSTALLED_APPS.count("ihub"):
     urlpatterns += i18n_patterns(path('ihub/', include('ihub.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting ihub app")
 
-try:
+if settings.INSTALLED_APPS.count("scifi"):
     urlpatterns += i18n_patterns(path('scifi/', include('scifi.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting scifi app")
 
-try:
+if settings.INSTALLED_APPS.count("masterlist"):
     urlpatterns += i18n_patterns(path('master-list/', include('masterlist.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting masterlist app")
 
-try:
+if settings.INSTALLED_APPS.count("shares"):
     urlpatterns += i18n_patterns(path('gulf-shares/', include('shares.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting shares app")
 
-try:
+if settings.INSTALLED_APPS.count("travel"):
     urlpatterns += i18n_patterns(path('travel-plans/', include('travel.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting travel app")
 
-try:
+if settings.INSTALLED_APPS.count("ios2"):
     urlpatterns += i18n_patterns(path('ios2/', include('ios2.urls')), prefix_default_language=True)
-except RuntimeError:
-    print("not connecting spot")
+else:
+    print("not connecting ios2")
 
-try:
+if settings.INSTALLED_APPS.count("spot"):
     urlpatterns += i18n_patterns(path('grants-and-contributions/', include('spot.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting spot")
 
-try:
+if settings.INSTALLED_APPS.count("publications"):
     urlpatterns += i18n_patterns(path('publications/', include('publications.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting publications app")
 
-try:
+if settings.INSTALLED_APPS.count("staff"):
     urlpatterns += i18n_patterns(path('staff/', include('staff.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting staff app")
 
-try:
+if settings.INSTALLED_APPS.count("whalesdb"):
     urlpatterns += i18n_patterns(path('whalesdb/', include('whalesdb.urls')), prefix_default_language=True)
-except RuntimeError as e:
-    print(e)
+else:
     print("not connecting whalesdb app")
 
-try:
+if settings.INSTALLED_APPS.count("trapnet"):
     urlpatterns += i18n_patterns(path('trapnet/', include('trapnet.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting TrapNet")
 
-try:
+if settings.INSTALLED_APPS.count("sar_search"):
     urlpatterns += i18n_patterns(path('sar-search/', include('sar_search.urls')), prefix_default_language=True)
-except RuntimeError:
+else:
     print("not connecting SAR Search")
 
+if settings.INSTALLED_APPS.count("vault"):
+        urlpatterns += i18n_patterns(path('vault/', include('vault.urls')), prefix_default_language=True)
+else:
+    print("not connecting vault app")
 
-if not settings.PRODUCTION_SERVER:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.INSTALLED_APPS.count("spring_cleanup"):
+    urlpatterns += i18n_patterns(path('spring-cleanup/', include('spring_cleanup.urls')), prefix_default_language=True)
+else:
+    print("not connecting spring_cleanup app")
+
+
+if settings.INSTALLED_APPS.count("shiny"):
+    urlpatterns += i18n_patterns(path('shiny-apps/', include('shiny.urls')), prefix_default_language=True)
+else:
+    print("not connecting shiny app repo")
+
+if settings.INSTALLED_APPS.count("csas"):
+    urlpatterns += i18n_patterns(path('csas/', include('csas.urls')), prefix_default_language=True)
+else:
+    print("not connecting csas app")
+
+
+# if not settings.DEBUG:
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
+                                                                                       document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block bug_create %}{% url 'tickets:bug_create' 'spring_cleanup' %}{% endblock bug_create %}
+
+{% block jquery_import %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>{% endblock %}
+
+{% block title %}
+    {% trans "Earth Day" %} {% block subtitle %}{% endblock %}
+{% endblock title %}
+
+{% block body %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+    {% block content %}{% endblock content %}
+{% endblock body %}
+
+{% block left_unauth %}
+{% endblock left_unauth %}
+
+{% block left_all %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'spring_cleanup:index' %}">
+        {% trans "Home" %}
+    </a></li>
+{% endblock %}
+
+{% block left_auth %}
+{% endblock %}
+
+{% block left_admin %}
+{% endblock %}

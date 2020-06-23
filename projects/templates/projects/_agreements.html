@@ -1,30 +1,31 @@
 {% load static %}
 {% load i18n %}
-<style>
-    table, td {
-        font-size: small;
-    }
-</style>
 
+<div class="mb-2 neighbours">
 <h4>
-    {% trans "Collaborative Agreements:" %}
+    {% trans "Collaborative Agreements" %}
 </h4>
-{% if not object.submitted and not report_mode %}
-    <a class="btn btn-sm btn-primary" href="#"
-       onclick="return popitup('{% url 'projects:agreement_new' object.id %}','popoutWindow')">
-        {% trans "Add Agreement" %}
-    </a>
-    <br><br>
+</div>
+{% if can_edit %}
+    <div class="mb-3 neighbours">
+        <a class="btn btn-sm btn-outline-primary" href="#"
+           onclick="return popitup('{% url 'projects:agreement_new' object.id %}','popoutWindow')">
+            {% trans "Add Agreement" %}
+        </a>
+    </div>
 {% endif %}
+
 {% if object.agreements.count == 0 %}
-    <em>
-        {% trans "No Collaborative Agreements" %}...
-    </em><br>
+    <div class="mb-3">
+        <em>
+            {% trans "No Collaborative Agreements" %}...
+        </em>
+    </div>
 {% else %}
 
     <table class="table table-hover table-sm" style="width: auto">
         <tr>
-            {% if not report_mode %}
+            {% if can_edit %}
                 <th></th>
             {% endif %}
             <th>
@@ -36,7 +37,7 @@
             <th>
                 {% trans "Agreement Title" %}
             </th>
-            <th style="text-align: center">
+            <th class="center-col">
                 {% trans "New or Existing" %}
             </th>
             <th>
@@ -46,20 +47,15 @@
         </tr>
         <tbody>
         {% for obj in object.agreements.all %}
-            <tr {% if not object.submitted and not report_mode %}
-                data-toggle="tooltip" title="Edit" href="{% url 'projects:agreement_edit' obj.id %}" pop
-            {% endif %}
-            >
-                {% if not report_mode %}
+            <tr {% if can_edit %}data-toggle="tooltip" title="Edit" href="{% url 'projects:agreement_edit' obj.id %}" pop{% endif %}>
+                {% if can_edit %}
                     <td>
-                        {% if not object.submitted and not report_mode %}
-                            <a class="agreement-delete-me" href="#" val="{{ obj.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
-                                     title="Delete">
-                            </a>
-                            <a id="agreement-secrect-delete-btn-{{ obj.id }}"
-                               href="{% url 'projects:agreement_delete' obj.id %}" class="hidden"></a>
-                        {% endif %}
+                        <a class="agreement-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                 title="Delete" width="20px">
+                        </a>
+                        <a id="agreement-secrect-delete-btn-{{ obj.id }}"
+                           href="{% url 'projects:agreement_delete' obj.id %}" class="hidden"></a>
                     </td>
                 {% endif %}
                 <td>{{ obj.partner_organization }}</td>
@@ -72,4 +68,3 @@
         </tbody>
     </table>
 {% endif %}
-<br>

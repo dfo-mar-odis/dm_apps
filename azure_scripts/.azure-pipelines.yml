@@ -1,0 +1,77 @@
+# Python Django
+# Test a Django project on multiple versions of Python.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+pool:
+  vmImage: 'Ubuntu 18.04'
+
+trigger:
+  - master
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: 3.7
+      architecture: 'x64'
+
+  - task: PythonScript@0
+    displayName: 'Export project path'
+    inputs:
+      scriptSource: 'inline'
+      script: |
+        """Search all subdirectories for `manage.py`."""
+        from glob import iglob
+        from os import path
+        # Python >= 3.5
+        manage_py = next(iglob(path.join('**', 'manage.py'), recursive=True), None)
+        if not manage_py:
+            raise SystemExit('Could not find a Django project')
+        project_location = path.dirname(path.abspath(manage_py))
+        print('Found Django project in', project_location)
+        print('##vso[task.setvariable variable=projectRoot]{}'.format(project_location))
+  - script: |
+      python -m pip install --upgrade pip setuptools wheel
+      sudo apt-get install libmysqlclient-dev
+      # sudo apt-get install binutils libproj-dev gdal-bin libsqlite3-mod-spatialite spatialite-bin
+      pip install -r requirements.txt
+    displayName: 'Install prerequisites'
+
+  - script: |
+      # python create_env_file.py --devops-build-number "$(SECRET_KEY)" --sendgrid-api-key "$(SENDGRID_API_KEY)" --oauth-app-id "$(app_id)" --oauth-app-secret "$(app_secret)" --oauth-redirect "$(redirect)" --oauth-scopes "$(scopes)" --oauth-authority "$(authority)" --oauth-authorize-endpoint "$(authorize_endpoint)" --oauth-token-endpoint "$(token_endpoint)" --azure-storage-account-name "$(AZURE_STORAGE_ACCOUNT_NAME)"
+      python create_env_file.py --devops-build-number "$(Build.BuildNumber)"
+      mkdir media
+      mkdir media/travel
+      mkdir media/travel/temp
+      mkdir media/inventory
+      mkdir media/inventory/temp
+    displayName: 'Creating configuration file'
+
+  - script: |
+      python manage.py migrate
+    displayName: 'Making database migrations'
+
+  - script: |
+      python manage.py collectstatic --no-input
+    displayName: 'Collecting staticfiles'
+
+  - script: |
+      pushd '$(projectRoot)'
+      ./run_tests.sh
+    condition: succeededOrFailed()
+    displayName: 'Run tests'
+
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/dm_apps$(Build.BuildId).zip'
+      replaceExistingArchive: true
+      verbose: true
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/dm_apps$(Build.BuildId).zip'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+    displayName: 'build number: $(Build.BuildId)'

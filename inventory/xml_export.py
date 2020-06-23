@@ -4,7 +4,8 @@ from django.db.models import Q
 from xml.etree.ElementTree import Element, SubElement, tostring, ElementTree
 from xml.dom import minidom
 from django.utils import timezone
-
+from django.utils.safestring import mark_safe
+from django.utils.translation import gettext as _
 from lib.functions.custom_functions import attr_error_2_none
 from lib.templatetags.custom_filters import nz
 from . import models
@@ -128,12 +129,12 @@ def descriptive_keyword(keyword):
     })
     SubElement(root, 'gco:CharacterString', attrib={
         'xmlns:gco': "http://www.isotc211.org/2005/gco",
-    }).text = keyword.text_value_eng
+    }).text = keyword.non_hierarchical_name_en
     PT_FreeText = SubElement(root, 'gmd:PT_FreeText')
     textGroup = SubElement(PT_FreeText, 'gmd:textGroup')
     LocalisedCharacterString = SubElement(textGroup, 'gmd:LocalisedCharacterString', attrib={
         'locale': "#fra"
-    }).text = keyword.text_value_fre
+    }).text = keyword.non_hierarchical_name_fr
     return root
 
 
@@ -630,9 +631,8 @@ def construct(my_resource, pretty=True):
     gmd_contact = SubElement(root, 'gmd:contact')
 
     # for each point of contact
-    for person in my_resource.resource_people.all():
-        if person.role.id == 4:
-            gmd_contact.append(ci_responsible_party(person))
+    for person in my_resource.resource_people.filter(role__id=4):
+        gmd_contact.append(ci_responsible_party(person))
 
     # timestamp
     datestamp(root, 'gmd:dateStamp', timezone.now().year, timezone.now().month, timezone.now().day)
@@ -694,7 +694,7 @@ def construct(my_resource, pretty=True):
                  "http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87", "RI_367",
                  "publication; publication")
 
-    else:  # publication AND revision dates are added
+    else:  # publication AND revision dates are added (if available)
 
         # publication date
         CI_Date = SubElement(SubElement(CI_Citation, 'gmd:date'), 'gmd:CI_Date')
@@ -704,19 +704,21 @@ def construct(my_resource, pretty=True):
                  "http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87", "RI_367",
                  "publication; publication")
 
-        # revision date
-        CI_Date = SubElement(SubElement(CI_Citation, 'gmd:date'), 'gmd:CI_Date')
-        datestamp(CI_Date, 'gmd:date', timezone.now().year, timezone.now().month, timezone.now().day)
-        codelist(CI_Date, "gmd:dateType", "gmd:CI_DateTypeCode",
-                 "http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87", "RI_368",
-                 "revision; révision")
+        if my_resource.last_revision_date:
+            # revision date
+            CI_Date = SubElement(SubElement(CI_Citation, 'gmd:date'), 'gmd:CI_Date')
+            datestamp(CI_Date, 'gmd:date', my_resource.last_revision_date.year, my_resource.last_revision_date.month,
+                      my_resource.last_revision_date.day)
+            codelist(CI_Date, "gmd:dateType", "gmd:CI_DateTypeCode",
+                     "http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87", "RI_368",
+                     "revision; révision")
 
-    # Custodians
+    # Custodians and other roles (not point of contact)
     # for each point of contact
-    for person in my_resource.resource_people.all():
-        if person.role.id == 1:
-            citedResponsibleParty = SubElement(CI_Citation, 'gmd:citedResponsibleParty')
-            citedResponsibleParty.append(ci_responsible_party(person))
+    for person in my_resource.resource_people.filter(~Q(role__id=4)).filter(role__code__isnull=False):
+        # if person.role.id == 1:
+        citedResponsibleParty = SubElement(CI_Citation, 'gmd:citedResponsibleParty')
+        citedResponsibleParty.append(ci_responsible_party(person))
 
     # abstract
     charstring(MD_DataIdentification, 'gmd:abstract', my_resource.descr_eng, my_resource.descr_fre)
@@ -868,9 +870,10 @@ def construct(my_resource, pretty=True):
     MD_Distribution = SubElement(distributionInfo, 'gmd:MD_Distribution')
 
     # distribution Format
-    MD_Format = SubElement(SubElement(MD_Distribution, 'gmd:distributionFormat '), "gmd:MD_Format")
-    charstring(MD_Format, 'gmd:name', my_resource.distribution_format)
-    charstring(MD_Format, 'gmd:version', "n/a")
+    for df in my_resource.distribution_formats.all():
+        MD_Format = SubElement(SubElement(MD_Distribution, 'gmd:distributionFormat '), "gmd:MD_Format")
+        charstring(MD_Format, 'gmd:name', df.name)
+        charstring(MD_Format, 'gmd:version', "n/a")
 
     # distributor
     distributor = SubElement(MD_Distribution, 'gmd:distributor')
@@ -922,7 +925,6 @@ def verify(resource):
         'south_bounding',
         'east_bounding',
         'north_bounding',
-        'distribution_format',
 
         # bilingual fields
         '?title_',
@@ -950,6 +952,8 @@ def verify(resource):
         'certification_history|',
         'data_resources|',
         'web_services|',
+        'distribution_formats|',
+
 
         # will check all keywords associated with resource
         '*keyword.text_value_',  # special keywords function will be called
@@ -978,6 +982,7 @@ def verify(resource):
     # plus number of people times number of fields for people
     # note: any field ending in '_' represents two fields and thus should be counted twice
 
+    simple_fields = len([f for f in fields_to_check if "$" not in f and "|" not in f and "." not in f and "__" not in f and "?" not in f])
     special_keyword_fields = len([f for f in fields_to_check if f.startswith("*keyword")])
     special_bilingual_keyword_fields = len([f for f in fields_to_check if f.startswith("*keyword") and f.endswith("_")])
     true_count_of_special_keyword_fields = special_keyword_fields - special_bilingual_keyword_fields + (
@@ -1006,7 +1011,7 @@ def verify(resource):
 
     for field in fields_to_check:
         # starting with the most simple case: unilingual fields of resource
-        if "$" not in field and "|" not in field and "." not in field and "_" not in field and "?" not in field:
+        if "$" not in field and "|" not in field and "." not in field and "__" not in field and "?" not in field:
             field_value = nz(getattr(resource, field), None)
             verbose_name = resource._meta.get_field(field).verbose_name
             if field_value is None:
@@ -1083,9 +1088,15 @@ def verify(resource):
             my_filter = field_list[1]
 
             if field == 'certification_history':
+                cert_now_html = mark_safe(
+                    f'<a href={reverse("inventory:resource_certify", kwargs={"pk": resource.id})}>{_("certify now")}</a>')
                 if resource.certification_history.count() == 0:
-                    checklist.append('This record has not been certified')
+                    checklist.append(f'This record has not been certified ({cert_now_html})')
                     rating = rating - 1
+                elif abs((resource.certification_history.first().certification_date - timezone.now()).days) > 30:
+                    checklist.append(f'This record has not been certified within the past 30 days ({cert_now_html})')
+                    rating = rating - 1
+
             elif field == 'keywords':
                 keyword_domain = models.KeywordDomain.objects.get(pk=my_filter)
                 if resource.keywords.filter(keyword_domain=keyword_domain).count() == 0:
@@ -1106,6 +1117,10 @@ def verify(resource):
                     rating = rating - 1
                 if resource.web_services.filter(service_language="urn:xml:lang:fra-CAN").count() == 0:
                     checklist.append('There has to be a French web service')
+                    rating = rating - 1
+            elif field == 'distribution_formats':
+                if resource.distribution_formats.count() == 0:
+                    checklist.append('There has to be at least one distribution format')
                     rating = rating - 1
 
         # next lets deal with special cases. This is the messiest one

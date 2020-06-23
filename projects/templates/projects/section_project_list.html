@@ -1,0 +1,68 @@
+{% extends "projects/list.html" %}
+{% load static %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+
+
+{% block subcontent %}
+
+    {% get_current_language as LANG %}
+
+    <style>
+        table, td {
+            font-size: 12px;
+        }
+
+        .project-table {
+        }
+    </style>
+
+
+    <div class="mb-3">
+        <form class="form" action="." method="get" id="filter-form">
+            <div class="row">
+                {% for field in filter.form %}
+                    <div class="col-2">{% bootstrap_field field placeholder="" size="small" %}</div>
+                {% endfor %}
+                <div class="col"><br><input type="submit" value="Filter" class="btn btn-warning btn-sm"></div>
+            </div>
+        </form>
+    </div>
+    <div class="mb-5">
+        {% include "projects/_section_financials.html" %}
+    </div>
+
+    {% if status_reports.count %}
+        <div class="mb-5">
+            {% include "projects/_section_status_reports.html" %}
+        </div>
+    {% endif %}
+
+    <div class="mb-5">
+        {% include "projects/_section_projects.html" %}
+    </div>
+    <div class="mb-5">
+        {% include "projects/_section_funding_sources.html" %}
+    </div>
+    <div class="mb-5">
+        {% include "projects/_section_functional_groups.html" %}
+    </div>
+    <div class="mb-5">
+        {% include "projects/_section_activity_types.html" %}
+    </div>
+    <div class="mb-5">
+        {% include "projects/_section_staff.html" %}
+    </div>
+
+
+{% endblock %}
+
+{% block body_js %}
+
+    <script type="application/javascript">
+
+    </script>
+{% endblock %}

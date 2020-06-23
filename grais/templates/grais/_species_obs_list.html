@@ -11,9 +11,11 @@
     {% endif %}
 </h4>
 
-<table class="table table-bordered table-sm">
+<table class="table table-hover table-sm" style="width: 75%;">
     <thead class="full-table">
+    <th>#</th>
     <th>Species</th>
+    <th>Notes</th>
     <th>Date observed</th>
     </thead>
     <tbody>
@@ -22,16 +24,12 @@
     {% if sample %}
 
         {% for obj in object.sample_spp.all %}
-            <tr>
-                <td><a href="{% url 'grais:species_detail' obj.species.id  %}" target="_blank">{{ obj.species.common_name }}</a></td>
+            <tr href="{% url 'grais:spp_obs_edit_pop' "sample" obj.id %}" pop>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ obj.species }}</td>
+                <td>{{ obj.notes }}</td>
                 <td>{{ obj.observation_date|date:"F d, Y" }}</td>
-                <td>
-                    <a href="#"
-                       onclick="return popitup('{% url 'grais:spp_obs_edit_pop' "sample" obj.id %}','surfaceSpeciesEdit')">
-                        <img src="{% static "/admin/img/icon-changelink.svg" %}" data-toggle="tooltip"
-                             title="Edit">
-                    </a>
-                </td>
+
                 <td>
                     <a class="delete-me" href="#" val="{{ s.id }}">
                         <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
@@ -54,15 +52,13 @@
 
         </tbody>
         </table>
-        <p>
-            <b>TOTAL: {{ object.sample_spp.count }}</b>
-        </p>
 
     {% else %}
 
         {% for obj in object.line_spp.all %}
             <tr>
                 <td><a href="{% url 'grais:species_detail' obj.species.id  %}" target="_blank">{{ obj.species.common_name }}</a></td>
+                <td>{{ obj.notes }}</td>
                 <td>{{ obj.observation_date|date:"F d, Y" }}</td>
                 <td>
                     <a href="#"
@@ -91,9 +87,6 @@
 
         </tbody>
         </table>
-        <p>
-            <b>TOTAL: {{ object.line_spp.count }}</b>
-        </p>
 
     {% endif %}
 <br>
@@ -101,7 +94,8 @@
 
 <script type="application/javascript">
 
-    $(".delete-me").click(function () {
+    $(".delete-me").click(function (e) {
+        e.stopImmediatePropagation();
         var objectId = $(this)[0].getAttribute("val");
 
         var userInput = "";
@@ -110,7 +104,7 @@
 
         }
         if (userInput === "y") {
-            $("#secrect-delete-btn-" + objectId)[0].click();
+            window.location.href = $("#secrect-delete-btn-" + objectId).attr("href");
         }
     })
 

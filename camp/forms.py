@@ -3,7 +3,12 @@ from django.core import validators
 
 from . import models
 
-
+attr_fp_date_time = {"class": "fp-date-time-with-seconds", "placeholder": "Select Date and Time.."}
+chosen_js = {"class": "chosen-select-contains"}
+YES_NO_CHOICES = (
+        (True, "Yes"),
+        (False, "No"),
+    )
 class SiteForm(forms.ModelForm):
     class Meta:
         model = models.Site
@@ -44,6 +49,7 @@ class SearchForm(forms.Form):
 
     year = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'placeholder': "all years"}))
     month = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'placeholder': "all months"}))
+    sample_id = forms.IntegerField(required=False, widget=forms.NumberInput(attrs={'placeholder': "any part of sample ID"}))
 
     field_order = ["year", "month", "site", "station", "species"]
 
@@ -88,6 +94,10 @@ class SampleForm(forms.ModelForm):
             'percent_gravel': forms.NumberInput(attrs=class_addable),
             'percent_rock': forms.NumberInput(attrs=class_addable),
             'percent_mud': forms.NumberInput(attrs=class_addable),
+            'start_date': forms.DateTimeInput(attrs=attr_fp_date_time),
+            'end_date': forms.DateTimeInput(attrs=attr_fp_date_time),
+            'rain_past_24_hours': forms.Select(choices=YES_NO_CHOICES),
+            'station': forms.Select(attrs=chosen_js),
         }
 
 
@@ -113,6 +123,10 @@ class SampleCreateForm(forms.ModelForm):
             'percent_gravel': forms.NumberInput(attrs=class_addable),
             'percent_rock': forms.NumberInput(attrs=class_addable),
             'percent_mud': forms.NumberInput(attrs=class_addable),
+            'start_date': forms.DateTimeInput(attrs=attr_fp_date_time),
+            'end_date': forms.DateTimeInput(attrs=attr_fp_date_time),
+            'rain_past_24_hours': forms.Select(choices=YES_NO_CHOICES),
+            'station': forms.Select(attrs=chosen_js),
         }
 
 

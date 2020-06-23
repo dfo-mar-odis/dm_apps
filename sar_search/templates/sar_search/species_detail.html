@@ -8,10 +8,10 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'sar_search:index' %}">
-            {% trans "Home" %}
+                {% trans "Home" %}
             </a></li>
             <li class="breadcrumb-item"><a href="{% url 'sar_search:species_list' %}">
-            {% trans "All Species " %}
+                {% trans "All Species " %}
             </a></li>
             <li class="breadcrumb-item active" aria-current="page"> {{ object }} </li>
         </ol>
@@ -258,31 +258,59 @@
                                 {% for polygon in region.polygons.all %}
                                     {% if polygon.coords %}
 
-                                        // extend bounds var
-                                        {% for point in polygon.points.all %}
-                                            bounds.extend(new google.maps.LatLng({{point.latitude}}, {{ point.longitude }}));
-                                        {% endfor %}
-
-                                        // Define the LatLng coordinates for the polygon's path.
-                                        var polygonCoords = [
+                                        {% if region.type == 2 %}
+                                            // extend bounds var
                                             {% for point in polygon.points.all %}
-                                                {lat: {{point.latitude}}, lng: {{point.longitude}}},
+                                                bounds.extend(new google.maps.LatLng({{point.latitude}}, {{ point.longitude }}));
                                             {% endfor %}
-                                        ];
 
-                                        // Construct the stratum.
-                                        var color = '#ea4544';
-                                        var myPolygon = new google.maps.Polygon({
-                                            paths: polygonCoords,
-                                            strokeColor: 'white',
-                                            strokeOpacity: 0.8,
-                                            strokeWeight: 2,
-                                            fillColor: color,
-                                            fillOpacity: 0.35
-                                        });
-                                        myPolygon.setMap(map);
-                                        {#bounds.extend(myPolygon.getBounds());#}
+                                            // Define the LatLng coordinates for the polygon's path.
+                                            var lineCoords = [
+                                                {% for point in polygon.points.all %}
+                                                    {lat: {{point.latitude}}, lng: {{point.longitude}}},
+                                                {% endfor %}
+                                            ];
 
+                                            // Construct the stratum.
+                                            var color = '#ea4544';
+                                            var myLine = new google.maps.Polyline({
+                                                path: lineCoords,
+                                                strokeColor: 'red',
+                                                strokeOpacity: 0.8,
+                                                strokeWeight: 3,
+                                                {#fillColor: color,#}
+                                                {#fillOpacity: 0.35#}
+                                            });
+                                            myLine.setMap(map);
+                                            {#bounds.extend(myPolygon.getBounds());#}
+
+                                        {% else %}
+                                            // extend bounds var
+                                            {% for point in polygon.points.all %}
+                                                bounds.extend(new google.maps.LatLng({{point.latitude}}, {{ point.longitude }}));
+                                            {% endfor %}
+
+                                            // Define the LatLng coordinates for the polygon's path.
+                                            var polygonCoords = [
+                                                {% for point in polygon.points.all %}
+                                                    {lat: {{point.latitude}}, lng: {{point.longitude}}},
+                                                {% endfor %}
+                                            ];
+
+                                            // Construct the stratum.
+                                            var color = '#ea4544';
+                                            var myPolygon = new google.maps.Polygon({
+                                                paths: polygonCoords,
+                                                strokeColor: 'white',
+                                                strokeOpacity: 0.8,
+                                                strokeWeight: 2,
+                                                fillColor: color,
+                                                fillOpacity: 0.35
+                                            });
+                                            myPolygon.setMap(map);
+                                            {#bounds.extend(myPolygon.getBounds());#}
+
+                                        {% endif %}
                                     {% endif %}
                                 {% endfor %}
                             {% endfor %}

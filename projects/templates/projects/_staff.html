@@ -3,92 +3,80 @@
 {% load i18n %}
 {% load custom_filters %}
 
-<style>
-    table, td {
-        font-size: small;
-    }
-</style>
+<div class="neighbours mb-2">
+    <h4>
+        {% trans "Project Staff" %}
+    </h4>
+</div>
+{% if can_edit %}
+    <div class="neighbours mb-3">
+        <a class="btn btn-sm btn-outline-primary" href="#" pop-href='{% url 'projects:staff_new' object.id %}'>
+            {% trans "Add Staff" %}
+        </a>
+    </div>
 
-<h4>
-    {% trans "Project Staff:" %}
-</h4>
-{% if not object.submitted and not report_mode %}
-    <a class="btn btn-sm btn-primary" href="#"
-       onclick="return popitup('{% url 'projects:staff_new' object.id %}','popoutWindow')">
-        {% trans "Add Staff" %}
-    </a>
-    <br><br>
 {% endif %}
 
 {% if object.staff_members.count == 0 %}
-    <em>
-        {% trans "No Staff Members" %}...
-    </em><br>
+    <div class="mb-3">
+        <em>
+            {% trans "No Staff Members" %}...
+        </em>
+    </div>
 {% else %}
 
     <table class="table table-hover table-sm sortable" style="width: auto">
         <thead>
-        {% if not report_mode %}
+        {% if can_edit %}
             <th></th>
         {% endif %}
         <th>
             {% trans "Name" %}
         </th>
-        <th style="text-align: center">
+        <th class="center-col">
             {% trans "Project Lead" %}
         </th>
         <th>
             {% trans "Employee type" %}
         </th>
-        <th style="text-align: center">
+        <th class="center-col">
             {% trans "Level" %}
         </th>
-        <th style="text-align: center">
+        <th class="center-col">
             {% trans "Duration (weeks)" %}
         </th>
-        <th style="text-align: center">
+        <th class="center-col">
             {% trans "Overtime hours" %}
         </th>
-        <th style="text-align: center">
+        <th class="center-col">
             {% trans "Cost Category" %}
         </th>
-        <th {% if not report_mode %} colspan="2" {% endif %} style="text-align: center">
+        <th class="center-col">
             {% trans "Funding Source" %}
         </th>
-        <th style="text-align: center">
+        <th class="center-col">
             {% trans "Cost" %}
         </th>
         </thead>
         <tbody>
         {% for obj in object.staff_members.all %}
-            <tr id="staff-{{ obj.id }}" {% if not object.submitted and not report_mode %} href="{% url 'projects:staff_edit' obj.id %}" pop
-                data-toggle="tooltip" title="Edit"{% endif %}>
-                {% if not report_mode %}
+            <tr id="staff-{{ obj.id }}"
+                    {% if can_edit %} href="{% url 'projects:staff_edit' obj.id %}" pop data-toggle="tooltip" title="Edit" {% endif %}>
+                {% if can_edit %}
                     <td>
-                        {% if not object.submitted and not report_mode %}
-                            <a class="staff-delete-me" href="#" val="{{ obj.id }}" user_id="{{ obj.user.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
-                                     title="Delete">
-                            </a>
-                            <a id="staff-secrect-delete-btn-{{ obj.id }}"
-                               href="{% url 'projects:staff_delete' obj.id %}" class="hidden"></a>
-                        {% endif %}
+                        <a class="staff-delete-me" href="#" val="{{ obj.id }}" user_id="{{ obj.user.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete" width="20px">
+                        </a>
+                        <a id="staff-secrect-delete-btn-{{ obj.id }}" href="{% url 'projects:staff_delete' obj.id %}" class="hidden"></a>
                     </td>
                 {% endif %}
 
                 <td>
-                    {% if obj.user.id %}
-                        {{ obj.user.first_name }} {{ obj.user.last_name }}
-                    {% else %}
-                        {{ obj.name }}
-                    {% endif %}
+                    {% if obj.user.id %} {{ obj.user }} {% else %} {{ obj.name }}{% endif %}
                 </td>
-                <td style="text-align: center" class="{% if obj.lead %}blue-font{% endif %}">{{ obj.lead|yesno }}</td>
+                <td class="{% if obj.lead %}blue-font{% endif %} center-col">{{ obj.lead|yesno }}</td>
                 <td class="{% if obj.employee_type %}{% else %}major-error{% endif %}">
-                    {{ obj.employee_type }}
-                    {% if  obj.employee_type.id == 4 %}
-                        ({{ obj.get_student_program_display }})
-                    {% endif %}
+                    {{ obj.employee_type }} {% if  obj.employee_type.id == 4 %} ({{ obj.get_student_program_display }}) {% endif %}
                 </td>
 
                 <td>
@@ -96,33 +84,22 @@
                 </td>
 
 
-                <td style="text-align: center;" class="{% if not obj.duration_weeks %}major-error{% endif %}">
+                <td class="center-col {% if not obj.duration_weeks %}major-error{% endif %}">
                     {{ obj.duration_weeks }}
                 </td>
 
-
-                <td style="text-align: center">
+                <td class="center-col">
                     {{ obj.overtime_hours }}
                 </td>
 
-                <td style="text-align: center">{{ obj.employee_type.get_cost_type_display }}</td>
+                <td class="center-col">{{ obj.employee_type.get_cost_type_display }}</td>
 
-                <td style="text-align: center; background-color: {{ obj.funding_source.color }}">
-                    {{ obj.funding_source }}
+                <td style="background-color: {{ obj.funding_source.funding_source_type.color }}" class="center-col">
+                    {{ obj.funding_source.tname }}
                 </td>
-                {% if not report_mode %}
-                    <td style="text-align: center">
-                        {% if not object.submitted %}
-                            <a class="toggle-source" href="#" type="staff" pk="{{ obj.id }}">
-                                <img src="{% static "/lou-multi-select-e052211/img/switch.png" %}" data-toggle="tooltip"
-                                     title="click to toggle funding source">
-                            </a>
-                            <a id="staff-secrect-toggle-btn-{{ obj.id }}" href="{% url 'projects:toggle_source' "staff" obj.id %}"
-                               class="hidden"></a>
-                        {% endif %}
-                    </td>
-                {% endif %}
-                <td style="text-align: center" class="{% if not obj.cost and not obj.employee_type.exclude_from_rollup %} major-error{% endif %}">
+
+                <td class="center-col"
+                    class="{% if not obj.cost and not obj.employee_type.exclude_from_rollup %} major-error{% endif %}">
                     {% if obj.employee_type.exclude_from_rollup %}
                         {% trans "n/a" %}
                     {% else %}
@@ -136,4 +113,3 @@
         </tbody>
     </table>
 {% endif %}
-<br>

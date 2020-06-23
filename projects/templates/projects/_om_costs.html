@@ -3,44 +3,37 @@
 {% load humanize %}
 {% load i18n %}
 {% get_current_language as LANG %}
-
-<style>
-    table, td {
-        font-size: small;
-    }
-</style>
-
-<h4>
-    {% trans "O&M Costs:" %}
-</h4>
-{% if not object.submitted and not report_mode %}
-    <div class="btn-group">
-        <a class="btn btn-sm btn-primary" href="#"
-           onclick="return popitup('{% url 'projects:om_new' object.id %}','popoutWindow')">
+<div class="neighbours mb-2">
+    <h4>
+        {% trans "O&M Costs" %}
+    </h4>
+</div>
+{% if can_edit %}
+    <div class="btn-group mb-3 neighbours">
+        <a class="btn btn-sm btn-outline-primary" href="#" pop-href="{% url 'projects:om_new' object.id %}">
             {% trans "Add O&M" %}
         </a>
-        <a class="btn btn-sm btn-success" href="{% url 'projects:om_populate' object.id %}">
+        <a class="btn btn-sm btn-outline-success" href="{% url 'projects:om_populate' object.id %}">
             {% trans "Add all categories" %}
         </a>
 
-        <a class="btn btn-sm btn-warning" href="{% url 'projects:om_clear' object.id %}">
+        <a class="btn btn-sm btn-outline-dark" href="{% url 'projects:om_clear' object.id %}">
             {% trans "Clear empty lines" %}
         </a>
     </div>
-    <br><br>
 {% endif %}
 
-
-
 {% if object.om_costs.count == 0 %}
-    <em>
-        {% trans "No O&M Costs" %}...
-    </em><br>
+    <div class="mb-3">
+        <em>
+            {% trans "No O&M Costs" %}...
+        </em>
+    </div>
 {% else %}
 
     <table class="table table-hover table-sm sortable" style="width: auto">
         <thead>
-        {% if not report_mode %}
+        {% if can_edit %}
             <th></th>
         {% endif %}
         <th>
@@ -52,10 +45,10 @@
         <th>
             {% trans "Description" %}
         </th>
-        <th {% if not report_mode %} colspan="2" {% endif %} style="text-align: center">
+        <th class="center-col">
             {% trans "Funding Source" %}
         </th>
-        <th style="text-align: center">
+        <th class="center-col">
             {% trans "Budget Amount" %}
         </th>
 
@@ -63,47 +56,28 @@
         <tbody>
         {% for obj in object.om_costs.all %}
             <tr id="om-{{ obj.id }}"
-                    {% if not object.submitted and not report_mode %}
-                href="{% url 'projects:om_edit' obj.id %}" pop  data-toggle="tooltip" title="Edit" {% endif %}>
-                {% if not report_mode %}
-
+                    {% if can_edit %} href="{% url 'projects:om_edit' obj.id %}" pop  data-toggle="tooltip" title="Edit" {% endif %}>
+                {% if can_edit %}
                     <td>
-                        {% if not object.submitted and not report_mode %}
-                            <a class="om-delete-me" href="#" val="{{ obj.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
-                                     title="Delete">
-                            </a>
-                            <a id="om-secrect-delete-btn-{{ obj.id }}"
-                               href="{% url 'projects:om_delete' obj.id %}" class="hidden"></a>
-                        {% endif %}
+                        <a class="om-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                 title="Delete" width="20px">
+                        </a>
+                        <a id="om-secrect-delete-btn-{{ obj.id }}"
+                           href="{% url 'projects:om_delete' obj.id %}" class="hidden"></a>
                     </td>
                 {% endif %}
-                <td>{{ obj.om_category.get_group_display }}</td>
 
-                {% if LANG == "fr" %}
-                    <td>{{ obj.om_category.nom }}</td>
-                {% else %}
-                    <td>{{ obj.om_category.name }}</td>
-                {% endif %}
+                <td>{{ obj.om_category.get_group_display }}</td>
+                <td>{{ obj.om_category.tname }}</td>
                 <td> {{ obj.description|nz:"-----" }}</td>
 
-                <td style="text-align: center; background-color: {{ obj.funding_source.color }}">
-                    {{ obj.funding_source }}
+                <td class="center-col" style="background-color: {{ obj.funding_source.funding_source_type.color }}">
+                    {{ obj.funding_source.tname }}
                 </td>
-                {% if not report_mode %}
-                    <td>
-                        {% if not object.submitted %}
-                            <a class="toggle-source" href="#" type="om" pk="{{ obj.id }}">
-                                <img src="{% static "/lou-multi-select-e052211/img/switch.png" %}" data-toggle="tooltip"
-                                     title="click to toggle funding source">
-                            </a>
-                            <a id="om-secrect-toggle-btn-{{ obj.id }}" href="{% url 'projects:toggle_source' "om" obj.id %}"
-                               class="hidden"></a>
-                        {% endif %}
-                    </td>
-                {% endif %}
 
-                <td style="text-align: center" class="{% if not obj.budget_requested %} major-error{% endif %}">
+
+                <td class="center-col {% if not obj.budget_requested %} major-error{% endif %}">
                     {{ obj.budget_requested|currency }}
                 </td>
 

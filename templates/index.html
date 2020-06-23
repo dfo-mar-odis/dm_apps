@@ -7,14 +7,26 @@
 {% block header %}
     <style>
         body {
-            background-image: url("{% static 'img/waves1.jpg' %}");
-            background-size: cover;
+        {#background-image: url("{% static 'img/waves1.jpg' %}");#}{#background-color: rgb(224, 225, 255);#} background-size: cover;
+
         }
+
         h1 {
-            font-size: 4.5em;
+            font-size: 4em;
         }
+
         h2 {
             font-size: 2em;
+        }
+
+        .jumbotron {
+            background-color: rgba(255, 255, 255, .85);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .container-fluid {
+            padding-left: 55px;
         }
 
         .card {
@@ -22,33 +34,79 @@
             background-color: #eeeeee;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             transition: 0.3s;
-            width: 200px;
-            margin: 10px
+            width: 275px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+        {#background-color: rgba(71, 71, 71, 0.6);#}{#color: white;#}
         }
 
         .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
 
-
         .card-title {
-            height: 50px;
-            font-size: 1.3em;
+            height: 30px;
+            font-size: 1.1em;
+        {#font-weight: bold;#}
         }
 
         .card-img {
-            height: 110px;
+            height: 100%;
         }
 
-        .card-img-top {
-            padding: 45px;
-        }
 
         .card-text {
-            height: 120px;
+            height: 70px;
+            font-size: .9em;
+
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            padding: 48px 0 0; /* Height of navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+
+        @supports ((position: -webkit-sticky) or (position: sticky)) {
+            .sidebar-sticky {
+                position: -webkit-sticky;
+                position: sticky;
+            }
+        }
+
+        body {
+            font-size: .875rem;
+        }
+
+        [role="main"] {
+            padding-top: 48px; /* Space for fixed navbar */
+        }
+
+        .my-title-font {
+            font-family: 'Anton', sans-serif;
         }
 
     </style>
+{% endblock %}
+
+
+{% block alerts %}
 
 {% endblock %}
 
@@ -57,172 +115,134 @@
 {% endblock title %}
 
 {% block body %}
-    <br>
     <div class="container-fluid">
-
-    <div class=" text-center">
-        <h1 class="text-center roboto">
-            {% trans 'Data Management Apps' %}
-        </h1>
-        <h2 class="roboto">
-            {% trans "By DFO Science" %}
-        </h2>
-        <hr>
-
-        {% url 'accounts:login' as sign_in_url %}
-        {% url 'accounts:signup' as sign_up_url %}
+        <div class="row">
+            <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <br>
 
 
-        <h4 class="text-center montserrat" style="font-size: 26px">
-            {% if user.is_authenticated %}
-                {% blocktrans with name=user.first_name %}
-                    Welcome back, {{ name }}! Please select an application below.
-                {% endblocktrans %}
-            {% else %}
-                {% blocktrans %}
-                    Welcome! Please <a href="{{ sign_in_url }}">sign in</a> or select an application below. If you do not have an
-                    account, you can register for one
-                    <a href="{{ sign_up_url }}">here.</a>
-                {% endblocktrans %}
-            {% endif %}
-        </h4>
-    </div>
+                    {% for a in announcements %}
+                        <div class="alert {{ a.alert_type }}" role="alert">
+                            <h4 class="alert-heading">{{ a.tsubject|safe }}</h4>
 
+                            <p style="font-size: small">{{ a.valid_from }}</p>
+                            <p class="mb-0">{{ a.tmessage|safe }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
 
-    <div class="container">
-        <br>
-        {% trans "Select" as btn_text %}
-        {% with app_dict_shared as app_dict %}
-            <div class="row">
-                {% for app in app_dict %}
+            </nav>
 
-                    <div class="card" href="{{ app_dict|lookup:app|lookup:"url" }}">
-                        <div class="card-body">
-                            <h4 class="card-title"> {{ app_dict|lookup:app|lookup:"title" }}</h4>
-                            <p class="card-img">
-                                <img class="card-img-top" src="{% static app_dict|lookup:app|lookup:"icon_path" %}" alt="Card image">
-                            </p>
-                            <p class="card-text">{{ app_dict|lookup:app|lookup:"description" }}</p>
-                            <div class="text-center" style="margin: auto">
+            <div role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 py-4">
+                <div class="">
+                    <div class="container-fluid">
+                        {% load bootstrap4 %}
+                        {% autoescape off %}
+                            {% for message in messages %}
+                                <div class="row justify-content-center">
+                                    <div style="width: 70%" class="{{ message|bootstrap_message_classes }} alert-dismissible fade show"
+                                         role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="{% trans 'close' %}">&#215;
+                                        </button>
+                                        {{ message }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endautoescape %}
 
-                                {% trans "access to this app requires special permissions" as permissions_msg %}
-                                {% trans "access to this app requires you to be logged in" as login_msg %}
-                                {% trans "this app is opened to all users" as open_msg %}
+                        {% if not user.is_authenticated %}
+                            <div class="mb-3 center-col">
 
-                                {% if app_dict|lookup:app|lookup:"access" == "permission-required" %}
-                                    <span data-toggle="tooltip" title="{{ permissions_msg }}">
-                                                                            <img src="{% static 'img/icons/padlock.svg' %}" alt=""
-                                                                                 style="width: 25px">
-                                                                        </span>
-                                {% elif app_dict|lookup:app|lookup:"access" == "login-required" %}
-                                    <span data-toggle="tooltip" title="{{ login_msg }}">
-                                                                            <img src="{% static 'img/icons/user.svg' %}"
-                                                                                 alt="" style="width: 25px">
-                                                                        </span>
-                                {% else %}
-                                    <span class="" data-toggle="tooltip" title="{{ open_msg }}">
-                                                                            <img src="{% static 'img/icons/language.svg' %}" alt=""
-                                                                                 width="25px">
-                                                                        </span>
-                                {% endif %}
-                                {% if app_dict|lookup:app|lookup:"status" == "beta" %}
-                                    <span class="badge badge-pill badge-warning" style="font-size: small">
+                                {% url 'accounts:login' as sign_in_url %}
+                                {% url 'accounts:signup' as sign_up_url %}
+
+                                <h4 class="montserrat" style="font-size: 26px">
+                                    {% if not user.is_authenticated %}
+                                        {% blocktrans %}
+                                            Please <a href="{{ sign_in_url }}">sign in</a> or select an application below. <br>If you do not
+                                            have an account, you can register for one
+                                            <a href="{{ sign_up_url }}">here.</a>
+                                        {% endblocktrans %}
+                                    {% endif %}
+                                </h4>
+                            </div>
+                        {% endif %}
+                        <br>
+                        {% trans "Select" as btn_text %}
+                        {% with app_dict as app_dict %}
+                            <div class="row justify-content-center">
+                                {% for app in app_dict %}
+
+                                    <div class="card" href="{{ app_dict|lookup:app|lookup:"url" }}">
+                                        <div class="card-body">
+                                            <div class="row mb-4">
+                                                <div class="col-3">
+                                                    <img class="card-img "
+                                                         src="{% static app_dict|lookup:app|lookup:"icon_path" %}">
+                                                </div>
+                                                <div class="col">
+                                                    <h4 class="card-title">
+                                                        {{ app_dict|lookup:app|lookup:"title" }}
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">
+                                                {{ app_dict|lookup:app|lookup:"description" }}
+                                                {% trans "access to this app requires special permissions" as permissions_msg %}
+                                                {% trans "access to this app requires you to be logged in" as login_msg %}
+                                                {% trans "this app is opened to all users" as open_msg %}
+                                                {% if app_dict|lookup:app|lookup:"status" == "beta" %}
+                                                    <span class="badge badge-pill badge-warning" style="font-size: x-small">
                                                 {% trans "beta" %}
                                             </span>
-                                {% elif app_dict|lookup:app|lookup:"status" == "dev" %}
-                                    <span class="badge badge-pill badge-danger" style="font-size: small">
+                                                {% elif app_dict|lookup:app|lookup:"status" == "dev" %}
+                                                    <span class="badge badge-pill badge-danger" style="font-size: x-small">
                                                 {% trans "dev" %}
                                             </span>
-                                {% endif %}
+                                                {% endif %}
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+
+                                {% endfor %}
                             </div>
-                        </div>
+                        {% endwith %}
+
 
                     </div>
 
-
-                {% endfor %}
-            </div>
-        {% endwith %}
-
-        <br><br>
-        {% trans "Select" as btn_text %}
-        {% with app_dict_regional as app_dict %}
-            <div class="row">
-                {% for app in app_dict %}
-
-                    <div class="card" href="{{ app_dict|lookup:app|lookup:"url" }}">
-                        <div class="card-body">
-                            <h4 class="card-title"> {{ app_dict|lookup:app|lookup:"title" }}</h4>
-                            <p class="card-img">
-                                <img class="card-img-top" src="{% static app_dict|lookup:app|lookup:"icon_path" %}" alt="Card image">
-                            </p>
-                            <p class="card-text">{{ app_dict|lookup:app|lookup:"description" }}</p>
-                            <div class="text-center" style="margin: auto">
-
-                                {% trans "access to this app requires special permissions" as permissions_msg %}
-                                {% trans "access to this app requires you to be logged in" as login_msg %}
-                                {% trans "this app is opened to all users" as open_msg %}
-
-                                {% if app_dict|lookup:app|lookup:"access" == "permission-required" %}
-                                    <span data-toggle="tooltip" title="{{ permissions_msg }}">
-                                                                            <img src="{% static 'img/icons/padlock.svg' %}" alt=""
-                                                                                 style="width: 25px">
-                                                                        </span>
-                                {% elif app_dict|lookup:app|lookup:"access" == "login-required" %}
-                                    <span data-toggle="tooltip" title="{{ login_msg }}">
-                                                                            <img src="{% static 'img/icons/user.svg' %}"
-                                                                                 alt="" style="width: 25px">
-                                                                        </span>
-                                {% else %}
-                                    <span class="" data-toggle="tooltip" title="{{ open_msg }}">
-                                                                            <img src="{% static 'img/icons/language.svg' %}" alt=""
-                                                                                 width="25px">
-                                                                        </span>
-                                {% endif %}
-                                {% if app_dict|lookup:app|lookup:"status" == "beta" %}
-                                    <span class="badge badge-pill badge-warning" style="font-size: small">
-                                                {% trans "beta" %}
-                                            </span>
-                                {% elif app_dict|lookup:app|lookup:"status" == "dev" %}
-                                    <span class="badge badge-pill badge-danger" style="font-size: small">
-                                                {% trans "dev" %}
-                                            </span>
-                                {% endif %}
-                            </div>
-                        </div>
-
-                    </div>
+                    <br><br>
 
 
-                {% endfor %}
-            </div>
-        {% endwith %}
+                    <div class="mb-5 center-col">
 
-
-    </div>
-
-
-    <br><br>
-
-
-
-    <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
-       href="https://unsplash.com/@nihthu?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-       target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Ahmed Nishaath"><span
-            style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg"
-                                                              style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
-                                                              viewBox="0 0 32 32"><title>unsplash-logo</title><path
-            d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Ahmed Nishaath</span></a>
-
-    <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
-       href="http://www.onlinewebfonts.com" target="_blank"
-       rel="noopener noreferrer" title="oNline Web Fonts"><span
-            style="display:inline-block;padding:2px 3px">
+                        <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+                           href="#" target="_blank"
+                           rel="noopener noreferrer" title="oNline Web Fonts"><span
+                                style="display:inline-block;padding:2px 3px">
         <svg xmlns="http://www.w3.org/2000/svg"
              style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
              viewBox="0 0 32 32"><title>unsplash-logo</title><path
                 d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span>
-        <span style="display:inline-block;padding:2px 3px">oNline Web Fonts</span></a>
+                            <span style="display:inline-block;padding:2px 3px">oNline Web Fonts</span></a>
+                        {% if build_number %}
+                            <div class="mb-3 mt-5">
+                                <p style="font-size: small">{{ build_number }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
 
     <script type="application/javascript">
 

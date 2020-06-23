@@ -27,7 +27,6 @@ def in_sar_search_group(user):
 
 
 class SARSearchAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_sar_search_group(self.request.user)
@@ -45,7 +44,7 @@ def in_sar_search_admin_group(user):
 
 
 class SARSearchAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_sar_search_admin_group(self.request.user)
@@ -232,7 +231,7 @@ class RegionPolygonDeleteView(SARSearchAdminRequiredMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def manage_rp_coords(request, region_polygon):
     qs = models.RegionPolygonPoint.objects.filter(region_polygon=region_polygon)
@@ -262,7 +261,7 @@ def manage_rp_coords(request, region_polygon):
     return render(request, 'sar_search/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def delete_rp_coord(request, pk):
     my_obj = models.RegionPolygonPoint.objects.get(pk=pk)
@@ -322,7 +321,6 @@ class SpeciesListView(SARSearchAccessRequiredMixin, FilterView):
             _("common_name_eng"))
 
     def get_context_data(self, **kwargs):
-
         context = super().get_context_data(**kwargs)
         context['my_object'] = models.Species.objects.first()
         context["field_list"] = [
@@ -370,7 +368,6 @@ class SpeciesDetailView(SARSearchAccessRequiredMixin, DetailView):
             'record_type',
             'year',
             'source',
-            'date_last_modified',
         ]
 
         return context
@@ -453,6 +450,7 @@ class RecordDetailView(SARSearchAccessRequiredMixin, DetailView):
             'record_type',
             'source',
             'year',
+            'notes',
             'last_modified_by',
             'date_last_modified',
         ]
@@ -473,7 +471,7 @@ class RecordDeleteView(SARSearchAdminRequiredMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def manage_coords(request, record):
     qs = models.RecordPoints.objects.filter(record=record)
@@ -510,7 +508,7 @@ def manage_coords(request, record):
     return render(request, 'sar_search/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def delete_coord(request, pk):
     my_obj = models.RecordPoints.objects.get(pk=pk)
@@ -565,7 +563,7 @@ class RecordImportFileView(SARSearchAdminRequiredMixin, UpdateView):
 
 # SETTINGS #
 ############
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def manage_taxa(request):
     qs = models.Taxon.objects.all()
@@ -578,7 +576,7 @@ def manage_taxa(request):
             return HttpResponseRedirect(reverse("sar_search:manage_taxa"))
     else:
         formset = forms.TaxonFormSet(queryset=qs)
-    context = {}
+    context = dict()
     context['title'] = "Manage Taxa"
     context['formset'] = formset
     context["my_object"] = qs.first()
@@ -590,7 +588,7 @@ def manage_taxa(request):
     return render(request, 'sar_search/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def delete_taxon(request, pk):
     my_obj = models.Taxon.objects.get(pk=pk)
@@ -598,7 +596,7 @@ def delete_taxon(request, pk):
     return HttpResponseRedirect(reverse("sar_search:manage_taxa"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def manage_statuses(request):
     qs = models.SpeciesStatus.objects.all()
@@ -626,7 +624,7 @@ def manage_statuses(request):
     return render(request, 'sar_search/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def delete_status(request, pk):
     my_obj = models.SpeciesStatus.objects.get(pk=pk)
@@ -634,7 +632,7 @@ def delete_status(request, pk):
     return HttpResponseRedirect(reverse("sar_search:manage_statuses"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def manage_schedules(request):
     qs = models.SARASchedule.objects.all()
@@ -660,7 +658,7 @@ def manage_schedules(request):
     return render(request, 'sar_search/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def delete_schedule(request, pk):
     my_obj = models.SARASchedule.objects.get(pk=pk)
@@ -732,7 +730,7 @@ class RegionDeleteView(SARSearchAdminRequiredMixin, DeleteView):
         return super().delete(request, *args, **kwargs)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def manage_appendices(request):
     qs = models.CITESAppendix.objects.all()
@@ -758,7 +756,7 @@ def manage_appendices(request):
     return render(request, 'sar_search/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def delete_appendix(request, pk):
     my_obj = models.CITESAppendix.objects.get(pk=pk)
@@ -766,7 +764,7 @@ def delete_appendix(request, pk):
     return HttpResponseRedirect(reverse("sar_search:manage_appendices"))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def manage_authorities(request):
     qs = models.ResponsibleAuthority.objects.all()
@@ -790,7 +788,7 @@ def manage_authorities(request):
     return render(request, 'sar_search/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_sar_search_admin_group, login_url='/accounts/denied/')
 def delete_authority(request, pk):
     my_obj = models.ResponsibleAuthority.objects.get(pk=pk)

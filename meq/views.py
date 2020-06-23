@@ -20,7 +20,7 @@
 # class IndexView(GroupRequiredMixin,TemplateView):
 #     template_name = 'grais/index.html'
 #     group_required = [u"grais_access",]
-#     login_url = '/accounts/login_required/'
+#
 #
 #
 # class DataFlowTemplateView(TemplateView):
@@ -36,7 +36,7 @@
 # class SampleListView(LoginRequiredMixin, FilterView):
 #     filterset_class = filters.SampleFilter
 #     template_name = "grais/sample_list.html"
-#     login_url = '/accounts/login_required/'
+#
 #
 #     # def get_filterset_kwargs(self, filterset_class):
 #     #     kwargs = super().get_filterset_kwargs(filterset_class)
@@ -46,7 +46,7 @@
 #
 # class SampleDetailView(LoginRequiredMixin, DetailView):
 #     model = models.Sample
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)
@@ -65,7 +65,7 @@
 # class SampleUpdateView(LoginRequiredMixin, UpdateView):
 #     model = models.Sample
 #     form_class = forms.SampleForm
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_initial(self):
 #         return {'last_modified_by': self.request.user}
@@ -73,7 +73,7 @@
 # class SampleCreateView(LoginRequiredMixin, CreateView):
 #     model = models.Sample
 #     form_class = forms.SampleForm
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_initial(self):
 #         return {'last_modified_by': self.request.user}
@@ -93,13 +93,13 @@
 #
 # class SampleNoteUpdateView(LoginRequiredMixin, UpdateView):
 #     model = models.SampleNote
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.SampleNoteForm
 #
 #
 # class SampleNoteCreateView(LoginRequiredMixin, CreateView):
 #     model = models.SampleNote
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.SampleNoteForm
 #
 #     def get_context_data(self, **kwargs):
@@ -128,12 +128,12 @@
 # class StationListView(LoginRequiredMixin, FilterView):
 #     filterset_class = filters.StationFilter
 #     template_name = "grais/station_list.html"
-#     login_url = '/accounts/login_required/'
+#
 #
 # class StationUpdateView(LoginRequiredMixin,  UpdateView):
 #     # permission_required = "__all__"
 #     raise_exception = True
-#     login_url = '/accounts/login_required/'
+#
 #     model = models.Station
 #     form_class = forms.StationForm
 #
@@ -142,7 +142,7 @@
 #
 # class StationCreateView(LoginRequiredMixin, CreateView):
 #     model = models.Station
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.StationForm
 #
 #     def get_initial(self):
@@ -150,7 +150,7 @@
 #
 # class StationDetailView(LoginRequiredMixin, UpdateView):
 #     model = models.Station
-#     login_url = '/accounts/login_required/'
+#
 #     fields =('__all__')
 #     template_name = 'grais/station_detail.html'
 #
@@ -174,14 +174,14 @@
 #
 # class PersonUpdateView(LoginRequiredMixin, UpdateView):
 #     model = models.Sampler
-#     login_url = '/accounts/login_required/'
+#
 #     fields =('__all__')
 #     template_name = 'grais/person_form_popout.html'
 #     success_url = reverse_lazy("grais:close_me")
 #
 # class PersonCreateView(LoginRequiredMixin, CreateView):
 #     model = models.Sampler
-#     login_url = '/accounts/login_required/'
+#
 #     fields =('__all__')
 #     template_name = 'grais/person_form_popout.html'
 #     success_url = reverse_lazy("grais:close_me")
@@ -189,7 +189,7 @@
 #
 # class PersonDetailView(LoginRequiredMixin, UpdateView):
 #     model = models.Sampler
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = 'grais/person_detail_popout.html'
 #     fields =('__all__')
 #
@@ -200,7 +200,7 @@
 # class ProbeMeasurementCreateView(LoginRequiredMixin, CreateView):
 #     model = models.ProbeMeasurement
 #     form_class = forms.ProbeMeasurementForm
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = 'grais/probe_measurement_form.html'
 #
 #     def get_initial(self):
@@ -214,13 +214,13 @@
 # class ProbeMeasurementDetailView(LoginRequiredMixin, UpdateView):
 #     model = models.ProbeMeasurement
 #     form_class = forms.ProbeMeasurementForm
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = 'grais/probe_measurement_detail.html'
 #
 # class ProbeMeasurementUpdateView(LoginRequiredMixin, UpdateView):
 #     model = models.ProbeMeasurement
 #     form_class = forms.ProbeMeasurementForm
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = 'grais/probe_measurement_form.html'
 #
 #     def get_initial(self):
@@ -247,7 +247,7 @@
 # class LineCreateView(LoginRequiredMixin, CreateView):
 #     model = models.Line
 #     form_class = forms.LineCreateForm
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = 'grais/line_form.html'
 #
 #     def get_initial(self):
@@ -276,7 +276,7 @@
 #
 # class LineDetailView(LoginRequiredMixin, DetailView):
 #     model = models.Line
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = 'grais/line_detail.html'
 #
 #     def get_context_data(self, **kwargs):
@@ -287,7 +287,7 @@
 # class LineUpdateView(LoginRequiredMixin, UpdateView):
 #     model = models.Line
 #     form_class = forms.LineForm
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_initial(self):
 #         return {'last_modified_by': self.request.user}
@@ -314,14 +314,14 @@
 # class SpeciesListView(LoginRequiredMixin, FilterView):
 #     template_name = "grais/species_list.html"
 #     filterset_class = filters.SpeciesFilter
-#     login_url = '/accounts/login_required/'
+#
 #     queryset = models.Species.objects.annotate(
 #         search_term=Concat('common_name', 'scientific_name', 'abbrev', output_field=TextField()))
 #
 # class SpeciesDetailView(LoginRequiredMixin, DetailView):
 #     model = models.Species
 #     fields = "__all__"
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_context_data(self, **kwargs):
 #         context = super(SpeciesDetailView, self).get_context_data(**kwargs)
@@ -337,7 +337,7 @@
 #
 # class SpeciesUpdateView(LoginRequiredMixin, UpdateView):
 #     model = models.Species
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.SpeciesForm
 #
 #     def get_initial(self):
@@ -345,7 +345,7 @@
 #
 # class SpeciesCreateView(LoginRequiredMixin, CreateView):
 #     model = models.Species
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.SpeciesForm
 #
 #     def get_initial(self):
@@ -353,7 +353,7 @@
 #
 # class SpeciesCreatePopoutView(LoginRequiredMixin, CreateView):
 #     model = models.Species
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.SpeciesForm
 #     template_name = 'grais/species_form_popout.html'
 #
@@ -382,7 +382,7 @@
 # class SurfaceDetailView(LoginRequiredMixin, UpdateView):
 #     model = models.Surface
 #     form_class = forms.SurfaceImageForm
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = 'grais/surface_detail.html'
 #
 #     def get_context_data(self, **kwargs):
@@ -399,7 +399,7 @@
 # class SurfaceUpdateView(LoginRequiredMixin, UpdateView):
 #     model = models.Surface
 #     form_class = forms.SurfaceForm
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_initial(self):
 #         return {'last_modified_by': self.request.user}
@@ -407,7 +407,7 @@
 # class SurfaceCreateView(LoginRequiredMixin, CreateView):
 #     model = models.Surface
 #     form_class = forms.SurfaceForm
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)
@@ -484,7 +484,7 @@
 #
 # class SpeciesObservationCreatePopoutView(LoginRequiredMixin,CreateView):
 #     template_name ='grais/species_obs_form_popout.html'
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.SurfaceSpeciesForm
 #
 #     def get_form_class(self):
@@ -607,7 +607,7 @@
 # class SurfaceSpeciesCreatePopoutView(LoginRequiredMixin,CreateView):
 #     model = models.SurfaceSpecies
 #     template_name ='grais/surface_species_form_popout.html'
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.SurfaceSpeciesForm
 #
 #     def get_initial(self):
@@ -677,11 +677,11 @@
 # class ReportListView(LoginRequiredMixin, FilterView):
 #     filterset_class = filters.ReportFilter
 #     template_name = "grais/report_list.html"
-#     login_url = '/accounts/login_required/'
+#
 #
 #
 # class ReportUpdateView(LoginRequiredMixin,  UpdateView):
-#     login_url = '/accounts/login_required/'
+#
 #     model = models.IncidentalReport
 #     form_class = forms.ReportForm
 #     template_name = "grais/report_form.html"
@@ -692,7 +692,7 @@
 #
 # class ReportCreateView(LoginRequiredMixin, CreateView):
 #     model = models.IncidentalReport
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.ReportForm
 #     template_name = "grais/report_form.html"
 #
@@ -702,7 +702,7 @@
 #
 # class ReportDetailView(LoginRequiredMixin, DetailView):
 #     model = models.IncidentalReport
-#     login_url = '/accounts/login_required/'
+#
 #     template_name = "grais/report_detail.html"
 #
 #     def get_context_data(self, **kwargs):

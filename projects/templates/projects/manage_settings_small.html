@@ -1,4 +1,4 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
@@ -141,10 +141,14 @@
                                     {% url 'projects:delete_program' form.instance.id as my_delete_url %}
                                 {% elif "level" in title|lower %}
                                     {% url 'projects:delete_level' form.instance.id as my_delete_url %}
+                                {% elif "theme" in title|lower %}
+                                    {% url 'projects:delete_theme' form.instance.id as my_delete_url %}
+                                {% elif "activity" in title|lower %}
+                                    {% url 'projects:delete_activity' form.instance.id as my_delete_url %}
                                 {% endif %}
 
                                 <a class="delete-btn" href="#" delete_url="{{ my_delete_url }}">
-                                    <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
+                                    <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete" width="20px">
                                 </a>
                             </td>
                         {% else %}

@@ -29,7 +29,7 @@ def in_masterlist_group(user):
 
 
 class MasterListAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_masterlist_group(self.request.user)
@@ -47,7 +47,7 @@ def in_masterlist_admin_group(user):
 
 
 class MasterListAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_masterlist_admin_group(self.request.user)
@@ -242,7 +242,7 @@ class OrganizationDeleteView(MasterListAdminRequiredMixin, DeleteView):
 class MemberCreateView(MasterListAccessRequiredMixin, CreateView):
     model = models.OrganizationMember
     template_name = 'masterlist/member_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.NewMemberForm
 
     def get_initial(self):
@@ -277,7 +277,7 @@ class MemberUpdateView(MasterListAccessRequiredMixin, UpdateView):
     model = models.OrganizationMember
     template_name = 'masterlist/member_form_popout.html'
     form_class = forms.MemberForm
-    login_url = '/accounts/login_required/'
+
 
     def form_valid(self, form):
         object = form.save()
@@ -378,7 +378,7 @@ class InstructionDeleteView(MasterListAdminRequiredMixin, DeleteView):
 class RecipientCreateView(MasterListAdminRequiredMixin, CreateView):
     model = models.ConsultationInstructionRecipient
     template_name = 'masterlist/recipient_form_popout.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.RecipientForm
 
     def get_initial(self):

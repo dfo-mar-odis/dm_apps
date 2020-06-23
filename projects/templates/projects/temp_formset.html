@@ -1,4 +1,4 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
@@ -24,13 +24,18 @@
             {% csrf_token %}
 
             {{ formset.management_form }}
-            {% bootstrap_formset_errors formset %}
+            {#            {% bootstrap_formset_errors formset %}#}
 
-            <table>
+            <table class="table-sm table-bordered table sortable" style="font-size: small">
                 <thead>
                 <tr>
                     {% for field in field_list %}
-                        {% if not field == "observation_type" %}
+                        {% if field == "programs" %}
+                            <th style="width: 20%;">{% get_verbose_label my_object field %}</th>
+{#                        {% elif field == "section" %}#}
+{#                            <th style="width: 10%;">{% get_verbose_label my_object field %}</th>#}
+
+                        {% else %}
                             <th scope="col">{% get_verbose_label my_object field %}</th>
                         {% endif %}
                     {% endfor %}
@@ -38,21 +43,17 @@
                 </thead>
                 <tbody>
                 {% for form in formset %}
-                    {% bootstrap_form_errors form %}
                     <tr>
+
+                        <td style="width: 20%">{{ form.instance.project_title }}</td>
+                        <td style="width: 15%">{{ form.instance.section }}</td>
+                        <td>{{ form.instance.project_leads }}</td>
+                        <td>{% get_field_value form.instance "programs" %}
+                        <td>{{ form.instance.funding_sources }}</td>
                         {% for field in form %}
-                            {% if not field.name == "observation_type" %}
-                                <td>
-                                    {% bootstrap_field field size='small' show_label=False placeholder="" %}
-                                </td>
-                            {% endif %}
-                        {% endfor %}
-                        {% for field in form %}
-                            {% if field.name == "observation_type" %}
-                                <td>
-                                    {% bootstrap_field field size='small' show_label=False placeholder="" %}
-                                </td>
-                            {% endif %}
+                            <td>
+                                {% bootstrap_field field size='small' show_label=False placeholder="" %}
+                            </td>
                         {% endfor %}
                         {% if form.instance.id %}
                         {% else %}

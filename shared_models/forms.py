@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core import validators
 from . import models
+chosen_js = {"class": "chosen-select-contains"}
 
 
 class SectionForm(forms.ModelForm):
@@ -12,6 +13,7 @@ class SectionForm(forms.ModelForm):
         ]
         widgets = {
             'last_modified_by': forms.HiddenInput(),
+            'head': forms.Select(attrs=chosen_js),
 
         }
 
@@ -37,7 +39,7 @@ class DivisionForm(forms.ModelForm):
         ]
         widgets = {
             'last_modified_by': forms.HiddenInput(),
-
+            'head': forms.Select(attrs=chosen_js),
         }
 
     def __init__(self, *args, **kwargs):
@@ -56,5 +58,19 @@ class BranchForm(forms.ModelForm):
         ]
         widgets = {
             'last_modified_by': forms.HiddenInput(),
+            'head': forms.Select(attrs=chosen_js),
+
+        }
+
+
+class RegionForm(forms.ModelForm):
+    class Meta:
+        model = models.Region
+        exclude = [
+            'date_last_modified',
+        ]
+        widgets = {
+            'last_modified_by': forms.HiddenInput(),
+            'head': forms.Select(attrs=chosen_js),
 
         }

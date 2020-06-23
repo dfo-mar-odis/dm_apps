@@ -6,7 +6,11 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User, Group
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.mail import send_mail
+import json
+
+from easy_pdf.views import PDFTemplateView
+
+from dm_apps.utils import custom_send_mail
 from django.db.models import Value, TextField, Q, Count
 from django.db.models.functions import Concat
 from django.shortcuts import render
@@ -19,6 +23,9 @@ from django.views.generic import ListView, UpdateView, DeleteView, CreateView, D
 
 ###
 from collections import OrderedDict
+
+from lib.functions.custom_functions import fiscal_year, listrify
+from shared_models.views import CommonDetailView
 from . import models
 from . import forms
 from . import filters
@@ -28,7 +35,7 @@ from . import reports
 from shared_models import models as shared_models
 
 
-# @login_required(login_url='/accounts/login_required/')
+# @login_required(login_url='/accounts/login/')
 # @user_passes_test(in_herring_group, login_url='/accounts/denied/')
 
 def in_inventory_dm_group(user):
@@ -39,7 +46,7 @@ def in_inventory_dm_group(user):
 
 def is_custodian_or_admin(user, resource_id):
     """returns True if user is a "custodian" in the specified resource"""
-    print(user.id, resource_id)
+    # print(user.id, resource_id)
     if user.id:
         # first, check to see if user is a dm admin
         if in_inventory_dm_group(user):
@@ -58,7 +65,6 @@ def is_custodian_or_admin(user, resource_id):
 
 
 class CustodianRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return is_custodian_or_admin(self.request.user, self.kwargs["pk"])
@@ -66,12 +72,12 @@ class CustodianRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect('/accounts/denied/custodians-only/')
+            return HttpResponseRedirect(reverse("accounts:denied_access", kwargs={
+                "message": _("Sorry, only custodians and system administrators have access to this view.")}))
         return super().dispatch(request, *args, **kwargs)
 
 
 class InventoryDMRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_inventory_dm_group(self.request.user)
@@ -83,17 +89,77 @@ class InventoryDMRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
         return super().dispatch(request, *args, **kwargs)
 
 
-# Create your views here.
-class CloserTemplateView(TemplateView):
-    template_name = 'inventory/close_me.html'
-
-
 # RESOURCE #
 ############
 
+class Index(TemplateView):
+    template_name = 'inventory/index.html'
+
+
+class OpenDataDashboardTemplateView(TemplateView):
+    template_name = 'inventory/open_data_dashboard.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        current_fy = shared_models.FiscalYear.objects.get(pk=fiscal_year(sap_style=True))
+        context["current_fy"] = current_fy
+        my_dict = dict()
+        qs = models.Resource.objects.all().order_by("-last_revision_date", "-fgp_publication_date")
+        my_dict["TOTAL"] = dict()
+        my_dict["TOTAL"]["qs_total"] = qs.count()
+        my_dict["TOTAL"]["qs_fgp"] = qs.filter(fgp_publication_date__isnull=False).count()
+        my_dict["TOTAL"]["qs_open_data"] = qs.filter(public_url__isnull=False).count()
+        my_dict["TOTAL"]["qs_open_data_current_fy"] = qs.filter(fgp_publication_date__isnull=False,
+                                                                publication_fy=current_fy, public_url__isnull=False).count()
+
+        for region in shared_models.Region.objects.all():
+            regional_qs = qs.filter(section__division__branch__region=region)
+            my_dict[region] = dict()
+            my_dict[region]["qs_total"] = regional_qs
+            my_dict[region]["qs_fgp"] = regional_qs.filter(fgp_publication_date__isnull=False)
+            my_dict[region]["qs_open_data"] = regional_qs.filter(public_url__isnull=False)
+            my_dict[region]["qs_open_data_current_fy"] = regional_qs.filter(fgp_publication_date__isnull=False,
+                                                                            publication_fy=current_fy,
+                                                                            public_url__isnull=False)
+
+        # unsorted
+        regional_qs = qs.filter(section__isnull=True)
+        my_dict["unsorted"] = dict()
+        my_dict["unsorted"]["qs_total"] = regional_qs
+        my_dict["unsorted"]["qs_fgp"] = regional_qs.filter(fgp_publication_date__isnull=False)
+        my_dict["unsorted"]["qs_open_data"] = regional_qs.filter(public_url__isnull=False)
+        my_dict["unsorted"]["qs_open_data_current_fy"] = regional_qs.filter(fgp_publication_date__isnull=False,
+                                                                            publication_fy=current_fy,
+                                                                            public_url__isnull=False)
+
+        context["my_dict"] = my_dict
+        context['field_list'] = [
+            "t_title|Title",
+            "section|DFO Section",
+            "last_publication|Published to Open Data",
+            "publication_fy|FY of latest publication",
+            "external_links|External links",
+        ]
+
+        od_keywords = [kw.non_hierarchical_name_en for r in qs.filter(public_url__isnull=False, fgp_publication_date__isnull=False) for kw
+                       in r.keywords.all()]
+        od_keywords_set = set(od_keywords)
+        frequency_list = list()
+        for kw in od_keywords_set:
+            frequency_list.append({
+                "text": kw,
+                "size": od_keywords.count(kw) * 10,
+            })
+
+        context["frequency_list"] = json.dumps(frequency_list)
+        # context["words"] = listrify([kw for kw in od_keywords])
+
+        return context
+
+
 class ResourceListView(FilterView):
     filterset_class = filters.ResourceFilter
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/resource_list.html'
     # queryset = models.Resource.objects.all().order_by("-status", "title_eng")
     queryset = models.Resource.objects.order_by("-status", "title_eng").annotate(
@@ -104,19 +170,14 @@ class ResourceListView(FilterView):
                            'purpose_eng',
                            Value(" "),
                            'uuid',
+                           Value(" "),
+                           'odi_id',
                            output_field=TextField()))
-
-    # def get_filterset_kwargs(self, filterset_class):
-    #     kwargs = super().get_filterset_kwargs(filterset_class)
-    #     # if kwargs["data"] is None:
-    #     #     kwargs["data"] = {"season": timezone.now().year }
-    #     print(kwargs['data'])
-    #     return kwargs
 
 
 class MyResourceListView(LoginRequiredMixin, ListView):
     model = models.Resource
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/my_resource_list.html'
 
     def get_queryset(self):
@@ -134,7 +195,7 @@ class MyResourceListView(LoginRequiredMixin, ListView):
             # "section",
             "roles|Role(s)",
             "last_certification|Previous time certified",
-            "completedness_rating|Completedness rating",
+            "completedness_rating|Completeness rating",
             "open_data|Published to Open Data",
             "external_links|External links",
         ]
@@ -172,6 +233,49 @@ class ResourceDetailView(DetailView):
             messages.info(self.request, "As {}, you have the necessary permissions to modify this record.".format(user_roles.first().role))
         elif in_inventory_dm_group(self.request.user):
             messages.info(self.request, _("As an application administrator, you have the necessary permissions to modify this record."))
+        context["google_api_key"] = settings.GOOGLE_API_KEY
+        return context
+
+
+class ResourceDetailPDFView(PDFTemplateView):
+    def get_pdf_filename(self):
+        my_object = models.Resource.objects.get(pk=self.kwargs.get("pk"))
+        return  f"{my_object.uuid}.pdf"
+
+    template_name = 'inventory/resource_detail_pdf.html'
+    field_list = [
+        'uuid',
+        'resource_type',
+        'section',
+        'title_eng',
+        'title_fre',
+        'status',
+        'maintenance',
+        'purpose_eng',
+        'purpose_fre',
+        'descr_eng',
+        'descr_fre',
+        'time_period|time period',
+        'security_classification',
+        'storage_envr_notes',
+        'distribution_formats',
+        'data_char_set',
+        'spat_representation',
+        'spat_ref_system',
+        'notes',
+        # 'citations',
+        # 'keywords',
+        # 'people',
+        # 'parent',
+        # 'date_last_modified',
+        # 'last_modified_by',
+    ]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["object"] = models.Resource.objects.get(pk=self.kwargs.get("pk"))
+        context["field_list"] = self.field_list
+        context["now"] = timezone.now()
         return context
 
 
@@ -188,7 +292,6 @@ class ResourceFullDetailView(UpdateView):
 class ResourceUpdateView(CustodianRequiredMixin, UpdateView):
     model = models.Resource
     form_class = forms.ResourceForm
-    login_url = '/accounts/login_required/'
 
     def get_initial(self):
         return {
@@ -213,7 +316,6 @@ class ResourceUpdateView(CustodianRequiredMixin, UpdateView):
 class ResourceCreateView(LoginRequiredMixin, CreateView):
     model = models.Resource
     form_class = forms.ResourceCreateForm
-    login_url = '/accounts/login_required/'
 
     def get_initial(self):
         return {
@@ -224,12 +326,12 @@ class ResourceCreateView(LoginRequiredMixin, CreateView):
         }
 
     def form_valid(self, form):
-        object = form.save()
+        my_object = form.save()
         if form.cleaned_data['add_custodian'] == True:
-            models.ResourcePerson.objects.create(resource_id=object.id, person_id=self.request.user.id, role_id=1)
+            models.ResourcePerson.objects.create(resource_id=my_object.id, person_id=self.request.user.id, role_id=1)
 
-        if form.cleaned_data['add_point_of_contact'] == True:
-            models.ResourcePerson.objects.create(resource_id=object.id, person_id=50, role_id=4)
+        # if form.cleaned_data['add_point_of_contact'] == True:
+        #     models.ResourcePerson.objects.create(resource_id=object.id, person_id=50, role_id=4)
 
         return super().form_valid(form)
 
@@ -247,7 +349,6 @@ class ResourceDeleteView(CustodianRequiredMixin, DeleteView):
     model = models.Resource
     success_url = reverse_lazy('inventory:resource_list')
     success_message = 'The data resource was successfully deleted!'
-    login_url = '/accounts/login_required/'
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
@@ -256,7 +357,7 @@ class ResourceDeleteView(CustodianRequiredMixin, DeleteView):
 
 class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Resource
-    login_url = '/accounts/login_required/'
+
     template_name = "inventory/resource_flag_deletion.html"
     form_class = forms.ResourceFlagging
 
@@ -275,13 +376,12 @@ class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
         if object.flagged_4_deletion:
             email = emails.FlagForDeletionEmail(self.object, self.request.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
-                send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                          recipient_list=email.to_list, fail_silently=False, )
-            else:
-                print('not sending email since in dev mode')
-                print("FROM={}; TO={}; SUBJECT={}; MESSAGE={}".format(email.from_email, email.to_list, email.subject,
-                                                                      email.message))
+            custom_send_mail(
+                subject=email.subject,
+                html_message=email.message,
+                from_email=email.from_email,
+                recipient_list=email.to_list
+            )
 
             messages.success(self.request,
                              'The data resource has been flagged for deletion and the regional data manager has been notified!')
@@ -292,7 +392,7 @@ class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
 
 class ResourcePublicationFlagUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Resource
-    login_url = '/accounts/login_required/'
+
     template_name = "inventory/resource_flag_publication.html"
     form_class = forms.ResourceFlagging
 
@@ -311,13 +411,12 @@ class ResourcePublicationFlagUpdateView(LoginRequiredMixin, UpdateView):
         if object.flagged_4_publication:
             email = emails.FlagForPublicationEmail(self.object, self.request.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
-                send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                          recipient_list=email.to_list, fail_silently=False, )
-            else:
-                print('not sending email since in dev mode')
-                print("FROM={}; TO={}; SUBJECT={}; MESSAGE={}".format(email.from_email, email.to_list, email.subject,
-                                                                      email.message))
+            custom_send_mail(
+                subject=email.subject,
+                html_message=email.message,
+                from_email=email.from_email,
+                recipient_list=email.to_list
+            )
             messages.success(self.request,
                              'The data resource has been flagged for publication and the regional data manager has been notified!')
         else:
@@ -331,6 +430,16 @@ class ResourcePublicationFlagUpdateView(LoginRequiredMixin, UpdateView):
 class ResourcePersonFilterView(CustodianRequiredMixin, FilterView):
     filterset_class = filters.PersonFilter
     template_name = "inventory/resource_person_filter.html"
+
+    def get_queryset(self):
+        return models.Person.objects.annotate(search_term=Concat(
+            'user__first_name',
+            Value(" "),
+            'user__last_name',
+            Value(" "),
+            'user__email',
+            output_field=TextField()
+        ))
 
     def test_func(self):
         return is_custodian_or_admin(self.request.user, self.kwargs["resource"])
@@ -376,13 +485,12 @@ class ResourcePersonCreateView(CustodianRequiredMixin, CreateView):
         if object.role.id == 1:
             email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
-                send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                          recipient_list=email.to_list, fail_silently=False, )
-            else:
-                print('not sending email since in dev mode')
-                print("FROM={}; TO={}; SUBJECT={}; MESSAGE={}".format(email.from_email, email.to_list, email.subject,
-                                                                      email.message))
+            custom_send_mail(
+                subject=email.subject,
+                html_message=email.message,
+                from_email=email.from_email,
+                recipient_list=email.to_list
+            )
             messages.success(self.request,
                              '{} has been added as {} and a notification email has been sent to them!'.format(
                                  object.person.full_name, object.role))
@@ -407,13 +515,12 @@ class ResourcePersonUpdateView(CustodianRequiredMixin, UpdateView):
         if object.role.id == 1:
             email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
-                send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                          recipient_list=email.to_list, fail_silently=False, )
-            else:
-                print('not sending email since in dev mode')
-                print("FROM={}; TO={}; SUBJECT={}; MESSAGE={}".format(email.from_email, email.to_list, email.subject,
-                                                                      email.message))
+            custom_send_mail(
+                subject=email.subject,
+                html_message=email.message,
+                from_email=email.from_email,
+                recipient_list=email.to_list
+            )
             messages.success(self.request,
                              '{} has been added as {} and a notification email has been sent to them!'.format(
                                  object.person.full_name, object.role))
@@ -440,13 +547,12 @@ class ResourcePersonDeleteView(CustodianRequiredMixin, DeleteView):
 
             email = emails.RemovedAsCustodianEmail(object.resource, object.person.user)
             # send the email object
-            if settings.PRODUCTION_SERVER:
-                send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                          recipient_list=email.to_list, fail_silently=False, )
-            else:
-                print('not sending email since in dev mode')
-                print("FROM={}; TO={}; SUBJECT={}; MESSAGE={}".format(email.from_email, email.to_list, email.subject,
-                                                                      email.message))
+            custom_send_mail(
+                subject=email.subject,
+                html_message=email.message,
+                from_email=email.from_email,
+                recipient_list=email.to_list
+            )
             messages.success(self.request,
                              '{} has been removed as {} and a notification email has been sent to them!'.format(
                                  object.person.full_name, object.role))
@@ -576,7 +682,7 @@ class PersonCreateViewPopout(LoginRequiredMixin, FormView):
         new_person.save()
 
         # finally close the form
-        return HttpResponseRedirect(reverse_lazy('inventory:close_me'))
+        return HttpResponseRedirect(reverse_lazy('shared_models:close_me'))
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -957,7 +1063,7 @@ class CitationCreateView(LoginRequiredMixin, CreateView):
         return HttpResponseRedirect(reverse('inventory:resource_detail', kwargs={'pk': self.kwargs['resource']}))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 def citation_delete(request, resource, citation):
     my_citation = models.Citation.objects.get(pk=citation)
     my_citation.delete()
@@ -971,12 +1077,12 @@ def citation_delete(request, resource, citation):
 class PublicationCreateView(LoginRequiredMixin, CreateView):
     model = models.Publication
     fields = "__all__"
-    login_url = '/accounts/login_required/'
+
     template_name = 'inventory/publication_form_popout.html'
 
     def form_valid(self, form):
         self.object = form.save()
-        return HttpResponseRedirect(reverse('inventory:close_me'))
+        return HttpResponseRedirect(reverse('shared_models:close_me'))
 
 
 # XML GOODNESS #
@@ -987,7 +1093,11 @@ def export_resource_xml(request, resource, publish):
     my_resource = models.Resource.objects.get(pk=resource)
 
     if publish == "yes":
-        my_resource.fgp_publication_date = timezone.now()
+        # if there is already a publication date, let's not overwrite it.
+        if my_resource.fgp_publication_date:
+            my_resource.last_revision_date = timezone.now()
+        else:
+            my_resource.fgp_publication_date = timezone.now()
         my_resource.flagged_4_publication = False
 
         my_resource.save()
@@ -1028,7 +1138,6 @@ class DataManagementHomeTemplateView(InventoryDMRequiredMixin, TemplateView):
 
 
 class DataManagementCustodianListView(InventoryDMRequiredMixin, TemplateView):
-    login_url = '/accounts/login_required/'
     template_name = 'inventory/dm_custodian_list.html'
 
     def get_context_data(self, **kwargs):
@@ -1055,7 +1164,6 @@ class DataManagementCustodianListView(InventoryDMRequiredMixin, TemplateView):
 
 
 class DataManagementCustodianDetailView(InventoryDMRequiredMixin, DetailView):
-    login_url = '/accounts/login_required/'
     template_name = 'inventory/dm_custodian_detail.html'
     model = models.Person
 
@@ -1078,14 +1186,12 @@ def send_certification_request(request, person):
     me = models.Person.objects.get(user=User.objects.get(pk=self.request.user.id))
     email = emails.CertificationRequestEmail(me, my_person)
     # send the email object
-    if settings.PRODUCTION_SERVER:
-        send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                  recipient_list=email.to_list, fail_silently=False, )
-    else:
-        print('not sending email since in dev mode')
-        print("FROM={}; TO={}; SUBJECT={}; MESSAGE={}".format(email.from_email, email.to_list, email.subject,
-                                                              email.message))
-
+    custom_send_mail(
+        subject=email.subject,
+        html_message=email.message,
+        from_email=email.from_email,
+        recipient_list=email.to_list
+    )
     my_person.user.correspondences.create(subject="Request for certification")
     messages.success(request, "the email has been sent and the correspondence has been logged!")
     return HttpResponseRedirect(reverse('inventory:dm_custodian_detail', kwargs={'pk': my_person.user_id}))
@@ -1208,14 +1314,12 @@ def send_section_report(request, section):
     me = models.Person.objects.get(user=request.user)
     email = emails.SectionReportEmail(me, head, my_section)
     # send the email object
-    if settings.PRODUCTION_SERVER:
-        send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                  recipient_list=email.to_list, fail_silently=False, )
-    else:
-        print('not sending email since in dev mode')
-        print("FROM={}; TO={}; SUBJECT={}; MESSAGE={}".format(email.from_email, email.to_list, email.subject,
-                                                              email.message))
-
+    custom_send_mail(
+        subject=email.subject,
+        html_message=email.message,
+        from_email=email.from_email,
+        recipient_list=email.to_list
+    )
     models.Correspondence.objects.create(custodian=head.user, subject="Section head report")
     messages.success(request, "the email has been sent and the correspondence has been logged!")
     return HttpResponseRedirect(reverse('inventory:dm_section_detail', kwargs={'pk': section}))
@@ -1447,6 +1551,17 @@ class DataResourceDeleteView(CustodianRequiredMixin, DeleteView):
         return reverse_lazy("inventory:resource_detail", kwargs={"pk": self.object.resource.id})
 
 
+@login_required(login_url='/accounts/login/')
+def data_resource_clone(request, pk):
+    my_object = models.DataResource.objects.get(pk=pk)
+    if is_custodian_or_admin(request.user, my_object.resource.id):
+        my_object.id = None
+        my_object.save()
+    else:
+        messages.error(request, _("Sorry, you do not have permissions to do this."))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
 # WEB SERVICES #
 ################
 
@@ -1504,6 +1619,17 @@ class WebServiceDeleteView(CustodianRequiredMixin, DeleteView):
         return reverse_lazy("inventory:resource_detail", kwargs={"pk": self.object.resource.id})
 
 
+@login_required(login_url='/accounts/login/')
+def web_service_clone(request, pk):
+    my_object = models.WebService.objects.get(pk=pk)
+    if is_custodian_or_admin(request.user, my_object.resource.id):
+        my_object.id = None
+        my_object.save()
+    else:
+        messages.error(request, _("Sorry, you do not have permissions to do this."))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
 # REPORTS #
 ###########
 
@@ -1526,6 +1652,8 @@ class ReportSearchFormView(InventoryDMRequiredMixin, FormView):
             return HttpResponseRedirect(reverse("inventory:export_batch_xml", kwargs={
                 'sections': sections,
             }))
+        if report == 2:
+            return HttpResponseRedirect(reverse("inventory:export_odi_report"))
 
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
@@ -1546,6 +1674,19 @@ def export_batch_xml(request, sections):
     # return HttpResponseRedirect(reverse("inventory:report_search"))
 
 
+@login_required()
+def export_odi_report(request):
+    # print(trip)
+    file_url = reports.generate_odi_report()
+    if os.path.exists(file_url):
+        with open(file_url, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = 'inline; filename="ODI Report {}.xlsx"'.format(
+                timezone.now().strftime("%Y-%m-%d"))
+            return response
+    raise Http404
+
+
 # def capacity_export_spreadsheet(request, fy=None, orgs=None):
 #     file_url = reports.generate_capacity_spreadsheet(fy, orgs)
 #
@@ -1562,7 +1703,7 @@ def export_batch_xml(request, sections):
 
 
 # this is a temp view DJF created to walkover the `program` field to the new `programs` field
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_inventory_dm_group, login_url='/accounts/denied/')
 def temp_formset(request, section):
     context = {}

@@ -1,26 +1,22 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 
 {% load bootstrap4 %}
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+        {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            <li class="breadcrumb-item"><a
-                    href="{% url 'inventory:resource_detail' object.id %}">{{ object.truncated_title }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{% if object.flagged_4_deletion %}Flag for
-                Deletion    {% else %}Unflag for Deletion   {% endif %}</li>
-        </ol>
-    </nav>
 
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                <li class="breadcrumb-item"><a
+                        href="{% url 'inventory:resource_detail' object.id %}">{{ object.truncated_title }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% if object.flagged_4_deletion %}Flag for
+                    Deletion    {% else %}Unflag for Deletion   {% endif %}</li>
+            </ol>
+        </nav>
 
         {% load static %}
 
@@ -56,7 +52,7 @@
                     <button type="submit" class="btn btn-lg btn-danger">Yes, Flag It!</button>
                 {% endif %}
 
-                <a class="btn btn-lg btn-secondary" href="{% url 'inventory:resource_detail' object.id %}">No, Forget
+                <a class="btn btn-lg btn-secondary" href="{{ request.META.HTTP_REFERER }}">No, Forget
                     it.</a>
             </p>
         </form>

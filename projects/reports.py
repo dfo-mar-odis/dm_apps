@@ -1,5 +1,7 @@
 from copy import deepcopy
+from lib.functions.custom_functions import fiscal_year
 
+import datetime
 import html2text as html2text
 import xlsxwriter as xlsxwriter
 from django.conf import settings
@@ -16,8 +18,496 @@ from . import models
 import os
 from shared_models import models as shared_models
 
-def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
 
+class StdReport:
+    target_dir = os.path.join(settings.BASE_DIR, 'media', 'projects', 'temp')
+    target_file = "temp_export.xlsx"
+    target_file_path = os.path.join(target_dir, target_file)
+    target_url = os.path.join(settings.MEDIA_ROOT, 'projects', 'temp', target_file)
+
+    formats = {
+        "section_header": {
+            'bold': True,
+            'border': 1,
+            'border_color': 'black',
+            "align": 'center',
+            "valign": 'top',
+            "text_wrap": True
+        },
+        "col_header": {
+            'bold': True,
+            'border': 1,
+            'border_color': 'black',
+            'bg_color': '#a6a6a6',
+            "align": 'center',
+            "text_wrap": True
+        },
+        "normal_text": {
+            "valign": 'top',
+            "align": 'left',
+            "text_wrap": True,
+            "border": 0,
+            "border_color": 'black',
+        },
+        "date_format": {
+            'num_format': "yy-mm-dd",
+            'align': 'left',
+        }
+    }
+
+    wb_format = {}
+
+    __workbook__ = None
+
+    __sheets__ = []
+
+    report_sections = "None"
+    report_divisions = "None"
+    report_regions = "None"
+    report_fiscal_year = "None"
+
+    def __init__(self, regions="None", divisions="None", sections="None", fiscal_year="None"):
+        self.report_regions = regions
+        self.report_divisions = divisions
+        self.report_sections = sections
+        self.report_fiscal_year = fiscal_year
+
+    def get_section_list(self):
+        # need to assemble a section list
+        #  first look at the sections arg; if not null, we don't need anything else
+        if self.report_sections != "None":
+            section_list = shared_models.Section.objects.filter(id__in=self.report_sections.split(","))
+        #  next look at the divisions arg; if not null, we don't need anything else
+        elif self.report_divisions != "None":
+            section_list = shared_models.Section.objects.filter(division_id__in=self.report_divisions.split(","))
+        #  next look at the divisions arg; if not null, we don't need anything else
+        elif self.report_regions != "None":
+            section_list = shared_models.Section.objects.filter(
+                division__branch__region_id__in=self.report_regions.split(","))
+        else:
+            section_list = shared_models.Section.objects.all()
+
+        return section_list
+
+    def get_workbook(self) -> xlsxwriter.Workbook:
+        if not self.__workbook__:
+            self.__workbook__ = xlsxwriter.Workbook(self.target_file_path, {'remove_timezone': True})
+
+        return self.__workbook__
+
+    def get_worksheet(self, title="Sheet1") -> xlsxwriter.Workbook.worksheet_class:
+        sheet = self.get_workbook().get_worksheet_by_name(title)
+        if not sheet:
+            sheet = self.get_workbook().add_worksheet(name=title)
+
+            sheets = [s['title'] for s in self.__sheets__]
+            if title not in sheets:
+                self.__sheets__.append({"title": title})
+
+        return sheet
+
+    def get_format(self, format_name):
+        # For some reason sometimes StdReport keeps a reference to wb_format, so it might remember a format, but
+        # that format isn't in the workbooks formats
+        if format_name not in self.wb_format or self.wb_format[format_name] not in self.get_workbook().formats:
+            self.wb_format[format_name] = self.get_workbook().add_format(self.formats[format_name])
+
+        return self.wb_format[format_name]
+
+    def create_headers(self):
+
+        sec_head = self.get_format("section_header")
+        col_head = self.get_format("col_header")
+        nor_text = self.get_format("normal_text")
+
+        for i in range(0, len(self.__sheets__)):
+            sh = self.__sheets__[i]
+            sheet = self.get_worksheet(title=sh['title'])
+
+            running_col_idx = 0
+            for i in range(0, len(sh['sub'])):
+                sec = sh['sub'][i]
+                subsec = sec['sub'] if 'sub' in sec else None
+
+                if subsec:
+                    for s in subsec:
+                        sheet.set_column(running_col_idx, running_col_idx,
+                                         (s['width'] if 'width' in s else 20),
+                                         (self.get_format(s["format"]) if "format" in s else nor_text)
+                                         )
+
+                    if len(subsec) > 1:
+                        sheet.merge_range(0, running_col_idx, 0, running_col_idx + (len(subsec) - 1), sec['title'],
+                                          sec_head)
+                    else:
+                        sheet.write_row(0, running_col_idx, [sec['title']], sec_head)
+
+                    subsec_array = [s["title"] for s in subsec]
+                    sheet.write_row(1, running_col_idx, subsec_array, col_head)
+
+                else:
+                    sheet.set_column(running_col_idx, running_col_idx,
+                                     (sec['width'] if 'width' in sec else 20),
+                                     (self.get_format(sec["format"]) if "format" in sec else nor_text)
+                                     )
+                    # if the section has no sub-sections, merge it with the column heading row
+                    sheet.merge_range(0, running_col_idx, 1, running_col_idx, sec['title'], sec_head)
+
+                running_col_idx += len(subsec) if subsec else 1
+
+    def add_section(self, section, worksheet='Sheet1'):
+        # create the worksheet if it doesn't exist and make sure it's added to the __sheets__ array
+        sheet = self.get_worksheet(title=worksheet)
+
+        sheet_meta = self.__sheets__[self.get_workbook().worksheets().index(sheet)]
+        if 'sub' not in sheet_meta:
+            sheet_meta['sub'] = list()
+
+        sheet_meta['sub'].append(section)
+
+
+class CovidReport(StdReport):
+
+    __sections__ = [
+        {
+            "title": "Original Project Information",
+            "sub": [
+                {
+                    "title": "Project/Activity title",
+                    "width": 50
+                },
+                {
+                    "title": "Project ID",
+                },
+                {
+                    "title": "Division",
+                },
+                {
+                    "title": "Section",
+                },
+                {
+                    "title": "Activity Type",
+                },
+                {
+                    "title": "# of DFO staff involved",
+                },
+                {
+                    "title": "# of non-DFO staff involved",
+                },
+                {
+                    "title": "Location(s) of activity",
+                },
+                {
+                    "title": "Original start date",
+                    "format": "date_format"
+                },
+                {
+                    "title": "Original end date",
+                    "format": "date_format"
+                },
+            ]
+        },
+        {
+            "title": "Recommendation",
+            "sub": [
+                {
+                    "title": "COVID Recommendation",
+                },
+                {
+                    "title": "Drop dead start date",
+                },
+                {
+                    "title": "Rationale",
+                },
+            ]
+        },
+        {
+            "title": "Analysis",
+            "sub": [
+                {
+                    "title": "Critical Service?",
+                },
+                {
+                    "title": "Able to maintain social distance?",
+                },
+                {
+                    "title": "Staffing?",
+                },
+                {
+                    "title": "Travel?",
+                },
+                {
+                    "title": "External services?",
+                },
+                {
+                    "title": "Timing",
+                },
+            ]
+        },
+        {
+            "title": "Impact",
+            "sub": [
+                {
+                    "title": "Impact of Ministerial Advice",
+                },
+                {
+                    "title": "Impact on Departmental Deliverables",
+                },
+                {
+                    "title": "Impact on Operations",
+                },
+            ]
+        },
+        {
+            "title": "Mitigation",
+            "sub": [
+                {
+                    "title": "Other measures to reduce risk",
+                },
+            ]
+        }
+    ]
+
+    __sheets__ = [
+        {
+            "title": "COVID Assessment",
+            "sub": __sections__
+        }
+    ]
+
+    def generate_spread_sheet(self):
+        self.create_headers()
+
+        # start on row 2 because sections is row 0, subsections is row 1
+        row = 2
+        sheet = self.get_worksheet(title=self.__sheets__[0]["title"])
+        row_format = list()
+        for s in self.__sections__:
+            if "sub" in s:
+                for c in s["sub"]:
+                    if "width" in c:
+                        col_idx = len(row_format)
+                        sheet.set_column(col_idx, col_idx, width=c["width"])
+                    row_format.append(self.get_format(c["format"] if "format" in c else "normal_text"))
+            else:
+                if "width" in s:
+                    col_idx = len(row_format)
+                    sheet.set_column(col_idx, col_idx, width=c["width"])
+                row_format.append(self.get_format(s["format"] if "format" in s else "normal_text"))
+
+        section_list = self.get_section_list()
+
+        project_list = models.Project.objects.all()
+
+        if section_list:
+            project_list = project_list.filter(section__in=section_list)
+
+        if self.report_fiscal_year != "None":
+            project_list = project_list.filter(year=self.report_fiscal_year)
+
+        for project in project_list:
+
+            staff = project.staff_members.all()
+            dfo_staff = staff.filter(employee_type__cost_type=1)
+            non_dfo_staff = staff.filter(employee_type__cost_type=2)
+
+            travel = "yes" if project.om_costs.filter(om_category__group=1, budget_requested__gt=0) else "No"
+
+            sheet.write(row, 0, project.project_title, row_format[0])
+            sheet.write(row, 1, project.pk, row_format[1])
+            sheet.write(row, 2, project.section.division.tname, row_format[2])
+            sheet.write(row, 3, project.section.tname, row_format[3])
+            sheet.write(row, 4, project.activity_type.name if project.activity_type else "", row_format[4])
+            sheet.write(row, 5, dfo_staff.count(), row_format[5])
+            sheet.write(row, 6, non_dfo_staff.count(), row_format[6])
+
+            sheet.write(row, 8, project.start_date.strftime("%Y-%m-%d") if project.start_date else "", row_format[8])
+            sheet.write(row, 9, project.end_date.strftime("%Y-%m-%d") if project.end_date else "", row_format[9])
+
+            sheet.write(row, 16, travel, row_format[16])
+            row += 1
+
+        self.get_workbook().close()
+
+
+def generate_funding_spreadsheet(fiscal_year, funding, regions, divisions, sections, omcatagory=None):
+    # figure out the filename
+    target_dir = os.path.join(settings.BASE_DIR, 'media', 'projects', 'temp')
+    target_file = "temp_export.xlsx"
+    target_file_path = os.path.join(target_dir, target_file)
+    target_url = os.path.join(settings.MEDIA_ROOT, 'projects', 'temp', target_file)
+
+    # create workbook and worksheets
+    workbook = xlsxwriter.Workbook(target_file_path)
+
+    # create formatting
+    header_format = workbook.add_format(
+        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#9ae0f5', "align": 'normal',
+         "text_wrap": True})
+    normal_format = workbook.add_format({"valign": 'top', "align": 'left', "text_wrap": True, 'border': 1,
+                                         'border_color': 'black', })
+
+    number_format = workbook.add_format({"valign": 'top', "align": 'left', 'border': 1,
+                                         'border_color': 'black', })
+    number_format.set_num_format(8)
+
+    # need to assemble a section list
+    #  first look at the sections arg; if not null, we don't need anything else
+    if sections != "None":
+        section_list = shared_models.Section.objects.filter(id__in=sections.split(","))
+    #  next look at the divisions arg; if not null, we don't need anything else
+    elif divisions != "None":
+        section_list = shared_models.Section.objects.filter(division_id__in=divisions.split(","))
+    #  next look at the divisions arg; if not null, we don't need anything else
+    elif regions != "None":
+        section_list = shared_models.Section.objects.filter(division__branch__region_id__in=regions.split(","))
+    else:
+        section_list = shared_models.Section.objects.all()
+
+    project_list = models.Project.objects.filter(year=fiscal_year, section__in=section_list)
+
+    if omcatagory and omcatagory != "None":
+        # get a list of OM Categories matching what the user selected in the web form
+        om_list = models.OMCategory.objects.filter(pk__in=omcatagory.split(','))
+
+        # Use the OMCost table to get a list of projects that have one of the categories assiged to it
+        om_costs_projects = [omc.project.pk for omc in models.OMCost.objects.filter(om_category__in=om_list,
+                                                                                    budget_requested__gt=0)]
+
+        # filter down the list of projects to projects in both the project list and in the OMCost list
+        project_list = project_list.filter(pk__in=om_costs_projects)
+
+        header = {"Project ID": [normal_format, 20], "Project Title": [normal_format, 20],
+                  "Project Leads": [normal_format, 20], "O&M Cost": [number_format, 20]}
+        # Use the header key as the col label, then use the array[0] for the col format and array[1] for col size
+        for om in om_list:
+            header[om.name] = [number_format, 20]
+        header["Project Objectives & Description"] = [normal_format, 150]
+
+        worksheet1 = workbook.add_worksheet(name="Submitted Projects")
+        write_funding_omcategory_sheet(worksheet1, header_format, header, project_list.filter(approved=False), om_list)
+
+        worksheet2 = workbook.add_worksheet(name="Approved Projects")
+        write_funding_omcategory_sheet(worksheet2, header_format, header, project_list.filter(approved=True), om_list)
+        workbook.close()
+    else:
+
+        # We're only using B-Base funding
+        # funding_type = models.FundingSourceType.objects.get(pk=funding)
+        # funding_src = models.FundingSource.objects.filter(name="SARA", funding_source_type=funding_type)
+        funding_src = models.FundingSource.objects.get(pk=funding)
+
+        project_list = project_list.filter(default_funding_source=funding_src)
+
+        # Use the header key as the col label, then use the array[0] for the col format and array[1] for col size
+        header = {
+            "Project ID": [normal_format, 20],
+            "Project Title": [normal_format, 20],
+            "Salary": [number_format, 20],
+            "O&M Cost": [number_format, 20],
+            "Capital Cost": [number_format, 20],
+            "Project Staff": [normal_format, 20],
+            "Start Date of Project": [normal_format, 20],
+            "End Date of Project": [normal_format, 20],
+            "Project-Specific Priorities": [normal_format, 150],
+            "Project Objectives & Description": [normal_format, 150],
+            "Project Deliverables / Activities": [normal_format, 150],
+            "Milestones": [normal_format, 150],
+            "Additional Notes": [normal_format, 150],
+        }
+
+        worksheet1 = workbook.add_worksheet(name="Submitted Projects")
+        write_funding_sheet(worksheet1, header_format, header, project_list.filter(approved=False), funding_src)
+
+        worksheet2 = workbook.add_worksheet(name="Approved Projects")
+        write_funding_sheet(worksheet2, header_format, header, project_list.filter(approved=True), funding_src)
+
+        workbook.close()
+
+    return target_url
+
+
+def write_funding_header(worksheet, header_format, header):
+    keys = [k for k in header.keys()]
+    worksheet.write_row(0, 0, keys, header_format)
+
+    for i in range(0, len(keys)):
+        worksheet.set_column(i, i, header[keys[i]][1], header[keys[i]][0])
+
+
+# used to generate a common sheet format
+def write_funding_omcategory_sheet(worksheet, header_format, header, projects, om_list):
+    write_funding_header(worksheet=worksheet, header_format=header_format, header=header)
+
+    row = 1
+    for project in projects:
+
+        prj_desc = html2text.html2text(project.description) if project.description else None
+
+        staff_leads = project.project_leads
+
+        om_cost = project.om_costs.aggregate(Sum("budget_requested"))
+
+        data = [
+            project.id,
+            project.project_title,
+            staff_leads,
+            nz(om_cost['budget_requested__sum'], 0),
+        ]
+        for om in om_list:
+            cost = {'budget_requested__sum': 0}
+            if project.om_costs.all().filter(om_category=om):
+                cost = project.om_costs.all().filter(om_category=om).aggregate(Sum("budget_requested"))
+            data.append(nz(cost['budget_requested__sum'], 0))
+
+        data.append(
+            prj_desc.replace("\n\n", "[_EOL_]").replace("\n", " ").replace("[_EOL_]", "\n\n") if prj_desc else "")
+
+        worksheet.write_row(row, 0, data)
+
+        row += 1
+
+
+# used to generate a common sheet format
+def write_funding_sheet(worksheet, header_format, header, projects, funding):
+    write_funding_header(worksheet=worksheet, header_format=header_format, header=header)
+
+    row = 1
+    for project in projects:
+        om_cost = project.om_costs.filter(funding_source=funding).aggregate(Sum("budget_requested"))
+
+        staff_list = project.staff_members.all()
+
+        staff_names = listrify([(staff.user if staff.user else staff.name) for staff in staff_list])
+        staff_cost = staff_list.filter(funding_source=funding).aggregate(Sum('cost'))
+
+        capital_cost = project.capital_costs.filter(funding_source=funding).aggregate(Sum("budget_requested"))
+
+        milestone = listrify([m.name + ": " + m.description for m in project.milestones.all()], "\n\n*")
+
+        data = [
+            project.id,
+            project.project_title,
+            nz(staff_cost['cost__sum'], 0),
+            nz(om_cost['budget_requested__sum'], 0),
+            nz(capital_cost['budget_requested__sum'], 0),
+            staff_names,
+            project.start_date.strftime('%Y-%m-%d') if project.start_date else "---",
+            project.end_date.strftime('%Y-%m-%d') if project.end_date else "---",
+            html2text.html2text(project.priorities).replace("\n\n", "[_EOL_]").replace("\n", " ").replace("[_EOL_]",
+                                                                                                          "\n\n"),
+            html2text.html2text(project.description).replace("\n\n", "[_EOL_]").replace("\n", " ").replace("[_EOL_]",
+                                                                                                           "\n\n"),
+            html2text.html2text(project.deliverables).replace("\n\n", "[_EOL_]").replace("\n", " ").replace("[_EOL_]",
+                                                                                                            "\n\n"),
+            milestone,
+            project.notes]
+        worksheet.write_row(row, 0, data)
+
+        row += 1
+
+
+def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
     # Upson, P - used by those weird Maritimes people because they have to be different <insert eye roll>
     mar_id = shared_models.Region.objects.get(name="Maritimes").pk
 
@@ -40,9 +530,11 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
         {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#9ae0f5', "align": 'normal',
          "text_wrap": True})
     header_format_centered = workbook.add_format(
-        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#9ae0f5', "align": 'center', "text_wrap": True})
+        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#9ae0f5', "align": 'center',
+         "text_wrap": True})
     divider_format = workbook.add_format(
-        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#d1dfe3', "align": 'left', "text_wrap": False, 'italic': True,
+        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#d1dfe3', "align": 'left', "text_wrap": False,
+         'italic': True,
          'num_format': '#,##0'})
     normal_num_format = workbook.add_format(
         {"align": 'left', "text_wrap": True, 'border': 1, 'border_color': 'black', 'num_format': '#,##0'})
@@ -128,14 +620,14 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                 program_id_list.extend([program.id for program in p.programs.all()])
         program_list = models.Program2.objects.filter(id__in=program_id_list).order_by("-is_core")
         for program in program_list:
-
             project_count = listrify([p.id for p in project_list.filter(programs=program)])
             leads = listrify(
                 list(set([str(staff.user) for staff in
                           models.Staff.objects.filter(project__in=project_list.filter(programs=program), lead=True) if
                           staff.user])))
             is_double_count = len(
-                [project for project in project_list.filter(programs=program).all() if project.programs.count() > 1]) > 0
+                [project for project in project_list.filter(programs=program).all() if
+                 project.programs.count() > 1]) > 0
 
             total_fte = models.Staff.objects.filter(
                 project__in=project_list.filter(programs=program)
@@ -250,7 +742,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
     i = 4
     for s in section_list.order_by("division", "name"):
         # get a list of projects..
-        project_list = s.projects.filter(year=fiscal_year, submitted=True, section_head_approved=True, programs__is_core=True).order_by("id")
+        project_list = s.projects.filter(year=fiscal_year, submitted=True, section_head_approved=True,
+                                         programs__is_core=True).order_by("id")
         for project in set(project_list):
             core_flex = "/".join(list(set(([program.get_is_core_display() for program in project.programs.all()]))))
             leads = listrify(
@@ -288,10 +781,12 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                 ).order_by("cost").aggregate(dsum=Sum("cost"))['dsum']
 
                 other_om = models.OMCost.objects.filter(project=project, funding_source=source
-                                                        ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
+                                                        ).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))['dsum']
 
                 capital = models.CapitalCost.objects.filter(project=project, funding_source=source
-                                                            ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
+                                                            ).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))['dsum']
 
                 total_salary += nz(staff_salary, 0)
                 total_om += nz(staff_om, 0) + nz(other_om, 0)
@@ -327,7 +822,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                     project__in=project_list, funding_source=source
                 ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
                 capital = models.CapitalCost.objects.filter(
-                    project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))[
+                    project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))[
                     'dsum']
 
                 total_salary += nz(staff_salary, 0)
@@ -378,7 +874,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                 project__in=projects, funding_source=source
             ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
             capital = models.CapitalCost.objects.filter(
-                project__in=projects, funding_source=source).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))[
+                project__in=projects, funding_source=source).order_by("budget_requested").aggregate(
+                dsum=Sum("budget_requested"))[
                 'dsum']
 
             total_salary += nz(staff_salary, 0)
@@ -445,7 +942,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
         if regions == str(mar_id):
             project_list = s.projects.filter(year=fiscal_year, submitted=True, programs__is_core=False).order_by("id")
         else:
-            project_list = s.projects.filter(year=fiscal_year, submitted=True, section_head_approved=True, programs__is_core=False).order_by("id")
+            project_list = s.projects.filter(year=fiscal_year, submitted=True, section_head_approved=True,
+                                             programs__is_core=False).order_by("id")
 
         for project in set(project_list):
             core_flex = "/".join(list(set(([program.get_is_core_display() for program in project.programs.all()]))))
@@ -485,10 +983,12 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                 ).order_by("cost").aggregate(dsum=Sum("cost"))['dsum']
 
                 other_om = models.OMCost.objects.filter(project=project, funding_source=source
-                                                        ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
+                                                        ).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))['dsum']
 
                 capital = models.CapitalCost.objects.filter(project=project, funding_source=source
-                                                            ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))[
+                                                            ).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))[
                     'dsum']
 
                 total_salary += nz(staff_salary, 0)
@@ -527,7 +1027,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                     project__in=project_list, funding_source=source
                 ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
                 capital = models.CapitalCost.objects.filter(
-                    project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))[
+                    project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))[
                     'dsum']
 
                 total_salary += nz(staff_salary, 0)
@@ -558,9 +1059,14 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
     for division in list(set(division_list)):
 
         if regions == str(mar_id):
-            project_list = models.Project.objects.filter(section__division=division).filter(year=fiscal_year, submitted=True, programs__is_core=False)
+            project_list = models.Project.objects.filter(section__division=division).filter(year=fiscal_year,
+                                                                                            submitted=True,
+                                                                                            programs__is_core=False)
         else:
-            project_list = models.Project.objects.filter(section__division=division).filter(year=fiscal_year, submitted=True, section_head_approved=True, programs__is_core=False)
+            project_list = models.Project.objects.filter(section__division=division).filter(year=fiscal_year,
+                                                                                            submitted=True,
+                                                                                            section_head_approved=True,
+                                                                                            programs__is_core=False)
 
         j = 9
         # worksheet2.write(i, j, division.name, summary_right_format)
@@ -581,7 +1087,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                 project__in=project_list, funding_source=source
             ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
             capital = models.CapitalCost.objects.filter(
-                project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))[
+                project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(
+                dsum=Sum("budget_requested"))[
                 'dsum']
 
             total_salary += nz(staff_salary, 0)
@@ -600,7 +1107,6 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
         j += 1
         worksheet3.write(i, j, zero2val(total_capital, '--'), summary_left_format)
         i += 1
-
 
     # 4) spreadsheet: No Gos#
     #############################
@@ -652,7 +1158,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
         if regions == str(mar_id):
             project_list = s.projects.filter(year=fiscal_year).filter(Q(submitted=False)).order_by("id")
         else:
-            project_list = s.projects.filter(year=fiscal_year).filter(Q(submitted=False) | Q(section_head_approved=False)).order_by("id")
+            project_list = s.projects.filter(year=fiscal_year).filter(
+                Q(submitted=False) | Q(section_head_approved=False)).order_by("id")
 
         for project in set(project_list):
             core_flex = "/".join(list(set(([program.get_is_core_display() for program in project.programs.all()]))))
@@ -695,10 +1202,12 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                 ).order_by("cost").aggregate(dsum=Sum("cost"))['dsum']
 
                 other_om = models.OMCost.objects.filter(project=project, funding_source=source
-                                                        ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
+                                                        ).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))['dsum']
 
                 capital = models.CapitalCost.objects.filter(project=project, funding_source=source
-                                                            ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))[
+                                                            ).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))[
                     'dsum']
 
                 total_salary += nz(staff_salary, 0)
@@ -737,7 +1246,8 @@ def generate_dougs_spreadsheet(fiscal_year, regions, divisions, sections):
                     project__in=project_list, funding_source=source
                 ).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))['dsum']
                 capital = models.CapitalCost.objects.filter(
-                    project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(dsum=Sum("budget_requested"))[
+                    project__in=project_list, funding_source=source).order_by("budget_requested").aggregate(
+                    dsum=Sum("budget_requested"))[
                     'dsum']
 
                 total_salary += nz(staff_salary, 0)
@@ -826,7 +1336,10 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
             verbose_field_name(project_list.first(), 'project_title'),
             "Section",
             "Division",
-            verbose_field_name(project_list.first(), 'programs'),
+            verbose_field_name(project_list.first(), 'activity_type'),
+            verbose_field_name(project_list.first(), 'default_funding_source'),
+            verbose_field_name(project_list.first(), 'functional_group'),
+            "Theme",
             verbose_field_name(project_list.first(), 'tags'),
             "Coding",
             verbose_field_name(project_list.first(), 'status'),
@@ -841,9 +1354,7 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
             verbose_field_name(project_list.first(), 'data_sharing'),
             verbose_field_name(project_list.first(), 'data_storage'),
             verbose_field_name(project_list.first(), 'metadata_url'),
-            verbose_field_name(project_list.first(), 'regional_dm'),
             verbose_field_name(project_list.first(), 'regional_dm_needs'),
-            verbose_field_name(project_list.first(), 'sectional_dm'),
             verbose_field_name(project_list.first(), 'sectional_dm_needs'),
             verbose_field_name(project_list.first(), 'vehicle_needs'),
             verbose_field_name(project_list.first(), 'it_needs'),
@@ -856,7 +1367,9 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
             'Total Capital',
             'Total G&Cs',
             verbose_field_name(project_list.first(), 'submitted'),
-            verbose_field_name(project_list.first(), 'section_head_approved'),
+            verbose_field_name(project_list.first(), 'approved'),
+            verbose_field_name(project_list.first(), 'notes'),
+            verbose_field_name(project_list.first(), 'meeting_notes'),
 
         ]
 
@@ -881,10 +1394,10 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
                 # exclude full time employees
                 if staff.employee_type.id != 1 or staff.employee_type.id != 6:
                     # if salary
-                    if staff.employee_type.cost_type is 1:
+                    if staff.employee_type.cost_type == 1:
                         salary_total += nz(staff.cost, 0)
                     # if o&M
-                    elif staff.employee_type.cost_type is 2:
+                    elif staff.employee_type.cost_type == 2:
                         om_total += nz(staff.cost, 0)
 
                 # include only FTEs
@@ -916,7 +1429,8 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
 
             try:
                 lead = str(
-                    ["{} {}".format(lead.user.first_name, lead.user.last_name) for lead in p.staff_members.filter(lead=True)]).replace(
+                    ["{} {}".format(lead.user.first_name, lead.user.last_name) for lead in
+                     p.staff_members.filter(lead=True)]).replace(
                     "[", "").replace("]", "").replace("'", "").replace('"', "")
             except:
                 lead = "n/a"
@@ -954,9 +1468,12 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
             data_row = [
                 p.id,
                 p.project_title,
-                division,
                 section,
-                programs,
+                division,
+                str(p.activity_type),
+                str(p.default_funding_source),
+                str(p.functional_group),
+                str(p.functional_group.theme) if p.functional_group else "",
                 tags,
                 p.coding,
                 status,
@@ -971,9 +1488,7 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
                 html2text.html2text(nz(p.data_sharing, "")),
                 html2text.html2text(nz(p.data_storage, "")),
                 p.metadata_url,
-                p.regional_dm,
                 html2text.html2text(nz(p.regional_dm_needs, "")),
-                p.sectional_dm,
                 html2text.html2text(nz(p.sectional_dm_needs, "")),
                 html2text.html2text(nz(p.vehicle_needs, "")),
                 html2text.html2text(nz(p.it_needs, "")),
@@ -986,7 +1501,9 @@ def generate_master_spreadsheet(fiscal_year, regions, divisions, sections, user=
                 capital_total,
                 gc_total,
                 yesno(p.submitted),
-                yesno(p.section_head_approved),
+                yesno(p.approved),
+                html2text.html2text(nz(p.notes, "")),
+                html2text.html2text(nz(p.meeting_notes, "")),
             ]
 
             # adjust the width of the columns based on the max string length in each col
@@ -1025,7 +1542,8 @@ def generate_program_list():
     # create formatting variables
     title_format = workbook.add_format({'bold': True, "align": 'normal', 'font_size': 24, })
     header_format = workbook.add_format(
-        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#D6D1C0', "align": 'normal', "text_wrap": True})
+        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#D6D1C0', "align": 'normal',
+         "text_wrap": True})
     total_format = workbook.add_format({'bold': True, "align": 'left', "text_wrap": True, 'num_format': '$#,##0'})
     normal_format = workbook.add_format({"align": 'left', "text_wrap": True, })
 

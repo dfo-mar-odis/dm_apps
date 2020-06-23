@@ -1,0 +1,29 @@
+{% extends "shared_models/generic_confirm_delete.html" %}
+
+{% block jquery_import %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block bug_create %}
+    {% include "travel/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+    {% include "travel/base/_app_title.html" %}
+    {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block header %}
+    {{ block.super }}
+    {% include "travel/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+    {{ block.super }}
+{% endblock body %}
+
+{% block left_auth %}
+    {% include "travel/base/_nav_left_auth.html" %}
+{% endblock left_auth %}
+
+

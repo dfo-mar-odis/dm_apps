@@ -1,10 +1,15 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load humanize %}
 {% load bootstrap4 %}
 {% load el_pagination_tags %}
 {% load i18n %}
 {% load custom_filters %}
+
+{% block subtitle %}
+    - {% trans "Resources" %}
+{% endblock %}
+
 {% block content %}
 
     <style>
@@ -18,7 +23,20 @@
 
     </style>
 
-    <div class="indent-lg">
+
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'inventory:index' %}">
+                        {% trans "Home" %}
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    {% trans "Full Calalogue" %}
+                </li>
+            </ol>
+        </nav>
 
         <p>
         <h1>Data Resource Inventory </h1>
@@ -54,7 +72,7 @@
                 {% show_pages %}
                 <em>{% trans "displaying" %} {{ filter_list.count }} {% trans "of" %} {{ filter.qs.count }}</em>
             </div>
-            <div class="col" style="text-align: right">
+            <div class="col mb-2" style="text-align: right">
                 <a href="{% url 'inventory:resource_new' %}" class="btn btn-sm btn-primary">New Resource</a>
             </div>
         </div>
@@ -66,7 +84,7 @@
                 <th scope="col">
                     {% trans "Region" %}
                 </th>
-                <th scope="col" style="width: 35%">
+                <th scope="col" style="width: 30%">
                     {% trans "Title" %}
                 </th>
                 <th scope="col">
@@ -79,13 +97,16 @@
                     {% trans "Previous time certified" %}
                 </th>
                 <th scope="col">
-                    {% trans "Completedness Rating" %}
+                    {% trans "Completeness Rating" %}
                 </th>
                 <th scope="col">
                     {% trans "Translation Needed" %}
                 </th>
                 <th scope="col">
-                    {% trans "Published to Open Data?" %}
+                    {% trans "Published to FGP?" %}
+                </th>
+                <th scope="col">
+                    {% trans "Open Data Inventory ID" %}
                 </th>
                 <th scope="col" colspan="2">
                     {% trans "External Links" %}
@@ -124,6 +145,9 @@
                     <td>{{ obj.translation_needed|yesno }}</td>
                     <td>
                         {{ obj.fgp_publication_date|yesno:"yes,no,no" }}
+                    </td>
+                    <td>
+                        {{ obj.odi_id|nz:"---" }}
                     </td>
                     <td>
                         {% if obj.fgp_url %}

@@ -1,0 +1,92 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+<style>
+</style>
+
+<div class="card mb-2">
+    <h3 class="card-header bg-outline-dark">
+        {% trans "ADM - Approve / Deny Traveller Requests" %}
+    </h3>
+
+    <div class="card-body">
+        <div class="card-text">
+
+            <table class="table table-sm table-bordered">
+                <thead>
+                <th style="width: 150px;">{% trans "Name" %}</th>
+                <th>{% trans "Region" %}</th>
+                <th style="width: 100px;">{% trans "Request type" %}</th>
+                <th style="width: 150px;">{% trans "Trip request status" %}</th>
+                <th style="width: 200px;">{% trans "ADM decision for traveller" %}</th>
+                <th>{% trans "Regional recommendation notes" %}</th>
+                <th style="width: 150px;">{% trans "Approve / Deny" %}</th>
+                </thead>
+                <tbody>
+                {% for item in adm_tr_list %}
+                    <tr id="{{ item.trip_request.id }}">
+                        <td>
+                            {{ item.trip_request.requester_name }}
+                        </td>
+                        <td>
+                            {{ item.trip_request.smart_section.division.branch.region }}
+                        </td>
+                        <td>
+                            {% if item.trip_request.parent_request %}
+                                {% trans "Group" %}
+                            {% else %}
+                                {% trans "Individual" %}
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            <span style="background-color: {{ item.trip_request.smart_status.color }}">
+                            {{ item.trip_request.status_string }}
+                            </span>
+                        </td>
+
+                        <td>
+                        <span style="background-color: {{ item.trip_request.adm.status.color }}">{{ item.trip_request.adm.status }}</span>
+                        {% if item.trip_request.adm.comments %}
+                            &mdash;
+                            {{ item.trip_request.adm.comments }}
+                        {% endif %}
+
+                        </td>
+                        <td>
+                            {{ item.trip_request.smart_recommendation_notes }}
+                        </td>
+                        <td>
+                            {% if item.reviewer %}
+                                {% if item.trip_request.status_id != 14 %}
+                                    <em>{% trans "Decision made" %}</em>
+                                {% else %}
+                                    <div class="btns">
+                                        <a href="#{{ item.trip_request.id }}"
+                                           pop-href="{% url 'travel:tr_review_adm_update' item.reviewer.id 1 %}"
+                                           class="btn btn-sm btn-success py-0  px-1">{% trans "Approve" %}</a>
+                                        <a href="#{{ item.trip_request.id }}"
+                                           pop-href="{% url 'travel:tr_review_adm_update' item.reviewer.id 0 %}"
+                                           class="btn btn-sm btn-danger py-0 px-1">{% trans "Deny" %}</a>
+                                    </div>
+                                {% endif %}
+                            {% else %}
+                                <em>{% trans "Not at ADM Level" %}</em>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+<br><br>

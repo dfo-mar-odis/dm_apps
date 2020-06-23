@@ -1,0 +1,85 @@
+{% extends "spring_cleanup/spring_cleanup_base.html" %}
+{% load static %}
+{% load i18n %}
+{% load verbose_names %}
+{% load bootstrap4 %}
+{% block header %}
+    {#    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">#}
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+    <style>
+        body {
+            background-image: url("{% static 'spring_cleanup/img/sky.jpg' %}");
+            background-size: cover;
+        }
+
+        .mytitle {
+            font-family: 'Gloria Hallelujah', cursive;
+
+        }
+
+        #map {
+            height: 300px;
+        }
+
+        .breadcrumb {
+            opacity: 70%;
+        }
+
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'spring_cleanup:index' %}">
+                    {% trans "Home" %}
+                </a>
+            </li>
+
+            <li class="breadcrumb-item">
+                <a href="{% url 'spring_cleanup:route_detail' object.route.id %}">
+                    {{ object.route }}
+                </a>
+            </li>
+
+            <li class="breadcrumb-item active" aria-current="page">
+                {% blocktrans with object.id as id %}
+                    {{ object }}
+                {% endblocktrans %}
+            </li>
+
+        </ol>
+    </nav>
+
+
+
+    <br><br>
+
+    <div class="container">
+        <h1>{{ object.route }} - {{ object }}</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {% bootstrap_field field placeholder="" %}
+
+            {% endfor %}
+
+
+            <br><br>
+            <div class="btn-group">
+                <input type="submit" class="btn btn-primary" value="{% trans "Save" %}">
+                <a class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">{% trans "Cancel" %}</a>
+
+
+            </div>
+
+        </form>
+        <br>
+
+    </div>
+
+{% endblock %}
+

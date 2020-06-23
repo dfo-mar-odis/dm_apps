@@ -1,0 +1,50 @@
+{% load verbose_names %}
+{% load i18n %}
+
+ <div class="card border border-dark my-1">
+    <div class="card-header h5">
+        <div class="row align-items-center">
+            <span class="col">
+                <a href="#fs-list-channels" data-toggle="collapse">{% trans 'Channel Information' %}</a>
+            </span>
+            <span class="px-1">
+                <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_rci' rec.pk 'pop' %}','id_channels')" title="{% trans 'Add' %}">{% trans 'Add Channel Information' %}</a>
+            </span>
+        </div>
+    </div>
+    <div class="card-body collapse" id="fs-list-channels">
+        <div class="card-text" id="id_channels">
+            <table class="table">
+                <thead>
+                <tr><th>{% trans 'Name' %}</th><th>{% trans 'Size (Gb)' %}</th><th>{% trans 'Gain' %}</th><th>{% trans 'Volts' %}</th></tr></thead>
+                <tbody>
+            {% for rci in rec.channels.all %}
+            <tr><td>{{rci.rci_name}}</td><td>{{rci.rci_size}}</td><td>{{rci.rci_gain}}</td><td>{{rci.rci_volts}}</td></tr>
+            {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="card border border-dark my-1">
+    <div class="card-header h5">
+        <div class="row align-items-center">
+            <span class="col">
+                <a href="#fs-list-events" data-toggle="collapse">{% trans 'Recording Events' %}</a>
+            </span>
+            <span class="px-1">
+                <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_ree' rec.pk 'pop' %}','id_events')" title="{% trans 'Add' %}">{% trans 'Add Recording Event' %}</a>
+            </span>
+        </div>
+    </div>
+    <div class="card-body collapse" id="fs-list-events">
+        <div class="card-text" id="id_events">
+            <ul>
+            {% for ree in rec.events.all %}
+            <li>{{ree.ret_id.ret_name}} : {{ree.rec_id}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

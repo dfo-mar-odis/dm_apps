@@ -60,23 +60,16 @@
 
 
                 <h3>Added:</h3>
-                <table class="table table-bordered ">
+                <table class="table table-bordered table-hover">
                     <thead class="full-table">
                     <th>Species name</th>
                     <th>Coverage (%)</th>
                     </thead>
                     <tbody>
                     {% for s in surface_spp %}
-                        <tr>
+                        <tr href="{% url 'grais:surface_spp_edit_pop' s.id %}" pop>
                             <td>{{ s.species.common_name }} (<em>{{ s.species.scientific_name }}</em>)</td>
                             <td>{{ s.percent_coverage|percentage }}</td>
-                            <td>
-                                <a href="#"
-                                   onclick="return popitup('{% url 'grais:surface_spp_edit_pop' s.id %}','surfaceSpeciesEdit')">
-                                    <img src="{% static "/admin/img/icon-changelink.svg" %}" data-toggle="tooltip"
-                                         title="Edit">
-                                </a>
-                            </td>
                             <td>
                                 <a class="delete-me" href="#" val="{{ s.id }}">
                                     <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
@@ -118,7 +111,8 @@
     <script type="application/javascript">
         var speciesList = {{ species_list |safe }};
 
-        $(".delete-me").click(function () {
+        $(".delete-me").click(function (e) {
+            e.stopImmediatePropagation();
             var objectId = $(this)[0].getAttribute("val");
 
             var userInput = "";
@@ -127,9 +121,9 @@
 
             }
             if (userInput === "y") {
-                $("#secrect-delete-btn-" + objectId)[0].click();
+                window.location.href = $("#secrect-delete-btn-" + objectId).attr("href");
             }
-        })
+        });
 
 
         $(document).ready(function () {

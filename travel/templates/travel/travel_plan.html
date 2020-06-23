@@ -71,10 +71,6 @@
         padding-bottom: 5px;
     }
 
-    th.wset, td.wset {
-        width: 100px;
-    }
-
 
 </style>
 
@@ -92,8 +88,8 @@
                 <table class="real">
                     <tr class="real">
                         <th style="width: 100px; text-align: right;" class="real">Period Covered:</th>
-                        <td style="width: 200px; text-align: center;" class="real">{{ object.start_date|date:"F d, Y" }}
-                            to {{ object.end_date|date:"F d, Y" }}</td>
+                        <td style="width: 200px; text-align: center;" class="real">{{ parent.start_date|date:"F d, Y" }}
+                            to {{ parent.end_date|date:"F d, Y" }}</td>
                     </tr>
                 </table>
             </div>
@@ -101,7 +97,7 @@
                 <table class="real">
                     <tr class="real">
                         <th style="width: 100px; text-align: right;" class="real">Plan number (optional):</th>
-                        <td style="width: 200px; text-align: center;" class="real">{{ object.plan_number }}</td>
+                        <td style="width: 200px; text-align: center;" class="real">{{ parent.plan_number }}</td>
                     </tr>
                 </table>
             </div>
@@ -113,30 +109,30 @@
                     </tr>
                     <tr>
                         <th style="width: 100px; text-align: right;" class="real">Name of Traveller:</th>
-                        <td style="width: 200px; text-align: left;" class="real">{{ object.first_name }} {{ object.last_name }}</td>
+                        <td style="width: 200px; text-align: left;" class="real">{{ parent.first_name }} {{ parent.last_name }}</td>
                         <th style="width: 200px; text-align: left;" class="real">Public Servant: choose yes or no below</th>
                     </tr>
                     <tr>
                         <th style="width: 100px; text-align: right;" class="real">Region/Sector/Branch/<br>Directorate/Section:</th>
                         <td style="width: 200px; text-align: left;"
-                            class="real">{{ object.section.division.branch.region.name }}/{{ object.section.division.branch.name }}/{{ object.section.division.name }}/{{ object.section.name }}</td>
-                        <td style="width: 200px; text-align: left;" class="real">{{ object.is_public_servant|yesno }}</td>
+                            class="real">{{ parent.section.division.branch.region.name }}/{{ parent.section.division.branch.name }}/{{ parent.section.division.name }}/{{ parent.section.name }}</td>
+                        <td style="width: 200px; text-align: left;" class="real">{{ parent.is_public_servant|yesno }}</td>
                     </tr>
                     <tr>
                         <th style="width: 100px; text-align: right;" class="real">Address:</th>
-                        <td style="width: 200px; text-align: left;" class="real">{{ object.address }}</td>
+                        <td style="width: 200px; text-align: left;" class="real">{{ parent.address }}</td>
                         <th style="width: 200px; text-align: left;" class="real">For non public servant, provide company name below (if
                             applicable)
                         </th>
                     </tr>
                     <tr>
                         <th style="width: 100px; text-align: right;" class="real">Telephone number:</th>
-                        <td style="width: 200px; text-align: left;" class="real">{{ object.phone }}</td>
-                        <td style="width: 200px; text-align: left;" class="real">{{ object.company_name|nz:"" }}</td>
+                        <td style="width: 200px; text-align: left;" class="real">{{ parent.phone }}</td>
+                        <td style="width: 200px; text-align: left;" class="real">{{ parent.company_name|nz:"" }}</td>
                     </tr>
                     <tr>
                         <th style="width: 100px; text-align: right;" class="real">Email:</th>
-                        <td colspan="2" style="width: 400px; text-align: left;" class="real">{{ object.email }}</td>
+                        <td colspan="2" style="width: 400px; text-align: left;" class="real">{{ parent.email }}</td>
                     </tr>
                 </table>
             </div>
@@ -150,12 +146,12 @@
             <table style="font-size: small">
                 <tr>
                     <th style="width: 100px; text-align: left"><u>Purpose of Travel</u></th>
-                    <th style="width: 500px; text-align: left"><u>Explanation</u></th>
+{#                    <th style="width: 500px; text-align: left"><u>Explanation</u></th>#}
                 </tr>
-                {% for purpose in purpose_list %}
+                {% for category in trip_category_list %}
                     <tr>
-                        <td>{{ purpose.name }}</td>
-                        <td>{{ purpose.description_eng }}</td>
+                        <td>{{ forloop.counter }} - {{ category.name }}</td>
+{#                        <td>{{ purpose.description_eng }}</td>#}
                     </tr>
                 {% endfor %}
 
@@ -168,7 +164,7 @@
         <tr class="real">
             <th rowspan="2" style="text-align: center;" class="real center">Amended</th>
             <th rowspan="2" class="real center">Trip</th>
-            <th rowspan="1" colspan="2" class="real center">Date</th>
+            <th rowspan="1" colspan="2" class="real center" style="text-align: center">Date</th>
             <th rowspan="2" class="real center">Origin / Destination(s) of Travel</th>
             <th rowspan="1" colspan="2" class="real center">Purpose of Travel</th>
             <th rowspan="1" colspan="11" class="real center">Cost Information (include taxes)</th>
@@ -182,67 +178,55 @@
                 and Provide specific trip objective and justification for not using telepresence or other alternative to travel. Provide
                 justification if agenda is not available.
             </th>
-            <th class="real center">Air</th>
-            <th class="real center">Rail</th>
-            <th class="real center">Rental Motor Vehicle</th>
-            <th class="real center">Personal Motor Vehicle</th>
-            <th class="real center">Taxi</th>
-            <th class="real center">Other Transport</th>
-            <th class="real center">Accommo-<br>dation</th>
-            <th class="real center">Meals</th>
-            <th class="real center">Incidentals</th>
-            <th class="real center">Other</th>
-            <th class="real center">Total Trip Amount</th>
+            {% for key in my_dict|lookup:parent %}
+                {% if "accom" in key.name|lower %}
+                    <th class="real center">Accommo-<br>dation</th>
+                {% else %}
+                    <th class="real center">{{ key }}</th>
+                {% endif %}
+            {% endfor %}
+            <th class="real center">Total Request Amount</th>
             <th class="real center">Is the trip part of an Event?</th>
         </tr>
         <tr>
             <th class="real center"></th>
             <th class="real center">1</th>
-            <td class="real center">{{ object.start_date|date:"d-F" }}</td>
-            <td class="real center">{{ object.end_date|date:"d-F" }}</td>
+            <td class="real center">{{ parent.start_date|date:"d-F" }}</td>
+            <td class="real center">{{ parent.end_date|date:"d-F" }}</td>
             <td class="real center">
-                {% if object.departure_location %}
-                    {{ object.departure_location }} to
+                {% if parent.departure_location %}
+                    {{ parent.departure_location }} to
                 {% endif %}
-                {{ object.destination }}
+                {{ parent.destination }}
             </td>
-            <td class="real center">{{ object.purpose }}</td>
-            <td class="real left">{{ object.purpose_long|safe }}</td>
-            <td class="real center">{{ object.air|currency|nz:"" }}</td>
-            <td class="real center">{{ object.rail|currency|nz:"" }}</td>
-            <td class="real center">{{ object.rental_motor_vehicle|currency|nz:"" }}</td>
-            <td class="real center">{{ object.personal_motor_vehicle|currency|nz:"" }}</td>
-            <td class="real center">{{ object.taxi|currency|nz:"" }}</td>
-            <td class="real center">{{ object.other_transport|currency|nz:"" }}</td>
-            <td class="real center">{{ object.accommodations|currency|nz:"" }}</td>
-            <td class="real center">{{ object.meals|currency|nz:"" }}</td>
-            <td class="real center">{{ object.incidentals|currency|nz:"" }}</td>
-            {% with object.other|nz:0 as other %}
-                {% with object.registration|nz:0 as reg %}
-                    <td class="real center">{{ other|add:reg|currency|zero2val:"" }}</td>
-                {% endwith %}
-            {% endwith %}
-            <td class="real center">{{ object.total_cost|currency|nz:"" }}</td>
-            {% if object.conference %}
-                <td class="real center">{{ object.conference.has_event_template|yesno:"yes,no,unknown" }}</td>
+            <td class="real center">{{ parent.trip.trip_subcategory.trip_category }}</td>
+            <td class="real left">{{ parent.purpose_long|safe }}</td>
+            {% for key in my_dict|lookup:parent %}
+                <td class="real center">{{ my_dict|lookup:parent|lookup:key|currency|nz:"---" }}</td>
+
+            {% endfor %}
+            <td class="real center">{{ parent.total_cost|currency|nz:"" }}</td>
+            {% if parent.trip %}
+                <td class="real center">{{ parent.trip.has_event_template|yesno:"yes,no,unknown" }}</td>
             {% else %}
                 <td class="real center">no</td>
             {% endif %}
 
         </tr>
         <tr>
-            <td class="center wset"></td>
-            <td class="center wset"></td>
-            <td class="center wset"></td>
-            <td class="center wset"></td>
-            <td class="center wset"></td>
-            <td class="center wset"></td>
-            <td style="width: 400px" class="center"></td>
+            <td class="center wset" style="width: 50px;"></td>
+            <td class="center wset" style="width: 30px;"></td>
+            <td class="center wset" style="width: 50px;"></td>
+            <td class="center wset" style="width: 50px;"></td>
+            <td class="center wset" style="width: 150px;"></td>
+            <td class="center wset" style="width: 100px;"></td>
+            <td style="width: 300px" class="center"></td>
             {# starting with AIR #}
-            {% for key in key_list %}
-                <td class="real center wset"><b>{{ total_dict|lookup:key|currency }}</b></td>
+            {% for key in my_dict|lookup:parent %}
+                <td style="width: 50px;" class=" center"></td>
             {% endfor %}
-            <td class="center wset"></td>
+            <td class="center wset" style="width: 50px;"></td>
+            <td class="center wset" style="width: 50px;"></td>
         </tr>
     </table>
 </div>
@@ -256,10 +240,10 @@
                 <tr>
                     <th class="right wide-cell">Traveller:</th>
                     <td colspan="2" class="left wide-cell">
-                        {{ object.user }}
+                        {{ parent.user }}
 
-                        {% if object.submitted %}
-                            (digitally signed on {{ object.submitted }})
+                        {% if parent.submitted %}
+                            (digitally signed on {{ parent.submitted }})
                         {% else %}
                             (NOT SUBMITTED)
                         {% endif %}
@@ -269,15 +253,15 @@
                     <th class="right wide-cell">Expenditure Initiation approved by (Print):</th>
                     <td class="left wide-cell" colspan="3">
                         {#                        <u>Serge Doucet, Regional Director General, Gulf Region___</u>#}
-                        {{ object.rdg.user |nz:"n/a" }}
-                        {% if object.rdg.user %} | Regional Director General | {{ object.rdg.user.shared_models_regions.first }}
+                        {{ parent.rdg.user |nz:"n/a" }}
+                        {% if parent.rdg.user %} | Regional Director General | {{ parent.rdg.user.shared_models_regions.first }}
                         {% endif %}
                     </td>
                 </tr>
                 <tr>
-                      {% if object.rdg.status_id == 2 %}
+                    {% if parent.rdg.status_id == 2 %}
                         <th class="right wide-cell" style="width: 500px;"></th>
-                        <td class="left wide-cell" style="width: 500px; font-size: 18px" >Approved on {{ object.rdg.status_date }}</td>
+                        <td class="left wide-cell" style="width: 500px; font-size: 18px">Approved on {{ parent.rdg.status_date }}</td>
                         <th class="right wide-cell" style="width: 100px;"></th>
                         <td class="left wide-cell" style="width: 200px;"></td>
                     {% else %}
@@ -291,24 +275,26 @@
         </td>
         <td>
             <table style="width: 50%;">
-                {% for r in object.recommenders %}
-                    <tr>
-                        <th class="right wide-cell">Recommended by:</th>
-                        <td rowspan="1" class="left wide-cell">
-                            {{ r.user }}
-                            {% if r.status_id == 2 %}
-                                (digitally signed on {{ r.status_date }})
-                            {% else %}
-                                (NOT RECOMMENDED)
-                            {% endif %}
-                        </td>
-                    </tr>
+                {% for r in parent.recommenders %}
+                    {% if not r.status_id == 21 %}
+                        <tr>
+                            <th class="right wide-cell">Recommended by:</th>
+                            <td rowspan="1" class="left wide-cell">
+                                {{ r.user }}
+                                {% if r.status_id == 2 %}
+                                    (digitally signed on {{ r.status_date }})
+                                {% else %}
+                                    (NOT RECOMMENDED)
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
                 {% endfor %}
-                {% if object.adm.status_id == 2 %}
+                {% if parent.adm.status_id == 2 %}
                     <tr>
                         <th class="right wide-cell">Approved by:</th>
                         <td rowspan="1" class="left wide-cell">
-                            {{ object.adm.user }} on {{ object.adm.status_date }}
+                            {{ parent.adm.user }} on {{ parent.adm.status_date }}
                         </td>
                     </tr>
                 {% endif %}
@@ -317,3 +303,7 @@
     </table>
 </div>
 
+<div class="block">
+    <strong>Additional Notes</strong><br>
+    DETAILED COST BREAKDOWN: {{ parent.cost_breakdown }}
+</div>

@@ -1,0 +1,31 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js"></script>
+<script type="application/javascript">
+
+
+    function initialize() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: {lat: {{stn.stn_planned_lat}}, lng: {{stn.stn_planned_lon}} },
+            mapTypeId: 'terrain'
+        });
+
+        var loc = {lat: {{stn.stn_planned_lat}}, lng: {{stn.stn_planned_lon}} };
+        var marker = new google.maps.Marker({
+            position: loc,
+            map: map,
+            title: "{{stn.stn_name}}"
+        });
+
+
+    }
+
+    function loadScript() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = "https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initialize";
+        document.body.appendChild(script);
+    }
+
+    window.onload = loadScript();
+
+</script>

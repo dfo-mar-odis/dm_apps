@@ -1,0 +1,229 @@
+{% extends "projects/base.html" %}
+{% load static %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+{% load verbose_names %}
+{% load bootstrap4 %}
+
+{% block title_area %}
+    <div class="row">
+        <div class="col">
+            <h1>
+                {{ fy }} {% trans "Summary of Functional Groups by " %}
+                {{ big_unit }}{% if small_unit %}/{{ small_unit }}{% endif %} ({{ region }})
+            </h1>
+            <h3>
+                {% trans "Recommended Projects" %}
+            </h3>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block subcontent %}
+    {% get_current_language as LANG %}
+
+    <style>
+        table, td {
+            font-size: 14px;
+        }
+
+        .division {
+            background-color: #2826ff;
+            color: white;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .section {
+            background-color: #d5d1ff;
+            color: black;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .pressures {
+            background-color: #ffbc76;
+            font-style: italic;
+        }
+
+        .general-notes {
+            background-color: #c2ffc8;
+            font-style: italic;
+        }
+
+        .my-summary-table {
+            font-size: small;
+            padding-top: 0;
+            margin-top: 0;
+
+        }
+
+    </style>
+
+    {% if view.kwargs.type == "theme" %}
+        {% trans "Theme" as big_unit %}
+    {% elif view.kwargs.type == "funding_source" %}
+        {% trans "Funding Type" as big_unit %}
+        {% trans "Source" as small_unit %}
+    {% else %}
+        {% trans "Division" as big_unit %}
+        {% trans "Section" as small_unit %}
+    {% endif %}
+
+
+
+
+    <div class="container-fluid">
+        {{ get_current_language }}
+
+        <form class="form" action="." method="post" id="filter-form">
+            <div class="row">
+                {% csrf_token %}
+
+                {% for field in form %}
+                    {# {{field.label}}: &nbsp; {{field}}&nbsp;&nbsp; #}
+                    <div class="col">
+                        {% bootstrap_field field placeholder="" size="small" %}
+                    </div>
+
+                {% endfor %}
+                <div class="col">
+                    <br>
+                    <input type="submit" value="{% trans "Filter" %}" class="btn btn-warning btn-sm">
+
+                </div>
+            </div>
+        </form>
+
+
+        <br>
+        <div class="mb-4">
+            <table class="table table-hover table-sm">
+                <thead>
+                <th style="width: 20%">{% trans "Functional Group" %}</th>
+                <th class="center-col" style="width: 10%">{% trans "Number of projects" %}</th>
+                <th>{% trans "Project leads" %}</th>
+                </thead>
+                <tbody>
+
+                {% for d in my_dict %}
+                    <tr>
+                        <td colspan="4" class="division">
+                            {{ big_unit|upper }}: {{ d }}
+                        </td>
+                    </tr>
+                    {% for s in my_dict|lookup:d %}
+                        {% if not s == "all" %}
+                            <tr>
+                                <td colspan="4"></td>
+                            </tr>
+
+                            <tr href="{% url 'projects:iw_project_list' fy.id region.id|nz:0 division.id|nz:0 section.id|nz:0 s.id view.kwargs.type %}"
+                                style="border: 20px" class="section">
+                                <td colspan="6" class="section">
+                                    {% with my_dict|lookup:d|lookup:s|lookup:"projects" as projects %}
+                                        {{ small_unit|upper }}:
+                                        {% if view.kwargs.type == "funding_source" %}{{ s.tname }}{% else %}{{ s }}{% endif %}
+                                        ({{ projects.count }} project{{ projects.count|pluralize }})
+                                    {% endwith %}
+                                </td>
+                            </tr>
+                        {% endif %}
+                        {% for group in my_dict|lookup:d|lookup:s|lookup:"groups" %}
+
+                            {% if group %}
+                                {% if s == "all" %}
+                                    {% if  view.kwargs.type == "theme" %}
+                                        {% url 'projects:iw_project_list' fy.id region.id|nz:0 0 0 0 group.id view.kwargs.type as url_b %}
+                                    {% else %}
+                                        {% url 'projects:iw_project_list' fy.id region.id|nz:0 division.id|nz:0 section.id|nz:0 group.id view.kwargs.type as url_b %}
+                                    {% endif %}
+                                {% else %}
+                                    {% url 'projects:iw_project_list' fy.id region.id|nz:0 division.id|nz:0 section.id|nz:0 s.id group.id view.kwargs.type as url_b %}
+                                {% endif %}
+                            {% else %}
+                                {% url 'projects:iw_project_list' fy.id region.id|nz:0 division.id|nz:0 section.id|nz:0 s.id view.kwargs.type as url_b %}
+                            {% endif %}
+
+
+                            <tr href="{{ url_b }}">
+                                {% trans "<em class='red-font'>No functional group assigned</em>" as no_group %}
+                                <td colspan="1" class="program">{{ group|nz:no_group }}</td>
+                                <td colspan="1"
+                                    class="center-col">{{ my_dict|lookup:d|lookup:s|lookup:"groups"|lookup:group|lookup:"project_count" }}</td>
+                                <td colspan="1"
+                                    class="program">{{ my_dict|lookup:d|lookup:s|lookup:"groups"|lookup:group|lookup:"leads" }}</td>
+                            </tr>
+                        {% endfor %}
+
+
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% if projects_without_groups.count or  projects_without_themes.count %}
+
+            <div class="mb-4">
+                <h4 class="red-font blink-me">
+                    {% trans "THE FOLLOWING PROJECTS HAVE NO HOME IN THE ABOVE WORKPLAN" %}
+                </h4>
+                <table class="table table-sm table-bordered my-summary-table">
+                    <thead class="my-summary-table">
+                    <th class="my-summary-table">Project</th>
+                    <th class="my-summary-table">Functional Group</th>
+                    {% if type == 'theme' %}
+                        <th class="my-summary-table">Theme</th>
+                    {% endif %}
+                    </thead>
+                    <tbody class="my-summary-table">
+                    {% for p in projects_without_groups %}
+                        <tr class="my-summary-table">
+                            <td class="my-summary-table">
+                                <a href="{% url 'projects:project_overview' p.id 1 %}">{{ p }}</a>
+                            </td>
+                            {% if type == 'theme' %}
+                                <th class="my-summary-table">???</th>
+                            {% endif %}
+                            <td class="my-summary-table">???</td>
+                        </tr>
+                    {% endfor %}
+                    {% for p in projects_without_themes %}
+                        <tr>
+                            <td><a href="{% url 'projects:project_overview' p.id 1 %}">{{ p }}</a></td>
+                            <td>{{ p.functional_group }}</td>
+                            <td>???</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+
+                </table>
+
+            </div>
+        {% endif %}
+
+    </div>
+
+
+{% endblock %}
+
+{% block body_js %}
+    <script type="application/javascript">
+        // if region is changed, reset the division and section
+        $("#id_region").change(function () {
+            $("#id_division").val("").trigger("chosen:updated");
+            $("#id_section").val("").trigger("chosen:updated");
+        });
+        // if division is changed, reset the section
+        $("#id_division").change(function () {
+            $("#id_section").val("").trigger("chosen:updated");
+        });
+    </script>
+{% endblock %}

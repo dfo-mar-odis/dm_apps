@@ -144,21 +144,16 @@ urlpatterns = [
     path('trap/<int:pk>/edit/', views.TrapUpdateView.as_view(), name="trap_edit"),
     path('trap/<int:pk>/delete/', views.TrapDeleteView.as_view(), name="trap_delete"),
 
-    path('bycatch/<int:pk>/delete/', views.bycatch_delete, name="bycatch_delete"),
+    # path('bycatch/<int:pk>/delete/', views.bycatch_delete, name="bycatch_delete"),
     # path('trap/<int:trap>/crab/<int:species>/add/', views.report_species_observation_add, name="crab_add"),
     # path('trap/<int:trap>/bycatch/<int:species>/add/', views.report_species_observation_add, name="bycatch_add"),
 
-    # CRAB #
+    # CATCH #
     ########
-    path('trap/<int:trap>/crab/<int:species>/new/', views.CrabCreateViewPopout.as_view(), name="crab_new_pop"),
-    path('crab/<int:pk>/edit/', views.CrabUpdateViewPopout.as_view(), name="crab_edit_pop"),
-    path('crab/<int:pk>/delete/', views.crab_delete, name="crab_delete"),
-
-    # BYCATCH #
-    ########
-    path('trap/<int:trap>/bycatch/<int:species>/new/', views.BycatchCreateViewPopout.as_view(), name="bycatch_new_pop"),
-    path('bycatch/<int:pk>/edit/', views.BycatchUpdateViewPopout.as_view(), name="bycatch_edit_pop"),
-    path('bycatch/<int:pk>/delete/', views.bycatch_delete, name="bycatch_delete"),
+    path('catch/<int:trap>/species/<int:species>/new/', views.CatchCreateViewPopout.as_view(), name="catch_new"),
+    path('catch/<int:pk>/edit/', views.CatchUpdateViewPopout.as_view(), name="catch_edit"),
+    path('catch/<int:pk>/delete/', views.catch_delete, name="catch_delete"),
+    path('trap/<int:trap>/manage-catch/type/<str:type>/', views.manage_catch, name="manage_catch"),
 
     # Reports #
     ###########

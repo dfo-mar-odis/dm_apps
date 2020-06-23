@@ -1,127 +1,97 @@
-from django_filters import FilterSet
+import django
+import django_filters
+from django.utils.translation import gettext as _
 
 from . import models
-from . import forms
-
-from django.db.models.base import ModelBase
 
 
-class GenericFilterSet(FilterSet):
+class DepFilter(django_filters.FilterSet):
+    mor_name = django_filters.CharFilter(field_name='dep_name', lookup_expr='icontains')
+
+    class Meta:
+        model = models.DepDeployment
+        fields = ['dep_name', 'dep_year', 'dep_month', 'stn', 'prj', 'mor']
+
+
+class EmmFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.EmmMakeModel
+        fields = ['eqt', 'emm_make', 'emm_model', 'emm_depth_rating']
+
+
+class EqpFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.EqpEquipment
+        fields = ['emm', 'eqp_serial', 'eqp_date_purchase', 'eqo_owned_by', 'eqp_retired', 'eqp_deployed']
+
+
+class MorFilter(django_filters.FilterSet):
+    mor_name = django_filters.CharFilter(field_name='mor_name', lookup_expr='icontains')
+    mor_max_depth = django_filters.NumberFilter(field_name='mor_max_depth', lookup_expr='icontains')
+
+    class Meta:
+        model = models.MorMooringSetup
+        fields = []
+
+
+class PrjFilter(django_filters.FilterSet):
+    name = django_filters.CharFilter(field_name=_("name"), lookup_expr='icontains')
+    description = django_filters.CharFilter(field_name=_("description_en"), lookup_expr='icontains')
+
+    class Meta:
+        model = models.PrjProject
+        fields = []
+
+
+class RecFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.RecDataset
+        fields = ['eda_id', 'rsc_id', 'rec_start_date', 'rec_end_date']
+
+
+class RscFilter(django_filters.FilterSet):
+    rsc_name = django_filters.CharFilter(field_name='rsc_name', lookup_expr='icontains')
+
+    class Meta:
+        model = models.RscRecordingSchedule
+        fields = []
+
+
+class RttFilter(django_filters.FilterSet):
+    rtt_name = django_filters.CharFilter(field_name='rtt_name', lookup_expr='icontains')
+
+    class Meta:
+        model = models.RttTimezoneCode
+        fields = []
+
+
+class StnFilter(django_filters.FilterSet):
+    stn_name = django_filters.CharFilter(field_name='stn_name', lookup_expr='icontains')
+    stn_code = django_filters.ChoiceFilter(field_name='stn_code')
+    stn_revision = django_filters.NumberFilter(field_name='stn_revision', lookup_expr='exact',
+                                               widget=django.forms.NumberInput(attrs={'style': "width: 4em"}))
+
+    class Meta:
+        model = models.StnStation
+        fields = []
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        labels = forms.get_short_labels(self._meta.model)
-        try:
-            for key in labels.keys():
-                if key in self.filters.keys():
-                    self.filters[key].label = labels[key]
-        except KeyError:
-            print("Label for key '" + key + "' not found in object '" + str(self._meta.model) + "'")
-            print("Filters: " + str(self.filters))
+        code_list = [(sc['stn_code'], sc['stn_code']) for sc in models.StnStation.objects.values('stn_code').distinct()]
+
+        self.filters['stn_code'] = django_filters.ChoiceFilter(field_name='stn_code', lookup_expr='exact',
+                                                               choices=code_list)
 
 
-class CrsFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.CrsCruise
-        fields = ['crs_name', 'crs_pi_name', 'crs_institute_name', 'crs_geographic_location', 'crs_start_date',
-                  'crs_end_date', 'crs_notes', ]
-
-
-class DepFilter(GenericFilterSet):
+class TeaFilter(django_filters.FilterSet):
+    tea_abb = django_filters.CharFilter(field_name='tea_abb', lookup_expr='icontains')
+    tea_last_name = django_filters.CharFilter(field_name='tea_last_name', lookup_expr='icontains')
+    tea_first_name = django_filters.CharFilter(field_name='tea_first_name', lookup_expr='icontains')
 
     class Meta:
-        model = models.DepDeployment
-        fields = ['dep_year', 'dep_month', 'dep_name', 'stn', 'prj', 'mor', ]
-
-
-class EdaFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.EdaEquipmentAttachment
-        fields = ['eqp', 'dep', 'rec']
-
-
-class EdhFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.EhaHydrophoneAttachment
-        fields = ['eda', 'eqp',]
-
-
-class EqhFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.EqhHydrophoneProperty
-        fields = ['emm', 'eqh_range_max', 'eqh_range_min']
-
-
-class EqpFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.EqpEquipment
-        fields = ['emm', 'eqp_serial', 'eqp_date_purchase', 'eqp_asset_id', 'eqp_notes']
-
-
-class EmmFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.EmmMakeModel
-        fields = ['emm_make', 'emm_model', 'emm_depth_rating']
-
-
-class MorFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.MorMooringSetup
-        fields = ['mor_name', 'mor_max_depth', 'mor_link_setup_image',
-                  'mor_additional_equipment', 'mor_general_moor_description', 'more_notes', ]
-
-
-class PrjFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.PrjProject
-        fields = ['prj_name', 'prj_description', 'prj_url', ]
-
-
-class RecFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.RecRecordingEvent
-        fields = ['rsc', 'tea_id_setup_by', 'rec_date_of_system_chk', 'tea_id_checked_by', 'rec_date_first_recording',
-                  'rec_date_last_recording', 'rec_total_memory_used', 'rec_hf_mem', 'rec_lf_mem',
-                  'rec_date_data_download', 'rec_data_store_url', 'tea_id_downloaded_by', 'rec_date_data_backed_up',
-                  'rec_data_backup_url', 'tea_id_backed_up_by', 'rec_channel_count', 'rec_notes', 'rtt',
-                  'rec_first_in_water', 'rec_last_in_water', ]
-
-
-class RscFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.RscRecordingSchedule
-        fields = ['rsc_name', 'rsc_period']
-
-
-class RstFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.RstRecordingStage
-        fields = ['rst_channel_no', 'rsc', 'rst_active', 'rst_duration', 'rst_rate', 'rst_gain']
-
-
-class SteFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.SteStationEvent
-        fields = ['dep', 'set_type', 'ste_date', 'crs', 'ste_lat_ship', 'ste_lon_ship', 'ste_depth_ship', 'ste_lat_mcal',
-                  'ste_lon_mcal', 'ste_depth_mcal', 'ste_team', 'ste_instrument_cond', 'ste_weather_cond', 'ste_logs',
-                  'ste_notes']
-
-
-class StnFilter(GenericFilterSet):
-
-    class Meta:
-        model = models.StnStation
-        fields = ['stn_name', 'stn_code', 'stn_revision', 'stn_planned_lat', 'stn_planned_lon', 'stn_planned_depth', 'stn_notes', ]
+        model = models.TeaTeamMember
+        fields = []

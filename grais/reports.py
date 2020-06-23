@@ -60,7 +60,8 @@ def generate_species_sample_spreadsheet(species_list=None):
         "observed at station?",
         "observed on line?",
         "observed on collector surface?",
-        "% surface coverage (sample average)?",
+        "% surface coverage - plates (mean)",
+        "% surface coverage - petris (mean)",
     ]
 
     # worksheets #
@@ -120,18 +121,30 @@ def generate_species_sample_spreadsheet(species_list=None):
             # calculate the % coverage
             if on_surface:
                 # for each surface, determine the percent coverage and store in list
-                ## only look at plates
-                coverage_list = []
-                for surface in models.Surface.objects.filter(line__sample=sample).filter(surface_type="pl"):
-                    try:
-                        my_coverage = models.SurfaceSpecies.objects.get(surface=surface, species=species).percent_coverage
-                    except:
-                        my_coverage = 0
-                    coverage_list.append(my_coverage)
-                mean_coverage = statistics.mean(coverage_list)
+                coverage_list_pl = []
+                coverage_list_pe = []
+                for surface in models.Surface.objects.filter(line__sample=sample).all():
+                    if surface.surface_type == "pl":
+                        try:
+                            my_coverage = models.SurfaceSpecies.objects.get(surface=surface, species=species).percent_coverage
+                        except:
+                            my_coverage = 0
+                        coverage_list_pl.append(my_coverage)
 
-            else:
-                mean_coverage = "n/a"
+                    elif surface.surface_type == "pe":
+                        try:
+                            my_coverage = models.SurfaceSpecies.objects.get(surface=surface, species=species).percent_coverage
+                        except:
+                            my_coverage = 0
+                        coverage_list_pe.append(my_coverage)
+                try:
+                    mean_pl_coverage = statistics.mean(coverage_list_pl)
+                except statistics.StatisticsError:
+                    mean_pl_coverage = 0
+                try:
+                    mean_pe_coverage = statistics.mean(coverage_list_pe)
+                except statistics.StatisticsError:
+                    mean_pe_coverage = 0
 
             data_row = [
                 species.id,
@@ -153,7 +166,8 @@ def generate_species_sample_spreadsheet(species_list=None):
                 at_station,
                 on_line,
                 on_surface,
-                mean_coverage,
+                mean_pl_coverage,
+                mean_pe_coverage,
             ]
 
             # adjust the width of the columns based on the max string length in each col
@@ -615,7 +629,7 @@ def generate_gc_cpue_report(year):
     # create the col_max column to store the length of each header
     # should be a maximum column width to 100
     col_max = [len(str(d)) if len(str(d)) <= 100 else 100 for d in header_row]
-    for c in models.Crab.objects.filter(trap__sample__season=year, species_id=26):
+    for c in models.Catch.objects.filter(trap__sample__season=year, species_id=26):
         data_row = [
             c.trap.sample.site.estuary.name,
             c.trap.sample.site.code,

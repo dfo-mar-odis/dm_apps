@@ -104,28 +104,27 @@
             {# <a class="btn btn-sm btn-light" onclick="return popitup('{% url "grais:surface_spp_insert" object.line.sample.id object.line.id object.id %}','sppInsert')"> <i class="material-icons">add</i></a> #}
             {# <a class="btn btn-sm btn-light" href="{% url "grais:surface_spp_insert" object.line.sample.id object.line.id object.id %}"> <i class="material-icons">add</i></a> #}
         </h3>
-        <table class="table table-bordered ">
+        <table class="table table-sm table-hover ">
             <thead class="full-table">
             <th>#</th>
-            <th>Common name</th>
-            <th>Scientific name</th>
-            <th>Epibiont type</th>
+            <th style="width: 30%">Species</th>
+{#            <th>Epibiont type</th>#}
             <th>Invasive</th>
             <th>Coverage (%)</th>
-            <th>Notes</th>
+            <th style="width: 40%">Notes</th>
             </thead>
             <tbody>
             {% for s in object.surface_spp.all %}
-                <tr>
+                <tr href="{% url 'grais:surface_spp_edit_pop' s.id %}" pop>
                     <td>{{ forloop.counter }}</td>
 
                     <td>
-                        <a href="{% url 'grais:species_detail' s.species.id %}" target="_blank">
-                            {{ s.species.common_name }}
-                        </a>
+{#                        <a href="{% url 'grais:species_detail' s.species.id %}" class="stop-blank">#}
+                            {{ s.species }}
+{#                        </a>#}
                     </td>
-                    <td><em>{{ s.species.scientific_name }}</em></td>
-                    <td>{{ s.species.get_epibiont_type_display }}</td>
+{#                    <td><em>{{ s.species.scientific_name }}</em></td>#}
+{#                    <td>{{ s.species.get_epibiont_type_display }}</td>#}
                     {% if s.species.invasive == True %}
                         <td class="bad">
                             {% else %}
@@ -138,12 +137,7 @@
 
                     <td>{{ s.percent_coverage|percentage }}</td>
                     <td>{{ s.notes }}</td>
-                    <td>
-                        <a href="#"
-                           onclick="return popitup('{% url 'grais:surface_spp_edit_pop' s.id %}','surfaceSpeciesEdit')">
-                            <img src="{% static "/admin/img/icon-changelink.svg" %}" data-toggle="tooltip" title="Edit">
-                        </a>
-                    </td>
+
                     <td>
                         <a class="delete-me" href="#" val="{{ s.id }}">
                             <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
@@ -166,12 +160,12 @@
         </p>
     </div>
 
-    </div>
 
 
 
     <script type="application/javascript">
-        $(".delete-me").click(function () {
+        $(".delete-me").click(function (e) {
+            e.stopImmediatePropagation();
             var objectId = $(this)[0].getAttribute("val");
 
             var userInput = "";
@@ -180,7 +174,7 @@
 
             }
             if (userInput === "y") {
-                $("#secrect-delete-btn-" + objectId)[0].click();
+                window.location.href = $("#secrect-delete-btn-" + objectId).attr("href");
             }
         })
     </script>

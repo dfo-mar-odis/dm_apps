@@ -4,8 +4,6 @@ from . import views
 app_name = 'tickets'
 
 urlpatterns = [
-    path('close/', views.CloserTemplateView.as_view(), name="close_me"),
-
     # Tickets #
     ###########
     path('', views.index_router, name="router"),
@@ -23,7 +21,7 @@ urlpatterns = [
     # feedback form
     path('feedback-form/new/', views.TicketCreateViewPopout.as_view(), name="bug_create"),
     path('feedback-form/new/application/<str:app>/', views.TicketCreateViewPopout.as_view(), name="bug_create"),
-    path('feedback-form/<int:pk>/view/', views.TicketDetailViewPopout.as_view(), name="detail_pop"),
+    path('feedback-form/<int:pk>/view/', views.TicketConfirmationTemplateView.as_view(), name="confirm"),
 
     # github views
     path('<int:pk>/create-github-issue/', views.create_github_issue, name="git_create"),

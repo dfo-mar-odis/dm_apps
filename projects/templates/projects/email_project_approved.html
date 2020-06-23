@@ -1,0 +1,99 @@
+{% load verbose_names %}
+{% load custom_filters %}
+
+<em>
+    *** un message français suivra
+</em>
+<br><br>
+
+{% if object.approved %}
+    <p>
+        Congratulations,
+    </p>
+    <p>
+        Your project in the DM Apps Project Planning Application entitled
+        <a href="{{ SITE_FULL_URL }}{% url 'projects:project_detail' object.id %}">{{ object.project_title }}</a>
+        has been approved by the Science Management team!
+    </p>
+    {% if object.allocated_budget %}
+        <p>
+            The amount of budget allocated to this project is ${{ object.allocated_budget|currency }}.
+        </p>
+    {% endif %}
+
+{% else %}
+
+    <p>Hello,</p>
+
+    <p>
+        The Science Management team has determined that your project entitled
+        <a href="{{ SITE_FULL_URL }}{% url 'projects:project_detail' object.id %}">{{ object.project_title }}</a>
+        in the DM Apps Project Planning Application is not approved at this time.
+        Should this decision change at a later date, you will be notified.
+    </p>
+
+{% endif %}
+
+{% if object.meeting_notes %}
+    The following administrative notes were provided:
+    <ul>
+        <li>
+            {{ object.meeting_notes }}
+
+        </li>
+    </ul>
+{% endif %}
+
+<p>
+    If you have any questions, please don't hesitate to ask your manager.
+</p>
+
+
+<p>
+    ********************************************************************
+</p>
+
+
+
+{% if object.approved %}
+    <p>
+        Félicitations,
+    </p>
+    <p>
+        Votre projet dans l'application de planification de projet (DM Apps) intitulée
+        <a href="{{ SITE_FULL_URL }}{% url 'projects:project_detail' object.id %}">{{ object.project_title }}</a>
+        a été approuvé par l'équipe de gestion des sciences!
+    </p>
+    {% if object.allocated_budget %}
+        <p>
+            Le montant du budget alloué à ce projet est de {{ object.allocated_budget|currency:True }}.
+        </p>
+    {% endif %}
+{% else %}
+    <p>Bonjour,</p>
+
+    <p>
+        L'équipe de gestion des sciences a déterminé que votre projet intitulé
+        <a href="{{ SITE_FULL_URL }}{% url 'projects:project_detail' object.id %}">{{ object.project_title }}</a>
+
+        dans l'application de planification de projet (DM Apps)
+        n'est pas approuvé pour le moment.
+
+        Si cette décision devait changer à une date ultérieure, vous en serez informé.
+    </p>
+{% endif %}
+
+{% if object.meeting_notes %}
+    Les notes administratives suivantes ont été fournies:
+    <ul>
+        <li>
+            {{ object.meeting_notes }}
+
+        </li>
+    </ul>
+{% endif %}
+
+<p>
+    Si vous avez des questions, n'hésitez pas à demander à votre gestionnaire.
+</p>
+

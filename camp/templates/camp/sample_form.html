@@ -7,206 +7,106 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'camp:index' %}"> Home </a></li>
-            <li class="breadcrumb-item"><a href="{% url 'camp:sample_search' %}"> All samples </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'camp:sample_list' %}"> All samples </a></li>
             {% if object.id %}
-	        <li class="breadcrumb-item"><a href="{% url 'camp:sample_detail' object.id %}"> {{object}} </a></li>
+                <li class="breadcrumb-item"><a href="{% url 'camp:sample_detail' object.id %}"> {{ object }} </a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Edit</li>
             {% else %}
-                <li class="breadcrumb-item active" aria-current="page"> New </li>
+                <li class="breadcrumb-item active" aria-current="page"> New</li>
             {% endif %}
 
         </ol>
     </nav>
 
-<div class="container">
+    <div class="container">
 
-{% load static %}
-{# Load js file to allow for popout window #}
-{% if object.id %}
-  <h1>Sample {{object.id}}</h1><br>
-{% else %}
-  <h1>New Sample</h1>
-{% endif %}
+        {% load static %}
+        {# Load js file to allow for popout window #}
+        {% if object.id %}
+            <h1>Sample {{ object.id }}</h1><br>
+        {% else %}
+            <h1>New Sample</h1>
+        {% endif %}
 
 
         <form method="post" class="form">
-            {%bootstrap_form_errors form%}
-              {% csrf_token %}
-              <br>
-              <div class="row">
-                <div class="col-10">
-                  <table>
-                    {% for field in form  %}
-                    <tr>
-                      <td width='80%'>
+            {% bootstrap_form_errors form %}
+            {% csrf_token %}
+            <div class="mb-3">
+                {% for field in form %}
+                    {% if field.name == "station" %}
+                        {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+                        <div class="mb-3">
+                        <a href="{% url 'camp:station_new' %}" target="_blank" id="add_station">(add new station)</a>
+                        </div>
 
-                        {% if field.name == "station" %}
-                          <div id="station_interpreter_div">
-                            <div class="form-group row" style="margin-bottom: 0px;">
-                              <label for="station_interpreter" class="col-md-3 col-form-label">Station (any part of name)</label>
-                              <div class="col-md-9">
-                                <input type="text" class="form-control tab" id="station_interpreter">
-                              </div>
+                    {% elif field.name == "percent_mud" %}
+                        {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+                        <hr>
+                        <div class="form-group row" style="font-weight: bold;">
+                            <label for="id_total_sediments" class="col-md-3 col-form-label">TOTAL (%)</label>
+                            <div class="col-md-9">
+                                <p id="id_total_sediments" style="font-size: 2em">0</p>
                             </div>
-                            <div class="form-group row" style="margin-bottom: 0px;">
-                              <label for="station_list" class="col-md-3 col-form-label"></label>
-                              <div class="col-md-9">
-                                <p id="station_list" style="margin-bottom: 0px;"></p>
-                                <a href="{% url 'camp:station_new'  %}" target="_blank" id="add_station">(add new station)</a>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div id="station_field_div">
-                            {% bootstrap_field field size='small' layout='horizontal' placeholder=""%}
-                            <div class="form-group row" style="margin-top: 0px;">
-                              <label for="clear_station" class="col-md-3 col-form-label"></label>
-                              <div class="col-md-9">
-                                <a href="#" id="clear_station" class="red-font">(clear station)</a>
-                              </div>
-                            </div>
-                          </div>
-
-                        {% elif field.name == "percent_mud" %}
-                        {% bootstrap_field field size='small' layout='horizontal' placeholder=""%}
-                            <hr>
-                            <div class="form-group row" style="font-weight: bold;">
-                                <label for="id_total_sediments" class="col-md-3 col-form-label">TOTAL (%)</label>
-                                <div class="col-md-9">
-                                    <p id="id_total_sediments" style="font-size: 2em">0</p>
-                                </div>
-                            </div>
-                        {% else %}
-
-                        {% bootstrap_field field size='small' layout='horizontal' placeholder=""%}
-                      {% endif %}
-                      </td>
-
-                    </tr>
-
-                    {% endfor %}
-                  </table>
-
-                </div>
-              </div>
-
-            <p>
-              <button type="submit" class="btn btn-primary">Submit</button>
-              {% if object.id %}
-                <a class="btn btn-secondary" href="{% url 'camp:sample_detail' object.id %}">Cancel</a>
-              {% else %}
-                <a class="btn btn-secondary" href="{% url 'camp:sample_search' %}">Cancel</a>
-              {% endif %}
-            </p>
-          </form>
+                        </div>
+                    {% else %}
+                        {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+                    {% endif %}
+                {% endfor %}
+            </div>
 
 
-</div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                {% if object.id %}
+                    <a class="btn btn-secondary" href="{% url 'camp:sample_detail' object.id %}">Cancel</a>
+                {% else %}
+                    <a class="btn btn-secondary" href="{% url 'camp:sample_list' %}">Cancel</a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
 
     <script type="text/javascript">
-
-    var stationList = {{station_list|safe}}
-
-
         $("#id_start_date").change(function () {
-            if($("#id_end_date").val() === "" ) {
-                $("#id_end_date").val(this.value)
+            if ($("#id_end_date").val() === "") {
+                $("#id_end_date").val(this.value);
             }
-        })
-
-
-    $(document).ready(function() {
-        // Stuff to do as soon as the DOM is ready
-
-        $("#id_camp_id" )[0].focus()
-
-        {% if object.station %}
-          $("#station_interpreter_div").prop("hidden",true)
-          $("#add_station").prop("hidden",true)
-        {% else %}
-          $("#station_field_div").prop("hidden",true)
-          $("#add_station").prop("hidden",true)
-        {% endif %}
-
-        addPercentages()
-
-    });
-
-
-
-    $("#station_interpreter").keyup(function(e) {
-        $("#station_list").html("")
-        $("#add_station").prop("hidden",true)
-        if (this.value.length >=3 ) {
-            $("#add_station").prop("hidden",false)
-            for (var i = 0; i < stationList.length; i++) {
-              // console.log(123);
-              var re = new RegExp(this.value, 'gi');
-
-              if (stationList[i].match(re)) {
-                $("#station_list").html(
-                  $("#station_list").html() + stationList[i]+'<br>')
-              }
-            }
-
-
-
-        $(".station_insert").click(function() {
-          $("#station_field_div").prop("hidden",false)
-          $("#station_interpreter_div").prop("hidden",true)
-          code = this.getAttribute("code")
-          $("#id_station").val(code)
-
-          $("#id_timezone")[0].focus()
-
         });
 
-      }
-    });
-
-    $("#clear_station").click(function() {
-      $("#station_interpreter").val("")
-      $("#station_list").html("")
-      $("#station_field_div").prop("hidden",true)
-      $("#station_interpreter_div").prop("hidden",false)
-      $("#station_interpreter")[0].focus()
-      $("#add_station").prop("hidden",true)
-    });
-
-    $("#add_station_btn").click(function () {
-      $("#station_field_div").prop("hidden",false)
-      $("#station_interpreter_div").prop("hidden",true)
-      $("#id_timezone")[0].focus()
-    })
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            addPercentages();
+        });
 
 
-    $("input").keydown(function(event){
-      if ( event.key == "Enter" ) {
-        event.preventDefault()
-      }
-    });
+        $("input").keydown(function (event) {
+            if (event.key == "Enter") {
+                event.preventDefault();
+            }
+        });
 
 
-    $(".addable").keyup(function () {
-        addPercentages()
-    })
+        $(".addable").keyup(function () {
+            addPercentages();
+        });
 
-    function addPercentages() {
-            var totVal = 0
+        function addPercentages() {
+            var totVal = 0;
             for (var i = 0; i < 4; i++) {
-                totVal = Number($(".addable")[i].value) + totVal
+                totVal = Number($(".addable")[i].value) + totVal;
             }
 
-            if(totVal === 100) {
-                $("#id_total_sediments").removeClass("bad")
-                $("#id_total_sediments").addClass("good")
+            if (totVal === 100) {
+                $("#id_total_sediments").removeClass("bad");
+                $("#id_total_sediments").addClass("good");
             } else {
-                $("#id_total_sediments").removeClass("good")
-                $("#id_total_sediments").addClass("bad")
+                $("#id_total_sediments").removeClass("good");
+                $("#id_total_sediments").addClass("bad");
             }
 
-            $("#id_total_sediments").text(totVal)
-    }
+            $("#id_total_sediments").text(totVal);
+        }
 
 
     </script>

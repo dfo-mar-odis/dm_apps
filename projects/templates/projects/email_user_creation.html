@@ -9,13 +9,13 @@
 
 
 <p>
-    A new user account was created for you in the <a href="http://dmapps">DM Apps</a> system as a part of the
-    <a href="http://dmapps{% url 'projects:index' %}">Science Project Planning</a> application.
+    A new user account was created for you in the <a href="{{SITE_FULL_URL}}">DM Apps</a> system as a part of the
+    <a href="{{SITE_FULL_URL}}{% url 'projects:index' %}">Science Project Planning</a> application.
 </p>
 
 <p>
     Please use the following link to reset your password: <a
-        href="http://dmapps{% url 'password_reset' %}">http://dmapps{% url 'password_reset' %}</a>.
+        href="{{SITE_FULL_URL}}{% url 'password_reset' %}">{{SITE_FULL_URL}}{% url 'password_reset' %}</a>.
 </p>
 <p>
     For any questions, please do not hesitate to contact your regional section head or the <a href="mailto:david.fishman@dfo-mpo.gc.ca">DM
@@ -31,13 +31,13 @@
 
 
 <p>
-    Un nouveau compte utilisateur a été créé pour vous dans le système <a href="http://dmapps"> DM Apps </a> dans le cadre du <a
-        href="http://dmapps{% url 'projects:index' %}"> application de planification de projet scientifique </a>.
+    Un nouveau compte utilisateur a été créé pour vous dans le système <a href="{{SITE_FULL_URL}}"> DM Apps </a> dans le cadre du <a
+        href="{{SITE_FULL_URL}}{% url 'projects:index' %}"> application de planification de projet scientifique </a>.
 </p>
 
 <p>
     Veuillez utiliser le lien suivant pour réinitialiser votre mot de passe: <a
-        href="http://dmapps{% url 'password_reset' %}">http://dmapps{% url 'password_reset' %}</a>.
+        href="{{SITE_FULL_URL}}{% url 'password_reset' %}">{{ SITE_FULL_URL }}{% url 'password_reset' %}</a>.
 </p>
 <p>
     Pour toute question, n'hésitez pas à contacter le responsable de votre section régionale ou l'adresse <a

@@ -42,11 +42,11 @@
         <div class="row">
             <div class="col-4">
                 {# Detail about the sample #}
-                <table class="table table-sm table-bordered">
+                <table class="table table-sm table-striped">
 
-                {% for field in field_list %}
-                    {% verbose_td_display object field %}
-                {% endfor %}
+                    {% for field in field_list %}
+                        {% verbose_td_display object field %}
+                    {% endfor %}
                 </table>
             </div>
             <div class="col">
@@ -55,3 +55,24 @@
         </div>
     </div>
 {% endblock content %}
+
+{% block body_js %}
+    <script type="application/javascript">
+        $("form").submit(function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+
+            if ($("#id_species").val()) {
+                popitup('/grais/catch/{{object.id}}/species/' + $("#id_species").val() + '/new/', 'popWindow');
+            }
+        });
+        $(document).ready(function() {
+            // Stuff to do as soon as the DOM is ready
+            $("#id_species_chosen").select()
+        });
+    </script>
+
+
+
+{% endblock %}

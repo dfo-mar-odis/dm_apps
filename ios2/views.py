@@ -80,7 +80,6 @@ class IndexTemplateView(TemplateView):
 
 
 class InstrumentListView(LoginRequiredMixin, FilterView):
-    login_url = '/accounts/login_required/'
     template_name = 'ios2/instrument_list.html'
     model = models.Instrument
     filterset_class = filters.InstrumentFilter
@@ -131,7 +130,6 @@ class InstrumentListView(LoginRequiredMixin, FilterView):
 
 
 class MooringListView(LoginRequiredMixin, FilterView):
-    login_url = '/accounts/login_required/'
     template_name = 'ios2/mooring_list.html'
     model = models.Mooring
     filterset_class = filters.MooringFilter
@@ -139,7 +137,6 @@ class MooringListView(LoginRequiredMixin, FilterView):
 
 class InstrumentCreateView(LoginRequiredMixin, CreateView):
     model = models.Instrument
-    login_url = '/accounts/login_required/'
     form_class = forms.NewInstrumentForm
 
     def form_valid(self, form):
@@ -153,7 +150,6 @@ class InstrumentCreateView(LoginRequiredMixin, CreateView):
 
 class InstrumentDetailView(LoginRequiredMixin, DetailView):
     model = models.Instrument
-    login_url = '/accounts/login_required/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -194,7 +190,6 @@ class InstrumentDetailView(LoginRequiredMixin, DetailView):
 
 class InstrumentSubmitUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Instrument
-    login_url = '/accounts/login_required/'
     form_class = forms.InstrumentSubmitForm
     template_name = "ios2/instrument_submit_form.html"
 
@@ -226,7 +221,6 @@ class InstrumentSubmitUpdateView(LoginRequiredMixin, UpdateView):
 
 class InstrumentPrintDetailView(LoginRequiredMixin, PDFTemplateView):
     model = models.Instrument
-    login_url = '/accounts/login_required/'
     template_name = "ios2/instrument_report.html"
 
     def get_pdf_filename(self):
@@ -260,7 +254,6 @@ class InstrumentDeleteView(LoginRequiredMixin, DeleteView):
     permission_required = "__all__"
     success_url = reverse_lazy('ios2:instrument_list')
     success_message = _('The instrument was successfully deleted!')
-    login_url = '/accounts/login_required/'
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
@@ -269,7 +262,6 @@ class InstrumentDeleteView(LoginRequiredMixin, DeleteView):
 
 class InstrumentUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Instrument
-    login_url = '/accounts/login_required/'
     form_class = forms.InstrumentForm
     template_name = 'ios2/instrument_form_popout.html'
 
@@ -303,7 +295,6 @@ class InstrumentUpdateView(LoginRequiredMixin, UpdateView):
 class MooringCreateView(LoginRequiredMixin, CreateView):
     model = models.Mooring
     template_name = 'ios2/mooring_form.html'
-    login_url = '/accounts/login_required/'
     form_class = forms.MooringForm
 
     def get_initial(self):
@@ -316,7 +307,6 @@ class MooringCreateView(LoginRequiredMixin, CreateView):
 
 class MooringDetailView(LoginRequiredMixin, DetailView):
     model = models.Mooring
-    login_url = '/accounts/login_required/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -343,7 +333,6 @@ class MooringDetailView(LoginRequiredMixin, DetailView):
 
 class MooringUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Mooring
-    login_url = '/accounts/login_required/'
     template_name = 'ios2/mooring_form_popout.html'
     form_class = forms.MooringForm
 
@@ -355,7 +344,6 @@ class MooringUpdateView(LoginRequiredMixin, UpdateView):
 # Does not work
 class MooringPrintDetailView(LoginRequiredMixin, PDFTemplateView):
     model = models.Mooring
-    login_url = '/accounts/login_required/'
     template_name = "ios2/mooring_report.html"
 
     def get_pdf_filename(self):
@@ -383,7 +371,6 @@ class MooringPrintDetailView(LoginRequiredMixin, PDFTemplateView):
 
 class MooringSubmitUpdateView(LoginRequiredMixin, UpdateView):
     model = models.Mooring
-    login_url = '/accounts/login_required/'
     form_class = forms.MooringSubmitForm
     template_name = "ios2/mooring_submit_form.html"
 
@@ -416,7 +403,6 @@ class MooringDeleteView(LoginRequiredMixin, DeleteView):
     permission_required = "__all__"
     success_url = reverse_lazy('ios2:mooring_list')
     success_message = _('The mooring was successfully deleted!')
-    login_url = '/accounts/login_required/'
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
@@ -430,7 +416,6 @@ from django.forms import modelformset_factory
 class InstrumentMooringCreateView(LoginRequiredMixin, CreateView):
     model = models.InstrumentMooring
     template_name = 'ios2/instrumentmooring_form_popout.html'
-    login_url = '/accounts/login_required/'
     form_class = forms.AddInstrumentToMooringForm
 
     # InstrumentFormSet = modelformset_factory(models.Instrument, form=forms.InstrumentForm)
@@ -477,7 +462,6 @@ class InstrumentMooringCreateView(LoginRequiredMixin, CreateView):
 class InstrumentMooringUpdateView(LoginRequiredMixin, UpdateView):
     model = models.InstrumentMooring
     template_name = 'ios2/instrumentmooring_form_popout.html'
-    login_url = '/accounts/login_required/'
     form_class = forms.EditInstrumentMooringForm
 
     def get_initial(self):
@@ -514,7 +498,6 @@ class InstrumentMooringUpdateView(LoginRequiredMixin, UpdateView):
 class MooringInstrumentCreateView(LoginRequiredMixin, CreateView):
     model = models.InstrumentMooring
     template_name = 'ios2/instrumentmooring_form_popout.html'
-    login_url = '/accounts/login_required/'
     form_class = forms.AddMooringToInstrumentForm
 
     def get_initial(self):
@@ -542,7 +525,6 @@ class MooringInstrumentCreateView(LoginRequiredMixin, CreateView):
 class MooringInstrumentUpdateView(LoginRequiredMixin, UpdateView):
     model = models.InstrumentMooring
     template_name = 'ios2/instrumentmooring_form_popout.html'
-    login_url = '/accounts/login_required/'
     form_class = forms.EditInstrumentMooringForm
 
     def get_initial(self):
@@ -572,7 +554,6 @@ class MooringInstrumentUpdateView(LoginRequiredMixin, UpdateView):
 
 class ServiceCreateView(LoginRequiredMixin, CreateView):
     model = models.ServiceHistory
-    login_url = '/accounts/login_required/'
     form_class = forms.ServiceForm
     template_name = 'ios2/service_form_popout.html'
 
@@ -614,7 +595,6 @@ class ServiceCreateView(LoginRequiredMixin, CreateView):
 
 class ServiceUpdateView(LoginRequiredMixin, UpdateView):
     model = models.ServiceHistory
-    login_url = '/accounts/login_required/'
     form_class = forms.ServiceForm
     template_name = 'ios2/service_form_popout.html'
 
@@ -633,7 +613,7 @@ def service_delete(request, pk):
 # class AddDeploymentCreateView(LoginRequiredMixin, CreateView):
 #     model = models.Mooring
 #     template_name = 'ios2/mooring_form_popout.html'
-#     login_url = '/accounts/login_required/'
+#
 #     form_class = forms.MooringForm
 #
 #     def get_initial(self):
@@ -667,7 +647,7 @@ def service_delete(request, pk):
 #     model = models.Mooring
 #     template_name = 'ios2/mooring_form_popout.html'
 #     form_class = forms.MooringForm
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def get_initial(self):
 #         mooring = models.Mooring.objects.get(pk=self.kwargs['pk'])
@@ -704,7 +684,7 @@ def service_delete(request, pk):
 #     permission_required = "__all__"
 #     success_url = reverse_lazy('ios2:instrument_detail')
 #     success_message = _('The instrument was successfully deleted!')
-#     login_url = '/accounts/login_required/'
+#
 #
 #     def delete(self, request, *args, **kwargs):
 #         messages.success(self.request, self.success_message)

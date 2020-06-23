@@ -1,0 +1,57 @@
+"id","code","english_name","french_name","latin_name","vor_code","quebec_code","aphia_id"
+1,SF,Atlantic spotted Dolphin,Dauphin tacheté,Stenella frontalis,SF,Sf,137108
+2,LA,Atlantic White-sided Dolphin,Dauphin à flanc blanc,Lagenorhynchus acutus,LA,La,137100
+3,BaSh,Basking Shark,Requin Pèlerin,Cetorhinus maximus,BaSh,BaSh,105837
+4,EB,Bearded Seal,Phoque barbu,Erignathus barbatus,EB,Eb,137079
+5,DL,Beluga Whale,Beluga,Delphinapterus leucas,DL,Dl,137115
+6,BlSh,Blue shark,Requin bleu,Prionace glauca,BlSh,BlSh,105801
+7,BM,Blue Whale,Rorqual bleu,Balaenoptera musculus,BM,Bm,137090
+8,TT,Bottlenose Dolphin,Grand dauphin,Tursiops truncatus,TT,Tt,137111
+9,Bmys,Bowhead Whale,Baleine boréale,Balaena mysticetus,Bmys,Bmys,137086
+10,DD,Common Dolphin,Dauphin commun,Delphinus delphis,DD,Dd,137094
+11,ZC,Cuvier's beaked whale,Baleine à bec de Cuvier,Ziphius cavirostris,ZC,Zc,137127
+12,BP,Fin Whale,Rorqual commun,Balaenoptera physalus,BP,Bp,137091
+13,FS,Fin/Sei Whale,Fin/Sei Whale,"",FS,"",
+14,FB,Fishing boat,Bateau de pêche,"",FB,FB,
+15,CM,Green Turtle,Tortue verte,Chelonia mydas,CM,Cm,137206
+16,HG,Grey Seal,Phoque gris,Halichoerus grypus,HG,Hg,137080
+17,PP,Harbour Porpoise,Marsouin commun,Phocoena phocoena,PP,Pp,137117
+18,PV,Harbour Seal,Phoque commun,Phoca vitulina,PV,Pv,137084
+19,PG,Harp Seal,Phoque du Groenland,Pagophilus groenlandicus,PG,Pg,159019
+20,CC,Hooded Seal,Phoque à capuchon,Cystophora cristata,CC,Cc,137078
+21,MN,Humpback Whale,Rorqual à bosse,Megaptera novaeangliae,MN,Mn,137092
+22,OO,Killer Whale,Épaulard,Orcinus orca,OO,Oo,137102
+23,DC,Leatherback Turtle,Tortue luth,Dermochelys coriacea,DC,Dc,137209
+24,Log,Loggerhead Turtle,Tortue caouanne,Caretta caretta,Log,"",137205
+25,BA,Minke Whale,Petit rorqual,Balaenoptera acutorostrata,BA,Ba,137087
+26,MM,Narwhal,Narval,Monodon monoceros,MM,Mm,137116
+27,EG,North Atlantic Right Whale,"Baleine noire de l'Atlantique nord, baleine franche",Eubalaena glacialis,EG,Eg,159023
+28,HA,Northern Bottlenose Whale,Baleine à bec commune,Hyperoodon ampullatus,HA,Ha,343899
+29,GM,Pilot Whale,Globicéphale,Globicephala melas,GM,Gm,137097
+30,PB,Pleasure boat,Bateau de plaisance,"",PB,PB,
+31,UM,Polar Bear,Ours polaire,Ursus maritimus,UM,Um,137085
+32,KB,Pygmy Sperm Whale,Cachalot pygmé,Kogia breviceps,KB,Kb,137113
+33,PH,Ringed Seal,Phoque annelé,Pusa hispida,PH,Ph,159021
+34,GG,Risso’s Dolphin,Dauphin de Risso,Grampus griseus,GG,Gg,137098
+35,BB,Sei Whale,Rorqual de Rudolphi,Balaenoptera borealis,BB,Bb,137088
+36,SH,Ship,Navire,"",SH,SH,
+37,PM,Sperm Whale,Cachalot,Physeter macrocephalus,PM,Pm,137119
+38,SC,Striped Dolphin,Dauphin bleu et blanc,Stenella coeruleoalba,SC,Sc,137107
+39,Mola,Sunfish,Poisson Lune,Mola mola,Mola,Mola,127405
+40,Tuna,Atlantic bluefin tuna,Thon rouge de l'Atlantique,Thunnus thynnus,Tuna,Tuna,127029
+41,UnBe,Unknown beaked whale,Baleine à bec inconnu,"","",UnBe,
+42,UC,Unknown cetacean,Cétacé inconnu,"",UC,UnCe,
+43,UnDo,Unknown dolphin,Dauphin inconnu,"",UnDo,UnDo,
+44,UnDP,Unknown dolphin or porpoise,Dauphin ou marsouin inconnu,"",UnDP,UnDP,
+45,UnMe,Unknown Mesoplodon,Mesoplodon inconnu,"",UnMe,UnMe,
+46,UnOb,Unknown Object,Objet inconnu,"",UnOb,UnOb,
+47,UnPo,Unknown porpoise,Marsouin inconnu,"",UnPo,UnPo,
+48,UnSe,Unknown seal,Phoque inconnu,"",UnSe,UnSe,
+49,UnSh,Unknown Shark,Requin inconnu,"",UnSh,UnSh,
+50,Unkn,Unknown species,Espèce inconnue,"",Unkn,Unkn,
+51,UT,Unknown Sea Turtle,Tortue inconnue,"",UT,UnSt,
+52,UnWh,Unknown whale,Baleine inconnue,"",UnWh,UnWh,
+53,LWNR,Unknown large whale not Right Whale,Large baleine inconnue pas une baleine noire de l'Atlantique nord,"","","",
+54,OR,Walrus,Morse,Odobenus rosmarus,OR,Or,137077
+55,WW,Whale watching boat,Bateau d'observation des baleines,"",WW,WW,
+56,Lalbi,White-beaked  Dolphin,Dauphin à nez blanc,Lagenorhynchus albirostris,Lalbi,Lalbi,137101

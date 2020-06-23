@@ -1,7 +1,0 @@
-[client]
-host = dmapps
-port = 3306
-database = glf_sci_site_dev
-user = glf_sci_dev_user
-password = SmellyFi$h*991
-default-character-set = utf8

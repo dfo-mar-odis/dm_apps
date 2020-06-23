@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ subtitle|safe }}{% endblock %}
+
+{% block body %}
+
+    {#  You can use content block to remove any of the busy-ness down below  #}
+    {% block content %}
+        <div class="{% block container_class %}{% if container_class %}{{ container_class }}{% else %}container{% endif %}{% endblock %}">
+
+            {% block crumbs %}
+                {% include "shared_models/_generic_breadcrumbs.html" %}
+            {% endblock %}
+
+            {% block area_above_h1 %}{% endblock %}
+
+            {% block title_area %}
+                {% include "shared_models/_generic_title_area.html" %}
+            {% endblock %}
+
+            {#  otherwise, use the subcontent block  #}
+            {% block subcontent %}{% endblock %}
+
+        </div>
+
+    {% endblock content %}
+
+{% endblock body %}
+

@@ -1,0 +1,144 @@
+{% extends "pop_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+
+{% block body %}
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+
+
+
+    <div class="container">
+        <h1>
+            {{ object }}
+        </h1>
+        <br><br>
+
+        <form method="post" class="form">
+            {% bootstrap_form_errors form %}
+            {% csrf_token %}
+            {% buttons %}
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        {% trans "Update" %}
+                    </button>
+                    <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                        {% trans "Close" %}
+                    </a>
+                </div>
+            {% endbuttons %}
+
+            {% for field in form %}
+                {% if 'editable' in field.field.widget.attrs|lookup:"class" %}
+
+                    {% if field.name in help_text_dict %}
+                        {% bootstrap_label field.label %}
+                        {% with help_text_dict|lookup:field.name as help_text %}
+                            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover"
+                                 data-trigger="hover"
+                                 title="{{ field.label }}"
+                                 data-content="{{ help_text }}">
+
+
+                            {% bootstrap_field field %}
+                        {% endwith %}
+
+                    {% else %}
+
+                        {% bootstrap_label field.label %}
+                        {% bootstrap_field field %}
+
+                    {% endif %}
+
+
+
+                {% else %}
+                    {% if field.name in help_text_dict %}
+                        {% bootstrap_label field.label %}
+                        {% with help_text_dict|lookup:field.name as help_text %}
+                            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover"
+                                 data-trigger="hover"
+                                 title="{{ field.label }}"
+                                 data-content="{{ help_text }}">
+                            {% bootstrap_field field placeholder="" show_label=False %}
+                        {% endwith %}
+
+                    {% else %}
+                        {% bootstrap_field field placeholder="" %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+
+            {% buttons %}
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary">
+                        {% trans "Update" %}
+                    </button>
+                    <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
+                        {% trans "Close" %}
+                    </a>
+                </div>
+            {% endbuttons %}
+        </form>
+
+
+    </div>
+    {# only do this if we are in the project create view #}
+
+
+
+
+{% endblock %}
+
+
+{% block body_js %}
+    <script type="text/javascript" src="{% static 'widgEditor_1.0.1/scripts/widgEditor.js' %}"></script>
+
+    <script>
+        window.resizeTo(width = 1500, height = 800);
+
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("#id_digestion_level")[0].focus()
+        });
+    </script>
+
+
+    <script type="application/javascript">
+        function adjustApproved() {
+            // if the funding is from a competitive stream, approval is implicit.
+            let myVal = $("#id_is_competitive").val();
+            if (myVal == "true") {
+                $("#id_approved").val("true").prop("disabled", true);
+            } else {
+                $("#id_approved").prop("disabled", false).val("");
+            }
+        }
+
+        $("#id_is_competitive").change(function () {
+            adjustApproved()
+        });
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            adjustApproved()
+        });
+
+        $("#id_section").change(function () {
+            $("form").submit()
+        })
+    </script>
+{% endblock %}

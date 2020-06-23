@@ -1,0 +1,35 @@
+{% extends "travel/list.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block table_tr %}
+    <tr href="{% url 'travel:default_reviewer_edit' object.id %}">
+        {% for field in field_list %}
+            <td>
+                {% if field.name == "sections" %}
+                    <ul>
+                        {% for obj in object.sections.all %}
+                            <li>
+                                {{ obj.full_name }}<br>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                {% elif field.name == "branches" %}
+                    <ul>
+                        {% for obj in object.branches.all %}
+                            <li>
+                                {{ obj }}<br>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    {% get_field_value object field.name %}
+                {% endif %}
+            </td>
+        {% endfor %}
+    </tr>
+{% endblock %}
+

@@ -1,0 +1,92 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+<div class="card mb-2">
+    <h3 class="card-header bg-outline-dark">
+        {% if trip.review_start_date %}
+
+            {% trans "Reviewer Comments" %}
+        {% else %}
+            {% trans "Reviewers, Recommenders and Approvers" %}
+        {% endif %}
+        {#        <div class="neighbours mb-3">#}
+        {#            {% with help_text_dict|lookup:"trip_reviewers_header" as help_text %}#}
+        {#                <img src="{% static 'img/icons/information.png' %}" style="width: 30px" data-toggle="popover"#}
+        {#                     data-trigger="hover"#}
+        {#                     title="{% trans "Trip Reviewers" %}"#}
+        {#                     data-content="{{ help_text }}">#}
+        {#            {% endwith %}#}
+        {#        </div>#}
+        <div class="float-right mb-3">
+
+            {% if not report_mode %}
+                <div class="group">
+                    {% if status_id == 31 %}
+                        {% trans "You cannot reset the reviewers while a trip is under review." as help_text_1 %}
+                        {% echo "disabled" as my_disbaled_var %}
+                    {% elif status_id == 32 %}
+                        {% trans "You cannot reset the reviewers on a trip that has already been reviewed." as help_text_1 %}
+                        {% echo "disabled" as my_disbaled_var %}
+                    {% endif %}
+
+                    <span data-toggle="tooltip" title="{{ help_text_1 }}">
+                    <a href="{% url 'travel:reset_trip_reviewers' trip.id view.kwargs.type %}"
+                       class="btn btn-sm btn-warning {{ my_disbaled_var }}" id="reset-btn">
+                        {% trans "Reset" %}
+                    </a>
+                    </span>
+                    <a href="{% url 'travel:manage_trip_reviewers' trip.id view.kwargs.type %}" class="btn btn-sm btn-primary">
+                        {% trans "Modify" %}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+    </h3>
+    <div class="card-body">
+        <div class="card-text">
+            {% if trip.reviewers.count > 0 %}
+                <br>
+                <table class="table table-sm sortable table-striped" style="width: 100%">
+                    <thead>
+                    {% for field in reviewer_field_list %}
+                        {% if "status" in field %}
+                            <th style="width: 10%;">{% get_verbose_label trip.reviewers.first field %}</th>
+                        {% else %}
+                            <th scope="col">{% get_verbose_label trip.reviewers.first field %}</th>
+                        {% endif %}
+                    {% endfor %}
+                    </thead>
+                    <tbody>
+                    {% for obj in trip.reviewers.all %}
+                        {#                        {% url 'shared_models:group_detail' obj.id %}#}
+                        <tr>
+                            {% for field in reviewer_field_list %}
+                                {% if field == "status" %}
+                                    <td style="background-color: {{ obj.status.color }}">
+                                        {% get_field_value obj field %}
+                                    </td>
+                                {% else %}
+                                    <td>{% get_field_value obj field safe=True %}</td>
+                                {% endif %}
+                            {% endfor %}
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <br>
+                <em>
+                    {% trans "No reviewers, recommenders or approvers have been added to this trip." %}
+                </em>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+<br><br>

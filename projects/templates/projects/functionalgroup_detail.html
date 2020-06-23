@@ -1,0 +1,48 @@
+{% extends "projects/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load verbose_names %}
+
+{% block content %}
+    <style>
+        .label {
+            font-weight: bold;
+        }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'projects:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'projects:group_list' %}">Functional Groups</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1>{{ object }}</h1>
+
+        <div class="btn-group">
+            <a class="btn btn-danger " href="{% url 'projects:group_delete' object.id %}">
+                {% trans "Delete" %}
+            </a>
+            <a class="btn btn-warning" href="{% url 'projects:group_edit' object.id %}">
+                {% trans "Edit" %}
+            </a>
+        </div>
+
+        <br><br>
+        <div class="row">
+            <div class="col">
+                {% for field in field_list %}
+                    {% verbose_field_display object field %}
+                {% endfor %}
+                <br>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock content %}

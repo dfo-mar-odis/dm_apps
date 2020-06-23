@@ -1,33 +1,39 @@
 {% load bootstrap4 %}
 
+
 <h3>Metadata:</h3>
-  {# Metadata fields #}
-    {% for field in form  %}
-      {% if field.name == "sample" or field.name == "probe" or field.name == "time_date" or field.name == "timezone" or field.name == "tide_descriptor" or field.name == "weather_notes" %}
+{# Metadata fields #}
+{% for field in form %}
+    {% if "metadata" in field.field.widget.attrs.class %}
         {% bootstrap_field field layout='horizontal' placeholder="" size='small' %}
-      {% endif %}
-    {% endfor %}
+    {% endif %}
+{% endfor %}
 <br>
 <h3>Measurements:</h3>
 <table class="table">
-  <thead>
-    {% for field in form  %}
-      {% if field.name == "sample" or field.name == "probe" or field.name == "time_date" or field.name == "timezone" or field.name == "tide_descriptor" or field.name == "last_modified_by" or field.name == "weather_notes" %}
-        {# do nothing - I AM DOING THE LAZY THING, SORRY #}
-      {% else %}
-        <th>{{field.label}}</th>
-      {% endif %}
+    <thead>
+    {% for field in form %}
+        {% if not "metadata" in field.field.widget.attrs.class %}
+            {% if not field.name == "sample" %}
+                <th>{{ field.label }}</th>
+            {% endif %}
+        {% endif %}
     {% endfor %}
-  </thead>
-  <tbody>
-    {% for field in form  %}
-              {% if field.name == "sample" or field.name == "probe" or field.name == "time_date" or field.name == "timezone" or field.name == "tide_descriptor" or field.name == "last_modified_by" or field.name == "weather_notes" %}
+    </thead>
+    <tbody>
+    {% for field in form %}
+        {% if not "metadata" in field.field.widget.attrs.class %}
+            {% if not field.name == "sample" %}
+                <td>  {% bootstrap_field field show_label=False placeholder="" size="small" %}</td>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
 
-{#      {% if field.name == "sample" or field.name == "probe" or field.name == "time_date" or field.name == "tide_descriptor" %}#}
-        {# do nothing - I AM DOING THE LAZY THING, SORRY #}
-      {% else %}
-        <td>  {% bootstrap_field field show_label=False placeholder="" size="small"%}</td>
-      {% endif %}
+    {% for field in form %}
+        {% if field.name == "sample" %}
+            <td>  {% bootstrap_field field show_label=False placeholder="" size="small" %}</td>
+        {% endif %}
     {% endfor %}
-  </tbody>
+
+    </tbody>
 </table>

@@ -1,34 +1,45 @@
 {% load static %}
 
 {#  COLLECTOR LINES #}
-        <h4>
-          <b style="padding-right: 1.1em">Notes</b>
-          <a class="btn btn-sm btn-outline-primary" href="{% url 'grais:sample_note_new' object.id %}"> Add </a>
-        </h4>
-        <ul>
-            {% for obj in object.notes.all  %}
-              <li>
-                  <code>{{obj.date|date:"F d, Y"}} ({{ obj.author.first_name }} {{ obj.author.last_name }}):</code> {{ obj.note }}
-                &nbsp;
-                  <a href="{% url 'grais:sample_note_edit' obj.id %}">
-                      <img src="{% static "/admin/img/icon-changelink.svg" %}" data-toggle="tooltip" title="Edit note">
-                  </a>
-                  <a class="delete-note" href="#" val="{{obj.id}}">
-                      <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete note">
-                  </a>
-                  <a id="secrect-delete-btn-{{ obj.id }}" href="{% url 'grais:sample_note_delete' obj.id %}" class="hidden"></a>
+<h4>
+    <b style="padding-right: 1.1em">Sample Notes</b>
+    <a class="btn btn-sm btn-outline-primary" href="{% url 'grais:sample_note_new' object.id %}"> Add </a>
+</h4>
+<table class="table table-hover table-sm" style="width: 60%">
+    <thead>
+    <th>Author</th>
+    <th>Date</th>
+    <th>Note</th>
+    </thead>
+    <tbody>
+    {% for obj in object.notes.all %}
+        <tr href="{% url 'grais:sample_note_edit' obj.id %}">
+            <td>{{ obj.author.first_name }} {{ obj.author.last_name }}</td>
+            <td>{{ obj.date|date:"F d, Y" }}</td>
+            <td>{{ obj.note }}</td>
+            <td>
+                <a class="delete-note" href="#" val="{{ obj.id }}">
+                    <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete note">
+                </a>
+                <a id="secrect-note-delete-btn-{{ obj.id }}" href="{% url 'grais:sample_note_delete' obj.id %}" class="hidden"></a>
+            </td>
+        </tr>
 
-              </li>
+    {% empty %}
+        <tr>
+            <td>
+                <em>No notes on this file.</em>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
 
-            {% empty %}
-              <em>No notes on this file.</em>
-            {% endfor %}
+</table>
 
-
-        </ul>
 
 <script type="application/javascript">
-    $(".delete-note").click(function () {
+    $(".delete-note").click(function (e) {
+        e.stopImmediatePropagation();
         sampleNoteId = $(this)[0].getAttribute("val");
 
         var userInput = "";
@@ -36,8 +47,8 @@
             userInput = prompt("Are you sure you want to delete this note? \n\n Please respond with 'y' for yes and 'n' for no.").toLocaleLowerCase();
 
         }
-        if(userInput === "y") {
-          $("#secrect-delete-btn-"+sampleNoteId)[0].click();
+        if (userInput === "y") {
+            window.location.href = $("#secrect-note-delete-btn-" + sampleNoteId).attr("href");
         }
     })
 </script>

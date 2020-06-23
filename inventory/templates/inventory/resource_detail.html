@@ -1,14 +1,18 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load verbose_names %}
 {% load custom_filters %}
+{% load custom_tags %}
+{% load i18n %}
+
+{% block subtitle %}
+    - {{ object.t_title }}
+{% endblock %}
 
 {% block content %}
     <style media="screen">
         body {
-        {% if object.flagged_4_deletion %}
-            background-color: pink;
-        {% endif %}
+
         }
 
         #floating-panel {
@@ -24,82 +28,97 @@
     </style>
 
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ object.truncated_title }}</li>
-        </ol>
-    </nav>
+    {% url 'inventory:index' as home_url %}
 
 
 
     <div class="container-fluid">
 
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">{% trans "Home" %}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ object.truncated_title }}</li>
+            </ol>
+        </nav>
+
         <div class="text-center">
-            <h2>{{ object.title_eng }}</h2>
+            <h2>
+                {{ object.t_title }}
+
+                {% if object.flagged_4_deletion %}
+                    <span class="bad"> - {% trans "Flagged for Deletion" %}</span>
+                {% endif %}
+                {% if object.flagged_4_publication %}
+                    <span class="good">
+                    {% if object.fgp_publication_date %}
+                        {% trans "Flagged for Open Data Re-publication" %}
+                    {% else %}
+                        {% trans "Flagged for Open Data Publication" %}
+                    {% endif %}
+                    </span>
+                {% endif %}
+            </h2>
         </div>
-<div id="floating-panel">
-        {% with "btn btn-sm btn-outline-dark" as my_btn %}
+        <div id="floating-panel">
+            {% with "btn btn-sm btn-outline-dark" as my_btn %}
 
-            <a class="{{ my_btn }}" href="{% url 'inventory:resource_edit' object.id %}">
-                Modify Record
-            </a>
-            <a class="{{ my_btn }}" href="{% url 'inventory:resource_full_detail' object.id %}">
-                Review Full Record
-            </a>
-            <a class="{{ my_btn }}" href="{% url 'inventory:resource_certify' object.id %}" data-toggle="tooltip"
-               title="Click here to add a certification event to this record.">
-                Certify This Record
-            </a>
-
-            {% if object.flagged_4_deletion %}
-
-                <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_delete' object.id %}" data-toggle="tooltip"
-                   title="Unflag this metadata record for deletion. A data manager will follow up with you after submitting this request.">
-                    Unflag for Deletion
+                <a class="{{ my_btn }}" href="{% url 'inventory:resource_edit' object.id %}">
+                    Modify Record
                 </a>
-            {% else %}
-                <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_delete' object.id %}" data-toggle="tooltip"
-                   title="Flag this metadata record for deletion. A data manager will follow up with you after submitting this request.">
-                    Flag for Deletion
+                <a class="{{ my_btn }}" href="{% url 'inventory:resource_full_detail' object.id %}">
+                    Review Full Record
                 </a>
-            {% endif %}
+                <a class="{{ my_btn }}" href="{% url 'inventory:resource_certify' object.id %}" data-toggle="tooltip"
+                   title="Click here to add a certification event to this record.">
+                    Certify This Record
+                </a>
 
-            {#            {% if object.flagged_4_publication %}#}
-            {#                <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_publication' object.id %}" data-toggle="tooltip"#}
-            {#                   title="Unflag this metadata record for open data publication. A data manager will follow up with you after submitting this request.">#}
-            {#                    Unflag for Open Data Publication#}
-            {#                </a>#}
-            {#            {% else %}#}
-            {#                <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_publication' object.id %}" data-toggle="tooltip"#}
-            {#                   title="Flag this metadata record for open data publication. A data manager will follow up with you after submitting this request.">#}
-            {#                    Flag for Open Data Publication#}
-            {#                </a>#}
-            {#            {% endif %}#}
+                {% if object.flagged_4_deletion %}
 
-            <a class="{{ my_btn }}" href="#" data-toggle="modal" data-target="#completedness">
-                View Completedness Report
-            </a>
-            <a class="{{ my_btn }}" href="#" data-toggle="modal" data-target="#hnap">
-                Export as XML (HNAP)
-            </a>
-            {% for group in user.groups.all %}
-                {% if group.id == 13 %}
-                    <a class="btn btn-sm btn-outline-danger" href="{% url 'inventory:resource_delete' object.id %}">
-                        Delete
+                    <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_delete' object.id %}" data-toggle="tooltip"
+                       title="Unflag this metadata record for deletion. A data manager will follow up with you after submitting this request.">
+                        Unflag for Deletion
+                    </a>
+                {% else %}
+                    <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_delete' object.id %}" data-toggle="tooltip"
+                       title="Flag this metadata record for deletion. A data manager will follow up with you after submitting this request.">
+                        Flag for Deletion
                     </a>
                 {% endif %}
 
-            {% endfor %}
-        {% endwith %}
 
-    </div>
+                <a class="{{ my_btn }}" href="#" data-toggle="modal" data-target="#completedness">
+                    View Completeness Report
+                </a>
+
+                {% if object.flagged_4_publication %}
+                    <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_publication' object.id %}" data-toggle="tooltip"
+                       title="Unflag this metadata record for open data publication. A data manager will follow up with you after submitting this request.">
+                        Unflag for Publication
+                    </a>
+                {% else %}
+                    <a class="{{ my_btn }}" href="{% url 'inventory:resource_flag_publication' object.id %}" data-toggle="tooltip"
+                       title="Flag this metadata record for open data publication. A data manager will follow up with you after submitting this request.">
+                        Flag for {% if object.fgp_publication_date %}Re-publication{% else %}Publication{% endif %}
+                    </a>
+                {% endif %}
+                <a class="{{ my_btn }}" href="#" data-toggle="modal" data-target="#hnap" title="export as HNAP xml">
+                    <img src="{% static 'img/icons/xml.svg' %}" alt="" width="20px">
+                </a>
+                <a class="{{ my_btn }}" href="{% url 'inventory:resource_pdf' object.id %}">
+                    <img src="{% static 'img/icons/pdf.svg' %}" alt="" width="20px">
+                </a>
+                {% for group in user.groups.all %}
+                    {% if group.id == 13 %}
+                        <a class="btn btn-sm btn-outline-danger" href="{% url 'inventory:resource_delete' object.id %}">
+                            Delete
+                        </a>
+                    {% endif %}
+
+                {% endfor %}
+            {% endwith %}
+
+        </div>
         {#<!-- HNAP MODAL -->#}
         <div class="modal fade" id="hnap" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
              aria-hidden="true">
@@ -121,13 +140,13 @@
                     </div>
                     <div class="modal-footer">
                         {% if verified %}
-                            <a class="btn btn-lg btn-warning closeBtn"
+                            <a class="btn btn-lg btn-warning" onclick="$('#hnap').modal('hide')"
                                href="{% url 'inventory:export_xml' object.id 'yes' %}">Yes</a>
-                            <a class="btn btn-lg btn-primary closeBtn"
+                            <a class="btn btn-lg btn-primary " onclick="$('#hnap').modal('hide')"
                                href="{% url 'inventory:export_xml' object.id 'no' %}">No, This is a Dry Run</a>
                             <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Forget the Whole Thing</button>
                         {% else %}
-                            <a class="btn btn-lg btn-warning closeBtn"
+                            <a class="btn btn-lg btn-warning" onclick="$('#hnap').modal('hide')"
                                href="{% url 'inventory:export_xml' object.id 'no' %}">Export Anyways!</a>
                             <button type="button" class="btn btn-lg btn-secondary" data-dismiss="modal">Nevermind</button>
                         {% endif %}
@@ -177,7 +196,7 @@
                 {% include "inventory/_resource_detail_basic.html" %}
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
                 {# <a href="{% url 'inventory:resource_full_detail' object.id %}"> #}
                 {# <h2>Review Full Record</h2> #}
                 {# </a> #}
@@ -213,7 +232,39 @@
 
             </div>
 
-            <div class="col-4">
+            <div class="col-5">
+
+
+                <style>
+                    #map {
+                        height: 200px; /* The height is 400 pixels */
+                        width: 100%; /* The width is the width of the web page */
+                    }
+                </style>
+
+                {#  thumbnail #}
+                <div class="row mb-3">
+                    <div class="col">
+                        {% if object.thumbnail %}
+                            {% echo object.thumbnail|safe as img_url %}
+                        {% else %}
+                            {% static 'inventory/no_image.svg' as img_url %}
+                        {% endif %}
+
+                        <a href="{{ img_url }}" data-toggle="tooltip"
+                           title="{% trans "to add/change a thumbnail to this resource, add a new file with the word 'thumbnail' included in the caption" %}">
+                            <img src="{{ img_url }}" alt="{% trans "missing thumbnail" %}" height="200px">
+                        </a>
+
+                    </div>
+                    {% if object.bounds %}
+                        <div class="col">
+                            <div id="map"></div>
+                        </div>
+                    {% endif %}
+                </div>
+
+
                 <h4 class="neighbours">Keywords etc.</h4>
                 <div class="neighbours">
                     <a class="btn btn-sm btn-outline-primary"
@@ -257,6 +308,66 @@
                 $(this).text("(Show all)")
             }
         })
+    </script>
+
+
+    <script>
+        {% if object.bounds %}
+            function initialize() {
+
+                window.map = new google.maps.Map(document.getElementById('map'), {
+                    mapTypeId: google.maps.MapTypeId.SATELLITE,
+                    disableDefaultUI: true
+                });
+                var infowindow = new google.maps.InfoWindow();
+                var bounds = new google.maps.LatLngBounds();
+
+                // extend bounds var
+                {% for point in object.bounds%}
+                    bounds.extend(new google.maps.LatLng({{point|last}}, {{ point|first}}));
+                {% endfor %}
+
+                // Define the LatLng coordinates for the polygon's path.
+                var polygonCoords = [
+                    {% for point in object.bounds %}
+                        {lat: {{point|last}}, lng: {{point|first}}},
+                    {% endfor %}
+                ];
+
+                // Construct the stratum.
+                var color = '#ea4544';
+                var myPolygon = new google.maps.Polygon({
+                    path: polygonCoords,
+                    strokeColor: 'red',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 3,
+                    {#fillColor: color,#}
+                    {#fillOpacity: 0.35#}
+                });
+                myPolygon.setMap(map);
+                {#bounds.extend(myPolygon.getBounds());#}
+
+                map.fitBounds(bounds);
+                // add a click event on the polygon
+
+
+                myPolygon.setMap(map);
+                {#bounds.extend(myPolygon.getBounds());#}
+
+                map.fitBounds(bounds);
+
+                // add a click event on the polygon
+            }
+            function loadScript() {
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = "https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initialize";
+                document.body.appendChild(script);
+            }
+
+            window.onload = loadScript();
+        {% endif %}
+
     </script>
 
 

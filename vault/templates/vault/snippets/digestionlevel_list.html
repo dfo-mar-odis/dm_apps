@@ -1,0 +1,54 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Digestion Levels</li>
+        </ol>
+    </nav>
+
+    <div class="container">
+
+        <h1 class="big-header">Digestion Levels </h1>
+        <p>TOTAL: {{ object_list.count }}</p>
+        <a href="{% url 'diets:digestion_new' %}" class="btn btn-sm btn-success">New Level</a><br>
+
+
+        <table class="table table-hover table-sm" style="width: auto">
+            <thead>
+            <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Level</th>
+                <th scope="col">Interpretation</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for object in object_list %}
+                <tr href="{% url 'diets:digestion_edit' object.id  %}">
+                    <td>{{ object.code }}</td>
+                    <td>{{ object.level }}</td>
+                    <td>{{ object.interpretation }}</td>
+
+                    <td>
+                        <a class="delete-me" href="{% url 'diets:digestion_delete' object.id %}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                 title="Delete">
+                        </a>
+
+                    </td>
+
+                </tr>
+            {% endfor %}
+            <br>
+            </tbody>
+        </table>
+
+
+    </div>
+
+{% endblock content %}

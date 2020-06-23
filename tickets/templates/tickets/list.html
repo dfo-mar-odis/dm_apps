@@ -1,0 +1,25 @@
+{% extends "shared_models/generic_filter.html" %}
+
+{% block bug_create %}
+    {% include "tickets/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+    {% include "tickets/base/_app_title.html" %}
+    {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block header %}
+    {{ block.super }}
+    {% include "tickets/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+    {{ block.super }}
+{% endblock body %}
+
+{% block left_auth %}
+    {% include "tickets/base/_nav_left_auth.html" %}
+{% endblock left_auth %}
+
+

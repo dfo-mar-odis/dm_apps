@@ -1,4 +1,4 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/base.html" %}
 {% load static %}
 {% load humanize %}
 {% load custom_filters %}
@@ -114,7 +114,7 @@
                         {{ obj.submitted|yesno }}
                     </td>
                     <td>
-                        {{ obj.section_head_approved|yesno }}
+                        {{ obj.approved|yesno }}
                     </td>
 
                 </tr>

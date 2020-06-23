@@ -9,6 +9,7 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db.models import TextField
 from django.db.models.functions import Concat
 from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.shortcuts import render
 from django.utils import timezone
 
 from django.views.generic import UpdateView, DeleteView, CreateView, DetailView, TemplateView, FormView
@@ -33,7 +34,6 @@ def in_grais_admin_group(user):
 
 
 class GraisAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_grais_group(self.request.user)
@@ -46,7 +46,6 @@ class GraisAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
 
 class GraisAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_grais_admin_group(self.request.user)
@@ -76,6 +75,23 @@ class SampleListView(GraisAccessRequiredMixin, FilterView):
     filterset_class = filters.SampleFilter
     template_name = "grais/sample_list.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["random_object"] = models.Sample.objects.first()
+        field_list = [
+            'id|Sample #',
+            'station',
+            'date_deployed',
+            'date_retrieved',
+            'sample_type',
+            'weeks_deployed|Weeks deployed',
+            'has_invasive_spp|Has invasive species?',
+
+        ]
+        context["field_list"] = field_list
+
+        return context
+
     # def get_filterset_kwargs(self, filterset_class):
     #     kwargs = super().get_filterset_kwargs(filterset_class)
     #     if kwargs["data"] is None:
@@ -89,6 +105,18 @@ class SampleDetailView(GraisAccessRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['google_api_key'] = settings.GOOGLE_API_KEY
+        context["field_list"] = [
+            'station',
+            'date_deployed',
+            'date_retrieved',
+            'weeks_deployed|Weeks deployed',
+            'samplers',
+            'sample_type',
+            'has_invasive_spp|Has invasive species?',
+            'last_modified',
+            'last_modified_by',
+        ]
+
         sampler_field_list = [
             'first_name',
             'last_name',
@@ -98,6 +126,20 @@ class SampleDetailView(GraisAccessRequiredMixin, DetailView):
 
         ]
         context["sampler_field_list"] = sampler_field_list
+
+        context["random_probe_object"] = models.ProbeMeasurement.objects.first()
+        probe_field_list = [
+            'time_date',
+            'probe',
+            'temp_c',
+            'sal_ppt',
+            'o2_percent',
+            'o2_mgl',
+            'sp_cond_ms',
+            'spc_ms',
+        ]
+        context["probe_field_list"] = probe_field_list
+
         return context
 
 
@@ -152,7 +194,7 @@ class SampleNoteCreateView(GraisAccessRequiredMixin, CreateView):
         }
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def sample_note_delete(request, pk):
     note = models.SampleNote.objects.get(pk=pk)
@@ -358,13 +400,29 @@ class SpeciesListView(GraisAccessRequiredMixin, FilterView):
     queryset = models.Species.objects.annotate(
         search_term=Concat('id', 'common_name', 'scientific_name', 'abbrev', output_field=TextField()))
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["field_list"] = [
+            'id',
+            'common_name',
+            'common_name_fra',
+            'scientific_name',
+            'abbrev',
+            'tsn|ITIS TSN',
+            'aphia_id',
+            'color_morph',
+            'invasive',
+            'Has occurred in db?',
+        ]
+        return context
+
 
 class SpeciesDetailView(GraisAccessRequiredMixin, DetailView):
     model = models.Species
     fields = "__all__"
 
     def get_context_data(self, **kwargs):
-        context = super(SpeciesDetailView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context["field_list"] = [
             'id',
             'common_name',
@@ -588,7 +646,7 @@ class SpeciesObservationUpdatePopoutView(GraisAdminRequiredMixin, UpdateView):
         return HttpResponseRedirect(reverse('grais:close_me'))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def species_observation_delete(request, type, pk, backto):
     if type == "sample":
@@ -837,7 +895,7 @@ class FollowUpCreateView(GraisAccessRequiredMixin, CreateView):
         }
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
 def follow_up_delete(request, pk):
     followup = models.FollowUp.objects.get(pk=pk)
@@ -989,8 +1047,8 @@ class GCSampleListView(GraisAccessRequiredMixin, FilterView):
         context["field_list"] = [
             'season',
             'site',
-            'traps_set',
-            'traps_fished',
+            'traps_set|Traps set',
+            'traps_fished|Traps fished',
         ]
         return context
 
@@ -1133,14 +1191,15 @@ class TrapCreateView(GraisAdminRequiredMixin, CreateView):
         return HttpResponseRedirect(reverse_lazy("grais:trap_detail", kwargs={"pk": object.id}))
 
 
-class TrapDetailView(GraisAccessRequiredMixin, DetailView):
+class TrapDetailView(GraisAccessRequiredMixin, DetailView, FormView):
     model = models.Trap
+    form_class = forms.TrapSpeciesForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['google_api_key'] = settings.GOOGLE_API_KEY
         context["field_list"] = [
-            'sample',
+            # 'sample',
             'trap_number',
             'trap_type',
             'bait_type',
@@ -1152,23 +1211,22 @@ class TrapDetailView(GraisAccessRequiredMixin, DetailView):
             'total_green_crab_wt_kg',
         ]
 
+        context["crab_field_list"] = [
+            'species',
+            'width',
+            'sex',
+            'carapace_color',
+            'abdomen_color',
+            'egg_color',
+            'notes',
+        ]
+        context["bycatch_field_list"] = [
+            'species',
+            'count',
+            'notes',
+        ]
+        context["random_catch_object"] = models.Catch.objects.first
         # get a list of species
-        species_list = []
-        for obj in models.Species.objects.all():
-            if obj.green_crab_monitoring:
-                url = reverse("grais:crab_new_pop", kwargs={"trap": self.object.id, "species": obj.id})
-            else:
-                url = reverse("grais:bycatch_new_pop", kwargs={"trap": self.object.id, "species": obj.id})
-
-            html_insert = '<a class="add-btn btn btn-outline-dark" href="#" target-url="{}"> <img src="{}" alt=""></a><span style="margin-left: 10px;">{} / <em>{}</em> / {}</span>'.format(
-                url,
-                static("admin/img/icon-addlink.svg"),
-                obj.common_name,
-                obj.scientific_name,
-                obj.abbrev
-            )
-            species_list.append(html_insert)
-        context['species_list'] = species_list
 
         return context
 
@@ -1197,38 +1255,78 @@ class TrapDeleteView(GraisAdminRequiredMixin, DeleteView):
         return reverse_lazy('grais:gcsample_detail', kwargs={'pk': self.object.sample.id})
 
 
-# CRAB #
+# CATCH #
 #########
 
-class CrabCreateViewPopout(GraisAdminRequiredMixin, CreateView):
-    template_name = 'grais/crab_form_popout.html'
-    form_class = forms.CrabForm
-    model = models.Crab
+class CatchCreateViewPopout(GraisAdminRequiredMixin, FormView):
+    template_name = 'grais/catch_form_popout.html'
+    form_class = forms.NewCatchForm
+    model = models.Catch
 
     def get_initial(self):
         my_dict = {}
-        my_dict["trap"] = models.Trap.objects.get(pk=self.kwargs['trap'])
-        my_dict["species"] = models.Species.objects.get(pk=self.kwargs['species'])
-        my_dict["last_modified_by"] = self.request.user.id
+        my_trap = models.Trap.objects.get(pk=self.kwargs['trap'])
+        my_species = models.Species.objects.get(pk=self.kwargs['species'])
+        my_dict["species"] = my_species
+        my_dict["trap"] = my_trap
+        # my_dict["last_modified_by"] = self.request.user.id
+
+        # if this is a bycatch sp, let's look up the previous entry
+        if not my_species.green_crab_monitoring:
+            try:
+                my_catch = models.Catch.objects.get(
+                    species=my_species,
+                    trap=my_trap,
+                )
+            except models.Catch.DoesNotExist:
+                pass
+            else:
+                my_dict["notes"] = my_catch.notes
+                my_dict["count"] = my_catch.count
+
         return my_dict
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        trap = models.Trap.objects.get(id=self.kwargs['trap'])
-        species = models.Species.objects.get(id=self.kwargs['species'])
-        context['species'] = species
-        context['trap'] = trap
+        my_species = models.Species.objects.get(id=self.kwargs['species'])
+        my_trap = models.Trap.objects.get(id=self.kwargs['trap'])
+        context['species'] = my_species
+        context['trap'] = my_trap
         return context
 
     def form_valid(self, form):
-        self.object = form.save()
+        my_species = models.Species.objects.get(id=self.kwargs['species'])
+        my_trap = models.Trap.objects.get(id=self.kwargs['trap'])
+
+        # if the species is a bycatch species, save all the data as a catch instance
+        if not my_species.green_crab_monitoring:
+            if form.cleaned_data.get("count"):
+                my_catch, created = models.Catch.objects.get_or_create(
+                    species=my_species,
+                    trap=my_trap,
+                )
+                my_catch.count = form.cleaned_data.get("count")
+                my_catch.notes = form.cleaned_data.get("notes")
+                my_catch.last_modified_by = self.request.user
+                my_catch.save()
+
+        # if targeted species, lets create x number of blank entries
+        else:
+            for i in range(0, form.cleaned_data.get("count")):
+                print("creating catch")
+                models.Catch.objects.create(
+                    species=my_species,
+                    trap=my_trap,
+                    last_modified_by=self.request.user,
+                )
+
         return HttpResponseRedirect(reverse('grais:close_me'))
 
 
-class CrabUpdateViewPopout(GraisAdminRequiredMixin, UpdateView):
-    template_name = 'grais/crab_form_popout.html'
-    form_class = forms.CrabForm
-    model = models.Crab
+class CatchUpdateViewPopout(GraisAdminRequiredMixin, UpdateView):
+    template_name = 'grais/catch_form_popout.html'
+    form_class = forms.CatchForm
+    model = models.Catch
 
     def get_initial(self):
         return {'last_modified_by': self.request.user.id}
@@ -1242,67 +1340,116 @@ class CrabUpdateViewPopout(GraisAdminRequiredMixin, UpdateView):
         return HttpResponseRedirect(reverse('grais:close_me'))
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
-def crab_delete(request, pk):
-    crab = models.Crab.objects.get(pk=pk)
-    crab.delete()
-    messages.success(request, "The crab has been successfully removed from this trap.")
-    return HttpResponseRedirect(reverse_lazy("grais:trap_detail", kwargs={"pk": crab.trap.id}))
+def catch_delete(request, pk):
+    my_catch = models.Catch.objects.get(pk=pk)
+    my_catch.delete()
+    messages.success(request, "The catch item has been successfully removed from this trap.")
+    return HttpResponseRedirect(reverse_lazy("grais:trap_detail", kwargs={"pk": my_catch.trap.id}))
 
 
-# Bycatch #
-#########
-
-class BycatchCreateViewPopout(GraisAdminRequiredMixin, CreateView):
-    template_name = 'grais/crab_form_popout.html'
-    form_class = forms.BycatchForm
-    model = models.Bycatch
-
-    def get_initial(self):
-        my_dict = {}
-        my_dict["trap"] = models.Trap.objects.get(pk=self.kwargs['trap'])
-        my_dict["species"] = models.Species.objects.get(pk=self.kwargs['species'])
-        my_dict["last_modified_by"] = self.request.user.id
-        return my_dict
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        trap = models.Trap.objects.get(id=self.kwargs['trap'])
-        species = models.Species.objects.get(id=self.kwargs['species'])
-        context['species'] = species
-        context['trap'] = trap
-        return context
-
-    def form_valid(self, form):
-        self.object = form.save()
-        return HttpResponseRedirect(reverse('grais:close_me'))
-
-
-class BycatchUpdateViewPopout(GraisAdminRequiredMixin, CreateView):
-    template_name = 'grais/crab_form_popout.html'
-    form_class = forms.BycatchForm
-    model = models.Bycatch
-
-    def get_initial(self):
-        return {'last_modified_by': self.request.user.id}
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
-
-    def form_valid(self, form):
-        self.object = form.save()
-        return HttpResponseRedirect(reverse('grais:close_me'))
-
-
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
-def bycatch_delete(request, pk):
-    bycatch = models.Bycatch.objects.get(pk=pk)
-    bycatch.delete()
-    messages.success(request, "The bycatch has been successfully removed from this trap.")
-    return HttpResponseRedirect(reverse_lazy("grais:trap_detail", kwargs={"pk": bycatch.trap.id}))
+def manage_catch(request, trap, type):
+    qs = models.Catch.objects.filter(trap_id=trap)
+    context = dict()
+    context["my_object"] = qs.first()
+    context["trap"] = qs.first().trap
+
+    if type == "invasive":
+        qs = qs.filter(species__invasive=True, species__green_crab_monitoring=True)
+        crab = True
+    elif type == "noninvasive":
+        qs = qs.filter(species__invasive=False, species__green_crab_monitoring=True)
+        crab = True
+    elif type == "bycatch":
+        qs = qs.filter(species__green_crab_monitoring=False)
+        crab = False
+
+    if crab:
+        context["field_list"] = [
+            'width',
+            'sex',
+            'carapace_color',
+            'abdomen_color',
+            'egg_color',
+            'notes',
+        ]
+    else:
+        context["field_list"] = [
+            'count',
+            'notes',
+        ]
+
+    if request.method == 'POST':
+        formset = forms.CatchFormSet(request.POST, )
+        if formset.is_valid():
+            formset.save()
+            # do something with the formset.cleaned_data
+            messages.success(request, "Items have been successfully updated")
+            return HttpResponseRedirect(reverse("grais:manage_catch", kwargs={"trap": trap, "type": type}))
+    else:
+        formset = forms.CatchFormSet(queryset=qs)
+
+    context['title'] = "Manage Catch"
+    context['formset'] = formset
+    return render(request, 'grais/manage_catch.html', context)
+
+
+#
+# # Bycatch #
+# #########
+#
+# class BycatchCreateViewPopout(GraisAdminRequiredMixin, CreateView):
+#     template_name = 'grais/crab_form_popout.html'
+#     form_class = forms.BycatchForm
+#     model = models.Catch
+#
+#     def get_initial(self):
+#         my_dict = {}
+#         my_dict["trap"] = models.Trap.objects.get(pk=self.kwargs['trap'])
+#         my_dict["species"] = models.Species.objects.get(pk=self.kwargs['species'])
+#         my_dict["last_modified_by"] = self.request.user.id
+#         return my_dict
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         trap = models.Trap.objects.get(id=self.kwargs['trap'])
+#         species = models.Species.objects.get(id=self.kwargs['species'])
+#         context['species'] = species
+#         context['trap'] = trap
+#         return context
+#
+#     def form_valid(self, form):
+#         self.object = form.save()
+#         return HttpResponseRedirect(reverse('grais:close_me'))
+#
+#
+# class BycatchUpdateViewPopout(GraisAdminRequiredMixin, CreateView):
+#     template_name = 'grais/crab_form_popout.html'
+#     form_class = forms.BycatchForm
+#     model = models.Catch
+#
+#     def get_initial(self):
+#         return {'last_modified_by': self.request.user.id}
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         return context
+#
+#     def form_valid(self, form):
+#         self.object = form.save()
+#         return HttpResponseRedirect(reverse('grais:close_me'))
+#
+#
+# @login_required(login_url='/accounts/login/')
+# @user_passes_test(in_grais_admin_group, login_url='/accounts/denied/')
+# def bycatch_delete(request, pk):
+#     bycatch = models.Catch.objects.get(pk=pk)
+#     bycatch.delete()
+#     messages.success(request, "The bycatch has been successfully removed from this trap.")
+#     return HttpResponseRedirect(reverse_lazy("grais:trap_detail", kwargs={"pk": bycatch.trap.id}))
 
 
 # REPORTS #

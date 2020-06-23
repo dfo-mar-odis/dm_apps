@@ -9,11 +9,12 @@ from shared_models import models as shared_models
 
 chosen_js = {"class": "chosen-select-contains"}
 attr_fp_date_time = {"class": "fp-date-time", "placeholder": "Select Date and Time.."}
+attr_fp_date = {"class": "fp-date", "placeholder": "Select a Date.."}
 
 
 class ResourceCreateForm(forms.ModelForm):
     add_custodian = forms.BooleanField(required=False, label="Add yourself as custodian")
-    add_point_of_contact = forms.BooleanField(required=False, label="Add Regional Data Manager as a Point of Contact")
+    # add_point_of_contact = forms.BooleanField(required=False, label="Add Regional Data Manager as a Point of Contact")
 
     class Meta:
         model = models.Resource
@@ -120,12 +121,17 @@ class ResourceForm(forms.ModelForm):
             "qc_process_descr_fre": forms.Textarea(attrs={"rows": 5}),
             "storage_envr_notes": forms.Textarea(attrs={"rows": 5}),
             "parameters_collected_eng": forms.Textarea(attrs={"rows": 5}),
+            "distribution_formats": forms.SelectMultiple(attrs=chosen_js),
             "parameters_collected_fre": forms.Textarea(attrs={"rows": 5}),
             "additional_credit": forms.Textarea(attrs={"rows": 5}),
             "analytic_software": forms.Textarea(attrs={"rows": 5}),
             "notes": forms.Textarea(attrs={"rows": 5}),
             "parent": forms.NumberInput(),
-            "fgp_publication_date": forms.DateInput(attrs=attr_fp_date_time),
+            "fgp_publication_date": forms.DateInput(attrs=attr_fp_date),
+            "od_publication_date": forms.DateInput(attrs=attr_fp_date),
+            "od_release_date": forms.DateInput(attrs=attr_fp_date),
+            "last_revision_date": forms.DateInput(attrs=attr_fp_date),
+            "paa_items": forms.SelectMultiple(attrs=chosen_js),
         }
         labels = {
             "section": "Section (Region / Branch / Division / Section)",
@@ -151,7 +157,7 @@ class ResourceForm(forms.ModelForm):
             'security_use_limitation_eng',
             'security_use_limitation_fre',
             'security_classification',
-            'distribution_format',
+            'distribution_formats',
             'data_char_set',
             'spat_representation',
             'spat_ref_system',
@@ -300,6 +306,7 @@ class ResourcePersonForm(forms.ModelForm):
         role_choices = [(r.id, "{} - {}".format(r.role, r.notes)) for r in models.PersonRole.objects.all()]
         role_choices.insert(0, (None, "-----"))
         self.fields['role'].choices = role_choices
+        self.fields['role'].choices = role_choices
 
 
 class PersonForm(forms.Form):
@@ -307,7 +314,7 @@ class PersonForm(forms.Form):
 
     first_name = forms.CharField()
     last_name = forms.CharField()
-    email = forms.EmailField(required=False)
+    email = forms.EmailField(required=True)
     position_eng = forms.CharField(label="Position title (English)", required=False)
     position_fre = forms.CharField(label="Position title (French)", required=False)
     phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "000-000-0000 ext.000"}), required=False)
@@ -322,7 +329,7 @@ class PersonCreateForm(PersonForm):
     def clean_email(self):
         email = self.cleaned_data['email']
         # if email already exists in db
-        if User.objects.filter(email=email).count() > 0:
+        if User.objects.filter(email__iexact=email).count() > 0:
             raise forms.ValidationError("email address already exists in system.")
         return email
 
@@ -411,6 +418,7 @@ class ReportSearchForm(forms.Form):
     REPORT_CHOICES = (
         (None, "------"),
         (1, "Batch XML export"),
+        (2, "Open Data Inventory - Quarterly Report"),
         # (2, "Organizational Report / Cue Card (PDF)"),
     )
 

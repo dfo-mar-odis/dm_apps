@@ -1,0 +1,161 @@
+{% extends "spring_cleanup/spring_cleanup_base.html" %}
+{% load static %}
+{% load i18n %}
+{% block header %}
+    {#    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">#}
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+    <style>
+        body {
+            background-image: url("{% static 'spring_cleanup/img/sky.jpg' %}");
+            background-size: cover;
+        }
+
+        .mytitle {
+            font-family: 'Gloria Hallelujah', cursive;
+
+        }
+
+        #map {
+            height: 600px;
+        }
+
+    </style>
+
+    <div class="mb-5 center-col">
+        <h1 class="mytitle" style="font-size: 50px">
+            {% trans "Welcome to the Gulf Region Spring Cleanup Coordination App" %}
+
+        </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col">
+            <div class="center-col">
+                <h2>{% trans "Click on a route below to sign up for spring cleanup!!" %}</h2>
+            </div>
+            <div id="map"></div>
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+    {#    <div class="container">#}
+    {#        <div class="jumbotron text-center">#}
+    {#            <h1>Earth Day GFC Spring Cleanup</h1>#}
+    {#        </div>#}
+    {#    </div>#}
+
+
+
+
+
+{% endblock %}
+{% block body_js %}
+
+    <script>
+        function initialize() {
+
+            window.map = new google.maps.Map(document.getElementById('map'), {
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
+            });
+            var infowindow = new google.maps.InfoWindow();
+            var bounds = new google.maps.LatLngBounds();
+
+            {% for object in object_list %}
+                {% if object.polygon %}
+                    var localBounds{{ forloop.counter0 }} = new google.maps.LatLngBounds();
+
+                    // extend bounds var
+                    {% for coord in object.coords %}
+                        bounds.extend(new google.maps.LatLng({{coord.1}}, {{ coord.0 }}));
+                        localBounds{{ forloop.parentloop.counter0 }}.extend(new google.maps.LatLng({{coord.1}}, {{ coord.0 }}));
+                    {% endfor %}
+
+                    // Define the LatLng coordinates for the polygon's path.
+                    var polygonCoords = [
+                        {% for coord in object.coords %}
+                            {lat: {{coord.1}}, lng: {{coord.0}}, order: {{forloop.counter0}}},
+                        {% endfor %}
+                    ];
+
+                    // Construct the stratum.
+                    var color = '#ea4544';
+                    var myPolygon = new google.maps.Polygon({
+                        paths: polygonCoords,
+                        strokeColor: 'white',
+                        strokeOpacity: 0.8,
+                        strokeWeight: 2,
+                        fillColor: color,
+                        fillOpacity: 0.35,
+                        label: "test"
+                    });
+
+                    myPolygon.setMap(map);
+
+                    marker{{ forloop.counter0 }} = new google.maps.Marker({
+                        position: new google.maps.LatLng(localBounds{{ forloop.counter0 }}.getCenter().lat,localBounds{{ forloop.counter0 }}.getCenter().long),
+                        map: map,
+                    });
+
+                    marker{{ forloop.counter0 }}.setMap(map);
+
+                    google.maps.event.addListener(myPolygon, 'click', function (event) {
+                        map.setCenter(localBounds{{ forloop.counter0 }}.getCenter());
+                        map.setZoom(20);
+                        window.location.href = "{% url 'spring_cleanup:route_detail' object.id  %}";
+                        {#infowindow.setContent("{{object.id}}");#}
+                        {#infowindow.open(map, marker{{ forloop.counter0 }});#}
+                    });
+
+
+                    map.fitBounds(bounds);
+                    // add a click event on the polygon
+                {% endif %}
+
+            {% endfor %}
+
+            map.fitBounds(bounds);
+
+        }
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initialize";
+            document.body.appendChild(script);
+        }
+
+        window.onload = loadScript();
+
+    </script>
+    {#    #}
+    {##}
+    {#    <script>#}
+    {##}
+    {#        // Initialize and add the map#}
+    {#        function initMap() {#}
+    {#            var gfc = {lat: 46.100329, lng: -64.785304};#}
+    {#            // The map, centered at Uluru#}
+    {#            var map = new google.maps.Map(#}
+    {#                document.getElementById('map'), {#}
+    {#                    zoom: 17,#}
+    {#                    center: gfc,#}
+    {#                    mapTypeId: 'satellite',#}
+    {#                });#}
+    {#            // The marker, positioned at Uluru#}
+    {#            var marker = new google.maps.Marker({position: gfc, map: map});#}
+    {#            marker.addListener('click', function () {#}
+    {#map.setZoom(8);#}
+    {#map.setCenter(marker.getPosition());#}
+    {#                alert("you just clicked")#}
+    {#            });#}
+    {#        }#}
+    {#    </script>#}
+    {#    <script async defer#}
+    {#            src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&callback=initMap">#}
+    {#    </script>#}
+{% endblock %}

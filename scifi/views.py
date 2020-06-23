@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.mail import send_mail
+from dm_apps.utils import custom_send_mail
 from django.db.models import TextField, Sum, Value
 from django.db.models.functions import Concat
 from django.utils import timezone
@@ -71,11 +71,11 @@ def can_modify(user, transaction_id):
 
 class SciFiAccessRequiredMixin(LoginRequiredMixin):
     # everyone who is logged in should be able to access scifi
-    login_url = '/accounts/login_required/'
+    login_url = '/accounts/login/'
 
 
 class OnlyThoseAllowedToEditMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return can_modify(self.request.user, self.kwargs["pk"])
@@ -83,12 +83,12 @@ class OnlyThoseAllowedToEditMixin(LoginRequiredMixin, UserPassesTestMixin):
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()
         if not user_test_result and self.request.user.is_authenticated:
-            return HttpResponseRedirect('/accounts/denied/scifi/')
+            return HttpResponseRedirect(reverse("accounts:denied_access"))
         return super().dispatch(request, *args, **kwargs)
 
 
 class SciFiAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_scifi_admin_group(self.request.user)
@@ -518,7 +518,7 @@ class TransactionBasicListView(SciFiAccessRequiredMixin, FilterView):
         return kwargs
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_scifi_admin_group, login_url='/accounts/denied/')
 def toggle_mrs(request, pk, query=None):
     # get instance of transaction
@@ -738,14 +738,13 @@ class CustomTransactionCreateView(SciFiAccessRequiredMixin, CreateView):
         # create a new email object
         email = emails.NewEntryEmail(self.object)
         # send the email object
-        if settings.PRODUCTION_SERVER and email.to_list:
-            send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                      recipient_list=email.to_list, fail_silently=False, )
-            messages.success(self.request,
-                             "The entry has been submitted and an email has been sent to the branch finance manager!")
-        else:
-            print('not sending email since in dev mode')
-            print(email)
+        if email.to_list:
+            custom_send_mail(
+                subject=email.subject,
+                html_message=email.message,
+                from_email=email.from_email,
+                recipient_list=email.to_list
+            )
 
         if form.cleaned_data["do_another"] == 1:
             return HttpResponseRedirect(reverse_lazy('scifi:ctrans_new'))
@@ -803,7 +802,8 @@ class ImportFileView(SciFiAdminRequiredMixin, CreateView):
             "IN MRS": ['string field', "must be one of the following: 'yes', or 'no'",
                        "not case sensitive", "If left blank, it will default to 'No'"],
             "REFERENCE NUMBER": ['text field', ],
-            "INVOICE DATE": ['date field', "must be formated as 'MM/DD/YYYY'"]
+            "INVOICE DATE": ['date field', "must be formated as 'MM/DD/YYYY'"],
+            "EXPECTED PURCHASE DATE": ['date field', "must be formated as 'MM/DD/YYYY'"],
         }
         context["header_dict"] = header_dict
         return context
@@ -847,6 +847,9 @@ class ImportFileView(SciFiAdminRequiredMixin, CreateView):
                 # INVOICE DATE
                 invoice_date = datetime.datetime.strptime(row.get("INVOICE DATE"), "%m/%d/%Y") if row.get("INVOICE DATE") else None
 
+                # EXPECTED PURCHASE DATE
+                expected_purchase_date = datetime.datetime.strptime(row.get("EXPECTED PURCHASE DATE"), "%m/%d/%Y") if row.get("EXPECTED PURCHASE DATE") else None
+
                 # LINE OBJECT
                 if row.get("LINE OBJECT"):
                     try:
@@ -871,7 +874,8 @@ class ImportFileView(SciFiAdminRequiredMixin, CreateView):
                     invoice_cost=float(row.get("INVOICE COST")),
                     in_mrs=in_mrs,
                     reference_number=row.get("REFERENCE NUMBER"),
-                    invoice_date=invoice_date
+                    invoice_date=invoice_date,
+                    expected_purchase_date=expected_purchase_date,
                 )
                 my_t.created_by = self.request.user
                 my_t.save()
@@ -893,7 +897,7 @@ class ImportFileView(SciFiAdminRequiredMixin, CreateView):
 
 class ReportSearchFormView(SciFiAccessRequiredMixin, FormView):
     template_name = 'scifi/report_search.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.ReportSearchForm
 
     def get_initial(self):

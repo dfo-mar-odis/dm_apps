@@ -1,0 +1,1 @@
+[{"model": "travel.tripcategory", "pk": 3, "fields": {"name": "Conference", "nom": null, "days_when_eligible_for_review": 90}}, {"model": "travel.tripcategory", "pk": 2, "fields": {"name": "Operational", "nom": null, "days_when_eligible_for_review": 60}}, {"model": "travel.tripcategory", "pk": 1, "fields": {"name": "Training", "nom": null, "days_when_eligible_for_review": 60}}]

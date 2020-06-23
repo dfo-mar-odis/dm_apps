@@ -1,0 +1,55 @@
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+
+
+<style>
+
+
+    .plainjane {
+        background-color: #f5efe6;
+        border: black solid 1px;
+    }
+
+    .admin_notes {
+        padding: 10px;
+        background-color: #efee7e;
+        font-weight: bold;
+    }
+
+</style>
+
+{% if triprequest.admin_notes %}
+    <strong>
+        {% trans "ADMINISTRATIVE NOTES" %}
+    </strong>
+    <div class="mb-3 card admin_notes">
+        {{ triprequest.admin_notes_html|safe }}
+    </div>
+
+{% endif %}
+
+{% include "travel/_basic_detail.html" %}
+{% include "travel/_group_travellers.html" %}
+{% include "travel/_costs.html" %}
+{% if trip %}
+    {% include "travel/_trip_detail.html" %}
+{% endif %}
+{% include "travel/_files.html" %}
+{% include "travel/_reviewers.html" %}
+
+
+<script type="application/javascript">
+    $("#reset-btn").click(function (e) {
+        e.preventDefault();
+        var input = confirm("{% trans 'Are you sure you want to reset the reviewers? This will undo any changes that you have made to the reviewer list and process order.' %}");
+        if (input) {
+            window.location.href = $(this).attr("href")
+        }
+    });
+    $(".cost-breakdown-btn").click(function (e) {
+        console.log(123);
+        e.stopPropagation();
+    })
+</script>

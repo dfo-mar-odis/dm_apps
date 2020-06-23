@@ -1,0 +1,25 @@
+{% load i18n %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'tickets:router' %}">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'tickets:my_list' %}">My Tickets</a></li>
+{% if user.is_staff %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'tickets:my_assigned_list' %}">My Assigned Tickets</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'tickets:list' %}">All Tickets</a></li>
+{% endif %}
+
+{# Reports #}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+       aria-expanded="false">
+        Reports
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'tickets:finance_report' %}">Report for Finance</a>
+        {# <a class="dropdown-item" href="#">New Sea Sample</a> #}
+    </div>
+</li>
+
+
+
+
+

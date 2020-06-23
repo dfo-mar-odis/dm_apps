@@ -1,83 +1,331 @@
-{% extends "travel/travel_base.html" %}
+{% extends "travel/base.html" %}
 {% load i18n %}
 {% load static %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load bootstrap4 %}
+
+{% block alerts %}
+{% endblock %}
 {% block content %}
     <style>
-        body {
-            background-image: url("{% static 'img/ross-parmly-25230-unsplash.jpg' %}");
-            background-size: cover;
+
+
+        .card, .jumbotron {
+            background-color: rgba(255, 255, 255, 1);
+        {#border: black solid 1px;#} margin-left: 25px;
+            margin-right: 25px;
+            border-radius: 25px;
         }
 
+        .card {
+            background-color: rgba(255, 255, 255, 1);
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: #79aec8;
+            border: grey;
+        }
+
+        .container-fluid, .container {
+            border-radius: 25px;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: transparent;
+            font-size: small;
+
+        }
+
+        .btn-special {
+            border: 1px grey solid;
+            border-radius: 25px;
+        }
+
+        .subtitle, .subtitle-success {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .subtitle-success {
+            color: green;
+        }
+
+        .nav-tabs {
+            font-size: 16px;
+        }
+
+        .text {
+            color: grey;
+            font-size: 16px;
+        }
+
+        .text-black {
+            font-size: 16px;
+        }
     </style>
+
     <div class="container">
-        <br>
-        <div class="container">
-            <div class="jumbotron">
-                <h1 class="three-em">
-                    {% trans "Travel Management System" %}
-                </h1>
-                <hr>
-                {% url 'travel:trip_list' as event_list_url %}
-                {% url 'travel:trip_review_list' "awaiting" as event_approval_list_url %}
-                {% url 'travel:trip_review_list' as event_assigned_list_url %}
-                {% url 'travel:trip_new' as event_new_url %}
-                {% url 'travel:admin_approval_list' as admin_approval_list_url %}
-                <br>
-                <h2>
-                    {% blocktrans %}
-                        <a href="{{ event_new_url }}">New</a> trip.
-                    {% endblocktrans %}
-                    <br><br>
-                    {% if user.user_trips.count > 0 %}
-                        {% with user.id as user_id %}
-                            {% blocktrans with event_list_url|add:"?user=" as your_url and user_id as user_id %}
-                                View <a href="{{ your_url }}{{ user_id }}">your</a> trips
-                            {% endblocktrans %} ({{ user.user_trips.count }}).
-                            <br><br>
+
+    <div class="jumbotron py-3 mx-0">
+        <div class="mb-5">
+            <h1 class="three-em center-col">
+                {% trans "DFO Science Travel Management System" %}
+            </h1>
+            <h4 class="center-col">
+                <em>
+                    {% trans '"Get Your Pre-approval to Travel Today!!"' %}
+                </em>
+            </h4>
+        </div>
+
+        {# Warnings #}
+        <div class="mb-3">
+            {% autoescape off %}
+                {% bootstrap_messages size='small' %}
+            {% endautoescape %}
+        </div>
+
+        <div class="mb-3 text" style="font-size: 16px;">
+            <p>
+                {% blocktrans %}
+                    This application process supersedes existing mechanisms for requesting travel requiring RDG or EOS ADM approval.
+                {% endblocktrans %}
+            </p>
+            <p>
+                {% blocktrans %}
+                    A travel request can have multiple travellers from various sectors (e.g., public, academic, private), however, only a
+                    Fisheries and Oceans employee with a valid Government of Canada email address can initiate and submit a travel request.
+                    In
+                    addition, the travel request should already have confirmed or anticipated funding available to support the travel.
+                {% endblocktrans %}
+            </p>
+            <p>
+                {% blocktrans %}
+                    Please ensure your travel request is properly completed and submitted on time to allow for efficient and appropriate
+                    review. Incomplete applications will not be evaluated. You can check the status of your travel request by going to the
+                    home page
+                    and selecting “view your request”.
+                {% endblocktrans %}
+            </p>
+
+        </div>
+
+
+        {% url 'travel:request_new' "my" as request_new_url %}
+        {% url 'travel:request_list' user|slugify as request_list_url %}
+
+        {% url 'travel:request_review_list' "awaiting" as active_tr_reviews_list_url %}
+        {% url 'travel:request_review_list' as all_tr_reviews_list_url %}
+
+        {% url 'travel:trip_review_list' "awaiting" as active_trip_reviews_list_url %}
+        {% url 'travel:trip_review_list'  as all_trip_reviews_list_url %}
+
+        <div class="row mb-4 justify-content-center">
+
+
+            <div class="container mt-3">
+
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#traveller">{% trans "Traveller" %}</a>
+                    </li>
+
+                    {% if reviews_waiting %}
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#reviewer">
+                                {% trans "Reviewer" %}
+                                {% if reviews_waiting %} (<span class="red-font blink-me">{{ reviews_waiting }}</span>) {% endif %}
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if is_admin %}
+                        {% for region in tab_dict %}
+                            {% with tab_dict|lookup:region as dict %}
+                                {% if dict.things_to_deal_with or "ADM" in region %}
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab"
+                                           href="#region_{{ region|slugify }}">
+                                            {{ region }}
+                                            {% if dict.things_to_deal_with %}
+                                                (<span class="red-font blink-me">{{ dict.things_to_deal_with }}</span>)
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}
+                    {% endif %}
+
+
+                </ul>
+                {% echo "22em" as width1 %}
+                {% echo "24em" as width2 %}
+                {% echo "26em" as width3 %}
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    {# Traveller Pane #}
+                    <div id="traveller" class="container tab-pane fade active show"><br>
+
+                        <div class="btns mb-3 center-col">
+
+                            <a href="{{ request_new_url }}" class="btn btn-lg btn-outline-primary mx-3">
+                                {% trans "Create a New Request" %}
+                            </a>
+
+                            {% if user_trip_requests > 0 %}
+                                <a href="{{ request_list_url }}"
+                                   class="btn btn-lg btn-outline-primary  mx-3">
+                                    {% trans "View Your Requests" %}
+                                    ({{ user_trip_requests }})
+                                </a>
+                            {% endif %}
+
+                            <a href="{% url 'travel:trip_list' "upcoming" %}"
+                               class="btn btn-lg btn-outline-primary mx-3">
+                                {% trans "Browse Upcoming Trips" %}
+                            </a>
+
+                        </div>
+
+                        {% if requests_awaiting_changes %}
+                            <div class="row justify-content-center">
+                                <div class="col-7 alert alert-danger center-col" role="alert">
+                                    <h5 class="py-1 blink-me">
+                                        {% trans "There are trip requests requiring your attention!" %}
+                                    </h5>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div class="mb-5 mt-5">
+                            <hr>
+                        </div>
+
+                        <div class="mt-5">
+
+                            {% include "travel/_process_timeline.html" %}
+                        </div>
+
+                    </div>
+
+                    {# Reviewer Pane #}
+
+                    <div id="reviewer" class="container tab-pane fade"><br>
+
+
+                        <div class="btns mb-3 center-col">
+
+                            <h2 class="">{% trans "Your Reviews" %}</h2>
+                            <p class="card-text">{% trans "View and manage trips and/or trip requests for which you are a reviewer" %}</p>
+                            {% if is_trip_reviewer %}
+                                {% if trip_reviews_waiting %}
+
+                                    <a href="{{ active_trip_reviews_list_url }}"
+                                       class="btn btn-lg btn-outline-primary mx-3 {{ disabled_text }}">
+                                        {% trans "Trips Awaiting Review" %}
+                                        (<span class="red-font blink-me">{{ trip_reviews_waiting }}</span>)
+                                    </a>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if is_tr_reviewer %}
+                                {% if tr_reviews_waiting %}
+                                    <a href="{{ active_tr_reviews_list_url }}"
+                                       class="btn btn-lg btn-outline-primary mx-3 {{ disabled_text }}">
+                                        {% trans "Requests Awaiting Review" %}
+                                        (<span class="red-font blink-me">{{ tr_reviews_waiting }}</span>)
+                                    </a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% for region in tab_dict %}
+                        {% with tab_dict|lookup:region as dict %}
+                            <div id="region_{{ region|slugify }}" class="container tab-pane fade"><br>
+
+
+                                <div class="btns mb-3 center-col">
+                                    <h2 class="card-title">
+                                        {% if region.id %}
+                                            {% blocktrans with region as r %}
+                                                {{ r }} Region - Admin
+                                            {% endblocktrans %}
+                                        {% else %}
+                                            {{ region }} - Admin
+                                        {% endif %}
+                                    </h2>
+                                    <p class="card-text">{% trans "Perform tasks reserved for travel app administrators" %}</p>
+
+                                    {% if not "ADM" in region %}
+                                        {% if dict.adm_number_waiting %}
+                                            <a href="{{ dict.adm_approval_list_url }}" class="btn btn-lg btn-outline-primary mx-3">
+                                                {% trans "Requests Awaiting ADM" %}
+                                                (<span class="red-font blink-me">{{ dict.adm_number_waiting }}</span>)
+                                            </a>
+                                        {% endif %}
+                                    {% endif %}
+
+                                    {# RDG stuff #}
+                                    {% if not "ADM" in region %}
+                                        {% if dict.rdg_number_waiting %}
+                                            <a href="{{ dict.rdg_approval_list_url }}" class="btn btn-lg btn-outline-primary mx-3">
+                                                {% trans "Requests Awaiting RDG" %}
+                                                (<span class="red-font blink-me">{{ dict.rdg_number_waiting }}</span>)
+                                            </a>
+                                        {% endif %}
+                                    {% endif %}
+
+
+                                    {# Verification #}
+                                    {% if dict.unverified_trips %}
+                                        <a href="{{ dict.trip_verification_list_url }}" class="btn btn-lg btn-outline-primary mx-3">
+                                            {% trans "Trip Verifications" %}
+                                            (<span class="red-font blink-me">{{ dict.unverified_trips }}</span>)
+                                        </a>
+                                    {% endif %}
+
+                                    {% if "ADM" in region %}
+                                        {# ADM hit list stuff #}
+                                        {% if dict.adm_trips_ready %}
+
+                                            <a href="{% url 'travel:trip_list' "adm-hit-list" %}"
+                                               class="btn btn-lg btn-outline-primary mx-3">
+                                                The ADMO Net
+                                                (<span class="red-font blink-me">{{ dict.adm_trips_ready }}</span>)
+                                            </a>
+
+                                        {% endif %}
+
+                                    {% endif %}
+
+                                </div>
+                            </div>
+
                         {% endwith %}
-                    {% endif %}
-
-
-                    {% blocktrans %}
-                        <a href="{{ event_list_url }}">List</a> all trips.
-                    {% endblocktrans %}
-                    <br>
-                    <br>
-                    <br>
-                    {% if is_reviewer or is_admin %}
-                        <hr>
-                        {% if is_reviewer %}
-{#                            <span class="{% if number_waiting > 0 %}highlight{% endif %}">#}
-                            {% blocktrans %}
-                                Trips awaiting your <a href="{{ event_approval_list_url }}">review</a>
-                            {% endblocktrans %}
-                            (<span class="{% if number_waiting > 0 %}red-font blink-me{% endif %}">{{ number_waiting }}</span>).
-{#                            </span>#}
-                            <br><br>
-                            {% blocktrans %}
-                                Trips <a href="{{ event_assigned_list_url }}">assigned</a> to you
-                            {% endblocktrans %}
-                            (<span>{{ user.reviewers.count }}</span>).
-                            <br><br>
-                        {% endif %}
-                        {% if is_admin %}
-                            {% blocktrans %}
-                                Trips awaiting admin <a href="{{ admin_approval_list_url }}">approval</a>
-                            {% endblocktrans %}
-                            (<span class="{% if admin_number_waiting > 0 %}red-font blink-me{% endif %}">{{ admin_number_waiting }}</span>).
-                        {% endif %}
-                    {% endif %}
-
-
-                </h2>
-                <br><br>
-                <div class="">
+                    {% endfor %}
 
                 </div>
 
             </div>
         </div>
+
+
     </div>
+    {#    <div class="jumbotron py-3 mx-0" style="background-color:white;">#}
+    {##}
+    {#       #}
+    {##}
+    {#    </div>#}
+
+
+
     <br>
     <br>
     <br>
@@ -87,17 +335,30 @@
     <br>
     <br>
     <br>
-    <footer>
-        <div class="container">
-            <a class=""
-               style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
-               href="https://unsplash.com/@rparmly?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-               target="_blank" rel="noopener noreferrer"
-               title="Download free do whatever you want high-resolution photos from Ross Parmly"><span
-                    style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                      style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
-                                                                      viewBox="0 0 32 32"><title>unsplash-logo</title><path
-                    d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Ross Parmly</span></a>
+    <br>
+    <br>
+    <footer class="center-col">
+        <a class=""
+           style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+           href="#"
+           rel="noopener noreferrer"
+           title="Download free do whatever you want high-resolution photos from Ross Parmly on Unsplah"><span
+                style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                  style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+                                                                  viewBox="0 0 32 32"><title>unsplash-logo</title><path
+                d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Photo by Ross Parmly</span></a>
     </footer>
-    </div>
 {% endblock content %}
+
+
+{% block body_js %}
+    <script type="application/javascript">
+        {#        {% if reviews_waiting %}#}
+        {#            $('#reviewer').tab('show');#}
+        {#        {% else %}#}
+        {#            $('#traveller').tab('show');#}
+        {#        {% endif %}#}
+
+
+    </script>
+{% endblock %}

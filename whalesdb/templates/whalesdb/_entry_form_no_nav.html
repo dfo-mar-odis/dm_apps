@@ -1,0 +1,52 @@
+{% extends "shared_models/shared_entry_form.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load static %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block navigation %}{% endblock navigation %}
+{% block header %}{% endblock header %}
+
+{% block body_js %}
+{{ block.super }}
+<script>
+    var refresh = false;
+
+    // Set the windows size if the form values are set.
+    {% if form.min_width and form.min_height %}
+        window.resizeTo({{ form.min_width }}, {{ form.min_height}});
+    {% endif %}
+
+    function cancel() {
+        refresh = false;
+        window.close();
+    }
+
+    function saveForm() {
+        refresh = true;
+        $('form').submit();
+    }
+
+    // This is a method of opening a child window and testing to see if/when it closes
+    // upon closing the drop menu the window is associated with is updated adding the new element
+    // and setting it as the selected option
+    function pop(url, tag) {
+        child = window.open(url, tag,'toolbar=0,status=0,height=500,width=600');
+        child.onbeforeunload = function() {
+            if(child.refresh && $('.is-invalid').length <= 0) {
+                refreshTag(tag);
+            }
+        }
+
+        return false;
+    }
+
+    function refreshTag(tag) {
+        console.log("refresh called on: '" + tag + "'");
+        var id_tag = "#"+tag;
+        $(id_tag).load("# "+id_tag+">*");
+    }
+
+</script>
+{% endblock %}

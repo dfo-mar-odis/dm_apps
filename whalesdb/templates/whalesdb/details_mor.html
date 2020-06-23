@@ -1,0 +1,15 @@
+{% extends "whalesdb/whales_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block field_override %}
+    <div class="card border border-dark my-1">
+        <h5 class="card-header">{% trans title %}</h5>
+        <div class="card-body">
+            <div class="card-text">{% include "whalesdb/_details_mor.html" with mor=object %}</div>
+        </div>
+    </div>
+{% endblock %}

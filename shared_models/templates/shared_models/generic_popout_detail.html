@@ -1,0 +1,63 @@
+{% extends 'pop_base.html' %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_tags %}
+{% load custom_filters %}
+{% load verbose_names %}
+{% block body %}
+
+    {#  You can use content block to remove any of the busy-ness down below  #}
+    <div class="{% block container_class %}{% if container_class %}{{ container_class }}{% else %}container{% endif %}{% endblock %}">
+
+        {% block title_area %}
+            {% include "shared_models/_generic_title_area.html" %}
+        {% endblock %}
+
+        <div class="mb-3">
+            <div class="btns">
+                {% block buttons_div %}
+                    {% block buttons %}
+                    {% endblock %}
+                    <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">Close</a>
+                {% endblock %}
+            </div>
+        </div>
+
+        {% block detail %}
+            {% block detail_table %}
+                <table class="table">
+                    {% for field in field_list %}
+                        {% block detail_tr %}
+                            {% verbose_td_display object field %}
+                        {% endblock %}
+                    {% endfor %}
+                </table>
+            {% endblock %}
+        {% endblock %}
+
+        <div class="mb-3">
+            {% block post_block_div %}{% endblock %}
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block body_js %}
+    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
+    <script>
+
+        window.resizeTo(width = {{width|nz:900}}, height = {{height|nz:650}});
+        window.onunload = refreshParent;
+
+        function refreshParent() {
+            window.opener.location.reload();
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            $("input").first().select();
+        });
+
+    </script>
+{% endblock %}

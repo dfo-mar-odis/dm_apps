@@ -1,189 +1,143 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/base.html" %}
 {% load i18n %}
 {% load static %}
 
 {% block content %}
     <style>
-        table.table-bordered {
-            border: 1px solid blue;
-            margin-top: 20px;
-        }
-
-        table.table-bordered > tbody > tr > th {
-            border: 1px solid blue;
-        }
-
-        table.table-bordered > tbody > tr > td {
-            border: 1px solid blue;
+        .btn1 {
+            width: 200px
         }
 
     </style>
     <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-7">
+    <br>
+    <div class="container mb-3 mt-3">
+        <h1 class="three-em center-col">
+            {% trans "DFO Science Project Planning" %}
+        </h1>
 
-                <div class="jumbotron">
-                    <h1 class="three-em">
-                        {% trans "Science Project Planning Application" %}
-                    </h1>
-                    <hr>
-                    <h3>
-                        {#                        {% trans "Science Project Planning " %}#}
-                    </h3>
-                    <div class="float-right">
-                        <img src="{% static '/img/icons/scope.svg' %}" alt="" width="200px">
-                    </div>
-                    {% if user.is_authenticated %}
-                        <br>
-                    {% else %}
-                        <br>
-                        {% url 'accounts:login' as sign_in_url %}
-                        {% url 'projects:index' as next_url %}
-                        {% url 'accounts:signup' as sign_up_url %}
+        {% url 'projects:project_new' as new_proj_url %}
+        {% url 'projects:my_project_list' as my_proj_url %}
+        {% url 'projects:project_list' as all_proj_url %}
 
-                        <p>
-                            {% blocktrans %}
-                                You must be <a href="{{ sign_in_url }}?next={{ next_url }}">signed in</a> to use this
-                                application.
-                            {% endblocktrans %}
-                        <p>
-                            {% blocktrans %}
-                                If you do not have an account, you can create one <a href="{{ sign_up_url }}">here</a>.
-                            {% endblocktrans %}
-                        </p>
-                    {% endif %}
-                    <br>
-                    <div style="">
-
-
-                        {% if user.is_authenticated %}
-                            <div align="">
-                                {% url 'projects:project_new' as new_proj_url %}
-                                {% url 'projects:my_project_list' as my_proj_url %}
-                                {% url 'projects:project_list' as all_proj_url %}
-
-
-                                <h4>
-                                    {% blocktrans %}
-                                        Click
-                                        <a href="{{ new_proj_url }}">HERE</a> to create a new project.
-                                        <br><br>
-                                        To view or edit an existing project, go to <a href="{{ my_proj_url }}">Your
-                                        Projects</a>.
-                                        <br><br>
-                                        For a list of all project in the branch, go to <a href="{{ all_proj_url }}">All
-                                        Projects</a>.
-
-                                    {% endblocktrans %}
-
-                                    <br><br>
-
-
-                                </h4>
-                            </div>
-                        {% else %}
-                            <br>    <br>
-                        {% endif %}
-                    </div>
-                </div>
-
-
+        <div class="mb-3 mt-3 row justify-content-center">
+            <div class="col center-col">
+                <a href="{{ new_proj_url }}" class="btn btn-dark btn-lg btn1">
+                    {% trans "New Project" %}
+                </a>
             </div>
-            <div class="col-5">
-                <div class="card" style="width: 100%; background: #ffd738;">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            {% blocktrans with '2020-2021' as y %}
-                                {{ y }} Timelines
-                            {% endblocktrans %}
-                        </h4>
-                        <table class="table table-bordered card-text">
-                            <tr>
-                                <th rowspan="2">{% trans "Phase" %}</th>
-                                <th colspan="2" class="center-col">{% trans "Region specific date" %}</th>
-                            </tr>
-                            <tr>
-                                <th class="center-col">{% trans "Gulf" %}</th>
-                                <th class="center-col">{% trans "Maritimes" %}</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    {% trans "Official launch of project planning. Start building projects in app." %}
-                                </td>
-                                <td class="center-col" style="width: 20%;">{% trans "Nov 1" %}</td>
-                                <td class="center-col" style="width: 20%;">{% trans "Nov 4" %}</td>
-                            </tr>
-                            <tr>
-                                <td class="red-font">
-                                    {% trans "Submission deadline for core projects." %}
-                                </td>
-                                <td class="center-col red-font">{% trans "Dec 2" %}</td>
-                                <td class="center-col red-font">{% trans "Dec 18" %}</td>
-                            </tr>
-                            <tr>
-                                <td class="">
-                                    {% trans "Review of core projects." %}
-                                </td>
-                                <td class="center-col">{% trans "Dec 5-6" %}</td>
-                                <td class="center-col">{% trans "TBD" %}</td>
-                            </tr>
-                            <tr>
-                                <td class="red-font">
-                                    {% trans "Submission deadline for flex projects." %}
-                                </td>
-                                <td class="center-col red-font">{% trans "Jan 6" %}</td>
-                                <td class="center-col red-font">{% trans "TBD" %}</td>
-                            </tr>
-                            <tr>
-                                <td class="">
-                                    {% trans "Review of flex projects." %}
-                                </td>
-                                <td class="center-col">{% trans "Jan 16-17" %}</td>
-                                <td class="center-col">{% trans "TBD" %}</td>
-                            </tr>
-                            <tr>
-                                <td class="">
-                                    {% trans "Review final versions of program descriptions, budgets and deliverables for fiscal 2020-2021." %}
-                                </td>
-                                <td class="center-col">{% trans "Mar 17" %}</td>
-                                <td class="center-col">{% trans "TBD" %}</td>
-                            </tr>
-                        </table>
-
-                        <br>
-                        <h4 class="card-title">
-                            {% trans "Reference Materials:" %}
-                        </h4>
-                        <ul>
-                            <li>
-                                <img src="{% static 'img/icons/pdf.svg' %}" alt="" width="20px">
-                                &nbsp;
-                                <a class="" href="{% static 'projects/Project Planning Guidance_Nov2019.pdf' %}">
-                                    {% trans "Guidance for Entering New Projects (Maritimes)" %}
-                                </a>
-                            </li>
-                            <li>
-                                <img src="{% static 'img/icons/pdf.svg' %}" alt="" width="20px"> &nbsp;
-                                <a class="" href="{% static 'projects/Project Planning Priorities_Nov2019.pdf' %}">
-                                    {% trans "Project Planning Priorities (Maritimes)" %}
-                                </a>
-                            </li>
-                            <br>
-                            <li>
-                                2020-2021
-                                <a href="{% url 'projects:ips_program_list' 1 2021  %}">
-                                    Interactive Project Summary
-                                </a>
-                                for the Gulf Region Workingplanning Meeting
-
-                            </li>
-
-                        </ul>
-
-                    </div>
-                </div>
+            <div class="col center-col">
+                <a href="{{ my_proj_url }}" class="btn btn-dark btn-lg btn1">
+                    {% trans "Your Projects" %} ({{ user.staff_instances.count }})
+                </a>
+            </div>
+            <div class="col center-col">
+                <a href="{{ all_proj_url }}" class="btn btn-dark btn-lg btn1">
+                    {% trans "Explore Projects" %}
+                </a>
             </div>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="mb-4 mt-3">
+                    <h4>
+                        {% trans "Regional Views" %}
+                    </h4>
+                    <ul>
+                        <li>
+                            2020-2021 Gulf Region Interactive Workplan <br>
+                            (<a href="{% url 'projects:iw_group_list' 1 0 0 2021 'division' %}">
+                            {% trans "by Section" %}
+                        </a>)
+                            (<a href="{% url 'projects:iw_group_list' 1 0 0 2021 'theme' %}">
+                            {% trans "by Theme" %}
+                        </a>)
+                            (<a href="{% url 'projects:iw_group_list' 1 0 0 2021 'funding_source' %}">
+                            {% trans "by Funding source" %}
+                        </a>)
+                        </li>
+                        <li>
+                            2020-2021 Maritimes Region Interactive Workplan <br>
+                            (<a href="{% url 'projects:iw_group_list' 2 0 0 2021 'division' %}">
+                            {% trans "by Section" %}
+                        </a>)
+                            (<a href="{% url 'projects:iw_group_list' 2 0 0 2021 'theme' %}">
+                            {% trans "by Theme" %}
+                        </a>)
+                            (<a href="{% url 'projects:iw_group_list' 2 0 0 2021 'funding_source' %}">
+                            {% trans "by Funding source" %}
+                        </a>)
+                        </li>
+                    </ul>
+                </div>
+
+
+                {% if section_list.count %}
+
+                    <div class="mb-4">
+                        <h4>
+                            {% trans "Your Sections" %}
+                        </h4>
+                        <ul>
+                            {% for section in user.shared_models_sections.all %}
+                                <li>
+                                    <a href="{% url 'projects:section_project_list' section.id %}">
+                                        {{ section }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    {% if section_list.count > user.shared_models_sections.count %}
+
+                        <div class="mb-4">
+                            <h4>
+                                {% trans "Other Sections Opened to You" %}
+                            </h4>
+                            <ul>
+                                {% for section in section_list %}
+                                    {% if section not in user.shared_models_sections.all %}
+                                        <li>
+                                            <a href="{% url 'projects:section_project_list' section.id %}">
+                                                {{ section.full_name_ver1 }}
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% else %}
+                        <br>    <br>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+
+            <div class="col-7">
+                {% include "projects/_upcoming_dates.html" %}
+            </div>
+        </div>
+
+
     </div>
-{% endblock content %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="center-col">
+        <a class=""
+           style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+           href="#"
+           target="_blank" rel="noopener noreferrer"
+           title="Photo by Alexander Andrews on Unsplash"><span
+                style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                  style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white"
+                                                                  viewBox="0 0 32 32"><title>unsplash-logo</title><path
+                d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Photo by Alexander Andrews on Unsplash</span></a>
+    </div>
+{% endblock %}
+
+

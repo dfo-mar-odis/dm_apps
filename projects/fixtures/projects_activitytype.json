@@ -1,0 +1,1 @@
+[{"model": "projects.activitytype", "pk": 1, "fields": {"name": "Monitoring & Assessment", "nom": ""}}, {"model": "projects.activitytype", "pk": 2, "fields": {"name": "Research", "nom": ""}}, {"model": "projects.activitytype", "pk": 3, "fields": {"name": "Other", "nom": null}}, {"model": "projects.activitytype", "pk": 4, "fields": {"name": "Data Management", "nom": null}}]

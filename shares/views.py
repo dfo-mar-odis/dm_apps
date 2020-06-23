@@ -3,7 +3,7 @@ import os
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.core.mail import send_mail
+from dm_apps.utils import custom_send_mail
 from django.db.models import TextField
 from django.db.models.functions import Concat
 from django.utils import timezone
@@ -31,7 +31,7 @@ def in_shares_group(user):
 
 
 class SharesAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_shares_group(self.request.user)
@@ -49,7 +49,7 @@ def in_shares_admin_group(user):
 
 
 class SharesAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
+
 
     def test_func(self):
         return in_shares_admin_group(self.request.user)
@@ -201,16 +201,12 @@ def send_instructions(request, pk):
     my_user = models.User.objects.get(pk=pk)
     email = emails.SendInstructionsEmail(my_user)
     # send the email object
-    if settings.PRODUCTION_SERVER:
-        send_mail(message='', subject=email.subject, html_message=email.message, from_email=email.from_email,
-                  recipient_list=email.to_list, fail_silently=False, )
-    else:
-        print('not sending email since in dev mode')
-        print("from={}".format(email.from_email))
-        print("to={}".format(email.to_list))
-        print("subject={}".format(email.subject))
-        print("message={}".format(email.message))
-
+    custom_send_mail(
+        subject=email.subject,
+        html_message=email.message,
+        from_email=email.from_email,
+        recipient_list=email.to_list
+    )
     messages.success(request, "An email has been sent to the user with setup instructions!")
 
     return HttpResponseRedirect(reverse("shares:user_detail", kwargs={"pk": pk}))

@@ -6,9 +6,9 @@
 
 {% block content %}
     <style>
-    table,th,td{
-        border: 1px black solid;
-    }
+        table, th, td {
+            border: 1px black solid;
+        }
     </style>
     <div class="container-fluid">
 
@@ -26,11 +26,11 @@
             <tbody>
             {% for project in object_list %}
                 <tr>
-                    <td> {{project.id}}</td>
-                    <td> {{project.section.division.branch.region}}</td>
-                    <td> {{project.section.division}}</td>
-                    <td> {{project.section}}</td>
-                    <td> {{project.project_title}}</td>
+                    <td> {{ project.id }}</td>
+                    <td> {{ project.section.division.branch.region }}</td>
+                    <td> {{ project.section.division }}</td>
+                    <td> {{ project.section }}</td>
+                    <td> {{ project.project_title }}</td>
                     <td> {% get_field_value project "program" %} </td>
                     <td> {% get_field_value project "programs" %} </td>
                     <td> {% get_field_value project "tags" %} </td>
@@ -38,5 +38,5 @@
             {% endfor %}
             </tbody>
         </table>
-
+    </div>
 {% endblock content %}

@@ -1,33 +1,29 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load bootstrap4 %}
 
 
 {% block content %}
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+    {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            {% if object %}
-                <li class="breadcrumb-item"><a
-                        href="{% url 'inventory:resource_detail' object.resource.id %}">{{ object.resource.truncated_title }}</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Web Service</li>
-            {% else %}
-                <li class="breadcrumb-item"><a
-                        href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Add Web Service</li>
-            {% endif %}
-        </ol>
-    </nav>
 
     <br><br>
 
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                {% if object %}
+                    <li class="breadcrumb-item"><a
+                            href="{% url 'inventory:resource_detail' object.resource.id %}">{{ object.resource.truncated_title }}</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Web Service</li>
+                {% else %}
+                    <li class="breadcrumb-item"><a
+                            href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Web Service</li>
+                {% endif %}
+            </ol>
+        </nav>
         {% if object.id %}
             <h1>Edit Web Service</h1>
         {% else %}

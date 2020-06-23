@@ -1,7 +1,9 @@
 {% extends "camp/camp_base.html" %}
 {% load static %}
 {% load custom_filters %}
+{% load custom_tags %}
 {% load verbose_names %}
+{% load i18n %}
 
 {% block header %}
     <style>
@@ -28,7 +30,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'camp:index' %}"> Home </a></li>
-            <li class="breadcrumb-item"><a href="{% url 'camp:sample_search' %}"> All samples </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'camp:sample_list' %}"> All samples </a></li>
             <li class="breadcrumb-item active" aria-current="page"> {{ object }} </li>
         </ol>
     </nav>
@@ -41,7 +43,15 @@
         <p>
         <div class="btn-group">
             <a class="btn btn-warning" href="{% url 'camp:sample_edit' sample.id %}">Edit</a>
-            <a class="btn btn-danger disabled" href="{% url 'camp:sample_delete' sample.id %}">Delete</a>
+
+            {% if object.sample_spp.count %}
+                {% trans "Samples with observations cannot be deleted." as help_text %}
+                {% echo "disabled" as disabled_var %}
+            {% endif %}
+
+            <span data-toggle="tooltip" title="{{ help_text }}">
+            <a class="btn btn-danger {{disabled_var}}" href="{% url 'camp:sample_delete' sample.id %}">Delete</a>
+            </span>
 
             <a href={% url 'camp:species_obs_search' object.id %} class="btn btn-success">Add Species</a>
 
@@ -50,9 +60,13 @@
         <br><br>
         <div class="row">
             <div class="col">
-                {% for field in field_list %}
-                    {% verbose_field_display object field None True %}
-                {% endfor %}
+                <table class="table table-sm table-striped">
+                    {% for field in field_list %}
+                        {% verbose_td_display object field display_time=True %}
+                    {% endfor %}
+
+                </table>
+
             </div>
             <div class="col">
                 <h3>Station Map:</h3>

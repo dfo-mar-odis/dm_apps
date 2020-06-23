@@ -1,6 +1,7 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
+{% load i18n %}
 {% block content %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,29 +52,18 @@
 
     {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
     <div class="container">
-        <div class="jumbotron">
-            <h1>Report Builder</h1>
+        <div class="jumbotron py-4">
+            <h1>{% trans "Report Builder" %}</h1>
         </div>
-    </div>
-
-    <div class="container">
+        <hr>
         <form method="post">
-
             {% csrf_token %}
             {% for field in form %}
-
-                {% if field.name == "sections" %}
-                    <div class="sections_div">
-                        {% bootstrap_field field %}
-
-                    </div>
-
-                {% else %}
+                <div class="{{ field.name }}_div">
                     {% bootstrap_field field %}
-                {% endif %}
+                </div>
             {% endfor %}
             <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
-
 
         </form>
         <br>

@@ -1,7 +1,25 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% load bootstrap4 %}
 {% block bug_create %}{% url 'tickets:bug_create' 'whalesdb' %}{% endblock bug_create %}
+
+{% block jquery_import %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>{% endblock %}
+
+{% block header %}
+    <style>
+        body {
+            background-image: url("{% static 'img/whalesdb/whale-background.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .card, .jumbotron {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+
+{% endblock %}
 
 {% block title %}Whale Equipment Deployment Inventory{% endblock title %}
 
@@ -10,7 +28,7 @@
 {% endblock body %}
 
 {% block left_all %}
-  <li class="nav-item"><a class="nav-link" href="{% url 'whalesdb:index' %}"> Home</a></li>
+{% include "whalesdb/whale_nav_menu.html" %}
 {% endblock left_all %}
 
 {% block left_unauth %}
@@ -19,3 +37,5 @@
 
 {% block left_admin %}
 {% endblock left_admin %}
+
+{% block body_js %}{% endblock %}

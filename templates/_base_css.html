@@ -16,16 +16,18 @@
 
 
 <!-- custom CSS -->
-<link rel="stylesheet" href="{% static 'css/master.css' %}?version=1.5.9">
+<link rel="stylesheet" href="{% static 'css/master.css' %}?version=1.6.5">
 {##}
 <!--  Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300|Open+Sans:300|Roboto:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto" rel="stylesheet">
+{#<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">#}
+
 
 <!--  Google icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!--  favicon -->
-<link rel="shortcut icon" type="image/png" href="{% static 'img/whales/favicon.ico' %}"/>
+<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 
 {# Special JS library CSS files   #}
 <link rel="stylesheet" href="{% static "js/chosen/chosen.css" %}">
@@ -53,17 +55,9 @@
 
     }
 
-    {#.flatpickr-input {#}
-    {#    background-color: rgba(53, 29, 230, 0.15);#}
-    {#}#}
-
-    {#.editable {#}
-    {#    background-color: #fff;#}
-    {#    border: 1px solid #1999f4;#}
-    {#    border-radius: 4px;#}
-    {##}
-    {#padding: 30px;#}
-    {#}#}
+    body {
+        padding-top: 55px;
+    }
 
     .ms-container {
         width: 100%;
@@ -76,4 +70,27 @@
     .label {
         font-weight: bold;
     }
+
+    .circle {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #fff;
+        line-height: 35px;
+        text-align: center;
+        background: #4c4c4c
+    }
+
+    .bg-navy {
+        background-color: #041d70;
+    }
+
+    table.sortable > thead > tr > th {
+        color: blue;
+        text-decoration: underline;
+        font-weight: normal;
+        cursor: pointer;
+    }
+
 </style>

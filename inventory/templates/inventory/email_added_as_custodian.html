@@ -24,7 +24,7 @@
     </tr>
   </table>
   <p>
-    The detailed record can be viewed <a href="http://dmapps{% url 'inventory:resource_detail' object.id %}">HERE</a>.
+    The detailed record can be viewed <a href="{{SITE_FULL_URL}}{% url 'inventory:resource_detail' object.id %}">HERE</a>.
   </p>
 
 <hr>
@@ -51,5 +51,5 @@
     </tr>
   </table>
   <p>
-    L’enregistrement détaillé peut être affiché <a href="http://dmapps{% url 'inventory:resource_detail' object.id %}">ICI</a>.
+    L’enregistrement détaillé peut être affiché <a href="{{SITE_FULL_URL}}{% url 'inventory:resource_detail' object.id %}">ICI</a>.
   </p>

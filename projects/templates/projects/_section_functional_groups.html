@@ -1,0 +1,82 @@
+{% load i18n %}
+{% load custom_filters %}
+{% load verbose_names %}
+{% load static %}
+
+<style>
+    .subtitle {
+        font-weight: bold;
+    }
+
+</style>
+
+<div class="projects">
+    <div class="mb-3">
+        <h2>{% trans "By Functional Groups" %}</h2>
+        <h6>({% trans "Recommended projects" %}) </h6>
+    </div>
+
+    {% for item in fg_dict %}
+        {% with fg_dict|lookup:item as dict1 %}
+            {% with dict1|lookup:"note" as note %}
+
+                {% with dict1|lookup:"projects" as qs %}
+                    <div class="mb-3">
+                        <h5>
+                            <a href="#tg-project-list-{{ item.id }}" data-toggle="collapse">
+                                {{ item|nz:"Not specified" }} ({{ qs.count }})
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="collapse" id="tg-project-list-{{ item.id }}">
+                        <div class="mb-3 row">
+                            <div class="col-10">
+                                <table class="table table-sm table-bordered">
+                                    <tr>
+                                        <th style="width: 10%;">{% trans "Executive summary" %}</th>
+                                        <td>{{ note.summary_html|nz:"n/a" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>{% trans "Pressures" %}</th>
+                                        <td>{{ note.pressures_html|nz:"n/a" }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col">
+                                <a href="#" pop-href="{% url 'projects:note_edit' note.id %}" class="btn btn-sm btn-success">
+                                    Edit
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <table class="table table-sm table-hover project-table sortable">
+                            <thead>
+                            {% for field in field_list %}
+                                <th>{% get_verbose_label random_project field %}</th>
+                            {% endfor %}
+                            </thead>
+                            {% for object in qs %}
+                                <tr pop href="{% url 'projects:project_overview' object.id 1 %}">
+                                    {% for field in field_list %}
+                                        <td>{% get_field_value object field %}</td>
+                                    {% endfor %}
+                                </tr>
+                            {% empty %}
+                                <tr>
+                                    <td><em>{% trans "None" %}</em></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+
+
+
+                {% endwith %}
+            {% endwith %}
+        {% endwith %}
+
+    {% endfor %}
+
+
+</div>

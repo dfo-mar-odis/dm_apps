@@ -77,7 +77,24 @@
                         <code>{{object.password}}</code>
                     </li>
                     <li>
-                        Add the user to the appropriate share(s):<br> <code>sudo nano /etc/samba/smb.conf</code>
+                        From the command line on glfscidm002, open the samba configuration file in a text editor (nano):
+                        <br><code>sudo nano /etc/samba/smb.conf</code>
+                    </li>
+                    <li>
+                        In the nano text editor, add the new user to the appropriate share(s) by adding their username to the "valid users" line:<br>
+                        <code>
+                            ######################## <br>
+                            # NAME_OF_EXISTING_NAS # <br>
+                            ######################## <br>
+                            [my_new_share]<br>
+                            comment = this is just an example <br>
+                            path = /mnt/name_of_existing_NAS/my_existing_share
+                            browseable = no <br>
+                            writeable = yes <br>
+                            guest ok = no <br>
+                            valid users = admin, ..., my_new_user <br>
+                        </code>
+
                     </li>
                     <li>Update the user status to "activated"</li>
                 </ol>

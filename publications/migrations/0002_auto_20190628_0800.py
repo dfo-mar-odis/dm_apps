@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('shared_models', '0017_auto_20190605_1100'),
+        ('shared_models', '0001_initial'),
         ('publications', '0001_initial'),
     ]
 

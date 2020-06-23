@@ -17,16 +17,18 @@
     <form method="post">
 
         {% csrf_token %}
-        <div class="row">
-            <div class="col-4">
+        <div class="row mb-3">
+            <div class="col-5">
                 {% bootstrap_form form layout='horizontal' %}
             </div>
         </div>
+        <div class="mb-3">
         <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Search">
+        <a href="{% url 'camp:sample_new'  %}" class="btn btn-success">New Sample</a>
+        </div>
     </form>
     <br>
     <p>
-        <a href="{% url 'camp:sample_new'  %}" class="btn btn-success">New Sample</a>
     </p>
 
 

@@ -1,4 +1,4 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 
@@ -8,100 +8,92 @@
     {% endif %}
 
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+    {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a> </li>
-            <li class="breadcrumb-item active" aria-current="page">Insert Keyword</li>
-        </ol>
-    </nav>
 
     <div class="container">
-    <h1>Select a {{ keyword_type }} to Insert:</h1><br>
-    {# <div class="row"> #}
-    {# <div class="col"> #}
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Insert Keyword</li>
+            </ol>
+        </nav>
+        <h1>Select a {{ keyword_type }} to Insert:</h1><br>
+        {# <div class="row"> #}
+        {# <div class="col"> #}
 
-    <form action="." method="get">
-        {% bootstrap_form filter.form %}
-        <p>
-            <input type="submit" value="Filter" class="btn btn-warning"/>
-            <a class="btn btn-info" href=".">Clear</a>
-        </p>
-    </form>
-    {# </div> #}
-    {# <div class="col"> #}
-
-    {% if keyword_type == "Taxonomic Keyword" %}
-        <div class="scroll-wide">
-        <table class="indent">
-            <thead>
-            <th></th>
-            <th>Scientific</th>
-            <th style="padding-left: 20px">Vernacular</th>
-            <th style="padding-left: 20px">UID</th>
-            </thead>
-            <tbody>
-            {% for obj in filter.qs %}
-                <tr>
-                    <td class="indent">
-                        <a class="btn btn-sm btn-dark"
-                           href="{% url "inventory:resource_keyword_add" resource.id obj.id keyword_type|slugify %}"> <i
-                                class="material-icons">add</i></a> &nbsp;
-                    </td>
-                    <td>
-                        <em>{{ obj.text_value_eng }}</em>
-                    </td>
-                    <td style="padding-left: 20px">
-                        {{ obj.details }}
-                    </td>
-                    <td style="padding-left: 20px">
-                        {{ obj.uid}}
-                    </td>
-                    <td>
-                        (<a href="{% url 'inventory:keyword_detail' resource.id obj.id %}">view</a>)
-                    </td>
-                </tr>
-            {% endfor %}
-
-            </tbody>
-
-        </table>
-
-    {% else %}
-        <div class="scroll-lg">
-        {% for obj in object_list.all %}
-            <p class="indent">
-                {# <a class="btn btn-sm btn-dark" href="{% url 'inventory:resource_person_add' resource.id person.user_id  %}"> <i class="material-icons">add</i></a> &nbsp; #}
-                <a class="btn btn-sm btn-dark"
-                   href="{% url "inventory:resource_keyword_add" resource.id obj.id keyword_type|slugify %}"> <i
-                        class="material-icons">add</i></a> &nbsp;
-                {{ obj.text_value_eng }}
-                (<a href="{% url 'inventory:keyword_detail' resource.id obj.id %}">view</a>)
+        <form action="." method="get">
+            {% bootstrap_form filter.form %}
+            <p>
+                <input type="submit" value="Filter" class="btn btn-warning"/>
+                <a class="btn btn-info" href=".">Clear</a>
             </p>
-        {% endfor %}
-    {% endif %}
+        </form>
+        {# </div> #}
+        {# <div class="col"> #}
 
-</div>
-<br>
-<a class="btn btn-sm btn-success" href="{% url 'inventory:keyword_new' resource.id %}">Add New Keyword</a>
+        {% if keyword_type == "Taxonomic Keyword" %}
+            <div class="scroll-wide">
+            <table class="indent">
+                <thead>
+                <th></th>
+                <th>Scientific</th>
+                <th style="padding-left: 20px">Vernacular</th>
+                <th style="padding-left: 20px">UID</th>
+                </thead>
+                <tbody>
+                {% for obj in filter.qs %}
+                    <tr>
+                        <td class="indent">
+                            <a class="btn btn-sm btn-dark"
+                               href="{% url "inventory:resource_keyword_add" resource.id obj.id keyword_type|slugify %}"> <i
+                                    class="material-icons">add</i></a> &nbsp;
+                        </td>
+                        <td>
+                            <em>{{ obj.text_value_eng }}</em>
+                        </td>
+                        <td style="padding-left: 20px">
+                            {{ obj.details }}
+                        </td>
+                        <td style="padding-left: 20px">
+                            {{ obj.uid }}
+                        </td>
+                        <td>
+                            (<a href="{% url 'inventory:keyword_detail' resource.id obj.id %}">view</a>)
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        {% else %}
+            <div class="scroll-lg">
+            {% for obj in object_list.all %}
+                <p class="indent">
+                    {# <a class="btn btn-sm btn-dark" href="{% url 'inventory:resource_person_add' resource.id person.user_id  %}"> <i class="material-icons">add</i></a> &nbsp; #}
+                    <a class="btn btn-sm btn-dark"
+                       href="{% url "inventory:resource_keyword_add" resource.id obj.id keyword_type|slugify %}"> <i
+                            class="material-icons">add</i></a> &nbsp;
+                    {{ obj.text_value_eng }}
+                    (<a href="{% url 'inventory:keyword_detail' resource.id obj.id %}">view</a>)
+                </p>
+            {% endfor %}
+        {% endif %}
+
+        </div>
+        <br>
+        <a class="btn btn-sm btn-success" href="{% url 'inventory:keyword_new' resource.id %}">Add New Keyword</a>
 
 
-{# </div> #}
-
-
-{# </div> #}
+        </div>
 
 
 
-
-
-</div>
+    </div>
 
 
 {% endblock content %}

@@ -1,4 +1,4 @@
-{% extends "travel/travel_base.html" %}
+{% extends "travel/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
@@ -22,25 +22,41 @@
 
     </style>
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'travel:trip_list' %}">Trips</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'travel:trip_detail' trip.id %}">{{ trip }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Manage Reviewers</li>
-        </ol>
-    </nav>
 
     <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">
+                    {% trans "Home" %}
+                </a></li>
+
+                <li class="breadcrumb-item">
+
+                    {% if trip %}
+                        <a href="{% url 'travel:trip_detail' trip.id type %}">
+                            {{ trip }}
+                        </a>
+                    {% else %}
+                        <a href="{% url 'travel:request_detail' triprequest.id type %}">
+                            {{ triprequest }}
+                        </a>
+                    {% endif %}
+
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    {% trans "Manage Reviewers" %}
+                </li>
+            </ol>
+        </nav>
         <h1>
             {% trans "Managing Reviewers:" %}
         </h1>
         <h2>
-            {{ trip }}
+            {{ triprequest }}{{ trip }}
         </h2>
-        {% if trip.reviewer_order_message %}
+        {% if triprequest.reviewer_order_message %}
             <h2 class="red-font blink-me">
-                {{ trip.reviewer_order_message }}
+                {{ triprequest.reviewer_order_message }}
             </h2>
         {% endif %}
 
@@ -51,20 +67,40 @@
             {{ formset.management_form }}
             {% bootstrap_formset_errors formset %}
             <div class="btn-group">
-                <button class="btn btn-primary submit">Save</button>
-                <a class="btn btn-secondary" href="{% url 'travel:trip_detail' trip.id %}">Back</a>
+                <button class="btn btn-primary submit">
+                    {% trans "Save" %}
+                </button>
+
+                {% if trip %}
+                    {% url 'travel:reset_trip_reviewers' trip.id type as reset_url %}
+                    {% url 'travel:trip_detail' trip.id type as back_url %}
+                {% else %}
+                    {% url 'travel:reset_tr_reviewers' triprequest.id type as reset_url %}
+                    {% url 'travel:request_detail' triprequest.id type as back_url %}
+                {% endif %}
+
+                <a class="btn btn-warning" href="{{ reset_url }}">
+                    {% trans "Reset" %}
+                </a>
+                <a class="btn btn-secondary" href="{{ back_url }}">
+                    {% trans "Back" %}
+                </a>
             </div>
             <br><br>
-            <table class="table" style="width: auto">
+            <table class="table" style="width: 70%">
                 <thead>
                 <tr>
+                    <th></th>
+                    <th></th>
                     {% for field in field_list %}
-                        {% if field == "trip" %}
-                            <th></th>
+                        {% if field == "order" %}
+                            <th style="width:150px">{% get_verbose_label my_object field %}</th>
+
                         {% else %}
                             <th scope="col">{% get_verbose_label my_object field %}</th>
                         {% endif %}
                     {% endfor %}
+                    <th style="align-content: center" colspan="2">{% trans "Status" %}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -72,19 +108,45 @@
                     {% bootstrap_form_errors form %}
                     <tr>
                         {% for field in form %}
-                            <td {% if field.name == "color" %}class="color-cell" color-value="{{ form.instance.color }}"{% endif %}>
-                                {% bootstrap_field field size='small' show_label=False placeholder="" %}
-                            </td>
+                            {% if field.is_hidden %}
+                                <td>
+                                    {{ field }}
+                                </td>
+                            {% endif %}
                         {% endfor %}
+                        {% for field in form %}
+                            {% if not field.is_hidden %}
+                                {% if form.instance.id and not form.instance.status.id == 4 and not form.instance.status.id == 20 and triprequest %}
+                                    <td>
+                                        {{ form.instance|getattribute:field.name }}
+                                        <span class="gone">{{ field }}</span>
+                                    </td>
+                                {% else %}
+
+                                    <td {% if field.name == "color" %}class="color-cell" color-value="{{ form.instance.color }}"{% endif %}>
+                                        {% bootstrap_field field size='small' show_label=False placeholder="" %}
+                                    </td>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        <td>
+                            {{ form.instance.status|nz:"---" }}
+                        </td>
                         {% if form.instance.id %}
-
-                            <td>
-
-                                {% url 'travel:delete_reviewer' form.instance.id as my_delete_url %}
-                                <a class="delete-btn" href="#" delete_url="{{ my_delete_url }}">
-                                    <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
-                                </a>
-                            </td>
+                            {% if not form.instance.status.id == 4 and not form.instance.status.id == 20 and triprequest %}
+                                {# NO delete button #}
+                            {% else %}
+                                <td>
+                                    {% if triprequest %}
+                                        {% url 'travel:delete_tr_reviewer' form.instance.id as my_delete_url %}
+                                    {% else %}
+                                        {% url 'travel:delete_trip_reviewer' form.instance.id as my_delete_url %}
+                                    {% endif %}
+                                    <a class="delete-btn" href="#" delete_url="{{ my_delete_url }}">
+                                        <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip" title="Delete">
+                                    </a>
+                                </td>
+                            {% endif %}
                         {% else %}
                             <td>(new record)</td>
                         {% endif %}
@@ -95,8 +157,15 @@
             </table>
 
             <div class="btn-group">
-                <button class="btn btn-primary submit">Save</button>
-                <a class="btn btn-secondary" href="{% url 'travel:trip_detail' trip.id %}">Back</a>
+                <button class="btn btn-primary submit">
+                    {% trans "Save" %}
+                </button>
+                <a class="btn btn-warning" href="{{ reset_url }}">
+                    {% trans "Reset" %}
+                </a>
+                <a class="btn btn-secondary" href="{{ back_url }}">
+                    {% trans "Back" %}
+                </a>
             </div>
 
         </form>
@@ -112,6 +181,7 @@
             var newRole = $("#id_form-" + newFormNumber + "-role").val();
             // if everything is blank, the user is not trying to add a new record
             if (newOrder == "" && newUser == "" && newRole == "") {
+                $("#id_form-" + newFormNumber + "-trip_request").val(null);
                 $("#id_form-" + newFormNumber + "-trip").val(null);
             }
         });

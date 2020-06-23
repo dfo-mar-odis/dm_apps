@@ -1,31 +1,29 @@
 {% load verbose_names %}
-
+{% load i18n %}
 
 <table class="table table-striped table-sm" style="font-size: 15px">
     {% verbose_td_display object "uuid" %}
+    {% verbose_td_display object "odi_id" %}
     {% verbose_td_display object "title_eng" %}
     {% verbose_td_display object "descr_eng" to_html=True %}
     {% verbose_td_display object "purpose_eng" to_html=True %}
     {% verbose_td_display object "resource_type" %}
     {% verbose_td_display object "section" %}
     {% verbose_td_display object "status" %}
-    <tr>
-        <th style="width: 150px">Time period <br>(yyyy-mm-dd)</th>
-        <td>
-            From: {{ object.time_start_year|default_if_none:"--" }}-{{ object.time_start_month|default_if_none:"--" }}-{{ object.time_start_day|default_if_none:"--" }}
-            <br>
-            To: {{ object.time_end_year|default_if_none:"--" }}-{{ object.time_end_month|default_if_none:"--" }}-{{ object.time_end_day|default_if_none:"--" }}
-        </td>
-    </tr>
+    {% verbose_td_display object "time_period|time period" %}
     {% verbose_td_display object "storage_envr_notes" to_html=True %}
     {% verbose_td_display object "notes" to_html=True %}
     {% verbose_td_display object "fgp_url" url=True %}
     {% verbose_td_display object "public_url" url=True %}
     {% verbose_td_display object "fgp_publication_date" %}
+    {% verbose_td_display object "od_publication_date" %}
+    {% verbose_td_display object "paa_items" %}
+    {% verbose_td_display object "last_revision_date" %}
     <tr>
         <th style="width: 150px">Last modification by</th>
         <td>
-            {{ object.last_modified_by }} on {{ object.date_last_modified }}
+            {{ object.last_modified_by }}
+{#            on {{ object.date_last_modified }}#}
         </td>
     </tr>
 </table>

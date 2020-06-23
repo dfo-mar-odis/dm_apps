@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {% for crumb in crumbs %}
+            <li class="breadcrumb-item {% if forloop.counter == crumbs|length %}active{% endif %}">
+                {% if forloop.counter == crumbs|length %}
+                    {{ crumb.title }}
+                {% else %}
+                    <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+</nav>
+

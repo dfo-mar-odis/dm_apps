@@ -4,14 +4,14 @@ from . import views
 urlpatterns = [
     path('close/', views.CloserTemplateView.as_view(), name="close_me"),
     path('', views.IndexTemplateView.as_view(), name="index"),
-    path('search/', views.SearchFormView.as_view(), name="sample_search"),
+    # path('search/', views.SearchFormView.as_view(), name="sample_search"),
     # path('dataflow/', views.DataFlowTemplateView.as_view(), name ="dataflow" ),
 
     # SAMPLE #
     ##########
-    # path('samples/', views.SampleFilterView.as_view(), name ="sample_list" ),
-    path('sample-list/year=<str:year>/month=<str:month>/site=<str:site>/stn=<str:station>/species=<str:species>/',
-         views.SampleListView.as_view(), name="sample_list"),
+    path('samples/', views.SampleFilterView.as_view(), name ="sample_list" ),
+    # path('sample-list/year=<str:year>/month=<str:month>/site=<str:site>/stn=<str:station>/species=<str:species>/',
+    #      views.SampleListView.as_view(), name="sample_list"),
     path('sample/new/', views.SampleCreateView.as_view(), name="sample_new"),
     path('sample/<int:pk>/view/', views.SampleDetailView.as_view(), name="sample_detail"),
     path('sample/<int:pk>/edit/', views.SampleUpdateView.as_view(), name="sample_edit"),

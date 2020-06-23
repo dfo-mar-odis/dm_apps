@@ -67,14 +67,6 @@ class Status(models.Model):
 
 
 class Ticket(models.Model):
-    # choices for app
-    APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
-    APP_CHOICES.insert(0, ("esee", "ESEE (not part of site)"))
-    APP_CHOICES.insert(0, ("plankton", "Plankton Net (not part of site)"))
-    APP_CHOICES.insert(0, ("tickets", "Data Management Tickets"))
-    APP_CHOICES.sort()
-    APP_CHOICES.insert(0, ("general", "n/a"))
-
     # Choices for priority
     HIGH = '1'
     MED = '2'
@@ -91,8 +83,7 @@ class Ticket(models.Model):
 
     title = models.CharField(max_length=255)
     primary_contact = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    app = models.CharField(max_length=25, default="general", choices=APP_CHOICES, verbose_name=_("application name"),
-                           blank=True, null=True)
+    app = models.CharField(max_length=25, default="general", verbose_name=_("application name"), blank=True, null=True)
     dm_assigned = models.ManyToManyField(User, limit_choices_to={"is_staff": True},
                                          verbose_name=_("ticket assigned to"), blank=True, related_name="dm_assigned_tickets")
     section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, blank=True, null=True)
@@ -105,7 +96,7 @@ class Ticket(models.Model):
     notes_html = models.TextField(blank=True, null=True, verbose_name="Notes")
     date_opened = models.DateTimeField(default=timezone.now)
     date_closed = models.DateTimeField(null=True, blank=True)
-    date_modified = models.DateTimeField(default=timezone.now)
+    date_modified = models.DateTimeField(auto_now=True)
     people_notes = models.TextField(blank=True, null=True)
     resolved_email_date = models.DateTimeField(null=True, blank=True,
                                                verbose_name="Notification sent to primary contact")
@@ -128,7 +119,7 @@ class Ticket(models.Model):
         self.date_modified = timezone.now()
 
         # if status is resolved or canceled, add a date closed timestamp
-        if self.status_id is 1 or self.status is 4:
+        if self.status_id == 1 or self.status == 4:
             self.date_closed = timezone.now()
         else:
             self.date_closed = None
@@ -155,6 +146,18 @@ class Ticket(models.Model):
         if self.sd_description:
             return textile.textile(self.sd_description)
 
+    @property
+    def app_display(self):
+        # choices for app
+        APP_DICT = local_conf.APP_DICT
+        APP_DICT["esee"] = "ESEE (not part of site)"
+        APP_DICT["plankton"] = "Plankton Net (not part of site)"
+        APP_DICT["tickets"] = "Data Management Tickets"
+        APP_DICT["general"] = "Data Management Tickets"
+
+        return APP_DICT.get(self.app, "n/a")
+
+
 class FollowUp(models.Model):
     ticket = models.ForeignKey(Ticket, related_name="follow_ups", on_delete=models.CASCADE)
     message = models.TextField(verbose_name=_("follow up message"))
@@ -167,7 +170,7 @@ class FollowUp(models.Model):
 
     def __str__(self):
         return "{} <code>({} {} on {})</code>".format(self.message, self.created_by.first_name, self.created_by.last_name,
-                                                                self.created_date.strftime("%Y-%m-%d %H:%M"))
+                                                      self.created_date.strftime("%Y-%m-%d %H:%M"))
 
 
 def ticket_directory_path(instance, filename):

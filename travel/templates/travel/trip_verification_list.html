@@ -1,0 +1,76 @@
+{% extends "travel/list.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load verbose_names %}
+{% load custom_filters %}
+
+{% block header %}
+    {{ block.super }}
+    <style>
+        .indent-lg {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        table {
+            font-size: small;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block subcontent %}
+    {% if not object_list.count %}
+        <div class="center-col">
+            <img src="{% static 'travel/you_are_done.png' %}" alt="">
+            <h3>Way to go! You're all done here :)</h3>
+        </div>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block table_tr %}
+    {% url 'travel:trip_verify' object.id view.kwargs.region view.kwargs.adm as my_url %}
+    <tr href="{{ my_url }}">
+        {% for field in field_list %}
+            <td class="{{ field.class }}">
+                {% block table_td %}
+                    {% get_field_value object field.name safe=True %}
+                {% endblock %}
+            </td>
+        {% endfor %}
+    </tr>
+{% endblock %}
+{##}
+{#{% block table_tr %}#}
+{#    {% for object in object_list %}#}
+{#        <tr href="{{ my_url }}">#}
+{#            {% for field in field_list %}#}
+{#                {% if "number" in field or "adm" in field %}#}
+{#                    <td class="center-col">#}
+{#                        {% if "adm" in field %}#}
+{#                            <span class="{% if object.is_adm_approval_required %}red-font{% endif %}">#}
+{##}
+{#                                        {% get_field_value object field safe=True %}#}
+{#                                        </span>#}
+{#                        {% else %}#}
+{#                            {% get_field_value object field safe=True %}#}
+{#                        {% endif %}#}
+{#                    </td>#}
+{#                {% else %}#}
+{#                    <td>{% get_field_value object field safe=True %}</td>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#            <td class="center-col">{{ object.traveller_list|length|zero2val:"---" }}</td>#}
+{#            <td class="center-col">{{ object.bta_traveller_list|length|zero2val:"---" }}</td>#}
+{#            <td class="center-col">{{ object.total_traveller_list|length|zero2val:"---" }}</td>#}
+{#            <td class="center-col">{{ object.trip_requests.count|zero2val:"---" }}</td>#}
+{#        </tr>#}
+{#    {% endfor %}#}
+{##}
+{#{% endblock %}#}
+
+

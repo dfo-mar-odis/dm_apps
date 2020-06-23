@@ -1,0 +1,98 @@
+[
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 1,
+    "fields": {
+      "name_eng": "NASA/Global Change Master Directory (GCMD) Science Keywords Version 6.0.0.0.0",
+      "name_fre": null,
+      "abbrev": "GCMD",
+      "url": "https://earthdata.nasa.gov/about/gcmd/global-change-master-directory-gcmd-keywords",
+      "web_services": true,
+      "xml_block": "<gmd:type xmlns:gmd=\"http://www.isotc211.org/2005/gmd\">\r\n\t<gmd:MD_KeywordTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101\" codeListValue=\"theme\">Theme</gmd:MD_KeywordTypeCode>\r\n</gmd:type><gmd:thesaurusName xmlns:gmd=\"http://www.isotc211.org/2005/gmd\">\r\n\t<gmd:CI_Citation>\r\n\t\t<gmd:title>\r\n\t\t\t<gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">NASA/Global Change Master Directory (GCMD) Science Keywords Version 6.0.0.0.0</gco:CharacterString>\r\n\t\t</gmd:title>\r\n\t\t<gmd:date>\r\n\t\t\t<gmd:CI_Date>\r\n\t\t\t\t<gmd:date>\r\n\t\t\t\t\t<gco:Date xmlns:gco=\"http://www.isotc211.org/2005/gco\">2007-07-23</gco:Date>\r\n\t\t\t\t</gmd:date>\r\n\t\t\t\t<gmd:dateType>\r\n\t\t\t\t\t<gmd:CI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\">Revision</gmd:CI_DateTypeCode>\r\n\t\t\t\t</gmd:dateType>\r\n\t\t\t</gmd:CI_Date>\r\n\t\t</gmd:date>\r\n\t\t<gmd:citedResponsibleParty>\r\n\t\t\t<gmd:CI_ResponsibleParty>\r\n\t\t\t\t<gmd:individualName>\r\n\t\t\t\t\t<gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">LM Olsen, G Major, K Shein, J Scialdone, R Vogel, S Leicester, H Weir, S Ritz, T Stevens, M Meaux, C Solomon, R Bilodeau, M Holland, T Northcutt, RA Restrepo</gco:CharacterString>\r\n\t\t\t\t</gmd:individualName>\r\n        <gmd:organisationName xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n\t\t\t\t\t<gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">NASA</gco:CharacterString>\r\n          <gmd:PT_FreeText><gmd:textGroup><gmd:LocalisedCharacterString locale=\"#fra\">NASA</gmd:LocalisedCharacterString></gmd:textGroup></gmd:PT_FreeText>\r\n\t\t\t\t</gmd:organisationName>\r\n\t\t\t\t<gmd:contactInfo>\r\n\t\t\t\t\t<gmd:CI_Contact>\r\n\t\t\t\t\t\t<gmd:onlineResource>\r\n\t\t\t\t\t\t\t<gmd:CI_OnlineResource>\r\n\t\t\t\t\t\t\t\t<gmd:linkage>\r\n\t\t\t\t\t\t\t\t\t<gmd:URL>http://gcmd.nasa.gov/index.html</gmd:URL>\r\n\t\t\t\t\t\t\t\t</gmd:linkage>\r\n\t\t\t\t\t\t\t\t<gmd:protocol>\r\n\t\t\t\t\t\t\t\t\t<gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">WWW:LINK-1.0-http--link</gco:CharacterString>\r\n\t\t\t\t\t\t\t\t</gmd:protocol>\r\n\t\t\t\t\t\t\t</gmd:CI_OnlineResource>\r\n\t\t\t\t\t\t</gmd:onlineResource>\r\n\t\t\t\t\t</gmd:CI_Contact>\r\n\t\t\t\t</gmd:contactInfo>\r\n\t\t\t\t<gmd:role>\r\n\t\t\t\t\t<gmd:CI_RoleCode codeList=\"owner\" codeListValue=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\">Owner</gmd:CI_RoleCode>\r\n\t\t\t\t</gmd:role>\r\n\t\t\t</gmd:CI_ResponsibleParty>\r\n\t\t</gmd:citedResponsibleParty>\r\n\t</gmd:CI_Citation>\r\n</gmd:thesaurusName>"
+    }
+  },
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 2,
+    "fields": {
+      "name_eng": "Integrated Taxonomic Information System (ITIS)",
+      "name_fre": "Syst\u00e8me d'information taxonomique int\u00e9gr\u00e9 (SITI)",
+      "abbrev": "ITIS",
+      "url": "https://www.itis.gov/",
+      "web_services": true,
+      "xml_block": "<gmd:type>\r\n  <gmd:MD_KeywordTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101\" codeListValue=\"RI_528\">theme; th\u00e8me</gmd:MD_KeywordTypeCode>\r\n</gmd:type>\r\n<gmd:thesaurusName>\r\n  <gmd:CI_Citation>\r\n    <gmd:title>\r\n      <gco:CharacterString>Integrated Taxonomic Information System (ITIS)</gco:CharacterString>\r\n    </gmd:title>\r\n    <gmd:date>\r\n      <gmd:CI_Date>\r\n        <gmd:date>\r\n          <gco:Date>2017-10-08</gco:Date>\r\n        </gmd:date>\r\n        <gmd:dateType>\r\n          <gmd:CI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\">Revision</gmd:CI_DateTypeCode>\r\n        </gmd:dateType>\r\n      </gmd:CI_Date>\r\n    </gmd:date>\r\n    <gmd:citedResponsibleParty>\r\n      <gmd:CI_ResponsibleParty>\r\n      <gmd:organisationName xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n        <gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">Integrated Taxonomic Information System (ITIS)</gco:CharacterString>\r\n        <gmd:PT_FreeText><gmd:textGroup><gmd:LocalisedCharacterString locale=\"#fra\">Integrated Taxonomic Information System (ITIS)</gmd:LocalisedCharacterString></gmd:textGroup></gmd:PT_FreeText>\r\n      </gmd:organisationName>\r\n        <gmd:contactInfo>\r\n          <gmd:CI_Contact>\r\n            <gmd:onlineResource>\r\n              <gmd:CI_OnlineResource>\r\n                <gmd:linkage>\r\n                  <gmd:URL>https://www.itis.gov</gmd:URL>\r\n                </gmd:linkage>\r\n                <gmd:protocol>\r\n                  <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>\r\n                </gmd:protocol>\r\n              </gmd:CI_OnlineResource>\r\n            </gmd:onlineResource>\r\n          </gmd:CI_Contact>\r\n        </gmd:contactInfo>\r\n        <gmd:role>\r\n          <gmd:CI_RoleCode codeList=\"owner\" codeListValue=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\">Owner</gmd:CI_RoleCode>\r\n        </gmd:role>\r\n      </gmd:CI_ResponsibleParty>\r\n    </gmd:citedResponsibleParty>\r\n  </gmd:CI_Citation>\r\n</gmd:thesaurusName>"
+    }
+  },
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 3,
+    "fields": {
+      "name_eng": "Medical Subject Headings (MeSH)",
+      "name_fre": null,
+      "abbrev": "MeSH",
+      "url": "https://meshb.nlm.nih.gov/search",
+      "web_services": true,
+      "xml_block": "<gmd:type xmlns:gmd=\"http://www.isotc211.org/2005/gmd\">\r\n\t<gmd:MD_KeywordTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101\" codeListValue=\"theme\">Theme</gmd:MD_KeywordTypeCode>\r\n</gmd:type><gmd:thesaurusName xmlns:gmd=\"http://www.isotc211.org/2005/gmd\">\r\n\t<gmd:CI_Citation>\r\n\t\t<gmd:title>\r\n\t\t\t<gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">Medical Subject Headings (MeSH)</gco:CharacterString>\r\n\t\t</gmd:title>\r\n\t\t<gmd:date>\r\n\t\t\t<gmd:CI_Date>\r\n\t\t\t\t<gmd:date>\r\n\t\t\t\t\t<gco:Date xmlns:gco=\"http://www.isotc211.org/2005/gco\">2018-04-26</gco:Date>\r\n\t\t\t\t</gmd:date>\r\n\t\t\t\t<gmd:dateType>\r\n\t\t\t\t\t<gmd:CI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\">Revision</gmd:CI_DateTypeCode>\r\n\t\t\t\t</gmd:dateType>\r\n\t\t\t</gmd:CI_Date>\r\n\t\t</gmd:date>\r\n\t\t<gmd:citedResponsibleParty>\r\n\t\t\t<gmd:CI_ResponsibleParty>\r\n\t\t\t\t\r\n        <gmd:organisationName xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n          <gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">U.S. National Library of Medicine</gco:CharacterString>\r\n          <gmd:PT_FreeText><gmd:textGroup><gmd:LocalisedCharacterString locale=\"#fra\">U.S. National Library of Medicine</gmd:LocalisedCharacterString></gmd:textGroup></gmd:PT_FreeText>\r\n        </gmd:organisationName>\r\n        \r\n\t\t\t\t<gmd:contactInfo>\r\n\t\t\t\t\t<gmd:CI_Contact>\r\n\t\t\t\t\t\t<gmd:onlineResource>\r\n\t\t\t\t\t\t\t<gmd:CI_OnlineResource>\r\n\t\t\t\t\t\t\t\t<gmd:linkage>\r\n\t\t\t\t\t\t\t\t\t<gmd:URL>https://www.nlm.nih.gov/mesh/</gmd:URL>\r\n\t\t\t\t\t\t\t\t</gmd:linkage>\r\n\t\t\t\t\t\t\t\t<gmd:protocol>\r\n\t\t\t\t\t\t\t\t\t<gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">WWW:LINK-1.0-http--link</gco:CharacterString>\r\n\t\t\t\t\t\t\t\t</gmd:protocol>\r\n\t\t\t\t\t\t\t</gmd:CI_OnlineResource>\r\n\t\t\t\t\t\t</gmd:onlineResource>\r\n\t\t\t\t\t</gmd:CI_Contact>\r\n\t\t\t\t</gmd:contactInfo>\r\n\t\t\t\t<gmd:role>\r\n\t\t\t\t\t<gmd:CI_RoleCode codeList=\"owner\" codeListValue=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\">Owner</gmd:CI_RoleCode>\r\n\t\t\t\t</gmd:role>\r\n\t\t\t</gmd:CI_ResponsibleParty>\r\n\t\t</gmd:citedResponsibleParty>\r\n\t</gmd:CI_Citation>\r\n</gmd:thesaurusName>"
+    }
+  },
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 4,
+    "fields": {
+      "name_eng": "uncontrolled vocabulary",
+      "name_fre": null,
+      "abbrev": "uncontrolled vocab.",
+      "url": null,
+      "web_services": false,
+      "xml_block": "<gmd:type>\r\n  <gmd:MD_KeywordTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101\" codeListValue=\"RI_528\">theme; th\u00e8me</gmd:MD_KeywordTypeCode>\r\n</gmd:type>\r\n<gmd:thesaurusName>\r\n  <gmd:CI_Citation>\r\n    <gmd:title xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n      <gco:CharacterString>uncontrolled vocabulary; user-specified</gco:CharacterString>\r\n      <gmd:PT_FreeText><gmd:textGroup><gmd:LocalisedCharacterString locale=\"#fra\">vocabulaire libre; sp\u00e9cifi\u00e9 par l'utilisateur</gmd:LocalisedCharacterString></gmd:textGroup></gmd:PT_FreeText>\r\n    </gmd:title>\r\n\r\n\r\n    <gmd:date>\r\n      <gmd:CI_Date>\r\n        <gmd:date>\r\n          <gco:Date>2018-04-29</gco:Date>\r\n        </gmd:date>\r\n        <gmd:dateType>\r\n          <gmd:CI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\">Revision</gmd:CI_DateTypeCode>\r\n        </gmd:dateType>\r\n      </gmd:CI_Date>\r\n    </gmd:date>\r\n  </gmd:CI_Citation>\r\n</gmd:thesaurusName>\r\n\r\n<gmd:organisationName xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n  <gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">NASA</gco:CharacterString>\r\n  <gmd:PT_FreeText><gmd:textGroup><gmd:LocalisedCharacterString locale=\"#fra\">NASA</gmd:LocalisedCharacterString></gmd:textGroup></gmd:PT_FreeText>\r\n</gmd:organisationName>"
+    }
+  },
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 5,
+    "fields": {
+      "name_eng": "World Register of Marine Species (WoRMS)",
+      "name_fre": "World Register of Marine Species (WoRMS)",
+      "abbrev": "WoRMS",
+      "url": "http://www.marinespecies.org/",
+      "web_services": false,
+      "xml_block": null
+    }
+  },
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 6,
+    "fields": {
+      "name_eng": "Government of Canada Core Subject Thesaurus",
+      "name_fre": null,
+      "abbrev": "CST",
+      "url": null,
+      "web_services": true,
+      "xml_block": "<gmd:type>\r\n\t\t\t<gmd:MD_KeywordTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101\" codeListValue=\"RI_528\">theme; th\u00e8me</gmd:MD_KeywordTypeCode>\r\n\t\t</gmd:type>\r\n\t\t<gmd:thesaurusName>\r\n\t\t\t<gmd:CI_Citation>\r\n\t\t\t\t<gmd:title xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n\t\t\t\t\t<gco:CharacterString>Government of Canada Core Subject Thesaurus</gco:CharacterString>\r\n\t\t\t\t\t<gmd:PT_FreeText>\r\n\t\t\t\t\t\t<gmd:textGroup>\r\n\t\t\t\t\t\t\t<gmd:LocalisedCharacterString locale=\"#fra\">Th\u00e9saurus des sujets de base du gouvernement du Canada</gmd:LocalisedCharacterString>\r\n\t\t\t\t\t\t</gmd:textGroup>\r\n\t\t\t\t\t</gmd:PT_FreeText>\r\n\t\t\t\t</gmd:title>\r\n\t\t\t\t<gmd:date>\r\n\t\t\t\t\t<gmd:CI_Date>\r\n\t\t\t\t\t\t<gmd:date>\r\n\t\t\t\t\t\t\t<gco:Date>2004</gco:Date>\r\n\t\t\t\t\t\t</gmd:date>\r\n\t\t\t\t\t\t<gmd:dateType>\r\n\t\t\t\t\t\t\t<gmd:CI_DateTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87\" codeListValue=\"RI_366\">creation; cr\u00e9ation</gmd:CI_DateTypeCode>\r\n\t\t\t\t\t\t</gmd:dateType>\r\n\t\t\t\t\t</gmd:CI_Date>\r\n\t\t\t\t</gmd:date>\r\n\t\t\t\t<gmd:date>\r\n\t\t\t\t\t<gmd:CI_Date>\r\n\t\t\t\t\t\t<gmd:date>\r\n\t\t\t\t\t\t\t<gco:Date>2016-07-04</gco:Date>\r\n\t\t\t\t\t\t</gmd:date>\r\n\t\t\t\t\t\t<gmd:dateType>\r\n\t\t\t\t\t\t\t<gmd:CI_DateTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87\" codeListValue=\"RI_367\">publication; publication</gmd:CI_DateTypeCode>\r\n\t\t\t\t\t\t</gmd:dateType>\r\n\t\t\t\t\t</gmd:CI_Date>\r\n\t\t\t\t</gmd:date>\r\n\t\t\t\t<gmd:citedResponsibleParty>\r\n\t\t\t\t\t<gmd:CI_ResponsibleParty>\r\n\t\t\t\t\t\t<gmd:organisationName xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n\t\t\t\t\t\t\t<gco:CharacterString>Government of Canada; Library and Archives Canada</gco:CharacterString>\r\n\t\t\t\t\t\t\t<gmd:PT_FreeText>\r\n\t\t\t\t\t\t\t\t<gmd:textGroup>\r\n\t\t\t\t\t\t\t\t\t<gmd:LocalisedCharacterString locale=\"#fra\">Gouvernement du Canada; Biblioth\u00e8que et Archives Canada</gmd:LocalisedCharacterString>\r\n\t\t\t\t\t\t\t\t</gmd:textGroup>\r\n\t\t\t\t\t\t\t</gmd:PT_FreeText>\r\n\t\t\t\t\t\t</gmd:organisationName>\r\n\t\t\t\t\t\t<gmd:role>\r\n\t\t\t\t\t\t\t<gmd:CI_RoleCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90\" codeListValue=\"RI_409\">custodian; conservateur</gmd:CI_RoleCode>\r\n\t\t\t\t\t\t</gmd:role>\r\n\t\t\t\t\t</gmd:CI_ResponsibleParty>\r\n\t\t\t\t</gmd:citedResponsibleParty>\r\n\t\t\t</gmd:CI_Citation>\r\n\t\t</gmd:thesaurusName>"
+    }
+  },
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 7,
+    "fields": {
+      "name_eng": "DFO Areas",
+      "name_fre": null,
+      "abbrev": "DFO Areas",
+      "url": null,
+      "web_services": false,
+      "xml_block": "<gmd:type xmlns:gmd=\"http://www.isotc211.org/2005/gmd\">\r\n\t<gmd:MD_KeywordTypeCode codeList=\"http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101\" codeListValue=\"place\">Place</gmd:MD_KeywordTypeCode>\r\n</gmd:type><gmd:thesaurusName xmlns:gmd=\"http://www.isotc211.org/2005/gmd\">\r\n\t<gmd:CI_Citation>\r\n\t\t\r\n    <gmd:title xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n      <gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">DFO Areas</gco:CharacterString>\r\n      <gmd:PT_FreeText><gmd:textGroup><gmd:LocalisedCharacterString locale=\"#fra\">Zones du MPO</gmd:LocalisedCharacterString></gmd:textGroup></gmd:PT_FreeText>\r\n    </gmd:title>\r\n\r\n\t\t<gmd:date>\r\n\t\t\t<gmd:CI_Date>\r\n\t\t\t\t<gmd:date>\r\n\t\t\t\t\t<gco:Date xmlns:gco=\"http://www.isotc211.org/2005/gco\">2009-01-06</gco:Date>\r\n\t\t\t\t</gmd:date>\r\n\t\t\t\t<gmd:dateType>\r\n\t\t\t\t\t<gmd:CI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\">Revision</gmd:CI_DateTypeCode>\r\n\t\t\t\t</gmd:dateType>\r\n\t\t\t</gmd:CI_Date>\r\n\t\t</gmd:date>\r\n\t\t<gmd:citedResponsibleParty>\r\n\t\t\t<gmd:CI_ResponsibleParty>\r\n\t\t\t\t<gmd:individualName>\r\n\t\t\t\t\t<gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">Doug Gregory</gco:CharacterString>\r\n\t\t\t\t</gmd:individualName>\r\n        <gmd:organisationName xsi:type=\"gmd:PT_FreeText_PropertyType\">\r\n          <gco:CharacterString xmlns:gco=\"http://www.isotc211.org/2005/gco\">Government of Canada; Fisheries and Oceans Canada</gco:CharacterString>\r\n          <gmd:PT_FreeText><gmd:textGroup><gmd:LocalisedCharacterString locale=\"#fra\">Gouvernement du Canada; P\u00eaches et Oc\u00e9ans Canada</gmd:LocalisedCharacterString></gmd:textGroup></gmd:PT_FreeText>\r\n        </gmd:organisationName>\r\n\t\t\t\t<gmd:contactInfo>\r\n\t\t\t\t\t<gmd:CI_Contact/>\r\n\t\t\t\t</gmd:contactInfo>\r\n\t\t\t\t<gmd:role>\r\n\t\t\t\t\t<gmd:CI_RoleCode codeList=\"originator\" codeListValue=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\">Owner</gmd:CI_RoleCode>\r\n\t\t\t\t</gmd:role>\r\n\t\t\t</gmd:CI_ResponsibleParty>\r\n\t\t</gmd:citedResponsibleParty>\r\n\t</gmd:CI_Citation>\r\n</gmd:thesaurusName>"
+    }
+  },
+  {
+    "model": "inventory.keyworddomain",
+    "pk": 8,
+    "fields": {
+      "name_eng": "ISO Topic Categories",
+      "name_fre": null,
+      "abbrev": "TopicCategory",
+      "url": null,
+      "web_services": false,
+      "xml_block": null
+    }
+  }
+]

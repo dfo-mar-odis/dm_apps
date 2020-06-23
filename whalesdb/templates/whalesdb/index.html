@@ -4,108 +4,100 @@
 {% load i18n %}
 {% bootstrap_css %}
 
-{% block header %}
-    <style>
-        body {
-            background-image: url("{% static 'img/pebbles_light.png' %}");
-            background-size: cover;
-        }
-
-        .card-title {
-        {#font-weight: bold;#}
-        }
-
-        .card {
-            cursor: pointer;
-        }
-
-        .shrink-me {
-            transform: scale(.8);
-        }
-
-
-    </style>
-
-{% endblock %}
-
 {% block tab_title %}
     {% trans 'Whale DB Home' %}
 {% endblock tab_title %}
 
 {% block body %}
 
-<div class=" text-center">
-    <h1 class="text-center montserrat" style="font-size: 56px">
-        {% trans 'Whale Equipment Metadata Repository' %}
-    </h1>
-</div>
 <div class="container">
-    {% for sec in section %}
-    <div class="jumbotron shrink-me" style="background-color: #ffffff; border: black solid 1px">
-        <div class="text-center roboto">
-            <h2>
-                {% trans sec.title %}
-            </h2>
+    <div class="jumbotron jumbotron-fluid mt-5 border border-dark">
+        <div class="container">
+            <h1 class="text-center">
+                {% trans 'Whale Equipment Metadata Repository' %}
+            </h1>
         </div>
-        <div class="row">
-
-            {% for dep_obj in sec.forms %}
-
-            {% if dep_obj.type == "codelist" %}
-            <div class="card mb-3 jumbotron"
-                 style="width: 19rem; height: 20rem; margin: auto; padding-top: 1px; border: black solid 1px"
-                 href="{% url 'whalesdb:code_list' dep_obj.url %}" >
-            {% elif dep_obj.obj_name %}
-            <div class="card mb-3 jumbotron"
-                 style="width: 19rem; height: 20rem; margin: auto; padding-top: 1px; border: black solid 1px"
-                 href="{% url dep_obj.url dep_obj.obj_name %}" >
-            {% else %}
-            <div class="card mb-3 jumbotron"
-                 style="width: 19rem; height: 20rem; margin: auto; padding-top: 1px; border: black solid 1px"
-                 href="{% url dep_obj.url %}" >
-            {% endif %}
-                <div class="card-body text-center">
-                    <h5 class="card-title">
-                        {% trans dep_obj.title %}
-                    </h5>
-                    <img src="{% static dep_obj.icon %}" class="card-img-top" />
-                </div>
-            </div>
-            {% endfor %}
-       </div>
-        {% if sec.code %}
-        <div class="text-center roboto">
-            <h2>
-                {% trans sec.title|add:" Code List" %}
-            </h2>
-        </div>
-        <div class="row">
-
-            {% for dep_obj in sec.code %}
-
-            {% if dep_obj.type == "codelist" %}
-            <div class="card mb-3 jumbotron"
-                 style="width: 19rem; height: 20rem; margin: auto; padding-top: 1px; border: black solid 1px"
-                 href="{% url 'whalesdb:code_list' dep_obj.url %}" >
-            {% else %}
-            <div class="card mb-3 jumbotron"
-                 style="width: 19rem; height: 20rem; margin: auto; padding-top: 1px; border: black solid 1px"
-                 href="{% url dep_obj.url %}" >
-            {% endif %}
-                <div class="card-body text-center">
-                    <h5 class="card-title">
-                        {% trans dep_obj.title %}
-                    </h5>
-                    <img src="{% static dep_obj.icon %}" class="card-img-top" />
-                </div>
-            </div>
-            {% endfor %}
-       </div>
-        {% endif %}
     </div>
-    {% endfor %}
-</div>
+    <div class="row">
+        <div class="col">
+            <div class="card border border-dark">
+                <div class="card-header">
+                    <h2>{% trans 'Deployments' %}</h2>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_dep' %}" >{% trans 'Deployments' %}</a>
+                    {% if editable %}
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:create_dep' %}" >{% trans 'New Deployment' %}</a>
+                    {% endif %}
+                    <hr />
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_stn' %}" >{% trans 'Stations' %}</a>
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_prj' %}" >{% trans 'Projects' %}</a>
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_mor' %}" >{% trans 'Mooring Setups' %}</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border border-dark">
+                <div class="card-header">
+                    <h2>{% trans 'Equipment' %}</h2>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_eqp' %}" >{% trans 'Equipment' %}</a>
+                    {% if auth %}
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:create_eqp' %}" >{% trans 'New Equipment' %}</a>
+                    {% endif %}
+                    <hr />
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_emm' %}" >{% trans 'Make/Model' %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card border border-dark">
+                <div class="card-header">
+                    <h2>{% trans 'Recording Datasets' %}</h2>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_rec' %}" >{% trans 'Datasets' %}</a>
+                    {% if auth %}
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:create_rec' %}" >{% trans 'New Dataset' %}</a>
+                    {% endif %}
+                    </div>
+                    <div>
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_rsc' %}" >{% trans 'Recording Schedules' %}</a>
+                    {% if auth %}
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:create_rsc' %}" >{% trans 'New Recording Schedule' %}</a>
+                    {% endif %}
+                    </div>
+                    <hr />
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_tea' %}" >{% trans 'Team Members' %}</a>
+                    {% if auth %}
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:create_tea' %}" >{% trans 'New Team Member' %}</a>
+                    {% endif %}
 
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border border-dark">
+                <div class="card-header">
+                    <h2>{% trans 'Other Lookups' %}</h2>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-secondary" href="{% url 'whalesdb:list_rtt' %}" >{% trans 'Time Zone' %}</a>
+                    {# add EQA_ADC_BITS_CODE #}
+                    {# add PRM_PARAMETER_CODE #}
+                    {# add EQT_EQUIPMENT_TYPE_CODE #}
+                    {# add ERT_RECORDER_TYPE #}
+                    {# add RTT_TIMEZONE_CODE #}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 {% endblock body %}
 
 {% block body_js %}

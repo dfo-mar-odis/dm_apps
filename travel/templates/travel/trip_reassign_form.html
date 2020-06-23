@@ -1,0 +1,86 @@
+{% extends 'shared_models/generic_popout_form.html' %}
+
+{% load i18n %}
+{% load verbose_names %}
+{% load custom_filters %}
+
+
+{% block pre_form_div %}
+    <div class="row">
+
+        {% for trip in trip_list %}
+
+
+            <div class="col">
+                <div class="mb-3">
+                    <h3>
+                        {% if trip is trip_a %}
+                            <span class="btn-warning">{% trans "Original Trip" %}</span>
+                        {% else %}
+                            <span class="btn-success">{% trans "Re-assigned Trip" %}</span>
+                        {% endif %}
+                    </h3>
+                    <table class="table table-bordered table-sm">
+                        {% for field in field_list %}
+                            {% if "traveller" in field %}
+                                <tr>
+                                    <th>{% get_verbose_label trip field %}</th>
+                                    <td>
+                                        <ul>
+                                            {% for t in trip.traveller_list %}
+                                                <li>{{ t }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% elif "requests" in field %}
+                                <tr>
+                                    <th>{% get_verbose_label trip field %}</th>
+                                    <td>
+                                        <ul>
+                                            {% for tr in trip.trip_requests.all %}
+                                                <li>{{ tr }} (STATUS: <span
+                                                        style="background-color: {{ tr.status.color }}">{{ tr.status }}</span>)
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                {% verbose_td_display trip field %}
+                            {% endif %}
+
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <h4 class="">
+        {% trans "Yes, I want to re-assign all linked trip requests from the original trip to the re-assigned trip!!" %}
+    </h4>
+    <ul>
+        {% for tr in trip_a.trip_requests.all %}
+            <li>{{ tr }}</li>
+        {% endfor %}
+    </ul>
+    {% if duplicate_ppl|length > 0 %}
+        <h4>
+        <span class="red-font">
+            {% trans "WARNING: you cannot make this re-assignment because there is an overlap of travellers and/or request owners: " %}<br>
+        <ul>
+            {% for p in duplicate_ppl %}
+                <li>{{ p }}</li>
+            {% endfor %}
+        </ul>
+
+        </span>
+        </h4>
+    {% endif %}
+
+
+
+{% endblock %}
+

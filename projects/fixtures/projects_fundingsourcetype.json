@@ -1,0 +1,1 @@
+[{"model": "projects.fundingsourcetype", "pk": 1, "fields": {"name": "A-base", "nom": "A-base", "color": "#a7aef9"}}, {"model": "projects.fundingsourcetype", "pk": 2, "fields": {"name": "B-base", "nom": "B-base", "color": "#d9a7f9"}}, {"model": "projects.fundingsourcetype", "pk": 3, "fields": {"name": "C-base", "nom": "C-base", "color": "#eff9a7"}}]

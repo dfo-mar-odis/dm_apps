@@ -1,0 +1,77 @@
+{% extends "whalesdb/whale_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block title %}
+    {% trans title %}
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-1">
+    <a class="btn btn-primary" href="{% url ''|add:list_url %}">{% trans 'Back to list' %}</a>
+    {% if editable and update_url%}
+        {# if the update url contains /pop/ then open the url in a popup window #}
+        {% if '/pop/' in update_url %}
+            <a class="btn btn-primary btn-sm" href="#" onclick="return pop('{% url ''|add:update_url object.pk 'pop' %}', 'details_table')" title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+        {% else %}
+            <a class="btn btn-primary btn-sm" href="{% url ''|add:update_url object.pk %}" title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+        {% endif %}
+    {% endif %}
+
+    {% block field_override %}
+        <div class="card border border-dark my-1">
+            <h5 class="card-header">{% trans title %}</h5>
+            <div class="card-body">
+            {% for field in fields %}
+            <div class="row" >
+                    <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span><span>{% get_field_value object field%}</span></div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    {% endblock field_override %}
+</div>
+{% endblock %}
+
+{% block body_js %}
+
+{# if the view includes a path to a javascript file in a java_script context variable, include it here #}
+{% if java_script %}
+{% include ''|add:java_script %}
+{% endif %}
+
+<script>
+
+var interval;
+
+// This is a method of opening a child window and testing to see if/when it closes
+// upon closing the drop menu the window is associated with is updated adding the new element
+// and setting it as the selected option
+function pop(url, tag) {
+    child = window.open(url, tag,'toolbar=0,status=0,height=500,width=600');
+    child.onbeforeunload = function() {
+        if(child.refresh && $('.is-invalid').length <= 0) {
+            refreshTag(tag);
+        }
+    }
+
+    return false;
+}
+
+function refreshTag(tag) {
+    if( tag == "all" ) {
+        interval = setInterval( function() {
+            location.reload(true);
+            clearInterval(interval);
+        }, 1000);
+    } else {
+        console.log("refresh called on: '" + tag + "'");
+        var id_tag = "#"+tag;
+        $(id_tag).load("# "+id_tag+">*");
+    }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+    <style>
+        .ms-container {
+            width: 100%;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+    {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Please Select a Report:</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="spinner-border text-primary hidden" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <form method="post">
+
+            {% csrf_token %}
+            {% for field in form %}
+
+                {% if field.name == "spp" %}
+                    <div class="spp_div">
+                        {% bootstrap_field field placeholder="" %}
+
+                    </div>
+                {% elif field.name == "year" %}
+                    <div class="year_div">
+                        {% bootstrap_field field placeholder="" %}
+                    </div>
+                {% elif field.name == "cruise" %}
+                    <div class="cruise_div">
+                        {% bootstrap_field field placeholder="" %}
+                    </div>
+
+                {% else %}
+                    {% bootstrap_field field placeholder="" %}
+                {% endif %}
+            {% endfor %}
+            <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
+
+
+        </form>
+        <br>
+        <p>
+        </p>
+
+
+    </div>
+
+
+    <script type="application/javascript">
+
+        function hideAll() {
+            $(".spp_div").addClass("gone");
+            $(".cruise_div").addClass("gone");
+            $(".year_div").addClass("gone");
+            $("#id_report").prop('required', true);
+        }
+
+        function configureForm() {
+            var reportChoice = $("#id_report").val();
+            // masterlist count report
+            if (reportChoice == 1) {
+
+                //$(".year_div").removeClass("gone");
+
+            } else if (reportChoice == 2) {
+                $(".cruise_div").removeClass("gone");
+                $(".spp_div").removeClass("gone");
+                $(".year_div").removeClass("gone");
+                $("#id_spp").multiSelect();
+                alert("Please note that running this report for all sites/years will take several minutes to complete. The resulting fileis approximately 10 MB in size.")
+            }
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            hideAll();
+            configureForm();
+        });
+
+        $("#id_report").change(function () {
+            hideAll();
+            configureForm();
+        });
+
+        $("form").submit(function () {
+            var reportChoice = $("#id_report")[0].value;
+            // species count report
+            if (reportChoice != 4) {
+                $(this).addClass("hidden");
+                $(".spinner-border").removeClass("hidden");
+                window.setTimeout(closeLoader, 10000)
+            }
+
+        });
+
+        function closeLoader() {
+            $("form").removeClass("hidden");
+            $(".spinner-border").addClass("hidden");
+        }
+
+
+    </script>
+
+{% endblock content %}

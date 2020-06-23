@@ -1,0 +1,38 @@
+{% extends "shared_models/generic_base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load verbose_names %}
+
+{% block subcontent %}
+    <div class="mb-3">
+        <div class="btns">
+            {% block buttons_div %}
+                {% block buttons %}
+                {% endblock %}
+            {% endblock %}
+        </div>
+    </div>
+
+    {% block detail %}
+        {% block detail_table %}
+            <table class="table">
+                {% for field in field_list %}
+                    {% block detail_tr %}
+                        {% verbose_td_display object field %}
+                    {% endblock %}
+                {% endfor %}
+            </table>
+        {% endblock %}
+    {% endblock %}
+
+
+    <div class="mb-3">
+        {% block post_detail_div %}{% endblock %}
+    </div>
+
+
+{% endblock %}
+
+

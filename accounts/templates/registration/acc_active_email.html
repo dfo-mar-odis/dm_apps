@@ -1,6 +1,15 @@
 {% autoescape off %}
-Hi {{ user.first_name }},
-Please click on the following link to confirm your registration with the DFO Science Gulf Region Data Management website:
-http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}
+    Hi {{ user.first_name }},
+    <p>
+        Please click on the following link to confirm your registration on the DM Apps website.
+        <br>
+        http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}
+    </p>
+
+    <p>
+        Veuillez cliquer sur le lien suivant pour confirmer votre inscription sur le site Web de DM Apps.
+        <br>
+        http://{{ domain }}{% url 'accounts:activate' uidb64=uid token=token %}
+    </p>
 
 {% endautoescape %}

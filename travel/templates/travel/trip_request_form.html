@@ -1,0 +1,290 @@
+{% extends "travel/form.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+
+{% block header %}
+    {{ block.super }}
+    <style>
+        input.cost {
+            font-size: small;
+            width: 100%;
+        }
+
+        select.chosen-select-contains:invalid {
+            height: 0px !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            display: flex !important;
+        }
+    </style>
+
+{% endblock %}
+
+
+
+
+
+{% block form %}
+
+
+    <form method="post" class="form">
+        {% csrf_token %}
+        <div class="container">
+            {% bootstrap_form_errors form %}
+
+
+            {# Fields without a label; Will serve as a catch all but also to bring in hidden fields #}
+            {% for field in form %}
+                {% if field.field.group == 0 %}
+                    {% bootstrap_field field placeholder="" %}
+                {% endif %}
+            {% endfor %}
+
+            {# GENERAL DETAILS #}
+            <div class="card mb-2">
+                <h2 class="card-header text-white bg-primary">
+                    {% trans "General Trip Information" %}
+                </h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {% for field in form %}
+                            {% if field.field.group == 1 %}
+                                {% include "travel/_trip_request_form_layout.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {# TRAVELLER #}
+            <div class="card mb-2">
+                <h2 class="card-header text-white bg-primary" id="group2-text-h2">
+
+                </h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {% for field in form %}
+                            {% if field.field.group == 2 %}
+                                {% include "travel/_trip_request_form_layout.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {# JUSTIFICATION #}
+            <div class="card mb-2">
+                <h2 class="card-header text-white bg-primary">
+                    {% trans "Trip Justification" %}
+                </h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {% for field in form %}
+                            {% if field.field.group == 3 %}
+                                {% include "travel/_trip_request_form_layout.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            {# Reviewers - ONLY ADD IF OBJECT PRESENT#}
+            {% if object %}
+
+                <div class="card mb-2">
+                    <h2 class="card-header text-white bg-primary">
+                        {% trans "Trip Request Reviewers" %}
+                    </h2>
+                    <div class="card-body">
+                        <div class="card-text">
+                            {% for field in form %}
+                                {% if field.field.group == 4 %}
+                                    {% include "travel/_trip_request_form_layout.html" %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="mb-3 blue-font center-col not-a-group-field">
+                <h2>
+                    {% trans "Select NEXT to enter trip costs" %}
+                </h2>
+            </div>
+
+            <div class="container center-col">
+                {% buttons %}
+                    {% if object %}
+                        <button type="submit" class="btn btn-success">
+                            {% trans "Update" %}
+                        </button>
+                        <a class="btn btn-secondary" href="{% url 'travel:request_detail' object.id view.kwargs.type %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% else %}
+                        <button type="submit" class="btn btn-success">
+                            {% trans "Next" %}
+                        </button>
+                        <a class="btn btn-secondary" href="{% url 'travel:request_list' view.kwargs.type %}">
+                            {% trans "Cancel" %}
+                        </a>
+                    {% endif %}
+                {% endbuttons %}
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+
+{% block body_js %}
+
+    <script type="application/javascript">
+        var userObj = {{ user_json|safe }};
+        var confObj = {{ conf_json|safe }};
+        {#var sectionObj = {{ section_json|safe }};#}
+        var myId = "";
+
+        function refreshUserInfo() {
+            myId = $("#id_user").val();
+            // no ID provided
+            if (myId == "") {
+                $("#id_first_name").prop("required", true);
+                $("#id_last_name").prop("required", true);
+                $("#id_email").prop("required", true);
+                $(".disappear-if-user").removeClass("gone");
+            } else {
+                $(".disappear-if-user").addClass("gone");
+                $("#id_is_public_servant").val("True");
+                $("#id_company_name").val("");
+                $("#id_first_name").val(userObj[myId]["first_name"]).prop("required", false);
+                $("#id_last_name").val(userObj[myId]["last_name"]).prop("required", false);
+                $("#id_email").val(userObj[myId]["email"]).prop("required", false);
+            }
+
+            if ($("#id_is_public_servant").val() == "True") {
+                $("#id_dfo_region").removeClass("gone");
+            } else {
+                $("#id_dfo_region").addClass("gone");
+            }
+
+        }
+
+        function refreshPublicServantFields() {
+            if ($("#id_is_public_servant").val() == "False") {
+                $(".hide-if-public-servant").removeClass("gone");
+                $(".hide-if-not-public-servant").addClass("gone");
+            } else {
+                $(".hide-if-public-servant").addClass("gone");
+                $(".hide-if-not-public-servant").removeClass("gone");
+            }
+        }
+
+
+        $("#id_is_public_servant").change(function () {
+            refreshPublicServantFields();
+        });
+
+        function refreshClassHideMe() {
+            // not a group request
+            if ($("#id_is_group_request").val() == "False") {
+                $("#id_user").prop("required", false);
+                $("#group2-text-h2").html("{% trans "Traveller Information" %}");
+                $("#request-type").html("{% trans "Individual" %}");
+                $(".not-a-group-field").removeClass("gone");
+                $(".show-me-when-group-request").addClass("gone");
+            } else {
+                $("#id_user").prop("required", true);
+                $("#group2-text-h2").text("{% trans "Requester Information" %}");
+                $("#request-type").html("{% trans "Group" %}");
+                $(".not-a-group-field").addClass("gone");
+                $(".show-me-when-group-request").removeClass("gone");
+            }
+            refreshUserInfo();
+        }
+
+
+        $("#id_user").change(function () {
+            refreshUserInfo();
+        });
+
+        //$("#id_reason").change(function () {
+        //            refreshConference();
+        //      });
+
+        function updateTrip() {
+            $("#id_trip").load("# #id_trip>*", reloadTripSelect);
+        }
+
+        function reloadTripSelect() {
+            var maxValue = -1;
+
+            $("#id_trip option").each(function () {
+                maxValue = Math.max(maxValue, $(this).val());
+            });
+            console.log("max val: " + maxValue);
+
+            $("#id_trip").val(maxValue).trigger("chosen:updated");
+
+            $.ajax({
+                url: '{% url 'travel:conf_details' %}',
+                data: {},
+                dataType: 'json',
+                success: function (data) {
+                    confObj = data;
+                    refreshTripDetails();
+                }
+            });
+        }
+
+        $("#id_trip").change(function () {
+            // update location and (maybe) dates
+            refreshTripDetails();
+        });
+
+        function refreshTripDetails() {
+            myId = $("#id_trip").val();
+            $("#id_destination").val(confObj[myId]["location"]);
+            $("#id_start_date").flatpickr().setDate(confObj[myId]["start_date"]);
+            $("#id_end_date").flatpickr().setDate(confObj[myId]["end_date"]);
+            {#$("#id_email").val(userObj[myId]["email"]);#}
+        }
+
+        $("#id_is_group_request").change(function () {
+            refreshClassHideMe();
+        });
+
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            refreshPublicServantFields();
+            refreshUserInfo();
+            refreshClassHideMe();
+            // do not make these fields required, otherwise we will not see the form errors if omitted
+            $("#id_user").prop("required", false);
+            $("#id_section").prop("required", false);
+        });
+
+        $("#predefined-addresses").change(function () {
+            $myInput = $(this);
+            $("#id_address").val($myInput.val());
+        });
+
+        {% if object %}
+            $("#group_request_container").addClass("gone");
+        {% endif %}
+
+
+        // if a user changes a section or trip, change the "reset reviewers" input to True
+        $("#id_trip").change(function () {
+            $("#id_reset_reviewers").val("True")
+        })
+        $("#id_section").change(function () {
+            $("#id_reset_reviewers").val("True")
+        })
+    </script>
+{% endblock %}
+
+

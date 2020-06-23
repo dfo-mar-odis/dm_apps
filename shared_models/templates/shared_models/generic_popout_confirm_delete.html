@@ -1,0 +1,38 @@
+{% extends "shared_models/generic_popout_form.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_tags %}
+{% load custom_filters %}
+
+{% block post_form_div %}
+    {% if related_names|length %}
+        <div class="mt-5">
+            <div class="mb-3">
+                <h3 style="font-weight: bold">
+                    {% blocktrans %}
+                        This {{ model_name }} is related to the following items:
+                    {% endblocktrans %}
+                </h3>
+            </div>
+            {% for dict in related_names %}
+
+
+                <h4>{{ dict.title|title }}</h4>
+                <ul>
+                    {% for obj in dict.qs %}
+                        <li>{{ obj }}</li>
+                    {% empty %}
+                        <em>
+                            {% blocktrans with dict.title as title %}
+                                There are no {{ title }} linked to this item.
+                            {% endblocktrans %}
+                        </em>
+                    {% endfor %}
+                </ul>
+
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}
+

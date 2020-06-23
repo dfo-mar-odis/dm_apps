@@ -1,0 +1,190 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block header %}
+    <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen"
+          type="text/css">
+{% endblock %}
+
+{% block content %}
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'diets:predator_filter' %}">Predators</a></li>
+            {% if object %}
+                <li class="breadcrumb-item"><a href="{% url 'diets:predator_detail' object.id %}">{{ object }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">New Predator</li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <div class="container">
+        <h1>
+            {% if object.id %}
+                {{ object }}
+            {% else %}
+                New Predator
+            {% endif %}
+        </h1>
+        <br>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {% for field in form %}
+                {% if field.name == "cruise" %}
+                    {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+                    <a href="{% url 'diets:cruise_new' %}" target="_blank">(add new cruise)</a><br><br>
+                    {# should produce a popout window... #}
+                {% elif field.name == "samplers" %}
+                    {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+                    <a href="{% url 'diets:sampler_new' %}" target="_blank">(add new sampler)</a><br><br>
+                    {# should produce a popout window... #}
+
+
+                {% elif field.name == "species" %}
+                    <div id="species_interpreter_div">
+                        <div class="form-group row" style="margin-bottom: 0px;">
+                            <label for="species_interpreter" class="col-md-3 col-form-label">Predator
+                                (any part...)</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control"
+                                       id="species_interpreter">
+                            </div>
+                        </div>
+                        <div class="form-group row" style="margin-bottom: 0px;">
+                            <label for="species_list" class="col-md-3 col-form-label"></label>
+                            <div class="col-md-9">
+                                <p id="species_list" style="margin-bottom: 0px;"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="species_field_div" class="appear-on-error">
+                        {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+                        <div class="form-group row" style="margin-top: 0px;">
+                            <label for="clear_species" class="col-md-3 col-form-label"></label>
+                            <div class="col-md-9">
+                                <a href="#" id="clear_species" class="red-font">(clear)</a>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+                {% endif %}
+            {% endfor %}
+
+
+            {% buttons %}
+                {% if object.id %}
+                    <button type="submit" class="btn btn-success">Submit</button>
+                {% else %}
+                    <button type="submit" class="btn btn-success">Add</button>
+                {% endif %}
+
+                {% if object.id %}
+                    <a class="btn btn-secondary" href="{% url 'diets:predator_detail' object.id %}">Cancel</a>
+                {% else %}
+                    <a class="btn btn-secondary" href="{% url 'diets:predator_filter' %}">Cancel</a>
+                {% endif %}
+
+            {% endbuttons %}
+        </form>
+
+    </div>
+
+
+
+    <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
+    <script type="application/javascript">
+        {#$("#id_samplers").multiSelect()#}
+    </script>
+
+    <script type="text/javascript">
+        window.name = "motherWindow";
+        var speciesList = {{species_list|safe}};
+
+
+        $(document).ready(function () {
+
+            $("#id_cruise")[0].focus()
+
+            {% if object.species %}
+                $("#species_interpreter_div").prop("hidden", true)
+            {% else %}
+                $("#species_field_div").prop("hidden", true)
+            {% endif %}
+
+
+            if ($(".invalid-feedback").length > 0) {
+                $(".appear-on-error").prop("hidden", false)
+            }
+
+
+        });
+
+        $("input").keydown(function (event) {
+            if (event.key == "Enter") {
+                event.preventDefault()
+            }
+        });
+
+        $(".no-tab").keydown(function (event) {
+            if (event.key == "Tab" && $(this).val() != "") {
+                event.preventDefault()
+            }
+        });
+
+        // PROJECT
+        $("#species_interpreter").keyup(function (e) {
+            $("#species_list").html("")
+            if (this.value.length >= 2) {
+                for (var i = 0; i < speciesList.length; i++) {
+                    var re = new RegExp(this.value, 'gi');
+
+                    if (speciesList[i].match(re)) {
+                        $("#species_list").html(
+                            $("#species_list").html() + speciesList[i] + '<br>')
+                    }
+                }
+                $(".species_insert").click(function () {
+                    $("#species_field_div").prop("hidden", false)
+                    $("#species_interpreter_div").prop("hidden", true)
+                    code = this.getAttribute("code")
+                    $("#id_species").val(code)
+
+                    // where to go next
+                    $("#id_fish_number")[0].focus()
+
+                });
+
+
+                if ($(".species_insert").length == 0) {
+                    $("#species_interpreter").addClass("bad")
+                } else {
+                    $("#species_interpreter").removeClass("bad")
+                }
+
+            }
+        });
+        $("#clear_species").click(function () {
+            $("#species_interpreter").val("")
+            $("#species_list").html("")
+            $("#species_field_div").prop("hidden", true)
+            $("#species_interpreter_div").prop("hidden", false)
+            $("#species_interpreter")[0].focus()
+        });
+
+    </script>
+
+
+{% endblock content %}

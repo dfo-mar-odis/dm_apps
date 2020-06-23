@@ -2,32 +2,31 @@
 {% load humanize %}
 {% load custom_filters %}
 {% load i18n %}
-<style>
-    table, td {
-        font-size: small;
-    }
-</style>
 
-
+<div class="mb-2 neighbours">
 <h4>
-    {% trans "Project Milestones:" %}
+    {% trans "Project Milestones" %}
 </h4>
-{% if not report_mode %}
-    <a class="btn btn-sm btn-primary add-btn" href="#" pop-href="{% url 'projects:milestone_new' project.id %}">
-        {% trans "Add Milestone" %}
-    </a>
-    <br><br>
+</div>
+{% if can_edit or is_lead %}
+    <div class="mb-3 neighbours">
+        <a class="btn btn-sm btn-outline-primary add-btn" href="#" pop-href="{% url 'projects:milestone_new' project.id %}">
+            {% trans "Add Milestone" %}
+        </a>
+    </div>
 {% endif %}
 
 {% if project.milestones.count == 0 %}
-    <em>
-        {% trans "No milestones" %}...
-    </em><br>
+    <div class="mb-3">
+        <em>
+            {% trans "No milestones" %}...
+        </em>
+    </div>
 {% else %}
 
     <table class="table table-hover table-sm" style="width: auto">
         <tr>
-            {% if not report_mode %}
+            {% if can_edit %}
                 <th></th>
             {% endif %}
             <th>
@@ -36,7 +35,7 @@
             <th>
                 {% trans "Description" %}
             </th>
-            {% if not report_mode %}
+            {% if object.submitted %}
                 <th>
                     {% trans "Latest status" %}
                 </th>
@@ -45,31 +44,24 @@
         </tr>
         <tbody>
         {% for obj in project.milestones.all %}
-            <tr  {% if not report_mode %}
-                href="{% url 'projects:milestone_edit' obj.id %}" pop
-                data-toggle="tooltip" title="Edit"
-            {% endif %}
-            >
-                {% if not report_mode %}
+            <tr  {% if can_edit %} href="{% url 'projects:milestone_edit' obj.id %}" pop data-toggle="tooltip" title="Edit" {% endif %} >
+                {% if can_edit %}
                     <td>
-                        {% if not report_mode %}
-                            <a class="milestone-delete-me" href="#" val="{{ obj.id }}">
-                                <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
-                                     title="Delete">
-                            </a>
-                            <a id="milestone-secrect-delete-btn-{{ obj.id }}"
-                               href="{% url 'projects:milestone_delete' obj.id %}" class="hidden"></a>
-                        {% endif %}
+                        <a class="milestone-delete-me" href="#" val="{{ obj.id }}">
+                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
+                                 title="Delete" width="20px">
+                        </a>
+                        <a id="milestone-secrect-delete-btn-{{ obj.id }}"
+                           href="{% url 'projects:milestone_delete' obj.id %}" class="hidden"></a>
                     </td>
                 {% endif %}
                 <td>{{ obj.name }}</td>
                 <td>{{ obj.description|nz:"-----" }}</td>
                 {% trans "No status reports on file.." as na %}
-                {% if not report_mode %}
+                {% if object.submitted %}
                     <td style="background-color: {{ obj.latest_update.status.color }}">
                         {% if obj.latest_update %}
                             {{ obj.latest_update.status }} ({{ obj.latest_update.status_report }})
-
                         {% else %}
                             {{ na }}
                         {% endif %}
@@ -80,4 +72,3 @@
         </tbody>
     </table>
 {% endif %}
-<br>

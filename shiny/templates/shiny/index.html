@@ -1,0 +1,73 @@
+{% extends 'shared_models/generic_filter.html' %}
+{% load static %}
+{% load i18n %}
+{% load verbose_names %}
+
+
+{% block header %}
+    {{ block.super }}
+    <style>
+        table {
+            font-size: 14px;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block area_above_h1 %}
+    <div class="float-right">
+        <img src="{% static 'shiny/img/rproj.jfif' %}" alt="" width="100px">
+    </div>
+{% endblock %}
+
+
+{% block table_tr %}
+
+    {% url row_object_url_name object.id as my_url %}
+    <tr {% if row_object_url_name %}href="{{ my_url }}"{% endif %}>
+        {% for field in field_list %}
+            <td class="{{ field.class }}">
+                {% if "thumbnail" in field.name %}
+                    {% if object.thumbnail %}
+                        <img src="{{ object.thumbnail.url }}" alt="" width="100%">
+                    {% else %}
+                        <img src="{% static 'shiny/img/rproj.jfif' %}" alt="" width="100%">
+                    {% endif %}
+                {% elif "github" in field.name %}
+                    {% if object.github_url %}
+                        <a href="{{ object.github_url|safe }}" target="_blank">
+                            <img src="{% static 'shiny/img/GitHub-Mark-32px.png' %}" alt="">
+                        </a>
+                    {% else %}
+                        :(
+                    {% endif %}
+                {% elif "owner" in field.name %}
+                    <a href="mailto:{{ object.owner.email }}?subject=your awesome shiny app... {{ object.ttitle }}">
+                        {% get_field_value object field.name %}
+                    </a>
+                {% else %}
+                    {% get_field_value object field.name %}
+                {% endif %}
+            </td>
+        {% endfor %}
+        <td style="width: 150px">
+            <div class="btn-group">
+                {% if object.url %}
+
+                    <a href="{{ object.url|safe }}" class="btn btn-sm btn-outline-primary" target="_blank">{% trans "Open" %}</a>
+                {% endif %}
+                {% if user == object.owner or user.is_superuser %}
+                    <a href="{% url 'shiny:update' object.id %}"
+                       class="btn btn-sm btn-outline-dark">{% trans "Edit" %}</a>
+                    <a href="{% url 'shiny:delete' object.id %}"
+                       class="btn btn-sm btn-outline-danger">{% trans "Delete" %}</a>
+                {% endif %}
+            </div>
+
+        </td>
+    </tr>
+
+
+
+{% endblock %}

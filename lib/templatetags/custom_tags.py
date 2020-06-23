@@ -32,3 +32,17 @@ def add(value, arg):
 @register.simple_tag
 def subtract(value, arg):
     return float(nz(value, 0)) - float(nz(arg, 0))
+
+
+@register.simple_tag
+def echo(value):
+    return value
+
+
+@register.simple_tag
+def crash_if_none(var_name, value):
+
+    if nz(value, None) is None:
+        raise Exception(f'the expected template variable: "{var_name}" is missing in the context')
+    else:
+        return ""

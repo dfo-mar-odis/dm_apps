@@ -16,6 +16,10 @@
                     <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
                          title="delete">
                 </a>
+                <a href="{% url 'inventory:web_service_clone' item.id %}">
+                    <img src="{% static "/img/iconfinder_copy_172587.svg" %}" data-toggle="tooltip"
+                         title="duplicate" width="15px">
+                </a>
             </li>
         {% endfor %}
     {% endif %}

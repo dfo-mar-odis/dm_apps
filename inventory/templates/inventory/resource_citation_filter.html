@@ -1,4 +1,4 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 
@@ -7,22 +7,18 @@
         {% bootstrap_alert temp_msg alert_type='success' %}
     {% endif %}
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+    {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            <li class="breadcrumb-item"><a
-                    href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Insert Citation</li>
-        </ol>
-    </nav>
 
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                <li class="breadcrumb-item"><a
+                        href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Insert Citation</li>
+            </ol>
+        </nav>
         <h1>Select a Citation to Insert:</h1><br>
 
         <form action="." method="get">

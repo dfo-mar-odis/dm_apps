@@ -7,6 +7,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
 
     {#  Include all css files  #}
     {% include "_base_css.html" %}
@@ -14,15 +15,20 @@
 
     <title>{% block title %}{% endblock title %}</title>
     {% block header %}{% endblock header %}
-    {% if not USING_PRODUCTION_DB %}
-        <div style="text-align: center; background-color: #ffaa06">
-            WORKING IN DEV MODE: you are connected to [glf_sci_site_dev] on host [dmapps]
-        </div>
+
+    {# Ignore this if in PROD mode   #}
+    {% if not DB_MODE == 'PROD' %}
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-center py-0 fixed-bottom shadow flex-md-nowrap">
+            <div class="justify-content-center {% if DB_MODE == "DEV" %}dev-mode{% elif DB_MODE == "TEST" %}test-mode{% else %}major-error{% endif %}">
+                WORKING IN {{ DB_MODE }} MODE: you are connected to [<var>{{ DB_NAME }}</var>] on host [<var>{{ DB_HOST }}</var>].
+                {% if USE_LOCAL_DB %}You are connected a local SQLITE database{% endif %}
+            </div>
+        </nav>
     {% endif %}
 
     <div class="gone" id="browser-warning">
         <div class="alert alert-danger " role="alert">
-            <span style="font-weight: bold; font-size: xx-large">
+            <span style="font-weight: bold; font-size: 60px" class="blink-me highlight red-font">
                 {% trans "WARNING: You will have limited functionality for this site due to the browser you are using. Please switch to Google Chrome or Microsoft Edge." %}
             </span>
         </div>
@@ -32,77 +38,118 @@
 </head>
 
 <body>
+{# 2020/03/26 - P. Upson - added block navigation tags so this template can be extended and the navigation elements hidden for popups #}
+{% block navigation %}
+    {# for sites that wish to turn the navigation off, they can by calling this block with show_nav=False. If show_nav is None or True it's displayed #}
+    {% if show_nav == None or show_nav %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-navy transparent py-0 fixed-top shadow flex-md-nowrap">
+            <a class="navbar-brand bigbrand" href="{% url 'index' %}">
+                <img src="{% static 'img/icons/iconfinder_cluster-data-group-organize_2205240 - white.png' %}" width="30"
+                     class="d-inline-block align-top" alt="" data-toggle="tooltip" title="{% trans "Data Management Home" %}">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    {% block left_all %}{% endblock left_all %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark transparent">
-    <a class="navbar-brand bigbrand" href="{% url 'index' %}">
-        <img src="{% static 'img/icons/iconfinder_cluster-data-group-organize_2205240 - white.png' %}" width="30" height="30"
-             class="d-inline-block align-top" alt="" data-toggle="tooltip" title="{% trans "Data Management Home" %}">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            {% block left_all %}{% endblock left_all %}
+                    {% if user.is_authenticated %}
+                        {% block left_auth %}{% endblock left_auth %}
+                        {% if user.is_superuser %}
+                            <li class="nav-item"><a class="nav-link" href="/admin"> Site Admin </a></li>
+                            {% block left_admin %}{% endblock left_admin %}
+                        {% endif %}
+                        {% if user.is_staff %}
+                            {% block left_staff %}{% endblock left_staff %}
+                        {% endif %}
 
-            {% if user.is_authenticated %}
-                {% block left_auth %}{% endblock left_auth %}
-                {% if user.is_superuser %}
-                    <li class="nav-item"><a class="nav-link" href="/admin"> Site Admin </a></li>
-                    {% block left_admin %}{% endblock left_admin %}
-                {% endif %}
-                {% if user.is_staff %}
-                    {% block left_staff %}{% endblock left_staff %}
-                {% endif %}
+                    {% else %}
+                        {% block left_unauth %}{% endblock left_unauth %}
+                    {% endif %}
+                </ul>
+            </div>
 
-            {% else %}
-                {% block left_unauth %}{% endblock left_unauth %}
-            {% endif %}
-        </ul>
-    </div>
+            {# Everything on the right hand side #}
+            <div class="collapse navbar-collapse justify-content-end headerfont2" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-end">
+                    {% block right_all %}{% endblock right_all %}
 
-    {# Everything on the right hand side #}
-    <div class="collapse navbar-collapse justify-content-end headerfont2">
-        <ul class="navbar-nav justify-content-end">
-            {% block right_all %}{% endblock right_all %}
+                    {% if user.is_authenticated %}
+                        {% block right_auth %}{% endblock right_auth %}
 
-            {% if user.is_authenticated %}
-                {% block right_auth %}{% endblock right_auth %}
+                        <li class="nav-item py-1">
+                            <a class="nav-link" href="#" pop-href="{% block bug_create %}{% endblock bug_create %}" data-toggle="tooltip"
+                               title="Complete this form to provide feedback about the system.">
+                                {% trans "Feedback / Bugs" %}
+                            </a>
+                        </li>
+                        {% include "_language_form.html" %}
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" pop-href="{% block bug_create %}{% endblock bug_create %}" data-toggle="tooltip"
-                       title="Complete this form to provide feedback about the system.">
-                        {% trans "Feedback / Bugs" %}
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'accounts:logout' %}" data-toggle="tooltip" title="">
-                        {% trans 'Logout' %}
-                    </a>
-                </li>
 
-            {% else %}
-                {% block right_unauth %}{% endblock right_unauth %}
-                <li class="nav-item">
-                    <a class="btn btn-dark" href="{% url 'accounts:login' %}">
-                        {% trans 'Sign In' %}
-                    </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropleft" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <div class="circle py-0 my-0">
+                                    {{ user.first_name|slice:1 }}{{ user.last_name|slice:1 }}
+                                </div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 0; left: auto;">
+                                {% if not AZURE_AD %}
+                                    <a class="dropdown-item" href="{% url 'accounts:account' user.id %}" data-toggle="tooltip" title="">
+                                        {% trans 'Account' %}
+                                    </a>
+                                    <a class="dropdown-item" href="{% url 'accounts:profile' user.id %}" data-toggle="tooltip" title="">
+                                        {% trans 'Profile' %}
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                {% endif %}
+                                <a class="dropdown-item" href="{% url 'accounts:logout' %}" data-toggle="tooltip" title="">
+                                    {% trans 'Logout' %}
+                                </a>
+                            </div>
+                        </li>
 
-                </li>
-            {% endif %}
+                        {#                        <li class="nav-item">#}
+                        {#                            <a class="nav-link" href="{% url 'accounts:logout' %}" data-toggle="tooltip" title="">#}
+                        {#                                {% trans 'Logout' %}#}
+                        {#                            </a>#}
+                        {#                        </li>#}
 
-            {% include "_language_form.html" %}
+                    {% else %}
+                        {% include "_language_form.html" %}
+                        {% block right_unauth %}{% endblock right_unauth %}
+                        <li class="nav-item py-1">
+                            <a class="nav-link " href="{% url 'accounts:login' %}">
+                                {% trans 'Sign In' %}
+                            </a>
 
-        </ul>
-    </div>
-</nav>
+                        </li>
+                    {% endif %}
 
-{% autoescape off %}
-    {% bootstrap_messages size='small' %}
-{% endautoescape %}
 
+                </ul>
+            </div>
+        </nav>
+    {% endif %}
+{% endblock navigation %}
+
+{% block alerts %}
+    {% autoescape off %}
+        {% block messages %}
+            {% bootstrap_messages size='small' %}
+        {% endblock %}
+    {% endautoescape %}
+{% endblock %}
 {% block body %}{% endblock body %}
+
+{# I moved the jquery import here because if it's "include" from another file #}
+{# the jquery_import block can't be overriden by an extending template -Patrick 2020/03/04 #}
+{% block jquery_import %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+{% endblock %}
 
 {% include "_base_js.html" %}
 {% block body_js %}{% endblock body_js %}

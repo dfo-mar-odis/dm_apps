@@ -10,7 +10,7 @@
             <li class="breadcrumb-item"><a href="{% url 'grais:sample_list' %}"> All samples </a></li>
             {% if object.id %}
                 <li class="breadcrumb-item"><a
-                        href="{% url 'grais:sample_detail' object.line.sample.id %}"> {{ object.line.sample }} </a></li>
+                        href="{% url 'grais:sample_detail' object.sample.id %}"> {{ object.sample }} </a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Edit Note</li>
             {% else %}
                 <li class="breadcrumb-item"><a href="{% url 'grais:sample_detail' sample.id %}"> {{ sample }} </a></li>

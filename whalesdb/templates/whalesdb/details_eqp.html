@@ -1,0 +1,47 @@
+{% extends "whalesdb/whales_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block title %}
+    {% trans title %}
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-1">
+    <a class="btn btn-primary" href="{% url ''|add:list_url %}">{% trans 'Back to list' %}</a>
+    {% if editable %}
+    <a class="btn btn-primary" href="#" onclick="return pop('{% url ''|add:update_url object.pk 'pop' %}','all')" title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+    {% endif %}
+
+    {% block field_override %}
+        <div class="card border border-dark my-1">
+            <div class="card-header">
+                <div class="row">
+                    <span class="col h5">{% trans title %}</span>
+                    {% if object.deployments.all %}
+                    <span class="col-2"><a class="btn btn-primary" href="{% url 'whalesdb:details_dep' object.deployments.all.last.dep.pk %}">Previous Attachment</a></span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card-body">
+            {% for field in fields %}
+                {% if not field == 'emm' %}
+                    <div class="row" >
+                            <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span><span>{% get_field_value object field%}</span></div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+
+    {% endblock field_override %}
+
+    {% trans "Make and Model" as title %}
+    {% with field_array='eqt emm_make emm_model emm_depth_rating emm_description' %}
+    {% include "whalesdb/_details_emm.html" with emm=object.emm auth=false fields=field_array.split %}
+    {% endwith %}
+</div>
+{% endblock %}

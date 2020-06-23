@@ -33,41 +33,73 @@
 
             {% endif %}
 
-            <a href="{% url "oceanography:bottle_list" object.id %}" class="btn btn-primary">View Bottles</a>
-            <a href="{% url "oceanography:mission_export_csv" object.id %}" class="btn btn-success">Export Bottle
-                CSV</a>
-            <a href="{% url "oceanography:file_create" object.id %}" class="btn btn-info">Add a File</a>
+
             <a href="{% url "oceanography:mission_list" %}" class="btn btn-dark">Back</a>
         </div>
         <br><br>
 
         <div class="row">
             <div class="col">
-                <table class="table table-striped table-sm">
-                    {% for field in field_list %}
-                        {% verbose_td_display object field %}
-                    {% endfor %}
-                </table>
-            </div>
+                <div class="mb-4">
+                    <h3>Mission Detail</h3>
 
-            <div class="col">
-                <b>Files:</b>
-                <ul>
-                    {% for file in object.files.all %}
-                        <li>
-                            <a href="{% url "oceanography:file_detail" file.id %}">{{ file.caption }}</a> (uploaded
-                            on: {{ file.date_created|date:"F d Y" }})
-                        </li>
-                    {% empty %}
-                        <span class="">  <em>There are no files attached to this mission.</em></span>
+                    <table class="table table-striped table-sm">
+                        {% for field in field_list %}
+                            {% if not filed == "vessel" %}
+                                {% verbose_td_display object field %}
+                            {% else %}
+                                <tr>
+                                    <td>field.name</td>
+                                    <td></td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </table>
+                </div>
 
-                    {% endfor %}
-                </ul>
-                <br>
-                <b>Map of Bottles:</b>
+                <div class="mb-4">
+                    <div class="mb-2">
+                        <div class="neighbours">
+                            <h3>Associated Files</h3>
+                        </div>
+                        <div class="neighbours">
+                            <a href="{% url "oceanography:file_create" object.id %}" class="btn btn-info">Add a File</a>
+                        </div>
+                    </div>
 
-                <div id="map"></div>
-                <div id="lineMap"></div>
+                    <ul>
+                        {% for file in object.files.all %}
+                            <li>
+                                <a href="{% url "oceanography:file_detail" file.id %}">{{ file.caption }}</a> (uploaded
+                                on: {{ file.date_created|date:"F d Y" }})
+                            </li>
+                        {% empty %}
+                            <span class="">  <em>There are no files attached to this mission.</em></span>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <div class="mb-2">
+                        <div class="neighbours">
+                            <h3>Map of Bottles</h3>
+                        </div>
+                        {% if object.bottles.count %}
+                            <div class="neighbours btn-group">
+                                <a href="{% url "oceanography:bottle_list" object.id %}" class="btn btn-primary">View Bottles</a>
+                                <a href="{% url "oceanography:mission_export_csv" object.id %}" class="btn btn-success">Export Bottle
+                                    CSV</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if object.bottles.count %}
+                        <div id="map"></div>
+                        <div id="lineMap"></div>
+                    {% else %}
+                        <em>There are no water samples to display</em>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

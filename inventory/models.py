@@ -2,17 +2,22 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.template.defaultfilters import default_if_none
 from django.urls import reverse
 from django.utils import timezone
 import os
 import uuid
+
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
 
-from lib.functions.custom_functions import truncate
+from lib.functions.custom_functions import truncate, fiscal_year
 from shared_models import models as shared_models
 from dm_apps import custom_widgets
 
 # Choices for language
+from shared_models.models import SimpleLookup
+
 ENG = 1
 FRE = 2
 LANGUAGE_CHOICES = (
@@ -20,8 +25,6 @@ LANGUAGE_CHOICES = (
     (FRE, 'French'),
 )
 
-
-# Create your models here.
 
 class Location(models.Model):
     # Choices for surface_type
@@ -89,7 +92,6 @@ class Person(models.Model):
         self.full_name = "{} {}".format(self.user.first_name, self.user.last_name)
 
         super().save(*args, **kwargs)
-
 
 
 class Status(models.Model):
@@ -192,8 +194,21 @@ class Keyword(models.Model):
             self.is_taxonomic = True
         super().save(*args, **kwargs)
 
-    # def get_absolute_url(self):
-    #     return reverse('resources:keyword_detail', kwargs={'pk':self.id})
+    @property
+    def non_hierarchical_name_en(self):
+        # if the keyword can be split by " > " then take the last item in the list
+        if len(self.text_value_eng.split(" > ")) > 1:
+            return self.text_value_eng.split(" > ")[-1]
+        else:
+            return self.text_value_eng
+
+    @property
+    def non_hierarchical_name_fr(self):
+        # if the keyword can be split by " > " then take the last item in the list
+        if self.text_value_fre and len(self.text_value_fre.split(" > ")) > 1:
+            return self.text_value_fre.split(" > ")[-1]
+        else:
+            return self.text_value_fre
 
 
 class Publication(models.Model):
@@ -292,15 +307,15 @@ class Citation(models.Model):
         return title
 
 
-class Resource(models.Model):
-    # distribution_format choices
-    from . import data_distribution_formats
-    DISTRIBUTION_FORMAT_CHOICES = data_distribution_formats.DISTRIBUTION_FORMAT_CHOICES
+class DistributionFormat(SimpleLookup):
+    pass
 
-    uuid = models.UUIDField(blank=True, null=True, verbose_name="UUID")
+
+class Resource(models.Model):
+    uuid = models.UUIDField(blank=True, null=True, verbose_name="UUID", unique=True)
     resource_type = models.ForeignKey(ResourceType, on_delete=models.DO_NOTHING, blank=True, null=True)
     # section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="resources")
-    section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="resources")
+    section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, null=True, related_name="resources")
     title_eng = custom_widgets.OracleTextField(verbose_name="Title (English)")
     title_fre = custom_widgets.OracleTextField(blank=True, null=True, verbose_name="Title (French)")
     status = models.ForeignKey(Status, on_delete=models.DO_NOTHING, blank=True, null=True)
@@ -333,16 +348,16 @@ class Resource(models.Model):
     security_classification = models.ForeignKey(SecurityClassification, on_delete=models.DO_NOTHING, blank=True,
                                                 null=True)
     storage_envr_notes = models.TextField(blank=True, null=True, verbose_name="Storage notes")
-    distribution_format = models.CharField(max_length=255, blank=True, null=True, choices=DISTRIBUTION_FORMAT_CHOICES)
+    distribution_formats = models.ManyToManyField(DistributionFormat, blank=True)
     data_char_set = models.ForeignKey(CharacterSet, on_delete=models.DO_NOTHING, blank=True, null=True,
                                       verbose_name="Data character set")
     spat_representation = models.ForeignKey(SpatialRepresentationType, on_delete=models.DO_NOTHING, blank=True,
                                             null=True, verbose_name="Spatial representation type")
     spat_ref_system = models.ForeignKey(SpatialReferenceSystem, on_delete=models.DO_NOTHING, blank=True, null=True,
                                         verbose_name="Spatial reference system")
-    geo_descr_eng = models.CharField(max_length=255, blank=True, null=True,
+    geo_descr_eng = models.CharField(max_length=1000, blank=True, null=True,
                                      verbose_name="Geographic description (English)")
-    geo_descr_fre = models.CharField(max_length=255, blank=True, null=True,
+    geo_descr_fre = models.CharField(max_length=1000, blank=True, null=True,
                                      verbose_name="Geographic description (French)")
     west_bounding = models.FloatField(blank=True, null=True, verbose_name="West bounding coordinate")
     south_bounding = models.FloatField(blank=True, null=True, verbose_name="South bounding coordinate")
@@ -353,24 +368,34 @@ class Resource(models.Model):
     additional_credit = models.TextField(blank=True, null=True)
     analytic_software = models.TextField(blank=True, null=True, verbose_name="Analytic software notes")
     date_verified = models.DateTimeField(blank=True, null=True)
+
     fgp_url = models.URLField(blank=True, null=True, verbose_name="Link to record on FGP")
-    public_url = models.URLField(blank=True, null=True, verbose_name="Link to record on Open Data")
+    public_url = models.URLField(blank=True, null=True, verbose_name="Link to record on Open Gov't Portal")
     fgp_publication_date = models.DateTimeField(blank=True, null=True, verbose_name="Date published to FGP")
-    open_data_notes = models.CharField(max_length=255, blank=True, null=True,
+    od_publication_date = models.DateTimeField(blank=True, null=True, verbose_name="Date published to Open Gov't Portal")
+    od_release_date = models.DateTimeField(blank=True, null=True, verbose_name="Date released to Open Gov't Portal")
+    odi_id = models.CharField(max_length=20, blank=True, null=True, verbose_name=_("ODIP Identifier"), unique=True)
+
+    last_revision_date = models.DateTimeField(blank=True, null=True, verbose_name="Date of last published revision")
+    open_data_notes = models.TextField(blank=True, null=True,
                                        verbose_name="Open data notes")
     notes = models.TextField(blank=True, null=True, verbose_name="General notes")
     citations = models.ManyToManyField(Citation, related_name='resources', blank=True)
     keywords = models.ManyToManyField(Keyword, related_name='resources', blank=True)
     people = models.ManyToManyField(Person, through='ResourcePerson')
+    paa_items = models.ManyToManyField(shared_models.PAAItem, blank=True, verbose_name=_("Program Alignment Architecture (PAA) references"))
     parent = models.ForeignKey("self", on_delete=models.DO_NOTHING, blank=True, null=True, related_name='children',
                                verbose_name="Parent resource")
-    date_last_modified = models.DateTimeField(blank=True, null=True, default=timezone.now)
+
+    date_last_modified = models.DateTimeField(auto_now=True, editable=False)
     last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
     flagged_4_deletion = models.BooleanField(default=False)
     flagged_4_publication = models.BooleanField(default=False)
     completedness_report = models.TextField(blank=True, null=True, verbose_name=_("completedness report"))
     completedness_rating = models.FloatField(blank=True, null=True, verbose_name=_("completedness rating"))
     translation_needed = models.BooleanField(default=True, verbose_name=_("translation needed"))
+    publication_fy = models.ForeignKey(shared_models.FiscalYear, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False,
+                                       verbose_name=_("FY of latest publication"))
 
     def get_absolute_url(self):
         return reverse('inventory:resource_detail', kwargs={'pk': self.pk})
@@ -389,6 +414,12 @@ class Resource(models.Model):
     def last_certification(self):
         return self.certification_history.fisrt()
 
+    @property
+    def last_publication(self):
+        if self.fgp_publication_date:
+            my_date = self.last_revision_date if self.last_revision_date else self.fgp_publication_date
+            return my_date.strftime("%Y-%m-%d")
+
     def truncated_title(self):
         if self.title_eng:
             my_str = truncate(self.title_eng, 50)
@@ -397,13 +428,41 @@ class Resource(models.Model):
 
         return my_str
 
+    @property
+    def time_period(self):
+        return mark_safe(f"FROM: {default_if_none(self.time_start_year, '--')} / {default_if_none(self.time_start_month, '--')} / "
+                         f"{default_if_none(self.time_start_day, '--')}<br>TO: {default_if_none(self.time_end_year, '--')} / "
+                         f"{default_if_none(self.time_end_month, '--')} / {default_if_none(self.time_end_day, '--')}")
+
     def save(self, *args, **kwargs):
         if self.uuid is None:
             self.uuid = uuid.uuid1()
 
+        if self.fgp_publication_date:
+            # if there is a revision date, use this, otherwise use fgp pub date
+            pub_date = self.last_revision_date if self.last_revision_date else self.fgp_publication_date
+            fy = shared_models.FiscalYear.objects.get(pk=fiscal_year(date=pub_date, sap_style=True))
+            self.publication_fy = fy
+
         # will handle this through the resource form. If not, each time the record is verified, this field will be updated
         # self.date_last_modified = timezone.now()
         super().save(*args, **kwargs)
+
+    @property
+    def thumbnail(self):
+        for file in self.files.all():
+            if "thumbnail" in file.caption.lower() or "vignette" in file.caption.lower():
+                return file.file.url
+
+    @property
+    def bounds(self):
+        if self.east_bounding and self.west_bounding and self.south_bounding and self.north_bounding:
+            return [
+                (self.east_bounding, self.north_bounding),
+                (self.west_bounding, self.north_bounding),
+                (self.west_bounding, self.south_bounding),
+                (self.east_bounding, self.south_bounding),
+            ]
 
 
 class ContentType(models.Model):
@@ -486,7 +545,7 @@ class ResourceCertification(models.Model):
     resource = models.ForeignKey(Resource, on_delete=models.DO_NOTHING, related_name="certification_history")
     certifying_user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     certification_date = models.DateTimeField(blank=True, null=True, verbose_name="Date published to FGP")
-    notes = models.TextField(blank=True, null=True)
+    notes = models.TextField(blank=False, null=True)
 
     class Meta:
         ordering = ['-certification_date']

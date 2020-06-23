@@ -1,0 +1,101 @@
+{% load verbose_names %}
+{% load i18n %}
+
+<div class="row">
+    <div class="col-sm">
+        <div><span class="font-weight-bold">{% get_verbose_label dep 'dep_name' %} : </span><span>{% get_field_value dep 'dep_name'%}</span></div>
+        <div><span class="font-weight-bold">{% get_verbose_label dep 'dep_month' %} : </span><span>{% get_field_value dep 'dep_month'%}</span></div>
+        <div><span class="font-weight-bold">{% get_verbose_label dep 'prj' %} : </span><span>{% get_field_value dep 'prj'%}</span></div>
+
+        <div class="card border border-dark my-1">
+            <h5 class="card-header"><a href="#fs-deployment-list-stn" data-toggle="collapse">{% get_verbose_label dep 'stn' %}</a></h5>
+            <div class="card-body collapse" id="fs-deployment-list-stn">
+                <div class="card-text">{% include "whalesdb/_details_stn.html" with stn=dep.stn %}</div>
+            </div>
+        </div>
+
+         <div class="card border border-dark my-1">
+            <h5 class="card-header"><a href="#fs-deployment-list-mor" data-toggle="collapse">{% get_verbose_label dep 'mor' %}</a></h5>
+            <div class="card-body collapse" id="fs-deployment-list-mor">
+                <div class="card-text">{% include "whalesdb/_details_mor.html" with mor=dep.mor %}</div>
+            </div>
+        </div>
+
+         <div class="card border border-dark my-1" id="id_attachments">
+            <div class="card-header h5">
+                <div class="row align-items-center">
+                    <span class="col">
+                        <a href="#fs-list-attachments" data-toggle="collapse">{% trans 'Attachments' %}</a>
+                    </span>
+                    {% if not dep.station_events.first %}
+                    <span class="px-1">
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_eda' dep.pk 'pop' %}','id_attachments')" title="{% trans 'Add' %}">{% trans 'Add Attachment' %}</a>
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card-body expand" id="fs-list-attachments">
+                <div class="card-text">
+                    <ul>
+                    {% for att in dep.attachments.all %}
+                        <li><a href="{% url 'whalesdb:details_eqp' att.eqp.pk %}">{{att.eqp}}</a> - This is a place holder, this should link to the Recording Dataset</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+         <div class="card border border-dark my-1">
+            <div class="card-header h5">
+                <div class="row align-items-center">
+                    <span class="col">
+                        {% trans "Station Events" %}
+                    </span>
+            {# if the user is authorized to edit content. for deployments 1 = Deployment event in the SET table, 2 = Recovery in the SET table #}
+            {% if auth %}
+                {% if not dep.station_events.last %}
+                    <span class="px-1">
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_ste' dep.pk 1 'pop' %}','all')" title="{% trans 'Add' %}">{% trans 'Deployment Event' %}</a>
+                    </span>
+                {% elif dep.station_events.last.set_type.pk == 1 %}
+                    <span class="px-1">
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_ste' dep.pk 2 'pop' %}','all')" title="{% trans 'Add' %}">{% trans 'Recovery Event' %}</a>
+                    </span>
+                {% endif %}
+            {% endif %}
+                </div>
+            </div>
+            <div class="card-body" id="fs-deployment-list-set">
+                {% if dep.station_events.first %}
+                <table class="table sortable">
+                    <thead><tr>
+                        {% with dep.station_events.first as evt %}
+                        <th scope="col">{% get_verbose_label evt 'ste_date' %}</th>
+                        <th scope="col">{% get_verbose_label evt 'crs' %}</th>
+                        <th scope="col">{% get_verbose_label evt 'set_type' %}</th>
+                        <td class="col"></td>
+                        {% endwith %}
+                    </tr></thead>
+                    <tbody>
+                {% for evt in dep.station_events.all %}
+                    <tr>
+                        <td>{{ evt.ste_date }}</td>
+                        <td>{{ evt.crs }}</td>
+                        <td>{{ evt.set_type.name }}</td>
+                        <td>
+                         <div class="card border border-dark my-1">
+                            <p class="card-header"><a href="#fs-evt-{{evt.pk}}" data-toggle="collapse">{% trans 'Details' %}</a></p>
+                            <div class="card-body collapse" id="fs-evt-{{evt.pk}}">
+                                <div class="card-text">{% include "whalesdb/_details_ste.html" with evt=evt %}</div>
+                            </div>
+                        </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

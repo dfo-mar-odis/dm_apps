@@ -12,11 +12,17 @@
 
     <title>{% block title %}{% endblock title %}</title>
     {% block header %}{% endblock header %}
-    {% if not USING_PRODUCTION_DB %}
-        <div style="text-align: center; background-color: #ffaa06">
-            WORKING IN DEV MODE: you are connected to [glf_sci_site_dev] on host [dmapps]
-        </div>
+
+    {# Ignore this if in PROD mode   #}
+    {% if not DB_MODE == 'PROD' %}
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-center py-0 fixed-top shadow flex-md-nowrap">
+            <div class="justify-content-center {% if DB_MODE == "DEV" %}dev-mode{% elif DB_MODE == "TEST" %}test-mode{% else %}major-error{% endif %}">
+                WORKING IN {{ DB_MODE }} MODE: you are connected to [<var>{{ DB_NAME }}</var>] on host [<var>{{ DB_HOST }}</var>].
+                {% if USE_LOCAL_DB %}You are connected a local SQLITE database{% endif %}
+            </div>
+        </nav>
     {% endif %}
+
 
     {% autoescape off %}
         {% bootstrap_messages size='small' %}
@@ -28,7 +34,14 @@
 <body>
 
 {% block body %}{% endblock %}
+{# I moved the jquery import here because if it's "include" from another file #}
+{# the jquery_import block can't be overriden by an extending template -Patrick 2020/03/04 #}
+{% block jquery_import %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+{% endblock %}
 {% include "_base_js.html" %}
+
 {% block body_js %}{% endblock %}
 
 </body>

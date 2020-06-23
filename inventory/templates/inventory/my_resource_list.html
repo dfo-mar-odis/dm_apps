@@ -1,4 +1,4 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load humanize %}
 {% load custom_filters %}
@@ -6,8 +6,19 @@
 {% load verbose_names %}
 
 {% block content %}
-
     <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'inventory:index' %}">
+                        {% trans "Home" %}
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    {% trans "Your Resources" %}
+                </li>
+            </ol>
+        </nav>
 
 
         <div class="text-center">

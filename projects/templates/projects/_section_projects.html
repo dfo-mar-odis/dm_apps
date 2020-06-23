@@ -1,0 +1,152 @@
+{% load i18n %}
+{% load verbose_names %}
+
+<style>
+    .btn-xsm{
+        font-size: small;
+        padding: 3px;
+    }
+</style>
+
+<div class="projects">
+    <div class="mb-3">
+        <h2>{% trans "By Recommendation Status" %}</h2>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="mb-3">
+                <h5>
+                    <a href="#project-list-1" data-toggle="collapse">
+
+                        {% trans "Recommended" %} ({{ recommended_projects.count }})
+                    </a>
+                </h5>
+            </div>
+            <div class="collapse" id="project-list-1">
+                <table class="table table-sm table-hover project-table sortable">
+                    <thead>
+                    {% for field in field_list %}
+                        <th>{% get_verbose_label random_project field %}</th>
+                    {% endfor %}
+                    </thead>
+                    {% for object in recommended_projects %}
+                        <tr pop href="{% url 'projects:project_overview' object.id 1 %}">
+                            {% for field in field_list %}
+                                <td>{% get_field_value object field %}</td>
+                            {% endfor %}
+                            <td style="width: 100px">
+                                <a href="#" pop-href="{% url 'projects:project_recommend' object.id %}"
+                                   class="stop-pop btn btn-xsm btn-danger">
+                                    {% trans "un-recommend" %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td><em>{% trans "None" %}</em></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col">
+
+            <div class="mb-3">
+
+                <h5>
+                    <a href="#project-list-2" data-toggle="collapse">
+                    <span class="{% if unrecommended_projects.count > 0 %}red-font{% endif %}">
+                        {% trans "Not Recommended" %} ({{ unrecommended_projects.count }})
+                    </span>
+                    </a>
+                </h5>
+            </div>
+            <div class="collapse" id="project-list-2">
+                <table class="table table-sm table-hover project-table sortable">
+                    <thead>
+                    {% for field in field_list %}
+                        <th>{% get_verbose_label random_project field %}</th>
+                    {% endfor %}
+                    </thead>
+                    {% for object in unrecommended_projects %}
+                        <tr pop href="{% url 'projects:project_overview' object.id 1 %}">
+                            {% for field in field_list %}
+                                <td>{% get_field_value object field %}</td>
+                            {% endfor %}
+                            <td style="width: 200px">
+                                <a href="#" pop-href="{% url 'projects:project_submit' object.id 1 %}"
+                                   class="stop-pop btn btn-xsm btn-warning">
+                                    {% trans "un-submit" %}
+                                </a>
+
+                                <a href="#" pop-href="{% url 'projects:project_recommend' object.id %}"
+                                   class="stop-pop btn btn-xsm btn-success">
+                                    {% trans "recommend" %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td><em>{% trans "None" %}</em></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+        <div class="col">
+            <div class="mb-3">
+                <h5>
+                    <a href="#project-list-3" data-toggle="collapse">
+                    <span class="{% if unsubmitted_projects.count > 0 %}red-font{% endif %}">
+                        {% trans "Unsubmitted" %} ({{ unsubmitted_projects.count }})
+                    </span>
+                    </a>
+                </h5>
+
+            </div>
+            <div class="collapse" id="project-list-3">
+                <table class="table table-sm table-hover project-table sortable">
+                    <thead>
+                    {% for field in field_list %}
+                        <th>{% get_verbose_label random_project field %}</th>
+                    {% endfor %}
+                    </thead>
+                    {% for object in unsubmitted_projects %}
+                        <tr pop href="{% url 'projects:project_overview' object.id 1 %}">
+                            {% for field in field_list %}
+                                <td>{% get_field_value object field %}</td>
+                            {% endfor %}
+                            <td style="width: 150px">
+                                <a href="#" pop-href="{% url 'projects:project_submit' object.id 1 %}"
+                                   class="stop-pop btn btn-xsm btn-warning">
+                                    {% trans "submit" %}
+                                </a>
+                                <a href="#" pop-href="{% url 'projects:project_delete' object.id 1 %}"
+                                   class="stop-pop btn btn-xsm btn-danger">
+                                    {% trans "delete" %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td><em>{% trans "None" %}</em></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+</div>

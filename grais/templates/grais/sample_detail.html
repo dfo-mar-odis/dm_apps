@@ -1,5 +1,6 @@
 {% extends "grais/grais_base.html" %}
 {% load static %}
+{% load verbose_names %}
 
 {% block header %}
     <style>
@@ -42,51 +43,37 @@
 
         <br><br>
         <div class="row">
-            <div class="col-2">
-                {# Detail about the sample #}
-                <p>
-                    <b>Station:</b><br>
-                    <a href="#" data-toggle="modal" data-target="#station_modal">{{ sample.station }}</a><br>
-                </p>
+            <div class="col-4">
+                <table class="table table-striped table-sm">
 
-                <p>
-                    <b>Date of deployment:</b><br>
-                    {{ sample.date_deployed|date:"F d, Y" }}
-                </p>
-                <p>
-                    <b>Date of retrieval:</b><br>
-                    {% if sample.date_retrieved %}
-                        {{ sample.date_retrieved|date:"F d, Y" }}
-                    {% else %}
-                        n/a
-                    {% endif %}
-                </p>
-                <p>
-                    <b>Weeks deployed:</b><br>
-                    {% if sample.date_retrieved %}
-                        {{ sample.weeks_deployed }}
-                    {% else %}
-                        n/a
-                    {% endif %}
-                </p>
-                <p>
-                    <b>Sampler(s):</b><br>
-                    {% for sampler in object.samplers.all %}
-                        <a href="#" data-toggle="modal" data-target="#sampler_{{ sampler.id }}">{{ sampler }}</a><br>
+                    {% for field in field_list %}
+                        {% if field == "samplers" %}
+                            <tr>
+                                <th>Sampler(s):</th>
+                                <td>
+
+                                    {% for sampler in object.samplers.all %}
+                                        <a href="#" data-toggle="modal" data-target="#sampler_{{ sampler.id }}">{{ sampler }}</a><br>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+
+                        {% elif "invasive" in field %}
+                            <tr>
+                                <th>{% get_verbose_label object field %}</th>
+                                <td>
+                                    {% get_field_value object field as my_val %}
+                                    {{ my_val|yesno }}
+                                </td>
+                            </tr>
+                        {% else %}
+                            {% verbose_td_display object field %}
+                        {% endif %}
                     {% endfor %}
-                </p>
-                <p>
-                    <b>Last modified by:</b><br>
-                    {% if object.last_modified_by %}
-                        {{ object.last_modified_by }}
-                    {% else %}
-                        n/a
-                    {% endif %}
-                </p>
+                </table>
+
             </div>
-            <div class="col-3">
-                {% include "grais/_sample_note_list.html" %}
-            </div>
+
 
             <div class="col-6">
                 <div id="map">
@@ -95,33 +82,43 @@
             </div>
 
         </div>
-        <br>
-        <hr>
-        <br>
-        <div class="row">
-            <div class="col-3">
-                {% include "grais/_sample_probe_list.html" %}
-            </div>
-            <div class="col">
-                {% include "grais/_sample_line_list.html" %}
-            </div>
-            <div class="col">
-                {% include "grais/_species_obs_list.html" %}
-            </div>
 
+
+        <br>
+        <br>
+
+        <div class="mb-4">
+            {% include "grais/_sample_note_list.html" %}
         </div>
+        <br>
+
+        <div class="mb-4">
+            {% include "grais/_sample_line_list.html" %}
+        </div>
+        <br>
+
+        <div class="mb-4">
+            {% include "grais/_sample_probe_list.html" %}
+        </div>
+        <br>
+
+        <div class="mb-4">
+            {% include "grais/_species_obs_list.html" %}
+        </div>
+        <br>
+
     </div>
 
     <script>
         function initialize() {
             var locations = [
                 {% if object.station.latitude_n and object.station.longitude_w %}
-                    ['<a href="{% url 'grais:station_detail' object.station.id %}">Station {{object.station.id}}</a>', {{object.station.latitude_n}}, {{object.station.longitude_w}}, '{% static "/img/grais/blue_MarkerS.png" %}'],
+                    ['<a href="{% url 'grais:station_detail' object.station.id %}">Station {{object.station.id}}</a>', {{object.station.latitude_n}}, {{object.station.longitude_w}}, '{% static "/grais/blue_MarkerS.png" %}'],
                 {% endif %}
 
                 {% for line in object.lines.all %}
                     {% if line.latitude_n and line.longitude_w %}
-                        ['<a href="{% url 'grais:line_detail' line.id %}">Line {{line.id}}</a>', {{line.latitude_n}}, {{line.longitude_w}}, '{% static "/img/grais/red_MarkerL.png" %}'],
+                        ['<a href="{% url 'grais:line_detail' line.id %}">{{line}}</a>', {{line.latitude_n}}, {{line.longitude_w}}, '{% static "grais/red_MarkerL.png" %}'],
                     {% endif %}
                 {% endfor %}
             ];
@@ -143,7 +140,7 @@
 
                 bounds.extend(marker.position);
 
-                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
                     return function () {
                         infowindow.setContent(locations[i][0]);
                         infowindow.open(map, marker);

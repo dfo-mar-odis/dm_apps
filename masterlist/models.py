@@ -70,6 +70,24 @@ def audio_file_directory_path(instance, filename):
     return 'ihub/org_{}/{}'.format(instance.id, filename)
 
 
+class RelationshipRating(models.Model):
+    level = models.IntegerField(verbose_name=_("level"), unique=True)
+    name = models.CharField(max_length=255, verbose_name=_("description (English)"))
+    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("description (French)"))
+
+    def __str__(self):
+        # check to see if a french value is given
+        if getattr(self, str(_("name"))):
+            my_str = "{}".format(getattr(self, str(_("name"))))
+        # if there is no translated term, just pull from the english field
+        else:
+            my_str = "{}".format(self.name)
+        return f'{self.level} - {my_str}'
+
+    class Meta:
+        ordering = ['level', ]
+
+
 class Organization(models.Model):
     YES_NO_BOTH_CHOICES = (
         (0, _("None")), (1, _("On-Reserve")), (2, _("Off-Reserve")), (3, _("Both"))
@@ -93,6 +111,8 @@ class Organization(models.Model):
     sectors = models.ManyToManyField(Sector, verbose_name=_("DFO sector"), blank=True)
 
     # ihub only
+    relationship_rating = models.ForeignKey(RelationshipRating, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="entries",
+                                            verbose_name=_("relationship rating"))  # title case needed
     orgs = models.ManyToManyField("Organization", verbose_name=_("Associated organizations"), blank=True,
                                   limit_choices_to={'grouping__is_indigenous': 1}, )
     nation = models.ForeignKey(Nation, verbose_name=_("Nation"), on_delete=models.DO_NOTHING, blank=True, null=True)

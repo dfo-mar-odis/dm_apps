@@ -1,0 +1,34 @@
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    {#  Include all css files  #}
+    {% include "_base_css.html" %}
+
+
+    <title>{% block title %}{% endblock title %}</title>
+
+</head>
+
+<body>
+{% autoescape off %}
+    {% bootstrap_messages size='small' %}
+{% endautoescape %}
+
+{% block body %}{% endblock body %}
+
+{# I moved the jquery import here because if it's "include" from another file #}
+{# the jquery_import block can't be overriden by an extending template -Patrick 2020/03/04 #}
+{% block jquery_import %}<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+{% endblock %}
+{% include "_base_js.html" %}
+{% block body_js %}{% endblock body_js %}
+
+</body>
+</html>

@@ -5,6 +5,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.contrib import auth
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 from shared_models import models as shared_models
 
 YES_NO_CHOICES = (
@@ -73,8 +75,8 @@ class Species(models.Model):
         (MOB, "mobile"),
     )
 
-    common_name = models.CharField(max_length=255, blank=True, null=True)
-    common_name_fra = models.CharField(max_length=255, blank=True, null=True)
+    common_name = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("common name (English)"))
+    common_name_fra = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("common name (French)"))
     scientific_name = models.CharField(max_length=255, blank=True, null=True)
     abbrev = models.CharField(max_length=255, blank=True, null=True, verbose_name="abbreviation", unique=True)
     epibiont_type = models.CharField(max_length=10, blank=True, null=True, choices=EPIBIONT_TYPE_CHOICES)
@@ -84,10 +86,19 @@ class Species(models.Model):
     invasive = models.BooleanField(verbose_name="is invasive?")
     # biofouling = models.BooleanField()
     last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
-    green_crab_monitoring = models.BooleanField(default=False)
+    green_crab_monitoring = models.BooleanField(default=False, verbose_name="targeted species in Green Crab Monitoring Program?")
 
     def __str__(self):
-        return self.common_name
+        if self.common_name or self.common_name_fra:
+            if getattr(self, str(_("common_name"))):
+                my_str = "{}".format(getattr(self, str(_("common_name"))))
+            # if there is no translated term, just pull from the english field
+            else:
+                my_str = "{}".format(self.common_name)
+
+            return mark_safe(my_str + " (<em>" + self.scientific_name + "</em>)") if self.scientific_name else my_str
+        else:
+            return mark_safe("<em>" + self.scientific_name + "</em>")
 
     class Meta:
         ordering = ['common_name']
@@ -97,15 +108,22 @@ class Species(models.Model):
 
 
 class Sample(models.Model):
+    # Choices for sample_type
+    FIRST = 'first'
+    SECOND = 'second'
+    FULL = 'full'
+    sample_type_choices = (
+        (FIRST, "first"),
+        (SECOND, "second"),
+        (FULL, 'full'),
+    )
+
     station = models.ForeignKey(Station, related_name='samples', on_delete=models.DO_NOTHING)
+    sample_type = models.CharField(max_length=10, default=FULL, choices=sample_type_choices, verbose_name="sample type")
     date_deployed = models.DateTimeField()
     date_retrieved = models.DateTimeField(blank=True, null=True)
     days_deployed = models.IntegerField(blank=True, null=True)
-    # sampler = models.ForeignKey(Sampler, on_delete=models.DO_NOTHING, related_name='samples')
     samplers = models.ManyToManyField(Sampler)
-    # notes = models.TextField(blank=True, null=True)
-    # notes_html = models.TextField(blank=True, null=True)
-    # date_created = models.DateTimeField(blank=True, null=True, default=timezone.now)
     old_substn_id = models.IntegerField(blank=True, null=True)
     species = models.ManyToManyField(Species, through='SampleSpecies')
     season = models.IntegerField(null=True, blank=True)
@@ -136,6 +154,12 @@ class Sample(models.Model):
     class Meta:
         ordering = ['-season', 'date_deployed', 'station']
 
+    @property
+    def has_invasive_spp(self):
+        for line in self.lines.all():
+            if line.has_invasive_spp:
+                return True
+        return False
 
 class SampleSpecies(models.Model):
     species = models.ForeignKey(Species, on_delete=models.CASCADE, related_name="sample_spp")
@@ -189,10 +213,9 @@ class Line(models.Model):
 
     def __str__(self):
         if self.collector:
-            my_str = "{} (collector #{})".format(self.id, self.collector)
+            my_str = f'Collector tag #{self.collector}'
         else:
-            my_str = "Line {}".format(self.id)
-
+            my_str = f"Line ID #{self.id} (no collector tag)"
         return my_str
 
     def get_absolute_url(self):
@@ -201,6 +224,13 @@ class Line(models.Model):
     @property
     def surface_species_count(self):
         return sum([s.species.count() for s in self.surfaces.all()])
+
+    @property
+    def has_invasive_spp(self):
+        for surface in self.surfaces.all():
+            if surface.has_invasive_spp:
+                return True
+        return False
 
 
 def img_file_name(instance, filename):
@@ -253,6 +283,13 @@ class Surface(models.Model):
     class Meta:
         ordering = ['line', 'surface_type', 'label']
 
+    @property
+    def has_invasive_spp(self):
+        for sp in self.species.all():
+            if sp.invasive:
+                return True
+        return False
+
 
 class SurfaceSpecies(models.Model):
     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING, related_name="surface_spp")
@@ -279,18 +316,6 @@ class Probe(models.Model):
 
 
 class ProbeMeasurement(models.Model):
-    # Choices for tide_descriptor
-    EBB = 'eb'
-    FLOOD = 'fl'
-    HIGH = 'hi'
-    LOW = 'lo'
-    TIDE_DESCRIPTOR_CHOICES = (
-        (EBB, 'Ebb'),
-        (FLOOD, 'Flood'),
-        (HIGH, 'High'),
-        (LOW, 'Low'),
-    )
-
     # Choices for timezone
     AST = 'AST'
     ADT = 'ADT'
@@ -305,8 +330,9 @@ class ProbeMeasurement(models.Model):
     probe = models.ForeignKey(Probe, on_delete=models.DO_NOTHING, verbose_name="Probe name")
     time_date = models.DateTimeField(blank=True, null=True, verbose_name="Date / Time (yyyy-mm-dd hh:mm)")
     timezone = models.CharField(max_length=5, choices=TIMEZONE_CHOICES, blank=True, null=True)
-    tide_descriptor = models.CharField(max_length=2, choices=TIDE_DESCRIPTOR_CHOICES, blank=True, null=True)
     probe_depth = models.FloatField(blank=True, null=True, verbose_name="Probe depth (m)")
+    cloud_cover = models.IntegerField(blank=True, null=True, verbose_name="% cloud cover",
+                                      validators=[MinValueValidator(0), MaxValueValidator(100)])
     temp_c = models.FloatField(blank=True, null=True, verbose_name="Temp (°C)")
     sal_ppt = models.FloatField(blank=True, null=True, verbose_name="Salinity (ppt)")
     o2_percent = models.FloatField(blank=True, null=True, verbose_name="Dissolved oxygen (%)")
@@ -618,8 +644,68 @@ class Trap(models.Model):
     class Meta:
         ordering = ['sample', 'trap_number']
 
+    @property
+    def get_bycatch(self):
+        return self.catch_spp.filter(species__green_crab_monitoring=False)
 
-class Crab(models.Model):
+    @property
+    def get_invasive_crabs(self):
+        return self.catch_spp.filter(species__invasive=True)
+
+    @property
+    def get_noninvasive_crabs(self):
+        return self.catch_spp.filter(species__green_crab_monitoring=True, species__invasive=False)
+
+
+# class Crab(models.Model):
+#     # Choices for sex
+#     MALE = 1
+#     FEMALE = 2
+#     UNK = 9
+#     SEX_CHOICES = (
+#         (MALE, 'Male'),
+#         (FEMALE, 'Female'),
+#         (UNK, 'Unknown'),
+#     )
+#     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
+#     trap = models.ForeignKey(Trap, on_delete=models.DO_NOTHING, related_name="crabs")
+#     width = models.FloatField(blank=True, null=True)
+#     sex = models.IntegerField(blank=True, null=True, choices=SEX_CHOICES)
+#     carapace_color = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(1), MaxValueValidator(4)])
+#     abdomen_color = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(1), MaxValueValidator(4)])
+#     egg_color = models.CharField(max_length=25, blank=True, null=True)
+#     notes = models.TextField(blank=True, null=True)
+#     last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+#
+#     # class Meta:
+#     #     unique_together = (('species', 'trap'),)
+#
+#     def __str__(self):
+#         return "{}".format(self.species)
+#
+#     class Meta:
+#         ordering = ['trap', 'species', 'id']
+
+
+# class Bycatch(models.Model):
+#     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
+#     trap = models.ForeignKey(Trap, on_delete=models.DO_NOTHING, related_name="bycatch")
+#     count = models.IntegerField(blank=True, null=True)
+#     notes = models.TextField(blank=True, null=True)
+#     last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+#
+#     class Meta:
+#         unique_together = (('species', 'trap'),)
+#
+#     def __str__(self):
+#         return "{}".format(self.species)
+#
+#     class Meta:
+#         ordering = ['trap', 'species', 'id']
+#         unique_together = ['trap', 'species']
+
+
+class Catch(models.Model):
     # Choices for sex
     MALE = 1
     FEMALE = 2
@@ -630,12 +716,13 @@ class Crab(models.Model):
         (UNK, 'Unknown'),
     )
     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
-    trap = models.ForeignKey(Trap, on_delete=models.DO_NOTHING, related_name="crabs")
+    trap = models.ForeignKey(Trap, on_delete=models.DO_NOTHING, related_name="catch_spp")
     width = models.FloatField(blank=True, null=True)
     sex = models.IntegerField(blank=True, null=True, choices=SEX_CHOICES)
     carapace_color = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(1), MaxValueValidator(4)])
     abdomen_color = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(1), MaxValueValidator(4)])
     egg_color = models.CharField(max_length=25, blank=True, null=True)
+    count = models.IntegerField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
 
@@ -648,20 +735,14 @@ class Crab(models.Model):
     class Meta:
         ordering = ['trap', 'species', 'id']
 
+    @property
+    def is_bycatch(self):
+        return self.species.green_crab_monitoring == False
 
-class Bycatch(models.Model):
-    species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
-    trap = models.ForeignKey(Trap, on_delete=models.DO_NOTHING, related_name="bycatch")
-    count = models.IntegerField(blank=True, null=True)
-    notes = models.TextField(blank=True, null=True)
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    @property
+    def is_invasive_crab(self):
+        return self.species.green_crab_monitoring == True and self.species.invasive == True
 
-    class Meta:
-        unique_together = (('species', 'trap'),)
-
-    def __str__(self):
-        return "{}".format(self.species)
-
-    class Meta:
-        ordering = ['trap', 'species', 'id']
-        unique_together = ['trap', 'species']
+    @property
+    def is_noninvasive_crab(self):
+        return self.species.green_crab_monitoring == True and self.species.invasive == False

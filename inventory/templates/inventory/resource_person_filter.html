@@ -1,4 +1,4 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 
@@ -8,21 +8,18 @@
     {% endif %}
 
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+        {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Insert Person</li>
-        </ol>
-    </nav>
 
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' resource.id %}">{{ resource.truncated_title }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Insert Person</li>
+            </ol>
+        </nav>
         {# <h1>Select person to insert:</h1> #}
         <br>
         <form action="." method="get" id="filter-form">
@@ -55,7 +52,7 @@
                         <a class="btn btn-sm btn-dark"
                            href="{% url 'inventory:resource_person_add' resource.id person.user_id %}"> <i
                                 class="material-icons">add</i></a> &nbsp;
-                        {{ person.user.last_name }}, {{ person.user.first_name }}
+                        {{ person.user.first_name }} {{ person.user.last_name }} ({{ person.user.email }})
                         (<a href="{% url 'inventory:person_edit' resource.id person.user_id %}">edit</a>)
                     </p>
                 {% endfor %}

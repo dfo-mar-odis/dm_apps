@@ -1,0 +1,17 @@
+{# Use this template if you don't want to refresh the parent window. #}
+{# Sometimes that desirable if you're using an ajax call to do something #}
+
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# This is just a redirect to close a popup window #}
+
+<script>
+  //close upon open window
+  $(document).ready(function () {
+    window.close()
+
+  })
+</script>

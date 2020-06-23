@@ -1,30 +1,36 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 
 {% load bootstrap4 %}
+{% load i18n %}
+
+{% block subtitle %}
+    -
+    {% if object %}
+        {% trans "Edit resource" %}
+    {% else %}
+        {% trans "Create resource metadata" %}
+    {% endif %}
+{% endblock %}
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            {% if object %}
-                <li class="breadcrumb-item"><a
-                        href="{% url 'inventory:resource_detail' object.id %}">{{ object.truncated_title }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{% if readonly %}Review{% else %}
-                    Edit{% endif %}</li>
-            {% else %}
-                <li class="breadcrumb-item active" aria-current="page">New</li>
-            {% endif %}
-        </ol>
-    </nav>
+
 
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'inventory:index' %}">Home</a></li>
+                {% if object %}
+                    <li class="breadcrumb-item"><a
+                            href="{% url 'inventory:resource_detail' object.id %}">{{ object.truncated_title }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{% if readonly %}Review{% else %}
+                        Edit{% endif %}</li>
+                {% else %}
+                    <li class="breadcrumb-item active" aria-current="page">New</li>
+                {% endif %}
+            </ol>
+        </nav>
 
         {% load static %}
         {# Load js file to allow for popout window #}
@@ -238,7 +244,24 @@
 
                             </div>
                         </div>
-
+                    {% elif field.name == 'fgp_url' %}
+                        <div class="row">
+                            <div class="col-8">
+                                {% bootstrap_field field placeholder="" %}
+                                <div class="mb-3">
+                                    <a href="#id_fgp_url" id="fgp-guess">(guess at FGP url)</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% elif field.name == 'public_url' %}
+                        <div class="row">
+                            <div class="col-8">
+                                {% bootstrap_field field placeholder="" %}
+                                <div class="mb-3">
+                                    <a href="#id_public_url" id="opendata-guess">(guess at Open Data url)</a>
+                                </div>
+                            </div>
+                        </div>
                     {% else %}
                         <div class="row">
                             <div class="col-8">
@@ -352,6 +375,13 @@
 
         });
 
+
+        $("#fgp-guess").click(function () {
+            $("#id_fgp_url").val("https://gcgeo.gc.ca/geonetwork/metadata/eng/" + "{{ object.uuid }}");
+        });
+        $("#opendata-guess").click(function () {
+            $("#id_public_url").val("https://open.canada.ca/data/dataset/" + "{{ object.uuid }}");
+        });
 
     </script>
 {% endblock content %}

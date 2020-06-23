@@ -16,13 +16,13 @@
 <p>
     Hello {{ reviewer.user }},
     <br><br>
-    A trip is awaiting your review as the role of {{ reviewer.role.name|upper }} in the DM Apps - Travel Management System.
-    Please click <a href="http://dmapps{% url 'travel:trip_review_list' 'awaiting' %}">HERE</a> to review the request. Here are the trip details:
+    A trip request is awaiting your review as the role of {{ reviewer.role.name|upper }} in the DM Apps - Travel Management System.
+    Please click <a href="{{SITE_FULL_URL}}{% url 'travel:request_review_list' 'awaiting' %}">HERE</a> to review the request. Here are the trip request details:
 </p>
 
 <table>
     {% for field in field_list %}
-        {% verbose_td_display trip field %}
+        {% verbose_td_display triprequest field %}
     {% endfor %}
 </table>
 
@@ -33,14 +33,14 @@
 <p>
     {{ reviewer.user }} :
     <br><br>
-    Un voyage attend votre examen en tant que rôle de {{ reviewer.role.nom|upper }} dans l'application DM Apps - Système de gestion de voyage.
-    Veuillez cliquer <a href="http://dmapps{% url 'travel:trip_review_list' 'awaiting' %}">ICI</a> pour examiner la demande.
+    Une demande de voyage attend votre examen en tant que rôle de {{ reviewer.role.nom|upper }} dans l'application DM Apps - Système de gestion de voyage.
+    Veuillez cliquer <a href="{{SITE_FULL_URL}}{% url 'travel:request_review_list' 'awaiting' %}">ICI</a> pour examiner la demande.
     Voici les détails du voyage:
 </p>
 
 <table>
     {% for field in field_list %}
-        {% verbose_td_display trip field %}
+        {% verbose_td_display triprequest field %}
     {% endfor %}
 </table>
 

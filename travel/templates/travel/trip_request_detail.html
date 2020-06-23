@@ -1,0 +1,251 @@
+{% extends "travel/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load i18n %}
+{% load humanize %}
+
+{% block area_above_h1 %}
+    {# if trip is cancelled, display a warning #}
+    {% if trip.status.id == 43 %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">
+                {% trans "WARNING" %}
+            </h4>
+            <p>
+                {% trans "The trip associated with this trip request has been cancelled." %}
+            </p>
+        </div>
+    {% elif trip and trip.status.id != 30 and trip.status.id != 41 and not submitted %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">
+                {% trans "WARNING" %}
+            </h4>
+            <p>
+                {% if trip.status.id == 31 %}
+                    {% trans "This trip is currently under review from NCR and is closed to additional requests." %}
+                {% elif trip.status.id == 32 %}
+                    {% trans "This trip has already been reviewed by NCR and is closed to additional requests." %}
+                {% else %}
+                    {% trans "This trip is closed to additional requests." %}
+                {% endif %}
+                {% if not object.submitted %}
+                    {% trans "You will not be able to submit this request." %}
+                {% endif %}
+            </p>
+        </div>
+
+    {% elif trip.is_adm_approval_required and not triprequest.submitted %}
+
+        {% if trip.days_until_eligible_for_adm_review > 45 %}
+            {% echo "success" as btn_color %}
+        {% elif trip.days_until_eligible_for_adm_review >= 15 %}
+            {% echo "warning" as btn_color %}
+        {% else %}
+            {% echo "danger" as btn_color %}
+        {% endif %}
+
+        <div class="alert alert-{{ btn_color }}" role="alert">
+            <h5 class="alert-heading">
+                {% trans "Just a heads up..." %}
+            </h5>
+            <p>
+                {% if trip.days_until_eligible_for_adm_review < 0 %}
+                    {% blocktrans with trip.date_eligible_for_adm_review|naturaltime as time %}
+                        This trip was eligible for review by the ADM office {{ time }}.
+                    {% endblocktrans %}
+                {% else %}
+                    {% blocktrans with trip.date_eligible_for_adm_review|naturaltime as time %}
+                        This trip will be eligible for review by the ADM office in {{ time }}.
+                    {% endblocktrans %}
+
+                {% endif %}
+                {% trans "Once under review, it will be closed to additional requests." %}
+            </p>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+
+{% block subcontent %}
+
+    <style>
+        .label {
+            font-weight: bold;
+        }
+
+        table, td {
+            font-size: small;
+        }
+
+        .container {
+            max-width: 1300px;
+        }
+
+
+    </style>
+    {# This is an indicator for how long before the trip can close off for registration   #}
+
+
+
+
+    {% if is_current_reviewer and object.submitted %}
+        <h3 class="red-font">{% trans "You are able to edit this record because you are " %}
+            {% if is_admin %}
+                {% trans "an application administrator." %}
+            {% else %}
+                {% trans "the current reviewer." %}
+            {% endif %}
+        </h3>
+    {% endif %}
+
+    <div class="float-right">
+        {% if object.current_reviewer.user == user %}
+            <a href="{% url 'travel:tr_review_update' object.current_reviewer.id %}" class="btn btn-lg btn-outline-primary">
+                {% trans "Back to Approver Panel" %}
+            </a>
+
+        {% endif %}
+    </div>
+
+
+    {# ADMIN BUTTON GROUP #}
+
+    <div class="btns mb-3">
+        {% if is_admin %}
+
+            {# ADMIN NOTES #}
+            <a class="btn btn-admin" href="#" pop-href="{% url 'travel:admin_notes_edit' object.id %}">
+                {% trans "Administrative Notes" %}
+            </a>
+
+
+            {# ADMIN CANCEL BUTTON - only show this option for approved requests #}
+            {% if object.status.id  != 22 and object.status.id  != 10 %}
+                {% echo "danger" as cancel_btn_color %}
+                {% trans "Cancel Request" as cancel_btn_text %}
+
+                <span data-toggle="tooltip" title="{% trans "This is only an option to you as a system admin" %}">
+                        <a class="btn btn-admin" href="{% url 'travel:request_cancel' object.id view.kwargs.type %}">
+                        {{ cancel_btn_text }}
+                        </a>
+                        </span>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="float-right ">
+
+        {#        <a class="btn btn-outline-dark" href="{% url 'travel:export_cfts_request' triprequest.id %}">#}
+        {#            {% trans "CFTS Report for this Request" %} &nbsp; <img src="{% static 'img/icons/excel.svg' %}" alt="" width="20px">#}
+        {#        </a>#}
+    </div>
+
+    <div class="btns mb-3">
+
+        {# SUBMIT BUTTON #}
+        {% if object.status.id == 11 or object.status.id == 22 %} {# disabled for everyone #}
+            {% echo "disabled" as submit_disabled_var %}
+            {% trans "Approved or cancelled requests cannot by unsubmitted." as submit_tip_text %}
+            {#                {% elif object.submitted and not is_admin and not is_owner %}#}
+        {% elif not can_modify and not is_owner %} {# owners can always unsubmit #}
+            {% echo "disabled" as submit_disabled_var %}
+            {% trans "You do not have permissions to submit / un-submit this request" as submit_tip_text %}
+
+            {# Unsubmitted only: if the trip is closed for further registration #}
+        {% elif not object.submitted and trip %}
+            {% if triprequest.trip.status.id != 30 and triprequest.trip.status.id != 41 and object.status.id != 16 %}
+                {% echo "disabled" as submit_disabled_var %}
+                {% trans "This trip is closed to further requests." as submit_tip_text %}
+            {% endif %}
+        {% endif %}
+
+        {% if object.submitted %}
+            {% echo "secondary" as submit_btn_color %}
+        {% else %}
+            {% echo "success" as submit_btn_color %}
+        {% endif %}
+
+        {% if object.submitted %}
+            {% trans "Un-submit" as submit_btn_text %}
+        {% else %}
+            {% if object.status.id == 16 %}
+                {% trans "Re-submit" as submit_btn_text %}
+            {% else %}
+                {% trans "Submit" as submit_btn_text %}
+            {% endif %}
+        {% endif %}
+
+        <span data-toggle="tooltip" title="{{ submit_tip_text }}">
+                <a class="btn btn-{{ submit_btn_color }} {{ submit_disabled_var }}"
+                   href="{% url 'travel:request_submit' object.id view.kwargs.type %}">{{ submit_btn_text }}</a>
+                </span>
+
+        {# EDIT BUTTON #}
+        {% if not can_modify %}
+            {% echo "disabled" as edit_disabled_var %}
+            {% trans "Only application administrators and reviewers can modify a submitted request" as edit_tip_text %}
+        {% endif %}
+
+        <span data-toggle="tooltip" title="{{ edit_tip_text }}">
+                <a class="btn btn-warning {{ edit_disabled_var }}" href="{% url 'travel:request_edit' object.id view.kwargs.type %}">
+                    {% trans "Edit" %}
+                </a>
+                </span>
+
+        {# DELETE BUTTON #}
+        {% if object.submitted or object.status.id == 16 %}
+            {% echo "disabled" as delete_disabled_var %}
+            {% trans "Submitted trip requests cannot be deleted." as delete_tip_text %}
+        {% endif %}
+
+        <span data-toggle="tooltip" title="{{ delete_tip_text }}">
+                <a class="btn btn-danger {{ delete_disabled_var }}" href="{% url 'travel:request_delete' object.id view.kwargs.type %}">
+                {% trans "Delete" %}
+                </a>
+                </span>
+
+        {# CLONE BUTTON #}
+        <a class="btn btn-primary " href="{% url 'travel:request_clone' object.id view.kwargs.type %}">
+            {% trans "Clone Me" %}
+        </a>
+
+        <a class="btn btn-outline-dark " href="{% url 'travel:request_print' triprequest.id %}">
+            {% trans "Travel Plan" %}&nbsp; <img src="{% static 'img/icons/pdf.svg' %}" alt="" width="20px">
+        </a>
+
+    </div>
+    {# SUPERUSER DELETE BUTTON #}
+    {#        {% if user.is_superuser %}#}
+    {#            <a class="btn btn-danger" href="{% url 'travel:request_delete' object.id  view.kwargs.type %}">#}
+    {#                {% trans "SUPERUSER DELETE!!" %}#}
+    {#            </a>#}
+    {#        {% endif %}#}
+
+    {% include "travel/_trip_request_detail.html" %}
+
+
+{% endblock %}
+
+{% block body_js %}
+    <script type="application/javascript">
+        function refreshCosts() {
+            $("#id_cost").load("# #id_cost>*", costReloaded);
+        }
+
+        function load_js() {
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.src = '{% static "js/clickableTableRows.js" %}';
+            head.appendChild(script);
+        }
+
+        function costReloaded() {
+            console.log("cost reloaded");
+            load_js();
+        }
+    </script>
+{% endblock %}

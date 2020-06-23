@@ -39,7 +39,6 @@ def in_herring_admin_group(user):
 
 
 class HerringAdminAccessRequired(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_herring_admin_group(self.request.user)
@@ -52,7 +51,6 @@ class HerringAdminAccessRequired(LoginRequiredMixin, UserPassesTestMixin):
 
 
 class HerringAccessRequired(LoginRequiredMixin, UserPassesTestMixin):
-    login_url = '/accounts/login_required/'
 
     def test_func(self):
         return in_herring_group(self.request.user)
@@ -64,7 +62,7 @@ class HerringAccessRequired(LoginRequiredMixin, UserPassesTestMixin):
         return super().dispatch(request, *args, **kwargs)
 
 
-@login_required(login_url='/accounts/login_required/')
+@login_required(login_url='/accounts/login/')
 @user_passes_test(in_herring_group, login_url='/accounts/denied/')
 def index(request):
     return render(request, 'herring/index.html')
@@ -73,7 +71,6 @@ def index(request):
 # class IndexView(AnonymousRequiredMixin,TemplateView):
 #     template_name = 'herring/index.html'
 # group_required = [u"herring_access",]
-# login_url = '/accounts/login_required/'
 
 
 class CloserTemplateView(TemplateView):
@@ -108,7 +105,6 @@ class SamplerCloseTemplateView(HerringAccessRequired, TemplateView):
 class SampleFilterView(HerringAccessRequired, FilterView):
     filterset_class = filters.SampleFilter
     template_name = "herring/sample_filter.html"
-    login_url = '/accounts/login_required/'
 
     def get_queryset(self):
         return models.Sample.objects.all().order_by("sample_date")
@@ -461,7 +457,6 @@ class FishUpdateView(HerringAccessRequired, UpdateView):
     template_name = 'herring/fish_form.html'
     form_class = forms.FishForm
     model = models.FishDetail
-    login_url = '/accounts/login_required/'
 
     def get_initial(self):
         return {
@@ -481,7 +476,6 @@ class FishDeleteView(HerringAccessRequired, DeleteView):
 
 class LabSampleConfirmation(HerringAccessRequired, TemplateView):
     template_name = 'herring/lab_sample_confirmation.html'
-    login_url = '/accounts/login_required/'
 
 
 def lab_sample_primer(request, sample):
@@ -502,14 +496,14 @@ def lab_sample_primer(request, sample):
 
 class FishboardTestView(HerringAccessRequired, TemplateView):
     template_name = 'herring/fishboard_test_form.html'
-    login_url = '/accounts/login_required/'
+
 
 
 class LabSampleUpdateView(HerringAccessRequired, UpdateView):
     template_name = 'herring/lab_sample_form.html'
     model = models.FishDetail
     form_class = forms.LabSampleForm
-    login_url = '/accounts/login_required/'
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -594,7 +588,7 @@ class OtolithUpdateView(HerringAccessRequired, UpdateView):
     template_name = 'herring/otolith_form.html'
     model = models.FishDetail
     form_class = forms.OtolithForm
-    login_url = '/accounts/login_required/'
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -713,7 +707,7 @@ def move_record(request, sample, type, direction, current_id):
 
 class ReportSearchFormView(HerringAccessRequired, FormView):
     template_name = 'herring/report_search.html'
-    login_url = '/accounts/login_required/'
+
     form_class = forms.ReportSearchForm
 
     def get_initial(self):

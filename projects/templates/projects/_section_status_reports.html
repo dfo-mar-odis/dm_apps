@@ -1,0 +1,38 @@
+{% load i18n %}
+{% load custom_filters %}
+{% load verbose_names %}
+<div class="projects">
+
+    <div class="mb-3">
+        <h2>{% trans "Status Reports" %}</h2>
+
+    </div>
+
+    <table class="table table-hover table-sm sortable" style="width: auto">
+        <thead>
+            {% for field in status_report_field_list %}
+                <th>
+                    {% get_verbose_label status_reports.first field %}
+                </th>
+            {% endfor %}
+        </thead>
+        <tbody>
+        {% with "---" as na %}
+            {% for report in status_reports.all %}
+                <tr pop href="{% url 'projects:report_edit' report.id %}" class="{% if not report.section_head_reviewed %}highlight{% endif %}">
+                    {% for field in status_report_field_list %}
+                        <td>
+                            {% get_field_value report field %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endwith %}
+        </tbody>
+    </table>
+
+</div>
+
+
+
+

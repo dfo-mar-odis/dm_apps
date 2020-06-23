@@ -4,7 +4,7 @@
 <br><br>
 <p>
     Please note that Ticket #{{ object.id }} entitled '<a
-        href="http://dmapps{% url 'tickets:detail' object.id %}">{{ object.title }}</a>' has been resolved.
+        href="{{SITE_FULL_URL}}{% url 'tickets:detail' object.id %}">{{ object.title }}</a>' has been resolved.
     {% if object.assigned_to %}
         If you have any questions, please contact
         <a href="mailto:{{ object.assigned_to }}?subject=Ticket #{{ object.id }}">{{ object.assigned_to.first_name }} {{ object.assigned_to.last_name }}</a>
@@ -13,7 +13,7 @@
 </p>
 <hr>
 <p>
-    Veuillez noter que le billet no. {{ object.id }} «<a href="http://dmapps{% url 'tickets:detail' object.id %}">{{ object.title }}</a>»
+    Veuillez noter que le billet no. {{ object.id }} «<a href="{{SITE_FULL_URL}}{% url 'tickets:detail' object.id %}">{{ object.title }}</a>»
     a été résolu.
 
     {% if object.assigned_to %}

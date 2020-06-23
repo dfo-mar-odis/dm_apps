@@ -1,0 +1,93 @@
+{% extends "grais/grais_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+{% block content %}
+    <style>
+        .indent-lg {
+            margin-left: 5em;
+            margin-right: 5em;
+        }
+
+        table {
+            width: auto;
+        }
+
+        th, td, table {
+            font-size: small;
+            padding-right: 10px;
+        }
+
+    </style>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'grais:index' %}"> Home </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'grais:gcsample_list' %}"> All green crab samples </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'grais:gcsample_detail' trap.sample.id %}"> {{ trap.sample }} </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'grais:trap_detail' trap.id %}"> {{ trap }} </a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ title }}</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+        <h1>
+            {{ title }}
+        </h1>
+        <br>
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {{ formset.management_form }}
+            {% bootstrap_formset_errors formset %}
+            <div class="btn-group">
+                <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" href="{% url 'grais:trap_detail' trap.id %}">Back</a>
+            </div>
+            <br><br>
+            <table class="table table-sm table-bordered" style="width: auto">
+                <thead>
+                <th>Species</th>
+                {% for field in field_list %}
+                    <th scope="col">{% get_verbose_label my_object field %}</th>
+                {% endfor %}
+                </thead>
+                <tbody>
+                {% for form in formset %}
+                    <tr>
+                        <td>
+                            {{ form.instance.species }}
+                        </td>
+                        {% for field in form %}
+                            {% if not field.is_hidden %}
+                                <td>
+                                    {{ field }}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                        {% for field in form %}
+                            {% if field.is_hidden %}
+                                <td>
+                                    {{ field }}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+            <div class="btn-group">
+                <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" href="{% url 'grais:trap_detail' trap.id %}">Back</a>
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}
+{% block body_js %}
+
+
+{% endblock %}

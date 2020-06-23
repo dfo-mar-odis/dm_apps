@@ -1,0 +1,32 @@
+{% extends "diets/diets_base.html" %}
+{% load static %}
+{% block title %}diets db{% endblock title %}
+{% block content %}
+
+    <style>
+        body{
+            background-image: url({% static "/img/diets/fish_eating_fish.png" %});
+            background-size: cover;
+        }
+    </style>
+
+    {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Gulf Region Marine Diets</h1>
+        </div>
+    </div>
+    </div>
+
+{#    <div align="center">#}
+{#        <img src="{% static "/img/diets/fish_eating_fish.png" %}" class="rounded" width="95%" alt="...">#}
+{##}
+{#    </div>#}
+    <div align="center">
+        <p style="font-size: small">Photo credit: VectorStock.com/5835281</p>
+    </div>
+
+
+
+
+{% endblock content %}

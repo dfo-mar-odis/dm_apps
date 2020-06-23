@@ -1,0 +1,158 @@
+{% load i18n %}
+{% load custom_filters %}
+
+<style>
+    .total{
+        font-style: italic;
+    }
+</style>
+
+<div class="projects">
+    <div class="mb-3">
+        <h2>{% trans "By Staff" %}</h2>
+        <h6>({% trans "Connected Users" %})</h6>
+    </div>
+
+    {% for user in user_dict %}
+        {% with user_dict|lookup:user as dict %}
+            {% with dict|lookup:"qs" as qs %}
+                {% with dict|lookup:"fte_recommended" as fte_approved %}
+                    {% with dict|lookup:"fte_not_recommended" as fte_unapproved %}
+                        {% with dict|lookup:"fte_unsubmitted" as fte_unsubmitted %}
+                            {% with dict|lookup:"fte_total" as fte_total %}
+                                <div class="mb-3">
+                                    <h5>
+                                        <a href="#user-project-list-{{ user.id }}" data-toggle="collapse">
+                                            {{ user|nz:"Not specified" }} ({{ fte_approved|floatformat|nz:0 }} week{{ fte_approved|pluralize }})
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div class="collapse" id="user-project-list-{{ user.id }}">
+                                    <table class="table table-sm table-hover project-table sortable">
+                                        <thead>
+                                        <th>
+                                            {% trans "Submitted?" %}
+                                        </th>
+                                        <th>
+                                            {% trans "Recommended?" %}
+                                        </th>
+
+                                        <th>
+                                            {% trans "Section" %}
+                                        </th>
+                                        <th>
+                                            {% trans "Project Title" %}
+                                        </th>
+                                        <th>
+                                            {% trans "Lead?" %}
+                                        </th>
+                                        <th>
+                                            {% trans "Project Leads" %}
+                                        </th>
+                                        <th>
+                                            {% trans "FTE weeks" %}
+                                        </th>
+
+
+                                        </thead>
+                                        {% for staff in qs.all %}
+                                            <tr pop href="{% url 'projects:project_overview' staff.project.id 1 %}"
+                                                class="{% if not staff.project.submitted %}red-font{% elif not staff.project.approved %}purple-font{% endif %}">
+                                                <td>
+                                                    {{ staff.project.submitted|yesno }}
+                                                </td>
+                                                <td>
+                                                    {{ staff.project.recommended_for_funding|yesno }}
+                                                </td>
+                                                <td>
+                                                    {{ staff.project.section }}
+                                                </td>
+                                                <td>
+                                                    {{ staff.project.project_title }}
+                                                </td>
+                                                <td>
+                                                    {{ staff.lead|yesno }}
+                                                </td>
+                                                <td>
+                                                    {{ staff.project.project_leads }}
+                                                </td>
+                                                <td>
+                                                    {{ staff.duration_weeks }}
+                                                </td>
+
+                                            </tr>
+                                        {% empty %}
+                                            <td>
+                                                <em>{% trans "None" %}</em>
+                                            </td>
+                                        {% endfor %}
+                                        <tr class="total">
+                                            <td>TOTAL Recommended:</td>
+                                            <td>{{ fte_approved|floatformat|nz:0 }} week{{ fte_approved|pluralize }}</td>
+                                        </tr>
+                                        <tr class="total">
+                                            <td>TOTAL Not Recommended:</td>
+                                            <td>{{ fte_unapproved|floatformat|nz:0 }} week{{ fte_approved|pluralize }}</td>
+                                        </tr>
+                                        <tr class="total">
+                                            <td>TOTAL Unsubmitted:</td>
+                                            <td>{{ fte_unsubmitted|floatformat|nz:0 }} week{{ fte_approved|pluralize }}</td>
+                                        </tr>
+                                        <tr class="total">
+                                            <td>TOTAL:</td>
+                                            <td>{{ fte_total|floatformat|nz:0 }} week{{ fte_approved|pluralize }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+
+
+                            {% endwith %}
+                        {% endwith %}
+                    {% endwith %}
+                {% endwith %}
+            {% endwith %}
+        {% endwith %}
+
+    {% endfor %}
+    {##}
+    {#        {% with tg_dict|lookup:item as qs %}#}
+    {#    <div class="" id="tg-project-list-{{ item.id }}">#}
+    {#        <table class="table table-sm table-hover project-table sortable">#}
+    {#            <thead>#}
+    {##}
+    {#            <th>#}
+    {#                {% trans "Name" %}#}
+    {#            </th>#}
+    {#            <th>#}
+    {#                {% trans "FTE (weeks) - Submitted" %}#}
+    {#            </th>#}
+    {#            <th>#}
+    {#                {% trans "Sections" %}#}
+    {#            </th>#}
+    {#                <th>#}
+    {#                    {% trans "Activity Type" %}#}
+    {#                </th>#}
+    {#                <th>#}
+    {#                    {% trans "Leads" %}#}
+    {#                </th>#}
+    {##}
+    {#            </thead>#}
+    {#            {% for item in user_dict %}#}
+    {#                <tr>#}
+    {#                    <td>#}
+    {#                        {{ item }}#}
+    {#                    </td>#}
+    {##}
+    {#                </tr>#}
+    {#            {% empty %}#}
+    {#                <td>#}
+    {#                    <em>{% trans "None" %}</em>#}
+    {#                </td>#}
+    {#            {% endfor %}#}
+    {#        </table>#}
+    {#    </div>#}
+    {#        {% endwith %}#}
+
+
+</div>

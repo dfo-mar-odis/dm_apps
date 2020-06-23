@@ -1,0 +1,50 @@
+{% extends "whalesdb/whales_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block title %}
+    {% trans title %}
+{% endblock title %}
+
+{% block field_override %}
+{{ block.super }}
+    <div class="card border border-dark my-1">
+        <div class="card-header">
+            <div class="row">
+                <span class="col h5">{% trans 'Recording Stage' %}</span>
+                {% if auth %}
+                <span class="col-1"><a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_rst' object.pk 'pop' %}','rst_table')" title="{% trans 'Add' %}">{% trans 'Add' %}</a></span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="card-body" id="rst_table">
+            <table class="table sortable">
+                <thead>
+                <tr>
+                    <th>{% trans 'ID' %}</th>
+                    <th>{% trans 'Channel' %}</th>
+                    <th>{% trans 'Active' %}</th>
+                    <th>{% trans 'Duration' %}</th>
+                    <th>{% trans 'Rate' %}</th>
+                    <td></td>
+                </tr>
+                </thead>
+                <tbody>
+        {% for stage in object.stages.all %}
+                    <tr>
+                        <td>{{ stage.pk }}</td>
+                        <td>{{ stage.rst_channel_no }}</td>
+                        <td>{{ stage.rst_active }}</td>
+                        <td>{{ stage.rst_duration }}</td>
+                        <td>{{ stage.rst_rate }}</td>
+                        <td>{% if auth %}<a href="{% url 'whalesdb:delete_rst' stage.pk %}" class="btn btn-danger">{% trans 'Delete' %}</a>{% endif %}</td>
+                    </tr>
+        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock field_override %}

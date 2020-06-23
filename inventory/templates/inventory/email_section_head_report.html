@@ -8,7 +8,7 @@
 
 <p>
     Resources within your section can now be managed directly through our new Regional Data Inventory app under the menu item entitled
-    <a href="http://dmapps{% url "inventory:my_section_detail" %}">My Section</a>. You must be signed in before you can access this
+    <a href="{{SITE_FULL_URL}}{% url "inventory:my_section_detail" %}">My Section</a>. You must be signed in before you can access this
     page.
 
     {% if  object.user.password == "pbkdf2_sha256$100000$aDyHhz2nhW58$yZBIrsyRWd8S+ILHmG8pEvSzkO+SwIkNbvME0VS2OdA=" %}

@@ -1,0 +1,49 @@
+{% load verbose_names %}
+
+<style media="screen">
+    table, td, th, tr {
+        border: solid 1px black;
+        text-align: left;
+        margin-right: 15px;
+    }
+</style>
+
+<em>
+    *** un message français suivra
+</em>
+<br><br>
+
+<p>
+    Hello {{ reviewer.user }},
+    <br><br>
+    A trip is awaiting your review as the role of {{ reviewer.role.name|upper }} in the DM Apps - Travel Management System.
+    Please click <a href="{{SITE_FULL_URL}}{% url 'travel:trip_review_list' %}">HERE</a> to review the request. Here are the trip request details:
+</p>
+
+<table>
+    {% for field in field_list %}
+        {% verbose_td_display trip field %}
+    {% endfor %}
+</table>
+
+<p>
+    ********************************************************************
+</p>
+
+<p>
+    {{ reviewer.user }} :
+    <br><br>
+    Une voyage attend votre examen en tant que rôle de {{ reviewer.role.nom|upper }} dans l'application DM Apps - Système de gestion de voyage.
+    Veuillez cliquer <a href="{{SITE_FULL_URL}}{% url 'travel:trip_review_list' %}">ICI</a> pour examiner la demande.
+    Voici les détails du voyage:
+</p>
+
+<table>
+    {% for field in field_list %}
+        {% verbose_td_display trip field %}
+    {% endfor %}
+</table>
+
+
+
+

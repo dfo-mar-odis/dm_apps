@@ -1,7 +1,8 @@
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.template import loader
 
-from_email = 'DoNotReply@DMApps.com'
+from_email = settings.SITE_FROM_EMAIL
 admin_email = 'david.fishman@dfo-mpo.gc.ca'
 
 
@@ -24,6 +25,7 @@ class NewTicketEmail:
     def load_html_template(self, ticket_object):
         t = loader.get_template('tickets/email_new_ticket.html')
         context = {'object': ticket_object}
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
         rendered = t.render(context)
         return rendered
 
@@ -51,6 +53,7 @@ class NewFollowUpEmail:
     def load_html_template(self, object):
         t = loader.get_template('tickets/email_follow_up.html')
         context = {'object': object}
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
         rendered = t.render(context)
         return rendered
 
@@ -76,6 +79,7 @@ class NewFileAddedEmail:
     def load_html_template(self, object):
         t = loader.get_template('tickets/email_new_file.html')
         context = {'object': object}
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
         rendered = t.render(context)
         return rendered
 
@@ -105,6 +109,7 @@ class TicketResolvedEmail:
         context = {
             'object': self.ticket_object,
         }
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
         rendered = t.render(context)
         return rendered
 

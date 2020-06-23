@@ -200,7 +200,6 @@ def get_allotment(sp, context):
 
 class DetailPlan(LoginRequiredMixin, DetailView):
     model = models.StaffingPlan
-    login_url = '/accounts/login_required/'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -240,7 +239,6 @@ def get_section_dump():
 
 class CreatePlan(LoginRequiredMixin, CreateView):
     model = models.StaffingPlan
-    login_url = '/accounts/login_required/'
     form_class = forms.NewStaffingForm
 
     def get_initial(self):
@@ -271,7 +269,6 @@ class CreatePlan(LoginRequiredMixin, CreateView):
 
 class UpdatePlan(LoginRequiredMixin, UpdateView):
     model = models.StaffingPlan
-    login_url = '/accounts/login_required/'
     form_class = forms.NewStaffingForm
 
     def get_context_data(self, **kwargs):

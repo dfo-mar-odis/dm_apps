@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext as _
 from shared_models import models as shared_models
-from shapely.geometry import Polygon, Point
+from shapely.geometry import Polygon, Point, LineString
 
 
 class Taxon(models.Model):
@@ -89,11 +89,21 @@ class SpeciesStatus(models.Model):
 
 
 class Region(models.Model):
-    code = models.CharField(max_length=5, blank=True, null=True)
+    # POINT = 1
+    LINE = 2
+    POLYGON = 3
+    RANGE_TYPE_CHOICES = (
+        # (POINT, "points"),
+        (LINE, "line"),
+        (POLYGON, "polygon"),
+    )
+
+    # code = models.CharField(max_length=5, blank=True, null=True)
     name = models.CharField(max_length=255, verbose_name=_("english name"))
     nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("french name"))
     province = models.ForeignKey(shared_models.Province, on_delete=models.DO_NOTHING, related_name='regions', blank=True, null=True)
     temp_file = models.FileField(upload_to='temp_file', null=True)
+    type = models.IntegerField(verbose_name=_("record type"), choices=RANGE_TYPE_CHOICES, default=3)
 
     def __str__(self):
         name = getattr(self, str(_("name"))) if getattr(self, str(_("name"))) else self.name
@@ -139,6 +149,7 @@ def auto_delete_region_file_on_change(sender, instance, **kwargs):
 
 
 class RegionPolygon(models.Model):
+
     region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name="polygons")
     old_id = models.IntegerField(blank=True, null=True)
 
@@ -151,8 +162,9 @@ class RegionPolygon(models.Model):
             try:
                 return Polygon(point_list)
             except (ValueError, TypeError):
-                print("problem creating polygon id {}".format(self.pk))
-                print(point_list)
+                pass
+                # print("problem creating polygon id {}".format(self.pk))
+                # print(point_list)
 
     def coords(self):
         my_polygon = self.get_polygon()
@@ -307,8 +319,9 @@ class Record(models.Model):
     regions = models.ManyToManyField(Region, blank=True, related_name="records")
     record_type = models.IntegerField(verbose_name=_("record type"), choices=RANGE_TYPE_CHOICES)
     source = models.CharField(max_length=1000, verbose_name=_("source"))
-    year = models.IntegerField(verbose_name=_("source year"), blank=True, null=True)
+    year = models.CharField(max_length=1000, verbose_name=_("source year"), blank=True, null=True)
     # temp_file = models.FileField(upload_to='temp_file', null=True)
+    notes = models.TextField(null=True, blank=True, verbose_name=_("notes"))
 
     # metadata
     date_last_modified = models.DateTimeField(blank=True, null=True, default=timezone.now, verbose_name=_("date last modified"))

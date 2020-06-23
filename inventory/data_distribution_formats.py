@@ -65,6 +65,7 @@ DISTRIBUTION_FORMAT_CHOICES = (
     ("MXF", "MXF"),
     ("MapInfo", "MapInfo"),
     ("NetCDF", "NetCDF"),
+    ("ODF", "ODF"),
     ("ODP", "ODP"),
     ("ODS", "ODS"),
     ("ODT", "ODT"),

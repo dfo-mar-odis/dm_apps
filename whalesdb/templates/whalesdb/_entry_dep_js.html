@@ -1,0 +1,49 @@
+<script type="application/javascript">
+    stnObj = {{ station_json|safe }};
+
+    $("#id_dep_year").change(function (e) {
+        setName();
+    })
+
+    $("#id_dep_month").change(function (e) {
+        setName()
+    })
+
+    $("#id_stn").change(function (e) {
+        setName()
+    })
+
+    function setName() {
+        year = $("#id_dep_year").val()
+        month = $("#id_dep_month").val()
+        stn = $("#id_stn").val()
+        stn_code = ""
+
+        for (var i = 0; i < Object.keys(stnObj).length; i++) {
+            var key = Object.keys(stnObj)[i];
+            if( stn == stnObj[key].pk ) {
+                stn_code = stnObj[key].stn_code
+                break;
+            }
+        }
+
+        name = ""
+        if( stn_code != "" ) {
+            name = stn_code;
+        }
+        if( year != "" ) {
+            if(name != "") {
+                name += "-";
+            }
+            name += year
+        }
+        if( month != null ) {
+            if( name != "" ) {
+                name += "-";
+            }
+            name += month.padStart(2, '0');
+        }
+
+        $("#id_dep_name").val(name);
+    }
+</script>

@@ -1,0 +1,19 @@
+{% load verbose_names %}
+
+<div class="container" >
+    <div class="row">
+        <div class="col-sm">
+            <div><span class="font-weight-bold">{% get_verbose_label mor 'mor_name' %} : </span><span>{% get_field_value mor 'mor_name' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label mor 'mor_max_depth' %} : </span><span>{% get_field_value mor 'mor_max_depth' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label mor 'mor_link_setup_image' %} : </span><span>{% get_field_value mor 'mor_link_setup_image' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label mor 'mor_additional_equipment' %} : </span><span>{% get_field_value mor 'mor_additional_equipment' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label mor 'mor_general_moor_description' %} : </span><span>{% get_field_value mor 'mor_general_moor_description' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label mor 'mor_notes' %} : </span><span>{% get_field_value mor 'mor_notes' %}</span></div>
+        </div>
+    {% if mor.mor_setup_image%}
+        <div class="col-sm border">
+            <img src="{{ mor.mor_setup_image.url }}" />
+        </div>
+    {% endif %}
+    </div>
+</div>

@@ -9,7 +9,7 @@
 
 
 {% block title %}
-    {% trans "iHub" %}
+    {% trans "iHub" %} {% block subtitle %}{% endblock %}
 {% endblock title %}
 
 {% block body %}
@@ -72,6 +72,9 @@
                     </a>
                     <a class="dropdown-item" href="{% url 'ihub:manage_programs' %}">
                         {% trans "Manage Funding Programs" %}
+                    </a>
+                     <a class="dropdown-item" href="{% url 'ihub:manage_ratings' %}">
+                        {% trans "Manage Relationship Ratings" %}
                     </a>
                     <a class="dropdown-item" href="{% url 'ihub:user_list' %}">
                         {% trans "Manage User Permissions" %}

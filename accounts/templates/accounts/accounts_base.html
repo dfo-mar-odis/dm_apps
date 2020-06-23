@@ -2,17 +2,12 @@
 {% load i18n %}
 {% block bug_create %}{% url 'tickets:bug_create' 'general' %}{% endblock bug_create %}
 {% block title %}DM-Accounts{% endblock title %}
-{% block right_auth %}
-  <li class="nav-item"><a class="nav-link" href="{% url 'accounts:account' user.id %}">
-      {% trans "My Account" %}
-  </a></li>
-  <li class="nav-item"><a class="nav-link" href="{% url 'accounts:profile' user.id %}">
-      {% trans "My Profile" %}
-  </a></li>
 
-{% endblock right_auth %}
+{% block left_all %}
+      <a class="navbar-brand " href="#">DM Apps</a>
 
+{% endblock %}
 
 {% block body %}
-  {% block content %}{% endblock content %}
+    {% block content %}{% endblock content %}
 {% endblock body %}

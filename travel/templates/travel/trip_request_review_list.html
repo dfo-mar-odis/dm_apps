@@ -1,0 +1,40 @@
+{% extends "travel/list.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+    {% if not object_list.count %}
+        <div class="center-col">
+            <img src="{% static 'travel/you_are_done.png' %}" alt="">
+            <h3>{% trans "Way to go! You're all done here" %} :)</h3>
+        </div>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block table_tr %}
+    {% if awaiting %}
+        {% url 'travel:tr_review_update' object.current_reviewer.id as my_url %}
+    {% elif admin %}
+        {% url 'travel:tr_review_update' object.current_reviewer.id view.kwargs.type as my_url %}
+    {% else %}
+        {% url 'travel:request_detail' object.id "all" as my_url %}
+    {% endif %}
+
+    <tr href="{{ my_url }}">
+        {% for field in field_list %}
+            {% if "is_group" in field.name %}
+                <td>{{ object.is_group_request|yesno:"Group,Individual" }}</td>
+            {% elif "status" in field.name %}
+                <td style="background-color: {{ object.status.color }}">{% get_field_value object field.name format="currency" %}</td>
+            {% else %}
+                <td>{% get_field_value object field.name format="currency" %}</td>
+            {% endif %}
+        {% endfor %}
+    </tr>
+{% endblock %}
+
+

@@ -1,0 +1,56 @@
+{% extends "shared_models/generic_form.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+{% block pre_form_div %}
+
+{% endblock %}
+
+{% block submit_btn_tip_text %}
+    {% if delete_protection %} {% trans "You cannot delete this object since it has related items." %} {% endif %}
+{% endblock %}
+
+{% block submit_btn_props %}
+    {% if delete_protection %} disabled {% endif %}
+{% endblock %}
+
+{% block submit_btn_class %}
+    btn-danger
+{% endblock %}
+
+
+{% block post_form_div %}
+    {% if related_names|length %}
+        <div class="mt-5">
+            <div class="mb-3">
+                <h3 style="font-weight: bold">
+                    {% blocktrans %}
+                        This {{ model_name }} is related to the following items:
+                    {% endblocktrans %}
+                </h3>
+            </div>
+            {% for dict in related_names %}
+
+
+                <h4>{{ dict.title|title }}</h4>
+                <ul>
+                    {% for obj in dict.qs %}
+                        <li>{{ obj }}</li>
+                    {% empty %}
+                        <em>
+                            {% blocktrans with dict.title as title %}
+                                There are no {{ title }} linked to this item.
+                            {% endblocktrans %}
+                        </em>
+                    {% endfor %}
+                </ul>
+
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,56 @@
+[
+  {
+    "model": "travel.reviewerrole",
+    "pk": 1,
+    "fields": {
+      "name": "Reviewer",
+      "nom": "Examinateur/ examinatrice",
+      "order": 1
+    }
+  },
+  {
+    "model": "travel.reviewerrole",
+    "pk": 2,
+    "fields": {
+      "name": "Recommender",
+      "nom": "Conseiller / conseill\u00e8re",
+      "order": 1
+    }
+  },
+  {
+    "model": "travel.reviewerrole",
+    "pk": 3,
+    "fields": {
+      "name": "NCR Travel Coordinators",
+      "nom": "",
+      "order": 2
+    }
+  },
+  {
+    "model": "travel.reviewerrole",
+    "pk": 4,
+    "fields": {
+      "name": "ADM Recommender",
+      "nom": "Conseiller / conseill\u00e8re (RCN)",
+      "order": 3
+    }
+  },
+  {
+    "model": "travel.reviewerrole",
+    "pk": 5,
+    "fields": {
+      "name": "ADM",
+      "nom": "SMA",
+      "order": 4
+    }
+  },
+  {
+    "model": "travel.reviewerrole",
+    "pk": 6,
+    "fields": {
+      "name": "RDG",
+      "nom": "DGR",
+      "order": 5
+    }
+  }
+]

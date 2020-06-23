@@ -1,49 +1,8 @@
-{% load bootstrap4 %}
+{% extends 'shared_models/generic_popout_detail.html' %}
 
-{% bootstrap_css %}
-{% bootstrap_javascript jquery='full' %}
-
-{% block content %}
-
-{# A script to refresh the parent window; to be called in when the buttons are pushed #}
-<script>
-window.onunload = refreshParent;
-function refreshParent() {
-  window.opener.location.reload();
-}
-</script>
-
-<div class="container">
-
-  {% if temp_msg %}
-    {% bootstrap_alert temp_msg alert_type='success' %}
-  {% endif %}
-
-  <h1>File: {{object.caption}}</h1><br>
-  <div class="btn-group">
-    <a class="btn btn-warning" href="{% url 'tickets:file_update' ticket=object.ticket.id pk=object.id %}" onclick="refreshParent();">Edit</a>
-    <a class="btn btn-success" href="{% url 'tickets:file_create' ticket=object.ticket.id %}">Add Another File</a>
+{% block buttons %}
+    <a class="btn btn-warning" href="{% url 'tickets:file_update' object.ticket.id object.id %}"
+       onclick="refreshParent();">Edit</a>
+    <a class="btn btn-success" href="{% url 'tickets:file_create' object.ticket.id %}">Add Another File</a>
     <a class="btn btn-danger" href="{% url 'tickets:file_delete' object.ticket.id object.id %}">Delete</a>
-    <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">Close</a>
-  </div><br><br>
-  {% for field in form  %}
-
-    <p>
-      <b>{{field.label}}:</b> <br>
-
-      {% if field.name == 'file' %}
-        <a href="{{object.file.url}}">{{object.file}}</a>
-
-      {% elif field.name == 'ticket' %}
-        {{object.ticket.title}}
-
-      {% else %}
-        {{field.value|safe}}
-
-      {% endif %}
-    {% endfor %}
-    <br><br>
-
-</div>
-
-{% endblock content %}
+{% endblock %}

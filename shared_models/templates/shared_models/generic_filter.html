@@ -1,0 +1,109 @@
+{% extends "shared_models/generic_base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load el_pagination_tags %}
+{% load verbose_names %}
+
+{% block subcontent %}
+    {% if filter %}
+        {% block filter %}
+            <form class="form" action="." method="get" id="filter-form">
+                <div class="row">
+                    {% for field in filter.form %}
+                        <div class="col">
+                            {% bootstrap_field field placeholder="" size="small" %}
+                        </div>
+                    {% endfor %}
+                    <div class="col">
+                        <br>
+                        <input type="submit" value="{% trans "Filter" %}" class="btn btn-warning btn-sm">
+                        <a href="." class="btn btn-secondary btn-sm">{% trans "Clear" %}</a>
+                    </div>
+                </div>
+            </form>
+        {% endblock %}
+        <br>
+        {% if paginate_by %}
+            {% paginate paginate_by filter.qs as filter_list %}
+        {% endif %}
+
+    {% endif %}
+
+
+    {% if filter %}
+        {% if filter_list %}
+            {% echo filter_list as list %}
+        {% else %}
+            {% echo filter.qs as list %}
+        {% endif %}
+    {% else %}
+        {% echo object_list as list %}
+    {% endif %}
+    {% block table_and_table_header %}
+
+        {% block table_header %}
+            <div class="row">
+                <div class="col">
+                    {% trans "(click on a header to sort table)" %}
+                </div>
+                <div class="col" style="text-align: center">
+                    {% if paginate_by %}
+                        {% show_pages %}
+                    {% endif %}
+                    {% if filter %}
+                        {% if filter_list %}
+                            <em>{% trans 'displaying' %} {{ filter_list.count }} {% trans 'of' %} {{ filter.qs.count }}</em>
+                        {% else %}
+                            <em>{% trans 'displaying' %} {{ filter.qs.count }} {% trans 'of' %} {{ object_list.count }}</em>
+                        {% endif %}
+                    {% else %}
+                        <em>{% trans 'displaying' %} {{ object_list.count }} {% trans "records." %}</em>
+                    {% endif %}
+                </div>
+                {% if new_object_url %}
+                    {% trans 'New' as default_new_btn_text %}
+                    <div class="col" style="text-align: right; padding-bottom: 10px">
+                        <a href="{{ new_object_url }}" class="btn btn-sm btn-primary">{{ new_btn_text|nz:default_new_btn_text }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock %}
+
+        {% block table %}
+            <table class="table table-sm {% if row_object_url_name %}table-hover{% endif %} sortable">
+                <thead>
+                {% block head %}
+                    {% for field in field_list %}
+                        <th class="{{ field.class }}" {% if field.width %}style="width: {{ field.width }}"{% endif %}>
+                            {% get_verbose_label random_object field.name %}
+                        </th>
+                    {% endfor %}
+                {% endblock %}
+                </thead>
+
+                <tbody>
+
+                {% for object in list %}
+                    {% block table_tr %}
+                        {% url row_object_url_name object.id as my_url %}
+                        <tr {% if row_object_url_name %}href="{{ my_url }}"{% endif %}>
+                            {% for field in field_list %}
+                                <td class="{{ field.class }}">
+                                    {% block table_td %}
+                                        {% get_field_value object field.name safe=True %}
+                                    {% endblock %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endblock %}
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endblock %}
+    {% endblock %}
+
+{% endblock %}
+
+

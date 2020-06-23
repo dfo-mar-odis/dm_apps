@@ -1,0 +1,24 @@
+{% extends 'shared_models/generic_base.html' %}
+{% load i18n %}
+{% block subcontent %}
+
+    <div class="container mt-5">
+
+        <ul>
+            <li>
+                <a href="{% url 'shared_models:region_list' %}">{% trans "Regions" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'shared_models:branch_list' %}">{% trans "Branches" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'shared_models:division_list' %}">{% trans "Divisions" %}</a>
+            </li>
+            <li>
+                <a href="{% url 'shared_models:section_list' %}">{% trans "Sections" %}</a>
+            </li>
+        </ul>
+
+    </div>
+
+{% endblock %}

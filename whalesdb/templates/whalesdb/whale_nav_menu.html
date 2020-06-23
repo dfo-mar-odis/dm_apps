@@ -1,0 +1,68 @@
+{% load i18n %}
+
+  <li class="nav-item"><a class="nav-link" href="{% url 'whalesdb:index' %}"> Home</a></li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+        {% trans "Deployments" %}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'whalesdb:list_dep' %}">
+            {% trans "Deployment List" %}
+        </a>
+        <hr />
+        <a class="dropdown-item" href="{% url 'whalesdb:list_stn' %}">
+            {% trans "Stations" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'whalesdb:list_prj' %}">
+            {% trans "Projects" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'whalesdb:list_mor' %}">
+            {% trans "Mooring Setups" %}
+        </a>
+    </div>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+        {% trans "Equipment" %}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'whalesdb:list_eqp' %}">
+            {% trans "Equipment List" %}
+        </a>
+        <hr />
+        <a class="dropdown-item" href="{% url 'whalesdb:list_emm' %}">
+            {% trans "Make and Model List" %}
+        </a>
+    </div>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+        {% trans "Datasets" %}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'whalesdb:list_rec' %}">
+            {% trans "Dataset List" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'whalesdb:list_rsc' %}">
+            {% trans "Recording Schedule List" %}
+        </a>
+        <hr />
+        <a class="dropdown-item" href="{% url 'whalesdb:list_tea' %}">
+            {% trans "Team Member List" %}
+        </a>
+    </div>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+        {% trans "Other" %}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'whalesdb:list_rtt' %}">
+            {% trans "Time Zone" %}
+        </a>
+    </div>
+  </li>

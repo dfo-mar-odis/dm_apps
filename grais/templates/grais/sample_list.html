@@ -2,7 +2,7 @@
 {% load static %}
 {% load el_pagination_tags %}
 {% load i18n %}
-
+{% load verbose_names %}
 {% load bootstrap4 %}
 {% block content %}
 
@@ -43,29 +43,27 @@
 
         <table class="table table-hover table-sm sortable">
             <thead>
-            <tr>
-                <th scope="col">Sample #</th>
-                <th scope="col">Station</th>
-                <th scope="col">Date Deployed</th>
-                <th scope="col">Date Retreived</th>
-                <th scope="col">Weeks deployed</th>
-            </tr>
+            {% for field in field_list %}
+                <th>
+                    {% get_verbose_label random_object field %}
+                </th>
+            {% endfor %}
+
             </thead>
             <tbody>
             {% for sample in filter_list %}
                 <tr href="{% url 'grais:sample_detail' sample.id %}">
-                    <td>{{ sample.id }}</td>
-                    <td>{{ sample.station }}</td>
-                    {#          <td>{{sample.sampler}}</td>#}
-                    <td>{{ sample.date_deployed|date:'F d, Y' }}</td>
-                    {% if sample.date_retrieved %}
-                        <td>{{ sample.date_retrieved|date:'F d, Y' }}</td>
-                        <td>{{ sample.weeks_deployed }}</td>
-                    {% else %}
-                        <td>n/a</td>
-                        <td>n/a</td>
-                    {% endif %}
 
+                    {% for field in field_list %}
+                        <td>
+                            {% if "invasive" in field %}
+                                {% get_field_value sample field as my_val %}
+                                {{ my_val|yesno }}
+                            {% else %}
+                                {% get_field_value sample field %}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
 
                 </tr>
             {% endfor %}

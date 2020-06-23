@@ -49,7 +49,7 @@
 
 
                 <h3>Added:</h3>
-                <table class="table table-bordered ">
+                <table class="table table-hover table-bordered">
                     <thead class="full-table">
                     <th>Date observed</th>
                     <th>Species name</th>
@@ -58,18 +58,10 @@
                     <tbody>
 
                     {% for s in spp_list %}
-                        <tr>
+                        <tr href="{% url 'grais:spp_obs_edit_pop' view.kwargs.type s.id %}" pop>
                             <td>{{ s.observation_date|date:"F m, Y" }}</td>
                             <td>{{ s.species.common_name }} (<em>{{ s.species.scientific_name }}</em>)</td>
                             <td>{{ s.notes }}</td>
-                            <td>
-                                <a href="#"
-                                   onclick="return popitup('{% url 'grais:spp_obs_edit_pop' view.kwargs.type s.id %}','popWindow')">
-                                    <img src="{% static "/admin/img/icon-changelink.svg" %}" data-toggle="tooltip"
-                                         title="Edit">
-                                </a>
-
-                            </td>
                             <td>
                                 <a class="delete-me" href="#" val="{{ s.id }}">
                                     <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
@@ -103,24 +95,23 @@
 
     </div>
 
-    </div>
 
 
     <script type="application/javascript">
         var speciesList = {{ species_list |safe }};
 
-        $(".delete-me").click(function () {
+        $(".delete-me").click(function (e) {
+            e.stopImmediatePropagation();
             var objectId = $(this)[0].getAttribute("val");
 
             var userInput = "";
             while (userInput !== "n" && userInput !== "y") {
                 userInput = prompt("Are you sure you want to delete this species from the surface? \n\n Please respond with 'y' for yes and 'n' for no.").toLocaleLowerCase();
-
             }
             if (userInput === "y") {
-                $("#secrect-delete-btn-" + objectId)[0].click();
+                window.location.href = $("#secrect-delete-btn-" + objectId).attr("href");
             }
-        })
+        });
 
 
         $(document).ready(function () {

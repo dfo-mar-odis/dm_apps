@@ -1,0 +1,206 @@
+[
+{
+    "model": "whalesdb.eqtequipmenttypecode",
+    "pk": 1,
+    "fields": {
+      "name": "Acoustic recorder"
+    }
+},
+{
+    "model": "whalesdb.eqtequipmenttypecode",
+    "pk": 2,
+    "fields": {
+      "name": "Environmental sensor"
+    }
+},
+{
+    "model": "whalesdb.eqtequipmenttypecode",
+    "pk": 3,
+    "fields": {
+      "name": "OTN reciever"
+    }
+},
+{
+    "model": "whalesdb.eqtequipmenttypecode",
+    "pk": 4,
+    "fields": {
+      "name": "Hydrophone"
+    }
+},
+{
+    "model": "whalesdb.setstationeventcode",
+    "pk": 1,
+    "fields": {
+    "name": "Deployment",
+      "description_en": "Equipment is placed in the water. Note: the time associated with an AMAR deployment event should be DROP TIME."
+    }
+},
+{
+    "model": "whalesdb.setstationeventcode",
+    "pk": 2,
+    "fields": {
+    "name": "Recovery ",
+      "description_en": "Equipment is recovered from the water. Note: the time associated with an AMAR recovery event should be RELEASE TIME."
+    }
+},
+{
+    "model": "whalesdb.ertrecordertype",
+    "pk": 1,
+    "fields": {
+      "name": "Guardbuoy"
+    }
+},
+{
+    "model": "whalesdb.ertrecordertype",
+    "pk": 2,
+    "fields": {
+      "name": "AURAL"
+    }
+},
+{
+    "model": "whalesdb.ertrecordertype",
+    "pk": 3,
+    "fields": {
+      "name": "MARU"
+    }
+},
+{
+    "model": "whalesdb.ertrecordertype",
+    "pk": 4,
+    "fields": {
+      "name": "AMAR"
+    }
+},
+{
+    "model": "whalesdb.eqaadcbitscode",
+    "pk": 1,
+    "fields": {
+        "name": "12-bit"
+    }
+},
+{
+    "model": "whalesdb.eqaadcbitscode",
+    "pk": 2,
+    "fields": {
+        "name": "16-bit"
+    }
+},
+{
+    "model": "whalesdb.eqaadcbitscode",
+    "pk": 3,
+    "fields": {
+        "name": "24-bit"
+    }
+},
+{
+    "model": "whalesdb.rtttimezonecode",
+    "pk": 1,
+    "fields": {
+        "rtt_abb": "UTC",
+        "rtt_name": "Coordinated Universal Time",
+        "rtt_offset": "0.00"
+    }
+},
+{
+    "model": "whalesdb.rtttimezonecode",
+    "pk": 2,
+    "fields": {
+        "rtt_abb": "ADT",
+        "rtt_name": "Atlantic Daylight Saving Time",
+        "rtt_offset": "-3.00"
+    }
+},
+{
+    "model": "whalesdb.rtttimezonecode",
+    "pk": 3,
+    "fields": {
+        "rtt_abb": "AST",
+        "rtt_name": "Atlantic Standard Time",
+        "rtt_offset": "-4.00"
+    }
+},
+{
+    "model": "whalesdb.rtttimezonecode",
+    "pk": 4,
+    "fields": {
+        "rtt_abb": "EDT",
+        "rtt_name": "Eastern Daylight Saving Time",
+        "rtt_offset": "-4.00"
+    }
+},
+{
+    "model": "whalesdb.rtttimezonecode",
+    "pk": 5,
+    "fields": {
+        "rtt_abb": "EST",
+        "rtt_name": "Eastern Standard Time",
+        "rtt_offset": "-5.00"
+    }
+},
+{
+    "model": "whalesdb.rtttimezonecode",
+    "pk": 6,
+    "fields": {
+        "rtt_abb": "NDT",
+        "rtt_name": "Newfoundland Daylight Saving Time",
+        "rtt_offset": "-2.50"
+    }
+},
+{
+    "model": "whalesdb.rtttimezonecode",
+    "pk": 7,
+    "fields": {
+        "rtt_abb": "NST",
+        "rtt_name": "Newfoundland Standard Time",
+        "rtt_offset": "-3.50"
+    }
+},
+{
+    "model": "whalesdb.retrecordingeventtype",
+    "pk": 1,
+    "fields": {
+        "ret_name": "Setup",
+        "ret_desc": "Equipment Setup"
+    }
+},
+{
+    "model": "whalesdb.retrecordingeventtype",
+    "pk": 2,
+    "fields": {
+        "ret_name": "System Check",
+        "ret_desc": "System Check"
+    }
+},
+{
+    "model": "whalesdb.retrecordingeventtype",
+    "pk": 3,
+    "fields": {
+        "ret_name": "Start Recording",
+        "ret_desc": "Start Recording"
+    }
+},
+{
+    "model": "whalesdb.retrecordingeventtype",
+    "pk": 4,
+    "fields": {
+        "ret_name": "Stop Recording",
+        "ret_desc": "Stop Recording"
+    }
+},
+{
+    "model": "whalesdb.retrecordingeventtype",
+    "pk": 5,
+    "fields": {
+        "ret_name": "Data Download",
+        "ret_desc": "Data Download"
+    }
+},
+{
+    "model": "whalesdb.retrecordingeventtype",
+    "pk": 6,
+    "fields": {
+        "ret_name": "Data Backup",
+        "ret_desc": "Data Backup"
+    }
+}
+]

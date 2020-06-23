@@ -44,11 +44,13 @@ Thumbs.db
 # project media dir #
 #####################
 /media/*
+/logs/*
+/staticfiles/*
 
 # local configuration #
 #######################
 local_conf.py
-my_conf.py
+my_conf*
 my_wsgi.py
 my_dev.cnf
 
@@ -56,21 +58,20 @@ my_dev.cnf
 ####################
 /access_files/*
 
-# if you want to untrack a file... Do these commands #
-######################################################
-#git rm -r --cached .
-#git add .
-#git commit -m "fixed untracked files"
 
 # PyCharm settings and maps #
 #############################
 /.IDEA/*
+.idea/*
 
 # prod.cnf file should not be in the repo since it has the credentials + connection strings for the production db #
 ###################################################################################################################
 prod.cnf
-my_dev.cnf
-my_stable_reqs.txt
+
+
+# Ignore all files dealing with enviornment variables except the sample file
+.env*
+!.env_sample
 
 # Google API key #
 ##################
@@ -82,4 +83,10 @@ temp/
 
 # Shell scripts #
 #################
-*.sh
+
+
+
+# AZURE AD #
+############
+azure_oauth_settings.yml
+oauth_settings.yml

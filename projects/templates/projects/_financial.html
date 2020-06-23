@@ -3,11 +3,6 @@
 {% load custom_filters %}
 {% load i18n %}
 
-<style>
-    table, td {
-        font-size: small;
-    }
-</style>
 
 <div class="">
     <h4>
@@ -17,51 +12,39 @@
 
 <table class="table table-bordered table-sm" style="width: auto">
     <tr>
-        <th>
-            {% trans "Category" %}
+        <th style="width: 150px;">
+            {% trans "Type" %}
         </th>
-        <th style="text-align: center;">
-            {% trans "A-base" %}
+        <th style="width: 150px;">
+            {% trans "Funding source" %}
         </th>
-        <th style="text-align: center;">
-            {% trans "B-base" %}
+        <th style="width: 150px;">
+            {% trans "Salary (excluding FTE)" %}
         </th>
-        <th style="text-align: center;">
-            {% trans "C-base" %}
+        <th style="width: 150px;">
+            {% trans "O & M" %}
         </th>
-        <th style="text-align: center">
-            {% trans "Total Cost" %}
+        <th style="width: 150px;">
+            {% trans "Captial" %}
+        </th>
+        <th style="width: 150px;">
+            {% trans "Total" %}
         </th>
     </tr>
     <tbody>
     {% with "---" as na %}
-        <tr>
-            <td>
-                {% trans "Salary (excluding full time employees)" %}
-            </td>
-            <td style="text-align: center; background-color: {{ abase }}">{{ salary_abase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center; background-color: {{ bbase }}">{{ salary_bbase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center; background-color: {{ cbase }}">{{ salary_cbase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center">{{ salary_total|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-        </tr>
-        <tr>
-            <td>
-                {% trans "O & M" %}
-            </td>
-            <td style="text-align: center; background-color: {{ abase }}">{{ om_abase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center; background-color: {{ bbase }}">{{ om_bbase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center; background-color: {{ cbase }}">{{ om_cbase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center">{{ om_total|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-        </tr>
-        <tr>
-            <td>
-                {% trans "Capital" %}
-            </td>
-            <td style="text-align: center; background-color: {{ abase }}">{{ capital_abase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center; background-color: {{ bbase }}">{{ capital_bbase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center; background-color: {{ cbase }}">{{ capital_cbase|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-            <td style="text-align: center">{{ capital_total|floatformat:1|zero2val:na|kmark:"2,True" }}</td>
-        </tr>
+        {% for fs in financial_summary_dict %}
+            {% with financial_summary_dict|lookup:fs  as fs_dict %}
+                <tr style="background-color: {{ fs.funding_source_type.color }}">
+                    <td>{{ fs.funding_source_type|nz:_("Total") }}</td>
+                    <td>{{ fs.tname|nz:"---" }}</td>
+                    <td>{{ fs_dict|lookup:"salary"|currency }}</td>
+                    <td>{{ fs_dict|lookup:"om"|currency }}</td>
+                    <td>{{ fs_dict|lookup:"capital"|currency }}</td>
+                    <td>{{ fs_dict|lookup:"total"|currency }}</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
     {% endwith %}
 
     </tbody>

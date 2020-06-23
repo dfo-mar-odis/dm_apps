@@ -80,7 +80,7 @@
             </h3>
             <ol>
                 {% for project in section.projects.all %}
-                    {% if project.submitted and project.section_head_approved %}
+                    {% if project.submitted and project.approved %}
                         {{ project.id }} - {{ project }}<br>
                     {% endif %}
                 {% endfor %}

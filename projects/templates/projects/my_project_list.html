@@ -1,164 +1,156 @@
-{% extends "projects/projects_base.html" %}
+{% extends "projects/list.html" %}
 {% load static %}
 {% load humanize %}
 {% load custom_filters %}
 {% load i18n %}
+{% load verbose_names %}
+{% load bootstrap4 %}
 
-{% block content %}
-    {% get_current_language as LANG %}
-
-    <style>
-        table, td {
-            font-size: 14px;
-        }
-    </style>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">
-                {% trans "My Projects" %}
-            </li>
-            {#            <li class="breadcrumb-item"><a href="{% url 'diets:index' %}">Home</a></li>#}
-        </ol>
-    </nav>
-
-    <div class="container-fluid">
-        {{ get_current_language }}
+{% block title_area %}
+    {{ get_current_language }}
+    <div class="mb-3">
         <h1>
             {% blocktrans with name=user.first_name %}
                 {{ name }}'s Project List
             {% endblocktrans %}
+            {% if fy %}
+                ({{ fy }})
+            {% endif %}
         </h1>
-        <br>
-        <h3>
-            {% trans "Here's a breakdown of your time allocation:" %}
-        </h3>
-        <table class="table table-bordered table-sm" style="width: auto;">
-            <tr>
-                <th rowspan="3" style="width: 100px; vertical-align: bottom">{% trans "Fiscal year" %}</th>
-                <th colspan="4" style="text-align: center">{% trans "Time in weeks" %}</th>
-            </tr>
-            <tr>
-                <th colspan="2" style="width: 150px; text-align: center">{% trans "Submitted projects" %}</th>
-                <th rowspan="2" style="width: 150px; text-align: center; vertical-align: bottom">{% trans "Un-submitted projects" %}</th>
-                <th rowspan="2" style="width: 150px; text-align: center; vertical-align: bottom">{% trans "Total" %}</th>
-            </tr>
-            <tr>
-                <th style="width: 150px; text-align: center">{% trans "Approved" %}</th>
-                <th style="width: 150px; text-align: center">{% trans "Unapproved" %}</th>
-            </tr>
-            <tbody>
-            {% for fy in fy_list %}
-                <tr>
-                    <td>{{ fy }}</td>
-                    <td style="text-align: center"> {{ weeks_dict|lookup:fy.id|lookup:"submitted_approved"|floatformat:1 }}</td>
-                    <td style="text-align: center"> {{ weeks_dict|lookup:fy.id|lookup:"submitted_unapproved"|floatformat:1 }}</td>
-                    <td style="text-align: center" class="red-font"> {{ weeks_dict|lookup:fy.id|lookup:"unsubmitted"|floatformat:1 }}</td>
-                    <td style="text-align: center"> {{ weeks_dict|lookup:fy.id|lookup:"total"|floatformat:1 }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-        <br> <br>
+    </div>
+{% endblock %}
+
+{% block subcontent %}
+    {% get_current_language as LANG %}
+
+
+    <div class="container-fluid">
+
         <div class="row">
             <div class="col">
-                {% trans "(click on a header to sort table)" %}
+                <form class="form" action="." method="get" id="filter-form">
+                    <div class="row">
+                        {% for field in filter.form %}
+                            <div class="col">{% bootstrap_field field placeholder="" size="small" %}</div>
+                        {% endfor %}
+                        <div class="col"><br><input type="submit" value="Filter" class="btn btn-warning btn-sm"></div>
+                    </div>
+                </form>
             </div>
-            <div class="col" style="text-align: center">
-                {#                {% show_pages %}#}
-                <em>{% trans "displaying" %} {{ object_list.count }} {% trans "record" %}{{ object_list|pluralize }}</em>
-            </div>
-            <div class="col" style="text-align: right; padding-bottom: 10px">
-                <a href="{% url 'projects:project_new' %}" class="btn btn-sm btn-primary">
-                    {% trans "New Project" %}
-                </a>
-                {#                <a href="" class="btn btn-sm btn-primary">New</a>#}
-            </div>
+            {% if object_list.count %}
+
+                <div class="col">
+                    <h3>
+                        {% trans "Here's a breakdown of your time allocation:" %}
+                    </h3>
+
+                    <table class="table table-bordered table-sm" style="width: auto;">
+                        <tr>
+                            <th rowspan="3" style="width: 100px; vertical-align: bottom">{% trans "Fiscal year" %}</th>
+                            <th colspan="4" style="text-align: center">{% trans "Time in weeks" %}</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="width: 150px; text-align: center">{% trans "Submitted projects" %}</th>
+                            <th rowspan="2"
+                                style="width: 150px; text-align: center; vertical-align: bottom">{% trans "Un-submitted projects" %}</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 150px; text-align: center">{% trans "Approved" %}</th>
+                            <th style="width: 150px; text-align: center">{% trans "Unapproved" %}</th>
+                        </tr>
+                        <tbody>
+                        <tr>
+                            <td>{{ fy }}</td>
+                            <td style="text-align: center"> {{ fte_approved_projects|nz:0|floatformat:1 }}</td>
+                            <td style="text-align: center"> {{ fte_unapproved_projects|nz:0|floatformat:1 }}</td>
+                            <td style="text-align: center" class="red-font"> {{ fte_unsubmitted_projects|nz:0|floatformat:1 }}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+
         </div>
-        <table class="table table-hover table-sm sortable">
-            <thead>
-            <th scope="col" style="text-align: center">
-                {% trans "Submitted" %}
-            </th>
-            <th scope="col" style="width: 100px">
-                {% trans "Fiscal Year" %}
-            </th>
-            <th scope="col">
-                {% trans "Region" %}
-            </th>
-            <th scope="col">
-                {% trans "Division" %}
-            </th>
-            <th scope="col">
-                {% trans "Section" %}
-            </th>
-            <th scope="col" style="width: 30%">
-                {% trans "Title" %}
-            </th>
-            <th scope="col">
-                {% trans "Is the Project Hidden?" %}
-            </th>
-            <th scope="col" style="width: 100px">
-                {% trans "Project Lead?" %}
-            </th>
-            <th scope="col">
-                {% trans "Role" %}
-            </th>
-            <th scope="col" style="width: 100px">
-                {% trans "No. weeks" %}
-            </th>
-            <th scope="col" style="text-align: center">
-                {% trans "Section Head Approved" %}
-            </th>
-            <th scope="col" style="text-align: center">
-                {% trans "Status Reports" %}
-            </th>
-            </thead>
+        <br>
+        {% if object_list.count %}
 
-            <tbody>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col">
+                        {% trans "(click on a header to sort table)" %}
+                    </div>
+                    <div class="col" style="text-align: center">
+                        {#                {% show_pages %}#}
+                        <em>{% trans "displaying" %} {{ object_list.count }} {% trans "record" %}{{ object_list|pluralize }}</em>
+                    </div>
+                    <div class="col" style="text-align: right; padding-bottom: 10px">
+                        <a href="{% url 'projects:project_new' %}" class="btn btn-sm btn-primary">
+                            {% trans "New Project" %}
+                        </a>
+                        {#                <a href="" class="btn btn-sm btn-primary">New</a>#}
+                    </div>
+                </div>
+                <table class="table table-hover table-sm sortable">
+                    <thead>
+                    {% for field in project_field_list %}
+                        <th>
+                            {% get_verbose_label project_list.first field %}
+                        </th>
+                    {% endfor %}
 
-            {% for obj in object_list %}
-                <tr href="{% url 'projects:project_detail' obj.project.id %}" class="{% if not obj.project.submitted %}red-font{% endif %}">
-                    <td class="" style="text-align:center">{{ obj.project.submitted|yesno:_("yes,no") }}</td>
-                    <td>{{ obj.project.year }}</td>
-                    {% if LANG == "fr" %}
-                        <td>{{ obj.project.section.division.branch.region.nom }}</td>
-                        <td>{{ obj.project.section.division.nom }}</td>
-                        <td>{{ obj.project.section.nom }}</td>
-                    {% else %}
-                        <td>{{ obj.project.section.division.branch.region.name }}</td>
-                        <td>{{ obj.project.section.division.name }}</td>
-                        <td>{{ obj.project.section.name }}</td>
-                    {% endif %}
-                    <td>
-                        {{ obj.project.project_title }}
-                    </td>
-                    <td class="{% if obj.project.is_hidden %} highlight{% endif %}">
-                        {{ obj.project.is_hidden|yesno }}
-                    </td>
-                    <td class="">{{ obj.lead|yesno }}</td>
-                    <td>{{ obj.employee_type }}</td>
-                    <td>{{ obj.duration_weeks|nz:"----" }}</td>
+                    </thead>
 
+                    <tbody>
 
-                    <td class="{% if obj.project.section_head_approved %}good{% else %}bad{% endif %}" style="text-align:center">
-                        {{ obj.project.section_head_approved|yesno:_("yes,no") }}<br>
-                    </td>
-                    <td class="center-col">
-                        {% if obj.project.submitted %}
-                            {{ obj.project.reports.count }} (<a class="stop-pop" href="{% url 'projects:report_new' obj.project.id  %}">New</a>)
-                        {% else %}
-                            ----
-                        {% endif %}
-                    </td>
+                    {% for obj in filter.qs %}
+                        <tr href="{% url 'projects:project_detail' obj.id %}" class="{% if not obj.submitted %}red-font{% endif %}">
 
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-        <b>
-            TOTAL: {{ object_list.count }}
-        </b>
+                            {% for field in project_field_list %}
+                                {% if "lead" in field %}
+                                    <td>
+                                        {% if user in obj.project_leads_as_users %}
+                                            {% trans "Yes" %}
+                                        {% else %}
+                                            {% trans "No" %}
+                                        {% endif %}
+
+                                    </td>
+                                {% elif "status" in field %}
+                                    <td class="">
+                                        {% if obj.submitted %}
+                                            {{ obj.reports.count }} (
+                                            <a class="stop-pop" href="{% url 'projects:report_new' obj.id %}">New</a>)
+                                        {% else %}
+                                            ----
+                                        {% endif %}
+                                    </td>
+                                {% elif "section|" in field %}
+                                    <td class="">{{ obj.section }} ({{ obj.section.division.branch.region }})</td>
+                                {% else %}
+                                    <td>
+                                        {% get_field_value obj field %}
+                                    </td>
+                                {% endif %}
+                            {% endfor %}
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <h3>
+                {% trans "You have no projects for fiscal year" %} <span id="fy"></span>
+            </h3>
+            <a href="{% url 'projects:project_new' %}" class="btn btn-primary">
+                {% trans "New Project" %}
+            </a>
+        {% endif %}
+
     </div>
 
-{% endblock content %}
+    <script type="application/javascript">
+        $("#fy").text($("#id_year option:selected").text())
+    </script>
+{% endblock %}

@@ -107,6 +107,7 @@ class Entry(models.Model):
     # funding
     funding_program = models.ForeignKey(FundingProgram, on_delete=models.DO_NOTHING, blank=True, null=True,
                                         verbose_name=_("funding program"), related_name="entries")
+
     fiscal_year = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("fiscal year/multiyear"))
     funding_needed = models.NullBooleanField(verbose_name=_("is funding needed?"))
     funding_purpose = models.ForeignKey(FundingPurpose, on_delete=models.DO_NOTHING, blank=True, null=True,
@@ -132,7 +133,7 @@ class Entry(models.Model):
 
     def save(self, *args, **kwargs):
         self.date_last_modified = timezone.now()
-        self.fiscal_year = fiscal_year(date=self.initial_date)
+        # self.fiscal_year = fiscal_year(date=self.initial_date)
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):

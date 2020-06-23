@@ -1,0 +1,34 @@
+{% extends "whalesdb/whales_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block field_override %}
+<style>
+    /* Set the size of the div element that contains the map */
+    #map, #lineMap {
+        height: 300px; /* The height is 400 pixels */
+        width: 100%; /* The width is the width of the web page */
+    }
+    .label {
+        font-weight: bold;
+    }
+</style>
+
+<div class="card border border-dark my-1" id="id_data">
+    <h5 class="card-header">{% trans title %}</h5>
+    <div class="card-body">
+        <div class="card-text">{% include "whalesdb/_details_dep.html" with dep=object %}</div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block body_js %}
+{# This is the deployment details page, but we still need the station javascript for displaying the stations map #}
+{% include "whalesdb/_details_stn_js.html" with stn=object.stn %}
+
+{{ block.super }}
+{% endblock %}

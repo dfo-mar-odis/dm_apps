@@ -1,0 +1,13 @@
+{% extends "whalesdb/whales_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block field_override %}
+{{ block.super }}
+
+{% include "whalesdb/_details_rec.html" with rec=object %}</div>
+
+{% endblock %}

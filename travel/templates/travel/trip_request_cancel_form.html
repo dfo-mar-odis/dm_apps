@@ -1,0 +1,28 @@
+{% extends "travel/form.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load i18n %}
+
+
+
+{% block post_form_div %}
+
+    <hr>
+    <div class="mb-3 mt-5">
+        {% include "travel/_trip_request_detail.html" %}
+    </div>
+
+{% endblock %}
+{% block submit_btn_class %}
+    btn-danger
+{% endblock %}
+
+
+{# if you are calling from this template, the admin notes field should be required #}
+{% block body_js %}
+    <script type="application/javascript">
+        $("#id_admin_notes").prop("required", true);
+    </script>
+{% endblock %}

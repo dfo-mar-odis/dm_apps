@@ -9,7 +9,7 @@
 {% endfor %}
 
 <p>
-    The full project detail page can be viewed <a href="http://dmapps{% url 'projects:project_detail' object.id %}">HERE</a>.
+    The full project detail page can be viewed <a href="{{SITE_FULL_URL}}{% url 'projects:project_detail' object.id %}">HERE</a>.
 </p>
 
 <style media="screen">

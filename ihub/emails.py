@@ -1,7 +1,8 @@
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.template import loader
 
-from_email = 'DoNotReply@DMApps.com'
+from_email = settings.SITE_FROM_EMAIL
 
 
 class NewEntryEmail:
@@ -24,5 +25,6 @@ class NewEntryEmail:
             'created_by',
         ]
         context = {'object': my_object, 'field_list': field_list}
+        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
         rendered = t.render(context)
         return rendered

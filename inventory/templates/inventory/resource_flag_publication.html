@@ -1,34 +1,37 @@
-{% extends "inventory/inventory_base.html" %}
+{% extends "inventory/base.html" %}
 
 {% load bootstrap4 %}
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-        {% url 'inventory:my_resource_list' as home_url %}
-    {% else %}
-        {% url 'inventory:resource_list' as home_url %}
-    {% endif %}
+        {% url 'inventory:index' as home_url %}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' object.id %}">{{ object.truncated_title }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{% if object.flagged_4_publication %}Flag for Publication    {% else %}Unflag for Publication   {% endif %}</li>
-        </ol>
-    </nav>
 
     <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ home_url }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'inventory:resource_detail' object.id %}">{{ object.truncated_title }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{% if object.flagged_4_publication %}Flag for
+                    Publication    {% else %}
+                    Unflag for Publication   {% endif %}</li>
+            </ol>
+        </nav>
 
         {% load static %}
 
         {% if object.flagged_4_publication %}
             <h1>Are you sure you want to unflag this data resource?</h1>
         {% else %}
-            <h1>Are you sure you want to flag this data resource for publication?</h1>
+            <h1>
+                Are you sure you want to flag this data resource for
+                {% if object.fgp_publication_date %}re-publication{% else %}publication{% endif %}?
+            </h1>
             <br>
-            <h3>By clicking yes below you will notify the regional data manager that you are interested in this record
-                to be published to Open Data / FGP.</h3>
+            <h3>
+                By clicking yes below your regional data manager will be notified and will contact you shortly in order to coordinate the
+                next steps in the process
+            </h3>
 
         {% endif %}
 

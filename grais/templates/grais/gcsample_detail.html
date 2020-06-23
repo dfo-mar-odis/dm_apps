@@ -77,7 +77,7 @@
         function initialize() {
             var locations = [
                 {% if object.site.latitude_n and object.site.longitude_w %}
-                    ['<a href="{% url 'grais:site_detail' object.site.id %}">Site {{object.site.id}}</a>', {{object.site.latitude_n}}, {{object.site.longitude_w}}, '{% static "/img/grais/blue_MarkerS.png" %}'],
+                    ['<a href="{% url 'grais:site_detail' object.site.id %}">Site {{object.site.id}}</a>', {{object.site.latitude_n}}, {{object.site.longitude_w}}, '{% static "/grais/blue_MarkerS.png" %}'],
                 {% endif %}
 
                 {% for trap in object.traps.all %}

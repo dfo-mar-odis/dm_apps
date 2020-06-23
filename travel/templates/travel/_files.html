@@ -1,52 +1,70 @@
 {% load i18n %}
 {% load static %}
+{% load custom_filters %}
 
-{% url 'travel:file_new' trip.id as add_url %}
-        <h3 class="neighbours">
-            {% trans "File Attachments" %}
-        </h3>
-        <div class="neighbours">
+
+<div class="card mb-2">
+    <h3 class="card-header bg-outline-dark">
+
+        {% url 'travel:file_new' triprequest.id as add_url %}
+        {% trans "File Attachments" %}
+
+        <div class="neighbours mb-3">
+            {% with help_text_dict|lookup:"files_header" as help_text %}
+                <img src="{% static 'img/icons/information.png' %}" style="width: 30px" data-toggle="popover"
+                     data-trigger="hover"
+                     title="{% trans "File Attachments" %}"
+                     data-content="{{ help_text }}">
+            {% endwith %}
+        </div>
+        <div class="float-right mb-3">
             <a class="btn btn-sm btn-primary" href="#" pop-href="{{ add_url }}">
                 {% trans "Add a File" %}
             </a>
         </div>
+    </h3>
+    <div class="card-body">
+        <div class="card-text">
 
 
-        {% if trip.files.count == 0 %}
-            <br>
-            <em>
-                {% trans "No Files" %}...
-            </em>
-            <br>
-        {% else %}
+            {% if triprequest.files.count == 0 %}
+                <br>
+                <em>
+                    {% trans "No Files" %}...
+                </em>
+                <br>
+            {% else %}
 
-            <table class="table table-hover table-sm" style="width: auto">
-                <tr>
-                    <th>
-                        {% trans "Caption" %}
-                    </th>
-                    <th class="center-col">
-                        {% trans "File Attachment" %}
-                    </th>
-                    <th>
-                        {% trans "Date Created" %}
-                    </th>
+                <table class="table table-hover table-sm" style="width: auto">
+                    <tr>
+                        <th>
+                            {% trans "Caption" %}
+                        </th>
+                        <th class="center-col">
+                            {% trans "File Attachment" %}
+                        </th>
+                        <th>
+                            {% trans "Date Created" %}
+                        </th>
 
-                </tr>
-                <tbody>
-                {% for obj in trip.files.all %}
-                    <tr data-toggle="tooltip" title="Edit" href="{% url 'travel:file_detail' obj.id %}" pop>
-                        <td>{{ obj.name }}</td>
-                        <td class="center-col">
-                            <a href="{{ obj.file.url }}" data-toggle="tooltip" title="{% trans "Open the file" %}"
-                               class="stop-blank">
-                                <img src="{% static 'img/paperclip-1332775_1920.png' %}" alt="" width="20px">
-                            </a>
-                        </td>
-                        <td>{{ obj.date_created }}</td>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% endif %}
-        <br>
+                    <tbody>
+                    {% for obj in triprequest.files.all %}
+                        <tr data-toggle="tooltip" title="Edit" href="{% url 'travel:file_detail' obj.id %}" pop>
+                            <td>{{ obj.name }}</td>
+                            <td class="center-col">
+                                <a href="{% url 'travel:get_file' obj.id %}" data-toggle="tooltip" title="{% trans "Open the file" %}"
+                                   class="stop-blank">
+                                    <img src="{% static 'img/paperclip-1332775_1920.png' %}" alt="" width="20px">
+                                </a>
+                            </td>
+                            <td>{{ obj.date_created }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<br>

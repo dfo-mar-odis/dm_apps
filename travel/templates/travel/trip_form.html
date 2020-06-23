@@ -1,342 +1,81 @@
-{% extends "travel/travel_base.html" %}
+{% extends "travel/form.html" %}
 {% load static %}
 {% load bootstrap4 %}
-{% load i18n %}
 {% load custom_filters %}
+{% load i18n %}
 {% block header %}
+    {{ block.super }}
 {% endblock %}
-{% block content %}
 
-    <style>
-        input.cost {
-            font-size: small;
-            width: 100%;
-        }
-    </style>
+{#    <form method="post" class="form">#}
+{#        {% csrf_token %}#}
+{#        {% bootstrap_form_errors form %}#}
+{#        {% for field in form %}#}
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">Home</a></li>
-            <li class="breadcrumb-item"><a href="{% url 'travel:trip_list' %}">Trips</a></li>
-            {% if object %}
-                <li class="breadcrumb-item"><a href="{% url 'travel:trip_detail' object.id %}">{{ object }}</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit</li>
-            {% else %}
-                <li class="breadcrumb-item active" aria-current="page">New</li>
-            {% endif %}
-        </ol>
-    </nav>
-
-    <div class="container">
-
-        <h1>
-            {% if object %}
-                {% if cloned %}
-                    CLONING:
-                {% endif %}
-                {{ object }}
-            {% else %}
-                New Trip
-            {% endif %}
-        </h1>
-
-        <br>
-
-        <form method="post" class="form">
-            {% csrf_token %}
-            {% bootstrap_form_errors form %}
-
-
-
-
-
-            {% for field in form %}
-                {% if "hide-me" in field.field.widget.attrs.class %}
-                    <div class="hide-me">
-                {% endif %}
-
-            {% if field.name == "role_of_participant" or field.name == "role" %}
-                <div class="conference_container">
-
-                    {% if field.name in help_text_dict %}
-                        {% bootstrap_label field.label %}
-                        {% with help_text_dict|lookup:field.name as help_text %}
-                            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover"
-                                 data-trigger="hover"
-                                 title="{{ field.label }}"
-                                 data-content="{{ help_text }}">
-                            {% bootstrap_field field placeholder="" show_label=False %}
-                        {% endwith %}
-                    {% else %}
-                        {% bootstrap_field field placeholder="" %}
-                    {% endif %}
-{#                    <em class="blue-font">#}
-{#                        ({% trans "The above field was added since 'conference' was selected as the reason for travel." %})#}
-{#                    </em><br><br>#}
-                </div>
-            {% elif field.name == "conference" %}
-                {% if field.name in help_text_dict %}
-                    {% bootstrap_label field.label %}
-                    {% with help_text_dict|lookup:field.name as help_text %}
-                        <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
-                             title="{{ field.label }}"
-                             data-content="{{ help_text }}">
-                        {% bootstrap_field field placeholder="" show_label=False %}
-                    {% endwith %}
-                {% else %}
-                    {% bootstrap_field field placeholder="" %}
-                {% endif %}
-                {% if field.name == "conference" %}
-                    (<a href="#" pop-href="{% url 'travel:conf_new' 1 %}" id="new_event">add a new conference / meeting</a>)
-                    <br><br>
-                {% endif %}
-            {% elif field.name == "is_group_trip" %}
-                {% if field.name in help_text_dict %}
-                    {% bootstrap_label field.label %}
-                    {% with help_text_dict|lookup:field.name as help_text %}
-                        <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
-                             title="{{ field.label }}"
-                             data-content="{{ help_text }}">
-                        {% bootstrap_field field placeholder="" show_label=False %}
-                    {% endwith %}
-                {% else %}
-                    {% bootstrap_field field placeholder="" %}
-                {% endif %}
-                <div class="show-me blue-font">
-                    <p>
-                        <em>
-                            {% trans "(One this form is submitted, you will be able to add group travellers to the trip. You will be automatically added as a traveller.)" %}
-                        </em>
-                    </p>
-                </div>
-            {% elif field.name == "address" %}
-                {% if field.name in help_text_dict %}
-                    {% bootstrap_label field.label %}
-                    {% with help_text_dict|lookup:field.name as help_text %}
-                        <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
-                             title="{{ field.label }}"
-                             data-content="{{ help_text }}">
-                        {% bootstrap_field field placeholder="" show_label=False %}
-                    {% endwith %}
-                {% else %}
-                    {% bootstrap_field field placeholder="" %}
-                {% endif %}
-                <span style="font-size: small">Predefined addresses:</span><br>
-                <a href="#" class="btn btn-sm btn-outline-info address-btn">343 Université Avenue, Moncton, NB, E1C 9B6</a>
-                <a href="#" class="btn btn-sm btn-outline-info address-btn">1 Challenger Drive, Datmouth, NS B2y 4A2</a>
-                <a href="#" class="btn btn-sm btn-outline-info address-btn">125 Marine Science Dr, St. Andrews, NB E5B 0E4</a>
+{% block form_field %}
+    {% if field.name == "name" %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading blink-me mb-3">
+                {% trans "Important:" %}
+            </h4>
+            <p>
+                {% trans "With exception of words like DFO and ICES, please do not use undefined acronyms in trip titles!!!" %}
                 <br>
                 <br>
+                <img src="{% static 'admin/img/icon-no.svg' %}" alt=""> "ICES ASC 2020"
+                <br>
+                <img src="{% static 'admin/img/icon-yes.svg' %}" alt=""> "ICES Annual Science Conference (ASC) 2020"
+            </p>
+        </div>
+    {% endif %}
 
-            {% elif "cost" in field.field.widget.attrs|lookup:"class" %}
+    {% if field.name in help_text_dict and "_date" not in field.name %}
+        {% bootstrap_label field.label %}
+        {% with help_text_dict|lookup:field.name as help_text %}
+            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
+                 title="{{ field.label }}"
+                 data-content="{{ help_text }}">
+            {% bootstrap_field field placeholder="" show_label=False %}
+        {% endwith %}
+    {% else %}
+        {% bootstrap_field field placeholder="" %}
+    {% endif %}
+{% endblock %}
 
+{##}
+{##}
+{#        {% buttons %}#}
+{#            {% if object %}#}
+{#                <button type="submit" class="btn btn-success">Update</button>#}
+{#                <a class="btn btn-secondary" href="{% url 'travel:trip_detail' object.id %}">#}
+{#                    {% trans "Cancel" %}#}
+{#                </a>#}
+{#            {% else %}#}
+{#                <button type="submit" class="btn btn-success">Add</button>#}
+{#                <a class="btn btn-secondary" href="{% url 'travel:trip_list' %}">#}
+{#                    {% trans "Cancel" %}#}
+{#                </a>#}
+{#            {% endif %}#}
+{##}
+{##}
+{#        {% endbuttons %}#}
+{#    </form>#}
+{##}
+{#{% endblock %}#}
 
-            {% else %}
-                {% if field.name in help_text_dict %}
-                    {% bootstrap_label field.label %}
-                    {% with help_text_dict|lookup:field.name as help_text %}
-                        <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
-                             title="{{ field.label }}"
-                             data-content="{{ help_text }}">
-                        {% bootstrap_field field placeholder="" show_label=False %}
-                    {% endwith %}
-                {% else %}
-                    {% bootstrap_field field placeholder="" %}
-                {% endif %}
-            {% endif %}
-            {% if "hide-me" in field.field.widget.attrs.class %}
-                </div>
-            {% endif %}
-            {% endfor %}
-            <br>
-
-            {# TRIP COSTS #}
-            <div class="hide-me">
-                <h4>{% trans "Breakdown of Trip Costs" %}</h4>
-                <p>
-                    {% blocktrans %}
-                        Per diem rates for breakfast, lunch, supper and incidentals should follow the
-                        <a href="https://www.njc-cnm.gc.ca/">National Joint Council</a> Travel Directive. For travel within Canada and
-                        USA, please refer to <a href="https://www.njc-cnm.gc.ca/directive/d10/v238/s659/en">Appendix C</a>
-                        and for all other travel please refer to
-                        <a href="https://www.njc-cnm.gc.ca/directive/app_d.php?lang=en">Appendix D</a>
-                    {% endblocktrans %}
-                    <br><br>
-                    <em class="red-font">
-                        {% trans "Please note that all expenses for this trip should be entered in Canadian dollars." %}
-                    </em>
-                </p>
-                <table class="table table-bordered" style="font-size: small ">
-
-                    <tr>
-                        {% for field in form %}
-                            {% if "cost" in field.field.widget.attrs|lookup:"class" and "_rate" not in field.name %}
-                                <th>
-                                    {% if "breakfast" in field.name %}
-                                        {% trans "Breakfasts" %}
-                                    {% elif "lunch" in field.name %}
-                                        {% trans "Lunches" %}
-                                    {% elif "supper" in field.name %}
-                                        {% trans "Suppers" %}
-                                    {% elif "incident" in field.name %}
-                                        {% trans "Incidentals" %}
-                                    {% else %}
-                                        {{ field.label }}
-                                    {% endif %}
-                                </th>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
-                    <tr>
-                        {% for field in form %}
-                            {% if "cost" in field.field.widget.attrs|lookup:"class" and "_rate" not in field.name %}
-                                <td>
-                                    {% if field.name == "no_breakfasts" %}
-                                        {{ field }}<br>(days) <br>&times;
-                                        {% for field3 in form %}
-                                            {% if field3.name == "breakfasts_rate" %}
-                                                {{ field3 }}<br>(CAD/day)
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% elif field.name == "no_lunches" %}
-                                        {{ field }}<br>(days) <br>&times;
-                                        {% for field3 in form %}
-                                            {% if field3.name == "lunches_rate" %}
-                                                {{ field3 }}<br>(CAD/day)
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% elif field.name == "no_suppers" %}
-                                        {{ field }}<br>(days) <br>&times;
-                                        {% for field3 in form %}
-                                            {% if field3.name == "suppers_rate" %}
-                                                {{ field3 }}<br>(CAD/day)
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% elif field.name == "no_incidentals" %}
-                                        {{ field }}<br>(days) <br>&times;
-                                        {% for field3 in form %}
-                                            {% if field3.name == "incidentals_rate" %}
-                                                {{ field3 }}<br>(CAD/day)
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% else %}
-                                        {{ field }}
-                                        {#                                    {% bootstrap_field field show_label=False placeholder="CAD" %}#}
-                                    {% endif %}
-                                </td>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
-
-                </table>
-
-            </div>
-
-            {% buttons %}
-                {% if object %}
-                    <button type="submit" class="btn btn-success">Update</button>
-                    <a class="btn btn-secondary" href="{% url 'travel:trip_detail' object.id %}">Cancel</a>
-                {% else %}
-                    <button type="submit" class="btn btn-success">Add</button>
-                    <a class="btn btn-secondary" href="{% url 'travel:trip_list' %}">Cancel</a>
-                {% endif %}
-            {% endbuttons %}
-        </form>
-
-    </div>
-{% endblock content %}
 
 {% block body_js %}
 
     <script type="application/javascript">
-        var userObj = {{ user_json|safe }};
-        var confObj = {{ conf_json|safe }};
-        {#var sectionObj = {{ section_json|safe }};#}
-        var myId = "";
 
-        function refreshUserInfo() {
-            myId = $("#id_user").val();
-            $("#id_first_name").val(userObj[myId]["first_name"]);
-            $("#id_last_name").val(userObj[myId]["last_name"]);
-            $("#id_email").val(userObj[myId]["email"]);
-        }
-
-
-        function refreshConference() {
-            if ($("#id_reason").val() != "2") {
-//                $("#id_role").val("").prop("disabled", true);
-  //              $("#id_role_of_participant").val("").prop("disabled", true);
-    //            $(".conference_container").addClass("gone");
-            } else {
-      //          $("#id_role").prop("disabled", false);
-        //        $("#id_role_of_participant").prop("disabled", false);
-          //      $(".conference_container").removeClass("gone");
-            }
-        }
-
-
-        function refreshClassHideMe() {
-            if ($("#id_is_group_trip").val() == "False") {
-                $(".hide-me").removeClass("gone");
-                $(".show-me").addClass("gone");
-            } else {
-                $(".hide-me").addClass("gone");
-                $(".show-me").removeClass("gone");
-            }
-        }
-
-        $("#id_user").change(function () {
-            refreshUserInfo();
-        });
-
-        $("#id_reason").change(function () {
-            refreshConference();
-        });
-
-        $("#id_conference").change(function () {
-            // update location and (maybe) dates
-            myId = $(this).val();
-            $("#id_destination").val(confObj[myId]["location"]);
-            $("#id_start_date").val(confObj[myId]["start_date"]);
-            $("#id_end_date").val(confObj[myId]["end_date"]);
-            {#$("#id_email").val(userObj[myId]["email"]);#}
-        });
-
-        $("#id_is_group_trip").change(function () {
-            refreshClassHideMe();
-        });
-
-        $(document).ready(function () {
-            // Stuff to do as soon as the DOM is ready
-            refreshUserInfo();
-            refreshConference();
-            refreshClassHideMe();
-            // do not make these fields required, otherwise we will not see the form errors if omitted
-            $("#id_user").prop("required", false);
-            $("#id_section").prop("required", false);
-        });
-
-        $("#new_event").click(function () {
-            $("#id_stay_on_page").val(1);
-            $("form").submit();
-        });
-
-        $(".address-btn").click(function (e) {
-            e.preventDefault();
-            $myBtn = $(this);
-            $("#id_address").val($myBtn.text());
-        });
-
-        $("#id_reason").change(function () {
-            var myVal = $(this).val()
-            // if the reason is for a meeting or conference, we already know the answer to the below question of `id_is_conference`
-            if (myVal == '2' || myVal == '4') {
-                $("#id_is_conference").val('True');
-                refreshConference();
+        $("#id_start_date").change(function () {
+            var startDate = $(this).val();
+            if (startDate != null) {
+                $("#id_end_date").flatpickr().setDate(startDate);
             }
         });
+
 
     </script>
+
 {% endblock %}
-
-

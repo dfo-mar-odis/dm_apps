@@ -3,6 +3,33 @@ from django.db.models import Q
 from .import models
 
 
+def fix_categories():
+    '''
+    for years 2006 to 2016, the assigned percentages on surfacespecies needs to be fixed.
+
+    .20  -> .125
+    .40 -> .375
+    .60 -> .625
+    .80 -> .875
+
+    '''
+    for sample in models.Sample.objects.filter(season__range=[2006,2016]):
+        for line in sample.lines.all():
+            for surface in line.surfaces.all():
+                for obs in surface.surface_spp.all():
+                    obs.notes = obs.notes.replace("20%","12.5%").replace("40%","37.5%").replace("60%","62.5%").replace("80%","87.5%")
+                    if obs.percent_coverage == 0.2:
+                        obs.percent_coverage = .125
+                    elif obs.percent_coverage == 0.4:
+                        obs.percent_coverage = .375
+                    elif obs.percent_coverage == 0.6:
+                        obs.percent_coverage = .625
+                    elif obs.percent_coverage == 0.8:
+                        obs.percent_coverage = .875
+                    obs.save()
+
+
+
 def resave_all():
     for obj in models.GCSample.objects.all():
         obj.save()

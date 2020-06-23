@@ -1,14 +1,11 @@
-{% extends "travel/travel_base.html" %}
+{% extends "travel/form.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
 {% load custom_filters %}
 {% load i18n %}
 {% block header %}
-{% endblock %}
-{% block content %}
-
-
+    {{ block.super }}
     <style>
         .label {
             font-weight: bold;
@@ -19,90 +16,81 @@
         }
     </style>
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">Home</a></li>
-            {% if admin %}
-                <li class="breadcrumb-item"><a href="{% url 'travel:admin_approval_list' %}">Admin Trip Approval List</a>
-                </li>
+{% endblock %}
 
-            {% else %}
-                <li class="breadcrumb-item"><a href="{% url 'travel:trip_review_list' 'awaiting' %}">Trips Awaiting Your Review</a>
-                </li>
-            {% endif %}
-            <li class="breadcrumb-item active" aria-current="page">{{ trip }} Reviewer Approval</li>
-        </ol>
-    </nav>
+{% block area_above_h1 %}
+    <span id="the-top"></span>
+{% endblock %}
 
-    <div class="container">
-
-        {% if admin %}
-            <h1>Do you wish to approve on behalf of the {{ trip.current_reviewer.user }} ({{ trip.current_reviewer.role }})?</h1>
-        {% else %}
-            <h1>Do you wish to approve the following trip?</h1>
-        {% endif %}
-
-        <br>
-        <form method="post" class="form">
-            {% csrf_token %}
-            <div class="float-right">
-                <a class="" href="#" id="save">({% trans "Save comments without approving" %})</a>
-            </div>
-            {% for field in form %}
-                {% bootstrap_field field placeholder="" %}
-            {% endfor %}
+{% block pre_form_div %}
 
 
+    <hr>
+    {% include "travel/_trip_request_detail.html" %}
+    <br><br>
+{#    <div class="center-col">#}
+{#        <h2>#}
+{#            <a href="#the-top">({% trans "Back to top" %})</a>#}
+{#        </h2>#}
+{#    </div>#}
 
-            <div class="float-right">
-                <a class="btn btn-outline-dark " href="{% url 'travel:trip_print' trip.id %}" target="_blank">
-                    Print Travel Plan&nbsp; <img src="{% static 'img/icons/pdf.svg' %}" alt="" width="20px">
-                </a>
-                <a class="btn btn-outline-dark" href="{% url 'travel:export_cfts' trip.id %}" target="_blank">
-                    CFTS Report &nbsp; <img src="{% static 'img/icons/excel.svg' %}" alt="" width="20px">
-                </a>
-            </div>
-            <div class="">
-
-                <a class="btn btn-lg btn-success" id="yes" href="#">
-                    {% trans "Yes" %}
-                </a>
-                <a class="btn btn-lg btn-danger" id="no" href="#">
-                    {% trans "No" %}
-                </a>
-                <a class="btn btn-lg" id="request_changes" href="#" style="background-color: orange">
-                    {% trans "Request Changes" %}
-                </a>
-                <a class="btn btn-lg btn-primary" href="{% url 'travel:trip_detail' trip.id %}">
-                    {% trans "Make Changes Yourself" %}
-                </a>
-
-                <a class="btn btn-lg btn-secondary" href="{% url 'travel:trip_review_list' %}">
-                    {% trans "Cancel" %}
-                </a>
-                <input type="submit" class="hidden">
-            </div>
-
-        </form>
-
-        <br><br>
-        <hr>
-        {% include "travel/_trip_detail.html" %}
+    <div class="float-right mb-3">
+        <a class="btn btn-outline-dark " href="{% url 'travel:request_print' triprequest.id %}" target="_blank">
+            {% trans "Print Travel Plan" %}&nbsp; <img src="{% static 'img/icons/pdf.svg' %}" alt="" width="20px">
+        </a>
+        <a class="btn btn-outline-dark" href="{% url 'travel:export_cfts_request' triprequest.id %}" target="_blank">
+            {% trans "CFTS Report" %} &nbsp; <img src="{% static 'img/icons/excel.svg' %}" alt="" width="20px">
+        </a>
     </div>
 
+{% endblock %}
 
 
-    <br><br><br>
-{% endblock content %}
+
+
+{% block form_buttons %}
+
+    <div class="">
+        <a class="btn btn-secondary" id="save" href="#">
+            {% trans "Save comments" %}
+        </a>
+        <a class="btn btn-success" id="yes" href="#">
+            {% trans "I approve" %}
+        </a>
+        <a class="btn btn-danger" id="no" href="#">
+            {% trans "I do not approve" %}
+        </a>
+        <a class="btn" id="request_changes" href="#" style="background-color: orange">
+            {% trans "Request changes" %}
+        </a>
+        <a class="btn btn-primary" href="{% url 'travel:request_detail' triprequest.id "all" %}" target="_blank">
+            {% trans "Make changes yourself" %}
+        </a>
+
+        <input type="submit" class="hidden">
+    </div>
+{% endblock %}
+
+
+{% block post_form_div %}
+
+
+
+{% endblock %}
+
+<br><br><br>
+
+
+
 {% block body_js %}
 
     <script type="application/javascript">
         $("#yes").click(function () {
-            $("#id_is_approved").val(true);
+            $("#id_approved").val(true);
             $("form").submit();
         });
         $("#no").click(function () {
-            $("#id_is_approved").val(false);
+            $("#id_approved").val(false);
             $("form").submit();
         });
         $("#save").click(function () {

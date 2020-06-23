@@ -1,0 +1,76 @@
+{% extends "shared_models/shared_base.html" %}
+{% load i18n %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}<div class="container">
+    <div class="card border border-dark mt-2 pt-1">
+        <div class="card-header">
+            <h2>{% trans title %}</h2>
+        </div>
+    </div>
+    <div class="card border border-dark mt-2 pt-1">
+        <div class="card-body">
+            <form method="post" class="form" enctype='multipart/form-data' >
+                {% csrf_token %}
+
+                {% for field in form %}
+                   {% if field.field.create_url %}
+                    <div>
+                       {% bootstrap_label field.label %}
+                    </div>
+                    <div class="row col pl-0">
+                        <span class="col">
+                        {% bootstrap_field field placeholder="" size="small" show_label=false %}
+                        </span><span class="col-1">
+                        <button class="btn btn-primary" onclick="return pop('{% url ''|add:field.field.create_url 'pop' %}', 'id_{{field.name}}' )" >+</button>
+                        </span>
+                    </div>
+                    {% else %}
+
+                   {% bootstrap_field field placeholder="" size="small" %}
+
+                   {% endif %}
+                {% endfor %}
+
+                {% buttons %}
+                    <button type="submit" class="btn btn-success" onclick="saveForm();">
+                        {% trans "Submit" %}
+                    </button>
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
+</div>{% endblock content %}
+
+{% block body_js %}
+
+{{block.super}}
+<script>
+
+function saveForm() {
+    refresh = true;
+    $('form').submit();
+}
+
+// This is a method of opening a child window and testing to see if/when it closes
+// upon closing the drop menu the window is associated with is updated adding the new element
+// and setting it as the selected option
+function pop(url, tag) {
+    child = window.open(url, tag,'toolbar=0,status=0,height=500,width=600');
+    child.onbeforeunload = function() {
+        if(child.refresh && $('.is-invalid').length <= 0) {
+            refreshTag(tag);
+        }
+    }
+
+    return false;
+}
+
+function refreshTag(tag) {
+    console.log("refresh called on: '" + tag + "'");
+    var id_tag = "#"+tag;
+    $(id_tag).load("# "+id_tag+">*");
+}
+</script>
+{% endblock %}

@@ -1,106 +1,34 @@
-{% extends "travel/travel_base.html" %}
-{% load static %}
-{% load bootstrap4 %}
+{% extends "travel/list.html" %}
 {% load verbose_names %}
+{% load static %}
 {% load i18n %}
 
-{% block content %}
-
-    <style>
-        .indent-lg {
-            margin-left: 5em;
-            margin-right: 5em;
-        }
-    </style>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'travel:index' %}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-                {% if awaiting %}
-                    Trips Awaiting Your Review
-                {% elif admin %}
-                    Admin Trip Approval List
-                {% else %}
-                    Trips Assigned to You for Review
-                {% endif %}
-            </li>
-        </ol>
-    </nav>
-
-    <div class="container-fluid">
-
-        <h1 class="big-header">
-            {% if awaiting %}
-                {% trans "Trips Awaiting Your Review" %}
-            {% elif admin %}
-                {% trans "Admin Trip Approval List" %}
-            {% else %}
-                {% trans "Trips Assigned to You for Review" %}
-            {% endif %}
-        </h1>
-        {% if awaiting %}
-            (<a href="{% url 'travel:trip_review_list' %}">
-            {% trans "view all trips assigned to me" %}
-        </a>)
-        {% elif not admin %}
-            (<a href="{% url 'travel:trip_review_list' "awaiting" %}">
-            {% trans "view trips awaiting my approval" %}
-        </a>)
-        {% endif %}
-
-        <br>
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-12">
-
-                <div class="row">
-                    <div class="col">
-                        {% trans "(click on a header to sort table)" %}
-                    </div>
-                    <div class="col" style="text-align: right">
-                        <em>displaying all {{ object_list.count }} records</em>
-                    </div>
-                </div>
-
-                <table class="table table-sm table-hover sortable" style="font-size: small">
-                    <thead>
-                    <tr>
-                        {% for field in field_list %}
-                            {% if "is_group" in field %}
-                                <th scope="col">Type</th>
-                            {% else %}
-                                <th scope="col">{% get_verbose_label my_object field %}</th>
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for object in object_list %}
-
-                        {% url 'travel:review_approve' object.current_reviewer.id as my_approval_url %}
-                        {% url 'travel:trip_detail' object.id as my_detail_url %}
-                        {% url 'travel:admin_approve' object.id as admin_approve_url %}
-                        <tr href="{% if admin or awaiting %}{{ my_approval_url }}{% else %}{{ my_detail_url }}{% endif %}">
-
-                            {% for field in field_list %}
-                                {% if "is_group" in field %}
-                                    <td>{{ object.is_group_trip|yesno:"Group,Individual" }}</td>
-                                {% elif "status" in field %}
-                                    <td style="background-color: {{ object.status.color }}">{% get_field_value object field format="currency" %}</td>
-                                {% else %}
-                                    <td>{% get_field_value object field format="currency" %}</td>
-                                {% endif %}
-                            {% endfor %}
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+{% block subcontent %}
+    {% if not object_list.count %}
+        <div class="center-col">
+            <img src="{% static 'travel/you_are_done.png' %}" alt="">
+            <h3>{% trans "Way to go! You're all done here" %} :)</h3>
         </div>
-    </div>
+    {% else %}
+        {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block table_tr %}
+    {% if view.kwargs.which_ones == "awaiting" %}
+        {% url row_object_url_name object.current_reviewer.id as my_url %}
+    {% else %}
+        {% url row_object_url_name object.id "tagged" as my_url %}
+    {% endif %}
 
 
-
-{% endblock content %}
+    <tr href="{{ my_url }}">
+        {% for field in field_list %}
+            <td class="{{ field.class }}">
+                {% block table_td %}
+                    {% get_field_value object field.name safe=True %}
+                {% endblock %}
+            </td>
+        {% endfor %}
+    </tr>
+{% endblock %}

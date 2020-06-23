@@ -76,6 +76,8 @@
                                     {% url 'ihub:delete_program' form.instance.id as my_delete_url %}
                                 {% elif "reserve" in title|lower %}
                                     {% url 'ihub:delete_reserve' form.instance.id as my_delete_url %}
+                                {% elif "rating" in title|lower %}
+                                    {% url 'ihub:delete_rating' form.instance.id as my_delete_url %}
 
                                 {% endif %}
 
