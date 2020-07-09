@@ -6,14 +6,14 @@ from datetime import timedelta
 from shared_models import models as shared_models
 from django.utils.translation import gettext as _
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import gettext
-from dm_apps import custom_widgets
 
 # Create your models here.
+
 
 def img_file_name(instance, filename):
     img_name = 'oceanography/{}'.format(filename)
     return img_name
+
 
 class Doc(models.Model):
     title = models.CharField(max_length=255)
@@ -30,6 +30,7 @@ class Doc(models.Model):
 
     def __str__(self):
         return self.item_name
+
 
 class Bottle(models.Model):
 
@@ -90,6 +91,7 @@ def file_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
     return 'oceanography/{0}/{1}'.format(instance.mission.mission_number, filename)
 
+
 class File(models.Model):
     caption = models.CharField(max_length=255)
     mission = models.ForeignKey(shared_models.Cruise, related_name="files", on_delete=models.CASCADE)
@@ -113,6 +115,7 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
         if os.path.isfile(instance.file.path):
             os.remove(instance.file.path)
 
+
 @receiver(models.signals.pre_save, sender=File)
 def auto_delete_file_on_change(sender, instance, **kwargs):
     """
@@ -132,6 +135,7 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
     if not old_file == new_file:
         if os.path.isfile(old_file.path):
             os.remove(old_file.path)
+
 
 class HelpText(models.Model):
     field_name = models.CharField(max_length=255)
