@@ -62,6 +62,7 @@ class CommonListTest(cct.CommonTestCase):
 
         # filter views require their object_list attribute be set, django does this normally.
         view.object_list = models.ReqRequest.objects.all()
+        view.model = models.ReqRequest
 
         context = view.get_context_data()
 

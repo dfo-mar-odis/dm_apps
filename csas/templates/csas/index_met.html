@@ -1,0 +1,64 @@
+{% extends "csas/csas_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block body %}
+    <div class="container pt-5 text-center">
+        <div class="jumbotron border border-dark">
+            {% trans "<h1>CSAS Tracking Tool: New Meeting Entry</h1>" %}
+        </div>
+    </div>
+
+    <div class="container pt-3">
+        <div class="jumbotron border border-dark">
+        <hr>    <!-- add a line -->
+            {# if the user is in csas-users group and has permissions to input New Requests info #}
+            {% if auth %}
+                <div class="row mb-2">
+                    <div class="col-3"> </div>
+                    <div class="col-5">{% trans "<h3>New Meeting Details</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_met'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-3"> </div>
+                    <div class="col-5">{% trans "<h3>New Meeting Documentation</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_met_doc'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-3"> </div>
+                    <div class="col-5">{% trans "<h3>New Meeting DFO Participants</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_met_DFO_pars'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-3"> </div>
+                    <div class="col-5">{% trans "<h3>New Meeting Other Participants</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_met_other_pars' %}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-3"> </div>
+                    <div class="col-5">{% trans "<h3>New Meeting O&M Costs</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_met_OM_costs' %}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-3"> </div>
+                    <div class="col-5">{% trans "<h3>New Meeting Media</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_met_media' %}">{% trans "+" %}</a></div>
+                </div><hr/>
+            {% endif %}
+        </div>
+    </div>
+{% endblock body %}

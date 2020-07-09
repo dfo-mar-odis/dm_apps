@@ -2,8 +2,8 @@ from django.test import TestCase, RequestFactory
 from django.urls import reverse_lazy
 from django.contrib.auth.models import AnonymousUser
 
-from csas.views import CsasCommonCreateView, RequestEntry
-from csas.test import csas_common_test as cct
+from csas.views import CsasCreateCommon, RequestEntry
+from csas.test import csas_common_test as cct, CsasFactory
 
 from csas import models, forms
 
@@ -16,7 +16,7 @@ class CommonCreateViewTest(cct.CommonTestCase):
     view = None
 
     def setUp(self) -> None:
-        self.view = CsasCommonCreateView()
+        self.view = CsasCreateCommon()
         self.view.title = 'EXAMPLE TITLE'
 
     def test_ceate_template(self):
@@ -57,7 +57,7 @@ class ReqCreateViewTest(TestCase):
 
     # Make sure the Req creation view is extending the CsasCommonCreateView class.
     def test_req_create_extends(self):
-        self.assertIsInstance(self.view, CsasCommonCreateView)
+        self.assertIsInstance(self.view, CsasCreateCommon)
 
     # req should be using the ReqRequest model
     def test_req_create_model(self):
@@ -65,8 +65,10 @@ class ReqCreateViewTest(TestCase):
 
     # upon success req redirects to the req filter view
     def test_req_success(self):
+        req = CsasFactory.ReqRequestFactory()
+        self.view.object = req
         addr = self.view.get_success_url()
-        self.assertEquals(addr, reverse_lazy('csas:list_req'))
+        self.assertEquals(addr, reverse_lazy('csas:details_req', args=(req.pk,)))
 
     # Use the RequestForm class for the req object
     def test_req_form(self):

@@ -3,8 +3,8 @@
   "model": "csas.cohhonorific",
   "pk": 1,
   "fields": {
-    "name_en": "Mr. ",
-    "name_fr": " Mr.(fr)",
+    "name": "Mr. ",
+    "nom": " Mr.(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -13,8 +13,8 @@
   "model": "csas.cohhonorific",
   "pk": 2,
   "fields": {
-    "name_en": "Mrs. ",
-    "name_fr": " Mrs.(fr)",
+    "name": "Mrs. ",
+    "nom": " Mrs.(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -23,8 +23,8 @@
   "model": "csas.cohhonorific",
   "pk": 3,
   "fields": {
-    "name_en": "Ms. ",
-    "name_fr": " Ms.(fr)",
+    "name": "Ms. ",
+    "nom": " Ms.(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -33,8 +33,8 @@
   "model": "csas.cohhonorific",
   "pk": 4,
   "fields": {
-    "name_en": "Dr. ",
-    "name_fr": " Dr.(fr)",
+    "name": "Dr. ",
+    "nom": " Dr.(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -43,8 +43,8 @@
   "model": "csas.cohhonorific",
   "pk": 5,
   "fields": {
-    "name_en": "Chief ",
-    "name_fr": " Chief(fr)",
+    "name": "Chief ",
+    "nom": " Chief(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -53,8 +53,8 @@
   "model": "csas.cohhonorific",
   "pk": 6,
   "fields": {
-    "name_en": "Capt. ",
-    "name_fr": " Capt.(fr)",
+    "name": "Capt. ",
+    "nom": " Capt.(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -63,8 +63,8 @@
   "model": "csas.cottype",
   "pk": 1,
   "fields": {
-    "name_en": "Government ",
-    "name_fr": " Government(fr)",
+    "name": "Government ",
+    "nom": " Government(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -73,8 +73,8 @@
   "model": "csas.cottype",
   "pk": 2,
   "fields": {
-    "name_en": "Industry ",
-    "name_fr": " Industry(fr)",
+    "name": "Industry ",
+    "nom": " Industry(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -83,8 +83,8 @@
   "model": "csas.cottype",
   "pk": 3,
   "fields": {
-    "name_en": "NGO ",
-    "name_fr": " NGO(fr)",
+    "name": "NGO ",
+    "nom": " NGO(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -93,8 +93,8 @@
   "model": "csas.cottype",
   "pk": 4,
   "fields": {
-    "name_en": "Indigenous ",
-    "name_fr": " Indigenous(fr)",
+    "name": "Indigenous ",
+    "nom": " Indigenous(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -103,8 +103,8 @@
   "model": "csas.cottype",
   "pk": 5,
   "fields": {
-    "name_en": "Consultant ",
-    "name_fr": " Consultant(fr)",
+    "name": "Consultant ",
+    "nom": " Consultant(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -113,8 +113,8 @@
   "model": "csas.cottype",
   "pk": 6,
   "fields": {
-    "name_en": "Contractor ",
-    "name_fr": " Contractor(fr)",
+    "name": "Contractor ",
+    "nom": " Contractor(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -123,8 +123,8 @@
   "model": "csas.lanlanguage",
   "pk": 1,
   "fields": {
-    "name_en": "English ",
-    "name_fr": " Anglaise",
+    "name": "English ",
+    "nom": " Anglaise",
     "description_en": null,
     "description_fr": null
   }
@@ -133,8 +133,8 @@
   "model": "csas.lanlanguage",
   "pk": 2,
   "fields": {
-    "name_en": "French ",
-    "name_fr": " Fran\u00e7is",
+    "name": "French ",
+    "nom": " Fran\u00e7is",
     "description_en": null,
     "description_fr": null
   }
@@ -143,8 +143,8 @@
   "model": "csas.notnotificationpreference",
   "pk": 1,
   "fields": {
-    "name_en": "Phone ",
-    "name_fr": " Phone(fr)",
+    "name": "Phone ",
+    "nom": " Phone(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -153,8 +153,8 @@
   "model": "csas.notnotificationpreference",
   "pk": 2,
   "fields": {
-    "name_en": "E-mail ",
-    "name_fr": " E-mail(fr)",
+    "name": "E-mail ",
+    "nom": " E-mail(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -163,8 +163,8 @@
   "model": "csas.notnotificationpreference",
   "pk": 3,
   "fields": {
-    "name_en": "Fax ",
-    "name_fr": " Fax(fr)",
+    "name": "Fax ",
+    "nom": " Fax(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -173,8 +173,8 @@
   "model": "csas.rolrole",
   "pk": 1,
   "fields": {
-    "name_en": "Regional Coordinator ",
-    "name_fr": " Regional Coordinator(fr)",
+    "name": "Regional Coordinator ",
+    "nom": " Regional Coordinator(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -183,8 +183,8 @@
   "model": "csas.rolrole",
   "pk": 2,
   "fields": {
-    "name_en": "Regional Science Advisor ",
-    "name_fr": " Regional Science Advisor(fr)",
+    "name": "Regional Science Advisor ",
+    "nom": " Regional Science Advisor(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -193,8 +193,8 @@
   "model": "csas.rolrole",
   "pk": 3,
   "fields": {
-    "name_en": "Regional Admin ",
-    "name_fr": " Regional Admin(fr)",
+    "name": "Regional Admin ",
+    "nom": " Regional Admin(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -203,8 +203,8 @@
   "model": "csas.rolrole",
   "pk": 4,
   "fields": {
-    "name_en": "Director ",
-    "name_fr": " Director(fr)",
+    "name": "Director ",
+    "nom": " Director(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -213,8 +213,8 @@
   "model": "csas.secsector",
   "pk": 1,
   "fields": {
-    "name_en": "Science ",
-    "name_fr": " Science(fr)",
+    "name": "Science ",
+    "nom": " Science(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -223,8 +223,8 @@
   "model": "csas.secsector",
   "pk": 2,
   "fields": {
-    "name_en": "Oceans ",
-    "name_fr": " Oceans(fr)",
+    "name": "Oceans ",
+    "nom": " Oceans(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -233,8 +233,8 @@
   "model": "csas.secsector",
   "pk": 3,
   "fields": {
-    "name_en": "FFHPP ",
-    "name_fr": " FFHPP(fr)",
+    "name": "FFHPP ",
+    "nom": " FFHPP(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -243,8 +243,8 @@
   "model": "csas.secsector",
   "pk": 4,
   "fields": {
-    "name_en": "SARA ",
-    "name_fr": " SARA(fr)",
+    "name": "SARA ",
+    "nom": " SARA(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -253,8 +253,8 @@
   "model": "csas.secsector",
   "pk": 5,
   "fields": {
-    "name_en": "RM ",
-    "name_fr": " RM(fr)",
+    "name": "RM ",
+    "nom": " RM(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -263,8 +263,8 @@
   "model": "csas.secsector",
   "pk": 6,
   "fields": {
-    "name_en": "AMD ",
-    "name_fr": " AMD(fr)",
+    "name": "AMD ",
+    "nom": " AMD(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -273,8 +273,8 @@
   "model": "csas.sttstatus",
   "pk": 1,
   "fields": {
-    "name_en": "On ",
-    "name_fr": " On(fr)",
+    "name": "On ",
+    "nom": " On(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -283,8 +283,8 @@
   "model": "csas.sttstatus",
   "pk": 2,
   "fields": {
-    "name_en": "In Planning ",
-    "name_fr": " In Planning(fr)",
+    "name": "In Planning ",
+    "nom": " In Planning(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -293,8 +293,8 @@
   "model": "csas.sttstatus",
   "pk": 3,
   "fields": {
-    "name_en": "Internal ",
-    "name_fr": " Internal(fr)",
+    "name": "Internal ",
+    "nom": " Internal(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -303,8 +303,8 @@
   "model": "csas.sttstatus",
   "pk": 4,
   "fields": {
-    "name_en": "Off ",
-    "name_fr": " Off(fr)",
+    "name": "Off ",
+    "nom": " Off(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -313,8 +313,8 @@
   "model": "csas.sttstatus",
   "pk": 5,
   "fields": {
-    "name_en": "Cancelled ",
-    "name_fr": " Cancelled(fr)",
+    "name": "Cancelled ",
+    "nom": " Cancelled(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -323,8 +323,8 @@
   "model": "csas.scpscope",
   "pk": 1,
   "fields": {
-    "name_en": "Regional ",
-    "name_fr": " Regional(fr)",
+    "name": "Regional ",
+    "nom": " Regional(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -333,8 +333,8 @@
   "model": "csas.scpscope",
   "pk": 2,
   "fields": {
-    "name_en": "Zonal ",
-    "name_fr": " Zonal(fr)",
+    "name": "Zonal ",
+    "nom": " Zonal(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -343,8 +343,8 @@
   "model": "csas.scpscope",
   "pk": 3,
   "fields": {
-    "name_en": "National ",
-    "name_fr": " National(fr)",
+    "name": "National ",
+    "nom": " National(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -353,8 +353,8 @@
   "model": "csas.aptadvisoryprocesstype",
   "pk": 1,
   "fields": {
-    "name_en": "test process ",
-    "name_fr": " test process(fr)",
+    "name": "test process ",
+    "nom": " test process(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -363,8 +363,8 @@
   "model": "csas.loclocation",
   "pk": 1,
   "fields": {
-    "name_en": "test ",
-    "name_fr": " test(fr)",
+    "name": "test ",
+    "nom": " test(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -373,8 +373,8 @@
   "model": "csas.meqquarter",
   "pk": 1,
   "fields": {
-    "name_en": "Spring ",
-    "name_fr": " Spring(fr)",
+    "name": "Spring ",
+    "nom": " Spring(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -383,8 +383,8 @@
   "model": "csas.meqquarter",
   "pk": 2,
   "fields": {
-    "name_en": "Summer ",
-    "name_fr": " Summar(fr)",
+    "name": "Summer ",
+    "nom": " Summar(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -393,8 +393,8 @@
   "model": "csas.meqquarter",
   "pk": 3,
   "fields": {
-    "name_en": "Fall ",
-    "name_fr": " Fall(fr)",
+    "name": "Fall ",
+    "nom": " Fall(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -403,8 +403,8 @@
   "model": "csas.meqquarter",
   "pk": 4,
   "fields": {
-    "name_en": "Winter ",
-    "name_fr": " Winter(fr)",
+    "name": "Winter ",
+    "nom": " Winter(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -413,8 +413,8 @@
   "model": "csas.reppriority",
   "pk": 1,
   "fields": {
-    "name_en": "High ",
-    "name_fr": " High(fr)",
+    "name": "High ",
+    "nom": " High(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -423,8 +423,8 @@
   "model": "csas.reppriority",
   "pk": 2,
   "fields": {
-    "name_en": "Medium ",
-    "name_fr": " Medium(fr)",
+    "name": "Medium ",
+    "nom": " Medium(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -433,8 +433,8 @@
   "model": "csas.reppriority",
   "pk": 3,
   "fields": {
-    "name_en": "Low ",
-    "name_fr": " Low(fr)",
+    "name": "Low ",
+    "nom": " Low(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -443,8 +443,8 @@
   "model": "csas.rettiming",
   "pk": 1,
   "fields": {
-    "name_en": "By quarter ",
-    "name_fr": " By quarter(fr)",
+    "name": "By quarter ",
+    "nom": " By quarter(fr)",
     "description_en": null,
     "description_fr": null
   }
@@ -453,8 +453,8 @@
   "model": "csas.rettiming",
   "pk": 2,
   "fields": {
-    "name_en": "By month ",
-    "name_fr": " By month(fr)",
+    "name": "By month ",
+    "nom": " By month(fr)",
     "description_en": null,
     "description_fr": null
   }

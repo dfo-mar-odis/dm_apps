@@ -1104,7 +1104,7 @@ def verify(resource):
                     rating = rating - 1
             elif field == 'resource_people':
                 role = models.PersonRole.objects.get(pk=my_filter)
-                if resource.resource_people.filter(role=role) == 0:
+                if not resource.resource_people.filter(role=role).exists():
                     checklist.append("At least one {} is needed.".format(role))
                     rating = rating - 1
             elif field == 'data_resources':

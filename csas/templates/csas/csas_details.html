@@ -11,21 +11,114 @@
 
 {% block body %}
 
-<br><br>
+<br>
 <div class="container mt-1" >
-    <div class="jumbotron">
-    <h2>{% trans title %}</h2><br>
-    <a class="btn btn-secondary" href="{% url ''|add:list_url %}">{% trans 'Back to list' %}</a>
-    <a class="btn btn-secondary" href="#" onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')" title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+    <div class="container card border border-dark text-center mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg">
+                    <h1>{% trans title %}</h1>
+                </div>
 
-    {% block field_override %}
-        <h2>{{ object.prj_name }}</h2>
-        {% for field in fields %}
-        <div class="row" >
-                <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span><span>{% get_field_value object field%}</span></div>
-        </div>
-        {% endfor %}
-    {% endblock field_override %}
+                <div class="col-6 pt-1">
+
+                    {% if key == 'pub' or key == 'pub_status' or key == 'pub_trans_info' or key == 'pub_doc_location' or key == 'pub_OM_costs' or key == 'pub_com_results' %}
+                        {% if csas_admin %}
+                            <a class="btn btn-secondary"
+                               href="{% url ''|add:'csas:index_pub' %}">{% trans 'New Publication Entry' %}</a>
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:'csas:list_pub' %}">{% trans 'Publication List' %}</a>
+
+                    {% elif key == 'met' or key == 'met_doc' or key == 'met_OM_costs' or key == 'met_media' %}
+                        {% if csas_admin %}
+                            <a class="btn btn-secondary"
+                               href="{% url ''|add:'csas:index_met' %}">{% trans 'New Meeting Entry' %}</a>
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:'csas:list_met' %}">{% trans 'Meeting List' %}</a>
+
+                    {% elif key == 'met_DFO_pars' %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:'csas:list_met_DFO_pars' %}">{% trans 'DFO Participants List' %}</a>
+                        {% if csas_admin %}
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+
+                    {% elif key == 'met_other_pars' %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:list_url %}">{% trans 'Other Participants List' %}</a>
+                        {% if csas_admin %}
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+
+                    {% elif key == 'req' %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:list_url %}">{% trans 'Request List' %}</a>
+                        {% if auth or csas_admin %}
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+                    {% elif key == 'req_CSAS' %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:list_url %}">{% trans 'Request List' %}</a>
+                        {% if csas_admin %}
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+                    {% elif key == 'con' %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:list_url %}">{% trans 'Contact List' %}</a>
+                        {% if csas_admin %}
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+
+                    {% endif %}
+
+                    {# if the user is authenticated and has permissions show the Update button #}
+                    {# {% if key == 'req' and auth or csas_admin %} #}
+                    {#    <a class="btn btn-secondary" #}
+                    {#       href="{% url ''|add:'csas:list_req' %}">{% trans 'RRRequest List' %}</a> #}
+                    {#    <a class="btn btn-secondary" href="#" #}
+                    {#       onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')" #}
+                    {#       title="{% trans 'Add' %}">{% trans 'Update' %}</a> #}
+                    {# {% endif %} #}
+                </div>
+            </div>
+         </div>
+    </div>
+    <br>
+    <div class="jumbotron">
+        {% block field_override %}
+            <h2>{{ object.prj_name }}</h2>
+            <style>
+                .mymdb-masthead {
+                   background-color: #EEEEEE;
+                   margin-bottom: 1em;
+            </style>
+            {% for field in fields %}
+                <div class="row" >
+                    <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span>
+                                           <span>{% get_field_value object field%}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endblock field_override %}
     </div>
 </div>
+
 {% endblock %}

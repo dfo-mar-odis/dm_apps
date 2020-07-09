@@ -1,0 +1,20 @@
+ 1, Tana,      Worcester,    DFO,  Executive Advisor,             902-426-3246, Tana.Worcester@dfo-mpo.gc.ca,    Expertise A, 1, None, 1, 3, 1, 1, 1, 1, 1
+ 2, Laura,     Ferris,       DFO,  Quality Assurance Officer,     613-990-0293, Laura.Ferris@dfo-mpo.gc.ca,      Expertise B, 1, None, 1, 3, 1, 1, 1, 2, 1
+ 3, Tobias,    Spears,       DFO,  Head of ODIS,                  902-456-8546, Tobias.Spears@dfo-mpo.gc.ca,     Expertise C, 1, None, 1, 1, 1, 1, 1, 3, 1
+ 4, Christina, Maclean,      RCMP, Administrative Assistant,      902-426-7070, Christina.Maclean@dfo-mpo.gc.ca, Expertise D, 1, None, 3, 2, 1, 1, 2, 4, 2
+ 5, Lottie E,  Bennett,      NRC,  Environmental Science Advisor, 902-402-3440, Lottie.E.Bennett@dfo-mpo.gc.ca,  Expertise E, 1, None, 1, 1, 1, 2, 3, 1, 4
+ 6, Rabindra,  Singh,        NRC,  Aquatic Science Biologist III, 506-529-5881, Rabindra.Singh@dfo-mpo.gc.ca,    Expertise F, 1, None, 2, 1, 1, 3, 4, 2, 3
+ 7, Tara M,    McIntyre,     CCGS, Aquatic Science Biologist,     902-402-8589, Tara.M.McIntyre@dfo-mpo.gc.ca,   Expertise G, 1, None, 2, 3, 1, 1, 5, 3, 5
+ 8, Una,       Goggin,       DFO,  Science Advisor,               902-426-9920, Una.Goggin@dfo-mpo.gc.ca,        Expertise H, 1, None, 3, 4, 1, 2, 6, 4, 1
+ 9, Jay,       Bugden,       DFO,  Aquatic Science Biologist,     902-426-7256, Jay.Bugden@dfo-mpo.gc.ca,        Expertise I, 1, None, 3, 5, 2, 3, 7, 3, 2
+10, Brian,     Bower,        NGO,  Physical Scientist II,         902-407-8135, Brian.Bower@dfo-mpo.gc.ca,       Expertise J, 1, None, 4, 1, 2, 1, 3, 2, 4
+11, Gordana,   Lazin,        NGO,  Oceanographic Data Technician, 902-426-2245, Gordana.Lazin@dfo-mpo.gc.ca,     Expertise K, 0, None, 4, 2, 2, 2, 4, 1, 1
+12, Robert,    Benjamin,     DFO,  Aquatic Science Technician,    902-426-3565, Robert.Benjamin@dfo-mpo.gc.ca,   Expertise L, 0, None, 5, 1, 1, 3, 5, 2, 3
+13, Shelly,    Bond,         CCGS, Team Lead of Data Acquisition, 902-426-1473, Shelly.Bond@dfo-mpo.gc.ca,       Expertise M, 0, None, 5, 2, 1, 1, 6, 4, 2
+14, Kryomi,    Ferguson,     CCGS, Aquatic Biologist,             902-426-3255, Kryomi.Ferguson@dfo-mpo.gc.ca,   Expertise N, 0, None, 6, 3, 2, 2, 7, 3, 6
+15, Marc,      Ringuette,    DFO,  Aquatic Science Biologist,     902-229-4902, Marc.Ringuette@dfo-mpo.gc.ca,    Expertise O, 0, None, 6, 1, 2, 3, 5, 2, 5
+16, Yeongha,   Jung,         NRC,  Research Technician,           250-756-7106, Yeongha.Jung@dfo-mpo.gc.ca,      Expertise P, 0, None, 3, 4, 2, 1, 4, 1, 4
+17, Stuart,    LePage,       RCMP, Fisheries Technician,          250-320-4178, Stuart.LePage@dfo-mpo.gc.ca,     Expertise Q, 0, None, 2, 6, 2, 2, 3, 3, 3
+18, Dave,      McDonald,     RCMP, Support Analyst,               902-426-4489, Dave.McDonald@dfo-mpo.gc.ca,     Expertise R, 0, None, 5, 1, 1, 3, 6, 1, 4
+19, Megan,     Gallant,      NRC,  Communications Advisor,        902-426-6414, Megan.Gallant@dfo-mpo.gc.ca,     Expertise S, 0, None, 4, 3, 1, 1, 7, 2, 1
+20, Amy,       Glass,        DFO,  Aquatic Science Technician,    902-476-9325, Amy.Glass@dfo-mpo.gc.ca,         Expertise T, 0, None, 3, 2, 1, 3, 5, 3, 3

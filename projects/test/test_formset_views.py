@@ -1,5 +1,6 @@
 from django.test import tag
 from django.urls import reverse_lazy
+from django.utils import timezone
 from django.utils.translation import activate
 
 from projects.test import FactoryFloor
@@ -79,7 +80,7 @@ class TestAllHardDeleteViews(CommonTest):
             {"model": models.Level, "url_name": "delete_level", "view": views.LevelHardDeleteView},
             {"model": models.Program, "url_name": "delete_program", "view": views.ProgramHardDeleteView},
             {"model": models.Theme, "url_name": "delete_theme", "view": views.ThemeHardDeleteView},
-            {"model": models.UpcomingDate, "url_name": "delete-coming-date", "view": views.UpcomingDateHardDeleteView},
+            {"model": models.UpcomingDate, "url_name": "delete-upcoming-date", "view": views.UpcomingDateHardDeleteView},
         ]
         self.test_dicts = list()
 
@@ -100,7 +101,7 @@ class TestAllHardDeleteViews(CommonTest):
             elif m == models.Program:
                 obj = m.objects.create(regional_program_name_eng=faker.word(), is_core=True)
             elif m == models.UpcomingDate:
-                obj = m.objects.create(description_en=faker.catch_phrase())
+                obj = FactoryFloor.UpcomingDateFactory()
             else:
                 obj = m.objects.create(name=faker.word())
             new_d["obj"] = obj

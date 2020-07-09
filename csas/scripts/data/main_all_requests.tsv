@@ -1,0 +1,422 @@
+req_id	assigned_req_id	title	in_year_request	region	old_client_sector	client_sector	client_name	client_title	client_email	issue	priority	rationale	proposed_timing	rationale_for_timing	funding	funding_notes	science_discussion	science_discussion_notes	adviser_submission	rd_submission	decision_date
+1	1	2007 Sulphide Monitoring	0	2	Habitat	14	Crocker, Joe			Aquaculture	2		999999		-1				10/23/2006 0:00	10/23/2006 0:00	
+2	2	2006 Salmon, Avon River	0	2	RDG	18	McPherson, Arran			Species at Risk	2		999999		-1				10/30/2006 0:00	10/30/2006 0:00	
+3	3	2006 Deep Panuke	0	2	Habitat	14	Potter, Ted			Habitat	2		999999		-1				11/14/2006 0:00	11/14/2006 0:00	
+4	4	2006 Rhodamine Effects on Fish	0	2	Habtiat	14	McLean, Melanie			Habitat	2		999999		-1				11/14/2006 0:00	11/14/2006 0:00	
+5	5	2006 Fish Sampling in Wetlands	0	2	Habitat	14	Hamilton, Anita			Habitat	2		999999		-1				11/27/2006 0:00	11/27/2006 0:00	
+6	6	2006 Yellowtail bycatch in the scallop fishery	0	2	FAM	10	Burke, Les			Bycatch	2		999999		-1				12/18/2006 0:00	12/18/2006 0:00	
+7	7	2007 Port Mouton	0	2	Habitat	14	Rose, Tammy			Aquaculture	2		999999		-1				5/7/2007 0:00	5/7/2007 0:00	
+10	10	2007 Snow Crab, ENS	0	2	FAM	10	Eagles, Michael			Stock Assessment	2		999999		-1				7/13/2007 0:00	7/13/2007 0:00	
+11	11	2007 Herring, 4VWX Assessment	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				7/13/2007 0:00	7/13/2007 0:00	
+14	14	2007 Shrimp, Scotian Shelf	0	2	FAM	10	Eagles, Michael			Stock Assessment	2		999999		-1				7/13/2007 0:00	7/13/2007 0:00	
+15	15	2007 Scallop, Bay of Fundy	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				6/19/2007 0:00	6/19/2007 0:00	
+16	16	2007 Atlantic Halibut Framework	0	2	Science	1	Hansen, Jorgen			Stock Assessment	2		999999		-1				7/17/2007 0:00	7/17/2007 0:00	
+17	17	2007 Groundfish, 4VWX Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				7/13/2007 0:00	7/13/2007 0:00	
+18	18	2007 Tidal Power in the Bay of Fundy	0	2	Habitat	14	Currie, Ted			Habitat	2		999999		-1				5/24/2007 0:00	5/24/2007 0:00	
+19	19	2007 Alton Natural Gas Storage Proposal	0	2	Habitat	14	MacLean, Melanie			Habitat	2		999999		-1				5/28/2007 0:00	5/28/2007 0:00	
+20	20	2007 SOEP 2006 EEM Report and 2007 EEM Plan	0	2	Habitat	14	Potter, Ted			Habitat	2		999999		-1				1/1/2007 0:00	1/1/2007 0:00	
+21	21	2007 Gully MPA Contaminant Monitoring	0	2	Oceans	2	Macnab, Paul			MPA	2		999999		-1				8/2/2007 0:00	8/2/2007 0:00	
+22	22	2007 Scallop Gear Modifications Bycatch	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				6/19/2007 0:00	6/19/2007 0:00	
+23	23	2007 Fallen Angelwing pre-COSEWIC	0	2	SARA	4	Smedbol, Kent			Species at Risk	2		999999		-1				6/5/2007 0:00	6/5/2007 0:00	
+24	24	2007 Basking Shark RPA	0	2	SARA	4	Smedbol, Kent			Species at Risk	2		999999		-1				6/5/2007 0:00	6/5/2007 0:00	
+25	25	2007 Cusk RPA	0	2	SARA	4	Smedbol, Kent			Species at Risk	2		999999		-1				6/5/2007 0:00	6/5/2007 0:00	
+26	26	2007 Hagfish Workshop	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				7/13/2007 0:00	7/13/2007 0:00	
+28	28	2007 Benthic RAP III	0	2	Oceans	2	Herbert, Glen			Other	2		999999		-1				1/1/2007 0:00	1/1/2007 0:00	
+31	31	2007 Coastal NS EOAR	0	2	Oceans	2	Duggan, Dave			Other	2		999999		-1				6/25/2007 0:00	6/25/2007 0:00	
+32	32	2007 Aquaculture Environmental Interactions	0	2	Oceans	2	Crocker, Joe			Aquaculture	2		999999		-1				2/1/2007 0:00	2/1/2007 0:00	
+33	33	2007 Marine Compensation II	0	2	Oceans	2	Laroche, Tasha			Habitat	2		999999		-1				1/1/2007 0:00	1/1/2007 0:00	
+34	34	2007 Scallop, SFA 29	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				6/19/2007 0:00	6/19/2007 0:00	
+35	35	2007 Smooth Skate pre-COSEWIC	0	2	SARA	4				Species at Risk	2		999999		-1				6/11/2007 0:00	6/11/2007 0:00	
+36	36	2007 Avon River Highway 101 Twinning	0	2	Habitat	14	Jollymore, Brian			Habitat	2		999999		-1				7/12/2007 0:00	7/12/2007 0:00	
+38	38	2007 Snow Crab, 4X	0	2	FAM	10	Eagles, Michael			Stock Assessment	2		999999		-1				8/3/2008 0:00	8/3/2008 0:00	
+43	43	2007 Surf Clam and Quahog, Offshore #1	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				9/25/2007 0:00	9/25/2007 0:00	
+44	44	2007 Scallop, Georges Bank Framework	0	2	Science	1	Claytor, Ross			Stock Assessment	2		999999		-1				10/18/2007 0:00	10/18/2007 0:00	
+45	45	2007 Belleisle Bay Infilling	0	2	Habitat	14	Keeting, Brian			Habitat	2		999999		-1				9/7/1931 0:00	9/7/1931 0:00	
+46	46	2007 Banded Killifish COSEWIC Review	0	2	SARA	4	Cooper, Lara			Species at Risk	2		999999		-1				11/1/2007 0:00	11/1/2007 0:00	
+47	47	2008 Sea Urchin, NB Assessment	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				3/13/2008 0:00	3/13/2008 0:00	
+49	49	2007 Surf Clam and Quahog, Offshore #2	0	2	FAM	10	Burke, Les			Stock Assessment	2		999999		-1				1/17/2008 0:00	1/17/2008 0:00	
+50	50	2008 Scallop, Georges Bank Assessment	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				3/27/2008 0:00	3/27/2008 0:00	
+51	51	2008 Salmon in SFAs 19-23 (2008)	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				4/4/2008 0:00	4/4/2008 0:00	
+52	52	2008 Lobster Damage - Cause/Timing	0	2	FAM	10	Jamieson, Jim			Impact Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+53	53	2008 Sea Urchin (LFA 36 & 38) Assessment	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+54	54	2008 Scallop, Bay of Fundy Assessment	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+55	55	2008 Shrimp, Scotian Shelf	0	2	FAM	10	Eagles, Mike			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+56	56	2008 Pollock, 4VWX+5Zc Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+57	57	2008 Silver Hake, 4VWX+5 Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+58	58	2008 Cod, 4X5Y Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+59	59	2008 Atlantic Halibut Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+60	60	2008 Snow Crab, Maritimes Region	0	2	FAM	10	Eagles, Mike			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+61	61	2008 Herring, 4VWX Assessment	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				3/14/2008 0:00	3/14/2008 0:00	
+62	62	2008 Minas Basin EOAR	0	2	Oceans	2	Duggan, Dave			EOAR	2		999999		-1				2/15/2008 0:00	2/15/2008 0:00	
+63	63	2008 Atlantic Whitefish pre-COSEWIC	0	2	Science	1	Smedbol, Kent			Species at Risk	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+64	64	2009 Brook Floater RPA	0	2	SARA	4				Species at Risk	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+65	65	2008 Barndoor skate pre-COSEIC	0	2	Science	1	Smedbol, Kent			Species at Risk	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+67	67	2009 Basking Shark RPA	0	2	SARA	4				Species at Risk	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+68	68	2009 Spiny Dogfish RPA (pre-COSEWIC)	0	2	SARA	4				Species at Risk	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+69	69	2009 Lake Utopia Dwarf Smelt RPA	0	2	SARA	4	Smedbol, Kent			Species at Risk	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+70	70	2008 Redbreast sunfish RPA	0	2	SARA	4	Smedbol, Kent			Species at Risk	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+71	71	2008 SOEP EEM Review	0	2	Habitat	14	Rodger, Peter			Habitat	2		999999		-1				4/9/2008 0:00	4/9/2008 0:00	
+72	72	2008 Hardshell Clam, SWNS Inshore Dredge Hydralic	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				4/25/2008 0:00	4/25/2008 0:00	
+78	78	2008 Melford Terminal EIA Review - Part 1	0	2	EAMP	9	McAllister, Kurt			Habitat	2		999999		-1				5/28/2008 0:00	5/28/2008 0:00	
+79	79	2008 Marine Worms	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				5/12/2008 0:00	5/12/2008 0:00	
+80	80	2008 Cod pre-COSEWIC	0	2	Science	1	Worcester, Tana			Species at Risk	2		999999		-1				10/3/2008 0:00	10/3/2008 0:00	
+81	81	2008 Lobster and Jonah Crab, LFA 41 Assessment	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				4/4/2008 0:00	4/4/2008 0:00	
+82	82	2008 Melford Terminal EIA Review - Part 2	0	2	EAMP	9	McAllister, Kurt			Habitat	2		999999		-1				7/31/2008 0:00	7/31/2008 0:00	
+83	83	2008 Georges Bank Moratorium Review	0	2	Science	1	Lee, Ken			Habitat	2		999999		-1				7/28/2008 0:00	7/28/2008 0:00	
+84	84	2008 Right Whales and Lobster Gear Interactions	0	2	FAM	10	vanHelvoort, Gus			Species at Risk	2		999999		-1				8/17/2008 0:00	8/17/2008 0:00	
+85	85	2009 Musquash MPA Monitoring Plan Review	0	2	Science	1	Kennedy, Eddy			Marine Protected Areas	2		999999		-1				1/1/2009 0:00	1/1/2009 0:00	
+86	86	2008 Marine Plants Assessment	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				7/15/2008 0:00	7/15/2008 0:00	
+87	87	2007 Seal Impact on Cod	0	2	Science	1	Bowen, Don				2		999999		-1				3/1/2007 0:00	3/1/2007 0:00	
+88	88	2008 Cape Breton Hydro / Wind Project	0	2	EAMP	9	Potter, Ted			Habitat	2		999999		-1				10/3/2008 0:00	10/3/2008 0:00	
+89	89	2008 Sea Cucumber Assessment	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				10/27/2008 0:00	10/27/2008 0:00	
+90	90	2007 Salmon, IBOF RPA	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				10/27/2008 0:00	10/27/2008 0:00	
+91	91	2008 Lobster, Biological Basis	0	2	Science	1	Tremblay, John			Stock Assessment	2		999999		-1				11/20/2008 0:00	11/20/2008 0:00	
+92	92	2009 Sea Cucumber Assessment	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+93	93	2009 Hagfish Assessment	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+94	94	2009 Grey Seal Breeding Colony Staging	0	2	FAM	10	Newbould, Andrew			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+95	95	2009 Surf Clam, 4X Assessment	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+96	96	2009 Quahog, SWNB	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+97	97	2009 Surf Clam (Grand Banks) Advice	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+98	98	2009 Surf Clam, Banquereau Bank Advice	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+99	99	2009 Scallop, Bay of Fundy Assessment	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+100	100	2009 Scallop, SFA 29	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+101	101	2009 Scallop, Offshore	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				1/1/2009 0:00	1/1/2009 0:00	
+102	102	2009 Yellowtail flounder, Georges Bank Closures	0	2	FAM	10	Scattolon, Faith			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+103	103	2009 Snow Crab, Maritimes Region	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+104	104	2009 Shrimp, Scotian Shelf	0	2	FAM	10	Newbould, Andrew			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+105	105	2009 Saint John River Fish Habitat	0	2	Habitat	14	MacDougall, Rob			Habitat	2		999999		-1				6/15/2009 0:00	6/15/2009 0:00	
+106	106	2009 Lobster (LFA 27-33) Assessment	0	2	FAM	10	Jamieson, Jim			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+107	107	2009 Atlantic Halibut Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+108	108	2009 Haddock (4X5Y) Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+109	109	2009 RV Survey Groundfish Biomass Index Trends	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+110	110	2009 Silver Hake, 4VWX+5 Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+111	111	2009 Herring, 4VWX Assessment	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+112	112	2009 Sea Urchin, NS	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+113	113	2009 Bay of Fundy Species at Risk Mapping Project	0	2	Habitat	14	Murphy, Mike			SARA	2		999999		-1				10/2/2008 0:00	10/2/2008 0:00	
+114	114	2009 Gulf of Maine State of the Ecosystem	0	2	Oceans	2	Hall, Tim			Oceans	2		999999		-1				2/11/2009 0:00	2/11/2009 0:00	
+115	115	2009 Conservation Network of MPAs	0	2	Oceans	2	Hall, Tim			MPAs	2		999999		-1				2/6/2009 0:00	2/6/2009 0:00	
+116	116	2009 Gulf of Maine Ecosystem Overview Report	0	2	Oceans	2	Hall, Tim			Oceans	2		999999		-1				2/6/2009 0:00	2/6/2009 0:00	
+117	117	2009 Horse Mussel Reefs in the Bay of Fundy	0	2	Oceans	2	Duggan, Dave			ESS	2		999999		-1				2/15/2008 0:00	2/15/2008 0:00	
+118	118	2009 Eider Rock EA	0	2	EAMP	9	Currie, Tim			Environmental Assessment	2		999999		-1				5/12/2009 0:00	5/12/2009 0:00	
+119	119	2008 Sydney Tar Ponds EEM	0	2	EAMP	9	McLean, Mark			EEM	2		999999		-1				1/29/2009 0:00	1/29/2009 0:00	
+120	120	2009 Sydport EA	0	2	EAMP	9	McLean, Mark			Environmental Assessment	2		999999		-1				1/16/2009 0:00	1/16/2009 0:00	
+121	121	2009 Deep Panuke EEM	0	2	EAMP	9	McLean, Mark			EEM	2		999999		-1				6/22/2009 0:00	6/22/2009 0:00	
+122	122	2008 Musquash Zone of Influence	0	2	Habitat	14	Crocker, Joe			Environmental Assessment	2		999999		-1				11/14/2008 0:00	11/14/2008 0:00	
+123	123	2009 Mud Piddock RPA	0	2	SARA	4	Millar, Dave			RPA	2		999999		-1				1/1/2009 0:00	1/1/2009 0:00	
+124	124	2009 Atlantic Halibut pre-COSEWIC	0	2	Science	1	Smedbol, Kent			Assessment	2		999999		-1				1/22/2008 0:00	1/22/2008 0:00	
+125	125	2009 Shovelmaster Monitoring Plan	0	2	Habitat	14				Habitat	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+126	126	2009 BEPCo Exploratory Drilling EIS	0	2	Habitat	14				Habitat	2		999999		-1				5/5/2009 0:00	5/5/2009 0:00	
+127	127	2009 Right Whale Critical Habitat - Roseway Basin	0	2	SARA	4	Millar, David			Species at Risk	2		999999		-1				4/28/2009 0:00	4/28/2009 0:00	
+129	129	2008 Salmon in SFAs 19-23 (2009)	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				4/9/2009 0:00	4/9/2009 0:00	
+130	130	2010 Scallop Cod Closures	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/14/2010 0:00	1/14/2010 0:00	
+131	131	2009 Shrimp, 4X Trap Fishery	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				5/4/2009 0:00	5/4/2009 0:00	
+134	134	2007 Spiny Dogfish TRAC	0	2	TRAC	19	Docherty, Verna			Stock Assessment	2		999999		-1				6/17/2007 0:00	6/17/2007 0:00	
+135	135	2008 Cod, Haddock and Yellowtail, 5Z	0	2	TRAC	19	Scattalon, Faith			Stock Assessment	2		999999		-1				1/1/2008 0:00	1/1/2008 0:00	
+137	137	2008 EBSA, ESSCPs and Depleted Species	0	2	Oceans	2				Oceans	2		999999		-1				2/15/2008 0:00	2/15/2008 0:00	
+138	138	2008 EBSA Impacts	0	2	Oceans	2				Oceans	2		999999		-1				2/15/2008 0:00	2/15/2008 0:00	
+139	139	2008 Horse Mussel Reefs	0	2	Oceans	2	Duggan, Dave			Oceans	2		999999		-1				2/15/2008 0:00	2/15/2008 0:00	
+140	140	2008 Inshore EOAR Part II	0	2	Oceans	2	Herbert, Glen			EOAR	2		999999		-1				2/15/2008 0:00	2/15/2008 0:00	
+141	141	2008 MPA AOIs	0	2	Oceans	2	Duggan, Dave			MPAs	2		999999		-1				2/15/2008 0:00	2/15/2008 0:00	
+142	142	2010 RV Survey Trends for Groundfish	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/14/2010 0:00	1/14/2010 0:00	
+143	143	2009 St. Croix Estuary Impacts	0	2	Habitat	14	MacDougall, Rob			Habitat	2		999999		-1				1/1/2009 0:00	1/1/2009 0:00	
+144	144	2010 Offshore Scallop Stock Advice	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				1/21/2010 0:00	1/21/2010 0:00	
+145	145	2010 Surf Clam, Grand Bank	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+146	146	2010 Halibut Advice	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+147	147	2010 Herring, 4VWX	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+148	148	2010 Shrimp, Scotian Shelf	0	2	FAM	10	Newbould, Andrew			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+149	149	2010 Snow Crab, 4VWX	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+150	150	2010 Lobster Areas 27-33	0	2	FAM	10	Eagles, Mike			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+151	151	2010 Pollock Advice	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+152	152	2010 Salmon Advice for 2011	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+153	153	2010 Scallop, BoF	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+154	154	2010 Scallop, SFA 29	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+155	155	2010 Marine Plants	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+156	156	2010 Cod, 4X5Y	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+157	157	2010 Surf Clam, Banquereau Bank	0	2	FAM	10	Macdonald, Carl			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+158	158	2010 Cunner Advice	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+159	159	2010 Diadromous Fish Advice	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+160	160	2010 Jonah Crab Advice	0	2	FAM	10	Eagles, Mike			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+161	161	2010 Precautionary Approach for Lobster	0	2	FAM	10	Eagles, Mike			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+162	162	2010 Redfish Advice	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+163	163	2010 Soft Shell Clam	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+164	164	2010 Sea Urchin Advice	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+165	165	2010 Little Mushquash Cove Aquaculture	0	2	Habitat	14	Westhead, Maxine			Aquaculture	2		999999		-1				11/26/2010 0:00	11/26/2010 0:00	
+166	166	2010 St. Mary's Bay Aquaculture: salmon	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				11/26/2010 0:00	11/26/2010 0:00	
+167	167	2010 St. Mary's Bay Aquaculture: lobster	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				11/26/2010 0:00	11/26/2010 0:00	
+168	168	2010 St. Mary's Bay Aquaculture: enrichment	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				11/26/2010 0:00	11/26/2010 0:00	
+169	169	2010 Bay of Fundy Tidal Power Review	0	2	Habitat	14	Currie, Ted			Habitat	2		999999		-1				2/8/2010 0:00	2/8/2010 0:00	
+170	170	2010 Cooling Water Intake Impacts	0	2	Habitat	14	Humphrey, Donald			Habitat	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+171	171	2010 Deep Panuke EEM Review	0	2	Habitat	14	Currie, Ted			Habitat	2		999999		-1				2/8/2010 0:00	2/8/2010 0:00	
+172	172	2010 St. Croix Estuary Impacts	0	2	Habitat	14	MacDonald, Robert			Habitat	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+173	173	2010 SOEI EEM Review	0	2	Habitat	14	Currie, Ted			Habitat	2		999999		-1				2/8/2010 0:00	2/8/2010 0:00	
+174	174	2010 NB Fish and Wildlife Proposals	0	2	Habitat	14	Hamilton, Anita			Habitat	2		999999		-1				12/20/2010 0:00	12/20/2010 0:00	
+175	175	2010 Aquaculture Impacts	0	2	Habitat	14	Jacobi, Carol			Habitat	2		999999		-1				2/8/2010 0:00	2/8/2010 0:00	
+176	176	2010 REET Advice	0	2	Habitat	14	Jacobi, Carol			Habitat	2		999999		-1				2/8/2010 0:00	2/8/2010 0:00	
+177	177	2010 Sydney Tar Ponds Advice	0	2	Habitat	14	Jalloh, Rugi			Habitat	2		999999		-1				1/20/2010 0:00	1/20/2010 0:00	
+178	178	2010 Gulf of Maine EOAR	0	2	Oceans	2	Hall, Tim			EOAR	2		999999		-1				1/1/2010 0:00	1/1/2010 0:00	
+179	179	2010 Horse Mussel Reefs Review	0	2	Oceans	2				Oceans	2		999999		-1				1/1/2010 0:00	1/1/2010 0:00	
+180	180	2010 Review of AOIs	0	2	Oceans	2	Hall, Tim			MPAs	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+181	181	2010 Rainbow Smelt RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+182	182	2010 Mud Piddock RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+183	183	2010 Bottlenose Whale RPA	0	2	SARA	4				RPA	2		999999		-1				1/1/2010 0:00	1/1/2010 0:00	
+184	184	2010 Spiny Dogfish RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+185	185	2010 Leatherback Turtle Critical Habitat	0	2	SARA	4	Penney, Marcia			Critical Habitat	2		999999		-1				1/1/2010 0:00	1/1/2010 0:00	
+186	186	2010 Right Whale Critical Habitat	0	2	SARA	4				Critical Habitat	2		999999		-1				1/1/2010 0:00	1/1/2010 0:00	
+187	187	2010 Cod, Haddock and Yellowtail, 5Z	0	2	TRAC	19				Stock Assessment	2		999999		-1				1/1/2010 0:00	1/1/2010 0:00	
+188	188	2010 Biomapping Support Tool: Wolffish	0	2	Habitat	14	Rodger, Peter			Species at Risk	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+189	189	2011 Salmon RPAs (SU and oBoF)	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				11/1/2010 0:00	11/1/2010 0:00	
+190	190	2011 Bluefin Tuna RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				11/1/2010 0:00	11/1/2010 0:00	
+191	191	2011 Atlantic Sturgeon RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				11/1/2010 0:00	11/1/2010 0:00	
+192	192	2011 Barndoor Skate RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				11/1/2010 0:00	11/1/2010 0:00	
+193	193	2011 Leatherback Turtle Advice	0	2	SARA	4	Penney, Marcia			pre-COSEWIC	2		999999		-1				11/1/2010 0:00	11/1/2010 0:00	
+194	194	2011 Salmon Critical Habitat	0	2	SARA	4	Penney, Marcia			Critical Habitat	2		999999		-1				11/1/2010 0:00	11/1/2010 0:00	
+195	195	2011 Atlantic Halibut RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				11/1/2010 0:00	11/1/2010 0:00	
+196	196	2011 Scallop, Offshore	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+197	197	2011 Surf Clam, Banquereau Bank	0	2	FAM	10	Macdonald, Carl			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+198	198	2011 Cod, Haddock, Yellowtail, 5Z	0	2	TRAC	19	Docherty, Verna			Stock Assessment	2		999999		-1				11/11/2010 0:00	11/11/2010 0:00	
+199	199	2011 Bycatch in Large Pelagic Fisheries	0	2	FAM	10	Quigley, Sara			Bycatch	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+200	200	2011 Lobster LFA 27-33	0	2	FAM	10	Macdonald, Carl			Stock Assessment	2		999999		-1				11/22/2010 0:00	11/22/2010 0:00	
+201	201	2011 Shrimp, Scotian Shelf	0	2	FAM	10	Newbould, Andrew			Stock Assessment	2		999999		-1				11/29/2010 0:00	11/29/2010 0:00	
+202	202	2011 Haddock, 4X5Y	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+203	203	2011 Snow Crab, 4VWX	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+204	204	2011 Herring, 4VWX	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+205	205	2011 Pollock, 4X5Y MSE	0	2	FAM	10	Docherty, Verna			MSE	2		999999		-1				1/20/2011 0:00	1/20/2011 0:00	
+206	206	2011 Spiny Dogfish Framework	0	2	Science	1	Campana, Steve			Stock Assessment	2		999999		-1				11/12/2010 0:00	11/12/2010 0:00	
+207	207	2011 ERI Synthesis	0	2	Science	1	Claytor, Ross				2		999999		-1				11/17/2010 0:00	11/17/2010 0:00	
+208	208	2011 Review of AOI	0	2	Oceans	2	Westhead, Maxine			MPAs	2		999999		-1				11/10/2010 0:00	11/10/2010 0:00	
+209	209	2011 Review of Gully Monitoring Indicators	0	2	Oceans	2	Westhead, Maxine			MPAs	2		999999		-1				11/10/2010 0:00	11/10/2010 0:00	
+210	210	2011 MPA Network Planning	0	2	Oceans	2	Westhead, Maxine			MPAs	2		999999		-1				11/10/2010 0:00	11/10/2010 0:00	
+211	211	2011 Coastal Classification	0	2	Oceans	2	Westhead, Maxine			Oceans	2		999999		-1				11/10/2010 0:00	11/10/2010 0:00	
+212	212	2011 DEPOMOD and Organic Enrichment	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				11/4/2010 0:00	11/4/2010 0:00	
+213	213	2011 Scallop, SFA 29	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+214	214	2011 Scallop, Bay of Fundy	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+215	215	2011 Marine Plants	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+216	216	2011 St. Croix Estuary Impacts	0	2	Habitat	14	MacDougall, Robert			Habitat	2		999999		-1				11/5/2010 0:00	11/5/2010 0:00	
+217	217	2011 Soft Shell Clam	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+218	218	2011 Jonah Crab	0	2	FAM	10	Macdonald, Carl			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+219	219	2011 Sea Urchin	0	2	FAM	10	Bradshaw, Valerie			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+220	220	2011 Redfish	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+221	221	2011 Rock Crab	0	2	FAM	10	Macdonald, Carl			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+222	222	2011 Lobster LFA 34-38	0	2	FAM	10	Macdonald, Carl			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+223	223	2011 Cod and Yellowtail Closure on Georges Bank	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+224	224	2011 RV Survey Trends	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+225	225	2011 Salmon Advice	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+226	226	2011 SOEP EEM Review	0	2	Habitat	14	Currie, Ted			EEM	2		999999		-1				2/8/2011 0:00	2/8/2011 0:00	
+227	227	2011 Sydney Tar Ponds Review	0	2	Habitat	14	Humphrey, Donald			EEM	2		999999		-1				11/4/2010 0:00	11/4/2010 0:00	
+228	228	2011 Sydney Harbour Dredging Review	0	2	Habitat	14	Humphrey, Donald			EEM	2		999999		-1				11/22/2010 0:00	11/22/2010 0:00	
+229	229	2011 Atlantic Halibut Projections	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				12/15/2010 0:00	12/15/2010 0:00	
+230	230	2011 Canada Express Telecom Cable Review	0	2	Habitat	14	Humphrey, Donald			Habitat	2		999999		-1				11/4/2010 0:00	11/4/2010 0:00	
+231	231	2011 Donkin Mine EA Review	0	2	Habitat	14	Humphrey, Donald			EA	2		999999		-1				11/4/2010 0:00	11/4/2010 0:00	
+232	232	2011 REET Advice	0	2	Habitat	14	McLean, Mark				2		999999		-1				11/4/2010 0:00	11/4/2010 0:00	
+233	233	2011 Lobster, Fishery Independent Survey	0	2	FAM	10	Macdonald, Carl			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+234	234	2011 Cunner	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				11/19/2010 0:00	11/19/2010 0:00	
+235	235	2011 Jordon Bay Aquaculture: enrichment	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				8/23/2011 0:00	8/23/2011 0:00	
+236	236	2011 Jordon Bay Aquaculture: shellfish/groundfish	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				8/23/2011 0:00	8/23/2011 0:00	
+237	237	2011 Jordon Bay Aquaculture: other species	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				8/23/2011 0:00	8/23/2011 0:00	
+238	238	2011 Jordon Bay Aquaculture: wild salmon	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				8/23/2011 0:00	8/23/2011 0:00	
+239	239	2011 Spiny Dogfish Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				12/13/2010 0:00	12/13/2010 0:00	
+240	240	2007 Groundfish, 4VWX Framework	0	2	Science	1	Hurley, Peter			Stock Assessment	2		999999		-1				1/1/2007 0:00	1/1/2007 0:00	
+241	241	2009 Surf Clam, Offshore Catch Locations	0	2	FAM	10	Jones, Chris			Stock Assessment	2		999999		-1				9/9/2009 0:00	9/9/2009 0:00	
+242	242	2011 Cod RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				1/15/2010 0:00	1/15/2010 0:00	
+243	243	2011 Removal of Barriers on Mill Lake Stream	0	2	Habitat	14	McAllister, Kurt			Mitigation	2		999999		-1				4/28/2011 0:00	4/28/2011 0:00	
+244	244	2008 Scallop, SFA 29	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				1/1/2008 0:00	1/1/2008 0:00	
+245	245	2009 SOEP EEM Review #1 - Results of 2008 EEM	0	2	Habitat	14	Rodger, Peter			EEM	2		999999		-1				4/24/2009 0:00	4/24/2009 0:00	
+246	246	2009 SOEP EEM Review #2 - Proposal for 2009 EEM	0	2	Habitat	14	Rodger, Peter			EEM	2		999999		-1				4/24/2009 0:00	4/24/2009 0:00	
+247	247	2011 SEA for Southwestern Scotian Slope	0	2	Habitat	14	Curran, Kristian			EA	2		999999		-1				10/11/2011 0:00	10/11/2011 0:00	
+248	248	2011 Review of Makivik Kelp Harvest Proposal	0	2	FAM	10				Stock Assessment	2		999999		-1				8/24/2011 0:00	8/24/2011 0:00	
+249	249	2011 PA Reference Points	0	2	FAM	10	Leslie, Stefan			Precautionary Approach	2		999999		-1				9/14/2011 0:00	9/14/2011 0:00	
+251	251	2011 Review of FORCE EEM Report	0	2	Habitat	14	Humphrey, Don			Tidal Power	2		999999		-1				9/22/2011 0:00	9/22/2011 0:00	
+252	252	2012 Shoal Bay Aquaculture: Salmon Impacts	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				4/17/2012 0:00	4/17/2012 0:00	
+253	253	2012 Shoal Bay Aquaculture: Habitat Use	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				4/17/2012 0:00	4/17/2012 0:00	
+254	254	2012 Scallop Closure for Yellowtail	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+255	255	2012 Scallop Closure for Cod	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+256	256	2012 Silver Hake Framework and Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+257	257	2012 Herring Assessment	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+258	258	2012 Shoal Bay Aquaculture: Organic Enrichment	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				4/17/2012 0:00	4/17/2012 0:00	
+259	259	2012 Cheney Head Aquaculture: Organic Enrichment	0	2	Habitat	14	McLean, Mark			Aquaculture	2		999999		-1				4/19/2012 0:00	4/19/2012 0:00	
+260	260	2012 PEV Wharf Dredging EA Review	0	2	Habitat	14	Humphrey, Don				2		999999		-1				4/20/2012 0:00	4/20/2012 0:00	
+261	261	2012 RV Survey Results	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+263	263	2012 Donkin Export Coking Coal Project EIS	0	2	Habitat	14	Currie, Ted				2		999999		-1				5/1/2012 0:00	5/1/2012 0:00	
+264	264	2012 IMTA	0	2	FAM	10	Cline, Jeff			Aquaculture	2		999999		-1				12/9/2011 0:00	12/9/2011 0:00	
+265	265	2012 Sisson Project- Baseline Tech Report Review	0	2	Habitat	14	Currie, Ted			Onshore Development	2		999999		-1				6/28/2012 0:00	6/28/2012 0:00	
+266	266	2012 SEA for Sable Bank and Slope	0	2	Oceans	2	Curran, Kristian			Onshore Development	2		999999		-1				8/1/2012 0:00	8/1/2012 0:00	
+267	267	2012 LFA 34-38 Lobster Framework and Assessment	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+268	268	2012 Offshore Scallop	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+269	269	2012 Right Whale	0	2	SARA	4	Penney, Marcia			Other SARA Issue	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+270	270	2012 Scallop SFA 29	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+271	271	2012 Research in Closed Areas	0	2	FAM	10	Quigley, Sara			Precautionary Approach	2		999999		-1				2/14/2012 0:00	2/14/2012 0:00	
+272	272	2012 ESS Aquaculture Framework	0	2	Science	1	Worcester, Tana			Aquaculture	2		999999		-1				12/23/2011 0:00	12/23/2011 0:00	
+273	273	2012 Bycatch Next Steps	0	2	FAM	10	Quigley, Sara			Stock Assessment	2		999999		-1				12/21/2011 0:00	12/21/2011 0:00	
+274	274	2012 Leatherback Placeholder	0	2	SARA	4	Penney, Marcia			Other SARA Issue	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+275	275	2012 Scallop BOF Assessment	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+276	276	2012 Shrimp Assessment	0	2	FAM	10	Quigley, Sara			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+277	277	2012 Snow Crab Assessment	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+278	278	2012 Maritimes Link Review	0	2	Habitat	14	Humphrey, Don			Onshore Development	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+279	279	2012 MPA Network Placeholder	0	2	Oceans	2	Westhead, Maxine			MPAs	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+280	280	2012 IBOF Salmon Critical Habitat	0	2	SARA	4	Penney, Marcia			Other SARA Issue	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+281	281	2012 Porbeagle Pre-COSEWIC	0	2	Science	1	Harris, Lei			Pre-COSEWIC	2		999999		-1				2/3/2012 0:00	2/3/2012 0:00	
+282	282	2012 ECB Salmon RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+283	283	2012 OBoF Salmon RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+284	284	2012 Atlantic Sturgeon RPA	0	2	SARA	4	Penney, Marcia			RPA	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+285	285	2012 TRAC Cod/Haddock/Yellowtail Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+286	286	2012 Musquash MPA Monitoring	0	2	Science	1	Kennedy, Eddy			MPAs	2		999999		-1				5/25/2012 0:00	5/25/2012 0:00	
+287	287	2012 St Anns Bank Monitoring	0	2	Science	1	Kennedy, Eddy			MPAs	2		999999		-1				5/25/2012 0:00	5/25/2012 0:00	
+288	288	2012 Gully MPA Monitoring	0	2	Oceans	2	Westhead, Maxine			MPAs	2		999999		-1				12/22/2011 0:00	12/22/2011 0:00	
+289	289	2013 Review of SEA Phase 2 (Banqereau and Misaine)	0	2	Oceans	2	Curran, Kristian			Offshore Development	2		999999		-1				11/16/2012 0:00	11/16/2012 0:00	
+291	291	2013 Bay of Fundy Scallop Stock Status	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				1/25/2013 0:00	1/25/2013 0:00	
+292	292	2013 Halibut Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				2/6/2013 0:00	2/6/2013 0:00	
+293	293	2013 Spiny Dogfish Framework & Assessment	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+294	294	2013 Scallop 29W Stock Status	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				7/25/2013 0:00	7/25/2013 0:00	
+295	295	2013 N-ENS, S-ENS and 4X Snow Crab Stock Status	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				1/24/2013 0:00	1/24/2013 0:00	
+296	296	2013 Eastern Scotian Shelf Shrimp Stock Status	0	2	FAM	10	Quigley, Sara			Stock Assessment	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+297	297	2013 Salmon (SFAs19,20,21and23) Status	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				1/25/2013 0:00	1/25/2013 0:00	
+298	298	2013 Western Pollock Harvest Control Rule	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+299	299	2013 4VWX Herring Stock Status	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				2/4/2013 0:00	2/4/2013 0:00	
+301	301	2013 Sensitive Benthic Area Mapping - BoF EBSA	0	2	FAM	10	Quigley, Sara			Sensitive Benthic Areas	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+302	302	2013 Cusk RPA	0	2	SARA	4	Carew, Andrea			RPA	2		999999		-1				12/18/2012 0:00	12/18/2012 0:00	
+303	303	2013 Striped Bass RPA - Bay of Fundy DU	0	2	SARA	4	Carew, Andrea			RPA	2		999999		-1				12/11/2012 0:00	12/11/2012 0:00	
+304	304	2013 Shortnose Sturgeon pre-COSEWIC	0	2	SARA	4	Carew, Andrea			Pre-COSEWIC	2		999999		-1				1/8/2013 0:00	1/8/2013 0:00	
+305	305	2013 Critical Habitat for Loggerheads	0	2	SARA	4	Schaefer, Heidi			Other SARA Issue	2		999999		-1				12/19/2012 0:00	12/19/2012 0:00	
+306	306	2013 RV Survey Trends - Georges Bank	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+307	307	2013 RV Survey Trends - Scotian Shelf	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+308	308	2013 4VWX5 Cusk Stock Status	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+309	309	2013 Risks to DFO Surveys with Vazella closures	0	2	FAM	10	Quigley, Sara			Sensitive Benthic Areas	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+310	310	2013 Monitoring and Evaluating Vazella closures	0	2	FAM	10	Quigley, Sara			Sensitive Benthic Areas	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+312	312	2013 pre-COSEWIC Winter Skate	0	2	SARA	4	Carew, Andrea			Pre-COSEWIC	2		999999		-1				12/18/2012 0:00	12/18/2012 0:00	
+313	313	2013 Southern Uplands Salmon DU Mitigation	0	2	SARA	4	Carew, Andrea			RPA	2		999999		-1				12/18/2012 0:00	12/18/2012 0:00	
+314	314	2013 Atlantic Whitefish-Smallmouth Bass Mitigation	0	2	SARA	4	Carew, Andrea			Other SARA Issue	2		999999		-1				1/17/2013 0:00	1/17/2013 0:00	
+315	315	2013 Offshore Scallops	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				2/4/2013 0:00	2/4/2013 0:00	
+316	316	2013 GB Scallop Closures - Yellowtail and Cod	0	2	FAM	10	Docherty, Verna			Stock Assessment	2		999999		-1				1/24/2013 0:00	1/24/2013 0:00	
+317	317	2013 Bycatch Action Plan Next Steps	0	2	FAM	10	Quigley, Sara			Precautionary Approach	2		999999		-1				1/23/2013 0:00	1/23/2013 0:00	
+318	318	2014 pre-COSEWIC for blue shark	0	2	SARA	4	Penney, Marci			Pre-COSEWIC	2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+319	319	2014 RPA for Porbeagle Shark	0	2	SARA	4	Penney, Marci			RPA	2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+320	320	2014 Critical Habitat for Loggerhead Turtle	0	2	SARA	4	Penney, Marci			Other SARA	2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+321	321	2014 Critical Habitat for Mud Piddock	0	2	SARA	4	Penney, Marci			Other SARA	2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+322	322	2013 Lobster LFA 41 Stock Status	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				8/14/2013 0:00	8/14/2013 0:00	
+323	323	2014 MPA Network Planning	0	2	Oceans	2				MPA	2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+324	324	2014 Maritimes Link Monitoring - DRAFT	0	2	FPP	13					2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+325	325	2014 Atlantic Halibut Framework	0	2	Science	1				Stock Assessment	2		999999		-1				11/6/2013 0:00	11/6/2013 0:00	
+326	326	2014 Atlantic Halibut Assessment	0	2	FAM	10				Stock Assessment	2		999999		-1				11/6/2013 0:00	11/6/2013 0:00	
+327	327	2014 Haddock Framework	0	2	Science	1				Stock Assessment	2		999999		-1				11/26/2013 0:00	11/26/2013 0:00	
+328	328	2014 Haddock Assessment	0	2	FAM	10				Stock Assessment	2		999999		-1				11/6/2013 0:00	11/6/2013 0:00	
+329	329	2014 Scotia-Fundy Eel and Elver Assessment	0	2	FAM	10				Stock Assessment	2		999999		-1				11/6/2013 0:00	11/6/2013 0:00	
+331	331	2014 Offshore Scallop Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/6/2013 0:00	11/6/2013 0:00	
+332	332	2014 Bay of Fundy Scallop Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/5/2013 0:00	11/5/2013 0:00	
+333	333	2014 SFA 29 Scallop Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/5/2013 0:00	11/5/2013 0:00	
+334	334	2014 Snow Crab Assessment	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				10/23/2013 0:00	10/23/2013 0:00	
+335	335	2014 4VWX Herring Assessment	0	2	FAM	10				Stock Assessment	2		999999		-1				11/19/2013 0:00	11/19/2013 0:00	
+336	336	2014 ESS Shrimp Assessment	0	2	FAM	10				Stock Assessment	2		999999		-1				12/5/2013 0:00	12/5/2013 0:00	
+338	338	2014 Silver Hake Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/7/2013 0:00	11/7/2013 0:00	
+339	339	2014 4X5Y Cod Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/8/2013 0:00	11/8/2013 0:00	
+340	340	2014 Cusk Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/6/2013 0:00	11/6/2013 0:00	
+341	341	2014 Pollock Harvest Control Rule Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/5/2013 0:00	11/5/2013 0:00	
+342	342	2014 Salmon Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/6/2013 0:00	11/6/2013 0:00	
+343	343	2014 Scotian Shelf RV Survey Report	0	2	FAM	10				Stock Assessment	2		999999		-1				11/5/2013 0:00	11/5/2013 0:00	
+344	344	2014 Georges Bank RV Survey Report	0	2	FAM	10				Stock Assessment	2		999999		-1				11/5/2013 0:00	11/5/2013 0:00	
+345	345	2014 Cod Closure on Georges Bank Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+346	346	2014 Yellowtail Closure on Georges Bank Update	0	2	FAM	10				Stock Assessment	2		999999		-1				11/15/2013 0:00	11/15/2013 0:00	
+347	347	2014 RV Survey Framework (Secondary Species)	0	2	FAM	10				Stock Assessment	2		999999		-1				3/21/2014 0:00	3/21/2014 0:00	
+348	348	2014 LFA 41 Lobster Update	0	2	FAM	10				Stock Assessment	2		999999		-1				2/19/2014 0:00	2/19/2014 0:00	
+349	349	2014 LFA 34 Lobster Update	0	2	FAM	10				Stock Assessment	2		999999		-1				2/13/2014 0:00	2/13/2014 0:00	
+350	350	2014 LFA 35-38 Lobster Update	0	2	FAM	10				Stock Assessment	2		999999		-1				2/19/2014 0:00	2/19/2014 0:00	
+351	351	2014 Shortnose Sturgeon Evaluation for US Petition	0	2	NHQ	26				Stock Assessment	2		999999		-1				12/12/2013 0:00	12/12/2013 0:00	
+352	352	2014 TRAC Cod, Haddock and Yellowtail Assessment	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				11/5/2013 0:00	11/5/2013 0:00	
+353	353	2014 TRAC Yellowtail Framework	0	2	FAM	10				Stock Assessment	2		999999		-1				2/17/2014 0:00	2/17/2014 0:00	
+358	358	2014 LFA 27-33 Lobster Update	0	2	FAM	10	MacDonald, Carl			Stoack Assessment	2		999999		-1				4/4/2014 0:00	4/4/2014 0:00	
+359	359	2014 Support for Delineation of IBOF Salmon CH	0	2	SARA	4	Robichaud-LeBlanc, Kim			Other SARA Issue	2		999999		-1				6/2/2014 0:00	6/2/2014 0:00	
+362	362	2014 Shell Exploration Drilling	0	2	Habitat	14	Wambolt, Michael			Offshore Development (petroleum)	2		999999		-1				6/11/2014 0:00	6/11/2014 0:00	
+363	363	2014 Point Lepreau Entrainment Monitoring	0	2	Habitat	14	Godin, Carole			Onshore Development	2		999999		-1				6/27/2014 0:00	6/27/2014 0:00	
+366	366	2016 SFA 19-23 Salmon Stock Status Update	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+367	367	2016 Scotian Shelf Snow Crab Stock Status Update	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+368	368	2016 River Herring Frmwrk and Tusket River Assess	0	2	Science	1	Bowlby, Heather			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+369	369	2016 Haddock 4X5Yb Framework	0	2	Science	1	Stone, Heath			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+370	370	2016 Incidental Catch Swordfish Tuna LL Fishery	0	2	FAM	10	Eagles, Mike			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+371	371	2015 4VWX5 Dogfish Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+372	372	2015 ESS Shrimp Stock Status Update	0	2	FAM	10	Ford, Jennifer			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+373	373	2015 Cusk 4VWX5 Stock Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/2/2015 0:00	4/2/2015 0:00	
+374	374	2015 4VWX Silver Hake Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+375	375	2015 WC Pollock Stock Status Update	0	2	FAM	10	Ford, Jennifer			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+376	376	2015 Halibut 3NOPs4VWX5 Stock Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+377	377	2015 RV Survey Trends SS Status Updates	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+378	378	2015 4X5Y Cod Stock Status Update	0	2	FAM	10	MacDonald, Carl			Sensitive Benthic Areas	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+379	379	2015 LFAs 27-33 Lobster Stock Status Update	0	2	FAM	10	Quigley, Sara			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+380	380	2015 Survey Trends BoF Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+381	381	2015 BoF Scallop Assessment	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	
+382	382	2017 Evaluation of the suitability of the Peskowesk Lake system for Atlantic Whitefish range expansion	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+383	383	2017 Lake Utopia rainbow smelt large-bodied population abundance and allowable harm estimate (update to 2016 Science Response)	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+384	384	2017 RPA for Blue Shark	0	2	SARA	4	Craig, Mark			RPA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+385	385	2017 Atlantic Mud Piddock Threat Assessment	0	2	SARA	4	Craig, Mark			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+386	386	2017 Review of the 2016 National Oceanographic and Atmospheric Administration Technical Guidelines for Assessing the Effects of Anthropogenic Sound on Marine Mammal Hearing	0	2	FPP	13	Wambolt, Mike			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+387	387	2017 Assessment of Leatherback Turtle fishery and non-fishery interactions in Atlantic Canadian waters	0	2	SARA	4	Craig, Mark			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+388	388	2017 pre-COSEWIC Assessment for Lake Utopia Rainbow Smelt - small-bodied and large-bodied populations	0	2	SARA	4	Craig, Mark			Pre-COSEWIC	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+389	389	2017 Ecosystem Overview for NCP Area of Interest (coastal) in Maritimes Region	0	2	Oceans	2	Westhead, Max			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+390	390	2017 Optimal stocking strategy to maximize success of Atlantic Whitefish introduction and populaton establishment in the Peskowest Lake system	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+392	392	2017 Ecosystem Overview for NCP Area of Interest (offshore) in Maritimes Region	0	2	Oceans	2	Westhead, Max			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+393	393	2017 Information on key benthic features of Head Harbour/West Isles/the Passages EBSA, the Wolves/Whitehorse Island EBSA and Southwest Grand Manan EBSA	0	2	Oceans	2	Breeze, Heather			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+394	394	2017 Modelling the effects of potential fish mortalities associated with in-stream tidal energy conversion devices in the Minas Passage, Bay of Fundy, NS	0	2	FPP	13	Humphrey, Donald				2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+395	395	2017 Re-assessment of recovery targets for striped bass (Bay of Fundy DU)	0	2	SARA	4	Deller, Sarah			Other SARA Issue	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+396	396	2017 Optimal strategy for invasive species control to ensure survival and recovery of Atlantic Whitefish in the Petite Riviere lakes	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+397	397	2017 Identification of important habitat for the Northern Bottlenose Whale (Scotian Shelf population)	0	2	SARA	4	Craig, Mark			critical habitat	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+398	398	2017 Effect of mandatory circle hook use on Loggerhead Turtle bycatch rates in the Canadian pelagic longline fishery	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+399	399	2017 Monitoring framework for MPAs	0	2	Oceans	2	Westhead, Max			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+400	400	2017 Information to inform the identification of critical habitat for the Loggerhead Sea Turtle	0	2	SARA	4	Schaefer, Heidi			critical habitat	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+401	401	2017 Soft-Shell Clam	0	2	FAM	10	Lent, Jamie				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+419	419	2017 Assessment of Maritimes Region Snow Crab	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+420	420	2017 Split weight sampling framework in the sea cucumber fisheries	0	2	FAM	10	Quigley, Sara				2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+424	424	2017 Assessment of the Status of the LFA 27-33 Lobster	0	2	FAM	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+428	428	2017 Length Frequency Sampling Framework in the Hagfish Fishery	0	2	FAM	10	Quigley, Sara				2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+431	431	2017 Validation of loss of productivity models	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+432	432	2017 Advice related to Transcanada East Marine Terminal	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+433	433	2017 Validation of the fish restoration models for the St. Croix River	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+434	434	2017 Determine equivalent adults and production foregone in terms of impacts to fishery productivity using the Point Lepreau Generating Station impingement and entrainment monitoring reports	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+435	435	2017 Advice related to NB Power Mactaquac Dam	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+436	436	2017 Advice on the Milltown Dam (NB) turbine efficiency	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	
+443	443	2017 Shortfin Mako RPA	0	2	SARA	4	Craig, Mark			RPA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	
+446	446	2018 Review of Offshore AOI (Fundian Channel)	0	2	Oceans / Océans	2	Westhead, Max			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+447	447	Science Advice for USR point for Atlantic Herring	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				10/26/2017 0:00	10/26/2017 0:00	
+448	448	LURS Allowable Harm Estimates	0	2	SARA / LEP	4	Schaefer, Heidi			Other SARA Issue	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+449	449	Loggerhead Mortality	0	2	SARA / LEP	4	Humphrey, Donald			Other SARA Issue	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+450	450	Review of NOAA Guidelines on Effects of Sound on Marine Mammal Hearing	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Wambolt, Michael			Marine Mammals	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+451	451	BoF Energy Conversion Devices	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Burbidge, Chris			Precautionary Approach	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+452	452	Avon River Fish Passage	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Hominick, Craig			Habitat	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+453	453	Mactaquac Dam NB Power	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+454	454	Hydro Dam Turbine Efficiency	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+455	455	Cable Corridor productivity models	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+456	456	Advice on Fish passage guidelines for regional and national HE dams	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+457	457	Artic Surf Clam Stock Update	0	2	Fisheries Management / Gestion des resources des pêches	10	MacDonald, Carl			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+458	458	4X5Y Cod Stock Assessment	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+459	459	Gaspereau productivity impacts hydro electric	0	2	Fisheries Protection Program (FPP) / Programme de protection des pêches	13	Stevens, Greg			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+460	460	Rope Strength Study NARW	0	2	Fisheries Management / Gestion des resources des pêches	10	Sweet, Marilyn			Marine Mammals	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+461	461	Stock Status of SFA 19,20,21,23 Salmon	0	2	Aquaculture	8	Stevens, Greg			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+462	462	Striped Bass population estimates	0	2	Fisheries Management / Gestion des resources des pêches	10	Stevens, Greg			Other SARA Issue	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+463	463	4VWX Cusk Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+464	464	4VWX Dogfish Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+465	465	2018 Scotian Shelf and Bay of Fundy RV Survey Trends	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+466	466	TRAC Cod, Haddock, Yellowtail Assessments	0	2	Fisheries Management / Gestion des resources des pêches	10	Hussey-Bondt, Laura			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+467	467	2018 Georges Bank RV Survey Trends	0	2	Fisheries Management / Gestion des resources des pêches	10	Hussey-Bondt, Laura			Fisheries related - other	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+468	468	St Mary's Bay Sculpin fishery assessment and Indicators	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+469	469	4X5Y Haddock Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+470	470	3NOPs4VWX+5 Atlantic Halibut Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+471	471	Assessment of 4VWX Herring	0	2	Fisheries Management / Gestion des resources des pêches	10	Waters, Christa			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+472	472	Monitoring Framework for Jonah Crab	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Fisheries related - other	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+473	473	Stock Status Update for Lobster Fishing Areas 27-33	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+474	474	Stock Assessment for Lobster Fishing Area 34	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+475	475	Stock Assessment for Lobster Fishing Area 35-38	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+476	476	Stock Status Update for Lobster Fishing Area 41	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+477	477	Advice on sampling for Estimating Cusk and 4x5 cod bycatch in the Lobster fisheries	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+478	478	Review of Science Data available for Marine Worm	0	2	Fisheries Management / Gestion des resources des pêches	10	Waters, Christa			Precautionary Approach	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+479	479	Western Component Pollock Management Strategy Evaluation Interim Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+480	480	Unit 3 Redfish Stock Assessment with Catch Projections	0	2	Fisheries Management / Gestion des resources des pêches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+481	481	Bay of Fundy Scallop Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+482	482	Offshore Scallop Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+483	483	Scallop Fishing Area 29 West Update	0	2	Fisheries Management / Gestion des resources des pêches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+484	484	Georges Bank Offshore Scallop Closure for Cod Spawning Assessment and Advice	0	2	Fisheries Management / Gestion des resources des pêches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+485	485	Review of Stock Status Indicators and Advice on Approaches to setting Reference Points for the Sea Cucumber Fisheries in Maritime Regions	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+486	486	Review of Science Data available for various secondary species	0	2	Fisheries Management / Gestion des resources des pêches	10	Waters, Christa			Precautionary Approach	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+487	487	Eastern Scotian Shelf Shrimp Stock Assessment	0	2	Fisheries Management / Gestion des resources des pêches	10	Potter, Ted			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+488	488	4vwx Silver Hake Interim Report	0	2	FAM	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+489	489	Assessment of Maritimes Region Snow Crab	0	2	Fisheries Management / Gestion des resources des pêches	10	Hayman, Timothy			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+490	490	Assessment of Soft-Shell Clam Resource in SWNS	0	2	Fisheries Management / Gestion des resources des pêches	10	Hayman, Timothy			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+491	491	A review of Research Objectives and Priorities for the Exploratory Whelk Fishery in Offshore 4V's	0	2	Fisheries Management / Gestion des resources des pêches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	
+493	493	Review of Existing Scientific Literature to Determine the Level of Fish Mortality and Potential Impacts on Fish Populations as a Result of the Operation of Annapolis Tidal Power Facility.	0	2	Science	1	Hominick, Craig			Precautionary Approach	2		999999		-1				11/29/2017 0:00	11/29/2017 0:00	
+494	494	Inner BoF Atlantic Salmon Population Abundance Estimate	0	2	SARA / LEP	4	Schaefer, Heidi			Species at Risk	2		999999		-1				1/12/2018 0:00	1/12/2018 0:00	

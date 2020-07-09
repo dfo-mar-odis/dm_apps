@@ -11,7 +11,7 @@ class ContactFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.ConContact
-        fields = ['last_name', 'first_name', 'contact_type', 'region']
+        fields = ['last_name', 'first_name', 'contact_type', 'region', 'role', 'expertise']
 
 
 class MeetingFilter(django_filters.FilterSet):
@@ -28,12 +28,42 @@ class MeetingFilter(django_filters.FilterSet):
         self.filters['start_date'] = django_filters.ChoiceFilter(field_name='start_date', lookup_expr='exact', choices=dates)
 
 
+class MeetingFilterDFOPars(django_filters.FilterSet):
+    # meeting = django_filters.ChoiceFilter(field_name='meeting', lookup_expr='exact')
+
+    class Meta:
+        model = models.MetMeetingDFOPars
+        fields = ['meeting', 'name', 'role', 'time']
+        # fields = ['meeting', 'name', 'role', 'time', 'cost_category', 'funding_source', 'total_salary']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        #meet = [(y[0], str(y[0])) for y in models.MetMeetingDFOPars.objects.all().values_list('meeting').distinct()]
+        #self.filters['meeting'] = django_filters.ChoiceFilter(field_name='meeting', lookup_expr='exact', choices=meet)
+
+
+class MeetingFilterOtherPars(django_filters.FilterSet):
+    name = django_filters.ChoiceFilter(field_name='meeting', lookup_expr='exact')
+
+    class Meta:
+        model = models.MetMeetingOtherPars
+        fields = ['meeting', 'name', 'role', 'affiliation', 'invited', 'attended']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        dates = [(y[0], str(y[0])) for y in models.MetMeetingOtherPars.objects.all().values_list('meeting').distinct()]
+        self.filters['meeting'] = django_filters.ChoiceFilter(field_name='meeting', lookup_expr='exact', choices=dates)
+
+
 class PublicationFilter(django_filters.FilterSet):
     series = django_filters.CharFilter(field_name='series', lookup_expr='icontains')
+    title_en = django_filters.CharFilter(field_name='title_en', lookup_expr='icontains')
 
     class Meta:
         model = models.PubPublication
-        fields = ['series', 'lead_region', 'lead_author', 'pub_year']
+        fields = ['series', 'title_en', 'lead_region', 'lead_author', 'other_author', 'pub_year']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -43,16 +73,12 @@ class PublicationFilter(django_filters.FilterSet):
 
 
 class RequestFilter(django_filters.FilterSet):
-    # start_date = django_filters.ChoiceFilter(field_name='start_date', lookup_expr='exact')
-    region = django_filters.ChoiceFilter(field_name='region', lookup_expr='exact')
     title = django_filters.CharFilter(field_name='title', lookup_expr='icontains')
     client_name = django_filters.CharFilter(field_name='client_name', lookup_expr='icontains')
 
     class Meta:
         model = models.ReqRequest
-        # fields = ['start_date', 'title_en', 'process_type', 'lead_region']
-        fields = ['region', 'client_sector', 'title', 'client_name', 'funding']
-        # fields = {'finding': ['Yes', 'No'],}
+        fields = ['title', 'region', 'client_sector', 'client_name', 'priority_id', 'funding']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

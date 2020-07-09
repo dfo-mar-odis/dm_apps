@@ -4,7 +4,7 @@ from faker import Factory
 from django.utils import timezone
 
 from projects import models
-from shared_models.test.SharedModelsFactoryFloor import UserFactory, SectionFactory
+from shared_models.test.SharedModelsFactoryFloor import UserFactory, SectionFactory, RegionFactory
 from shared_models import models as shared_models
 
 faker = Factory.create()
@@ -71,3 +71,21 @@ class OMCostTravelFactory(OMCostFactory):
 
 class OMCostEquipmentFactory(OMCostFactory):
     om_category = factory.lazy_attribute(lambda o: models.OMCategory.objects.get(pk=5))
+
+
+class UpcomingDateFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.UpcomingDate
+
+    region = factory.SubFactory(RegionFactory)
+    description_en = factory.lazy_attribute(lambda o: faker.text())
+    date = factory.lazy_attribute(lambda o: faker.date_time_this_year(tzinfo=timezone.get_current_timezone()))
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'region': RegionFactory().id,
+            'description_en': faker.text(),
+            'date': faker.date_time_this_year(tzinfo=timezone.get_current_timezone()),
+        }
+

@@ -6,64 +6,71 @@
 {% bootstrap_css %}
 
 {% block body %}
-	<div class="container pt-5 text-center">
-	    <div class=jumbotron border border-dark">
-		    {% trans "<h1>CSAS Tracking Tool</h1>" %}
-		</div>
-	</div>
+    <div class="container pt-5 text-center">
+        <div class="jumbotron border border-dark">
+            {% trans "<h1>CSAS Tracking Tool</h1>" %}
+        </div>
+    </div>
 
     <div class="container pt-3">
         <div class="jumbotron border border-dark">
-            <hr>    <!-- add a line -->
-
+        <hr>    <!-- add a line -->
             <div class="row mb-2">
-			    <div class="col-1"> </div>
+                <div class="col-1"> </div>
                 <div class="col-5">{% trans "<h3>Requests for Science Advice</h3>" %}</div>
-                <div class="col-1"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_req'%}">{% trans "All" %}</a></div>
-                <div class="col-2"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_req'%}">{% trans "Maritimes" %}</a></div>
-
-                {# if the user is in Staff-Users group and has permissions to input New Requests #}
+                <div class="col-1"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_req'%}">{% trans "All" %}</a></div>
+                <div class="col-2"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_req'%}">{% trans "Maritimes" %}</a></div>
+                {# if the user is in csas-users group and has permissions to input New Requests #}
                 {% if auth %}
-                    <div class="col-3"><a class="btn btn-secondary btn-lg" href="{% url 'csas:create_req'%}">{% trans "New Request" %}</a></div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_req'%}">{% trans "New Request" %}</a></div>
                 {% endif %}
             </div>
             <hr/>
 
             <div class="row mb-2">
-			    <div class="col-1"> </div>
+                <div class="col-1"> </div>
                 <div class="col-5">{% trans "<h3>Schedule of Meetings</h3>" %}</div>
-                <div class="col-1"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_met'%}">{% trans "All" %}</a></div>
-                <div class="col-2"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_met'%}">{% trans "Maritimes" %}</a></div>
-
+                <div class="col-1"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_met'%}">{% trans "All" %}</a></div>
+                <div class="col-2"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_met'%}">{% trans "Maritimes" %}</a></div>
                 {# if the user is in csas-admin group authenticated and has permissions to input New Meetings #}
                 {% if csas_admin %}
-                    <div class="col-3"><a class="btn btn-secondary btn-lg" href="{% url 'csas:create_met'%}">{% trans "New Meeting" %}</a></div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:index_met'%}">{% trans "New Meeting" %}</a></div>
                 {% endif %}
             </div>
             <hr/>
 
             <div class="row mb-2">
-			    <div class="col-1"> </div>
+                <div class="col-1"> </div>
                 <div class="col-5">{% trans "<h3> Publications </h3>" %}</div>
-                <div class="col-1"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_pub'%}">{% trans "All" %}</a></div>
-                <div class="col-2"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_pub'%}">{% trans "Maritimes" %}</a></div>
-
+                <div class="col-1"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_pub'%}">{% trans "All" %}</a></div>
+                <div class="col-2"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_pub'%}">{% trans "Maritimes" %}</a></div>
                 {# if the user is in csas-admin group authenticated and has permissions to input New Publications #}
                 {% if csas_admin %}
-                    <div class="col-3"><a class="btn btn-secondary btn-lg" href="{% url 'csas:create_pub'%}">{% trans "New Publication" %}</a></div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:index_pub'%}">{% trans "New Publication" %}</a></div>
                 {% endif %}
             </div>
             <hr/>
 
             <div class="row mb-2">
-			    <div class="col-1"> </div>
+                <div class="col-1"> </div>
                 <div class="col-5">{% trans "<h3> Contacts </h3>" %}</div>
-                <div class="col-1"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_con'%}">{% trans "All" %}</a></div>
-                <div class="col-2"><a class="btn btn-secondary btn-lg" href="{% url 'csas:list_con'%}">{% trans "Maritimes" %}</a></div>
-
-                {# if the user is in Staff-Users group and has permissions to input New Contact #}
-                {% if auth %}
-                    <div class="col-3"><a class="btn btn-secondary btn-lg" href="{% url 'csas:create_con' %}">{% trans "New Contact" %}</a></div>
+                <div class="col-1"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_con'%}">{% trans "All" %}</a></div>
+                <div class="col-2"><a class="btn btn-secondary btn-lg"
+                                      href="{% url 'csas:list_con'%}">{% trans "Maritimes" %}</a></div>
+                {# if the user is in csas-users group and has permissions to input New Contact #}
+                {% if csas_admin %}
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_con' %}">{% trans "New Contact" %}</a></div>
                 {% endif %}
             </div>
             <hr/>

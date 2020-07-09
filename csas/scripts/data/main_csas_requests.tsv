@@ -1,0 +1,95 @@
+req_id	assigned_req_id	title	in_year_request	region	old_client_sector	client_sector	client_name	client_title	client_email	issue	priority	rationale	proposed_timing	rationale_for_timing	funding	funding_notes	science_discussion	science_discussion_notes	adviser_submission	rd_submission	decision_date
+1	366	2016 SFA 19-23 Salmon Stock Status Update	0	2	FAM	10	Stevens, Greg			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+2	367	2016 Scotian Shelf Snow Crab Stock Status Update	0	2	FAM	10	MacDonald, Claire			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+3	368	2016 River Herring Frmwrk and Tusket River Assess	0	2	Science	1	Bowlby, Heather			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+4	369	2016 Haddock 4X5Yb Framework	0	2	Science	1	Stone, Heath			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+5	370	2016 Incidental Catch Swordfish Tuna LL Fishery	0	2	FAM	10	Eagles, Mike			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+6	371	2015 4VWX5 Dogfish Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+7	372	2015 ESS Shrimp Stock Status Update	0	2	FAM	10	Ford, Jennifer			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+8	373	2015 Cusk 4VWX5 Stock Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/2/2015 0:00	4/2/2015 0:00	4/2/2015 0:00
+9	374	2015 4VWX Silver Hake Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+10	375	2015 WC Pollock Stock Status Update	0	2	FAM	10	Ford, Jennifer			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+11	376	2015 Halibut 3NOPs4VWX5 Stock Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+12	377	2015 RV Survey Trends SS Status Updates	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+13	378	2015 4X5Y Cod Stock Status Update	0	2	FAM	10	MacDonald, Carl			Sensitive Benthic Areas	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+14	379	2015 LFAs 27-33 Lobster Stock Status Update	0	2	FAM	10	Quigley, Sara			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+15	380	2015 Survey Trends BoF Status Update	0	2	FAM	10	MacDonald, Carl			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+16	381	2015 BoF Scallop Assessment	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				4/1/2015 0:00	4/1/2015 0:00	4/1/2015 0:00
+17	382	2017 Evaluation of the suitability of the Peskowesk Lake system for Atlantic Whitefish range expansion	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+18	383	2017 Lake Utopia rainbow smelt large-bodied population abundance and allowable harm estimate (update to 2016 Science Response)	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+19	384	2017 RPA for Blue Shark	0	2	SARA	4	Craig, Mark			RPA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+20	385	2017 Atlantic Mud Piddock Threat Assessment	0	2	SARA	4	Craig, Mark			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+21	386	2017 Review of the 2016 National Oceanographic and Atmospheric Administration Technical Guidelines for Assessing the Effects of Anthropogenic Sound on Marine Mammal Hearing	0	2	FPP	13	Wambolt, Mike			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+22	387	2017 Assessment of Leatherback Turtle fishery and non-fishery interactions in Atlantic Canadian waters	0	2	SARA	4	Craig, Mark			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+23	388	2017 pre-COSEWIC Assessment for Lake Utopia Rainbow Smelt - small-bodied and large-bodied populations	0	2	SARA	4	Craig, Mark			Pre-COSEWIC	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+24	389	2017 Ecosystem Overview for NCP Area of Interest (coastal) in Maritimes Region	0	2	Oceans	2	Westhead, Max			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+25	390	2017 Optimal stocking strategy to maximize success of Atlantic Whitefish introduction and populaton establishment in the Peskowest Lake system	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+26	392	2017 Ecosystem Overview for NCP Area of Interest (offshore) in Maritimes Region	0	2	Oceans	2	Westhead, Max			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+27	393	2017 Information on key benthic features of Head Harbour/West Isles/the Passages EBSA, the Wolves/Whitehorse Island EBSA and Southwest Grand Manan EBSA	0	2	Oceans	2	Breeze, Heather			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+28	394	2017 Modelling the effects of potential fish mortalities associated with in-stream tidal energy conversion devices in the Minas Passage, Bay of Fundy, NS	0	2	FPP	13	Humphrey, Donald				2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+29	395	2017 Re-assessment of recovery targets for striped bass (Bay of Fundy DU)	0	2	SARA	4	Deller, Sarah			Other SARA Issue	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+30	396	2017 Optimal strategy for invasive species control to ensure survival and recovery of Atlantic Whitefish in the Petite Riviere lakes	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+31	397	2017 Identification of important habitat for the Northern Bottlenose Whale (Scotian Shelf population)	0	2	SARA	4	Craig, Mark			critical habitat	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+32	398	2017 Effect of mandatory circle hook use on Loggerhead Turtle bycatch rates in the Canadian pelagic longline fishery	0	2	SARA	4	Schaefer, Heidi			other SARA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+33	399	2017 Monitoring framework for MPAs	0	2	Oceans	2	Westhead, Max			MPAs	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+34	400	2017 Information to inform the identification of critical habitat for the Loggerhead Sea Turtle	0	2	SARA	4	Schaefer, Heidi			critical habitat	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+35	401	2017 Soft-Shell Clam	0	2	FAM	10	Lent, Jamie				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+36	419	2017 Assessment of Maritimes Region Snow Crab	0	2	FAM	10	Butler, Maureen			Stock Assessment	2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+37	420	2017 Split weight sampling framework in the sea cucumber fisheries	0	2	FAM	10	Quigley, Sara				2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+38	424	2017 Assessment of the Status of the LFA 27-33 Lobster	0	2	FAM	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+39	428	2017 Length Frequency Sampling Framework in the Hagfish Fishery	0	2	FAM	10	Quigley, Sara				2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+40	431	2017 Validation of loss of productivity models	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+41	432	2017 Advice related to Transcanada East Marine Terminal	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+42	433	2017 Validation of the fish restoration models for the St. Croix River	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+43	434	2017 Determine equivalent adults and production foregone in terms of impacts to fishery productivity using the Point Lepreau Generating Station impingement and entrainment monitoring reports	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+44	435	2017 Advice related to NB Power Mactaquac Dam	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+45	436	2017 Advice on the Milltown Dam (NB) turbine efficiency	0	2	FPP	13	Godin, Carole				2		999999		-1				11/10/2016 0:00	11/10/2016 0:00	11/10/2016 0:00
+46	443	2017 Shortfin Mako RPA	0	2	SARA	4	Craig, Mark			RPA	2		999999		-1				11/8/2016 0:00	11/8/2016 0:00	11/8/2016 0:00
+47	446	2018 Review of Offshore AOI (Fundian Channel)	0	2	Oceans / Oc�ans	2	Westhead, Max			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+48	447	Science Advice for USR point for Atlantic Herring	0	2	FAM	10	Waters, Christa			Stock Assessment	2		999999		-1				10/26/2017 0:00	10/26/2017 0:00	10/26/2017 0:00
+49	448	LURS Allowable Harm Estimates	0	2	SARA / LEP	4	Schaefer, Heidi			Other SARA Issue	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+50	449	Loggerhead Mortality	0	2	SARA / LEP	4	Humphrey, Donald			Other SARA Issue	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+51	450	Review of NOAA Guidelines on Effects of Sound on Marine Mammal Hearing	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Wambolt, Michael			Marine Mammals	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+52	451	BoF Energy Conversion Devices	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Burbidge, Chris			Precautionary Approach	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+53	452	Avon River Fish Passage	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Hominick, Craig			Habitat	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+54	453	Mactaquac Dam NB Power	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+55	454	Hydro Dam Turbine Efficiency	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+56	455	Cable Corridor productivity models	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+57	456	Advice on Fish passage guidelines for regional and national HE dams	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Ferron, Christine			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+58	457	Artic Surf Clam Stock Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	MacDonald, Carl			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+59	458	4X5Y Cod Stock Assessment	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+60	459	Gaspereau productivity impacts hydro electric	0	2	Fisheries Protection Program (FPP) / Programme de protection des p�ches	13	Stevens, Greg			Oceans	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+61	460	Rope Strength Study NARW	0	2	Fisheries Management / Gestion des resources des p�ches	10	Sweet, Marilyn			Marine Mammals	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+62	461	Stock Status of SFA 19,20,21,23 Salmon	0	2	Aquaculture	8	Stevens, Greg			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+63	462	Striped Bass population estimates	0	2	Fisheries Management / Gestion des resources des p�ches	10	Stevens, Greg			Other SARA Issue	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+64	463	4VWX Cusk Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+65	464	4VWX Dogfish Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+66	465	2018 Scotian Shelf and Bay of Fundy RV Survey Trends	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+67	466	TRAC Cod, Haddock, Yellowtail Assessments	0	2	Fisheries Management / Gestion des resources des p�ches	10	Hussey-Bondt, Laura			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+68	467	2018 Georges Bank RV Survey Trends	0	2	Fisheries Management / Gestion des resources des p�ches	10	Hussey-Bondt, Laura			Fisheries related - other	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+69	468	St Mary's Bay Sculpin fishery assessment and Indicators	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+70	469	4X5Y Haddock Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+71	470	3NOPs4VWX+5 Atlantic Halibut Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+72	471	Assessment of 4VWX Herring	0	2	Fisheries Management / Gestion des resources des p�ches	10	Waters, Christa			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+73	472	Monitoring Framework for Jonah Crab	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Fisheries related - other	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+74	473	Stock Status Update for Lobster Fishing Areas 27-33	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+75	474	Stock Assessment for Lobster Fishing Area 34	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+76	475	Stock Assessment for Lobster Fishing Area 35-38	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+77	476	Stock Status Update for Lobster Fishing Area 41	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Fisheries related - stock assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+78	477	Advice on sampling for Estimating Cusk and 4x5 cod bycatch in the Lobster fisheries	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+79	478	Review of Science Data available for Marine Worm	0	2	Fisheries Management / Gestion des resources des p�ches	10	Waters, Christa			Precautionary Approach	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+80	479	Western Component Pollock Management Strategy Evaluation Interim Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+81	480	Unit 3 Redfish Stock Assessment with Catch Projections	0	2	Fisheries Management / Gestion des resources des p�ches	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+82	481	Bay of Fundy Scallop Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+83	482	Offshore Scallop Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+84	483	Scallop Fishing Area 29 West Update	0	2	Fisheries Management / Gestion des resources des p�ches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+85	484	Georges Bank Offshore Scallop Closure for Cod Spawning Assessment and Advice	0	2	Fisheries Management / Gestion des resources des p�ches	10	Reeves, Alan			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+86	485	Review of Stock Status Indicators and Advice on Approaches to setting Reference Points for the Sea Cucumber Fisheries in Maritime Regions	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+87	486	Review of Science Data available for various secondary species	0	2	Fisheries Management / Gestion des resources des p�ches	10	Waters, Christa			Precautionary Approach	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+88	487	Eastern Scotian Shelf Shrimp Stock Assessment	0	2	Fisheries Management / Gestion des resources des p�ches	10	Potter, Ted			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+89	488	4vwx Silver Hake Interim Report	0	2	FAM	10	Ford, Jennifer			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+90	489	Assessment of Maritimes Region Snow Crab	0	2	Fisheries Management / Gestion des resources des p�ches	10	Hayman, Timothy			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+91	490	Assessment of Soft-Shell Clam Resource in SWNS	0	2	Fisheries Management / Gestion des resources des p�ches	10	Hayman, Timothy			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+92	491	A review of Research Objectives and Priorities for the Exploratory Whelk Fishery in Offshore 4V's	0	2	Fisheries Management / Gestion des resources des p�ches	10	Quigley, Sara			Stock Assessment	2		999999		-1				11/10/2017 0:00	11/10/2017 0:00	11/10/2017 0:00
+93	493	Review of Existing Scientific Literature to Determine the Level of Fish Mortality and Potential Impacts on Fish Populations as a Result of the Operation of Annapolis Tidal Power Facility.	0	2	Science	1	Hominick, Craig			Precautionary Approach	2		999999		-1				11/29/2017 0:00	11/29/2017 0:00	11/29/2017 0:00
+94	494	Inner BoF Atlantic Salmon Population Abundance Estimate	0	2	SARA / LEP	4	Schaefer, Heidi			Species at Risk	2		999999		-1				1/12/2018 0:00	1/12/2018 0:00	1/12/2018 0:00

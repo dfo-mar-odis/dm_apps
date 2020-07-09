@@ -14,7 +14,7 @@ class CommonUpdateViewTest(cct.CommonTestCase):
 
     def setUp(self) -> None:
 
-        self.view = views.CsasCommonUpdateView()
+        self.view = views.CsasUpdateCommon()
 
     def test_update_template(self):
         self.assertIn("csas/csas_entry_form.html", self.view.get_template_names())
@@ -63,7 +63,7 @@ class ReqUpdateViewTest(TestCase):
 
     # Make sure the Req creation view is extending the CsasCommonCreateView class.
     def test_req_update_extends(self):
-        self.assertIsInstance(self.view, views.CsasCommonUpdateView)
+        self.assertIsInstance(self.view, views.CsasUpdateCommon)
 
     # req should be using the ReqRequest model
     def test_req_update_model(self):

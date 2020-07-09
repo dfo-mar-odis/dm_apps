@@ -1,0 +1,64 @@
+{% extends "csas/csas_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block body %}
+	<div class="container pt-5 text-center">
+	    <div class="jumbotron border border-dark">
+		    {% trans "<h1>CSAS Tracking Tool: New Publication Entry</h1>" %}
+		</div>
+	</div>
+
+    <div class="container pt-3">
+        <div class="jumbotron border border-dark">
+        <hr>    <!-- add a line -->
+            {# if the user is in csas-users group and has permissions to input New Requests #}
+            {% if auth %}
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>New Publication Details</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>New Publication Status</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_status'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>New Publication Translation Information</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_trans_info'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>New Publication Documentation Location</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_doc_location' %}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>New Publication O&M Costs</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_OM_costs' %}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>New Publication Communication of Results</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_com_results' %}">{% trans "+" %}</a></div>
+                </div><hr/>
+            {% endif %}
+        </div>
+    </div>
+{% endblock body %}

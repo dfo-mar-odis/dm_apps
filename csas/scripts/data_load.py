@@ -1,3 +1,5 @@
+from typing import List
+
 from csas.models import CohHonorific, LanLanguage, CotType, NotNotificationPreference, SecSector, RolRole
 from csas import models
 ###################################################################################################
@@ -16,8 +18,8 @@ def load_lookup(model, options):
 
     for opt in options:
         # filter the model looking for this option. The option is only added if the filter returns a NoneType object
-        if not model.objects.filter(name_en=opt[0]):
-            model(name_en=opt[0], name_fr=opt[1]).save()
+        if not model.objects.filter(name=opt[0]):
+            model(name=opt[0], nom=opt[1]).save()
 
 
 # Load the (Request) priority model
@@ -28,6 +30,25 @@ load_lookup(models.RepPriority, priorities)
 # Load the (Request) proposed timing model
 timings = [['By quarter ', ' By quarter(fr)'], ['By month ', ' By month(fr)'], ]
 load_lookup(models.RetTiming, timings)
+
+
+# Load the (Request) status model
+req_status = [['Withdrawn ', ' Withdrawn(fr)'], ['CSAS Office Reviewing ', ' CSAS Office Reviewing(fr)'],
+              ['RDS Reviewing ', ' RDS Reviewing(fr)'], ['Decision Made ', ' Decision Made(fr)'], ]
+load_lookup(models.ResStatus, req_status)
+
+
+# Load the (Request) decision model
+decision = [['On ', ' On(fr)'], ['Off ', ' Off(fr)'], ['Tentative ', ' Tentative(fr)'], ]
+load_lookup(models.RedDecision, decision)
+
+
+# Load the (Request) decision explanation model
+decision_exp = [['Planned Deferred (lower priority) ', ' Planned Deferred (lower priority)(fr)'],
+                ['Client Withdrawal ', ' Client Withdrawal(fr)'],
+                ['Capacity Issues (e.g., no science staff) ', 'Capacity Issues (e.g., no science staff)(fr)'],
+                ['Unexpected Delays/Unforeseen Circumstances )', ' Unexpected Delays/Unforeseen Circumstances(fr)'], ]
+load_lookup(models.RdeDecisionExplanation, decision_exp)
 
 
 # Load the honorific model
@@ -75,11 +96,61 @@ quarter = [['Spring ', ' Spring(fr)'], ['Summer ', ' Summar(fr)'], ['Fall ', ' F
 load_lookup(models.MeqQuarter, quarter)
 
 # Load Locations
-locations = [['test ', ' test(fr)']]
+locations = [['Victoria ', ' Victoria(fr)'], ['Edmonton ', 'Edmonton(fr)'], ['Winnipeg ', ' Winnipeg(fr)'],
+             ['Toronto ', ' Toronto(fr)'], ['Quebec City ', ' Quebec City(fr)'], ['Halifax ', ' Halifax(fr)'],
+             ['Charlottetown ', ' Charlottetown(fr)']]
 load_lookup(models.LocLocation, locations)
 
 # Load Process Types
-process = [['test process ', ' test process(fr)']]
+process = [['Process Type A ', ' Process Type A(fr)'], ['Process Type B ', ' Process Type B(fr)'],
+           ['Process Type C ', ' Process Type C(fr)'], ['Process Type D ', ' Process Type D(fr)']]
 load_lookup(models.AptAdvisoryProcessType, process)
+
+# Load Expected Publication(s)
+exp_publication = [['SAR/SSR ', ' SAR/SSR(fr)'], ['Research Document ', ' Research Document(fr)'],
+                   ['Proceedings ', ' Proceedings(fr)'], ['Attendance List ', ' Attendance List(fr)'],
+                   ['Briefing Note(s) ', ' Briefing Notes(s)(fr)']]
+load_lookup(models.MepMeetingExpectedPublication, exp_publication)
+
+# Load Terms of Reference
+reference = [['SAR/SSR ', ' SAR/SSR(fr)'], ['Research Document ', ' Research Document(fr)'],
+             ['Proceedings ', ' Proceedings(fr)'], ['Attendance List ', ' Attendance List(fr)'],
+             ['Briefing Note(s) ', ' Briefing Notes(s)(fr)']]
+load_lookup(models.MdfMeetingDocsRef, reference)
+
+# load Series
+series = [['SAR ', ' SAR(fr)'], ['SR ', ' SR(fr)'], ['RES ', ' RES(fr)'], ['PRO ', ' PRO(fr)']]
+load_lookup(models.PsePublicationSeries, series)
+
+# load Publication Status
+pub_status = [['In Approvals ', ' In Approvals(fr)'], ['Submitted for Posting ', ' Submitted for Posting(fr)']]
+load_lookup(models.PusPublicationStatus, pub_status)
+
+# load Publication Translation Status
+trans_status = [['Not Translation ', ' Not Translation(fr)'],
+                ['Submitted for Translation ', ' Submitted for Translation(fr)'],
+                ['Back from Translation ', ' Back from Translation(fr)'], ['Complete ', ' Complete(fr)']]
+load_lookup(models.PtsPublicationTransStatus, trans_status)
+
+# load Publication Target Language
+target_lang = [['English ', ' English(fr)'], ['French ', ' French(fr)'],
+               ['Inuktitut (& dialects) ', ' Inuktitut (& dialects) (fr)']]
+load_lookup(models.PtlPublicationTargetLanguage, target_lang)
+
+# load Publication Translation Urgent Request
+urgent_req = [['Yes ', ' Yes(fr)'], ['No ', ' No(fr)']]
+load_lookup(models.PurPublicationUrgentRequest, urgent_req)
+
+# ----------------------------------------------------------------------------------------------------
+# Yongcun: This part will be removed, we will use shared_models.Region in "models.py", it's just for
+#          the temporarily usage on my desktop.
+#
+# Load Regions
+region = [['Pacific ', ' Pacific(fr)'], ['Central & Arctic ', ' Central & Arctic(fr)'], ['Quebec ', ' Quebec(fr)'],
+          ['Gulf ', ' Gulf(fr)'], ['Maritimes ', ' Maritimes(fr)'], ['Newfoundland ', ' Newfoundland(fr)'],
+          ['National ', ' National(fr)']]
+load_lookup(models.MyRegion, region)
+#
+# ----------------------------------------------------------------------------------------------------
 
 print("Data Load complete")
