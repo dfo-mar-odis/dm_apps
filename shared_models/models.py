@@ -329,7 +329,7 @@ class Institute(models.Model):
     nom = models.CharField(max_length=255, blank=True, null=True)
     abbrev = models.CharField(max_length=255, verbose_name=_("abbreviation"))
     address = models.CharField(max_length=255, blank=True, null=True)
-    region = models.CharField(max_length=255, blank=True, null=True)
+    region = models.ForeignKey(Region, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         # check to see if a french value is given
