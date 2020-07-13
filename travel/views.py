@@ -739,35 +739,40 @@ class TripRequestCloneUpdateView(TripRequestUpdateView):
         old_obj = models.TripRequest.objects.get(pk=new_obj.pk)
         new_obj.pk = None
         new_obj.submitted = None
-        new_obj.save()
-
-        # add the reviewers based on the new request info
-        utils.get_tr_reviewers(new_obj)
-        utils.approval_seeker(new_obj)
-
-        if new_obj.is_group_request:
-            my_child_object = models.TripRequest.objects.create(
-                user=self.request.user,
-                first_name=self.request.user.first_name,
-                last_name=self.request.user.last_name,
-                email=self.request.user.email,
-                parent_request=new_obj,
-            )
-            # pre-populate the costs on the 'child' record
-            utils.populate_trip_request_costs(self.request, my_child_object)
+        try:
+            new_obj.save()
+        except IntegrityError:
+            messages.error(self.request, _("sorry, cannot clone this trip because there is another trip request with the same user in the system"))
+            return HttpResponseRedirect(reverse_lazy("travel:request_detail", kwargs={"pk": old_obj.id, "type": self.kwargs.get("type")}))
         else:
-            # import from old record
-            # costs
-            for old_rel_obj in old_obj.trip_request_costs.all():
-                new_rel_obj = deepcopy(old_rel_obj)
-                new_rel_obj.pk = None
-                new_rel_obj.trip_request = new_obj
-                new_rel_obj.save()
 
-        if form.cleaned_data.get("stay_on_page"):
-            return HttpResponseRedirect(reverse_lazy("travel:request_edit", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
-        else:
-            return HttpResponseRedirect(reverse_lazy("travel:request_detail", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
+            # add the reviewers based on the new request info
+            utils.get_tr_reviewers(new_obj)
+            utils.approval_seeker(new_obj)
+
+            if new_obj.is_group_request:
+                my_child_object = models.TripRequest.objects.create(
+                    user=self.request.user,
+                    first_name=self.request.user.first_name,
+                    last_name=self.request.user.last_name,
+                    email=self.request.user.email,
+                    parent_request=new_obj,
+                )
+                # pre-populate the costs on the 'child' record
+                utils.populate_trip_request_costs(self.request, my_child_object)
+            else:
+                # import from old record
+                # costs
+                for old_rel_obj in old_obj.trip_request_costs.all():
+                    new_rel_obj = deepcopy(old_rel_obj)
+                    new_rel_obj.pk = None
+                    new_rel_obj.trip_request = new_obj
+                    new_rel_obj.save()
+
+            if form.cleaned_data.get("stay_on_page"):
+                return HttpResponseRedirect(reverse_lazy("travel:request_edit", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
+            else:
+                return HttpResponseRedirect(reverse_lazy("travel:request_detail", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
 
 
 class ChildTripRequestCloneUpdateView(TripRequestUpdateView):
