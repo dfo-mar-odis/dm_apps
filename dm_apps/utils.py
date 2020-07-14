@@ -9,9 +9,9 @@ from django.core.mail import send_mail as django_send_mail
 
 def get_azure_connection_dict():
     key_list = [
-        'AAD_APP_ID',
-        'AAD_APP_SECRET',
-        'AAD_REDIRECT',
+        'AAD_APP_ID',  # needed
+        'AAD_APP_SECRET',  # needed
+        'AAD_REDIRECT',  # needed?
         'AAD_SCOPES',
         'AAD_AUTHORITY',
         'AAD_AUTHORIZE_ENDPOINT',
@@ -19,8 +19,17 @@ def get_azure_connection_dict():
     ]
     my_dict = dict()
     for key in key_list:
-        casting = str
-        my_dict[key] = config(key, cast=casting, default="")
+        if key == 'AAD_SCOPES':
+            my_dict[key] = "openid user.read"
+        elif key == 'AAD_AUTHORITY':
+            my_dict[key] = "https://login.microsoftonline.com/1594fdae-a1d9-4405-915d-011467234338"
+        elif key == 'AAD_AUTHORIZE_ENDPOINT':
+            my_dict[key] = "/oauth2/v2.0/authorize"
+        elif key == 'AAD_TOKEN_ENDPOINT':
+            my_dict[key] = "/oauth2/v2.0/token"
+        else:
+            casting = str
+            my_dict[key] = config(key, cast=casting, default="")
     return my_dict
 
 
@@ -29,10 +38,10 @@ def azure_ad_values_exist(connection_dict):
         'AAD_APP_ID',
         'AAD_APP_SECRET',
         'AAD_REDIRECT',
-        'AAD_SCOPES',
-        'AAD_AUTHORITY',
-        'AAD_AUTHORIZE_ENDPOINT',
-        'AAD_TOKEN_ENDPOINT',
+        # 'AAD_SCOPES',
+        # 'AAD_AUTHORITY',
+        # 'AAD_AUTHORIZE_ENDPOINT',
+        # 'AAD_TOKEN_ENDPOINT',
     ]
     # if all values are present, below expression should be evaluated as False
     there_is_something_missing = False in [connection_dict[key] != "" for key in key_list]
@@ -72,7 +81,6 @@ def get_db_connection_dict():
             my_dict[key] = ""
 
     return my_dict
-
 
 
 def custom_send_mail(subject, html_message, from_email, recipient_list):

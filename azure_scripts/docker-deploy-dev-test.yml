@@ -18,6 +18,7 @@ trigger:
 # non-secret pipline vars:
 ##########################
 # AAD_APP_ID
+# AAD_REDIRECT
 # AZURE_STORAGE_ACCOUNT_NAME
 # DB_HOST
 # DB_NAME
@@ -31,6 +32,7 @@ trigger:
 # azureSubscription
 # DockerNamespace
 # DockerRepository
+# DockerImageTag
 ###############
 
 steps:
@@ -38,6 +40,7 @@ steps:
     parameters:
       AAD_APP_ID: '$(AAD_APP_ID)'
       AAD_APP_SECRET: '$(AAD_APP_SECRET)'
+      AAD_REDIRECT: '$(AAD_REDIRECT)'
       AZURE_STORAGE_ACCOUNT_NAME: '$(AZURE_STORAGE_ACCOUNT_NAME)'
       AZURE_STORAGE_SECRET_KEY: '$(AZURE_STORAGE_SECRET_KEY)'
       azureSubscription: '$(azureSubscription)'
@@ -52,6 +55,7 @@ steps:
       DEPLOYMENT_STAGE: '$(DEPLOYMENT_STAGE)'
       DockerNamespace: '$(DockerNamespace)'
       DockerRepository: '$(DockerRepository)'
+      DockerImageTag: '$(DockerImageTag)'
       GEODJANGO: 'False'
       GITHUB_API_KEY: '$(GITHUB_API_KEY)'
       SECRET_KEY: '$(SECRET_KEY)'
