@@ -405,7 +405,7 @@ def generate_trip_list(fiscal_year, region, adm, from_date, to_date, site_url):
             elif field == "name":
                 my_val = str(get_field_value(trip, field))
                 my_ws.write_url(i, j,
-                                url=f'{settings.SITE_FULL_URL}/{reverse("travel:trip_detail", kwargs={"pk": trip.id})}',
+                                url=f'{site_url}/{reverse("travel:trip_detail", kwargs={"pk": trip.id})}',
                                 string=my_val)
             elif "cost" in field:
                 my_val = nz(get_field_value(trip, field), 0)
