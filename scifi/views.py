@@ -736,7 +736,7 @@ class CustomTransactionCreateView(SciFiAccessRequiredMixin, CreateView):
         self.object = form.save()
 
         # create a new email object
-        email = emails.NewEntryEmail(self.object)
+        email = emails.NewEntryEmail(self.object, self.request)
         # send the email object
         if email.to_list:
             custom_send_mail(

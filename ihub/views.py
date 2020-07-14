@@ -477,7 +477,7 @@ class EntryCreateView(iHubEditRequiredMixin, CreateView):
         models.EntryPerson.objects.create(entry=object, role=1, user_id=self.request.user.id, organization="DFO")
 
         # create a new email object
-        email = emails.NewEntryEmail(object)
+        email = emails.NewEntryEmail(object, self.request)
         # send the email object
 
         custom_send_mail(

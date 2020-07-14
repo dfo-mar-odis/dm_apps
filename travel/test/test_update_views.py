@@ -292,7 +292,7 @@ class TestTripRequestReviewerUpdateView(CommonTest):
         self.reviewer3 = FactoryFloor.ReviewerFactory(trip_request=self.tr, role_id=6, order=3)
         # start the review process and get set the first reviewer to "pending"
         utils.start_review_process(self.tr)
-        utils.approval_seeker(self.tr, supress_email=True)
+        utils.approval_seeker(self.tr, surpress_email=True, )
         self.test_url1 = reverse_lazy('travel:tr_review_update', kwargs={"pk": self.reviewer1.pk})
 
         # there are two cases we will want to test. 1) an admin coming in to approve on behalf of and 2) a reviewer approving their own record

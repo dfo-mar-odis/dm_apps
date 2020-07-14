@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.template import loader
 
+from dm_apps.context_processor import my_envr
+
 from_email = settings.SITE_FROM_EMAIL
 admin_email = 'david.fishman@dfo-mpo.gc.ca'
 kim_email = 'Kimberly.Bertolin@dfo-mpo.gc.ca'
@@ -8,7 +10,8 @@ yves_email = 'Yves.Despres@dfo-mpo.gc.ca'
 
 
 class NewEntryEmail:
-    def __init__(self, object):
+    def __init__(self, object, request):
+        self.request = request
         self.subject = 'A new expense has been entered into SciFi'
         self.message = self.load_html_template(object)
         self.from_email = from_email
@@ -25,6 +28,6 @@ class NewEntryEmail:
     def load_html_template(self, object):
         t = loader.get_template('scifi/email_new_entry.html')
         context = {'object': object}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered

@@ -706,7 +706,7 @@ class TripRequestDeleteView(CanModifyMixin, CommonDeleteView):
             my_trip = my_object.parent_request.trip
         else:
             my_trip = my_object.trip
-        utils.manage_trip_warning(my_trip,self.request)
+        utils.manage_trip_warning(my_trip, self.request)
 
         messages.success(self.request,
                          'The trip request for {} {} was deleted successfully!'.format(my_object.first_name, my_object.last_name))
@@ -750,7 +750,7 @@ class TripRequestCloneUpdateView(TripRequestUpdateView):
 
             # add the reviewers based on the new request info
             utils.get_tr_reviewers(new_obj)
-            utils.approval_seeker(new_obj, self.request)
+            utils.approval_seeker(new_obj, False, self.request)
 
             if new_obj.is_group_request:
                 my_child_object = models.TripRequest.objects.create(
@@ -901,7 +901,7 @@ class TripRequestSubmitUpdateView(CanModifyMixin, CommonUpdateView):
                     # go and get approvals!!
 
         # No matter what business was done, we will call this function to sort through reviewer and request statuses
-        utils.approval_seeker(my_object, self.request)
+        utils.approval_seeker(my_object, False, self.request)
         my_object.save()
 
         # clean up any unused cost categories
@@ -1131,7 +1131,7 @@ class TripRequestReviewerADMUpdateView(AdminOrApproverRequiredMixin, CommonPopou
         ################
         if not parent_request:
             # update any statuses if necessary; this is business as usual
-            utils.approval_seeker(my_reviewer.trip_request, self.request)
+            utils.approval_seeker(my_reviewer.trip_request, False, self.request)
         else:
             # if this is a child request,
             if my_reviewer.status_id == 3:
@@ -1161,7 +1161,7 @@ class TripRequestReviewerADMUpdateView(AdminOrApproverRequiredMixin, CommonPopou
                 parent_reviewer.status_date = timezone.now()
                 parent_reviewer.save()
 
-                utils.approval_seeker(parent_request, self.request)
+                utils.approval_seeker(parent_request, False, self.request)
 
             #
             #             # We have to append any comments to the corresponding review of the parent request
@@ -1281,7 +1281,7 @@ class TripRequestReviewerUpdateView(AdminOrApproverRequiredMixin, CommonUpdateVi
                 my_reviewer.save()
 
         # update any statuses if necessary
-        utils.approval_seeker(my_reviewer.trip_request, self.request)
+        utils.approval_seeker(my_reviewer.trip_request, False, self.request)
 
         if stay_on_page:
             return HttpResponseRedirect(reverse("travel:tr_review_update", kwargs=self.kwargs))
@@ -1319,7 +1319,7 @@ class SkipReviewerUpdateView(TravelAdminRequiredMixin, CommonPopoutUpdateView):
         # now we save the reviewer for real
         my_reviewer.save()
         # update any statuses if necessary
-        utils.approval_seeker(my_reviewer.trip_request, self.request)
+        utils.approval_seeker(my_reviewer.trip_request, False, self.request)
 
         return HttpResponseRedirect(reverse("shared_models:close_me"))
 
@@ -2156,7 +2156,7 @@ class SkipTripReviewerUpdateView(TravelAdminRequiredMixin, UpdateView):
         my_reviewer.save()
 
         # update any statuses if necessary
-        utils.approval_seeker(my_reviewer.trip_request, self.request)
+        utils.approval_seeker(my_reviewer.trip_request, False, self.request)
 
         return HttpResponseRedirect(reverse("shared_models:close_me"))
 

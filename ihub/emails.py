@@ -2,11 +2,14 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.template import loader
 
+from dm_apps.context_processor import my_envr
+
 from_email = settings.SITE_FROM_EMAIL
 
 
 class NewEntryEmail:
-    def __init__(self, my_object):
+    def __init__(self, my_object, request):
+        self.request = request
         self.subject = 'A new entry has been made in the iHub web app'
         self.message = self.load_html_template(my_object)
         self.from_email = from_email
@@ -25,6 +28,6 @@ class NewEntryEmail:
             'created_by',
         ]
         context = {'object': my_object, 'field_list': field_list}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered

@@ -276,7 +276,7 @@ def __set_request_status__(trip_request, request):
     return True
 
 
-def approval_seeker(trip_request, supress_email=False, request=None):
+def approval_seeker(trip_request, suppress_email=False, request=None):
     """
     This method is meant to seek approvals via email + set reveiwer statuses.
     It will also set the trip_request status vis a vis __set_request_status__()
@@ -304,13 +304,13 @@ def approval_seeker(trip_request, supress_email=False, request=None):
 
             # now, depending on the role of this reviewer, perhaps we want to send an email.
             # if they are a recommender, rev...
-            if next_reviewer.role_id in [1, 2, 3, 4, ]:  # essentially, just not the RDG or ADM
+            if next_reviewer.role_id in [1, 2, 3, 4, ] and request:  # essentially, just not the RDG or ADM
                 email = emails.ReviewAwaitingEmail(trip_request, next_reviewer, request)
 
-            elif next_reviewer.role_id in [5, 6]:  # if we are going for ADM or RDG signature...
+            elif next_reviewer.role_id in [5, 6]  and request:  # if we are going for ADM or RDG signature...
                 email = emails.AdminApprovalAwaitingEmail(trip_request, next_reviewer.role_id, request)
 
-            if email and not supress_email:
+            if email and not suppress_email:
                 # send the email object
                 custom_send_mail(
                     subject=email.subject,

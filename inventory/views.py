@@ -374,7 +374,7 @@ class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         object = form.save()
         if object.flagged_4_deletion:
-            email = emails.FlagForDeletionEmail(self.object, self.request.user)
+            email = emails.FlagForDeletionEmail(self.object, self.request.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -409,7 +409,7 @@ class ResourcePublicationFlagUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         object = form.save()
         if object.flagged_4_publication:
-            email = emails.FlagForPublicationEmail(self.object, self.request.user)
+            email = emails.FlagForPublicationEmail(self.object, self.request.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -483,7 +483,7 @@ class ResourcePersonCreateView(CustodianRequiredMixin, CreateView):
 
         # if the person is being added as a custodian
         if object.role.id == 1:
-            email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
+            email = emails.AddedAsCustodianEmail(object.resource, object.person.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -513,7 +513,7 @@ class ResourcePersonUpdateView(CustodianRequiredMixin, UpdateView):
 
         # if the person is being added as a custodian
         if object.role.id == 1:
-            email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
+            email = emails.AddedAsCustodianEmail(object.resource, object.person.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -545,7 +545,7 @@ class ResourcePersonDeleteView(CustodianRequiredMixin, DeleteView):
         # if the person is being added as a custodian
         if object.role.id == 1:
 
-            email = emails.RemovedAsCustodianEmail(object.resource, object.person.user)
+            email = emails.RemovedAsCustodianEmail(object.resource, object.person.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -1171,7 +1171,7 @@ class DataManagementCustodianDetailView(InventoryDMRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         queryset = self.object.resource_people.filter(role=1)
         me = models.Person.objects.get(user=User.objects.get(pk=self.request.user.id))
-        email = emails.CertificationRequestEmail(me, self.object)
+        email = emails.CertificationRequestEmail(me, self.object, self.request)
         context['queryset'] = queryset
         context['email'] = email
         context['now'] = timezone.now()
@@ -1183,8 +1183,8 @@ def send_certification_request(request, person):
     # grab a copy of the resource
     my_person = models.Person.objects.get(pk=person)
     # create a new email object
-    me = models.Person.objects.get(user=User.objects.get(pk=self.request.user.id))
-    email = emails.CertificationRequestEmail(me, my_person)
+    me = models.Person.objects.get(user=User.objects.get(pk=request.user.id))
+    email = emails.CertificationRequestEmail(me, my_person, request)
     # send the email object
     custom_send_mail(
         subject=email.subject,
@@ -1300,7 +1300,7 @@ class SectionDetailView(InventoryDMRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         if self.object.head:
             me = models.Person.objects.get(user=self.request.user)
-            email = emails.SectionReportEmail(me, self.object.head, self.object)
+            email = emails.SectionReportEmail(me, self.object.head, self.object, self.request)
             context['email'] = email
         context['now'] = timezone.now()
         return context
@@ -1312,7 +1312,7 @@ def send_section_report(request, section):
     head = my_section.head
     # create a new email object
     me = models.Person.objects.get(user=request.user)
-    email = emails.SectionReportEmail(me, head, my_section)
+    email = emails.SectionReportEmail(me, head, my_section, request)
     # send the email object
     custom_send_mail(
         subject=email.subject,

@@ -135,7 +135,7 @@ class TicketDetailView(LoginRequiredMixin, CommonDetailView):
 
     def get_context_data(self, **kwargs):
         context = super(TicketDetailView, self).get_context_data(**kwargs)
-        context['email'] = emails.TicketResolvedEmail(self.object)
+        context['email'] = emails.TicketResolvedEmail(self.object, self.request)
         context["field_group_1"] = [
             "primary_contact",
             "dm_assigned",
@@ -173,7 +173,7 @@ def send_resolved_email(request, ticket):
     # grab a copy of the resource
     my_ticket = models.Ticket.objects.get(pk=ticket)
     # create a new email object
-    email = emails.TicketResolvedEmail(my_ticket)
+    email = emails.TicketResolvedEmail(my_ticket, request)
     # send the email object
     custom_send_mail(
         subject=email.subject,
@@ -261,7 +261,7 @@ class TicketCreateView(LoginRequiredMixin, CommonCreateView):
                 self.object.dm_assigned.add(u)
 
         # create a new email object
-        email = emails.NewTicketEmail(self.object)
+        email = emails.NewTicketEmail(self.object, self.request)
         # send the email object
         custom_send_mail(
             subject=email.subject,
@@ -310,7 +310,7 @@ class TicketCreateViewPopout(LoginRequiredMixin, CommonPopoutCreateView):
                 self.object.dm_assigned.add(u)
 
         # create a new email object
-        email = emails.NewTicketEmail(self.object)
+        email = emails.NewTicketEmail(self.object, self.request)
         # send the email object
         custom_send_mail(
             subject=email.subject,
@@ -352,7 +352,7 @@ class FileCreateView(LoginRequiredMixin, CommonPopoutCreateView):
         self.object = form.save()
 
         # create a new email object
-        email = emails.NewFileAddedEmail(self.object)
+        email = emails.NewFileAddedEmail(self.object, self.request)
         # send the email object
         custom_send_mail(
             subject=email.subject,
@@ -442,7 +442,7 @@ class FollowUpCreateView(LoginRequiredMixin, CommonPopoutCreateView):
         self.object = form.save()
 
         # create a new email object
-        email = emails.NewFollowUpEmail(self.object)
+        email = emails.NewFollowUpEmail(self.object, self.request)
         # send the email object
         custom_send_mail(
             subject=email.subject,
@@ -482,7 +482,7 @@ class FollowUpUpdateView(LoginRequiredMixin, CommonPopoutUpdateView):
         self.object = form.save()
 
         # create a new email object
-        email = emails.NewFollowUpEmail(self.object)
+        email = emails.NewFollowUpEmail(self.object, self.request)
         # send the email object
         custom_send_mail(
             subject=email.subject,

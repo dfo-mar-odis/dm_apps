@@ -62,9 +62,6 @@ parameters:
   - name: SHOW_TICKETING_APP
     type: string
 
-  - name: SITE_FULL_URL
-    type: string
-
   - name: WEB_APP_NAME
     type: string
 
@@ -119,7 +116,6 @@ steps:
         -AAD_SCOPES  "openid user.read"
         -AAD_TOKEN_ENDPOINT "/oauth2/v2.0/token"
         -AZURE_STORAGE_ACCOUNT_NAME ${{parameters.AZURE_STORAGE_ACCOUNT_NAME}}
-        -SITE_FULL_URL ${{parameters.SITE_FULL_URL}}
         -SECRET_KEY ${{parameters.SECRET_KEY}}
         -ALLOWED_HOST_TO_ADD ${{parameters.WEB_APP_NAME}}.azurewebsites.net
         -SITE_FROM_EMAIL "DoNotReply@Sci-Zone.dfo-mpo.gc.ca"

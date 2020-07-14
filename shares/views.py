@@ -199,7 +199,7 @@ class UserDeleteView(SharesAdminRequiredMixin, DeleteView):
 def send_instructions(request, pk):
     # create a new email object
     my_user = models.User.objects.get(pk=pk)
-    email = emails.SendInstructionsEmail(my_user)
+    email = emails.SendInstructionsEmail(my_user, request)
     # send the email object
     custom_send_mail(
         subject=email.subject,

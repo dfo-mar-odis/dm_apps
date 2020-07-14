@@ -2,12 +2,15 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.template import loader
 
+from dm_apps.context_processor import my_envr
+
 from_email = settings.SITE_FROM_EMAIL
 admin_email = 'david.fishman@dfo-mpo.gc.ca'
 
 
 class NewTicketEmail:
-    def __init__(self, ticket_object):
+    def __init__(self, ticket_object, request):
+        self.request = request
         self.subject = 'A new ticket has been created / un nouveau billet a été créé'
         self.message = self.load_html_template(ticket_object)
         self.from_email = from_email
@@ -25,7 +28,7 @@ class NewTicketEmail:
     def load_html_template(self, ticket_object):
         t = loader.get_template('tickets/email_new_ticket.html')
         context = {'object': ticket_object}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -35,7 +38,8 @@ class NewTicketEmail:
 
 
 class NewFollowUpEmail:
-    def __init__(self, object):
+    def __init__(self, object, request):
+        self.request = request
         self.subject = 'A follow-up has been added to your ticket / un suivi a été ajouté à votre billet'
         self.message = self.load_html_template(object)
         self.from_email = from_email
@@ -53,7 +57,7 @@ class NewFollowUpEmail:
     def load_html_template(self, object):
         t = loader.get_template('tickets/email_follow_up.html')
         context = {'object': object}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -63,7 +67,8 @@ class NewFollowUpEmail:
 
 
 class NewFileAddedEmail:
-    def __init__(self, object):
+    def __init__(self, object, request):
+        self.request = request
         self.subject = "A new file has been added to Ticket #{}".format(object.ticket.id)
         self.message = self.load_html_template(object)
         self.from_email = from_email
@@ -79,7 +84,7 @@ class NewFileAddedEmail:
     def load_html_template(self, object):
         t = loader.get_template('tickets/email_new_file.html')
         context = {'object': object}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -88,7 +93,8 @@ class NewFileAddedEmail:
 
 
 class TicketResolvedEmail:
-    def __init__(self, ticket_object):
+    def __init__(self, ticket_object, request):
+        self.request = request
         self.ticket_object = ticket_object
         self.subject = 'Your ticket has been resolved / votre billet a été résolu'
         self.message = self.load_html_template()
@@ -109,7 +115,7 @@ class TicketResolvedEmail:
         context = {
             'object': self.ticket_object,
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 

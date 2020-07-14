@@ -155,9 +155,7 @@ class StatusUpdateEmail:
 
     def load_html_template(self, trip_request_object):
         t = loader.get_template('travel/email_status_update.html')
-
         field_list = request_field_list
-
         context = {'triprequest': trip_request_object, 'field_list': field_list}
         context.update(my_envr(self.request))
         rendered = t.render(context)
