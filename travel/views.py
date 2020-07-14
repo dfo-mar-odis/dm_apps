@@ -533,7 +533,7 @@ class TripRequestUpdateView(CanModifyMixin, CommonUpdateView):
             my_trip = my_object.parent_request.trip
         else:
             my_trip = my_object.trip
-        utils.manage_trip_warning(my_trip)
+        utils.manage_trip_warning(my_trip, self.request)
 
         # decide whether the reviewers should be reset
         if form.cleaned_data.get("reset_reviewers"):
@@ -706,7 +706,7 @@ class TripRequestDeleteView(CanModifyMixin, CommonDeleteView):
             my_trip = my_object.parent_request.trip
         else:
             my_trip = my_object.trip
-        utils.manage_trip_warning(my_trip)
+        utils.manage_trip_warning(my_trip,self.request)
 
         messages.success(self.request,
                          'The trip request for {} {} was deleted successfully!'.format(my_object.first_name, my_object.last_name))
@@ -2651,7 +2651,7 @@ class TRCostUpdateView(LoginRequiredMixin, UpdateView):
             my_trip = my_object.trip_request.parent_request.trip
         else:
             my_trip = my_object.trip_request.trip
-        utils.manage_trip_warning(my_trip)
+        utils.manage_trip_warning(my_trip, self.request)
 
         return HttpResponseRedirect(reverse('shared_models:close_me_no_refresh'))
 
