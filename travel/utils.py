@@ -187,7 +187,7 @@ def reset_trip_review_process(trip):
     start_trip_review_process(trip, reset=True)
 
 
-def __set_request_status__(trip_request):
+def __set_request_status__(trip_request, request):
     """
     IF POSSIBLE, THIS SHOULD ONLY BE CALLED BY THE approval_seeker() function.
     This will look at the reviewers and decide on  what the project status should be. Will return False if trip_request is denied or if trip_request is not submitted
@@ -221,7 +221,7 @@ def __set_request_status__(trip_request):
             trip_request.status_id = 10
             trip_request.save()
             # send an email to the trip_request owner
-            email = emails.StatusUpdateEmail(trip_request)
+            email = emails.StatusUpdateEmail(trip_request, request)
             # # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -276,7 +276,7 @@ def __set_request_status__(trip_request):
     return True
 
 
-def approval_seeker(trip_request, supress_email=False):
+def approval_seeker(trip_request, supress_email=False, request=None):
     """
     This method is meant to seek approvals via email + set reveiwer statuses.
     It will also set the trip_request status vis a vis __set_request_status__()
@@ -284,7 +284,7 @@ def approval_seeker(trip_request, supress_email=False):
     """
 
     # start by setting the trip_request status... if the trip_request is "denied" OR "draft" or "approved", do not continue
-    if __set_request_status__(trip_request):
+    if __set_request_status__(trip_request, request):
         next_reviewer = None
         email = None
         for reviewer in trip_request.reviewers.all():
@@ -305,10 +305,10 @@ def approval_seeker(trip_request, supress_email=False):
             # now, depending on the role of this reviewer, perhaps we want to send an email.
             # if they are a recommender, rev...
             if next_reviewer.role_id in [1, 2, 3, 4, ]:  # essentially, just not the RDG or ADM
-                email = emails.ReviewAwaitingEmail(trip_request, next_reviewer)
+                email = emails.ReviewAwaitingEmail(trip_request, next_reviewer, request)
 
             elif next_reviewer.role_id in [5, 6]:  # if we are going for ADM or RDG signature...
-                email = emails.AdminApprovalAwaitingEmail(trip_request, next_reviewer.role_id)
+                email = emails.AdminApprovalAwaitingEmail(trip_request, next_reviewer.role_id, request)
 
             if email and not supress_email:
                 # send the email object
@@ -320,7 +320,7 @@ def approval_seeker(trip_request, supress_email=False):
                 )
 
             # Then, lets set the trip_request status again to account for the fact that something happened
-            __set_request_status__(trip_request)
+            __set_request_status__(trip_request, request)
 
 
 def populate_trip_request_costs(request, trip_request):
@@ -388,7 +388,7 @@ def compare_strings(str1, str2):
         return 9999
 
 
-def manage_trip_warning(trip):
+def manage_trip_warning(trip, request):
     """
     This function will decide if sending an email to NCR is necessary based on
     1) the total costs accrued for a trip
@@ -414,7 +414,7 @@ def manage_trip_warning(trip):
         # if the trip is >= 10K, we simply need to send an email to NCR
         else:
             if not trip.cost_warning_sent:
-                email = emails.TripCostWarningEmail(trip)
+                email = emails.TripCostWarningEmail(trip, request)
                 # # send the email object
                 custom_send_mail(
                     subject=email.subject,
@@ -435,7 +435,7 @@ def __set_trip_status__(trip):
     pass
 
 
-def trip_approval_seeker(trip):
+def trip_approval_seeker(trip, request):
     """
     This method is meant to seek approvals via email + set reviewer statuses.
     """
@@ -464,7 +464,7 @@ def trip_approval_seeker(trip):
             next_reviewer.status_date = timezone.now()
             next_reviewer.save()
 
-            email = emails.TripReviewAwaitingEmail(trip, next_reviewer)
+            email = emails.TripReviewAwaitingEmail(trip, next_reviewer, request)
 
             # send the email object
             custom_send_mail(

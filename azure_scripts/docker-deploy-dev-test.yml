@@ -30,7 +30,6 @@ trigger:
 # SHOW_TICKETING_APP
 # WEB_APP_NAME
 # azureSubscription
-# GITHUB_API_KEY
 # DockerNamespace
 # DockerRepository
 ###############

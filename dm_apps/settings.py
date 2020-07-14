@@ -39,8 +39,6 @@ DEBUG = config("DEBUG", cast=bool, default=False)
 LOGGING_LEVEL = config("LOGGING_LEVEL", cast=str, default="WARNING")
 # What is the path to the log file?
 LOG_FILE_PATH = config("LOG_FILE_PATH", cast=str, default=os.path.join(LOGS_DIR, 'error.log'))
-# this is used in email templates to link the recipient back to the site
-SITE_FULL_URL = config("SITE_FULL_URL", cast=str, default="http://dmapps")
 # the default 'from' email address used for system emails
 SITE_FROM_EMAIL = config("SITE_FROM_EMAIL", cast=str, default="DoNotReply.DMApps@Azure.Cloud.dfo-mpo.gc.ca")
 # google maps API key
