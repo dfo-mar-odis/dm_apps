@@ -23,7 +23,11 @@ trigger:
 # DB_NAME
 # DB_USER_PIPELINE
 # DB_USER_WEB
+# DB_MODE
+# DEBUG
+# DEPLOYMENT_STAGE
 # SITE_FULL_URL
+# SHOW_TICKETING_APP
 # WEB_APP_NAME
 # azureSubscription
 # GITHUB_API_KEY
@@ -40,21 +44,21 @@ steps:
       AZURE_STORAGE_SECRET_KEY: '$(AZURE_STORAGE_SECRET_KEY)'
       azureSubscription: '$(azureSubscription)'
       DB_HOST: '$(DB_HOST)'
-      DB_MODE: 'PROD'
+      DB_MODE: '$(DB_MODE)'
       DB_NAME: '$(DB_NAME)'
       DB_PASSWORD_PIPELINE: '$(DB_PASSWORD_PIPELINE)'
       DB_PASSWORD_WEB: '$(DB_PASSWORD_WEB)'
       DB_USER_PIPELINE: '$(DB_USER_PIPELINE)'
       DB_USER_WEB: '$(DB_USER_WEB)'
-      DEBUG: 'False'
-      DEPLOYMENT_STAGE: 'PROD'
+      DEBUG: '$(DEBUG)'
+      DEPLOYMENT_STAGE: '$(DEPLOYMENT_STAGE)'
       DockerNamespace: '$(DockerNamespace)'
       DockerRepository: '$(DockerRepository)'
       GEODJANGO: 'False'
       GITHUB_API_KEY: '$(GITHUB_API_KEY)'
       SECRET_KEY: '$(SECRET_KEY)'
       SENDGRID_API_KEY: '$(SENDGRID_API_KEY)'
-      SHOW_TICKETING_APP: 'False'
+      SHOW_TICKETING_APP: '$(SHOW_TICKETING_APP)'
       SITE_FULL_URL: '$(SITE_FULL_URL)'
       WEB_APP_NAME: '$(WEB_APP_NAME)'
 
