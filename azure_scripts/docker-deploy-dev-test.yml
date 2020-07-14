@@ -56,7 +56,6 @@ steps:
       DockerNamespace: '$(DockerNamespace)'
       DockerRepository: '$(DockerRepository)'
       DockerImageTag: '$(DockerImageTag)'
-      GEODJANGO: 'False'
       GITHUB_API_KEY: '$(GITHUB_API_KEY)'
       SECRET_KEY: '$(SECRET_KEY)'
       SENDGRID_API_KEY: '$(SENDGRID_API_KEY)'
