@@ -15,7 +15,6 @@ steps:
       python -m pip install --upgrade pip setuptools wheel
       sudo apt-get install libmysqlclient-dev
       pip install -r requirements.txt
-      # run migrations and collect static files
       python manage.py migrate
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     displayName: 'Install Prerequisites and Run Local Migrations '

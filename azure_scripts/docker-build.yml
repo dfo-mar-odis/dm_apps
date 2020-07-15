@@ -2,7 +2,7 @@ pool:
   vmImage: 'Ubuntu 18.04'
 
 trigger:
-- master
+- none
 
 resources:
 - repo: self
@@ -11,6 +11,7 @@ variables:
   azureServiceConnection: 'SP.dmappsdevacr'
   imageRepository: 'dmapps_img'
   tag: '$(Build.BuildNumber)'
+  productionTag: '$(productionTag)'
 
 stages:
 - stage: Build
@@ -35,6 +36,7 @@ stages:
         tags: |
           latest
           $(tag)
+          $(productionTag)
 
     - task: Docker@2
       displayName: Logout from ACR
