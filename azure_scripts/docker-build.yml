@@ -11,7 +11,6 @@ variables:
   azureServiceConnection: 'SP.dmappsdevacr'
   imageRepository: 'dmapps_img'
   tag: '$(Build.BuildNumber)'
-  productionTag: '$(productionTag)'
 
 stages:
 - stage: Build

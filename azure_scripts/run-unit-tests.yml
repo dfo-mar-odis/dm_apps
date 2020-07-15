@@ -15,12 +15,17 @@ steps:
       python -m pip install --upgrade pip setuptools wheel
       sudo apt-get install libmysqlclient-dev
       pip install -r requirements.txt
+      mkdir media
+      mkdir media/travel
+      mkdir media/travel/temp
+      mkdir media/inventory
+      mkdir media/inventory/temp
+      python manage.py collectstatic --no-input
       python manage.py migrate
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     displayName: 'Install Prerequisites and Run Local Migrations '
 
   - script: |
-      pushd '$(projectRoot)'
       ./run_tests.sh
     condition: succeededOrFailed()
     displayName: 'Run tests'
