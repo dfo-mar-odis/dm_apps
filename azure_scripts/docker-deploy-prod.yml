@@ -36,6 +36,32 @@ trigger:
 ###############
 
 steps:
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: 'SP.DMAPPS'
+      scriptType: 'ps'
+      scriptLocation: 'inlineScript'
+      inlineScript: '
+        $sourceAcrName = "dmappsdevacr"
+        $sourceRg = "DMAPPS-DEV-RG"
+        $sourceAcr = az acr show `
+        --name $sourceAcrName -g $sourceRg `
+        --subscription "IMTS DEV/TEST" --query "id"
+
+        $repo = "dmapps_img"
+        $image = "dmapps_img"
+        $tag = "prod"
+        $targetAcrName = "dmappsprodacr"
+
+        az account set --subscription="IMTS PROD UNCLASS"
+        az acr import `
+          --name $targetAcrName `
+          --source "$($image):$tag" `
+          --image "$($image):$tag" `
+          --registry $sourceAcr
+          '
+    displayName: 'copy the latest production-ready image from dev ACR to prod ACR'
+
   - template: \azure_scripts\docker-deploy-template.yml
     parameters:
       AAD_APP_ID: '$(AAD_APP_ID)'
