@@ -44,7 +44,7 @@ steps:
       inlineScript: '
         sourceAcrName="dmappsdevacr"
         sourceRg="DMAPPS-DEV-RG"
-        sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --query id)
+        sourceAcr="/subscriptions/3eb57d27-b726-402d-8cfe-a9a846b99121/resourceGroups/DMAPPS_DEV_RG/providers/Microsoft.ContainerRegistry/registries/dmappsdevacr"
         repo="dmapps_img"
         image="dmapps_img"
         tag="prod"
