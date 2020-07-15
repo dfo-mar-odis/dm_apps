@@ -51,7 +51,7 @@ steps:
         targetAcrName="dmappsprodacr"
 
         az account set --subscription="IMTS PROD UNCLASS"
-        az acr import --name $targetAcrName --source $image:$tag --image $image:$tag --registry $sourceAcr
+        az acr import --name $targetAcrName --source $image:$tag --image $image:$tag --registry "$sourceAcr"
         '
     displayName: 'copy the latest production-ready image from dev ACR to prod ACR'
 
