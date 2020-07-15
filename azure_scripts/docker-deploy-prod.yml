@@ -52,6 +52,7 @@ steps:
         tag="prod"
         targetAcrName="dmappsprodacr"
 
+        az acr login --name $sourceAcrName
         az account set --subscription="IMTS PROD UNCLASS"
         az acr import --name $targetAcrName --source $image:$tag --image $image:$tag --registry $sourceAcr
 
