@@ -42,11 +42,13 @@ steps:
       scriptType: 'bash'
       scriptLocation: 'inlineScript'
       inlineScript: |
-        sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
+#        sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
+        az account set --subscription="IMTS DEV/TEST"
         sourceAcrName="dmappsdevacr"
         sourceRg="DMAPPS-DEV-RG"
-        sourceAcr="/subscriptions/3eb57d27-b726-402d-8cfe-a9a846b99121/resourceGroups/DMAPPS_DEV_RG/providers/Microsoft.ContainerRegistry/registries/dmappsdevacr"
-        #sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --subscription "IMTS DEV/TEST" --query "id")
+#        sourceAcr="/subscriptions/3eb57d27-b726-402d-8cfe-a9a846b99121/resourceGroups/DMAPPS_DEV_RG/providers/Microsoft.ContainerRegistry/registries/dmappsdevacr"
+
+        sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --subscription "IMTS DEV/TEST" --query "id")
         repo="dmapps_img"
         image="dmapps_img"
         tag="prod"
