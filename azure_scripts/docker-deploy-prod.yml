@@ -36,29 +36,29 @@ trigger:
 ###############
 
 steps:
-  - task: AzureCLI@2
-    inputs:
-      azureSubscription: 'SP.DMAPPS'
-      scriptType: 'bash'
-      scriptLocation: 'inlineScript'
-      inlineScript: |
-        # sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
-        az account set --subscription="IMTS DEV/TEST"
-        sourceAcrName="dmappsdevacr"
-        sourceRg="DMAPPS-DEV-RG"
-        # sourceAcr="/subscriptions/3eb57d27-b726-402d-8cfe-a9a846b99121/resourceGroups/DMAPPS_DEV_RG/providers/Microsoft.ContainerRegistry/registries/dmappsdevacr"
-
-        sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --subscription "IMTS DEV/TEST" --query "id")
-        repo="dmapps_img"
-        image="dmapps_img"
-        tag="prod"
-        targetAcrName="dmappsprodacr"
-
-        az acr login --name $sourceAcrName
-        az account set --subscription="IMTS PROD UNCLASS"
-        az acr import --name $targetAcrName --source $image:$tag --image $image:$tag --registry $sourceAcr
-
-    displayName: 'copy the latest production-ready image from dev ACR to prod ACR'
+#  - task: AzureCLI@2
+#    inputs:
+#      azureSubscription: 'SP.DMAPPS'
+#      scriptType: 'bash'
+#      scriptLocation: 'inlineScript'
+#      inlineScript: |
+#        # sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
+#        az account set --subscription="IMTS DEV/TEST"
+#        sourceAcrName="dmappsdevacr"
+#        sourceRg="DMAPPS-DEV-RG"
+#        # sourceAcr="/subscriptions/3eb57d27-b726-402d-8cfe-a9a846b99121/resourceGroups/DMAPPS_DEV_RG/providers/Microsoft.ContainerRegistry/registries/dmappsdevacr"
+#
+#        sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --subscription "IMTS DEV/TEST" --query "id")
+#        repo="dmapps_img"
+#        image="dmapps_img"
+#        tag="prod"
+#        targetAcrName="dmappsprodacr"
+#
+#        az acr login --name $sourceAcrName
+#        az account set --subscription="IMTS PROD UNCLASS"
+#        az acr import --name $targetAcrName --source $image:$tag --image $image:$tag --registry $sourceAcr
+#
+#    displayName: 'copy the latest production-ready image from dev ACR to prod ACR'
 
   - template: \azure_scripts\docker-deploy-template.yml
     parameters:
