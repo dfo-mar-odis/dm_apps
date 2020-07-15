@@ -44,7 +44,7 @@ steps:
       inlineScript: '
         sourceAcrName="dmappsdevacr"
         sourceRg="DMAPPS-DEV-RG"
-        sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --subscription "IMTS DEV/TEST" --query "id")
+        sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --query id)
         repo="dmapps_img"
         image="dmapps_img"
         tag="prod"
