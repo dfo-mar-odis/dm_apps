@@ -438,9 +438,9 @@ class TripRequestListView(TravelAccessRequiredMixin, CommonFilterView):
         {"name": 'requester_name|{}'.format(gettext_lazy("Requester name")), },
         {"name": 'trip.tname', "width": "400px"},
         {"name": 'destination|{}'.format(gettext_lazy("Destination")), },
-        {"name": 'start_date|{}'.format(gettext_lazy("Departure date")), },
+        {"name": 'smart_start_date|{}'.format(gettext_lazy("Start date")), "width": "90px"},
         {"name": 'processing_time|{}'.format(gettext_lazy("Processing time")), },
-        {"name": 'created_by', },
+        # {"name": 'created_by', },
     ]
 
     def get_queryset(self):
