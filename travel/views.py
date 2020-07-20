@@ -431,7 +431,7 @@ class TripRequestListView(TravelAccessRequiredMixin, CommonFilterView):
         return models.TripRequest.objects.first()
 
     field_list = [
-        {"name": 'fiscal year', "width": "75px"},
+        {"name": 'fiscal_year', "width": "75px"},
         {"name": 'is_group_request|Type', },
         {"name": 'status', "width": "150px"},
         {"name": 'section|{}'.format(gettext_lazy("DFO section")), },
