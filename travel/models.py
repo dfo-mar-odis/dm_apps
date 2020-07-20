@@ -871,6 +871,10 @@ class TripRequest(models.Model):
         return mark_safe(mystr)
 
     @property
+    def smart_fiscal_year(self):
+        return self.trip.fiscal_year if self.parent_request else self.fiscal_year
+
+    @property
     def smart_start_date(self):
         return date(self.trip.start_date) if self.parent_request else date(self.end_date)
 
