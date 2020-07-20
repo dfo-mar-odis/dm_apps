@@ -333,7 +333,7 @@ traveller_field_list = [
 ]
 
 request_group_field_list = [
-    'smart_fiscal_year|{}'.format(_("fiscal year")),
+    'fiscal_year',
     'trip',
     'requester_name|{}'.format(_("organizer name")),
     'status_string|{}'.format(_("request status")),
@@ -431,14 +431,14 @@ class TripRequestListView(TravelAccessRequiredMixin, CommonFilterView):
         return models.TripRequest.objects.first()
 
     field_list = [
-        {"name": 'smart_fiscal_year|{}'.format(gettext_lazy("fiscal year")), "width": "75px"},
+        {"name": 'fiscal year', "width": "75px"},
         {"name": 'is_group_request|Type', },
         {"name": 'status', "width": "150px"},
         {"name": 'section|{}'.format(gettext_lazy("DFO section")), },
         {"name": 'requester_name|{}'.format(gettext_lazy("Requester name")), },
         {"name": 'trip.tname', "width": "400px"},
         {"name": 'destination|{}'.format(gettext_lazy("Destination")), },
-        {"name": 'smart_start_date|{}'.format(gettext_lazy("Start date")), "width": "120px"},
+        {"name": 'start_date', "width": "120px"},
         {"name": 'processing_time|{}'.format(gettext_lazy("Processing time")), "width": "120px"},
         {"name": 'created_by', },
     ]
