@@ -872,11 +872,11 @@ class TripRequest(models.Model):
 
     @property
     def smart_fiscal_year(self):
-        return self.trip.fiscal_year if self.parent_request else self.fiscal_year
+        return self.trip.fiscal_year if self.is_group_request else self.fiscal_year
 
     @property
     def smart_start_date(self):
-        return date(self.trip.start_date) if self.parent_request else date(self.end_date)
+        return date(self.trip.start_date) if self.is_group_request else date(self.end_date)
 
     @property
     def smart_status(self):
