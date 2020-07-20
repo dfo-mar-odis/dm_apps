@@ -438,8 +438,8 @@ class TripRequestListView(TravelAccessRequiredMixin, CommonFilterView):
         {"name": 'requester_name|{}'.format(gettext_lazy("Requester name")), },
         {"name": 'trip.tname', "width": "400px"},
         {"name": 'destination|{}'.format(gettext_lazy("Destination")), },
-        {"name": 'smart_start_date|{}'.format(gettext_lazy("Start date")), "width": "90px"},
-        {"name": 'processing_time|{}'.format(gettext_lazy("Processing time")), },
+        {"name": 'smart_start_date|{}'.format(gettext_lazy("Start date")), "width": "120px"},
+        {"name": 'processing_time|{}'.format(gettext_lazy("Processing time")), "width": "120px"},
         # {"name": 'created_by', },
     ]
 
