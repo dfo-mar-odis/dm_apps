@@ -548,7 +548,7 @@ def generate_consultation_log_spreadsheet(fy, orgs, statuses, entry_types, repor
         data_row = [
             col_1,
             col_2,
-            e.initial_date.strftime("%m/%d/%Y"),
+            e.initial_date.strftime("%m/%d/%Y") if e.initial_date else "n/a",
             people,
             other_notes.replace("\\r\\n", "\r\n"),
             followups.replace("\\r\\n", "\r\n") if followups else "",
