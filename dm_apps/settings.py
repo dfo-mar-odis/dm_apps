@@ -255,7 +255,6 @@ STATICFILES_DIRS = [
 ]
 
 AZURE_STORAGE_ACCOUNT_NAME = config("AZURE_STORAGE_ACCOUNT_NAME", cast=str, default="")
-# AZURE_STORAGE_ACCESS_KEY = config("AZURE_STORAGE_ACCESS_KEY", cast=str, default="")
 # if no account name was provided, serve static and media files with whitenoise
 if AZURE_STORAGE_ACCOUNT_NAME == "":
     print('Serving static and media files from local staticfiles directory using Whitenoise.')
@@ -269,11 +268,8 @@ else:
     print('Azure storage blob connection information found. Serving static and mediafile from azure storage blob.')
     DEFAULT_FILE_STORAGE = 'backend.custom_azure.AzureMediaStorage'
     STATICFILES_STORAGE = 'backend.custom_azure.AzureStaticStorage'
-    STATIC_CONTAINER_NAME = "static"
-    MEDIA_CONTAINER_NAME = "media"
     AZURE_CUSTOM_DOMAIN = f'{AZURE_STORAGE_ACCOUNT_NAME}.blob.core.windows.net'
-    STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_CONTAINER_NAME}/'
-    MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_CONTAINER_NAME}/'
+    STATIC_URL = f'https://{AZURE_STORAGE_ACCOUNT_NAME}.z9.web.core.windows.net/'
 
 # This setting should allow for submitting forms with lots of fields. This is especially relevent when using formsets as in ihub > settings > orgs...
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 10000

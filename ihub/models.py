@@ -95,7 +95,7 @@ class Entry(models.Model):
     location = models.CharField(max_length=1000, blank=True, null=True, verbose_name=_("location"))
     organizations = models.ManyToManyField(ml_models.Organization, related_name="entries",
                                            limit_choices_to={'grouping__is_indigenous': True})
-    initial_date = models.DateTimeField(verbose_name=_("initial activity date"))
+    initial_date = models.DateTimeField(verbose_name=_("initial activity date"), blank=True, null=True )
     anticipated_end_date = models.DateTimeField(verbose_name=_("anticipated end date"), blank=True, null=True)
     status = models.ForeignKey(Status, default=1, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("status"),
                                related_name="entries")

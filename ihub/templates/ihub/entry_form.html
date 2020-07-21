@@ -46,7 +46,9 @@
         </h1>
         <br><br>
 
+        {% bootstrap_form_errors form %}
         <form method="post" class="form">
+
             {% csrf_token %}
             {% buttons %}
                 <div class="btn-group">

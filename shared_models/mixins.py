@@ -314,6 +314,13 @@ class CommonListMixin(CommonMixin):
     # the text of the "new" button
     new_btn_text = None
 
+    def get_h1(self):
+        # take a stab at getting the h1
+        if self.h1:
+            return self.h1
+        else:
+            return self.get_queryset().model._meta.verbose_name_plural.title()
+
     def get_new_btn_text(self):
         if self.new_btn_text:
             return self.new_btn_text

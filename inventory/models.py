@@ -315,7 +315,7 @@ class Resource(models.Model):
     uuid = models.UUIDField(blank=True, null=True, verbose_name="UUID", unique=True)
     resource_type = models.ForeignKey(ResourceType, on_delete=models.DO_NOTHING, blank=True, null=True)
     # section = models.ForeignKey(Section, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="resources")
-    section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, null=True, related_name="resources")
+    section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, null=True, blank=True, related_name="resources")
     title_eng = custom_widgets.OracleTextField(verbose_name="Title (English)")
     title_fre = custom_widgets.OracleTextField(blank=True, null=True, verbose_name="Title (French)")
     status = models.ForeignKey(Status, on_delete=models.DO_NOTHING, blank=True, null=True)

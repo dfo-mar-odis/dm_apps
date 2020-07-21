@@ -1,0 +1,27 @@
+pool:
+  vmImage: 'Ubuntu 18.04'
+
+trigger:
+  - master
+
+steps:
+  - task: UsePythonVersion@0
+    displayName: 'Use Python 3.8'
+    inputs:
+      versionSpec: 3.8
+
+  - script: |
+      # install pre-requisites
+      python -m pip install --upgrade pip setuptools wheel
+      sudo apt-get install libmysqlclient-dev
+      pip install -r requirements.txt
+      # run migrations and collect static files
+      python manage.py migrate
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    displayName: 'Install Prerequisites and Run Local Migrations '
+
+  - script: |
+      pushd '$(projectRoot)'
+      ./run_tests.sh
+    condition: succeededOrFailed()
+    displayName: 'Run tests'

@@ -295,13 +295,6 @@ class CommonListView(ListView, CommonListMixin):
     #  shared_entry_form.html contains the common navigation elements at the top of the template
     template_name = 'shared_models/generic_filter.html'
 
-    def get_h1(self):
-        # take a stab at getting the h1
-        if self.h1:
-            return self.h1
-        else:
-            return self.get_queryset().model._meta.verbose_name_plural.title()
-
     def get_context_data(self, **kwargs):
         # we want to update the context with the context vars added by CommonMixin classes
         context = super().get_context_data(**kwargs)

@@ -141,16 +141,14 @@ else:
     print("not connecting SAR Search")
 
 if settings.INSTALLED_APPS.count("vault"):
-        urlpatterns += i18n_patterns(path('vault/', include('vault.urls')), prefix_default_language=True)
+    urlpatterns += i18n_patterns(path('vault/', include('vault.urls')), prefix_default_language=True)
 else:
     print("not connecting vault app")
-
 
 if settings.INSTALLED_APPS.count("spring_cleanup"):
     urlpatterns += i18n_patterns(path('spring-cleanup/', include('spring_cleanup.urls')), prefix_default_language=True)
 else:
     print("not connecting spring_cleanup app")
-
 
 if settings.INSTALLED_APPS.count("shiny"):
     urlpatterns += i18n_patterns(path('shiny-apps/', include('shiny.urls')), prefix_default_language=True)
@@ -162,7 +160,7 @@ if settings.INSTALLED_APPS.count("csas"):
 else:
     print("not connecting csas app")
 
-
-# if not settings.DEBUG:
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
-                                                                                       document_root=settings.MEDIA_ROOT)
+if settings.AZURE_STORAGE_ACCOUNT_NAME == "":
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
+                                                                                            document_root=settings.MEDIA_ROOT)
+# print(urlpatterns)

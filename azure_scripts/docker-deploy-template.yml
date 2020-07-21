@@ -1,0 +1,145 @@
+parameters:
+  - name: AAD_APP_ID
+    type: string
+
+  - name: AAD_APP_SECRET
+    type: string
+
+  - name: AZURE_STORAGE_ACCOUNT_NAME
+    type: string
+
+  - name: AZURE_STORAGE_SECRET_KEY
+    type: string
+
+  - name: azureSubscription
+    type: string
+
+  - name: DB_HOST
+    type: string
+
+  - name: DB_MODE
+    type: string
+
+  - name: DB_NAME
+    type: string
+
+  - name: DB_PASSWORD_PIPELINE
+    type: string
+
+  - name: DB_PASSWORD_WEB
+    type: string
+
+  - name: DB_USER_PIPELINE
+    type: string
+
+  - name: DB_USER_WEB
+    type: string
+
+  - name: DEBUG
+    type: string
+
+  - name: DEPLOYMENT_STAGE
+    type: string
+
+  - name: DockerNamespace
+    type: string
+
+  - name: DockerRepository
+    type: string
+
+  - name: GEODJANGO
+    type: string
+
+  - name: GITHUB_API_KEY
+    type: string
+
+  - name: SECRET_KEY
+    type: string
+
+  - name: SENDGRID_API_KEY
+    type: string
+
+  - name: SHOW_TICKETING_APP
+    type: string
+
+  - name: SITE_FULL_URL
+    type: string
+
+  - name: WEB_APP_NAME
+    type: string
+
+
+steps:
+  - task: UsePythonVersion@0
+    displayName: 'Use Python 3.8'
+    inputs:
+      versionSpec: 3.8
+
+  - script: |
+      # install pre-requisites
+      python -m pip install --upgrade pip setuptools wheel
+      sudo apt-get install libmysqlclient-dev
+      pip install -r requirements.txt
+
+      # create env file
+      python create_env_file.py --db-host "${{parameters.DB_HOST}}" \
+      --db-port 3306 \
+      --db-name "${{parameters.DB_NAME}}" \
+      --db-user "${{parameters.DB_USER_PIPELINE}}" \
+      --db-password "${{parameters.DB_PASSWORD_PIPELINE}}" \
+      --deployment-stage "${{parameters.DEPLOYMENT_STAGE}}" \
+      --azure-storage-account-name "${{parameters.AZURE_STORAGE_ACCOUNT_NAME}}" \
+      --azure-storage-secret-key "${{parameters.AZURE_STORAGE_SECRET_KEY}}" \
+      --in-pipeline "True"
+
+      # run migrations and collect static files
+      python manage.py migrate
+      python manage.py collectstatic --no-input
+
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    displayName: 'Run Migrations and Staticfiles'
+
+  - task: AzureRmWebAppDeployment@4
+    displayName: 'Deploy Docker Image to ${{parameters.WEB_APP_NAME}}'
+    inputs:
+      azureSubscription: '${{parameters.azureSubscription}}'
+      appType: webAppContainer
+      WebAppName: '${{parameters.WEB_APP_NAME}}'
+      DockerNamespace: ${{parameters.DockerNamespace}}
+      DockerRepository: ${{parameters.DockerRepository}}
+      DockerImageTag: latest
+      StartupCommand: init.sh
+      AppSettings: >-
+        -WEBSITES_PORT 8000
+        -AAD_APP_ID ${{parameters.AAD_APP_ID}}
+        -AAD_APP_SECRET ${{parameters.AAD_APP_SECRET}}
+        -AAD_AUTHORITY "https://login.microsoftonline.com/1594fdae-a1d9-4405-915d-011467234338"
+        -AAD_AUTHORIZE_ENDPOINT "/oauth2/v2.0/authorize"
+        -AAD_REDIRECT "https://${{parameters.WEB_APP_NAME}}.azurewebsites.net/accounts/callback"
+        -AAD_SCOPES  "openid user.read"
+        -AAD_TOKEN_ENDPOINT "/oauth2/v2.0/token"
+        -AZURE_STORAGE_ACCOUNT_NAME ${{parameters.AZURE_STORAGE_ACCOUNT_NAME}}
+        -SITE_FULL_URL ${{parameters.SITE_FULL_URL}}
+        -SECRET_KEY ${{parameters.SECRET_KEY}}
+        -ALLOWED_HOST_TO_ADD ${{parameters.WEB_APP_NAME}}.azurewebsites.net
+        -SITE_FROM_EMAIL "DoNotReply@Sci-Zone.dfo-mpo.gc.ca"
+        -SHOW_TICKETING_APP ${{parameters.SHOW_TICKETING_APP}}
+        -GEODJANGO ${{parameters.GEODJANGO}}
+        -DEPLOYMENT_STAGE ${{parameters.DEPLOYMENT_STAGE}}
+        -DB_HOST ${{parameters.DB_HOST}}
+        -DB_MODE ${{parameters.DB_MODE}}
+        -DB_NAME ${{parameters.DB_NAME}}
+        -DB_USER ${{parameters.DB_USER_WEB}}
+        -DB_PASSWORD ${{parameters.DB_PASSWORD_WEB}}
+        -DB_PORT 3306
+        -DEBUG ${{parameters.DEBUG}}
+        -SENDGRID_API_KEY ${{parameters.SENDGRID_API_KEY}}
+        -GITHUB_API_KEY ${{parameters.GITHUB_API_KEY}}
+        -DEVOPS_BUILD_NUMBER $(Build.BuildNumber)
+
+  - task: AzureAppServiceManage@0
+    displayName: 'Restart web app service'
+    inputs:
+      azureSubscription: '${{parameters.azureSubscription}}'
+      Action: 'Restart Azure App Service'
+      WebAppName: '${{parameters.WEB_APP_NAME}}'

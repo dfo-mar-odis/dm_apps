@@ -27,7 +27,7 @@
                     {% trans "Cancel" as default_cancel_text %}
                     {% echo request.META.HTTP_REFERER as default_cancel_url %}
                     <span data-toggle="tooltip" title="{% block submit_btn_tip_text %}{% endblock %}">
-                <input type="submit" class="btn btn-lg {% block submit_btn_class %}btn-warning{% endblock %}"
+                <input type="submit" class="btn btn-lg {% block submit_btn_class %}{{ submit_btn_class|nz:"btn-warning" }}{% endblock %}"
                         {% block submit_btn_props %}{% endblock %}
                        value="{{ submit_text|nz:default_submit_text }}">
                 </span>
