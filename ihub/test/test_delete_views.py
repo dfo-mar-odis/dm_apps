@@ -130,3 +130,56 @@ class TestEntryPersonDeleteView(CommonTest):
     @tag("EntryPerson", "ep_delete", "access")
     def test_view2(self):
         self.assert_non_public_view(test_url=self.test_url, user=self.user, expected_code=302, locales=["en"])
+
+
+class TestConsultationInstructionDeleteView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.ConsultationInstructionFactory()
+        self.test_url = reverse_lazy('ihub:instruction_delete', args=[self.instance.pk, ])
+        self.expected_template = 'shared_models/generic_popout_confirm_delete.html'
+        self.user = self.get_and_login_user(in_group="ihub_admin")
+
+    @tag("ConsultationInstruction", "instruction_delete", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.InstructionDeleteView, CommonPopoutDeleteView)
+
+    @tag("ConsultationInstruction", "instruction_delete", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("ConsultationInstruction", "instruction_delete", "submit")
+    def test_submit(self):
+        data = FactoryFloor.ConsultationInstructionFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+
+        # for delete views...
+        self.assertEqual(ml_models.ConsultationInstruction.objects.filter(pk=self.instance.pk).count(), 0)
+
+
+
+class TestConsultationRoleDeleteView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.ConsultationRoleFactory()
+        self.test_url = reverse_lazy('ihub:consultee_delete', args=[self.instance.pk, ])
+        self.expected_template = 'shared_models/generic_popout_confirm_delete.html'
+        self.user = self.get_and_login_user(in_group="ihub_admin")
+
+    @tag("ConsultationRole", "consultee_delete", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.ConsultationRoleDeleteView, CommonPopoutDeleteView)
+
+    @tag("ConsultationRole", "consultee_delete", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("ConsultationRole", "consultee_delete", "submit")
+    def test_submit(self):
+        data = FactoryFloor.ConsultationRoleFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+
+        # for delete views...
+        self.assertEqual(ml_models.ConsultationRole.objects.filter(pk=self.instance.pk).count(), 0)

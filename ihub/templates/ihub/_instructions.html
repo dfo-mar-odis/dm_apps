@@ -6,24 +6,27 @@
 {% trans "<b class='highlight'>MISSING EMAIL</b>" as missing_email %}
 {% trans "<b class='highlight'>MISSING ROLE</b>" as missing_role %}
 
-<div class="">
-  <h3>
-    {% trans "Consultation Instructions:" %}
-  </h3>
 
-</div>
+<h3>
+  {% trans "Consultation Instructions:" %}
+</h3>
+
 
 {% if not object.consultation_instructions %}
-  <em>
-    {% trans "There are no consultation instructions available for this organization" %}
-  </em><br>
-  <a class="" href="{% url 'ihub:instruction_new' object.id %}">
+  <div class="mb-3">
+    <em>
+      {% trans "There are no consultation instructions available for this organization" %}
+    </em>
+  </div>
+  <a class="" href="#" pop-href="{% url 'ihub:instruction_new' object.id %}">
     ({% trans "Create Instructions" %})
   </a>
 {% else %}
-  <a class="" href="{% url 'ihub:instruction_edit' object.consultation_instructions.id %}">
-    ({% trans "Edit Instructions" %})
-  </a>
+  <div class="mb-3">
+    <a class="" href="#" pop-href="{% url 'ihub:instruction_edit' object.consultation_instructions.id %}">
+      ({% trans "Edit Instructions" %})
+    </a>
+  </div>
   <table class="table table-bordered table-sm" style="width: auto">
     <tr>
       <th>

@@ -309,6 +309,7 @@ class MemberCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     template_name = 'ihub/member_form_popout.html'
     form_class = forms.MemberForm
     width = 1000
+    height = 700
 
     def get_initial(self):
         org = ml_models.Organization.objects.get(pk=self.kwargs['org'])
@@ -326,7 +327,8 @@ class MemberUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = ml_models.OrganizationMember
     template_name = 'ihub/member_form_popout.html'
     form_class = forms.MemberForm
-    width = "1000px"
+    width = 1000
+    height = 800
 
     def get_initial(self):
         return {
@@ -549,9 +551,8 @@ def file_delete(request, pk):
 # CONSULTATION INSTRUCTION #
 ############################
 
-class InstructionCreateView(iHubEditRequiredMixin, CommonCreateView):
+class InstructionCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = ml_models.ConsultationInstruction
-    template_name = 'ihub/instruction_form.html'
     form_class = forms.InstructionForm
 
     def get_initial(self):
@@ -561,33 +562,11 @@ class InstructionCreateView(iHubEditRequiredMixin, CommonCreateView):
             'last_modified_by': self.request.user
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        org = ml_models.Organization.objects.get(id=self.kwargs['org'])
-        context['org'] = org
 
-        return context
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse_lazy('ihub:instruction_edit', kwargs={"pk": object.id}))
-
-
-class InstructionUpdateView(iHubEditRequiredMixin, CommonUpdateView):
+class InstructionUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = ml_models.ConsultationInstruction
-    template_name = 'ihub/instruction_form.html'
     form_class = forms.InstructionForm
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        # # get a list of members from only the indigenous organizations
-        # member_list = ['<a href="#" class="add-btn" target-url="{target_url}">{text}</a>'.format(
-        #     target_url=reverse_lazy("masterlist:recipient_new", kwargs={"instruction": self.object.id, "member": member.id}),
-        #     text=member) for member in ml_models.OrganizationMember.objects.filter(organization__grouping__is_indigenous=True)]
-        # context['member_list'] = member_list
-
-        return context
+    template_name = 'ihub/instruction_form.html'
 
     def get_initial(self):
         return {
@@ -595,70 +574,47 @@ class InstructionUpdateView(iHubEditRequiredMixin, CommonUpdateView):
         }
 
 
-class InstructionDeleteView(iHubEditRequiredMixin, CommonDeleteView):
+class InstructionDeleteView(iHubAdminRequiredMixin, CommonPopoutDeleteView):
     model = ml_models.ConsultationInstruction
-    success_message = _("The organization's consultation instructions were deleted successfully!")
-    template_name = 'ihub/instruction_confirm_delete.html'
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+
+# Consultation Role #
+#####################
+
+class ConsultationRoleCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
+    model = ml_models.ConsultationRole
+    form_class = forms.ConsultationRoleForm
+
+    def get_initial(self):
+        return {
+            'organization': self.kwargs['organization'],
+            'member': self.kwargs['member'],
+            'last_modified_by': self.request.user,
+        }
+
+    def form_valid(self, form):
+        obj = form.save()
+        return HttpResponseRedirect(reverse("ihub:member_edit", args=[obj.member.id]))
+
+
+class ConsultationRoleUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
+    model = ml_models.ConsultationRole
+    form_class = forms.ConsultationRoleForm
+
+    def get_initial(self):
+        return {
+            'last_modified_by': self.request.user,
+        }
 
     def get_success_url(self):
-        return reverse_lazy("ihub:org_detail", kwargs={"pk": self.object.organization.id})
+        return reverse("ihub:member_edit", args=[self.get_object().member.id])
 
 
-# RECIPIENTS #
-##############
+class ConsultationRoleDeleteView(iHubAdminRequiredMixin, CommonPopoutDeleteView):
+    model = ml_models.ConsultationRole
 
-class RecipientCreateView(iHubEditRequiredMixin, CommonCreateView):
-    model = ml_models.ConsultationInstructionRecipient
-    template_name = 'ihub/recipient_form_popout.html'
-
-    form_class = forms.RecipientForm
-
-    def get_initial(self):
-        instruction = ml_models.ConsultationInstruction.objects.get(pk=self.kwargs['instruction'])
-        member = ml_models.OrganizationMember.objects.get(pk=self.kwargs['member'])
-        return {
-            'consultation_instruction': instruction.id,
-            'member': member.id,
-            'last_modified_by': self.request.user,
-        }
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        instruction = ml_models.ConsultationInstruction.objects.get(id=self.kwargs['instruction'])
-        member = ml_models.OrganizationMember.objects.get(id=self.kwargs['member'])
-        context['instruction'] = instruction
-        context['member'] = member
-        return context
-
-    def form_valid(self, form):
-        self.object = form.save()
-        return HttpResponseRedirect(reverse('shared_models:close_me'))
-
-
-class RecipientUpdateView(iHubEditRequiredMixin, CommonUpdateView):
-    model = ml_models.ConsultationInstructionRecipient
-    template_name = 'ihub/recipient_form_popout.html'
-    form_class = forms.RecipientForm
-
-    def form_valid(self, form):
-        self.object = form.save()
-        return HttpResponseRedirect(reverse('shared_models:close_me'))
-
-    def get_initial(self):
-        return {
-            'last_modified_by': self.request.user,
-        }
-
-
-def recipient_delete(request, pk):
-    object = ml_models.ConsultationInstructionRecipient.objects.get(pk=pk)
-    object.delete()
-    messages.success(request, "The recipient has been successfully deleted from {}.".format(object.consultation_instruction))
-    return HttpResponseRedirect(reverse_lazy("ihub:instruction_edit", kwargs={"pk": object.consultation_instruction.id}))
+    def get_success_url(self):
+        return reverse("ihub:member_edit", args=[self.get_object().member.id])
 
 
 # REPORTS #

@@ -183,7 +183,7 @@ class MemberForm(forms.ModelForm):
             'notes': forms.Textarea(attrs={"rows": "3"}),
         }
         labels = {
-            'person': "Select a person:",
+            'person': "Select a contact",
         }
 
     def __init__(self, *args, **kwargs):
@@ -204,15 +204,19 @@ class InstructionForm(forms.ModelForm):
         }
 
 
-class RecipientForm(forms.ModelForm):
+class ConsultationRoleForm(forms.ModelForm):
     class Meta:
-        model = ml_models.ConsultationInstructionRecipient
+        model = ml_models.ConsultationRole
         exclude = ["date_last_modified"]
         widgets = {
             'member': forms.HiddenInput(),
-            'consultation_instruction': forms.HiddenInput(),
+            'organization': forms.Select(attrs=chosen_js),
             'last_modified_by': forms.HiddenInput(),
         }
+        labels = {
+            'organization': "For which organization?"
+        }
+
 
 class FileForm(forms.ModelForm):
     class Meta:

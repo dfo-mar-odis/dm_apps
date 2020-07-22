@@ -17,6 +17,7 @@ YESNO_CHOICES = (
 class Sector(SimpleLookup):
     pass
 
+
 class Grouping(SimpleLookup):
     is_indigenous = models.BooleanField(default=False, verbose_name=_("indigenous?"))
 
@@ -266,7 +267,7 @@ class ConsultationRole(models.Model):
         (TO, _("TO")),
         (CC, _("CC")),
     )
-    member = models.ForeignKey(OrganizationMember, on_delete=models.DO_NOTHING, related_name="consultation_role")
+    member = models.ForeignKey(OrganizationMember, on_delete=models.DO_NOTHING, related_name="consultation_roles")
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="consultees")
     to_cc = models.IntegerField(choices=TO_CC_CHOICES, verbose_name=_("TO / CC"))
     # metadata
@@ -279,7 +280,7 @@ class ConsultationRole(models.Model):
 
     class Meta:
         ordering = ["to_cc", "member"]
-        unique_together = ["organization", "member"]
+        unique_together = ["organization", "member", "to_cc"]
 
     def __str__(self):
         if self.member.person.designation:

@@ -53,15 +53,15 @@ urlpatterns = [
 
     # Consultation Instructions #
     #############################
-    path('organization/<int:org>/instructions/new/', views.InstructionCreateView.as_view(), name="instruction_new"),
-    path('instructions/<int:pk>/edit/', views.InstructionUpdateView.as_view(), name="instruction_edit"),
-    path('instructions/<int:pk>/delete/', views.InstructionDeleteView.as_view(), name="instruction_delete"),
+    path('organization/<int:org>/instructions/new/', views.InstructionCreateView.as_view(), name="instruction_new"),# TESTED
+    path('instructions/<int:pk>/edit/', views.InstructionUpdateView.as_view(), name="instruction_edit"),# TESTED
+    path('instructions/<int:pk>/delete/', views.InstructionDeleteView.as_view(), name="instruction_delete"),# TESTED
 
-    # RECIPIENTS #
+    # ConsultationRole (ie.. a member who is consulted ) #
     ##############
-    path('instructions/<int:instruction>/member/<int:member>/add/', views.RecipientCreateView.as_view(), name="recipient_new"),
-    path('recipient/<int:pk>/edit/', views.RecipientUpdateView.as_view(), name="recipient_edit"),
-    path('recipient/<int:pk>/delete/', views.recipient_delete, name="recipient_delete"),
+    path('organization/<int:organization>/member/<int:member>/new/', views.ConsultationRoleCreateView.as_view(), name="consultee_new"),
+    path('consultee/<int:pk>/edit/', views.ConsultationRoleUpdateView.as_view(), name="consultee_edit"),
+    path('consultee/<int:pk>/delete/', views.ConsultationRoleDeleteView.as_view(), name="consultee_delete"),
 
     # FILE #
     ########

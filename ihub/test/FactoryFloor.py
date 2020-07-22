@@ -121,3 +121,33 @@ class EntryNoteFactory(factory.django.DjangoModelFactory):
             'date': faker.date_time_this_year(tzinfo=timezone.get_current_timezone()).strftime("%Y-%m-%d 13:00"),
             'note': faker.text(),
         }
+
+
+class ConsultationInstructionFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = ml_models.ConsultationInstruction
+
+    organization = factory.SubFactory(OrganizationFactory)
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'organization': OrganizationFactory().id,
+        }
+
+
+class ConsultationRoleFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = ml_models.ConsultationRole
+
+    member = factory.SubFactory(OrganizationMemberFactory)
+    organization = factory.SubFactory(OrganizationFactory)
+    to_cc = factory.lazy_attribute(lambda o: faker.pyint(1, 100))
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'member': OrganizationMemberFactory().id,
+            'organization': OrganizationFactory().id,
+            'to_cc': faker.pyint(1, 2),
+        }

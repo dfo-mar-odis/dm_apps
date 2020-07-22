@@ -154,3 +154,50 @@ class TestEntryPersonCreateView(CommonTest):
     def test_submit(self):
         data = FactoryFloor.EntryPersonFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
+
+
+class TestConsultationInstructionCreateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.OrganizationFactory()
+        self.test_url = reverse_lazy('ihub:instruction_new', args=[self.instance.pk, ])
+        self.expected_template = 'shared_models/generic_popout_form.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("ConsultationInstruction", "instruction_new", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.InstructionCreateView, CommonPopoutCreateView)
+
+    @tag("ConsultationInstruction", "instruction_new", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("ConsultationInstruction", "instruction_new", "submit")
+    def test_submit(self):
+        data = FactoryFloor.ConsultationInstructionFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+
+
+class TestConsultationRoleCreateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance1 = FactoryFloor.OrganizationFactory()
+        self.instance2 = FactoryFloor.OrganizationMemberFactory()
+        self.test_url = reverse_lazy('ihub:consultee_new', args=[self.instance1.pk, self.instance2.pk, ])
+        self.expected_template = 'shared_models/generic_popout_form.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("ConsultationRole", "consultee_new", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.ConsultationRoleCreateView, CommonPopoutCreateView)
+
+    @tag("ConsultationRole", "consultee_new", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("ConsultationRole", "consultee_new", "submit")
+    def test_submit(self):
+        data = FactoryFloor.ConsultationRoleFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)

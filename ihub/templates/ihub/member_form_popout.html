@@ -3,35 +3,47 @@
 {% load i18n %}
 {% load static %}
 
+{% block header %}
+{{ block.super }}
+  <style>
+    .contact-box{
+      background-color: rgba(211, 211, 211, 0.28);
+      border: black 1px solid;
+
+    }
+  </style>
+
+{% endblock %}
+
+{% block pre_form_div %}
+  {% if object.person %}
+
+        <div class="py-3 px-3 contact-box">
+          <a pop-href="{% url 'ihub:person_edit_pop' object.person.id %}" href="#" id="edit_person"
+             class="btn btn-sm btn-warning py-0 float-right">
+            {% trans "Edit Contact Information" %}
+          </a>
+          <h5>Contact Information:</h5>
+          {{ object.person.contact_card|safe }}
+        </div>
+
+    </table>
+
+  {% endif %}
+{% endblock %}
+
 {% block form_fields %}
   {% for field in form %}
 
     {% if field.name == "person" %}
       {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
-      <div class="mb-3">
-        <a pop-href="{% url 'ihub:person_new_pop' %}" href="#" id="add_person">
-          <em>
-            {% trans "(add a new person)" %}
-          </em>
+      <div class="mb-4">
+        <a pop-href="{% url 'ihub:person_new_pop' %}" href="#" id="add_person" class="">
+          <em>({% trans "add a new contact" %})</em>
         </a>
       </div>
 
-      {% if object.person %}
 
-        <div id="contact_card">
-          <h5>Contact Details:</h5>
-          <div class="">
-            {{ object.person.contact_card|safe }}
-          </div>
-          <div class="mb-3">
-            <a pop-href="{% url 'ihub:person_edit_pop' object.person.id %}" href="#" id="edit_person">
-              <em>
-                {% trans "(edit contact details)" %}
-              </em>
-            </a>
-          </div>
-        </div>
-      {% endif %}
     {% else %}
       {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
     {% endif %}
@@ -39,10 +51,47 @@
 {% endblock %}
 
 
+{% block pre_buttons_div %}
+  {# this will be for the consultation roles #}
+  {% if object %}
+
+
+    <div class="form-group row">
+      <div class="col-md-3">
+        <label class="col-form-label"> Consultation Roles </label>
+      </div>
+      <div class="col-md-9">
+        <ul>
+          {% for role in object.consultation_roles.all %}
+            <li>
+              {{ role.get_to_cc_display }} &rarr; {{ role.organization }}
+              {% if not role.member.person.email_1 %}
+                <span class="red-font">(contact email address is missing!)</span>
+              {% endif %}
+
+              <a href="{% url 'ihub:consultee_edit' role.id %}"> <span class="mdi mdi-pencil"></span></a>
+              <a href="{% url 'ihub:consultee_delete' role.id %}"> <span class="mdi mdi-delete"></span></a>
+            </li>
+
+          {% empty %}
+            <em>This member does not have a consultation role.</em>
+          {% endfor %}
+        </ul>
+
+      </div>
+
+    </div>
+
+
+  {% endif %}
+
+
+{% endblock %}
+
 
 {% block extra_buttons %}
   {% if object %}
-    <a class="btn btn-primary" href="#">
+    <a class="btn btn-primary" href="{% url 'ihub:consultee_new' object.organization.id object.id %}">
       {% trans "Add Consultation Role" %}
     </a>
     <a class="btn btn-danger" href="{% url 'ihub:member_delete' object.id %}">
