@@ -353,7 +353,7 @@ class EntryListView(SiteLoginRequiredMixin, CommonFilterView):
         {"name": 'regions', "class": "", "width": ""},
         {"name": 'organizations', "class": "", "width": ""},
         {"name": 'sectors', "class": "", "width": ""},
-        {"name": 'status', "class": "", "width": ""},
+        {"name": 'status', "class": "", "width": "170px"},
     ]
     new_object_url_name = "ihub:entry_new"
     row_object_url_name = "ihub:entry_detail"
