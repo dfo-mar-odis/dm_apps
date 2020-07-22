@@ -12,7 +12,7 @@ class TestPersonListView(CommonTest):
     def setUp(self):
         super().setUp()
         self.instance = FactoryFloor.PersonFactory()
-        self.test_url = reverse_lazy('ihub:person_list', args=[self.instance.pk, ])
+        self.test_url = reverse_lazy('ihub:person_list')
         self.expected_template = 'ihub/person_list.html'
         self.user = self.get_and_login_user()
 
@@ -24,7 +24,6 @@ class TestPersonListView(CommonTest):
     def test_view(self):
         self.assert_not_broken(self.test_url)
         self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
-        self.assert_public_view(test_url=self.test_url, expected_template=self.expected_template)
 
     @tag("Person", "person_list", "context")
     def test_context(self):
@@ -32,11 +31,3 @@ class TestPersonListView(CommonTest):
             "field_list",
         ]
         self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
-
-    @tag("Person", "person_list", "submit")
-    def test_submit(self):
-        data = FactoryFloor.PersonFactory.get_valid_data()
-        self.assert_success_url(self.test_url, data=data, user=self.user)
-
-        # for delete views...
-        self.assertEqual(models.Person.objects.filter(pk=self.instance.pk).count(), 0)

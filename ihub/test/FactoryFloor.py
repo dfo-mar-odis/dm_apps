@@ -36,23 +36,15 @@ class PersonFactory(factory.django.DjangoModelFactory):
 
     first_name = factory.lazy_attribute(lambda o: faker.first_name())
     last_name = factory.lazy_attribute(lambda o: faker.last_name())
+    ihub_vetted = factory.lazy_attribute(lambda o: faker.pybool())
 
     @staticmethod
     def get_valid_data():
         return {
             'first_name': faker.first_name(),
             'last_name': faker.first_name(),
+            'ihub_vetted': True,
         }
-
-
-"""
-class OrganizationMember(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="memberships")
-    organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="members")
-    # role = models.ForeignKey(Role, on_delete=models.DO_NOTHING, related_name="members", blank=True, null=True, verbose_name=_("G&C role"))
-    role = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("role"))
-    notes = models.TextField(blank=True, null=True)
-"""
 
 
 class OrganizationMemberFactory(factory.django.DjangoModelFactory):
