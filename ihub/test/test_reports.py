@@ -38,10 +38,16 @@ class TestConsultationLogReport(CommonTest):
         super().setUp()
         org = FactoryFloor.OrganizationFactory()
         status = models.Status.objects.first()
+        sector = FactoryFloor.SectorFactory()
         entry_type = models.EntryType.objects.first()
+        for x in range(1,10):
+            FactoryFloor.EntryFactory()
+
         self.test_urls = [
             reverse_lazy('ihub:consultation_log', args=[2020, org.id, status.id, entry_type.id, "testing report"]),
             reverse_lazy('ihub:consultation_log_xlsx', args=[2020, org.id, status.id, entry_type.id, "testing report"]),
+            reverse_lazy('ihub:summary_xlsx', args=[2020, sector.id, org.id]),
+            reverse_lazy('ihub:summary_pdf', args=[2020, sector.id, org.id]),
             reverse_lazy('ihub:report_q', args=[org.id]),
         ]
         self.view = views.ConsultationLogPDFTemplateView
@@ -50,3 +56,5 @@ class TestConsultationLogReport(CommonTest):
     def test_view(self):
         for url in self.test_urls:
             self.assert_not_broken(url)
+
+

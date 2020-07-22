@@ -359,7 +359,7 @@ def generate_summary_spreadsheet(fy, orgs, sectors):
                 str(e.status),
                 sectors,
                 str(e.entry_type),
-                e.initial_date.strftime("%Y-%m-%d"),
+                e.initial_date.strftime("%Y-%m-%d") if e.initial_date else "n/a",
                 e.anticipated_end_date.strftime("%Y-%m-%d") if e.anticipated_end_date else "",
                 regions,
                 people,
