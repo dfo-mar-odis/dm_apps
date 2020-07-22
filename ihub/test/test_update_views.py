@@ -82,3 +82,28 @@ class TestOrganizationMemberUpdateView(CommonTest):
     def test_submit(self):
         data = FactoryFloor.OrganizationMemberFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
+
+class TestEntryUpdateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.EntryFactory()
+        self.test_url = reverse_lazy('ihub:entry_edit', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/entry_form.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("Entry", "entry_edit", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryUpdateView, UpdateView)
+        self.assert_inheritance(views.EntryUpdateView, views.iHubEditRequiredMixin)
+
+    @tag("Entry", "entry_edit", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+
+    @tag("Entry", "entry_edit", "submit")
+    def test_submit(self):
+        data = FactoryFloor.EntryFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+        

@@ -55,3 +55,27 @@ class TestOrganizationListView(CommonTest):
             "field_list",
         ]
         self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
+
+
+class TestEntryListView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.test_url = reverse_lazy('ihub:entry_list')
+        self.expected_template = 'ihub/entry_list.html'
+        self.user = self.get_and_login_user()
+
+    @tag("Entry", "entry_list", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryListView, ListView)
+
+    @tag("Entry", "entry_list", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("Entry", "entry_list", "context")
+    def test_context(self):
+        context_vars = [
+            "field_list",
+        ]
+        self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)

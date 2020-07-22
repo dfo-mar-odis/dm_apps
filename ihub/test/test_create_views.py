@@ -81,3 +81,59 @@ class TestOrganizationMemberCreateView(CommonTest):
     def test_submit(self):
         data = FactoryFloor.OrganizationMemberFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
+
+
+class TestEntryCreateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.test_url = reverse_lazy('ihub:entry_new')
+        self.expected_template = 'ihub/entry_form.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("Entry", "entry_new", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryCreateView, CreateView)
+
+    @tag("Entry", "entry_new", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+
+    @tag("Entry", "entry_new", "submit")
+    def test_submit(self):
+        data = FactoryFloor.EntryFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+        
+class TestEntryNoteCreateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.EntryNoteFactory()
+        self.test_url = reverse_lazy('ihub:note', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/generic_.html'
+        self.user = self.get_and_login_user()
+
+    @tag("EntryNote", "note", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryNoteCreateView, CommonCreateView)
+
+    @tag("EntryNote", "note", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+        self.assert_public_view(test_url=self.test_url, expected_template=self.expected_template)
+
+    @tag("EntryNote", "note", "context")
+    def test_context(self):
+        context_vars = [
+            "field_list",
+        ]
+        self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
+    
+    @tag("EntryNote", "note", "submit")
+    def test_submit(self):
+        data = FactoryFloor.EntryNoteFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+        
+        # for delete views...
+        self.assertEqual(models.EntryNote.objects.filter(pk=self.instance.pk).count(), 0)

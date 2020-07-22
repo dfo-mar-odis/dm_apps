@@ -86,3 +86,30 @@ class TestOrganizationMemberDeleteView(CommonTest):
 
         # for delete views...
         self.assertEqual(ml_models.OrganizationMember.objects.filter(pk=self.instance.pk).count(), 0)
+
+
+class TestEntryDeleteView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.EntryFactory()
+        self.test_url = reverse_lazy('ihub:entry_delete', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/entry_confirm_delete.html'
+        self.user = self.get_and_login_user(in_group="ihub_admin")
+
+    @tag("Entry", "entry_delete", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryDeleteView, DeleteView)
+        self.assert_inheritance(views.EntryDeleteView, views.iHubAdminRequiredMixin)
+
+    @tag("Entry", "entry_delete", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("Entry", "entry_delete", "submit")
+    def test_submit(self):
+        data = FactoryFloor.EntryFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+
+        # for delete views...
+        self.assertEqual(models.Entry.objects.filter(pk=self.instance.pk).count(), 0)

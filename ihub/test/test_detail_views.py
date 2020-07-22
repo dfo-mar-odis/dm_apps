@@ -9,6 +9,7 @@ from ihub.test import FactoryFloor
 from ihub.test.common_tests import CommonIHubTest as CommonTest
 from .. import views
 
+
 class TestPersonDetailView(CommonTest):
     def setUp(self):
         super().setUp()
@@ -58,4 +59,29 @@ class TestOrganizationDetailView(CommonTest):
             "field_list_2",
         ]
         self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
-    
+
+
+class TestEntryDetailView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.EntryFactory()
+        self.test_url = reverse_lazy('ihub:entry_detail', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/entry_detail.html'
+        self.user = self.get_and_login_user()
+
+    @tag("Entry", "entry_detail", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryDetailView, DetailView)
+
+    @tag("Entry", "entry_detail", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("Entry", "entry_detail", "context")
+    def test_context(self):
+        context_vars = [
+            "field_list",
+            "field_list_1",
+        ]
+        self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)

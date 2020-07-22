@@ -19,26 +19,26 @@ urlpatterns = [
 
     # ORGANIZATION #
     ################
-    path('organizations/', views.OrganizationListView.as_view(), name="org_list"),# TESTED
-    path('organization/new/', views.OrganizationCreateView.as_view(), name="org_new"),# TESTED
-    path('organization/<int:pk>/view/', views.OrganizationDetailView.as_view(), name="org_detail"),# TESTED
-    path('organization/<int:pk>/edit/', views.OrganizationUpdateView.as_view(), name="org_edit"),# TESTED
-    path('organization/<int:pk>/delete/', views.OrganizationDeleteView.as_view(), name="org_delete"),# TESTED
+    path('organizations/', views.OrganizationListView.as_view(), name="org_list"),  # TESTED
+    path('organization/new/', views.OrganizationCreateView.as_view(), name="org_new"),  # TESTED
+    path('organization/<int:pk>/view/', views.OrganizationDetailView.as_view(), name="org_detail"),  # TESTED
+    path('organization/<int:pk>/edit/', views.OrganizationUpdateView.as_view(), name="org_edit"),  # TESTED
+    path('organization/<int:pk>/delete/', views.OrganizationDeleteView.as_view(), name="org_delete"),  # TESTED
 
     # ORGANIZATIONPERSON #
     ######################
-    path('organization/<int:org>/member/new/', views.MemberCreateView.as_view(), name="member_new"),
-    path('member/<int:pk>/edit/', views.MemberUpdateView.as_view(), name="member_edit"),
-    path('member/<int:pk>/delete/', views.MemberDeleteView.as_view(), name="member_delete"),
+    path('organization/<int:org>/member/new/', views.MemberCreateView.as_view(), name="member_new"),  # TESTED
+    path('member/<int:pk>/edit/', views.MemberUpdateView.as_view(), name="member_edit"),  # TESTED
+    path('member/<int:pk>/delete/', views.MemberDeleteView.as_view(), name="member_delete"),  # TESTED
     # path('member/<int:pk>/delete/', views.member_delete, name="member_delete"),
 
     # # Entry #
     # #########
-    path('entries/', views.EntryListView.as_view(), name="entry_list"),
-    path('entry/new/', views.EntryCreateView.as_view(), name="entry_new"),
-    path('entry/<int:pk>/view', views.EntryDetailView.as_view(), name="entry_detail"),
-    path('entry/<int:pk>/edit', views.EntryUpdateView.as_view(), name="entry_edit"),
-    path('entry/<int:pk>/delete', views.EntryDeleteView.as_view(), name="entry_delete"),
+    path('entries/', views.EntryListView.as_view(), name="entry_list"),  # TESTED
+    path('entry/new/', views.EntryCreateView.as_view(), name="entry_new"),  # TESTED
+    path('entry/<int:pk>/view', views.EntryDetailView.as_view(), name="entry_detail"),  # TESTED
+    path('entry/<int:pk>/edit', views.EntryUpdateView.as_view(), name="entry_edit"),  # TESTED
+    path('entry/<int:pk>/delete', views.EntryDeleteView.as_view(), name="entry_delete"),  # TESTED
 
     # NOTES #
     #########
