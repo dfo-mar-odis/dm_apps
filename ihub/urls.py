@@ -90,32 +90,32 @@ urlpatterns = [
     # SETTINGS #
     ############
 
-    path('settings/organizations/', views.OrganizationFormsetView.as_view(), name="manage_orgs"),
+    path('settings/organizations/', views.OrganizationFormsetView.as_view(), name="manage_orgs"),  # TESTED
 
 
-    path('settings/sectors/', views.SectorFormsetView.as_view(), name="manage_sectors"),
-    path('settings/sector/<int:pk>/delete/', views.SectorHardDeleteView.as_view(), name="delete_sector"),
+    path('settings/sectors/', views.SectorFormsetView.as_view(), name="manage_sectors"),  # TESTED
+    path('settings/sector/<int:pk>/delete/', views.SectorHardDeleteView.as_view(), name="delete_sector"),  # TESTED
 
-    path('settings/statuses/', views.StatusFormsetView.as_view(), name="manage_statuses"),
-    path('settings/status/<int:pk>/delete/', views.StatusHardDeleteView.as_view(), name="delete_status"),
+    path('settings/statuses/', views.StatusFormsetView.as_view(), name="manage_statuses"),  # TESTED
+    path('settings/status/<int:pk>/delete/', views.StatusHardDeleteView.as_view(), name="delete_status"),  # TESTED
 
-    path('settings/entry-types/', views.EntryTypeFormsetView.as_view(), name="manage_entry_types"),
-    path('settings/entry-type/<int:pk>/delete/', views.EntryTypeHardDeleteView.as_view(), name="delete_entry_type"),
+    path('settings/entry-types/', views.EntryTypeFormsetView.as_view(), name="manage_entry_types"),  # TESTED
+    path('settings/entry-type/<int:pk>/delete/', views.EntryTypeHardDeleteView.as_view(), name="delete_entry_type"),  # TESTED
 
-    path('settings/funding-purposes/', views.FundingPurposeFormsetView.as_view(), name="manage_funding_purposes"),
-    path('settings/funding-purpose/<int:pk>/delete/', views.FundingPurposeHardDeleteView.as_view(), name="delete_funding_purpose"),
+    path('settings/funding-purposes/', views.FundingPurposeFormsetView.as_view(), name="manage_funding_purposes"),  # TESTED
+    path('settings/funding-purpose/<int:pk>/delete/', views.FundingPurposeHardDeleteView.as_view(), name="delete_funding_purpose"),  # TESTED
 
-    path('settings/reserves/', views.ReserveFormsetView.as_view(), name="manage_reserves"),
-    path('settings/reserve/<int:pk>/delete/', views.ReserveHardDeleteView.as_view(), name="delete_reserve"),
+    path('settings/reserves/', views.ReserveFormsetView.as_view(), name="manage_reserves"),  # TESTED
+    path('settings/reserve/<int:pk>/delete/', views.ReserveHardDeleteView.as_view(), name="delete_reserve"),  # TESTED
 
-    path('settings/nations/', views.NationFormsetView.as_view(), name="manage_nations"),
-    path('settings/nation/<int:pk>/delete/', views.NationHardDeleteView.as_view(), name="delete_nation"),
+    path('settings/nations/', views.NationFormsetView.as_view(), name="manage_nations"),  # TESTED
+    path('settings/nation/<int:pk>/delete/', views.NationHardDeleteView.as_view(), name="delete_nation"),  # TESTED
 
-    path('settings/funding-programs/', views.FundingProgramFormsetView.as_view(), name="manage_programs"),
-    path('settings/funding-program/<int:pk>/delete/', views.FundingProgramHardDeleteView.as_view(), name="delete_program"),
+    path('settings/funding-programs/', views.FundingProgramFormsetView.as_view(), name="manage_programs"),  # TESTED
+    path('settings/funding-program/<int:pk>/delete/', views.FundingProgramHardDeleteView.as_view(), name="delete_program"),  # TESTED
 
-    path('settings/relationship-ratings/', views.RelationshipRatingFormsetView.as_view(), name="manage_ratings"),
-    path('settings/relationship-rating/<int:pk>/delete/', views.RelationshipRatingHardDeleteView.as_view(), name="delete_rating"),
+    path('settings/relationship-ratings/', views.RelationshipRatingFormsetView.as_view(), name="manage_ratings"),  # TESTED
+    path('settings/relationship-rating/<int:pk>/delete/', views.RelationshipRatingHardDeleteView.as_view(), name="delete_rating"),  # TESTED
 
 
     path('settings/users/', views.UserListView.as_view(), name='user_list'),

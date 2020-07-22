@@ -6,63 +6,27 @@ from django.utils.translation import gettext_lazy as _
 from shared_models import models as shared_models
 
 # Choices for YesNo
+from shared_models.models import SimpleLookup
+
 YESNO_CHOICES = (
     (True, "Yes"),
     (False, "No"),
 )
 
 
-class Sector(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
+class Sector(SimpleLookup):
+    pass
 
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class Grouping(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("Name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
+class Grouping(SimpleLookup):
     is_indigenous = models.BooleanField(default=False, verbose_name=_("indigenous?"))
 
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
 
-    class Meta:
-        ordering = ['name', ]
+class Reserve(SimpleLookup):
+    pass
 
 
-class Reserve(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("Name"))
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class Nation(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name"))
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name', ]
+class Nation(SimpleLookup):
+    pass
 
 
 def audio_file_directory_path(instance, filename):
@@ -70,19 +34,11 @@ def audio_file_directory_path(instance, filename):
     return 'ihub/org_{}/{}'.format(instance.id, filename)
 
 
-class RelationshipRating(models.Model):
+class RelationshipRating(SimpleLookup):
     level = models.IntegerField(verbose_name=_("level"), unique=True)
-    name = models.CharField(max_length=255, verbose_name=_("description (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("description (French)"))
 
     def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            my_str = "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            my_str = "{}".format(self.name)
-        return f'{self.level} - {my_str}'
+        return f'{self.level} - {self.tname}'
 
     class Meta:
         ordering = ['level', ]
@@ -265,20 +221,8 @@ class Person(models.Model):
         return my_str
 
 
-class Role(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
-
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
-
-    class Meta:
-        ordering = [_('name'), ]
+class Role(SimpleLookup):
+    pass
 
 
 class OrganizationMember(models.Model):

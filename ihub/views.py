@@ -1127,7 +1127,6 @@ class OrganizationFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
     container_class = "container-fluid"
 
 
-
 class SectorFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
     template_name = 'ihub/formset.html'
     h1 = "Manage Sectors"
