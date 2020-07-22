@@ -39,11 +39,11 @@
         </h1>
 
 
-        <div class="btn-group">
-            <a class="btn btn-warning" href="{% url 'ihub:entry_edit' object.id %}">
+        <div class="btns">
+            <a class="btn btn-sm btn-warning" href="{% url 'ihub:entry_edit' object.id %}">
                 {% trans "Edit" %}
             </a>
-            <a class="btn btn-danger " href="{% url 'ihub:entry_delete' object.id %}">
+            <a class="btn btn-sm btn-danger " href="{% url 'ihub:entry_delete' object.id %}">
                 {% trans "Delete" %}
             </a>
 
