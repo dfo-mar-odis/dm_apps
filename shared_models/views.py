@@ -343,6 +343,7 @@ class CommonFormsetView(TemplateView, CommonFormMixin):
     queryset = None
     formset_class = None
     success_url = None
+    success_url_name = None
     home_url_name = None
     delete_url_name = None
     pre_display_fields = ["id", ]
@@ -354,7 +355,10 @@ class CommonFormsetView(TemplateView, CommonFormMixin):
         return self.queryset
 
     def get_success_url(self):
-        return self.success_url
+        if self.success_url:
+            return self.success_url
+        elif self.success_url_name:
+            return reverse(self.success_url_name)
 
     def get_pre_display_fields(self):
         return self.pre_display_fields

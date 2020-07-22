@@ -89,25 +89,36 @@ urlpatterns = [
 
     # SETTINGS #
     ############
-    path('settings/sectors/', views.manage_sectors, name="manage_sectors"),
-    path('settings/organizations/', views.manage_orgs, name="manage_orgs"),
-    path('settings/status/', views.manage_statuses, name="manage_statuses"),
-    path('settings/entry-types/', views.manage_entry_types, name="manage_entry_types"),
-    path('settings/funding-purpose/', views.manage_funding_purposes, name="manage_funding_purposes"),
-    path('settings/reserves/', views.manage_reserves, name="manage_reserves"),
-    path('settings/nations/', views.manage_nations, name="manage_nations"),
-    path('settings/funding-programs/', views.manage_programs, name="manage_programs"),
-    path('settings/relationship-ratings/', views.manage_ratings, name="manage_ratings"),
 
-    path('settings/relationship-rating/<int:pk>/delete/', views.delete_rating, name="delete_rating"),
-    path('settings/status/<int:pk>/delete/', views.delete_status, name="delete_status"),
-    path('settings/entry-type/<int:pk>/delete/', views.delete_entry_type, name="delete_entry_type"),
-    path('settings/funding-purpose/<int:pk>/delete/', views.delete_funding_purpose, name="delete_funding_purpose"),
-    path('settings/reserve/<int:pk>/delete/', views.delete_reserve, name="delete_reserve"),
-    path('settings/nation/<int:pk>/delete/', views.delete_nation, name="delete_nation"),
-    path('settings/funding-program/<int:pk>/delete/', views.delete_program, name="delete_program"),
+    path('settings/organizations/', views.OrganizationFormsetView.as_view(), name="manage_orgs"),
+
+
+    path('settings/sectors/', views.SectorFormsetView.as_view(), name="manage_sectors"),
+    path('settings/sector/<int:pk>/delete/', views.SectorHardDeleteView.as_view(), name="delete_sector"),
+
+    path('settings/statuses/', views.StatusFormsetView.as_view(), name="manage_statuses"),
+    path('settings/status/<int:pk>/delete/', views.StatusHardDeleteView.as_view(), name="delete_status"),
+
+    path('settings/entry-types/', views.EntryTypeFormsetView.as_view(), name="manage_entry_types"),
+    path('settings/entry-type/<int:pk>/delete/', views.EntryTypeHardDeleteView.as_view(), name="delete_entry_type"),
+
+    path('settings/funding-purposes/', views.FundingPurposeFormsetView.as_view(), name="manage_funding_purposes"),
+    path('settings/funding-purpose/<int:pk>/delete/', views.FundingPurposeHardDeleteView.as_view(), name="delete_funding_purpose"),
+
+    path('settings/reserves/', views.ReserveFormsetView.as_view(), name="manage_reserves"),
+    path('settings/reserve/<int:pk>/delete/', views.ReserveHardDeleteView.as_view(), name="delete_reserve"),
+
+    path('settings/nations/', views.NationFormsetView.as_view(), name="manage_nations"),
+    path('settings/nation/<int:pk>/delete/', views.NationHardDeleteView.as_view(), name="delete_nation"),
+
+    path('settings/funding-programs/', views.FundingProgramFormsetView.as_view(), name="manage_programs"),
+    path('settings/funding-program/<int:pk>/delete/', views.FundingProgramHardDeleteView.as_view(), name="delete_program"),
+
+    path('settings/relationship-ratings/', views.RelationshipRatingFormsetView.as_view(), name="manage_ratings"),
+    path('settings/relationship-rating/<int:pk>/delete/', views.RelationshipRatingHardDeleteView.as_view(), name="delete_rating"),
+
+
     path('settings/users/', views.UserListView.as_view(), name='user_list'),
     path('settings/users/ihub/<int:ihub>/', views.UserListView.as_view(), name='user_list'),
     path('settings/user/<int:pk>/toggle/<str:type>/', views.toggle_user, name='toggle_user'),
-    # path('settings/user/<int:pk>/edit/', views.UserUpdateView.as_view(), name='user_edit'),
 ]

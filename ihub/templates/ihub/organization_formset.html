@@ -1,0 +1,80 @@
+{% extends "ihub/formset.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+
+    <div class="indent-lg">
+        <h1>
+            {{ title }}
+        </h1>
+        <br>
+        <form method="post" class="form">
+            <p>
+                <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" href="{% url 'ihub:index' %}">Back</a>
+            </p>
+
+            {% csrf_token %}
+
+            {{ formset.management_form }}
+            {% bootstrap_formset_errors formset %}
+
+            {% for form in formset %}
+                <h3>
+                    {{ form.instance.name_eng }}
+                </h3>
+
+                {#                #}
+                <div class="row">
+
+                    <div class="col">
+                        {% for field in form %}
+                            {% if field.name == "name_eng" or field.name == "former_name" or field.name == "name_ind" or field.name == "abbrev" %}
+                                {% bootstrap_field field size='small' placeholder="" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col">
+                        {% for field in form %}
+                            {% if field.name == "address" or field.name == "city" or field.name == "postal_code"  or field.name == "province" %}
+                                {% bootstrap_field field size='small' placeholder="" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="col">
+                        {% for field in form %}
+                            {% if field.name == "phone" or field.name == "fax" or field.name == "next_election"  or field.name == "election_term" %}
+                                {% bootstrap_field field size='small' placeholder="" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col">
+                        {% for field in form %}
+                            {% if field.name == "population_on_reserve" or field.name == "population_off_reserve" or field.name == "population_other_reserve"  or field.name == "fin" %}
+                                {% bootstrap_field field size='small' placeholder="" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col">
+                        {% for field in form %}
+                            {% if field.name == "notes" or field.name == "grouping" or field.name == "nation" or field.name == "id" %}
+                                {% bootstrap_field field size='small' placeholder="" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+                <hr>
+            {% endfor %}
+            <p>
+                <button id="submit" type="submit" class="btn btn-primary">Save</button>
+                <a class="btn btn-secondary" href="{% url 'ihub:index' %}">Back</a>
+            </p>
+
+        </form>
+    </div>
+{% endblock %}

@@ -6,151 +6,151 @@
 {% load custom_tags %}
 
 {% block header %}
-{{ block.super }}
-    <style>
-    </style>
+  {{ block.super }}
+  <style>
+  </style>
 {% endblock %}
 
 {% block messages %}{% endblock %}
 
 {% block subcontent %}
 
-    {% trans "Save" as default_submit_text %}
-    {% trans "Back" as default_cancel_text %}
-    {% echo request.META.HTTP_REFERER as default_cancel_url %}
-    {% bootstrap_messages size='small' %}
+  {% trans "Save" as default_submit_text %}
+  {% trans "Back" as default_cancel_text %}
+  {% echo request.META.HTTP_REFERER as default_cancel_url %}
+  {% bootstrap_messages size='small' %}
 
-    <form method="post" class="form">
-        {% csrf_token %}
+  <form method="post" class="form">
+    {% csrf_token %}
 
-        {{ formset.management_form }}
-        {% bootstrap_formset_errors formset %}
-        <div class="mt-3 mb-3">
-            <input type="submit" class="btn btn-primary" value="{{ submit_text|nz:default_submit_text }}">
+    {{ formset.management_form }}
+    {% bootstrap_formset_errors formset %}
+    <div class="mt-3 mb-3">
+      <input type="submit" class="btn btn-primary" value="{{ submit_text|nz:default_submit_text }}">
 
-            <a class=" btn btn-secondary" href="{{ cancel_url|nz:default_cancel_url }}">
-                {{ cancel_text|nz:default_cancel_text }}
-            </a>
-        </div>
+      <a class=" btn btn-secondary" href="{{ cancel_url|nz:default_cancel_url }}">
+        {{ cancel_text|nz:default_cancel_text }}
+      </a>
+    </div>
 
-        <br><br>
+    <br><br>
 
-        <table class="table table-sm table-bordered">
-            <thead>
-            {% for field in pre_display_fields %}
-                <th>
-                    {% get_verbose_label random_object field %}
-                </th>
-            {% endfor %}
-            {% for field in field_list %}
-                <th scope="col">{% get_verbose_label random_object field %}</th>
-            {% endfor %}
-            {% for field in post_display_fields %}
-                <th>
-                    {% get_verbose_label random_object field %}
-                </th>
-            {% endfor %}
-            </thead>
-            <tbody>
+    <table class="table table-sm table-bordered">
+      <thead>
+      {% for field in pre_display_fields %}
+        <th>
+          {% get_verbose_label random_object field %}
+        </th>
+      {% endfor %}
+      {% for field in field_list %}
+        <th scope="col">{% get_verbose_label random_object field %}</th>
+      {% endfor %}
+      {% for field in post_display_fields %}
+        <th>
+          {% get_verbose_label random_object field %}
+        </th>
+      {% endfor %}
+      </thead>
+      <tbody>
 
-            {#   each form is a row     #}
-            {% for form in formset %}
-                <tr>
+      {#   each form is a row     #}
+      {% for form in formset %}
+        <tr>
 
-                    {# display fields #}
-                    {% for field in pre_display_fields %}
-                        <td>
-                            {% get_field_value form.instance field as my_val %}
-                            {{ my_val|nz:"---" }}
-                        </td>
+          {# display fields #}
+          {% for field in pre_display_fields %}
+            <td>
+              {% get_field_value form.instance field as my_val %}
+              {{ my_val|nz:"---" }}
+            </td>
 
-                    {% endfor %}
-
-
-                    {# each field of the form should be a cell #}
-                    {% for field in form %}
-                        {% if not field.is_hidden %}
-                            <td {% if field.name == "color" %}class="color-cell" color-value="{{ form.instance.color }}"{% endif %}>
-                                {% bootstrap_field field size="small" show_label=False placeholder="" %}
-                            </td>
-                        {% endif %}
-                    {% endfor %}
-
-                    {# display fields #}
-                    {% for field in post_display_fields %}
-                        <td>
-                            {% get_field_value form.instance field as my_val %}
-                            {{ my_val|nz:"---" }}
-                        </td>
-                    {% endfor %}
-
-                    {# make sure we include all the hidden cells #}
-                    {% for field in form %}
-                        {% if field.is_hidden %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
+          {% endfor %}
 
 
-                    {% if form.instance.id %}
-                        {% if delete_url_name %}
-                            <td>
-                                <a class="delete-btn red-font" href="#" delete_url="{% url delete_url_name form.instance.id %}"
-                                   object-name="{{ form.instance }}">
-                                    ({% trans "delete" %})
-                                </a>
-                            </td>
-                        {% endif %}
-                    {% else %}
-                        <td>({% trans "new record" %})</td>
-                    {% endif %}
-                </tr>
-            {% endfor %}
+          {# each field of the form should be a cell #}
+          {% for field in form %}
+            {% if not field.is_hidden %}
+              <td {% if field.name == "color" %}class="color-cell" color-value="{{ form.instance.color }}"{% endif %}>
+                {% bootstrap_field field size="small" show_label=False placeholder="" %}
+              </td>
+            {% endif %}
+          {% endfor %}
 
-            </tbody>
-        </table>
+          {# display fields #}
+          {% for field in post_display_fields %}
+            <td>
+              {% get_field_value form.instance field as my_val %}
+              {{ my_val|nz:"---" }}
+            </td>
+          {% endfor %}
 
-        <div class="mt-3 mb-3">
-           <input type="submit" class="btn btn-primary" value="{{ submit_text|nz:default_submit_text }}">
+          {# make sure we include all the hidden cells #}
+          {% for field in form %}
+            {% if field.is_hidden %}
+              {{ field }}
+            {% endif %}
+          {% endfor %}
 
-            <a class=" btn btn-secondary" href="{{ cancel_url|nz:default_cancel_url }}">
-                {{ cancel_text|nz:default_cancel_text }}
-            </a>
-        </div>
 
-    </form>
+          {% if form.instance.id %}
+            {% if delete_url_name %}
+              <td>
+                <a class="delete-btn red-font" href="#" delete_url="{% url delete_url_name form.instance.id %}"
+                   object-name="{{ form.instance }}">
+                  ({% trans "delete" %})
+                </a>
+              </td>
+            {% endif %}
+          {% else %}
+            <td>({% trans "new record" %})</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
 
-    {% block post_form_div %}{% endblock %}
+      </tbody>
+    </table>
 
-    <script type="application/javascript">
+    <div class="mt-3 mb-3">
+      <input type="submit" class="btn btn-primary" value="{{ submit_text|nz:default_submit_text }}">
 
-        $(".delete-btn").click(function () {
-            input = confirm("Are you sure you want to delete: " + $(this).attr("object-name") + "? \n\nThere is no going back from here.");
-            if (input) {
-                window.location.href = $(this).attr("delete_url");
-            }
-        });
+      <a class=" btn btn-secondary" href="{{ cancel_url|nz:default_cancel_url }}">
+        {{ cancel_text|nz:default_cancel_text }}
+      </a>
+    </div>
 
-        $(".color-cell").each(function () {
-            let myColor = $(this).attr("color-value");
-            $(this).children().children("input").css("background-color", myColor);
-        });
-        
-        $("input").change(function () {
-          $(this).css("background-color","#E7EB6C")
-        });
-        $("select").change(function () {
-          $(this).css("background-color","#E7EB6C")
-        });
-        $("textarea").change(function () {
-          $(this).css("background-color","#E7EB6C")
-        });
+  </form>
 
-    </script>
-
+  {% block post_form_div %}{% endblock %}
 
 
 
 {% endblock %}
 
 
+{% block body_js %}
+  <script type="application/javascript">
+
+  $(".delete-btn").click(function () {
+    input = confirm("Are you sure you want to delete: " + $(this).attr("object-name") + "? \n\nThere is no going back from here.");
+    if (input) {
+      window.location.href = $(this).attr("delete_url");
+    }
+  });
+
+  $(".color-cell").each(function () {
+    let myColor = $(this).attr("color-value");
+    $(this).children().children("input").css("background-color", myColor);
+  });
+
+  $("input").change(function () {
+    $(this).css("background-color", "#E7EB6C")
+  });
+  $("select").change(function () {
+    $(this).css("background-color", "#E7EB6C")
+  });
+  $("textarea").change(function () {
+    $(this).css("background-color", "#E7EB6C")
+  });
+
+  </script>
+{% endblock %}
