@@ -37,12 +37,6 @@ urlpatterns = [
     path('instructions/<int:pk>/edit/', views.InstructionUpdateView.as_view(), name="instruction_edit"),
     path('instructions/<int:pk>/delete/', views.InstructionDeleteView.as_view(), name="instruction_delete"),
 
-    # RECIPIENTS #
-    ##############
-    path('instructions/<int:instruction>/member/<int:member>/add/', views.RecipientCreateView.as_view(), name="recipient_new"),
-    path('recipient/<int:pk>/edit/', views.RecipientUpdateView.as_view(), name="recipient_edit"),
-    path('recipient/<int:pk>/delete/', views.recipient_delete, name="recipient_delete"),
-
     # Reports #
     ###########
     path('reports/search/', views.ReportSearchFormView.as_view(), name="report_search"),

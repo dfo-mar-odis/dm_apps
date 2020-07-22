@@ -92,15 +92,6 @@ class InstructionForm(forms.ModelForm):
         }
 
 
-class RecipientForm(forms.ModelForm):
-    class Meta:
-        model = models.ConsultationInstructionRecipient
-        exclude = ["date_last_modified"]
-        widgets = {
-            'member': forms.HiddenInput(),
-            'consultation_instruction': forms.HiddenInput(),
-            'last_modified_by': forms.HiddenInput(),
-        }
 
 
 class OrganizationFormShort(forms.ModelForm):

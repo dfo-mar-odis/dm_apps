@@ -190,8 +190,10 @@ def generate_capacity_spreadsheet(fy, orgs, sectors):
             tot_lapsed,
             tot_outstanding,
         ]
-        print(header)
-        my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
+        try:
+            my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
+        except:
+            print("problem with summary row")
 
         # set formatting for status
         for status in models.Status.objects.all():
