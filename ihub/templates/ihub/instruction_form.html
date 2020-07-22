@@ -1,0 +1,78 @@
+{% extends "ihub/ihub_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen" type="text/css">
+{% endblock %}
+{% block content %}
+
+    <style>
+        .ms-container {
+            width: 100%;
+        }
+    </style>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'ihub:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'ihub:org_list' %}">Organizations</a></li>
+            {% if object %}
+                <li class="breadcrumb-item"><a href="{% url 'ihub:org_detail' object.organization.id %}">{{ object.organization }}</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Editing {{ object }}</li>
+            {% else %}
+                <li class="breadcrumb-item"><a href="{% url 'ihub:org_detail' org.id %}">{{ org }}</a>
+                <li class="breadcrumb-item active" aria-current="page">Creating Consultation Instructions for {{ org }}</li>
+            {% endif %}
+        </ol>
+    </nav>
+
+    <div class="container">
+        <h1>
+            {% if object %}
+                Editing {{ object }}
+            {% else %}
+                Creating Consultation Instructions for {{ org }}
+            {% endif %}
+        </h1>
+        <form method="post" class="form">
+
+            <div class="btn-group">
+                {% if object %}
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a class="btn btn-danger" href="{% url 'ihub:instruction_delete' object.id %}">Delete</a>
+                    <a class="btn btn-secondary" href="{% url 'ihub:org_detail' object.organization.id %}">Cancel</a>
+                {% endif %}
+            </div>
+            <br><br>
+
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+
+            <div class="btn-group">
+                {% if not object %}
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <a class="btn btn-secondary" href="{% url 'ihub:org_list' %}">Cancel</a>
+                {% endif %}
+            </div>
+
+
+        </form>
+
+    </div>
+    <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
+    <script type="application/javascript">
+        $("#id_grouping").multiSelect()
+        $("#id_regions").multiSelect()
+        $("#id_sectors").multiSelect()
+
+        $("form").keydown(function (event) {
+            if (event.key == "Enter") {
+                event.preventDefault()
+            }
+        });
+
+    </script>
+
+{% endblock content %}

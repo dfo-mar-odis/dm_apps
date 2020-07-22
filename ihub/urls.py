@@ -42,15 +42,27 @@ urlpatterns = [
 
     # NOTES #
     #########
-    path('entry/<int:entry>/note/new/', views.NoteCreateView.as_view(), name="note_new"),# TESTED
-    path('note/<int:pk>/edit/', views.NoteUpdateView.as_view(), name="note_edit"),# TESTED
-    path('note/<int:pk>/delete/', views.note_delete, name="note_delete"),# TESTED
+    path('entry/<int:entry>/note/new/', views.NoteCreateView.as_view(), name="note_new"),  # TESTED
+    path('note/<int:pk>/edit/', views.NoteUpdateView.as_view(), name="note_edit"),  # TESTED
+    path('note/<int:pk>/delete/', views.note_delete, name="note_delete"),  # TESTED
 
     # ENTRYPERSON #
     ###############
-    path('entry/<int:entry>/person/new/', views.EntryPersonCreateView.as_view(), name="ep_new"),# TESTED
-    path('dfo-person/<int:pk>/edit/', views.EntryPersonUpdateView.as_view(), name="ep_edit"),# TESTED
-    path('dfo-person/<int:pk>/delete/', views.entry_person_delete, name="ep_delete"),# TESTED
+    path('entry/<int:entry>/person/new/', views.EntryPersonCreateView.as_view(), name="ep_new"),  # TESTED
+    path('dfo-person/<int:pk>/edit/', views.EntryPersonUpdateView.as_view(), name="ep_edit"),  # TESTED
+    path('dfo-person/<int:pk>/delete/', views.entry_person_delete, name="ep_delete"),  # TESTED
+
+    # Consultation Instructions #
+    #############################
+    path('organization/<int:org>/instructions/new/', views.InstructionCreateView.as_view(), name="instruction_new"),
+    path('instructions/<int:pk>/edit/', views.InstructionUpdateView.as_view(), name="instruction_edit"),
+    path('instructions/<int:pk>/delete/', views.InstructionDeleteView.as_view(), name="instruction_delete"),
+
+    # RECIPIENTS #
+    ##############
+    path('instructions/<int:instruction>/member/<int:member>/add/', views.RecipientCreateView.as_view(), name="recipient_new"),
+    path('recipient/<int:pk>/edit/', views.RecipientUpdateView.as_view(), name="recipient_edit"),
+    path('recipient/<int:pk>/delete/', views.recipient_delete, name="recipient_delete"),
 
     # FILE #
     ########

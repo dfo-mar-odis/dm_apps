@@ -27,7 +27,7 @@
         </ol>
     </nav>
 
-    <div class="indent-lg">
+    <div class="container-fluid">
 
         <h1>{{ object }}</h1>
         <div class="row">
@@ -69,20 +69,21 @@
                 </table>
                 <br>
 
-                <h3>
-                    {% trans "iHub Only:" %}
-                </h3>
-                <table class="table table-sm table-striped">
-                    {% for field in field_list_2 %}
-                        {% verbose_td_display instance=object field_name=field date_format="%d-%b-%Y" %}
-                    {% endfor %}
-                </table>
-                <br>
-                <br>
+{#                <h3>#}
+{#                    {% trans "iHub Only:" %}#}
+{#                </h3>#}
+{#                <table class="table table-sm table-striped">#}
+{#                    {% for field in field_list_2 %}#}
+{#                        {% verbose_td_display instance=object field_name=field date_format="%d-%b-%Y" %}#}
+{#                    {% endfor %}#}
+{#                </table>#}
+{#                <br>#}
+{#                <br>#}
 
             </div>
             <div class="col">
                 {% include "ihub/_members.html" %}
+                {% include "ihub/_instructions.html" %}
             </div>
             <div class="col">
                 {% include "ihub/_entries.html" %}

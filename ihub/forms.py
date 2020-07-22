@@ -181,6 +181,29 @@ class MemberForm(forms.ModelForm):
         }
 
 
+class InstructionForm(forms.ModelForm):
+    class Meta:
+        model = ml_models.ConsultationInstruction
+        exclude = [
+            'date_last_modified',
+        ]
+        widgets = {
+            'organization': forms.HiddenInput(),
+            'notes': forms.Textarea(attrs={"rows": 3}),
+            'last_modified_by': forms.HiddenInput(),
+        }
+
+
+class RecipientForm(forms.ModelForm):
+    class Meta:
+        model = ml_models.ConsultationInstructionRecipient
+        exclude = ["date_last_modified"]
+        widgets = {
+            'member': forms.HiddenInput(),
+            'consultation_instruction': forms.HiddenInput(),
+            'last_modified_by': forms.HiddenInput(),
+        }
+
 class FileForm(forms.ModelForm):
     class Meta:
         model = models.File

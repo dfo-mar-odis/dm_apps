@@ -198,6 +198,8 @@ class Person(models.Model):
     connected_user = models.OneToOneField(User, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="ml_persons")
     ihub_vetted = models.BooleanField(default=False, choices=YESNO_CHOICES, verbose_name=_("vetted by iHub"))
 
+    # is_consultation_contact = models.BooleanField(default=False, choices=YESNO_CHOICES, verbose_name=_("Consultation contact?"))
+
     def save(self, *args, **kwargs):
         self.date_last_modified = timezone.now()
         return super().save(*args, **kwargs)
@@ -313,6 +315,57 @@ class OrganizationMember(models.Model):
         return "{} {}, {} ({})".format(first_name, last_name, self.role, self.organization)
 
 
+class ConsultationRole(models.Model):
+    TO = 1
+    CC = 2
+    TO_CC_CHOICES = (
+        (TO, _("TO")),
+        (CC, _("CC")),
+    )
+    member = models.ForeignKey(OrganizationMember, on_delete=models.DO_NOTHING, related_name="consultation_role")
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="consultees")
+    to_cc = models.IntegerField(choices=TO_CC_CHOICES, verbose_name=_("TO / CC"))
+    # metadata
+    date_last_modified = models.DateTimeField(auto_now=True, editable=False, verbose_name=_("date last modified"))
+    last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("last modified by"))
+
+    def save(self, *args, **kwargs):
+        self.date_last_modified = timezone.now()
+        return super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ["to_cc", "member"]
+        unique_together = ["organization", "member"]
+
+    def __str__(self):
+        if self.member.person.designation:
+            designation = self.member.person.designation + " "
+        else:
+            designation = ""
+
+        if self.member.person.first_name:
+            first_name = self.member.person.first_name + " "
+        else:
+            first_name = ""
+
+        if self.member.person.last_name:
+            last_name = self.member.person.last_name
+        else:
+            last_name = ""
+
+        if self.member.person.email_1:
+            email = self.member.person.email_1
+        else:
+            email = _("EMAIL MISSING")
+
+        if self.member.role:
+            role = self.member.role
+        else:
+            role = _("MISSING ROLE")
+
+        return "{}: {}{}{} - {} [{}]".format(self.get_to_cc_display(), designation, first_name, last_name, role, email)
+
+
 class ConsultationInstruction(models.Model):
     organization = models.OneToOneField(Organization, on_delete=models.CASCADE, related_name="consultation_instructions")
     letter_to = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("address letter to:"))
@@ -324,7 +377,7 @@ class ConsultationInstruction(models.Model):
     last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("last modified by"))
 
     def get_absolute_url(self):
-        return reverse('masterlist:org_detail', kwargs={'pk': self.organization.pk})
+        return reverse('ihub:org_detail', kwargs={'pk': self.organization.pk})
 
     def save(self, *args, **kwargs):
         self.date_last_modified = timezone.now()
@@ -335,6 +388,14 @@ class ConsultationInstruction(models.Model):
 
     def __str__(self):
         return "Consultation Instructions for {}".format(self.organization)
+
+    @property
+    def to_email_recipients(self):
+        return self.organization.consultees.filter(to_cc=1)
+
+    @property
+    def cc_email_recipients(self):
+        return self.organization.consultees.filter(to_cc=2)
 
 
 class ConsultationInstructionRecipient(models.Model):

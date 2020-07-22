@@ -1,0 +1,102 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+{% load custom_filters %}
+
+{% trans "<b class='highlight'>MISSING EMAIL</b>" as missing_email %}
+{% trans "<b class='highlight'>MISSING ROLE</b>" as missing_role %}
+
+<div class="">
+  <h3>
+    {% trans "Consultation Instructions:" %}
+  </h3>
+
+</div>
+
+{% if not object.consultation_instructions %}
+  <em>
+    {% trans "There are no consultation instructions available for this organization" %}
+  </em><br>
+  <a class="" href="{% url 'ihub:instruction_new' object.id %}">
+    ({% trans "Create Instructions" %})
+  </a>
+{% else %}
+  <a class="" href="{% url 'ihub:instruction_edit' object.consultation_instructions.id %}">
+    ({% trans "Edit Instructions" %})
+  </a>
+  <table class="table table-bordered table-sm" style="width: auto">
+    <tr>
+      <th>
+        {% trans "Address Letter To:" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.letter_to }}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        {% trans "Cc (on Bottom of Letter):" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.letter_cc }}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        {% trans "Paper Copy:" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.paper_copy }}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        {% trans "To Email Recipients:" %}
+      </th>
+      <td>
+        {% for recipient in object.consultation_instructions.to_email_recipients %}
+          {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }},
+          <a href="#" onclick="return popitup('{% url 'ihub:member_edit' recipient.member.id %}','popWindow')"
+             data-toggle="tooltip" title="Edit member">
+            {{ recipient.member.role|nz:missing_role }}
+            ({{ recipient.member.organization }})
+          </a>
+          &lt;{{ recipient.member.person.email_1|nz:missing_email }}&gt;;
+          <br>
+          <br>
+        {% endfor %}
+        <br>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        {% trans "Cc Email Recipients:" %}
+      </th>
+      <td>
+        {% for recipient in object.consultation_instructions.cc_email_recipients %}
+          {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }},
+          <a href="#" onclick="return popitup('{% url 'ihub:member_edit' recipient.member.id %}','popWindow')"
+             data-toggle="tooltip" title="Edit member">
+            {{ recipient.member.role|nz:missing_role }}
+            ({{ recipient.member.organization }})
+          </a>
+          &lt;{{ recipient.member.person.email_1|nz:missing_email }}&gt;;
+          <br>
+          <br>
+        {% endfor %}
+        <br>
+      </td>
+    </tr>
+
+
+  </table>
+{% endif %}
+{% if object.consultation_instructions %}
+
+
+{% else %}
+
+{% endif %}
+<br>
+<br>
+<br>
