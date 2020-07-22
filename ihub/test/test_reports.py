@@ -41,7 +41,9 @@ class TestConsultationLogReport(CommonTest):
         sector = FactoryFloor.SectorFactory()
         entry_type = models.EntryType.objects.first()
         for x in range(1,10):
-            FactoryFloor.EntryFactory()
+            e = FactoryFloor.EntryFactory(status=status)
+            e.organizations.add(org)
+            e.sectors.add(sector)
 
         self.test_urls = [
             reverse_lazy('ihub:consultation_log', args=[2020, org.id, status.id, entry_type.id, "testing report"]),

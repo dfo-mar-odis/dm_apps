@@ -359,6 +359,7 @@ class EntryListView(SiteLoginRequiredMixin, CommonFilterView):
     row_object_url_name = "ihub:entry_detail"
     home_url_name = "ihub:index"
     h1 = gettext_lazy("Entries")
+    container_class = "container-fluid"
 
 
 class EntryDetailView(SiteLoginRequiredMixin, CommonDetailView):
