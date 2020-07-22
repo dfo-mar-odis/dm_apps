@@ -2,6 +2,8 @@ from django.urls import reverse_lazy
 from django.test import tag
 from django.views.generic import ListView
 from django_filters.views import FilterView
+
+from shared_models.views import CommonFilterView
 from .. import models
 from .. import views
 
@@ -13,12 +15,12 @@ class TestPersonListView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.PersonFactory()
         self.test_url = reverse_lazy('ihub:person_list')
-        self.expected_template = 'ihub/person_list.html'
+        self.expected_template = 'ihub/list.html'
         self.user = self.get_and_login_user()
 
     @tag("Person", "person_list", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.PersonListView, FilterView)
+        self.assert_inheritance(views.PersonListView, CommonFilterView)
 
     @tag("Person", "person_list", "access")
     def test_view(self):
@@ -42,7 +44,7 @@ class TestOrganizationListView(CommonTest):
 
     @tag("Organization", "org_list", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.OrganizationListView, FilterView)
+        self.assert_inheritance(views.OrganizationListView, CommonFilterView)
 
     @tag("Organization", "org_list", "access")
     def test_view(self):
@@ -66,7 +68,7 @@ class TestEntryListView(CommonTest):
 
     @tag("Entry", "entry_list", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryListView, FilterView)
+        self.assert_inheritance(views.EntryListView, CommonFilterView)
 
     @tag("Entry", "entry_list", "access")
     def test_view(self):

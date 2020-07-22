@@ -342,7 +342,7 @@ class MemberDeleteView(iHubAdminRequiredMixin, CommonPopoutDeleteView):
 #########
 
 class EntryListView(SiteLoginRequiredMixin, CommonFilterView):
-    template_name = "ihub/list.html"
+    template_name = "ihub/entry_list.html"
     model = models.Entry
     filterset_class = filters.EntryFilter
     field_list = [
@@ -664,7 +664,7 @@ def recipient_delete(request, pk):
 # REPORTS #
 ###########
 
-class ReportSearchFormView(SiteLoginRequiredMixin, CommonFormView):
+class ReportSearchFormView(SiteLoginRequiredMixin, FormView):
     template_name = 'ihub/report_search.html'
     form_class = forms.ReportSearchForm
 
@@ -1124,7 +1124,7 @@ class FundingProgramFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
     formset_class = forms.FundingProgramFormSet
     success_url_name = "ihub:manage_programs"
     home_url_name = "ihub:index"
-    delete_url_name = "ihub:delete_funding_program"
+    delete_url_name = "ihub:delete_program"
 
 
 class FundingProgramHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):

@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from django.test import tag
 from django.views.generic import DeleteView
 
+from shared_models.views import CommonDeleteView, CommonPopoutDeleteView
 from .. import models
 from masterlist import models as ml_models
 from .. import views
@@ -14,12 +15,12 @@ class TestPersonDeleteView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.PersonFactory()
         self.test_url = reverse_lazy('ihub:person_delete', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/person_confirm_delete.html'
+        self.expected_template = 'ihub/confirm_delete.html'
         self.user = self.get_and_login_user(in_group="ihub_admin")
 
     @tag("Person", "person_delete", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.PersonDeleteView, DeleteView)
+        self.assert_inheritance(views.PersonDeleteView, CommonDeleteView)
         self.assert_inheritance(views.PersonDeleteView, views.iHubAdminRequiredMixin)
 
     @tag("Person", "person_delete", "access")
@@ -41,7 +42,7 @@ class TestOrganizationDeleteView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.OrganizationFactory()
         self.test_url = reverse_lazy('ihub:org_delete', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/organization_confirm_delete.html'
+        self.expected_template = 'ihub/confirm_delete.html'
         self.user = self.get_and_login_user(in_group="ihub_admin")
 
     @tag("Organization", "org_delete", "view")
@@ -67,12 +68,12 @@ class TestOrganizationMemberDeleteView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.OrganizationMemberFactory()
         self.test_url = reverse_lazy('ihub:member_delete', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/member_confirm_delete_popout.html'
+        self.expected_template = 'shared_models/generic_popout_confirm_delete.html'
         self.user = self.get_and_login_user(in_group="ihub_admin")
 
     @tag("OrganizationMember", "member_delete", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.MemberDeleteView, DeleteView)
+        self.assert_inheritance(views.MemberDeleteView, CommonPopoutDeleteView)
 
     @tag("OrganizationMember", "member_delete", "access")
     def test_view(self):
@@ -93,12 +94,12 @@ class TestEntryDeleteView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.EntryFactory()
         self.test_url = reverse_lazy('ihub:entry_delete', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/entry_confirm_delete.html'
+        self.expected_template = 'ihub/confirm_delete.html'
         self.user = self.get_and_login_user(in_group="ihub_admin")
 
     @tag("Entry", "entry_delete", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryDeleteView, DeleteView)
+        self.assert_inheritance(views.EntryDeleteView, CommonDeleteView)
         self.assert_inheritance(views.EntryDeleteView, views.iHubAdminRequiredMixin)
 
     @tag("Entry", "entry_delete", "access")

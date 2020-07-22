@@ -1,11 +1,10 @@
 from django.urls import reverse_lazy
 from django.test import tag
-from django.views.generic import CreateView
 
 from ihub.test import FactoryFloor
 from ihub.test.common_tests import CommonIHubTest as CommonTest
+from shared_models.views import CommonPopoutCreateView, CommonCreateView
 from .. import views
-from .. import models
 from masterlist import models as ml_models
 
 
@@ -14,15 +13,15 @@ class TestPersonCreateView(CommonTest):
         super().setUp()
         self.test_url = reverse_lazy('ihub:person_new')
         self.test_url1 = reverse_lazy('ihub:person_new_pop')
-        self.expected_template = 'ihub/person_form.html'
-        self.expected_template1 = 'ihub/person_form_popout.html'
+        self.expected_template = 'ihub/form.html'
+        self.expected_template1 = 'shared_models/generic_popout_form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("Person", "person_new", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.PersonCreateView, CreateView)
+        self.assert_inheritance(views.PersonCreateView, CommonCreateView)
         self.assert_inheritance(views.PersonCreateView, views.iHubEditRequiredMixin)
-        self.assert_inheritance(views.PersonCreateViewPopout, CreateView)
+        self.assert_inheritance(views.PersonCreateViewPopout, CommonPopoutCreateView)
         self.assert_inheritance(views.PersonCreateViewPopout, views.iHubEditRequiredMixin)
 
     @tag("Person", "person_new", "access")
@@ -43,12 +42,12 @@ class TestOrganizationCreateView(CommonTest):
     def setUp(self):
         super().setUp()
         self.test_url = reverse_lazy('ihub:org_new')
-        self.expected_template = 'ihub/organization_form.html'
+        self.expected_template = 'ihub/form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("Organization", "org_new", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.OrganizationCreateView, CreateView)
+        self.assert_inheritance(views.OrganizationCreateView, CommonCreateView)
 
     @tag("Organization", "org_new", "access")
     def test_view(self):
@@ -71,7 +70,7 @@ class TestOrganizationMemberCreateView(CommonTest):
 
     @tag("OrganizationMember", "member_new", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.MemberCreateView, CreateView)
+        self.assert_inheritance(views.MemberCreateView, CommonPopoutCreateView)
 
     @tag("OrganizationMember", "member_new", "access")
     def test_view(self):
@@ -88,12 +87,12 @@ class TestEntryCreateView(CommonTest):
     def setUp(self):
         super().setUp()
         self.test_url = reverse_lazy('ihub:entry_new')
-        self.expected_template = 'ihub/entry_form.html'
+        self.expected_template = 'ihub/form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("Entry", "entry_new", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryCreateView, CreateView)
+        self.assert_inheritance(views.EntryCreateView, CommonCreateView)
 
     @tag("Entry", "entry_new", "access")
     def test_view(self):
@@ -116,12 +115,12 @@ class TestEntryNoteCreateView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.EntryFactory()
         self.test_url = reverse_lazy('ihub:note_new', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/note_form_popout.html'
+        self.expected_template = 'shared_models/generic_popout_form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("EntryNote", "note_new", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.NoteCreateView, CreateView)
+        self.assert_inheritance(views.NoteCreateView, CommonPopoutCreateView)
 
     @tag("EntryNote", "note_new", "access")
     def test_view(self):
@@ -144,7 +143,7 @@ class TestEntryPersonCreateView(CommonTest):
 
     @tag("EntryPerson", "ep_new", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryPersonCreateView, CreateView)
+        self.assert_inheritance(views.EntryPersonCreateView, CommonPopoutCreateView)
 
     @tag("EntryPerson", "ep_new", "access")
     def test_view(self):

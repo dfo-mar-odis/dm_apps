@@ -7,6 +7,7 @@ from easy_pdf.views import PDFTemplateView
 
 from ihub.test import FactoryFloor
 from ihub.test.common_tests import CommonIHubTest as CommonTest
+from shared_models.views import CommonDetailView
 from .. import views
 
 
@@ -20,7 +21,7 @@ class TestPersonDetailView(CommonTest):
 
     @tag("Person", "person_detail", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.PersonDetailView, DetailView)
+        self.assert_inheritance(views.PersonDetailView, CommonDetailView)
 
     @tag("Person", "person_detail", "access")
     def test_view(self):
@@ -45,7 +46,7 @@ class TestOrganizationDetailView(CommonTest):
 
     @tag("Organization", "org_detail", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.OrganizationDetailView, DetailView)
+        self.assert_inheritance(views.OrganizationDetailView, CommonDetailView)
 
     @tag("Organization", "org_detail", "access")
     def test_view(self):
@@ -56,7 +57,6 @@ class TestOrganizationDetailView(CommonTest):
     def test_context(self):
         context_vars = [
             "field_list",
-            "field_list_2",
         ]
         self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
 
@@ -71,7 +71,7 @@ class TestEntryDetailView(CommonTest):
 
     @tag("Entry", "entry_detail", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryDetailView, DetailView)
+        self.assert_inheritance(views.EntryDetailView, CommonDetailView)
 
     @tag("Entry", "entry_detail", "access")
     def test_view(self):

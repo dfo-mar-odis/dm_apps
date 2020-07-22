@@ -4,6 +4,7 @@ from django.views.generic import CreateView, UpdateView
 
 from ihub.test import FactoryFloor
 from ihub.test.common_tests import CommonIHubTest as CommonTest
+from shared_models.views import CommonPopoutUpdateView, CommonUpdateView
 from .. import views
 from .. import models
 from masterlist import models as ml_models
@@ -15,14 +16,14 @@ class TestPersonUpdateView(CommonTest):
         self.instance = FactoryFloor.PersonFactory()
         self.test_url = reverse_lazy('ihub:person_edit', args=[self.instance.pk, ])
         self.test_url1 = reverse_lazy('ihub:person_edit_pop', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/person_form.html'
-        self.expected_template1 = 'ihub/person_form_popout.html'
+        self.expected_template = 'ihub/form.html'
+        self.expected_template1 = 'shared_models/generic_popout_form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("Person", "person_form", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.PersonUpdateView, UpdateView)
-        self.assert_inheritance(views.PersonUpdateViewPopout, UpdateView)
+        self.assert_inheritance(views.PersonUpdateView, CommonUpdateView)
+        self.assert_inheritance(views.PersonUpdateViewPopout, CommonPopoutUpdateView)
 
     @tag("Person", "person_form", "access")
     def test_view(self):
@@ -43,12 +44,12 @@ class TestOrganizationUpdateView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.OrganizationFactory()
         self.test_url = reverse_lazy('ihub:org_edit', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/organization_form.html'
+        self.expected_template = 'ihub/form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("Organization", "org_edit", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.OrganizationUpdateView, UpdateView)
+        self.assert_inheritance(views.OrganizationUpdateView, CommonUpdateView)
         self.assert_inheritance(views.OrganizationUpdateView, views.iHubEditRequiredMixin)
 
     @tag("Organization", "org_edit", "access")
@@ -72,7 +73,7 @@ class TestOrganizationMemberUpdateView(CommonTest):
 
     @tag("OrganizationMember", "member_edit", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.MemberUpdateView, UpdateView)
+        self.assert_inheritance(views.MemberUpdateView, CommonPopoutUpdateView)
 
     @tag("OrganizationMember", "member_edit", "access")
     def test_view(self):
@@ -90,12 +91,12 @@ class TestEntryUpdateView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.EntryFactory()
         self.test_url = reverse_lazy('ihub:entry_edit', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/entry_form.html'
+        self.expected_template = 'ihub/form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("Entry", "entry_edit", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryUpdateView, UpdateView)
+        self.assert_inheritance(views.EntryUpdateView, CommonUpdateView)
         self.assert_inheritance(views.EntryUpdateView, views.iHubEditRequiredMixin)
 
     @tag("Entry", "entry_edit", "access")
@@ -120,12 +121,12 @@ class TestEntryNoteUpdateView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.EntryNoteFactory()
         self.test_url = reverse_lazy('ihub:note_edit', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/note_form_popout.html'
+        self.expected_template = 'shared_models/generic_popout_form.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("EntryNote", "note_edit", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.NoteUpdateView, UpdateView)
+        self.assert_inheritance(views.NoteUpdateView, CommonPopoutUpdateView)
 
     @tag("EntryNote", "note_edit", "access")
     def test_view(self):
@@ -148,7 +149,7 @@ class TestEntryPersonUpdateView(CommonTest):
 
     @tag("EntryPerson", "ep_edit", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryPersonUpdateView, UpdateView)
+        self.assert_inheritance(views.EntryPersonUpdateView, CommonPopoutUpdateView)
 
     @tag("EntryPerson", "ep_edit", "access")
     def test_view(self):
