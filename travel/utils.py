@@ -239,7 +239,7 @@ def __set_request_status__(trip_request, request):
             trip_request.status_id = 11
             trip_request.save()
             # send an email to the trip_request owner
-            email = emails.StatusUpdateEmail(trip_request)
+            email = emails.StatusUpdateEmail(trip_request, request)
             # # send the email object
             custom_send_mail(
                 subject=email.subject,
