@@ -99,12 +99,12 @@ class TestEntryCreateView(CommonTest):
         self.assert_not_broken(self.test_url)
         self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
 
-
     @tag("Entry", "entry_new", "submit")
     def test_submit(self):
         data = FactoryFloor.EntryFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
-        
+
+
 class TestEntryNoteCreateView(CommonTest):
     def setUp(self):
         super().setUp()
@@ -122,9 +122,7 @@ class TestEntryNoteCreateView(CommonTest):
         self.assert_not_broken(self.test_url)
         self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
 
-
     @tag("EntryNote", "note_new", "submit")
     def test_submit(self):
         data = FactoryFloor.EntryNoteFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
-        

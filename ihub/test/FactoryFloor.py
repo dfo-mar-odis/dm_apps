@@ -116,7 +116,7 @@ class EntryNoteFactory(factory.django.DjangoModelFactory):
     def get_valid_data():
         return {
             'entry': EntryFactory().id,
-            'type': faker.pyint(1, 100),
-            'date': faker.date_time_this_year(tzinfo=timezone.get_current_timezone()),
+            'type': faker.pyint(1, 4),
+            'date': faker.date_time_this_year(tzinfo=timezone.get_current_timezone()).strftime("%Y-%m-%d 13:00"),
             'note': faker.text(),
         }
