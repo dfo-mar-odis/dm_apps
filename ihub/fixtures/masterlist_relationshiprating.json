@@ -1,0 +1,1 @@
+[{"model": "masterlist.relationshiprating", "pk": 1, "fields": {"level": 1, "name": "excellent", "nom": null}}, {"model": "masterlist.relationshiprating", "pk": 2, "fields": {"level": 2, "name": "good", "nom": null}}]

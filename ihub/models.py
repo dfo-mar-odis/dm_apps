@@ -11,71 +11,28 @@ from lib.functions.custom_functions import fiscal_year, listrify
 from lib.functions.custom_functions import nz
 from masterlist import models as ml_models
 from shared_models import models as shared_models
+from shared_models.models import SimpleLookup
+
+# This can be delete after the next time migrations are crushed
+def audio_file_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/entry_<id>/<filename>
+    return 'ihub/org_{}/{}'.format(instance.id, filename)
 
 
-class EntryType(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
+
+class EntryType(SimpleLookup):
     color = models.CharField(max_length=25, blank=True, null=True)
 
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
 
-    class Meta:
-        ordering = ['name', ]
-
-
-class Status(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
+class Status(SimpleLookup):
     color = models.CharField(max_length=25, blank=True, null=True)
 
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
+class FundingPurpose(SimpleLookup):
+    pass
 
-    class Meta:
-        ordering = ['name', ]
-
-
-class FundingPurpose(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
-
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class FundingProgram(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (French)"))
+class FundingProgram(SimpleLookup):
     abbrev_eng = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("abbreviation (French)"))
     abbrev_fre = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("abbreviation (French)"))
-
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
 
     @property
     def full_eng(self):
@@ -84,9 +41,6 @@ class FundingProgram(models.Model):
     @property
     def full_fre(self):
         return "{} ({})".format(self.nom, self.abbrev_fre)
-
-    class Meta:
-        ordering = [_('name'), ]
 
 
 class Entry(models.Model):
@@ -162,6 +116,7 @@ class Entry(models.Model):
 
 class EntryPerson(models.Model):
     # Choices for role
+    # TODO: test me
     LEAD = 1
     CONTACT = 2
     SUPPORT = 3
