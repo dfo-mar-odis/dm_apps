@@ -15,7 +15,7 @@ class TestPersonUpdateView(CommonTest):
         self.test_url = reverse_lazy('ihub:person_edit', args=[self.instance.pk, ])
         self.test_url1 = reverse_lazy('ihub:person_edit_pop', args=[self.instance.pk, ])
         self.expected_template = 'ihub/person_form.html'
-        self.expected_template1 = 'ihub/person_form_pop.html'
+        self.expected_template1 = 'ihub/person_form_popout.html'
         self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("Person", "person_form", "view")
@@ -35,3 +35,50 @@ class TestPersonUpdateView(CommonTest):
         data = FactoryFloor.PersonFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
         self.assert_success_url(self.test_url1, data=data, user=self.user)
+
+
+class TestOrganizationUpdateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.OrganizationFactory()
+        self.test_url = reverse_lazy('ihub:org_edit', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/organization_form.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("Organization", "org_edit", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.OrganizationUpdateView, UpdateView)
+        self.assert_inheritance(views.OrganizationUpdateView, views.iHubEditRequiredMixin)
+
+    @tag("Organization", "org_edit", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("Organization", "org_edit", "submit")
+    def test_submit(self):
+        data = FactoryFloor.OrganizationFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+
+
+class TestOrganizationMemberUpdateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.OrganizationMemberFactory()
+        self.test_url = reverse_lazy('ihub:member_edit', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/member_form_popout.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("OrganizationMember", "member_edit", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.MemberUpdateView, UpdateView)
+
+    @tag("OrganizationMember", "member_edit", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("OrganizationMember", "member_edit", "submit")
+    def test_submit(self):
+        data = FactoryFloor.OrganizationMemberFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)

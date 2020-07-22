@@ -27,6 +27,8 @@ class OrganizationFactory(factory.django.DjangoModelFactory):
     def get_valid_data():
         return {
             'name_eng': faker.word(),
+            'processing_plant': 0,
+            'wharf': 0,
         }
 
 

@@ -32,3 +32,30 @@ class TestPersonDetailView(CommonTest):
             "field_list",
         ]
         self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
+
+
+class TestOrganizationDetailView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.OrganizationFactory()
+        self.test_url = reverse_lazy('ihub:org_detail', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/organization_detail.html'
+        self.user = self.get_and_login_user()
+
+    @tag("Organization", "org_detail", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.OrganizationDetailView, DetailView)
+
+    @tag("Organization", "org_detail", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("Organization", "org_detail", "context")
+    def test_context(self):
+        context_vars = [
+            "field_list",
+            "field_list_2",
+        ]
+        self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
+    

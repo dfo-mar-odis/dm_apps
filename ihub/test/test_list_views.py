@@ -31,3 +31,27 @@ class TestPersonListView(CommonTest):
             "field_list",
         ]
         self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
+
+
+class TestOrganizationListView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.test_url = reverse_lazy('ihub:org_list')
+        self.expected_template = 'ihub/organization_list.html'
+        self.user = self.get_and_login_user()
+
+    @tag("Organization", "org_list", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.OrganizationListView, FilterView)
+
+    @tag("Organization", "org_list", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("Organization", "org_list", "context")
+    def test_context(self):
+        context_vars = [
+            "field_list",
+        ]
+        self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
