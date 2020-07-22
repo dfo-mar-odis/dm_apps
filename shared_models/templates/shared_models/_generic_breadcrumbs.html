@@ -4,7 +4,7 @@
 
 
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb px-0">
         {% for crumb in crumbs %}
             <li class="breadcrumb-item {% if forloop.counter == crumbs|length %}active{% endif %}">
                 {% if forloop.counter == crumbs|length %}

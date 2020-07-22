@@ -245,6 +245,8 @@ class CommonPopoutCreateView(CommonPopoutFormMixin, CommonCreateView):
 
 
 class CommonPopoutUpdateView(CommonPopoutFormMixin, UpdateView):
+    template_name = 'shared_models/generic_popout_form.html'
+
     def get_h1(self):
         if self.h1:
             return self.h1

@@ -100,53 +100,52 @@ class IndexTemplateView(SiteLoginRequiredMixin, TemplateView):
 ##########
 
 class PersonListView(SiteLoginRequiredMixin, CommonFilterView):
-    template_name = 'ihub/person_list.html'
+    template_name = 'ihub/list.html'
     filterset_class = filters.PersonFilter
     model = ml_models.Person
     queryset = ml_models.Person.objects.annotate(
         search_term=Concat('first_name', 'last_name', 'designation', output_field=TextField()))
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["my_object"] = ml_models.Person.objects.first()
-        context["field_list"] = [
-            'full_name_with_title|Full name',
-            'phone_1',
-            'phone_2',
-            'email_1',
-            'ihub_vetted',
-        ]
-        return context
-
+    field_list = [
+        {"name": 'full_name_with_title|Full name', "class": "", "width": ""},
+        {"name": 'phone_1', "class": "", "width": ""},
+        {"name": 'phone_2', "class": "", "width": ""},
+        {"name": 'ihub_vetted', "class": "", "width": ""},
+    ]
+    new_object_url_name = "ihub:person_new"
+    row_object_url_name = "ihub:person_detail"
+    home_url_name = "ihub:index"
+    paginate_by = 100
 
 class PersonDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = ml_models.Person
     template_name = 'ihub/person_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["field_list"] = [
-            "designation",
-            "first_name",
-            "last_name",
-            "phone_1",
-            "phone_2",
-            "email_1",
-            "email_2",
-            "cell",
-            "fax",
-            "language",
-            "notes",
-            "ihub_vetted",
-            "last_modified_by",
-        ]
-        return context
-
+    field_list = [
+        "designation",
+        "first_name",
+        "last_name",
+        "phone_1",
+        "phone_2",
+        "email_1",
+        "email_2",
+        "cell",
+        "fax",
+        "language",
+        "notes",
+        "ihub_vetted",
+        "last_modified_by",
+    ]
+    home_url_name = "ihub:index"
+    parent_crumb = {"title":_("People"), "url": reverse_lazy("ihub:person_list")}
 
 class PersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = ml_models.Person
-    template_name = 'ihub/person_form.html'
+    template_name = 'ihub/form.html'
     form_class = forms.PersonForm
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title":_("People"), "url": reverse_lazy("ihub:person_list")}
+
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:person_detail", args=[self.get_object().id])}
 
     def get_initial(self):
         return {
@@ -154,13 +153,9 @@ class PersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
             'last_modified_by': self.request.user,
         }
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse_lazy('ihub:person_detail', kwargs={"pk": object.id}))
 
 
 class PersonUpdateViewPopout(iHubEditRequiredMixin, CommonPopoutUpdateView):
-    template_name = 'ihub/person_form_popout.html'
     model = ml_models.Person
     form_class = forms.PersonForm
 
@@ -175,9 +170,11 @@ class PersonUpdateViewPopout(iHubEditRequiredMixin, CommonPopoutUpdateView):
 
 
 class PersonCreateView(iHubEditRequiredMixin, CommonCreateView):
-    model = ml_models.Organization
-    template_name = 'ihub/person_form.html'
+    model = ml_models.Person
+    template_name = 'ihub/form.html'
     form_class = forms.PersonForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title":_("People"), "url": reverse_lazy("ihub:person_list")}
 
     def get_initial(self):
         return {
@@ -185,19 +182,11 @@ class PersonCreateView(iHubEditRequiredMixin, CommonCreateView):
             'ihub_vetted': True,
         }
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse_lazy('ihub:person_detail', kwargs={"pk": object.id}))
 
 
 class PersonCreateViewPopout(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = ml_models.Person
-    template_name = 'ihub/person_form_popout.html'
     form_class = forms.PersonForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
 
     def get_initial(self):
         return {
@@ -207,13 +196,13 @@ class PersonCreateViewPopout(iHubEditRequiredMixin, CommonPopoutCreateView):
 
 class PersonDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
     model = ml_models.Person
-    template_name = 'ihub/person_confirm_delete.html'
+    template_name = 'ihub/confirm_delete.html'
     success_url = reverse_lazy('ihub:person_list')
-    success_message = _('The person was deleted successfully!')
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:person_detail", args=[self.get_object().id])}
 
 
 # ORGANIZATION #
@@ -1147,14 +1136,14 @@ class StatusFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
     h1 = "Manage Statuses"
     queryset = models.Status.objects.all()
     formset_class = forms.StatusFormSet
-    success_url_name = "ihub:manage_status"
+    success_url_name = "ihub:manage_statuses"
     home_url_name = "ihub:index"
     delete_url_name = "ihub:delete_status"
 
 
 class StatusHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
     model = models.Status
-    success_url = reverse_lazy("ihub:manage_status")
+    success_url = reverse_lazy("ihub:manage_statuses")
 
 
 class EntryTypeFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
@@ -1177,14 +1166,14 @@ class FundingPurposeFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
     h1 = "Manage Funding Purposes"
     queryset = models.FundingPurpose.objects.all()
     formset_class = forms.FundingPurposeFormSet
-    success_url_name = "ihub:manage_fundingPurposes"
+    success_url_name = "ihub:manage_funding_purposes"
     home_url_name = "ihub:index"
     delete_url_name = "ihub:delete_funding_purpose"
 
 
 class FundingPurposeHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
     model = models.FundingPurpose
-    success_url = reverse_lazy("ihub:manage_fundingPurposes")
+    success_url = reverse_lazy("ihub:manage_funding_purposes")
 
 
 class ReserveFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
@@ -1222,14 +1211,14 @@ class FundingProgramFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
     h1 = "Manage Funding Programs"
     queryset = models.FundingProgram.objects.all()
     formset_class = forms.FundingProgramFormSet
-    success_url_name = "ihub:manage_funding_programs"
+    success_url_name = "ihub:manage_programs"
     home_url_name = "ihub:index"
     delete_url_name = "ihub:delete_funding_program"
 
 
 class FundingProgramHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
     model = models.FundingProgram
-    success_url = reverse_lazy("ihub:manage_funding_programs")
+    success_url = reverse_lazy("ihub:manage_programs")
 
 
 class RelationshipRatingFormsetView(iHubAdminRequiredMixin, CommonFormsetView):

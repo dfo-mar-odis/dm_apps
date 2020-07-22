@@ -98,29 +98,29 @@ class TestAllHardDeleteViews(CommonTest):
     def setUp(self):
         super().setUp()
         self.starter_dicts = [
-            {"model": ml_models.Sector, "url_name": "manage_sectors", "view": views.SectorHardDeleteView},
-            {"model": models.Status, "url_name": "manage_statuses", "view": views.StatusHardDeleteView},
-            {"model": models.EntryType, "url_name": "manage_entry_types", "view": views.EntryTypeHardDeleteView},
-            {"model": models.FundingPurpose, "url_name": "manage_funding_purposes", "view": views.FundingPurposeHardDeleteView},
-            {"model": ml_models.Reserve, "url_name": "manage_reserves", "view": views.ReserveHardDeleteView},
-            {"model": ml_models.Nation, "url_name": "manage_nations", "view": views.NationHardDeleteView},
-            {"model": models.FundingProgram, "url_name": "manage_programs", "view": views.FundingProgramHardDeleteView},
-            {"model": ml_models.RelationshipRating, "url_name": "manage_ratings", "view": views.RelationshipRatingHardDeleteView},
+            {"model": ml_models.Sector, "url_name": "delete_sector", "view": views.SectorHardDeleteView},
+            {"model": models.Status, "url_name": "delete_status", "view": views.StatusHardDeleteView},
+            {"model": models.EntryType, "url_name": "delete_entry_type", "view": views.EntryTypeHardDeleteView},
+            {"model": models.FundingPurpose, "url_name": "delete_funding_purpose", "view": views.FundingPurposeHardDeleteView},
+            {"model": ml_models.Reserve, "url_name": "delete_reserve", "view": views.ReserveHardDeleteView},
+            {"model": ml_models.Nation, "url_name": "delete_nation", "view": views.NationHardDeleteView},
+            {"model": models.FundingProgram, "url_name": "delete_program", "view": views.FundingProgramHardDeleteView},
+            {"model": ml_models.RelationshipRating, "url_name": "delete_rating", "view": views.RelationshipRatingHardDeleteView},
         ]
         self.test_dicts = list()
 
-        self.user = self.get_and_login_user(in_group="projects_admin")
+        self.user = self.get_and_login_user(in_group="ihub_admin")
         for d in self.starter_dicts:
             new_d = d
             m = d["model"]
             if m == ml_models.Sector:
                 obj = FactoryFloor.SectorFactory()
-            # elif m == models.Program:
-            #     obj = m.objects.create(regional_program_name_eng=faker.word(), is_core=True)
+            elif m == ml_models.RelationshipRating:
+                obj = m.objects.create(name=faker.catch_phrase(), level=faker.pyint(1,100))
             else:
-                obj = m.objects.create(name=faker.word())
+                obj = m.objects.create(name=faker.catch_phrase())
             new_d["obj"] = obj
-            new_d["url"] = reverse_lazy("projects:" + d["url_name"], kwargs={"pk": obj.id})
+            new_d["url"] = reverse_lazy("ihub:" + d["url_name"], kwargs={"pk": obj.id})
             self.test_dicts.append(new_d)
 
     @tag('hard_delete', "view")

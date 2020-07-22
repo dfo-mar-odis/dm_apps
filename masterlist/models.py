@@ -127,7 +127,7 @@ class Organization(models.Model):
         return my_str
 
     def get_absolute_url(self):
-        return reverse('masterlist:org_detail', kwargs={'pk': self.pk})
+        return reverse('ihub:org_detail', kwargs={'pk': self.pk})
 
 
 class Person(models.Model):
@@ -167,7 +167,7 @@ class Person(models.Model):
         ordering = ['last_name', 'first_name']
 
     def get_absolute_url(self):
-        return reverse('masterlist:person_detail', kwargs={'pk': self.pk})
+        return reverse('ihub:person_detail', kwargs={'pk': self.pk})
 
     @property
     def display_name(self):
