@@ -108,32 +108,23 @@ class TestEntryCreateView(CommonTest):
 class TestEntryNoteCreateView(CommonTest):
     def setUp(self):
         super().setUp()
-        self.instance = FactoryFloor.EntryNoteFactory()
-        self.test_url = reverse_lazy('ihub:note', args=[self.instance.pk, ])
-        self.expected_template = 'ihub/generic_.html'
-        self.user = self.get_and_login_user()
+        self.instance = FactoryFloor.EntryFactory()
+        self.test_url = reverse_lazy('ihub:note_new', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/note_form_popout.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
 
-    @tag("EntryNote", "note", "view")
+    @tag("EntryNote", "note_new", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryNoteCreateView, CommonCreateView)
+        self.assert_inheritance(views.NoteCreateView, CreateView)
 
-    @tag("EntryNote", "note", "access")
+    @tag("EntryNote", "note_new", "access")
     def test_view(self):
         self.assert_not_broken(self.test_url)
         self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
-        self.assert_public_view(test_url=self.test_url, expected_template=self.expected_template)
 
-    @tag("EntryNote", "note", "context")
-    def test_context(self):
-        context_vars = [
-            "field_list",
-        ]
-        self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
-    
-    @tag("EntryNote", "note", "submit")
+
+    @tag("EntryNote", "note_new", "submit")
     def test_submit(self):
         data = FactoryFloor.EntryNoteFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
         
-        # for delete views...
-        self.assertEqual(models.EntryNote.objects.filter(pk=self.instance.pk).count(), 0)

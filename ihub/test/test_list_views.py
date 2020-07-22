@@ -66,7 +66,7 @@ class TestEntryListView(CommonTest):
 
     @tag("Entry", "entry_list", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.EntryListView, ListView)
+        self.assert_inheritance(views.EntryListView, FilterView)
 
     @tag("Entry", "entry_list", "access")
     def test_view(self):

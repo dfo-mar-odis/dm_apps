@@ -80,6 +80,7 @@ class EntryFactory(factory.django.DjangoModelFactory):
             'status': models.Status.objects.all()[faker.random_int(0, models.Status.objects.count() - 1)],
             'entry_type': models.EntryType.objects.all()[faker.random_int(0, models.EntryType.objects.count() - 1)],
             'title': faker.catch_phrase(),
+            'organizations': OrganizationFactory().id,
         }
 
 
@@ -99,4 +100,23 @@ class EntryPersonFactory(factory.django.DjangoModelFactory):
             'user': UserFactory().id,
             'name': faker.catch_phrase(),
             'organization': faker.company(),
+        }
+
+
+class EntryNoteFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.EntryNote
+
+    entry = factory.SubFactory(EntryFactory)
+    type = factory.lazy_attribute(lambda o: faker.pyint(1, 4))
+    date = factory.lazy_attribute(lambda o: faker.date_time_this_year(tzinfo=timezone.get_current_timezone()))
+    note = factory.lazy_attribute(lambda o: faker.text())
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'entry': EntryFactory().id,
+            'type': faker.pyint(1, 100),
+            'date': faker.date_time_this_year(tzinfo=timezone.get_current_timezone()),
+            'note': faker.text(),
         }
