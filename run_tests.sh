@@ -25,3 +25,7 @@ python manage.py test -v0 inventory.test -v 0
 printf "\n"
 echo "RUNNING TESTS FOR: shiny"
 python manage.py test -v0 shiny.test -v 0
+
+printf "\n"
+echo "RUNNING TESTS FOR: ihub"
+python manage.py test -v0 ihub.test -v 0

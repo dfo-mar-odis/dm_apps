@@ -15,3 +15,6 @@ python manage.py test inventory.test --keepdb -v 0
 
 :: run tests for shiny
 python manage.py test shiny.test --keepdb -v 0
+
+:: run tests for ihub
+python manage.py test ihub.test --keepdb -v 0

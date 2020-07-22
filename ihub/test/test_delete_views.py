@@ -120,7 +120,7 @@ class TestEntryPersonDeleteView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.EntryPersonFactory()
         self.test_url = reverse_lazy('ihub:ep_delete', args=[self.instance.pk, ])
-        self.user = self.get_and_login_user(in_group="ihub_admin")
+        self.user = self.get_and_login_user(in_group="ihub_edit")
 
     @tag("EntryPerson", "ep_delete", "access")
     def test_view(self):
@@ -128,4 +128,4 @@ class TestEntryPersonDeleteView(CommonTest):
 
     @tag("EntryPerson", "ep_delete", "access")
     def test_view2(self):
-        self.assert_non_public_view(test_url=self.test_url, user=self.user)
+        self.assert_non_public_view(test_url=self.test_url, user=self.user, expected_code=302, locales=["en"])

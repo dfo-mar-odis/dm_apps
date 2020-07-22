@@ -183,6 +183,7 @@ class PersonCreateView(iHubEditRequiredMixin, CreateView):
     def get_initial(self):
         return {
             'last_modified_by': self.request.user,
+            'ihub_vetted': True,
         }
 
     def form_valid(self, form):
