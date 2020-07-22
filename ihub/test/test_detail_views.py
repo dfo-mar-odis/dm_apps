@@ -6,6 +6,6 @@ from django.views.generic import DetailView, UpdateView
 from easy_pdf.views import PDFTemplateView
 
 from ihub.test import FactoryFloor
-from ihub.test.common_tests import CommonInventoryTest as CommonTest
+from ihub.test.common_tests import CommonIHubTest as CommonTest
 from .. import views
 

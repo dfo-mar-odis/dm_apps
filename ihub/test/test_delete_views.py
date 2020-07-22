@@ -4,6 +4,6 @@ from django.views.generic import DeleteView
 
 from .. import models
 from .. import views
-from ihub.test.common_tests import CommonInventoryTest as CommonTest
+from ihub.test.common_tests import CommonIHubTest as CommonTest
 from ihub.test import FactoryFloor
 

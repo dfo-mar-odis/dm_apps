@@ -10,7 +10,6 @@ from shared_models.test.SharedModelsFactoryFloor import RegionFactory, UserFacto
 from travel.test import FactoryFloor
 
 from travel.test.common_tests import CommonTravelTest as CommonTest
-from .FactoryFloor import ResourceFactory
 from .. import views
 
 faker = Faker()
