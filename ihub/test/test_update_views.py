@@ -6,6 +6,7 @@ from ihub.test import FactoryFloor
 from ihub.test.common_tests import CommonIHubTest as CommonTest
 from .. import views
 from .. import models
+from masterlist import models as ml_models
 
 
 class TestPersonUpdateView(CommonTest):
@@ -83,6 +84,7 @@ class TestOrganizationMemberUpdateView(CommonTest):
         data = FactoryFloor.OrganizationMemberFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
 
+
 class TestEntryUpdateView(CommonTest):
     def setUp(self):
         super().setUp()
@@ -101,12 +103,18 @@ class TestEntryUpdateView(CommonTest):
         self.assert_not_broken(self.test_url)
         self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
 
-
     @tag("Entry", "entry_edit", "submit")
     def test_submit(self):
+        # need to make sure the organization is
+        org = FactoryFloor.OrganizationFactory()
+        grouping = ml_models.Grouping.objects.filter(is_indigenous=True).first()
+        org.grouping.add(grouping)
+
         data = FactoryFloor.EntryFactory.get_valid_data()
+        data["organizations"] = [org.id]
         self.assert_success_url(self.test_url, data=data, user=self.user)
-        
+
+
 class TestEntryNoteUpdateView(CommonTest):
     def setUp(self):
         super().setUp()
@@ -124,9 +132,30 @@ class TestEntryNoteUpdateView(CommonTest):
         self.assert_not_broken(self.test_url)
         self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
 
-
     @tag("EntryNote", "note_edit", "submit")
     def test_submit(self):
         data = FactoryFloor.EntryNoteFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)
 
+
+class TestEntryPersonUpdateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.EntryPersonFactory()
+        self.test_url = reverse_lazy('ihub:ep_edit', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/entry_person_form_popout.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("EntryPerson", "ep_edit", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryPersonUpdateView, UpdateView)
+
+    @tag("EntryPerson", "ep_edit", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("EntryPerson", "ep_edit", "submit")
+    def test_submit(self):
+        data = FactoryFloor.EntryPersonFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)

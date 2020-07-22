@@ -32,14 +32,14 @@
         <h1>{{ object }}</h1>
         <div class="row">
             <div class="col">
-                <div class="btn-group">
-                    <a class="btn btn-warning" href="{% url 'ihub:org_edit' object.id %}">
+                <div class="btns">
+                    <a class="btn btn-sm btn-warning" href="{% url 'ihub:org_edit' object.id %}">
                         {% trans "Edit" %}
                     </a>
-                    <a class="btn btn-danger " href="{% url 'ihub:org_delete' object.id %}">
+                    <a class="btn btn-sm btn-danger " href="{% url 'ihub:org_delete' object.id %}">
                         {% trans "Delete" %}
                     </a>
-                    <a class="btn btn-success" href="{% url 'ihub:report_q' object.id %}">
+                    <a class="btn btn-sm btn-success" href="{% url 'ihub:report_q' object.id %}">
                         {% trans "Cue Card" %}
                     </a>
 

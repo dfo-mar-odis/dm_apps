@@ -6,6 +6,7 @@ from ihub.test import FactoryFloor
 from ihub.test.common_tests import CommonIHubTest as CommonTest
 from .. import views
 from .. import models
+from masterlist import models as ml_models
 
 
 class TestPersonCreateView(CommonTest):
@@ -101,7 +102,12 @@ class TestEntryCreateView(CommonTest):
 
     @tag("Entry", "entry_new", "submit")
     def test_submit(self):
+        org = FactoryFloor.OrganizationFactory()
+        grouping = ml_models.Grouping.objects.filter(is_indigenous=True).first()
+        org.grouping.add(grouping)
+
         data = FactoryFloor.EntryFactory.get_valid_data()
+        data["organizations"] = [org.id]
         self.assert_success_url(self.test_url, data=data, user=self.user)
 
 
@@ -125,4 +131,27 @@ class TestEntryNoteCreateView(CommonTest):
     @tag("EntryNote", "note_new", "submit")
     def test_submit(self):
         data = FactoryFloor.EntryNoteFactory.get_valid_data()
+        self.assert_success_url(self.test_url, data=data, user=self.user)
+
+
+class TestEntryPersonCreateView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.EntryPersonFactory()
+        self.test_url = reverse_lazy('ihub:ep_new', args=[self.instance.pk, ])
+        self.expected_template = 'ihub/entry_person_form_popout.html'
+        self.user = self.get_and_login_user(in_group="ihub_edit")
+
+    @tag("EntryPerson", "ep_new", "view")
+    def test_view_class(self):
+        self.assert_inheritance(views.EntryPersonCreateView, CreateView)
+
+    @tag("EntryPerson", "ep_new", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+        self.assert_non_public_view(test_url=self.test_url, expected_template=self.expected_template, user=self.user)
+
+    @tag("EntryPerson", "ep_new", "submit")
+    def test_submit(self):
+        data = FactoryFloor.EntryPersonFactory.get_valid_data()
         self.assert_success_url(self.test_url, data=data, user=self.user)

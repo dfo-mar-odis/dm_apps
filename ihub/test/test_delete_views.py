@@ -113,3 +113,19 @@ class TestEntryDeleteView(CommonTest):
 
         # for delete views...
         self.assertEqual(models.Entry.objects.filter(pk=self.instance.pk).count(), 0)
+
+
+class TestEntryPersonDeleteView(CommonTest):
+    def setUp(self):
+        super().setUp()
+        self.instance = FactoryFloor.EntryPersonFactory()
+        self.test_url = reverse_lazy('ihub:ep_delete', args=[self.instance.pk, ])
+        self.user = self.get_and_login_user(in_group="ihub_admin")
+
+    @tag("EntryPerson", "ep_delete", "access")
+    def test_view(self):
+        self.assert_not_broken(self.test_url)
+
+    @tag("EntryPerson", "ep_delete", "access")
+    def test_view2(self):
+        self.assert_non_public_view(test_url=self.test_url, user=self.user)

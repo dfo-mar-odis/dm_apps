@@ -42,15 +42,15 @@ urlpatterns = [
 
     # NOTES #
     #########
-    path('entry/<int:entry>/note/new/', views.NoteCreateView.as_view(), name="note_new"),
-    path('note/<int:pk>/edit/', views.NoteUpdateView.as_view(), name="note_edit"),
-    path('note/<int:pk>/delete/', views.note_delete, name="note_delete"),
+    path('entry/<int:entry>/note/new/', views.NoteCreateView.as_view(), name="note_new"),# TESTED
+    path('note/<int:pk>/edit/', views.NoteUpdateView.as_view(), name="note_edit"),# TESTED
+    path('note/<int:pk>/delete/', views.note_delete, name="note_delete"),# TESTED
 
     # ENTRYPERSON #
     ###############
-    path('entry/<int:entry>/person/new/', views.EntryPersonCreateView.as_view(), name="ep_new"),
-    path('dfo-person/<int:pk>/edit/', views.EntryPersonUpdateView.as_view(), name="ep_edit"),
-    path('dfo-person/<int:pk>/delete/', views.entry_person_delete, name="ep_delete"),
+    path('entry/<int:entry>/person/new/', views.EntryPersonCreateView.as_view(), name="ep_new"),# TESTED
+    path('dfo-person/<int:pk>/edit/', views.EntryPersonUpdateView.as_view(), name="ep_edit"),# TESTED
+    path('dfo-person/<int:pk>/delete/', views.entry_person_delete, name="ep_delete"),# TESTED
 
     # FILE #
     ########

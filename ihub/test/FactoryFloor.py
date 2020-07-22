@@ -3,7 +3,7 @@ import factory
 from django.utils import timezone
 from faker import Faker
 
-from shared_models.test.SharedModelsFactoryFloor import SectionFactory, UserFactory
+from shared_models.test.SharedModelsFactoryFloor import SectionFactory, UserFactory, RegionFactory
 from .. import models
 from masterlist import models as ml_models
 
@@ -77,10 +77,11 @@ class EntryFactory(factory.django.DjangoModelFactory):
     @staticmethod
     def get_valid_data():
         return {
-            'status': models.Status.objects.all()[faker.random_int(0, models.Status.objects.count() - 1)],
-            'entry_type': models.EntryType.objects.all()[faker.random_int(0, models.EntryType.objects.count() - 1)],
+            'status': models.Status.objects.all()[faker.random_int(0, models.Status.objects.count() - 1)].id,
+            'entry_type': models.EntryType.objects.all()[faker.random_int(0, models.EntryType.objects.count() - 1)].id,
             'title': faker.catch_phrase(),
-            'organizations': OrganizationFactory().id,
+            'regions': RegionFactory().id,
+            'sectors': SectorFactory().id,
         }
 
 

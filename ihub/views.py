@@ -275,6 +275,7 @@ class OrganizationDetailView(SiteLoginRequiredMixin, DetailView):
             'phone',
             'fax',
             'notes',
+            'dfo_contact_instructions',
             'consultation_protocol',
         ]
         context["field_list_2"] = [
@@ -472,6 +473,7 @@ class EntryCreateView(iHubEditRequiredMixin, CreateView):
     form_class = forms.EntryCreateForm
 
     def form_valid(self, form):
+        print(self.request.POST)
         object = form.save()
 
         models.EntryPerson.objects.create(entry=object, role=1, user_id=self.request.user.id, organization="DFO")
@@ -795,6 +797,7 @@ class OrganizationCueCard(PDFTemplateView):
             'processing_plant',
             'wharf',
             'consultation_protocol',
+            'dfo_contact_instructions',
             'council_quorum',
             'reserves',
             'orgs',
