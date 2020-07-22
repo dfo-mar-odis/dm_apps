@@ -261,11 +261,14 @@ class OrganizationMember(models.Model):
 
 
 class ConsultationRole(models.Model):
+    # TODO: testme
     TO = 1
     CC = 2
+    COM = 3
     TO_CC_CHOICES = (
         (TO, _("TO")),
         (CC, _("CC")),
+        (COM, _("CC (Commercial Only)")),
     )
     member = models.ForeignKey(OrganizationMember, on_delete=models.DO_NOTHING, related_name="consultation_roles")
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="consultees")
@@ -342,3 +345,6 @@ class ConsultationInstruction(models.Model):
     def cc_email_recipients(self):
         return self.organization.consultees.filter(to_cc=2)
 
+    @property
+    def cc_commercial_email_recipients(self):
+        return self.organization.consultees.filter(to_cc=3)
