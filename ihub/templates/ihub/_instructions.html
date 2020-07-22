@@ -29,7 +29,7 @@
   </div>
   <table class="table table-sm table-sm" style="width: auto">
     <tr>
-      <th style="width: 40%">
+      <th style="width: 30%">
         {% trans "Address Letter To:" %}
       </th>
       <td>
@@ -58,16 +58,17 @@
         {% trans 'Email "To" Recipients:' %}
       </th>
       <td>
-        <ul>
+        <ul class="px-3">
           {% for recipient in object.consultation_instructions.to_email_recipients %}
             <li>
               <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
                  data-toggle="tooltip" title="Edit member">
                 {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }},
                 {{ recipient.member.role|nz:missing_role }}
-                ({{ recipient.member.organization }})
               </a>
-              &lt;{{ recipient.member.person.email_1|nz:missing_email }}&gt;;
+              <br>
+              <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
             </li>
           {% endfor %}
         </ul>
@@ -79,16 +80,17 @@
         {% trans 'Email "Cc" Recipients:' %}
       </th>
       <td>
-        <ul>
+        <ul class="px-3">
           {% for recipient in object.consultation_instructions.cc_email_recipients %}
             <li>
               <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
                  data-toggle="tooltip" title="Edit member">
                 {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }},
                 {{ recipient.member.role|nz:missing_role }}
-                ({{ recipient.member.organization }})
               </a>
-              &lt;{{ recipient.member.person.email_1|nz:missing_email }}&gt;;
+              <br>
+              <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}mail }}
             </li>
           {% endfor %}
         </ul>
@@ -99,16 +101,17 @@
         {% trans 'Email "Cc" Recipients (Commercial Only):' %}
       </th>
       <td>
-        <ul>
+        <ul class="px-3">
           {% for recipient in object.consultation_instructions.cc_commercial_email_recipients %}
             <li>
               <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
                  data-toggle="tooltip" title="Edit member">
                 {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }},
                 {{ recipient.member.role|nz:missing_role }}
-                ({{ recipient.member.organization }})
               </a>
-              &lt;{{ recipient.member.person.email_1|nz:missing_email }}&gt;;
+              <br>
+              <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
             </li>
           {% endfor %}
         </ul>
