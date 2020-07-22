@@ -11,7 +11,7 @@ from django.db.models.functions import Concat
 from django.shortcuts import render
 from django.utils import timezone
 from django.utils.safestring import mark_safe
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext as _, gettext_lazy
 from django_filters.views import FilterView
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.urls import reverse_lazy, reverse
@@ -21,7 +21,7 @@ from easy_pdf.views import PDFTemplateView
 
 from lib.functions.custom_functions import nz, listrify
 from shared_models.views import CommonFilterView, CommonDetailView, CommonUpdateView, CommonPopoutUpdateView, CommonPopoutCreateView, \
-    CommonDeleteView, CommonCreateView, CommonFormView, CommonHardDeleteView, CommonFormsetView
+    CommonDeleteView, CommonCreateView, CommonFormView, CommonHardDeleteView, CommonFormsetView, CommonPopoutDeleteView
 from . import models
 from . import forms
 from . import filters
@@ -155,10 +155,6 @@ class PersonUpdateViewPopout(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = ml_models.Person
     form_class = forms.PersonForm
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
     def get_initial(self):
         return {
             'last_modified_by': self.request.user,
@@ -204,7 +200,7 @@ class PersonDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
 ################
 
 class OrganizationListView(SiteLoginRequiredMixin, CommonFilterView):
-    template_name = 'ihub/list.html'
+    template_name = 'ihub/organization_list.html'
     filterset_class = filters.OrganizationFilter
     queryset = get_ind_organizations().annotate(
         search_term=Concat(
@@ -224,6 +220,7 @@ class OrganizationListView(SiteLoginRequiredMixin, CommonFilterView):
         {"name": 'province', "class": "", "width": ""},
         {"name": 'grouping', "class": "", "width": ""},
         {"name": 'full_address|' + _("Full address"), "class": "", "width": ""},
+        {"name": 'Audio recording', "class": "", "width": ""},
     ]
     home_url_name = "ihub:index"
     new_object_url_name = "ihub:org_new"
@@ -265,7 +262,7 @@ class OrganizationDetailView(SiteLoginRequiredMixin, CommonDetailView):
         'reserves',
     ]
     home_url_name = "ihub:index"
-    parent_crumb = {"title":_("Organizations"), "url": reverse_lazy("ihub:org_list")}
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
 
 
 class OrganizationUpdateView(iHubEditRequiredMixin, CommonUpdateView):
@@ -274,9 +271,11 @@ class OrganizationUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     form_class = forms.OrganizationForm
     home_url_name = "ihub:index"
     parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
+    is_multipart_form_data = True
 
     def get_parent_crumb(self):
         return {"title": self.get_object(), "url": reverse("ihub:org_detail", args=[self.get_object().id])}
+
 
 class OrganizationCreateView(iHubEditRequiredMixin, CommonCreateView):
     model = ml_models.Organization
@@ -284,6 +283,7 @@ class OrganizationCreateView(iHubEditRequiredMixin, CommonCreateView):
     form_class = forms.OrganizationForm
     home_url_name = "ihub:index"
     parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
+    is_multipart_form_data = True
 
     def form_valid(self, form):
         object = form.save()
@@ -301,15 +301,14 @@ class OrganizationDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
         return {"title": self.get_object(), "url": reverse("ihub:org_detail", args=[self.get_object().id])}
 
 
-
 # MEMBER  (ORGANIZATION PERSON) #
 #################################
 
-class MemberCreateView(iHubEditRequiredMixin, CommonCreateView):
+class MemberCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = ml_models.OrganizationMember
     template_name = 'ihub/member_form_popout.html'
-
     form_class = forms.MemberForm
+    width = 1000
 
     def get_initial(self):
         org = ml_models.Organization.objects.get(pk=self.kwargs['org'])
@@ -318,49 +317,16 @@ class MemberCreateView(iHubEditRequiredMixin, CommonCreateView):
             'last_modified_by': self.request.user,
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        org = ml_models.Organization.objects.get(id=self.kwargs['org'])
-        context['organization'] = org
-
-        # get a list of people
-        person_list = [
-            '<a href="#" class="person_insert" code={id}>{first} {last}</a>'.format(
-                id=p.id, first=p.first_name, last=p.last_name
-            ) for p in ml_models.Person.objects.all()
-        ]
-
-        context['person_list'] = person_list
-
-        return context
-
     def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
+        obj = form.save()
+        return HttpResponseRedirect(reverse("ihub:member_edit", args=[obj.id]))
 
 
-class MemberUpdateView(iHubEditRequiredMixin, UpdateView):
+class MemberUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = ml_models.OrganizationMember
     template_name = 'ihub/member_form_popout.html'
     form_class = forms.MemberForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        # get a list of people
-        person_list = [
-            '<a href="#" class="person_insert" code={id}>{first} {last}</a>'.format(
-                id=p.id, first=p.first_name, last=p.last_name
-            ) for p in ml_models.Person.objects.all()
-        ]
-
-        context['person_list'] = person_list
-
-        return context
+    width = "1000px"
 
     def get_initial(self):
         return {
@@ -368,36 +334,36 @@ class MemberUpdateView(iHubEditRequiredMixin, UpdateView):
         }
 
 
-class MemberDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
+class MemberDeleteView(iHubAdminRequiredMixin, CommonPopoutDeleteView):
     model = ml_models.OrganizationMember
-    template_name = 'ihub/member_confirm_delete_popout.html'
-    success_url = reverse_lazy("ihub:close_me")
 
 
 # ENTRY #
 #########
 
 class EntryListView(SiteLoginRequiredMixin, CommonFilterView):
-    template_name = "ihub/entry_list.html"
+    template_name = "ihub/list.html"
     model = models.Entry
     filterset_class = filters.EntryFilter
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["my_object"] = models.Entry.objects.first()
-        context["field_list"] = [
-            'title',
-            'entry_type',
-            'regions',
-            'organizations',
-            'sectors',
-            'status',
-        ]
-        return context
+    field_list = [
+        {"name": 'title', "class": "", "width": ""},
+        {"name": 'entry_type', "class": "", "width": ""},
+        {"name": 'regions', "class": "", "width": ""},
+        {"name": 'organizations', "class": "", "width": ""},
+        {"name": 'sectors', "class": "", "width": ""},
+        {"name": 'status', "class": "", "width": ""},
+    ]
+    new_object_url_name = "ihub:entry_new"
+    row_object_url_name = "ihub:entry_detail"
+    home_url_name = "ihub:index"
+    h1 = gettext_lazy("Entries")
 
 
 class EntryDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = models.Entry
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    container_class = "container-fluid"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -415,7 +381,6 @@ class EntryDetailView(SiteLoginRequiredMixin, CommonDetailView):
             'last_modified_by',
             'created_by',
         ]
-
         context["field_list_1"] = [
             'fiscal_year',
             'funding_program',
@@ -427,13 +392,18 @@ class EntryDetailView(SiteLoginRequiredMixin, CommonDetailView):
             'amount_lapsed',
             'amount_owing'
         ]
-
         return context
 
 
 class EntryUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = models.Entry
     form_class = forms.EntryForm
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    template_name = "ihub/form.html"
+
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:entry_detail", args=[self.get_object().id])}
 
     def get_initial(self):
         return {'last_modified_by': self.request.user}
@@ -442,11 +412,12 @@ class EntryUpdateView(iHubEditRequiredMixin, CommonUpdateView):
 class EntryCreateView(iHubEditRequiredMixin, CommonCreateView):
     model = models.Entry
     form_class = forms.EntryCreateForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    template_name = "ihub/form.html"
 
     def form_valid(self, form):
-        print(self.request.POST)
         object = form.save()
-
         models.EntryPerson.objects.create(entry=object, role=1, user_id=self.request.user.id, organization="DFO")
 
         # create a new email object
@@ -473,47 +444,37 @@ class EntryCreateView(iHubEditRequiredMixin, CommonCreateView):
 class EntryDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
     model = models.Entry
     success_url = reverse_lazy('ihub:entry_list')
-    success_message = _('The entry was successfully deleted!')
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    template_name = "ihub/confirm_delete.html"
+    delete_protection = False
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:entry_detail", args=[self.get_object().id])}
 
 
 # NOTES #
 #########
 
-class NoteCreateView(iHubEditRequiredMixin, CommonCreateView):
+class NoteCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = models.EntryNote
-    template_name = 'ihub/note_form_popout.html'
     form_class = forms.NoteForm
+    width = 700
+    height = 750
 
     def get_initial(self):
         entry = models.Entry.objects.get(pk=self.kwargs['entry'])
         return {
             'author': self.request.user,
-            'entry': entry,
+            'entry': self.kwargs['entry'],
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        entry = models.Entry.objects.get(id=self.kwargs['entry'])
-        context['entry'] = entry
-        return context
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-
-class NoteUpdateView(iHubEditRequiredMixin, CommonUpdateView):
+class NoteUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = models.EntryNote
-    template_name = 'ihub/note_form_popout.html'
     form_class = forms.NoteForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
+    width = 700
+    height = 750
 
 
 @login_required(login_url='/accounts/login/')
@@ -528,37 +489,22 @@ def note_delete(request, pk):
 # ENTRYPERSON #
 ###############
 
-class EntryPersonCreateView(iHubEditRequiredMixin, CommonCreateView):
+class EntryPersonCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = models.EntryPerson
     template_name = 'ihub/entry_person_form_popout.html'
-
     form_class = forms.EntryPersonForm
 
     def get_initial(self):
         entry = models.Entry.objects.get(pk=self.kwargs['entry'])
         return {
-            'entry': entry,
+            'entry': self.kwargs['entry'],
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        entry = models.Entry.objects.get(id=self.kwargs['entry'])
-        context['entry'] = entry
-        return context
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-
-class EntryPersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
+class EntryPersonUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = models.EntryPerson
     template_name = 'ihub/entry_person_form_popout.html'
     form_class = forms.EntryPersonForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
 
 
 @login_required(login_url='/accounts/login/')
@@ -573,40 +519,22 @@ def entry_person_delete(request, pk):
 # FILE #
 ########
 
-class FileCreateView(iHubEditRequiredMixin, CommonCreateView):
+class FileCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = models.File
-    template_name = 'ihub/file_form_popout.html'
-
+    is_multipart_form_data = True
     form_class = forms.FileForm
-    success_url = reverse_lazy('ihub:close_me')
 
     def get_initial(self):
         entry = models.Entry.objects.get(pk=self.kwargs['entry'])
         return {
-            'entry': entry,
+            'entry': self.kwargs['entry'],
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        entry = models.Entry.objects.get(id=self.kwargs['entry'])
-        context['entry'] = entry
-        return context
 
-
-class FileUpdateView(iHubEditRequiredMixin, CommonUpdateView):
+class FileUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = models.File
-    template_name = 'ihub/file_form_popout.html'
+    is_multipart_form_data = True
     form_class = forms.FileForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-    def get_initial(self):
-        entry = models.Entry.objects.get(pk=self.kwargs['entry'])
-        return {
-            'date_uploaded': timezone.now(),
-        }
 
 
 @login_required(login_url='/accounts/login/')

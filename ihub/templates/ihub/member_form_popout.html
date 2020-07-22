@@ -1,106 +1,73 @@
-{% extends 'pop_base.html' %}
+{% extends 'shared_models/generic_popout_form.html' %}
 {% load bootstrap4 %}
 {% load i18n %}
 {% load static %}
 
-{% block body %}
-  {% bootstrap_javascript jquery='full' %}
-  {% bootstrap_css %}
+{% block form_fields %}
+  {% for field in form %}
 
-  <script>
-  window.resizeTo(width = 600, height = 850);
-  window.onunload = refreshParent;
-
-  function refreshParent() {
-    window.opener.location.reload();
-  }
-
-  </script>
-  <div class="indent-med">
-
-    <h3>
-      {% if object %}
-        {% trans "Editing Member" %}
-
-      {% else %}
-        {% trans "Adding Member" %}
-      {% endif %}
-    </h3>
-    <br>
-    <form method="post" class="form">
-
-      {% csrf_token %}
-
-      {% for field in form %}
-        {% if field.name == "person" %}
-          {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
-          <a pop-href="{% url 'ihub:person_new_pop' %}" href="#" id="add_person">
-            <em>
-              {% trans "(add a new person)" %}
-            </em>
-            <br>
-            <br>
-          </a>
-          {% if object.person %}
-
-            <div id="contact_card">
-              <h5>Contact Details:</h5>
-              {{ object.person.contact_card|safe }}<br>
-              <a pop-href="{% url 'ihub:person_edit_pop' object.person.id %}" href="#" id="edit_person">
-                <em>
-                  {% trans "(edit contact details)" %}
-                </em>
-              </a>
-              <br>
-              <br>
-            </div>
-
-          {% endif %}
-
-
-        {% else %}
-
-          {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
-        {% endif %}
-      {% endfor %}
-      <div class="btn-group">
-        <button type="submit" class="btn btn-primary" onclick="refreshParent()">
-          {% trans "Submit" %}
-        </button>
-        {% if object %}
-          <a class="btn btn-warning" href="#">
-            {% trans "Add Consultation Role" %}
-          </a>
-          <a class="btn btn-danger" href="{% url 'ihub:member_delete' object.id %}">
-            {% trans "Delete" %}
-          </a>
-        {% endif %}
-        <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
-          {% trans "Close" %}
+    {% if field.name == "person" %}
+      {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
+      <div class="mb-3">
+        <a pop-href="{% url 'ihub:person_new_pop' %}" href="#" id="add_person">
+          <em>
+            {% trans "(add a new person)" %}
+          </em>
         </a>
-
       </div>
 
-    </form>
-    <br><br>
-    {% if object %}
-      <p>
-        <em>
-          {% trans "Last modified on" %} {{ object.date_last_modified }} {% trans "by" %} {{ object.last_modified_by }}
-        </em>
-      </p>
+      {% if object.person %}
+
+        <div id="contact_card">
+          <h5>Contact Details:</h5>
+          <div class="">
+            {{ object.person.contact_card|safe }}
+          </div>
+          <div class="mb-3">
+            <a pop-href="{% url 'ihub:person_edit_pop' object.person.id %}" href="#" id="edit_person">
+              <em>
+                {% trans "(edit contact details)" %}
+              </em>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    {% else %}
+      {% bootstrap_field field size='small' layout='horizontal' placeholder="" %}
     {% endif %}
-
-
-  </div>
+  {% endfor %}
 {% endblock %}
+
+
+
+{% block extra_buttons %}
+  {% if object %}
+    <a class="btn btn-primary" href="#">
+      {% trans "Add Consultation Role" %}
+    </a>
+    <a class="btn btn-danger" href="{% url 'ihub:member_delete' object.id %}">
+      {% trans "Delete" %}
+    </a>
+  {% endif %}
+
+{% endblock %}
+
+
+{% block post_form_div %}
+  {% if object %}
+    <p>
+      <em>
+        {% trans "Last modified on" %} {{ object.date_last_modified }} {% trans "by" %} {{ object.last_modified_by }}
+      </em>
+    </p>
+  {% endif %}
+
+{% endblock %}
+
 {% block body_js %}
 
-
-  <script type="text/javascript">
-
-  $("#id_person")[0].focus();
-
+  {{ block.super }}
+  <script>
   $("#id_person").change(function () {
     $("#contact_card").prop("hidden", true)
   });

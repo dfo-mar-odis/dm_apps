@@ -1,116 +1,68 @@
-{% extends 'pop_base.html' %}
+{% extends 'shared_models/generic_popout_form.html' %}
 
-{% load bootstrap4 %}
 {% load i18n %}
-{% load static %}
-{% bootstrap_css %}
-{% bootstrap_javascript jquery='full' %}
+{% load bootstrap4 %}
 
-{% block body %}
+{% block form_fields %}
+  {% for field in form %}
+    {% if field.name == "name" %}
+      {#                    do nothing #}
+    {% elif field.name == "user" %}
+      <div class="row">
+        <div class="col-6">
+          {% bootstrap_field field size="small" %}
+        </div>
+        <div class="col-1">
+          {% trans "OR" %}
+        </div>
+        <div class="col-5">
+          {% for field in form %}
+          {% if field.name == "name" %}
+          {% bootstrap_field field placeholder="" size="small" %}
+          {% endif %}
+          {% endfor %}
+        </div>
 
-    <link rel="stylesheet" href="{% static 'css/master.css' %}">
-    {# A script to refresh the parent window; to be called in when the buttons are pushed #}
-
-    <div class="indent-med">
-
-        <h3>
-            {% if object %}
-                {% trans "Editing Person:" %} {{ object }}
-
-            {% else %}
-                {% trans "Adding Person" %}
-            {% endif %}
-        </h3>
-        <br>
-        <form method="post" class="form">
-            {% csrf_token %}
-
-            {% for field in form %}
-                {% if field.name == "name" %}
-                    {#                    do nothing #}
-                {% elif field.name == "user" %}
-                    <div class="row">
-                        <div class="col-6">
-                            {% bootstrap_field field size="small" %}
-                        </div>
-                        <div class="col-1">
-                            {% trans "OR" %}
-                        </div>
-                        <div class="col-5">
-                            {% for field in form %}
-                                {% if field.name == "name" %}
-                                    {% bootstrap_field field placeholder="" size="small" %}
-                                {% endif %}
-                            {% endfor %}
-                        </div>
-
-                    </div>
-                {% else %}
-                    {% bootstrap_field field placeholder="" size="small" %}
-                {% endif %}
-            {% endfor %}
-
-            {% buttons %}
-                <button type="submit" class="btn btn-success" onclick="refreshParent()">
-                    {% trans "Submit" %}
-                </button>
-                <a class="btn btn-secondary" onclick="refreshParent(); window.close()" href="#">
-                    {% trans "Close" %}
-                </a>
-            {% endbuttons %}
-        </form>
-
-
-    </div>
+      </div>
+    {% else %}
+      {% bootstrap_field field placeholder="" size="small" %}
+    {% endif %}
+  {% endfor %}
 {% endblock %}
+
 {% block body_js %}
+  {{ block.super }}
+
+  <script type="application/javascript">
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    checkUser();
+  });
 
 
-    <script>
-        window.resizeTo(width = 700, height = 600);
-
-        window.onunload = refreshParent;
-
-        function refreshParent() {
-            window.opener.location.reload();
-        }
-
-        $(document).ready(function () {
-            // Stuff to do as soon as the DOM is ready
-            $("#id_digestion_level")[0].focus()
-        });
-    </script>
-    <script type="application/javascript">
-        $(document).ready(function () {
-            // Stuff to do as soon as the DOM is ready
-            checkUser();
-        });
+  $("form").change(function () {
+    checkUser()
+  });
 
 
-        $("form").change(function () {
-            checkUser()
-        });
+  function checkUser() {
+    // if there is a user given, disable and clean the "name" field
+    if ($("#id_user").val() != "") {
+      $("#id_name").val("")
+      $("#id_name").prop("disabled", true);
+      $("#id_organization").prop("disabled", false);
+    } else {
+      $("#id_name").prop("disabled", false);
+      {#$("#id_organization").val("")#}
+      $("#id_organization").prop("disabled", false);
+    }
+  }
 
-
-        function checkUser() {
-            // if there is a user given, disable and clean the "name" field
-            if ($("#id_user").val() != "") {
-                $("#id_name").val("")
-                $("#id_name").prop("disabled", true);
-                $("#id_organization").prop("disabled", false);
-            } else {
-                $("#id_name").prop("disabled", false);
-                {#$("#id_organization").val("")#}
-                $("#id_organization").prop("disabled", false);
-            }
-        }
-
-        $("#id_user").change(function () {
-            if ($("#id_user").val() != "") {
-                $("#id_organization").val("DFO")
-            }
-        })
-    </script>
-
+  $("#id_user").change(function () {
+    if ($("#id_user").val() != "") {
+      $("#id_organization").val("DFO")
+    }
+  })
+  </script>
 
 {% endblock %}

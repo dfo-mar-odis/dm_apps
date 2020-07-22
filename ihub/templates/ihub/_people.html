@@ -3,69 +3,66 @@
 {% load i18n %}
 
 <div class="">
-    <h3>
-        {% trans "Contacts:" %}
-    </h3>
+  <h3>
+    {% trans "Contacts:" %}
+  </h3>
 </div>
 
 {% if object.people.count == 0 %}
-    <em>
-        {% trans "No people have been added to this entry" %}
-    </em><br>
+  <em>
+    {% trans "No people have been added to this entry" %}
+  </em><br>
 {% else %}
 
-    <table class="table table-hover table-sm" style="width: auto">
-        <tr>
-            <th>
-                {% trans "Name" %}
-            </th>
-            <th>
-                {% trans "Organization" %}
-            </th>
-            <th>
-                {% trans "Role" %}
-            </th>
-            <th>
-                {% trans "Connected user?" %}
-            </th>
-        </tr>
-        <tbody>
-        {% for obj in object.people.all %}
-            <tr href="{% url 'ihub:ep_edit' obj.id %}" pop>
-                <td>
-                    {% if obj.user.id %}
-                        {{ obj.user.first_name }} {{ obj.user.last_name }}
-                    {% else %}
-                        {{ obj.name }}
-                    {% endif %}
-                </td>
-                <td>
-                    {{ obj.organization }}
-                </td>
-                <td>
-                    {{ obj.get_role_display }}
-                </td>
-                <td style="text-align: center">
-                    {{ obj.user|yesno:"yes,no,no" }}
-                </td>
-
-
-                <td>
-                    <a class="person-delete-me stop" href="#" val="{{ obj.id }}">
-                        <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"
-                             title="Delete">
-                    </a>
-                    <a id="person-secrect-delete-btn-{{ obj.id }}"
-                       href="{% url 'ihub:ep_delete' obj.id %}" class="hidden stop"></a>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+  <table class="table table-hover table-sm" style="width: auto">
+    <tr>
+      <th>
+        {% trans "Name" %}
+      </th>
+      <th>
+        {% trans "Organization" %}
+      </th>
+      <th>
+        {% trans "Role" %}
+      </th>
+      <th>
+        {% trans "Connected user?" %}
+      </th>
+    </tr>
+    <tbody>
+    {% for obj in object.people.all %}
+      <tr href="{% url 'ihub:ep_edit' obj.id %}" pop>
+        <td>
+          {% if obj.user.id %}
+            {{ obj.user.first_name }} {{ obj.user.last_name }}
+          {% else %}
+            {{ obj.name }}
+          {% endif %}
+        </td>
+        <td>
+          {{ obj.organization }}
+        </td>
+        <td>
+          {{ obj.get_role_display }}
+        </td>
+        <td style="text-align: center">
+          {{ obj.user|yesno:"yes,no,no" }}
+        </td>
+        <td>
+          <a class="person-delete-me" href="#" val="{{ obj.id }}">
+            <span class="mdi mdi-delete" data-toggle="tooltip" title="Delete"></span>
+          </a>
+          <a id="person-secrect-delete-btn-{{ obj.id }}"
+             href="{% url 'ihub:ep_delete' obj.id %}" class="hidden stop"></a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
 {% endif %}
 <a class="" href="#"
    onclick="return popitup('{% url 'ihub:ep_new' object.id %}','popoutWindow')">
-    {% trans "(Add person)" %}
+  {% trans "(Add person)" %}
 </a>
 <br>
 <br>

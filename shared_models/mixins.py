@@ -272,22 +272,12 @@ class CommonFormMixin(CommonMixin):
         return context
 
 
-class CommonPopoutMixin(CommonFormMixin):
-    '''
-    NOTE: This should come before the View class in order to work properly
-    '''
+class CommonPopoutMixin():
     width = 900
     height = 650
 
-    def get_common_context(self):
-        context = super().get_common_context()
-        # set the width and the height of the popout form
-        context['width'] = self.width
-        context['height'] = self.height
-        return context
 
-
-class CommonPopoutFormMixin(CommonFormMixin):
+class CommonPopoutFormMixin(CommonFormMixin, CommonPopoutMixin):
     '''
     This can be added to a FormView (+Update, Create, Delete etc...) if you want to make it a popout
     NOTE: This should come before the View class in order to work properly

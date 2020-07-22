@@ -169,7 +169,7 @@ class EntryNote(models.Model):
 
     entry = models.ForeignKey(Entry, related_name='notes', on_delete=models.CASCADE)
     type = models.IntegerField(choices=TYPE_CHOICES)
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateTimeField(auto_now=True, editable=False)
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("author"))
     note = models.TextField()
     status = models.ForeignKey(Status, default=1, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("status"))
@@ -198,7 +198,7 @@ class File(models.Model):
     caption = models.CharField(max_length=255, verbose_name=_("caption"))
     entry = models.ForeignKey(Entry, related_name="files", on_delete=models.CASCADE)
     file = models.FileField(upload_to=file_directory_path, verbose_name=_("file"))
-    date_uploaded = models.DateTimeField(default=timezone.now, verbose_name=_("date uploaded"))
+    date_uploaded = models.DateTimeField(auto_now=True, editable=False, verbose_name=_("date uploaded"))
 
     class Meta:
         ordering = ['-date_uploaded']

@@ -23,6 +23,9 @@ class EntryCreateForm(forms.ModelForm):
             'anticipated_end_date': forms.DateInput(attrs=attr_fp_date),
             'last_modified_by': forms.HiddenInput(),
             'created_by': forms.HiddenInput(),
+            'organizations': forms.SelectMultiple(attrs={'class': "multi-select"}),
+            'regions': forms.SelectMultiple(attrs={'class': "multi-select"}),
+            'sectors': forms.SelectMultiple(attrs={'class': "multi-select"}),
         }
 
 
@@ -38,6 +41,9 @@ class EntryForm(forms.ModelForm):
             'initial_date': forms.DateInput(attrs=attr_fp_date),
             'anticipated_end_date': forms.DateInput(attrs=attr_fp_date),
             'last_modified_by': forms.HiddenInput(),
+            'organizations': forms.SelectMultiple(attrs={'class': "multi-select"}),
+            'regions': forms.SelectMultiple(attrs={'class': "multi-select"}),
+            'sectors': forms.SelectMultiple(attrs={'class': "multi-select"}),
         }
 
 
@@ -179,6 +185,10 @@ class MemberForm(forms.ModelForm):
         labels = {
             'person': "Select a person:",
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['person'].required = False
 
 
 class InstructionForm(forms.ModelForm):

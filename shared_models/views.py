@@ -246,11 +246,24 @@ class CommonDeleteView(CommonFormMixin, DeleteView):
 class CommonPopoutDeleteView(CommonPopoutFormMixin, CommonDeleteView):
     template_name = 'shared_models/generic_popout_confirm_delete.html'
 
+    def get_context_data(self, **kwargs):
+        # we want to update the context with the context vars added by CommonMixin classes
+        context = super().get_context_data(**kwargs)
+        context.update(super().get_common_context())
+        context['width'] = self.width
+        context['height'] = self.height
+        return context
 
 class CommonPopoutCreateView(CommonPopoutFormMixin, CommonCreateView):
     template_name = 'shared_models/generic_popout_form.html'
 
-
+    def get_context_data(self, **kwargs):
+        # we want to update the context with the context vars added by CommonMixin classes
+        context = super().get_context_data(**kwargs)
+        context.update(super().get_common_context())
+        context['width'] = self.width
+        context['height'] = self.height
+        return context
 
 class CommonPopoutUpdateView(CommonPopoutFormMixin, UpdateView):
     template_name = 'shared_models/generic_popout_form.html'
@@ -265,6 +278,8 @@ class CommonPopoutUpdateView(CommonPopoutFormMixin, UpdateView):
         # we want to update the context with the context vars added by CommonMixin classes
         context = super().get_context_data(**kwargs)
         context.update(super().get_common_context())
+        context['width'] = self.width
+        context['height'] = self.height
         return context
 
 
