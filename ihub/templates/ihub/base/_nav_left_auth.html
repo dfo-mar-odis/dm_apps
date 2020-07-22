@@ -1,80 +1,66 @@
 {% load i18n %}
-
-<li class="nav-item"><a class="nav-link" href="{% url 'projects:index' %}">
-    {% trans "Home" %}
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:index' %}">
+  {% trans "Home" %}
 </a></li>
 
-<li class="nav-item"><a class="nav-link" href="{% url 'projects:report_search' %}">
-    {% trans "Reports" %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:entry_list' %}">
+  {% trans "Entries" %}
+</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:person_list' %}">
+  {% trans "People" %}
+</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:org_list' %}">
+  {% trans "Organizations" %}
 </a></li>
 
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:report_search' %}">
+  {% trans "Reports" %}
+</a></li>
 
 {% for group in user.groups.all %}
-    {% if group.name == "projects_admin" %}
+  {% if group.name == "ihub_admin" %}
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-                {% trans "Settings" %}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'projects:manage_funding_sources' %}">
-                    {% trans "Manage Funding Sources" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_om_cats' %}">
-                    {% trans "Manage O & M Categories" %}
-                </a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        {% trans "Settings" %}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'ihub:manage_sectors' %}">
+          {% trans "Manage Sectors" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_orgs' %}">
+          {% trans "Manage Organizations" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_statuses' %}">
+          {% trans "Manage Statuses" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_entry_types' %}">
+          {% trans "Manage Entry Types" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_funding_purposes' %}">
+          {% trans "Manage Funding Purposes" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_reserves' %}">
+          {% trans "Manage Reserves" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_nations' %}">
+          {% trans "Manage Nations" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_programs' %}">
+          {% trans "Manage Funding Programs" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_ratings' %}">
+          {% trans "Manage Relationship Ratings" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:user_list' %}">
+          {% trans "Manage User Permissions" %}
+        </a>
 
-                <a class="dropdown-item" href="{% url 'projects:manage_employee_types' %}">
-                    {% trans "Manage Employee Types" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_tags' %}">
-                    {% trans "Manage Tags" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_statuses' %}">
-                    {% trans "Manage Statuses" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_help_text' %}">
-                    {% trans "Manage Help Text" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_levels' %}">
-                    {% trans "Manage Staff Levels" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_activity_types' %}">
-                    {% trans "Manage Activity Types" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_themes' %}">
-                    {% trans "Manage Themes" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage-upcoming-dates' %}">
-                    {% trans "Manage Upcoming Dates" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:manage_programs' %}">
-                    {% trans "Manage Programs" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:group_list' %}">
-                    {% trans "Manage Functional Groups" %}
-                </a>
+      </div>
+    </li>
 
-                <a class="dropdown-item" href="{% url 'projects:admin_staff_list' %}">
-                    {% trans "ADMIN: Non-registered Staff List" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:admin_project_program_list' %}">
-                    {% trans "ADMIN: Project Program List" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:admin_submitted_unapproved' %}">
-                    {% trans "ADMIN: Submitted + Unapproved Projects" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'projects:admin_project_approval_search' %}">
-                    {% trans "ADMIN: Project Approvals" %}
-                </a>
-            </div>
-        </li>
-
-    {% endif %}
+  {% endif %}
 
 {% endfor %}
-
-
-
-
