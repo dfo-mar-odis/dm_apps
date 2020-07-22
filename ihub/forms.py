@@ -62,6 +62,8 @@ class ReportSearchForm(forms.Form):
     field_order = ["report", "fiscal_year", "statuses", "organizations", "entry_types", "single_org"]
 
     def __init__(self, *args, **kwargs):
+        from .views import get_ind_organizations
+
         super().__init__(*args, **kwargs)
 
         report_choices = (
@@ -77,9 +79,8 @@ class ReportSearchForm(forms.Form):
                       models.Entry.objects.all().values("fiscal_year").order_by("fiscal_year").distinct() if y is not None]
         fy_choices.insert(0, (None, "all years"))
 
-        org_choices_all = [(obj.id, obj) for obj in ml_models.Organization.objects.filter(grouping__is_indigenous=True)]
-        org_choices_has_entry = [(obj.id, obj) for obj in ml_models.Organization.objects.filter(grouping__is_indigenous=True) if
-                                 obj.entries.count() > 0]
+        org_choices_all = [(obj.id, obj) for obj in get_ind_organizations()]
+        org_choices_has_entry = [(obj.id, obj) for obj in get_ind_organizations() if obj.entries.count() > 0]
 
         sector_choices = [(obj.id, obj) for obj in ml_models.Sector.objects.all() if obj.entries.count() > 0]
         status_choices = [(obj.id, obj) for obj in models.Status.objects.all() if obj.entries.count() > 0]

@@ -22,11 +22,11 @@ class TestReportSearchFormView(CommonTest):
         self.test_url = reverse_lazy('ihub:report_search')
         self.expected_template = 'ihub/report_search.html'
 
-    @tag("ihub", 'report', "view")
+    @tag("ihub", 'reports', "view")
     def test_view_class(self):
         self.assert_inheritance(views.ReportSearchFormView, FormView)
 
-    @tag("ihub", 'report', "access")
+    @tag("ihub", 'reports', "access")
     def test_view(self):
         self.assert_not_broken(self.test_url)
         my_user = self.get_and_login_user()
@@ -46,10 +46,11 @@ class TestConsultationLogReport(CommonTest):
             e.sectors.add(sector)
 
         self.test_urls = [
-            reverse_lazy('ihub:consultation_log', args=[2020, org.id, status.id, entry_type.id, "testing report"]),
-            reverse_lazy('ihub:consultation_log_xlsx', args=[2020, org.id, status.id, entry_type.id, "testing report"]),
-            reverse_lazy('ihub:summary_xlsx', args=[2020, sector.id, org.id]),
-            reverse_lazy('ihub:summary_pdf', args=[2020, sector.id, org.id]),
+            reverse_lazy('ihub:consultation_log', args=["None", org.id, status.id, entry_type.id, "testing report"]),
+            reverse_lazy('ihub:consultation_log_xlsx', args=["None", org.id, status.id, entry_type.id, "testing report"]),
+            reverse_lazy('ihub:summary_xlsx', args=["None", sector.id, org.id]),
+            reverse_lazy('ihub:summary_pdf', args=["None", sector.id, org.id]),
+            reverse_lazy('ihub:capacity_xlsx', args=["None", sector.id, org.id]),
             reverse_lazy('ihub:report_q', args=[org.id]),
         ]
         self.view = views.ConsultationLogPDFTemplateView

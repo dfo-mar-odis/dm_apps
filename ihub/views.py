@@ -110,7 +110,7 @@ class PersonListView(SiteLoginRequiredMixin, CommonFilterView):
     row_object_url_name = "ihub:person_detail"
     home_url_name = "ihub:index"
     paginate_by = 100
-
+    h1 = gettext_lazy("Contacts")
 
 class PersonDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = ml_models.Person
@@ -131,7 +131,7 @@ class PersonDetailView(SiteLoginRequiredMixin, CommonDetailView):
         "last_modified_by",
     ]
     home_url_name = "ihub:index"
-    parent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
+    parent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
 
 
 class PersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
@@ -139,7 +139,7 @@ class PersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     template_name = 'ihub/form.html'
     form_class = forms.PersonForm
     home_url_name = "ihub:index"
-    grandparent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
+    grandparent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
 
     def get_parent_crumb(self):
         return {"title": self.get_object(), "url": reverse("ihub:person_detail", args=[self.get_object().id])}
@@ -166,7 +166,7 @@ class PersonCreateView(iHubEditRequiredMixin, CommonCreateView):
     template_name = 'ihub/form.html'
     form_class = forms.PersonForm
     home_url_name = "ihub:index"
-    parent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
+    parent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
 
     def get_initial(self):
         return {
@@ -190,7 +190,7 @@ class PersonDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
     template_name = 'ihub/confirm_delete.html'
     success_url = reverse_lazy('ihub:person_list')
     home_url_name = "ihub:index"
-    grandparent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
+    grandparent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
 
     def get_parent_crumb(self):
         return {"title": self.get_object(), "url": reverse("ihub:person_detail", args=[self.get_object().id])}
@@ -263,7 +263,7 @@ class OrganizationDetailView(SiteLoginRequiredMixin, CommonDetailView):
     ]
     home_url_name = "ihub:index"
     parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
-
+    container_class = "container-fluid"
 
 class OrganizationUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = ml_models.Organization

@@ -134,7 +134,7 @@ def generate_capacity_spreadsheet(fy, orgs, sectors):
                 str(e.status),
                 sectors,
                 str(e.entry_type),
-                e.initial_date.strftime("%Y-%m-%d"),
+                e.initial_date.strftime("%Y-%m-%d") if e.initial_date else "n/a",
                 e.anticipated_end_date.strftime("%Y-%m-%d") if e.anticipated_end_date else "",
                 str(e.funding_program),
                 regions,
@@ -173,14 +173,6 @@ def generate_capacity_spreadsheet(fy, orgs, sectors):
         for j in range(0, len(col_max)):
             my_ws.set_column(j, j, width=col_max[j] * 1.1)
 
-        # set formatting on currency columns
-        # my_ws.set_column(first_col=10, last_col=10, cell_format=money_format)
-        # my_ws.set_column(header.index("Funding requested"), header.index("Funding requested"), cell_format=money_format)
-        # my_ws.set_column(header.index("Funding approved"), header.index("Funding approved"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount transferred"), header.index("Amount transferred"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount lapsed"), header.index("Amount lapsed"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount outstanding"), header.index("Amount outstanding"), cell_format=money_format)
-
         # sum all the currency columns
         total_row = [
             _("GRAND TOTAL:"),
@@ -192,28 +184,28 @@ def generate_capacity_spreadsheet(fy, orgs, sectors):
         ]
         try:
             my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
+
+            # set formatting for status
+            for status in models.Status.objects.all():
+                my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(status.name),
+                                             'format': workbook.add_format({'bg_color': status.color, }),
+                                         })
+
+            # set formatting for entry type
+            for entry_type in models.EntryType.objects.all():
+                my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(entry_type.name),
+                                             'format': workbook.add_format({'bg_color': entry_type.color, }),
+                                         })
         except:
             print("problem with summary row")
-
-        # set formatting for status
-        for status in models.Status.objects.all():
-            my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(status.name),
-                                         'format': workbook.add_format({'bg_color': status.color, }),
-                                     })
-
-        # set formatting for entry type
-        for entry_type in models.EntryType.objects.all():
-            my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(entry_type.name),
-                                         'format': workbook.add_format({'bg_color': entry_type.color, }),
-                                     })
 
     workbook.close()
     return target_url
@@ -402,14 +394,6 @@ def generate_summary_spreadsheet(fy, orgs, sectors):
         for j in range(0, len(col_max)):
             my_ws.set_column(j, j, width=col_max[j] * 1.1)
 
-        # set formatting on currency columns
-        # my_ws.set_column(first_col=10, last_col=10, cell_format=money_format)
-        # my_ws.set_column(header.index("Funding requested"), header.index("Funding requested"), cell_format=money_format)
-        # my_ws.set_column(header.index("Funding approved"), header.index("Funding approved"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount transferred"), header.index("Amount transferred"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount lapsed"), header.index("Amount lapsed"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount outstanding"), header.index("Amount outstanding"), cell_format=money_format)
-
         # sum all the currency columns
         total_row = [
             _("GRAND TOTAL:"),
@@ -421,28 +405,28 @@ def generate_summary_spreadsheet(fy, orgs, sectors):
         ]
         try:
             my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
+
+            # set formatting for status
+            for status in models.Status.objects.all():
+                my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(status.name),
+                                             'format': workbook.add_format({'bg_color': status.color, }),
+                                         })
+
+            # set formatting for entry type
+            for entry_type in models.EntryType.objects.all():
+                my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(entry_type.name),
+                                             'format': workbook.add_format({'bg_color': entry_type.color, }),
+                                         })
         except:
             print("problem with summary row")
-
-        # set formatting for status
-        for status in models.Status.objects.all():
-            my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(status.name),
-                                         'format': workbook.add_format({'bg_color': status.color, }),
-                                     })
-
-        # set formatting for entry type
-        for entry_type in models.EntryType.objects.all():
-            my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(entry_type.name),
-                                         'format': workbook.add_format({'bg_color': entry_type.color, }),
-                                     })
 
     workbook.close()
     return target_url
