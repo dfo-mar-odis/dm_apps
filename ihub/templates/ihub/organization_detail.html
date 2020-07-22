@@ -39,7 +39,24 @@
       </h3>
       <table class="table table-sm table-striped">
         {% for field in field_list %}
-          {% verbose_td_display object field %}
+
+          {% if field == "orgs" %}
+            <tr>
+              <th>
+                {% get_verbose_label instance=object field_name=field %}
+              </th>
+              <td>
+                {% for org in object.orgs.all %}
+                  <a href="{% url 'ihub:org_detail' org.id %}" target="_blank">
+                    {{ org }}
+                  </a><br>
+                {% endfor %}
+              </td>
+            </tr>
+          {% else %}
+
+            {% verbose_td_display object field %}
+          {% endif %}
         {% endfor %}
       </table>
       <br>

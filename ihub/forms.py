@@ -28,6 +28,11 @@ class EntryCreateForm(forms.ModelForm):
             'sectors': forms.SelectMultiple(attrs={'class': "multi-select"}),
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        from ihub.views import get_ind_organizations
+        org_choices_all = [(obj.id, obj) for obj in get_ind_organizations()]
+        self.fields["organizations"].choices = org_choices_all
 
 class EntryForm(forms.ModelForm):
     class Meta:
@@ -45,6 +50,12 @@ class EntryForm(forms.ModelForm):
             'regions': forms.SelectMultiple(attrs={'class': "multi-select"}),
             'sectors': forms.SelectMultiple(attrs={'class': "multi-select"}),
         }
+
+    def __init__(self,*args, **kwargs):
+        super().__init__(*args, **kwargs)
+        from ihub.views import get_ind_organizations
+        org_choices_all = [(obj.id, obj) for obj in get_ind_organizations()]
+        self.fields["organizations"].choices = org_choices_all
 
 
 class NoteForm(forms.ModelForm):
@@ -123,6 +134,12 @@ class OrganizationForm(forms.ModelForm):
             'next_election': forms.TextInput(attrs=attr_fp_date),
             'new_coucil_effective_date': forms.TextInput(attrs=attr_fp_date)
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        from ihub.views import get_ind_organizations
+        org_choices_all = [(obj.id, obj) for obj in get_ind_organizations()]
+        self.fields["orgs"].choices = org_choices_all
 
 
 class PersonForm(forms.ModelForm):

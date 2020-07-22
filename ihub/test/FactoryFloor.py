@@ -29,6 +29,7 @@ class OrganizationFactory(factory.django.DjangoModelFactory):
             'name_eng': faker.word(),
             'processing_plant': 0,
             'wharf': 0,
+            'grouping': ml_models.Grouping.objects.filter(is_indigenous=True).first().id,
         }
 
 
