@@ -3,10 +3,10 @@
 {% load custom_tags %}
 
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb px-0">
+<nav aria-label="breadcrumb" class="pt-0">
+    <ol class="breadcrumb px-0 mt-0 mb-2 py-0">
         {% for crumb in crumbs %}
-            <li class="breadcrumb-item {% if forloop.counter == crumbs|length %}active{% endif %}">
+            <li class="breadcrumb-item py-0 my-0 {% if forloop.counter == crumbs|length %}active{% endif %}">
                 {% if forloop.counter == crumbs|length %}
                     {{ crumb.title }}
                 {% else %}
