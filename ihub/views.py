@@ -32,12 +32,7 @@ from shared_models import models as shared_models
 
 
 def get_ind_organizations():
-    return ml_models.Organization.objects.filter(grouping__is_indigenous=True)
-
-
-# Create your views here.
-class CloserTemplateView(TemplateView):
-    template_name = 'ihub/close_me.html'
+    return ml_models.Organization.objects.filter(grouping__is_indigenous=True).distinct()
 
 
 def in_ihub_admin_group(user):
@@ -116,6 +111,7 @@ class PersonListView(SiteLoginRequiredMixin, CommonFilterView):
     home_url_name = "ihub:index"
     paginate_by = 100
 
+
 class PersonDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = ml_models.Person
     template_name = 'ihub/person_detail.html'
@@ -135,14 +131,15 @@ class PersonDetailView(SiteLoginRequiredMixin, CommonDetailView):
         "last_modified_by",
     ]
     home_url_name = "ihub:index"
-    parent_crumb = {"title":_("People"), "url": reverse_lazy("ihub:person_list")}
+    parent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
+
 
 class PersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = ml_models.Person
     template_name = 'ihub/form.html'
     form_class = forms.PersonForm
     home_url_name = "ihub:index"
-    grandparent_crumb = {"title":_("People"), "url": reverse_lazy("ihub:person_list")}
+    grandparent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
 
     def get_parent_crumb(self):
         return {"title": self.get_object(), "url": reverse("ihub:person_detail", args=[self.get_object().id])}
@@ -152,7 +149,6 @@ class PersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
             'ihub_vetted': True,
             'last_modified_by': self.request.user,
         }
-
 
 
 class PersonUpdateViewPopout(iHubEditRequiredMixin, CommonPopoutUpdateView):
@@ -174,14 +170,13 @@ class PersonCreateView(iHubEditRequiredMixin, CommonCreateView):
     template_name = 'ihub/form.html'
     form_class = forms.PersonForm
     home_url_name = "ihub:index"
-    parent_crumb = {"title":_("People"), "url": reverse_lazy("ihub:person_list")}
+    parent_crumb = {"title": _("People"), "url": reverse_lazy("ihub:person_list")}
 
     def get_initial(self):
         return {
             'last_modified_by': self.request.user,
             'ihub_vetted': True,
         }
-
 
 
 class PersonCreateViewPopout(iHubEditRequiredMixin, CommonPopoutCreateView):
@@ -209,99 +204,86 @@ class PersonDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
 ################
 
 class OrganizationListView(SiteLoginRequiredMixin, CommonFilterView):
-    template_name = 'ihub/organization_list.html'
+    template_name = 'ihub/list.html'
     filterset_class = filters.OrganizationFilter
     queryset = get_ind_organizations().annotate(
         search_term=Concat(
-            'name_eng',
-            Value(" "),
-            'abbrev',
-            Value(" "),
-            'name_ind',
-            Value(" "),
-            'former_name',
-            Value(" "),
-            'province__name',
-            Value(" "),
-            'province__nom',
-            Value(" "),
-            'province__abbrev_eng',
-            Value(" "),
-            'province__abbrev_fre',
-            output_field=TextField()))
+            'name_eng', Value(" "),
+            'abbrev', Value(" "),
+            'name_ind', Value(" "),
+            'former_name', Value(" "),
+            'province__name', Value(" "),
+            'province__nom', Value(" "),
+            'province__abbrev_eng', Value(" "),
+            'province__abbrev_fre', output_field=TextField()))
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["my_object"] = ml_models.Organization.objects.first()
-        context["field_list"] = [
-            'name_eng',
-            'name_ind',
-            'abbrev',
-            'province',
-            'grouping',
-            'full_address|' + _("Full address"),
-        ]
-        return context
+    field_list = [
+        {"name": 'name_eng', "class": "", "width": ""},
+        {"name": 'name_ind', "class": "", "width": ""},
+        {"name": 'abbrev', "class": "", "width": ""},
+        {"name": 'province', "class": "", "width": ""},
+        {"name": 'grouping', "class": "", "width": ""},
+        {"name": 'full_address|' + _("Full address"), "class": "", "width": ""},
+    ]
+    home_url_name = "ihub:index"
+    new_object_url_name = "ihub:org_new"
+    row_object_url_name = "ihub:org_detail"
 
 
 class OrganizationDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = ml_models.Organization
     template_name = 'ihub/organization_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["field_list"] = [
-            'name_eng',
-            # 'name_fre',
-            'name_ind',
-            'former_name',
-            'abbrev',
-            'address',
-            'mailing_address',
-            'city',
-            'postal_code',
-            'province',
-            'phone',
-            'fax',
-            'notes',
-            'dfo_contact_instructions',
-            'consultation_protocol',
-            # ]
-            # context["field_list_2"] = [
-            # 'legal_band_name',
-            'relationship_rating',
-            'orgs',
-            'nation',
-            'website',
-            'council_quorum',
-            'next_election',
-            'new_coucil_effective_date',
-            'election_term',
-            'population_on_reserve',
-            'population_off_reserve',
-            'population_other_reserve',
-            'fin',
-            'processing_plant',
-            'wharf',
-            'reserves',
-        ]
-        return context
+    field_list = [
+        'name_eng',
+        'name_ind',
+        'former_name',
+        'abbrev',
+        'address',
+        'mailing_address',
+        'city',
+        'postal_code',
+        'province',
+        'phone',
+        'fax',
+        'notes',
+        'dfo_contact_instructions',
+        'consultation_protocol',
+        'relationship_rating',
+        'orgs',
+        'nation',
+        'website',
+        'council_quorum',
+        'next_election',
+        'new_coucil_effective_date',
+        'election_term',
+        'population_on_reserve',
+        'population_off_reserve',
+        'population_other_reserve',
+        'fin',
+        'processing_plant',
+        'wharf',
+        'reserves',
+    ]
+    home_url_name = "ihub:index"
+    parent_crumb = {"title":_("Organizations"), "url": reverse_lazy("ihub:org_list")}
 
 
 class OrganizationUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = ml_models.Organization
-    template_name = 'ihub/organization_form.html'
+    template_name = 'ihub/form.html'
     form_class = forms.OrganizationForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse_lazy('ihub:org_detail', kwargs={'pk': object.id}))
-
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:org_detail", args=[self.get_object().id])}
 
 class OrganizationCreateView(iHubEditRequiredMixin, CommonCreateView):
     model = ml_models.Organization
-    template_name = 'ihub/organization_form.html'
+    template_name = 'ihub/form.html'
     form_class = forms.OrganizationForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
 
     def form_valid(self, form):
         object = form.save()
@@ -310,13 +292,14 @@ class OrganizationCreateView(iHubEditRequiredMixin, CommonCreateView):
 
 class OrganizationDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
     model = ml_models.Organization
-    template_name = 'ihub/organization_confirm_delete.html'
+    template_name = 'ihub/confirm_delete.html'
     success_url = reverse_lazy('ihub:org_list')
-    success_message = _('The organization was deleted successfully!')
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:org_detail", args=[self.get_object().id])}
+
 
 
 # MEMBER  (ORGANIZATION PERSON) #

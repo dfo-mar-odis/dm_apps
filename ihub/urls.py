@@ -4,7 +4,6 @@ from . import views
 app_name = 'ihub'
 
 urlpatterns = [
-    path('close/', views.CloserTemplateView.as_view(), name="close_me"),
     path('', views.IndexTemplateView.as_view(), name="index"),  # TESTED
 
     # PERSON #

@@ -187,12 +187,15 @@ class CommonDeleteView(CommonFormMixin, DeleteView):
                 related_name = None
 
             if related_name:
-                my_list.append(
-                    {
-                        "title": getattr(type(self.get_object()), related_name).rel.related_model._meta.verbose_name_plural,
-                        "qs": getattr(self.get_object(), related_name).all()
-                    }
-                )
+                try:
+                    my_list.append(
+                        {
+                            "title": getattr(type(self.get_object()), related_name).rel.related_model._meta.verbose_name_plural,
+                            "qs": getattr(self.get_object(), related_name).all()
+                        }
+                    )
+                except AttributeError:
+                    pass
         return my_list
 
     def get_delete_protection(self):
@@ -214,8 +217,13 @@ class CommonDeleteView(CommonFormMixin, DeleteView):
                     related_name = None
 
                 # the second we find a related object, we are done here.
-                if related_name and getattr(self.get_object(), related_name).count():
-                    return True
+                try:
+                    getattr(self.get_object(), related_name)
+                except:
+                    pass
+                else:
+                    if related_name and getattr(self.get_object(), related_name).count():
+                        return True
             # if we got to this point, delete protection should be set to false, since there are no related objects
             return False
 

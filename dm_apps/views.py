@@ -335,19 +335,19 @@ def get_app_dict(request):
         }
     except NoReverseMatch:
         pass
-
-    try:
-        app_dict["masterlist"] = {
-            "title": _("MasterList"),
-            "description": _("Regional master list and consultation instructions."),
-            "status": "dev",
-            "access": "permission-required",
-            "url": reverse('masterlist:index'),
-            "icon_path": 'img/icons/connection.svg',
-            "region": "regional",
-        }
-    except NoReverseMatch:
-        pass
+    #
+    # try:
+    #     app_dict["masterlist"] = {
+    #         "title": _("MasterList"),
+    #         "description": _("Regional master list and consultation instructions."),
+    #         "status": "dev",
+    #         "access": "permission-required",
+    #         "url": reverse('masterlist:index'),
+    #         "icon_path": 'img/icons/connection.svg',
+    #         "region": "regional",
+    #     }
+    # except NoReverseMatch:
+    #     pass
 
     return OrderedDict(app_dict)
 
