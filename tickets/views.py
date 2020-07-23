@@ -223,18 +223,18 @@ class TicketUpdateView(LoginRequiredMixin, CommonUpdateView):
         return context
 
     def form_valid(self, form):
-        self.object = form.save()
+        obj = form.save()
 
         # nobody is assigned, assign everyone
-        if self.object.dm_assigned.count() == 0:
+        if obj.dm_assigned.count() == 0:
             for u in User.objects.filter(is_superuser=True):
-                self.object.dm_assigned.add(u)
+                obj.dm_assigned.add(u)
 
         # if there is a github issue number, we should also make sure the ticket is up to date.
-        if self.object.github_issue_number:
-            edit_github_issue(self.object.id, self.request.user.id)
+        if obj.github_issue_number:
+            edit_github_issue(obj, self.request.user.id)
 
-        return HttpResponseRedirect(self.get_success_url())
+        return HttpResponseRedirect(reverse('tickets:detail', kwargs={'pk': obj.id}))
 
 
 class TicketDeleteView(LoginRequiredMixin, CommonDeleteView):
