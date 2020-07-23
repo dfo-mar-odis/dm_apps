@@ -30,7 +30,7 @@
   <table class="table table-sm table-sm" style="width: auto">
     <tr>
       <th style="width: 30%">
-        {% trans "Address Letter To:" %}
+        {% trans "Address Letter To" %}
       </th>
       <td>
         {{ object.consultation_instructions.letter_to }}
@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <th>
-        {% trans "Cc (on Bottom of Letter):" %}
+        {% trans "Cc (on Bottom of Letter)" %}
       </th>
       <td>
         {{ object.consultation_instructions.letter_cc }}
@@ -46,7 +46,7 @@
     </tr>
     <tr>
       <th>
-        {% trans "Paper Copy:" %}
+        {% trans "Paper Copy" %}
       </th>
       <td>
         {{ object.consultation_instructions.paper_copy }}
@@ -55,7 +55,7 @@
 
     <tr>
       <th>
-        {% trans 'Email "To" Recipients:' %}
+        {% trans 'Email "To" Recipients' %}
       </th>
       <td>
         <ul class="px-3">
@@ -77,7 +77,7 @@
 
     <tr>
       <th>
-        {% trans 'Email "Cc" Recipients:' %}
+        {% trans 'Email "Cc" Recipients' %}
       </th>
       <td>
         <ul class="px-3">
@@ -98,7 +98,7 @@
     </tr>
     <tr>
       <th>
-        {% trans 'Email "Cc" Recipients (Commercial Only):' %}
+        {% trans 'Email "Cc" Recipients (Commercial Only)' %}
       </th>
       <td>
         <ul class="px-3">
@@ -117,7 +117,14 @@
         </ul>
       </td>
     </tr>
-
+    <tr>
+      <th style="width: 30%">
+        {% trans "Notes" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.notes|nz:"n/a" }}
+      </td>
+    </tr>
   </table>
 {% endif %}
 <br>
