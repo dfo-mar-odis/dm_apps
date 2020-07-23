@@ -60,14 +60,14 @@
       <td>
         <ul class="px-3">
           {% for recipient in object.consultation_instructions.to_email_recipients %}
-            <li>
+            <li class="mb-1">
               <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
                  data-toggle="tooltip" title="Edit member">
-                {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }},
-                {{ recipient.member.role|nz:missing_role }}
+                {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }}
               </a>
               <br>
               <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
               <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
             </li>
           {% endfor %}
@@ -82,14 +82,14 @@
       <td>
         <ul class="px-3">
           {% for recipient in object.consultation_instructions.cc_email_recipients %}
-            <li>
+            <li class="mb-1">
               <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
                  data-toggle="tooltip" title="Edit member">
-                {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }},
-                {{ recipient.member.role|nz:missing_role }}
+                {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }}
               </a>
               <br>
               <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
               <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
             </li>
           {% endfor %}
@@ -103,7 +103,7 @@
       <td>
         <ul class="px-3">
           {% for recipient in object.consultation_instructions.cc_commercial_email_recipients %}
-            <li>
+            <li class="mb-1">
               <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
                  data-toggle="tooltip" title="Edit member">
                 {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }}
