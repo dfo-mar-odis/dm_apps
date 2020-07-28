@@ -262,7 +262,7 @@ def generate_physical_samples_report():
     ids.extend(
         [r.id for r in models.Resource.objects.filter(storage_envr_notes__icontains="physical")])
 
-    resources = models.Resource.objects(id__in=ids).all()
+    resources = models.Resource.objects.filter(id__in=ids)
 
     field_list = [
         "id",
