@@ -240,7 +240,7 @@ class ResourceDetailView(DetailView):
 class ResourceDetailPDFView(PDFTemplateView):
     def get_pdf_filename(self):
         my_object = models.Resource.objects.get(pk=self.kwargs.get("pk"))
-        return  f"{my_object.uuid}.pdf"
+        return f"{my_object.uuid}.pdf"
 
     template_name = 'inventory/resource_detail_pdf.html'
     field_list = [
@@ -1654,7 +1654,8 @@ class ReportSearchFormView(InventoryDMRequiredMixin, FormView):
             }))
         if report == 2:
             return HttpResponseRedirect(reverse("inventory:export_odi_report"))
-
+        if report == 3:
+            return HttpResponseRedirect(reverse("inventory:export_phyiscal_samples"))
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
             return HttpResponseRedirect(reverse("inventory:report_search"))
@@ -1682,6 +1683,19 @@ def export_odi_report(request):
         with open(file_url, 'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
             response['Content-Disposition'] = 'inline; filename="ODI Report {}.xlsx"'.format(
+                timezone.now().strftime("%Y-%m-%d"))
+            return response
+    raise Http404
+
+
+@login_required()
+def export_phyiscal_samples(request):
+    # print(trip)
+    file_url = reports.generate_physical_samples_report()
+    if os.path.exists(file_url):
+        with open(file_url, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = 'inline; filename="physical_samples_report {}.xlsx"'.format(
                 timezone.now().strftime("%Y-%m-%d"))
             return response
     raise Http404
