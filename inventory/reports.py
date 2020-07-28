@@ -257,10 +257,15 @@ def generate_physical_samples_report():
         [r.id for r in models.Resource.objects.filter(physical_sample_descr_fre__isnull=False) if len(r.physical_sample_descr_fre) > 10])
     # anything where the word "physical" is in the title
     ids.extend(
-        [r.id for r in models.Resource.objects.filter(title_eng__icontains="physical")])
+        [r.id for r in models.Resource.objects.filter(title_eng__icontains="physical").filter(title_eng__icontains="sample")])
+    ids.extend(
+        [r.id for r in models.Resource.objects.filter(title_fre__icontains="physique").filter(title_fre__icontains="échantillon")])
     # anything where the word "physical" is in the storage notes
     ids.extend(
-        [r.id for r in models.Resource.objects.filter(storage_envr_notes__icontains="physical")])
+        [r.id for r in models.Resource.objects.filter(storage_envr_notes__icontains="physical").filter(storage_envr_notes__icontains="sample")])
+    ids.extend(
+        [r.id for r in models.Resource.objects.filter(storage_envr_notes__icontains="physique").filter(storage_envr_notes__icontains="échantillon")])
+
 
     resources = models.Resource.objects.filter(id__in=ids)
 
@@ -268,12 +273,18 @@ def generate_physical_samples_report():
         "id",
         "title_eng",
         "title_fre",
+        "physical_sample_descr_eng",
+        "physical_sample_descr_fre",
+        "storage_envr_notes",
         "hyperlink",
     ]
 
     # define the headers
     header0 = ["dfo-mpo",
                "Physical Samples Report        Fisheries and Oceans Canada | Pêches et Océans Canada",
+               "",
+               "",
+               "",
                "",
                "",
                ]
