@@ -2045,6 +2045,21 @@ class ProjectApprovalFormsetView(AdminRequiredMixin, CommonFormsetView):
         fy = shared_models.FiscalYear.objects.get(pk=self.kwargs.get("fy"))
         return f"Setting Project Approvals for {region} ({fy})"
 
+    def post(self, request, *args, **kwargs):
+        formset = self.formset_class(request.POST, )
+        if formset.is_valid():
+            formset.save()
+            for obj in formset.changed_objects:
+                obj[0].send_approval_email(request)
+
+            # do something with the formset.cleaned_data
+            messages.success(self.request, "Items have been successfully updated")
+            return HttpResponseRedirect(self.get_success_url())
+            # return self.form_valid(formset)
+        else:
+            return self.render_to_response(self.get_context_data(formset=formset))
+
+
 
 # STATUS REPORT #
 #################

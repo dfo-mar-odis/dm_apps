@@ -338,10 +338,9 @@ class Project(models.Model):
     def __str__(self):
         return "{}".format(self.project_title)
 
-    def save(self, *args, **kwargs):
-        self.date_last_modified = timezone.now()
+    def send_approval_email(self, request):
         if self.approved is not None and not self.notification_email_sent:
-            email = emails.ProjectApprovalEmail(self)
+            email = emails.ProjectApprovalEmail(self, request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -350,6 +349,10 @@ class Project(models.Model):
                 recipient_list=email.to_list
             )
             self.notification_email_sent = timezone.now()
+            self.save()
+
+    def save(self, *args, **kwargs):
+        self.date_last_modified = timezone.now()
 
         super().save(*args, **kwargs)
 
