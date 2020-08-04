@@ -20,6 +20,8 @@ steps:
       mkdir media/travel/temp
       mkdir media/inventory
       mkdir media/inventory/temp
+      mkdir media/ihub
+      mkdir media/ihub/temp
       python manage.py collectstatic --no-input
       python manage.py migrate
     workingDirectory: '$(System.DefaultWorkingDirectory)'
