@@ -52,7 +52,7 @@ def get_app_dict(request):
 
     try:
         app_dict["travel"] = {
-            "title": _("Travel Management System"),
+            "title": _("Conference and Travel Management System"),
             "description": _("Management tool to facilitate regional and national travel pre-approvals."),
             "status": "production",
             "access": "permission-required",
