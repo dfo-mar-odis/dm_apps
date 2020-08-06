@@ -473,6 +473,9 @@ class ContentType(models.Model):
     def __str__(self):
         return "{}".format(self.title)
 
+    class Meta:
+        ordering = ["title", ]
+
 
 class DataResource(models.Model):
     # choices for protocol
