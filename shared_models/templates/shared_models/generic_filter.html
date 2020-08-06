@@ -41,6 +41,10 @@
     {% else %}
         {% echo object_list as list %}
     {% endif %}
+
+    {% block pre_table %}
+    {% endblock %}
+
     {% block table_and_table_header %}
 
         {% block table_header %}
