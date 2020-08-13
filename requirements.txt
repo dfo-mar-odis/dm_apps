@@ -2,7 +2,7 @@ bokeh==1.0.4
 certifi==2019.3.9
 chardet==3.0.4
 Deprecated==1.2.5
-Django==2.2.2
+Django==2.2.13
 django-bootstrap4==1.1.1
 django-easy-pdf==0.1.1
 django-el-pagination==3.3.0
