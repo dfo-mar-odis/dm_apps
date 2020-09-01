@@ -160,6 +160,11 @@ if settings.INSTALLED_APPS.count("csas"):
 else:
     print("not connecting csas app")
 
+if settings.INSTALLED_APPS.count("grainsize"):
+    urlpatterns += i18n_patterns(path('grainsize/', include('grainsize.urls')), prefix_default_language=True)
+else:
+    print("not connecting grainsize app")
+
 if settings.AZURE_STORAGE_ACCOUNT_NAME == "":
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
                                                                                             document_root=settings.MEDIA_ROOT)

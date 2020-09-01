@@ -90,3 +90,5 @@ temp/
 ############
 azure_oauth_settings.yml
 oauth_settings.yml
+
+/dm_apps_venv/

@@ -335,6 +335,20 @@ def get_app_dict(request):
         }
     except NoReverseMatch:
         pass
+
+    try:
+        app_dict["grainsize"] = {
+            "title": _("Maritime regional grainsize database"),
+            "description": _("Simple data viewer for DFO Oracle grainsize database"),
+            "status": "dev",
+            "access": "open",
+            "url": reverse('grainsize:index'),
+            "icon_path": 'img/icons/grainsize.png',
+            "region": "regional",
+
+        }
+    except NoReverseMatch:
+        pass
     #
     # try:
     #     app_dict["masterlist"] = {

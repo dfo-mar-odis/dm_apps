@@ -1,0 +1,18 @@
+{% extends "grainsize/base_generic.html" %}
+
+{% block content %}
+<h1>{{object.country_name}}</h1><br>
+<h2>Country code</h2>
+<p> {{object.country_code}} </p><br>
+
+
+<div class="btn-group">
+  <a href="update" class="btn btn-primary" role="button">
+    Update Record
+  </a>
+
+  <a href="delete" class="btn btn-danger" role="button">
+    Delete Record
+  </a>
+</div>
+{% endblock %}

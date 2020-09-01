@@ -1,0 +1,25 @@
+{% extends "grainsize/base_generic.html" %}
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+
+<h1>{{object.name}}</h1>
+
+{# Display a form #}
+<form method="post" class="form">
+  {% csrf_token %}
+
+  {% bootstrap_form form %}
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+</form>
+{% endblock %}

@@ -1,0 +1,1 @@
+for i in *.html; do cp $i ../$1$i; done
