@@ -1,47 +1,28 @@
-from .tables import (
-    CountryTable,
-    ProjectTable,
-    AnalysisTable,
-    CollectionTable,
-    PreservationTable,
-    SampleTypeTable,
-    StorageTypeTable,
-    SampleTable,
-    DataTable,
-    # FilteredProjectListView
-)
-from .models import (
-    Analysis,
-    Collection,
-    Country,
-    Subregion,
-    Data,
-    MarineRegion,
-    Preservation,
-    Project,
-    Sample,
-    SampleType,
-    StorageType,
-    Unit)
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import (
-    CreateView, DeleteView, DetailView, ListView, UpdateView)
-from django_tables2 import SingleTableView
+    CreateView, DeleteView, DetailView, FormView, ListView, TemplateView,
+    UpdateView)
 from django.views.generic.edit import FormMixin
 from django_filters.views import FilterView
+from django_tables2 import SingleTableView
 from django_tables2.views import SingleTableMixin
 
 from .filters import ProjectFilter
+from .models import (Analysis, Collection, Country, Data, MarineRegion,
+                     Preservation, Project, Sample, SampleType, StorageType,
+                     Subregion, Unit)
+from .tables import (  # FilteredProjectListView
+    AnalysisTable, CollectionTable, CountryTable, DataTable, PreservationTable,
+    ProjectTable, SampleTable, SampleTypeTable, StorageTypeTable)
 
 # Create your views here.
 
 
-def index(request):
-    return render(request, 'grainsize/index.html')
+class Index(TemplateView):
+    template_name = 'grainsize/index.html'
 
 
 # Project

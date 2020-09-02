@@ -5,7 +5,7 @@ from django.contrib.auth import views as auth_views
 app_name = 'grainsize'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.Index.as_view(), name='index'),
     
     path('country/', views.CountryListView.as_view(), name='country'),
     path('country/add/', views.CountryCreate.as_view(), name='country_add'),
