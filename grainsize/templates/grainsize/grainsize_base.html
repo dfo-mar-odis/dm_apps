@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block bug_create %}{% url 'tickets:bug_create' 'grainsize' %}{% endblock bug_create %}
+
+{% block title %}Grainsize{% block subtitle %}{% endblock %}{% endblock title %}
+
+{% block body %}
+  {% block content %}{% endblock content %}
+{% endblock body %}
+
+{% block left_all %}
+  <li class="nav-item"><a class="nav-link" href="{% url 'grainsize:index' %}">Home</a></li>
+{% endblock left_all %}
+
+{% block left_unauth %}
+
+{% endblock left_unauth %}
+
+{% block left_auth %}
+{% endblock left_auth %}
+{% block left_admin %}
+{% endblock left_admin %}

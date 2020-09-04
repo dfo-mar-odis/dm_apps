@@ -1,7 +1,14 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse
+import csv
+
+from django.conf import settings
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.db.models import TextField
+from django.db.models.functions import Concat
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
+from django.utils import timezone
+from django.utils.text import slugify
 from django.views.generic import (
     CreateView, DeleteView, DetailView, FormView, ListView, TemplateView,
     UpdateView)
@@ -9,14 +16,51 @@ from django.views.generic.edit import FormMixin
 from django_filters.views import FilterView
 from django_tables2 import SingleTableView
 from django_tables2.views import SingleTableMixin
+from shared_models import models as shared_models
 
-from .filters import ProjectFilter
-from .models import (Analysis, Collection, Country, Data, MarineRegion,
-                     Preservation, Project, Sample, SampleType, StorageType,
-                     Subregion, Unit)
-from .tables import (  # FilteredProjectListView
-    AnalysisTable, CollectionTable, CountryTable, DataTable, PreservationTable,
-    ProjectTable, SampleTable, SampleTypeTable, StorageTypeTable)
+from . import filters, forms
+from .models import (Analysis, Country, Collection, Data, Preservation, Project, Sample,
+                     SampleType, StorageType)
+from .tables import (
+    AnalysisTable, CountryTable, CollectionTable, DataTable, PreservationTable, ProjectTable,
+    SampleTable, SampleTypeTable, StorageTypeTable)
+
+# open basic access up to anybody who is logged in
+
+
+def in_grainsize_group(user):
+    if user.id:
+        # return user.groups.filter(name='sar_search_access').count() != 0
+        return True
+
+
+class GrainsizeAccessRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+
+    def test_func(self):
+        return in_grainsize_group(self.request.user)
+
+    def dispatch(self, request, *args, **kwargs):
+        user_test_result = self.get_test_func()()
+        if not user_test_result and self.request.user.is_authenticated:
+            return HttpResponseRedirect('/accounts/denied/')
+        return super().dispatch(request, *args, **kwargs)
+
+
+def in_grainsize_admin_group(user):
+    if user:
+        return user.groups.filter(name='grainsize_admin').count() != 0
+
+
+class GrainsizeAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+
+    def test_func(self):
+        return in_grainsize_admin_group(self.request.user)
+
+    def dispatch(self, request, *args, **kwargs):
+        user_test_result = self.get_test_func()()
+        if not user_test_result and self.request.user.is_authenticated:
+            return HttpResponseRedirect('/accounts/denied/')
+        return super().dispatch(request, *args, **kwargs)
 
 # Create your views here.
 

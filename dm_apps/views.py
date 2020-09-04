@@ -343,7 +343,7 @@ def get_app_dict(request):
             "status": "dev",
             "access": "open",
             "url": reverse('grainsize:index'),
-            "icon_path": 'img/icons/grainsize.png',
+            "icon_path": 'img\grainsize\grainsize.svg',
             "region": "regional",
 
         }
