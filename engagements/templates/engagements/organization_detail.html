@@ -1,0 +1,98 @@
+{% extends "engagements/engagements_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+{% load render_table from django_tables2 %}
+
+{% block pagetitle %}{{ organization.legal_name }}{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="{% url 'engagements:home' %}">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'engagements:organization_list' %}">Organizations</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ organization.legal_name }}</li>
+{% endblock breadcrumbs %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-2 border-bottom">
+        <div class="mr-auto">
+            <h3 class="mb-0">{{ organization.legal_name }}</h3>
+            <div class="text-muted"><small>Last modified: {{ organization.last_modified }} by {{ organization.last_modified_by }}</small></div>
+        </div>
+        <a href="{{ organization.get_absolute_url }}/edit" class="btn btn-primary mr-2">Edit</a>
+        <a href="{{ organization.get_absolute_url }}/delete" class="btn btn-outline-danger">Delete</a></td>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2">
+        <div class="col-9">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label class="mb-0">Name</label><br>
+                        {{ organization.legal_name }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Phone Number</label><br>
+                        {{ organization.phone_number }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Fax Number</label><br>
+                        {{ organization.fax_number }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Email Address</label><br>
+                        <a href="mailto:{{ organization.email }}">{{ organization.email }}</a>
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Website</label><br>
+                        <a href="{{ organization.webpage }}">{{ organization.webpage }}</a>
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Address</label><br>
+                        {{ organization.address_line_1 }}<br>{% if organization.address_line_2 %}
+                        {{ organization.address_line_2 }}<br>
+                        {% endif %}
+                        {{ organization.city }}, {{ organization.province.name }} {{ organization.zip_postal }}<br>
+                        {{ organization.country }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label class="mb-0">CRA Business Number</label><br>
+                        {{ organization.business_number }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Stakeholder Type</label><br>
+                        {{ organization.stakeholder_type_str }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Organization Type</label><br>
+                        {% if organization.organization_type == 'Other' %}
+                        {{ organization.other_organization_type }}
+                        {% else %}
+                        {{ organization.organization_type }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">For-Profit?</label><br>
+                        {{ organization.profit_str }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Parent Organizations</label><br>
+                        <ul>
+                        {% for parent in organization.parent_organizations.all %}
+                            <li><a href="{{ parent.get_absolute_url }}">{{ parent.legal_name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="text-muted">
+            <small>Created: {{ organization.created_on }} by {{ organization.created_by }}</small>
+        </div>
+        </div>
+        <div class="col">
+            <!-- Right Sidebar -->
+        </div>
+    </div>
+{% endblock %}

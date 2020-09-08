@@ -53,9 +53,9 @@ urlpatterns = [
 
     # Consultation Instructions #
     #############################
-    path('organization/<int:org>/instructions/new/', views.InstructionCreateView.as_view(), name="instruction_new"),# TESTED
-    path('instructions/<int:pk>/edit/', views.InstructionUpdateView.as_view(), name="instruction_edit"),# TESTED
-    path('instructions/<int:pk>/delete/', views.InstructionDeleteView.as_view(), name="instruction_delete"),# TESTED
+    path('organization/<int:org>/instructions/new/', views.InstructionCreateView.as_view(), name="instruction_new"),  # TESTED
+    path('instructions/<int:pk>/edit/', views.InstructionUpdateView.as_view(), name="instruction_edit"),  # TESTED
+    path('instructions/<int:pk>/delete/', views.InstructionDeleteView.as_view(), name="instruction_delete"),  # TESTED
 
     # ConsultationRole (ie.. a member who is consulted ) #
     ##############
@@ -86,11 +86,13 @@ urlpatterns = [
         'reports/consultation-log/fy/<str:fy>/orgs/<str:orgs>/statuses/<str:statuses>/entry-types/<str:entry_types>/report-title/<str:report_title>/xlsx/',
         views.consultation_log_export_spreadsheet, name="consultation_log_xlsx"),
 
+    path('reports/consultation-instructions/pdf/', views.ReportConsultationInstructionsPDFView.as_view(), name="consultation_instructions_pdf"),
+    path('reports/consultation-instructions/xlsx/', views.consultation_instructions_export_spreadsheet, name="consultation_instructions_xlsx"),
+
     # SETTINGS #
     ############
 
     path('settings/organizations/', views.OrganizationFormsetView.as_view(), name="manage_orgs"),  # TESTED
-
 
     path('settings/sectors/', views.SectorFormsetView.as_view(), name="manage_sectors"),  # TESTED
     path('settings/sector/<int:pk>/delete/', views.SectorHardDeleteView.as_view(), name="delete_sector"),  # TESTED
@@ -102,7 +104,8 @@ urlpatterns = [
     path('settings/entry-type/<int:pk>/delete/', views.EntryTypeHardDeleteView.as_view(), name="delete_entry_type"),  # TESTED
 
     path('settings/funding-purposes/', views.FundingPurposeFormsetView.as_view(), name="manage_funding_purposes"),  # TESTED
-    path('settings/funding-purpose/<int:pk>/delete/', views.FundingPurposeHardDeleteView.as_view(), name="delete_funding_purpose"),  # TESTED
+    path('settings/funding-purpose/<int:pk>/delete/', views.FundingPurposeHardDeleteView.as_view(), name="delete_funding_purpose"),
+    # TESTED
 
     path('settings/reserves/', views.ReserveFormsetView.as_view(), name="manage_reserves"),  # TESTED
     path('settings/reserve/<int:pk>/delete/', views.ReserveHardDeleteView.as_view(), name="delete_reserve"),  # TESTED
@@ -115,7 +118,6 @@ urlpatterns = [
 
     path('settings/relationship-ratings/', views.RelationshipRatingFormsetView.as_view(), name="manage_ratings"),  # TESTED
     path('settings/relationship-rating/<int:pk>/delete/', views.RelationshipRatingHardDeleteView.as_view(), name="delete_rating"),  # TESTED
-
 
     path('settings/users/', views.UserListView.as_view(), name='user_list'),
     path('settings/users/ihub/<int:ihub>/', views.UserListView.as_view(), name='user_list'),

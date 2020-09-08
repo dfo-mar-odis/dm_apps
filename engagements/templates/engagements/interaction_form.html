@@ -1,0 +1,176 @@
+{% extends "engagements/engagements_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+{% load render_table from django_tables2 %}
+
+{% block pagetitle %}New Interaction{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="{% url 'engagements:home' %}">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'engagements:interaction_list' %}">Interactions</a></li>
+    <li class="breadcrumb-item active" aria-current="page">New Interaction</li>
+{% endblock breadcrumbs %}
+
+{% block content %}
+
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <script>
+        $(function () {
+            $("#id_date").datepicker({
+                format:'yyyy-mm-dd',
+            });
+        });
+    </script>
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-2 border-bottom">
+        <div class="mr-auto">
+            <h3 class="mb-0">New Interaction</h3>
+        </div>
+        <input type="submit" value="Save" class="btn btn-success mr-2">
+        <a href="javascript:history.back()" class="btn btn-danger">Cancel</a></td>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2">
+        <div class="col-9">
+            <div class="row">
+                <div class="col">
+                    {{ form.non_field_errors }}
+                    <div class="form-group">
+                        {{ form.title.errors }}
+                        <label class="mb-0" for="{{ form.title.id_for_label }}">Title</label><br>
+                        {{ form.title }}
+                        <small class="form-text text-muted">{{ form.title.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.activity_type.errors }}
+                        <label class="mb-0" for="{{ form.lead.id_for_label }}">Activity Type</label><br>
+                        {{ form.activity_type }}
+                        <small class="form-text text-muted">{{ form.activity_type.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.description.errors }}
+                        <label class="mb-0" for="{{ form.description.id_for_label }}">Description</label><br>
+                        {{ form.description }}
+                        <small class="form-text text-muted">{{ form.description.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.engagement_plan.errors }}
+                        <label class="mb-0" for="{{ form.engagement_plan.id_for_label }}">Engagement Plan</label><br>
+                        {{ form.engagement_plan }}
+                        <small class="form-text text-muted">{{ form.engagement_plan.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.organization_attendees.errors }}
+                        <label class="mb-0" for="{{ form.organization_attendees.id_for_label }}">Organization Attendees</label><br>
+                        {{ form.organization_attendees }}
+                        <small class="form-text text-muted">{{ form.organization_attendees.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.initiator.errors }}
+                        <label class="mb-0" for="{{ form.initiator.id_for_label }}">Initiator</label><br>
+                        {{ form.initiator }}
+                        <small class="form-text text-muted">{{ form.initiator.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.primary_contact.errors }}
+                        <label class="mb-0" for="{{ form.primary_contact.id_for_label }}">Primary Contact</label><br>
+                        {{ form.primary_contact }}
+                        <small class="form-text text-muted">{{ form.primary_contact.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.attendees.errors }}
+                        <label class="mb-0" for="{{ form.attendees.id_for_label }}">Attendees</label><br>
+                        {{ form.attendees }}
+                        <small class="form-text text-muted">{{ form.attendees.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.subjects.errors }}
+                        <label class="mb-0" for="{{ form.subjects.id_for_label }}">Subjects</label><br>
+                        <ul class="list-unstyled">
+                        {% for check in form.subjects %}
+                            <li class="form-check">
+                                <p for="{{ check.id_for_label }}" class="form-check-label">
+                                    {{ check.tag }} {{ check.choice_label }}
+                                </p>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                        <small class="form-text text-muted">{{ form.subjects.help_text }}</small>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.date.errors }}
+                        <label class="mb-0" for="{{ form.start_date.id_for_label }}">Date</label><br>
+                        {{ form.date }}
+                        <small class="form-text text-muted">{{ form.date.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.status.errors }}
+                        <label class="mb-0" for="{{ form.status.id_for_label }}">Status</label><br>
+                        {{ form.status }}
+                        <small class="form-text text-muted">{{ form.status.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.geographic_level.errors }}
+                        <label class="mb-0" for="{{ form.region.id_for_label }}">Regional Scope</label><br>
+                        {{ form.geographic_level }}
+                        <small class="form-text text-muted">{{ form.geographic_level.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.location.errors }}
+                        <label class="mb-0" for="{{ form.location.id_for_label }}">Location</label><br>
+                        {{ form.location }}
+                        <small class="form-text text-muted">{{ form.location.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.file_reference.errors }}
+                        <label class="mb-0" for="{{ form.end_date.id_for_label }}">File Reference</label><br>
+                        {{ form.file_reference }}
+                        <small class="form-text text-muted">{{ form.file_reference.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.priority.errors }}
+                        <label class="mb-0" for="{{ form.priority.id_for_label }}">Priority</label><br>
+                        {{ form.priority }}
+                        <small class="form-text text-muted">{{ form.priority.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.staff_attendees.errors }}
+                        <label class="mb-0" for="{{ form.end_date.id_for_label }}">Staff Attendees</label><br>
+                        {{ form.staff_attendees }}
+                        <small class="form-text text-muted">{{ form.staff_attendees.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.objectives.errors }}
+                        <label class="mb-0" for="{{ form.objectives.id_for_label }}">Objectives</label><br>
+                        <ul class="list-unstyled">
+                        {% for check in form.objectives %}
+                            <li class="form-check">
+                                <p for="{{ check.id_for_label }}" class="form-check-label">
+                                    {{ check.tag }} {{ check.choice_label }}
+                                </p>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                        <small class="form-text text-muted">{{ form.objectives.help_text }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <!-- Right Sidebar -->
+        </div>
+    </div>
+</form>
+{% endblock content %}
+
+{% block body_js %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+{% endblock body_js %}

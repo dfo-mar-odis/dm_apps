@@ -1,0 +1,90 @@
+[
+{
+    "model": "csas.concontact",
+    "pk": 1,
+    "fields": {
+        "honorific": 3,
+        "first_name": "Tana",
+        "last_name": "Worcester",
+        "affiliation": "DFO",
+        "job_title": "Manager, Science Planning, Advice and Data",
+        "language": 1,
+        "contact_type": 1,
+        "notification_preference": 2,
+        "phone": "902-426-9090",
+        "email": "Tana.Worcester@dfo-mpo.gc.ca",
+        "region": 2,
+        "sector": 1,
+        "role": 1,
+        "expertise": "diverse....",
+        "cc_grad": true,
+        "notes": "Tana is super awesome!"
+    }
+},
+{
+    "model": "csas.concontact",
+    "pk": 2,
+    "fields": {
+        "honorific": 2,
+        "first_name": "Lottie",
+        "last_name": "Bennett",
+        "affiliation": "DFO",
+        "job_title": "Science Advisor",
+        "language": 1,
+        "contact_type": 1,
+        "notification_preference": 2,
+        "phone": "902-426-0000",
+        "email": "Lottie.Bennett@dfo-mpo.gc.ca",
+        "region": 2,
+        "sector": 1,
+        "role": 2,
+        "expertise": "SSRs",
+        "cc_grad": false,
+        "notes": "Lottie is also super awesome!"
+    }
+},
+{
+    "model": "csas.concontact",
+    "pk": 3,
+    "fields": {
+        "honorific": 3,
+        "first_name": "Laura",
+        "last_name": "Ferris",
+        "affiliation": "DFO",
+        "job_title": "Web and Pub Administrator",
+        "language": 1,
+        "contact_type": 1,
+        "notification_preference": 2,
+        "phone": "613-990-0293",
+        "email": "Laura.Ferris@dfo-mpo.gc.ca",
+        "region": 6,
+        "sector": 1,
+        "role": 3,
+        "expertise": "everything",
+        "cc_grad": false,
+        "notes": "Laura is awesome"
+    }
+},
+{
+    "model": "csas.concontact",
+    "pk": 4,
+    "fields": {
+        "honorific": 1,
+        "first_name": "Alain",
+        "last_name": "D'Entremont",
+        "affiliation": "Scotia Harvest",
+        "job_title": "President and Chief Executive Officer",
+        "language": 1,
+        "contact_type": 2,
+        "notification_preference": 2,
+        "phone": "902-648-4075",
+        "email": "alain@scotiaharvest.com",
+        "region": 2,
+        "sector": 1,
+        "role": 1,
+        "expertise": "fisheries",
+        "cc_grad": false,
+        "notes": "active participant."
+    }
+}
+]

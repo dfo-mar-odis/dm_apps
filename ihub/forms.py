@@ -85,6 +85,8 @@ class ReportSearchForm(forms.Form):
             (4, _("iHub Summary Report (PDF)")),
             (5, _("Engagement Update Log (PDF)")),
             (6, _("Engagement Update Log (XLSX)")),
+            (7, _("Consultation Instructions (PDF)")),
+            (8, _("Consultation Instructions - Mail Merge (xlsx)")),
         )
         fy_choices = [("{}".format(y["fiscal_year"]), "{}".format(y["fiscal_year"])) for y in
                       models.Entry.objects.all().values("fiscal_year").order_by("fiscal_year").distinct() if y is not None]
@@ -92,6 +94,7 @@ class ReportSearchForm(forms.Form):
 
         org_choices_all = [(obj.id, obj) for obj in get_ind_organizations()]
         org_choices_has_entry = [(obj.id, obj) for obj in get_ind_organizations() if obj.entries.count() > 0]
+        org_choices_has_ci = [(obj.id, obj) for obj in get_ind_organizations() if hasattr(obj,"consultation_instructions")]
 
         sector_choices = [(obj.id, obj) for obj in ml_models.Sector.objects.all() if obj.entries.count() > 0]
         status_choices = [(obj.id, obj) for obj in models.Status.objects.all() if obj.entries.count() > 0]
@@ -105,6 +108,9 @@ class ReportSearchForm(forms.Form):
         self.fields['organizations'] = forms.MultipleChoiceField(required=False,
                                                                  label='List of organizations (w/ entries) - Leave blank for all',
                                                                  choices=org_choices_has_entry)
+        self.fields['orgs_w_consultation_instructions'] = forms.MultipleChoiceField(required=False,
+                                                                 label='List of organizations (w/ consultation instructions) - Leave blank for all',
+                                                                 choices=org_choices_has_ci)
         self.fields['statuses'] = forms.MultipleChoiceField(required=False,
                                                             label='Status - Leave blank for all',
                                                             choices=status_choices,

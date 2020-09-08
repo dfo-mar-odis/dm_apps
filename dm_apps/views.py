@@ -363,6 +363,19 @@ def get_app_dict(request):
     # except NoReverseMatch:
     #     pass
 
+    try:
+        app_dict["engagements"] = {
+            "title": _("Engagement Tracking"),
+            "description": _("Stakeholder engagement tracking platform"),
+            "status": "Development",
+            "access": "permission-required",
+            "url": reverse('engagements:home'),
+            "icon_path": "img/icons/network.svg",
+            "region": "regional",
+        }
+    except NoReverseMatch:
+        pass
+
     return OrderedDict(app_dict)
 
 

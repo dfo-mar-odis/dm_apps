@@ -11,15 +11,12 @@
 
 {% block body %}
 
-<<<<<<< HEAD
 <style>
     {# tr:nth-child(even){ #}
     {#     background-color: #dddddd; #}
     {# } #}
 </style>
 
-=======
->>>>>>> c4fea7763709eb4a74e1d4435afded41692e482b
 <div class="container-fluid mt-1" >
     <div class="row mt-2 pt-1">
         <div class="container-fluid card border border-dark text-center">
@@ -239,7 +236,7 @@
                                 <td>
                                     {# if the update url contains /pop/ then open the url in a popup window #}
                                     {% if key == 'req' and auth or csas_admin %}
-                                        {% if '/pop/' in update_url %}
+                                        {% if pop %}
                                             <a class="btn btn-secondary btn-sm"
                                                href="#" onclick="return pop('{% url ''|add:update_url obj.pk 'pop' %}', 'details_table')"
                                                title="{% trans 'Update' %}">{% trans 'Update' %}</a>

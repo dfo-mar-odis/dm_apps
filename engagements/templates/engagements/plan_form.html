@@ -1,0 +1,115 @@
+{% extends "engagements/engagements_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+{% load render_table from django_tables2 %}
+
+{% block pagetitle %}New Engagement Plan{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="{% url 'engagements:home' %}">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'engagements:plan_list' %}">Engagement Plans</a></li>
+    <li class="breadcrumb-item active" aria-current="page">New Organization</li>
+{% endblock breadcrumbs %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <script>
+        $(function () {
+            $("#id_start_date").datepicker({
+                format:'yyyy-mm-dd',
+            });
+            $("#id_end_date").datepicker({
+                format:'yyyy-mm-dd',
+            });
+        });
+    </script>
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-2 border-bottom">
+        <div class="mr-auto">
+            <h3 class="mb-0">New Engagement Plan</h3>
+        </div>
+        <input type="submit" value="Save" class="btn btn-success mr-2">
+        <a href="javascript:history.back()" class="btn btn-danger">Cancel</a></td>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2">
+        <div class="col-9">
+            <div class="row">
+                <div class="col">
+                    {{ form.non_field_errors }}
+                    <div class="form-group">
+                        {{ form.title.errors }}
+                        <label class="mb-0" for="{{ form.title.id_for_label }}">Title</label><br>
+                        {{ form.title }}
+                        <small class="form-text text-muted">{{ form.title.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.lead.errors }}
+                        <label class="mb-0" for="{{ form.lead.id_for_label }}">Staff Lead</label><br>
+                        {{ form.lead }}
+                        <small class="form-text text-muted">{{ form.lead.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.summary.errors }}
+                        <label class="mb-0" for="{{ form.summary.id_for_label }}">Summary</label><br>
+                        {{ form.summary }}
+                        <small class="form-text text-muted">{{ form.summary.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.stakeholders.errors }}
+                        <label class="mb-0" for="{{ form.stakeholders.id_for_label }}">Stakeholder Organizations</label><br>
+                        {{ form.stakeholders }}
+                        <small class="form-text text-muted">{{ form.stakeholders.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.staff_collaborators.errors }}
+                        <label class="mb-0" for="{{ form.staff_collaborators.id_for_label }}">Staff Collaborators</label><br>
+                        {{ form.staff_collaborators }}
+                        <small class="form-text text-muted">{{ form.staff_collaborators.help_text }}</small>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.status.errors }}
+                        <label class="mb-0" for="{{ form.status.id_for_label }}">Status</label><br>
+                        {{ form.status }}
+                        <small class="form-text text-muted">{{ form.status.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.region.errors }}
+                        <label class="mb-0" for="{{ form.region.id_for_label }}">Region</label><br>
+                        {{ form.region }}
+                        <small class="form-text text-muted">{{ form.region.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.start_date.errors }}
+                        <label class="mb-0" for="{{ form.start_date.id_for_label }}">Start Date</label><br>
+                        {{ form.start_date }}
+                        <small class="form-text text-muted">{{ form.start_date.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.end_date.errors }}
+                        <label class="mb-0" for="{{ form.end_date.id_for_label }}">End Date</label><br>
+                        {{ form.end_date }}
+                        <small class="form-text text-muted">{{ form.end_date.help_text }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <!-- Right Sidebar -->
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+
+{% block body_js %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+{% endblock body_js %}

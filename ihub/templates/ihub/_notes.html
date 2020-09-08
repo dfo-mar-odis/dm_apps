@@ -28,7 +28,7 @@
         {% trans "Type" %}
       </th>
       <th>
-        {% trans "Date" %}
+        {% trans "Creation date" %}
       </th>
       <th>
         {% trans "Author" %}
@@ -39,15 +39,19 @@
       <th>
         {% trans "Status" %}
       </th>
+      <th>
+        {% trans "Last modified" %}
+      </th>
     </tr>
     <tbody>
     {% for obj in object.notes.all %}
       <tr href="{% url 'ihub:note_edit' obj.id %}" pop>
         <td>{{ obj.get_type_display }}</td>
-        <td>{{ obj.date|date:"F d, Y" }}</td>
+        <td>{{ obj.creation_date|date:"F d, Y" }}</td>
         <td>{{ obj.author.first_name }} {{ obj.author.last_name }}</td>
         <td>{{ obj.note }}</td>
         <td style="background: {{ obj.status.color }};">{{ obj.status }}</td>
+        <td>{{ obj.modified_date|date:"F d, Y" }}</td>
 
 
         <td>

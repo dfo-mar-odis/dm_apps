@@ -32,7 +32,7 @@ be sure to run migrations before you get started: `python manage.py migrate`.
 Before proceeding any further, make sure you have completed the steps outlined above.
 
 ### Create a superuser for local development
-1. to create a superuser, use the following command `python manage.py create superuser`
+1. to create a superuser, use the following command `python manage.py createsuperuser`
 1. please note that all usernames in this project should be an email address. Otherwise you will have trouble logging in through the login page.
 
 ### Import fixtures
@@ -47,6 +47,9 @@ which database it is connecting to, which apps are connected, allowed hostnames,
 Without any customizations, the site will connect to a local sqlite3 database. This is an ideal, fast and simple option for local development. 
 After running the `migrate` command an empty sqlite database will be created in the project root called `db.sqlite3`. 
 This file is already in the .gitignore file. 
+
+### Static files
+Static files are not stored in the git repository, they can be pushed to the static file server using `python manage.py findstatic` and downloaded to a machine for local development using `python manage.py collectstatic`. If this step is skipped the "you are not using chrome" warning message will show and images will appear broken on the "127.0.0.1:8000/en" page
 
 **The first step of customizing the site's configuration is by cloning the `.env_sample` file and renaming this copy to `.env`.** This file is also in the .gitignore.
 This file has numerous switches and flags that can be used for customizing the application. The `.env_sample` file has a lot of annotation and the configuration 

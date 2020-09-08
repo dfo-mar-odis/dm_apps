@@ -62,3 +62,7 @@ Faker==4.0.1
 # THESE TWO LIBRARIES CAN BE PROBLEMATIC
 mysqlclient==1.4.6
 shapely==1.7.0
+
+phonenumberslite==8.12.8
+django-phonenumber-field==5.0.0
+django-tables2==2.3.1

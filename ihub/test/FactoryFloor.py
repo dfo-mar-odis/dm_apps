@@ -111,7 +111,7 @@ class EntryNoteFactory(factory.django.DjangoModelFactory):
 
     entry = factory.SubFactory(EntryFactory)
     type = factory.lazy_attribute(lambda o: faker.pyint(1, 4))
-    date = factory.lazy_attribute(lambda o: faker.date_time_this_year(tzinfo=timezone.get_current_timezone()))
+    # date = factory.lazy_attribute(lambda o: faker.date_time_this_year(tzinfo=timezone.get_current_timezone()))
     note = factory.lazy_attribute(lambda o: faker.text())
 
     @staticmethod
@@ -119,7 +119,7 @@ class EntryNoteFactory(factory.django.DjangoModelFactory):
         return {
             'entry': EntryFactory().id,
             'type': faker.pyint(1, 4),
-            'date': faker.date_time_this_year(tzinfo=timezone.get_current_timezone()).strftime("%Y-%m-%d 13:00"),
+            # 'date': faker.date_time_this_year(tzinfo=timezone.get_current_timezone()).strftime("%Y-%m-%d 13:00"),
             'note': faker.text(),
         }
 

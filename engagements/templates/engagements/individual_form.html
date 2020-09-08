@@ -1,0 +1,134 @@
+{% extends "engagements/engagements_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+{% load render_table from django_tables2 %}
+
+{% block pagetitle %}New Individual{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="{% url 'engagements:home' %}">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'engagements:individual_list' %}">Individuals</a></li>
+    <li class="breadcrumb-item active" aria-current="page">New Individual</li>
+{% endblock breadcrumbs %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-2 border-bottom">
+        <div class="mr-auto">
+            <h3 class="mb-0">New Individual</h3>
+        </div>
+        <input type="submit" value="Save" class="btn btn-success mr-2">
+        <a href="javascript:history.back()" class="btn btn-danger">Cancel</a></td>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2">
+        <div class="col-9">
+            <div class="row">
+                <div class="col">
+                    <div class="form-row">
+                    {{ form.non_field_errors }}
+                    <div class="form-group col">
+                        {{ form.first_name.errors }}
+                        <label class="mb-0" for="{{ form.first_name.id_for_label }}">First Name</label><br>
+                        {{ form.first_name }}
+                        <small class="form-text text-muted">{{ form.first_name.help_text }}</small>
+                    </div>
+                    <div class="form-group col">
+                        {{ form.last_name.errors }}
+                        <label class="mb-0" for="{{ form.last_name.id_for_label }}">Last Name</label><br>
+                        {{ form.last_name }}
+                        <small class="form-text text-muted">{{ form.last_name.help_text }}</small>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form.email_address.errors }}
+                        <label class="mb-0" for="{{ form.email_address.id_for_label }}">Email Address</label><br>
+                        {{ form.email_address }}
+                        <small class="form-text text-muted">{{ form.email_address.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.phone_number.errors }}
+                        <label class="mb-0" for="{{ form.phone_number.id_for_label }}">Phone Number</label><br>
+                        {{ form.phone_number }}
+                        <small class="form-text text-muted">{{ form.phone_number.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.fax_number.errors }}
+                        <label class="mb-0" for="{{ form.fax_number.id_for_label }}">Fax Number</label><br>
+                        {{ form.fax_number }}
+                        <small class="form-text text-muted">{{ form.fax_number.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.linkedin_profile.errors }}
+                        <label class="mb-0" for="{{ form.linkedin_profile.id_for_label }}">LinkedIn Profile</label><br>
+                        {{ form.linkedin_profile }}
+                        <small class="form-text text-muted">{{ form.linkedin_profile.help_text }}</small>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.title.errors }}
+                        <label class="mb-0" for="{{ form.title.id_for_label }}">Title</label><br>
+                        {{ form.title }}
+                        <small class="form-text text-muted">{{ form.title.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.organization.errors }}
+                        <label class="mb-0" for="{{ form.parent_organizations.id_for_label }}">Organizations</label><br>
+                        {{ form.organization }}
+                        <small class="form-text text-muted">{{ form.organization.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.address_line_1.errors }}
+                        <label class="mb-0" for="{{ form.address_line_1.id_for_label }}">Address Line 1</label><br>
+                        {{ form.address_line_1 }}
+                        <small class="form-text text-muted">{{ form.address_line_1.help_text }}</small>
+                    </div>
+                    <div class="form-group">
+                        {{ form.address_line_1.errors }}
+                        <label class="mb-0" for="{{ form.address_line_1.id_for_label }}">Address Line 2</label><br>
+                        {{ form.address_line_2 }}
+                        <small class="form-text text-muted">{{ form.address_line_2.help_text }}</small>
+                    </div>
+                    <div class="form-row">
+                    <div class="form-group col-6">
+                        {{ form.city.errors }}
+                        <label class="mb-0" for="{{ form.city.id_for_label }}">City</label><br>
+                        {{ form.city }}
+                        <small class="form-text text-muted">{{ form.city.help_text }}</small>
+                    </div>
+                    <div class="form-group col-6">
+                        {{ form.province.errors }}
+                        <label class="mb-0" for="{{ form.province.id_for_label }}">Province</label><br>
+                        {{ form.province }}
+                        <small class="form-text text-muted">{{ form.province.help_text }}</small>
+                    </div>
+                    </div>
+                    <div class="form-row">
+                    <div class="form-group col-4">
+                        {{ form.zip_postal.errors }}
+                        <label class="mb-0" for="{{ form.zip_postal.id_for_label }}">Postal/ZIP Code</label><br>
+                        {{ form.zip_postal }}
+                        <small class="form-text text-muted">{{ form.zip_postal.help_text }}</small>
+                    </div>
+                    <div class="form-group col-8">
+                        {{ form.country.errors }}
+                        <label class="mb-0" for="{{ form.country.id_for_label }}">Country</label><br>
+                        {{ form.country }}
+                        <small class="form-text text-muted">{{ form.country.help_text }}</small>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <!-- Right Sidebar -->
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

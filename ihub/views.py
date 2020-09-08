@@ -112,6 +112,7 @@ class PersonListView(SiteLoginRequiredMixin, CommonFilterView):
     paginate_by = 100
     h1 = gettext_lazy("Contacts")
 
+
 class PersonDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = ml_models.Person
     template_name = 'ihub/person_detail.html'
@@ -264,6 +265,7 @@ class OrganizationDetailView(SiteLoginRequiredMixin, CommonDetailView):
     home_url_name = "ihub:index"
     parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
     container_class = "container-fluid"
+
 
 class OrganizationUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = ml_models.Organization
@@ -635,6 +637,7 @@ class ReportSearchFormView(SiteLoginRequiredMixin, FormView):
     def form_valid(self, form):
         sectors = listrify(form.cleaned_data["sectors"])
         orgs = listrify(form.cleaned_data["organizations"])
+        orgs_w_consultation_instructions = listrify(form.cleaned_data["orgs_w_consultation_instructions"])
         statuses = listrify(form.cleaned_data["statuses"])
         entry_types = listrify(form.cleaned_data["entry_types"])
         org = int(nz(form.cleaned_data["single_org"]), 0)
@@ -687,6 +690,14 @@ class ReportSearchFormView(SiteLoginRequiredMixin, FormView):
                 "report_title": nz(report_title, "None"),
             }))
 
+        elif report == 7:
+            return HttpResponseRedirect(
+                f'{reverse("ihub:consultation_instructions_pdf")}?orgs={orgs_w_consultation_instructions}'
+            )
+        elif report == 8:
+            return HttpResponseRedirect(
+                f'{reverse("ihub:consultation_instructions_xlsx")}?orgs={orgs_w_consultation_instructions}'
+            )
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
             return HttpResponseRedirect(reverse("ihub:report_search"))
@@ -968,6 +979,41 @@ class ConsultationLogPDFTemplateView(PDFTemplateView):
         context["report_title"] = report_title
 
         return context
+
+
+class ReportConsultationInstructionsPDFView(PDFTemplateView):
+    template_name = 'ihub/report_consultation_instructions.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        orgs = self.request.GET["orgs"] if self.request.GET.get("orgs") else "None"
+        orgs = None if orgs == "None" else orgs
+
+        # if there are some organizations that are specified,
+        if orgs:
+            # we have to refine the queryset to only the selected orgs
+            object_list = ml_models.ConsultationInstruction.objects.filter(organization_id__in=orgs.split(","))
+        else:
+            # else return all orgs
+            object_list = ml_models.ConsultationInstruction.objects.all()
+        context["object_list"] = object_list
+        context["now"] = timezone.now()
+        # now we need to refine the list again to only
+        return context
+
+
+def consultation_instructions_export_spreadsheet(request):
+    orgs = request.GET["orgs"] if request.GET.get("orgs") else "None"
+    file_url = reports.consultation_instructions_export_spreadsheet(orgs)
+
+    if os.path.exists(file_url):
+        with open(file_url, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = f'inline; ' \
+                                              f'filename="iHub Consultation Instructions Export ({timezone.now().strftime("%Y-%m-%d")}).xlsx"'
+            return response
+    raise Http404
 
 
 # SETTINGS #

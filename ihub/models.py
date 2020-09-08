@@ -169,7 +169,8 @@ class EntryNote(models.Model):
 
     entry = models.ForeignKey(Entry, related_name='notes', on_delete=models.CASCADE)
     type = models.IntegerField(choices=TYPE_CHOICES)
-    date = models.DateTimeField(auto_now=True, editable=False)
+    modified_date = models.DateTimeField(auto_now=True, editable=False)
+    creation_date = models.DateTimeField(auto_now_add=True, editable=False)
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("author"))
     note = models.TextField()
     status = models.ForeignKey(Status, default=1, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("status"))
@@ -181,12 +182,12 @@ class EntryNote(models.Model):
             self.status,
             self.author.first_name,
             self.author.last_name,
-            self.date.strftime("%Y-%m-%d"),
+            self.creation_date.strftime("%Y-%m-%d"),
         )
         return my_str
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ["-creation_date"]
 
 
 def file_directory_path(instance, filename):

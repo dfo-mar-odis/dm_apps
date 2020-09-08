@@ -1,0 +1,178 @@
+{% load verbose_names %}
+{% load bootstrap4 %}
+{% load humanize %}
+{% load custom_filters %}
+{% load i18n %}
+{% load custom_tags %}
+{% load custom_filters %}
+{% bootstrap_css %}
+
+<style>
+
+table.et, td.et, th.et {
+    font-size: 10px;
+    border: 1px solid black;
+    text-align: left;
+    padding: 2px;
+    vertical-align: top;
+}
+
+td.et, th.et {
+    padding-top: 1px;
+}
+
+th.et {
+    background-color: #cde9cb;
+    color: black;
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: yellow;
+}
+.mb-1{
+    margin-bottom: 10px;
+}
+
+@page {
+    size: legal landscape;
+    margin: 1cm;
+    @frame footer {
+    -pdf-frame-content: footerContent;
+    bottom: 0cm;
+    margin-left: 18cm;
+    margin-right: 0cm;
+    height: 1cm;
+}
+}
+
+</style>
+
+<p style="text-align: center">
+
+  <span style="font-size: 25px; font-weight: bold;">
+  Consultation Instructions
+  </span>
+  <br>
+  <br>
+  <span style="color: red; font-size: 20px;">
+  You must send individual letters to each Indigenous groups and organizations as described below
+  <br>
+  <br>
+  SEND A PAPER COPY AND ELECTRONIC COPY
+  </span>
+</p>
+
+{% trans "<b class='highlight'>MISSING EMAIL</b>" as missing_email %}
+{% trans "<b class='highlight'>MISSING ROLE</b>" as missing_role %}
+
+<table class="et">
+  <thead>
+  <tr>
+    <th class="et" rowspan="3">Community</th>
+    <th class="et" colspan="2" style="text-align: center">In the Letter</th>
+    <th class="et" colspan="2" style="text-align: center">Chief/Primary Point of Contact</th>
+    <th class="et" colspan="4" style="text-align: center">Send To:</th>
+    <th class="et" rowspan="3">Notes</th>
+  </tr>
+  <tr>
+    <th class="et" rowspan="2">Address Letter To:</th>
+    <th class="et" rowspan="2">cc: on Bottom of Letter</th>
+    <th class="et" rowspan="2">Name</th>
+    <th class="et" rowspan="2">Mailing Address and Contact Information</th>
+    <th class="et" rowspan="2">Paper Copy</th>
+    <th class="et" colspan="3" style="text-align: center">Electronic Copy</th>
+  </tr>
+  <tr>
+    <th class="et">To</th>
+    <th class="et">Cc</th>
+    <th class="et">Cc (Commerical)</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for object in object_list %}
+    <tr>
+    <td colspan="10" style="background-color: #2a62bc"></td>
+    </tr>
+    <tr>
+      <td class="et" style="width: 100px">{{ object.organization|nz:"---" }}</td>
+      <td class="et" style="width: 100px">{{ object.letter_to|nz:"---" }}</td>
+      <td class="et" style="width: 100px">{{ object.letter_cc|nz:"---" }}</td>
+      <td class="et" style="width: 80px">{{ object.organization.chief.person.full_name|nz:"---" }}</td>
+      <td class="et" style="width: 150px">
+        {{ object.organization.full_address|nz:"---" }} <br> <br>
+        <u>Email:</u> <br>
+        {{ object.organization.chief.person.email_1|nz:"---" }} <br> <br>
+        <u>Phone:</u> <br>
+        {{ object.organization.chief.person.phone_1|nz:"---" }}
+      </td>
+      <td class="et" style="width: 100px">{{ object.paper_copy|nz:"---" }}</td>
+
+      {# To Recipients  #}
+      <td class="et">
+        <ul>
+          {% for recipient in object.to_email_recipients %}
+            <li class="mb-1">
+              {{ recipient.member.person.full_name }}<br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+
+      {# Cc Recipients  #}
+      <td class="et">
+        <ul>
+          {% for recipient in object.cc_email_recipients %}
+            <li class="mb-1">
+              {{ recipient.member.person.full_name }}<br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+
+      {# Cc Commercial Recipients  #}
+      <td class="et">
+        <ul>
+          {% for recipient in object.cc_commercial_email_recipients %}
+            <li class="mb-1">
+              {{ recipient.member.person.full_name }}<br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+
+      <td class="et" style="width: 120px">{{ object.notes }}</td>
+    </tr>
+
+    {# TO Recipients   #}
+
+    {#      <td>To:</td>#}
+    {#      {% for consultee in object.to_email_recipients %}#}
+    {#        <td>{{ consultee.member.person.full_name|nz:"---" }}</td>#}
+    {#        <td>{{ consultee.member.role|nz:"---" }}</td>#}
+    {#        <td>{{ consultee.member.person.email_1|nz:"---" }}</td>#}
+    {#      {% endfor %}#}
+
+
+
+
+
+  {% endfor %}
+  </tbody>
+
+
+</table>
+
+<p>
+  <em style="font-size: 10px">
+    {% blocktrans %}
+      This report was generated by iHub on {{ now }}
+    {% endblocktrans %}
+  </em>
+</p>

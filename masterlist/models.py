@@ -106,10 +106,13 @@ class Organization(models.Model):
     @property
     def full_address(self):
         # initial my_str with either address or None
-        if self.address:
+        if self.mailing_address:
+            my_str = self.mailing_address
+        elif self.address:
             my_str = self.address
         else:
             my_str = ""
+
         # add city
         if self.city:
             if my_str:
@@ -129,6 +132,11 @@ class Organization(models.Model):
 
     def get_absolute_url(self):
         return reverse('ihub:org_detail', kwargs={'pk': self.pk})
+
+    @property
+    def chief(self):
+        if self.members.filter(role__icontains="chief").exists():
+            return self.members.filter(role__icontains="chief").first()
 
 
 class Person(models.Model):

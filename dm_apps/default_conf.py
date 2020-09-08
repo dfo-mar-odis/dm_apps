@@ -41,6 +41,7 @@ APP_DICT = {
     'vault': "Marine Megafauna Media Vault",
     'spring_cleanup': "Gulf Region Spring Cleanup",
     'shiny': "DM Apps Shiny App Collection",
+    'engagements': 'Stakeholder Engagement Tool',
 }
 
 # This variable is used to employ a preconfiguartion of applications for Azure deployment

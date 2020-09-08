@@ -140,6 +140,8 @@ INSTALLED_APPS = [
                      'lib',
                      'shared_models',
                      'tickets',
+                     'phonenumber_field',
+                     'django_tables2'
                  ] + local_conf.MY_INSTALLED_APPS
 
 # If the GEODJANGO setting is set to False, turn off any apps that require it
@@ -228,7 +230,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Halifax'
+TIME_ZONE = config("TIME_ZONE", cast=str, default='UTC')
 
 USE_I18N = True
 
