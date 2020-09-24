@@ -1,0 +1,34 @@
+{% extends "csas/csas_entry_form.html" %}
+{% load i18n %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block body_js %}
+{{block.super}}
+
+<script>
+    $("#id_category").change(function() {
+        val = $(this).val();
+
+        $("#id_meeting").children().each(function() {
+            $(this).show();
+        });
+
+
+        if (val == 2) {
+            $("#id_meeting").children().each(function() {
+                if( $(this).val() > 1 ){
+                        $(this).hide();
+                    }
+            });
+        } else if (val == 3 ){
+            $("#id_meeting").children().each(function() {
+                if( $(this).val() < 2 || $(this).val() > 2){
+                        $(this).hide();
+                    }
+            });
+        }
+    }
+    );
+</script>
+{% endblock %}

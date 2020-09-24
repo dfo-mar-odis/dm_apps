@@ -531,6 +531,8 @@ class MeetingEntryOMCosts(CsasCreateCommon):
     model = models.MocMeetingOMCosts
     form_class = forms.MeetingFormOMCosts
 
+    template_name = "csas/csas_entry_om.html"
+
     def get_initial(self):
         initial = super().get_initial()
 
