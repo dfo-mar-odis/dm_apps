@@ -1,0 +1,113 @@
+{% extends "csas/csas_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block field_override %}
+    <h2>{{ object.prj_name }}</h2>
+    <style>
+        .mymdb-masthead {
+            background-color: #EEEEEE;
+        }
+
+        table{
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        {# td, th{                        #}
+        {#     border: 1px solid #dddddd; #}
+        {#     text-align: left;          #}
+        {#     padding: 8px;              #}
+        {# }                              #}
+
+        tr:nth-child(even){
+            background-color: #dddddd;
+        }
+
+        .collapsible {
+            background-color: #971;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #888;
+        }
+
+        .collapsible:after {
+            content: 'Open';    {# \002B is + sign #}
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: 'Close';    {# \2212 is - sign #}
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            {# background-color: #f1f1f1; #}
+        }
+
+        .outsideDiv {
+            position: relative;
+        }
+    </style>
+
+    {# ----- Meeting Details ----- #}
+    {# {% for field in fields %} #}
+        {# <div class="row" > #}
+            <div class="container">
+            {# <div class="card-header bg-transparent"> #}
+                <table class="table" style="background-color:#f2f2f2">
+                    {#<tbody>#}
+                    {% for field in fields %}
+                        <tr>
+                        <td><span style="color:black" class="font-weight-bold"> {% get_verbose_label object field %} :</span></td>
+                        <td><span style="color:brown"> {% get_field_value object field%}</span></td>
+                        </tr>
+                    {% endfor %}
+                    {#</tbody>#}
+                </table>
+            {# </div> #}
+            </div>
+        {# </div> #}
+    {# {% endfor %} #}
+
+    </div>
+
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+{% endblock field_override %}

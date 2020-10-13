@@ -11,6 +11,12 @@
 
 {% block body %}
 
+<style>
+    {# tr:nth-child(even){ #}
+    {#     background-color: #dddddd; #}
+    {# } #}
+</style>
+
 <div class="container-fluid mt-1" >
     <div class="row mt-2 pt-1">
         <div class="container-fluid card border border-dark text-center">
@@ -29,6 +35,10 @@
                             {% if key == 'met' or key == 'pub' %}
                                 <a class="btn btn-secondary btn"
                                    href="{% url ''|add:index_url %}" title="{% trans 'Add' %}">+</a>
+                             {% elif pop %}
+                                <a class="btn btn-secondary btn"
+                                   href="#" onclick="return pop('{% url ''|add:create_url 'pop' %}', 'details_table')"
+                                   title="{% trans 'Add' %}">+</a>
                             {% else %}
                                 <a class="btn btn-secondary btn"
                                    href="{% url ''|add:create_url %}" title="{% trans 'Add' %}">+</a>
@@ -84,7 +94,7 @@
                     {% if details_url %}
                         <th></th>
                     {% endif %}
-                    {% if editable and update_url %}
+                    {% if editable and update_url and auth  %}
                         <th></th>
                     {% endif %}
                 </tr>
@@ -99,56 +109,184 @@
                             {% if key == 'met' %}
                                 <td><a class="btn btn-secondary btn-sm"
                                        href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_met_docs' obj.pk %}">{% trans 'Docs' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:list_met_DFO_pars' %}">{% trans 'DFO participants' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:list_met_other_pars' %}">{% trans 'Other participants' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_met_OM_costs' obj.pk %}">{% trans 'O&M Costs' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_met_media' obj.pk %}">{% trans 'Media' %}</a>
+
+                                    {# ----- for button Docs #}
+                                    {% if obj.meeting_docs.all %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:'csas:details_met_docs' obj.pk %}">
+                                           {% trans 'Docs' %}</a>
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'Docs' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button DFO participants #}
+                                    {% if obj.meetingDFO.all %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:'csas:list_met_DFO_pars' %}">{% trans 'DFO participants' %}</a>
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'DFO participants' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button Other participants #}
+                                    {% if obj.meetingOther.all %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:'csas:list_met_other_pars' %}">{% trans 'Other participants' %}</a>
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'Other participants' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button O&M Costs #}
+                                    {% if obj.meeting_costs.all %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:'csas:details_met_OM_costs' obj.pk %}">{% trans 'O&M Costs' %}</a>
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'O&M Costs' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button Media #}
+                                    {% if obj.meeting_media.all %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:'csas:details_met_media' obj.pk %}">{% trans 'Media' %}</a>
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'Media' %}</a>
+                                    {% endif %}
                                 </td>
                             {% elif key == 'pub' %}
                                 <td><a class="btn btn-secondary btn-sm"
                                        href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_pub_status' obj.pk %}">{% trans 'Status' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_pub_trans_info' obj.pk %}">{% trans 'Translation Info' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_pub_doc_location' obj.pk %}">{% trans 'Doc Location' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_pub_OM_costs' obj.pk %}">{% trans 'O&M Costs' %}</a>
-                                    <a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:'csas:details_pub_com_results' obj.pk %}">{% trans 'Com Results' %}</a>
+
+                                    {# ----- for button Status #}
+                                    {% if obj.pub_status.all %}
+                                        {% for status in obj.pub_status.all %}
+                                            {% if status %}
+                                                <a class="btn btn-secondary btn-sm"
+                                                   href="{% url ''|add:'csas:details_pub_status' status.pk %}">{% trans 'Status' %}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'Status' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button Translation Info #}
+                                    {% if obj.pub_trans_info.all %}
+                                        {% for trans in obj.pub_trans_info.all %}
+                                            {% if trans %}
+                                                <a class="btn btn-secondary btn-sm"
+                                                   href="{% url ''|add:'csas:details_pub_trans_info' trans.pk %}">{% trans 'Translation Info' %}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'Translation Info' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button Doc Location #}
+                                    {% if obj.pub_doc_location.all %}
+                                        {% for location in obj.pub_doc_location.all %}
+                                            {% if location %}
+                                                <a class="btn btn-secondary btn-sm"
+                                                   href="{% url ''|add:'csas:details_pub_doc_location' location.pk %}">{% trans 'Doc Location' %}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'Doc Location' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button O&M Costs #}
+                                    {% if obj.publication_costs.all %}
+                                         {% for cost in obj.publication_costs.all %}
+                                             {% if cost %}
+                                                 <a class="btn btn-secondary btn-sm"
+                                                    href="{% url ''|add:'csas:details_pub_OM_costs' cost.pk %}">{% trans 'O&M Costs' %}</a>
+                                             {% endif %}
+                                         {% endfor %}
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'O&M Costs' %}</a>
+                                    {% endif %}
+
+                                    {# ----- for button Com Results #}
+                                    {% if obj.pub_com_results.all %}
+                                        {# {% for result in obj.pub_com_results.all %} #}
+                                            {# {% if result %} #}
+                                                <a class="btn btn-secondary btn-sm"
+                                                   href="{% url ''|add:'csas:details_pub_com_results' obj.pk %}">{% trans 'Com Results' %}</a>
+                                            {# {% endif %} #}
+                                        {# {% endfor %} #}
+                                    {% else %}
+                                        <a class="btn btn-outline-primary btn-sm">{% trans 'Com Results' %}</a>
+                                    {% endif %}
                                  </td>
                             {% else %}
-                                <td><a class="btn btn-secondary btn-sm"
-                                       href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
-                                    {# if the update url contains /pop/ then open the url in a popup window #}
-                                    {% if auth %}
-                                    {% if '/pop/' in update_url %}
-                                        <a class="btn btn-secondary btn-sm"
-                                           href="#" onclick="return pop('{% url ''|add:update_url obj.pk 'pop' %}', 'details_table')"
-                                           title="{% trans 'Update' %}">{% trans 'Update' %}</a>
-                                    {% else %}
-                                        <a class="btn btn-secondary btn-sm"
-                                               href="{% url ''|add:update_url obj.pk %}"
-                                               title="{% trans 'Update' %}">{% trans 'Update' %}</a>
-                                    {% endif %}
-                                    {% endif %}
+                                {% if details_url %}
+                                <td>
                                     {% if key == 'req' and csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:update_url obj.pk %}"
+                                           title="{% trans 'Update' %}">{% trans 'Update' %}</a>
                                         <a class="btn btn-secondary btn-sm"
                                            href="{% url ''|add:'csas:details_req_CSAS' obj.pk %}">{% trans 'Status' %}</a>
                                         <a class="btn btn-secondary btn-sm"
                                            href="{% url ''|add:'csas:create_req_CSAS' %}">{% trans 'Status Update' %}</a>
                                     {% elif key == 'req' and auth %}
                                         <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:update_url obj.pk %}"
+                                           title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+                                        <a class="btn btn-secondary btn-sm"
                                            href="{% url ''|add:'csas:details_req_CSAS' obj.pk %}">{% trans 'Status' %}</a>
+                                    {% elif key == 'req' %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:'csas:details_req_CSAS' obj.pk %}">{% trans 'Status' %}</a>
+                                    {% elif key == 'con' and csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:update_url obj.pk %}"
+                                           title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+                                    {% elif key == 'con' and auth %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:update_url obj.pk %}"
+                                           title="{% trans 'Update' %}">{% trans 'Update' %}</a>
+                                    {% else %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="{% url ''|add:details_url obj.pk %}">{% trans 'Details' %}</a>
                                     {% endif %}
                                 </td>
+                                {% endif %}
+
+                                {# {% if update_url and auth %}                                                                              #}
+                                {# <td>                                                                                                      #}
+                                       {# if the update url contains /pop/ then open the url in a popup window #}
+                                {#     {% if key == 'req' and auth or csas_admin %}                                                          #}
+                                {#         {% if '/pop/' in update_url %}                                                                    #}
+                                {#             <a class="btn btn-secondary btn-sm"                                                           #}
+                                {#                href="#" onclick="return pop('{% url ''|add:update_url obj.pk 'pop' %}', 'details_table')" #}
+                                {#                title="{% trans 'Update' %}">{% trans 'Update' %}</a>                                      #}
+                                {#         {% else %}                                                                                        #}
+                                {#             <a class="btn btn-secondary btn-sm"                                                           #}
+                                {#                href="{% url ''|add:update_url obj.pk %}"                                                  #}
+                                {#                title="{% trans 'Update' %}">{% trans 'Update' %}</a>                                      #}
+                                {#         {% endif %}                                                                                       #}
+                                {#     {% endif %}                                                                                           #}
+
+                                {#     {% if key == 'req' and csas_admin %}                                                                  #}
+                                {#         <a class="btn btn-secondary btn-sm"                                                               #}
+                                {#            href="{% url ''|add:'csas:details_req_CSAS' obj.pk %}">{% trans 'Status' %}</a>                #}
+                                {#         <a class="btn btn-secondary btn-sm"                                                               #}
+                                {#            href="{% url ''|add:'csas:create_req_CSAS' %}">{% trans 'Status Update' %}</a>                 #}
+                                {#     {% elif key == 'req' and auth %}                                                                      #}
+                                {#         <a class="btn btn-secondary btn-sm"                                                               #}
+                                {#            href="{% url ''|add:'csas:details_req_CSAS' obj.pk %}">{% trans 'Status' %}</a>                #}
+                                {#     {% endif %}                                                                                           #}
+                                {# </td>                                                                                                     #}
+                                {# {% endif %}                                                                                               #}
+
                             {% endif %}
                         </tr>
                     {% endfor %}

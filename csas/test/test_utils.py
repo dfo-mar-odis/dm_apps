@@ -54,3 +54,17 @@ class UtilityTests(TestCase):
         authorized = utils.csas_admin(user)
 
         self.assertTrue(authorized)
+
+    # user in csas_super, giving them permissions to modify lookup tables
+    @tag('util', 'auth')
+    def test_auth_csas_admin_granted(self):
+        user = User.objects.create_user(username='Patrick', email="Patrick@dfo-mpo.gc.ca", password="secret")
+
+        csas_group = Group(name="csas_super")
+        csas_group.save()
+
+        user.groups.add(csas_group)
+
+        authorized = utils.csas_super(user)
+
+        self.assertTrue(authorized)

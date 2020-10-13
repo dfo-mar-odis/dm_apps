@@ -1,118 +1,29 @@
-{% extends "ihub/ihub_base.html" %}
+{% extends "ihub/list.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
 {% load i18n %}
-{% block content %}
 
-    <style>
-        .indent-lg {
-            margin-left: 5em;
-            margin-right: 5em;
-        }
+{% block table_tr %}
+  {% url row_object_url_name object.id as my_url %}
+  <tr {% if row_object_url_name %}href="{{ my_url }}"{% endif %}>
+    {% for field in field_list %}
+      {% if "audio" in field.name|lower %}
+        <td>
+          {% if object.audio_file %}
+            <a href="{{ object.audio_file.url }}">Listen</a>
+          {% else %}
+            ---
+          {% endif %}
+        </td>
+      {% else %}
+        <td class="{{ field.class }}">
+          {% block table_td %}
+            {% get_field_value object field.name safe=True %}
+          {% endblock %}
+        </td>
+      {% endif %}
+    {% endfor %}
 
-        table, td, th {
-            font-size: 14px;
-        }
-    </style>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'ihub:index' %}">
-                {% trans "Home" %}
-            </a></li>
-            <li class="breadcrumb-item active" aria-current="page">
-                {% trans "Organizations" %}
-            </li>
-        </ol>
-    </nav>
-
-    <div class="indent-lg">
-
-        <h1 class="big-header">
-            {% trans "Organizations" %}
-        </h1>
-        <p>TOTAL: {{ object_list.count }}</p>
-
-        <form class="form" action="." method="get" id="filter-form">
-            <div class="row">
-                {% for field in filter.form %}
-                    <div class="col-5">
-                        {% bootstrap_field field placeholder="" size="small" %}
-                    </div>
-                {% endfor %}
-                <div class="col-3">
-                    <br>
-                    <div class="btn-group">
-                        <input type="submit" value="Filter" class="btn btn-sm btn-warning">
-                        <a href="." class="btn btn btn-secondary btn-sm">
-                            {% trans "Clear" %}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <br>
-        <div class="row">
-            <div class="col-12">
-
-                <div class="row">
-                    <div class="col">
-                        {% trans "(click on a header to sort table)" %}
-                    </div>
-                    <div class="col" style="text-align: center">
-                        <em>
-                            {% blocktrans with count=filter.qs.count %}
-                                displaying all {{ count }} records
-                            {% endblocktrans %}
-                        </em>
-                    </div>
-                    <div class="col" style="text-align: right; padding-bottom: 10px">
-                        <a href="{% url 'ihub:org_new' %}" class="btn btn-sm btn-primary">
-                            {% trans "New Organization" %}
-                        </a>
-                    </div>
-                </div>
-
-
-                <table class="table table-sm table-hover sortable">
-                    <thead>
-                    <tr>
-                        {% for field in field_list %}
-                            <th scope="col">{% get_verbose_label my_object field %}</th>
-                        {% endfor %}
-                        <th scope="col">Audio recording</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for object in filter.qs %}
-                        {% url 'ihub:org_detail' object.id as my_url %}
-                        <tr href="{{ my_url }}">
-                            {% for field in field_list %}
-                                <td>{% get_field_value object field %}</td>
-                            {% endfor %}
-                            <td>
-                                {% if object.audio_file %}
-
-                                    {#                                    <audio controls style="width: 100px; height: 10px">#}
-                                    {#                                        <source src="{{ object.audio_file.url }}" type="audio/ogg">#}
-                                    {#                                        Your browser does not support the audio element.#}
-                                    {#                                    </audio>#}
-                                    {#                                    #}
-                                    <a href="{{ object.audio_file.url }}">Listen</a>
-                                {% endif %}
-
-                            </td>
-
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-
-
-{% endblock content %}
+  </tr>
+{% endblock %}

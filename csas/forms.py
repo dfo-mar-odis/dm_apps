@@ -82,7 +82,7 @@ class MeetingForm(forms.ModelForm):
 
 class MeetingFormDocs(forms.ModelForm):
     class Meta:
-        model = models.MetMeetingDocs
+        model = models.MedMeetingDocs
         exclude = []
         widgets = {}
 
@@ -115,11 +115,9 @@ class MeetingFormOtherPars(forms.ModelForm):
 
 class MeetingFormOMCosts(forms.ModelForm):
     class Meta:
-        model = models.MetMeetingOMCosts
+        model = models.MocMeetingOMCosts
         exclude = []
         widgets = {
-            "p1": Textarea(attrs={"class": "hidden", "rows": 0, "cols": 0}),
-            "p2": Textarea(attrs={"class": "hidden", "rows": 0, "cols": 0}),
         }
 
     def __init__(self, *args, **kwargs):
@@ -129,7 +127,7 @@ class MeetingFormOMCosts(forms.ModelForm):
 
 class MeetingFormMedia(forms.ModelForm):
     class Meta:
-        model = models.MetMeetingMedia
+        model = models.MemMeetingMedia
         exclude = []
         widgets = {
             "media_attention_yes": Textarea(attrs={"rows": 3, "cols": 20}),
@@ -224,9 +222,7 @@ class PublicationFormComResults(forms.ModelForm):
         widgets = {
             "p1": Textarea(attrs={"class": "hidden", "rows": 0, "cols": 0}),
             "p2": Textarea(attrs={"class": "hidden", "rows": 0, "cols": 0}),
-            "media_line_desc": Textarea(attrs={"rows": 3, "cols": 20}),
-            "brief_mate_desc": Textarea(attrs={"rows": 3, "cols": 20}),
-            "other_comm_desc": Textarea(attrs={"rows": 3, "cols": 20})
+            "pub_description": Textarea(attrs={"rows": 2, "cols": 20})
         }
 
     def __init__(self, *args, **kwargs):

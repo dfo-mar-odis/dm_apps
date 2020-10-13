@@ -7,6 +7,25 @@ EXPECTED_CSS = 'csas/csas_css.css'
 TEST_PASSWORD = 'test1234'
 
 
+# use when a user needs to be logged in, and needs to be in the csas_super group
+def login_csas_super(test_case):
+    user_name = "Csas"
+    if User.objects.filter(username=user_name):
+        user = User.objects.get(username=user_name)
+    else:
+        csas_group = Group(name="csas_super")
+        csas_group.save()
+
+        user = User.objects.create_user(username=user_name, first_name="Hump", last_name="Back",
+                                        email="Hump.Back@dfo-mpo.gc.ca", password=TEST_PASSWORD)
+        user.groups.add(csas_group)
+        user.save()
+
+    test_case.client.login(username=user.username, password=TEST_PASSWORD)
+
+    return user
+
+
 # use when a user needs to be logged in, and needs to be in the csas_admin group
 def login_csas_admin(test_case):
     user_name = "Csas"

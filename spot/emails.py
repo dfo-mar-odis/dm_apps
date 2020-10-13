@@ -1,13 +1,16 @@
 from django.conf import settings
 from django.template import loader
 
+from dm_apps.context_processor import my_envr
+
 from_email = settings.SITE_FROM_EMAIL
 admin_email = 'test@dfo-mpo.gc.ca'
 stacy_email = 'test@dfo-mpo.gc.ca'
 
 
 class MasterEmail:
-    def __init__(self, object, email_name):
+    def __init__(self, object, email_name, request):
+        self.request = request
         self.object = object
         self.email_name = email_name
         self.title = self.__get_title__()
@@ -39,7 +42,7 @@ class MasterEmail:
         context = {
             'object': self.object,
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 

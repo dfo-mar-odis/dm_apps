@@ -1,0 +1,88 @@
+pool:
+  vmImage: 'Ubuntu 18.04'
+
+trigger:
+  - none
+
+# secret pipline vars:
+######################
+# AAD_APP_SECRET
+# DB_PASSWORD_WEB
+# DB_PASSWORD_PIPELINE
+# SECRET_KEY
+# AZURE_STORAGE_SECRET_KEY
+# SENDGRID_API_KEY
+# GITHUB_API_KEY
+###############
+
+# non-secret pipline vars:
+##########################
+# AAD_APP_ID
+# AAD_REDIRECT
+# AZURE_STORAGE_ACCOUNT_NAME
+# DB_HOST
+# DB_NAME
+# DB_USER_PIPELINE
+# DB_USER_WEB
+# DB_MODE
+# DEBUG
+# DEPLOYMENT_STAGE
+# SHOW_TICKETING_APP
+# WEB_APP_NAME
+# azureSubscription
+# DockerNamespace
+# DockerRepository
+# DockerImageTag
+###############
+
+steps:
+#  - task: AzureCLI@2
+#    inputs:
+#      azureSubscription: 'SP.DMAPPS'
+#      scriptType: 'bash'
+#      scriptLocation: 'inlineScript'
+#      inlineScript: |
+#        # sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
+#        az account set --subscription="IMTS DEV/TEST"
+#        sourceAcrName="dmappsdevacr"
+#        sourceRg="DMAPPS-DEV-RG"
+#        # sourceAcr="/subscriptions/3eb57d27-b726-402d-8cfe-a9a846b99121/resourceGroups/DMAPPS_DEV_RG/providers/Microsoft.ContainerRegistry/registries/dmappsdevacr"
+#
+#        sourceAcr=$(az acr show --name $sourceAcrName -g $sourceRg --subscription "IMTS DEV/TEST" --query "id")
+#        repo="dmapps_img"
+#        image="dmapps_img"
+#        tag="prod"
+#        targetAcrName="dmappsprodacr"
+#
+#        az acr login --name $sourceAcrName
+#        az account set --subscription="IMTS PROD UNCLASS"
+#        az acr import --name $targetAcrName --source $image:$tag --image $image:$tag --registry $sourceAcr
+#
+#    displayName: 'copy the latest production-ready image from dev ACR to prod ACR'
+
+  - template: \azure_scripts\docker-deploy-template.yml
+    parameters:
+      AAD_APP_ID: '$(AAD_APP_ID)'
+      AAD_APP_SECRET: '$(AAD_APP_SECRET)'
+      AAD_REDIRECT: '$(AAD_REDIRECT)'
+      AZURE_STORAGE_ACCOUNT_NAME: '$(AZURE_STORAGE_ACCOUNT_NAME)'
+      AZURE_STORAGE_SECRET_KEY: '$(AZURE_STORAGE_SECRET_KEY)'
+      azureSubscription: '$(azureSubscription)'
+      DB_HOST: '$(DB_HOST)'
+      DB_MODE: '$(DB_MODE)'
+      DB_NAME: '$(DB_NAME)'
+      DB_PASSWORD_PIPELINE: '$(DB_PASSWORD_PIPELINE)'
+      DB_PASSWORD_WEB: '$(DB_PASSWORD_WEB)'
+      DB_USER_PIPELINE: '$(DB_USER_PIPELINE)'
+      DB_USER_WEB: '$(DB_USER_WEB)'
+      DEBUG: '$(DEBUG)'
+      DEPLOYMENT_STAGE: '$(DEPLOYMENT_STAGE)'
+      DockerNamespace: '$(DockerNamespace)'
+      DockerRepository: '$(DockerRepository)'
+      DockerImageTag: '$(DockerImageTag)'
+      GITHUB_API_KEY: '$(GITHUB_API_KEY)'
+      SECRET_KEY: '$(SECRET_KEY)'
+      SENDGRID_API_KEY: '$(SENDGRID_API_KEY)'
+      SHOW_TICKETING_APP: '$(SHOW_TICKETING_APP)'
+      WEB_APP_NAME: '$(WEB_APP_NAME)'
+

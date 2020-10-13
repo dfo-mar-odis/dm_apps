@@ -5,6 +5,9 @@ parameters:
   - name: AAD_APP_SECRET
     type: string
 
+  - name: AAD_REDIRECT
+    type: string
+
   - name: AZURE_STORAGE_ACCOUNT_NAME
     type: string
 
@@ -47,7 +50,7 @@ parameters:
   - name: DockerRepository
     type: string
 
-  - name: GEODJANGO
+  - name: DockerImageTag
     type: string
 
   - name: GITHUB_API_KEY
@@ -60,9 +63,6 @@ parameters:
     type: string
 
   - name: SHOW_TICKETING_APP
-    type: string
-
-  - name: SITE_FULL_URL
     type: string
 
   - name: WEB_APP_NAME
@@ -107,24 +107,18 @@ steps:
       WebAppName: '${{parameters.WEB_APP_NAME}}'
       DockerNamespace: ${{parameters.DockerNamespace}}
       DockerRepository: ${{parameters.DockerRepository}}
-      DockerImageTag: latest
+      DockerImageTag: ${{parameters.DockerImageTag}}
       StartupCommand: init.sh
       AppSettings: >-
         -WEBSITES_PORT 8000
         -AAD_APP_ID ${{parameters.AAD_APP_ID}}
         -AAD_APP_SECRET ${{parameters.AAD_APP_SECRET}}
-        -AAD_AUTHORITY "https://login.microsoftonline.com/1594fdae-a1d9-4405-915d-011467234338"
-        -AAD_AUTHORIZE_ENDPOINT "/oauth2/v2.0/authorize"
-        -AAD_REDIRECT "https://${{parameters.WEB_APP_NAME}}.azurewebsites.net/accounts/callback"
-        -AAD_SCOPES  "openid user.read"
-        -AAD_TOKEN_ENDPOINT "/oauth2/v2.0/token"
+        -AAD_REDIRECT ${{parameters.AAD_REDIRECT}}
         -AZURE_STORAGE_ACCOUNT_NAME ${{parameters.AZURE_STORAGE_ACCOUNT_NAME}}
-        -SITE_FULL_URL ${{parameters.SITE_FULL_URL}}
         -SECRET_KEY ${{parameters.SECRET_KEY}}
         -ALLOWED_HOST_TO_ADD ${{parameters.WEB_APP_NAME}}.azurewebsites.net
         -SITE_FROM_EMAIL "DoNotReply@Sci-Zone.dfo-mpo.gc.ca"
         -SHOW_TICKETING_APP ${{parameters.SHOW_TICKETING_APP}}
-        -GEODJANGO ${{parameters.GEODJANGO}}
         -DEPLOYMENT_STAGE ${{parameters.DEPLOYMENT_STAGE}}
         -DB_HOST ${{parameters.DB_HOST}}
         -DB_MODE ${{parameters.DB_MODE}}

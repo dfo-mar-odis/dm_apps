@@ -719,12 +719,12 @@ class TrackingUpdateView(SpotAccessRequiredMixin, UpdateView):
         step_name = self.kwargs["step"]
         if step_name == "initiation":
             step_name = "Initiation"
-            context["email"] = emails.MasterEmail(my_object, "eoi_acknowledgement")
+            context["email"] = emails.MasterEmail(my_object, "eoi_acknowledgement", self.request)
         elif step_name == "review":
             step_name = "Regional Review"
         elif step_name == "negotiations":
             step_name = "Negotiations"
-            context["email"] = emails.MasterEmail(my_object, "negotiations")
+            context["email"] = emails.MasterEmail(my_object, "negotiations", self.request)
         elif step_name == "ca-admin":
             step_name = "CA Administration"
         elif step_name == "attributes":

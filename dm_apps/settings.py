@@ -39,8 +39,6 @@ DEBUG = config("DEBUG", cast=bool, default=False)
 LOGGING_LEVEL = config("LOGGING_LEVEL", cast=str, default="WARNING")
 # What is the path to the log file?
 LOG_FILE_PATH = config("LOG_FILE_PATH", cast=str, default=os.path.join(LOGS_DIR, 'error.log'))
-# this is used in email templates to link the recipient back to the site
-SITE_FULL_URL = config("SITE_FULL_URL", cast=str, default="http://dmapps")
 # the default 'from' email address used for system emails
 SITE_FROM_EMAIL = config("SITE_FROM_EMAIL", cast=str, default="DoNotReply.DMApps@Azure.Cloud.dfo-mpo.gc.ca")
 # google maps API key
@@ -98,8 +96,8 @@ ALLOWED_HOSTS = [
     'localhost',
     'dmapps',
     'dmapps.ent.dfo-mpo.ca',
-    'dmapps-dev.azurewebsites.net',
-    'dmapps-test-web.azurewebsites.net',
+    'dmapps-dev-docker.azurewebsites.net',
+    'dmapps-test-docker.azurewebsites.net',
     'dmapps-prod-web.azurewebsites.net',
     'dmapps-prod-web-staging.azurewebsites.net',
     'sci-zone.azure.cloud.dfo-mpo.gc.ca',
@@ -142,6 +140,8 @@ INSTALLED_APPS = [
                      'lib',
                      'shared_models',
                      'tickets',
+                     'phonenumber_field',
+                     'django_tables2'
                  ] + local_conf.MY_INSTALLED_APPS
 
 # If the GEODJANGO setting is set to False, turn off any apps that require it
@@ -230,7 +230,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Halifax'
+TIME_ZONE = config("TIME_ZONE", cast=str, default='UTC')
 
 USE_I18N = True
 

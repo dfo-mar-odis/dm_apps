@@ -12,7 +12,7 @@ import os
 
 
 class TestDep(TestCase):
-    fixtures = ['initial_data']
+    fixtures = ['initial_whale_data.json']
 
     @tag('dep', 'model', 'dep_model')
     def test_dep_station_events(self):
@@ -29,7 +29,7 @@ class TestDep(TestCase):
 
 class TestEmm(TestCase):
 
-    fixtures = ['initial_data']
+    fixtures = ['initial_whale_data.json']
 
     def setup(self):
         pass
@@ -75,7 +75,7 @@ class TestEmm(TestCase):
 # the test should explain why.
 class TestEdaEquipmentAttachment(TestCase):
 
-    fixtures = ['initial_data']
+    fixtures = ['initial_whale_data.json']
 
     def setUp(self) -> None:
         pass

@@ -419,6 +419,7 @@ class ReportSearchForm(forms.Form):
         (None, "------"),
         (1, "Batch XML export"),
         (2, "Open Data Inventory - Quarterly Report"),
+        (3, "Physical Collections Report (xlsx)"),
         # (2, "Organizational Report / Cue Card (PDF)"),
     )
 

@@ -1,66 +1,66 @@
 {% load i18n %}
 
 <li class="nav-item"><a class="nav-link" href="{% url 'travel:index' %}">
-    {% trans "Home" %}
+  {% trans "Home" %}
 </a></li>
 
 {% for group in user.groups.all %}
-    {% if group.name == "travel_admin" %}
-        <li class="nav-item"><a class="nav-link" href="{% url 'travel:trip_list' "all" %}">
-            {% trans "All Trips" %}
-        </a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'travel:request_list' "all" %}">
-            {% trans "All Requests" %}
-        </a></li>
+  {% if group.name == "travel_admin" %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'travel:trip_list' "all" %}">
+      {% trans "All Trips" %}
+    </a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'travel:request_list' "all" %}">
+      {% trans "All Requests" %}
+    </a></li>
 
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false">
-                {% trans "Settings" %}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'travel:manage_njc_rates' %}">
-                    {% trans "Manage NJC Rates" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'travel:manage_statuses' %}">
-                    {% trans "Manage Statuses" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'travel:manage_help_text' %}">
-                    {% trans "Manage Help Text" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'travel:manage_cost_categories' %}">
-                    {% trans "Manage Cost Categories" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'travel:manage_costs' %}">
-                    {% trans "Manage Costs" %}
-                </a>
-{#                <a class="dropdown-item" href="{% url 'travel:manage_reasons' %}">#}
-{#                    {% trans "Manage Trip Reasons" %}#}
-{#                </a>#}
-                <a class="dropdown-item" href="{% url 'travel:manage_trip_categories' %}">
-                    {% trans "Manage Trip Categories" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'travel:manage_trip_subcategories' %}">
-                    {% trans "Manage Trip Subcategories" %}
-                </a>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        {% trans "Settings" %}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'travel:manage_njc_rates' %}">
+          {% trans "Manage NJC Rates" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'travel:manage_statuses' %}">
+          {% trans "Manage Statuses" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'travel:manage_help_text' %}">
+          {% trans "Manage Help Text" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'travel:manage_cost_categories' %}">
+          {% trans "Manage Cost Categories" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'travel:manage_costs' %}">
+          {% trans "Manage Costs" %}
+        </a>
+        {#                <a class="dropdown-item" href="{% url 'travel:manage_reasons' %}">#}
+        {#                    {% trans "Manage Trip Reasons" %}#}
+        {#                </a>#}
+        <a class="dropdown-item" href="{% url 'travel:manage_trip_categories' %}">
+          {% trans "Manage Trip Categories" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'travel:manage_trip_subcategories' %}">
+          {% trans "Manage Trip Subcategories" %}
+        </a>
 
-                <a class="dropdown-item" href="{% url 'travel:default_reviewer_list' %}">
-                    {% trans "Set Default Reviewers" %}
-                </a>
-                <a class="dropdown-item" href="{% url 'shared_models:index' %}" target="_blank">
-                    {% trans "Manage DFO Organizations" %}
-                </a>
-                 <a class="dropdown-item" href="{% url 'travel:manage_process_steps' %}" target="_blank">
-                    {% trans "Manage Process Steps" %}
-                </a>
-            </div>
-        </li>
+        <a class="dropdown-item" href="{% url 'travel:default_reviewer_list' %}">
+          {% trans "Set Default Reviewers" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'shared_models:index' %}" target="_blank">
+          {% trans "Manage DFO Organizations" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'travel:manage_process_steps' %}" target="_blank">
+          {% trans "Manage Process Steps" %}
+        </a>
+      </div>
+    </li>
 
-    {% endif %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'travel:report_search' %}">
+      {% trans "Reports" %}
+    </a></li>
+  {% endif %}
 
 {% endfor %}
 
 
-<li class="nav-item"><a class="nav-link" href="{% url 'travel:report_search' %}">
-    {% trans "Reports" %}
-</a></li>

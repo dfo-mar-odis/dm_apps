@@ -331,6 +331,12 @@ class Conference(models.Model):
 
     def save(self, *args, **kwargs):
         self.fiscal_year = shared_models.FiscalYear.objects.get(pk=fiscal_year(next=False, date=self.start_date, sap_style=True))
+
+        # TODO: make sure this gets tested
+        # go through all the associated requests and update dates if applicable
+        for tr in self.trip_requests.all():
+            tr.save()
+
         # ensure the process order makes sense
         count = 1
         for reviewer in self.reviewers.all():  # use the default sorting
@@ -585,11 +591,12 @@ class TripRequest(models.Model):
 
     def save(self, *args, **kwargs):
         # if the start and end dates are null, but there is a trip, use those.. to populate
-        if self.trip and not self.start_date:
-            # print("adding start date from trip")
+        ## but also, if this is a group request, the start date should always be populated from the trip
+        # TODO: test me
+        if (self.trip and not self.start_date) or self.is_group_request:
             self.start_date = self.trip.start_date
+
         if self.trip and not self.end_date:
-            # print("adding end date from trip")
             self.end_date = self.trip.end_date
 
         if self.start_date:
@@ -626,7 +633,7 @@ class TripRequest(models.Model):
     def cost_breakdown(self):
         """used for CFTS and travel plan"""
         my_str = ""
-        for tr_cost in self.trip_request_costs.all():
+        for tr_cost in self.trip_request_costs.filter(amount_cad__isnull=False):
             if tr_cost.rate_cad:
                 my_str += "{}: ${:,.2f} ({} x {:,.2f}); ".format(
                     tr_cost.cost,

@@ -52,7 +52,7 @@ def get_app_dict(request):
 
     try:
         app_dict["travel"] = {
-            "title": _("Travel Management System"),
+            "title": _("Conference and Travel Management System"),
             "description": _("Management tool to facilitate regional and national travel pre-approvals."),
             "status": "production",
             "access": "permission-required",
@@ -335,15 +335,28 @@ def get_app_dict(request):
         }
     except NoReverseMatch:
         pass
+    #
+    # try:
+    #     app_dict["masterlist"] = {
+    #         "title": _("MasterList"),
+    #         "description": _("Regional master list and consultation instructions."),
+    #         "status": "dev",
+    #         "access": "permission-required",
+    #         "url": reverse('masterlist:index'),
+    #         "icon_path": 'img/icons/connection.svg',
+    #         "region": "regional",
+    #     }
+    # except NoReverseMatch:
+    #     pass
 
     try:
-        app_dict["masterlist"] = {
-            "title": _("MasterList"),
-            "description": _("Regional master list and consultation instructions."),
-            "status": "dev",
+        app_dict["engagements"] = {
+            "title": _("Engagement Tracking"),
+            "description": _("Stakeholder engagement tracking platform"),
+            "status": "Development",
             "access": "permission-required",
-            "url": reverse('masterlist:index'),
-            "icon_path": 'img/icons/connection.svg',
+            "url": reverse('engagements:home'),
+            "icon_path": "img/icons/network.svg",
             "region": "regional",
         }
     except NoReverseMatch:

@@ -11,7 +11,7 @@ from django.db.models.functions import Concat
 from django.shortcuts import render
 from django.utils import timezone
 from django.utils.safestring import mark_safe
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext as _, gettext_lazy
 from django_filters.views import FilterView
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.urls import reverse_lazy, reverse
@@ -20,6 +20,8 @@ from django.views.generic import UpdateView, DeleteView, CreateView, DetailView,
 from easy_pdf.views import PDFTemplateView
 
 from lib.functions.custom_functions import nz, listrify
+from shared_models.views import CommonFilterView, CommonDetailView, CommonUpdateView, CommonPopoutUpdateView, CommonPopoutCreateView, \
+    CommonDeleteView, CommonCreateView, CommonFormView, CommonHardDeleteView, CommonFormsetView, CommonPopoutDeleteView
 from . import models
 from . import forms
 from . import filters
@@ -30,12 +32,7 @@ from shared_models import models as shared_models
 
 
 def get_ind_organizations():
-    return ml_models.Organization.objects.filter(grouping__is_indigenous=True)
-
-
-# Create your views here.
-class CloserTemplateView(TemplateView):
-    template_name = 'ihub/close_me.html'
+    return ml_models.Organization.objects.filter(grouping__is_indigenous=True).distinct()
 
 
 def in_ihub_admin_group(user):
@@ -44,7 +41,6 @@ def in_ihub_admin_group(user):
 
 
 class iHubAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-
 
     def test_func(self):
         return in_ihub_admin_group(self.request.user)
@@ -65,7 +61,6 @@ def in_ihub_edit_group(user):
 
 class iHubEditRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
-
     def test_func(self):
         return in_ihub_edit_group(self.request.user)
 
@@ -77,7 +72,6 @@ class iHubEditRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
 
 class SiteLoginRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
-
 
     def test_func(self):
         return True
@@ -100,54 +94,56 @@ class IndexTemplateView(SiteLoginRequiredMixin, TemplateView):
 # PERSON #
 ##########
 
-class PersonListView(SiteLoginRequiredMixin, FilterView):
-    template_name = 'ihub/person_list.html'
+class PersonListView(SiteLoginRequiredMixin, CommonFilterView):
+    template_name = 'ihub/list.html'
     filterset_class = filters.PersonFilter
     model = ml_models.Person
     queryset = ml_models.Person.objects.annotate(
         search_term=Concat('first_name', 'last_name', 'designation', output_field=TextField()))
+    field_list = [
+        {"name": 'full_name_with_title|Full name', "class": "", "width": ""},
+        {"name": 'phone_1', "class": "", "width": ""},
+        {"name": 'phone_2', "class": "", "width": ""},
+        {"name": 'ihub_vetted', "class": "", "width": ""},
+    ]
+    new_object_url_name = "ihub:person_new"
+    row_object_url_name = "ihub:person_detail"
+    home_url_name = "ihub:index"
+    paginate_by = 100
+    h1 = gettext_lazy("Contacts")
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["my_object"] = ml_models.Person.objects.first()
-        context["field_list"] = [
-            'full_name_with_title|Full name',
-            'phone_1',
-            'phone_2',
-            'email_1',
-            'ihub_vetted',
-        ]
-        return context
 
-
-class PersonDetailView(SiteLoginRequiredMixin, DetailView):
+class PersonDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = ml_models.Person
     template_name = 'ihub/person_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["field_list"] = [
-            "designation",
-            "first_name",
-            "last_name",
-            "phone_1",
-            "phone_2",
-            "email_1",
-            "email_2",
-            "cell",
-            "fax",
-            "language",
-            "notes",
-            "ihub_vetted",
-            "last_modified_by",
-        ]
-        return context
+    field_list = [
+        "designation",
+        "first_name",
+        "last_name",
+        "phone_1",
+        "phone_2",
+        "email_1",
+        "email_2",
+        "cell",
+        "fax",
+        "language",
+        "notes",
+        "ihub_vetted",
+        "last_modified_by",
+    ]
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
 
 
-class PersonUpdateView(iHubEditRequiredMixin, UpdateView):
+class PersonUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = ml_models.Person
-    template_name = 'ihub/person_form.html'
+    template_name = 'ihub/form.html'
     form_class = forms.PersonForm
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
+
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:person_detail", args=[self.get_object().id])}
 
     def get_initial(self):
         return {
@@ -155,19 +151,10 @@ class PersonUpdateView(iHubEditRequiredMixin, UpdateView):
             'last_modified_by': self.request.user,
         }
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse_lazy('ihub:person_detail', kwargs={"pk": object.id}))
 
-
-class PersonUpdateViewPopout(iHubEditRequiredMixin, UpdateView):
-    template_name = 'ihub/person_form_popout.html'
+class PersonUpdateViewPopout(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = ml_models.Person
     form_class = forms.PersonForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
 
     def get_initial(self):
         return {
@@ -175,9 +162,22 @@ class PersonUpdateViewPopout(iHubEditRequiredMixin, UpdateView):
         }
 
 
-class PersonCreateView(iHubEditRequiredMixin, CreateView):
-    model = ml_models.Organization
-    template_name = 'ihub/person_form.html'
+class PersonCreateView(iHubEditRequiredMixin, CommonCreateView):
+    model = ml_models.Person
+    template_name = 'ihub/form.html'
+    form_class = forms.PersonForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
+
+    def get_initial(self):
+        return {
+            'last_modified_by': self.request.user,
+            'ihub_vetted': True,
+        }
+
+
+class PersonCreateViewPopout(iHubEditRequiredMixin, CommonPopoutCreateView):
+    model = ml_models.Person
     form_class = forms.PersonForm
 
     def get_initial(self):
@@ -185,158 +185,133 @@ class PersonCreateView(iHubEditRequiredMixin, CreateView):
             'last_modified_by': self.request.user,
         }
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse_lazy('ihub:person_detail', kwargs={"pk": object.id}))
 
-
-class PersonCreateViewPopout(iHubEditRequiredMixin, CreateView):
+class PersonDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
     model = ml_models.Person
-    template_name = 'ihub/person_form_popout.html'
-    form_class = forms.PersonForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-    def get_initial(self):
-        return {
-            'last_modified_by': self.request.user,
-        }
-
-
-class PersonDeleteView(iHubAdminRequiredMixin, DeleteView):
-    model = ml_models.Person
-    template_name = 'ihub/person_confirm_delete.html'
+    template_name = 'ihub/confirm_delete.html'
     success_url = reverse_lazy('ihub:person_list')
-    success_message = _('The person was deleted successfully!')
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title": _("Contacts"), "url": reverse_lazy("ihub:person_list")}
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:person_detail", args=[self.get_object().id])}
 
 
 # ORGANIZATION #
 ################
 
-class OrganizationListView(SiteLoginRequiredMixin, FilterView):
+class OrganizationListView(SiteLoginRequiredMixin, CommonFilterView):
     template_name = 'ihub/organization_list.html'
     filterset_class = filters.OrganizationFilter
     queryset = get_ind_organizations().annotate(
         search_term=Concat(
-            'name_eng',
-            Value(" "),
-            'abbrev',
-            Value(" "),
-            'name_ind',
-            Value(" "),
-            'former_name',
-            Value(" "),
-            'province__name',
-            Value(" "),
-            'province__nom',
-            Value(" "),
-            'province__abbrev_eng',
-            Value(" "),
-            'province__abbrev_fre',
-            output_field=TextField()))
+            'name_eng', Value(" "),
+            'abbrev', Value(" "),
+            'name_ind', Value(" "),
+            'former_name', Value(" "),
+            'province__name', Value(" "),
+            'province__nom', Value(" "),
+            'province__abbrev_eng', Value(" "),
+            'province__abbrev_fre', output_field=TextField()))
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["my_object"] = ml_models.Organization.objects.first()
-        context["field_list"] = [
-            'name_eng',
-            'name_ind',
-            'abbrev',
-            'province',
-            'grouping',
-            'full_address|' + _("Full address"),
-        ]
-        return context
+    field_list = [
+        {"name": 'name_eng', "class": "", "width": ""},
+        {"name": 'name_ind', "class": "", "width": ""},
+        {"name": 'abbrev', "class": "", "width": ""},
+        {"name": 'province', "class": "", "width": ""},
+        {"name": 'grouping', "class": "", "width": ""},
+        {"name": 'full_address|' + _("Full address"), "class": "", "width": ""},
+        {"name": 'Audio recording', "class": "", "width": ""},
+    ]
+    home_url_name = "ihub:index"
+    new_object_url_name = "ihub:org_new"
+    row_object_url_name = "ihub:org_detail"
 
 
-class OrganizationDetailView(SiteLoginRequiredMixin, DetailView):
+class OrganizationDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = ml_models.Organization
     template_name = 'ihub/organization_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["field_list"] = [
-            'name_eng',
-            # 'name_fre',
-            'name_ind',
-            'former_name',
-            'abbrev',
-            'address',
-            'mailing_address',
-            'city',
-            'postal_code',
-            'province',
-            'phone',
-            'fax',
-            'notes',
-            'consultation_protocol',
-        ]
-        context["field_list_2"] = [
-            # 'legal_band_name',
-            'relationship_rating',
-            'orgs',
-            'nation',
-            'website',
-            'council_quorum',
-            'next_election',
-            'new_coucil_effective_date',
-            'election_term',
-            'population_on_reserve',
-            'population_off_reserve',
-            'population_other_reserve',
-            'fin',
-            'processing_plant',
-            'wharf',
-            'reserves',
-        ]
-        return context
+    field_list = [
+        'name_eng',
+        'name_ind',
+        'former_name',
+        'abbrev',
+        'address',
+        'mailing_address',
+        'city',
+        'postal_code',
+        'province',
+        'phone',
+        'fax',
+        'notes',
+        'dfo_contact_instructions',
+        'consultation_protocol',
+        'relationship_rating',
+        'orgs',
+        'nation',
+        'website',
+        'council_quorum',
+        'next_election',
+        'new_coucil_effective_date',
+        'election_term',
+        'population_on_reserve',
+        'population_off_reserve',
+        'population_other_reserve',
+        'fin',
+        'processing_plant',
+        'wharf',
+        'reserves',
+    ]
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
+    container_class = "container-fluid"
 
 
-class OrganizationUpdateView(iHubEditRequiredMixin, UpdateView):
+class OrganizationUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = ml_models.Organization
-    template_name = 'ihub/organization_form.html'
+    template_name = 'ihub/form.html'
     form_class = forms.OrganizationForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
+    is_multipart_form_data = True
+
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:org_detail", args=[self.get_object().id])}
+
+
+class OrganizationCreateView(iHubEditRequiredMixin, CommonCreateView):
+    model = ml_models.Organization
+    template_name = 'ihub/form.html'
+    form_class = forms.OrganizationForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
+    is_multipart_form_data = True
 
     def form_valid(self, form):
         object = form.save()
         return HttpResponseRedirect(reverse_lazy('ihub:org_detail', kwargs={'pk': object.id}))
 
 
-class OrganizationCreateView(iHubEditRequiredMixin, CreateView):
+class OrganizationDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
     model = ml_models.Organization
-    template_name = 'ihub/organization_form.html'
-    form_class = forms.OrganizationForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse_lazy('ihub:org_detail', kwargs={'pk': object.id}))
-
-
-class OrganizationDeleteView(iHubAdminRequiredMixin, DeleteView):
-    model = ml_models.Organization
-    template_name = 'ihub/organization_confirm_delete.html'
+    template_name = 'ihub/confirm_delete.html'
     success_url = reverse_lazy('ihub:org_list')
-    success_message = _('The organization was deleted successfully!')
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Organizations"), "url": reverse_lazy("ihub:org_list")}
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:org_detail", args=[self.get_object().id])}
 
 
 # MEMBER  (ORGANIZATION PERSON) #
 #################################
 
-class MemberCreateView(iHubEditRequiredMixin, CreateView):
+class MemberCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = ml_models.OrganizationMember
     template_name = 'ihub/member_form_popout.html'
-
     form_class = forms.MemberForm
+    width = 1000
+    height = 700
 
     def get_initial(self):
         org = ml_models.Organization.objects.get(pk=self.kwargs['org'])
@@ -345,50 +320,17 @@ class MemberCreateView(iHubEditRequiredMixin, CreateView):
             'last_modified_by': self.request.user,
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        org = ml_models.Organization.objects.get(id=self.kwargs['org'])
-        context['organization'] = org
-
-        # get a list of people
-        person_list = [
-            '<a href="#" class="person_insert" code={id}>{first} {last}</a>'.format(
-                id=p.id, first=p.first_name, last=p.last_name
-            ) for p in ml_models.Person.objects.all()
-        ]
-
-        context['person_list'] = person_list
-
-        return context
-
     def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
+        obj = form.save()
+        return HttpResponseRedirect(reverse("ihub:member_edit", args=[obj.id]))
 
 
-class MemberUpdateView(iHubEditRequiredMixin, UpdateView):
+class MemberUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = ml_models.OrganizationMember
     template_name = 'ihub/member_form_popout.html'
     form_class = forms.MemberForm
-
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        # get a list of people
-        person_list = [
-            '<a href="#" class="person_insert" code={id}>{first} {last}</a>'.format(
-                id=p.id, first=p.first_name, last=p.last_name
-            ) for p in ml_models.Person.objects.all()
-        ]
-
-        context['person_list'] = person_list
-
-        return context
+    width = 1000
+    height = 800
 
     def get_initial(self):
         return {
@@ -396,36 +338,37 @@ class MemberUpdateView(iHubEditRequiredMixin, UpdateView):
         }
 
 
-class MemberDeleteView(iHubAdminRequiredMixin, DeleteView):
+class MemberDeleteView(iHubAdminRequiredMixin, CommonPopoutDeleteView):
     model = ml_models.OrganizationMember
-    template_name = 'ihub/member_confirm_delete_popout.html'
-    success_url = reverse_lazy("ihub:close_me")
 
 
 # ENTRY #
 #########
 
-class EntryListView(SiteLoginRequiredMixin, FilterView):
+class EntryListView(SiteLoginRequiredMixin, CommonFilterView):
     template_name = "ihub/entry_list.html"
     model = models.Entry
     filterset_class = filters.EntryFilter
+    field_list = [
+        {"name": 'title', "class": "", "width": ""},
+        {"name": 'entry_type', "class": "", "width": ""},
+        {"name": 'regions', "class": "", "width": ""},
+        {"name": 'organizations', "class": "", "width": ""},
+        {"name": 'sectors', "class": "", "width": ""},
+        {"name": 'status', "class": "", "width": "170px"},
+    ]
+    new_object_url_name = "ihub:entry_new"
+    row_object_url_name = "ihub:entry_detail"
+    home_url_name = "ihub:index"
+    h1 = gettext_lazy("Entries")
+    container_class = "container-fluid"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["my_object"] = models.Entry.objects.first()
-        context["field_list"] = [
-            'title',
-            'entry_type',
-            'regions',
-            'organizations',
-            'sectors',
-            'status',
-        ]
-        return context
 
-
-class EntryDetailView(SiteLoginRequiredMixin, DetailView):
+class EntryDetailView(SiteLoginRequiredMixin, CommonDetailView):
     model = models.Entry
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    container_class = "container-fluid"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -443,7 +386,6 @@ class EntryDetailView(SiteLoginRequiredMixin, DetailView):
             'last_modified_by',
             'created_by',
         ]
-
         context["field_list_1"] = [
             'fiscal_year',
             'funding_program',
@@ -455,29 +397,36 @@ class EntryDetailView(SiteLoginRequiredMixin, DetailView):
             'amount_lapsed',
             'amount_owing'
         ]
-
         return context
 
 
-class EntryUpdateView(iHubEditRequiredMixin, UpdateView):
+class EntryUpdateView(iHubEditRequiredMixin, CommonUpdateView):
     model = models.Entry
     form_class = forms.EntryForm
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    template_name = "ihub/form.html"
+
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:entry_detail", args=[self.get_object().id])}
 
     def get_initial(self):
         return {'last_modified_by': self.request.user}
 
 
-class EntryCreateView(iHubEditRequiredMixin, CreateView):
+class EntryCreateView(iHubEditRequiredMixin, CommonCreateView):
     model = models.Entry
     form_class = forms.EntryCreateForm
+    home_url_name = "ihub:index"
+    parent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    template_name = "ihub/form.html"
 
     def form_valid(self, form):
         object = form.save()
-
         models.EntryPerson.objects.create(entry=object, role=1, user_id=self.request.user.id, organization="DFO")
 
         # create a new email object
-        email = emails.NewEntryEmail(object)
+        email = emails.NewEntryEmail(object, self.request)
         # send the email object
 
         custom_send_mail(
@@ -497,50 +446,40 @@ class EntryCreateView(iHubEditRequiredMixin, CreateView):
         }
 
 
-class EntryDeleteView(iHubAdminRequiredMixin, DeleteView):
+class EntryDeleteView(iHubAdminRequiredMixin, CommonDeleteView):
     model = models.Entry
     success_url = reverse_lazy('ihub:entry_list')
-    success_message = _('The entry was successfully deleted!')
+    home_url_name = "ihub:index"
+    grandparent_crumb = {"title": _("Entries"), "url": reverse_lazy("ihub:entry_list")}
+    template_name = "ihub/confirm_delete.html"
+    delete_protection = False
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, self.success_message)
-        return super().delete(request, *args, **kwargs)
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse("ihub:entry_detail", args=[self.get_object().id])}
 
 
 # NOTES #
 #########
 
-class NoteCreateView(iHubEditRequiredMixin, CreateView):
+class NoteCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = models.EntryNote
-    template_name = 'ihub/note_form_popout.html'
     form_class = forms.NoteForm
+    width = 700
+    height = 750
 
     def get_initial(self):
         entry = models.Entry.objects.get(pk=self.kwargs['entry'])
         return {
             'author': self.request.user,
-            'entry': entry,
+            'entry': self.kwargs['entry'],
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        entry = models.Entry.objects.get(id=self.kwargs['entry'])
-        context['entry'] = entry
-        return context
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-
-class NoteUpdateView(iHubEditRequiredMixin, UpdateView):
+class NoteUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = models.EntryNote
-    template_name = 'ihub/note_form_popout.html'
     form_class = forms.NoteForm
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
+    width = 700
+    height = 750
 
 
 @login_required(login_url='/accounts/login/')
@@ -555,38 +494,22 @@ def note_delete(request, pk):
 # ENTRYPERSON #
 ###############
 
-class EntryPersonCreateView(iHubEditRequiredMixin, CreateView):
+class EntryPersonCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = models.EntryPerson
     template_name = 'ihub/entry_person_form_popout.html'
-
     form_class = forms.EntryPersonForm
 
     def get_initial(self):
         entry = models.Entry.objects.get(pk=self.kwargs['entry'])
         return {
-            'entry': entry,
+            'entry': self.kwargs['entry'],
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        entry = models.Entry.objects.get(id=self.kwargs['entry'])
-        context['entry'] = entry
-        return context
 
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-
-class EntryPersonUpdateView(iHubEditRequiredMixin, UpdateView):
+class EntryPersonUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = models.EntryPerson
     template_name = 'ihub/entry_person_form_popout.html'
     form_class = forms.EntryPersonForm
-
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
 
 
 @login_required(login_url='/accounts/login/')
@@ -601,41 +524,22 @@ def entry_person_delete(request, pk):
 # FILE #
 ########
 
-class FileCreateView(iHubEditRequiredMixin, CreateView):
+class FileCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
     model = models.File
-    template_name = 'ihub/file_form_popout.html'
-
+    is_multipart_form_data = True
     form_class = forms.FileForm
-    success_url = reverse_lazy('ihub:close_me')
 
     def get_initial(self):
         entry = models.Entry.objects.get(pk=self.kwargs['entry'])
         return {
-            'entry': entry,
+            'entry': self.kwargs['entry'],
         }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        entry = models.Entry.objects.get(id=self.kwargs['entry'])
-        context['entry'] = entry
-        return context
 
-
-class FileUpdateView(iHubEditRequiredMixin, UpdateView):
+class FileUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
     model = models.File
-    template_name = 'ihub/file_form_popout.html'
+    is_multipart_form_data = True
     form_class = forms.FileForm
-
-
-    def form_valid(self, form):
-        object = form.save()
-        return HttpResponseRedirect(reverse('ihub:close_me'))
-
-    def get_initial(self):
-        entry = models.Entry.objects.get(pk=self.kwargs['entry'])
-        return {
-            'date_uploaded': timezone.now(),
-        }
 
 
 @login_required(login_url='/accounts/login/')
@@ -645,6 +549,75 @@ def file_delete(request, pk):
     object.delete()
     messages.success(request, _("The file has been successfully deleted from the entry."))
     return HttpResponseRedirect(reverse_lazy("ihub:entry_detail", kwargs={"pk": object.entry.id}))
+
+
+# CONSULTATION INSTRUCTION #
+############################
+
+class InstructionCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
+    model = ml_models.ConsultationInstruction
+    form_class = forms.InstructionForm
+
+    def get_initial(self):
+        org = ml_models.Organization.objects.get(pk=self.kwargs['org'])
+        return {
+            'organization': org,
+            'last_modified_by': self.request.user
+        }
+
+
+class InstructionUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
+    model = ml_models.ConsultationInstruction
+    form_class = forms.InstructionForm
+    template_name = 'ihub/instruction_form.html'
+
+    def get_initial(self):
+        return {
+            'last_modified_by': self.request.user
+        }
+
+
+class InstructionDeleteView(iHubAdminRequiredMixin, CommonPopoutDeleteView):
+    model = ml_models.ConsultationInstruction
+
+
+# Consultation Role #
+#####################
+
+class ConsultationRoleCreateView(iHubEditRequiredMixin, CommonPopoutCreateView):
+    model = ml_models.ConsultationRole
+    form_class = forms.ConsultationRoleForm
+
+    def get_initial(self):
+        return {
+            'organization': self.kwargs['organization'],
+            'member': self.kwargs['member'],
+            'last_modified_by': self.request.user,
+        }
+
+    def form_valid(self, form):
+        obj = form.save()
+        return HttpResponseRedirect(reverse("ihub:member_edit", args=[obj.member.id]))
+
+
+class ConsultationRoleUpdateView(iHubEditRequiredMixin, CommonPopoutUpdateView):
+    model = ml_models.ConsultationRole
+    form_class = forms.ConsultationRoleForm
+
+    def get_initial(self):
+        return {
+            'last_modified_by': self.request.user,
+        }
+
+    def get_success_url(self):
+        return reverse("ihub:member_edit", args=[self.get_object().member.id])
+
+
+class ConsultationRoleDeleteView(iHubAdminRequiredMixin, CommonPopoutDeleteView):
+    model = ml_models.ConsultationRole
+
+    def get_success_url(self):
+        return reverse("ihub:member_edit", args=[self.get_object().member.id])
 
 
 # REPORTS #
@@ -664,6 +637,7 @@ class ReportSearchFormView(SiteLoginRequiredMixin, FormView):
     def form_valid(self, form):
         sectors = listrify(form.cleaned_data["sectors"])
         orgs = listrify(form.cleaned_data["organizations"])
+        orgs_w_consultation_instructions = listrify(form.cleaned_data["orgs_w_consultation_instructions"])
         statuses = listrify(form.cleaned_data["statuses"])
         entry_types = listrify(form.cleaned_data["entry_types"])
         org = int(nz(form.cleaned_data["single_org"]), 0)
@@ -716,6 +690,14 @@ class ReportSearchFormView(SiteLoginRequiredMixin, FormView):
                 "report_title": nz(report_title, "None"),
             }))
 
+        elif report == 7:
+            return HttpResponseRedirect(
+                f'{reverse("ihub:consultation_instructions_pdf")}?orgs={orgs_w_consultation_instructions}'
+            )
+        elif report == 8:
+            return HttpResponseRedirect(
+                f'{reverse("ihub:consultation_instructions_xlsx")}?orgs={orgs_w_consultation_instructions}'
+            )
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
             return HttpResponseRedirect(reverse("ihub:report_search"))
@@ -795,6 +777,7 @@ class OrganizationCueCard(PDFTemplateView):
             'processing_plant',
             'wharf',
             'consultation_protocol',
+            'dfo_contact_instructions',
             'council_quorum',
             'reserves',
             'orgs',
@@ -835,7 +818,6 @@ class OrganizationCueCard(PDFTemplateView):
 
 
 class PDFSummaryReport(PDFTemplateView):
-
     template_name = "ihub/report_pdf_summary.html"
 
     def get_pdf_filename(self):
@@ -935,7 +917,6 @@ class PDFSummaryReport(PDFTemplateView):
 
 
 class ConsultationLogPDFTemplateView(PDFTemplateView):
-
     template_name = "ihub/report_consultation_log.html"
 
     # def get_pdf_filename(self):
@@ -1000,273 +981,176 @@ class ConsultationLogPDFTemplateView(PDFTemplateView):
         return context
 
 
+class ReportConsultationInstructionsPDFView(PDFTemplateView):
+    template_name = 'ihub/report_consultation_instructions.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        orgs = self.request.GET["orgs"] if self.request.GET.get("orgs") else "None"
+        orgs = None if orgs == "None" else orgs
+
+        # if there are some organizations that are specified,
+        if orgs:
+            # we have to refine the queryset to only the selected orgs
+            object_list = ml_models.ConsultationInstruction.objects.filter(organization_id__in=orgs.split(","))
+        else:
+            # else return all orgs
+            object_list = ml_models.ConsultationInstruction.objects.all()
+        context["object_list"] = object_list
+        context["now"] = timezone.now()
+        # now we need to refine the list again to only
+        return context
+
+
+def consultation_instructions_export_spreadsheet(request):
+    orgs = request.GET["orgs"] if request.GET.get("orgs") else "None"
+    file_url = reports.consultation_instructions_export_spreadsheet(orgs)
+
+    if os.path.exists(file_url):
+        with open(file_url, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = f'inline; ' \
+                                              f'filename="iHub Consultation Instructions Export ({timezone.now().strftime("%Y-%m-%d")}).xlsx"'
+            return response
+    raise Http404
+
+
 # SETTINGS #
 ############
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_sectors(request):
-    if request.method == 'POST':
-        formset = forms.SectorFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Sectors have been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_sectors"))
-    else:
-        qs = ml_models.Sector.objects.all()
-        formset = forms.SectorFormSet(
-            queryset=qs)
-    context = {}
-    context['title'] = "Manage Sectors"
-    context['formset'] = formset
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'name',
-        'nom',
-    ]
-    return render(request, 'ihub/manage_settings_small.html', context)
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_orgs(request):
-    if request.method == 'POST':
-        formset = forms.OrganizationFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Organizations have been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_orgs"))
-    else:
-        qs = get_ind_organizations()
-        formset = forms.OrganizationFormSet(
-            queryset=qs)
-    context = {}
-    context['title'] = "Manage Organizations"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings.html', context)
+class OrganizationFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/organization_formset.html'
+    h1 = "Manage Organizations"
+    queryset = get_ind_organizations()
+    formset_class = forms.OrganizationFormSet
+    success_url_name = "ihub:manage_orgs"
+    home_url_name = "ihub:index"
+    container_class = "container-fluid"
 
 
-def delete_status(request, pk):
-    my_obj = models.Status.objects.get(pk=pk)
-    my_obj.delete()
-    return HttpResponseRedirect(reverse("ihub:manage_statuses"))
+class SectorFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Sectors"
+    queryset = ml_models.Sector.objects.all()
+    formset_class = forms.SectorFormSet
+    success_url_name = "ihub:manage_sectors"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_sector"
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_statuses(request):
-    if request.method == 'POST':
-        formset = forms.StatusFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Statuses have been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_statuses"))
-    else:
-        qs = models.Status.objects.all()
-        formset = forms.StatusFormSet(
-            queryset=qs)
-    context = {}
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'name',
-        'nom',
-        'color',
-    ]
-    context['title'] = "Manage Statuses"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings_small.html', context)
+class SectorHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = ml_models.Sector
+    success_url = reverse_lazy("ihub:manage_sectors")
 
 
-def delete_entry_type(request, pk):
-    my_obj = models.EntryType.objects.get(pk=pk)
-    my_obj.delete()
-    return HttpResponseRedirect(reverse("ihub:manage_entry_types"))
+class StatusFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Statuses"
+    queryset = models.Status.objects.all()
+    formset_class = forms.StatusFormSet
+    success_url_name = "ihub:manage_statuses"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_status"
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_entry_types(request):
-    if request.method == 'POST':
-        formset = forms.EntryTypeFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Entry types have been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_entry_types"))
-    else:
-        qs = models.EntryType.objects.all()
-        formset = forms.EntryTypeFormSet(
-            queryset=qs)
-    context = {}
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'name',
-        'nom',
-        'color',
-    ]
-    context['title'] = "Manage Entry Types"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings_small.html', context)
+class StatusHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = models.Status
+    success_url = reverse_lazy("ihub:manage_statuses")
 
 
-def delete_funding_purpose(request, pk):
-    my_obj = models.FundingPurpose.objects.get(pk=pk)
-    my_obj.delete()
-    return HttpResponseRedirect(reverse("ihub:manage_funding_purposes"))
+class EntryTypeFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Entry Types"
+    queryset = models.EntryType.objects.all()
+    formset_class = forms.EntryTypeFormSet
+    success_url_name = "ihub:manage_entry_types"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_entry_type"
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_funding_purposes(request):
-    if request.method == 'POST':
-        formset = forms.FundingPurposeFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Funding purposes have been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_funding_purposes"))
-    else:
-        qs = models.FundingPurpose.objects.all()
-        formset = forms.FundingPurposeFormSet(
-            queryset=qs)
-    context = {}
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'name',
-        'nom',
-    ]
-    context['title'] = "Manage Funding Purposes"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings_small.html', context)
+class EntryTypeHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = models.EntryType
+    success_url = reverse_lazy("ihub:manage_entry_types")
 
 
-def delete_reserve(request, pk):
-    my_obj = ml_models.Reserve.objects.get(pk=pk)
-    my_obj.delete()
-    return HttpResponseRedirect(reverse("ihub:manage_reserves"))
+class FundingPurposeFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Funding Purposes"
+    queryset = models.FundingPurpose.objects.all()
+    formset_class = forms.FundingPurposeFormSet
+    success_url_name = "ihub:manage_funding_purposes"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_funding_purpose"
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_reserves(request):
-    if request.method == 'POST':
-        formset = forms.ReserveFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Reverse list has been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_reserves"))
-    else:
-        qs = ml_models.Reserve.objects.all()
-        formset = forms.ReserveFormSet(
-            queryset=qs)
-    context = {}
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'name',
-    ]
-    context['title'] = "Manage Reserve List"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings_small.html', context)
+class FundingPurposeHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = models.FundingPurpose
+    success_url = reverse_lazy("ihub:manage_funding_purposes")
 
 
-def delete_nation(request, pk):
-    my_obj = ml_models.Nation.objects.get(pk=pk)
-    my_obj.delete()
-    return HttpResponseRedirect(reverse("ihub:manage_nations"))
+class ReserveFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Reserves"
+    queryset = ml_models.Reserve.objects.all()
+    formset_class = forms.ReserveFormSet
+    success_url_name = "ihub:manage_reserves"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_reserve"
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_nations(request):
-    if request.method == 'POST':
-        formset = forms.NationFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Nation list has been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_nations"))
-    else:
-        qs = ml_models.Nation.objects.all()
-        formset = forms.NationFormSet(
-            queryset=qs)
-    context = {}
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'name',
-    ]
-    context['title'] = "Manage Nation List"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings_small.html', context)
+class ReserveHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = ml_models.Reserve
+    success_url = reverse_lazy("ihub:manage_reserves")
 
 
-def delete_program(request, pk):
-    my_obj = models.FundingProgram.objects.get(pk=pk)
-    my_obj.delete()
-    return HttpResponseRedirect(reverse("ihub:manage_programs"))
+class NationFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Nations"
+    queryset = ml_models.Nation.objects.all()
+    formset_class = forms.NationFormSet
+    success_url_name = "ihub:manage_nations"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_nation"
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_programs(request):
-    if request.method == 'POST':
-        formset = forms.FundingProgramFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "Funding program list has been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_programs"))
-    else:
-        qs = models.FundingProgram.objects.all()
-        formset = forms.FundingProgramFormSet(
-            queryset=qs)
-    context = {}
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'name',
-        'nom',
-        'abbrev_eng',
-        'abbrev_fre',
-    ]
-    context['title'] = "Manage Funding Program List"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings_small.html', context)
-
-def delete_rating(request, pk):
-    my_obj = ml_models.RelationshipRating.objects.get(pk=pk)
-    my_obj.delete()
-    return HttpResponseRedirect(reverse("ihub:manage_ratings"))
+class NationHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = ml_models.Nation
+    success_url = reverse_lazy("ihub:manage_nations")
 
 
-@login_required(login_url='/accounts/login/')
-@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
-def manage_ratings(request):
-    qs = ml_models.RelationshipRating.objects.all()
-    if request.method == 'POST':
-        formset = forms.RelationshipRatingFormSet(request.POST, )
-        if formset.is_valid():
-            formset.save()
-            # do something with the formset.cleaned_data
-            messages.success(request, "relationship rating list has been successfully updated")
-            return HttpResponseRedirect(reverse("ihub:manage_ratings"))
-    else:
-        formset = forms.RelationshipRatingFormSet(
-            queryset=qs)
-    context = {}
-    context["my_object"] = qs.first()
-    context["field_list"] = [
-        'level',
-        'name',
-        'nom',
-    ]
-    context['title'] = "Manage Relationship Rating List"
-    context['formset'] = formset
-    return render(request, 'ihub/manage_settings_small.html', context)
+class FundingProgramFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Funding Programs"
+    queryset = models.FundingProgram.objects.all()
+    formset_class = forms.FundingProgramFormSet
+    success_url_name = "ihub:manage_programs"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_program"
 
 
-class UserListView(iHubAdminRequiredMixin, FilterView):
+class FundingProgramHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = models.FundingProgram
+    success_url = reverse_lazy("ihub:manage_programs")
+
+
+class RelationshipRatingFormsetView(iHubAdminRequiredMixin, CommonFormsetView):
+    template_name = 'ihub/formset.html'
+    h1 = "Manage Relationship Ratings"
+    queryset = ml_models.RelationshipRating.objects.all()
+    formset_class = forms.RelationshipRatingFormSet
+    success_url_name = "ihub:manage_ratings"
+    home_url_name = "ihub:index"
+    delete_url_name = "ihub:delete_rating"
+
+
+class RelationshipRatingHardDeleteView(iHubAdminRequiredMixin, CommonHardDeleteView):
+    model = ml_models.RelationshipRating
+    success_url = reverse_lazy("ihub:manage_ratings")
+
+
+class UserListView(iHubAdminRequiredMixin, CommonFilterView):
     template_name = "ihub/user_list.html"
     filterset_class = filters.UserFilter
 
@@ -1294,6 +1178,8 @@ class UserListView(iHubAdminRequiredMixin, FilterView):
         return context
 
 
+@login_required(login_url='/accounts/login/')
+@user_passes_test(in_ihub_admin_group, login_url='/accounts/denied/')
 def toggle_user(request, pk, type):
     my_user = User.objects.get(pk=pk)
     admin_group = Group.objects.get(pk=18)

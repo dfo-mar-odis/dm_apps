@@ -1,131 +1,20 @@
-{% extends "ihub/ihub_base.html" %}
+{% extends "ihub/list.html" %}
 {% load static %}
-{% load humanize %}
-{% load i18n %}
 {% load custom_filters %}
+{% load verbose_names %}
 
-{% block content %}
-    {% load bootstrap4 %}
+{% block table_td %}
 
-    <style>
-        form, input {
-            font-size: small;
-        }
+  {% if "entry_type" in field.name %}
+    <span class='px-2 py-1' style="background-color: {{ object.entry_type.color }}">{% get_field_value object field.name safe=True %}
+    </span>
 
-        table, td, th {
-            font-size: 14px;
-        }
+  {% elif "status" in field.name %}
+    <span class='px-2 py-1' style="background-color: {{ object.status.color }}">{% get_field_value object field.name safe=True %}
+    </span>
 
+  {% else %}
+    {% get_field_value object field.name safe=True %}
 
-    </style>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">
-                {% trans "All Entries" %}
-            </li>
-        </ol>
-    </nav>
-
-    <div class="indent-lg">
-        <h1>
-            {% trans "iHub Entries" %}
-        </h1>
-
-
-        <form class="form" action="." method="get" id="filter-form">
-            <div class="row">
-
-                {% for field in filter.form %}
-                    {# {{field.label}}: &nbsp; {{field}}&nbsp;&nbsp; #}
-                    <div class="col">
-                        {% bootstrap_field field placeholder="" size="small" %}
-                    </div>
-
-                {% endfor %}
-                <div class="col">
-                    <br>
-                    <div class="btn-group">
-                        <input type="submit" value="{% trans "Filter" %}" class="btn btn-warning btn-sm">
-                        <a href="." class="btn btn btn-secondary btn-sm">
-                            {% trans "Clear" %}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <br>
-        <div class="col" style="text-align: center; padding-bottom: 10px">
-            <h4>
-                <a href="{% url 'ihub:entry_new' %}">Click here to create a new entry</a>
-            </h4>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                {% trans "(click on a header to sort table)" %}
-            </div>
-            <div class="col" style="text-align: right">
-                <em>
-                    {% blocktrans with count=filter.qs.count %}
-                        displaying all {{ count }} records
-                    {% endblocktrans %}
-                </em>
-            </div>
-
-        </div>
-
-        <table class="table table-hover table-sm sortable">
-            <thead>
-            <th scope="col" style="width: 450px;">
-                {% trans "Title" %}
-            </th>
-            <th scope="col">
-                {% trans "Type" %}
-            </th>
-            <th scope="col">
-                {% trans "Regions" %}
-            </th>
-            <th scope="col">
-                {% trans "Organization" %}
-            </th>
-            <th scope="col">
-                {% trans "DFO Sector" %}
-            </th>
-
-            <th scope="col">
-                {% trans "Status" %}
-            </th>
-
-            </tr>
-            </thead>
-            <tbody>
-
-            {% for obj in filter.qs %}
-                <tr href="{% url 'ihub:entry_detail' obj.id %}">
-                    <td>{{ obj.title }}</td>
-                    <td style="background-color: {{ obj.entry_type.color }}">{{ obj.entry_type }}</td>
-                    <td>
-                        {% for region in obj.regions.all %}
-                            {{ region }}<br>
-                        {% endfor %}
-                    </td>
-                    <td>
-                        {% for org in obj.organizations.all %}
-                            {{ org }}<br>
-                        {% endfor %}
-                    </td>
-                    <td>
-                        {% for sector in obj.sectors.all %}
-                            {{ sector }}<br>
-                        {% endfor %}
-                    </td>
-                    <td style="background-color: {{ obj.status.color }}">{{ obj.status }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-    </div>
-
-{% endblock content %}
+  {% endif %}
+{% endblock %}

@@ -8,7 +8,7 @@
 {% block body %}
     <div class="container pt-5 text-center">
         <div class="jumbotron border border-dark">
-            {% trans "<h1>CSAS Tracking Tool</h1>" %}
+            <h1>{% trans "CSAS Tracking Tool" %}</h1>
         </div>
     </div>
 
@@ -17,11 +17,11 @@
         <hr>    <!-- add a line -->
             <div class="row mb-2">
                 <div class="col-1"> </div>
-                <div class="col-5">{% trans "<h3>Requests for Science Advice</h3>" %}</div>
+                <div class="col-5"><h3>{% trans "Requests for Science Advice" %}</h3></div>
                 <div class="col-1"><a class="btn btn-secondary btn-lg"
                                       href="{% url 'csas:list_req'%}">{% trans "All" %}</a></div>
                 <div class="col-2"><a class="btn btn-secondary btn-lg"
-                                      href="{% url 'csas:list_req'%}">{% trans "Maritimes" %}</a></div>
+                                      href="{% url 'csas:list_req_reg'%}">{% trans "Maritimes" %}</a></div>
                 {# if the user is in csas-users group and has permissions to input New Requests #}
                 {% if auth %}
                     <div class="col-3"><a class="btn btn-secondary btn-lg"
@@ -32,11 +32,11 @@
 
             <div class="row mb-2">
                 <div class="col-1"> </div>
-                <div class="col-5">{% trans "<h3>Schedule of Meetings</h3>" %}</div>
+                <div class="col-5"><h3>{% trans "Schedule of Meetings" %}</h3></div>
                 <div class="col-1"><a class="btn btn-secondary btn-lg"
                                       href="{% url 'csas:list_met'%}">{% trans "All" %}</a></div>
                 <div class="col-2"><a class="btn btn-secondary btn-lg"
-                                      href="{% url 'csas:list_met'%}">{% trans "Maritimes" %}</a></div>
+                                      href="{% url 'csas:list_met_reg'%}">{% trans "Maritimes" %}</a></div>
                 {# if the user is in csas-admin group authenticated and has permissions to input New Meetings #}
                 {% if csas_admin %}
                     <div class="col-3"><a class="btn btn-secondary btn-lg"
@@ -47,11 +47,11 @@
 
             <div class="row mb-2">
                 <div class="col-1"> </div>
-                <div class="col-5">{% trans "<h3> Publications </h3>" %}</div>
+                <div class="col-5"><h3>{% trans "Publications" %}</h3></div>
                 <div class="col-1"><a class="btn btn-secondary btn-lg"
                                       href="{% url 'csas:list_pub'%}">{% trans "All" %}</a></div>
                 <div class="col-2"><a class="btn btn-secondary btn-lg"
-                                      href="{% url 'csas:list_pub'%}">{% trans "Maritimes" %}</a></div>
+                                      href="{% url 'csas:list_pub_reg'%}">{% trans "Maritimes" %}</a></div>
                 {# if the user is in csas-admin group authenticated and has permissions to input New Publications #}
                 {% if csas_admin %}
                     <div class="col-3"><a class="btn btn-secondary btn-lg"
@@ -62,11 +62,11 @@
 
             <div class="row mb-2">
                 <div class="col-1"> </div>
-                <div class="col-5">{% trans "<h3> Contacts </h3>" %}</div>
+                <div class="col-5"><h3> {% trans "Contacts" %}</h3></div>
                 <div class="col-1"><a class="btn btn-secondary btn-lg"
                                       href="{% url 'csas:list_con'%}">{% trans "All" %}</a></div>
                 <div class="col-2"><a class="btn btn-secondary btn-lg"
-                                      href="{% url 'csas:list_con'%}">{% trans "Maritimes" %}</a></div>
+                                      href="{% url 'csas:list_con_reg'%}">{% trans "Maritimes" %}</a></div>
                 {# if the user is in csas-users group and has permissions to input New Contact #}
                 {% if csas_admin %}
                     <div class="col-3"><a class="btn btn-secondary btn-lg"
@@ -76,4 +76,28 @@
             <hr/>
         </div>
     </div>
+
+    {# ############################################################################################################# #}
+    {# To add a new lookup table to this section add the details to the 'lookup' list in the IndexTemplateView       #}
+    {# get_context method in the views.py file.                                                                      #}
+    {# ############################################################################################################# #}
+
+    {% if csas_super %}
+    <div class="container pt-3">
+        <div class="jumbotron border border-dark">
+            <h2>{% trans "Controlled Lists" %}</h2>
+            {% for lookup in lookups %}
+            <hr/>
+            <div class="row mb-2">
+                <div class="col-1"> </div>
+                <div class="col-5"><h3>{% trans lookup.title %}</h3></div>
+                <div class="col-1"><a class="btn btn-secondary btn-lg"
+                                      href="{% url ''|add:lookup.list_url %}">{% trans "All" %}</a></div>
+                <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                      href="{% url ''|add:lookup.create_url %}"> + </a></div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
 {% endblock body %}

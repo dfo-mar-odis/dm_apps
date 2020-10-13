@@ -134,7 +134,7 @@ def generate_capacity_spreadsheet(fy, orgs, sectors):
                 str(e.status),
                 sectors,
                 str(e.entry_type),
-                e.initial_date.strftime("%Y-%m-%d"),
+                e.initial_date.strftime("%Y-%m-%d") if e.initial_date else "n/a",
                 e.anticipated_end_date.strftime("%Y-%m-%d") if e.anticipated_end_date else "",
                 str(e.funding_program),
                 regions,
@@ -173,14 +173,6 @@ def generate_capacity_spreadsheet(fy, orgs, sectors):
         for j in range(0, len(col_max)):
             my_ws.set_column(j, j, width=col_max[j] * 1.1)
 
-        # set formatting on currency columns
-        # my_ws.set_column(first_col=10, last_col=10, cell_format=money_format)
-        # my_ws.set_column(header.index("Funding requested"), header.index("Funding requested"), cell_format=money_format)
-        # my_ws.set_column(header.index("Funding approved"), header.index("Funding approved"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount transferred"), header.index("Amount transferred"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount lapsed"), header.index("Amount lapsed"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount outstanding"), header.index("Amount outstanding"), cell_format=money_format)
-
         # sum all the currency columns
         total_row = [
             _("GRAND TOTAL:"),
@@ -190,28 +182,30 @@ def generate_capacity_spreadsheet(fy, orgs, sectors):
             tot_lapsed,
             tot_outstanding,
         ]
-        print(header)
-        my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
+        try:
+            my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
 
-        # set formatting for status
-        for status in models.Status.objects.all():
-            my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(status.name),
-                                         'format': workbook.add_format({'bg_color': status.color, }),
-                                     })
+            # set formatting for status
+            for status in models.Status.objects.all():
+                my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(status.name),
+                                             'format': workbook.add_format({'bg_color': status.color, }),
+                                         })
 
-        # set formatting for entry type
-        for entry_type in models.EntryType.objects.all():
-            my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(entry_type.name),
-                                         'format': workbook.add_format({'bg_color': entry_type.color, }),
-                                     })
+            # set formatting for entry type
+            for entry_type in models.EntryType.objects.all():
+                my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(entry_type.name),
+                                             'format': workbook.add_format({'bg_color': entry_type.color, }),
+                                         })
+        except:
+            print("problem with summary row")
 
     workbook.close()
     return target_url
@@ -359,7 +353,7 @@ def generate_summary_spreadsheet(fy, orgs, sectors):
                 str(e.status),
                 sectors,
                 str(e.entry_type),
-                e.initial_date.strftime("%Y-%m-%d"),
+                e.initial_date.strftime("%Y-%m-%d") if e.initial_date else "n/a",
                 e.anticipated_end_date.strftime("%Y-%m-%d") if e.anticipated_end_date else "",
                 regions,
                 people,
@@ -400,14 +394,6 @@ def generate_summary_spreadsheet(fy, orgs, sectors):
         for j in range(0, len(col_max)):
             my_ws.set_column(j, j, width=col_max[j] * 1.1)
 
-        # set formatting on currency columns
-        # my_ws.set_column(first_col=10, last_col=10, cell_format=money_format)
-        # my_ws.set_column(header.index("Funding requested"), header.index("Funding requested"), cell_format=money_format)
-        # my_ws.set_column(header.index("Funding approved"), header.index("Funding approved"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount transferred"), header.index("Amount transferred"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount lapsed"), header.index("Amount lapsed"), cell_format=money_format)
-        # my_ws.set_column(header.index("Amount outstanding"), header.index("Amount outstanding"), cell_format=money_format)
-
         # sum all the currency columns
         total_row = [
             _("GRAND TOTAL:"),
@@ -417,27 +403,30 @@ def generate_summary_spreadsheet(fy, orgs, sectors):
             tot_lapsed,
             tot_outstanding,
         ]
-        my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
+        try:
+            my_ws.write_row(i + 2, header.index(_("Funding requested")) - 1, total_row, total_format)
 
-        # set formatting for status
-        for status in models.Status.objects.all():
-            my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(status.name),
-                                         'format': workbook.add_format({'bg_color': status.color, }),
-                                     })
+            # set formatting for status
+            for status in models.Status.objects.all():
+                my_ws.conditional_format(0, header.index(_("status").title()), i, header.index(_("status").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(status.name),
+                                             'format': workbook.add_format({'bg_color': status.color, }),
+                                         })
 
-        # set formatting for entry type
-        for entry_type in models.EntryType.objects.all():
-            my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
-                                     {
-                                         'type': 'cell',
-                                         'criteria': 'equal to',
-                                         'value': '"{}"'.format(entry_type.name),
-                                         'format': workbook.add_format({'bg_color': entry_type.color, }),
-                                     })
+            # set formatting for entry type
+            for entry_type in models.EntryType.objects.all():
+                my_ws.conditional_format(0, header.index(_("Entry Type").title()), i, header.index(_("Entry Type").title()),
+                                         {
+                                             'type': 'cell',
+                                             'criteria': 'equal to',
+                                             'value': '"{}"'.format(entry_type.name),
+                                             'format': workbook.add_format({'bg_color': entry_type.color, }),
+                                         })
+        except:
+            print("problem with summary row")
 
     workbook.close()
     return target_url
@@ -548,10 +537,105 @@ def generate_consultation_log_spreadsheet(fy, orgs, statuses, entry_types, repor
         data_row = [
             col_1,
             col_2,
-            e.initial_date.strftime("%m/%d/%Y"),
+            e.initial_date.strftime("%m/%d/%Y") if e.initial_date else "n/a",
             people,
             other_notes.replace("\\r\\n", "\r\n"),
             followups.replace("\\r\\n", "\r\n") if followups else "",
+        ]
+
+        # adjust the width of the columns based on the max string length in each col
+        ## replace col_max[j] if str length j is bigger than stored value
+
+        j = 0
+        for d in data_row:
+            # if new value > stored value... replace stored value
+            if len(str(d)) > col_max[j]:
+                if len(str(d)) < 75:
+                    col_max[j] = len(str(d))
+                else:
+                    col_max[j] = 75
+            j += 1
+
+        my_ws.write_row(i, 0, data_row, normal_format)
+        i += 1
+
+    # set column widths
+    for j in range(0, len(col_max)):
+        my_ws.set_column(j, j, width=col_max[j] * 1.1)
+
+    workbook.close()
+    return target_url
+
+
+
+
+def consultation_instructions_export_spreadsheet(orgs=None):
+    # figure out the filename
+    target_dir = os.path.join(settings.BASE_DIR, 'media', 'ihub', 'temp')
+    target_file = "temp_data_export_{}.xlsx".format(timezone.now().strftime("%Y-%m-%d"))
+    target_file_path = os.path.join(target_dir, target_file)
+    target_url = os.path.join(settings.MEDIA_ROOT, 'ihub', 'temp', target_file)
+
+    # first, filter out the "none" placeholder
+    orgs = None if orgs == "None" else orgs
+
+    # if there are some organizations that are specified,
+    if orgs:
+        # we have to refine the queryset to only the selected orgs
+        object_list = ml_models.ConsultationInstruction.objects.filter(organization_id__in=orgs.split(","))
+    else:
+        # else return all orgs
+        object_list = ml_models.ConsultationInstruction.objects.all()
+
+
+    # create workbook and worksheets
+    workbook = xlsxwriter.Workbook(target_file_path)
+
+    # create formatting
+    title_format = workbook.add_format({'bold': True, "align": 'normal', 'font_size': 24, })
+    header_format = workbook.add_format(
+        {'bold': True, 'border': 1, 'border_color': 'black', 'bg_color': '#a6cbf5', "align": 'normal', "text_wrap": True,
+         "valign": 'top', })
+    normal_format = workbook.add_format({
+        "align": 'left', "text_wrap": True, 'num_format': 'mm/dd/yyyy', "valign": 'top',
+    })
+
+    # define the header
+    header = [
+        "Community",
+        "Address Letter To",
+        "cc: on Bottom of Letter",
+        "Mailing Address",
+        "Chief/Primary Point of Contact Name",
+        "Chief/Primary Point of Contact Email",
+        "Chief/Primary Point of Contact Phone",
+        "Paper Copy",
+        "To",
+        "Cc",
+        "Cc Commercial",
+    ]
+
+    my_ws = workbook.add_worksheet(name="mail_merge")
+
+    # create the col_max column to store the length of each header
+    # should be a maximum column width to 100
+    col_max = [len(str(d)) if len(str(d)) <= 100 else 100 for d in header]
+    my_ws.write_row(0, 0, header, header_format)
+    i = 1
+    for obj in object_list.all():
+
+        data_row = [
+            str(obj.organization),
+            obj.letter_to,
+            obj.letter_cc,
+            obj.organization.full_address,
+            obj.organization.chief.person.full_name if obj.organization.chief else "",
+            obj.organization.chief.person.email_1 if obj.organization.chief else "",
+            obj.organization.chief.person.phone_1 if obj.organization.chief else "",
+            obj.paper_copy,
+            listrify([consultee.member.person.email_1 for consultee in obj.to_email_recipients.all()], "; "),
+            listrify([consultee.member.person.email_1 for consultee in obj.cc_email_recipients.all()], "; "),
+            listrify([consultee.member.person.email_1 for consultee in obj.cc_commercial_email_recipients.all()], "; "),
         ]
 
         # adjust the width of the columns based on the max string length in each col

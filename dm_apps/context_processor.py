@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.sites.shortcuts import get_current_site
 
 
 def my_envr(request):
@@ -10,5 +11,5 @@ def my_envr(request):
         'DB_NAME': settings.DB_NAME,
         'DB_HOST': settings.DB_HOST,
         'AZURE_AD': settings.AZURE_AD,
-        'SITE_FULL_URL': settings.SITE_FULL_URL,
+        'SITE_FULL_URL': f'http://{get_current_site(request).domain}',
     }

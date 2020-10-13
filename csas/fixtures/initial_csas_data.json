@@ -1,0 +1,678 @@
+[
+{
+    "model": "csas.cohhonorific",
+    "pk": 1,
+    "fields": {
+        "name": "Mr. ",
+        "nom": " Mr.(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cohhonorific",
+    "pk": 2,
+    "fields": {
+        "name": "Mrs. ",
+        "nom": " Mrs.(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cohhonorific",
+    "pk": 3,
+    "fields": {
+        "name": "Ms. ",
+        "nom": " Ms.(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cohhonorific",
+    "pk": 4,
+    "fields": {
+        "name": "Dr. ",
+        "nom": " Dr.(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cohhonorific",
+    "pk": 5,
+    "fields": {
+        "name": "Chief ",
+        "nom": " Chief(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cohhonorific",
+    "pk": 6,
+    "fields": {
+        "name": "Capt. ",
+        "nom": " Capt.(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cottype",
+    "pk": 1,
+    "fields": {
+        "name": "Government ",
+        "nom": " Government(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cottype",
+    "pk": 2,
+    "fields": {
+        "name": "Industry ",
+        "nom": " Industry(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cottype",
+    "pk": 3,
+    "fields": {
+        "name": "NGO ",
+        "nom": " NGO(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cottype",
+    "pk": 4,
+    "fields": {
+        "name": "Indigenous ",
+        "nom": " Indigenous(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cottype",
+    "pk": 5,
+    "fields": {
+        "name": "Consultant ",
+        "nom": " Consultant(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.cottype",
+    "pk": 6,
+    "fields": {
+        "name": "Contractor ",
+        "nom": " Contractor(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.lanlanguage",
+    "pk": 1,
+    "fields": {
+        "name": "English ",
+        "nom": " Anglaise",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.lanlanguage",
+    "pk": 2,
+    "fields": {
+        "name": "French ",
+        "nom": " Fran\u00e7is",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.notnotificationpreference",
+    "pk": 1,
+    "fields": {
+        "name": "Phone ",
+        "nom": " Phone(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.notnotificationpreference",
+    "pk": 2,
+    "fields": {
+        "name": "E-mail ",
+        "nom": " E-mail(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.notnotificationpreference",
+    "pk": 3,
+    "fields": {
+        "name": "Fax ",
+        "nom": " Fax(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.rolrole",
+    "pk": 1,
+    "fields": {
+        "name": "Regional Coordinator ",
+        "nom": " Regional Coordinator(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.rolrole",
+    "pk": 2,
+    "fields": {
+        "name": "Regional Science Advisor ",
+        "nom": " Regional Science Advisor(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.rolrole",
+    "pk": 3,
+    "fields": {
+        "name": "Regional Admin ",
+        "nom": " Regional Admin(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.rolrole",
+    "pk": 4,
+    "fields": {
+        "name": "Director ",
+        "nom": " Director(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.secsector",
+    "pk": 1,
+    "fields": {
+        "name": "Science ",
+        "nom": " Science(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.secsector",
+    "pk": 2,
+    "fields": {
+        "name": "Oceans ",
+        "nom": " Oceans(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.secsector",
+    "pk": 3,
+    "fields": {
+        "name": "FFHPP ",
+        "nom": " FFHPP(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.secsector",
+    "pk": 4,
+    "fields": {
+        "name": "SARA ",
+        "nom": " SARA(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.secsector",
+    "pk": 5,
+    "fields": {
+        "name": "RM ",
+        "nom": " RM(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.secsector",
+    "pk": 6,
+    "fields": {
+        "name": "AMD ",
+        "nom": " AMD(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.concontact",
+    "pk": 1,
+    "fields": {
+        "honorific": 3,
+        "first_name": "Tana",
+        "last_name": "Worcester",
+        "affiliation": "DFO",
+        "job_title": "Manager, Science Planning, Advice and Data",
+        "language": 1,
+        "contact_type": 1,
+        "notification_preference": 2,
+        "phone": "902-426-9090",
+        "email": "Tana.Worcester@dfo-mpo.gc.ca",
+        "region": 2,
+        "sector": 1,
+        "role": 1,
+        "expertise": "diverse....",
+        "cc_grad": true,
+        "notes": "Tana is super awesome!"
+    }
+},
+{
+    "model": "csas.concontact",
+    "pk": 2,
+    "fields": {
+        "honorific": 2,
+        "first_name": "Lottie",
+        "last_name": "Bennett",
+        "affiliation": "DFO",
+        "job_title": "Science Advisor",
+        "language": 1,
+        "contact_type": 1,
+        "notification_preference": 2,
+        "phone": "902-426-0000",
+        "email": "Lottie.Bennett@dfo-mpo.gc.ca",
+        "region": 2,
+        "sector": 1,
+        "role": 2,
+        "expertise": "SSRs",
+        "cc_grad": false,
+        "notes": "Lottie is also super awesome!"
+    }
+},
+{
+    "model": "csas.concontact",
+    "pk": 3,
+    "fields": {
+        "honorific": 3,
+        "first_name": "Laura",
+        "last_name": "Ferris",
+        "affiliation": "DFO",
+        "job_title": "Web and Pub Administrator",
+        "language": 1,
+        "contact_type": 1,
+        "notification_preference": 2,
+        "phone": "613-990-0293",
+        "email": "Laura.Ferris@dfo-mpo.gc.ca",
+        "region": 6,
+        "sector": 1,
+        "role": 3,
+        "expertise": "everything",
+        "cc_grad": false,
+        "notes": "Laura is awesome"
+    }
+},
+{
+    "model": "csas.concontact",
+    "pk": 4,
+    "fields": {
+        "honorific": 1,
+        "first_name": "Alain",
+        "last_name": "D'Entremont",
+        "affiliation": "Scotia Harvest",
+        "job_title": "President and Chief Executive Officer",
+        "language": 1,
+        "contact_type": 2,
+        "notification_preference": 2,
+        "phone": "902-648-4075",
+        "email": "alain@scotiaharvest.com",
+        "region": 2,
+        "sector": 1,
+        "role": 1,
+        "expertise": "fisheries",
+        "cc_grad": false,
+        "notes": "active participant."
+    }
+},
+{
+    "model": "csas.sttstatus",
+    "pk": 1,
+    "fields": {
+        "name": "On ",
+        "nom": " On(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.sttstatus",
+    "pk": 2,
+    "fields": {
+        "name": "In Planning ",
+        "nom": " In Planning(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.sttstatus",
+    "pk": 3,
+    "fields": {
+        "name": "Internal ",
+        "nom": " Internal(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.sttstatus",
+    "pk": 4,
+    "fields": {
+        "name": "Off ",
+        "nom": " Off(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.sttstatus",
+    "pk": 5,
+    "fields": {
+        "name": "Cancelled ",
+        "nom": " Cancelled(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.scpscope",
+    "pk": 1,
+    "fields": {
+        "name": "Regional ",
+        "nom": " Regional(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.scpscope",
+    "pk": 2,
+    "fields": {
+        "name": "Zonal ",
+        "nom": " Zonal(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.scpscope",
+    "pk": 3,
+    "fields": {
+        "name": "National ",
+        "nom": " National(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.aptadvisoryprocesstype",
+    "pk": 1,
+    "fields": {
+        "name": "test process ",
+        "nom": " test process(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.loclocationprov",
+    "pk": 1,
+    "fields": {
+        "name": "test prov ",
+        "nom": " test prov(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.loclocationcity",
+    "pk": 1,
+    "fields": {
+        "name": "test city",
+        "nom": " test city(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.meqquarter",
+    "pk": 1,
+    "fields": {
+        "name": "Spring ",
+        "nom": " Spring(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.meqquarter",
+    "pk": 2,
+    "fields": {
+        "name": "Summer ",
+        "nom": " Summar(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.meqquarter",
+    "pk": 3,
+    "fields": {
+        "name": "Fall ",
+        "nom": " Fall(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.meqquarter",
+    "pk": 4,
+    "fields": {
+        "name": "Winter ",
+        "nom": " Winter(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.psepublicationseries",
+    "pk": 1,
+    "fields": {
+        "name": "test",
+        "nom": "test_fr",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.pseseries",
+    "pk": 1,
+    "fields": {
+        "nom": "test(fr)",
+        "description_en": "",
+        "description_fr": null,
+        "name": "test"
+    }
+},
+{
+    "model": "csas.reppriority",
+    "pk": 1,
+    "fields": {
+        "name": "High ",
+        "nom": " High(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.reppriority",
+    "pk": 2,
+    "fields": {
+        "name": "Medium ",
+        "nom": " Medium(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.reppriority",
+    "pk": 3,
+    "fields": {
+        "name": "Low ",
+        "nom": " Low(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.rettiming",
+    "pk": 1,
+    "fields": {
+        "name": "By quarter ",
+        "nom": " By quarter(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.rettiming",
+    "pk": 2,
+    "fields": {
+        "name": "By month ",
+        "nom": " By month(fr)",
+        "description_en": null,
+        "description_fr": null
+    }
+},
+{
+    "model": "csas.pubpublication",
+    "pk": 3,
+    "fields": {
+        "series": 1,
+        "lead_region": 6,
+        "title_en": "test pub",
+        "title_fr": "test pub(fr)",
+        "title_in": "test pub(in)",
+        "pub_year": 2333,
+        "lead_author": null,
+        "pub_num": "4444",
+        "pages": 23,
+        "keywords": "keyword",
+        "citation": "ABC",
+        "description": null,
+        "other_author": [],
+        "client": []
+    }
+},
+{
+    "model": "csas.reqrequest",
+    "pk": 1,
+    "fields": {
+        "assigned_req_id": "",
+        "title": "Request for Stock Status Update for LFA 41 Lobster",
+        "in_year_request": false,
+        "region": 2,
+        "client_sector": 5,
+        "client_name": "Jennifer Ford",
+        "client_title": "Senior Advisor",
+        "client_email": "Jennifer.Ford@dfo-mpo.gc.ca",
+        "issue": "Require advice on the sustainable catch levels for LFA 41 Lobster, including evaluation of stock status relative to agreed to reference points.",
+        "priority": 1,
+        "rationale": "Information is required to set the annual TAC for this area.",
+        "proposed_timing": 1,
+        "rationale_for_timing": "Required in time to present to LFA 41 advisory committee, and provide briefing material to the Minister prior to the opening of the fishery.",
+        "funding": false,
+        "funding_notes": "None",
+        "science_discussion": true,
+        "science_discussion_notes": "Request in line with agreed to multi-year assessment schedule.",
+        "adviser_submission": null,
+        "rd_submission": null,
+        "decision_date": null
+    }
+},
+{
+    "model": "csas.reqrequest",
+    "pk": 2,
+    "fields": {
+        "assigned_req_id": "",
+        "title": "Request for AAA",
+        "in_year_request": false,
+        "region": 2,
+        "client_sector": 1,
+        "client_name": "Tobias Spears",
+        "client_title": "Head of ODIS",
+        "client_email": "tobias.spears@dfo-mpo.gc.ca",
+        "issue": "AAAAA",
+        "priority": 1,
+        "rationale": "AaAaA",
+        "proposed_timing": 1,
+        "rationale_for_timing": "aAaAa",
+        "funding": true,
+        "funding_notes": "aaaaa",
+        "science_discussion": true,
+        "science_discussion_notes": "Tana Worcester",
+        "adviser_submission": null,
+        "rd_submission": null,
+        "decision_date": null
+    }
+},
+{
+    "model": "csas.reqrequest",
+    "pk": 3,
+    "fields": {
+        "assigned_req_id": "",
+        "title": "This is a test",
+        "in_year_request": false,
+        "region": 2,
+        "client_sector": 5,
+        "client_name": "Jen Ford",
+        "client_title": "Advisor",
+        "client_email": "Jen.Ford@dfo-mpo.gc.ca",
+        "issue": "Element 8 of the Terms of Reference for Recovery Potential Assessments (RPAs) reads as follows: \"Assess and prioritize the threats to the survival and recovery of the wildlife species\". The associated RPA guidance states: \"The two-step approach to threat assessment (DFO 2014*) will be used to complete this element at both the population-level and species-level\".\r\n\r\nAn RPA was not completed for the leatherback sea turtle, which was listed when the Species at Risk Act came into force. A recovery strategy was published on the SARA public registry in 2007 and did not include a formal threat assessment. The recovery strategy is now being amended to conform to current program guidance, which requires the inclusion of a threat assessment table (normally completed during the RPA). \r\n\r\nScience advice is required to complete a peer-reviewed threat assessment in accordance with DFO (2014*). Specifically, an assessment of threats to the Northwest Atlantic subpopulation of leatherback sea turtles, as well as threats to members of that subpopulation that use Atlantic Canadian waters.\r\n\r\n*DFO. 2014. Guidance on assessing threats, ecological risk and ecological impacts for species at risk. DFO Can. Sci. Advis. Sec. Sci. Advis. Rep. 2014/013. (Erratum: June 2016)",
+        "priority": 1,
+        "rationale": "If science advice is not provided, the recovery strategy will not comply with current standards and will be inconsistent with other recovery strategies in preparation (i.e. loggerhead sea turtle, Atlantic mud-piddock), which include CSAS-reviewed threat assessment tables. Recovery strategies and action plans are meant to address the threats to the species. A rigourous threat assessment is needed to ensure the most effective use of resources to implement those plans.",
+        "proposed_timing": 1,
+        "rationale_for_timing": "An amended version of the leatherback sea turtle recovery strategy has been in development for several years and has been delayed on multiple occasions. The recovery strategy needs be finalized as soon as possible.",
+        "funding": true,
+        "funding_notes": "Species at Risk Program funds.",
+        "science_discussion": true,
+        "science_discussion_notes": "Discussed with CSA Office and lead PI.",
+        "adviser_submission": null,
+        "rd_submission": null,
+        "decision_date": null
+    }
+}
+]

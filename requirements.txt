@@ -2,7 +2,7 @@ bokeh==1.0.4
 certifi==2019.3.9
 chardet==3.0.4
 Deprecated==1.2.5
-Django==2.2.2
+Django==2.2.13
 django-bootstrap4==1.1.1
 django-easy-pdf==0.1.1
 django-el-pagination==3.3.0
@@ -11,21 +11,21 @@ django-tracking2==0.5.0
 html2text==2020.1.16
 html5lib==1.0.1
 idna==2.8
-Jinja2==2.10
+Jinja2==2.10.1
 Markdown==3.0.1
 MarkupSafe==1.1.0
 cx-Oracle==7.1.3
 numpy==1.18.1
 packaging==19.0
 pandas==1.0.1
-Pillow==7.0.0
+Pillow==7.1.0
 PyGithub==1.43.7
 PyJWT==1.7.1
 pyparsing==2.3.1
 PyPDF2==1.26.0
 python-dateutil==2.8.1
 pytz==2018.9
-PyYAML==3.13
+PyYAML==4.2b1
 reportlab==3.5.42
 requests==2.21.0
 selenium==3.141.0
@@ -34,7 +34,7 @@ sqlparse==0.3.0
 textile==3.0.3
 tornado==5.1.1
 unicodecsv==0.14.1
-urllib3==1.24.1
+urllib3==1.24.2
 webencodings==0.5.1
 wrapt==1.11.1
 xhtml2pdf==0.2.4
@@ -56,3 +56,7 @@ Faker==4.0.1
 # THESE TWO LIBRARIES CAN BE PROBLEMATIC
 mysqlclient==1.4.6
 shapely==1.7.0
+
+phonenumberslite==8.12.8
+django-phonenumber-field==5.0.0
+django-tables2==2.3.1

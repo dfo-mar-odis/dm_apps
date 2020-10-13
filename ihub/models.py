@@ -11,71 +11,28 @@ from lib.functions.custom_functions import fiscal_year, listrify
 from lib.functions.custom_functions import nz
 from masterlist import models as ml_models
 from shared_models import models as shared_models
+from shared_models.models import SimpleLookup
+
+# This can be delete after the next time migrations are crushed
+def audio_file_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/entry_<id>/<filename>
+    return 'ihub/org_{}/{}'.format(instance.id, filename)
 
 
-class EntryType(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
+
+class EntryType(SimpleLookup):
     color = models.CharField(max_length=25, blank=True, null=True)
 
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
 
-    class Meta:
-        ordering = ['name', ]
-
-
-class Status(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
+class Status(SimpleLookup):
     color = models.CharField(max_length=25, blank=True, null=True)
 
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
+class FundingPurpose(SimpleLookup):
+    pass
 
-    class Meta:
-        ordering = ['name', ]
-
-
-class FundingPurpose(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
-
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class FundingProgram(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (French)"))
+class FundingProgram(SimpleLookup):
     abbrev_eng = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("abbreviation (French)"))
     abbrev_fre = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("abbreviation (French)"))
-
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
 
     @property
     def full_eng(self):
@@ -84,9 +41,6 @@ class FundingProgram(models.Model):
     @property
     def full_fre(self):
         return "{} ({})".format(self.nom, self.abbrev_fre)
-
-    class Meta:
-        ordering = [_('name'), ]
 
 
 class Entry(models.Model):
@@ -162,6 +116,7 @@ class Entry(models.Model):
 
 class EntryPerson(models.Model):
     # Choices for role
+    # TODO: test me
     LEAD = 1
     CONTACT = 2
     SUPPORT = 3
@@ -214,7 +169,8 @@ class EntryNote(models.Model):
 
     entry = models.ForeignKey(Entry, related_name='notes', on_delete=models.CASCADE)
     type = models.IntegerField(choices=TYPE_CHOICES)
-    date = models.DateTimeField(default=timezone.now)
+    modified_date = models.DateTimeField(auto_now=True, editable=False)
+    creation_date = models.DateTimeField(auto_now_add=True, editable=False)
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("author"))
     note = models.TextField()
     status = models.ForeignKey(Status, default=1, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("status"))
@@ -226,12 +182,12 @@ class EntryNote(models.Model):
             self.status,
             self.author.first_name,
             self.author.last_name,
-            self.date.strftime("%Y-%m-%d"),
+            self.creation_date.strftime("%Y-%m-%d"),
         )
         return my_str
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ["-creation_date"]
 
 
 def file_directory_path(instance, filename):
@@ -243,7 +199,7 @@ class File(models.Model):
     caption = models.CharField(max_length=255, verbose_name=_("caption"))
     entry = models.ForeignKey(Entry, related_name="files", on_delete=models.CASCADE)
     file = models.FileField(upload_to=file_directory_path, verbose_name=_("file"))
-    date_uploaded = models.DateTimeField(default=timezone.now, verbose_name=_("date uploaded"))
+    date_uploaded = models.DateTimeField(auto_now=True, editable=False, verbose_name=_("date uploaded"))
 
     class Meta:
         ordering = ['-date_uploaded']

@@ -1,97 +1,69 @@
-{% extends "ihub/ihub_base.html" %}
+{% extends "ihub/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
 {% load custom_filters %}
 {% load custom_tags %}
 {% load i18n %}
-{% block header %}
-{% endblock %}
-{% block content %}
-
-    <style>
-        .label {
-            font-weight: bold;
-        }
-
-        table, td {
-            font-size: small;
-        }
-    </style>
-
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'ihub:index' %}">
-                {% trans "Home" %}
-            </a></li>
-            <li class="breadcrumb-item"><a href="{% url 'ihub:person_list' %}">
-                {% trans "People" %}
-            </a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
-        </ol>
-    </nav>
-
-    <div class="indent-lg">
-
-        <h1>{{ object }}</h1>
 
 
-        <div class="btn-group">
-            <a class="btn btn-warning" href="{% url 'ihub:person_edit' object.id %}">
-                {% trans "Edit" %}
-            </a>
-            <a class="btn btn-danger " href="{% url 'ihub:person_delete' object.id %}">
-                {% trans "Delete" %}
-            </a>
+{% block subcontent %}
 
-        </div>
-        <br><br>
 
-        <div class="row">
-            <div class="col">
-                <h3>
-                    {% trans "Person Detail:" %}
-                </h3>
-                <table class="table table-sm table-striped">
-                    {% for field in field_list %}
-                        {% verbose_td_display object field %}
-                    {% endfor %}
-                </table>
-                <br>
+  <div class="btns">
+    <a class="btn btn-sm btn-warning" href="{% url 'ihub:person_edit' object.id %}">
+      {% trans "Edit" %}
+    </a>
+    <a class="btn btn-sm btn-danger " href="{% url 'ihub:person_delete' object.id %}">
+      {% trans "Delete" %}
+    </a>
+  </div>
+  <br><br>
 
-            </div>
-            <div class="col">
-                <h3>
-                    {% trans "Membership:" %}
-                </h3>
-                <ul>
-                    {% for member in object.memberships.all %}
-                        <li>
-                            {# This code is problematic since an org can have many groupings and only 1 might be indigenous #}
-                            {% if member.organization.grouping.first.is_indigenous %}
-                                <a href="{% url 'ihub:org_detail'  member.organization.id %}">{{ member.organization }} </a>,
-                                {% if member.role %}{{ member.role|nz:"(missing role)" }}{% else %}
-                                    {{ "<em>missing role</em>"|safe }}{% endif %}
-                            {% else %}
-                                <a href="{% url 'masterlist:org_detail'  member.organization.id %}"
-                                   target="_blank">{{ member.organization }} </a>,
-                                {% if member.role %}{{ member.role|nz:"(missing role)" }}{% else %}
-                                    {{ "<em>missing role</em>"|safe }}{% endif %}
-                                - {% trans "(Will open in Master List in separate tab)" %}
-                            {% endif %}
-                        </li>
-                    {% empty %}
-                        <em>
-                            {% trans "person is not part of any organizations" %}
-                        </em>
-                    {% endfor %}
+  <div class="row">
+    <div class="col">
+      <h3>
+        {% trans "Person Detail:" %}
+      </h3>
+      <table class="table table-sm table-striped">
+        {% for field in field_list %}
+          {% verbose_td_display object field %}
+        {% endfor %}
+      </table>
+      <br>
 
-                </ul>
+    </div>
+    <div class="col">
+      <h3>
+        {% trans "Membership:" %}
+      </h3>
+      <ul>
+        {% for member in object.memberships.all %}
+          <li>
+            {# This code is problematic since an org can have many groupings and only 1 might be indigenous #}
+            {% if member.organization.grouping.first.is_indigenous %}
+              <a href="{% url 'ihub:org_detail'  member.organization.id %}">{{ member.organization }} </a>,
+              {% if member.role %}{{ member.role|nz:"(missing role)" }}{% else %}
+                {{ "<em>missing role</em>"|safe }}{% endif %}
+            {% else %}
+              <a href="{% url 'masterlist:org_detail'  member.organization.id %}"
+                 target="_blank">{{ member.organization }} </a>,
+              {% if member.role %}{{ member.role|nz:"(missing role)" }}{% else %}
+                {{ "<em>missing role</em>"|safe }}{% endif %}
+              - {% trans "(Will open in Master List in separate tab)" %}
+            {% endif %}
+          </li>
+        {% empty %}
+          <em>
+            {% trans "person is not part of any organizations" %}
+          </em>
+        {% endfor %}
 
-            </div>
-
-        </div>
+      </ul>
 
     </div>
 
-{% endblock content %}
+  </div>
+
+
+{% endblock %}

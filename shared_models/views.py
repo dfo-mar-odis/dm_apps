@@ -187,12 +187,15 @@ class CommonDeleteView(CommonFormMixin, DeleteView):
                 related_name = None
 
             if related_name:
-                my_list.append(
-                    {
-                        "title": getattr(type(self.get_object()), related_name).rel.related_model._meta.verbose_name_plural,
-                        "qs": getattr(self.get_object(), related_name).all()
-                    }
-                )
+                try:
+                    my_list.append(
+                        {
+                            "title": getattr(type(self.get_object()), related_name).rel.related_model._meta.verbose_name_plural,
+                            "qs": getattr(self.get_object(), related_name).all()
+                        }
+                    )
+                except AttributeError:
+                    pass
         return my_list
 
     def get_delete_protection(self):
@@ -214,8 +217,13 @@ class CommonDeleteView(CommonFormMixin, DeleteView):
                     related_name = None
 
                 # the second we find a related object, we are done here.
-                if related_name and getattr(self.get_object(), related_name).count():
-                    return True
+                try:
+                    getattr(self.get_object(), related_name)
+                except:
+                    pass
+                else:
+                    if related_name and getattr(self.get_object(), related_name).count():
+                        return True
             # if we got to this point, delete protection should be set to false, since there are no related objects
             return False
 
@@ -238,13 +246,28 @@ class CommonDeleteView(CommonFormMixin, DeleteView):
 class CommonPopoutDeleteView(CommonPopoutFormMixin, CommonDeleteView):
     template_name = 'shared_models/generic_popout_confirm_delete.html'
 
+    def get_context_data(self, **kwargs):
+        # we want to update the context with the context vars added by CommonMixin classes
+        context = super().get_context_data(**kwargs)
+        context.update(super().get_common_context())
+        context['width'] = self.width
+        context['height'] = self.height
+        return context
 
 class CommonPopoutCreateView(CommonPopoutFormMixin, CommonCreateView):
     template_name = 'shared_models/generic_popout_form.html'
 
-
+    def get_context_data(self, **kwargs):
+        # we want to update the context with the context vars added by CommonMixin classes
+        context = super().get_context_data(**kwargs)
+        context.update(super().get_common_context())
+        context['width'] = self.width
+        context['height'] = self.height
+        return context
 
 class CommonPopoutUpdateView(CommonPopoutFormMixin, UpdateView):
+    template_name = 'shared_models/generic_popout_form.html'
+
     def get_h1(self):
         if self.h1:
             return self.h1
@@ -255,6 +278,8 @@ class CommonPopoutUpdateView(CommonPopoutFormMixin, UpdateView):
         # we want to update the context with the context vars added by CommonMixin classes
         context = super().get_context_data(**kwargs)
         context.update(super().get_common_context())
+        context['width'] = self.width
+        context['height'] = self.height
         return context
 
 
@@ -343,6 +368,7 @@ class CommonFormsetView(TemplateView, CommonFormMixin):
     queryset = None
     formset_class = None
     success_url = None
+    success_url_name = None
     home_url_name = None
     delete_url_name = None
     pre_display_fields = ["id", ]
@@ -354,7 +380,10 @@ class CommonFormsetView(TemplateView, CommonFormMixin):
         return self.queryset
 
     def get_success_url(self):
-        return self.success_url
+        if self.success_url:
+            return self.success_url
+        elif self.success_url_name:
+            return reverse(self.success_url_name)
 
     def get_pre_display_fields(self):
         return self.pre_display_fields

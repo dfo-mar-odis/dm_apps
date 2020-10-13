@@ -201,6 +201,7 @@ class MyResourceListView(LoginRequiredMixin, ListView):
         ]
 
         context['now'] = timezone.now()
+        context['random_object'] = models.Resource.objects.first()
 
         return context
 
@@ -240,7 +241,7 @@ class ResourceDetailView(DetailView):
 class ResourceDetailPDFView(PDFTemplateView):
     def get_pdf_filename(self):
         my_object = models.Resource.objects.get(pk=self.kwargs.get("pk"))
-        return  f"{my_object.uuid}.pdf"
+        return f"{my_object.uuid}.pdf"
 
     template_name = 'inventory/resource_detail_pdf.html'
     field_list = [
@@ -374,7 +375,7 @@ class ResourceDeleteFlagUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         object = form.save()
         if object.flagged_4_deletion:
-            email = emails.FlagForDeletionEmail(self.object, self.request.user)
+            email = emails.FlagForDeletionEmail(self.object, self.request.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -409,7 +410,7 @@ class ResourcePublicationFlagUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         object = form.save()
         if object.flagged_4_publication:
-            email = emails.FlagForPublicationEmail(self.object, self.request.user)
+            email = emails.FlagForPublicationEmail(self.object, self.request.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -483,7 +484,7 @@ class ResourcePersonCreateView(CustodianRequiredMixin, CreateView):
 
         # if the person is being added as a custodian
         if object.role.id == 1:
-            email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
+            email = emails.AddedAsCustodianEmail(object.resource, object.person.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -513,7 +514,7 @@ class ResourcePersonUpdateView(CustodianRequiredMixin, UpdateView):
 
         # if the person is being added as a custodian
         if object.role.id == 1:
-            email = emails.AddedAsCustodianEmail(object.resource, object.person.user)
+            email = emails.AddedAsCustodianEmail(object.resource, object.person.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -545,7 +546,7 @@ class ResourcePersonDeleteView(CustodianRequiredMixin, DeleteView):
         # if the person is being added as a custodian
         if object.role.id == 1:
 
-            email = emails.RemovedAsCustodianEmail(object.resource, object.person.user)
+            email = emails.RemovedAsCustodianEmail(object.resource, object.person.user, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -1171,7 +1172,7 @@ class DataManagementCustodianDetailView(InventoryDMRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         queryset = self.object.resource_people.filter(role=1)
         me = models.Person.objects.get(user=User.objects.get(pk=self.request.user.id))
-        email = emails.CertificationRequestEmail(me, self.object)
+        email = emails.CertificationRequestEmail(me, self.object, self.request)
         context['queryset'] = queryset
         context['email'] = email
         context['now'] = timezone.now()
@@ -1183,8 +1184,8 @@ def send_certification_request(request, person):
     # grab a copy of the resource
     my_person = models.Person.objects.get(pk=person)
     # create a new email object
-    me = models.Person.objects.get(user=User.objects.get(pk=self.request.user.id))
-    email = emails.CertificationRequestEmail(me, my_person)
+    me = models.Person.objects.get(user=User.objects.get(pk=request.user.id))
+    email = emails.CertificationRequestEmail(me, my_person, request)
     # send the email object
     custom_send_mail(
         subject=email.subject,
@@ -1300,7 +1301,7 @@ class SectionDetailView(InventoryDMRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         if self.object.head:
             me = models.Person.objects.get(user=self.request.user)
-            email = emails.SectionReportEmail(me, self.object.head, self.object)
+            email = emails.SectionReportEmail(me, self.object.head, self.object, self.request)
             context['email'] = email
         context['now'] = timezone.now()
         return context
@@ -1312,7 +1313,7 @@ def send_section_report(request, section):
     head = my_section.head
     # create a new email object
     me = models.Person.objects.get(user=request.user)
-    email = emails.SectionReportEmail(me, head, my_section)
+    email = emails.SectionReportEmail(me, head, my_section, request)
     # send the email object
     custom_send_mail(
         subject=email.subject,
@@ -1654,7 +1655,8 @@ class ReportSearchFormView(InventoryDMRequiredMixin, FormView):
             }))
         if report == 2:
             return HttpResponseRedirect(reverse("inventory:export_odi_report"))
-
+        if report == 3:
+            return HttpResponseRedirect(reverse("inventory:export_phyiscal_samples"))
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
             return HttpResponseRedirect(reverse("inventory:report_search"))
@@ -1682,6 +1684,19 @@ def export_odi_report(request):
         with open(file_url, 'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
             response['Content-Disposition'] = 'inline; filename="ODI Report {}.xlsx"'.format(
+                timezone.now().strftime("%Y-%m-%d"))
+            return response
+    raise Http404
+
+
+@login_required()
+def export_phyiscal_samples(request):
+    # print(trip)
+    file_url = reports.generate_physical_samples_report()
+    if os.path.exists(file_url):
+        with open(file_url, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
+            response['Content-Disposition'] = 'inline; filename="physical_samples_report {}.xlsx"'.format(
                 timezone.now().strftime("%Y-%m-%d"))
             return response
     raise Http404

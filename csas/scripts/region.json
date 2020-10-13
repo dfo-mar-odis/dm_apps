@@ -1,0 +1,93 @@
+[
+{
+    "model": "shared_models.region",
+    "pk": 1,
+    "fields": {
+        "name": "Gulf",
+        "nom": "Golfe",
+        "uuid": "37dd554f-e0ab-4078-b337-0c40fab2a248",
+        "abbrev": "GULF",
+        "head": 618,
+        "date_last_modified": "2020-06-17T09:21:36.840-03:00",
+        "last_modified_by": null
+    }
+},
+{
+    "model": "shared_models.region",
+    "pk": 2,
+    "fields": {
+        "name": "Maritimes",
+        "nom": "Maritimes",
+        "uuid": "bbb9e18a-265e-4f6f-8f16-7fec2f82af27",
+        "abbrev": "MAR",
+        "head": 801,
+        "date_last_modified": "2020-06-17T09:21:36.932-03:00",
+        "last_modified_by": null
+    }
+},
+{
+    "model": "shared_models.region",
+    "pk": 4,
+    "fields": {
+        "name": "Quebec",
+        "nom": "Qu\u00e9bec",
+        "uuid": "3fe3c775-2769-45b3-9f75-38490336e982",
+        "abbrev": "QC",
+        "head": null,
+        "date_last_modified": "2020-06-17T09:21:37.323-03:00",
+        "last_modified_by": null
+    }
+},
+{
+    "model": "shared_models.region",
+    "pk": 5,
+    "fields": {
+        "name": "Newfoundland & Labrador",
+        "nom": "Terre-Neuve-et-Labrador",
+        "uuid": "21d8bc2a-8eca-4e37-9725-41d273d8ae2c",
+        "abbrev": "NL",
+        "head": null,
+        "date_last_modified": "2020-06-17T09:21:37.150-03:00",
+        "last_modified_by": null
+    }
+},
+{
+    "model": "shared_models.region",
+    "pk": 6,
+    "fields": {
+        "name": "National",
+        "nom": "National",
+        "uuid": "01370006-cc34-4631-be37-90b340157acd",
+        "abbrev": "NAT",
+        "head": null,
+        "date_last_modified": "2020-06-17T09:21:37.058-03:00",
+        "last_modified_by": null
+    }
+},
+{
+    "model": "shared_models.region",
+    "pk": 7,
+    "fields": {
+        "name": "Central & Arctic",
+        "nom": "Centre et de l'Arctique",
+        "uuid": "9c8fc66a-8b96-4282-b55c-254bf9cfd6c3",
+        "abbrev": "C&A",
+        "head": null,
+        "date_last_modified": "2020-06-17T09:21:36.740-03:00",
+        "last_modified_by": null
+    }
+},
+{
+    "model": "shared_models.region",
+    "pk": 8,
+    "fields": {
+        "name": "Pacific",
+        "nom": "Pacifique",
+        "uuid": "3df520ba-76ce-4b94-9fb0-ceeba2cbbdb1",
+        "abbrev": "PAC",
+        "head": null,
+        "date_last_modified": "2020-06-17T09:21:37.240-03:00",
+        "last_modified_by": null
+    }
+}
+]

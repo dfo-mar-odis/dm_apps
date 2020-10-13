@@ -1,0 +1,130 @@
+{% extends "engagements/engagements_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+{% load render_table from django_tables2 %}
+
+{% block pagetitle %}{{ interaction.title }}{% endblock %}
+
+{% block breadcrumbs %}
+    <li class="breadcrumb-item"><a href="{% url 'engagements:home' %}">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'engagements:interaction_list' %}">Interactions</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ interaction.title }}</li>
+{% endblock breadcrumbs %}
+
+{% block content %}
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 pt-2 border-bottom">
+        <div class="mr-auto">
+            <h3 class="mb-0">{{ interaction.title }}</h3>
+            <div class="text-muted"><small>Last modified: {{ interaction.last_modified }} by {{ interaction.last_modified_by }}</small></div>
+        </div>
+        <a href="{{ interaction.get_absolute_url }}/edit" class="btn btn-primary mr-2">Edit</a>
+        <a href="{{ interaction.get_absolute_url }}/delete" class="btn btn-outline-danger">Delete</a></td>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2">
+        <div class="col-9">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label class="mb-0">Title</label><br>
+                        {{ interaction.title }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Activity Type</label><br>
+                        {{ interaction.activity_type }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Description</label><br>
+                        {{ interaction.description }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Engagement Plan</label><br>
+                        <a href="{{ interaction.engagement_plan.get_absolute_url }}">{{ interaction.engagement_plan }}</a>
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Organization Attendees</label><br>
+                        <ul class="list-unstyled">
+                        {% for org in interaction.organization_attendees.all %}
+                            <li><a href="{{ org.get_absolute_url }}">{{ org.legal_name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Initiator</label><br>
+                        {{ interaction.initiator }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Primary Contact</label><br>
+                        {{ interaction.primary_contact }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Attendees</label><br>
+                        <ul class="list-unstyled">
+                        {% for att in interaction.attendees.all %}
+                            <li>{{ att }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Subjects</label><br>
+                        <ul class="list-unstyled">
+                        {% for subj in interaction.subjects.all %}
+                            <li>{{ subj.name }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label class="mb-0">Date</label><br>
+                        {{ interaction.date }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Status</label><br>
+                        {{ interaction.status }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Regional Scope</label><br>
+                        {{ interaction.geographic_level_str }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Location</label><br>
+                        {{ interaction.location }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">File Reference</label><br>
+                        {{ interaction.file_reference }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Priority</label><br>
+                        {{ interaction.priority_str }}
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Staff Attendees</label><br>
+                        <ul class="list-unstyled">
+                        {% for att in interaction.staff_attendees.all %}
+                            <li>{{ att }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="mb-0">Objectives</label><br>
+                        <ul class="list-unstyled">
+                        {% for obj in interaction.objectives.all %}
+                            <li>{{ obj.name }}</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="text-muted">
+            <small>Created: {{ interaction.created_on }} by {{ interaction.created_by }}</small>
+        </div>
+        </div>
+        <div class="col">
+            <!-- Right Sidebar -->
+        </div>
+    </div>
+{% endblock %}

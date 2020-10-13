@@ -21,7 +21,7 @@ urlpatterns = [
     # feedback form
     path('feedback-form/new/', views.TicketCreateViewPopout.as_view(), name="bug_create"),
     path('feedback-form/new/application/<str:app>/', views.TicketCreateViewPopout.as_view(), name="bug_create"),
-    path('feedback-form/<int:pk>/view/', views.TicketConfirmationTemplateView.as_view(), name="confirm"),
+    path('feedback-form/confirmation/', views.TicketConfirmationTemplateView.as_view(), name="confirm"),
 
     # github views
     path('<int:pk>/create-github-issue/', views.create_github_issue, name="git_create"),

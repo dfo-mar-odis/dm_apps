@@ -1,12 +1,15 @@
 from django.conf import settings
 from django.template import loader
 
+from dm_apps.context_processor import my_envr
+
 from_email = settings.SITE_FROM_EMAIL
 
 
 
 class ProjectApprovalEmail:
-    def __init__(self, project):
+    def __init__(self, project, request):
+        self.request = request
         if project.approved:
             self.subject = 'Your project has been approved / Votre projet a été approuvé'
         else:
@@ -22,13 +25,14 @@ class ProjectApprovalEmail:
     def load_html_template(self, project):
         t = loader.get_template('projects/email_project_approved.html')
         context = {'object': project,}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
 
 class ProjectSubmissionEmail:
-    def __init__(self, object):
+    def __init__(self, object, request):
+        self.request = request
         if object.submitted:
             self.subject = 'A project has been submitted under your section / Un projet a été soumis dans votre section'
         else:
@@ -54,15 +58,15 @@ class ProjectSubmissionEmail:
             'project_leads|project_leads',
         ]
         context = {'object': object, 'field_list':project_field_list}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
 
 
 class UserCreationEmail:
-    def __init__(self, object):
-
+    def __init__(self, object, request):
+        self.request = request
         self.subject = 'DM Apps account creation / Création de compte DM Apps'
         self.message = self.load_html_template(object)
         self.from_email = from_email
@@ -79,6 +83,6 @@ class UserCreationEmail:
     def load_html_template(self, object):
         t = loader.get_template('projects/email_user_creation.html')
         context = {'object': object,}
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered

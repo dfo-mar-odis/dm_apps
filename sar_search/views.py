@@ -324,8 +324,8 @@ class SpeciesListView(SARSearchAccessRequiredMixin, FilterView):
         context = super().get_context_data(**kwargs)
         context['my_object'] = models.Species.objects.first()
         context["field_list"] = [
-            'full_name|Species',
-            'scientific_name',
+            'full_name|Common name (population)',
+            'scientific_name|Species',
             'taxon',
             'sara_status',
             'cosewic_status',
@@ -366,7 +366,7 @@ class SpeciesDetailView(SARSearchAccessRequiredMixin, DetailView):
             'name',
             'regions',
             'record_type',
-            'year',
+            'year|Sighting Date',
             'source',
         ]
 

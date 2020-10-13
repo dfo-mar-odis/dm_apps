@@ -16,6 +16,7 @@ from django.template.defaultfilters import pluralize
 from django.utils.safestring import mark_safe
 from msrestazure.azure_active_directory import MSIAuthentication
 
+from dm_apps.context_processor import my_envr
 from dm_apps.utils import custom_send_mail
 from django.db.models import Sum, Q, Value, TextField
 from django.shortcuts import render
@@ -334,8 +335,8 @@ traveller_field_list = [
 request_group_field_list = [
     'fiscal_year',
     'trip',
-    'requester_name|{}'.format(_("Organizer name")),
-    'status_string|{}'.format(_("Request status")),
+    'requester_name|{}'.format(_("organizer name")),
+    'status_string|{}'.format(_("request status")),
     'section',
     'destination',
 
@@ -437,8 +438,8 @@ class TripRequestListView(TravelAccessRequiredMixin, CommonFilterView):
         {"name": 'requester_name|{}'.format(gettext_lazy("Requester name")), },
         {"name": 'trip.tname', "width": "400px"},
         {"name": 'destination|{}'.format(gettext_lazy("Destination")), },
-        {"name": 'start_date|{}'.format(gettext_lazy("Departure date")), },
-        {"name": 'processing_time|{}'.format(gettext_lazy("Processing time")), },
+        {"name": 'start_date', "width": "120px"},
+        {"name": 'processing_time|{}'.format(gettext_lazy("Processing time")), "width": "120px"},
         {"name": 'created_by', },
     ]
 
@@ -532,7 +533,7 @@ class TripRequestUpdateView(CanModifyMixin, CommonUpdateView):
             my_trip = my_object.parent_request.trip
         else:
             my_trip = my_object.trip
-        utils.manage_trip_warning(my_trip)
+        utils.manage_trip_warning(my_trip, self.request)
 
         # decide whether the reviewers should be reset
         if form.cleaned_data.get("reset_reviewers"):
@@ -705,7 +706,7 @@ class TripRequestDeleteView(CanModifyMixin, CommonDeleteView):
             my_trip = my_object.parent_request.trip
         else:
             my_trip = my_object.trip
-        utils.manage_trip_warning(my_trip)
+        utils.manage_trip_warning(my_trip, self.request)
 
         messages.success(self.request,
                          'The trip request for {} {} was deleted successfully!'.format(my_object.first_name, my_object.last_name))
@@ -739,35 +740,42 @@ class TripRequestCloneUpdateView(TripRequestUpdateView):
         old_obj = models.TripRequest.objects.get(pk=new_obj.pk)
         new_obj.pk = None
         new_obj.submitted = None
-        new_obj.save()
-
-        # add the reviewers based on the new request info
-        utils.get_tr_reviewers(new_obj)
-        utils.approval_seeker(new_obj)
-
-        if new_obj.is_group_request:
-            my_child_object = models.TripRequest.objects.create(
-                user=self.request.user,
-                first_name=self.request.user.first_name,
-                last_name=self.request.user.last_name,
-                email=self.request.user.email,
-                parent_request=new_obj,
-            )
-            # pre-populate the costs on the 'child' record
-            utils.populate_trip_request_costs(self.request, my_child_object)
+        try:
+            new_obj.save()
+        except IntegrityError:
+            messages.error(self.request,
+                           _("sorry, cannot clone this trip because there is another trip request with the same user in the system"))
+            return HttpResponseRedirect(reverse_lazy("travel:request_detail", kwargs={"pk": old_obj.id, "type": self.kwargs.get("type")}))
         else:
-            # import from old record
-            # costs
-            for old_rel_obj in old_obj.trip_request_costs.all():
-                new_rel_obj = deepcopy(old_rel_obj)
-                new_rel_obj.pk = None
-                new_rel_obj.trip_request = new_obj
-                new_rel_obj.save()
 
-        if form.cleaned_data.get("stay_on_page"):
-            return HttpResponseRedirect(reverse_lazy("travel:request_edit", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
-        else:
-            return HttpResponseRedirect(reverse_lazy("travel:request_detail", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
+            # add the reviewers based on the new request info
+            utils.get_tr_reviewers(new_obj)
+            utils.approval_seeker(new_obj, False, self.request)
+
+            if new_obj.is_group_request:
+                my_child_object = models.TripRequest.objects.create(
+                    user=self.request.user,
+                    first_name=self.request.user.first_name,
+                    last_name=self.request.user.last_name,
+                    email=self.request.user.email,
+                    parent_request=new_obj,
+                )
+                # pre-populate the costs on the 'child' record
+                utils.populate_trip_request_costs(self.request, my_child_object)
+            else:
+                # import from old record
+                # costs
+                for old_rel_obj in old_obj.trip_request_costs.all():
+                    new_rel_obj = deepcopy(old_rel_obj)
+                    new_rel_obj.pk = None
+                    new_rel_obj.trip_request = new_obj
+                    new_rel_obj.save()
+
+            if form.cleaned_data.get("stay_on_page"):
+                return HttpResponseRedirect(reverse_lazy("travel:request_edit", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
+            else:
+                return HttpResponseRedirect(
+                    reverse_lazy("travel:request_detail", kwargs={"pk": new_obj.id, "type": self.kwargs.get("type")}))
 
 
 class ChildTripRequestCloneUpdateView(TripRequestUpdateView):
@@ -893,7 +901,7 @@ class TripRequestSubmitUpdateView(CanModifyMixin, CommonUpdateView):
                     # go and get approvals!!
 
         # No matter what business was done, we will call this function to sort through reviewer and request statuses
-        utils.approval_seeker(my_object)
+        utils.approval_seeker(my_object, False, self.request)
         my_object.save()
 
         # clean up any unused cost categories
@@ -1123,7 +1131,7 @@ class TripRequestReviewerADMUpdateView(AdminOrApproverRequiredMixin, CommonPopou
         ################
         if not parent_request:
             # update any statuses if necessary; this is business as usual
-            utils.approval_seeker(my_reviewer.trip_request)
+            utils.approval_seeker(my_reviewer.trip_request, False, self.request)
         else:
             # if this is a child request,
             if my_reviewer.status_id == 3:
@@ -1153,7 +1161,7 @@ class TripRequestReviewerADMUpdateView(AdminOrApproverRequiredMixin, CommonPopou
                 parent_reviewer.status_date = timezone.now()
                 parent_reviewer.save()
 
-                utils.approval_seeker(parent_request)
+                utils.approval_seeker(parent_request, False, self.request)
 
             #
             #             # We have to append any comments to the corresponding review of the parent request
@@ -1251,7 +1259,7 @@ class TripRequestReviewerUpdateView(AdminOrApproverRequiredMixin, CommonUpdateVi
                 my_reviewer.trip_request.submitted = None
                 my_reviewer.trip_request.save()
                 # send an email to the request owner
-                email = emails.ChangesRequestedEmail(my_reviewer.trip_request)
+                email = emails.ChangesRequestedEmail(my_reviewer.trip_request, self.request)
                 # send the email object
                 custom_send_mail(
                     subject=email.subject,
@@ -1273,7 +1281,7 @@ class TripRequestReviewerUpdateView(AdminOrApproverRequiredMixin, CommonUpdateVi
                 my_reviewer.save()
 
         # update any statuses if necessary
-        utils.approval_seeker(my_reviewer.trip_request)
+        utils.approval_seeker(my_reviewer.trip_request, False, self.request)
 
         if stay_on_page:
             return HttpResponseRedirect(reverse("travel:tr_review_update", kwargs=self.kwargs))
@@ -1311,7 +1319,7 @@ class SkipReviewerUpdateView(TravelAdminRequiredMixin, CommonPopoutUpdateView):
         # now we save the reviewer for real
         my_reviewer.save()
         # update any statuses if necessary
-        utils.approval_seeker(my_reviewer.trip_request)
+        utils.approval_seeker(my_reviewer.trip_request, False, self.request)
 
         return HttpResponseRedirect(reverse("shared_models:close_me"))
 
@@ -1667,7 +1675,7 @@ class TripCreateView(TravelAccessRequiredMixin, CommonCreateView):
 
         if self.kwargs.get("type") == "pop":
             # create a new email object
-            email = emails.NewTripEmail(my_object)
+            email = emails.NewTripEmail(my_object, self.request)
             # send the email object
             custom_send_mail(
                 subject=email.subject,
@@ -1752,7 +1760,7 @@ class TripReviewProcessUpdateView(TravelADMAdminRequiredMixin, CommonUpdateView)
             # go and get approvals!!
 
         # No matter what business what done, we will call this function to sort through reviewer and request statuses
-        utils.trip_approval_seeker(my_trip)
+        utils.trip_approval_seeker(my_trip, self.request)
         my_trip.save()
 
         # decide where to go. If the request user is the same as the active reviewer for the trip, go right to the review page.
@@ -2111,7 +2119,7 @@ class TripReviewerUpdateView(TravelADMAdminRequiredMixin, CommonUpdateView):
                 my_reviewer.save()
 
             # update any statuses if necessary
-            utils.trip_approval_seeker(my_reviewer.trip)
+            utils.trip_approval_seeker(my_reviewer.trip, self.request)
             return HttpResponseRedirect(reverse("travel:trip_review_list", kwargs={"which_ones": "awaiting"}))
 
         else:
@@ -2148,7 +2156,7 @@ class SkipTripReviewerUpdateView(TravelAdminRequiredMixin, UpdateView):
         my_reviewer.save()
 
         # update any statuses if necessary
-        utils.approval_seeker(my_reviewer.trip_request)
+        utils.approval_seeker(my_reviewer.trip_request, False, self.request)
 
         return HttpResponseRedirect(reverse("shared_models:close_me"))
 
@@ -2309,7 +2317,8 @@ def export_cfts_list(request, fy, region, trip, user, from_date, to_date):
 
 @login_required()
 def export_trip_list(request, fy, region, adm, from_date, to_date):
-    file_url = reports.generate_trip_list(fiscal_year=fy, region=region, adm=adm, from_date=from_date, to_date=to_date)
+    site_url = my_envr(request)["SITE_FULL_URL"]
+    file_url = reports.generate_trip_list(fiscal_year=fy, region=region, adm=adm, from_date=from_date, to_date=to_date, site_url=site_url)
 
     if os.path.exists(file_url):
         with open(file_url, 'rb') as fh:
@@ -2486,7 +2495,6 @@ class TripSubcategoryHardDeleteView(TravelAdminRequiredMixin, CommonHardDeleteVi
     success_url = reverse_lazy("travel:manage_trip_subcategories")
 
 
-
 class ProcessStepFormsetView(TravelAdminRequiredMixin, CommonFormsetView):
     template_name = 'travel/formset.html'
     h1 = "Manage Process Steps"
@@ -2628,7 +2636,7 @@ class TRCostCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         my_object = form.save()
         if my_object.trip_request.trip:
-            utils.manage_trip_warning(my_object.trip_request.trip)
+            utils.manage_trip_warning(my_object.trip_request.trip, self.request)
         return HttpResponseRedirect(reverse('shared_models:close_me'))
 
 
@@ -2643,7 +2651,7 @@ class TRCostUpdateView(LoginRequiredMixin, UpdateView):
             my_trip = my_object.trip_request.parent_request.trip
         else:
             my_trip = my_object.trip_request.trip
-        utils.manage_trip_warning(my_trip)
+        utils.manage_trip_warning(my_trip, self.request)
 
         return HttpResponseRedirect(reverse('shared_models:close_me_no_refresh'))
 

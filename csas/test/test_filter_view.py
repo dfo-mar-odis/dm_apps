@@ -4,8 +4,8 @@ from django.contrib.auth.models import AnonymousUser
 
 from shared_models import views as shared_views
 
-from csas.test import csas_common_test as cct
-from csas.views import CsasListCommon
+from csas.test import csas_common_test as cct, test_urls as urt
+from csas.views import CsasListCommon, CohList, SttList, MeqList, AptList, ScpList
 
 from csas import models
 
@@ -84,3 +84,288 @@ class CommonListTest(cct.CommonTestCase):
 
         # should be true with a csas user logged in
         self.assertTrue(context['auth'])
+
+
+# Used for testing listing values from models extending the Lookup model
+class CohListTest(cct.CommonTestCase):
+
+    def setUp(self) -> None:
+        self.view = CohList()
+
+    # Make sure the view is extending the expected classes
+    def test_Coh_list_extends(self):
+        self.assertIsInstance(self.view, CohList)
+
+    # Test that given a key the lookup view will return the proper model
+    def test_Coh_list_get_model(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(reverse_lazy("csas:list_coh"))
+
+        view = cct.setup_view(self.view, request)
+
+        self.assertIs(view.model, models.CohHonorific)
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Coh_list_not_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the regular user
+        request.user = cct.login_regular_user(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertFalse(context["auth"])
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Coh_list_super_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the csas_admin user
+        request.user = cct.login_csas_super(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertTrue(context["auth"])
+
+        # csas_super is authorized for all things
+        self.assertIn("csas_super", context)
+        self.assertTrue(context["csas_super"])
+
+
+# Used for testing listing values from models extending the Lookup model
+class SttListTest(cct.CommonTestCase):
+
+    def setUp(self) -> None:
+        self.view = SttList()
+
+    # Make sure the view is extending the expected classes
+    def test_Stt_list_extends(self):
+        self.assertIsInstance(self.view, SttList)
+
+    # Test that given a key the lookup view will return the proper model
+    def test_Stt_list_get_model(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(reverse_lazy("csas:list_stt"))
+
+        view = cct.setup_view(self.view, request)
+
+        self.assertIs(view.model, models.SttStatus)
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Stt_list_not_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the regular user
+        request.user = cct.login_regular_user(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertFalse(context["auth"])
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Stt_list_super_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the csas_admin user
+        request.user = cct.login_csas_super(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertTrue(context["auth"])
+
+        # csas_super is authorized for all things
+        self.assertIn("csas_super", context)
+        self.assertTrue(context["csas_super"])
+
+
+# Used for testing listing values from models extending the Lookup model
+class MeqListTest(cct.CommonTestCase):
+
+    def setUp(self) -> None:
+        self.view = MeqList()
+
+    # Make sure the view is extending the expected classes
+    def test_Meq_list_extends(self):
+        self.assertIsInstance(self.view, MeqList)
+
+    # Test that given a key the lookup view will return the proper model
+    def test_Meq_list_get_model(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(reverse_lazy("csas:list_meq"))
+
+        view = cct.setup_view(self.view, request)
+
+        self.assertIs(view.model, models.MeqQuarter)
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Meq_list_not_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the regular user
+        request.user = cct.login_regular_user(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertFalse(context["auth"])
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Meq_list_super_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the csas_admin user
+        request.user = cct.login_csas_super(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertTrue(context["auth"])
+
+        # csas_super is authorized for all things
+        self.assertIn("csas_super", context)
+        self.assertTrue(context["csas_super"])
+
+
+# Used for testing listing values from models extending the Lookup model
+class AptListTest(cct.CommonTestCase):
+
+    def setUp(self) -> None:
+        self.view = AptList()
+
+    # Make sure the view is extending the expected classes
+    def test_Apt_list_extends(self):
+        self.assertIsInstance(self.view, AptList)
+
+    # Test that given a key the lookup view will return the proper model
+    def test_Apt_list_get_model(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(reverse_lazy("csas:list_apt"))
+
+        view = cct.setup_view(self.view, request)
+
+        self.assertIs(view.model, models.AptAdvisoryProcessType)
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Apt_list_not_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the regular user
+        request.user = cct.login_regular_user(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertFalse(context["auth"])
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Apt_list_super_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the csas_admin user
+        request.user = cct.login_csas_super(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertTrue(context["auth"])
+
+        # csas_super is authorized for all things
+        self.assertIn("csas_super", context)
+        self.assertTrue(context["csas_super"])
+
+
+# Used for testing listing values from models extending the Lookup model
+class ScpListTest(cct.CommonTestCase):
+
+    def setUp(self) -> None:
+        self.view = ScpList()
+
+    # Make sure the view is extending the expected classes
+    def test_Scp_list_extends(self):
+        self.assertIsInstance(self.view, ScpList)
+
+    # Test that given a key the lookup view will return the proper model
+    def test_Scp_list_get_model(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(reverse_lazy("csas:list_apt"))
+
+        view = cct.setup_view(self.view, request)
+
+        self.assertIs(view.model, models.ScpScope)
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Scp_list_not_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the regular user
+        request.user = cct.login_regular_user(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertFalse(context["auth"])
+
+    # users should be authenticated in the csas_super group to user this view
+    def test_Scp_list_super_auth(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+        self.view.object_list = []
+
+        # login the csas_admin user
+        request.user = cct.login_csas_super(self)
+        view = cct.setup_view(self.view, request)
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertTrue(context["auth"])
+
+        # csas_super is authorized for all things
+        self.assertIn("csas_super", context)
+        self.assertTrue(context["csas_super"])

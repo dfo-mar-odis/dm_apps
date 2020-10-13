@@ -329,7 +329,11 @@ class Institute(models.Model):
     nom = models.CharField(max_length=255, blank=True, null=True)
     abbrev = models.CharField(max_length=255, verbose_name=_("abbreviation"))
     address = models.CharField(max_length=255, blank=True, null=True)
+<<<<<<< HEAD
     region = models.ForeignKey(Region, on_delete=models.DO_NOTHING)
+=======
+    region = models.ForeignKey(Region, on_delete=models.DO_NOTHING, blank=True, null=True)
+>>>>>>> 7c6f440eda1356c0151c793358f18515aa15d602
 
     def __str__(self):
         # check to see if a french value is given
@@ -399,7 +403,10 @@ class Cruise(models.Model):
     samplers = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Samplers"))
     start_date = models.DateTimeField(null=True, blank=True, verbose_name=_("Start Date"))
     end_date = models.DateTimeField(null=True, blank=True, verbose_name=_("End Date"))
+<<<<<<< HEAD
     observations = models.ForeignKey(Observations, null=True, blank=True, on_delete=models.DO_NOTHING)
+=======
+>>>>>>> 7c6f440eda1356c0151c793358f18515aa15d602
     probe = models.ForeignKey(Probe, null=True, blank=True, on_delete=models.DO_NOTHING)
     area_of_operation = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Area of Operation"))
     number_of_profiles = models.IntegerField(blank=True, null=True, verbose_name=_("Number of Profiles"))

@@ -1,0 +1,66 @@
+{% load i18n %}
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:index' %}">
+  {% trans "Home" %}
+</a></li>
+
+
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:entry_list' %}">
+  {% trans "Entries" %}
+</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:person_list' %}">
+  {% trans "Contacts" %}
+</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:org_list' %}">
+  {% trans "Organizations" %}
+</a></li>
+
+<li class="nav-item"><a class="nav-link" href="{% url 'ihub:report_search' %}">
+  {% trans "Reports" %}
+</a></li>
+
+{% for group in user.groups.all %}
+  {% if group.name == "ihub_admin" %}
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        {% trans "Settings" %}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'ihub:manage_sectors' %}">
+          {% trans "Manage Sectors" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_orgs' %}">
+          {% trans "Manage Organizations" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_statuses' %}">
+          {% trans "Manage Statuses" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_entry_types' %}">
+          {% trans "Manage Entry Types" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_funding_purposes' %}">
+          {% trans "Manage Funding Purposes" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_reserves' %}">
+          {% trans "Manage Reserves" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_nations' %}">
+          {% trans "Manage Nations" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_programs' %}">
+          {% trans "Manage Funding Programs" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:manage_ratings' %}">
+          {% trans "Manage Relationship Ratings" %}
+        </a>
+        <a class="dropdown-item" href="{% url 'ihub:user_list' %}">
+          {% trans "Manage User Permissions" %}
+        </a>
+
+      </div>
+    </li>
+
+  {% endif %}
+
+{% endfor %}

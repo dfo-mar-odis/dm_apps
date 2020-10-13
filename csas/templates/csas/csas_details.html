@@ -86,17 +86,7 @@
                                onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
                                title="{% trans 'Add' %}">{% trans 'Update' %}</a>
                         {% endif %}
-
                     {% endif %}
-
-                    {# if the user is authenticated and has permissions show the Update button #}
-                    {# {% if key == 'req' and auth or csas_admin %} #}
-                    {#    <a class="btn btn-secondary" #}
-                    {#       href="{% url ''|add:'csas:list_req' %}">{% trans 'RRRequest List' %}</a> #}
-                    {#    <a class="btn btn-secondary" href="#" #}
-                    {#       onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')" #}
-                    {#       title="{% trans 'Add' %}">{% trans 'Update' %}</a> #}
-                    {# {% endif %} #}
                 </div>
             </div>
          </div>

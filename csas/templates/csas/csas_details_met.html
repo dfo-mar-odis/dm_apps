@@ -1,0 +1,445 @@
+{% extends "csas/csas_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block field_override %}
+    <h2>{{ object.prj_name }}</h2>
+    <style>
+        .mymdb-masthead {
+            background-color: #EEEEEE;
+        }
+
+        table{
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        {# td, th{                        #}
+        {#     border: 1px solid #dddddd; #}
+        {#     text-align: left;          #}
+        {#     padding: 8px;              #}
+        {# }                              #}
+
+        tr:nth-child(even){
+            background-color: #dddddd;
+        }
+
+        .collapsible {
+            background-color: #971;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #888;
+        }
+
+        .collapsible:after {
+            content: 'Open';    {# \002B is + sign #}
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: 'Close';    {# \2212 is - sign #}
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            {# background-color: #f1f1f1; #}
+        }
+
+        .outsideDiv {
+            position: relative;
+        }
+    </style>
+
+    {# ----- Meeting Details ----- #}
+    {# {% for field in fields %} #}
+        {# <div class="row" > #}
+            <div class="container">
+            {# <div class="card-header bg-transparent"> #}
+                <table class="table" style="background-color:#f2f2f2">
+                    {#<tbody>#}
+                    {% for field in fields %}
+                        <tr>
+                        <td><span style="color:black" class="font-weight-bold"> {% get_verbose_label object field %} :</span></td>
+                        <td><span style="color:brown"> {% get_field_value object field%}</span></td>
+                        </tr>
+                    {% endfor %}
+                    {#</tbody>#}
+                </table>
+            {# </div> #}
+            </div>
+        {# </div> #}
+    {# {% endfor %} #}
+
+    </div>
+
+    {# ----- Confirmed Documentation ----- #}
+    <button class="collapsible">Confirmed Documentation Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <h1>{% trans 'Confirmed Documentation' %}</h1>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Publication Type</th>
+                            <th>Status</th>
+                            <th>Due Date</th>
+                            <th>Posted Date</th>
+                            <th>Link</th>
+                            <th>Confirmed</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url 'csas:create_met_doc' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {# Get all of the meetingDFO participants and iterate over them #}
+                        {% for doc in object.meeting_docs.all %}
+                            {# for each participant, get the list of participant names, role, time, cost cat., funding src. and salary #}
+                            <tr>
+                                {# participant names is a many-to-many object so get the participant names similar to how we got #}
+                                {# all of the DFO participants #}
+
+                                <td style="color:brown">{{ doc.pub_type }}</td>
+                                <td style="color:brown">{{ doc.status }}</td>
+                                <td style="color:brown">{{ doc.due_date }}</td>
+                                <td style="color:brown">{{ doc.date_posted }}</td>
+                                <td style="color:brown">{{ doc.link }}</td>
+
+                                {% if doc.confirmed %}
+                                    <td style="color:brown"><span style="size:lg">&#x2714</span></td>
+                                {% else %}
+                                    <td> </td>
+                                {% endif %}
+
+                                <td>
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_met_doc' doc.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    {# ----- DFO Meeting Participants ----- #}
+    <br>
+    <button class="collapsible">DFO Meeting Participants Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <h1>DFO Meeting Participants</h1>
+                </div>
+
+                {# <div class="col-2 pt-1">    #}
+                {#     adding new participants #}
+                {# </div>                      #}
+            </div>
+
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Time (Weeks)</th>
+                            <th>Cost Category</th>
+                            <th>Funding Source</th>
+                            <th>Total Salary Amount</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url 'csas:create_met_DFO_pars' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {# Get all of the meetingDFO participants and iterate over them #}
+                        {% for par in object.meetingDFO.all %}
+                            {# for each participant, get the list of participant names, role, time, cost cat., funding src. and salary #}
+                            <tr>
+                                {# participant names is a many-to-many object so get the participant names similar to how we got #}
+                                {# all of the DFO participants #}
+                                <td style="color:brown">{% for par_name in par.name.all %}{{par_name}}{% endfor %}</td>
+                                <td style="color:brown">{{ par.role }}</td>
+                                <td style="color:brown">{{ par.time }}</td>
+                                <td style="color:brown">{{ par.cost_category }}</td>
+                                <td style="color:brown">{{ par.funding_source }}</td>
+                                <td style="color:brown">{{ par.total_salary }}</td>
+
+                                <td>
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_met_DFO_pars' par.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    {# ----- Other Meeting Participants ----- #}
+    <br>
+    <button class="collapsible">Other Meeting Participants Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <h1>Other Meeting Participants</h1>
+                </div>
+            </div>
+
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Affiliation</th>
+                            <th>Invited</th>
+                            <th>Attended</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url 'csas:create_met_other_pars' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {# Get all of the meetingDFO participants and iterate over them #}
+                        {% for par in object.meetingOther.all %}
+                            {# for each participant, get the list of participant names, role, time, cost cat., funding src. and salary #}
+                            <tr>
+                                {# participant names is a many-to-many object so get the participant names similar to how we got #}
+                                {# all of the DFO participants #}
+                                <td style="color:brown">{% for par_name in par.name.all %}{{par_name}}{% endfor %}</td>
+                                <td style="color:brown">{{ par.role }}</td>
+                                <td style="color:brown">{{ par.affiliation }}</td>
+
+                                {% if par.invited %}
+                                    <td style="color:brown"><span style="size:lg">&#x2714</span></td>
+                                {% else %}
+                                    <td> </td>
+                                {% endif %}
+
+                                {% if par.attended %}
+                                    <td style="color:brown"><span style="size:lg">&#x2714</span></td>
+                                {% else %}
+                                    <td> </td>
+                                {% endif %}
+
+                                <td>
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_met_other_pars' par.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    {# ----- Meeting O&M Costs ----- #}
+    <br>
+    <button class="collapsible">Meeting O&M Cost Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <h1>{% trans 'Meeting O&M Cost' %}</h1>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Funding Source</th>
+                            <th>Total O&M Amount</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url 'csas:create_met_OM_costs' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {# Get all of the meetingDFO participants and iterate over them #}
+                        {% for cost in object.meeting_costs.all %}
+                            {# for each participant, get the list of participant names, role, time, cost cat., funding src. and salary #}
+                            <tr>
+                                {# participant names is a many-to-many object so get the participant names similar to how we got #}
+                                {# all of the DFO participants #}
+                                <td style="color:brown">{{ cost.category }}</td>
+                                <td style="color:brown">{{ cost.description }}</td>
+                                <td style="color:brown">{{ cost.funding }}</td>
+                                <td style="color:brown">{{ cost.total }}</td>
+                                <td>
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_met_OM_costs' cost.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    {# ----- Meeting Media ----- #}
+    <br>
+    <button class="collapsible">Meeting Media Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <h1>{% trans 'Meeting Media' %}</h1>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Is Media Attention Anticipated</th>
+
+                            {% for media in object.meeting_media.all %}
+                                {% if media.media_attention %}
+                                    <th>If Yes, More Info</th>
+                                {% else %}
+                                    <th>If No, Why Not?</th>
+                                {% endif %}
+                            {% endfor %}
+
+                            <th>Media Bullets</th>
+                            <th>Media Lines</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url 'csas:create_met_media' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {# Get all of the meetingDFO participants and iterate over them #}
+                        {% for media in object.meeting_media.all %}
+                            <tr>
+                                {% if media.media_attention %}
+                                    {# <td style="color:brown"><span style="size:lg">&#x2714</span></td> #}
+                                    <td style="color:brown"> Yes </td>
+                                    <td style="color:brown">{{ media.media_attention_yes }}</td>
+                                {% else %}
+                                    <td style="color:brown"> No </td>
+                                    <td style="color:brown">{{ media.media_attention_no }}</td>
+                                {% endif %}
+
+                                <td style="color:brown">{{ media.media_bullets }}</td>
+                                <td style="color:brown">{{ media.media_lines }}</td>
+                                <td>
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_met_media' media.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+{% endblock field_override %}

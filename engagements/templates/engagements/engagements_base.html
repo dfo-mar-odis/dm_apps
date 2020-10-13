@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+{% block title %}{% block pagetitle %} {% endblock pagetitle %} | Engagement Tracking{% endblock title %}
+
+{% block body %}
+    <div class="container-fluid">
+    <div class="row">
+    <nav class="col-md-2 d-none d-lg-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link {% if nbar == 'home' %}active{% endif %}" href="{% url 'engagements:home' %}">Dashboard</a>
+                </li>
+            </ul>
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted font-weight-bold">
+                <span>Stakeholders</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link {% if nbar == 'individuals' %}active{% endif %}" href="{% url 'engagements:individual_list' %}">Individuals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if nbar == 'organizations' %}active{% endif %}" href="{% url 'engagements:organization_list' %}">Organizations</a>
+                </li>
+            </ul>
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted font-weight-bold">
+                <span>Planning</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link {% if nbar == 'plans' %}active{% endif %}" href="{% url 'engagements:plan_list' %}">Engagement Plans</a>
+                </li>
+            </ul>
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted font-weight-bold">
+                <span>Engagements</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link {% if nbar == 'interactions' %}active{% endif %}" href="{% url 'engagements:interaction_list' %}">Interactions</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="col-md-10 ml-sm-auto px-4">
+        <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb pt-1 pb-0 m-0">{% block breadcrumbs %}{% endblock breadcrumbs %}</ol>
+            </nav>
+        </div>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    </div>
+    </div>
+{% endblock body %}
+
+{% block header %}
+
+{% endblock %}
+{% block left_all %}
+    <a class="navbar-brand" href="{% url 'engagements:home' %}">Engagement Tracking</a>
+{% endblock left_all %}
+
+
+{% block left_unauth %}
+{% endblock left_unauth %}
+
+{% block left_admin %}
+{% endblock left_admin %}
+
+{% block body_js %}
+{% endblock body_js %}

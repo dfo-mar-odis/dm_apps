@@ -6,63 +6,28 @@ from django.utils.translation import gettext_lazy as _
 from shared_models import models as shared_models
 
 # Choices for YesNo
+from shared_models.models import SimpleLookup
+
 YESNO_CHOICES = (
     (True, "Yes"),
     (False, "No"),
 )
 
 
-class Sector(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
-
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
-
-    class Meta:
-        ordering = ['name', ]
+class Sector(SimpleLookup):
+    pass
 
 
-class Grouping(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("Name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
+class Grouping(SimpleLookup):
     is_indigenous = models.BooleanField(default=False, verbose_name=_("indigenous?"))
 
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
 
-    class Meta:
-        ordering = ['name', ]
+class Reserve(SimpleLookup):
+    pass
 
 
-class Reserve(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("Name"))
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name', ]
-
-
-class Nation(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name"))
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name', ]
+class Nation(SimpleLookup):
+    pass
 
 
 def audio_file_directory_path(instance, filename):
@@ -70,19 +35,11 @@ def audio_file_directory_path(instance, filename):
     return 'ihub/org_{}/{}'.format(instance.id, filename)
 
 
-class RelationshipRating(models.Model):
+class RelationshipRating(SimpleLookup):
     level = models.IntegerField(verbose_name=_("level"), unique=True)
-    name = models.CharField(max_length=255, verbose_name=_("description (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("description (French)"))
 
     def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            my_str = "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            my_str = "{}".format(self.name)
-        return f'{self.level} - {my_str}'
+        return f'{self.level} - {self.tname}'
 
     class Meta:
         ordering = ['level', ]
@@ -106,7 +63,7 @@ class Organization(models.Model):
     notes = models.TextField(blank=True, null=True, verbose_name=_("notes"))
     consultation_protocol = models.TextField(blank=True, null=True, verbose_name=_("consultation protocol"))
     key_species = models.TextField(blank=True, null=True, verbose_name=_("key species"))
-    grouping = models.ManyToManyField(Grouping, verbose_name=_("grouping"), blank=True)
+    grouping = models.ManyToManyField(Grouping, verbose_name=_("grouping"), blank=False)
     regions = models.ManyToManyField(shared_models.Region, verbose_name=_("region"), blank=True)
     sectors = models.ManyToManyField(Sector, verbose_name=_("DFO sector"), blank=True)
 
@@ -149,10 +106,13 @@ class Organization(models.Model):
     @property
     def full_address(self):
         # initial my_str with either address or None
-        if self.address:
+        if self.mailing_address:
+            my_str = self.mailing_address
+        elif self.address:
             my_str = self.address
         else:
             my_str = ""
+
         # add city
         if self.city:
             if my_str:
@@ -171,7 +131,12 @@ class Organization(models.Model):
         return my_str
 
     def get_absolute_url(self):
-        return reverse('masterlist:org_detail', kwargs={'pk': self.pk})
+        return reverse('ihub:org_detail', kwargs={'pk': self.pk})
+
+    @property
+    def chief(self):
+        if self.members.filter(role__icontains="chief").exists():
+            return self.members.filter(role__icontains="chief").first()
 
 
 class Person(models.Model):
@@ -198,6 +163,8 @@ class Person(models.Model):
     connected_user = models.OneToOneField(User, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="ml_persons")
     ihub_vetted = models.BooleanField(default=False, choices=YESNO_CHOICES, verbose_name=_("vetted by iHub"))
 
+    # is_consultation_contact = models.BooleanField(default=False, choices=YESNO_CHOICES, verbose_name=_("Consultation contact?"))
+
     def save(self, *args, **kwargs):
         self.date_last_modified = timezone.now()
         return super().save(*args, **kwargs)
@@ -209,7 +176,7 @@ class Person(models.Model):
         ordering = ['last_name', 'first_name']
 
     def get_absolute_url(self):
-        return reverse('masterlist:person_detail', kwargs={'pk': self.pk})
+        return reverse('ihub:person_detail', kwargs={'pk': self.pk})
 
     @property
     def display_name(self):
@@ -263,20 +230,8 @@ class Person(models.Model):
         return my_str
 
 
-class Role(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("name (English)"))
-    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Name (French)"))
-
-    def __str__(self):
-        # check to see if a french value is given
-        if getattr(self, str(_("name"))):
-            return "{}".format(getattr(self, str(_("name"))))
-        # if there is no translated term, just pull from the english field
-        else:
-            return "{}".format(self.name)
-
-    class Meta:
-        ordering = [_('name'), ]
+class Role(SimpleLookup):
+    pass
 
 
 class OrganizationMember(models.Model):
@@ -313,42 +268,21 @@ class OrganizationMember(models.Model):
         return "{} {}, {} ({})".format(first_name, last_name, self.role, self.organization)
 
 
-class ConsultationInstruction(models.Model):
-    organization = models.OneToOneField(Organization, on_delete=models.CASCADE, related_name="consultation_instructions")
-    letter_to = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("address letter to:"))
-    letter_cc = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("include on cc (letter)"))
-    paper_copy = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("paper copy to"))
-    notes = models.TextField(blank=True, null=True)
-    # metadata
-    date_last_modified = models.DateTimeField(blank=True, null=True, default=timezone.now, verbose_name=_("date last modified"))
-    last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("last modified by"))
-
-    def get_absolute_url(self):
-        return reverse('masterlist:org_detail', kwargs={'pk': self.organization.pk})
-
-    def save(self, *args, **kwargs):
-        self.date_last_modified = timezone.now()
-        return super().save(*args, **kwargs)
-
-    class Meta:
-        ordering = ["organization", ]
-
-    def __str__(self):
-        return "Consultation Instructions for {}".format(self.organization)
-
-
-class ConsultationInstructionRecipient(models.Model):
+class ConsultationRole(models.Model):
+    # TODO: testme
     TO = 1
     CC = 2
+    COM = 3
     TO_CC_CHOICES = (
         (TO, _("TO")),
         (CC, _("CC")),
+        (COM, _("CC (Commercial Only)")),
     )
-    consultation_instruction = models.ForeignKey(ConsultationInstruction, on_delete=models.CASCADE, related_name="recipients")
-    member = models.ForeignKey(OrganizationMember, on_delete=models.DO_NOTHING, related_name="consultation_instructions")
+    member = models.ForeignKey(OrganizationMember, on_delete=models.DO_NOTHING, related_name="consultation_roles")
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name="consultees")
     to_cc = models.IntegerField(choices=TO_CC_CHOICES, verbose_name=_("TO / CC"))
     # metadata
-    date_last_modified = models.DateTimeField(blank=True, null=True, default=timezone.now, verbose_name=_("date last modified"))
+    date_last_modified = models.DateTimeField(auto_now=True, editable=False, verbose_name=_("date last modified"))
     last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("last modified by"))
 
     def save(self, *args, **kwargs):
@@ -357,7 +291,7 @@ class ConsultationInstructionRecipient(models.Model):
 
     class Meta:
         ordering = ["to_cc", "member"]
-        unique_together = ["consultation_instruction", "member"]
+        unique_together = ["organization", "member", "to_cc"]
 
     def __str__(self):
         if self.member.person.designation:
@@ -386,3 +320,39 @@ class ConsultationInstructionRecipient(models.Model):
             role = _("MISSING ROLE")
 
         return "{}: {}{}{} - {} [{}]".format(self.get_to_cc_display(), designation, first_name, last_name, role, email)
+
+
+class ConsultationInstruction(models.Model):
+    organization = models.OneToOneField(Organization, on_delete=models.CASCADE, related_name="consultation_instructions")
+    letter_to = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("address letter to:"))
+    letter_cc = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("include on cc (letter)"))
+    paper_copy = models.CharField(max_length=500, blank=True, null=True, verbose_name=_("paper copy to"))
+    notes = models.TextField(blank=True, null=True)
+    # metadata
+    date_last_modified = models.DateTimeField(blank=True, null=True, default=timezone.now, verbose_name=_("date last modified"))
+    last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("last modified by"))
+
+    def get_absolute_url(self):
+        return reverse('ihub:org_detail', kwargs={'pk': self.organization.pk})
+
+    def save(self, *args, **kwargs):
+        self.date_last_modified = timezone.now()
+        return super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ["organization", ]
+
+    def __str__(self):
+        return "Consultation Instructions for {}".format(self.organization)
+
+    @property
+    def to_email_recipients(self):
+        return self.organization.consultees.filter(to_cc=1)
+
+    @property
+    def cc_email_recipients(self):
+        return self.organization.consultees.filter(to_cc=2)
+
+    @property
+    def cc_commercial_email_recipients(self):
+        return self.organization.consultees.filter(to_cc=3)

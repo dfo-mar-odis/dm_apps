@@ -1,0 +1,558 @@
+{% extends "csas/csas_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+
+{% block field_override %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .mymdb-masthead {
+            background-color: #EEEEEE;
+        }
+
+        table{
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        {# td, th{                        #}
+        {#     border: 1px solid #dddddd; #}
+        {#     text-align: left;          #}
+        {#     padding: 8px;              #}
+        {# }                              #}
+
+        tr:nth-child(even){
+            background-color: #dddddd;
+        }
+
+        .collapsible {
+            background-color: #971;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 18px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #888;
+        }
+
+        .collapsible:after {
+            content: 'Open';    {# \002B is + sign #}
+            color: white;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: 'Close';    {# \2212 is - sign #}
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            {# background-color: #f1f1f1; #}
+        }
+
+        .outsideDiv {
+            position: relative;
+        }
+    </style>
+
+    {# ----- Publication Details ----- #}
+    {# {% for field in fields %} #}
+        {# <div class="row" > #}
+            <div class="container">
+            {# <div class="card-header bg-transparent"> #}
+                <table class="table" style="background-color:#f2f2f2">
+                    {#<tbody>#}
+                    {% for field in fields %}
+                        <tr>
+                        <td><span style="color:black" class="font-weight-bold"> {% get_verbose_label object field %} :</span></td>
+                        <td><span style="color:brown"> {% get_field_value object field%}</span></td>
+                        </tr>
+                    {% endfor %}
+                    {#</tbody>#}
+                </table>
+            {# </div> #}
+            </div>
+        {# </div> #}
+    {# {% endfor %} #}
+
+    </div>
+
+    {# ----- Publication Status ----- #}
+    <button class="collapsible">Publication Status Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <br>
+                    <h1>{% trans 'Publication Status' %}</h1>
+                </div>
+
+                <div class="col-4 pt-1">
+                        {% if csas_admin %}
+                            <br>
+                            {% if object.pub_status.all %}
+                                {# ----- this publication status exists, put a Update button #}
+                                {% for pub_status in object.pub_status.all %}
+                                    {% if pub_status.pk %}
+                                        <a class="btn btn-secondary"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_pub_status' pub_status.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                {# ----- this publication status does not exist, put a Add New (+) button #}
+                                <a class="btn btn-secondary"
+                                   href="#" onclick="return popitup('{% url 'csas:create_pub_status' object.pk 'pop' %}','popoutWindow')"
+                                   title="{% trans 'Add' %}">{% trans '+' %}</a>
+                            {% endif %}
+                        {% endif %}
+                        {# ----- put a Publication List button #}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:'csas:list_pub' %}">{% trans 'Publication List' %}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-header bg-transparent">
+
+            <div class="card-body bg-transparent">
+
+                <table class="table" style="background-color:#f2f2f2">
+                    {% for pub_status in object.pub_status.all %}
+                        <tr><td style="color:black" class="font-weight-bold"> Status :</td>
+                            <td style="color:brown"> {{ pub_status.status }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Status Comments :</td>
+                            <td style="color:brown"> {{ pub_status.status_comments }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Due :</td>
+                            <td style="color:brown"> {{ pub_status.date_due }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Submitted by Author :</td>
+                            <td style="color:brown"> {{ pub_status.date_submitted }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Submitted By :</td>
+                            <td style="color:brown">
+                                {% for author in pub_status.submitted_by.all %}
+                                    {{ author }}<br />
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Approved by Chair :</td>
+                            <td style="color:brown"> {{ pub_status.date_appr_by_chair }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Approved By (Chair) :</td>
+                            <td style="color:brown">
+                                {% for chair in pub_status.appr_by_chair.all %}
+                                    {{ chair }}<br />
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Approved by CSAS :</td>
+                            <td style="color:brown"> {{ pub_status.data_appr_by_CSAS }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Approved By (CSAS Contact) :</td>
+                            <td style="color:brown">
+                                {% for csas_contact in pub_status.appr_by_CSAS.all %}
+                                    {{ csas_contact }}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Approved by Director :</td>
+                            <td style="color:brown"> {{ pub_status.date_appr_by_dir }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Approved By (Director) :</td>
+                            <td style="color:brown">
+                                {% for director in pub_status.appr_by_dir.all %}
+                                    {{ director }}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Number Requested :</td>
+                            <td style="color:brown"> {{ pub_status.date_num_req }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Document Submitted to CSAS :</td>
+                            <td style="color:brown"> {{ pub_status.date_doc_submitted }}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:black" class="font-weight-bold"> Date PDF Proof Sent to Author :</td>
+                            <td style="color:brown"> {{ pub_status.date_pdf_proof }}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:black" class="font-weight-bold"> Approved By (PDF Proof) :</td>
+                            <td style="color:brown">
+                                {% for pdf_proof in pub_status.appr_by.all %}
+                                    {{ pdf_proof }}
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color:black" class="font-weight-bold"> Date of Anticipated Posting :</td>
+                            <td style="color:brown"> {{ pub_status.date_anti }}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:black" class="font-weight-bold"> Date Posted :</td>
+                            <td style="color:brown"> {{ pub_status.date_posted }}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:black" class="font-weight-bold"> Date Modified :</td>
+                            <td style="color:brown"> {{ pub_status.date_modify }}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:black" class="font-weight-bold"> Notes :</td>
+                            <td style="color:brown"> {{ pub_status.notes }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {# ----- Translation Information ----- #}
+    <br>
+    <button class="collapsible">Translation Information Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <br>
+                    <h1>{% trans 'Translation Information' %}</h1>
+                </div>
+
+                <div class="col-4 pt-1">
+                        {% if csas_admin %}
+                            <br>
+                            {% if object.pub_trans_info.all %}
+                                {# ----- this publication translation information exists, put a Update button #}
+                                {% for trans_info in object.pub_trans_info.all %}
+                                    {% if trans_info.pk %}
+                                        <a class="btn btn-secondary"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_pub_trans_info' trans_info.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                {# ----- this publication translation information does not exist, put a Add New (+) button #}
+                                <a class="btn btn-secondary"
+                                   href="#" onclick="return popitup('{% url 'csas:create_pub_trans_info' object.pk 'pop' %}','popoutWindow')"
+                                   title="{% trans 'Add' %}">{% trans '+' %}</a>
+                            {% endif %}
+                        {% endif %}
+                        {# ----- put a Publication List button #}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:'csas:list_pub' %}">{% trans 'Publication List' %}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-header bg-transparent">
+
+            <div class="card-body bg-transparent">
+
+                <table class="table" style="background-color:#f2f2f2">
+                    {% for trans_info in object.pub_trans_info.all %}
+                        <tr><td style="color:black" class="font-weight-bold"> Translation Status :</td>
+                            <td style="color:brown"> {{ trans_info.trans_status }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Sent to Translation :</td>
+                            <td style="color:brown"> {{ trans_info.date_to_trans }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Client Reference Number :</td>
+                            <td style="color:brown"> {{ trans_info.client_ref_num }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Target Language :</td>
+                            <td style="color:brown"> {{ trans_info.target_lang }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Translator Reference Number :</td>
+                            <td style="color:brown">{{ trans_info.trans_ref_num }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Urgent Request :</td>
+                            <td style="color:brown"> {{ trans_info.urgent_req }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Date Back from Translation :</td>
+                            <td style="color:brown"> {{ trans_info.date_fr_trans }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Invoice Number :</td>
+                            <td style="color:brown"> {{ trans_info.invoice_num }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Attachment(s) :</td>
+                            <td style="color:brown"> {{ trans_info.attach }}</td>
+                        </tr>
+                        <tr><td style="color:black" class="font-weight-bold"> Translation Notes :</td>
+                            <td style="color:brown"> {{ trans_info.trans_note }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {# ----- Documentation Location ----- #}
+    <br>
+    <button class="collapsible">Documentation Location Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <br>
+                    <h1>{% trans 'Documentation Location' %}</h1>
+                </div>
+
+                <div class="col-4 pt-1">
+                        {% if csas_admin %}
+                            <br>
+                            {% if object.pub_doc_location.all %}
+                                {# ----- this publication documentation location exists, put a Update button #}
+                                {% for doc_location in object.pub_doc_location.all %}
+                                    {% if doc_location.pk %}
+                                        <a class="btn btn-secondary"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_pub_doc_location' doc_location.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                {# ----- this publication documentation location does not exist, put a Add New (+) button #}
+                                <a class="btn btn-secondary"
+                                   href="#" onclick="return popitup('{% url 'csas:create_pub_doc_location' object.pk 'pop' %}','popoutWindow')"
+                                   title="{% trans 'Add' %}">{% trans '+' %}</a>
+                            {% endif %}
+                        {% endif %}
+                        {# ----- put a Publication List button #}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:'csas:list_pub' %}">{% trans 'Publication List' %}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-header bg-transparent">
+
+            <div class="card-body bg-transparent">
+
+                <table class="table" style="background-color:#f2f2f2">
+
+                    {% for doc_location in object.pub_doc_location.all %}
+                    <tr><td style="color:black" class="font-weight-bold"> Attachment (English) :</td>
+                        <td style="color:brown"> {{ doc_location.attach_en_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.attach_en_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> Attachment (French) :</td>
+                        <td style="color:brown"> {{ doc_location.attach_fr_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.attach_fr_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> URL (English) :</td>
+                        <td style="color:brown"> {{ doc_location.url_e_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.url_e_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> URL (French) :</td>
+                        <td style="color:brown"> {{ doc_location.url_f_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.url_f_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> Dev Link (English) :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_e_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_e_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> Dev Link (French) :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_f_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_f_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> EKME#/GCDocs (English) :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_e_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_e_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> EKME#/GCDocs (French) :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_f_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.dev_link_f_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> Library Catelogue # (English) :</td>
+                        <td style="color:brown"> {{ doc_location.lib_cat_e_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.lib_cat_e_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> Library Catelogue # (French) :</td>
+                        <td style="color:brown"> {{ doc_location.lib_cat_f_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.lib_cat_f_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> Library Link (English) :</td>
+                        <td style="color:brown"> {{ doc_location.lib_link_e_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.lib_link_e_size }}</td>
+                    </tr>
+                    <tr><td style="color:black" class="font-weight-bold"> Library Link (French) :</td>
+                        <td style="color:brown"> {{ doc_location.lib_link_f_file }}</td>
+                        <td style="color:black" class="font-weight-bold"> Size :</td>
+                        <td style="color:brown"> {{ doc_location.lib_link_f_size }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {# ----- Publication O&M Costs ----- #}
+    <br>
+    <button class="collapsible">Publication O&M Cost Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <br>
+                    <h1>{% trans 'Publication O&M Cost' %} {{object.publication_costs.trans_cost}} </h1>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Funding Source</th>
+                            <th>Coding</th>
+                            <th>Estimate</th>
+                            <th>Total O&M Amount</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url 'csas:create_pub_OM_costs' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {# Get all of the publication O&M costs and iterate over them #}
+                        {% for cost in object.publication_costs.all %}
+                            <tr>
+                                <td style="color:brown">{{ cost.category }}</td>
+                                <td style="color:brown">{{ cost.trans_funding }}</td>
+                                <td style="color:brown">{{ cost.trans_code }}</td>
+                                <td style="color:brown">{{ cost.trans_estimate }}</td>
+                                <td style="color:brown">{{ cost.trans_cost }}</td>
+                                <td>
+                                    {# if the update url contains /pop/ then open the url in a popup window #}
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_pub_OM_costs' cost.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {# ----- Communication of Results ----- #}
+    <br>
+    <button class="collapsible">Communication of Results Form</button>
+    <div class="content">
+
+    <div class="container card border border-dark text-left mt-2 pt-1">
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <br>
+                    <h1>{% trans 'Communication of Results' %} {{object.meeting_costs.description}} </h1>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Size</th>
+                            <th>Attachment</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary"
+                                       href="#" onclick="return popitup('{% url 'csas:create_pub_com_results' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {# Get all of the meetingDFO participants and iterate over them #}
+                        {% for com_results in object.pub_com_results.all %}
+                            {# for each participant, get the list of participant names, role, time, cost cat., funding src. and salary #}
+                            <tr>
+                                <td style="color:brown">{{ com_results.pub_category }}</td>
+                                <td style="color:brown">{{ com_results.pub_description }}</td>
+                                <td style="color:brown">{{ com_results.pub_size }}</td>
+                                <td style="color:brown">{{ com_results.pub_attachment }}</td>
+                                <td>
+                                    {# if the update url contains /pop/ then open the url in a popup window #}
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_pub_com_results' com_results.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+{% endblock field_override %}

@@ -1,173 +1,182 @@
-{% extends "ihub/ihub_base.html" %}
+{% extends "ihub/base.html" %}
 {% load static %}
 {% load i18n %}
 {% load bootstrap4 %}
 
 {% block title %}
-    {% trans "iHub reports" %}
+  {% trans "iHub reports" %}
 {% endblock title %}
 
 {% block content %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        label {
-            font-weight: bold;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  label {
+      font-weight: bold;
+  }
 
-    </style>
+  </style>
 
-    <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen"
-          type="text/css">
-    <style>
-        .ms-container {
-            width: 100%;
-        }
-    </style>
+  <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen"
+        type="text/css">
+  <style>
+  .ms-container {
+      width: 100%;
+  }
+  </style>
 
-    {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
-    <div class="container">
-        <div class="jumbotron">
-            <h1>
-                {% trans "Please enter the Report Details:" %}
-            </h1>
-        </div>
+  {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
+  <div class="container">
+    <div class="jumbotron">
+      <h1>
+        {% trans "Please enter the Report Details:" %}
+      </h1>
     </div>
+  </div>
 
-    <div class="container">
-        <form method="post">
+  <div class="container">
+    <form method="post">
 
-            {% csrf_token %}
-            {% for field in form %}
+      {% csrf_token %}
+      {% for field in form %}
 
-                {% if field.name == "organizations" %}
-                    <div class="org_div">
-                        {% bootstrap_field field %}
+        {% if field.name == "organizations" %}
+          <div class="org_div">
+            {% bootstrap_field field %}
 
-                    </div>
-                {% elif field.name == "sectors" %}
-                    <div class="sector_div">
-                        {% bootstrap_field field %}
-                    </div>
-                {% elif field.name == "statuses" %}
-                    <div class="status_div">
-                        {% bootstrap_field field %}
-                    </div>
-                {% elif field.name == "entry_types" %}
-                    <div class="entry_type_div">
-                        {% bootstrap_field field %}
-                    </div>
-                {% elif field.name == "fiscal_year" %}
-                    <div class="year_div">
-                        {% bootstrap_field field %}
-                    </div>
-                {% elif field.name == "single_org" %}
-                    <div class="single_org_div">
-                        {% bootstrap_field field %}
-                    </div>
-                {% elif field.name == "report_title" %}
-                    <div class="report_title_div">
-                        {% bootstrap_field field %}
-                    </div>
-                {% else %}
-                    {% bootstrap_field field %}
-                {% endif %}
-            {% endfor %}
-            <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
-
-
-        </form>
-
-    </div>
-
-    <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
-    <script type="application/javascript">
-
-        function hideAll() {
-            $(".org_div").addClass("gone");
-            $(".year_div").addClass("gone");
-            $(".single_org_div").addClass("gone");
-            $(".sector_div").addClass("gone");
-            $(".status_div").addClass("gone");
-            $(".entry_type_div").addClass("gone");
-            $(".report_title_div").addClass("gone");
-
-            $("#id_report").prop('required', true);
-            $("#id_organizations").prop('required', false);
-            $("#id_fiscal_year").prop('required', false);
-            $("#id_single_org").prop('required', false);
-            $("#id_sectors").prop('required', false);
-            $("#id_statuses").prop('required', false);
-            $("#id_entry_types").prop('required', false);
-            $("#id_report_title").prop('required', false);
-        }
-
-        function configureForm() {
-            let reportChoice = $("#id_report")[0].value;
-            // species count report
-            if (reportChoice == 1) {
-                $(".sector_div").removeClass("gone");
-                $(".org_div").removeClass("gone");
-                $(".year_div").removeClass("gone");
-                $("#id_organizations").multiSelect();
-                $("#id_sectors").multiSelect();
-            } else if (reportChoice == 2) {
-                $(".single_org_div").removeClass("gone");
-                $("#id_single_org").prop('required', true);
-            } else if (reportChoice == 4) {
-                $(".sector_div").removeClass("gone");
-                $(".org_div").removeClass("gone");
-                $(".year_div").removeClass("gone");
-                $("#id_organizations").multiSelect();
-                $("#id_sectors").multiSelect();
-
-            } else if (reportChoice == 3) {
-                $(".sector_div").removeClass("gone");
-                $(".org_div").removeClass("gone");
-                $(".year_div").removeClass("gone");
-                $("#id_organizations").multiSelect();
-                $("#id_sectors").multiSelect();
-            } else if (reportChoice == 5 || reportChoice == 6) {
-                $(".org_div").removeClass("gone");
-                $(".year_div").removeClass("gone");
-                $(".status_div").removeClass("gone");
-                $(".entry_type_div").removeClass("gone");
-                $(".report_title_div").removeClass("gone");
-                $("#id_organizations").multiSelect();
-                $("#id_statuses").multiSelect();
-                $("#id_entry_types").multiSelect();
-                $("#id_report_title").prop('required', true);
-
-            }
-        }
-
-        $(document).ready(function () {
-            // Stuff to do as soon as the DOM is ready
-            hideAll();
-            configureForm();
-        });
-
-        $("#id_report").change(function () {
-            hideAll();
-            configureForm();
-        });
-
-        $("form").submit(function () {
-            var reportChoice = $("#id_report")[0].value;
-            // species count report
-            if (reportChoice != 4) {
-                $(this).addClass("hidden");
-                $(".loader").removeClass("hidden");
-                window.setTimeout(closeLoader, 5000);
-            }
-        });
-
-        function closeLoader() {
-            $("form").removeClass("hidden");
-            $(".loader").addClass("hidden");
-        }
+          </div>
+        {% elif field.name == "orgs_w_consultation_instructions" %}
+          <div class="orgs_w_consultation_instructions_div">
+            {% bootstrap_field field %}
+          </div>
+        {% elif field.name == "sectors" %}
+          <div class="sector_div">
+            {% bootstrap_field field %}
+          </div>
+        {% elif field.name == "statuses" %}
+          <div class="status_div">
+            {% bootstrap_field field %}
+          </div>
+        {% elif field.name == "entry_types" %}
+          <div class="entry_type_div">
+            {% bootstrap_field field %}
+          </div>
+        {% elif field.name == "fiscal_year" %}
+          <div class="year_div">
+            {% bootstrap_field field %}
+          </div>
+        {% elif field.name == "single_org" %}
+          <div class="single_org_div">
+            {% bootstrap_field field %}
+          </div>
+        {% elif field.name == "report_title" %}
+          <div class="report_title_div">
+            {% bootstrap_field field %}
+          </div>
+        {% else %}
+          {% bootstrap_field field %}
+        {% endif %}
+      {% endfor %}
+      <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
 
 
-    </script>
+    </form>
+
+  </div>
+
+  <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
+  <script type="application/javascript">
+
+  function hideAll() {
+    $(".org_div").addClass("gone");
+    $(".orgs_w_consultation_instructions_div").addClass("gone");
+    $(".year_div").addClass("gone");
+    $(".single_org_div").addClass("gone");
+    $(".sector_div").addClass("gone");
+    $(".status_div").addClass("gone");
+    $(".entry_type_div").addClass("gone");
+    $(".report_title_div").addClass("gone");
+
+    $("#id_report").prop('required', true);
+    $("#id_organizations").prop('required', false);
+    $("#id_orgs_w_consultation_instructions").prop('required', false);
+    $("#id_fiscal_year").prop('required', false);
+    $("#id_single_org").prop('required', false);
+    $("#id_sectors").prop('required', false);
+    $("#id_statuses").prop('required', false);
+    $("#id_entry_types").prop('required', false);
+    $("#id_report_title").prop('required', false);
+  }
+
+  function configureForm() {
+    let reportChoice = $("#id_report")[0].value;
+    // species count report
+    if (reportChoice == 1) {
+      $(".sector_div").removeClass("gone");
+      $(".org_div").removeClass("gone");
+      $(".year_div").removeClass("gone");
+      $("#id_organizations").multiSelect();
+      $("#id_sectors").multiSelect();
+    } else if (reportChoice == 2) {
+      $(".single_org_div").removeClass("gone");
+      $("#id_single_org").prop('required', true);
+    } else if (reportChoice == 4) {
+      $(".sector_div").removeClass("gone");
+      $(".org_div").removeClass("gone");
+      $(".year_div").removeClass("gone");
+      $("#id_organizations").multiSelect();
+      $("#id_sectors").multiSelect();
+
+    } else if (reportChoice == 3) {
+      $(".sector_div").removeClass("gone");
+      $(".org_div").removeClass("gone");
+      $(".year_div").removeClass("gone");
+      $("#id_organizations").multiSelect();
+      $("#id_sectors").multiSelect();
+    } else if (reportChoice == 5 || reportChoice == 6) {
+      $(".org_div").removeClass("gone");
+      $(".year_div").removeClass("gone");
+      $(".status_div").removeClass("gone");
+      $(".entry_type_div").removeClass("gone");
+      $(".report_title_div").removeClass("gone");
+      $("#id_organizations").multiSelect();
+      $("#id_statuses").multiSelect();
+      $("#id_entry_types").multiSelect();
+      $("#id_report_title").prop('required', true);
+
+    } else if (reportChoice == 7 ||reportChoice == 8) {
+      $(".orgs_w_consultation_instructions_div").removeClass("gone");
+      $("#id_orgs_w_consultation_instructions").multiSelect();
+    }
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    hideAll();
+    configureForm();
+  });
+
+  $("#id_report").change(function () {
+    hideAll();
+    configureForm();
+  });
+
+  $("form").submit(function () {
+    var reportChoice = $("#id_report")[0].value;
+    // species count report
+    if (reportChoice != 4) {
+      $(this).addClass("hidden");
+      $(".loader").removeClass("hidden");
+      window.setTimeout(closeLoader, 5000);
+    }
+  });
+
+  function closeLoader() {
+    $("form").removeClass("hidden");
+    $(".loader").addClass("hidden");
+  }
+
+
+  </script>
 
 {% endblock content %}

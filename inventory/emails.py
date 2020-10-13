@@ -1,16 +1,18 @@
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.template import loader
+
+from dm_apps.context_processor import my_envr
 from . import models
 
 app_name = settings.WEB_APP_NAME  # should be a single word with one space
 from_email = settings.SITE_FROM_EMAIL
-admin_email = 'david.fishman@dfo-mpo.gc.ca'
 
 
 class CertificationRequestEmail:
 
-    def __init__(self, me, person_object):
+    def __init__(self, me, person_object, request):
+        self.request = request
         self.me = me
         self.person_object = person_object
         self.subject = 'Your metadata inventory'
@@ -31,7 +33,7 @@ class CertificationRequestEmail:
             'object': self.person_object,
             'queryset': self.person_object.resource_people.filter(role=1)
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -41,7 +43,8 @@ class CertificationRequestEmail:
 
 class SectionReportEmail:
 
-    def __init__(self, me, person_object, section):
+    def __init__(self, me, person_object, section, request):
+        self.request = request
         self.me = me
         self.person_object = person_object
         self.section = section
@@ -63,7 +66,7 @@ class SectionReportEmail:
             'queryset': self.queryset,
             'section': self.section,
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -73,7 +76,8 @@ class SectionReportEmail:
 
 class FlagForDeletionEmail:
 
-    def __init__(self, object, user):
+    def __init__(self, object, user, request):
+        self.request = request
         self.subject = 'A data resource has been flagged for deletion'
         self.message = self.load_html_template(object, user)
         self.from_email = from_email
@@ -85,7 +89,7 @@ class FlagForDeletionEmail:
             'object': object,
             'user': user,
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -95,7 +99,8 @@ class FlagForDeletionEmail:
 
 class FlagForPublicationEmail:
 
-    def __init__(self, object, user):
+    def __init__(self, object, user, request):
+        self.request = request
         self.subject = 'A data resource has been flagged for publication'
         self.message = self.load_html_template(object, user)
         self.from_email = from_email
@@ -107,7 +112,7 @@ class FlagForPublicationEmail:
             'object': object,
             'user': user,
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -117,7 +122,8 @@ class FlagForPublicationEmail:
 
 class AddedAsCustodianEmail:
 
-    def __init__(self, object, user):
+    def __init__(self, object, user, request):
+        self.request = request
         self.subject = 'You have been added as a custodian'
         self.message = self.load_html_template(object, user)
         self.from_email = from_email
@@ -129,7 +135,7 @@ class AddedAsCustodianEmail:
             'object': object,
             'user': user,
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 
@@ -139,7 +145,8 @@ class AddedAsCustodianEmail:
 
 class RemovedAsCustodianEmail:
 
-    def __init__(self, object, user):
+    def __init__(self, object, user, request):
+        self.request = request
         self.subject = 'You have been removed as a custodian'
         self.message = self.load_html_template(object, user)
         self.from_email = from_email
@@ -151,7 +158,7 @@ class RemovedAsCustodianEmail:
             'object': object,
             'user': user,
         }
-        context.update({"SITE_FULL_URL": settings.SITE_FULL_URL})
+        context.update(my_envr(self.request))
         rendered = t.render(context)
         return rendered
 

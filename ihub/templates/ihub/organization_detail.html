@@ -1,111 +1,96 @@
-{% extends "ihub/ihub_base.html" %}
+{% extends "ihub/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load verbose_names %}
 {% load i18n %}
-{% block content %}
+{% block subcontent %}
 
-    <style>
-        .label {
-            font-weight: bold;
-        }
+  <div class="row">
+    <div class="col">
+      <div class="btns">
+        <a class="btn btn-sm btn-warning" href="{% url 'ihub:org_edit' object.id %}">
+          {% trans "Edit" %}
+        </a>
+        <a class="btn btn-sm btn-danger " href="{% url 'ihub:org_delete' object.id %}">
+          {% trans "Delete" %}
+        </a>
+        <a class="btn btn-sm btn-success" href="{% url 'ihub:report_q' object.id %}">
+          {% trans "Cue Card" %}
+        </a>
 
-        table, td {
-            font-size: small;
-        }
-    </style>
+      </div>
+    </div>
+    <div class="col">
+      {% if object.audio_file %}
+        <audio controls>
+          <source src="{{ object.audio_file.url }}" type="audio/ogg">
+          Your browser does not support the audio element.
+        </audio>
+      {% endif %}
+    </div>
+  </div>
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'ihub:index' %}">
-                {% trans "Home" %}
-            </a></li>
-            <li class="breadcrumb-item"><a href="{% url 'ihub:org_list' %}">
-                {% trans "Organizations" %}
-            </a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>
-        </ol>
-    </nav>
+  <br><br>
 
-    <div class="indent-lg">
+  <div class="row">
+    <div class="col">
+      <h3>
+        {% trans "Organization Detail:" %}
+      </h3>
+      <table class="table table-sm table-striped">
+        {% for field in field_list %}
 
-        <h1>{{ object }}</h1>
-        <div class="row">
-            <div class="col">
-                <div class="btn-group">
-                    <a class="btn btn-warning" href="{% url 'ihub:org_edit' object.id %}">
-                        {% trans "Edit" %}
-                    </a>
-                    <a class="btn btn-danger " href="{% url 'ihub:org_delete' object.id %}">
-                        {% trans "Delete" %}
-                    </a>
-                    <a class="btn btn-success" href="{% url 'ihub:report_q' object.id %}">
-                        {% trans "Cue Card" %}
-                    </a>
+          {% if field == "orgs" %}
+            <tr>
+              <th>
+                {% get_verbose_label instance=object field_name=field %}
+              </th>
+              <td>
+                {% for org in object.orgs.all %}
+                  <a href="{% url 'ihub:org_detail' org.id %}" target="_blank">
+                    {{ org }}
+                  </a><br>
+                {% endfor %}
+              </td>
+            </tr>
+          {% else %}
 
-                </div>
-            </div>
-            <div class="col">
-                {% if object.audio_file %}
-                    <audio controls>
-                        <source src="{{ object.audio_file.url }}" type="audio/ogg">
-                        Your browser does not support the audio element.
-                    </audio>
-                {% endif %}
-            </div>
-        </div>
+            {% verbose_td_display object field %}
+          {% endif %}
+        {% endfor %}
+      </table>
+      <br>
 
-        <br><br>
-
-        <div class="row">
-            <div class="col">
-                <h3>
-                    {% trans "Organization Detail:" %}
-                </h3>
-                <table class="table table-sm table-striped">
-                    {% for field in field_list %}
-                        {% verbose_td_display object field %}
-                    {% endfor %}
-                </table>
-                <br>
-
-                <h3>
-                    {% trans "iHub Only:" %}
-                </h3>
-                <table class="table table-sm table-striped">
-                    {% for field in field_list_2 %}
-                        {% verbose_td_display instance=object field_name=field date_format="%d-%b-%Y" %}
-                    {% endfor %}
-                </table>
-                <br>
-                <br>
-
-            </div>
-            <div class="col">
-                {% include "ihub/_members.html" %}
-            </div>
-            <div class="col">
-                {% include "ihub/_entries.html" %}
-            </div>
-        </div>
 
     </div>
-
-    <script type="application/javascript">
-
-
-        $(".person-delete-me").click(function () {
-            var objectId = $(this)[0].getAttribute("val");
-
-            var userInput = "";
-            userInput = confirm("{% trans "Are you sure you want to delete this person from the entry?" %}");
-
-            if (userInput === true) {
-                $("#person-secrect-delete-btn-" + objectId)[0].click();
-            }
-        })
+    <div class="col-5">
+      {% include "ihub/_members.html" %}
+      {% include "ihub/_instructions.html" %}
+    </div>
+    <div class="col">
+      {% include "ihub/_entries.html" %}
+    </div>
+  </div>
 
 
-    </script>
-{% endblock content %}
 
+{% endblock %}
+
+{% block body_js %}
+  <script type="application/javascript">
+
+
+  $(".person-delete-me").click(function () {
+    var objectId = $(this)[0].getAttribute("val");
+
+    var userInput = "";
+    userInput = confirm("{% trans "Are you sure you want to delete this person from the entry?" %}");
+
+    if (userInput === true) {
+      $("#person-secrect-delete-btn-" + objectId)[0].click();
+    }
+  })
+
+
+  </script>
+{% endblock %}

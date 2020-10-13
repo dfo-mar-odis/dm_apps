@@ -77,3 +77,25 @@ class IndexTemplateViewTest(cct.CommonTestCase):
         # csas_admin is authorized for all things
         self.assertIn("csas_admin", context)
         self.assertTrue(context["csas_admin"])
+
+    # check of the user should see components for the csas_super group
+    def test_index_get_context_csas_super(self):
+        # have to initialize the view as though Django did it.
+        req_factory = RequestFactory()
+        request = req_factory.get(None)
+
+        # login the csas_admin user
+        request.user = cct.login_csas_super(self)
+
+        view = cct.setup_view(self.view, request)
+
+        context = view.get_context_data()
+
+        # csas_user is authorized for most things, but not all
+        self.assertIn("auth", context)
+        self.assertTrue(context["auth"])
+
+        # csas_super is authorized for all things
+        self.assertIn("csas_super", context)
+        self.assertTrue(context["csas_super"])
+

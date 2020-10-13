@@ -135,6 +135,7 @@ urlpatterns = [
     path('reports/search/', views.ReportSearchFormView.as_view(), name="report_search"),
     path('reports/export-batch-xml/<str:sections>/', views.export_batch_xml, name="export_batch_xml"),
     path('reports/odi-report/', views.export_odi_report, name="export_odi_report"),
+    path('reports/physical-samples/', views.export_phyiscal_samples, name="export_phyiscal_samples"),
 
 
     # TEMP #

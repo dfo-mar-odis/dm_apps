@@ -1,0 +1,10 @@
+{% extends "shared_models/generic_popout_form.html" %}
+{% load i18n %}
+{% block extra_buttons %}
+  {% if object %}
+    <a class="btn btn-danger" href="{% url 'ihub:instruction_delete' object.id %}">{% trans "Delete" %}</a>
+  {% endif %}
+
+{% endblock %}
+
+

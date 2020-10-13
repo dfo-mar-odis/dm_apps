@@ -1,0 +1,131 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+{% load custom_filters %}
+
+{% trans "<b class='highlight'>MISSING EMAIL</b>" as missing_email %}
+{% trans "<b class='highlight'>MISSING ROLE</b>" as missing_role %}
+
+
+<h3>
+  {% trans "Consultation Instructions:" %}
+</h3>
+
+
+{% if not object.consultation_instructions %}
+  <div class="mb-3">
+    <em>
+      {% trans "There are no consultation instructions available for this organization" %}
+    </em>
+  </div>
+  <a class="" href="#" pop-href="{% url 'ihub:instruction_new' object.id %}">
+    ({% trans "Create Instructions" %})
+  </a>
+{% else %}
+  <div class="mb-3">
+    <a class="" href="#" pop-href="{% url 'ihub:instruction_edit' object.consultation_instructions.id %}">
+      ({% trans "Edit Instructions" %})
+    </a>
+  </div>
+  <table class="table table-sm table-sm" style="width: auto">
+    <tr>
+      <th style="width: 30%">
+        {% trans "Address Letter To" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.letter_to }}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        {% trans "Cc (on Bottom of Letter)" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.letter_cc }}
+      </td>
+    </tr>
+    <tr>
+      <th>
+        {% trans "Paper Copy" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.paper_copy }}
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        {% trans 'Email "To" Recipients' %}
+      </th>
+      <td>
+        <ul class="px-3">
+          {% for recipient in object.consultation_instructions.to_email_recipients %}
+            <li class="mb-1">
+              <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
+                 data-toggle="tooltip" title="Edit member">
+                {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }}
+              </a>
+              <br>
+              <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        {% trans 'Email "Cc" Recipients' %}
+      </th>
+      <td>
+        <ul class="px-3">
+          {% for recipient in object.consultation_instructions.cc_email_recipients %}
+            <li class="mb-1">
+              <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
+                 data-toggle="tooltip" title="Edit member">
+                {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }}
+              </a>
+              <br>
+              <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        {% trans 'Email "Cc" Recipients (Commercial Only)' %}
+      </th>
+      <td>
+        <ul class="px-3">
+          {% for recipient in object.consultation_instructions.cc_commercial_email_recipients %}
+            <li class="mb-1">
+              <a href="#" pop-href="{% url 'ihub:member_edit' recipient.member.id %}"
+                 data-toggle="tooltip" title="Edit member">
+                {{ recipient.member.person.first_name }} {{ recipient.member.person.last_name }}
+              </a>
+              <br>
+              <u>Organization:</u> {{ recipient.member.organization }} <br>
+              <u>Role:</u> {{ recipient.member.role|nz:missing_role }} <br>
+              <u>Email:</u> {{ recipient.member.person.email_1|nz:missing_email }}
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th style="width: 30%">
+        {% trans "Notes" %}
+      </th>
+      <td>
+        {{ object.consultation_instructions.notes|nz:"n/a" }}
+      </td>
+    </tr>
+  </table>
+{% endif %}
+<br>
+<br>

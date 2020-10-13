@@ -44,7 +44,7 @@
             {% for field in field_list %}
 
                 <th class="{% if "open_data" in field or "completedness" in field or "external" in field %}center-col{% endif %}">
-                    {% get_verbose_label object_list.first field %}
+                    {% get_verbose_label random_object field %}
                 </th>
             {% endfor %}
             </thead>

@@ -1,0 +1,113 @@
+{% extends "csas/csas_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+
+<style>
+    .mymdb-masthead {
+        background-color: #EEEEEE;
+        margin-bottom: 1em;
+    }
+
+    table{
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    {# td, th{                        #}
+    {#     border: 1px solid #dddddd; #}
+    {#     text-align: left;          #}
+    {#     padding: 8px;              #}
+    {# }                              #}
+
+    tr:nth-child(even){
+        background-color: #dddddd;
+    }
+</style>
+
+{% block body %}
+{% block field_override %}
+<div class="container border-dark text-left mt-2 pt-4" >
+    <div class="jumbotron">
+        {% for field in fields %}
+            <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span>
+                                       <span>{% get_field_value object field%}</span>
+                </div>
+            </div>
+        {% endfor %}
+
+        {# ----- Meeting Media ----- #}
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <h1>{% trans 'Meeting Media' %}</h1>
+                </div>
+                <div class="col-3 pt-1">
+                    <a class="btn btn-secondary"
+                       href="{% url ''|add:'csas:details_met' object.pk %}">{% trans 'Details' %}</a>
+                    <a class="btn btn-secondary"
+                       href="{% url ''|add:'csas:list_met' %}">{% trans 'Meeting List' %}</a>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <th>Is Media Attention Anticipated</th>
+
+                            {% for media in object.meeting_media.all %}
+                                {% if media.media_attention %}
+                                    <th>If Yes, More Info</th>
+                                {% else %}
+                                    <th>If No, Why Not?</th>
+                                {% endif %}
+                            {% endfor %}
+
+                            <th>Media Bullets</th>
+                            <th>Media Lines</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url 'csas:create_met_media' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {# Get all of the results of Publication Communication and iterate over them #}
+                        {% for media in object.meeting_media.all %}
+                            <tr>
+                                {% if media.media_attention %}
+                                    {# <td style="color:brown"><span style="size:lg">&#x2714</span></td> #}
+                                    <td style="color:brown"> Yes </td>
+                                    <td style="color:brown">{{ media.media_attention_yes }}</td>
+                                {% else %}
+                                    <td style="color:brown"> No </td>
+                                    <td style="color:brown">{{ media.media_attention_no }}</td>
+                                {% endif %}
+
+                                <td style="color:brown">{{ media.media_bullets }}</td>
+                                <td style="color:brown">{{ media.media_lines }}</td>
+                                <td>
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_met_media' media.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock field_override %}
+{% endblock body %}

@@ -1,0 +1,101 @@
+{% extends "csas/csas_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+
+<style>
+    .mymdb-masthead {
+        background-color: #EEEEEE;
+        margin-bottom: 1em;
+    }
+
+    table{
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    {# td, th{                        #}
+    {#     border: 1px solid #dddddd; #}
+    {#     text-align: left;          #}
+    {#     padding: 8px;              #}
+    {# }                              #}
+
+    tr:nth-child(even){
+        background-color: #dddddd;
+    }
+</style>
+
+{% block body %}
+{% block field_override %}
+<div class="container border-dark text-left mt-2 pt-4" >
+    <div class="jumbotron">
+        {% for field in fields %}
+            <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span>
+                                       <span>{% get_field_value object field%}</span>
+                </div>
+            </div>
+        {% endfor %}
+
+        {# ----- Communication of Results ----- #}
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <h1>{% trans 'Communication of Results' %}</h1>
+                </div>
+                <div class="col-3 pt-1">
+                    <a class="btn btn-secondary"
+                       href="{% url ''|add:'csas:details_pub' object.pk %}">{% trans 'Details' %}</a>
+                    <a class="btn btn-secondary"
+                       href="{% url ''|add:'csas:list_pub' %}">{% trans 'Publication List' %}</a>
+                </div>
+            </div>
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Size</th>
+                            <th>Attachment</th>
+                            <th>
+                                {% if csas_admin %}
+                                    <a class="btn btn-secondary"
+                                       href="#" onclick="return popitup('{% url 'csas:create_pub_com_results' object.pk 'pop' %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans '+' %}</a>
+                                {% endif %}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {# Get all of the results of Publication Communication and iterate over them #}
+                        {% for com_results in object.pub_com_results.all %}
+                            {# for each result, get the list of category, description, size and attachment #}
+                            <tr>
+                                <td style="color:brown">{{ com_results.pub_category }}</td>
+                                <td style="color:brown">{{ com_results.pub_description }}</td>
+                                <td style="color:brown">{{ com_results.pub_size }}</td>
+                                <td style="color:brown">{{ com_results.pub_attachment }}</td>
+                                <td>
+                                    {# if the update url contains /pop/ then open the url in a popup window #}
+                                    {% if csas_admin %}
+                                        <a class="btn btn-secondary btn-sm"
+                                           href="#" onclick="return popitup('{% url ''|add:'csas:update_pub_com_results' com_results.pk 'pop' %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock field_override %}
+{% endblock body %}

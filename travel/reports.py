@@ -256,7 +256,7 @@ def generate_cfts_spreadsheet(fiscal_year=None, region=None, trip_request=None, 
     return target_url
 
 
-def generate_trip_list(fiscal_year, region, adm, from_date, to_date):
+def generate_trip_list(fiscal_year, region, adm, from_date, to_date, site_url):
     # figure out the filename
     target_dir = os.path.join(settings.BASE_DIR, 'media', 'travel', 'temp')
     target_file = "temp_data_export_{}.xlsx".format(timezone.now().strftime("%Y-%m-%d"))
@@ -405,7 +405,7 @@ def generate_trip_list(fiscal_year, region, adm, from_date, to_date):
             elif field == "name":
                 my_val = str(get_field_value(trip, field))
                 my_ws.write_url(i, j,
-                                url=f'{settings.SITE_FULL_URL}/{reverse("travel:trip_detail", kwargs={"pk": trip.id})}',
+                                url=f'{site_url}/{reverse("travel:trip_detail", kwargs={"pk": trip.id})}',
                                 string=my_val)
             elif "cost" in field:
                 my_val = nz(get_field_value(trip, field), 0)

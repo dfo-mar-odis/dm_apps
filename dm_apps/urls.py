@@ -160,6 +160,11 @@ if settings.INSTALLED_APPS.count("csas"):
 else:
     print("not connecting csas app")
 
+if settings.INSTALLED_APPS.count("engagements"):
+    urlpatterns += i18n_patterns(path('engagements/', include('engagements.urls')), prefix_default_language=True)
+else:
+    print("Not connecting Engagements app")
+
 if settings.AZURE_STORAGE_ACCOUNT_NAME == "":
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
                                                                                             document_root=settings.MEDIA_ROOT)
