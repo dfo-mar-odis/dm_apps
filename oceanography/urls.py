@@ -1,7 +1,4 @@
-from django.contrib import admin
 from django.urls import path
-from django.conf.urls.static import static
-from django.conf import settings
 from . import views
 
 app_name = 'oceanography'
@@ -31,6 +28,11 @@ urlpatterns = [
     path('file/<int:pk>/edit/', views.FileUpdateView.as_view(), name='file_edit'),
     path('file/<int:pk>/delete/', views.FileDeleteView.as_view(), name='file_delete'),
 
+    # Helptext #
+    ############
+    path('settings/help-text/', views.HelpTextCreate.as_view(), name="manage_help_text"),
+    path('settings/help-text/<int:pk>/delete/', views.delete_help_text, name="delete_help_text"),
+
 ]
 
- # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

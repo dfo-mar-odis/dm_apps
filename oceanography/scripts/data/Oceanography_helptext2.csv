@@ -1,0 +1,14 @@
+id,field_name,eng_text,fra_text
+3,mission_name,"Provide a descriptive title",
+6,description,"A narrative summary of the cruise",
+7,purpose,"The intentions of the mission",
+8,mission_number,"mission number, with no spaces, dashes or other special characters","numero de mission"
+9,area_of_operation,"Names of the geographic area where the data collection takes place (separate them with comma)",
+10,West_bound_longitude,"Westernmost longitude of the sampling (decimal degrees, negative for Western Hemisphere longitude)",
+11,East_bound_longitude,"Easternmost longitude of the sampling (decimal degrees, negative for Western Hemisphere longitude)",
+12,North_bound_latitude,"Northernmost latitude of the sampling (decimal degrees, negative for Southern Hemisphere latitude)",
+13,South_bound_latitude,"Southernmost latitude of the sampling (decimal degrees, negative for Southern Hemisphere latitude)",
+14,Funding_project_title,"The title of your funded project",
+15,Funding_project_ID,"The ID of your funded project",
+16,Research_Projects_Programs,"The collaborative research or programs which the mission is part of (separate them with comma)",
+17,References,"Provide the bibliographic citations for publications describing the data set. Example: cruise report or scientific paper",

@@ -1,8 +1,8 @@
 from django import forms
-from django.core import validators
 from . import models
 from django.utils.safestring import mark_safe
 from shared_models import models as shared_models
+from django.forms import modelformset_factory
 
 
 class DocForm(forms.ModelForm):
@@ -18,6 +18,7 @@ class DocForm(forms.ModelForm):
             'source':forms.Textarea(attrs={'rows': '5'}),
 
         }
+
 
 class MissionForm(forms.ModelForm):
     class Meta:
@@ -58,3 +59,20 @@ class FileForm(forms.ModelForm):
             'mission':forms.HiddenInput(),
             # 'end_date':forms.DateInput(attrs={'type': 'date'}),
         }
+
+
+class HelpTextForm(forms.ModelForm):
+    class Meta:
+        model = models.HelpText
+        fields = "__all__"
+        widgets = {
+            'eng_text': forms.Textarea(attrs={"rows": 2}),
+            'fra_text': forms.Textarea(attrs={"rows": 2}),
+        }
+
+
+HelpTextFormSet = modelformset_factory(
+    model=models.HelpText,
+    form=HelpTextForm,
+    extra=1,
+)
