@@ -238,8 +238,6 @@ class Project(models.Model):
     coordinates = models.ForeignKey(GeoCoordinate, on_delete=models.DO_NOTHING, blank=True, null=True,
                                     verbose_name=_("Coordinate(s)"))
 
-    division = models.ManyToManyField(shared_models.Division, verbose_name=_("Division(s)"))
-
     class Meta:
         ordering = ['title']
 
