@@ -1,12 +1,14 @@
+from datetime import timedelta
+
 from django import forms
-from django.contrib.auth.models import User as AuthUser, User
+from django.contrib.auth.models import User as AuthUser
 from django.forms import modelformset_factory
 from django.utils import timezone
 from django.utils.translation import gettext as _, gettext_lazy
 
 from shared_models import models as shared_models
-from travel.filters import get_region_choices
 from . import models
+from .utils import get_region_choices
 
 chosen_js = {"class": "chosen-select-contains"}
 attr_fp_date = {"class": "fp-date", "placeholder": gettext_lazy("Click to select a date..")}
@@ -45,8 +47,8 @@ class ReviewerApprovalForm(forms.ModelForm):
 
 
 class TripReviewerApprovalForm(forms.ModelForm):
-    # approved = forms.BooleanField(widget=forms.HiddenInput(), required=False)
     stay_on_page = forms.BooleanField(widget=forms.HiddenInput(), required=False)
+    reset = forms.BooleanField(widget=forms.HiddenInput(), required=False)
 
     class Meta:
         model = models.TripReviewer
@@ -61,189 +63,74 @@ class TripReviewerApprovalForm(forms.ModelForm):
         }
 
 
-class ReviewerSkipForm(forms.ModelForm):
-    class Meta:
-        model = models.Reviewer
-        fields = [
-            "comments",
-        ]
-        labels = {
-            "comments": _("If so, please provide the rationale here...")
-        }
-        widgets = {
-            "comments": forms.Textarea(attrs=attr_row3)
-        }
-
-
-class TripRequestApprovalForm(forms.ModelForm):
+class TripRequestTimestampUpdateForm(forms.ModelForm):
     class Meta:
         model = models.TripRequest
         fields = [
-            "created_by",
+            "notes",
         ]
         widgets = {
-            "created_by": forms.HiddenInput()
+            "notes": forms.HiddenInput()
         }
 
 
 class TripTimestampUpdateForm(forms.ModelForm):
     class Meta:
-        model = models.Conference
+        model = models.Trip
         fields = [
-            "last_modified_by",
+            "notes",
         ]
         widgets = {
-            "last_modified_by": forms.HiddenInput()
+            "notes": forms.HiddenInput()
         }
 
 
 class TripRequestForm(forms.ModelForm):
-    stay_on_page = forms.BooleanField(widget=forms.HiddenInput(), required=False)
     reset_reviewers = forms.BooleanField(widget=forms.Select(choices=YES_NO_CHOICES),
                                          label=gettext_lazy("Do you want to reset the reviewer list?"), required=False)
+    is_traveller = forms.BooleanField(widget=forms.Select(choices=YES_NO_CHOICES),
+                                      label=gettext_lazy("Are you a traveller on this request?"), required=False)
 
     class Meta:
         model = models.TripRequest
-        exclude = [
-            "total_cost",
-            "fiscal_year",
-            "submitted",
-            "status",
-            "exclude_from_travel_plan",
-            "admin_notes",
-            "original_submission_date",
-            "created_by",
-        ]
+        exclude = ["admin_notes"]
         labels = {
             'bta_attendees': gettext_lazy("Other attendees covered under BTA (i.e., they will not need to have a travel plan)"),
         }
-
         widgets = {
             'bta_attendees': forms.SelectMultiple(attrs=chosen_js),
             'trip': forms.Select(attrs=chosen_js),
-            'is_group_request': forms.Select(choices=YES_NO_CHOICES),
+            'section': forms.Select(attrs=chosen_js),
             'objective_of_event': forms.Textarea(attrs=attr_row3),
             'benefit_to_dfo': forms.Textarea(attrs=attr_row3),
             'late_justification': forms.Textarea(attrs=attr_row3),
             'funding_source': forms.Textarea(attrs=attr_row3),
             'notes': forms.Textarea(attrs=attr_row3),
-
-            # hidden fields
-            'parent_request': forms.HiddenInput(),
-
-            # non-group trip request fields
-
-            # user fields
-            'is_public_servant': forms.Select(attrs={"class": "not-a-group-field disappear-if-user"}, choices=YES_NO_CHOICES),
-            'user': forms.Select(attrs={"class": "chosen-select-contains"}),
-            'first_name': forms.TextInput(attrs={"class": "not-a-group-field disappear-if-user"}),
-            'last_name': forms.TextInput(attrs={"class": "not-a-group-field disappear-if-user"}),
-            'section': forms.Select(attrs=chosen_js),
-            'email': forms.EmailInput(attrs={"class": "not-a-group-field disappear-if-user"}),
-            'address': forms.TextInput(attrs={"class": "not-a-group-field"}),
-            'phone': forms.TextInput(attrs={"class": "not-a-group-field input-phone"}),
-            'company_name': forms.TextInput(attrs={"class": "not-a-group-field disappear-if-user hide-if-public-servant"}),
-            'is_research_scientist': forms.Select(attrs={"class": "not-a-group-field hide-if-not-public-servant"}, choices=YES_NO_CHOICES),
-
-            'start_date': forms.DateInput(attrs={"class": "not-a-group-field fp-date", "placeholder": _("Click to select a date..")}),
-            'end_date': forms.DateInput(attrs={"class": "not-a-group-field fp-date", "placeholder": _("Click to select a date..")}),
-            'departure_location': forms.TextInput(attrs={"class": "not-a-group-field"}),
-            # 'reason': forms.Select(attrs={"class": "not-a-group-field"}),
-            'role': forms.Select(attrs={"class": "not-a-group-field"}),
-            'region': forms.Select(attrs={"class": "not-a-group-field hide-if-not-public-servant"}),
-            'role_of_participant': forms.Textarea(attrs={"class": "not-a-group-field", "rows": 3}),
-            'learning_plan': forms.Select(attrs={"class": "not-a-group-field"}, choices=YES_NO_CHOICES),
-            'non_dfo_costs': forms.NumberInput(attrs={"class": "not-a-group-field"}),
-            'non_dfo_org': forms.TextInput(attrs={"class": "not-a-group-field"}),
         }
 
     def __init__(self, *args, **kwargs):
-        user_choices = [(u.id, "{}, {}".format(u.last_name, u.first_name)) for u in
-                        AuthUser.objects.all().order_by("last_name", "first_name") if u.first_name and u.last_name and u.email]
+        user_choices = [(u.id, u.get_full_name()) for u in AuthUser.objects.all().order_by("first_name", "last_name") if
+                        u.first_name and u.last_name and u.email]
         user_choices.insert(0, tuple((None, "---")))
-
         section_choices = [(s.id, s.full_name) for s in
                            shared_models.Section.objects.all().order_by("division__branch__region",
                                                                         "division__branch",
                                                                         "division", "name")]
         section_choices.insert(0, tuple((None, "---")))
-
-        trip_choices = [(t.id, f'{t} ({t.status})') for t in models.Conference.objects.filter(start_date__gte=timezone.now())]
+        trip_choices = [(t.id, f'{t} ({t.get_status_display()})') for t in models.Trip.objects.filter(start_date__gte=timezone.now()-timedelta(days=14))]
         trip_choices.insert(0, tuple((None, "---")))
 
         super().__init__(*args, **kwargs)
+
         self.fields['trip'].choices = trip_choices
-        self.fields['user'].choices = user_choices
         self.fields['bta_attendees'].choices = user_choices
         self.fields['section'].choices = section_choices
-        self.fields['start_date'].widget.format = '%Y-%m-%d'
-        self.fields['end_date'].widget.format = '%Y-%m-%d'
-
-        # general trip infomation
-        field_list = [
-            'is_group_request',
-            'trip',
-            'late_justification',
-            'departure_location',
-            'destination',
-            'start_date',
-            'end_date',
-            'bta_attendees',
-            'non_dfo_costs',
-            'non_dfo_org',
-        ]
-        for field in field_list:
-            self.fields[field].group = 1
-
-        # traveller info
-        field_list = [
-            'user',
-            'section',
-            'first_name',
-            'last_name',
-            'address',
-            'phone',
-            'email',
-            'is_public_servant',
-            'is_research_scientist',
-            'company_name',
-            'region',
-        ]
-        for field in field_list:
-            self.fields[field].group = 2
-
-        # justification
-        field_list = [
-            # 'reason',
-            'role',
-            'role_of_participant',
-            'learning_plan',
-            'objective_of_event',
-            'benefit_to_dfo',
-            'funding_source',
-            'notes',
-        ]
-        for field in field_list:
-            self.fields[field].group = 3
-
-        # Reviewers
-        field_list = [
-            'reset_reviewers',
-        ]
-        for field in field_list:
-            self.fields[field].group = 4
-
-        # are there any forgotten fields?
-        for field in self.fields:
-            try:
-                self.fields[field].group
-            except AttributeError:
-                # print(f'Adding label: "Unspecified" to field "{field}".')
-                self.fields[field].group = 0
 
         # if there is no instance of TR, remove the field for reset_reviewers.
         if not kwargs.get("instance"):
             del self.fields["reset_reviewers"]
+        else:
+            del self.fields["is_traveller"]
 
     def clean(self):
         """
@@ -321,179 +208,15 @@ class TripRequestAdminNotesForm(forms.ModelForm):
 
 class TripAdminNotesForm(forms.ModelForm):
     class Meta:
-        model = models.Conference
+        model = models.Trip
         fields = [
             "admin_notes",
-            "last_modified_by",
         ]
-        widgets = {
-            "last_modified_by": forms.HiddenInput()
-        }
-
-
-class ChildTripRequestForm(forms.ModelForm):
-    stay_on_page = forms.BooleanField(widget=forms.HiddenInput(), required=False)
-
-    class Meta:
-        model = models.TripRequest
-        fields = [
-            'user',
-            'first_name',
-            'last_name',
-            'address',
-            'phone',
-            'email',
-            'is_public_servant',
-            'is_research_scientist',
-            'company_name',
-            'region',
-            'start_date',
-            'end_date',
-            'departure_location',
-            'non_dfo_costs',
-            'non_dfo_org',
-            # 'reason',
-            'role',
-            'role_of_participant',
-            'learning_plan',
-            'exclude_from_travel_plan',
-            'parent_request',
-        ]
-        widgets = {
-            'user': forms.Select(attrs=chosen_js),
-            'parent_request': forms.HiddenInput(),
-            'start_date': forms.DateInput(attrs=attr_fp_date),
-            'end_date': forms.DateInput(attrs=attr_fp_date),
-            'role_of_participant': forms.Textarea(attrs=attr_row3),
-            'learning_plan': forms.Select(choices=YES_NO_CHOICES),
-            'phone': forms.TextInput(attrs={"class": "disappear-if-user input-phone"}),
-            'first_name': forms.TextInput(attrs={"class": "disappear-if-user"}),
-            'last_name': forms.TextInput(attrs={"class": "disappear-if-user"}),
-            'email': forms.EmailInput(attrs={"class": "disappear-if-user"}),
-            'exclude_from_travel_plan': forms.Select(choices=YES_NO_CHOICES),
-        }
-
-    def __init__(self, *args, **kwargs):
-        try:
-            parent_request = kwargs.get("initial").get("parent_request")
-        except AttributeError:
-            parent_request = None
-
-        if not parent_request:
-            parent_request = kwargs.get("instance").parent_request
-
-        user_choices = [(u.id, "{}, {}".format(u.last_name, u.first_name)) for u in
-                        AuthUser.objects.all().order_by("last_name", "first_name") if u.first_name and u.last_name and u.email]
-        user_choices.insert(0, tuple((None, "---")))
-        super().__init__(*args, **kwargs)
-        self.fields['user'].choices = user_choices
-        self.fields['start_date'].widget.format = '%Y-%m-%d'
-        self.fields['end_date'].widget.format = '%Y-%m-%d'
-
-        # general trip infomation
-        field_list = [
-            'start_date',
-            'end_date',
-            'departure_location',
-            'exclude_from_travel_plan',
-            'non_dfo_costs',
-            'non_dfo_org',
-        ]
-        for field in field_list:
-            self.fields[field].group = 1
-
-        # traveller info
-        field_list = [
-            'user',
-            'first_name',
-            'last_name',
-            'address',
-            'phone',
-            'email',
-            'is_public_servant',
-            'is_research_scientist',
-            'company_name',
-            'region',
-        ]
-        for field in field_list:
-            self.fields[field].group = 2
-
-        # justification
-        field_list = [
-            # 'reason',
-            'role',
-            'role_of_participant',
-            'learning_plan',
-        ]
-        for field in field_list:
-            self.fields[field].group = 3
-
-        # are there any forgotten fields?
-        for field in self.fields:
-            try:
-                self.fields[field].group
-            except AttributeError:
-                # print(f'Adding label: "Unspecified" to field "{field}".')
-                self.fields[field].group = 0
-
-    def clean(self):
-        """
-        form validation:
-        1) make sure that the request start date and the trip start date make sense with respect to each other and individually
-        """
-
-        cleaned_data = super().clean()
-        request_start_date = cleaned_data.get("start_date")
-        request_end_date = cleaned_data.get("end_date")
-        trip = cleaned_data.get("parent_request").trip
-        trip_start_date = trip.start_date
-        trip_end_date = trip.end_date
-        user = cleaned_data.get("user")
-
-        # we have to make sure there is not already a trip request in the system for this user and this trip
-        if user and user.user_trip_requests.filter(trip=trip, is_group_request=False).count():
-            msg = _('There is already a trip request in the system for this user and this trip.')
-            self.add_error('user', msg)
-
-        # first, let's look at the request date and make sure it makes sense, i.e. start date is before end date and
-        # the length of the trip is not too long
-        if request_start_date and request_end_date:
-            if request_end_date < request_start_date:
-                msg = _('The start date of the trip must occur before the end date.')
-                self.add_error('start_date', msg)
-                self.add_error('end_date', msg)
-            if abs((request_start_date - request_end_date).days) > 180:
-                msg = _('The length of this trip is unrealistic.')
-                self.add_error('start_date', msg)
-                self.add_error('end_date', msg)
-            # is the start date of the travel request equal to or before the start date of the trip?
-            if trip_start_date:
-                delta = abs(request_start_date - trip_start_date)
-                if delta.days > 10:
-                    msg = _(
-                        "The start date of this request ({request_start_date}) has to be within 10 days of the start date of the selected trip ({trip_start_date})!").format(
-                        request_start_date=request_start_date.strftime("%Y-%m-%d"),
-                        trip_start_date=trip_start_date.strftime("%Y-%m-%d"),
-                    )
-                    self.add_error('start_date', msg)
-                    # self.add_error('trip', msg)
-
-            # is the end_date of the travel request equal to or after the end date of the trip?
-            if trip_end_date:
-                delta = abs(request_end_date - trip_end_date)
-                if delta.days > 10:
-                    msg = _(
-                        "The end date of this request ({request_end_date}) must be within 10 days of the end date of the selected trip ({trip_end_date})!").format(
-                        request_end_date=request_end_date.strftime("%Y-%m-%d"),
-                        trip_end_date=trip_end_date.strftime("%Y-%m-%d"),
-                    )
-                    self.add_error('end_date', msg)
-                    # self.add_error('trip', msg)
 
 
 class TripForm(forms.ModelForm):
     class Meta:
-        model = models.Conference
+        model = models.Trip
         exclude = ["fiscal_year", "is_verified", "verified_by", "cost_warning_sent", "status", "admin_notes", "review_start_date",
                    "adm_review_deadline", "date_eligible_for_adm_review"]
         widgets = {
@@ -502,7 +225,7 @@ class TripForm(forms.ModelForm):
             'registration_deadline': forms.DateInput(attrs=attr_fp_date),
             'abstract_deadline': forms.DateInput(attrs=attr_fp_date),
             'last_modified_by': forms.HiddenInput(),
-            # 'trip_subcategory': forms.RadioSelect(),
+            'notes': forms.Textarea(attrs=attr_row3),
         }
 
     def __init__(self, *args, **kwargs):
@@ -544,8 +267,7 @@ class ReportSearchForm(forms.Form):
     REPORT_CHOICES = (
         (None, "------"),
         (1, gettext_lazy("CFTS export (xlsx)")),
-        # (2, "Print Travel Plan PDF"),
-        (3, gettext_lazy("Export trip list (xlsx)")),
+        (2, gettext_lazy("Export trip list (xlsx)")),
     )
     report = forms.ChoiceField(required=True, choices=REPORT_CHOICES, label=gettext_lazy("Report"))
     # report #1
@@ -559,14 +281,12 @@ class ReportSearchForm(forms.Form):
     to_date = forms.CharField(required=False, widget=forms.DateInput(attrs=attr_fp_date))
 
     def __init__(self, *args, **kwargs):
-        fy_choices = [(fy.id, str(fy)) for fy in shared_models.FiscalYear.objects.all().order_by("id") if fy.trip_requests.count() > 0]
+        fy_choices = [(fy.id, str(fy)) for fy in shared_models.FiscalYear.objects.filter(requests__isnull=False).order_by("id").distinct()]
         fy_choices.insert(0, tuple((None, "---")))
-        # TRAVELLER_CHOICES = [(e['email'], "{}, {}".format(e['last_name'], e['first_name'])) for e in
-        #                      models.Trip.objects.values("email", "first_name", "last_name").order_by("last_name", "first_name").distinct()]
         user_choices = [(u.id, "{}, {}".format(u.last_name, u.first_name)) for u in
-                        AuthUser.objects.all().order_by("last_name", "first_name") if u.user_trip_requests.count() > 0]
+                        AuthUser.objects.filter(travellers__isnull=False).order_by("last_name", "first_name").distinct()]
         user_choices.insert(0, tuple((None, "---")))
-        trip_choices = [(trip.id, f"{trip}") for trip in models.Conference.objects.all()]
+        trip_choices = [(trip.id, f"{trip}") for trip in models.Trip.objects.all()]
         trip_choices.insert(0, tuple((None, "---")))
 
         region_choices = get_region_choices()
@@ -577,138 +297,6 @@ class ReportSearchForm(forms.Form):
         self.fields['user'].choices = user_choices
         self.fields['region'].choices = region_choices
         self.fields['trip'].choices = trip_choices
-
-
-class StatusForm(forms.ModelForm):
-    class Meta:
-        model = models.Status
-        fields = [
-            "name",
-            "nom",
-            "used_for",
-            "order",
-            "color",
-        ]
-
-
-StatusFormset = modelformset_factory(
-    model=models.Status,
-    form=StatusForm,
-    extra=1,
-)
-
-
-class ReviewerForm(forms.ModelForm):
-    class Meta:
-        model = models.Reviewer
-        fields = [
-            'trip_request',
-            'order',
-            'user',
-            'role',
-        ]
-        widgets = {
-            'trip_request': forms.HiddenInput(),
-            'user': forms.Select(attrs=chosen_js),
-        }
-
-    def clean(self):
-        """
-        The order, user, or role cannot be changed if the reviewer status is approved or queued
-        :return:
-        """
-        my_object = self.instance
-        cleaned_data = super().clean()
-        order = cleaned_data.get("order")
-        user = cleaned_data.get("user")
-        role = cleaned_data.get("role")
-
-        # Check the role
-        if my_object.status and my_object.status.id not in [4, 20]:
-            # need to determine if there have been any changes
-            if my_object.role != role:
-                raise forms.ValidationError(_(f'Sorry, the role of a reviewer whose status is set to {my_object.status} cannot be changed'))
-
-            if my_object.user != user:
-                raise forms.ValidationError(
-                    _(f'Sorry, you cannot change the associated DM Apps user of a reviewer whose status is set to {my_object.status}'))
-
-            if my_object.order != order:
-                raise forms.ValidationError(
-                    _(f'Sorry, the order of a reviewer whose status is set to {my_object.status} cannot be changed'))
-
-
-ReviewerFormset = modelformset_factory(
-    model=models.Reviewer,
-    form=ReviewerForm,
-    extra=1,
-)
-
-
-class TripReviewerForm(forms.ModelForm):
-    class Meta:
-        model = models.TripReviewer
-        fields = [
-            'trip',
-            'order',
-            'user',
-            'role',
-        ]
-        widgets = {
-            'trip': forms.HiddenInput(),
-            'user': forms.Select(attrs=chosen_js),
-        }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        user_choices = [(u.id, str(u)) for u in User.objects.all()]
-        # user_choices = [(u.id, str(u)) for u in User.objects.filter(groups__name__icontains="travel_adm_admin")]
-        # # add any users with special roles
-        # user_choices.extend([(df.user.id, str(df.user)) for df in models.DefaultReviewer.objects.filter(reviewer_roles__id__in=[3, 4, 5])])
-        # user_choices = list(set(user_choices))
-        user_choices.insert(0, (None, "-----"))
-        self.fields["user"].choices = user_choices
-
-    def clean(self):
-        """
-        The order, user, or role cannot be changed if the reviewer status is approved or queued
-        :return:
-        """
-        my_object = self.instance
-        cleaned_data = super().clean()
-        order = cleaned_data.get("order")
-        user = cleaned_data.get("user")
-        role = cleaned_data.get("role")
-
-        # Check the role
-        if my_object.status and my_object.status.id not in [23, 24]:
-            # need to determine if there have been any changes
-            if my_object.role != role:
-                raise forms.ValidationError(_(f'Sorry, the role of a reviewer whose status is set to {my_object.status} cannot be changed'))
-
-            if my_object.user != user:
-                raise forms.ValidationError(
-                    _(f'Sorry, you cannot change the associated DM Apps user of a reviewer whose status is set to {my_object.status}'))
-
-            if my_object.order != order:
-                raise forms.ValidationError(
-                    _(f'Sorry, the order of a reviewer whose status is set to {my_object.status} cannot be changed'))
-
-
-TripReviewerFormset = modelformset_factory(
-    model=models.TripReviewer,
-    form=TripReviewerForm,
-    extra=1,
-)
-
-
-class FileForm(forms.ModelForm):
-    class Meta:
-        model = models.File
-        exclude = ["date_created", ]
-        widgets = {
-            'trip_request': forms.HiddenInput(),
-        }
 
 
 class HelpTextForm(forms.ModelForm):
@@ -764,19 +352,6 @@ NJCRatesFormset = modelformset_factory(
     model=models.NJCRates,
     form=NJCRatesForm,
     extra=0,
-)
-
-
-class ReasonForm(forms.ModelForm):
-    class Meta:
-        model = models.Reason
-        fields = "__all__"
-
-
-ReasonFormset = modelformset_factory(
-    model=models.Reason,
-    form=ReasonForm,
-    extra=1,
 )
 
 
@@ -859,9 +434,9 @@ TripCategoryFormset = modelformset_factory(
 )
 
 
-class TripRequestCostForm(forms.ModelForm):
+class TravellerCostForm(forms.ModelForm):
     class Meta:
-        model = models.TripRequestCost
+        model = models.TravellerCost
         fields = "__all__"
         widgets = {
             'trip_request': forms.HiddenInput(),
@@ -879,6 +454,7 @@ class DefaultReviewerForm(forms.ModelForm):
         widgets = {
             "user": forms.Select(attrs=chosen_js),
             "sections": forms.SelectMultiple(attrs=chosen_js),
+            "divisions": forms.SelectMultiple(attrs=chosen_js),
             "branches": forms.SelectMultiple(attrs=chosen_js),
             "reviewer_roles": forms.SelectMultiple(attrs=chosen_js),
         }
@@ -895,7 +471,7 @@ class TripSelectForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        trip_choices = [(t.id, f'{t} ({t.status})') for t in models.Conference.objects.all()]
+        trip_choices = [(t.id, f'{t} ({t.get_status_display()})') for t in models.Trip.objects.all()]
         trip_choices.insert(0, tuple((None, "---")))
 
         self.fields["trip"].choices = trip_choices
@@ -932,4 +508,3 @@ class OrganizationForm1(forms.Form):
         super().__init__(*args, **kwargs)
         self.fields['orgs'].choices = org_choices
         self.fields['orgs'].widget.attrs["id"] = "predefined-addresses"
-

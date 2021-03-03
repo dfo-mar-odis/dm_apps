@@ -37,7 +37,7 @@ def get_app_dict(request):
     except NoReverseMatch:
         pass
 
-    if settings.SHOW_TICKETING_APP:
+    if settings.SHOW_TICKETING_APP or request.user.is_staff:
         try:
             app_dict["tickets"] = {
                 "title": _("DM Apps Tickets"),

@@ -72,4 +72,8 @@ urlpatterns = [
     path('script/new/', views.ScriptCreateView.as_view(), name="script_new"),  # TESTED
     path('script/<int:pk>/run/', views.run_script, name="run_script"),  # TESTED
 
+    # REPORTS
+    #########
+
+    path('dfo-org/export-report/', views.export_org_report, name="export_org_report"),  # TESTED
 ]

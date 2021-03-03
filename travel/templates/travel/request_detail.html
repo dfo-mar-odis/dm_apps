@@ -1,0 +1,159 @@
+{% extends "travel/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load i18n %}
+{% load humanize %}
+
+{% block title_area %}
+{% endblock %}
+
+
+{% block subcontent %}
+  <div id="app" v-cloak>
+    <div class="mb-3 mt-3" v-if="request">
+      <h2>
+        {% trans "Trip Request" %}
+        <span v-if="request.id">
+            <span v-if="!request.trip.is_virtual">{% trans "for" %} ${request.trip.tname}, ${request.trip.location}</span>
+            <span v-else>{% trans "for" %} ${request.trip.tname} ({% trans "virtual" %})</span>
+          </span>
+      </h2>
+    </div>
+    <div v-if="canModify" class="alert alert-primary no-print py-2" role="alert" style="width: 80%">
+      <p class="mb-0">
+        <span class="h5 mdi mdi-information-outline mr-3"></span> <span class="h6">${currentUser.reason}</span>
+      </p>
+    </div>
+    <div v-if="firstTravellerMsg" class="alert alert-success no-print py-2" role="alert" style="width: 80%">
+      <p class="mb-0">
+        <span class="h5 mdi mdi-grease-pencil mr-3"></span> <span class="h6">${firstTravellerMsg}</span>
+      </p>
+    </div>
+    <div v-if="request.id">
+      <div
+        v-if="request.trip.is_adm_approval_required && !request.submitted"
+        :class="{'alert py-2': true, 'alert-success':request.trip.days_until_eligible_for_adm_review > 45, 'alert-warning':request.trip.days_until_eligible_for_adm_review >= 15, 'alert-danger':request.trip.days_until_eligible_for_adm_review < 15}"
+        role="alert" style="width: 80%">
+        <p class="mb-0">
+          <span class="h5 mdi mdi-alert-decagram-outline mr-3"></span>
+          <span class="h6" v-if="request.trip.days_until_eligible_for_adm_review < 0">
+          {% blocktrans %}
+            This trip was eligible for review by the ADM office ${ request.trip.time_until_eligible_for_adm_review }.
+          {% endblocktrans %}
+          </span>
+          <span class="h6" v-else>
+          {% blocktrans %}
+            This trip will be eligible for review by the ADM office in ${ request.trip.time_until_eligible_for_adm_review }.
+          {% endblocktrans %}
+          </span>
+        </p>
+      </div>
+
+      <div v-if="request.is_late_request && !request.submitted && !request.late_justification" class="alert alert-danger py-2" role="alert" style="width: 80%">
+        <p class="mb-0">
+          <span class="h5 mdi mdi-alert-decagram-outline mr-3"></span>
+          <span class="h6 red-font"><u>{% trans "WARNING" %}</u></span>
+          <span class="h6">{% trans "In order to submit this request, you will need to provide a justification for the late submission." %}</span>
+        </p>
+      </div>
+      <div v-if="request.trip.status === 43" class="alert alert-danger py-2" role="alert" style="width: 80%">
+        <p class="mb-0">
+          <span class="h5 mdi mdi-alert-decagram-outline mr-3"></span>
+          <span class="h6 red-font"><u>{% trans "WARNING" %}</u></span>
+          <span class="h6">{% trans "The trip associated with this request has been cancelled." %}</span>
+        </p>
+      </div>
+      <div v-if="request.trip.status === 31" class="alert alert-danger py-2" role="alert" style="width: 80%">
+        <p class="mb-0">
+          <span class="h5 mdi mdi-alert-decagram-outline mr-3"></span>
+          <span class="h6">{% trans "This trip is currently under review from NCR." %}</span>
+        </p>
+      </div>
+      <div v-if="request.trip.status === 32" class="alert alert-danger py-2" role="alert" style="width: 80%">
+        <p class="mb-0">
+          <span class="h5 mdi mdi-alert-decagram-outline mr-3"></span>
+          <span class="h6">{% trans "This trip has already been reviewed by NCR." %}</span>
+        </p>
+      </div>
+
+
+    </div>
+
+
+    {# ADMIN BUTTON GROUP #}
+
+    <div class="btns mb-3">
+
+      {# ADMIN NOTES #}
+      {% include "travel/common/_request_admin_notes_button.html" %}
+
+      {# ADMIN CANCEL BUTTON - only show this option for approved requests #}
+      {% echo "danger" as cancel_btn_color %}
+      <span v-if="isAdmin && request.status !== 22 && request.status !== 10 && request.status !== 8 && !showAdminNotesForm" data-toggle="tooltip"
+            title="{% trans "This is only an option to you as a system admin" %}">
+        <a class="btn btn-admin" href="{% url 'travel:request_cancel' object.id %}">
+          {% trans "Cancel Request" %}
+        </a>
+      </span>
+    </div>
+
+    <div v-if="!showAdminNotesForm && !travellerToEdit" class="btns mb-3">
+      {# SUBMIT BUTTON #}
+      <span data-toggle="tooltip" :title="submitTip">
+      <a
+        :class="{btn:true, 'btn-secondary': request.submitted, 'btn-success': !request.submitted, 'disabled': (request.is_late_request && !request.late_justification) || (!request.submitted && !request.travellers.length)}"
+        v-if="(canModify || isOwner || isTraveller) && request.status !== 11 && request.status !== 22"
+        href="{% url 'travel:request_submit' object.id %}">
+        <span v-if="request.status === 16" class="blink-me">{% trans "Re-submit" %}</span>
+        <span v-else-if="!request.submitted">{% trans "Submit" %}</span>
+        <span v-else>{% trans "Un-submit" %}</span>
+      </a>
+      </span>
+
+      {# EDIT BUTTON #}
+      <a v-if="canModify"
+         class="btn btn-warning" href="{% url 'travel:request_edit' object.id %}{{ view.get_query_string }}">
+        {% trans "Edit" %}
+      </a>
+      {# DELETE BUTTON #}
+      <a v-if="canModify && !request.submitted"
+         class="btn btn-danger" href="{% url 'travel:request_delete' object.id %}{{ view.get_query_string }}">
+        {% trans "Delete" %}
+      </a>
+      {# CLONE BUTTON #}
+      <a class="btn btn-primary " href="{% url 'travel:request_clone' object.id %}{{ view.get_query_string }}">
+        {% trans "Clone Me" %}
+      </a>
+
+      {% trans "Travel Request and Approval Form (TRAF)" as print_tip %}
+      <a class="btn btn-outline-dark " href="{% url 'travel:request_print' object.id %}" data-toggle="tooltip" title="{{ print_tip }}">
+        <span class="mdi mdi-file-pdf h5"></span>
+        {% trans "Print TRAF" %}
+      </a>
+
+    </div>
+    <div class="mb-3 card admin-notes" v-if="request.admin_notes_html && !showAdminNotesForm">
+      <div class="card-header">{% trans "Administrative Notes" %}</div>
+      <div class="card-body">
+        <p class="card-text" v-html="request.admin_notes_html"></p>
+      </div>
+    </div>
+
+    {% include "travel/common/_request_detail.html" %}
+    {% include "travel/common/_travellers.html" %}
+    {% include "travel/common/_files.html" %}
+    {% include "travel/common/_reviewers.html" %}
+  </div>
+{% endblock %}
+
+
+{% block body_js %}
+  {{ block.super }}
+  <script type="application/javascript">
+  let isReview = false;
+  </script>
+  {% include "travel/common/_request_script.html" %}
+{% endblock %}

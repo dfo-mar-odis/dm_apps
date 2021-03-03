@@ -1,0 +1,14 @@
+{% load i18n %}
+{% load static %}
+
+<script type="application/javascript">
+var tripId = {{ trip.id }};
+let travellerDeleteMsg = "{% trans "You are about to remove this traveller from the request? This action is irreversible!! \n\nIf you proceed with this action, an administrative note will automatically be added to this request in order to record this transaction and an email notification will be sent to the request owner. \n\nPlease type 'yes' to confirm:" %}";
+let travellerCherryPickMsg = "{% trans "You are about to approve this traveller as a one-off from the entire delegation. Are you certain you wish to proceed? \n\nPlease type 'yes' to confirm:" %}";
+let approveAllTravellersMsg = "{% trans "You are about to approve all ELIGIBLE travellers on this trip. Are you certain you wish to proceed? \n\nPlease type 'yes' to confirm:" %}";
+let tripReviewerResetMsg = "{% trans 'Are you sure you want to reset the reviewers? This will undo any changes that you have made to the reviewer list and process order.' %}";
+let deleteReviewerMsg = "{% trans 'Are you sure you want to delete this reviewer?' %}";
+let yesNoChoices = [{text: '-----', value: null}, {text: '{% trans 'No' %}', value: false}, {text: '{% trans 'Yes' %}', value: true}];
+</script>
+
+<script src="{% static 'travel/mainTrip.js' %}?version=1.4"></script>

@@ -1,13 +1,13 @@
 import os
 
+import markdown
 import textile
 from django.contrib.auth.models import User
 from django.db import models
 from django.dispatch import receiver
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from django.urls import reverse
-import markdown
 
 from lib.functions.custom_functions import fiscal_year
 from shared_models import models as shared_models
@@ -150,12 +150,13 @@ class Ticket(models.Model):
     def app_display(self):
         # choices for app
         APP_DICT = local_conf.APP_DICT
-        APP_DICT["esee"] = "ESEE (not part of site)"
-        APP_DICT["plankton"] = "Plankton Net (not part of site)"
-        APP_DICT["tickets"] = "DM Apps Tickets"
-        APP_DICT["general"] = "DM Apps Tickets"
-
-        return APP_DICT.get(self.app, "n/a")
+        APP_DICT["tickets"] = dict(name="DM Apps Tickets")
+        registered_app = APP_DICT.get(self.app)
+        if registered_app:
+            if isinstance(registered_app, dict) and registered_app.get("name"):
+                registered_app = registered_app["name"]
+            return registered_app
+        return self.app
 
 
 class FollowUp(models.Model):

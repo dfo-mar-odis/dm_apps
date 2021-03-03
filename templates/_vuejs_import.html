@@ -1,0 +1,20 @@
+{% load static %}
+
+{% if DEBUG %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+{% else %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+{% endif %}
+
+<script type="application/javascript">
+for (var i = 0; i < Object.keys(vueFiltersObject).length; i++) {
+  key = Object.keys(vueFiltersObject)[i]
+  val = vueFiltersObject[key]
+  Vue.filter(key, val)
+}
+</script>
+
+<script type="text/javascript" src="{% static "vue-select/vue-select.js" %}"></script>
+<link rel="stylesheet" href="{% static "vue-select/vue-select.css" %}">
+
+

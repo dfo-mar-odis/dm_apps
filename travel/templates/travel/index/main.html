@@ -1,0 +1,156 @@
+{% extends "travel/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load bootstrap4 %}
+
+{% block alerts %}
+{% endblock %}
+{% block content %}
+  <div id="app">
+    <div class="container" v-cloak>
+
+      <div class="py-3 mx-5">
+        <div class="mb-5">
+          <h1 class="three-em center-col">
+            {% trans "EOS Conference and Travel Management System" %}
+          </h1>
+          <h3 class="text-center text-muted">
+            {% trans '"Pre-approval for travel"' %}
+          </h3>
+        </div>
+
+        {# Warnings #}
+        <div class="mb-0" v-for="(w, index) in adminWarnings">
+          <div class="alert alert-danger py-1" role="alert" style="width: 75%">
+            <p class="mb-0">
+              <span class="h6 mdi mdi-alert-decagram-outline mr-3"></span>
+              <span class="" v-html="w"></span>
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="row mb-4 justify-content-center">
+          <div class="container mt-3">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              {# Overview #}
+              <li class="nav-item">
+                <a :class="{'nav-link': true, active: showOverview}" @click="changeTabs('showOverview')">{% trans "Overview" %}</a>
+              </li>
+
+              {# Traveller #}
+              <li class="nav-item">
+                <a :class="{'nav-link': true, active: showTraveller}" @click="changeTabs('showTraveller')">
+                  <span class="pr-1"> {% trans "Traveller" %} </span>
+                  <div v-if="loading_user" class="spinner-border spinner-border-sm" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </a>
+              </li>
+
+              {# Reviewer #}
+              <li class="nav-item" v-if="currentUser.id && ( currentUser.request_reviews_count + currentUser.trip_reviews_count > 0)">
+                <a :class="{'nav-link': true, active: showReviewer}" @click="changeTabs('showReviewer')">
+                  <span class="pr-1"> {% trans "Reviewer" %} </span>
+                  <div v-if="loading_user" class="spinner-border spinner-border-sm" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <span v-else-if="currentUser.id && ( currentUser.request_reviews_count + currentUser.trip_reviews_count > 0)">
+                  (<span class="red-font blink-me">${ currentUser.request_reviews_count + currentUser.trip_reviews_count }</span>)
+                  </span>
+                </a>
+              </li>
+
+              {# regional admin #}
+              <li v-if="isAdmin" class="nav-item">
+                <a :class="{'nav-link': true, active: showRegions}" @click="changeTabs('showRegions')">
+                  <span class="pr-1">{% trans "Regional Travel Admins" %} </span>
+
+                  <div v-if="loading_user || loading_regional_verification_list || loading_rdg_approval_list" class="spinner-border spinner-border-sm"
+                       role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <span v-else-if="( regionalVerificationCount + regionalRDGApprovalCount > 0)">
+                  (<span class="red-font blink-me">${ regionalVerificationCount + regionalRDGApprovalCount }</span>)
+                  </span>
+                </a>
+              </li>
+
+              {# ncr admin #}
+              <li v-if="isNCRAdmin" class="nav-item">
+                <a :class="{'nav-link': true, active: showNCR}" @click="changeTabs('showNCR')">
+                  <span class="pr-1">{% trans "ADM Office" %} </span>
+
+                  <div v-if="loading_user || loading_adm_hit_list || loading_adm_verification_list" class="spinner-border spinner-border-sm" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                  <span v-else-if="( admVerificationCount + admHitCount > 0)">
+                  (<span class="red-font blink-me">${ admVerificationCount + admHitCount }</span>)
+                  </span>
+
+                </a>
+              </li>
+
+              {# support #}
+              <li class="nav-item">
+                <a :class="{'nav-link': true, active: showSupport}" @click="changeTabs('showSupport')">{% trans "Support" %}</a>
+              </li>
+            </ul>
+
+            {# Overview #}
+            <div v-if="showOverview" id="overview" class=""><br>
+              {% include "travel/index/_overview.html" %}
+            </div>
+
+            {# Support #}
+            <div v-if="showSupport" id="help" class=""><br>
+              {% include "travel/index/_support.html" %}
+            </div>
+
+            {# Traveller #}
+            <div v-if="showTraveller" id="traveller" class=""><br>
+              {% include "travel/index/_traveller.html" %}
+            </div>
+
+            {# Reviewer #}
+            <div v-if="showReviewer" id="reviewer" class=""><br>
+              {% include "travel/index/_reviewer.html" %}
+            </div>
+
+            {# Regions #}
+            <div v-if="showRegions" id="regions" class=""><br>
+              {% include "travel/index/_regions.html" %}
+            </div>
+
+            {# NCR #}
+            <div v-if="showNCR" id="ncr" class=""><br>
+              {% include "travel/index/_ncr.html" %}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="margin-bottom: 150px">
+  </div>
+{% endblock content %}
+
+
+{% block body_js %}
+  {{ block.super }}
+
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+
+  <script src="{% static '/travel/mainIndex.js' %}?version=1.0" type="application/javascript"></script>
+
+
+{% endblock %}

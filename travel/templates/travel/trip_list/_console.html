@@ -1,0 +1,100 @@
+{% load i18n %}
+{% load static %}
+{% load custom_tags %}
+{% load bootstrap4 %}
+<div class="">
+  <div v-if="!trips_loading" class="filters">
+    {# Regular filters #}
+
+    <div class="mb-5">
+      <div class="row table-bordered py-2">
+        {# Title #}
+        <div class="col-3">
+          <div class="form-group">
+            <label for="filter_search">{% trans "Search (trip title, location)" %}</label>
+            <input
+              v-model="filter_search"
+              @change="updateResults"
+              type="text" class="form-control form-control-sm" id="filter_search" placeholder="">
+          </div>
+        </div>
+        {# regional lead #}
+        <div class="col">
+          <label class="filter" for="filter_regional_lead">{% trans "Regional Lead" %}</label>
+          <select
+            v-model="filter_regional_lead"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_regional_lead"
+          >
+            <option value="">{% trans "all" %}</option>
+            <option v-for="(obj, index) in regions" :value="obj.id">${obj.name}</option>
+          </select>
+        </div>
+        {# Fiscal Year #}
+        <div class="col">
+          <label class="filter" for="filter_fiscal_year">{% trans "Year" %}</label>
+          <select
+            v-model="filter_fiscal_year"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_fiscal_year"
+          >
+            <option value="">{% trans "all" %}</option>
+            <option v-for="(obj, index) in fiscalYears" :value="obj.id">${obj.full}</option>
+          </select>
+        </div>
+        {# status #}
+        <div class="col">
+          <label class="filter" for="filter_status">{% trans "Trip Status" %}</label>
+          <select
+            v-model="filter_status"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_status"
+          >
+            <option value selected>{% trans "all" %}</option>
+            {% for status in status_choices %}
+              <option value="{{ status.value }}">{{ status.label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        {# subcategory #}
+        <div class="col">
+          <label class="filter" for="filter_status">{% trans "Purpose" %}</label>
+          <select
+            v-model="filter_subcategory"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_subcategory"
+          >
+            <option value selected>{% trans "all" %}</option>
+            {% for subcat in subcategory_choices %}
+              <option value="{{ subcat.value }}">{{ subcat.label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+
+        {# adm approval #}
+
+        <div class="col">
+          <label class="filter" for="filter_adm_approval">{% trans "ADM approval required?" %}</label>
+          <select
+            v-model="filter_adm_approval"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_adm_approval"
+          >
+            <option value selected>{% trans "all" %}</option>
+            <option value="True">{% trans "yes" %}</option>
+            <option value="False">{% trans "no" %}</option>
+          </select>
+        </div>
+
+        <div class="col-1">
+          <br>
+          <button @click="clearFilters" class="btn btn-sm btn-warning">{% trans "Clear filters" %}</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

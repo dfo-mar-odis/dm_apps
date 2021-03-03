@@ -1,18 +1,19 @@
 import inspect
 import math
-from datetime import date, datetime, time
+from datetime import date, datetime
 
+import pytz
 from django import forms
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 from django.forms import modelformset_factory
-from django.utils import timezone
 from django.utils.timezone import make_aware
 from django.utils.translation import gettext
 import pandas as pd
 
 from bio_diversity import models
-from bio_diversity.utils import comment_parser, enter_tank_contx, enter_indvd
+from bio_diversity.utils import comment_parser, enter_tank_contx, enter_indvd, year_coll_splitter, enter_env, \
+    create_movement_evnt, enter_grpd, enter_anix, val_unit_splitter
 
 
 class CreatePrams(forms.ModelForm):
@@ -82,17 +83,17 @@ class CreateTimePrams(forms.ModelForm):
         # the end datetime is after the start datetime
         # and set the datetime values
         if cleaned_data["start_time"]:
-            start_time = make_aware(datetime.strptime(cleaned_data["start_time"], '%H:%M').time(),
-                                    timezone=timezone.get_current_timezone())
+            start_time = datetime.strptime(cleaned_data["start_time"],
+                                           '%H:%M').time().replace(tzinfo=pytz.UTC)
         else:
-            start_time = make_aware(time(0, 0), timezone=timezone.get_current_timezone())
+            start_time = datetime.min.time().replace(tzinfo=pytz.UTC)
         cleaned_data["start_datetime"] = datetime.combine(cleaned_data["start_date"], start_time)
         if cleaned_data["end_date"]:
             if cleaned_data["end_time"]:
-                end_time = make_aware(datetime.strptime(cleaned_data["end_time"], '%H:%M').time(),
-                                      timezone=timezone.get_current_timezone())
+                end_time = datetime.strptime(cleaned_data["end_time"],
+                                             '%H:%M').time().replace(tzinfo=pytz.UTC)
             else:
-                end_time = make_aware(time(0, 0), timezone=timezone.get_current_timezone())
+                end_time = datetime.min.time().replace(tzinfo=pytz.UTC)
             cleaned_data["end_datetime"] = datetime.combine(cleaned_data["end_date"], end_time)
 
         end_date = cleaned_data.get("end_date")
@@ -119,9 +120,13 @@ class AnidcForm(CreatePrams):
 
 
 class AnixForm(CreatePrams):
+
     class Meta:
         model = models.AniDetailXref
         exclude = []
+        widgets = {
+            'final_contx_flag': forms.NullBooleanSelect()
+        }
 
 
 class AdscForm(CreatePrams):
@@ -240,11 +245,11 @@ class DataForm(CreatePrams):
                 row_entered = False
                 try:
                     loc = models.Location(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                          locc_id_id=1,
+                                          locc_id_id=models.LocCode.objects.first(),
                                           rive_id=models.RiverCode.objects.filter(name=row["River"]).get(),
                                           subr_id=models.SubRiverCode.objects.filter(name__iexact=row["Branch"]).get(),
                                           relc_id=models.ReleaseSiteCode.objects.filter(name__iexact=row["Site"]).get(),
-                                          start_datetime=datetime.strptime(row["Date"], "%Y-%b-%d"),
+                                          loc_date=datetime.strptime(row["Date"], "%Y-%b-%d"),
                                           comments=row["Comments"],
                                           created_by=cleaned_data["created_by"],
                                           created_date=cleaned_data["created_date"],
@@ -256,25 +261,11 @@ class DataForm(CreatePrams):
                     except ValidationError:
                         loc = models.Location.objects.filter(evnt_id=loc.evnt_id, locc_id=loc.locc_id,
                                                              rive_id=loc.rive_id, subr_id=loc.subr_id,
-                                                             relc_id=loc.relc_id, start_datetime=loc.start_datetime).get()
+                                                             relc_id=loc.relc_id, loc_date=loc.loc_date).get()
 
-                    if not math.isnan(row["temp"]):
-                        env = models.EnvCondition(loc_id_id=loc.pk,
-                                                  inst_id=models.Instrument.objects.first(),
-                                                  envc_id=models.EnvCode.objects.filter(name__iexact="Temperature").get(),
-                                                  env_val=row["temp"],
-                                                  start_datetime=datetime.strptime(row["Date"], "%Y-%b-%d"),
-                                                  env_avg=False,
-                                                  qual_id=models.QualCode.objects.filter(name="Good").get(),
-                                                  created_by=cleaned_data["created_by"],
-                                                  created_date=cleaned_data["created_date"],
-                                                  )
-                        try:
-                            env.clean()
-                            env.save()
-                            row_entered = True
-                        except ValidationError:
-                            pass
+                    if enter_env(row["temp"], datetime.strptime(row["Date"], "%Y-%b-%d"), cleaned_data, "Temperature", loc_id=loc,):
+                        row_entered = True
+
                     cnt = False
                     if not math.isnan(row["# of salmon collected"]):
                         cnt = models.Count(loc_id_id=loc.pk,
@@ -293,22 +284,21 @@ class DataForm(CreatePrams):
                             cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id, cnt=cnt.cnt).get()
 
                     elif not math.isnan(row["# of salmon observed"]):
-                            cnt = models.Count(loc_id_id=loc.pk,
-                                               spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
-                                               cntc_id=models.CountCode.objects.filter(
-                                                   name__iexact="Fish Observed").get(),
-                                               cnt=row["# of salmon observed"],
-                                               est=False,
-                                               created_by=cleaned_data["created_by"],
-                                               created_date=cleaned_data["created_date"],
-                                               )
-                            try:
-                                cnt.clean()
-                                cnt.save()
-                                row_entered = True
-                            except ValidationError:
-                                cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id,
-                                                                  cnt=cnt.cnt).get()
+                        cnt = models.Count(loc_id_id=loc.pk,
+                                           spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
+                                           cntc_id=models.CountCode.objects.filter(
+                                               name__iexact="Fish Observed").get(),
+                                           cnt=row["# of salmon observed"],
+                                           est=False,
+                                           created_by=cleaned_data["created_by"],
+                                           created_date=cleaned_data["created_date"],
+                                           )
+                        try:
+                            cnt.clean()
+                            cnt.save()
+                            row_entered = True
+                        except ValidationError:
+                            cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id, cnt=cnt.cnt).get()
                     if cnt:
                         if not math.isnan(row["fishing seconds"]):
                             cntd = models.CountDet(cnt_id=cnt,
@@ -354,42 +344,203 @@ class DataForm(CreatePrams):
                     rows_parsed += 1
             if parsed:
                 try:
-                    grp = models.Group(spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
-                                       stok_id=models.StockCode.objects.filter(name=data["River"][0]).get(),
-                                       coll_id=models.Collection.objects.filter(name__icontains=data["purpose"][0][:8]).get(),
-                                       grp_valid=True,
-                                       created_by=cleaned_data["created_by"],
-                                       created_date=cleaned_data["created_date"],
-                                       )
-                    try:
-                        grp.clean()
-                        grp.save()
-                    except ValidationError:
-                        grp = models.Group.objects.filter(spec_id=grp.spec_id, stok_id=grp.stok_id,
-                                                          coll_id=grp.coll_id).get()
-                    anix = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                                grp_id_id=grp.pk,
-                                                created_by=cleaned_data["created_by"],
-                                                created_date=cleaned_data["created_date"],
-                                                )
-                    try:
-                        anix.clean()
-                        anix.save()
-                    except ValidationError:
-                        pass
-                    grpd = models.GroupDet(anix_id_id=anix.pk,
-                                           anidc_id=models.AnimalDetCode.objects.filter(name__iexact="Number of Fish").get(),
-                                           det_val=data["# of salmon collected"].sum(),
-                                           qual_id=models.QualCode.objects.filter(name="Good").get(),
-                                           # det_val=True,
+                    anix_grp_qs = models.AniDetailXref.objects.filter(evnt_id=cleaned_data["evnt_id"],
+                                                                      grp_id__isnull=False,
+                                                                      indv_id__isnull=True,
+                                                                      contx_id__isnull=True,
+                                                                      indvt_id__isnull=True,
+                                                                      loc_id__isnull=True,
+                                                                      pair_id__isnull=True)
+                    if anix_grp_qs.count() == 0:
+
+                        grp = models.Group(spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
+                                           stok_id=models.StockCode.objects.filter(name=data["River"][0]).get(),
+                                           coll_id=models.Collection.objects.filter(name__icontains=data["purpose"][0][:8]).get(),
+                                           grp_year=datetime.strptime(data["Date"][0], "%Y-%b-%d").year,
+                                           grp_valid=True,
                                            created_by=cleaned_data["created_by"],
                                            created_date=cleaned_data["created_date"],
                                            )
+                        try:
+                            grp.clean()
+                            grp.save()
+                        except ValidationError:
+                            grp = models.Group.objects.filter(spec_id=grp.spec_id,
+                                                              stok_id=grp.stok_id,
+                                                              coll_id=grp.coll_id).get()
+
+                        anix_grp = enter_anix(cleaned_data, grp_pk=grp.pk)
+                    elif anix_grp_qs.count() == 1:
+                        anix_grp = anix_grp_qs.get()
+                        grp = anix_grp.grp_id
+
+                    first_row_date = datetime.strptime(row["Date"], "%Y-%b-%d").replace(tzinfo=pytz.UTC)
+                    enter_grpd(anix_grp.pk, cleaned_data, first_row_date, data["# Parr Collected"].sum(), "Number of Fish")
+
+                    enter_tank_contx(cleaned_data["tank_id"].name, cleaned_data, True, None, grp.pk, False)
+
+                except Exception as err:
+                    log_data += "Error parsing common data: \n"
+                    log_data += "\n Error: {}".format(err.__str__())
+                    self.request.session["load_success"] = False
+            log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to" \
+                        " database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
+
+        # --------------------------ELECTROFISHING MACTAQUAC DATA ENTRY-----------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Electrofishing" and \
+                cleaned_data["facic_id"].__str__() == "Mactaquac":
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], header=1, engine='openpyxl')
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                raise Exception("File format not valid: {}".format(err.__str__()))
+            parsed = True
+
+            self.request.session["load_success"] = True
+            for row in data_dict:
+                row_parsed = True
+                row_entered = False
+                row_date = datetime.strptime(str(row["Year"])+str(row["Month"])+str(row["Day"]), "%Y%b%d").replace(tzinfo=pytz.UTC)
+                try:
+                    loc = models.Location(evnt_id_id=cleaned_data["evnt_id"].pk,
+                                          locc_id=models.LocCode.objects.first(),
+                                          relc_id=models.ReleaseSiteCode.objects.filter(
+                                              name__iexact=row["Location Name"]).get(),
+                                          loc_date=row_date,
+                                          comments=row["Comments"],
+                                          created_by=cleaned_data["created_by"],
+                                          created_date=cleaned_data["created_date"],
+                                          )
                     try:
-                        grpd.clean()
-                        grpd.save()
+                        loc.clean()
+                        loc.save()
+                        row_entered = True
                     except ValidationError:
-                        pass
+                        loc = models.Location.objects.filter(evnt_id=loc.evnt_id, locc_id=loc.locc_id,
+                                                             rive_id=loc.rive_id, subr_id=loc.subr_id,
+                                                             relc_id=loc.relc_id, loc_date=loc.loc_date).get()
+
+                    if enter_env(row["Temperature"], row_date, cleaned_data, "Temperature", loc_id=loc,):
+                        row_entered = True
+
+                    cnt = False
+                    if not math.isnan(row["# Parr Collected"]):
+                        cnt = models.Count(loc_id_id=loc.pk,
+                                           spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
+                                           cntc_id=models.CountCode.objects.filter(
+                                               name__iexact="Fish Caught").get(),
+                                           cnt=row["# Parr Collected"],
+                                           est=False,
+                                           created_by=cleaned_data["created_by"],
+                                           created_date=cleaned_data["created_date"],
+                                           )
+                        try:
+                            cnt.clean()
+                            cnt.save()
+                            row_entered = True
+                        except ValidationError:
+                            cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id,
+                                                              cnt=cnt.cnt).get()
+
+                    elif not math.isnan(row["# Parr Observed"]):
+                        cnt = models.Count(loc_id_id=loc.pk,
+                                           spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
+                                           cntc_id=models.CountCode.objects.filter(
+                                               name__iexact="Fish Observed").get(),
+                                           cnt=row["# Parr Observed"],
+                                           est=False,
+                                           created_by=cleaned_data["created_by"],
+                                           created_date=cleaned_data["created_date"],
+                                           )
+                        try:
+                            cnt.clean()
+                            cnt.save()
+                            row_entered = True
+                        except ValidationError:
+                            cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id,
+                                                              cnt=cnt.cnt).get()
+                    if cnt:
+                        if not math.isnan(row["Fishing seconds"]):
+                            cntd = models.CountDet(cnt_id=cnt,
+                                                   anidc_id=models.AnimalDetCode.objects.filter(
+                                                       name__iexact="Electrofishing Seconds").get(),
+                                                   det_val=row["Fishing seconds"],
+                                                   qual_id=models.QualCode.objects.filter(name="Good").get(),
+                                                   created_by=cleaned_data["created_by"],
+                                                   created_date=cleaned_data["created_date"],
+                                                   )
+                            try:
+                                cntd.clean()
+                                cntd.save()
+                                row_entered = True
+                            except ValidationError:
+                                pass
+
+                        if not math.isnan(row["Voltage"]):
+                            cntd = models.CountDet(cnt_id=cnt,
+                                                   anidc_id=models.AnimalDetCode.objects.filter(
+                                                       name__iexact="Voltage").get(),
+                                                   det_val=row["Voltage"],
+                                                   qual_id=models.QualCode.objects.filter(name="Good").get(),
+                                                   created_by=cleaned_data["created_by"],
+                                                   created_date=cleaned_data["created_date"],
+                                                   )
+                            try:
+                                cntd.clean()
+                                cntd.save()
+                                row_entered = True
+                            except ValidationError:
+                                pass
+
+                except Exception as err:
+                    parsed = False
+                    self.request.session["load_success"] = False
+                    log_data += "Error parsing row: \n"
+                    log_data += str(row)
+                    log_data += "\n Error: {}".format(err.__str__())
+                    break
+                if row_entered:
+                    rows_entered += 1
+                    rows_parsed += 1
+                elif row_parsed:
+                    rows_parsed += 1
+            if parsed:
+                try:
+                    relc = models.ReleaseSiteCode.objects.filter(name__iexact=data["Location Name"][0]).get()
+
+                    anix_grp_qs = models.AniDetailXref.objects.filter(evnt_id=cleaned_data["evnt_id"],
+                                                                      grp_id__isnull=False,
+                                                                      indv_id__isnull=True,
+                                                                      contx_id__isnull=True,
+                                                                      indvt_id__isnull=True,
+                                                                      loc_id__isnull=True,
+                                                                      pair_id__isnull=True)
+
+                    if anix_grp_qs.count() == 0:
+                        grp = models.Group(spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
+                                           stok_id=models.StockCode.objects.filter(name__icontains=relc.rive_id.name).get(),
+                                           coll_id=models.Collection.objects.filter(name__icontains="Fall Parr").get(),
+                                           grp_year=data["Year"][0],
+                                           grp_valid=True,
+                                           created_by=cleaned_data["created_by"],
+                                           created_date=cleaned_data["created_date"],
+                                           )
+                        try:
+                            grp.clean()
+                            grp.save()
+                        except ValidationError:
+                            grp = models.Group.objects.filter(spec_id=grp.spec_id, stok_id=grp.stok_id,
+                                                              grp_year=grp.grp_year, coll_id=grp.coll_id).get()
+                        anix_grp = enter_anix(cleaned_data, grp_pk=grp.pk)
+                    elif anix_grp_qs.count() == 1:
+                        anix_grp = anix_grp_qs.get()
+                        grp = anix_grp.grp_id
+
+                    first_row_date = datetime.strptime(str(data["Year"][0])+str(data["Month"][0])+str(data["Day"][0]), "%Y%b%d").replace(tzinfo=pytz.UTC)
+                    enter_grpd(anix_grp.pk, cleaned_data, first_row_date, data["# Parr Collected"].sum(), "Number of Fish")
+
+                    enter_tank_contx(cleaned_data["tank_id"].name, cleaned_data, True, None, grp.pk, False)
+
                 except Exception as err:
                     log_data += "Error parsing common data: \n"
                     log_data += "\n Error: {}".format(err.__str__())
@@ -398,7 +549,7 @@ class DataForm(CreatePrams):
                         " database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
 
         # ---------------------------TAGGING DATA ENTRY----------------------------------------
-        elif cleaned_data["evntc_id"].__str__() == "Tagging" and cleaned_data["facic_id"].__str__() == "Coldbrook":
+        elif cleaned_data["evntc_id"].__str__() == "PIT Tagging" and cleaned_data["facic_id"].__str__() == "Coldbrook":
             try:
                 data = pd.read_excel(cleaned_data["data_csv"], engine='openpyxl', header=0,
                                      converters={'to tank': str})
@@ -408,21 +559,37 @@ class DataForm(CreatePrams):
             parsed = True
             self.request.session["load_success"] = True
             try:
-                grp_id = models.Group.objects.filter(stok_id__name=data_dict[0]["Stock"],
-                                                     coll_id__name=data_dict[0]["Group"]).get().pk
+                year, coll = year_coll_splitter(data["Group"][0])
+                grp_qs = models.Group.objects.filter(stok_id__name=data_dict[0]["Stock"],
+                                                     coll_id__name__iexact=coll,
+                                                     grp_year=year)
+                if len(grp_qs) == 1:
+                    grp_id = grp_qs.get().pk
+                elif len(grp_qs) > 1:
+                    for grp in grp_qs:
+                        tank_list = grp.current_tank()
+                        if data["from Tank"][0] in [tank.name for tank in tank_list]:
+                            grp_id = grp.pk
+
             except Exception as err:
                 log_data += "Error finding origin group (check first row): \n"
                 log_data += "Error: {}\n\n".format(err.__str__())
                 self.request.session["load_success"] = False
 
+            enter_anix(cleaned_data, grp_pk=grp_id)
+
             for row in data_dict:
                 row_parsed = True
                 row_entered = False
                 try:
+                    year, coll = year_coll_splitter(row["Group"])
+                    row_date = datetime.strptime(row["Date"], "%Y-%b-%d").date()
+                    row_datetime = datetime.combine(row_date, datetime.min.time()).replace(tzinfo=pytz.UTC)
                     indv = models.Individual(grp_id_id=grp_id,
-                                             spec_id_id=1,
+                                             spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
                                              stok_id=models.StockCode.objects.filter(name=row["Stock"]).get(),
-                                             coll_id=models.Collection.objects.filter(name__iexact=row["Group"].strip()).get(),
+                                             coll_id=models.Collection.objects.filter(name__icontains=coll).get(),
+                                             indv_year=year,
                                              ufid=row["Universal Fish ID"],
                                              pit_tag=row["PIT tag"],
                                              indv_valid=True,
@@ -437,57 +604,26 @@ class DataForm(CreatePrams):
                     except (ValidationError, IntegrityError):
                         indv = models.Individual.objects.filter(ufid=indv.ufid, pit_tag=indv.pit_tag).get()
 
-                    if enter_tank_contx(row["from Tank"], cleaned_data, final_flag=False, indv_pk=indv.pk):
+                    if create_movement_evnt(row["from Tank"], row["to tank"], cleaned_data, row_datetime, indv_pk=indv.pk):
                         row_entered = True
 
-                    if enter_tank_contx(row["to tank"], cleaned_data, final_flag=True, indv_pk=indv.pk):
+                    anix_indv = enter_anix(cleaned_data, indv_pk=indv.pk)
+
+                    anix_grp = enter_anix(cleaned_data, indv_pk=indv.pk, grp_pk=grp_id)
+
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Length (cm)"], "Length", None):
                         row_entered = True
 
-                    anix_indv = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                                     indv_id_id=indv.pk,
-                                                     created_by=cleaned_data["created_by"],
-                                                     created_date=cleaned_data["created_date"],
-                                                     )
-                    try:
-                        anix_indv.clean()
-                        anix_indv.save()
-                        row_entered = True
-                    except ValidationError:
-                        anix_indv = models.AniDetailXref.objects.filter(evnt_id=anix_indv.evnt_id,
-                                                                        indv_id=anix_indv.indv_id,
-                                                                        contx_id__isnull=True,
-                                                                        loc_id__isnull=True,
-                                                                        spwn_id__isnull=True,
-                                                                        grp_id__isnull=True,
-                                                                        indvt_id__isnull=True,
-                                                                        ).get()
-
-                    anix_grp = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                                    indv_id_id=indv.pk,
-                                                    grp_id_id=grp_id,
-                                                    created_by=cleaned_data["created_by"],
-                                                    created_date=cleaned_data["created_date"],
-                                                    )
-                    try:
-                        anix_grp.clean()
-                        anix_grp.save()
-                        row_entered = True
-                    except ValidationError:
-                        pass
-
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["Length (cm)"], "Length", None):
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Weight (g)"], "Weight", None):
                         row_entered = True
 
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["Weight (g)"], "Weight", None):
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Vial"], "Vial", None):
                         row_entered = True
 
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["Vial"], "Vial", None):
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Box"], "Box", None):
                         row_entered = True
 
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["Box"], "Box", None):
-                        row_entered = True
-
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["location"], "Box Location", None):
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["location"], "Box Location", None):
                         row_entered = True
 
                 except Exception as err:
@@ -508,10 +644,10 @@ class DataForm(CreatePrams):
                         "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
 
             # ---------------------------TAGGING MACTAQUAC DATA ENTRY----------------------------------------
-        elif cleaned_data["evntc_id"].__str__() == "Tagging" and cleaned_data["facic_id"].__str__() == "Mactaquac":
+        elif cleaned_data["evntc_id"].__str__() == "PIT Tagging" and cleaned_data["facic_id"].__str__() == "Mactaquac":
             try:
                 data = pd.read_excel(cleaned_data["data_csv"], engine='openpyxl', header=0,
-                                     converters={'to tank': str})
+                                     converters={'to tank': str, "PIT": str})
                 data["Comments"] = data["Comments"].fillna('')
                 data_dict = data.to_dict('records')
             except Exception as err:
@@ -519,32 +655,38 @@ class DataForm(CreatePrams):
             parsed = True
             self.request.session["load_success"] = True
             try:
-                grp_id = models.Group.objects.filter(stok_id__name__iexact=data_dict[0]["Stock"],
-                                                     coll_id__name__iexact=data_dict[0]["Collection"]).get().pk
-                anix_grp = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                                grp_id_id=grp_id,
-                                                created_by=cleaned_data["created_by"],
-                                                created_date=cleaned_data["created_date"],
-                                                )
-                try:
-                    anix_grp.clean()
-                    anix_grp.save()
-                    row_entered = True
-                except ValidationError:
-                    pass
+
+                year, coll = year_coll_splitter(data["Collection"][0])
+                grp_qs = models.Group.objects.filter(stok_id__name=data_dict[0]["Stock"],
+                                                     coll_id__name__icontains=coll,
+                                                     grp_year=year)
+                if len(grp_qs) == 1:
+                    grp_id = grp_qs.get().pk
+                elif len(grp_qs) > 1:
+                    for grp in grp_qs:
+                        tank_list = grp.current_tank()
+                        if data["Origin Pond"][0] in [tank.name for tank in tank_list]:
+                            grp_id = grp.pk
+
             except Exception as err:
                 log_data += "Error finding origin group (check first row): \n"
                 log_data += "Error: {}\n\n".format(err.__str__())
                 self.request.session["load_success"] = False
 
+            anix_grp = enter_anix(cleaned_data, grp_pk=grp_id)
+
             for row in data_dict:
                 row_parsed = True
                 row_entered = False
                 try:
+                    year, coll = year_coll_splitter(row["Collection"])
+                    row_date = row["Date"].date()
+                    row_datetime = datetime.combine(row_date, datetime.min.time()).replace(tzinfo=pytz.UTC)
                     indv = models.Individual(grp_id_id=grp_id,
-                                             spec_id_id=1,
+                                             spec_id=models.SpeciesCode.objects.filter(name__icontains="Salmon").get(),
                                              stok_id=models.StockCode.objects.filter(name=row["Stock"]).get(),
-                                             coll_id=models.Collection.objects.filter(name=row["Collection"]).get(),
+                                             coll_id=models.Collection.objects.filter(name__icontains=coll).get(),
+                                             indv_year=year,
                                              pit_tag=row["PIT"],
                                              indv_valid=True,
                                              comments=row["Comments"],
@@ -556,57 +698,30 @@ class DataForm(CreatePrams):
                         indv.save()
                         row_entered = True
                     except (ValidationError, IntegrityError):
-                        indv = models.Individual.objects.filter(ufid=indv.ufid, pit_tag=indv.pit_tag).get()
+                        indv = models.Individual.objects.filter(pit_tag=indv.pit_tag).get()
 
-                    if enter_tank_contx(row["Origin Pond"], cleaned_data, final_flag=False, indv_pk=indv.pk):
+                    if create_movement_evnt(row["Origin Pond"], row["Destination Pond"], cleaned_data, row_datetime, indv_pk=indv.pk):
                         row_entered = True
 
-                    if enter_tank_contx(row["Destination Pond"], cleaned_data, final_flag=True, indv_pk=indv.pk):
+                    anix_indv = enter_anix(cleaned_data, indv_pk=indv.pk)
+
+                    anix_grp = enter_anix(cleaned_data, indv_pk=indv.pk, grp_pk=grp_id)
+
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Length (cm)"], "Length", None):
                         row_entered = True
 
-                    anix_indv = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                                     indv_id_id=indv.pk,
-                                                     created_by=cleaned_data["created_by"],
-                                                     created_date=cleaned_data["created_date"],
-                                                     )
-                    try:
-                        anix_indv.clean()
-                        anix_indv.save()
-                        row_entered = True
-                    except ValidationError:
-                        anix_indv = models.AniDetailXref.objects.filter(evnt_id=anix_indv.evnt_id,
-                                                                        indv_id=anix_indv.indv_id,
-                                                                        contx_id__isnull=True,
-                                                                        loc_id__isnull=True,
-                                                                        spwn_id__isnull=True,
-                                                                        grp_id__isnull=True,
-                                                                        indvt_id__isnull=True,
-                                                                        ).get()
-
-                    anix_grp = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                                    indv_id_id=indv.pk,
-                                                    grp_id_id=grp_id,
-                                                    created_by=cleaned_data["created_by"],
-                                                    created_date=cleaned_data["created_date"],
-                                                    )
-                    try:
-                        anix_grp.clean()
-                        anix_grp.save()
-                        row_entered = True
-                    except ValidationError:
-                        pass
-
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["Length (cm)"], "Length", None):
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Weight (g)"], "Weight", None):
                         row_entered = True
 
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["Weight (g)"], "Weight", None):
+                    if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Vial Number"], "Vial", None):
                         row_entered = True
 
-                    if enter_indvd(anix_indv.pk, cleaned_data, row["Vial Number"], "Vial", None):
-                        row_entered = True
+                    if row["Precocity (Y/N)"].upper() == "Y":
+                        if enter_indvd(anix_indv.pk, cleaned_data, row_date, None, "Animal Health", "Precocity"):
+                            row_entered = True
 
                     if row["Comments"]:
-                        comment_parser(row["Comments"], anix_indv)
+                        comment_parser(row["Comments"], anix_indv, det_date=row_date)
                 except Exception as err:
                     parsed = False
                     self.request.session["load_success"] = False
@@ -654,52 +769,16 @@ class DataForm(CreatePrams):
                         log_data += "\nFish with PIT {} not found in db\n".format(row["PIT"])
 
                     if indv:
-                        anix_indv = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
-                                                         indv_id_id=indv.pk,
-                                                         created_by=cleaned_data["created_by"],
-                                                         created_date=cleaned_data["created_date"],
-                                                         )
-                        try:
-                            anix_indv.clean()
-                            anix_indv.save()
-                            row_entered = True
-                        except ValidationError:
-                            anix_indv = models.AniDetailXref.objects.filter(evnt_id=anix_indv.evnt_id,
-                                                                            indv_id=anix_indv.indv_id,
-                                                                            contx_id__isnull=True,
-                                                                            loc_id__isnull=True,
-                                                                            spwn_id__isnull=True,
-                                                                            grp_id__isnull=True,
-                                                                            indvt_id__isnull=True,
-                                                                            ).get()
+                        anix_indv = enter_anix(cleaned_data, indv_pk=indv.pk)
 
-                        if enter_indvd(anix_indv.pk, cleaned_data, None, "Gender", sex_dict[row["SEX"]]):
+                        row_date = row["DATE SORTED (ddmmmyr)"].date()
+                        row_datetime = datetime.combine(row_date, datetime.min.time()).replace(tzinfo=pytz.UTC)
+                        if enter_indvd(anix_indv.pk, cleaned_data, row_date, None, "Gender", sex_dict[row["SEX"]], comments=row["COMMENTS"]):
                             row_entered = True
 
-                        if row["SEX"]:
-                            indvd_sex = models.IndividualDet(anix_id_id=anix_indv.pk,
-                                                             anidc_id=models.AnimalDetCode.objects.filter(
-                                                                 name="Gender").get(),
-                                                             adsc_id=models.AniDetSubjCode.objects.filter(
-                                                                 name=sex_dict[row["SEX"]]).get(),
-                                                             qual_id=models.QualCode.objects.filter(name="Good").get(),
-                                                             comments=row["COMMENTS"],
-                                                             created_by=cleaned_data["created_by"],
-                                                             created_date=cleaned_data["created_date"],
-                                                             )
-                            try:
-                                indvd_sex.clean()
-                                indvd_sex.save()
-                                row_entered = True
-                            except (ValidationError, IntegrityError) as e:
-                                pass
-
-                        if enter_tank_contx(row["ORIGIN POND"], cleaned_data, final_flag=False, indv_pk=indv.pk):
+                        if create_movement_evnt(row["ORIGIN POND"], row["DESTINATION POND"], cleaned_data, row_datetime,
+                                                indv_pk=indv.pk):
                             row_entered = True
-
-                        if enter_tank_contx(row["DESTINATION POND"], cleaned_data, final_flag=True, indv_pk=indv.pk):
-                            row_entered = True
-
 
                         if row["COMMENTS"]:
                             comment_parser(row["COMMENTS"], anix_indv)
@@ -722,6 +801,459 @@ class DataForm(CreatePrams):
                 self.request.session["load_success"] = False
             log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
                         "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
+
+        # ---------------------------MACTAQUAC WATER QUALITY DATA ENTRY----------------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Water Quality Record" and cleaned_data["facic_id"].__str__() == "Mactaquac":
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], engine='openpyxl', header=0,
+                                     converters={'Pond': str})
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                raise Exception("File format not valid: {}".format(err.__str__()))
+            parsed = True
+            self.request.session["load_success"] = True
+            for row in data_dict:
+                row_parsed = True
+                row_entered = False
+                try:
+                    contx = enter_tank_contx(row["Pond"], cleaned_data, None, return_contx=True)
+                    row_date = row["Date"].date()
+                    if row["Time (24HR)"]:
+                        row_time = make_aware(row["Time (24HR)"])
+                    else:
+                        row_time = None
+                    if enter_env(row["Temp °C"], row_date, cleaned_data, "Temperature", contx=contx, env_start=row_time):
+                        row_entered = True
+                    if enter_env(row["DO%"], row_date, cleaned_data, "Oxygen Level", contx=contx, env_start=row_time):
+                        row_entered = True
+                    if enter_env(row["pH"], row_date, cleaned_data, "pH", contx=contx, env_start=row_time):
+                        row_entered = True
+                    if enter_env(row["Dissolved Nitrogen %"], row_date, cleaned_data, "Dissolved Nitrogen", contx=contx, env_start=row_time):
+                        row_entered = True
+
+                except Exception as err:
+                    parsed = False
+                    self.request.session["load_success"] = False
+                    log_data += "Error parsing row: \n"
+                    log_data += str(row)
+                    log_data += "\n Error: {}".format(err.__str__())
+                    break
+                if row_entered:
+                    rows_entered += 1
+                    rows_parsed += 1
+                elif row_parsed:
+                    rows_parsed += 1
+            if not parsed:
+                self.request.session["load_success"] = False
+            log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
+                        "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
+
+        # ---------------------------MACTAQUAC SPAWNING DATA ENTRY----------------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Spawning" and cleaned_data["facic_id"].__str__() == "Mactaquac":
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], header=5, sheet_name="RECORDED matings" )
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                raise Exception("File format not valid: {}".format(err.__str__()))
+            parsed = True
+            self.request.session["load_success"] = True
+
+            for row in data_dict:
+                row_parsed = True
+                row_entered = False
+                try:
+                    indv_qs = models.Individual.objects.filter(pit_tag=row["Pit or carlin"])
+                    indv_qs_male = models.Individual.objects.filter(pit_tag=row["Pit or carlin.1"])
+                    if len(indv_qs) == 1 and len(indv_qs_male) == 1:
+                        indv_female = indv_qs.get()
+                        indv_male = indv_qs_male.get()
+                    else:
+                        log_data += "Error parsing row: \n"
+                        log_data += str(row)
+                        log_data += "\nFish with PIT {} or PIT {} not found in db\n".format(row["Pit or carlin"], row["Pit or carlin.1"])
+                        break
+
+                    row_date = row["date"].date()
+                    anix_female = enter_anix(cleaned_data, indv_pk=indv_female.pk)
+                    anix_male = enter_anix(cleaned_data, indv_pk=indv_male.pk)
+
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, None, "Gender", "Female"):
+                        row_entered = True
+
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Ln"], "Length", None):
+                        row_entered = True
+
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Wt"], "Weight", None):
+                        row_entered = True
+
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, None, "Gender", "Male"):
+                        row_entered = True
+
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Ln.1"], "Length", None):
+                        row_entered = True
+
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Wt.1"], "Weight", None):
+                        row_entered = True
+
+                    # pair
+                    prio_dict = {"H": "High", "M": "Normal", "P": "Low"}
+                    pair = models.Pairing(start_date=row_date,
+                                          prio_id=models.PriorityCode.objects.filter(
+                                              name__iexact=prio_dict[row["Pri..1"]]).get(),
+                                          valid=True,
+                                          indv_id=indv_female,
+                                          comments=row["Comment"],
+                                          created_by=cleaned_data["created_by"],
+                                          created_date=cleaned_data["created_date"],
+                                          )
+                    try:
+                        pair.clean()
+                        pair.save()
+                        row_entered = True
+                    except (ValidationError, IntegrityError):
+                        pair = models.Pairing.objects.filter(start_date=row_date, indv_id=indv_female).get()
+
+                    # sire
+                    sire = models.Sire(prio_id=models.PriorityCode.objects.filter(name__iexact=prio_dict[row["Pri..1"]]).get(),
+                                       pair_id=pair,
+                                       indv_id=indv_male,
+                                       choice=row["Choice"],
+                                       comments=row["Comment.1"],
+                                       created_by=cleaned_data["created_by"],
+                                       created_date=cleaned_data["created_date"],
+                                       )
+                    try:
+                        sire.clean()
+                        sire.save()
+                        row_entered = True
+                    except (ValidationError, IntegrityError):
+                        pass
+
+                    anix_pair = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
+                                                     pair_id=pair,
+                                                     created_by=cleaned_data["created_by"],
+                                                     created_date=cleaned_data["created_date"],
+                                                     )
+                    try:
+                        anix_pair.clean()
+                        anix_pair.save()
+                        row_entered = True
+                    except ValidationError:
+                        pass
+
+                    fecu_est = models.SpawnDet(pair_id=pair,
+                                               spwndc_id=models.SpawnDetCode.objects.filter(name="Fecundity").get(),
+                                               det_val=int(row["Exp. #"]),
+                                               qual_id=models.QualCode.objects.filter(name="Calculated").get(),
+                                               created_by=cleaned_data["created_by"],
+                                               created_date=cleaned_data["created_date"],
+                                               )
+                    try:
+                        fecu_est.clean()
+                        fecu_est.save()
+                        row_entered = True
+                    except ValidationError:
+                        pass
+
+                    # grp
+                    anix_grp_qs = models.AniDetailXref.objects.filter(evnt_id=cleaned_data["evnt_id"],
+                                                                      grp_id__isnull=False,
+                                                                      pair_id=pair,
+                                                                      indv_id__isnull=True,
+                                                                      contx_id__isnull=True,
+                                                                      indvt_id__isnull=True,
+                                                                      loc_id__isnull=True,
+                                                                      )
+                    if anix_grp_qs.count() == 0:
+
+                        grp = models.Group(spec_id=indv_female.spec_id,
+                                           stok_id=indv_female.stok_id,
+                                           coll_id=models.Collection.objects.filter(name="F1").get(),
+                                           grp_year=row_date.year,
+                                           grp_valid=False,
+                                           created_by=cleaned_data["created_by"],
+                                           created_date=cleaned_data["created_date"],
+                                           )
+                        try:
+                            grp.clean()
+                            grp.save()
+                            anix_grp = enter_anix(cleaned_data, grp_pk=grp.pk)
+                            anix_grp = enter_anix(cleaned_data, grp_pk=grp.pk, pair_pk=pair.pk)
+                            grp.grp_valid = True
+                            grp.save()
+                        except ValidationError:
+                            # recovering the group is only doable through the anix with both grp and pair.
+                            # no way to find it here, so only make the group valid after anix's created.
+                            pass
+
+                    elif anix_grp_qs.count() == 1:
+                        anix_grp = anix_grp_qs.get()
+                        grp = anix_grp.grp_id
+
+                except Exception as err:
+                    parsed = False
+                    self.request.session["load_success"] = False
+                    log_data += "Error parsing row: \n"
+                    log_data += str(row)
+                    log_data += "\n Error: {}".format(err.__str__())
+                    break
+                if row_entered:
+                    rows_entered += 1
+                    rows_parsed += 1
+                elif row_parsed:
+                    rows_parsed += 1
+
+            # matp
+            indv_qs = models.Individual.objects.filter(pit_tag=data["Pit or carlin"][0])
+            if len(indv_qs) == 1:
+                indv_female = indv_qs.get()
+                matp = models.MatingPlan(evnt_id_id=cleaned_data["evnt_id"].pk,
+                                         stok_id=indv_female.stok_id,
+                                         matp_xls=cleaned_data["data_csv"],
+                                         created_by=cleaned_data["created_by"],
+                                         created_date=cleaned_data["created_date"],
+                                         )
+                try:
+                    matp.clean()
+                    matp.save()
+                except (ValidationError, IntegrityError):
+                    pass
+
+            if not parsed:
+                self.request.session["load_success"] = False
+
+            log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
+                        "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
+
+        # ---------------------------COLDBROOK SPAWNING DATA ENTRY----------------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Spawning" and cleaned_data["facic_id"].__str__() == "Coldbrook":
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], header=5, sheet_name="Recording")
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                raise Exception("File format not valid: {}".format(err.__str__()))
+            parsed = True
+            self.request.session["load_success"] = True
+
+            for row in data_dict:
+                row_parsed = True
+                row_entered = False
+                try:
+                    indv_qs = models.Individual.objects.filter(pit_tag=row["Pit tag"])
+                    indv_qs_male = models.Individual.objects.filter(pit_tag=row["Pit tag.1"])
+                    if len(indv_qs) == 1 and len(indv_qs_male) == 1:
+                        indv_female = indv_qs.get()
+                        indv_male = indv_qs_male.get()
+                    else:
+                        log_data += "Error parsing row: \n"
+                        log_data += str(row)
+                        log_data += "\nFish with PIT {} or PIT {} not found in db\n".format(row["Pit tag"], row["Pit tag.1"])
+                        break
+
+                    row_date = row["date"].date()
+                    anix_female = enter_anix(cleaned_data, indv_pk=indv_female.pk)
+                    anix_male = enter_anix(cleaned_data, indv_pk=indv_male.pk)
+
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Ln"], "Length", None):
+                        row_entered = True
+
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Wt"], "Weight", None):
+                        row_entered = True
+
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Ln.1"], "Length", None):
+                        row_entered = True
+
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Wt.1"], "Weight", None):
+                        row_entered = True
+
+                    # pair
+                    prio_dict = {"H": "High", "M": "Normal", "P": "Low"}
+                    pair = models.Pairing(start_date=row_date,
+                                          prio_id=models.PriorityCode.objects.filter(
+                                              name__iexact=prio_dict[row["Pri..1"]]).get(),
+                                          valid=True,
+                                          indv_id=indv_female,
+                                          comments=row["Comment"],
+                                          created_by=cleaned_data["created_by"],
+                                          created_date=cleaned_data["created_date"],
+                                          )
+                    try:
+                        pair.clean()
+                        pair.save()
+                        row_entered = True
+                    except (ValidationError, IntegrityError):
+                        pair = models.Pairing.objects.filter(start_date=row_date, indv_id=indv_female).get()
+
+                    # sire
+                    sire = models.Sire(prio_id=models.PriorityCode.objects.filter(name__iexact=prio_dict[row["Pri..1"]]).get(),
+                                       pair_id=pair,
+                                       indv_id=indv_male,
+                                       choice=row["Choice"],
+                                       comments=row["Comment.1"],
+                                       created_by=cleaned_data["created_by"],
+                                       created_date=cleaned_data["created_date"],
+                                       )
+                    try:
+                        sire.clean()
+                        sire.save()
+                        row_entered = True
+                    except (ValidationError, IntegrityError):
+                        pass
+
+                    anix_pair = models.AniDetailXref(evnt_id_id=cleaned_data["evnt_id"].pk,
+                                                     pair_id=pair,
+                                                     created_by=cleaned_data["created_by"],
+                                                     created_date=cleaned_data["created_date"],
+                                                     )
+                    try:
+                        anix_pair.clean()
+                        anix_pair.save()
+                        row_entered = True
+                    except ValidationError:
+                        pass
+
+                    fecu_est = models.SpawnDet(pair_id=pair,
+                                               spwndc_id=models.SpawnDetCode.objects.filter(name="Fecundity").get(),
+                                               det_val=int(row["Exp. #"]),
+                                               qual_id=models.QualCode.objects.filter(name="Calculated").get(),
+                                               created_by=cleaned_data["created_by"],
+                                               created_date=cleaned_data["created_date"],
+                                               )
+                    try:
+                        fecu_est.clean()
+                        fecu_est.save()
+                        row_entered = True
+                    except ValidationError:
+                        pass
+
+                    # grp
+                    anix_grp_qs = models.AniDetailXref.objects.filter(evnt_id=cleaned_data["evnt_id"],
+                                                                      grp_id__isnull=False,
+                                                                      pair_id=pair,
+                                                                      indv_id__isnull=True,
+                                                                      contx_id__isnull=True,
+                                                                      indvt_id__isnull=True,
+                                                                      loc_id__isnull=True,
+                                                                      )
+                    if anix_grp_qs.count() == 0:
+
+                        grp = models.Group(spec_id=indv_female.spec_id,
+                                           stok_id=indv_female.stok_id,
+                                           coll_id=models.Collection.objects.filter(name="F1").get(),
+                                           grp_year=row_date.year,
+                                           grp_valid=False,
+                                           created_by=cleaned_data["created_by"],
+                                           created_date=cleaned_data["created_date"],
+                                           )
+                        try:
+                            grp.clean()
+                            grp.save()
+                            anix_grp = enter_anix(cleaned_data, grp_pk=grp.pk)
+                            anix_grp = enter_anix(cleaned_data, grp_pk=grp.pk, pair_pk=pair.pk)
+                            grp.grp_valid = True
+                            grp.save()
+                        except ValidationError:
+                            # recovering the group is only doable through the anix with both grp and pair.
+                            # no way to find it here, so only make the group valid after anix's created.
+                            pass
+
+                    elif anix_grp_qs.count() == 1:
+                        anix_grp = anix_grp_qs.get()
+                        grp = anix_grp.grp_id
+
+                except Exception as err:
+                    parsed = False
+                    self.request.session["load_success"] = False
+                    log_data += "Error parsing row: \n"
+                    log_data += str(row)
+                    log_data += "\n Error: {}".format(err.__str__())
+                    break
+                if row_entered:
+                    rows_entered += 1
+                    rows_parsed += 1
+                elif row_parsed:
+                    rows_parsed += 1
+
+            # matp
+            indv_qs = models.Individual.objects.filter(pit_tag=data["Pit or carlin"][0])
+            if len(indv_qs) == 1:
+                indv_female = indv_qs.get()
+                matp = models.MatingPlan(evnt_id_id=cleaned_data["evnt_id"].pk,
+                                         stok_id=indv_female.stok_id,
+                                         matp_xls=cleaned_data["data_csv"],
+                                         created_by=cleaned_data["created_by"],
+                                         created_date=cleaned_data["created_date"],
+                                         )
+                try:
+                    matp.clean()
+                    matp.save()
+                except (ValidationError, IntegrityError):
+                    pass
+
+            if not parsed:
+                self.request.session["load_success"] = False
+
+            log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
+                        "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
+
+        # ---------------------------MACTAQUAC TREATMENT DATA ENTRY----------------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Treatment" and cleaned_data["facic_id"].__str__() == "Mactaquac":
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], header=0, engine='openpyxl', sheet_name="Ponds")
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                raise Exception("File format not valid: {}".format(err.__str__()))
+            parsed = True
+            self.request.session["load_success"] = True
+
+            for row in data_dict:
+                row_parsed = True
+                row_entered = False
+                try:
+                    row_date = row["Date"].date()
+
+                    contx = enter_tank_contx(row["Pond / Trough"], cleaned_data, None, return_contx=True)
+                    val, unit_str = val_unit_splitter(row["Amount"])
+                    duration, time_unit = val_unit_splitter(row["Duration"])
+                    envt = models.EnvTreatment(contx_id=contx,
+                                               envtc_id=models.EnvTreatCode.objects.filter(name__icontains=row["Treatment Type"]).get(),
+                                               lot_num=None,
+                                               amt=val,
+                                               unit_id=models.UnitCode.objects.filter(name__icontains=unit_str).get(),
+                                               duration=60*duration,
+                                               comments=row["Concentration"],
+                                               created_by=cleaned_data["created_by"],
+                                               created_date=cleaned_data["created_date"],
+                                               )
+
+                    try:
+                        envt.clean()
+                        envt.save()
+                    except (ValidationError, IntegrityError):
+                        pass
+
+                    water_level, height_unit = val_unit_splitter(row["Pond Level During Treatment"])
+                    enter_env(water_level, row_date, cleaned_data, "Water Level", contx=contx)
+
+                except Exception as err:
+                    parsed = False
+                    self.request.session["load_success"] = False
+                    log_data += "Error parsing row: \n"
+                    log_data += str(row)
+                    log_data += "\n Error: {}".format(err.__str__())
+                    break
+                if row_entered:
+                    rows_entered += 1
+                    rows_parsed += 1
+                elif row_parsed:
+                    rows_parsed += 1
+
+            if not parsed:
+                self.request.session["load_success"] = False
+
+            log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
+                        "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
+
         else:
             log_data = "Data loading not set up for this event type.  No data loaded."
         self.request.session["log_data"] = log_data
@@ -771,7 +1303,7 @@ class EnvtcForm(CreatePrams):
         exclude = []
 
 
-class EvntForm(CreatePrams):
+class EvntForm(CreateTimePrams):
     class Meta:
         model = models.Event
         exclude = []
@@ -780,55 +1312,6 @@ class EvntForm(CreatePrams):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['team_id'].create_url = 'bio_diversity:create_team'
-        self.fields['created_date'].widget = forms.HiddenInput()
-        self.fields['created_by'].widget = forms.HiddenInput()
-        self.fields['evnt_start'].widget = forms.HiddenInput()
-        self.fields['evnt_start'].required = False
-        self.fields['evnt_end'].widget = forms.HiddenInput()
-        self.fields['evnt_end'].required = False
-        self.fields['start_date'] = forms.DateField(widget=forms.DateInput(attrs={"placeholder": "Click to select a date...", "class": "fp-date"}))
-        self.fields['end_date'] = forms.DateField(required=False, widget=forms.DateInput(attrs={"placeholder": "Click to select a date...", "class": "fp-date"}))
-        self.fields['start_time'] = forms.CharField(required=False, widget=forms.DateInput(attrs={"placeholder": "Click to select a time...", "class": "fp-time"}))
-        self.fields['end_time'] = forms.CharField(required=False, widget=forms.DateInput(attrs={"placeholder": "Click to select a time...", "class": "fp-time"}))
-
-    def clean(self):
-        cleaned_data = super().clean()
-        #
-        if not self.is_valid():
-            raise ValidationError("Please fill out missing fields.")
-    # we have to make sure
-        # the end datetime is after the start datetime
-        # and set the datetime values
-        if cleaned_data["start_time"]:
-            start_time = make_aware(datetime.strptime(cleaned_data["start_time"], '%H:%M').time(),
-                                    timezone=timezone.get_current_timezone())
-        else:
-            start_time = make_aware(time(0, 0), timezone=timezone.get_current_timezone())
-        cleaned_data["evnt_start"] = datetime.combine(cleaned_data["start_date"], start_time)
-        if cleaned_data["end_date"]:
-            if cleaned_data["end_time"]:
-                end_time = make_aware(datetime.strptime(cleaned_data["end_time"], '%H:%M').time(),
-                                      timezone=timezone.get_current_timezone())
-            else:
-                end_time = make_aware(time(0, 0), timezone=timezone.get_current_timezone())
-            cleaned_data["evnt_end"] = datetime.combine(cleaned_data["end_date"], end_time)
-
-        end_date = cleaned_data.get("end_date")
-        end_time = cleaned_data.get("end_time")
-        start_time = cleaned_data.get("start_time")
-        if end_date:
-            start_date = cleaned_data.get("start_date")
-            if end_date and start_date and end_date < start_date:
-                self.add_error('end_date', gettext(
-                    "The end date must be after the start date!"
-                ))
-            elif end_date and start_date and end_date == start_date:
-                if end_time and start_time and end_time < start_time:
-                    self.add_error('end_time', gettext(
-                        "The end date must be after the start date!"
-                    ))
-        return self.cleaned_data
-
 
 
 class EvntcForm(CreatePrams):
@@ -1009,10 +1492,10 @@ class LocForm(CreatePrams):
     def save(self, commit=True):
         obj = super().save(commit=False)  # here the object is not commited in db
         if self.cleaned_data["start_time"]:
-            start_time = make_aware(datetime.strptime(self.cleaned_data["start_time"], '%H:%M').time(),
-                                    timezone=timezone.get_current_timezone())
+            start_time = datetime.strptime(self.cleaned_data["start_time"],
+                                           '%H:%M').time().replace(tzinfo=pytz.UTC)
         else:
-            start_time = make_aware(time(0, 0), timezone=timezone.get_current_timezone())
+            start_time = datetime.min.time().replace(tzinfo=pytz.UTC)
         obj.loc_date = datetime.combine(self.cleaned_data["start_date"], start_time)
         obj.save()
         return obj
@@ -1021,6 +1504,12 @@ class LocForm(CreatePrams):
 class LoccForm(CreatePrams):
     class Meta:
         model = models.LocCode
+        exclude = []
+
+
+class MatpForm(CreatePrams):
+    class Meta:
+        model = models.MatingPlan
         exclude = []
 
 
@@ -1135,20 +1624,6 @@ class SireForm(CreatePrams):
         widgets = {
             "indv_id": forms.Select(attrs={"class": "chosen-select-contains"}),
         }
-
-
-class SpwnForm(CreatePrams):
-    class Meta:
-        model = models.Spawning
-        exclude = []
-        widgets = {
-            'spwn_date': forms.DateInput(attrs={"placeholder": "Click to select a date...", "class": "fp-date"}),
-        }
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.fields['pair_id'].create_url = 'bio_diversity:create_pair'
 
 
 class SpwndForm(CreatePrams):

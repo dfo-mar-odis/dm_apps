@@ -1,0 +1,174 @@
+{% extends "travel/form.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+
+{% block header %}
+  {{ block.super }}
+  <style>
+  input.cost {
+      font-size: small;
+      width: 100%;
+  }
+
+  select.chosen-select-contains:invalid {
+      height: 0px !important;
+      opacity: 0 !important;
+      position: absolute !important;
+      display: flex !important;
+  }
+  </style>
+
+{% endblock %}
+
+
+
+
+{% block form %}
+
+  <form method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form_errors form %}
+
+    {% for field in form %}
+      {% if field.name != "late_justification" %}
+        {% bootstrap_label field.label label_class="pr-1" %}
+        {% if field.name in help_text_dict %}
+          <span class="mdi mdi-help-circle-outline h6" data-toggle="popover"
+                data-trigger="hover" title="{{ field.label }}" data-content="{{ help_text_dict|lookup:field.name }}"></span>
+        {% endif %}
+        {% bootstrap_field field placeholder="" show_label=False %}
+
+        {% if field.name == "trip" %}
+          <div class="mb-3">
+            <a id="add_trip" class="btn btn-sm btn-success py-0 px-2" tabindex="-1" href="#" pop-href="{% url 'travel:trip_new' %}?pop=true">
+              {% trans "add a new trip" %}
+            </a>
+          </div>
+          <div id="late_justification_div">
+            <div class="alert alert-danger" role="alert">
+              <h4 class="alert-heading">
+                {% trans "The submission deadline for this trip has already passed. " %}
+              </h4>
+              <p class="h6">
+                {% blocktrans %}
+                  Understanding that not all potential trips can be predicted, unforeseen requests can be submitted via the Conference and
+                  Travel Management System for consideration.
+                  <br><br>
+                  These requests must have a very strong rationale outlining the necessity of the trip and clearly articulate the reason for the
+                  late request; requests of this nature will only be approved in exceptional circumstances.
+                {% endblocktrans %}
+              </p>
+
+            </div>
+            <label class="h5 red-font px-2" for="id_late_justification">{% trans "Please provide your late justification here" %}</label>
+            <span class="mdi mdi-help-circle-outline h6" data-toggle="popover"
+                  data-trigger="hover"
+                  title="{{ form.late_justification.label }}"
+                  data-content="{{ help_text_dict.late_justification }}"></span>
+            {% bootstrap_field form.late_justification placeholder="" show_label=False %}
+
+          </div>
+
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="mb-3 blue-font center-col">
+      {% if not object %}
+        <h2>
+          {% trans "Select NEXT to save progress and go to next section" %}
+        </h2>
+      {% endif %}
+    </div>
+
+
+    <div class="container center-col">
+      <button type="submit" class="btn btn-success">
+        {% if object %}
+          {% trans "Save" %}
+        {% else %}
+          {% trans "Next" %}
+        {% endif %}
+      </button>
+      <a class="btn btn-secondary" href="{{ request.META.HTTP_REFERER }}">
+        {% trans "Cancel" %}
+      </a>
+    </div>
+  </form>
+{% endblock %}
+
+
+{% block body_js %}
+
+  <script type="application/javascript">
+  var confObj = {};
+  var myId = "";
+
+  function updateTrip() {
+    $("#id_trip").load("# #id_trip>*", reloadTripSelect);
+  }
+
+  function reloadTripSelect(update = true) {
+    var maxValue = -1;
+
+    $("#id_trip option").each(function () {
+      maxValue = Math.max(maxValue, $(this).val());
+    });
+    console.log("max val: " + maxValue);
+    if (update) $("#id_trip").val(maxValue).trigger("chosen:updated");
+    $.ajax({
+      url: '{% url 'travel:conf_details' %}',
+      data: {},
+      dataType: 'json',
+      success: function (data) {
+        confObj = data;
+        refreshTripDetails();
+      }
+    });
+  }
+
+  $("#id_trip").change(function () {
+    // update location and (maybe) dates
+    refreshTripDetails();
+  });
+
+  function refreshTripDetails() {
+    myId = $("#id_trip").val();
+    refreshLateJustification();
+  }
+
+  function refreshLateJustification() {
+    if ($("#id_trip").val()) myTrip = confObj[$("#id_trip").val()];
+    else myTrip = null;
+    $input = $("#id_late_justification");
+    $div = $("#late_justification_div");
+    if (!myTrip || !myTrip.is_late_request) {
+      $div.addClass("gone");
+      $input.prop("required", false);
+      $input.prop("disabled", true);
+    } else {
+      $div.removeClass("gone");
+      $input.prop("required", true);
+      $input.prop("disabled", false);
+    }
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    reloadTripSelect(update=false);
+    refreshLateJustification();
+  });
+
+  // if a user changes a section or trip, change the "reset reviewers" input to True
+  $("#id_trip").change(function () {
+    $("#id_reset_reviewers").val("True")
+  })
+  $("#id_section").change(function () {
+    $("#id_reset_reviewers").val("True")
+  })
+  </script>
+{% endblock %}
+
+

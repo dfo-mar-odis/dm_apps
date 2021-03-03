@@ -1,4 +1,4 @@
-{% extends 'shared_models/generic_popout_form.html' %}
+{% extends 'travel/form.html' %}
 
 {% load i18n %}
 {% load verbose_names %}
@@ -6,81 +6,95 @@
 
 
 {% block pre_form_div %}
-    <div class="row">
+  <div class="row">
 
-        {% for trip in trip_list %}
+    {% for trip in trip_list %}
+
+      <div class="col">
+        <div class="mb-3">
+          <h3>
+            {% if trip is trip_a %}
+              <span class="btn-warning">{% trans "Original Trip" %}</span>
+            {% else %}
+              <span class="btn-success">{% trans "Re-assigned Trip" %}</span>
+            {% endif %}
+          </h3>
+          <table class="table table-bordered table-sm">
+            {% for field in field_list %}
+              {% if "traveller" in field %}
+                <tr>
+                  <th>{% get_verbose_label trip field %}</th>
+                  <td>
+                    <ul>
+                      {% for t in trip.travellers %}
+                        <li>{{ t }}</li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                </tr>
+              {% elif "requests" in field %}
+                <tr>
+                  <th>{% get_verbose_label trip field %}</th>
+                  <td>
+                    <ul>
+                      {% for tr in trip.requests.all %}
+                        <li>{{ tr }} (STATUS: <span
+                          class="{{ tr.get_status_display|slugify }}">{{ tr.get_status_display }}</span>)
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </td>
+                </tr>
+              {% else %}
+                {% verbose_td_display trip field %}
+              {% endif %}
+
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
 
 
-            <div class="col">
-                <div class="mb-3">
-                    <h3>
-                        {% if trip is trip_a %}
-                            <span class="btn-warning">{% trans "Original Trip" %}</span>
-                        {% else %}
-                            <span class="btn-success">{% trans "Re-assigned Trip" %}</span>
-                        {% endif %}
-                    </h3>
-                    <table class="table table-bordered table-sm">
-                        {% for field in field_list %}
-                            {% if "traveller" in field %}
-                                <tr>
-                                    <th>{% get_verbose_label trip field %}</th>
-                                    <td>
-                                        <ul>
-                                            {% for t in trip.traveller_list %}
-                                                <li>{{ t }}</li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                </tr>
-                            {% elif "requests" in field %}
-                                <tr>
-                                    <th>{% get_verbose_label trip field %}</th>
-                                    <td>
-                                        <ul>
-                                            {% for tr in trip.trip_requests.all %}
-                                                <li>{{ tr }} (STATUS: <span
-                                                        style="background-color: {{ tr.status.color }}">{{ tr.status }}</span>)
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                </tr>
-                            {% else %}
-                                {% verbose_td_display trip field %}
-                            {% endif %}
-
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-        {% endfor %}
-
-    </div>
-
-    <h4 class="">
-        {% trans "Yes, I want to re-assign all linked trip requests from the original trip to the re-assigned trip!!" %}
-    </h4>
-    <ul>
-        {% for tr in trip_a.trip_requests.all %}
-            <li>{{ tr }}</li>
-        {% endfor %}
-    </ul>
-    {% if duplicate_ppl|length > 0 %}
-        <h4>
+  {% if duplicate_ppl|length > 0 %}
+    <h4 class="text-center">
         <span class="red-font">
             {% trans "WARNING: you cannot make this re-assignment because there is an overlap of travellers and/or request owners: " %}<br>
-        <ul>
-            {% for p in duplicate_ppl %}
-                <li>{{ p }}</li>
-            {% endfor %}
-        </ul>
+          {% for p in duplicate_ppl %}
+            {{ p }}<br>
+          {% endfor %}
 
         </span>
-        </h4>
-    {% endif %}
-
-
+    </h4>
+  {% else %}
+    <h4 class="">
+      {% trans "Yes, I want to re-assign all linked trip requests from the original trip to the re-assigned trip!!" %}
+    </h4>
+    <ul>
+      {% for tr in trip_a.requests.all %}
+        <li>{{ tr }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 
 {% endblock %}
 
+{% block form_buttons %}
+  <div class="mt-3 mb-3">
+    {% trans "Submit" as default_submit_text %}
+    {% trans "Cancel" as default_cancel_text %}
+    {% if duplicate_ppl|length == 0 %}
+      <span data-toggle="tooltip" title="{% block submit_btn_tip_text %}{% endblock %}">
+      <input type="submit" class="btn btn-lg {% block submit_btn_class %}{{ submit_btn_class|nz:"btn-warning" }}{% endblock %}"
+        {% block submit_btn_props %}{% endblock %}
+             value="{{ submit_text|nz:default_submit_text }}">
+    </span>
+    {% endif %}
+
+    <a class="btn btn-lg btn-secondary" href="{% url 'travel:trip_verify' trip_a.id %}">
+      {% trans "Cancel" %}
+    </a>
+  </div>
+{% endblock %}

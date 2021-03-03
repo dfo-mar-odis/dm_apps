@@ -1,34 +1,38 @@
-from django.contrib.auth.models import User
+import os
+from shutil import copyfile
+
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 from django.db.models import TextField
 from django.db.models.functions import Concat
 from django.http import HttpResponseRedirect, HttpResponse, Http404
-from django.utils import timezone
 from django.urls import reverse_lazy, reverse
-from django.utils.translation import gettext as _, gettext_lazy
-from django.views.generic import TemplateView, UpdateView, DeleteView, CreateView, DetailView, ListView
+from django.utils import timezone
+from django.utils.translation import gettext_lazy
+from django.views.generic import TemplateView
 from django_filters.views import FilterView
-from shutil import copyfile
 from github import Github
-
-import os
 
 from dm_apps.utils import custom_send_mail
 from shared_models.views import CommonFilterView, CommonDetailView, CommonUpdateView, CommonDeleteView, CommonCreateView, \
-    CommonPopoutCreateView, CommonPopoutUpdateView, CommonPopoutDeleteView, CommonPopoutDetailView, CommonListView
-from . import models
-from . import forms
-from . import filters
-from . import reports
+    CommonPopoutCreateView, CommonPopoutUpdateView, CommonPopoutDeleteView, CommonPopoutDetailView
 from . import emails
+from . import filters
+from . import forms
+from . import models
+from . import reports
+
+try:
+    from dm_apps import my_conf as local_conf
+except (ModuleNotFoundError, ImportError):
+    from dm_apps import default_conf as local_conf
 
 
 def index_router(request):
     # if the user is a staff user, then go to my_tickets
     if request.user.id:
-        print("there is a user")
         if request.user.is_staff:
             # go to assigned tickets
             return HttpResponseRedirect(reverse("tickets:my_assigned_list"))
@@ -138,7 +142,9 @@ class TicketDetailView(LoginRequiredMixin, CommonDetailView):
 
     def get_context_data(self, **kwargs):
         context = super(TicketDetailView, self).get_context_data(**kwargs)
-        context['email'] = emails.TicketResolvedEmail(self.object, self.request)
+        email = emails.TicketResolvedEmail(self.request, self.object)
+
+        context['email'] = email.as_table()
         context["field_group_1"] = [
             "primary_contact",
             "dm_assigned",
@@ -264,14 +270,9 @@ class TicketCreateView(LoginRequiredMixin, CommonCreateView):
                 self.object.dm_assigned.add(u)
 
         # create a new email object
-        email = emails.NewTicketEmail(self.object, self.request)
+        email = emails.NewTicketEmail(self.request, self.object)
         # send the email object
-        custom_send_mail(
-            subject=email.subject,
-            html_message=email.message,
-            from_email=email.from_email,
-            recipient_list=email.to_list
-        )
+        email.send()
         messages.success(self.request, "The new ticket has been logged and a confirmation email has been sent!")
 
         # check to see if a generic file should be appended
@@ -288,39 +289,38 @@ class TicketCreateViewPopout(LoginRequiredMixin, CommonPopoutCreateView):
     model = models.Ticket
     form_class = forms.FeedbackForm
 
-    # template_name = "tickets/ticket_form_popout.html"
-
     def get_initial(self):
-        my_dict = {
-            'primary_contact': self.request.user,
-            'request_type': 19,
-        }
-        try:
-            self.kwargs['app']
-        except KeyError:
-            pass
-        else:
-            my_dict["app"] = self.kwargs['app']
-
-        return my_dict
+        return dict(
+            request_type=19,
+            app=self.kwargs.get("app"),  # using this as a way to talk to FormClass
+            assign_to=self.request.GET.get("assign_to"),  # using this as a way to talk to FormClass
+        )
 
     def form_valid(self, form):
-        self.object = form.save()
+        obj = form.save(commit=False)
+        obj.primary_contact = self.request.user
+        if self.kwargs.get("app"):
+            obj.app = self.kwargs.get("app")
+        obj.save()
+
+        # if the registered app has a key for staff_ids (with a length), delete the assign to field
+        try:
+            app = self.kwargs.get("app")
+            if isinstance(local_conf.APP_DICT[app]['staff_ids'], list) and len(local_conf.APP_DICT[app]['staff_ids']) > 0:
+                for user_id in local_conf.APP_DICT[app]['staff_ids']:
+                    obj.dm_assigned.add(user_id)
+        except KeyError:
+            pass
 
         # nobody is assigned, assign everyone
-        if self.object.dm_assigned.count() == 0:
+        if not obj.dm_assigned.exists():
             for u in User.objects.filter(is_superuser=True):
-                self.object.dm_assigned.add(u)
+                obj.dm_assigned.add(u)
 
         # create a new email object
-        email = emails.NewTicketEmail(self.object, self.request)
+        email = emails.NewTicketEmail(self.request, obj)
         # send the email object
-        custom_send_mail(
-            subject=email.subject,
-            html_message=email.message,
-            from_email=email.from_email,
-            recipient_list=email.to_list
-        )
+        email.send()
         return HttpResponseRedirect(reverse_lazy('tickets:confirm'))
 
 
@@ -336,7 +336,7 @@ class TicketNoteUpdateView(LoginRequiredMixin, CommonUpdateView):
     h1 = "Edit notes"
 
     def get_parent_crumb(self):
-        return {"title":self.get_object(), "url": reverse("tickets:detail" , args=[self.get_object().id])}
+        return {"title": self.get_object(), "url": reverse("tickets:detail", args=[self.get_object().id])}
 
 
 # Files #
@@ -352,18 +352,7 @@ class FileCreateView(LoginRequiredMixin, CommonPopoutCreateView):
         return {'ticket': ticket}
 
     def form_valid(self, form):
-        self.object = form.save()
-
-        # create a new email object
-        email = emails.NewFileAddedEmail(self.object, self.request)
-        # send the email object
-        custom_send_mail(
-            subject=email.subject,
-            html_message=email.message,
-            from_email=email.from_email,
-            recipient_list=email.to_list
-        )
-
+        form.save()
         return HttpResponseRedirect(reverse('shared_models:close_me'))
 
 
@@ -430,7 +419,7 @@ class FollowUpCreateView(LoginRequiredMixin, CommonPopoutCreateView):
     def get_h3(self):
         ticket = models.Ticket.objects.get(pk=self.kwargs['ticket'])
         if ticket.github_issue_number and self.request.user.is_staff:
-            return f'HEADS UP: this follow-up will be created as a github comment on issue { ticket.github_issue_number }'
+            return f'HEADS UP: this follow-up will be created as a github comment on issue {ticket.github_issue_number}'
 
     def get_initial(self):
         ticket = models.Ticket.objects.get(pk=self.kwargs['ticket'])
@@ -441,28 +430,22 @@ class FollowUpCreateView(LoginRequiredMixin, CommonPopoutCreateView):
         }
 
     def form_valid(self, form):
-        self.object = form.save()
+        obj = form.save()
 
         # create a new email object
-        email = emails.NewFollowUpEmail(self.object, self.request)
-        # send the email object
-        custom_send_mail(
-            subject=email.subject,
-            html_message=email.message,
-            from_email=email.from_email,
-            recipient_list=email.to_list
-        )
+        email = emails.NewFollowUpEmail(self.request, obj)
+        email.send()
 
         # github
-        if self.object.ticket.github_issue_number:
+        if obj.ticket.github_issue_number:
             # If a github issue number exists, create this follow up as a comment
             my_comment = create_or_edit_comment(
-                self.object.created_by_id,
-                self.object.message,
-                self.object.ticket.github_issue_number,
+                obj.created_by_id,
+                obj.message,
+                obj.ticket.github_issue_number,
             )
-            self.object.github_id = my_comment.id
-            self.object.save()
+            obj.github_id = my_comment.id
+            obj.save()
         return HttpResponseRedirect(reverse('shared_models:close_me'))
 
 
@@ -472,7 +455,7 @@ class FollowUpUpdateView(LoginRequiredMixin, CommonPopoutUpdateView):
 
     def get_h3(self):
         if self.get_object().ticket.github_issue_number and self.request.user.is_staff:
-            return f'HEADS UP: this follow-up will be updated as a github comment on issue { self.get_object().ticket.github_issue_number }'
+            return f'HEADS UP: this follow-up will be updated as a github comment on issue {self.get_object().ticket.github_issue_number}'
 
     def get_initial(self):
         return {

@@ -3,7 +3,7 @@ import os
 from django.db import models
 from django.dispatch import receiver
 
-from travel.models import File, TripRequest, Conference
+from travel.models import File, Traveller
 
 
 @receiver(models.signals.post_delete, sender=File)
@@ -36,8 +36,20 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
     except File.DoesNotExist:
         return False
 
-    new_file = instance.file
-    if not old_file == new_file:
-        if os.path.isfile(old_file.path):
-            os.remove(old_file.path)
+    try:
+        new_file = instance.file
+        if not old_file == new_file:
+            if os.path.isfile(old_file.path):
+                os.remove(old_file.path)
+    except:
+        pass
 
+
+@receiver(models.signals.post_delete, sender=Traveller)
+def update_request_on_traveller_delete(sender, instance, **kwargs):
+    instance.request.save()
+
+
+@receiver(models.signals.post_save, sender=Traveller)
+def update_request_on_traveller_change_or_create(sender, instance, **kwargs):
+    instance.request.save()

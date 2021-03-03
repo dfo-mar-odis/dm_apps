@@ -1,0 +1,105 @@
+{% extends "travel/form.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load i18n %}
+{% load humanize %}
+
+
+{% block form_buttons %}
+  <div id="app">
+
+
+    <div v-if="request.id && !request.submitted" class="mt-5 mb-5" v-cloak>
+      <div class="form-check mb-5">
+        <input class="form-check-input h1" type="checkbox" value="" id="confirmation1" v-model="userConfirmed1">
+        <label class="form-check-label h4" for="confirmation1">
+          {% blocktrans %}
+            All the information being submitted in this request has been carefully reviewed prior to submission.
+          {% endblocktrans %}
+        </label>
+      </div>
+      <div class="form-check mb-5">
+        <input class="form-check-input h1" type="checkbox" value="" id="confirmation2" v-model="userConfirmed2">
+        <label class="form-check-label h4" for="confirmation2">
+          {% blocktrans %}
+            I have done my due diligence to ensure that the regional reviewers in the approval queue are selected appropriately, are available to evaluate and
+            have the necessary authority to approve all the travellers on this request.
+          {% endblocktrans %}
+        </label>
+      </div>
+      <div class="form-check mb-5">
+        <input class="form-check-input h1" type="checkbox" value="" id="confirmation3" v-model="userConfirmed3">
+        <label class="form-check-label h4" for="confirmation3">
+          {% blocktrans %}
+            All costs have been entered in Canadian dollars.
+          {% endblocktrans %}
+        </label>
+      </div>
+      <div class="mb-5" v-if="request && !request.total_request_cost">
+        <span class="red-font blink-me h4">
+        {% blocktrans %}
+          WARNING: you are about to submit a trip request that has no costs!!
+        {% endblocktrans %}
+        </span>
+      </div>
+
+    </div>
+
+    <div class="mb-5">
+      {% trans "Submit" as default_submit_text %}
+      {% trans "Cancel" as default_cancel_text %}
+      {% echo request.META.HTTP_REFERER as default_cancel_url %}
+      <span data-toggle="tooltip" title="{% block submit_btn_tip_text %}{% endblock %}">
+                <input
+                  type="submit"
+                  :class="{'btn btn-lg btn-warning': true, disabled: !request.submitted && !allConfirmed}"
+                  :disabled="!request.submitted && !allConfirmed"
+                  value="{{ submit_text|nz:default_submit_text }}">
+                </span>
+      <a class="btn btn-lg btn-secondary" href="{{ cancel_url|nz:default_cancel_url }}">
+        {{ cancel_text|nz:default_cancel_text }}
+      </a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block body_js %}
+  {{ block.super }}
+  <script type="application/javascript">
+  var tripRequestId = {{ object.id }};
+  var app = new Vue({
+    el: '#app',
+    delimiters: ["${", "}"],
+    data: {
+      userConfirmed1: false,
+      userConfirmed2: false,
+      userConfirmed3: false,
+      request: {},
+      loading_request: true,
+    },
+    methods: {
+      getRequest() {
+        this.loading_request = true;
+        let endpoint = `/api/travel/requests/${tripRequestId}/`;
+        apiService(endpoint)
+            .then(response => {
+              this.loading_request = false;
+              this.request = response;
+            })
+      },
+    },
+    computed: {
+      allConfirmed() {
+        return this.userConfirmed1 && this.userConfirmed2 && this.userConfirmed3
+      }
+    },
+    created() {
+      this.getRequest();
+    }
+  });
+
+  </script>
+{% endblock %}

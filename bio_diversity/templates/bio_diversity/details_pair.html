@@ -33,4 +33,34 @@
             </table>
         {% endif %}
     </div>
+
+    <div class="card border border-dark my-1" name="spwnd-details">
+        <h5 class="card-header">{% trans "Spawning Details" %}
+            <span>
+                <a class="btn btn-secondary" href="#evnt-spwnd-list" data-toggle="collapse">+</a>
+            </span>
+        </h5>
+        {% if object.spawning_details.count > 0 %}
+            <table class="table table-sm sortable table-hover collapse" id="evnt-spwnd-list">
+                <thead>
+                    {% for field in spwnd_field_list %}
+                        <th>{% get_verbose_label spwnd_object field %}</th>
+                    {% endfor %}
+                </thead>
+                <tbody>
+                    {% for obj in object.spawning_details.all %}
+                        <tr href="{% url 'bio_diversity:details_spwnd' 'pair' object.id obj.id %}">
+                        {% for field in spwnd_field_list %}
+                            <td>
+                                {% get_field_value obj field %}
+                            </td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+
+        
 {% endblock  %}

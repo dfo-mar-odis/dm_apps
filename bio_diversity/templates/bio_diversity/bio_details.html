@@ -37,7 +37,102 @@
             </div>
         </div>
     {% endblock field_override %}
-    {% block detail_tables %} {% endblock %}
+
+
+    {% block detail_tables %}
+    {% if "data" in table_list %}
+        <div class="card border border-dark my-1" name="evnt_data">
+            <h5 class="card-header">{% trans "Add program event data" %}
+                <span class="px-1">
+                    <a class="btn btn-primary" name="add-data-btn" href="#" onclick="return pop('{% url 'bio_diversity:create_data' object.pk 'pop' %}','all')" title="{% trans 'Add' %}">{% trans 'Add New Data' %}</a>
+                </span>
+            </h5>
+        </div>
+    {% endif %}
+    {% if "cnt" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=cnt_context_dict %}
+    {% endif %}
+    {% if "cntd" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=cntd_context_dict %}
+    {% endif %}
+    {% if "env" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=env_context_dict %}
+    {% endif %}
+    {% if "envt" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=envt_context_dict %}
+    {% endif %}
+    {% if "evnt" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=evnt_context_dict %}
+    {% endif %}
+    {% if "grp" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=grp_context_dict %}
+    {% endif %}
+    {% if "grp_cont" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=grp_context_dict %}
+    {% endif %}
+    {% if "grpd" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=grpd_context_dict %}
+    {% endif %}
+    {% if "indv" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=indv_context_dict %}
+    {% endif %}
+     {% if "indv_cont" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=indv_context_dict %}
+    {% endif %}
+    {% if "indvd" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=indvd_context_dict %}
+    {% endif %}
+    {% if "loc" in table_list %}
+            {% include "bio_diversity/details_table_block.html" with context_dict=loc_context_dict %}
+    {% endif %}
+    {% if "pair" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=pair_context_dict %}
+    {% endif %}
+    {% if "prot" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=prot_context_dict %}
+    {% endif %}
+    {% if "matp" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=matp_context_dict %}
+    {% endif %}
+    {% if "sire" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=sire_context_dict %}
+    {% endif %}
+    {% if "spwnd" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=spwnd_context_dict %}
+    {% endif %}
+    {% if "tank" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=tank_context_dict %}
+    {% endif %}
+    {% if "trof" in table_list %}
+        {% include "bio_diversity/details_table_block.html" with context_dict=trof_context_dict %}
+    {% endif %}
+
+    {% if "cont" in table_list %}
+        {% if cont_evnt_list %}
+        <div class="card border border-dark my-1" name="container-details">
+            <h5 class="card-header">{% trans "Container History" %}</h5>
+            <table class="table table-sm sortable table-hover">
+                <thead>
+                {% for field in cont_evnt_field_list %}
+                <th>{{ field }}</th>
+                {% endfor %}
+                </thead>
+                <tbody>
+                {% for obj in cont_evnt_list %}
+                <tr>
+                    {% for field in obj %}
+                    <td>
+                        {{ field }}
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    {% endif %}
+    {% endblock %}
 </div>
 {% endblock %}
 

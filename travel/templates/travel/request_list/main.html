@@ -1,0 +1,119 @@
+{% extends 'travel/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+{% load custom_filters %}
+{% load static %}
+
+{% block title_area %}{% endblock %}
+
+{% block subcontent %}
+  <div id="app" v-cloak>
+    <h1 v-if="pageType=== 'all'">
+      <span v-if="isAdmin">{% trans "All Trip Requests" %}</span>
+      <span v-else>{% trans "Trip Requests Under Your Purview" %}</span>
+    </h1>
+    <h1 v-else>{% trans "Your Associated Requests" %}</h1>
+    <div>
+      <div class="row container-fluid bg-light curvy">
+        <div class="col">
+          <div>
+            <div>
+              {% include "travel/request_list/_console.html" %}
+            </div>
+            <div v-if='showSearchLanding' class="alert alert-info" role="alert" style="width: 80%;">
+              <div class="row">
+                <div class="col-1">
+                  <span class="mdi mdi-magnify h1"></span>
+                </div>
+                <div class="col">
+                  <div class="float-right">
+                    <button class="btn btn-sm btn-primary" @click="getRequests(null)">{% trans "Search All" %}</button>
+                  </div>
+                  <h4 class="alert-heading">
+                    {% trans "Please enter your search criteria above!" %}
+                  </h4>
+                  <p v-if="isAdmin">
+                    {% trans "You have access to this view since you are a system administrator." %}
+                  </p>
+                  <p v-else>
+                    {% trans "You have access to this view since you a manager or an administrative assistant. Your search capacity is limited to the requests falling under your purview." %}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div v-else>
+              <div class="float-right">
+                <a class="mb-3 btn btn-sm btn-success" href="{% url 'travel:request_new' %}">{% trans "New Request" %}</a>
+              </div>
+              <div>
+                <div class="text-center">
+                  <p class="font-italic font-weight-bold">{% trans "${requests.length} of ${count} loaded" %}</p>
+                </div>
+              </div>
+              <table class="table table-sm table-hover">
+                <thead>
+                <tr>
+                  <th style="width: 75px" @click="sort('fiscal_year')" class="clickable">${requestLabels.fiscal_year}</th>
+                  <th style="width: 300px" @click="sort('trip')" class="clickable">${requestLabels.trip}</th>
+                  <th style="" @click="sort('location')" class="clickable">{% trans "Destination" %}</th>
+                  <th style="width: 100px" @click="sort('section')" class="clickable">{% trans "Region" %}</th>
+                  <th style="width: 175px" @click="sort('section')" class="clickable">{% trans "Section" %}</th>
+                  <th style="width: 100px" @click="sort('created_by')" class="clickable">${requestLabels.created_by}</th>
+                  <th style="" @click="sort('name_search')" class="clickable">{% trans "Travellers" %}</th>
+                  <th style="width: 150px" @click="sort('status_display')" class="clickable">{% trans "Trip status" %}</th>
+                  <th style="" @click="sort('is_adm_approval_required')" class="clickable">{% trans "ADM approval required?" %}</th>
+                  <th style="" @click="sort('processing_time')" class="clickable">{% trans "Processing time" %}</th>
+                </tr>
+                </thead>
+                <tbody v-if="requests.length">
+                <tr
+                  v-for="(r, index) in sortedRequests"
+                  @click="goRequestDetail(r)"
+                  class="pointy"
+                >
+                  <td>${r.fiscal_year }</td>
+                  <td>${r.trip.tname }</td>
+                  <td>${r.trip.location }</td>
+                  <td>${r.region }</td>
+                  <td>${r.section.tname }</td>
+                  <td>${r.created_by }</td>
+                  <td>${r.name_search }</td>
+                  <td :class="r.status_class">${r.status_display }</td>
+                  <td>${r.trip.is_adm_approval_required |yesNo }</td>
+                  <td>${r.processing_time }</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div v-if="requests_loading" class="loading mb-3 mt-3 text-center mt-5">
+              <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+                <span class="sr-only"></span>
+              </div>
+            </div>
+            <div v-else>
+              <div class="text-center">
+                <p class="font-italic font-weight-bold">{% trans "${requests.length} of ${count} loaded" %}</p>
+                <button v-if="next" @click="loadMoreResults" class="btn btn-primary btn-sm">
+                  {% trans "Load more results..." %}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+{% block body_js %}
+  {{ block.super }}
+
+  <script src="{% static '/travel/mainRequestList.js' %}?version=1.2" type="application/javascript"></script>
+  <script type="application/javascript">
+  //reload other scripts that we care about
+  </script>
+
+
+{% endblock %}

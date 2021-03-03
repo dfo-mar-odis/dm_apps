@@ -1,0 +1,14 @@
+{% load i18n %}
+<p class="large-font">
+  <b>{% trans "Digital Approval Obtained on:" %} {{ parent.rdg.status_date }} {{ parent.rdg.status_date|date:'e' }}</b>
+</p>
+<p class="med-font">
+  {% trans "This request was approved through the DM Apps EOS Conference and Travel Management System." %}
+</p>
+<p class="med-font">
+  {% trans "The unique identifier for this request is:" %} {{ parent.uuid }}
+</p>
+<p class="med-font">
+  {% trans "The full details of this request can be viewed at the following URL:" %} <br>
+  <span class="hyperlink">{{ SITE_FULL_URL }}{% url 'travel:request_detail_by_uuid' parent.uuid %}</span>
+</p>

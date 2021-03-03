@@ -1,0 +1,33 @@
+{% load i18n %}
+
+{% url 'travel:request_new' as request_new_url %}
+{% url 'travel:request_list' as request_list_url %}
+
+<div><br>
+
+  <div class="btns mb-3 center-col">
+
+    <a href="{{ request_new_url }}" class="btn btn-lg btn-outline-primary mx-3">
+      {% trans "Create a New Request" %}
+    </a>
+    <a v-if="currentUser.related_requests_count" href="{{ request_list_url }}"
+       class="btn btn-lg btn-outline-primary  mx-3">
+      {% trans "View Your Requests" %}
+      (${ currentUser.related_requests_count })
+    </a>
+    <a href="{% url 'travel:trip_list' %}"
+       class="btn btn-lg btn-outline-primary mx-3">
+      {% trans "Browse Upcoming Trips" %}
+    </a>
+  </div>
+
+    <div v-if="currentUser.requests_awaiting_changes" class="row justify-content-center">
+      <div class="col-7 alert alert-danger center-col" role="alert">
+        <h5 class="py-1 blink-me">
+          {% trans "There are trip requests requiring your attention!" %}
+        </h5>
+      </div>
+    </div>
+
+
+</div>

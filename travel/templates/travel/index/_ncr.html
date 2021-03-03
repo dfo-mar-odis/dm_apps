@@ -1,0 +1,23 @@
+{% load i18n %}
+<div>
+  <div class="btns mb-3 center-col">
+    <h2 class="card-title">
+      {% trans "ADM Office" %}
+    </h2>
+    <p class="card-text">{% trans "Perform tasks reserved for travel app ADM administrators" %}</p>
+
+    {# Verification #}
+    <a href="{% url 'travel:trip_list' %}?adm-verification=true" class="btn btn-lg btn-outline-primary mx-3">
+      {% trans "Trip Verifications" %}
+      (<span :class="{'red-font blink-me':admVerificationCount>0}">${  admVerificationCount }</span>)
+    </a>
+
+    <a href="{% url 'travel:trip_list' %}?adm-hit-list=true"
+       class="btn btn-lg btn-outline-primary mx-3">
+      {% trans "The ADMO Net" %}
+      (<span :class="{'red-font blink-me':admHitCount>0}">${  admHitCount }</span>)
+    </a>
+
+
+  </div>
+</div>

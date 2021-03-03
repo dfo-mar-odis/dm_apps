@@ -8,14 +8,14 @@
 {% load el_pagination_tags %}
 
 {% block title_area %}
-  {{ block.super }}
-  <h3>
-    {% if view.kwargs.travel %}
-      Click <a href="{% url 'travel:user_list' %}">HERE</a> to show ALL users
+  <div class="float-right">
+    {% if view.request.GET.travel_only %}
+      <a href="{% url 'travel:user_list' %}" class="btn btn-dark">Show ALL users</a>
     {% else %}
-      Click <a href="{% url 'travel:user_list' 1 %}">HERE</a> to show Regional & National coordinators only.
+      <a href="{% url 'travel:user_list' %}?travel_only=true" class="btn btn-dark">Show Regional & National coordinators Only</a>
     {% endif %}
-  </h3>
+  </div>
+  {{ block.super }}
 {% endblock %}
 
 {% block new_object_button %}
@@ -87,7 +87,3 @@
     </tbody>
   </table>
 {% endblock %}
-
-
-
-

@@ -1,0 +1,130 @@
+{% extends "travel/form.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load i18n %}
+{% load humanize %}
+
+
+{% block subcontent %}
+
+  <div class="mb-3" id="app" v-cloak>
+    <hr>
+    <div>
+      {% include "travel/common/_trip_detail.html" %}
+      {% include "travel/common/_travellers.html" %}
+      {% include "travel/common/_reviewers.html" %}
+
+      <div v-if="trip.id">
+        <div v-if="!trip.trip_review_ready.can_proceed" class="alert alert-warning mt-5" role="alert" style="width: 85%">
+          <div class="alert-heading">
+            <div class="row">
+              <div class="col-1">
+                <span class="mdi mdi-alarm-light h1 mr-3"></span>
+              </div>
+              <div class="col">
+                <span class="h4">{% trans "This review cannot be submitted because" %} ${trip.trip_review_ready.reason}</span>
+              </div>
+            </div>
+            </p>
+          </div>
+        </div>
+        <div v-else class="alert alert-success mt-5" role="alert" style="width: 85%">
+          <div class="alert-heading">
+            <div class="row">
+              <div class="col-1">
+                <span class="mdi mdi-check-outline h1 mr-3"></span>
+              </div>
+              <div class="col">
+                <span class="h4" v-html="trip.trip_review_ready.reason"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <form method="post" class="form" id="my_form" {% if is_multipart_form_data %}enctype="multipart/form-data"{% endif %} @submit.prevent="reviewSubmit()">
+      {% csrf_token %}
+      {% if form %}
+        {% bootstrap_form_errors form %}
+      {% endif %}
+      <div class="mt-5">
+        {% for field in form %}
+          {% if field.name == 'comments' %}
+            <h3>{% trans "Please provide your approval comments here (required)" %}</h3>
+            {% bootstrap_field field show_label=False %}
+          {% else %}
+            {{ field }}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="mt-3 mb-3">
+        <div class="float-right">
+          <a class="btn btn-outline-dark" href="{% url 'travel:trip_detail' object.trip.id %}" target="_blank">
+            {% trans "Go to Trip Page" %}
+          </a>
+        </div>
+        <div class="mt-3 mb-3">
+          <a class="btn btn-secondary" id="save" href="#id_comments">
+            {% trans "Save comments" %}
+          </a>
+
+          <span v-if="trip.id">
+          <button v-if="isADM" type="submit"
+                  :class="{'btn btn-danger':true, 'disabled':!trip.trip_review_ready.can_proceed}"
+                  :disabled="!trip.trip_review_ready.can_proceed">
+            {% trans "Complete the review and approve all travel" %}
+          </button>
+          <button v-else type="submit"
+                  :class="{'btn btn-danger':true, 'disabled':!trip.trip_review_ready.can_proceed}"
+                  :disabled="!trip.trip_review_ready.can_proceed">
+            {% trans "Submit your review" %}
+          </button>
+          </span>
+
+          {#          <input type="submit" class="btn btn-danger {% if not object.trip.trip_review_ready.can_proceed %}disabled{% endif %}"#}
+          {#                 {% if not object.trip.trip_review_ready.can_proceed %}disabled{% endif %} value="{{ submit_text }}">#}
+
+          {% if object.trip.current_reviewer != object.trip.reviewers.first %}
+            <button type="button" class="btn btn-warning" id="reset">
+              {% trans "Modifications Required" %}
+            </button>
+          {% endif %}
+
+          {#          <a class="btn btn-secondary" href="{{ back_url }}">#}
+          {#            {% trans "Cancel" %}#}
+          {#          </a>#}
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}
+
+{% block body_js %}
+  {{ block.super }}
+  <script type="application/javascript">
+  let isReview = true;
+  </script>
+  {% include "travel/common/_trip_script.html" %}
+
+
+  <script type="application/javascript">
+  $("#save").click(function () {
+    console.log(123)
+    $("#id_stay_on_page").val(1);
+    $("form").submit();
+  });
+
+  $("#reset").click(function () {
+    var input = confirm("{% trans 'By proceeding, you will be returning this review to the first reviewer in the queue: '%}  {{ object.trip.reviewers.first.user }} \n\n {%trans 'Are you certain you wish to proceed?'%}");
+    $("#id_reset").val(1);
+    $("form").submit();
+  });
+
+  </script>
+{% endblock %}
+

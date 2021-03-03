@@ -1,10 +1,11 @@
+-e git+https://github.com/pawanvirsingh/django-easy-pdf.git#egg=django-easy-pdf
 adal==1.2.4
 arabic-reshaper==2.1.0
 asgiref==3.2.10
 azure-common==1.1.25
-django-storages[azure]
 beautifulsoup4==4.9.3
 bokeh==2.2.3
+boto3==1.17.18
 cachetools==4.1.1
 cairocffi==1.1.0
 CairoSVG==2.5.1
@@ -16,17 +17,17 @@ cssselect2==0.4.1
 cx-Oracle==7.1.3
 defusedxml==0.6.0
 Deprecated==1.2.10
-Django==3.1.2
-djangorestframework==3.12.2
 django-bootstrap4==2.3.1
 django-debug-toolbar==3.1.1
-django-easy-pdf
 django-el-pagination==3.3.0
 django-filter==2.4.0
 django-phonenumber-field==5.0.0
 django-storages==1.10.1
+django-storages[azure]
 django-tracking2==0.5.0
 django-webpack-loader==0.7.0
+Django==3.1.2
+djangorestframework==3.12.2
 factory-boy==3.1.0
 Faker==4.14.0
 future==0.18.2
@@ -34,9 +35,9 @@ google-api-core==1.23.0
 google-auth==1.22.1
 googleapis-common-protos==1.52.0
 gunicorn==20.0.4
+html2markdown==0.1.7
 html2text==2020.1.16
 html5lib==1.1
-html2markdown==0.1.7
 idna==2.10
 isodate==0.6.0
 Jinja2==2.11.2
@@ -47,10 +48,10 @@ msrestazure==0.6.4
 mysqlclient==1.4.6
 numpy==1.19.2
 oauthlib==3.1.0
-opencensus==0.7.11
 opencensus-context==0.1.2
 opencensus-ext-azure==1.0.5
 opencensus-ext-django==0.7.2
+opencensus==0.7.11
 openpyxl==3.0.5
 packaging==20.4
 pandas==1.1.3
@@ -58,8 +59,8 @@ phonenumberslite==8.12.8
 Pillow==8.0.1
 protobuf==3.13.0
 psutil==5.7.3
-pyasn1==0.4.8
 pyasn1-modules==0.2.8
+pyasn1==0.4.8
 pycparser==2.20
 PyGithub==1.53
 PyJWT==1.7.1
@@ -76,8 +77,8 @@ pytz==2020.1
 PyYAML==5.3.1
 regex==2020.10.28
 reportlab==3.5.54
-requests==2.24.0
 requests-oauthlib==1.3.0
+requests==2.24.0
 rsa==4.6
 selenium==3.141.0
 sendgrid==6.4.7

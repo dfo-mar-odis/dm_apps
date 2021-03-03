@@ -46,6 +46,15 @@
       </ul>
     </div>
 
+  <div class="mb-5">
+      <h4>{% trans "REPORTS" %}</h4>
+      <ul>
+        <li>
+          <a href="{% url 'shared_models:export_org_report' %}">{% trans "export organization (CSV)" %}</a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 
 {% endblock %}

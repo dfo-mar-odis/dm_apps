@@ -10,8 +10,6 @@ steps:
       python3.8 -V
       python3.8 -m pip install --upgrade pip setuptools wheel
       python3.8 -m pip install -r requirements.txt
-      python3.8 -m pip uninstall --yes django-easy-pdf
-      python3.8 -m pip install git+https://github.com/pawanvirsingh/django-easy-pdf.git#egg=django-easy-pdf
       mkdir media
       mkdir media/travel
       mkdir media/travel/temp

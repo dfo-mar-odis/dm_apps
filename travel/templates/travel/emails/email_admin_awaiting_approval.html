@@ -1,0 +1,27 @@
+{% load verbose_names %}
+{% load custom_tags %}
+{% load i18n %}
+
+<style media="screen">
+    table, td, th, tr {
+        border: solid 1px black;
+        text-align: left;
+        margin-right: 15px;
+    }
+</style>
+
+<h1>
+    A request is awaiting the approval of {{ reviewer.user }} as {{ reviewer.get_role_display }}.
+</h1>
+
+<p>
+    You can manage approvals via the <a href="{{ SITE_FULL_URL }}{% url 'travel:request_reviewer_list' %}?rdg=true"> TMS admin console</a>.
+</p>
+
+<table>
+    {% for field in field_list %}
+        {% verbose_td_display triprequest field %}
+    {% endfor %}
+</table>
+
+

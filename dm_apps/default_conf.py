@@ -17,37 +17,38 @@ from .utils import db_connection_values_exist, get_db_connection_dict
 
 # add new applications to this dictionary; grey out any app you do not want
 # the dict key should be the actual name of the app
-# if there is a verbose name, it should be the key value, otherwise None
+# if there is a verbose name, it should be the value of key 'name', otherwise None
+# if there are supposed to be staff member to whom tickets should be automatically assigned, user ids should be placed under 'staff_ids'
+
 APP_DICT = {
-    'inventory': 'Metadata Inventory',
-    'grais': 'grAIS',
-    'cruises': 'Cruises',
-    'herring': 'HerMorrhage',
-    'camp': 'CAMP db',
-    'scuba': 'SCUBA survey',
-    'meq': 'Marine environmental quality (MEQ)',
-    'diets': 'Marine diets',
-    'projects': 'Science project planning',
-    'projects2': 'Science project planning v2.0',
-    'ihub': 'iHub',  # dependency on masterlist
-    'scifi': 'SciFi',
-    'masterlist': 'Masterlist',
-    'shares': 'Gulf Shares',
-    'travel': 'Travel Management System',
-    'sar_search': "SAR Search",
-    'spot': 'Grants & Contributions (Spot)',  # dependency on masterlist, sar_search
-    'ios2': 'Instruments',
-    'staff': "Staff Planning Tool",
-    'publications': "Project Publications Inventory",
-    'trapnet': "TrapNet",
-    'whalesdb': "Whale Equipment Deployment Inventory",
-    'csas': "Canadian Science Advisory Secretariat",
-    'vault': "Marine Megafauna Media Vault",
-    'whalebrary': "Whalebrary Marine Mammal Tools",
-    'spring_cleanup': "Gulf Region Spring Cleanup",
-    'shiny': "DM Apps Shiny App Collection",
-    'bio_diversity': "Biodiversity",
-    'events': "Events Planner",
+    'inventory': dict(name='Metadata Inventory', staff_ids=[]),
+    'grais': dict(name='grAIS', staff_ids=[50, ]),
+    'cruises': dict(name='Cruises', staff_ids=[50, 382,]),
+    'herring': dict(name='HerMorrhage', staff_ids=[50, ]),
+    'camp': dict(name='CAMP db', staff_ids=[50, ]),
+    'scuba': dict(name='SCUBA survey', staff_ids=[50, ]),
+    'diets': dict(name='Marine diets', staff_ids=[50, ]),
+    'projects': dict(name='Science project planning', staff_ids=[50,382 ]),
+    'projects2': dict(name='Science project planning v2.0', staff_ids=[50,382 ]),
+    'ihub': dict(name='iHub', staff_ids=[50, ]),  # dependency on masterlist
+    'scifi': dict(name='SciFi', staff_ids=[50, ]),
+    'masterlist': dict(name='Masterlist', staff_ids=[50, ]),
+    'shares': dict(name='Gulf Shares', staff_ids=[50, ]),
+    'travel': dict(name='Travel Management System', staff_ids=[385]),  # beware, the staff ids will have to be changed below for cloud instances of app
+    'sar_search': dict(name="SAR Search", staff_ids=[50, 452]),
+    'spot': dict(name='Grants & Contributions (Spot)', staff_ids=[50, ]),  # dependency on masterlist, sar_search)
+    'ios2': dict(name='Instruments', staff_ids=[381, ]),
+    'staff': dict(name="Staff Planning Tool", staff_ids=[382, ]),
+    'publications': dict(name="Project Publications Inventory", staff_ids=[382, ]),
+    'trapnet': dict(name="TrapNet", staff_ids=[50, ]),
+    'whalesdb': dict(name="Whale Equipment Deployment Inventory", staff_ids=[382, ]),
+    'csas': dict(name="Canadian Science Advisory Secretariat", staff_ids=[382, 581 ]),
+    'vault': dict(name="Marine Megafauna Media Vault", staff_ids=[452, ]),
+    'whalebrary': dict(name="Whalebrary Marine Mammal Tools", staff_ids=[452, ]),
+    'spring_cleanup': dict(name="Gulf Region Spring Cleanup", staff_ids=[50, ]),
+    'shiny': dict(name="DM Apps Shiny App Collection", staff_ids=[50, ]),
+    'bio_diversity': dict(name="Biodiversity", staff_ids=[382, 1337]),
+    'events': dict(name="Events Planner", staff_ids=[50, ]),
 }
 
 # Deal with fake apps...
@@ -61,14 +62,14 @@ DEPLOYMENT_STAGE = config("DEPLOYMENT_STAGE", cast=str, default="").upper()
 if DEPLOYMENT_STAGE == 'PROD':
     # overwrite app_dict with only the applications to be deployed to PROD
     APP_DICT = {
-        'travel': 'Travel Management System'
+        'travel': dict(name='Travel Management System', staff_ids=[385])
     }
 
 ### Deploying application in test environment
 elif DEPLOYMENT_STAGE == 'TEST':
     # overwrite app_dict with only the applications to be deployed to TEST
     APP_DICT = {
-        'travel': 'Travel Management System'
+        'travel': dict(name='Travel Management System', staff_ids=[385])
     }
 
 
@@ -94,6 +95,8 @@ db_connections = get_db_connection_dict()
 if not db_connection_values_exist(db_connections):
     USE_LOCAL_DB = True
     print("DB connection values are not specified. Can not connect to the database. Connecting to local db instead.")
+else:
+    print(f" *** Connecting to database '{db_connections['DB_NAME'].upper()}' on host '{db_connections['DB_HOST'].upper()}' ***")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if USE_LOCAL_DB:

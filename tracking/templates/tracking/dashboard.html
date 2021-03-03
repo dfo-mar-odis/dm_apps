@@ -1,149 +1,175 @@
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% load custom_filters %}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard - django-tracking2</title>
+  <title>DM Apps Admin Dashboard</title>
 </head>
 <style>
-    ul, li {
-        font-size: x-small;
-    }
+ul, li {
+    font-size: x-small;
+}
 </style>
 
+
+{% if DEBUG %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+{% else %}
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+{% endif %}
+
+<script src="https://unpkg.com/vue-select@3.11.2"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue-select@3.11.2/dist/vue-select.css">
+<script type="text/javascript" src="{% static "js/api_service.js" %}?version=1.0.2"></script>
+
+
 <body>
+
 <div class="container-fluid">
-    <h1>Dashboard - django-tracking2</h1>
-    <div class="row">
-        <div class="col-4">
-            <div id="tracking-filters">
-                <form method="GET">
-                    {{ form.as_table }}
-                    <input type="submit" name="submit" value="submit"/>
-                </form>
-            </div>
-            <div id="tracking-info">
-                <p>
-                    Visitor tracking began on
-                    {{ track_start_time|date:"Y-m-d H:i:s" }}
-                </p>
-                {% if warn_incomplete %}
-                    <p class=warning>
-                        The start time precedes the oldest tracked visitor, thus
-                        the stats are not complete for the specified range.
-                    </p>
-                {% endif %}
-            </div>
-            <div id="tracking-stats">
-                {% include "tracking/snippets/stats.html" %}
-            </div>
-        </div>
-        <div class="col justify-content-center">
-            <h2>Site activity over time:</h2>
-
-            <div class="text-center">
-                {% include report_path %}
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <h2>Today's list of applications:</h2>
-
-                    <table class="table table-sm table-striped" style="width: auto">
-                        <thead>
-                        <th>Application name</th>
-                        <th>Pageviews</th>
-                        </thead>
-                        <tbody>
-                        {% for app in app_dict_today %}
-                            <tr>
-                                <td>
-                                    <a href="{% url 'tracking:app_history' app %}">{{ app }}</a>
-                                </td>
-                                <td>{{ app_dict_today|lookup:app }}</td>
-                            </tr>
-                        {% endfor %}
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col">
-                    <h2>Today's list of users:</h2>
-                    <table class=" table table-sm table-striped" style="width: auto">
-                        <thead>
-                        <th>Username</th>
-                        <th>Pageviews</th>
-                        </thead>
-                        <tbody>
-                        {% for user in user_dict_today %}
-                            <tr>
-                                <td>
-                                    <a href="{% url 'tracking:user_history' user.id %}">{{ user }}</a>
-                                </td>
-                                <td>{{ user_dict_today|lookup:user }}</td>
-
-                            </tr>
-                        {% endfor %}
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col">
-                    <h2>list of applications:</h2>
-
-                    <table class="table table-sm table-striped" style="width: auto">
-                        <thead>
-                        <th>Application name</th>
-                        <th>Pageviews</th>
-                        </thead>
-                        <tbody>
-                        {% for app in app_dict %}
-                            <tr>
-                                <td>
-                                    <a href="{% url 'tracking:app_history' app %}">{{ app }}</a>
-                                </td>
-
-                                <td>{{ app_dict|lookup:app }}</td>
-                            </tr>
-                        {% endfor %}
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col">
-
-                    <h2>list of users:</h2>
-                    <table class=" table table-sm table-striped" style="width: auto">
-                        <thead>
-                        <th>Username</th>
-                        <th>Pageviews</th>
-                        </thead>
-                        <tbody>
-                        {% for user in user_dict %}
-                            <tr>
-                                <td>
-                                    <a href="{% url 'tracking:user_history' user.id %}">{{ user }}</a>
-                                </td>
-                                <td>{{ user_dict|lookup:user }}</td>
-
-                            </tr>
-                        {% endfor %}
-
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-
-        </div>
+  <div class="float-right my-3" id="app">
+    <button v-if="!loading" @click="chuckPageviews">Chunk Pageviews</button>
+    <button v-else>
+      <span class="spinner-border spinner-border-sm" role="status"><span class="sr-only">Loading...</span></span>
+    </button>
+  </div>
+  <h1>DM Apps Admin Dashboard</h1>
+  <div class="row">
+    <div class="col-4">
+      <div id="tracking-stats">
+        {% include "tracking/snippets/stats.html" %}
+      </div>
     </div>
+    <div class="col justify-content-center">
+      <h2>Site activity over time:</h2>
+
+      <div class="text-center">
+        {% include report_path %}
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <h2>Today's list of applications:</h2>
+
+          <table class="table table-sm table-striped" style="width: auto">
+            <thead>
+            <th>Application name</th>
+            <th>Pageviews</th>
+            </thead>
+            <tbody>
+            {% for app in app_dict_today %}
+              <tr>
+                <td>
+                  <a href="{% url 'tracking:app_history' app %}">{{ app }}</a>
+                </td>
+                <td>{{ app_dict_today|lookup:app }}</td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+          <h2>Today's list of users:</h2>
+          <table class=" table table-sm table-striped" style="width: auto">
+            <thead>
+            <th>Username</th>
+            <th>Pageviews</th>
+            </thead>
+            <tbody>
+            {% for user in user_dict_today %}
+              <tr>
+                <td>
+                  <a href="{% url 'tracking:user_history' user.id %}">{{ user }}</a>
+                </td>
+                <td>{{ user_dict_today|lookup:user }}</td>
+
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col">
+          <h2>list of applications:</h2>
+
+          <table class="table table-sm table-striped" style="width: auto">
+            <thead>
+            <th>Application name</th>
+            <th>Pageviews</th>
+            </thead>
+            <tbody>
+            {% for app in app_dict %}
+              <tr>
+                <td>
+                  <a href="{% url 'tracking:app_history' app %}">{{ app }}</a>
+                </td>
+
+                <td>{{ app_dict|lookup:app }}</td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+
+          <h2>list of users:</h2>
+          <table class=" table table-sm table-striped" style="width: auto">
+            <thead>
+            <th>Username</th>
+            <th>Pageviews</th>
+            </thead>
+            <tbody>
+            {% for user in user_dict %}
+              <tr>
+                <td>
+                  <a href="{% url 'tracking:user_history' user.id %}">{{ user }}</a>
+                </td>
+                <td>{{ user_dict|lookup:user }}</td>
+
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
 </div>
 </body>
 </html>
+
+
+<script type="application/javascript">
+var app = new Vue({
+  el: '#app',
+  delimiters: ["${", "}"],
+  data: {
+    loading: false,
+  },
+  methods: {
+    chuckPageviews() {
+      this.loading = true;
+      let endpoint = `/api/tracking/pageviews/`;
+      apiService(endpoint, "POST")
+          .then(response => {
+            console.log(response)
+            this.loading = false;
+            window.location.reload();
+          })
+    },
+  },
+});
+
+</script>

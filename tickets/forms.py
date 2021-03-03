@@ -1,8 +1,9 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import gettext as _
-from . import models
+
 from shared_models import models as shared_models
+from . import models
 
 try:
     from dm_apps import my_conf as local_conf
@@ -49,7 +50,7 @@ class TicketForm(forms.ModelForm):
         SECTION_CHOICES.insert(0, tuple((None, "---")))
 
         # choices for app
-        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
+        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]['name']) for app_key in local_conf.APP_DICT]
         APP_CHOICES.sort()
         APP_CHOICES.insert(0, ("general", "n/a"))
         super().__init__(*args, **kwargs)
@@ -57,37 +58,21 @@ class TicketForm(forms.ModelForm):
         self.fields['sd_primary_contact'].choices = USER_CHOICES
         self.fields['dm_assigned'].choices = STAFF_USER_CHOICES
         self.fields['section'].choices = SECTION_CHOICES
-        self.fields['app'] = forms.ChoiceField(widget=forms.Select(attrs=chosen_select_contains),choices=APP_CHOICES)
+        self.fields['app'] = forms.ChoiceField(widget=forms.Select(attrs=chosen_select_contains), choices=APP_CHOICES)
 
 
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = models.Ticket
-        exclude = [
-            'notes_html',
-            "resolved_email_date",
-            'notes',
-            "date_opened",
-            "date_modified",
-            "date_closed",
-            "fiscal_year",
-            "people_notes",
-            'sd_ref_number',
-            'sd_ticket_url',
-            'sd_primary_contact',
-            'sd_description',
-            'sd_date_logged',
-            'financial_follow_up_needed',
-            'financial_coding',
-            'estimated_cost',
-            'assigned_to',
-            'section',
-            'github_issue_number',
-            'github_resolved',
+        fields = [
+            'title',
+            'app',
+            'dm_assigned',
+            'request_type',
+            'priority',
+            'description',
         ]
         widgets = {
-            'primary_contact': forms.HiddenInput(),
-            'status': forms.HiddenInput(),
             'description': forms.Textarea(attrs={'rows': '5'}),
             'app': forms.Select(attrs=chosen_select_contains),
             'dm_assigned': forms.SelectMultiple(attrs=chosen_select_contains),
@@ -106,16 +91,27 @@ class FeedbackForm(forms.ModelForm):
         STAFF_USER_CHOICES = [(u.id, "{}, {}".format(u.last_name, u.first_name)) for u in
                               User.objects.filter(is_staff=True).order_by("last_name", "first_name")]
         # choices for app
-        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
-        APP_CHOICES.insert(0, ("esee", "ESEE (not part of site)"))
-        APP_CHOICES.insert(0, ("plankton", "Plankton Net (not part of site)"))
+        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]['name']) for app_key in local_conf.APP_DICT]
         APP_CHOICES.insert(0, ("tickets", "DM Apps Tickets"))
         APP_CHOICES.sort()
         APP_CHOICES.insert(0, ("general", "n/a"))
 
         super().__init__(*args, **kwargs)
+        self.fields['app'] = forms.ChoiceField(widget=forms.Select(attrs=chosen_select_contains), choices=APP_CHOICES)
         self.fields['dm_assigned'].choices = STAFF_USER_CHOICES
-        self.fields['app'] = forms.ChoiceField(widget=forms.Select(attrs=chosen_select_contains),choices=APP_CHOICES)
+        if kwargs.get('initial'):
+            initial = kwargs['initial']
+            if initial.get('app'):
+                registered_apps = [app_key for app_key in local_conf.APP_DICT]
+                # if it is a registered app, we do not need the user input regarding which app..
+                if initial['app'] in registered_apps:
+                    del self.fields['app']
+                    # if the registered app has a key for staff_ids (with a length), delete the assign to field
+                    try:
+                        if isinstance(local_conf.APP_DICT[initial['app']]['staff_ids'], list) and len(local_conf.APP_DICT[initial['app']]['staff_ids']) > 0:
+                            del self.fields['dm_assigned']
+                    except KeyError:
+                        pass
 
 
 class TicketNoteForm(forms.ModelForm):

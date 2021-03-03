@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: iHub - traduction 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 13:05-0400\n"
+"POT-Creation-Date: 2021-03-02 14:57-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -170,14 +170,14 @@ msgid "audio file"
 msgstr "fichier audio"
 
 #: .\masterlist\models.py:105 .\masterlist\models.py:192
-#: .\masterlist\models.py:282 .\masterlist\models.py:325
-#: .\masterlist\models.py:379
+#: .\masterlist\models.py:286 .\masterlist\models.py:329
+#: .\masterlist\models.py:383
 msgid "date last modified"
 msgstr "dernière modification"
 
 #: .\masterlist\models.py:106 .\masterlist\models.py:193
-#: .\masterlist\models.py:283 .\masterlist\models.py:326
-#: .\masterlist\models.py:380
+#: .\masterlist\models.py:287 .\masterlist\models.py:330
+#: .\masterlist\models.py:384
 msgid "last modified by"
 msgstr "modifié par"
 
@@ -225,62 +225,62 @@ msgstr "courriel 1"
 msgid "membership"
 msgstr "appartenance"
 
-#: .\masterlist\models.py:240 .\masterlist\models.py:255
+#: .\masterlist\models.py:244 .\masterlist\models.py:259
 msgid "Phone 1"
 msgstr "téléphone personnel"
 
-#: .\masterlist\models.py:242 .\masterlist\models.py:257
+#: .\masterlist\models.py:246 .\masterlist\models.py:261
 msgid "Phone 2"
 msgstr "téléphone personnel (autre)"
 
-#: .\masterlist\models.py:244 .\masterlist\models.py:259
+#: .\masterlist\models.py:248 .\masterlist\models.py:263
 msgid "Fax"
 msgstr "Fax"
 
-#: .\masterlist\models.py:246 .\masterlist\models.py:261
+#: .\masterlist\models.py:250 .\masterlist\models.py:265
 msgid "E-mail 1"
 msgstr "Courriel personnel"
 
-#: .\masterlist\models.py:248 .\masterlist\models.py:263
+#: .\masterlist\models.py:252 .\masterlist\models.py:267
 msgid "E-mail 2"
 msgstr "Courriel personnel (autre)"
 
-#: .\masterlist\models.py:275
+#: .\masterlist\models.py:279
 msgid "role"
 msgstr "rôle"
 
-#: .\masterlist\models.py:317
+#: .\masterlist\models.py:321
 msgid "TO"
 msgstr "À"
 
-#: .\masterlist\models.py:318
+#: .\masterlist\models.py:322
 msgid "CC"
 msgstr "C.c."
 
-#: .\masterlist\models.py:319
+#: .\masterlist\models.py:323
 msgid "CC (Commercial Only)"
 msgstr "C.c. (commercial)"
 
-#: .\masterlist\models.py:323
+#: .\masterlist\models.py:327
 msgid "TO / CC"
 msgstr "À / CC"
 
-#: .\masterlist\models.py:362
+#: .\masterlist\models.py:366
 msgid "EMAIL MISSING"
 msgstr "COURRIEL MANQUANT"
 
-#: .\masterlist\models.py:367
+#: .\masterlist\models.py:371
 msgid "MISSING ROLE"
 msgstr "RÔLE MANQUANT"
 
-#: .\masterlist\models.py:374
+#: .\masterlist\models.py:378
 msgid "address letter to:"
 msgstr "Envoyer un lettre papier à :"
 
-#: .\masterlist\models.py:375
+#: .\masterlist\models.py:379
 msgid "include on cc (letter)"
 msgstr "Mettre en C.c. dans la lettre :"
 
-#: .\masterlist\models.py:376
+#: .\masterlist\models.py:380
 msgid "paper copy to"
 msgstr "copie papier à"

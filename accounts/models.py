@@ -20,7 +20,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     position_eng = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("position (English)"))
     position_fre = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("position (French)"))
-    phone = models.CharField(max_length=25, blank=True, null=True, verbose_name=_("phone (office)"))
+    phone = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("phone (office)"))
     language = models.IntegerField(choices=LANGUAGE_CHOICES, blank=True, null=True, verbose_name=_("language preference"))
     section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name=_("Section"))
     retired = models.BooleanField(default=False)

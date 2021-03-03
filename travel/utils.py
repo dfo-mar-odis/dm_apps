@@ -1,15 +1,16 @@
+from collections import OrderedDict
+from copy import deepcopy
+
 from azure.storage.blob import BlockBlobService
 from decouple import config
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth.models import User
-from django.db import IntegrityError
 from django.db.models import Q
+from django.template.defaultfilters import date
 from django.utils import timezone
 from django.utils.translation import gettext as _
 from msrestazure.azure_active_directory import MSIAuthentication
 
-from dm_apps.utils import custom_send_mail
 from shared_models import models as shared_models
 from . import emails
 from . import models
@@ -25,9 +26,23 @@ def in_adm_admin_group(user):
         return user.groups.filter(name='travel_adm_admin').count() != 0
 
 
+def is_admin(user):
+    return in_adm_admin_group(user) or in_travel_admin_group(user)
+
+
 def is_approver(user, trip_request):
-    if trip_request.current_reviewer and user == trip_request.current_reviewer.user:
-        return True
+    return get_related_request_reviewers(user).filter(request_id=trip_request.id).exists()
+
+
+def is_adm(user):
+    try:
+        if hasattr(user, "travel_default_reviewers") and user.travel_default_reviewers.special_role == 5:
+            return True
+        national_branch = shared_models.Region.objects.get(name__icontains="national")
+        if user == national_branch.head:
+            return True
+    except:
+        print("Cannot find branch named: 'national'")
 
 
 def is_trip_approver(user, trip):
@@ -35,7 +50,7 @@ def is_trip_approver(user, trip):
         return True
 
 
-def can_modify_request(user, trip_request_id, trip_request_unsubmit=False):
+def can_modify_request(user, trip_request_id, request_to_unsubmit=False, as_dict=False):
     """
     returns True if user has permissions to delete or modify a request
 
@@ -44,37 +59,52 @@ def can_modify_request(user, trip_request_id, trip_request_unsubmit=False):
 
     :param user:
     :param trip_request_id:
-    :param trip_request_submit: If true, it means this function is being used to answer the question about whether a user can unsubmit a trip
-    :return:
+    :param request_to_unsubmit: Is this a request to unsubmit? If so, the permissions are a little different.
+    :param as_dict: return as dict (with result and reason) as opposed to boolean
+    :return: dict or bool
     """
     if user.id:
-        my_trip_request = models.TripRequest.objects.get(pk=trip_request_id)
+        my_request = models.TripRequest.objects.get(pk=trip_request_id)
 
-        # check to see if a travel_admin
-        if in_travel_admin_group(user):
-            return True
+        reason = None
+        result = False
+
+        # if the request is unsubmitted, the owner can edit
+        if not my_request.submitted and my_request in user.travel_requests_created_by.all():
+            result = True
+            reason = _("You can edit this record because you are the request owner.")
+
+        elif not my_request.submitted and my_request in models.TripRequest.objects.filter(travellers__user=user):
+            result = True
+            reason = _("You can edit this record because you are a traveller on this request.")
+
+        elif request_to_unsubmit and my_request in user.travel_requests_created_by.all():
+            result = True
+            reason = _("You can un-submit this request because you are the request owner.")
 
         # check to see if they are the active reviewer
-        # determine if this is a child trip or not.
-        if not my_trip_request.parent_request:
-            if my_trip_request.current_reviewer and my_trip_request.current_reviewer.user == user:
-                return True
-        # This is a child trip request
-        else:
-            if my_trip_request.parent_request.current_reviewer and my_trip_request.parent_request.current_reviewer.user == user:
-                return True
-        # if the project is unsubmitted, the project lead is also able to edit the project... obviously
-        # check to see if they are either the owner OR a traveller
-        # SPECIAL CASE: sometimes we complete requests on behalf of somebody else.
-        if not my_trip_request.submitted and \
-                (not my_trip_request.user or  # anybody can edit
-                 my_trip_request.user == user or  # the user is the traveller and / or requester
-                 user in my_trip_request.travellers or  # the user is a traveller on the trip
-                 (my_trip_request.parent_request and my_trip_request.parent_request.user == user)):  # the user is the requester
-            return True
+        elif get_related_request_reviewers(user).filter(request_id=trip_request_id).exists():
+            result = True
+            reason = _("You can edit this record because you are the active reviewer for this request.")
 
-        if trip_request_unsubmit and user == my_trip_request.user:
-            return True
+        # check to see if they are the RDS
+        elif user == my_request.section.division.branch.head:
+            result = True
+            reason = _("You can edit this record because you are the Regional director / NCR Director General.")
+
+        # check to see if a travel_admin or ADM admin
+        elif in_adm_admin_group(user):
+            result = True
+            reason = _("You can edit this record because you are in the NCR National Coordinator Group.")
+
+        elif in_travel_admin_group(user):
+            result = True
+            reason = _("You can edit this record because you are in the Regional Administrator Group.")
+
+        if as_dict:
+            return dict(can_modify=result, reason=reason)
+        else:
+            return result
 
 
 def get_section_choices(all=False, full_name=True):
@@ -85,7 +115,7 @@ def get_section_choices(all=False, full_name=True):
 
     if not all:
         return [(s.id, getattr(s, my_attr)) for s in
-                shared_models.Section.objects.filter(trip_requests__isnull=False).order_by(
+                shared_models.Section.objects.filter(requests__isnull=False).order_by(
                     "division__branch__region",
                     "division__branch",
                     "division",
@@ -101,7 +131,7 @@ def get_division_choices(all=False):
         return [(d.id, str(d)) for d in shared_models.Division.objects.all()]
     else:
         return [(d.id, str(d)) for d in
-                shared_models.Division.objects.filter(sections__in=shared_models.Section.objects.filter(trip_requests__isnull=False)).distinct()]
+                shared_models.Division.objects.filter(sections__in=shared_models.Section.objects.filter(requests__isnull=False)).distinct()]
 
 
 def get_region_choices(all=False):
@@ -111,7 +141,7 @@ def get_region_choices(all=False):
         # return [(d.id, str(d)) for d in shared_models.Region.objects.all()]
         return [(r.id, str(r)) for r in
                 shared_models.Region.objects.filter(branches__divisions__sections__in=shared_models.Section.objects.filter(
-                    trip_requests__isnull=False)).distinct()]
+                    requests__isnull=False)).distinct()]
 
 
 def get_trip_reviewers(trip):
@@ -119,115 +149,126 @@ def get_trip_reviewers(trip):
     # This section only matters for ADM trips
 
     if trip.is_adm_approval_required:
+        # NCR travel coordinator(3), ADM Recommender(4), ADM (5)
+        roles = [3, 4, 5]
+        for role in roles:
+            for default_reviewer in models.DefaultReviewer.objects.filter(special_role=role).order_by("order"):
+                models.TripReviewer.objects.get_or_create(trip=trip, user=default_reviewer.user, role=role)
 
-        # NCR travel coordinator
-        try:
-            # add each default NCR coordinator to the queue
-            for default_reviewer in models.ReviewerRole.objects.get(pk=3).travel_default_reviewers.order_by("id"):
-                models.TripReviewer.objects.get_or_create(trip=trip, user=default_reviewer.user, role_id=3)
-        except (IntegrityError, KeyError):
-            pass
-
-        # ADM Approver
-        try:
-            # add each default ADM approver to the queue
-            for default_reviewer in models.ReviewerRole.objects.get(pk=4).travel_default_reviewers.order_by("id"):
-                models.TripReviewer.objects.get_or_create(trip=trip, user=default_reviewer.user, role_id=4)
-        except (IntegrityError, KeyError):
-            pass
-
-        # ADM Approver
-        try:
-            # add ADM to the queue
-            for default_reviewer in models.ReviewerRole.objects.get(pk=5).travel_default_reviewers.all():
-                models.TripReviewer.objects.get_or_create(trip=trip, user=default_reviewer.user, role_id=5)
-        except (IntegrityError, KeyError):
-            pass
     else:
         trip.reviewers.all().delete()
     trip.save()
 
 
-def get_tr_reviewers(trip_request):
+def get_request_reviewers(trip_request):
+    """
+    - NCR coordinator (if LATE --> handled by submit on_valid method)
+    - SPECIAL OPTIONAL INSERTs --> pre-section
+    - section admin
+    - section head
+    - SPECIAL OPTIONAL INSERTs --> pre-division
+    - div head
+    - SPECIAL OPTIONAL INSERTs --> pre-branch
+    - branch admin
+    - branch head
+    - ADM  --> THIS IS ACHIEVED INDIRECTLY THROUGH TRIP REVIEW
+    - RDG --> this step follows back tot the branch admin
+    """
+
     if trip_request.section:
+        travellers = trip_request.travellers.filter(user__isnull=False)
 
-        # section level reviewer
-        try:
-            # add each default reviewer to the queue
-            for default_reviewer in trip_request.section.travel_default_reviewers.all():
-                models.Reviewer.objects.get_or_create(trip_request=trip_request, user=default_reviewer.user, role_id=1)
-        except (IntegrityError, KeyError):
-            pass
+        # SPECIAL OPTIONAL INSERTS --> pre-section
+        ############################################
+        # add each default reviewer to the queue
+        for default_reviewer in trip_request.section.travel_default_reviewers.order_by("order"):
+            models.Reviewer.objects.get_or_create(request=trip_request, user=default_reviewer.user, role=1)
 
-        # section level recommender  - only applies if this is not the section head
-        try:
-            # if the division head is the one creating the request, the section head should be skipped as a recommender AND
-            # if the section head is the one creating the request, they should be skipped as a recommender
-            if trip_request.user != trip_request.section.head and trip_request.user != trip_request.section.division.head:
-                models.Reviewer.objects.get_or_create(trip_request=trip_request, user=trip_request.section.head, role_id=2, )
-        except (IntegrityError, AttributeError):
-            pass
+        # section admin
+        ###############
+        if trip_request.section.admin:
+            models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.admin, role=1)
 
-        # division level recommender  - only applies if this is not the division manager
-        try:
-            # if the division head is the one creating the request, they should be skipped as a recommender
-            if trip_request.user != trip_request.section.division.head:
-                models.Reviewer.objects.get_or_create(trip_request=trip_request, user=trip_request.section.division.head, role_id=2, )
-        except (IntegrityError, AttributeError):
-            pass
+        # section head
+        ##############
+        # if the division head is the one creating the request, the section head should be skipped as a recommender AND
+        # if the section head is the one creating the request, they should be skipped as a recommender
+        if trip_request.section.head and trip_request.section.head not in [t.user for t in travellers] and \
+                trip_request.section.division.head not in [t.user for t in travellers]:
+            models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.head, role=2)
 
-        # Branch level reviewer - only applies if this is not the RDS
-        try:
-            if trip_request.user != trip_request.section.division.branch.head:
-                # TODO: DOES THE BRANCH HAVE A DEFAULT REVIEWER?
-                # add each default reviewer to the queue
-                for default_reviewer in trip_request.section.division.branch.travel_default_reviewers.all():
-                    models.Reviewer.objects.get_or_create(trip_request=trip_request, user=default_reviewer.user, role_id=1)
+        # SPECIAL OPTIONAL INSERTS --> pre-division
+        ############################################
+        # add each default reviewer to the queue
+        for default_reviewer in trip_request.section.division.travel_default_reviewers.order_by("order"):
+            models.Reviewer.objects.get_or_create(request=trip_request, user=default_reviewer.user, role=1)
 
-        except (IntegrityError, AttributeError, User.DoesNotExist):
-            pass
+        # division manager
+        ###################
+        # if the division head is the one creating the request, they should be skipped as a recommender
+        if trip_request.section.division.head and trip_request.section.division.head not in [t.user for t in travellers]:
+            models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.division.head, role=2)
 
-        # Branch level recommender  - only applies if this is not the RDS
-        try:
-            if trip_request.user != trip_request.section.division.branch.head:
-                models.Reviewer.objects.get_or_create(trip_request=trip_request, user=trip_request.section.division.branch.head,
-                                                      role_id=2, )
-        except (IntegrityError, AttributeError, User.DoesNotExist):
-            pass
+        # SPECIAL OPTIONAL INSERTS --> pre-branch
+        ############################################
+        # add each default reviewer to the queue
+        for default_reviewer in trip_request.section.division.branch.travel_default_reviewers.order_by("order"):
+            models.Reviewer.objects.get_or_create(request=trip_request, user=default_reviewer.user, role=1)
 
-    # should the ADMs office be involved?
-    if trip_request.trip:
+        # rds admin
+        ###############
+        if trip_request.section.division.branch.admin:
+            models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.division.branch.admin, role=1)
+
+        # RDS
+        #####
+        if trip_request.section.division.branch.head and trip_request.section.division.branch.head not in [t.user for t in travellers]:
+            models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.division.branch.head, role=2, )
+
+        # ADM
+        #####
         if trip_request.trip.is_adm_approval_required:
-            # add the ADMs office staff
-            try:
-                models.Reviewer.objects.get_or_create(trip_request=trip_request, user_id=626, role_id=5, )  # Arran McPherson
-            except IntegrityError:
-                pass
+            # the ADM is head of the National Branch.
+            national_branch = shared_models.Region.objects.filter(name__icontains="national")
+            if national_branch.exists():
+                national_branch = national_branch.first()
+                if national_branch.head:
+                    models.Reviewer.objects.get_or_create(request=trip_request, user=national_branch.head, role=5)
+            else:
+                adm_special_reviewer = models.DefaultReviewer.objects.filter(special_role=5).first()
+                if adm_special_reviewer:
+                    models.Reviewer.objects.get_or_create(request=trip_request, user=adm_special_reviewer.user, role=5)
 
-    # finally, we always need to add the RDG
-    try:
-        models.Reviewer.objects.get_or_create(trip_request=trip_request, user=trip_request.section.division.branch.region.head, role_id=6, )
-    except (IntegrityError, AttributeError):
-        pass
+        # RDG
+        #####
+        # only do this if the trip is NOT virtual!
+        if not trip_request.trip.is_virtual:
+            if trip_request.section.division.branch.region.head and trip_request.section.division.branch.region.head not in [t.user for t in travellers]:
+                models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.division.branch.region.head, role=6)
 
-    trip_request.save()
+        # ensure the process order makes sense
+        count = 1
+        for r in trip_request.reviewers.order_by('id'):  # sort by id since this will correspond to order of creation
+            r.order = count
+            r.save()
+            count += 1
 
 
-def start_review_process(trip_request):
+def start_request_review_process(trip_request):
     """this should be used when a trip is submitted. It will change over all reviewers' statuses to Pending"""
     # focus only on reviewers that are status = Not Submitted
     for reviewer in trip_request.reviewers.all():
         # set everyone to being queued
-        reviewer.status_id = 20
+        reviewer.status = 20
         reviewer.status_date = None
         reviewer.save()
 
 
-def end_review_process(trip_request):
+def end_request_review_process(trip_request):
     """this should be used when a project is unsubmitted. It will change over all reviewers' statuses to Pending"""
     # focus only on reviewers that are status = Not Submitted
     for reviewer in trip_request.reviewers.all():
-        reviewer.status_id = 4
+        reviewer.status = 4
         reviewer.status_date = None
         reviewer.comments = None
         reviewer.save()
@@ -240,12 +281,12 @@ def start_trip_review_process(trip, reset=False):
     # focus only on reviewers that are status = Not Submitted
     if not reset:
         trip.review_start_date = timezone.now()
-        trip.status_id = 31
+        trip.status = 31
         trip.save()
 
     for reviewer in trip.reviewers.all():
         # set everyone to being queued
-        reviewer.status_id = 24
+        reviewer.status = 24
         if not reset:
             reviewer.status_date = None
         reviewer.save()
@@ -258,18 +299,18 @@ def end_trip_review_process(trip, reset=False):
     # focus only on reviewers that are status = Not Submitted
     if not reset:
         # trip.review_start_date = None NEVER reset the review start date!
-        trip.status_id = 41
+        trip.status = 41
     else:
-        trip.status_id = 31
+        trip.status = 31
     trip.save()
 
     for reviewer in trip.reviewers.all():
         if not reset:
-            reviewer.status_id = 23
+            reviewer.status = 23
             reviewer.status_date = None
             reviewer.comments = None
         else:
-            reviewer.status_id = 24
+            reviewer.status = 24
         reviewer.save()
 
 
@@ -287,12 +328,12 @@ def __set_request_status__(trip_request, request):
     """
 
     # first order of business, if the trip_request is status "changes requested' do not continue
-    if trip_request.status_id == 16:
+    if trip_request.status == 16:
         return False
 
     # Next: if the trip_request is unsubmitted, it is in 'draft' status
     elif not trip_request.submitted:
-        trip_request.status_id = 8
+        trip_request.status = 8
         # don't stick around any longer. save the trip_request and leave exit the function
         trip_request.save()
         return False
@@ -303,67 +344,55 @@ def __set_request_status__(trip_request, request):
         for reviewer in trip_request.reviewers.all():
             # if is_denied, all subsequent reviewer statuses should be set to "cancelled"
             if is_denied:
-                reviewer.status_id = 5
+                reviewer.status = 5
                 reviewer.save()
 
             # if reviewer status is denied, set the is_denied var to true
-            if reviewer.status_id == 3:
+            if reviewer.status == 3:
                 is_denied = True
 
         if is_denied:
-            trip_request.status_id = 10
+            trip_request.status = 10
             trip_request.save()
             # send an email to the trip_request owner
-            email = emails.StatusUpdateEmail(trip_request, request)
-            # # send the email object
-            custom_send_mail(
-                subject=email.subject,
-                html_message=email.message,
-                from_email=email.from_email,
-                recipient_list=email.to_list
-            )
+            email = emails.StatusUpdateEmail(request, trip_request)
+            email.send()
 
             # don't stick around any longer. save the trip_request and leave exit the function
             return False
 
         # The trip_request should be approved if everyone has approved it. HOWEVER, some reviewers might have been skipped
         # The total number of reviewers should equal the number of reviewer who approved [id=2] and / or were skipped [id=21].
-        elif trip_request.reviewers.all().count() == trip_request.reviewers.filter(status_id__in=[2, 21]).count():
-            trip_request.status_id = 11
+        elif trip_request.reviewers.all().count() == trip_request.reviewers.filter(status__in=[2, 21]).count():
+            trip_request.status = 11
             trip_request.save()
             # send an email to the trip_request owner
-            email = emails.StatusUpdateEmail(trip_request, request)
-            # # send the email object
-            custom_send_mail(
-                subject=email.subject,
-                html_message=email.message,
-                from_email=email.from_email,
-                recipient_list=email.to_list
-            )
+            email = emails.StatusUpdateEmail(request, trip_request)
+            email.send()
             # don't stick around any longer. save the trip_request and leave exit the function
             return False
         else:
             for reviewer in trip_request.reviewers.all():
                 # if a reviewer's status is 'pending', we are waiting on them and the project status should be set accordingly.
-                if reviewer.status_id == 1:
+                if reviewer.status == 1:
                     # if role is 'reviewer'
-                    if reviewer.role_id == 1:
-                        trip_request.status_id = 17
+                    if reviewer.role == 1:
+                        trip_request.status = 17
                     # if role is 'recommender'
-                    elif reviewer.role_id == 2:
-                        trip_request.status_id = 12
+                    elif reviewer.role == 2:
+                        trip_request.status = 12
                     # if role is 'ncr reviewer'
-                    elif reviewer.role_id == 3:
-                        trip_request.status_id = 17
+                    elif reviewer.role == 3:
+                        trip_request.status = 17
                     # if role is 'ncr recommender'
-                    elif reviewer.role_id == 4:
-                        trip_request.status_id = 12
+                    elif reviewer.role == 4:
+                        trip_request.status = 12
                     # if role is 'adm'
-                    elif reviewer.role_id == 5:
-                        trip_request.status_id = 14
+                    elif reviewer.role == 5:
+                        trip_request.status = 14
                     # if role is 'rdg'
-                    elif reviewer.role_id == 6:
-                        trip_request.status_id = 15
+                    elif reviewer.role == 6:
+                        trip_request.status = 15
 
     trip_request.save()
     return True
@@ -385,50 +414,35 @@ def approval_seeker(trip_request, suppress_email=False, request=None):
             # we should then exit the loop and set the next_reviewer var
 
             # if this is a resubmission, there might still be a reviewer whose status is 'pending'. This should be the reviewer
-            if reviewer.status_id == 20 or reviewer.status_id == 1:
+            if reviewer.status == 20 or reviewer.status == 1:
                 next_reviewer = reviewer
                 break
 
         # if there is a next reviewer, set their status to pending
         if next_reviewer:
-            next_reviewer.status_id = 1
+            next_reviewer.status = 1
             next_reviewer.status_date = timezone.now()
             next_reviewer.save()
 
             # now, depending on the role of this reviewer, perhaps we want to send an email.
             # if they are a recommender, rev...
-            if next_reviewer.role_id in [1, 2, 3, 4, ] and request:  # essentially, just not the RDG or ADM
-                email = emails.ReviewAwaitingEmail(trip_request, next_reviewer, request)
+            if next_reviewer.role in [1, 2, 3, 4, ] and request:  # essentially, just not the RDG or ADM
+                email = emails.ReviewAwaitingEmail(request, trip_request, next_reviewer)
 
-            elif next_reviewer.role_id in [6, ] and request:  # if we are going for RDG signature...
-                email = emails.AdminApprovalAwaitingEmail(trip_request, next_reviewer.role_id, request)
+            elif next_reviewer.role in [6, ] and request:  # if we are going for RDG signature...
+                email = emails.RDGReviewAwaitingEmail(request, trip_request, next_reviewer)
 
             if email and not suppress_email:
                 # send the email object
-                custom_send_mail(
-                    subject=email.subject,
-                    html_message=email.message,
-                    from_email=email.from_email,
-                    recipient_list=email.to_list
-                )
+                email.send()
 
             # Then, lets set the trip_request status again to account for the fact that something happened
             __set_request_status__(trip_request, request)
 
 
-def populate_trip_request_costs(request, trip_request):
-    # determine if we are dealing with a child trip request - used to prepopulate number of days
-    if trip_request.parent_request:
-        trip = trip_request.parent_request.trip
-    else:
-        trip = trip_request.trip
-
+def populate_traveller_costs(request, traveller):
     for obj in models.Cost.objects.all():
-        new_item, created = models.TripRequestCost.objects.get_or_create(
-            trip_request=trip_request,
-            cost=obj,
-            # number_of_days=trip.number_of_days,
-        )
+        new_item, created = models.TravellerCost.objects.get_or_create(traveller=traveller, cost=obj)
         if created:
             # breakfast
             if new_item.cost_id == 9:
@@ -461,12 +475,10 @@ def populate_trip_request_costs(request, trip_request):
                     messages.warning(request,
                                      _("NJC rates for incidentals missing from database. Please let your system administrator know."))
 
-    # messages.success(request, _("All costs have been added to this project."))
 
-
-def clear_empty_trip_request_costs(trip_request):
+def clear_empty_traveller_costs(traveller):
     for obj in models.Cost.objects.all():
-        for cost in models.TripRequestCost.objects.filter(trip_request=trip_request, cost=obj):
+        for cost in models.TravellerCost.objects.filter(traveller=traveller, cost=obj):
             if (cost.amount_cad is None or cost.amount_cad == 0):
                 cost.delete()
 
@@ -497,14 +509,8 @@ def manage_trip_warning(trip, request):
         # if the trip is >= 10K, we simply need to send an email to NCR
         else:
             if not trip.cost_warning_sent:
-                email = emails.TripCostWarningEmail(trip, request)
-                # # send the email object
-                custom_send_mail(
-                    subject=email.subject,
-                    html_message=email.message,
-                    from_email=email.from_email,
-                    recipient_list=email.to_list
-                )
+                email = emails.TripCostWarningEmail(request, trip)
+                email.send()
                 trip.cost_warning_sent = timezone.now()
                 trip.save()
 
@@ -527,7 +533,7 @@ def trip_approval_seeker(trip, request):
     # Next: if the trip_request is un submitted, it is in 'draft' status
 
     # only look for a next reviewer if we are still in a review [id=31]
-    if trip.status_id == 31:
+    if trip.status == 31:
 
         next_reviewer = None
         email = None
@@ -537,25 +543,19 @@ def trip_approval_seeker(trip, request):
             # if the reviewer's status is set to 'queued', they will be our next selection
             # we should then exit the loop and set the next_reviewer var
             # CAVEAT: if this is a resubmission, there might still be a reviewer whose status is 'pending'. This should be the reviewer
-            if reviewer.status_id == 24 or reviewer.status_id == 25:
+            if reviewer.status == 24 or reviewer.status == 25:
                 next_reviewer = reviewer
                 break
 
         # if there is a next reviewer, set their status to pending and send them an email
         if next_reviewer:
-            next_reviewer.status_id = 25
+            next_reviewer.status = 25
             next_reviewer.status_date = timezone.now()
             next_reviewer.save()
 
-            email = emails.TripReviewAwaitingEmail(trip, next_reviewer, request)
-
+            email = emails.TripReviewAwaitingEmail(request, trip, next_reviewer)
             # send the email object
-            custom_send_mail(
-                subject=email.subject,
-                html_message=email.message,
-                from_email=email.from_email,
-                recipient_list=email.to_list
-            )
+            email.send()
 
 
         # if no next reviewer was found, the trip's review is complete...
@@ -565,11 +565,12 @@ def trip_approval_seeker(trip, request):
             # The trip review is complete if all the reviewers' status are set to complete [id=26]
             # HOWEVER, some reviewers might have been skipped
             # The total number of reviewers should equal the number of reviewer who completed [id=26] and / or were skipped [id=42].
-            if trip.reviewers.all().count() == trip.reviewers.filter(status_id__in=[26, 42]).count():
-                trip.status_id = 32
+            if trip.reviewers.all().count() == trip.reviewers.filter(status__in=[26, 42]).count():
+                trip.status = 32
                 trip.save()
 
 
+# DELETE!!
 def get_related_trips(user):
     """give me a user and I'll send back a queryset with all related trips, i.e.
      they are the request.user | they are the request.created_by | they are a traveller on a child trip"""
@@ -583,19 +584,40 @@ def get_related_trips(user):
     return models.TripRequest.objects.filter(id__in=tr_ids)
 
 
+def get_related_requests(user):
+    """give me a user and I'll send back a queryset with all related trip requests, i.e.
+     they are a traveller || they are the request.created_by"""
+    qs = models.TripRequest.objects.filter(Q(created_by=user) | Q(travellers__user=user)).distinct()
+    return qs
+
+
+def get_related_request_reviewers(user):
+    """give me a user and I'll send back a queryset with all related trips request reviews that are actionable (pending)
+     (excluding drafts (8), ADM approval (14) and when changes have already been requested (16)"""
+    qs = models.Reviewer.objects.filter(status=1).filter(~Q(request__status__in=[16, 14, 8]), user=user).distinct()
+    return qs
+
+
+def get_related_trip_reviewers(user):
+    """give me a user and I'll send back a queryset with all related trips reviews that are actionable (pending = 25)
+     """
+    qs = models.TripReviewer.objects.filter(status=25, user=user)
+    return qs
+
+
 def get_adm_eligible_trips():
     """returns a qs of trips that are ready for adm review"""
     # start with trips that need adm approval that have not already been reviewed or those that have been cancelled
-    trips = models.Conference.objects.filter(is_adm_approval_required=True).filter(~Q(status_id__in=[32, 43, 31]))
+    trips = models.Trip.objects.filter(is_adm_approval_required=True).filter(~Q(status__in=[32, 43, 31]))
 
-    t_ids = list()
+    keepers = list()
     for t in trips:
-        # only get trips that have attached requests
-        if t.get_connected_active_requests().count():
+        # only get trips that have attached travellers and that are in an active status (i.e. not draft=8, cancelled=22, denied=10)
+        if t.status not in [10, 22, 8] and t.travellers.exists():
             # only get trips that are within three months from the closest date
             if t.date_eligible_for_adm_review and t.date_eligible_for_adm_review <= timezone.now():
-                t_ids.append(t.id)
-    return models.Conference.objects.filter(id__in=t_ids)
+                keepers.append(t.id)
+    return models.Trip.objects.filter(id__in=keepers).order_by("adm_review_deadline")
 
 
 user_attr_list = [
@@ -612,7 +634,7 @@ user_attr_list = [
 
 def is_manager_or_assistant_or_admin(user):
     # start high and go low
-    if in_travel_admin_group(user) or in_adm_admin_group(user):
+    if is_admin(user):
         return True
 
     for attr in user_attr_list:
@@ -620,15 +642,16 @@ def is_manager_or_assistant_or_admin(user):
             return True
 
 
-def get_trip_with_managerial_access(user):
-    queryset = models.TripRequest.objects.filter(parent_request__isnull=True)
-    if in_travel_admin_group(user) or in_adm_admin_group(user):
+def get_requests_with_managerial_access(user):
+    queryset = models.TripRequest.objects.all()
+    if is_admin(user):
         return queryset
     else:
-        return queryset.filter(Q(section__admin=user) | Q(section__head=user)
-                               | Q(section__division__admin=user) | Q(section__division__head=user)
-                               | Q(section__division__branch__admin=user) | Q(section__division__branch__head=user)
-                               | Q(section__division__branch__region__admin=user) | Q(section__division__branch__region__head=user))
+        qs = queryset.filter(Q(section__admin=user) | Q(section__head=user)
+                             | Q(section__division__admin=user) | Q(section__division__head=user)
+                             | Q(section__division__branch__admin=user) | Q(section__division__branch__head=user)
+                             | Q(section__division__branch__region__admin=user) | Q(section__division__branch__region__head=user))
+        return qs
 
 
 def upload_to_azure_blob(target_file_path, target_file):
@@ -644,3 +667,107 @@ def upload_to_azure_blob(target_file_path, target_file):
     blobService.create_blob_from_path('media', target_file, target_file_path)
 
 
+def get_cost_comparison(travellers):
+    """
+    This method is used to return a dictionary of trip requests and will compare cost across all of them.
+    """
+    costs = models.TravellerCost.objects.filter(traveller__in=travellers, amount_cad__gt=0).values("cost").order_by("cost").distinct()
+    header = [models.Cost.objects.get(pk=c["cost"]).tname for c in costs]
+    cost_totals = OrderedDict()
+    for c in costs:
+        cost_totals[c["cost"]] = 0
+    header.insert(0, _("Name"))
+    header.append(_("Total"))
+    list1 = [header, ]
+    # get all travellers from active requests
+    total = 0
+    for t in travellers.all():
+        name = t.smart_name
+        if t.is_research_scientist:
+            name += " (RES)"
+        list2 = [name, ]
+        traveller_total = 0
+        for cost in costs:
+            try:
+                c = models.TravellerCost.objects.get(traveller=t, cost_id=cost['cost'])
+                val = c.amount_cad
+                cost_totals[c.cost.id] += c.amount_cad
+                traveller_total += c.amount_cad
+                total += c.amount_cad
+            except Exception as e:
+                val = 0
+            list2.append(val)
+        list2.append(traveller_total)
+        list1.append(list2)
+
+    total_row = [cost_totals[c["cost"]] for c in costs]
+    total_row.insert(0, "TOTAL")
+    total_row.append(total)
+    list1.append(total_row)
+    return list1
+
+
+def cherry_pick_traveller(traveller, request, comment="approved / approuvé"):
+    """this is a special function that is to be used by the ADM only.
+    It is for when the ADM wants to approve a single traveller while not approving the entire delegation.
+    Validation will be handled by views"""
+    trip_request = traveller.request
+    # scenario 1: this is a single person request (yayy!!)
+    if trip_request.travellers.count() == 1:
+        reviewer = trip_request.current_reviewer
+        reviewer.user = request.user
+        reviewer.comments = comment
+        reviewer.status = 2
+        reviewer.status_date = timezone.now()
+        reviewer.save()
+        approval_seeker(trip_request, False, request)
+    else:
+        # scenario 2: they are being cherry picked out of a group request
+        # make a copy of the original request (include a copy of the reviewers)
+        old_obj = trip_request
+        new_obj = deepcopy(old_obj)
+        new_obj.pk = None
+        new_obj.save()
+
+        # copy over the reviewers
+        for old_rel_obj in old_obj.reviewers.all():
+            new_rel_obj = deepcopy(old_rel_obj)
+            new_rel_obj.pk = None
+            new_rel_obj.request = new_obj
+            new_rel_obj.save()
+
+        # move traveller over to the new request
+        traveller.request = new_obj
+        traveller.save()
+        old_obj.add_admin_note = f"{date(timezone.now())} - {traveller.smart_name} was automatically transferred to a separate request during" \
+                                 f" the course of the ADM-level review."
+
+        # finally, we approved the new request at the level of the active reviewer
+        reviewer = new_obj.current_reviewer
+        reviewer.user = request.user
+        reviewer.comments = comment
+        reviewer.status = 2
+        reviewer.status_date = timezone.now()
+        reviewer.save()
+        approval_seeker(new_obj, False, request)
+
+
+def get_trip_field_list(trip=None):
+    my_list = [
+        'tname|{}'.format(_("Name")),
+        'location',
+        'trip_subcategory',
+        'lead',
+        'has_event_template',
+        'number',
+        'start_date',
+        'end_date',
+        'meeting_url',
+        'abstract_deadline',
+        'registration_deadline',
+        'is_adm_approval_required',
+        'notes',
+    ]
+
+    while None in my_list: my_list.remove(None)
+    return my_list

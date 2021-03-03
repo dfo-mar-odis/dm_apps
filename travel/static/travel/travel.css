@@ -1,4 +1,56 @@
 
+.admin-notes {
+    background-color: #f8f8c6;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.approved {
+    background-color: #a8ffb8;
+}
+
+.blue {
+    color: blue;
+}
+.btn-admin {
+    background-color: #5b80b2;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.cancelled {
+    background-color: #a6aba2;
+}
+
+
+.changes-requested {
+    background-color: #fcc1a2;
+}
+
+.clickable {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.closed-traveller {
+    background-color: #edf0fa;
+}
+
+.complete {
+    background-color: #a8ffb8;
+}
+
+.container {
+    max-width: 1300px;
+}
+
+
 .container-fluid, .container {
     border-radius: 25px;
     margin-top: 15px;
@@ -9,10 +61,130 @@
 
 }
 
-.btn-admin {
-    background-color: #5b80b2;
-    color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.denied {
+    background-color: #f79eb3;
+}
 
+.draft {
+    background-color: #fff396;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.lightgrey {
+    background-color: #e5e2e2;
+}
+
+.mdi-help-circle-outline {
+    color: blue;
+}
+
+
+.other-traveller {
+    background-color: #faf3cf;
+}
+
+.pending {
+    background-color: #fcc1a2;
+}
+
+.pending-adm-approval {
+    background-color: #99ccff;
+}
+
+.pending-rdg-approval {
+    background-color: #0f135d;
+    color: white;
+}
+
+.pending-recommendation {
+    background-color: #cc4aec;
+    color: white;
+}
+
+.pending-review {
+    background-color: #ffcce1;
+}
+
+.pointy {
+    cursor: pointer;
+}
+
+.queued {
+    background-color: #d0dcf5;
+}
+
+.reviewed {
+    background-color: #99ccff;
+}
+
+.simple-table tbody tr td {
+    border: 1px solid black;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 5px;
+}
+
+.simple-table tbody tr th {
+    border: 1px solid black;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 5px
+}
+
+.simple-table tbody tr {
+    border: 1px solid black;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 5px
+}
+
+
+.skipped {
+    background-color: #fa574c;
+    color: white;
+}
+
+.text-sm {
+    font-size: small;
+}
+
+.traveller-card {
+    /*cursor: pointer;*/
+    /*background-color: #eeeeee;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 85%;
+    margin: 10px;
+    /*background-color: rgba(255, 255, 255, 0.85);*/
+    border-radius: 10px;
+}
+
+.under-review {
+    background-color: #e197f7;
+}
+
+.unverified {
+    background-color: #fff396;
+}
+
+.verified {
+    background-color: #a8ffb8;
+}
+
+table, td {
+    font-size: small;
+}
+
+.btn-success{
+    background-color: darkgreen;
+}
+
+.btn-primary{
+    background-color: darkblue;
 }

@@ -117,6 +117,7 @@ urlpatterns = [
     
     path('create/envt/', views.EnvtCreate.as_view(), name="create_envt"),
     path('details/envt/<int:pk>/', views.EnvtDetails.as_view(), name="details_envt"),
+    path('details/envt/<str:back>/<int:back_id>/<int:pk>/', views.EnvtDetails.as_view(), name="details_envt"),
     path('list/envt/', views.EnvtList.as_view(), name="list_envt"),
     path('update/envt/<int:pk>/', views.EnvtUpdate.as_view(), name="update_envt"),  
     
@@ -254,6 +255,13 @@ urlpatterns = [
     path('list/locc/', views.LoccList.as_view(), name="list_locc"),
     path('update/locc/<int:pk>/', views.LoccUpdate.as_view(), name="update_locc"),
 
+    path('create/matp/', views.MatpCreate.as_view(), name="create_matp"),
+    path('details/matp/<int:pk>/', views.MatpDetails.as_view(), name="details_matp"),
+    path('details/matp/<str:back>/<int:back_id>/<int:pk>/', views.MatpDetails.as_view(), name="details_matp"),
+    path('list/matp/', views.MatpList.as_view(), name="list_matp"),
+    path('update/matp/<int:pk>/', views.MatpUpdate.as_view(), name="update_matp"),
+
+
     path('create/orga/', views.OrgaCreate.as_view(), name="create_orga"),
     path('create/orga/<str:pop>/', views.OrgaCreate.as_view(), name="create_orga"),
     path('details/orga/<int:pk>/', views.OrgaDetails.as_view(), name="details_orga"),
@@ -262,6 +270,7 @@ urlpatterns = [
 
     path('create/pair/', views.PairCreate.as_view(), name="create_pair"),
     path('create/pair/<str:pop>/', views.PairCreate.as_view(), name="create_pair"),
+    path('create/pair/<int:evnt>/<str:pop>/', views.PairCreate.as_view(), name="create_pair"),
     path('details/pair/<int:pk>/', views.PairDetails.as_view(), name="details_pair"),
     path('details/pair/<str:back>/<int:back_id>/<int:pk>/', views.PairDetails.as_view(), name="details_pair"),
     path('list/pair/', views.PairList.as_view(), name="list_pair"),
@@ -348,15 +357,9 @@ urlpatterns = [
     path('list/sire/', views.SireList.as_view(), name="list_sire"),
     path('update/sire/<int:pk>/', views.SireUpdate.as_view(), name="update_sire"),
 
-    path('create/spwn/', views.SpwnCreate.as_view(), name="create_spwn"),
-    path('create/spwn/<int:evnt>/<str:pop>/', views.SpwnCreate.as_view(), name="create_spwn"),
-    path('details/spwn/<int:pk>/', views.SpwnDetails.as_view(), name="details_spwn"),
-    path('details/spwn/<str:back>/<int:back_id>/<int:pk>/', views.SpwnDetails.as_view(), name="details_spwn"),
-    path('list/spwn/', views.SpwnList.as_view(), name="list_spwn"),
-    path('update/spwn/<int:pk>/', views.SpwnUpdate.as_view(), name="update_spwn"),
-    
     path('create/spwnd/', views.SpwndCreate.as_view(), name="create_spwnd"),
     path('details/spwnd/<int:pk>/', views.SpwndDetails.as_view(), name="details_spwnd"),
+    path('details/spwnd/<str:back>/<int:back_id>/<int:pk>/', views.SpwndDetails.as_view(), name="details_spwnd"),
     path('list/spwnd/', views.SpwndList.as_view(), name="list_spwnd"),
     path('update/spwnd/<int:pk>/', views.SpwndUpdate.as_view(), name="update_spwnd"),
     

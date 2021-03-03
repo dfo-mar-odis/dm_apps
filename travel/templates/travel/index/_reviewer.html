@@ -1,0 +1,25 @@
+{% load i18n %}
+
+
+
+
+<div>
+  <div class="btns mb-3 center-col">
+
+    <h2 class="">{% trans "Your Reviews" %}</h2>
+    <p class="card-text">{% trans "View and manage trips and/or trip requests for which you are a reviewer" %}</p>
+
+    <a v-if="currentUser && currentUser.trip_reviews_count" href="{% url 'travel:trip_reviewer_list' %}"
+       class="btn btn-lg btn-outline-primary mx-3 {{ disabled_text }}">
+      {% trans "Trips Awaiting Review" %}
+      (<span class="red-font blink-me">${ currentUser.trip_reviews_count }</span>)
+    </a>
+
+    <a v-if="currentUser && currentUser.request_reviews_count" href="{% url 'travel:request_reviewer_list' %}"
+       class="btn btn-lg btn-outline-primary mx-3 {{ disabled_text }}">
+      {% trans "Requests Awaiting Review" %}
+      (<span class="red-font blink-me">${ currentUser.request_reviews_count }</span>)
+    </a>
+
+  </div>
+</div>

@@ -1,6 +1,8 @@
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
+from lib.templatetags.custom_filters import nz
+
 
 class CommonMixin():
     '''
@@ -154,6 +156,11 @@ class CommonMixin():
 
     def get_container_class(self):
         return self.container_class
+
+    def get_query_string(self):
+        if self.request.META['QUERY_STRING'] and self.request.META['QUERY_STRING'] != "":
+            return "?" + self.request.META['QUERY_STRING']
+        return ""
 
     def get_common_context(self) -> dict:
         context = dict()

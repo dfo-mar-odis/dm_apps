@@ -1,0 +1,156 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+{% load travel_tags %}
+{% load travel_filters %}
+{#  BASIC DETAIL #}
+
+<div class="card mb-4" v-if="!travellerToEdit">
+  <h3 class="card-header bg-outline-dark">
+    {% trans "Request Summary" %}
+    <span @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+          data-trigger="hover" title="{% trans "Request Summary" %}"
+          :data-content="helpText.trip_request_header"></span>
+  </h3>
+  <div class="card-body">
+    <div class="card-text">
+      <div v-if="loading" class="loading mb-3 mt-3 text-center mt-5">
+        <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div v-else>
+        <p class="lead" style="text-decoration: underline">{% trans "Details" %}</p>
+        <table class="table table-sm mb-5" style="width: auto">
+          <tr>
+            <th style="width: 25%">${requestLabels.fiscal_year}</th>
+            <td>${request.fiscal_year}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">${requestLabels.created_by}</th>
+            <td>${request.created_by}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">${requestLabels.trip}</th>
+            <td><a href="#" @click="goTripDetail(request.trip)">${request.trip.tname}</a></td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Destination" %}</th>
+            <td>${request.trip.location}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Dates" %}</th>
+            <td v-html="request.trip.dates"></td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Number of travellers" %}</th>
+            <td>${request.travellers.length}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Request status" %}</th>
+            <td><span :class="request.status_class + ' px-1 py-1'">${request.status_display}</span></td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "DFO Section" %}</th>
+            <td>${request.section.full_name}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Objective of trip" %}</th>
+            <td>${request.objective_of_event | nz}</td>
+          </tr>
+          <tr v-if="request.late_justification">
+            <th style="width: 25%">${requestLabels.late_justification}</th>
+            <td>${request.late_justification}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Benefits to DFO" %}</th>
+            <td>${request.benefit_to_dfo | nz}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "BTA attendees" %}</th>
+            <td>${request.bta_attendees | nz}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Notes" %}</th>
+            <td>${request.notes}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">${requestLabels.original_submission_date}</th>
+            <td>${request.original_submission_date}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Processing time" %}</th>
+            <td>${request.processing_time}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">${requestLabels.uuid}</th>
+            <td>${request.uuid}</td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "Metadata" %}</th>
+            <td v-html="request.metadata"></td>
+          </tr>
+        </table>
+
+        <p class="lead"  style="text-decoration: underline">{% trans "Costs" %}</p>
+        <table class="table table-sm table-bordered" style="width: auto;">
+          <thead>
+          <tr>
+            <th></th>
+            <th>{% trans "Amount (CAD)" %}</th>
+            <th>{% trans "Funding source(s)" %}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td style="width: 25%">{% trans "DFO" %}</td>
+            <td>
+              ${request.total_dfo_funding| floatformat }
+            </td>
+            <td>
+              ${request.funding_source |nz}
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 25%">{% trans "Non-DFO" %}</td>
+            <td>
+              ${request.total_non_dfo_funding| floatformat }
+            </td>
+            <td>
+              ${request.total_non_dfo_funding_sources |nz}
+            </td>
+          </tr>
+          <tr>
+            <th style="width: 25%">{% trans "TOTAL" %}</th>
+            <th>
+              ${request.total_request_cost| floatformat }
+            </th>
+          </tr>
+
+          </tbody>
+        </table>
+
+        <div v-if="isReview" class="mb-5">
+          <p class="h5">{% trans "Comparison of Traveller Costs:" %}</p>
+          <table class="table table-sm table-bordered">
+            <tr v-for="(row, i) in request.cost_comparison" :key="i">
+              <td v-for="(cell, j) in row" :key="j">
+                <span v-if="i===0"><b>${cell}</b></span>
+                <span v-else>${cell |floatformat}</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div v-if="isReview && request.travellers_from_other_regions.length" class="mb-5">
+          <p class="h5">{% trans "Travellers to ${request.trip.tname} from Other Regions:" %}</p>
+          <ul>
+            <li v-for="(t, i) in request.travellers_from_other_regions" :key="t.id">
+              ${t.smart_name} (${t.request_obj.region}) &rarr; <span :class="t.request_obj.status_class">${t.request_obj.status_display}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

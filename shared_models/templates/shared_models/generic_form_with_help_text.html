@@ -9,8 +9,8 @@
 
   {% if field.name in help_text_dict %}
     {% bootstrap_label field.label %}
-    <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" title="{{ field.label }}"
-         data-content="{{ help_text_dict|lookup:field.name }}" data-trigger="hover">
+    <span class="mdi mdi-help-circle-outline h6" data-toggle="popover" title="{{ field.label }}"
+          data-content="{{ help_text_dict|lookup:field.name }}" data-trigger="hover"></span>
     {% bootstrap_field field placeholder="" show_label=False %}
   {% else %}
     {% bootstrap_field field placeholder="" %}

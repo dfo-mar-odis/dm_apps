@@ -90,7 +90,7 @@ class UserForgotPasswordForm(PasswordResetForm):
 
 class RequestAccessForm(forms.Form):
     # we only want the text from the choices of apps
-    APPLICATION_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
+    APPLICATION_CHOICES = [(app_key, local_conf.APP_DICT[app_key]['name']) for app_key in local_conf.APP_DICT]
     APPLICATION_CHOICES.insert(0, (None, "-----"))
 
     first_name = forms.CharField(label='First name', max_length=100)

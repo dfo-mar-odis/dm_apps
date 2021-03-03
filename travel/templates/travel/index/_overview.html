@@ -1,0 +1,80 @@
+{% load i18n %}
+<div class="mt-2">
+
+  <h2 class="center-col">
+    {% trans "An Overview of the Travel App" %}
+  </h2>
+
+  {% for s in information_sections %}
+    <div class="mb-3 mt-5 ">
+      <h3>{{ s.tname }} </h3>
+    </div>
+    <div class="text-black ">
+      {{ s.tdescription|safe }}
+    </div>
+  {% endfor %}
+  <div class="mb-3 mt-5">
+    <hr>
+  </div>
+
+  <div>
+    <v-app id="inspire">
+      <div class="mt-3 ml-3 mr-3">
+        {% for process in processes %}
+
+          <div class="mb-5 mt-5 center-col">
+            <h3>{{ process.first.get_stage_display }}</h3>
+          </div>
+          <v-timeline
+            :align-top="alignTop"
+            :dense="dense"
+            :reverse="reverse"
+          >
+
+            {% for step in process %}
+              <v-timeline-item
+                {#                                    :key="n"#}
+                :fill-dot="fillDot"
+                :hide-dot="hideDot"
+                :icon="icon ? 'mdi-star' : ''"
+                :icon-color=" iconColor ? 'deep-orange' : ''"
+                :left="left"
+                :right="right"
+                :small="small"
+              >
+
+                <template v-slot:icon>
+                  <v-avatar v-if="avatar">
+                    <img src="http://i.pravatar.cc/64">
+                  </v-avatar>
+                </template>
+                <v-card class="elevation-2">
+                  <v-card-title class="headline">{{ step.tname }}</v-card-title>
+                  <v-card-text>
+                    {{ step.tdescription|safe }}
+                  </v-card-text>
+                </v-card>
+              </v-timeline-item>
+
+            {% endfor %}
+          </v-timeline>
+
+
+          <br>
+          <br>
+          <br>
+          <br>
+        {% endfor %}
+      </div>
+    </v-app>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

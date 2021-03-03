@@ -31,7 +31,7 @@ class TicketFilter(django_filters.FilterSet):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # choices for app
-        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
+        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]['name']) for app_key in local_conf.APP_DICT]
         APP_CHOICES.insert(0, ("esee", "ESEE (not part of site)"))
         APP_CHOICES.insert(0, ("plankton", "Plankton Net (not part of site)"))
         APP_CHOICES.insert(0, ("tickets", "DM Apps Tickets"))
@@ -75,7 +75,7 @@ class MyTicketFilter(django_filters.FilterSet):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]) for app_key in local_conf.APP_DICT]
+        APP_CHOICES = [(app_key, local_conf.APP_DICT[app_key]["name"]) for app_key in local_conf.APP_DICT]
         APP_CHOICES.insert(0, ("esee", "ESEE (not part of site)"))
         APP_CHOICES.insert(0, ("plankton", "Plankton Net (not part of site)"))
         APP_CHOICES.insert(0, ("tickets", "DM Apps Tickets"))

@@ -1,0 +1,333 @@
+{% load static %}
+{% load i18n %}
+{% load custom_filters %}
+{% load travel_filters %}
+{% load travel_tags %}
+{% load verbose_names %}
+<span id="travellers_head" ref="travellers_head" tabindex="0"></span>
+<div class="card mb-4">
+  <h3 class="card-header bg-outline-dark">
+    <div class="float-right" v-if="!travellerToEdit">
+      <button v-if="!isReview && canModify && !travellerToEdit" @click="addTraveller" data-toggle="tooltip" title="{% trans "Add traveller" %}"
+              class="btn btn-sm btn-primary ml-2">
+        <span class="mdi mdi-plus text-light"></span> {% trans "Add traveller" %}
+      </button>
+      {#      <button @click="expandTravellers" data-toggle="tooltip" title="{% trans "Expand all" %}"><span class="mdi mdi-arrow-collapse-down h3"></span></button>#}
+      {#      <button @click="collapseTravellers" data-toggle="tooltip" title="{% trans "Collapse all" %}"><span class="mdi mdi-arrow-collapse-up"></span></button>#}
+    </div>
+    <span v-if="!travellerToEdit">{% trans "Travellers Associated with this Request" %}</span>
+    <span v-else-if="travellerToEdit.id">{% trans "Traveller: " %} ${travellerToEdit.smart_name}</span>
+    <span v-else>{% trans "New Traveller" %}</span>
+    <span @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+          data-trigger="hover" title="{% trans "Travellers" %}"
+          :data-content="helpText.travellers_header"></span>
+  </h3>
+  <div class="card-body">
+    <div class="card-text">
+      <div v-if="loading" class="loading mb-3 mt-3 text-center mt-5">
+        <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div v-else>
+        <div v-if="travellers.length">
+          <div v-if="!travellerToEdit">
+            <div class="float-right btn-group" v-if="!travellerToEdit">
+              {% include "travel/common/_expand_collapse_buttons.html" %}
+            </div>
+            <div v-for="(t,index) in travellers" class="mx-1" :key="t.id">
+              <div :class="{'card traveller-card mx-1':true, 'closed-traveller':!t.show_me}">
+                <div class="card-body">
+                  <div class="float-right">
+                    <span v-if="trip && !t.show_me" :class="t.request_obj.status_class + ' px-1 py-1 mr-3 h6'">${t.request_obj.status_display}</span>
+                    <button v-if="!isReview && canModify && !trip && !t.show_me" @click="editTraveller(t)"><span class="mdi mdi-pencil h4"
+                                                                                                                 data-toggle="tooltip"
+                                                                                                                 title="{% trans "Edit" %}"></span></button>
+                    <button v-if="!isReview && canModify && !trip && !t.show_me" @click="addTraveller(t)"><span class="mdi mdi-content-copy h4"
+                                                                                                                data-toggle="tooltip"
+                                                                                                                title="{% trans "Clone" %}"></span></button>
+                    <button v-if="canModify && !t.show_me" @click="deleteTraveller(t)"><span class="mdi mdi-delete h4" data-toggle="tooltip"
+                                                                                             title="{% trans "Remove" %}"></span></button>
+                    <button v-if="canCherryPick(t) && !t.show_me" @click="cherryPickTraveller(t)"><span class="mdi mdi-check-circle text-success h4"
+                                                                                                        data-toggle="tooltip"
+                                                                                                        title="{% trans "Cherry Pick" %}"></span></button>
+
+                    <button v-if="!t.show_me" @click="toggleShowMe(t)" data-toggle="tooltip" title="{% trans "Expand" %}">
+                      <span class="mdi mdi-arrow-collapse-down h4"></span>
+                    </button>
+                    <button v-else @click="toggleShowMe(t)" data-toggle="tooltip" title="{% trans "Collapse" %}" class="ml-3">
+                      <span class="mdi mdi-arrow-collapse-up h4"></span>
+                    </button>
+                  </div>
+                  <h5 class="card-title" v-if="!t.show_me">
+                    ${index+1}. ${t.smart_name} <span v-if="t.role"> (${t.role_display})</span>
+                    <span v-if="t.is_research_scientist"> &mdash; {% trans "Research Scientist" %}</span>
+                    <span v-else-if="!t.is_public_servant"> &mdash; {% trans "EXTERNAL" %}</span>
+
+                  </h5>
+                  <div v-if="t.show_me" class="card-text">
+                    <h4 class="mb-3">
+                      ${t.smart_name}
+                      <span v-if="t.is_research_scientist"> &mdash; {% trans "Research Scientist" %}</span>
+                      <span v-else-if="!t.is_public_servant"> &mdash; {% trans "EXTERNAL" %}</span>
+                    </h4>
+                    <hr>
+                    {% include "travel/common/_traveller_detail.html" %}
+
+                    <div v-if="trip">
+                      <hr>
+                      <h4 class="mb-3">{% trans "Request Information:" %}</h4>
+                      {% include "travel/common/_traveller_request_detail.html" %}
+                    </div>
+
+                    <div class="mt-5">
+                      <div class="float-right">
+                        <button v-if="t.show_me" @click="toggleShowMe(t)" data-toggle="tooltip" title="{% trans "Collapse" %}" class="ml-3">
+                          <span class="mdi mdi-arrow-collapse-up h4"></span>
+                        </button>
+                      </div>
+                      <a v-if="trip || isReview" class="btn btn-sm btn-primary" :href="`/travel-plans/requests/${t.request_obj.id}/view/`" target="_blank">
+                        {% trans "Open Request in Separate Window" %}
+                      </a>
+                      <button v-if="!isReview && canModify && !trip" @click="editTraveller(t)" class="btn btn-sm btn-warning">{% trans "Edit" %}</button>
+                      <button v-if="!isReview && canModify && !trip" @click="addTraveller(t)" class="btn btn-sm btn-dark">{% trans "Clone" %}</button>
+                      <button v-if="canModify" @click="deleteTraveller(t)" class="btn btn-sm btn-danger">{% trans "Remove" %}</button>
+                      <button v-if="canCherryPick(t)" @click="cherryPickTraveller(t)" class="btn btn-sm btn-success">{% trans "Cherry Pick Approval" %}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="float-right btn-group" v-if="!travellerToEdit">
+              {% include "travel/common/_expand_collapse_buttons.html" %}
+            </div>
+          </div>
+
+          <div v-else>
+            <form @submit.prevent="updateTraveller">
+              <div v-if="cloningTraveller" class="alert alert-info" role="alert">
+                <h4>{% trans "CLONING: " %} ${travellerToEdit.old_name}</h4>
+                <p class="h5">
+                  {% trans "Please enter the new traveller information below." %}
+                </p>
+              </div>
+
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.user}
+                  <span v-if="helpText.user" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.user"
+                        :data-content="helpText.user"></span>
+                </label>
+                <v-select
+                  style="width: 100%"
+                  v-model="travellerToEdit.user"
+                  :options="dmAppsUsers"
+                  label='full_name'
+                  :reduce="full_name => full_name.id"
+                  :clearable="false"
+                  placeholder="{% trans "Start typing to search for a user" %}"
+                >
+                </v-select>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.is_public_servant}
+                  <span v-if="helpText.is_public_servant" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.is_public_servant"
+                        :data-content="helpText.is_public_servant"></span>
+                </label>
+                <select v-model="travellerToEdit.is_public_servant" class="form-control form-control-sm" required ref="traveller_form_starting_point">
+                  <option v-for="(obj, index) in yesNoChoices" :value="obj.value">${obj.text}</option>
+                </select>
+              </div>
+              <div class="form-group" v-if="travellerToEdit.is_public_servant">
+                <label for="">
+                  ${travellerLabels.is_research_scientist}
+                  <span v-if="helpText.is_research_scientist" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.is_research_scientist"
+                        :data-content="helpText.is_research_scientist"></span>
+                </label>
+                <select v-model="travellerToEdit.is_research_scientist" class="form-control form-control-sm" required>
+                  <option v-for="(obj, index) in yesNoChoices" :value="obj.value">${obj.text}</option>
+                </select>
+              </div>
+              <div class="form-group" v-if="!travellerToEdit.user">
+                <label for="">
+                  ${travellerLabels.first_name}
+                  <span v-if="helpText.first_name" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.first_name"
+                        :data-content="helpText.first_name"></span>
+                </label>
+                <input type="text" v-model="travellerToEdit.first_name" class="form-control form-control-sm" required>
+              </div>
+              <div class="form-group" v-if="!travellerToEdit.user">
+                <label for="">
+                  ${travellerLabels.last_name}
+                  <span v-if="helpText.last_name" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.last_name"
+                        :data-content="helpText.last_name"></span>
+                </label>
+                <input type="text" v-model="travellerToEdit.last_name" class="form-control form-control-sm" required>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.address}
+                  <span v-if="helpText.address" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.address"
+                        :data-content="helpText.address"></span>
+                </label>
+
+                <input type="text" v-model="travellerToEdit.address" class="form-control form-control-sm"
+                       placeholder="{% trans "Please enter address" %}" list="orgList">
+                <datalist id="orgList">
+                  <option v-for="(obj, index) in orgChoices" :value="obj.value"></option>
+                </datalist>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.phone}
+                  <span v-if="helpText.phone" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.phone"
+                        :data-content="helpText.phone"></span>
+                </label>
+                <input type="tel" v-model="travellerToEdit.phone" class="form-control form-control-sm" placeholder="xxx-xxx-xxxx"
+                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+              </div>
+              <div class="form-group" v-if="!travellerToEdit.user">
+                <label for="">
+                  ${travellerLabels.email}
+                  <span v-if="helpText.email" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.email"
+                        :data-content="helpText.email"></span>
+                </label>
+                <input type="text" v-model="travellerToEdit.email" class="form-control form-control-sm" required>
+              </div>
+              <div class="form-group" v-if="!travellerToEdit.is_public_servant">
+                <label for="">
+                  ${travellerLabels.company_name}
+                  <span v-if="helpText.company_name" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.company_name"
+                        :data-content="helpText.company_name"></span>
+                </label>
+                <input type="text" v-model="travellerToEdit.company_name" class="form-control form-control-sm" required>
+              </div>
+              <div class="form-group" v-if="request.id && !request.trip.is_virtual">
+                <label for="">
+                  ${travellerLabels.departure_location}
+                  <span v-if="helpText.departure_location" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.departure_location"
+                        :data-content="helpText.departure_location"></span>
+                </label>
+                <input type="text" v-model="travellerToEdit.departure_location" class="form-control form-control-sm" required>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.start_date}
+                  <span v-if="helpText.start_date" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.start_date"
+                        :data-content="helpText.start_date"></span>
+                </label>
+                <input type="date" v-model="travellerToEdit.start_date" class="form-control form-control-sm" required>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.end_date}
+                  <span v-if="helpText.end_date" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.end_date"
+                        :data-content="helpText.end_date"></span>
+                </label>
+                <input type="date" v-model="travellerToEdit.end_date" class="form-control form-control-sm" required>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.role}
+                  <span v-if="helpText.role" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.role"
+                        :data-content="helpText.role"></span>
+                </label>
+                <select v-model="travellerToEdit.role" class="form-control form-control-sm">
+                  <option v-for="(obj, index) in travellerRoleChoices" :value="obj.value">${obj.text}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.role_of_participant}
+                  <span v-if="helpText.role_of_participant" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.role_of_participant"
+                        :data-content="helpText.role_of_participant"></span>
+                </label>
+                <textarea v-model="travellerToEdit.role_of_participant" class="form-control form-control-sm"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.learning_plan}
+                  <span v-if="helpText.learning_plan" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.learning_plan"
+                        :data-content="helpText.learning_plan"></span>
+                </label>
+                <select v-model="travellerToEdit.learning_plan" class="form-control form-control-sm" required>
+                  <option v-for="(obj, index) in yesNoChoices" :value="obj.value">${obj.text}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.non_dfo_costs}
+                  <span v-if="helpText.non_dfo_costs" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.non_dfo_costs"
+                        :data-content="helpText.non_dfo_costs"></span>
+                </label>
+                <input type="number" step=".01" v-model="travellerToEdit.non_dfo_costs" class="form-control form-control-sm">
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.non_dfo_org}
+                  <span v-if="helpText.non_dfo_org" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.non_dfo_org"
+                        :data-content="helpText.non_dfo_org"></span>
+                </label>
+                <input type="text" v-model="travellerToEdit.non_dfo_org" class="form-control form-control-sm">
+              </div>
+              <div class="form-group">
+                <label for="">
+                  ${travellerLabels.notes}
+                  <span v-if="helpText.notes" @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+                        data-trigger="hover" :title="travellerLabels.notes"
+                        :data-content="helpText.notes"></span>
+                </label>
+                <textarea v-model="travellerToEdit.notes" class="form-control form-control-sm"></textarea>
+              </div>
+
+              <div class="float-right">
+                <button type="submit" class="btn btn-sm btn-success text-light">{% trans "Save" %}</button>
+                <button type="button" @click="cancelTravellerEdit" class="btn btn-sm btn-secondary text-light">{% trans "Cancel" %}</button>
+              </div>
+              <div v-if="errorMsgTraveller" class="alert alert-danger py-1 mt-3" role="alert" style="width: 80%">
+                <p class="mb-0">
+                  <span class="h5 mdi mdi-alert-decagram-outline mr-3"></span>
+                  <span class="h6">${errorMsgTraveller}</span>
+                </p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <div v-else>
+          <em v-if="trip">{% trans "There are no travellers associated with this trip" %}</em>
+          <div v-else>
+            <span class="mdi mdi-account-multiple h1 mr-3"></span>
+            <em
+              class="lead draw-attention py-1 px-1">{% trans "There are no travellers associated with this request" %}</em>
+            <div class="text-center mt-3" v-if="!isReview && canModify && !travellerToEdit">
+              <button @click="addTraveller" data-toggle="tooltip" title="{% trans "Add traveller" %}"
+                      class="btn btn-lg btn-warning">
+                {% trans "Click here to add your first traveller!" %}
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

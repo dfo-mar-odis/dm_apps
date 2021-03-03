@@ -34,7 +34,7 @@ from inventory.test.common_tests import CommonInventoryTest
 #     def test_trip_request_model(self):
 #         # a reviewer associated with a trip request can be accessed by the reverse name called `reviewers`
 #         reviewer = TravelFactoryFloor.ReviewerFactory()
-#         tr = reviewer.trip_request
+#         tr = reviewer.request
 #         self.assertIn(reviewer, tr.reviewers.all())
 #
 #         # a file associated with a trip request can be accessed by the reverse name called `files`
@@ -82,7 +82,7 @@ from inventory.test.common_tests import CommonInventoryTest
 #         # if you save a reviewer while a request is in NON DRAFT (!=8) and the reviewer is in draft status (=4), there is a problem. the status should
 #         # be queued (=20)
 #         reviewer = TravelFactoryFloor.ReviewerFactory()
-#         tr = reviewer.trip_request
+#         tr = reviewer.request
 #
 #         reviewer.status_id = 4 # draft
 #         reviewer.save()

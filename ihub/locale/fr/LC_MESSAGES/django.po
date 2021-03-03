@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: iHub - traduction 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 13:05-0400\n"
+"POT-Creation-Date: 2021-03-02 14:57-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,6 +64,18 @@ msgstr "Instructions de consultation (PDF)"
 #: .\ihub\forms.py:90
 msgid "Consultation Instructions - Mail Merge (xlsx)"
 msgstr "Instructions de consultations (Liste de courriels)"
+
+#: .\ihub\forms.py:109 .\ihub\models.py:192
+msgid "Internal"
+msgstr "Note interne"
+
+#: .\ihub\forms.py:110
+msgid "Internal (** for internal reports only)"
+msgstr ""
+
+#: .\ihub\forms.py:111 .\ihub\models.py:191
+msgid "Follow-up (*)"
+msgstr "Suivi (*)"
 
 #: .\ihub\forms.py:197
 msgid "DFO employee"
@@ -217,14 +229,6 @@ msgstr "Prochaine étape"
 #: .\ihub\models.py:190
 msgid "Comment"
 msgstr "Commentaire"
-
-#: .\ihub\models.py:191
-msgid "Follow-up (*)"
-msgstr "Suivi (*)"
-
-#: .\ihub\models.py:192
-msgid "Internal"
-msgstr "Note interne"
 
 #: .\ihub\models.py:199
 msgid "author"

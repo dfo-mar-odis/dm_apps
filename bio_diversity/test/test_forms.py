@@ -1,13 +1,17 @@
 from datetime import timedelta
 
+import pytz
+from django.utils.timezone import make_aware
+
 from django.forms import model_to_dict
 from django.test import tag
-
+from datetime import datetime
 from bio_diversity import forms
 from bio_diversity.test import BioFactoryFloor
 # from ..test.common_tests import CommonProjectTest as CommonTest
 from shared_models.test.common_tests import CommonTest
 from bio_diversity.models import PersonnelCode, Pairing, Program, Individual
+from django.utils import timezone
 
 
 @tag("Anix", 'forms')
@@ -130,19 +134,27 @@ class TestEnvForm(CommonTest):
     def test_invalid_val(self):
         # cannot use values outside of envc min-max range
         invalid_data = self.data
-        test_envc = BioFactoryFloor.EnvcFactory(max_val=(invalid_data['env_val'] - 1))
+        test_envc = BioFactoryFloor.EnvcFactory()
+        test_envc.max_val = invalid_data['env_val'] - 1
+        test_envc.save()
         invalid_data['envc_id'] = test_envc.pk
         self.assert_form_invalid(self.Form, data=invalid_data)
 
         invalid_data = self.data
-        test_envc = BioFactoryFloor.EnvcFactory(min_val=(invalid_data['env_val'] + 1))
+        test_envc = BioFactoryFloor.EnvcFactory()
+        test_envc.min_val = invalid_data['env_val'] + 1
+        test_envc.save()
         invalid_data['envc_id'] = test_envc.pk
         self.assert_form_invalid(self.Form, data=invalid_data)
 
     def test_null_unique(self):
-        instance = BioFactoryFloor.EnvFactory(contx_id=None)
+        instance = BioFactoryFloor.EnvFactory()
+        instance.contx_id = None
+        instance.start_datetime = datetime.strptime(instance.start_datetime.strftime("%Y%m%d%H%M"), "%Y%m%d%H%M").replace(tzinfo=pytz.UTC)
+        instance.save()
         invalid_data = model_to_dict(instance)
         invalid_data["start_date"] = invalid_data["start_datetime"].date()
+        invalid_data["start_time"] = invalid_data["start_datetime"].time().strftime("%H:%M")
         del invalid_data["id"]
         self.assert_form_invalid(self.Form, data=invalid_data)
         invalid_data["contx_id"] = 1
@@ -521,29 +533,6 @@ class TestSireForm(CommonTest):
         non_valid_indv = BioFactoryFloor.IndvFactory(pit_tag=None)
         invalid_data['indv_id'] = non_valid_indv.pk
         self.assert_form_invalid(self.Form, data=invalid_data)
-
-
-@tag("Spwn", 'forms')
-class TestSpwnForm(CommonTest):
-
-    def setUp(self):
-        super().setUp()  # used to import fixtures
-        self.data = BioFactoryFloor.SpwnFactory.build_valid_data()
-        self.Form = forms.SpwnForm
-
-    def test_valid_data(self):
-        # get valid data
-        self.assert_form_valid(self.Form, data=self.data)
-
-    def test_invalid_pair(self):
-        # cannot use invalid pair code
-        invalid_data = self.data
-        non_valid_pair = BioFactoryFloor.PairFactory(valid=False)
-        invalid_data['pair_id'] = non_valid_pair.pk
-        try:
-            self.assert_form_invalid(self.Form, data=invalid_data)
-        except Pairing.DoesNotExist:
-            pass
 
 
 @tag("Spwnd", 'forms')

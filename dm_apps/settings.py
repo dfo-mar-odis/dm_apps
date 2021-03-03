@@ -42,7 +42,7 @@ LOGGING_LEVEL = config("LOGGING_LEVEL", cast=str, default="WARNING")
 # What is the path to the log file?
 LOG_FILE_PATH = config("LOG_FILE_PATH", cast=str, default=os.path.join(LOGS_DIR, 'error.log'))
 # the default 'from' email address used for system emails
-SITE_FROM_EMAIL = config("SITE_FROM_EMAIL", cast=str, default="DoNotReply.DMApps@Azure.Cloud.dfo-mpo.gc.ca")
+SITE_FROM_EMAIL = config("SITE_FROM_EMAIL", cast=str, default="DoNotReply-nepasrepondre.DMApps@dfo-mpo.gc.ca")
 # google maps API key
 GOOGLE_API_KEY = config("GOOGLE_API_KEY", cast=str, default="")
 # github api key
@@ -78,27 +78,31 @@ else:
     # there is not a complete set of connection values in the env
     AZURE_AD = False
 
-#
+
 # Email settings
 SENDGRID_API_KEY = config('SENDGRID_API_KEY', cast=str, default="")
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', cast=str, default="")
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', cast=str, default="")
 EMAIL_HOST = config('EMAIL_HOST', cast=str, default="")
 EMAIL_HOST_USER = config('EMAIL_HOST_USER', cast=str, default="")
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', cast=str, default="")
 EMAIL_PORT = config('EMAIL_PORT', cast=str, default="")
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=str, default="")
 
+USE_SENDGRID = False
+USE_AWS_SES = False
 # first check to see if a sendgrid api key is available
-if SENDGRID_API_KEY == "":
-    USE_SENDGRID = False
+if SENDGRID_API_KEY != "":
+    USE_SENDGRID = True
+elif AWS_ACCESS_KEY_ID != "":
+    USE_AWS_SES = True
+else:
     # if there is nothing there, let's check for SMTP EMAIL configuration
     if EMAIL_HOST == "":
         print("No email service credentials found in system config.")
         USE_SMTP_EMAIL = False
     else:
         USE_SMTP_EMAIL = True
-else:
-    USE_SENDGRID = True
-
 #
 # Allowed Hosts
 # the user can provide a one-off host to allow (i.e., if they do not wish to add it to the settings file)
@@ -141,6 +145,7 @@ INSTALLED_APPS = [
                      'django.contrib.staticfiles',
                      'django.contrib.gis',
                      'rest_framework',
+                     'django_filters',
                      'storages',
                      'django.contrib.humanize',
                      'bootstrap4',
@@ -321,7 +326,20 @@ if USE_AZURE_APPLICATION_INSIGHT and AZURE_INSTRUMENTATION_KEY != "":
     }
 elif not DEBUG:
     if not os.path.exists(LOG_FILE_PATH):
-        print(f"Cannot use file logs since the log filepath provided does not exist: {LOG_FILE_PATH}")
+        print(f"All logs at the {LOGGING_LEVEL} level and above will be outputted to console via StreamHandler.")
+        LOGGING = {
+            'version': 1,
+            'disable_existing_loggers': False,
+            'handlers': {
+                'console': {
+                    'class': 'logging.StreamHandler',
+                },
+            },
+            'root': {
+                'handlers': ['console'],
+                'level': LOGGING_LEVEL,
+            },
+        }
     else:
         print(f"All logs at the {LOGGING_LEVEL} level and above will be saved to the following location: {LOG_FILE_PATH}")
         LOGGING = {

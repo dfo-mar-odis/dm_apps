@@ -1,12 +1,15 @@
+import csv
 from abc import ABC
 
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.core.exceptions import ImproperlyConfigured
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy, reverse
+from django.utils import timezone
 from django.utils.translation import gettext_lazy, gettext
 from django.views import View
 from django.views.generic import UpdateView, CreateView, TemplateView, DeleteView, ListView, FormView
@@ -1080,16 +1083,79 @@ class ScriptDeleteView(SuperuserRequiredMixin, CommonDeleteView):
             "pk": self.get_object().id})}
 
 
+@login_required()
 def run_script(request, pk):
-    script = models.Script.objects.get(pk=pk)
-    try:
-        mod = script.script.split(".")
-        scr = mod.pop()
-        mod = ".".join(mod)
-        i = __import__(mod, fromlist=[''])
-        getattr(i, scr)()
-        messages.success(request, f"The '{script}' script has been run successfully.")
+    if request.user.is_superuser:
+        script = models.Script.objects.get(pk=pk)
+        try:
+            mod = script.script.split(".")
+            scr = mod.pop()
+            mod = ".".join(mod)
+            i = __import__(mod, fromlist=[''])
+            getattr(i, scr)()
+            messages.success(request, f"The '{script}' script has been run successfully.")
 
-    except Exception as e:
-        messages.error(request, e)
-    return HttpResponseRedirect(reverse("shared_models:script_list"))
+        except Exception as e:
+            messages.error(request, e)
+        return HttpResponseRedirect(reverse("shared_models:script_list"))
+
+
+@login_required()
+def export_org_report(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response.write(u'\ufeff'.encode('utf8'))  # BOM (optional...Excel needs it to open UTF-8 file properly)
+    writer = csv.writer(response)
+
+    fields = [
+        'region uuid',
+        'region name',
+        'region nom',
+        'region head email',
+        'region admin email',
+        'branch uuid',
+        'branch name',
+        'branch nom',
+        'branch head email',
+        'branch admin email',
+        'division uuid',
+        'division name',
+        'division nom',
+        'division head email',
+        'division admin email',
+        'section uuid',
+        'section name',
+        'section nom',
+        'section head email',
+        'section admin email',
+    ]
+    writer.writerow(fields)
+
+    for obj in models.Section.objects.all():
+        data_row = [
+            obj.division.branch.region.uuid,
+            obj.division.branch.region.name,
+            obj.division.branch.region.nom,
+            obj.division.branch.region.head.email if obj.division.branch.region.head else None,
+            obj.division.branch.region.admin.email if obj.division.branch.region.admin else None,
+            obj.division.branch.uuid,
+            obj.division.branch.name,
+            obj.division.branch.nom,
+            obj.division.branch.head.email if obj.division.branch.head else None,
+            obj.division.branch.admin.email if obj.division.branch.admin else None,
+            obj.division.uuid,
+            obj.division.name,
+            obj.division.nom,
+            obj.division.head.email if obj.division.head else None,
+            obj.division.admin.email if obj.division.admin else None,
+            obj.uuid,
+            obj.name,
+            obj.nom,
+            obj.head.email if obj.head else None,
+            obj.admin.email if obj.admin else None,
+        ]
+        writer.writerow(data_row)
+
+    # Create the HttpResponse object with the appropriate CSV header.
+    response['Content-Disposition'] = f'attachment; filename="org list ({timezone.now().strftime("%Y_%m_%d")}).csv"'
+    return response

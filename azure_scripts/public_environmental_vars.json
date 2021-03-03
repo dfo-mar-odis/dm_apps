@@ -9,6 +9,7 @@
     "test": "https://dmapps-test-docker.azurewebsites.net/accounts/callback",
     "prod": "https://sci-zone.dfo-mpo.gc.ca/accounts/callback"
   },
+  "AZURE_ACR": "dmappsdevtestacr",
   "AZURE_INSTRUMENTATION_KEY": {
     "dev": "729045e9-9337-4f7b-a6b9-6910e3abfde6",
     "test": "729045e9-9337-4f7b-a6b9-6910e3abfde6",
@@ -18,6 +19,16 @@
     "dev": "b9b8533b-430c-4b7a-95b7-0c8d43179f68",
     "test": "b9b8533b-430c-4b7a-95b7-0c8d43179f68",
     "prod": "369c4d1e-a0d1-4257-ac4c-ed887662808a"
+  },
+  "AZURE_RESOURCE_GROUP": {
+    "dev": "DMAPPS-DEV-RG",
+    "test": "DMAPPS-DEV-RG",
+    "prod": "DMAPPS-PROD-RG"
+  },
+  "AZURE_SERVICE_CONNECTION": {
+    "dev": "msi.dmapps-dev",
+    "test": "msi.dmapps-dev",
+    "prod": "msi.dmapps"
   },
   "AZURE_STORAGE_ACCOUNT_NAME": {
     "dev": "dmappsdev",
@@ -29,15 +40,10 @@
     "test": "IMTS DEV/TEST",
     "prod": "IMTS PROD UNCLASS"
   },
-  "AZURE_RESOURCE_GROUP": {
-    "dev": "DMAPPS-DEV-RG",
-    "test": "DMAPPS-DEV-RG",
-    "prod": "DMAPPS-PROD-RG"
-  },
-  "AZURE_SERVICE_CONNECTION": {
-    "dev": "msi.dmapps-dev",
-    "test": "msi.dmapps-dev",
-    "prod": "msi.dmapps"
+  "AZURE_WEBHOOK_NAME": {
+    "dev": "webappdmappsdevdocker",
+    "test": "latest",
+    "prod": "prod"
   },
   "DB_HOST": {
     "dev": "dmapps-dev-mysql.mysql.database.azure.com",
@@ -70,18 +76,19 @@
     "test": "TEST",
     "prod": "PROD"
   },
-  "AZURE_ACR": "dmappsdevtestacr",
-  "DOCKER_REPOSITORY": "dmapps_img",
   "DOCKER_IMAGE_TAG": {
     "dev": "latest",
     "test": "latest",
     "prod": "prod"
   },
-  "AZURE_WEBHOOK_NAME": {
-    "dev": "webappdmappsdevdocker",
-    "test": "latest",
-    "prod": "prod"
+  "DOCKER_REPOSITORY": "dmapps_img",
+  "EMAIL_HOST": {
+    "dev": "",
+    "test": "",
+    "prod": "email-smtp.ca-central-1.amazonaws.com"
   },
+  "EMAIL_PORT": 587,
+  "EMAIL_USE_TLS": "True",
   "SHOW_TICKETING_APP": {
     "dev": "True",
     "test": "False",

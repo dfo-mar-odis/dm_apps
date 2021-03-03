@@ -1,0 +1,76 @@
+{% load static %}
+{% load i18n %}
+{% load custom_filters %}
+{% load travel_filters %}
+{% load travel_tags %}
+{% load verbose_names %}
+
+<div class="card mb-4" v-if="isReview">
+  <h3 class="card-header bg-outline-dark">
+    <span>{% trans "Other Travellers from ${request.region} Region" %}</span>
+    <span @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+          data-trigger="hover" title="{% trans "Travellers" %}"
+          :data-content="helpText.other_travellers_header"></span>
+  </h3>
+  <div class="card-body">
+    <div class="card-text">
+      <div v-if="loading" class="loading mb-3 mt-3 text-center mt-5">
+        <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div v-else>
+        <div v-if="request.travellers_from_other_requests.length">
+          <div v-for="(t,index) in request.travellers_from_other_requests" class="mx-1" :key="t.id">
+              <div :class="{'card traveller-card mx-1':true, 'other-traveller':!t.show_me}">
+                <div class="card-body">
+                  <div class="float-right">
+                    <span v-if='!t.show_me' :class="t.request_obj.status_class + ' px-1 py-1 mr-3 h6'">${t.request_obj.status_display}</span>
+                    <button v-if="canModify && !t.show_me" @click="deleteTraveller(t)"><span class="mdi mdi-delete h4" data-toggle="tooltip"
+                                                                                             title="{% trans "Remove" %}"></span></button>
+                    <button @click="toggleShowMe(t)"
+                            data-toggle="tooltip" title="{% trans "collapse" %}">
+                      <span v-if="t.show_me" class="mdi mdi-arrow-collapse-up h4"></span>
+                      <span v-else class="mdi mdi-arrow-collapse-down h4"></span>
+                    </button>
+                  </div>
+                  <h5 class="card-title" v-if="!t.show_me">
+                    ${index+1}. ${t.smart_name} <span v-if="t.role"> (${t.role_display})</span>
+                    <span v-if="t.is_research_scientist"> &mdash; {% trans "Research Scientist" %}</span>
+                    <span v-else-if="!t.is_public_servant"> &mdash; {% trans "EXTERNAL" %}</span>
+                  </h5>
+                  <div v-if="t.show_me" class="card-text">
+                    <h4 class="mb-3">
+                      ${t.smart_name}
+                      <span v-if="t.is_research_scientist"> &mdash; {% trans "Research Scientist" %}</span>
+                      <span v-else-if="!t.is_public_servant"> &mdash; {% trans "EXTERNAL" %}</span>
+                    </h4>
+                    <hr>
+                    {% include "travel/common/_traveller_detail.html" %}
+
+                    <div>
+                      <hr>
+                      <h4 class="mb-3">{% trans "Request Information:" %}</h4>
+                      {% include "travel/common/_traveller_request_detail.html" %}
+                    </div>
+
+                    <a v-if="trip || isReview" class="btn btn-sm btn-primary" :href="`/travel-plans/requests/${t.request_obj.id}/view/`" target="_blank">
+                      {% trans "Open Request in Separate Window" %}
+                    </a>
+                    <div class="float-right">
+                      <button v-if="canModify" @click="deleteTraveller(t)" class="btn btn-sm btn-danger">{% trans "Remove" %}</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        </div>
+        <div v-else>
+          <em>{% trans "There are no other travellers from your region who are associated with this request" %}</em>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

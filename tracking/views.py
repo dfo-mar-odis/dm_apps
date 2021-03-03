@@ -69,8 +69,8 @@ def dashboard(request):
 
     # get the last 100 page visits
     page_visits = Pageview.objects.all().order_by("-view_time")
-    if len(page_visits) > 1001:
-        page_visits = page_visits[:1000]
+    if len(page_visits) > 101:
+        page_visits = page_visits[:100]
 
     context = {
         'form': form,
@@ -142,7 +142,7 @@ def app_history(request, app):
 
 def summarize_data(context, user=None, app=None):
     # start by chucking all the unsummarized data
-    utils.chunk_pageviews()
+    # utils.chunk_pageviews()
 
     # now build the context variable to pass in
     if not app:
@@ -205,9 +205,6 @@ def summarize_data(context, user=None, app=None):
             result = VisitSummary.objects.filter(user=my_user).values('user').order_by(
                 "user").distinct().annotate(dsum=Sum('page_visits'))
             if User.objects.filter(pk=my_user).exists():
-                user_dict[User.objects.get(pk=my_user)] = result[0]["dsum"]
-            else:
-                User.objects.create(pk=my_user, username="test" + str(timezone.now()))
                 user_dict[User.objects.get(pk=my_user)] = result[0]["dsum"]
 
         for key, value in sorted(user_dict.items(), key=lambda item: item[1], reverse=True):
@@ -277,7 +274,7 @@ def generate_page_visit_report(app_list, user=None, app=None):
         tools="pan,box_zoom,wheel_zoom,reset,save",
         x_axis_label='Date',
         y_axis_label='Pageviews',
-        plot_width=1000, plot_height=700,
+        plot_width=800, plot_height=500,
         x_axis_type="datetime",
         toolbar_location="above",
     )
@@ -344,19 +341,19 @@ def generate_page_visit_report(app_list, user=None, app=None):
         },
     ))
 
-    if calc_total:
-        total_count = []
-        for date in date_list:
-            # create a new file containing data
-            if not user:
-                result = VisitSummary.objects.filter(date=date).values('date').order_by("date").distinct().annotate(dsum=Sum('page_visits'))
-            else:
-                result = VisitSummary.objects.filter(date=date, user=user).values('date').order_by("date").distinct().annotate(
-                    dsum=Sum('page_visits'))
-            total_count.append(result[0]["dsum"])
-
-        p.line(date_list, total_count, legend_label="total", line_color='black', line_width=1, line_dash=[6, 3])
-        p.circle(date_list, total_count, legend_label="total", fill_color='black', line_color="black", size=1)
-        p.legend.location = "top_left"
+    # if calc_total:
+    #     total_count = []
+    #     for date in date_list:
+    #         # create a new file containing data
+    #         if not user:
+    #             result = VisitSummary.objects.filter(date=date).values('date').order_by("date").distinct().annotate(dsum=Sum('page_visits'))
+    #         else:
+    #             result = VisitSummary.objects.filter(date=date, user=user).values('date').order_by("date").distinct().annotate(
+    #                 dsum=Sum('page_visits'))
+    #         total_count.append(result[0]["dsum"])
+    #
+    #     p.line(date_list, total_count, legend_label="total", line_color='black', line_width=1, line_dash=[6, 3])
+    #     p.circle(date_list, total_count, legend_label="total", fill_color='black', line_color="black", size=1)
+    #     p.legend.location = "top_left"
 
     save(p)

@@ -1,0 +1,44 @@
+{% load verbose_names %}
+{% load i18n %}
+<style>
+table, th, td {
+    text-align: left;
+    border: 1px solid black;
+}
+</style>
+
+<em>
+  *** un message français suivra
+</em>
+<br><br>
+{% language 'fr' %}
+  <p>
+    {{ instance.first_name }},
+    <br><br>
+    This is an automated message to inform you that you have been removed from the following trip request over the course of its review:
+  <p>
+  <p>
+    <a href="{{ SITE_FULL_URL }}{% url 'travel:request_detail' instance.request.id %}">{{ instance.request }}</a>
+  </p>
+{% endlanguage %}
+
+<p>
+  ********************************************************************
+</p>
+
+{% language 'fr' %}
+  <p>
+    {{ instance.first_name }},
+    <br><br>
+    Ceci est un message automatisé pour vous informer que vous avez été retiré de la demande de voyage suivante au cours de son examen:
+  <p>
+  <p>
+    <a href="{{ SITE_FULL_URL }}{% url 'travel:request_detail' instance.request.id %}">{{ instance.request }}</a>
+  </p>
+{% endlanguage %}
+
+<style media="screen">
+table, td {
+    border: solid 1px black;
+}
+</style>

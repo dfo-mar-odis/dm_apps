@@ -77,7 +77,7 @@ class CupFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Cup
-        fields = ["name", "nom", "description_en", "description_fr", ]
+        fields = ["name", "nom", "facic_id", ]
 
 
 class CupdFilter(django_filters.FilterSet):
@@ -91,7 +91,7 @@ class DrawFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Drawer
-        fields = ["name", "nom", "description_en", "description_fr", ]
+        fields = ["name", "nom", "facic_id", ]
 
 
 class EnvFilter(django_filters.FilterSet):
@@ -189,7 +189,7 @@ class GrpFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Group
-        fields = ["spec_id", "stok_id", ]
+        fields = ["spec_id", "stok_id", "grp_year", ]
 
 
 class GrpdFilter(django_filters.FilterSet):
@@ -203,7 +203,7 @@ class HeatFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.HeathUnit
-        fields = ["name", "nom", "description_en", "description_fr", "manufacturer", "serial_number", "inservice_date",
+        fields = ["name", "nom", "facic_id", "manufacturer", "serial_number", "inservice_date",
                   ]
 
 
@@ -234,7 +234,7 @@ class IndvFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Individual
-        fields = ["ufid", "spec_id", "stok_id", ]
+        fields = ["ufid", "spec_id", "stok_id", "indv_year", ]
 
 
 class IndvdFilter(django_filters.FilterSet):
@@ -300,6 +300,13 @@ class LoccFilter(django_filters.FilterSet):
         fields = ["name", "nom", ]
 
 
+class MatpFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.MatingPlan
+        fields = ["evnt_id", ]
+
+
 class OrgaFilter(django_filters.FilterSet):
 
     class Meta:
@@ -348,7 +355,7 @@ class ProtFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Protocol
-        fields = ["prog_id", "protc_id", ]
+        fields = ["prog_id", "protc_id", "facic_id",]
 
 
 class ProtcFilter(django_filters.FilterSet):
@@ -421,18 +428,11 @@ class SireFilter(django_filters.FilterSet):
         fields = ["prio_id", "pair_id", ]
 
 
-class SpwnFilter(django_filters.FilterSet):
-
-    class Meta:
-        model = models.Spawning
-        fields = ["pair_id", "spwn_date", ]
-
-
 class SpwndFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.SpawnDet
-        fields = ["spwndc_id", "spwn_id", ]
+        fields = ["spwndc_id", "pair_id", ]
 
 
 class SpwndcFilter(django_filters.FilterSet):
@@ -475,7 +475,7 @@ class TankFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Tank
-        fields = ["name", "nom", ]
+        fields = ["name", "nom", "facic_id", ]
 
 
 class TankdFilter(django_filters.FilterSet):
@@ -496,7 +496,7 @@ class TrayFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Tray
-        fields = ["name", "nom", ]
+        fields = ["name", "nom", "facic_id",]
 
 
 class TraydFilter(django_filters.FilterSet):
@@ -517,7 +517,7 @@ class TrofFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Trough
-        fields = ["name", "nom", ]
+        fields = ["name", "nom", "facic_id",]
 
 
 class TrofdFilter(django_filters.FilterSet):

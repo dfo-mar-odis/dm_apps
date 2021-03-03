@@ -1,0 +1,98 @@
+{% load i18n %}
+{% load static %}
+{% load custom_tags %}
+{% load bootstrap4 %}
+<div class="">
+  <div v-if="!requests_loading" class="filters">
+    {# Regular filters #}
+
+    <div class="mb-5 ">
+      <div class="row table-bordered py-2">
+        {# Title, Travellers, Creator #}
+        <div class="col-4">
+          <div class="form-group">
+            <label for="filter_search">{% trans "Search (trip title, location, traveller name, creator name)" %}</label>
+            <input
+              v-model="filter_search"
+              @change="updateResults"
+              type="text" class="form-control form-control-sm" id="filter_search" placeholder="">
+          </div>
+        </div>
+
+        {# status #}
+        <div class="col">
+          <label class="filter" for="filter_status">{% trans "Status" %}</label>
+          <select
+            v-model="filter_status"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_status"
+          >
+            <option value selected>{% trans "all" %}</option>
+            {% for status in status_choices %}
+              <option value="{{ status.value }}">{{ status.label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        {# Fiscal Year #}
+        <div class="col">
+          <label class="filter" for="filter_fiscal_year">{% trans "Year" %}</label>
+          <select
+            v-model="filter_fiscal_year"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_fiscal_year"
+          >
+            <option value="">{% trans "all" %}</option>
+            <option v-for="(obj, index) in fiscalYears" :value="obj.id">${obj.full}</option>
+          </select>
+        </div>
+
+        {# Region #}
+        <div class="col">
+          <label class="filter" for="filter_region">{% trans "Region" %}</label>
+          <select
+            v-model="filter_region"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_region"
+          >
+            <option value="">{% trans "all" %}</option>
+            <option v-for="(obj, index) in regions" :value="obj.id">${obj.name}</option>
+          </select>
+        </div>
+
+        {# Division #}
+        <div class="col">
+          <label class="filter" for="filter_division">{% trans "Division" %}</label>
+          <select
+            v-model="filter_division"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_division"
+          >
+            <option value="">{% trans "all" %}</option>
+            <option v-for="(obj, index) in divisions" :value="obj.id">${obj.display}</option>
+          </select>
+        </div>
+
+        {# Section #}
+        <div class="col">
+          <label class="filter" for="filter_section">{% trans "Section" %}</label>
+          <select
+            v-model="filter_section"
+            @change="updateResults"
+            class="form-control form-control-sm" id="filter_section"
+          >
+            <option value="">{% trans "all" %}</option>
+            <option v-for="(obj, index) in sections" :value="obj.id">${obj.full_name}</option>
+          </select>
+        </div>
+        <div class="col-1">
+          <br>
+          <button @click="clearFilters" class="btn btn-sm btn-warning">{% trans "Clear filters" %}</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

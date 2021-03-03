@@ -4,7 +4,7 @@
 {% load custom_filters %}
 {% load i18n %}
 {% block header %}
-    {{ block.super }}
+  {{ block.super }}
 {% endblock %}
 
 {#    <form method="post" class="form">#}
@@ -13,33 +13,33 @@
 {#        {% for field in form %}#}
 
 {% block form_field %}
-    {% if field.name == "name" %}
-        <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading blink-me mb-3">
-                {% trans "Important:" %}
-            </h4>
-            <p>
-                {% trans "With exception of words like DFO and ICES, please do not use undefined acronyms in trip titles!!!" %}
-                <br>
-                <br>
-                <img src="{% static 'admin/img/icon-no.svg' %}" alt=""> "ICES ASC 2020"
-                <br>
-                <img src="{% static 'admin/img/icon-yes.svg' %}" alt=""> "ICES Annual Science Conference (ASC) 2020"
-            </p>
-        </div>
-    {% endif %}
+  {% if field.name == "name" %}
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading blink-me mb-3">
+        {% trans "Important:" %}
+      </h4>
+      <p>
+        {% trans "With exception of words like DFO and ICES, please do not use undefined acronyms in trip titles!!!" %}
+        <br>
+        <br>
+        <img src="{% static 'admin/img/icon-no.svg' %}" alt=""> "ICES ASC 2020"
+        <br>
+        <img src="{% static 'admin/img/icon-yes.svg' %}" alt=""> "ICES Annual Science Conference (ASC) 2020"
+      </p>
+    </div>
+  {% endif %}
 
-    {% if field.name in help_text_dict and "_date" not in field.name %}
-        {% bootstrap_label field.label %}
-        {% with help_text_dict|lookup:field.name as help_text %}
-            <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
-                 title="{{ field.label }}"
-                 data-content="{{ help_text }}">
-            {% bootstrap_field field placeholder="" show_label=False %}
-        {% endwith %}
-    {% else %}
-        {% bootstrap_field field placeholder="" %}
-    {% endif %}
+  {% if field.name in help_text_dict and "_date" not in field.name %}
+    {% bootstrap_label field.label %}
+    {% with help_text_dict|lookup:field.name as help_text %}
+      <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover" data-trigger="hover"
+           title="{{ field.label }}"
+           data-content="{{ help_text }}">
+      {% bootstrap_field field placeholder="" show_label=False %}
+    {% endwith %}
+  {% else %}
+    {% bootstrap_field field placeholder="" %}
+  {% endif %}
 {% endblock %}
 
 {##}
@@ -66,16 +66,15 @@
 
 {% block body_js %}
 
-    <script type="application/javascript">
+  <script type="application/javascript">
 
-        $("#id_start_date").change(function () {
-            var startDate = $(this).val();
-            if (startDate != null) {
-                $("#id_end_date").flatpickr().setDate(startDate);
-            }
-        });
+  $("#id_start_date").change(function () {
+    var startDate = $(this).val();
+    if (startDate != null) {
+      $("#id_end_date").flatpickr().setDate(startDate);
+    }
+  });
 
-
-    </script>
+  </script>
 
 {% endblock %}

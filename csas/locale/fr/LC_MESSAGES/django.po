@@ -1,40 +1,67 @@
+#: .\csas\models.py:485
 msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 13:05-0400\n"
+"POT-Creation-Date: 2021-03-02 14:57-0400\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
 "Language: en\n"
 
-#: .\csas\models.py:64 .\csas\templates\csas\csas_nav.html:34
-#: .\csas\views.py:240 .\csas\views.py:1307
+#: .\csas\mixins.py:9 .\csas\templates\csas\csas_nav.html:46
+#: .\csas\views.py:353
+#, fuzzy
+msgid "Advisory Process Type"
+msgstr "ordre de traitement"
+
+#: .\csas\mixins.py:17 .\csas\models.py:72
+#: .\csas\templates\csas\csas_nav.html:34 .\csas\views.py:333
 msgid "Honorific"
 msgstr "Honorifique"
 
-#: .\csas\models.py:65
+#: .\csas\mixins.py:25 .\csas\models.py:198
+#: .\csas\templates\csas\csas_nav.html:43
+msgid "Meeting Location Province"
+msgstr "Lieu de la réunion Province"
+
+#: .\csas\mixins.py:33 .\csas\models.py:189
+#: .\csas\templates\csas\csas_nav.html:40 .\csas\views.py:343
+msgid "Meeting Quarter"
+msgstr "Trimestre de réunion"
+
+#: .\csas\mixins.py:41 .\csas\models.py:201
+#: .\csas\templates\csas\csas_nav.html:49 .\csas\views.py:358
+msgid "Scope"
+msgstr "Champ d'application"
+
+#: .\csas\mixins.py:49 .\csas\models.py:187
+#: .\csas\templates\csas\csas_nav.html:37 .\csas\views.py:338
+msgid "Meeting Status"
+msgstr "Statut de la réunion"
+
+#: .\csas\models.py:73
 msgid "First Name"
 msgstr "Prénom"
 
-#: .\csas\models.py:66
+#: .\csas\models.py:75
 msgid "Last Name"
 msgstr "Nom de famille"
 
-#: .\csas\models.py:67 .\csas\models.py:252
+#: .\csas\models.py:76 .\csas\models.py:267
 msgid "Affiliation"
 msgstr "Affiliation"
 
-#: .\csas\models.py:69 .\csas\models.py:587
+#: .\csas\models.py:79 .\csas\models.py:605
 msgid "Region"
 msgstr "Région"
 
-#: .\csas\models.py:70
+#: .\csas\models.py:80
 msgid "Sector"
 msgstr "Secteur"
 
-#: .\csas\models.py:72
+#: .\csas\models.py:82
 msgid ""
 "Indicates permissions i.e. regional coordinator, regional science adviser, "
 "regional admin, director, etc."
@@ -43,781 +70,878 @@ msgstr ""
 "conseiller scientifique régional, l'administrateur régional, le directeur, "
 "etc."
 
-#: .\csas\models.py:74 .\csas\models.py:240 .\csas\models.py:251
+#: .\csas\models.py:84 .\csas\models.py:255 .\csas\models.py:266
 msgid "Role"
 msgstr "Rôle"
 
-#: .\csas\models.py:75
+#: .\csas\models.py:85
 msgid "Job Title"
 msgstr "Titre du poste"
 
-#: .\csas\models.py:76
+#: .\csas\models.py:87
 msgid "Language"
 msgstr "Langue"
 
-#: .\csas\models.py:77
+#: .\csas\models.py:89
 msgid "Contact Type"
 msgstr "Type de contact"
 
-#: .\csas\models.py:78 .\csas\models.py:227 .\csas\models.py:410
-#: .\csas\models.py:629 .\csas\templates\csas\csas_filter.html:163
-#: .\csas\templates\csas\csas_filter.html:167
-#: .\csas\templates\csas\csas_filter.html:231
-#: .\csas\templates\csas\csas_filter.html:233
-#: .\csas\templates\csas\csas_filter.html:245
-#: .\csas\templates\csas\csas_filter.html:250
-#: .\csas\templates\csas\csas_filter_arctic.html:168
-#: .\csas\templates\csas\csas_filter_arctic.html:172
-#: .\csas\templates\csas\csas_filter_arctic.html:233
-#: .\csas\templates\csas\csas_filter_arctic.html:243
-#: .\csas\templates\csas\csas_filter_arctic.html:248
-#: .\csas\templates\csas\csas_filter_gulf.html:168
-#: .\csas\templates\csas\csas_filter_gulf.html:172
-#: .\csas\templates\csas\csas_filter_gulf.html:233
-#: .\csas\templates\csas\csas_filter_gulf.html:243
-#: .\csas\templates\csas\csas_filter_gulf.html:248
-#: .\csas\templates\csas\csas_filter_maritimes.html:168
-#: .\csas\templates\csas\csas_filter_maritimes.html:172
-#: .\csas\templates\csas\csas_filter_maritimes.html:233
-#: .\csas\templates\csas\csas_filter_maritimes.html:243
-#: .\csas\templates\csas\csas_filter_maritimes.html:248
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:168
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:172
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:233
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:243
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:248
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:168
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:172
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:233
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:243
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:248
-#: .\csas\templates\csas\csas_filter_pacific.html:168
-#: .\csas\templates\csas\csas_filter_pacific.html:172
-#: .\csas\templates\csas\csas_filter_pacific.html:233
-#: .\csas\templates\csas\csas_filter_pacific.html:243
-#: .\csas\templates\csas\csas_filter_pacific.html:248
-#: .\csas\templates\csas\csas_filter_quebec.html:168
-#: .\csas\templates\csas\csas_filter_quebec.html:172
-#: .\csas\templates\csas\csas_filter_quebec.html:233
-#: .\csas\templates\csas\csas_filter_quebec.html:243
-#: .\csas\templates\csas\csas_filter_quebec.html:248
+#: .\csas\models.py:91 .\csas\models.py:242 .\csas\models.py:425
+#: .\csas\models.py:681 .\csas\templates\csas\csas_filter.html:172
+#: .\csas\templates\csas\csas_filter.html:176
+#: .\csas\templates\csas\csas_filter.html:249
+#: .\csas\templates\csas\csas_filter.html:251
+#: .\csas\templates\csas\csas_filter.html:271
+#: .\csas\templates\csas\csas_filter.html:273
+#: .\csas\templates\csas\csas_filter.html:281
+#: .\csas\templates\csas\csas_filter.html:283
+#: .\csas\templates\csas\csas_filter_arctic.html:177
+#: .\csas\templates\csas\csas_filter_arctic.html:181
+#: .\csas\templates\csas\csas_filter_arctic.html:254
+#: .\csas\templates\csas\csas_filter_arctic.html:256
+#: .\csas\templates\csas\csas_filter_arctic.html:276
+#: .\csas\templates\csas\csas_filter_arctic.html:278
+#: .\csas\templates\csas\csas_filter_arctic.html:286
+#: .\csas\templates\csas\csas_filter_arctic.html:288
+#: .\csas\templates\csas\csas_filter_gulf.html:177
+#: .\csas\templates\csas\csas_filter_gulf.html:181
+#: .\csas\templates\csas\csas_filter_gulf.html:254
+#: .\csas\templates\csas\csas_filter_gulf.html:256
+#: .\csas\templates\csas\csas_filter_gulf.html:276
+#: .\csas\templates\csas\csas_filter_gulf.html:278
+#: .\csas\templates\csas\csas_filter_gulf.html:286
+#: .\csas\templates\csas\csas_filter_gulf.html:288
+#: .\csas\templates\csas\csas_filter_maritimes.html:177
+#: .\csas\templates\csas\csas_filter_maritimes.html:181
+#: .\csas\templates\csas\csas_filter_maritimes.html:254
+#: .\csas\templates\csas\csas_filter_maritimes.html:256
+#: .\csas\templates\csas\csas_filter_maritimes.html:276
+#: .\csas\templates\csas\csas_filter_maritimes.html:278
+#: .\csas\templates\csas\csas_filter_maritimes.html:286
+#: .\csas\templates\csas\csas_filter_maritimes.html:288
+#: .\csas\templates\csas\csas_filter_national.html:177
+#: .\csas\templates\csas\csas_filter_national.html:181
+#: .\csas\templates\csas\csas_filter_national.html:254
+#: .\csas\templates\csas\csas_filter_national.html:256
+#: .\csas\templates\csas\csas_filter_national.html:276
+#: .\csas\templates\csas\csas_filter_national.html:278
+#: .\csas\templates\csas\csas_filter_national.html:286
+#: .\csas\templates\csas\csas_filter_national.html:288
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:177
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:181
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:254
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:256
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:276
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:278
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:286
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:288
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:177
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:181
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:254
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:256
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:276
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:278
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:286
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:288
+#: .\csas\templates\csas\csas_filter_pacific.html:177
+#: .\csas\templates\csas\csas_filter_pacific.html:181
+#: .\csas\templates\csas\csas_filter_pacific.html:254
+#: .\csas\templates\csas\csas_filter_pacific.html:256
+#: .\csas\templates\csas\csas_filter_pacific.html:276
+#: .\csas\templates\csas\csas_filter_pacific.html:278
+#: .\csas\templates\csas\csas_filter_pacific.html:286
+#: .\csas\templates\csas\csas_filter_pacific.html:288
+#: .\csas\templates\csas\csas_filter_quebec.html:177
+#: .\csas\templates\csas\csas_filter_quebec.html:181
+#: .\csas\templates\csas\csas_filter_quebec.html:254
+#: .\csas\templates\csas\csas_filter_quebec.html:256
+#: .\csas\templates\csas\csas_filter_quebec.html:276
+#: .\csas\templates\csas\csas_filter_quebec.html:278
+#: .\csas\templates\csas\csas_filter_quebec.html:286
+#: .\csas\templates\csas\csas_filter_quebec.html:288
 msgid "Status"
 msgstr "Statut"
 
-#: .\csas\models.py:80
+#: .\csas\models.py:93
 msgid "Communication Preference"
 msgstr "Préférence de communication"
 
-#: .\csas\models.py:81
+#: .\csas\models.py:96
 msgid "Phone"
 msgstr "Téléphone"
 
-#: .\csas\models.py:82
+#: .\csas\models.py:97
 msgid "E-mail"
 msgstr "Courriel"
 
-#: .\csas\models.py:85
+#: .\csas\models.py:100
 msgid "Expertise"
 msgstr "Expertise"
 
-#: .\csas\models.py:86
+#: .\csas\models.py:101
 msgid "Chair Course Graduate"
 msgstr ""
 
-#: .\csas\models.py:87 .\csas\models.py:442
+#: .\csas\models.py:102 .\csas\models.py:457
 msgid "Notes"
 msgstr "Remarques"
 
-#: .\csas\models.py:170
+#: .\csas\models.py:185
 msgid "Meeting Title (English)"
 msgstr "Titre de la réunion (anglais)"
 
-#: .\csas\models.py:171
+#: .\csas\models.py:186
 msgid "Meeting Title (French)"
 msgstr "Titre de la réunion (français)"
 
-#: .\csas\models.py:172 .\csas\templates\csas\csas_nav.html:37
-#: .\csas\views.py:245 .\csas\views.py:1327
-msgid "Meeting Status"
-msgstr "Statut de la réunion"
-
-#: .\csas\models.py:173
+#: .\csas\models.py:188
 #, fuzzy
 msgid "Status Notes"
 msgstr "Rapports d'état"
 
-#: .\csas\models.py:174 .\csas\templates\csas\csas_nav.html:40
-#: .\csas\views.py:250 .\csas\views.py:1347
-msgid "Meeting Quarter"
-msgstr "Trimestre de réunion"
-
-#: .\csas\models.py:175
+#: .\csas\models.py:190
 msgid "Meeting Month"
 msgstr "Mois de la réunion"
 
-#: .\csas\models.py:176
+#: .\csas\models.py:191
 msgid "Start Date"
 msgstr "Date de début"
 
-#: .\csas\models.py:177 .\csas\models.py:179 .\csas\models.py:228
-#: .\csas\models.py:230 .\csas\models.py:409 .\csas\models.py:413
-#: .\csas\models.py:417 .\csas\models.py:421 .\csas\models.py:425
-#: .\csas\models.py:429 .\csas\models.py:431 .\csas\models.py:433
-#: .\csas\models.py:437 .\csas\models.py:439 .\csas\models.py:441
-#: .\csas\models.py:452 .\csas\models.py:460
+#: .\csas\models.py:192 .\csas\models.py:194 .\csas\models.py:243
+#: .\csas\models.py:245 .\csas\models.py:424 .\csas\models.py:428
+#: .\csas\models.py:432 .\csas\models.py:436 .\csas\models.py:440
+#: .\csas\models.py:444 .\csas\models.py:446 .\csas\models.py:448
+#: .\csas\models.py:452 .\csas\models.py:454 .\csas\models.py:456
+#: .\csas\models.py:467 .\csas\models.py:475
 msgid "Format: YYYY-MM-DD"
 msgstr "Format : AAAA-MM-JJ"
 
-#: .\csas\models.py:178
+#: .\csas\models.py:193
 msgid "End Date"
 msgstr "Date de fin"
 
-#: .\csas\models.py:180
+#: .\csas\models.py:195
 msgid "Meeting Date Range (English)"
 msgstr "Période de réunion (anglais)"
 
-#: .\csas\models.py:181
+#: .\csas\models.py:196
 msgid "Meeting Date Range (French)"
 msgstr "Période de réunion (français)"
 
-#: .\csas\models.py:183 .\csas\templates\csas\csas_nav.html:43
-#: .\csas\views.py:1367
-msgid "Meeting Location Province"
-msgstr "Lieu de la réunion Province"
-
-#: .\csas\models.py:185
+#: .\csas\models.py:200
 msgid "Meeting Location City"
 msgstr "Lieu de la réunion Ville"
 
-#: .\csas\models.py:186 .\csas\templates\csas\csas_nav.html:49
-#: .\csas\views.py:265 .\csas\views.py:1407
-msgid "Scope"
-msgstr "Champ d'application"
-
-#: .\csas\models.py:188
+#: .\csas\models.py:203
 msgid "Type of Advisory Process"
 msgstr "Type de processus consultatif"
 
-#: .\csas\models.py:192 .\csas\models.py:376
+#: .\csas\models.py:207 .\csas\models.py:391
 msgid "Lead Region"
 msgstr "Région responsable"
 
-#: .\csas\models.py:194
+#: .\csas\models.py:209
 msgid "Other Regions"
 msgstr "Autres régions"
 
-#: .\csas\models.py:198
+#: .\csas\models.py:213
 msgid "Expected Publication(s)"
 msgstr "Publication(s) attendue(s)"
 
-#: .\csas\models.py:201
+#: .\csas\models.py:216
 msgid "Chair(s)"
 msgstr "Président(s)"
 
-#: .\csas\models.py:203
+#: .\csas\models.py:218
 msgid "CSAS Contact(s)"
 msgstr "Contact(s) du SCCS"
 
-#: .\csas\models.py:205
+#: .\csas\models.py:220
 msgid "Program Contact(s)"
 msgstr "Contact(s) du programme"
 
-#: .\csas\models.py:211
+#: .\csas\models.py:226
 msgid "Chair Comments"
 msgstr "Commentaires du président"
 
-#: .\csas\models.py:212 .\csas\models.py:263 .\csas\models.py:395
-#: .\csas\models.py:522
+#: .\csas\models.py:227 .\csas\models.py:278 .\csas\models.py:410
+#: .\csas\models.py:537
 msgid "Description"
 msgstr "Description"
 
-#: .\csas\models.py:213
+#: .\csas\models.py:228
 msgid "Description of the meeting for reporting to senior management"
 msgstr ""
 
-#: .\csas\models.py:223 .\csas\models.py:238 .\csas\models.py:249
-#: .\csas\models.py:259 .\csas\models.py:272
+#: .\csas\models.py:238 .\csas\models.py:253 .\csas\models.py:264
+#: .\csas\models.py:274 .\csas\models.py:287
 #, fuzzy
 msgid "Meeting"
 msgstr "Nouveau ou existant"
 
-#: .\csas\models.py:226
+#: .\csas\models.py:241
 #, fuzzy
 msgid "Publication Type"
 msgstr "Nouvelle organisation"
 
-#: .\csas\models.py:229 .\csas\models.py:313
+#: .\csas\models.py:244 .\csas\models.py:328
 #, fuzzy
 msgid "Date Submitted"
 msgstr "date de soumission"
 
-#: .\csas\models.py:231
+#: .\csas\models.py:246
 #, fuzzy
 msgid "Posted Date"
 msgstr "Titre proposé"
 
-#: .\csas\models.py:232
+#: .\csas\models.py:247
 msgid "Link"
 msgstr ""
 
-#: .\csas\models.py:239 .\csas\models.py:250
+#: .\csas\models.py:254 .\csas\models.py:265
 msgid "Name"
 msgstr "Nom"
 
-#: .\csas\models.py:241
+#: .\csas\models.py:256
 #, fuzzy
 msgid "Time (Weeks)"
 msgstr "Durée en semaines"
 
-#: .\csas\models.py:242 .\csas\models.py:261
+#: .\csas\models.py:257 .\csas\models.py:276
 msgid "Cost Category"
 msgstr "Catégorie de coût"
 
-#: .\csas\models.py:243 .\csas\models.py:264
+#: .\csas\models.py:258 .\csas\models.py:279
 msgid "Funding Source"
 msgstr "Source de financement"
 
-#: .\csas\models.py:244
+#: .\csas\models.py:259
 #, fuzzy
 msgid "Total Salary Amount"
 msgstr "Coût total"
 
-#: .\csas\models.py:253
+#: .\csas\models.py:268
 #, fuzzy
 msgid "Invited"
 msgstr "Nom de famille"
 
-#: .\csas\models.py:254
+#: .\csas\models.py:269
 msgid "Attended"
 msgstr ""
 
-#: .\csas\models.py:265
+#: .\csas\models.py:280
 #, fuzzy
 msgid "Total O&M Amount"
 msgstr "Total"
 
-#: .\csas\models.py:274
+#: .\csas\models.py:289
 msgid "Is Media Attention Anticipated"
 msgstr ""
 
-#: .\csas\models.py:275
+#: .\csas\models.py:290
 msgid "Why Media Attention Anticipated"
 msgstr ""
 
-#: .\csas\models.py:276
+#: .\csas\models.py:291
 msgid "Why Media Attention Not Anticipated"
 msgstr ""
 
-#: .\csas\models.py:277
+#: .\csas\models.py:292
 msgid "Media Bullets (ADM Summary Package)"
 msgstr ""
 
-#: .\csas\models.py:278
+#: .\csas\models.py:293
 msgid "Media Lines (Meeting/Publication)"
 msgstr ""
 
-#: .\csas\models.py:314
+#: .\csas\models.py:329
 #, fuzzy
 msgid "Date Postted"
 msgstr "Achat d'équipement"
 
-#: .\csas\models.py:374
+#: .\csas\models.py:389
 msgid "Series"
 msgstr ""
 
-#: .\csas\models.py:379
+#: .\csas\models.py:394
 #, fuzzy
 msgid "Title (English)"
 msgstr "titre du voyage (anglais)"
 
-#: .\csas\models.py:380
+#: .\csas\models.py:395
 #, fuzzy
 msgid "Title (French)"
 msgstr "titre du voyage (français)"
 
-#: .\csas\models.py:381
+#: .\csas\models.py:396
 #, fuzzy
 msgid "Title (Inuktitut)"
 msgstr "titre du voyage (anglais)"
 
-#: .\csas\models.py:383
+#: .\csas\models.py:398
 #, fuzzy
 msgid "Publication Year"
 msgstr "Nouvelle organisation"
 
-#: .\csas\models.py:385
+#: .\csas\models.py:400
 #, fuzzy
 msgid "Lead Author"
 msgstr "auteur"
 
-#: .\csas\models.py:387
+#: .\csas\models.py:402
 #, fuzzy
 msgid "Other Author(s)"
 msgstr "auteur"
 
-#: .\csas\models.py:388
+#: .\csas\models.py:403
 #, fuzzy
 msgid "Publication Number"
 msgstr "Nouvelle organisation"
 
-#: .\csas\models.py:389
+#: .\csas\models.py:404
 msgid "Pages"
 msgstr ""
 
-#: .\csas\models.py:390
+#: .\csas\models.py:405
 msgid "PDF Size"
 msgstr ""
 
-#: .\csas\models.py:391
+#: .\csas\models.py:406
 #, fuzzy
 msgid "Keywords"
 msgstr "Mots clés"
 
-#: .\csas\models.py:392
+#: .\csas\models.py:407
 #, fuzzy
 msgid "Citation"
 msgstr "Section"
 
-#: .\csas\models.py:394
+#: .\csas\models.py:409
 #, fuzzy
 msgid "Client(s)"
 msgstr "Détails du projet"
 
-#: .\csas\models.py:406 .\csas\models.py:447 .\csas\models.py:468
-#: .\csas\models.py:504 .\csas\models.py:519
+#: .\csas\models.py:421 .\csas\models.py:462 .\csas\models.py:483
+#: .\csas\models.py:519 .\csas\models.py:534
 #, fuzzy
 msgid "Publication"
 msgstr "Nouvelle organisation"
 
-#: .\csas\models.py:409
+#: .\csas\models.py:424
 #, fuzzy
 msgid "Date Due"
 msgstr "Date"
 
-#: .\csas\models.py:411
+#: .\csas\models.py:426
 #, fuzzy
 msgid "Status Comments"
 msgstr "Rapports d'état"
 
-#: .\csas\models.py:412
+#: .\csas\models.py:427
 #, fuzzy
 msgid "Date Submitted by Author"
 msgstr "date de soumission"
 
-#: .\csas\models.py:415
+#: .\csas\models.py:430
 #, fuzzy
 msgid "Submitted By"
 msgstr "Soumis"
 
-#: .\csas\models.py:416
+#: .\csas\models.py:431
 #, fuzzy
 msgid "Date Approved by Chair"
 msgstr "Approuvé par vous"
 
-#: .\csas\models.py:419
+#: .\csas\models.py:434
 #, fuzzy
 msgid "Approved By (Chair)"
 msgstr "Approuvé par vous"
 
-#: .\csas\models.py:420
+#: .\csas\models.py:435
 #, fuzzy
 msgid "Date Approved by CSAS"
 msgstr "Approuvé par vous"
 
-#: .\csas\models.py:423
+#: .\csas\models.py:438
 #, fuzzy
 msgid "Approved By (CSAS Contact)"
 msgstr "Contacts du MPO"
 
-#: .\csas\models.py:424
+#: .\csas\models.py:439
 #, fuzzy
 msgid "Date Approved by Director"
 msgstr "Approuvé par vous"
 
-#: .\csas\models.py:427
+#: .\csas\models.py:442
 #, fuzzy
 msgid "Approved By Director"
 msgstr "Approuvé par vous"
 
-#: .\csas\models.py:428
+#: .\csas\models.py:443
 #, fuzzy
 msgid "Date Number Requested"
 msgstr "Créer une nouvelle demande"
 
-#: .\csas\models.py:430
+#: .\csas\models.py:445
 #, fuzzy
 msgid "Date Document Submitted to CSAS"
 msgstr "date de soumission"
 
-#: .\csas\models.py:432
+#: .\csas\models.py:447
 msgid "Date PDF Proof Sent to Author"
 msgstr ""
 
-#: .\csas\models.py:435
+#: .\csas\models.py:450
 #, fuzzy
 msgid "Approved by (PDF Proof)"
 msgstr "Approuvé par vous"
 
-#: .\csas\models.py:436
+#: .\csas\models.py:451
 msgid "Date of Anticipated Posting"
 msgstr ""
 
-#: .\csas\models.py:438
+#: .\csas\models.py:453
 #, fuzzy
 msgid "Date Posted"
 msgstr "Achat d'équipement"
 
-#: .\csas\models.py:440
+#: .\csas\models.py:455
 #, fuzzy
 msgid "Date Modified"
 msgstr "Dernière modification"
 
-#: .\csas\models.py:450
+#: .\csas\models.py:465
 #, fuzzy
 msgid "Translation Status"
 msgstr "Transactions"
 
-#: .\csas\models.py:451
+#: .\csas\models.py:466
 #, fuzzy
 msgid "Date Sent to Translation"
 msgstr "Organisation destinataire"
 
-#: .\csas\models.py:453
+#: .\csas\models.py:468
 msgid "Client Reference Number"
 msgstr ""
 
-#: .\csas\models.py:455
+#: .\csas\models.py:470
 #, fuzzy
 msgid "Target Language"
 msgstr "Chef de projet"
 
-#: .\csas\models.py:456
+#: .\csas\models.py:471
 msgid "Translator Reference Number"
 msgstr ""
 
-#: .\csas\models.py:458
+#: .\csas\models.py:473
 #, fuzzy
 msgid "Urgent Request"
 msgstr "Nouvelle demande"
 
-#: .\csas\models.py:459
+#: .\csas\models.py:474
 msgid "Date Back from Translation"
 msgstr ""
 
-#: .\csas\models.py:461
+#: .\csas\models.py:476
 #, fuzzy
 msgid "Invoice Number"
 msgstr "Numéro"
 
-#: .\csas\models.py:462
+#: .\csas\models.py:477
 #, fuzzy
 msgid "Attachment(s)"
 msgstr "Pièce jointe"
 
-#: .\csas\models.py:463
+#: .\csas\models.py:478
 #, fuzzy
 msgid "Translation Notes"
 msgstr "Traduction nécessaire"
 
-#: .\csas\models.py:470
-msgid "p1"
-msgstr ""
-
-#: .\csas\models.py:471
+#: .\csas\models.py:486
 #, fuzzy
 msgid "Attachment (English) File"
 msgstr "nom (anglais)"
 
-#: .\csas\models.py:472
+#: .\csas\models.py:487
 #, fuzzy
 msgid "Attachment (English) Size"
 msgstr "nom (anglais)"
 
-#: .\csas\models.py:473
+#: .\csas\models.py:488
 #, fuzzy
 msgid "Attachment (French) File"
 msgstr "nom (français)"
 
-#: .\csas\models.py:474
+#: .\csas\models.py:489
 #, fuzzy
 msgid "Attachment (French) Size"
 msgstr "nom (français)"
 
-#: .\csas\models.py:476
+#: .\csas\models.py:491
 #, fuzzy
 msgid "URL (English)"
 msgstr "nom (anglais)"
 
-#: .\csas\models.py:477
+#: .\csas\models.py:492
 #, fuzzy
 msgid "URL (English) Size"
 msgstr "nom (anglais)"
 
-#: .\csas\models.py:478
+#: .\csas\models.py:493
 #, fuzzy
 msgid "URL (French)"
 msgstr "nom (français)"
 
-#: .\csas\models.py:479
+#: .\csas\models.py:494
 #, fuzzy
 msgid "URL (French) Size"
 msgstr "nom (français)"
 
-#: .\csas\models.py:481
+#: .\csas\models.py:496
 #, fuzzy
 msgid "Dev Link (English)"
 msgstr "nom (anglais)"
 
-#: .\csas\models.py:482
-msgid "Dev Link (English) Size"
-msgstr ""
-
-#: .\csas\models.py:483
-#, fuzzy
-msgid "Dev Link (French)"
-msgstr "nom (français)"
-
-#: .\csas\models.py:484
-msgid "Dev Link (French) Size"
-msgstr ""
-
-#: .\csas\models.py:486
-#, fuzzy
-msgid "EKME# GCDocs (English)"
-msgstr "notes (anglais)"
-
-#: .\csas\models.py:487
-msgid "EKME# GCDocs (English) Size"
-msgstr ""
-
-#: .\csas\models.py:488
-#, fuzzy
-msgid "EKME# GCDocs (French)"
-msgstr "notes (français)"
-
-#: .\csas\models.py:489
-msgid "EKME# GCDocs (French) Size"
-msgstr ""
-
-#: .\csas\models.py:491
-#, fuzzy
-msgid "Library Catalogue # (English)"
-msgstr "titre du voyage (anglais)"
-
-#: .\csas\models.py:492
-msgid "Library Catalogue # (English) Size"
-msgstr ""
-
-#: .\csas\models.py:493
-#, fuzzy
-msgid "Library Catalogue # (French)"
-msgstr "titre du voyage (français)"
-
-#: .\csas\models.py:494
-msgid "Library Catalogue # (French) Size"
-msgstr ""
-
-#: .\csas\models.py:496
-#, fuzzy
-msgid "Library Link (English)"
-msgstr "notes (anglais)"
-
 #: .\csas\models.py:497
-msgid "Library Link (English) Size"
+msgid "Dev Link (English) Size"
 msgstr ""
 
 #: .\csas\models.py:498
 #, fuzzy
-msgid "Library Link (French)"
-msgstr "notes (français)"
+msgid "Dev Link (French)"
+msgstr "nom (français)"
 
 #: .\csas\models.py:499
-msgid "Library Link (French) Size"
+msgid "Dev Link (French) Size"
+msgstr ""
+
+#: .\csas\models.py:501
+#, fuzzy
+msgid "EKME# GCDocs (English)"
+msgstr "notes (anglais)"
+
+#: .\csas\models.py:502
+msgid "EKME# GCDocs (English) Size"
+msgstr ""
+
+#: .\csas\models.py:503
+#, fuzzy
+msgid "EKME# GCDocs (French)"
+msgstr "notes (français)"
+
+#: .\csas\models.py:504
+msgid "EKME# GCDocs (French) Size"
+msgstr ""
+
+#: .\csas\models.py:506
+#, fuzzy
+msgid "Library Catalogue # (English)"
+msgstr "titre du voyage (anglais)"
+
+#: .\csas\models.py:507
+msgid "Library Catalogue # (English) Size"
 msgstr ""
 
 #: .\csas\models.py:508
 #, fuzzy
+msgid "Library Catalogue # (French)"
+msgstr "titre du voyage (français)"
+
+#: .\csas\models.py:509
+msgid "Library Catalogue # (French) Size"
+msgstr ""
+
+#: .\csas\models.py:511
+#, fuzzy
+msgid "Library Link (English)"
+msgstr "notes (anglais)"
+
+#: .\csas\models.py:512
+msgid "Library Link (English) Size"
+msgstr ""
+
+#: .\csas\models.py:513
+#, fuzzy
+msgid "Library Link (French)"
+msgstr "notes (français)"
+
+#: .\csas\models.py:514
+msgid "Library Link (French) Size"
+msgstr ""
+
+#: .\csas\models.py:523
+#, fuzzy
 msgid "Publication Category"
 msgstr "Nouvelle organisation"
 
-#: .\csas\models.py:511
+#: .\csas\models.py:526
 #, fuzzy
 msgid "Translation Funding Source (e.g. sector)"
 msgstr "Gérer les source de financement"
 
-#: .\csas\models.py:512
+#: .\csas\models.py:527
 #, fuzzy
 msgid "Translation Coding"
 msgstr "Traduction nécessaire"
 
-#: .\csas\models.py:513
+#: .\csas\models.py:528
 #, fuzzy
 msgid "Translation Estimate"
 msgstr "Transactions"
 
-#: .\csas\models.py:514
+#: .\csas\models.py:529
 #, fuzzy
 msgid "Translation Total Cost"
 msgstr "Transactions"
 
-#: .\csas\models.py:521
+#: .\csas\models.py:536
 msgid "Category"
 msgstr "Catégorie"
 
-#: .\csas\models.py:523
+#: .\csas\models.py:538
 #, fuzzy
 msgid "Size"
 msgstr "Remarques:"
 
-#: .\csas\models.py:524
+#: .\csas\models.py:539
 #, fuzzy
 msgid "Attachment"
 msgstr "Pièce jointe"
 
-#: .\csas\models.py:582
+#: .\csas\models.py:598
 msgid "Assigned Request Number"
 msgstr ""
 
-#: .\csas\models.py:583
-msgid "Title"
-msgstr "Titre"
-
-#: .\csas\models.py:584
+#: .\csas\models.py:599
 #, fuzzy
 msgid "In-Year Request"
 msgstr "Annuler la demande"
 
-#: .\csas\models.py:588
+#: .\csas\models.py:601
+msgid "Title"
+msgstr "Titre"
+
+#: .\csas\models.py:602
+#, fuzzy
+#| msgid "Title"
+msgid "File"
+msgstr "Titre"
+
+#: .\csas\models.py:607
+msgid "Directorate Branch"
+msgstr ""
+
+#: .\csas\models.py:609
 #, fuzzy
 msgid "Client Sector"
 msgstr "Secteurs du MPO"
 
-#: .\csas\models.py:589
-#, fuzzy
-msgid "Client Name"
-msgstr "Prénom"
-
-#: .\csas\models.py:590
+#: .\csas\models.py:610
 #, fuzzy
 msgid "Client Title"
 msgstr "Titre de l'accord"
 
-#: .\csas\models.py:591
+#: .\csas\models.py:613
+#, fuzzy
+msgid "Client Name"
+msgstr "Prénom"
+
+#: .\csas\models.py:615
+msgid "Manager Name"
+msgstr ""
+
+#: .\csas\models.py:617
 msgid "Client E-mail"
 msgstr ""
 
-#: .\csas\models.py:592
+#: .\csas\models.py:619
+#, fuzzy
+msgid "Request Type"
+msgstr "Statut de la demande"
+
+#: .\csas\models.py:621
+msgid "Zonal"
+msgstr ""
+
+#: .\csas\models.py:622
+msgid "Zonal Text"
+msgstr ""
+
+#: .\csas\models.py:624
 msgid "Issue"
 msgstr ""
 
-#: .\csas\models.py:593
+#: .\csas\models.py:625
 msgid ""
 "Issue requiring science information and/or advice. Posted as a question to "
 "be answered by Science."
 msgstr ""
 
-#: .\csas\models.py:595
+#: .\csas\models.py:627
+msgid "Consequence Text"
+msgstr ""
+
+#: .\csas\models.py:629
+msgid "Assistance"
+msgstr ""
+
+#: .\csas\models.py:630
+msgid "Assistance Text"
+msgstr ""
+
+#: .\csas\models.py:632
 msgid "Priority"
 msgstr ""
 
-#: .\csas\models.py:596
+#: .\csas\models.py:633
 msgid "Rationale for Request"
 msgstr "Justification de la demande"
 
-#: .\csas\models.py:597
+#: .\csas\models.py:634
 msgid ""
 "Rationale or context for the request: What will the information/advice be "
 "used for? Who will be the end user(s)? Will it impact other DFO programs or "
 "regions?"
 msgstr ""
 
-#: .\csas\models.py:600
+#: .\csas\models.py:638
 #, fuzzy
 msgid "Proposed Timing"
 msgstr "Titre proposé"
 
-#: .\csas\models.py:601
+#: .\csas\models.py:639
 msgid "Latest possible date to receive Science Advice."
 msgstr ""
 
-#: .\csas\models.py:602
+#: .\csas\models.py:640
 #, fuzzy
 msgid "Rationale for Timing"
 msgstr "National ou régional?"
 
-#: .\csas\models.py:603
+#: .\csas\models.py:641
 msgid "Explain rationale for proposed timing."
 msgstr ""
 
-#: .\csas\models.py:604
+#: .\csas\models.py:643
 #, fuzzy
 msgid "Do you have funds to cover extra costs associated with this request?"
 msgstr "Il n'y a pas de frais associés à cette demande"
 
-#: .\csas\models.py:605
+#: .\csas\models.py:644
 #, fuzzy
 msgid "Funding Notes"
 msgstr "Financement"
 
-#: .\csas\models.py:606
+#: .\csas\models.py:646
 msgid "Science Discussion"
 msgstr ""
 
-#: .\csas\models.py:607
+#: .\csas\models.py:647
 msgid "Have you talked to Science about this request?"
 msgstr ""
 
-#: .\csas\models.py:608
+#: .\csas\models.py:648
 msgid "Science Discussion Notes"
 msgstr ""
 
-#: .\csas\models.py:609
+#: .\csas\models.py:649
 msgid ""
 "If you have talked to Science about this request, to whom have you talked?"
 msgstr ""
 
-#: .\csas\models.py:614
+#: .\csas\models.py:653
+#, fuzzy
+msgid "Coordinator Name"
+msgstr "Prénom"
+
+#: .\csas\models.py:655
+#, fuzzy
+#| msgid "First Name"
+msgid "Director Name"
+msgstr "Prénom"
+
+#: .\csas\models.py:657
+msgid "Fiscal Year Text"
+msgstr ""
+
+#: .\csas\models.py:658
+#, fuzzy
+msgid "Submission Date"
+msgstr "date de soumission initiale"
+
+#: .\csas\models.py:659 .\csas\models.py:662 .\csas\models.py:664
+#: .\csas\models.py:667 .\csas\models.py:689
+#, fuzzy
+#| msgid "Format: YYYY-MM-DD"
+msgid "Format: YYYY-MM-DD."
+msgstr "Format : AAAA-MM-JJ"
+
+#: .\csas\models.py:661
 #, fuzzy
 msgid "Client Adviser Submission Date"
 msgstr "date de soumission initiale"
 
-#: .\csas\models.py:615
+#: .\csas\models.py:663
 #, fuzzy
 msgid "Client RD Submission Date"
 msgstr "date de soumission initiale"
 
-#: .\csas\models.py:616 .\csas\models.py:635
+#: .\csas\models.py:666
 #, fuzzy
-msgid "Decision Date"
+msgid "Received Date"
 msgstr "Organisation"
 
-#: .\csas\models.py:630
+#: .\csas\models.py:668
+msgid "Signature"
+msgstr ""
+
+#: .\csas\models.py:682
 #, fuzzy
 msgid "Translated Title"
 msgstr "Titre proposé"
 
-#: .\csas\models.py:632
+#: .\csas\models.py:684
 #, fuzzy
 msgid "Decision"
 msgstr "Organisation"
 
-#: .\csas\models.py:634
+#: .\csas\models.py:686
 #, fuzzy
 msgid "Decision Explanation"
 msgstr "Organisation"
 
+#: .\csas\models.py:687
+#, fuzzy
+msgid "Rationale for Decision"
+msgstr "National ou régional?"
+
+#: .\csas\models.py:688
+#, fuzzy
+msgid "Decision Date"
+msgstr "Organisation"
+
+#: .\csas\templates\csas\csas_delete.html:28
 #: .\csas\templates\csas\csas_details.html:28
 #, fuzzy
 msgid "New Publication Entry"
 msgstr "Nouvelle organisation"
 
+#: .\csas\templates\csas\csas_delete.html:31
+#: .\csas\templates\csas\csas_delete.html:42
+#: .\csas\templates\csas\csas_delete.html:53
+#: .\csas\templates\csas\csas_delete.html:62
+#: .\csas\templates\csas\csas_delete.html:71
+#: .\csas\templates\csas\csas_delete.html:79
 #: .\csas\templates\csas\csas_details.html:31
 #: .\csas\templates\csas\csas_details.html:42
 #: .\csas\templates\csas\csas_details.html:53
 #: .\csas\templates\csas\csas_details.html:62
 #: .\csas\templates\csas\csas_details.html:71
-#: .\csas\templates\csas\csas_details.html:79
-#: .\csas\templates\csas\csas_details.html:87
+#: .\csas\templates\csas\csas_details.html:74
+#: .\csas\templates\csas\csas_details.html:82
+#: .\csas\templates\csas\csas_details.html:85
+#: .\csas\templates\csas\csas_details.html:93
+#: .\csas\templates\csas\csas_details.html:96
 #: .\csas\templates\csas\csas_details_met.html:119
 #: .\csas\templates\csas\csas_details_met.html:148
 #: .\csas\templates\csas\csas_details_met.html:192
@@ -860,30 +984,66 @@ msgstr "Nouvelle organisation"
 #: .\csas\templates\csas\csas_filter.html:41
 #: .\csas\templates\csas\csas_filter.html:44
 #: .\csas\templates\csas\csas_filter.html:48
+#: .\csas\templates\csas\csas_filter.html:159
+#: .\csas\templates\csas\csas_filter.html:232
+#: .\csas\templates\csas\csas_filter.html:260
+#: .\csas\templates\csas\csas_filter.html:294
 #: .\csas\templates\csas\csas_filter_arctic.html:40
 #: .\csas\templates\csas\csas_filter_arctic.html:44
 #: .\csas\templates\csas\csas_filter_arctic.html:47
 #: .\csas\templates\csas\csas_filter_arctic.html:51
+#: .\csas\templates\csas\csas_filter_arctic.html:164
+#: .\csas\templates\csas\csas_filter_arctic.html:237
+#: .\csas\templates\csas\csas_filter_arctic.html:265
+#: .\csas\templates\csas\csas_filter_arctic.html:299
 #: .\csas\templates\csas\csas_filter_gulf.html:40
 #: .\csas\templates\csas\csas_filter_gulf.html:44
 #: .\csas\templates\csas\csas_filter_gulf.html:47
 #: .\csas\templates\csas\csas_filter_gulf.html:51
+#: .\csas\templates\csas\csas_filter_gulf.html:164
+#: .\csas\templates\csas\csas_filter_gulf.html:237
+#: .\csas\templates\csas\csas_filter_gulf.html:265
+#: .\csas\templates\csas\csas_filter_gulf.html:299
 #: .\csas\templates\csas\csas_filter_maritimes.html:40
 #: .\csas\templates\csas\csas_filter_maritimes.html:44
 #: .\csas\templates\csas\csas_filter_maritimes.html:47
 #: .\csas\templates\csas\csas_filter_maritimes.html:51
+#: .\csas\templates\csas\csas_filter_maritimes.html:164
+#: .\csas\templates\csas\csas_filter_maritimes.html:237
+#: .\csas\templates\csas\csas_filter_maritimes.html:265
+#: .\csas\templates\csas\csas_filter_maritimes.html:299
+#: .\csas\templates\csas\csas_filter_national.html:40
+#: .\csas\templates\csas\csas_filter_national.html:44
+#: .\csas\templates\csas\csas_filter_national.html:47
+#: .\csas\templates\csas\csas_filter_national.html:51
+#: .\csas\templates\csas\csas_filter_national.html:164
+#: .\csas\templates\csas\csas_filter_national.html:237
+#: .\csas\templates\csas\csas_filter_national.html:265
+#: .\csas\templates\csas\csas_filter_national.html:299
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:40
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:44
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:47
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:51
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:164
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:237
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:265
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:299
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:40
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:44
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:47
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:51
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:164
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:237
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:265
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:299
 #: .\csas\templates\csas\csas_filter_pacific.html:40
 #: .\csas\templates\csas\csas_filter_pacific.html:44
 #: .\csas\templates\csas\csas_filter_pacific.html:47
 #: .\csas\templates\csas\csas_filter_pacific.html:51
+#: .\csas\templates\csas\csas_filter_pacific.html:164
+#: .\csas\templates\csas\csas_filter_pacific.html:237
+#: .\csas\templates\csas\csas_filter_pacific.html:265
+#: .\csas\templates\csas\csas_filter_pacific.html:299
 #: .\csas\templates\csas\csas_filter_pars.html:27
 #: .\csas\templates\csas\csas_filter_pars.html:30
 #: .\csas\templates\csas\csas_filter_pars.html:34
@@ -891,16 +1051,26 @@ msgstr "Nouvelle organisation"
 #: .\csas\templates\csas\csas_filter_quebec.html:44
 #: .\csas\templates\csas\csas_filter_quebec.html:47
 #: .\csas\templates\csas\csas_filter_quebec.html:51
+#: .\csas\templates\csas\csas_filter_quebec.html:164
+#: .\csas\templates\csas\csas_filter_quebec.html:237
+#: .\csas\templates\csas\csas_filter_quebec.html:265
+#: .\csas\templates\csas\csas_filter_quebec.html:299
 msgid "Add"
 msgstr "Ajouter"
 
+#: .\csas\templates\csas\csas_delete.html:31
+#: .\csas\templates\csas\csas_delete.html:42
+#: .\csas\templates\csas\csas_delete.html:53
+#: .\csas\templates\csas\csas_delete.html:62
+#: .\csas\templates\csas\csas_delete.html:71
+#: .\csas\templates\csas\csas_delete.html:79
 #: .\csas\templates\csas\csas_details.html:31
 #: .\csas\templates\csas\csas_details.html:42
 #: .\csas\templates\csas\csas_details.html:53
 #: .\csas\templates\csas\csas_details.html:62
 #: .\csas\templates\csas\csas_details.html:71
-#: .\csas\templates\csas\csas_details.html:79
-#: .\csas\templates\csas\csas_details.html:87
+#: .\csas\templates\csas\csas_details.html:82
+#: .\csas\templates\csas\csas_details.html:93
 #: .\csas\templates\csas\csas_details_met.html:148
 #: .\csas\templates\csas\csas_details_met.html:216
 #: .\csas\templates\csas\csas_details_met.html:288
@@ -920,43 +1090,48 @@ msgstr "Ajouter"
 #: .\csas\templates\csas\csas_details_pub_version_without_collapsible_sections.html:283
 #: .\csas\templates\csas\csas_details_pub_version_without_collapsible_sections.html:415
 #: .\csas\templates\csas\csas_details_pub_version_without_collapsible_sections.html:467
-#: .\csas\templates\csas\csas_filter.html:226
-#: .\csas\templates\csas\csas_filter.html:243
-#: .\csas\templates\csas\csas_filter.html:256
-#: .\csas\templates\csas\csas_filter.html:262
-#: .\csas\templates\csas\csas_filter_arctic.html:231
-#: .\csas\templates\csas\csas_filter_arctic.html:241
-#: .\csas\templates\csas\csas_filter_arctic.html:254
-#: .\csas\templates\csas\csas_filter_arctic.html:260
-#: .\csas\templates\csas\csas_filter_gulf.html:231
-#: .\csas\templates\csas\csas_filter_gulf.html:241
-#: .\csas\templates\csas\csas_filter_gulf.html:254
-#: .\csas\templates\csas\csas_filter_gulf.html:260
-#: .\csas\templates\csas\csas_filter_maritimes.html:231
-#: .\csas\templates\csas\csas_filter_maritimes.html:241
-#: .\csas\templates\csas\csas_filter_maritimes.html:254
-#: .\csas\templates\csas\csas_filter_maritimes.html:260
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:231
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:241
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:254
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:260
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:231
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:241
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:254
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:260
-#: .\csas\templates\csas\csas_filter_pacific.html:231
-#: .\csas\templates\csas\csas_filter_pacific.html:241
-#: .\csas\templates\csas\csas_filter_pacific.html:254
-#: .\csas\templates\csas\csas_filter_pacific.html:260
+#: .\csas\templates\csas\csas_filter.html:244
+#: .\csas\templates\csas\csas_filter.html:267
+#: .\csas\templates\csas\csas_filter.html:290
+#: .\csas\templates\csas\csas_filter.html:301
+#: .\csas\templates\csas\csas_filter_arctic.html:249
+#: .\csas\templates\csas\csas_filter_arctic.html:272
+#: .\csas\templates\csas\csas_filter_arctic.html:295
+#: .\csas\templates\csas\csas_filter_arctic.html:306
+#: .\csas\templates\csas\csas_filter_gulf.html:249
+#: .\csas\templates\csas\csas_filter_gulf.html:272
+#: .\csas\templates\csas\csas_filter_gulf.html:295
+#: .\csas\templates\csas\csas_filter_gulf.html:306
+#: .\csas\templates\csas\csas_filter_maritimes.html:249
+#: .\csas\templates\csas\csas_filter_maritimes.html:272
+#: .\csas\templates\csas\csas_filter_maritimes.html:295
+#: .\csas\templates\csas\csas_filter_maritimes.html:306
+#: .\csas\templates\csas\csas_filter_national.html:249
+#: .\csas\templates\csas\csas_filter_national.html:272
+#: .\csas\templates\csas\csas_filter_national.html:295
+#: .\csas\templates\csas\csas_filter_national.html:306
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:249
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:272
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:295
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:306
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:249
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:272
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:295
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:306
+#: .\csas\templates\csas\csas_filter_pacific.html:249
+#: .\csas\templates\csas\csas_filter_pacific.html:272
+#: .\csas\templates\csas\csas_filter_pacific.html:295
+#: .\csas\templates\csas\csas_filter_pacific.html:306
 #: .\csas\templates\csas\csas_filter_pars.html:106
 #: .\csas\templates\csas\csas_filter_pars.html:110
-#: .\csas\templates\csas\csas_filter_quebec.html:231
-#: .\csas\templates\csas\csas_filter_quebec.html:241
-#: .\csas\templates\csas\csas_filter_quebec.html:254
-#: .\csas\templates\csas\csas_filter_quebec.html:260
+#: .\csas\templates\csas\csas_filter_quebec.html:249
+#: .\csas\templates\csas\csas_filter_quebec.html:272
+#: .\csas\templates\csas\csas_filter_quebec.html:295
+#: .\csas\templates\csas\csas_filter_quebec.html:306
 msgid "Update"
 msgstr "Mettre à jour"
 
+#: .\csas\templates\csas\csas_delete.html:34
 #: .\csas\templates\csas\csas_details.html:34
 #: .\csas\templates\csas\csas_details_pub.html:129
 #: .\csas\templates\csas\csas_details_pub.html:265
@@ -965,39 +1140,87 @@ msgstr "Mettre à jour"
 #: .\csas\templates\csas\csas_details_pub_version_without_collapsible_sections.html:84
 #: .\csas\templates\csas\csas_details_pub_version_without_collapsible_sections.html:216
 #: .\csas\templates\csas\csas_details_pub_version_without_collapsible_sections.html:295
-#: .\csas\views.py:1136
+#: .\csas\views.py:1345
 #, fuzzy
 msgid "Publication List"
 msgstr "Section"
 
+#: .\csas\templates\csas\csas_delete.html:39
 #: .\csas\templates\csas\csas_details.html:39
 #, fuzzy
 msgid "New Meeting Entry"
 msgstr "Nouvelle entrée"
 
+#: .\csas\templates\csas\csas_delete.html:45
 #: .\csas\templates\csas\csas_details.html:45
 #: .\csas\templates\csas\csas_details_met_costs.html:54
 #: .\csas\templates\csas\csas_details_met_docs.html:54
-#: .\csas\templates\csas\csas_details_met_media.html:54 .\csas\views.py:856
+#: .\csas\templates\csas\csas_details_met_media.html:54 .\csas\views.py:1036
 #, fuzzy
 msgid "Meeting List"
 msgstr "URL externe"
 
+#: .\csas\templates\csas\csas_delete.html:49
 #: .\csas\templates\csas\csas_details.html:49
 msgid "DFO Participants List"
 msgstr ""
 
+#: .\csas\templates\csas\csas_delete.html:58
 #: .\csas\templates\csas\csas_details.html:58
 msgid "Other Participants List"
 msgstr ""
 
+#: .\csas\templates\csas\csas_delete.html:67
+#: .\csas\templates\csas\csas_delete.html:75
 #: .\csas\templates\csas\csas_details.html:67
-#: .\csas\templates\csas\csas_details.html:75 .\csas\views.py:471
+#: .\csas\templates\csas\csas_details.html:78 .\csas\views.py:580
 #, fuzzy
 msgid "Request List"
 msgstr "Statut de la demande"
 
-#: .\csas\templates\csas\csas_details.html:83 .\csas\views.py:603
+#: .\csas\templates\csas\csas_details.html:74
+#: .\csas\templates\csas\csas_details.html:85
+#: .\csas\templates\csas\csas_details.html:96
+#: .\csas\templates\csas\csas_filter.html:159
+#: .\csas\templates\csas\csas_filter.html:232
+#: .\csas\templates\csas\csas_filter.html:260
+#: .\csas\templates\csas\csas_filter.html:294
+#: .\csas\templates\csas\csas_filter_arctic.html:164
+#: .\csas\templates\csas\csas_filter_arctic.html:237
+#: .\csas\templates\csas\csas_filter_arctic.html:265
+#: .\csas\templates\csas\csas_filter_arctic.html:299
+#: .\csas\templates\csas\csas_filter_gulf.html:164
+#: .\csas\templates\csas\csas_filter_gulf.html:237
+#: .\csas\templates\csas\csas_filter_gulf.html:265
+#: .\csas\templates\csas\csas_filter_gulf.html:299
+#: .\csas\templates\csas\csas_filter_maritimes.html:164
+#: .\csas\templates\csas\csas_filter_maritimes.html:237
+#: .\csas\templates\csas\csas_filter_maritimes.html:265
+#: .\csas\templates\csas\csas_filter_maritimes.html:299
+#: .\csas\templates\csas\csas_filter_national.html:164
+#: .\csas\templates\csas\csas_filter_national.html:237
+#: .\csas\templates\csas\csas_filter_national.html:265
+#: .\csas\templates\csas\csas_filter_national.html:299
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:164
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:237
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:265
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:299
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:164
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:237
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:265
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:299
+#: .\csas\templates\csas\csas_filter_pacific.html:164
+#: .\csas\templates\csas\csas_filter_pacific.html:237
+#: .\csas\templates\csas\csas_filter_pacific.html:265
+#: .\csas\templates\csas\csas_filter_pacific.html:299
+#: .\csas\templates\csas\csas_filter_quebec.html:164
+#: .\csas\templates\csas\csas_filter_quebec.html:237
+#: .\csas\templates\csas\csas_filter_quebec.html:265
+#: .\csas\templates\csas\csas_filter_quebec.html:299
+msgid "Delete"
+msgstr ""
+
+#: .\csas\templates\csas\csas_details.html:89 .\csas\views.py:753
 #, fuzzy
 msgid "Contact List"
 msgstr "Contacts du MPO"
@@ -1048,7 +1271,7 @@ msgid "Meeting O&M Cost"
 msgstr "URL externe"
 
 #: .\csas\templates\csas\csas_details_met.html:367
-#: .\csas\templates\csas\csas_details_met_media.html:48 .\csas\views.py:992
+#: .\csas\templates\csas\csas_details_met_media.html:48 .\csas\views.py:1183
 #, fuzzy
 msgid "Meeting Media"
 msgstr "URL externe"
@@ -1058,77 +1281,85 @@ msgstr "URL externe"
 #: .\csas\templates\csas\csas_details_met_media.html:52
 #: .\csas\templates\csas\csas_details_pub_com_results.html:52
 #: .\csas\templates\csas\csas_filter.html:111
-#: .\csas\templates\csas\csas_filter.html:156
-#: .\csas\templates\csas\csas_filter.html:223
-#: .\csas\templates\csas\csas_filter.html:240
-#: .\csas\templates\csas\csas_filter.html:248
-#: .\csas\templates\csas\csas_filter.html:253
-#: .\csas\templates\csas\csas_filter.html:259
-#: .\csas\templates\csas\csas_filter.html:265
+#: .\csas\templates\csas\csas_filter.html:165
+#: .\csas\templates\csas\csas_filter.html:241
+#: .\csas\templates\csas\csas_filter.html:264
+#: .\csas\templates\csas\csas_filter.html:277
+#: .\csas\templates\csas\csas_filter.html:287
+#: .\csas\templates\csas\csas_filter.html:298
+#: .\csas\templates\csas\csas_filter.html:304
 #: .\csas\templates\csas\csas_filter_arctic.html:116
-#: .\csas\templates\csas\csas_filter_arctic.html:161
-#: .\csas\templates\csas\csas_filter_arctic.html:228
-#: .\csas\templates\csas\csas_filter_arctic.html:238
+#: .\csas\templates\csas\csas_filter_arctic.html:170
 #: .\csas\templates\csas\csas_filter_arctic.html:246
-#: .\csas\templates\csas\csas_filter_arctic.html:251
-#: .\csas\templates\csas\csas_filter_arctic.html:257
-#: .\csas\templates\csas\csas_filter_arctic.html:263
+#: .\csas\templates\csas\csas_filter_arctic.html:269
+#: .\csas\templates\csas\csas_filter_arctic.html:282
+#: .\csas\templates\csas\csas_filter_arctic.html:292
+#: .\csas\templates\csas\csas_filter_arctic.html:303
+#: .\csas\templates\csas\csas_filter_arctic.html:309
 #: .\csas\templates\csas\csas_filter_gulf.html:116
-#: .\csas\templates\csas\csas_filter_gulf.html:161
-#: .\csas\templates\csas\csas_filter_gulf.html:228
-#: .\csas\templates\csas\csas_filter_gulf.html:238
+#: .\csas\templates\csas\csas_filter_gulf.html:170
 #: .\csas\templates\csas\csas_filter_gulf.html:246
-#: .\csas\templates\csas\csas_filter_gulf.html:251
-#: .\csas\templates\csas\csas_filter_gulf.html:257
-#: .\csas\templates\csas\csas_filter_gulf.html:263
+#: .\csas\templates\csas\csas_filter_gulf.html:269
+#: .\csas\templates\csas\csas_filter_gulf.html:282
+#: .\csas\templates\csas\csas_filter_gulf.html:292
+#: .\csas\templates\csas\csas_filter_gulf.html:303
+#: .\csas\templates\csas\csas_filter_gulf.html:309
 #: .\csas\templates\csas\csas_filter_maritimes.html:116
-#: .\csas\templates\csas\csas_filter_maritimes.html:161
-#: .\csas\templates\csas\csas_filter_maritimes.html:228
-#: .\csas\templates\csas\csas_filter_maritimes.html:238
+#: .\csas\templates\csas\csas_filter_maritimes.html:170
 #: .\csas\templates\csas\csas_filter_maritimes.html:246
-#: .\csas\templates\csas\csas_filter_maritimes.html:251
-#: .\csas\templates\csas\csas_filter_maritimes.html:257
-#: .\csas\templates\csas\csas_filter_maritimes.html:263
+#: .\csas\templates\csas\csas_filter_maritimes.html:269
+#: .\csas\templates\csas\csas_filter_maritimes.html:282
+#: .\csas\templates\csas\csas_filter_maritimes.html:292
+#: .\csas\templates\csas\csas_filter_maritimes.html:303
+#: .\csas\templates\csas\csas_filter_maritimes.html:309
+#: .\csas\templates\csas\csas_filter_national.html:116
+#: .\csas\templates\csas\csas_filter_national.html:170
+#: .\csas\templates\csas\csas_filter_national.html:246
+#: .\csas\templates\csas\csas_filter_national.html:269
+#: .\csas\templates\csas\csas_filter_national.html:282
+#: .\csas\templates\csas\csas_filter_national.html:292
+#: .\csas\templates\csas\csas_filter_national.html:303
+#: .\csas\templates\csas\csas_filter_national.html:309
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:116
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:161
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:228
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:238
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:170
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:246
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:251
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:257
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:263
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:269
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:282
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:292
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:303
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:309
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:116
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:161
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:228
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:238
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:170
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:246
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:251
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:257
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:263
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:269
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:282
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:292
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:303
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:309
 #: .\csas\templates\csas\csas_filter_pacific.html:116
-#: .\csas\templates\csas\csas_filter_pacific.html:161
-#: .\csas\templates\csas\csas_filter_pacific.html:228
-#: .\csas\templates\csas\csas_filter_pacific.html:238
+#: .\csas\templates\csas\csas_filter_pacific.html:170
 #: .\csas\templates\csas\csas_filter_pacific.html:246
-#: .\csas\templates\csas\csas_filter_pacific.html:251
-#: .\csas\templates\csas\csas_filter_pacific.html:257
-#: .\csas\templates\csas\csas_filter_pacific.html:263
+#: .\csas\templates\csas\csas_filter_pacific.html:269
+#: .\csas\templates\csas\csas_filter_pacific.html:282
+#: .\csas\templates\csas\csas_filter_pacific.html:292
+#: .\csas\templates\csas\csas_filter_pacific.html:303
+#: .\csas\templates\csas\csas_filter_pacific.html:309
 #: .\csas\templates\csas\csas_filter_pars.html:99
 #: .\csas\templates\csas\csas_filter_quebec.html:116
-#: .\csas\templates\csas\csas_filter_quebec.html:161
-#: .\csas\templates\csas\csas_filter_quebec.html:228
-#: .\csas\templates\csas\csas_filter_quebec.html:238
+#: .\csas\templates\csas\csas_filter_quebec.html:170
 #: .\csas\templates\csas\csas_filter_quebec.html:246
-#: .\csas\templates\csas\csas_filter_quebec.html:251
-#: .\csas\templates\csas\csas_filter_quebec.html:257
-#: .\csas\templates\csas\csas_filter_quebec.html:263
+#: .\csas\templates\csas\csas_filter_quebec.html:269
+#: .\csas\templates\csas\csas_filter_quebec.html:282
+#: .\csas\templates\csas\csas_filter_quebec.html:292
+#: .\csas\templates\csas\csas_filter_quebec.html:303
+#: .\csas\templates\csas\csas_filter_quebec.html:309
 #, fuzzy
 msgid "Details"
 msgstr "Détails de la personne:"
 
 #: .\csas\templates\csas\csas_details_pub.html:105
 #: .\csas\templates\csas\csas_details_pub_version_without_collapsible_sections.html:60
-#: .\csas\views.py:1226
+#: .\csas\views.py:1445
 #, fuzzy
 msgid "Publication Status"
 msgstr "Détails de la personne:"
@@ -1169,6 +1400,8 @@ msgstr "Soumettre"
 #: .\csas\templates\csas\csas_filter_gulf.html:124
 #: .\csas\templates\csas\csas_filter_maritimes.html:122
 #: .\csas\templates\csas\csas_filter_maritimes.html:124
+#: .\csas\templates\csas\csas_filter_national.html:122
+#: .\csas\templates\csas\csas_filter_national.html:124
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:122
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:124
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:122
@@ -1188,6 +1421,8 @@ msgstr ""
 #: .\csas\templates\csas\csas_filter_gulf.html:132
 #: .\csas\templates\csas\csas_filter_maritimes.html:130
 #: .\csas\templates\csas\csas_filter_maritimes.html:132
+#: .\csas\templates\csas\csas_filter_national.html:130
+#: .\csas\templates\csas\csas_filter_national.html:132
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:130
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:132
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:130
@@ -1208,6 +1443,8 @@ msgstr "Coût total"
 #: .\csas\templates\csas\csas_filter_gulf.html:140
 #: .\csas\templates\csas\csas_filter_maritimes.html:138
 #: .\csas\templates\csas\csas_filter_maritimes.html:140
+#: .\csas\templates\csas\csas_filter_national.html:138
+#: .\csas\templates\csas\csas_filter_national.html:140
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:138
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:140
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:138
@@ -1221,36 +1458,40 @@ msgstr ""
 
 #: .\csas\templates\csas\csas_filter.html:141
 #: .\csas\templates\csas\csas_filter.html:143
-#: .\csas\templates\csas\csas_filter.html:199
-#: .\csas\templates\csas\csas_filter.html:203
+#: .\csas\templates\csas\csas_filter.html:208
+#: .\csas\templates\csas\csas_filter.html:212
 #: .\csas\templates\csas\csas_filter_arctic.html:146
 #: .\csas\templates\csas\csas_filter_arctic.html:148
-#: .\csas\templates\csas\csas_filter_arctic.html:204
-#: .\csas\templates\csas\csas_filter_arctic.html:208
+#: .\csas\templates\csas\csas_filter_arctic.html:213
+#: .\csas\templates\csas\csas_filter_arctic.html:217
 #: .\csas\templates\csas\csas_filter_gulf.html:146
 #: .\csas\templates\csas\csas_filter_gulf.html:148
-#: .\csas\templates\csas\csas_filter_gulf.html:204
-#: .\csas\templates\csas\csas_filter_gulf.html:208
+#: .\csas\templates\csas\csas_filter_gulf.html:213
+#: .\csas\templates\csas\csas_filter_gulf.html:217
 #: .\csas\templates\csas\csas_filter_maritimes.html:146
 #: .\csas\templates\csas\csas_filter_maritimes.html:148
-#: .\csas\templates\csas\csas_filter_maritimes.html:204
-#: .\csas\templates\csas\csas_filter_maritimes.html:208
+#: .\csas\templates\csas\csas_filter_maritimes.html:213
+#: .\csas\templates\csas\csas_filter_maritimes.html:217
+#: .\csas\templates\csas\csas_filter_national.html:146
+#: .\csas\templates\csas\csas_filter_national.html:148
+#: .\csas\templates\csas\csas_filter_national.html:213
+#: .\csas\templates\csas\csas_filter_national.html:217
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:146
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:148
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:204
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:208
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:213
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:217
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:146
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:148
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:204
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:208
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:213
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:217
 #: .\csas\templates\csas\csas_filter_pacific.html:146
 #: .\csas\templates\csas\csas_filter_pacific.html:148
-#: .\csas\templates\csas\csas_filter_pacific.html:204
-#: .\csas\templates\csas\csas_filter_pacific.html:208
+#: .\csas\templates\csas\csas_filter_pacific.html:213
+#: .\csas\templates\csas\csas_filter_pacific.html:217
 #: .\csas\templates\csas\csas_filter_quebec.html:146
 #: .\csas\templates\csas\csas_filter_quebec.html:148
-#: .\csas\templates\csas\csas_filter_quebec.html:204
-#: .\csas\templates\csas\csas_filter_quebec.html:208
+#: .\csas\templates\csas\csas_filter_quebec.html:213
+#: .\csas\templates\csas\csas_filter_quebec.html:217
 #, fuzzy
 msgid "O&M Costs"
 msgstr "F et E:"
@@ -1263,6 +1504,8 @@ msgstr "F et E:"
 #: .\csas\templates\csas\csas_filter_gulf.html:156
 #: .\csas\templates\csas\csas_filter_maritimes.html:154
 #: .\csas\templates\csas\csas_filter_maritimes.html:156
+#: .\csas\templates\csas\csas_filter_national.html:154
+#: .\csas\templates\csas\csas_filter_national.html:156
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:154
 #: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:156
 #: .\csas\templates\csas\csas_filter_ontario_prairie.html:154
@@ -1274,120 +1517,135 @@ msgstr "F et E:"
 msgid "Media"
 msgstr ""
 
-#: .\csas\templates\csas\csas_filter.html:175
-#: .\csas\templates\csas\csas_filter.html:179
-#: .\csas\templates\csas\csas_filter_arctic.html:180
-#: .\csas\templates\csas\csas_filter_arctic.html:184
-#: .\csas\templates\csas\csas_filter_gulf.html:180
-#: .\csas\templates\csas\csas_filter_gulf.html:184
-#: .\csas\templates\csas\csas_filter_maritimes.html:180
-#: .\csas\templates\csas\csas_filter_maritimes.html:184
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:180
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:184
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:180
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:184
-#: .\csas\templates\csas\csas_filter_pacific.html:180
-#: .\csas\templates\csas\csas_filter_pacific.html:184
-#: .\csas\templates\csas\csas_filter_quebec.html:180
-#: .\csas\templates\csas\csas_filter_quebec.html:184
+#: .\csas\templates\csas\csas_filter.html:184
+#: .\csas\templates\csas\csas_filter.html:188
+#: .\csas\templates\csas\csas_filter_arctic.html:189
+#: .\csas\templates\csas\csas_filter_arctic.html:193
+#: .\csas\templates\csas\csas_filter_gulf.html:189
+#: .\csas\templates\csas\csas_filter_gulf.html:193
+#: .\csas\templates\csas\csas_filter_maritimes.html:189
+#: .\csas\templates\csas\csas_filter_maritimes.html:193
+#: .\csas\templates\csas\csas_filter_national.html:189
+#: .\csas\templates\csas\csas_filter_national.html:193
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:189
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:193
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:189
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:193
+#: .\csas\templates\csas\csas_filter_pacific.html:189
+#: .\csas\templates\csas\csas_filter_pacific.html:193
+#: .\csas\templates\csas\csas_filter_quebec.html:189
+#: .\csas\templates\csas\csas_filter_quebec.html:193
 #, fuzzy
 msgid "Translation Info"
 msgstr "Transactions"
 
-#: .\csas\templates\csas\csas_filter.html:187
-#: .\csas\templates\csas\csas_filter.html:191
-#: .\csas\templates\csas\csas_filter_arctic.html:192
-#: .\csas\templates\csas\csas_filter_arctic.html:196
-#: .\csas\templates\csas\csas_filter_gulf.html:192
-#: .\csas\templates\csas\csas_filter_gulf.html:196
-#: .\csas\templates\csas\csas_filter_maritimes.html:192
-#: .\csas\templates\csas\csas_filter_maritimes.html:196
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:192
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:196
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:192
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:196
-#: .\csas\templates\csas\csas_filter_pacific.html:192
-#: .\csas\templates\csas\csas_filter_pacific.html:196
-#: .\csas\templates\csas\csas_filter_quebec.html:192
-#: .\csas\templates\csas\csas_filter_quebec.html:196
+#: .\csas\templates\csas\csas_filter.html:196
+#: .\csas\templates\csas\csas_filter.html:200
+#: .\csas\templates\csas\csas_filter_arctic.html:201
+#: .\csas\templates\csas\csas_filter_arctic.html:205
+#: .\csas\templates\csas\csas_filter_gulf.html:201
+#: .\csas\templates\csas\csas_filter_gulf.html:205
+#: .\csas\templates\csas\csas_filter_maritimes.html:201
+#: .\csas\templates\csas\csas_filter_maritimes.html:205
+#: .\csas\templates\csas\csas_filter_national.html:201
+#: .\csas\templates\csas\csas_filter_national.html:205
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:201
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:205
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:201
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:205
+#: .\csas\templates\csas\csas_filter_pacific.html:201
+#: .\csas\templates\csas\csas_filter_pacific.html:205
+#: .\csas\templates\csas\csas_filter_quebec.html:201
+#: .\csas\templates\csas\csas_filter_quebec.html:205
 #, fuzzy
 msgid "Doc Location"
 msgstr "Section"
 
-#: .\csas\templates\csas\csas_filter.html:211
-#: .\csas\templates\csas\csas_filter.html:215
-#: .\csas\templates\csas\csas_filter_arctic.html:216
-#: .\csas\templates\csas\csas_filter_arctic.html:220
-#: .\csas\templates\csas\csas_filter_gulf.html:216
-#: .\csas\templates\csas\csas_filter_gulf.html:220
-#: .\csas\templates\csas\csas_filter_maritimes.html:216
-#: .\csas\templates\csas\csas_filter_maritimes.html:220
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:216
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:220
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:216
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:220
-#: .\csas\templates\csas\csas_filter_pacific.html:216
-#: .\csas\templates\csas\csas_filter_pacific.html:220
-#: .\csas\templates\csas\csas_filter_quebec.html:216
-#: .\csas\templates\csas\csas_filter_quebec.html:220
+#: .\csas\templates\csas\csas_filter.html:220
+#: .\csas\templates\csas\csas_filter.html:224
+#: .\csas\templates\csas\csas_filter_arctic.html:225
+#: .\csas\templates\csas\csas_filter_arctic.html:229
+#: .\csas\templates\csas\csas_filter_gulf.html:225
+#: .\csas\templates\csas\csas_filter_gulf.html:229
+#: .\csas\templates\csas\csas_filter_maritimes.html:225
+#: .\csas\templates\csas\csas_filter_maritimes.html:229
+#: .\csas\templates\csas\csas_filter_national.html:225
+#: .\csas\templates\csas\csas_filter_national.html:229
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:225
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:229
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:225
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:229
+#: .\csas\templates\csas\csas_filter_pacific.html:225
+#: .\csas\templates\csas\csas_filter_pacific.html:229
+#: .\csas\templates\csas\csas_filter_quebec.html:225
+#: .\csas\templates\csas\csas_filter_quebec.html:229
 #, fuzzy
 msgid "Com Results"
 msgstr "Commentaires"
 
-#: .\csas\templates\csas\csas_filter.html:237
-#: .\csas\templates\csas\csas_filter_arctic.html:235
-#: .\csas\templates\csas\csas_filter_gulf.html:235
-#: .\csas\templates\csas\csas_filter_maritimes.html:235
-#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:235
-#: .\csas\templates\csas\csas_filter_ontario_prairie.html:235
-#: .\csas\templates\csas\csas_filter_pacific.html:235
-#: .\csas\templates\csas\csas_filter_quebec.html:235
+#: .\csas\templates\csas\csas_filter.html:255
+#: .\csas\templates\csas\csas_filter_arctic.html:260
+#: .\csas\templates\csas\csas_filter_gulf.html:260
+#: .\csas\templates\csas\csas_filter_maritimes.html:260
+#: .\csas\templates\csas\csas_filter_national.html:260
+#: .\csas\templates\csas\csas_filter_newfoundland_labrador.html:260
+#: .\csas\templates\csas\csas_filter_ontario_prairie.html:260
+#: .\csas\templates\csas\csas_filter_pacific.html:260
+#: .\csas\templates\csas\csas_filter_quebec.html:260
 #, fuzzy
 msgid "Status Update"
 msgstr "date du statut"
+
+#: .\csas\templates\csas\csas_managed_lists.html:19
+msgid "delete"
+msgstr ""
 
 #: .\csas\templates\csas\csas_nav.html:8
 msgid "CSAS"
 msgstr ""
 
-#: .\csas\templates\csas\csas_nav.html:12 .\csas\templates\csas\index.html:31
-#: .\csas\templates\csas\index_arctic.html:31
-#: .\csas\templates\csas\index_gulf.html:31
-#: .\csas\templates\csas\index_newfoundland_labrador.html:31
-#: .\csas\templates\csas\index_ontario_prairie.html:31
-#: .\csas\templates\csas\index_pacific.html:31
-#: .\csas\templates\csas\index_quebec.html:31
+#: .\csas\templates\csas\csas_nav.html:12 .\csas\templates\csas\index.html:32
+#: .\csas\templates\csas\index_arctic.html:32
+#: .\csas\templates\csas\index_gulf.html:32
+#: .\csas\templates\csas\index_national.html:32
+#: .\csas\templates\csas\index_newfoundland_labrador.html:32
+#: .\csas\templates\csas\index_ontario_prairie.html:32
+#: .\csas\templates\csas\index_pacific.html:32
+#: .\csas\templates\csas\index_quebec.html:32
 msgid "Requests for Science Advice"
 msgstr ""
 
-#: .\csas\templates\csas\csas_nav.html:15 .\csas\templates\csas\index.html:44
-#: .\csas\templates\csas\index_arctic.html:44
-#: .\csas\templates\csas\index_gulf.html:44
-#: .\csas\templates\csas\index_newfoundland_labrador.html:44
-#: .\csas\templates\csas\index_ontario_prairie.html:44
-#: .\csas\templates\csas\index_pacific.html:44
-#: .\csas\templates\csas\index_quebec.html:44
+#: .\csas\templates\csas\csas_nav.html:15 .\csas\templates\csas\index.html:45
+#: .\csas\templates\csas\index_arctic.html:45
+#: .\csas\templates\csas\index_gulf.html:45
+#: .\csas\templates\csas\index_national.html:45
+#: .\csas\templates\csas\index_newfoundland_labrador.html:45
+#: .\csas\templates\csas\index_ontario_prairie.html:45
+#: .\csas\templates\csas\index_pacific.html:45
+#: .\csas\templates\csas\index_quebec.html:45
 msgid "Schedule of Meetings"
 msgstr ""
 
-#: .\csas\templates\csas\csas_nav.html:18 .\csas\templates\csas\index.html:57
-#: .\csas\templates\csas\index_arctic.html:57
-#: .\csas\templates\csas\index_gulf.html:57
-#: .\csas\templates\csas\index_newfoundland_labrador.html:57
-#: .\csas\templates\csas\index_ontario_prairie.html:57
-#: .\csas\templates\csas\index_pacific.html:57
-#: .\csas\templates\csas\index_quebec.html:57
+#: .\csas\templates\csas\csas_nav.html:18 .\csas\templates\csas\index.html:58
+#: .\csas\templates\csas\index_arctic.html:58
+#: .\csas\templates\csas\index_gulf.html:58
+#: .\csas\templates\csas\index_national.html:58
+#: .\csas\templates\csas\index_newfoundland_labrador.html:58
+#: .\csas\templates\csas\index_ontario_prairie.html:58
+#: .\csas\templates\csas\index_pacific.html:58
+#: .\csas\templates\csas\index_quebec.html:58
 #, fuzzy
 msgid "Publications"
 msgstr "Nouvelle organisation"
 
-#: .\csas\templates\csas\csas_nav.html:21 .\csas\templates\csas\index.html:71
-#: .\csas\templates\csas\index_arctic.html:71
-#: .\csas\templates\csas\index_gulf.html:71
-#: .\csas\templates\csas\index_newfoundland_labrador.html:70
-#: .\csas\templates\csas\index_ontario_prairie.html:71
-#: .\csas\templates\csas\index_pacific.html:71
-#: .\csas\templates\csas\index_quebec.html:71
+#: .\csas\templates\csas\csas_nav.html:21 .\csas\templates\csas\index.html:72
+#: .\csas\templates\csas\index_arctic.html:72
+#: .\csas\templates\csas\index_gulf.html:72
+#: .\csas\templates\csas\index_national.html:72
+#: .\csas\templates\csas\index_newfoundland_labrador.html:71
+#: .\csas\templates\csas\index_ontario_prairie.html:72
+#: .\csas\templates\csas\index_pacific.html:72
+#: .\csas\templates\csas\index_quebec.html:72
 #, fuzzy
 msgid "Contacts"
 msgstr "Contacts du MPO"
@@ -1397,15 +1655,43 @@ msgstr "Contacts du MPO"
 msgid "Lookup"
 msgstr "Déconnecter"
 
-#: .\csas\templates\csas\csas_nav.html:46 .\csas\views.py:260
-#: .\csas\views.py:1387
+#: .\csas\templates\csas\csas_nav.html:53
 #, fuzzy
-msgid "Advisory Process Type"
+msgid "Managed Advisory Process Type"
 msgstr "ordre de traitement"
+
+#: .\csas\templates\csas\csas_nav.html:56
+#, fuzzy
+#| msgid "Honorific"
+msgid "Managed Honorific"
+msgstr "Honorifique"
+
+#: .\csas\templates\csas\csas_nav.html:59
+#, fuzzy
+#| msgid "Meeting Location Province"
+msgid "Managed Location Province"
+msgstr "Lieu de la réunion Province"
+
+#: .\csas\templates\csas\csas_nav.html:62
+#, fuzzy
+#| msgid "Meeting Quarter"
+msgid "Managed Meeting Quarter"
+msgstr "Trimestre de réunion"
+
+#: .\csas\templates\csas\csas_nav.html:65
+msgid "Managed Scope"
+msgstr ""
+
+#: .\csas\templates\csas\csas_nav.html:68
+#, fuzzy
+#| msgid "Meeting Status"
+msgid "Managed Status"
+msgstr "Statut de la réunion"
 
 #: .\csas\templates\csas\index.html:11
 #: .\csas\templates\csas\index_arctic.html:11
 #: .\csas\templates\csas\index_gulf.html:11
+#: .\csas\templates\csas\index_national.html:11
 #: .\csas\templates\csas\index_newfoundland_labrador.html:11
 #: .\csas\templates\csas\index_ontario_prairie.html:11
 #: .\csas\templates\csas\index_pacific.html:11
@@ -1413,189 +1699,222 @@ msgstr "ordre de traitement"
 msgid "CSAS Tracking Tool"
 msgstr ""
 
-#: .\csas\templates\csas\index.html:15 .\csas\templates\csas\index.html:34
-#: .\csas\templates\csas\index.html:47 .\csas\templates\csas\index.html:60
-#: .\csas\templates\csas\index.html:74
+#: .\csas\templates\csas\index.html:15
 #: .\csas\templates\csas\index_arctic.html:15
 #: .\csas\templates\csas\index_gulf.html:15
+#: .\csas\templates\csas\index_national.html:15
+#: .\csas\templates\csas\index_national.html:35
+#: .\csas\templates\csas\index_national.html:48
+#: .\csas\templates\csas\index_national.html:61
+#: .\csas\templates\csas\index_national.html:75
 #: .\csas\templates\csas\index_newfoundland_labrador.html:15
 #: .\csas\templates\csas\index_ontario_prairie.html:15
 #: .\csas\templates\csas\index_pacific.html:15
 #: .\csas\templates\csas\index_quebec.html:15
-msgid "Maritimes"
-msgstr "Maritimes"
+#, fuzzy
+msgid "National"
+msgstr "Section"
 
-#: .\csas\templates\csas\index.html:16
+#: .\csas\templates\csas\index.html:16 .\csas\templates\csas\index.html:35
+#: .\csas\templates\csas\index.html:48 .\csas\templates\csas\index.html:61
+#: .\csas\templates\csas\index.html:75
 #: .\csas\templates\csas\index_arctic.html:16
 #: .\csas\templates\csas\index_gulf.html:16
+#: .\csas\templates\csas\index_national.html:16
 #: .\csas\templates\csas\index_newfoundland_labrador.html:16
-#: .\csas\templates\csas\index_newfoundland_labrador.html:34
-#: .\csas\templates\csas\index_newfoundland_labrador.html:47
-#: .\csas\templates\csas\index_newfoundland_labrador.html:60
-#: .\csas\templates\csas\index_newfoundland_labrador.html:73
 #: .\csas\templates\csas\index_ontario_prairie.html:16
 #: .\csas\templates\csas\index_pacific.html:16
 #: .\csas\templates\csas\index_quebec.html:16
-msgid "Newfoundland & Labrador"
-msgstr ""
+msgid "Maritimes"
+msgstr "Maritimes"
 
 #: .\csas\templates\csas\index.html:17
 #: .\csas\templates\csas\index_arctic.html:17
 #: .\csas\templates\csas\index_gulf.html:17
-#: .\csas\templates\csas\index_gulf.html:34
-#: .\csas\templates\csas\index_gulf.html:47
-#: .\csas\templates\csas\index_gulf.html:60
-#: .\csas\templates\csas\index_gulf.html:74
+#: .\csas\templates\csas\index_national.html:17
 #: .\csas\templates\csas\index_newfoundland_labrador.html:17
+#: .\csas\templates\csas\index_newfoundland_labrador.html:35
+#: .\csas\templates\csas\index_newfoundland_labrador.html:48
+#: .\csas\templates\csas\index_newfoundland_labrador.html:61
+#: .\csas\templates\csas\index_newfoundland_labrador.html:74
 #: .\csas\templates\csas\index_ontario_prairie.html:17
 #: .\csas\templates\csas\index_pacific.html:17
 #: .\csas\templates\csas\index_quebec.html:17
-msgid "Gulf"
-msgstr "Golfe"
+msgid "Newfoundland & Labrador"
+msgstr ""
 
 #: .\csas\templates\csas\index.html:18
 #: .\csas\templates\csas\index_arctic.html:18
 #: .\csas\templates\csas\index_gulf.html:18
+#: .\csas\templates\csas\index_gulf.html:35
+#: .\csas\templates\csas\index_gulf.html:48
+#: .\csas\templates\csas\index_gulf.html:61
+#: .\csas\templates\csas\index_gulf.html:75
+#: .\csas\templates\csas\index_national.html:18
 #: .\csas\templates\csas\index_newfoundland_labrador.html:18
 #: .\csas\templates\csas\index_ontario_prairie.html:18
 #: .\csas\templates\csas\index_pacific.html:18
 #: .\csas\templates\csas\index_quebec.html:18
-#: .\csas\templates\csas\index_quebec.html:34
-#: .\csas\templates\csas\index_quebec.html:47
-#: .\csas\templates\csas\index_quebec.html:60
-#: .\csas\templates\csas\index_quebec.html:74
-msgid "Quebec"
-msgstr "Québec"
+msgid "Gulf"
+msgstr "Golfe"
 
 #: .\csas\templates\csas\index.html:19
 #: .\csas\templates\csas\index_arctic.html:19
-#: .\csas\templates\csas\index_arctic.html:34
-#: .\csas\templates\csas\index_arctic.html:47
-#: .\csas\templates\csas\index_arctic.html:60
-#: .\csas\templates\csas\index_arctic.html:74
 #: .\csas\templates\csas\index_gulf.html:19
+#: .\csas\templates\csas\index_national.html:19
 #: .\csas\templates\csas\index_newfoundland_labrador.html:19
 #: .\csas\templates\csas\index_ontario_prairie.html:19
 #: .\csas\templates\csas\index_pacific.html:19
 #: .\csas\templates\csas\index_quebec.html:19
-msgid "Arctic"
-msgstr ""
+#: .\csas\templates\csas\index_quebec.html:35
+#: .\csas\templates\csas\index_quebec.html:48
+#: .\csas\templates\csas\index_quebec.html:61
+#: .\csas\templates\csas\index_quebec.html:75
+msgid "Quebec"
+msgstr "Québec"
 
 #: .\csas\templates\csas\index.html:20
 #: .\csas\templates\csas\index_arctic.html:20
+#: .\csas\templates\csas\index_arctic.html:35
+#: .\csas\templates\csas\index_arctic.html:48
+#: .\csas\templates\csas\index_arctic.html:61
+#: .\csas\templates\csas\index_arctic.html:75
 #: .\csas\templates\csas\index_gulf.html:20
+#: .\csas\templates\csas\index_national.html:20
 #: .\csas\templates\csas\index_newfoundland_labrador.html:20
 #: .\csas\templates\csas\index_ontario_prairie.html:20
-#: .\csas\templates\csas\index_ontario_prairie.html:34
-#: .\csas\templates\csas\index_ontario_prairie.html:47
-#: .\csas\templates\csas\index_ontario_prairie.html:60
-#: .\csas\templates\csas\index_ontario_prairie.html:74
 #: .\csas\templates\csas\index_pacific.html:20
 #: .\csas\templates\csas\index_quebec.html:20
-msgid "Ontario & Prairie"
+msgid "Arctic"
 msgstr ""
 
 #: .\csas\templates\csas\index.html:21
 #: .\csas\templates\csas\index_arctic.html:21
 #: .\csas\templates\csas\index_gulf.html:21
+#: .\csas\templates\csas\index_national.html:21
 #: .\csas\templates\csas\index_newfoundland_labrador.html:21
 #: .\csas\templates\csas\index_ontario_prairie.html:21
+#: .\csas\templates\csas\index_ontario_prairie.html:35
+#: .\csas\templates\csas\index_ontario_prairie.html:48
+#: .\csas\templates\csas\index_ontario_prairie.html:61
+#: .\csas\templates\csas\index_ontario_prairie.html:75
 #: .\csas\templates\csas\index_pacific.html:21
-#: .\csas\templates\csas\index_pacific.html:34
-#: .\csas\templates\csas\index_pacific.html:47
-#: .\csas\templates\csas\index_pacific.html:60
-#: .\csas\templates\csas\index_pacific.html:74
 #: .\csas\templates\csas\index_quebec.html:21
+msgid "Ontario & Prairie"
+msgstr ""
+
+#: .\csas\templates\csas\index.html:22
+#: .\csas\templates\csas\index_arctic.html:22
+#: .\csas\templates\csas\index_gulf.html:22
+#: .\csas\templates\csas\index_national.html:22
+#: .\csas\templates\csas\index_newfoundland_labrador.html:22
+#: .\csas\templates\csas\index_ontario_prairie.html:22
+#: .\csas\templates\csas\index_pacific.html:22
+#: .\csas\templates\csas\index_pacific.html:35
+#: .\csas\templates\csas\index_pacific.html:48
+#: .\csas\templates\csas\index_pacific.html:61
+#: .\csas\templates\csas\index_pacific.html:75
+#: .\csas\templates\csas\index_quebec.html:22
 msgid "Pacific"
 msgstr "Pacifique"
 
-#: .\csas\templates\csas\index.html:32 .\csas\templates\csas\index.html:45
-#: .\csas\templates\csas\index.html:58 .\csas\templates\csas\index.html:72
-#: .\csas\templates\csas\index.html:99
-#: .\csas\templates\csas\index_arctic.html:32
-#: .\csas\templates\csas\index_arctic.html:45
-#: .\csas\templates\csas\index_arctic.html:58
-#: .\csas\templates\csas\index_arctic.html:72
-#: .\csas\templates\csas\index_arctic.html:99
-#: .\csas\templates\csas\index_gulf.html:32
-#: .\csas\templates\csas\index_gulf.html:45
-#: .\csas\templates\csas\index_gulf.html:58
-#: .\csas\templates\csas\index_gulf.html:72
-#: .\csas\templates\csas\index_gulf.html:99
-#: .\csas\templates\csas\index_newfoundland_labrador.html:32
-#: .\csas\templates\csas\index_newfoundland_labrador.html:45
-#: .\csas\templates\csas\index_newfoundland_labrador.html:58
-#: .\csas\templates\csas\index_newfoundland_labrador.html:71
-#: .\csas\templates\csas\index_newfoundland_labrador.html:98
-#: .\csas\templates\csas\index_ontario_prairie.html:32
-#: .\csas\templates\csas\index_ontario_prairie.html:45
-#: .\csas\templates\csas\index_ontario_prairie.html:58
-#: .\csas\templates\csas\index_ontario_prairie.html:72
-#: .\csas\templates\csas\index_ontario_prairie.html:99
-#: .\csas\templates\csas\index_pacific.html:32
-#: .\csas\templates\csas\index_pacific.html:45
-#: .\csas\templates\csas\index_pacific.html:58
-#: .\csas\templates\csas\index_pacific.html:72
-#: .\csas\templates\csas\index_pacific.html:99
-#: .\csas\templates\csas\index_quebec.html:32
-#: .\csas\templates\csas\index_quebec.html:45
-#: .\csas\templates\csas\index_quebec.html:58
-#: .\csas\templates\csas\index_quebec.html:72
-#: .\csas\templates\csas\index_quebec.html:99
+#: .\csas\templates\csas\index.html:33 .\csas\templates\csas\index.html:46
+#: .\csas\templates\csas\index.html:59 .\csas\templates\csas\index.html:73
+#: .\csas\templates\csas\index.html:100
+#: .\csas\templates\csas\index_arctic.html:33
+#: .\csas\templates\csas\index_arctic.html:46
+#: .\csas\templates\csas\index_arctic.html:59
+#: .\csas\templates\csas\index_arctic.html:73
+#: .\csas\templates\csas\index_arctic.html:100
+#: .\csas\templates\csas\index_gulf.html:33
+#: .\csas\templates\csas\index_gulf.html:46
+#: .\csas\templates\csas\index_gulf.html:59
+#: .\csas\templates\csas\index_gulf.html:73
+#: .\csas\templates\csas\index_gulf.html:100
+#: .\csas\templates\csas\index_national.html:33
+#: .\csas\templates\csas\index_national.html:46
+#: .\csas\templates\csas\index_national.html:59
+#: .\csas\templates\csas\index_national.html:73
+#: .\csas\templates\csas\index_national.html:100
+#: .\csas\templates\csas\index_newfoundland_labrador.html:33
+#: .\csas\templates\csas\index_newfoundland_labrador.html:46
+#: .\csas\templates\csas\index_newfoundland_labrador.html:59
+#: .\csas\templates\csas\index_newfoundland_labrador.html:72
+#: .\csas\templates\csas\index_newfoundland_labrador.html:99
+#: .\csas\templates\csas\index_ontario_prairie.html:33
+#: .\csas\templates\csas\index_ontario_prairie.html:46
+#: .\csas\templates\csas\index_ontario_prairie.html:59
+#: .\csas\templates\csas\index_ontario_prairie.html:73
+#: .\csas\templates\csas\index_ontario_prairie.html:100
+#: .\csas\templates\csas\index_pacific.html:33
+#: .\csas\templates\csas\index_pacific.html:46
+#: .\csas\templates\csas\index_pacific.html:59
+#: .\csas\templates\csas\index_pacific.html:73
+#: .\csas\templates\csas\index_pacific.html:100
+#: .\csas\templates\csas\index_quebec.html:33
+#: .\csas\templates\csas\index_quebec.html:46
+#: .\csas\templates\csas\index_quebec.html:59
+#: .\csas\templates\csas\index_quebec.html:73
+#: .\csas\templates\csas\index_quebec.html:100
 msgid "All"
 msgstr "Tous les projets"
 
-#: .\csas\templates\csas\index.html:37
-#: .\csas\templates\csas\index_arctic.html:37
-#: .\csas\templates\csas\index_gulf.html:37
-#: .\csas\templates\csas\index_newfoundland_labrador.html:37
-#: .\csas\templates\csas\index_ontario_prairie.html:37
-#: .\csas\templates\csas\index_pacific.html:37
-#: .\csas\templates\csas\index_quebec.html:37
+#: .\csas\templates\csas\index.html:38
+#: .\csas\templates\csas\index_arctic.html:38
+#: .\csas\templates\csas\index_gulf.html:38
+#: .\csas\templates\csas\index_national.html:38
+#: .\csas\templates\csas\index_newfoundland_labrador.html:38
+#: .\csas\templates\csas\index_ontario_prairie.html:38
+#: .\csas\templates\csas\index_pacific.html:38
+#: .\csas\templates\csas\index_quebec.html:38
 #, fuzzy
 msgid "New Request"
 msgstr "Nouvelle demande"
 
-#: .\csas\templates\csas\index.html:50
-#: .\csas\templates\csas\index_arctic.html:50
-#: .\csas\templates\csas\index_gulf.html:50
-#: .\csas\templates\csas\index_newfoundland_labrador.html:50
-#: .\csas\templates\csas\index_ontario_prairie.html:50
-#: .\csas\templates\csas\index_pacific.html:50
-#: .\csas\templates\csas\index_quebec.html:50
+#: .\csas\templates\csas\index.html:51
+#: .\csas\templates\csas\index_arctic.html:51
+#: .\csas\templates\csas\index_gulf.html:51
+#: .\csas\templates\csas\index_national.html:51
+#: .\csas\templates\csas\index_newfoundland_labrador.html:51
+#: .\csas\templates\csas\index_ontario_prairie.html:51
+#: .\csas\templates\csas\index_pacific.html:51
+#: .\csas\templates\csas\index_quebec.html:51
 #, fuzzy
 msgid "New Meeting"
 msgstr "Nouveau ou existant"
 
-#: .\csas\templates\csas\index.html:64
-#: .\csas\templates\csas\index_arctic.html:64
-#: .\csas\templates\csas\index_gulf.html:64
-#: .\csas\templates\csas\index_newfoundland_labrador.html:63
-#: .\csas\templates\csas\index_ontario_prairie.html:64
-#: .\csas\templates\csas\index_pacific.html:64
-#: .\csas\templates\csas\index_quebec.html:64
+#: .\csas\templates\csas\index.html:65
+#: .\csas\templates\csas\index_arctic.html:65
+#: .\csas\templates\csas\index_gulf.html:65
+#: .\csas\templates\csas\index_national.html:65
+#: .\csas\templates\csas\index_newfoundland_labrador.html:64
+#: .\csas\templates\csas\index_ontario_prairie.html:65
+#: .\csas\templates\csas\index_pacific.html:65
+#: .\csas\templates\csas\index_quebec.html:65
 #, fuzzy
 msgid "New Publication"
 msgstr "Nouvelle organisation"
 
-#: .\csas\templates\csas\index.html:77
-#: .\csas\templates\csas\index_arctic.html:77
-#: .\csas\templates\csas\index_gulf.html:77
-#: .\csas\templates\csas\index_newfoundland_labrador.html:76
-#: .\csas\templates\csas\index_ontario_prairie.html:77
-#: .\csas\templates\csas\index_pacific.html:77
-#: .\csas\templates\csas\index_quebec.html:77
+#: .\csas\templates\csas\index.html:78
+#: .\csas\templates\csas\index_arctic.html:78
+#: .\csas\templates\csas\index_gulf.html:78
+#: .\csas\templates\csas\index_national.html:78
+#: .\csas\templates\csas\index_newfoundland_labrador.html:77
+#: .\csas\templates\csas\index_ontario_prairie.html:78
+#: .\csas\templates\csas\index_pacific.html:78
+#: .\csas\templates\csas\index_quebec.html:78
 #, fuzzy
 msgid "New Contact"
 msgstr "Contacts du MPO"
 
-#: .\csas\templates\csas\index.html:92
-#: .\csas\templates\csas\index_arctic.html:92
-#: .\csas\templates\csas\index_gulf.html:92
-#: .\csas\templates\csas\index_newfoundland_labrador.html:91
-#: .\csas\templates\csas\index_ontario_prairie.html:92
-#: .\csas\templates\csas\index_pacific.html:92
-#: .\csas\templates\csas\index_quebec.html:92
+#: .\csas\templates\csas\index.html:93
+#: .\csas\templates\csas\index_arctic.html:93
+#: .\csas\templates\csas\index_gulf.html:93
+#: .\csas\templates\csas\index_national.html:93
+#: .\csas\templates\csas\index_newfoundland_labrador.html:92
+#: .\csas\templates\csas\index_ontario_prairie.html:93
+#: .\csas\templates\csas\index_pacific.html:93
+#: .\csas\templates\csas\index_quebec.html:93
 #, fuzzy
 msgid "Controlled Lists"
 msgstr "Contacts du MPO"
@@ -1663,355 +1982,408 @@ msgstr "Nouvelle organisation"
 msgid "<h3>New Publication Communication of Results</h3>"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:255
+#: .\csas\utils.py:30
+msgid "Sorry, you need to be a csas super user in order to access this page."
+msgstr ""
+
+#: .\csas\views.py:348
 #, fuzzy
 msgid "Meeting Location"
 msgstr "URL externe"
 
-#: .\csas\views.py:406
+#: .\csas\views.py:515
 #, fuzzy
 msgid "New Request Entry"
 msgstr "Nouvelle demande"
 
-#: .\csas\views.py:418
+#: .\csas\views.py:527
 #, fuzzy
 msgid "New Request CSAS Entry"
 msgstr "Nouvelle demande"
 
-#: .\csas\views.py:427
+#: .\csas\views.py:536
 #, fuzzy
 msgid "Update Request"
 msgstr "Équipement de laboratoire"
 
-#: .\csas\views.py:449
+#: .\csas\views.py:558
 #, fuzzy
 msgid "Update Request CSAS"
 msgstr "Équipement de laboratoire"
 
-#: .\csas\views.py:479
+#: .\csas\views.py:590
+#, fuzzy
+msgid "National Region Request List"
+msgstr "Statut de la demande"
+
+#: .\csas\views.py:600
 msgid "Maritimes Region Request List"
 msgstr ""
 
-#: .\csas\views.py:489
+#: .\csas\views.py:610
 msgid "Newfoundland & Labrador Region Request List"
 msgstr ""
 
-#: .\csas\views.py:499
+#: .\csas\views.py:620
 #, fuzzy
 msgid "Gulf Region Request List"
 msgstr "Statut de la demande"
 
-#: .\csas\views.py:509
+#: .\csas\views.py:630
 #, fuzzy
 msgid "Quebec Region Request List"
 msgstr "Statut de la demande"
 
-#: .\csas\views.py:519
+#: .\csas\views.py:640
 #, fuzzy
 msgid "Arctic Region Request List"
 msgstr "Statut de la demande"
 
-#: .\csas\views.py:529
+#: .\csas\views.py:650
 msgid "Ontario & Prairie Region Request List"
 msgstr ""
 
-#: .\csas\views.py:539
+#: .\csas\views.py:660
 #, fuzzy
 msgid "Pacific Region Request List"
 msgstr "Statut de la demande"
 
-#: .\csas\views.py:549
+#: .\csas\views.py:670
 #, fuzzy
 msgid "Request Details"
 msgstr "Demande de renseignements"
 
-#: .\csas\views.py:561
+#: .\csas\views.py:684
 msgid "Request Status Details"
 msgstr "Détails sur l'état de la demande"
 
-#: .\csas\views.py:572
+#: .\csas\views.py:693 .\csas\views.py:702
+#, fuzzy
+msgid "Delete Request"
+msgstr "Nouvelle demande"
+
+#: .\csas\views.py:711
+#, fuzzy
+msgid "Delete Request CSAS"
+msgstr "Équipement de laboratoire"
+
+#: .\csas\views.py:722
 #, fuzzy
 msgid "New Contact Entry"
 msgstr "Nouvelle entrée"
 
-#: .\csas\views.py:581
+#: .\csas\views.py:731
 #, fuzzy
 msgid "Update Contact"
 msgstr "Mis à jour sur"
 
-#: .\csas\views.py:611
+#: .\csas\views.py:763
+#, fuzzy
+msgid "National Region Contact List"
+msgstr "Contacts du MPO"
+
+#: .\csas\views.py:773
 msgid "Maritimes Region Contact List"
 msgstr ""
 
-#: .\csas\views.py:621
+#: .\csas\views.py:783
 msgid "Newfoundland & Labrador Region Contact List"
 msgstr ""
 
-#: .\csas\views.py:631
+#: .\csas\views.py:793
 #, fuzzy
 msgid "Gulf Region Contact List"
 msgstr "Contacts du MPO"
 
-#: .\csas\views.py:641
+#: .\csas\views.py:803
 #, fuzzy
 msgid "Quebec Region Contact List"
 msgstr "Contacts du MPO"
 
-#: .\csas\views.py:651
+#: .\csas\views.py:813
 #, fuzzy
 msgid "Arctic Region Contact List"
 msgstr "Contacts du MPO"
 
-#: .\csas\views.py:661
+#: .\csas\views.py:823
 msgid "Ontario & Prairie Region Contact List"
 msgstr ""
 
-#: .\csas\views.py:671
+#: .\csas\views.py:833
 #, fuzzy
 msgid "Pacific Region Contact List"
 msgstr "Contacts du MPO"
 
-#: .\csas\views.py:681
+#: .\csas\views.py:843
 #, fuzzy
 msgid "Contact Details"
 msgstr "Détails du projet"
 
-#: .\csas\views.py:695
+#: .\csas\views.py:854 .\csas\views.py:863
+#, fuzzy
+msgid "Delete Contact"
+msgstr "Contacts du MPO"
+
+#: .\csas\views.py:875
 #, fuzzy
 msgid "New Meeting Details Entry"
 msgstr "Nouvelle entrée"
 
-#: .\csas\views.py:709
+#: .\csas\views.py:889
 #, fuzzy
 msgid "New Meeting Documentation Entry"
 msgstr "Nouvelle entrée"
 
-#: .\csas\views.py:720
+#: .\csas\views.py:900
 #, fuzzy
 msgid "New Meeting DFO Participants Entry"
 msgstr "Nouvelle entrée"
 
-#: .\csas\views.py:739
+#: .\csas\views.py:919
 #, fuzzy
 msgid "New Meeting Other Participants Entry"
 msgstr "Nouvelle entrée"
 
-#: .\csas\views.py:751
+#: .\csas\views.py:931
 #, fuzzy
 msgid "New Meeting O&M Costs Entry"
 msgstr "Nouvelle entrée"
 
-#: .\csas\views.py:773
+#: .\csas\views.py:953
 #, fuzzy
 msgid "New Meeting Media Entry"
 msgstr "Nouvelle entrée"
 
-#: .\csas\views.py:785
+#: .\csas\views.py:965
 #, fuzzy
 msgid "Update Meeting"
 msgstr "Mis à jour sur"
 
-#: .\csas\views.py:797
+#: .\csas\views.py:977
 #, fuzzy
 msgid "Update Meeting Documentation"
 msgstr "Mis à jour sur"
 
-#: .\csas\views.py:808
+#: .\csas\views.py:988
 #, fuzzy
 msgid "Update Meeting DFO Participants"
 msgstr "Mis à jour sur"
 
-#: .\csas\views.py:820
+#: .\csas\views.py:1000
 msgid "Update Meeting Other Participants"
 msgstr ""
 
-#: .\csas\views.py:832
+#: .\csas\views.py:1012
 #, fuzzy
 msgid "Update Meeting O&M Costs"
 msgstr "Mis à jour sur"
 
-#: .\csas\views.py:844
+#: .\csas\views.py:1024
 #, fuzzy
 msgid "Update Meeting Media"
 msgstr "Mis à jour sur"
 
-#: .\csas\views.py:864
+#: .\csas\views.py:1045
+#, fuzzy
+msgid "National Region Meeting List"
+msgstr "URL externe"
+
+#: .\csas\views.py:1055
 msgid "Maritimes Region Meeting List"
 msgstr ""
 
-#: .\csas\views.py:874
+#: .\csas\views.py:1065
 msgid "Newfoundland & Labrador Region Meeting List"
 msgstr ""
 
-#: .\csas\views.py:884
+#: .\csas\views.py:1075
 #, fuzzy
 msgid "Gulf Region Meeting List"
 msgstr "URL externe"
 
-#: .\csas\views.py:894
+#: .\csas\views.py:1085
 #, fuzzy
 msgid "Quebec Region Meeting List"
 msgstr "URL externe"
 
-#: .\csas\views.py:904
+#: .\csas\views.py:1095
 #, fuzzy
 msgid "Arctic Region Meeting List"
 msgstr "URL externe"
 
-#: .\csas\views.py:914
+#: .\csas\views.py:1105
 msgid "Ontario & Prairie Region Meeting List"
 msgstr ""
 
-#: .\csas\views.py:924
+#: .\csas\views.py:1115
 #, fuzzy
 msgid "Pacific Region Meeting List"
 msgstr "URL externe"
 
-#: .\csas\views.py:934
+#: .\csas\views.py:1125
 msgid "Meeting: DFO Participants List"
 msgstr ""
 
-#: .\csas\views.py:942
+#: .\csas\views.py:1133
 msgid "Meeting: Other Participants List"
 msgstr ""
 
-#: .\csas\views.py:950
+#: .\csas\views.py:1141
 #, fuzzy
 msgid "Meeting Details"
 msgstr "Détails de financement:"
 
-#: .\csas\views.py:962
+#: .\csas\views.py:1153
 #, fuzzy
 msgid "Meeting Documentation"
 msgstr "Détails de financement:"
 
-#: .\csas\views.py:970
+#: .\csas\views.py:1161
 #, fuzzy
 msgid "Meeting DFO Participants"
 msgstr "Détails de financement:"
 
-#: .\csas\views.py:977
+#: .\csas\views.py:1168
 msgid "Meeting Other Participants"
 msgstr ""
 
-#: .\csas\views.py:984
+#: .\csas\views.py:1175
 #, fuzzy
 msgid "Meeting O&M Costs"
 msgstr "F et E:"
 
-#: .\csas\views.py:1002
+#: .\csas\views.py:1191 .\csas\views.py:1200
+#, fuzzy
+msgid "Delete Meeting"
+msgstr "Nouveau ou existant"
+
+#: .\csas\views.py:1211
 #, fuzzy
 msgid "New Publication Details Entry"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1013
+#: .\csas\views.py:1222
 #, fuzzy
 msgid "New Publication Status Entry"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1025
+#: .\csas\views.py:1234
 #, fuzzy
 msgid "New Publication Translation Information Entry"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1036
+#: .\csas\views.py:1245
 #, fuzzy
 msgid "New Publication Documentation Location Entry"
 msgstr "Description"
 
-#: .\csas\views.py:1047
+#: .\csas\views.py:1256
 #, fuzzy
 msgid "New Publication O&M Costs Entry"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1058
+#: .\csas\views.py:1267
 #, fuzzy
 msgid "New Publication Communication of Results Entry"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1069
+#: .\csas\views.py:1278
 #, fuzzy
 msgid "Update Publication"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1080
+#: .\csas\views.py:1289
 #, fuzzy
 msgid "Update Publication Status"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1091
+#: .\csas\views.py:1300
 #, fuzzy
 msgid "Update Publication Translation Information"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1102
+#: .\csas\views.py:1311
 #, fuzzy
 msgid "Update Publication Documentation Location"
 msgstr "Description"
 
-#: .\csas\views.py:1113
+#: .\csas\views.py:1322
 #, fuzzy
 msgid "Update Publication O&M Costs"
 msgstr "Nouvelle organisation"
 
-#: .\csas\views.py:1124
+#: .\csas\views.py:1333
 msgid "Update Publication Communication of Results"
 msgstr ""
 
-#: .\csas\views.py:1145
+#: .\csas\views.py:1354
+#, fuzzy
+msgid "National Region Publication List"
+msgstr "Section"
+
+#: .\csas\views.py:1364
 #, fuzzy
 msgid "Maritimes Region Publication List"
 msgstr "Section"
 
-#: .\csas\views.py:1155
+#: .\csas\views.py:1374
 msgid "Newfoundland & Labrador Region Publication List"
 msgstr ""
 
-#: .\csas\views.py:1165
+#: .\csas\views.py:1384
 #, fuzzy
 msgid "Gulf Region Publication List"
 msgstr "Section"
 
-#: .\csas\views.py:1175
+#: .\csas\views.py:1394
 #, fuzzy
 msgid "Quebec Region Publication List"
 msgstr "Section"
 
-#: .\csas\views.py:1185
+#: .\csas\views.py:1404
 #, fuzzy
 msgid "Arctic Region Publication List"
 msgstr "Section"
 
-#: .\csas\views.py:1195
+#: .\csas\views.py:1414
 msgid "Ontario & Prairie Region Publication List"
 msgstr ""
 
-#: .\csas\views.py:1205
+#: .\csas\views.py:1424
 #, fuzzy
 msgid "Pacific Region Publication List"
 msgstr "Section"
 
-#: .\csas\views.py:1215
+#: .\csas\views.py:1434
 #, fuzzy
 msgid "Publication Details"
 msgstr "Détails de la personne:"
 
-#: .\csas\views.py:1237
+#: .\csas\views.py:1456
 #, fuzzy
 msgid "Publication Translation Info."
 msgstr "Section"
 
-#: .\csas\views.py:1246
+#: .\csas\views.py:1465
 #, fuzzy
 msgid "Publication Doc. Location"
 msgstr "Section"
 
-#: .\csas\views.py:1255
+#: .\csas\views.py:1474
 #, fuzzy
 msgid "Publication O&M Costs"
 msgstr "Section"
 
-#: .\csas\views.py:1263
+#: .\csas\views.py:1482
 #, fuzzy
 msgid "Publication Com. of Results"
 msgstr "Détails de la personne:"
+
+#: .\csas\views.py:1490 .\csas\views.py:1499
+#, fuzzy
+msgid "Delete Publication"
+msgstr "Nouvelle organisation"
+
+#: .\csas\views.py:1540
+msgid "Code has been successfully deleted."
+msgstr ""

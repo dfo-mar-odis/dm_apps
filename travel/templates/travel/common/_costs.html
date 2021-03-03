@@ -1,0 +1,126 @@
+{% load i18n %}
+{% load static %}
+{% load verbose_names %}
+{% load custom_filters %}
+
+<span class="h6 font-weight-bold">{% trans "Costs" %}</span>
+<span @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
+      data-trigger="hover" title="{% trans "Trip Request Costs" %}"
+      :data-content="helpText.costs_header"></span>
+<div class="card mb-2">
+  <div v-if="!inCostEditMode" class="card-header">
+    <div class="">
+      <button class="btn btn-sm btn-dark px-1 py-0 text-sm" @click="addCost(t)">
+        {% trans "Add a cost" %}<span class="mdi mdi-plus text-light"></span>
+      </button>
+      <button class="btn btn-sm btn-dark px-1 py-0 text-sm" @click="addAllCosts(t)">
+        {% trans "Add all costs" %} <span class="mdi mdi-plus-box-multiple-outline text-light"></span>
+      </button>
+      <button class="btn btn-sm btn-dark px-1 py-0 text-sm" @click="clearEmptyCosts(t)">
+        {% trans "Clear unused lines" %} <span class="mdi mdi-broom text-light"></span>
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-text">
+      <p>
+        {% blocktrans %}
+          Per diem rates for breakfast, lunch, supper and incidentals should follow the
+          <a href="https://www.njc-cnm.gc.ca/">National Joint Council</a> Travel Directive.
+          For travel within Canada and
+          USA, please refer to <a href="https://www.njc-cnm.gc.ca/directive/d10/v238/s659/en">Appendix C</a>
+          and for all other travel please refer to
+          <a href="https://www.njc-cnm.gc.ca/directive/app_d.php?lang=en">Appendix D</a>.
+          <span class="red-font">Please note that all expenses for this request should be entered in Canadian dollars.</span>
+        {% endblocktrans %}
+      </p>
+      <div v-if="loading_costs" class="loading mb-3 mt-3 text-center mt-5">
+        <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div v-else-if="!t.costs.length" class="mb-3">
+        <em> {% trans "There are no costs associated with this request" %}... </em>
+      </div>
+      <table v-else :class="{'table table-sm':true, 'table-hover':!isReview}">
+        <tr>
+          <th>${costLabels.cost}</th>
+          <th class="text-center">${costLabels.rate_cad}</th>
+          <th class="text-center">${costLabels.number_of_days}</th>
+          <th class="text-center">${costLabels.amount_cad}</th>
+        </tr>
+        <tbody>
+        <tr v-for="(c,index) in t.costs" :key="c.id">
+          {# cost #}
+
+          <td v-if="!c.editMode"> ${c.cost_display }</td>
+          <td v-else>
+            <select v-model="c.cost" class="form-control form-control-sm">
+              <option v-for="(obj, index) in costChoices" :value="obj.value">${obj.text}</option>
+            </select>
+          </td>
+
+          {# daily_rate #}
+          <td v-if="!c.editMode" class="center-col"> ${c.rate_cad |floatformat |nz|zero2NullMark}</td>
+          <td v-else>
+            <input @keyup='updateCostRowTotal(c)' type="number" step=".01" v-model="c.rate_cad" class="form-control form-control-sm text-center"
+                   placeholder="{% trans "rate" %}" v-on:keyup.enter="updateCost(t, c)">
+          </td>
+          {# days #}
+          <td class="center-col" v-if="!c.editMode"> ${c.number_of_days|nz|zero2NullMark }</td>
+          <td v-else>
+            <input @keyup='updateCostRowTotal(c)' type="number" v-model="c.number_of_days" class="form-control form-control-sm text-center"
+                   placeholder="{% trans "days" %}" v-on:keyup.enter="updateCost(t, c)">
+          </td>
+          {# Amount CAD #}
+          <td class="text-center" v-if="!c.editMode"> ${c.amount_cad |floatformat |zero2NullMark }</td>
+          <td v-else>
+            <input :disabled="(c.rate_cad !== null && c.rate_cad !== '') || (c.number_of_days !== null && c.number_of_days !== '')" type="number" step=".01"
+                   v-model="c.amount_cad" class="form-control form-control-sm text-center" v-on:keyup.enter="updateCost(t, c)">
+          </td>
+
+          <td v-if="canModify && !isReview" style="width:75px">
+            <div v-if="!c.editMode && !inCostEditMode">
+              <button @click="c.editMode=true; inCostEditMode=true; $forceUpdate()" class="btn btn-sm btn-outline-dark py-0 px-1"
+                      data-toggle="tooltip" title="{% trans "Edit" %}">
+                <span class="mdi mdi-pencil text-dark"></span>
+              </button>
+              <button @click="deleteCost(t, c)" class="btn btn-sm btn-outline-dark py-0 px-1" data-toggle="tooltip"
+                      title="{% trans "Delete" %}">
+                <span class="mdi mdi-delete text-dark"></span>
+              </button>
+            </div>
+            <div v-else-if="c.editMode">
+              <button @click="updateCost(t, c)" class="btn btn-sm btn-primary py-0 px-1" data-toggle="tooltip" title="{% trans "Save" %}">
+                <span class="mdi mdi-content-save text-light"></span>
+              </button>
+              <button @click="costCloseEditMode(t, c)" class="btn btn-sm btn-secondary py-0 px-1" data-toggle="tooltip" title="{% trans "Cancel" %}">
+                <span class="mdi mdi-close text-light"></span>
+              </button>
+            </div>
+          </td>
+
+        </tr>
+        <tr>
+          <td class=""><strong>TOTAL</strong></td>
+          <td class="center-col">---</td>
+          <td class="center-col">---</td>
+          <td class="center-col"><strong>${ t.total_cost |floatformat }</strong></td>
+        </tr>
+        </tbody>
+      </table>
+      <div v-if="errorMsgCost" class="alert alert-danger py-1 mt-3" role="alert">
+        <p class="mb-0">
+          <span class="h5 mdi mdi-alert-decagram-outline mr-3"></span>
+          <span class="h6">${errorMsgCost}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+

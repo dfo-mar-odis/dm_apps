@@ -1,0 +1,49 @@
+{% load i18n %}
+<p class="mb-3">
+  <b>{% trans "Request Type:" %}</b><br>
+  <span class="h6" v-if="t.request_obj.traveller_count > 1">{% trans "Group" %}</span>
+  <span v-else>{% trans "Individual" %}</span>
+</p>
+<p class="mb-3">
+  <b>{% trans "Status:" %}</b><br>
+  <span :class="t.request_obj.status_class +' h6'">${t.request_obj.status_display}</span>
+</p>
+<p class="mb-3">
+  <b>{% trans "DFO Section" %}</b><br>
+  <span class="h6">${t.request_obj.section.full_name}</span>
+</p>
+<p class="mb-3">
+  <b>{% trans "Objective of Trip:" %}</b><br>
+  <span class="h6">${t.request_obj.objective_of_event | nz}</span>
+</p>
+<p class="mb-3">
+  <b>{% trans "Benefits to DFO:" %}</b><br>
+  <span class="h6">${t.request_obj.benefit_to_dfo | nz}</span>
+</p>
+<p v-if="t.request_obj.late_justification" class="mb-3">
+  <b>${requestLabels.late_justification}:</b><br>
+  <span class="h6">${t.request_obj.late_justification}</span>
+</p>
+<div v-if="t.request_obj.reviewer_history.length">
+  <p>
+    <span class="h6 font-weight-bold">
+      {% trans "Regional Reviews and Recommendations:" %}<br>
+    </span>
+  <table class="table table-sm table-bordered" style="width: auto;">
+    <tbody>
+    <tr>
+      <th>{% trans "Name" %}</th>
+      <th>${ reviewerLabels.status}</th>
+      <th>${ reviewerLabels.status_date}</th>
+      <th>${ reviewerLabels.comments}</th>
+    </tr>
+    <tr v-for="(reviewer, index) in t.request_obj.reviewer_history">
+      <td>${reviewer.user_display} (${reviewer.role_display})</td>
+      <td :class="reviewer.status_class">${reviewer.status_display}</td>
+      <td>${reviewer.status_date}</td>
+      <td v-html="reviewer.comments_html"></td>
+    </tr>
+    </tbody>
+  </table>
+  </p>
+</div>

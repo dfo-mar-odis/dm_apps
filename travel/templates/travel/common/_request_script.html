@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load static %}
+
+<script type="application/javascript">
+var tripRequestId = {{ trip_request.id }};
+let travellerDeleteMsg = "{% trans "You are about to remove this traveller from the request? This action is irreversible!! \n\nIf you proceed with this action, an administrative note will automatically be added to this request in order to record this transaction and an email notification will be sent to the removed traveller. \n\nPlease type 'yes' to confirm:" %}";
+let travellerDeleteMsgLITE = "{% trans 'Are you certain you want to remove this traveller from the request? This action is irreversible!!' %}";
+let requestReviewerResetMsg = "{% trans 'Are you sure you want to reset the reviewers? This will undo any changes that you have made to the reviewer list and process order.' %}";
+let deleteReviewerMsg = "{% trans 'Are you sure you want to delete this reviewer?' %}";
+let deleteFileMsg = "{% trans 'Are you sure you want to delete this file?' %}";
+let deleteCostMsg = "{% trans 'Are you sure you want to delete this cost?' %}";
+let skipReviewerMsg = "{% trans 'Are you sure you want to skip this reviewer? \n\n If so, please provide your rationale:' %}";
+let yesNoChoices = [{text: '-----', value: null}, {text: '{% trans 'No' %}', value: false}, {text: '{% trans 'Yes' %}', value: true}];
+
+let lateJustificationTip = "{% trans "You must provide a late justification in order to submit this trip." %}";
+let noTravellersTip = "{% trans "You cannot submit a trip request that has no associated travellers." %}";
+let firstTravellerMsg = "{% trans "Please enter in your information then click on 'Save'." %}";
+
+
+</script>
+
+<script src="{% static 'travel/mainRequest.js' %}?version=1.23"></script>

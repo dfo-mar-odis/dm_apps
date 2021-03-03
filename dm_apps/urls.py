@@ -20,7 +20,6 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from django.views.i18n import JavaScriptCatalog
 
 from accounts import views as acc_views
 from . import views as views
@@ -31,6 +30,7 @@ urlpatterns = [
     path('tracking/', include('tracking.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
     path('api/shared/', include('shared_models.api.urls')),
+    path('api/tracking/', include('tracking.api.urls')),
 ]
 
 # Add application APIs

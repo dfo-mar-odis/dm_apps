@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<button
+  @click="showAdminNotesForm=true"
+  v-if="isAdmin && !showAdminNotesForm"
+  class="btn btn-admin">
+  {% trans "Administrative Notes" %}
+</button>
+<div class="mt-3 mb-3" v-if="showAdminNotesForm">
+  <form @submit.prevent="updateRequestAdminNotes">
+    <textarea v-model="request.admin_notes" class="form-control form-control-sm" id="" cols="30" rows="5"></textarea>
+    <div class="mt-3">
+      <button type="submit" class="btn btn-sm btn-primary text-light">{% trans "Save" %}</button>
+      <button @click="showAdminNotesForm=false" type="button" class="btn btn-sm btn-secondary text-light">{% trans "Cancel" %}</button>
+    </div>
+  </form>
+</div>

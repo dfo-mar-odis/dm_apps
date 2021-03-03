@@ -33,7 +33,7 @@
         {% trans "Address Letter To" %}
       </th>
       <td>
-        {{ object.consultation_instructions.letter_to }}
+        {{ object.consultation_instructions.letter_to|nz }}
       </td>
     </tr>
     <tr>
@@ -41,7 +41,7 @@
         {% trans "Cc (on Bottom of Letter)" %}
       </th>
       <td>
-        {{ object.consultation_instructions.letter_cc }}
+        {{ object.consultation_instructions.letter_cc|nz }}
       </td>
     </tr>
     <tr>
@@ -49,7 +49,7 @@
         {% trans "Paper Copy" %}
       </th>
       <td>
-        {{ object.consultation_instructions.paper_copy }}
+        {{ object.consultation_instructions.paper_copy|nz }}
       </td>
     </tr>
 

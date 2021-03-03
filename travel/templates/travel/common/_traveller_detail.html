@@ -1,0 +1,79 @@
+{% load i18n %}
+<div class="row">
+  <div :class="travellerColClass">
+
+    <p class="mb-3">
+      <b>{% trans "Organization:" %}</b><br>
+      <span v-if="t.company_name" class="h6">${t.company_name}</span>
+      <span v-else class="h6">{% trans "Fisheries and Oceans Canada (DFO)" %}</span>
+    </p>
+    <p class="mb-3">
+      <b>{% trans "Address:" %}</b><br>
+      <span v-if="t.address" class="h6">${t.address}</span>
+      <span v-else class="red-font">{% trans "missing address!" %}</span>
+    </p>
+    <p class="mb-3">
+      <b>{% trans "Phone:" %}</b><br>
+      <span v-if="t.phone" class="h6">${t.phone}</span>
+      <span v-else class="red-font">{% trans "missing phone!" %}</span>
+    </p>
+    <p class="mb-3">
+      <b>{% trans "E-mail:" %}</b><br>
+      <a v-if="t.email" :href="`mailto:${t.email}`" class="h6">${t.email}</a>
+      <span v-else class="red-font">{% trans "missing e-mail!" %}</span>
+    </p>
+
+    <p class="mb-3">
+      <b>{% trans "Travel Dates:" %}</b><br>
+      <span class="h6" v-html="t.dates"></span>
+    </p>
+    <p class="mb-3" v-if="(request && !request.trip.is_virtual) || (trip && !trip.is_virtual)">
+      <b>{% trans "Departure Location:" %}</b><br>
+      <span class="h6" v-html="t.departure_location"></span>
+    </p>
+    <p class="mb-3">
+      <b>${travellerLabels.role}:</b><br>
+      <span v-if="t.long_role" class="h6" v-html="t.long_role"></span>
+      <span v-else class="red-font">{% trans "missing role!" %}</span>
+    </p>
+    <p class="mb-3">
+      <b>{% trans "Part of Learning Plan:" %}</b><br>
+      <span class="h6">${t.learning_plan|yesNo}</span>
+    </p>
+    <p class="mb-3">
+      <b>{% trans "Non-DFO Funding:" %}</b><br>
+      <span class="h6" v-html="t.non_dfo_costs_html"></span>
+    </p>
+    <p v-if="t.notes" class="mb-3">
+      <b>{% trans "Notes:" %}</b><br>
+      <span class="h6" v-html="t.notes"></span>
+    </p>
+
+  </div>
+  <div class="col">
+    <div v-if="trip && t.is_public_servant" class="mb-5">
+      <p class="mb-3 h6"><b>{% trans "Travel History (ADM approved only):" %}</b></p>
+      <ul class="">
+        <li v-for="(r,i) in t.adm_travel_history" :key="r.id">
+          <a :href="`/travel-plans/requests/${r.id}/view/`" target="_blank" data-toggle="tooltip" title="{% trans "open in new window" %}">
+            <span class="mdi mdi-arrow-top-right text-primary table-bordered"></span> ${r.display}
+          </a>  (${r.fiscal_year})
+        </li>
+        <li v-if="!t.adm_travel_history.length">
+          <em>{% trans "This traveller has no ADM approved requests on file." %}</em>
+        </li>
+      </ul>
+    </div>
+
+    <div v-if="canModify && !isReview && !trip">
+      {% include "travel/common/_costs.html" %}
+    </div>
+    <div v-else>
+      <span class="h6 font-weight-bold">{% trans "Cost Breakdown:" %}</span>
+      <span class="" v-html="t.cost_breakdown_html"></span>
+    </div>
+
+
+  </div>
+
+</div>

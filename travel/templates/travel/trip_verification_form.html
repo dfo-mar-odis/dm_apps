@@ -1,354 +1,336 @@
-{% extends "travel/form.html" %}
+{% extends "travel/base.html" %}
 {% load static %}
 {% load bootstrap4 %}
 {% load custom_filters %}
 {% load verbose_names %}
 {% load custom_tags %}
 {% load i18n %}
-
+{% block title_area %}{% endblock %}
 {% block header %}
-    {{ block.super }}
-    <style>
-        table, th, td {
-            font-size: 14px;
-        }
+  {{ block.super }}
+  <style>
+  table, th, td {
+      font-size: 14px;
+  }
 
-        h4 {
-            font-weight: bold;
-        }
-
-        .invert {
-            background-color: black;
-            color: white;
-        }
-    </style>
+  h4 {
+      font-weight: bold;
+  }
+  </style>
 
 {% endblock %}
 
 {% block subcontent %}
-    <div class="mb-5">
-
-        <h4>
-            {% blocktrans with object.fiscal_year as fy %}
-                Are there any other {{ fy }} trips that have similar sounding NAMES?
-            {% endblocktrans %}
-        </h4>
-        <table class="table table-bordered">
-            <tr>
-                <th style="width: 40%">{% trans "My Trip" %}</th>
-                <th style="width: 60%">{% trans "Other Trips" %}</th>
-            </tr>
-            <tr>
-                <td>
-                    {{ object.tname }}
-                    <button class="badge" data-toggle="popover" title="{{ object.tname }}"
-                            data-content="{{ object.html_block }}">
-                        {% trans "View details" %}
-                    </button>
-                </td>
-                <td>
-                    <ul>
-                        {% for trip in same_name_trips %}
-                            <li>
-                                {{ trip.tname }}
-                                <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
-                                        data-content="{{ trip.html_block }}">
-                                    {% trans "View details" %}
-                                </button>
-                            </li>
-                        {% empty %}
-                            <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-        </table>
+  <div class="mb-5" id="app" v-cloak>
+    <p class="h4 text-center mt-5">{% trans "Question ${currentQuestion}:" %}</p>
+    {# Question 1 #}
+    <div v-if="!q1Confirmed" class="">
+      <p class="text-center mb-3 h2">
+        {% blocktrans with object.fiscal_year as fy %}
+          Are there any other {{ fy }} trips that have similar sounding NAMES?
+        {% endblocktrans %}
+      </p>
+      <table class="table table-bordered">
+        <tr>
+          <th style="width: 40%">{% trans "My Trip" %}</th>
+          <th style="width: 60%">{% trans "Trips with Comparible Names" %}</th>
+        </tr>
+        <tr>
+          <td>
+            {{ object.tname }}
+            <button class="badge" data-toggle="popover" title="{{ object.tname }}"
+                    data-content="{{ object.html_block }}">
+              {% trans "View details" %}
+            </button>
+          </td>
+          <td>
+            <ul>
+              {% for trip in same_name_trips %}
+                <li>
+                  {{ trip.tname }}
+                  <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
+                          data-content="{{ trip.html_block }}">
+                    {% trans "View details" %}
+                  </button>
+                </li>
+              {% empty %}
+                <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      </table>
     </div>
 
 
-    <div class="mb-5">
-        <h4>
-            {% blocktrans with object.fiscal_year as fy %}
-                Are there any other {{ fy }} trips that are STARTING or ENDING on the same day?
-            {% endblocktrans %}
-        </h4>
-        <table class="table table-bordered">
-            <tr>
-                <th style="width: 40%">{% trans "My Trip" %}</th>
-                <th style="width: 60%">{% trans "Other Trips" %}</th>
-            </tr>
-            <tr>
-                <td>
-                    {{ object.tname }}
-                    <button class="badge" data-toggle="popover" title="{{ object.tname }}"
-                            data-content="{{ object.html_block }}">
-                        {% trans "View details" %}
-                    </button>
-                </td>
-                <td>
-                    <ul>
-                        {% for trip in same_day_trips %}
-                            <li>
-                                {{ trip.tname }}
-                                <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
-                                        data-content="{{ trip.html_block }}">
-                                    {% trans "View details" %}
-                                </button>
-                            </li>
-                        {% empty %}
-                            <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-        </table>
+    {# Question 2 #}
+    <div v-else-if="!q2Confirmed" class="">
+      <p class="text-center mb-3 h2">
+        {% blocktrans with object.fiscal_year as fy %}
+          Are there any other {{ fy }} trips that are STARTING or ENDING on the same day?
+        {% endblocktrans %}
+      </p>
+      <table class="table table-bordered">
+        <tr>
+          <th style="width: 40%">{% trans "My Trip" %}</th>
+          <th style="width: 60%">{% trans "Trips with Comparible Dates" %}</th>
+        </tr>
+        <tr>
+          <td>
+            {{ object.tname }}
+            <button class="badge" data-toggle="popover" title="{{ object.tname }}"
+                    data-content="{{ object.html_block }}">
+              {% trans "View details" %}
+            </button>
+          </td>
+          <td>
+            <ul>
+              {% for trip in same_day_trips %}
+                <li>
+                  {{ trip.tname }}
+                  <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
+                          data-content="{{ trip.html_block }}">
+                    {% trans "View details" %}
+                  </button>
+                </li>
+              {% empty %}
+                <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    {# Question 3 #}
+    <div v-else-if="!q3Confirmed" class="">
+      <p class="text-center mb-3 h2">
+        {% blocktrans with object.fiscal_year as fy %}
+          Are there any other {{ fy }} trips that are happening at similar sounding LOCATIONS?
+        {% endblocktrans %}
+      </p>
+      <table class="table table-bordered">
+        <tr>
+          <th style="width: 40%">{% trans "My Trip" %}</th>
+          <th style="width: 60%">{% trans "Trips with Comparible Locations" %}</th>
+        </tr>
+        <tr>
+          <td>
+            {{ object.tname }}
+            <button class="badge" data-toggle="popover" title="{{ object.tname }}"
+                    data-content="{{ object.html_block }}">
+              {% trans "View details" %}
+            </button>
+          </td>
+          <td>
+            <ul>
+              {% for trip in same_location_trips %}
+                <li>
+                  {{ trip.tname }}
+                  <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
+                          data-content="{{ trip.html_block }}">
+                    {% trans "View details" %}
+                  </button>
+                </li>
+              {% empty %}
+                <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
+              {% endfor %}
+            </ul>
+          </td>
+        </tr>
+      </table>
     </div>
 
 
-    <div class="mb-5">
-        <h4>
-            {% blocktrans with object.fiscal_year as fy %}
-                Are there any other {{ fy }} trips that are happening at similar sounding LOCATIONS?
-            {% endblocktrans %}
-        </h4>
-
-        <table class="table table-bordered">
-            <tr>
-                <th style="width: 40%">{% trans "My Trip" %}</th>
-                <th style="width: 60%">{% trans "Other Trips" %}</th>
-            </tr>
-            <tr>
-                <td>
-                    {{ object.tname }}
-                    <button class="badge" data-toggle="popover" title="{{ object.tname }}"
-                            data-content="{{ object.html_block }}">
-                        {% trans "View details" %}
-                    </button>
-                </td>
-                <td>
-                    <ul>
-                        {% for trip in same_location_trips %}
-                            <li>
-                                {{ trip.tname }}
-                                <button class="badge" data-toggle="popover" title="{{ trip.tname }}"
-                                        data-content="{{ trip.html_block }}">
-                                    {% trans "View details" %}
-                                </button>
-                            </li>
-                        {% empty %}
-                            <img src="{% static 'admin/img/icon-yes.svg' %}" alt="" width="50px">
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="mb-5">
-        <h4>
-            {% trans "What do you think of the TRIP PURPOSE? Please ensure that the proper selection was made." %}
-        </h4>
-
-
-        <table class="table table-bordered">
-            <tr>
-                <th style="width: 20%">{% trans "Trip title" %}</th>
-                <th style="width: 40%">{% trans "Trip purpose (current selection)" %}</th>
-                <th style="width: 40%">{% trans "Other options" %}</th>
-            </tr>
-            <tr>
-                <td>
-                    <span class=""> {{ object.tname }}</span>
-                </td>
-                <td>
-                    {% if not object.trip_subcategory %}
-                        <h5 class="red-font">
-                        {% blocktrans  %}
-                            There is no trip purpose. You will not be allowed to submit this form without selecting a
-                            trip purpose!
-                        {% endblocktrans  %}
-                        </h5>
-                    {% else %}
-                        <span class=""> {{ object.trip_subcategory }}</span>
-                        {% if object.trip_subcategory.tdescription %}
-                            <div class="">
-                                <span class=""> ({{ object.trip_subcategory.tdescription }})</span>
-                            </div>
-                        {% endif %}
-                    {% endif %}
-                </td>
-                <td>
-                    <ul>
-                        {% for item in trip_subcategories %}
-                            {% if item != object.trip_subcategory %}
-                                <li>
-                                    <b>{{ item }}</b>
-                                    {% if item.tdescription %}
-                                        &rarr;
-                                        {{ item.tdescription }}
-                                    {% endif %}
-                                </li>
-                            {% endif %}
-                        {% endfor %}
-                    </ul>
-
-                </td>
-            </tr>
-        </table>
-
-        <div class="">
-            <h3>
-            </h3>
-        </div>
-        <div class="">
-            <a href="#" pop-href="{% url 'travel:trip_edit' object.id "pop" %}" class="btn btn-primary">
-                {% trans "Click HERE to edit the trip purpose" %}
-            </a>
-        </div>
-    </div>
-
-
-    <div class="mb-5">
-        <div class="mb-3">
-            <h4>
-                {% trans "Do the trip details look complete?" %}
-            </h4>
-        </div>
-
-        <table class="table table-sm">
-            {% for field in conf_field_list %}
-                {% if "total" in field %}
-                    {% verbose_td_display object field th_width="30%" format="currency" %}
-                {% else %}
-                    {% verbose_td_display object field th_width="30%" %}
-                {% endif %}
-            {% endfor %}
-
-            <th>
-                {% trans "Connected Travel Requests:" %}
-            </th>
-            <td>
-                <ul>
-                    {% for triprequest in object.trip_requests.all %}
-                        <li>
-                            <a href="{% url 'travel:request_detail' triprequest.id "all" %}"
-                               target="_blank">{{ triprequest }}</a>
-                            by {{ triprequest.user }}
-                            ({% trans "STATUS" %}: <span
-                                style="background-color: {{ triprequest.status.color }}">{{ triprequest.status }}</span>)
-
-                        </li>
-                    {% empty %}
-                        <em>
-                            {% trans "There are no requests connected to this trip." %}
-                        </em>
-                    {% endfor %}
-                </ul>
-            </td>
-
-        </table>
-    </div>
-
-    <form method="post" class="form">
-        {% csrf_token %}
-        {% for field in form %}
-
-            {% if field.name in help_text_dict and "_date" not in field.name %}
-                {% bootstrap_label field.label %}
-                {% with help_text_dict|lookup:field.name as help_text %}
-                    <img src="{% static 'img/icons/information.png' %}" style="width: 20px" data-toggle="popover"
-                         data-trigger="hover"
-                         title="{{ field.label }}"
-                         data-content="{{ help_text }}">
-                    {% bootstrap_field field placeholder="" show_label=False %}
-                {% endwith %}
+    {# Question 4 #}
+    <div v-else-if="!q4Confirmed" class="">
+      <p class="text-center mb-3 h2">
+        {% trans "What do you think of the TRIP PURPOSE? <br>Please ensure that the proper selection was made." %}
+      </p>
+      <table class="table table-bordered">
+        <tr>
+          <th style="width: 20%">{% trans "Trip title" %}</th>
+          <th style="width: 40%">{% trans "Trip purpose (current selection)" %}</th>
+          <th style="width: 40%">{% trans "Other options" %}</th>
+        </tr>
+        <tr>
+          <td>
+            <span class=""> {{ object.tname }}</span>
+          </td>
+          <td>
+            {% if not object.trip_subcategory %}
+              <h5 class="red-font">
+                {% blocktrans %}
+                  There is no trip purpose. You will not be allowed to submit this form without selecting a
+                  trip purpose!
+                {% endblocktrans %}
+              </h5>
             {% else %}
-                {% bootstrap_field field placeholder="" %}
+              <span class=""> {{ object.trip_subcategory }}</span>
+              {% if object.trip_subcategory.tdescription %}
+                <div class="">
+                  <span class=""> ({{ object.trip_subcategory.tdescription }})</span>
+                </div>
+              {% endif %}
             {% endif %}
-
-
-            {% bootstrap_field field placeholder="" %}
-
-        {% endfor %}
-
-        <div class="center-col">
-            {% buttons %}
-                <button type="submit" class="btn btn-success" {% if not object.trip_subcategory %}disabled{% endif %}>
-                    {% trans "Yes, looks good!" %}
-                </button>
-
-                <a href="#" pop-href="{% url 'travel:trip_edit' object.id "pop" %}" class="btn btn-primary">
-                    {% trans "Make some changes" %}
-                </a>
-                {% if object.trip_requests.count %}
-                    {% echo "disabled" as disabled_var %}
-                    {% trans "Cannot delete a trip that has requests attached to it." as tip_text %}
-                    <a class="btn btn-warning" href="#" pop-href="{% url 'travel:trip_reassign_select' object.id %}">
-                        {% trans "This trip is no good and I want to re-assign the requests." %}
-                    </a>
-
+          </td>
+          <td>
+            <ul>
+              {% for item in trip_subcategories %}
+                {% if item != object.trip_subcategory %}
+                  <li>
+                    <b>{{ item }}</b>
+                    {% if item.tdescription %}
+                      &rarr;
+                      {{ item.tdescription }}
+                    {% endif %}
+                  </li>
                 {% endif %}
-                <span data-toggle="tooltip" title="{{ tip_text }}">
-                    <a class="btn btn-danger {{ disabled_var }}"
-                       href="{% url 'travel:trip_delete' object.id "back_to_verify" %}">
-                        {% trans "Delete" %}
-                    </a>
-                    </span>
-                <a class="btn btn-secondary"
-                   href="{% url 'travel:admin_trip_verification_list' view.kwargs.region view.kwargs.adm %}">
-                    {% trans "Back" %}
-                </a>
-            {% endbuttons %}
-        </div>
+              {% endfor %}
+            </ul>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    </form>
-
+          </td>
+        </tr>
+      </table>
     </div>
+
+    {# Question 5 #}
+    <div v-else-if="!q5Confirmed" class="">
+      <p class="text-center mb-3 h2">
+        {% trans "Do the trip details look complete?" %}
+      </p>
+      <div class="container">
+        <table class="table table-sm table-bordered">
+          {% for field in trip_field_list %}
+            {% verbose_td_display object field th_width="30%" %}
+          {% endfor %}
+          <th>
+            {% trans "Connected Travel Requests:" %}
+          </th>
+          <td>
+            <ul>
+              {% for triprequest in object.requests.all %}
+                <li>
+                  <a href="{% url 'travel:request_detail' triprequest.id %}{{ view.get_query_string }}"
+                     target="_blank">{{ triprequest }}</a>
+                  by {{ triprequest.created_by }}
+                  ({% trans "STATUS" %}: <span
+                  class="{{ triprequest.get_status_display|slugify }}">{{ triprequest.get_status_display }}</span>)
+
+                </li>
+              {% empty %}
+                <em>
+                  {% trans "There are no requests connected to this trip." %}
+                </em>
+              {% endfor %}
+            </ul>
+          </td>
+        </table>
+      </div>
+    </div>
+
+    <div class="center-col mt-4">
+      <div class="mb-5">
+        <div v-if="allConfirmed">
+          <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">
+              {% trans "Trip looks good!" %}
+            </button>
+            <a href="#" pop-href="{% url 'travel:trip_edit' object.id %}?pop=true" class="btn btn-info">
+              {% trans "Make some changes" %}
+            </a>
+          </form>
+        </div>
+        <button v-else @click='confirmCurrentQuestion' type="button" class="btn btn-primary" {% if not object.trip_subcategory %}disabled{% endif %}>
+          {% trans "Next Question!" %}
+        </button>
+
+      </div>
+
+      <div class="">
+        <a v-if="hasRequests" class="btn btn-warning" href="{% url 'travel:trip_reassign_select' object.id %}">
+          {% trans "This trip is no good and I want to re-assign the requests." %}
+        </a>
+        <a v-else class="btn btn-danger" href="{% url 'travel:trip_delete' object.id %}?back_to_verify=true">
+          {% trans "Delete" %}
+        </a>
+        <a class="btn btn-dark" v-if="currentQuestion>1" href=".">
+          {% trans "Restart" %}
+        </a>
+        <a class="btn btn-secondary ml-3" href="{% url 'travel:trip_detail' object.id %}" target="_blank">
+          {% trans "Open Trip Detail" %}
+        </a>
+
+      </div>
+    </div>
+  </div>
 {% endblock %}
 
 
 {% block body_js %}
-
-    <script type="application/javascript">
-        var userObj = {{ user_json|safe }};
-        var sectionObj = {{ section_json|safe }};
-        var myId = "";
-
-        function refreshUserInfo() {
-            myId = $("#id_user").val();
-            $("#id_first_name").val(userObj[myId]["first_name"]);
-            $("#id_last_name").val(userObj[myId]["last_name"]);
-            $("#id_email").val(userObj[myId]["email"]);
+  {{ block.super }}
+  <script type="application/javascript">
+  var tripId = {{ object.id }};
+  var app = new Vue({
+    el: '#app',
+    delimiters: ["${", "}"],
+    data: {
+      q1Confirmed: false,
+      q2Confirmed: false,
+      q3Confirmed: false,
+      q4Confirmed: false,
+      q5Confirmed: false,
+      trip: {},
+      loading: true,
+    },
+    methods: {
+      confirmCurrentQuestion() {
+        for (var i = 1; i < 6; i++) {
+          if (!this["q" + i + "Confirmed"]) {
+            this["q" + i + "Confirmed"] = true;
+            this.$nextTick(() => {
+              this.enablePopovers()
+            })
+            break;
+          }
         }
+      },
+      enablePopovers() {
+        $('[data-toggle="popover"]').popover({html: true});
+      },
+      getTrip() {
+        this.loading = true;
+        let endpoint = `/api/travel/trips/${tripId}/`;
+        apiService(endpoint)
+            .then(response => {
+              this.loading = false;
+              this.trip = response;
+            })
+      },
+    },
+    computed: {
+      allConfirmed() {
+        return this.q1Confirmed && this.q2Confirmed && this.q3Confirmed && this.q4Confirmed
+      },
+      currentQuestion() {
+        for (var i = 1; i < 6; i++) {
+          if (!this["q" + i + "Confirmed"]) {
+            return i
+          }
+        }
+      },
+      hasRequests() {
+        return this.trip.id && this.trip.requests.length;
+      }
+    },
+    created() {
+      this.getTrip();
+      this.$nextTick(() => {
+        this.enablePopovers()
+      })
+    }
+  });
 
-
-        $("#id_user").change(function () {
-            refreshUserInfo();
-        });
-
-
-        $("#id_section").change(function () {
-            mySectionId = $(this).val();
-            $("#id_recommender_1").val(sectionObj[mySectionId]["recommender_1"]);
-            $("#id_recommender_2").val(sectionObj[mySectionId]["recommender_2"]);
-            $("#id_recommender_3").val(sectionObj[mySectionId]["recommender_3"]);
-            $("#id_approver").val(sectionObj[mySectionId]["approver"]);
-            $('select').trigger("chosen:updated");
-        });
-
-        $(document).ready(function () {
-            // Stuff to do as soon as the DOM is ready
-            refreshUserInfo();
-        });
-
-
-    </script>
+  </script>
 {% endblock %}
-
-

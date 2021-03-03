@@ -1,0 +1,188 @@
+{% extends 'travel/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+{% load custom_filters %}
+{% load static %}
+{% load travel_filters %}
+{% block title_area %}
+
+{% endblock %}
+
+{% block subcontent %}
+  <div id="app" v-cloak>
+
+    <h1 v-if="pageType=== 'rdg'">{% trans "Requests Awaiting RDG-level Approval" %}</h1>
+    <h1 v-else>{% trans "Requests Awaiting Your Review" %}</h1>
+
+    <div>
+      <div class="row container-fluid bg-light curvy">
+        <div class="col">
+          <div v-if="!reviewers.length && !loading_reviewers">
+            <div class="text-center">
+              <img src="{% static 'travel/you_are_done.png' %}" alt="">
+              <h3>{% trans "Way to go! You're all done here" %} :)</h3>
+            </div>
+          </div>
+
+          <div v-else>
+            <div>
+              <div class="text-center">
+                <p class="font-italic font-weight-bold">
+                  {% trans "${count} results loaded" %}
+                </p>
+              </div>
+            </div>
+            <table class="table table-sm table-hover">
+              <thead>
+              <tr>
+                <th v-if="pageType=== 'rdg'">{% trans "For which RDG" %}</th>
+                <th v-html="requestLabels.created_by"></th>
+                <th v-html="requestLabels.status"></th>
+                <th style="width: 350px" v-html="requestLabels.trip"></th>
+                <th style="width: 350px">{% trans "Travellers" %}</th>
+                <th>{% trans "Current processing time" %}</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr
+                v-for="(item, index) in reviewers"
+                @click="goRow(item)"
+                class="pointy"
+              >
+                <td v-if="pageType=== 'rdg'">${item.user_display }</td>
+                <td>${item.request_obj.created_by }</td>
+                <td :class="item.request_obj.status_class">${item.request_obj.status_display }</td>
+                <td>${item.request_obj.trip_display }</td>
+                <td>${item.request_obj.name_search }</td>
+                <td>${item.request_obj.processing_time }</td>
+              </tr>
+              </tbody>
+            </table>
+
+            <div v-if="loading_reviewers" class="loading mb-3 mt-3 text-center mt-5">
+              <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+                <span class="sr-only"></span>
+              </div>
+            </div>
+            <div v-else>
+              <div class="text-center">
+                <p class="font-italic font-weight-bold">{% trans "${count} results loaded" %}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+
+{% block body_js %}
+  {{ block.super }}
+
+  <script type="application/javascript">
+  var app = new Vue({
+    el: '#app',
+    delimiters: ["${", "}"],
+    data: {
+      currentUser: {},
+      loading_reviewers: false,
+      reviewers: [],
+      requestLabels: {},
+      count: null,
+    },
+    methods: {
+      getCurrentUser() {
+        let endpoint = `/api/travel/user/`;
+        apiService(endpoint)
+            .then(response => {
+              this.currentUser = response;
+            })
+      },
+      goRow(reviewer) {
+        var url = `/travel-plans/request-reviewers/${reviewer.id}/review/?${window.location.search.substring(1)}`;
+        window.location.href = url;
+      },
+      getReviewers() {
+        this.loading_reviewers = true;
+        endpoint = `/api/travel/request-reviewers/`;
+        if (this.pageType === 'rdg') endpoint += '?rdg=true'
+        apiService(endpoint)
+            .then(response => {
+              this.loading_reviewers = false;
+              this.reviewers = response;
+              this.count = response.count;
+            })
+      },
+      getRequestMetadata() {
+        let endpoint = `/api/travel/meta/models/request/`;
+        apiService(endpoint).then(data => {
+          this.requestLabels = data.labels;
+        });
+      },
+    },
+    filters: {
+      floatformat: function (value, precision = 2) {
+        if (value == null) return '';
+        value = Number(value).toFixed(precision).toLocaleString("en");
+        return value
+      },
+      currencyFormat: function (value, precision = 2) {
+        if (value == null) return '';
+        value = accounting.formatNumber(value, precision);
+        return value
+      },
+      zero2NullMark: function (value) {
+        if (!value || value === "0.00" || value == 0) return '---';
+        return value
+      },
+      nz: function (value, arg = "---") {
+        if (value == null || value === "None") return arg;
+        return value
+      },
+      yesNo: function (value) {
+        if (value == null || value == false || value == 0) return 'No';
+        return "Yes"
+      },
+      percentage: function (value, decimals) {
+        // https://gist.github.com/belsrc/672b75d1f89a9a5c192c
+        if (!value) {
+          value = 0;
+        }
+
+        if (!decimals) {
+          decimals = 0;
+        }
+
+        value = value * 100;
+        value = Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
+        value = value + '%';
+        return value;
+      }
+    },
+    computed: {
+      pageType() {
+        let uri = window.location.search.substring(1);
+        let params = new URLSearchParams(uri);
+        if (params.get("rdg")) return 'rdg';
+      }
+
+    },
+    created() {
+      this.getCurrentUser()
+      this.getReviewers()
+      this.getRequestMetadata()
+    },
+    mounted() {
+    },
+  });
+
+
+  </script>
+
+
+{% endblock %}
