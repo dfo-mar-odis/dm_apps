@@ -64,6 +64,9 @@ class DefaultReviewer(models.Model):
     branches = models.ManyToManyField(shared_models.Branch, verbose_name=_("To be added in front of which branches"),
                                       blank=True,
                                       related_name="travel_default_reviewers")
+    expenditure_initiation_region = models.ForeignKey(shared_models.Region, verbose_name=_("Expenditure initiation for which region?"),
+                                                      on_delete=models.DO_NOTHING,
+                                                      blank=True, null=True, related_name="travel_default_reviewers")
     special_role = models.IntegerField(choices=role_choices, verbose_name=_("Do they have a special role?"), blank=True, null=True)
     order = models.IntegerField(blank=True, null=True,
                                 verbose_name=_("What order should they be in (only applicable when there is multiple reviewers at the same level)?"))
@@ -72,7 +75,7 @@ class DefaultReviewer(models.Model):
         return "{}".format(self.user)
 
     class Meta:
-        ordering = ["user", ]
+        ordering = ["user__first_name", ]
 
 
 class NJCRates(SimpleLookup):
@@ -477,7 +480,7 @@ class TripRequest(models.Model):
         (11, _("Approved")),
         (12, _("Pending Recommendation")),
         (14, _("Pending ADM Approval")),
-        (15, _("Pending RDG Approval")),
+        (15, _("Pending Expenditure Initiation")),
         (16, _("Changes Requested")),
         (17, _("Pending Review")),
         (22, _("Cancelled")),
@@ -669,8 +672,8 @@ class TripRequest(models.Model):
         return self.reviewers.filter(role=5).first()
 
     @property
-    def rdg(self):
-        return self.reviewers.filter(role=6).first()
+    def expenditure_initiation(self):
+        return self.reviewers.filter(role__in=[6, 7]).first()
 
     @property
     def recommenders(self):
@@ -898,7 +901,8 @@ class Reviewer(models.Model):
         (3, _("NCR Travel Coordinators")),
         (4, _("ADM Recommender")),
         (5, _("ADM")),
-        (6, _("RDG")),
+        (6, _("Expenditure Initiation")),
+        (7, _("RDG (Expenditure Initiation)")), # this is temporary until RDG is actually looped into the process
     )
     request = models.ForeignKey(TripRequest, on_delete=models.CASCADE, related_name="reviewers", blank=True, null=True)  # todo remove the non-null!!!!
     order = models.IntegerField(null=True, verbose_name=_("process order"))

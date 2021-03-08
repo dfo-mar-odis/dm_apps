@@ -357,6 +357,13 @@ class MatpMixin:
     admin_only = False
 
 
+class MortMixin:
+    key = "mort"
+    form_class = forms.MortForm
+    title = _("Mortality")
+    admin_only = False
+
+
 class OrgaMixin:
     key = 'orga'
     model = models.Organization

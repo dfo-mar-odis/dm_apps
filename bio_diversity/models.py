@@ -216,6 +216,9 @@ class AniDetSubjCode(BioLookup):
     # adsc tag
     anidc_id = models.ForeignKey("AnimalDetCode", on_delete=models.CASCADE, verbose_name=_("Type of measurement"))
 
+    class Meta:
+        ordering = ['name', ]
+
 
 class AniDetailXref(BioModel):
     # anix tag
@@ -373,6 +376,7 @@ class Cup(BioCont):
         constraints = [
             models.UniqueConstraint(fields=['name', 'facic_id'], name='cup_uniqueness')
         ]
+        ordering = ['facic_id', 'name']
 
 
 class CupDet(BioContainerDet):
@@ -522,6 +526,8 @@ class EnvTreatment(BioModel):
                                  verbose_name=_("Environment Treatment Code"))
     lot_num = models.CharField(max_length=30, blank=True, null=True, verbose_name=_("Lot Number"))
     amt = models.DecimalField(max_digits=7, decimal_places=3, verbose_name=_("Dose"))
+    concentration = models.DecimalField(max_digits=8, decimal_places=7, null=True, blank=True,
+                                        verbose_name=_("Concentration"))
     unit_id = models.ForeignKey('UnitCode', on_delete=models.CASCADE, verbose_name=_("Units"))
     duration = models.DecimalField(max_digits=5, decimal_places=0, verbose_name=_("Duration (minutes)"))
     comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
@@ -533,6 +539,14 @@ class EnvTreatment(BioModel):
         constraints = [
             models.UniqueConstraint(fields=['contx_id', 'envtc_id'], name='Environment_Treatment_Uniqueness')
         ]
+
+    @property
+    def concentration_str(self):
+        if self.concentration:
+            return "1:{}  |  {:.3}%".format(int(1/self.concentration), 100 * self.concentration)
+        else:
+            return None
+    concentration_str.fget.short_description = "Concentration"
 
 
 class Event(BioTimeModel):
@@ -568,7 +582,8 @@ class Event(BioTimeModel):
 
 class EventCode(BioLookup):
     # evntc tag
-    pass
+    class Meta:
+        ordering = ['name']
 
 
 class FacilityCode(BioLookup):
@@ -700,7 +715,7 @@ class GroupDet(BioDet):
                     old_grpd.grpd_valid = False
                     old_grpd.save()
 
-            current_grpd_set = [anix.groupd_details.filter(detail_date__gt=self.detail_date) for anix in anix_set]
+            current_grpd_set = [anix.group_details.filter(detail_date__gt=self.detail_date) for anix in anix_set]
             for current_grpd in current_grpd_set:
                 if current_grpd:
                     self.grpd_valid = False
@@ -724,6 +739,7 @@ class HeathUnit(BioCont):
         constraints = [
             models.UniqueConstraint(fields=['name', 'facic_id'], name='heat_uniqueness')
         ]
+        ordering = ['facic_id', 'name']
 
 
 class HeathUnitDet(BioContainerDet):
@@ -1389,6 +1405,8 @@ class Tank(BioCont):
         constraints = [
             models.UniqueConstraint(fields=['name', 'facic_id'], name='tank_uniqueness')
         ]
+        ordering = ['facic_id', 'name']
+
 
 
 class TankDet(BioContainerDet):
@@ -1422,6 +1440,7 @@ class Tray(BioCont):
         constraints = [
             models.UniqueConstraint(fields=['name', 'facic_id'], name='tray_uniqueness')
         ]
+        ordering = ['facic_id', 'name']
 
 
 class TrayDet(BioContainerDet):
@@ -1448,6 +1467,7 @@ class Trough(BioCont):
         constraints = [
             models.UniqueConstraint(fields=['name', 'facic_id'], name='trof_uniqueness')
         ]
+        ordering = ['facic_id', 'name']
 
 
 class TroughDet(BioContainerDet):

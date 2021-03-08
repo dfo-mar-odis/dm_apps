@@ -380,7 +380,7 @@ class StaffForm(forms.ModelForm):
         self.fields["employee_type"].widget.attrs = {"v-model": "staff.employee_type", "@change": "adjustStaffFields"}
         self.fields["level"].widget.attrs = {"v-model": "staff.level", ":disabled": "disableLevelField"}
         self.fields["duration_weeks"].widget.attrs = {"v-model": "staff.duration_weeks", "step": "0.1"}
-        self.fields["overtime_hours"].widget.attrs = {"v-model": "staff.overtime_hours"}
+        self.fields["overtime_hours"].widget.attrs = {"v-model": "staff.overtime_hours", "step": "0.1"}
         self.fields["student_program"].widget.attrs = {"v-model": "staff.student_program", ":disabled": "disableStudentProgramField"}
 
         self.fields["name"].widget.attrs = {"v-model": "staff.name", ":disabled": "disableNameField"}
@@ -829,6 +829,7 @@ class ReportSearchForm(forms.Form):
         (4, "Project List (csv)"),
         (5, "SAR Workplan (xlsx)"),
         (6, "Regional Staff Allocation (csv)"),
+        (7, "HR Project-Position Allocation (csv)"),
     )
     report = forms.ChoiceField(required=True, choices=REPORT_CHOICES)
     year = forms.ChoiceField(required=False, label=gettext_lazy('Fiscal Year'))

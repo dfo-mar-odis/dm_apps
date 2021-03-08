@@ -10,6 +10,7 @@
 {% endblock title %}
 
 {% block body %}
+
 <div class="container mt-1">
     {% if back %}
             <a class="btn btn-primary" name="back-btn" href="{% url ''|add:list_url back_id %}" title="{% trans 'Back to Details' %}">{% trans 'Back to Details' %}</a>

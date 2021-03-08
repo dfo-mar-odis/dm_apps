@@ -250,8 +250,14 @@
           <tr>
             <td class="text-right wide-cell">{% trans "Expenditure Initiation approved by (Print)" %}</td>
             <td class="data wide-cell" colspan="3">
-              {{ parent.rdg.user |nz:"n/a" }}
-              {% if parent.rdg.user %} | {% trans "Regional Director General" %} | {{ parent.rdg.user.shared_models_regions.first }}
+              {{ parent.expenditure_initiation.user |nz:"n/a" }}
+              {% if parent.expenditure_initiation.user %}
+                {% if parent.expenditure_initiation.user.profile.tposition %}
+                  | {{ parent.expenditure_initiation.user.profile.tposition }}
+                {% else %}
+                  | {% trans "Regional Director General" %}
+                {% endif %}
+                | {{ parent.section.division.branch.region }}
               {% endif %}
             </td>
           </tr>
@@ -259,9 +265,9 @@
             <td class="thin">&nbsp;</td>
           </tr>
           <tr>
-            {% if parent.rdg.status == 2 %}
+            {% if parent.expenditure_initiation.status == 2 %}
               <td colspan="4" class="" style="padding-left: 10px">
-                {% include "travel/traf/_rdg_approval.html" %}
+                {% include "travel/traf/_expenditure_initiation_approval.html" %}
               </td>
             {% else %}
               <td class="text-right very-wide-cell w40p">{% trans "Signature" %}</td>

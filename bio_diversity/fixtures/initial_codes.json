@@ -229,9 +229,9 @@
   {
     "model": "bio_diversity.collection",
     "pk": 20, "fields": {
-    "name": "WIld Parr (WP)",
+    "name": "Wild Parr (WP)",
     "nom": null,
-    "description_en": "Wild parents",
+    "description_en": "Wild parr",
     "description_fr": "",
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-02-25"}
@@ -358,8 +358,7 @@
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-02-15",
     "min_val": "4.00000",
-    "max_val":
-    "10.00000",
+    "max_val": "10.00000",
     "unit_id": null,
     "env_subj_flag": false}
   },
@@ -399,9 +398,13 @@
     "end_datetime": null,
     "contx_id": null,
     "loc_id": null,
-    "inst_id": 1, "envc_id": 1, "env_val": "12.00000",
+    "inst_id": 1,
+    "envc_id": 1,
+    "env_val": "12.00000",
     "envsc_id": null,
-    "env_avg": false, "qual_id": 1, "comments": null}
+    "env_avg": false,
+    "qual_id": 1,
+    "comments": null}
   },
   {
     "model": "bio_diversity.envtreatcode",
@@ -609,7 +612,8 @@
     "pk": 1, "fields": {
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-01-14",
-    "instc_id": 1, "serial_number": "TestTherm",
+    "instc_id": 1,
+    "serial_number": "TestTherm",
     "comments": null}
   },
   {
@@ -739,7 +743,7 @@
     "nom": null,
     "description_en": "Value was calculated, not measured",
     "description_fr": "",
-    "created_by": "Joshua Curtis",
+    "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2002-12-16"}
   },
   {
@@ -751,7 +755,8 @@
     "description_fr": "",
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-01-14",
-    "rive_id": 3, "trib_id": null,
+    "rive_id": 3,
+    "trib_id": null,
     "subr_id": null,
     "min_lat": null,
     "max_lat": null,
@@ -767,7 +772,8 @@
     "description_fr": "",
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-01-14",
-    "rive_id": 3, "trib_id": null,
+    "rive_id": 3,
+    "trib_id": null,
     "subr_id": null,
     "min_lat": null,
     "max_lat": null,
@@ -783,7 +789,8 @@
     "description_fr": "",
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-01-14",
-    "rive_id": 3, "trib_id": null,
+    "rive_id": 3,
+    "trib_id": null,
     "subr_id": null,
     "min_lat": null,
     "max_lat": null,
@@ -799,7 +806,8 @@
     "description_fr": "",
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-01-14",
-    "rive_id": 3, "trib_id": null,
+    "rive_id": 3,
+    "trib_id": null,
     "subr_id": null,
     "min_lat": null,
     "max_lat": null,
@@ -813,7 +821,7 @@
     "nom": "Bonnell Brook",
     "description_en": "Bonnell Brook",
     "description_fr": "Bonnell Brook",
-    "created_by": "Brandi Glover",
+    "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2015-08-31",
     "rive_id": 1, "trib_id": null,
     "subr_id": null,
@@ -829,16 +837,16 @@
     "nom": "Falls Brook",
     "description_en": "",
     "description_fr": "",
-    "created_by": "Valerie Watson",
+    "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2001-01-12",
-    "rive_id": 1, "trib_id": null,
+    "rive_id": 1,
+    "trib_id": null,
     "subr_id": null,
     "min_lat": null,
     "max_lat": null,
     "min_lon": null,
     "max_lon": null}
-  }
-,
+  },
   {
     "model": "bio_diversity.rivercode",
     "pk": 1, "fields": {
@@ -861,11 +869,10 @@
   },
   {
     "model": "bio_diversity.rivercode",
-    "pk": 3, "fields":
-  {
+    "pk": 3, "fields": {
     "name": "SMA",
     "nom": null,
-    "description_en": "",
+    "description_en": "St. Mary's River",
     "description_fr": "",
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-01-13"}
@@ -1102,8 +1109,7 @@
     "description_fr": "",
     "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2021-02-09",
-    "name":
-    "SP22B",
+    "name": "SP22B",
     "facic_id": 2}
   },
   {
@@ -1341,7 +1347,7 @@
     "nom": null,
     "description_en": "Unit of time",
     "description_fr": "",
-    "created_by": "Olivia Johnson",
+    "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "1998-07-25"}
   },
   {
@@ -1352,7 +1358,7 @@
     "nom": null,
     "description_en": "Unit of electric potential",
     "description_fr": "",
-    "created_by": "Brandon Hansen",
+    "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
     "created_date": "2012-04-10"}
   },
   {
@@ -1390,7 +1396,7 @@
   {
     "model": "bio_diversity.unitcode",
     "pk": 12, "fields": {
-    "name": "Feet",
+    "name": "Inches",
     "nom": null,
     "description_en": "unit of length",
     "description_fr": "",

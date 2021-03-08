@@ -286,7 +286,7 @@ class ReviewerViewSet(viewsets.ModelViewSet):
         qs = self.get_queryset()
         qp = request.query_params
         if qp.get("rdg") and utils.is_admin(request.user):
-            qs = qs.filter(role=6, status=1).filter(~Q(request__status=16))  # rdg & pending
+            qs = qs.filter(role=7, status=1).filter(~Q(request__status=16))  # rdg & pending
             serializer = self.get_serializer(qs, many=True)
             return Response(serializer.data)
         else:

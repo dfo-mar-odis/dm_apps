@@ -77,7 +77,7 @@ class CommonTest(TestCase):
             self.client.logout()
 
     def assert_non_public_view(self, test_url, locales=('en', 'fr'), expected_template=None, user=None,
-                               expected_code=200, login_search_term=None):
+                               expected_code=200, login_search_term=None, bad_user_list=[]):
         """
         This test will ensure a view requires a user to be logged in in order to access it. Part 1, will test to see
         what happens when an anonymous user tries accessing the url. Part 2 attempt the same this with a logged in user.
@@ -88,6 +88,7 @@ class CommonTest(TestCase):
         :param expected_code: the expected http response code
         :param user: an optional user to use for the second part of this test
         :param login_search_term: the search term to use when confirming a login redirect
+        :param bad_user_list: a list of users to check to make sure that they do not have access
         """
 
         # perform this test for each locale
@@ -105,7 +106,18 @@ class CommonTest(TestCase):
             # we are expecting to see the login url
             self.assertIn(f"{login_url}", response.url)
 
-            # PART 2: try with a logged in user. user the User provided in args, if available
+            # PART 2: try accessing with the bad users
+            for u in bad_user_list:
+                # make sure there is no one already logged in
+                self.client.logout()
+                self.get_and_login_user(user=u)
+                response = self.client.get(test_url)
+                # a 403 response would be expected here
+                possibility_1 = 403 == response.status_code
+                possibility_2 = 302 == response.status_code and "denied" in response.url
+                self.assertTrue(possibility_1 or possibility_2)
+
+            # PART 3: try with a logged in user. user the User provided in args, if available
             # login a random user if one was not provided by args
             self.get_and_login_user(user=user)
 

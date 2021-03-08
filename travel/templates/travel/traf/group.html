@@ -214,11 +214,25 @@
           </tr>
           <tr>
             <td class="data">
-              <em>{% trans "Trip Title:" %}</em> {{ parent.trip.tname }}
-              {#              <br>#}
-              {#              {{ parent.purpose_long|safe|nz }}#}
-              <br>
-              <br>
+              <p>
+                <span>{% trans "Trip Title:"|upper %}</span>
+                {{ parent.trip.tname }}
+              </p>
+              <p>
+                {% get_verbose_label parent "objective_of_event" as text %}
+                <span>{{ text|upper }}</span>
+                {{ parent.objective_of_event }}
+              </p>
+              <p>
+                {% get_verbose_label parent "benefit_to_dfo" as text %}
+                <span>{{ text|upper }}</span>
+                {{ parent.benefit_to_dfo }}
+              </p>
+              <p>
+                {% get_verbose_label parent "funding_source" as text %}
+                <span>{{ text|upper }}</span>
+                {{ parent.funding_source }}
+              </p>
               {% trans "DETAILED COST BREAKDOWN PER TRAVELLER" %}:
               <br>
               {% for object in parent.travellers.all %}
@@ -237,8 +251,14 @@
           <tr>
             <td class="text-right wide-cell w40p">{% trans "Expenditure Initiation approved by (Print)" %}</td>
             <td class="data wide-cell" colspan="1">
-              {{ parent.rdg.user |nz:"n/a" }}
-              {% if parent.rdg.user %} | {% trans "Regional Director General" %} | {{ parent.rdg.user.shared_models_regions.first }}
+              {{ parent.expenditure_initiation.user |nz:"n/a" }}
+              {% if parent.expenditure_initiation.user %}
+                {% if parent.expenditure_initiation.user.profile.tposition %}
+                  | {{ parent.expenditure_initiation.user.profile.tposition }}
+                {% else %}
+                  | {% trans "Regional Director General" %}
+                {% endif %}
+                | {{ parent.section.division.branch.region }}
               {% endif %}
             </td>
           </tr>
@@ -246,9 +266,9 @@
             <td class="thin">&nbsp;</td>
           </tr>
           <tr>
-            {% if parent.rdg.status == 2 %}
+            {% if parent.expenditure_initiation.status == 2 %}
               <td colspan="2" class="" style="padding-left: 10px">
-                {% include "travel/traf/_rdg_approval.html" %}
+                {% include "travel/traf/_expenditure_initiation_approval.html" %}
               </td>
             {% else %}
               <td class="text-right very-wide-cell w40p">{% trans "Signature" %}</td>
@@ -258,7 +278,7 @@
           <tr class="thin">
             <td class="thin">&nbsp;</td>
           </tr>
-          {% if parent.rdg.status != 2 %}
+          {% if parent.expenditure_initiation.status != 2 %}
             <tr>
               <td class="text-right wide-cell w40p">{% trans "Date" %}</td>
               <td class="data wide-cell"> &nbsp;</td>

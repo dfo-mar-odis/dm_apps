@@ -140,7 +140,7 @@ class EvntFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Event
-        fields = ["facic_id", "evntc_id", "perc_id", "prog_id", "team_id", ]
+        fields = ["facic_id", "evntc_id", "perc_id", "prog_id",]
 
 
 class EvntcFilter(django_filters.FilterSet):

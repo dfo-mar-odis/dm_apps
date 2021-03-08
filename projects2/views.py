@@ -1111,6 +1111,8 @@ class ReportSearchFormView(AdminRequiredMixin, CommonFormView):
             return HttpResponseRedirect(reverse("projects2:export_sar_workplan") + f'?year={year};region={region}')
         elif report == 6:
             return HttpResponseRedirect(reverse("projects2:export_rsa") + f'?year={year};region={region}')
+        elif report == 7:
+            return HttpResponseRedirect(reverse("projects2:export_ppa") + f'?year={year};section={section};region={region}')
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
             return HttpResponseRedirect(reverse("projects2:reports"))
@@ -1309,8 +1311,49 @@ def export_regional_staff_allocation(request):
     return response
 
 
-# ADMIN USERS
+@login_required()
+def export_project_position_allocation(request):
+    year = request.GET.get("year")
+    region = request.GET.get("region")
+    section = request.GET.get("section")
 
+    region_name = None
+    if region:
+        region_name = shared_models.Region.objects.get(pk=region)
+
+    section_name = None
+    if section:
+        section_name = shared_models.Section.objects.get(pk=section)
+
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    if section_name:
+        response['Content-Disposition'] = 'attachment; filename="{}_{}_{}.csv"'.format(year, region_name, section_name)
+    else:
+        response['Content-Disposition'] = 'attachment; filename="{}_{}.csv"'.format(year, region_name)
+
+    writer = csv.writer(response)
+    writer.writerow(['Project ID', 'Project Name', 'Project Lead', 'Staff Name', 'Staff Level', 'Funding Source'])
+
+    project_years = models.ProjectYear.objects.filter(fiscal_year_id=year,
+                                                      project__section__division__branch__region_id=region)
+    if section:
+        project_years = project_years.filter(project__section_id=section)
+
+    # Now filter down the projects to projects that have staff with staff levels, but no staff name.
+    for p in project_years:
+        staff = p.staff_set.filter(user__id=None)
+        if staff:
+            leads = ", ".join(l.smart_name for l in p.staff_set.filter(is_lead=True))
+            project = p.project
+            for s in staff:
+                # sometimes people enter a persons name
+                writer.writerow([project.pk, project.title, '"' + leads + '"', s.smart_name, s.level, s.funding_source])
+
+    return response
+
+
+# ADMIN USERS
 class UserListView(AdminRequiredMixin, CommonFilterView):
     template_name = "projects2/user_list.html"
     filterset_class = filters.UserFilter

@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView, DetailView, DeleteView
 from shared_models.views import CommonAuthCreateView, CommonAuthFilterView, CommonAuthUpdateView, CommonTemplateView, \
-    CommonFormsetView, CommonHardDeleteView
+    CommonFormsetView, CommonHardDeleteView, CommonFormView
 from django.urls import reverse_lazy
 from django import forms
 from bio_diversity.forms import HelpTextFormset, CommentKeywordsFormset
@@ -250,11 +250,12 @@ class DataCreate(mixins.DataMixin, CommonCreate):
             evntc = models.Event.objects.filter(pk=self.kwargs["evnt"]).get().evntc_id
             init['evntc_id'] = evntc
             init['facic_id'] = models.Event.objects.filter(pk=self.kwargs["evnt"]).get().facic_id
+            self.get_form_class().base_fields["data_csv"].required = True
             self.get_form_class().base_fields["evnt_id"].widget = forms.HiddenInput()
             self.get_form_class().base_fields["evntc_id"].widget = forms.HiddenInput()
             self.get_form_class().base_fields["facic_id"].widget = forms.HiddenInput()
             if evntc.__str__() == "Electrofishing":
-                self.get_form_class().base_fields["tank_id"].widget = forms.Select()
+                self.get_form_class().base_fields["tank_id"].widget = forms.Select(attrs={"class": "chosen-select-contains"})
                 self.get_form_class().base_fields["tank_id"].required = True
             else:
                 self.get_form_class().base_fields["tank_id"].required = False
@@ -268,6 +269,8 @@ class DataCreate(mixins.DataMixin, CommonCreate):
             facility_code = models.Event.objects.filter(pk=self.kwargs["evnt"]).get().facic_id.__str__().lower()
             context["title"] = "Add {} data".format(evnt_code)
             context["template_url"] = 'data_templates/{}-{}.xlsx'.format(facility_code, evnt_code)
+            if evnt_code == "spawning":
+                context["template_url"] = 'data_templates/{}-{}.xls'.format(facility_code, evnt_code)
             context["template_name"] = "{}-{}".format(facility_code, evnt_code)
         return context
 
@@ -767,7 +770,7 @@ class EnvscDetails(mixins.EnvscMixin, CommonDetails):
 
 
 class EnvtDetails(mixins.EnvtMixin, CommonDetails):
-    fields = ["envtc_id", "lot_num", "amt", "unit_id", "duration", "comments", "created_by",
+    fields = ["envtc_id", "lot_num", "amt", "unit_id", "concentration_str", "duration", "comments", "created_by",
               "created_date", ]
 
 
@@ -883,6 +886,10 @@ class EvntDetails(mixins.EvntMixin, CommonDetails):
             context["table_list"] = ["data", "indv", "pair", "grp", "matp", "prot"]
         elif evnt_code == "Treatment":
             context["table_list"] = ["data", "tank", "trof", "prot"]
+        elif evnt_code == "Movement":
+            context["table_list"] = ["indv", "grp", "tank", "trof", "prot"]
+        elif evnt_code == "Mortality":
+            context["table_list"] = ["indv", "grp"]
 
         return context
 
@@ -914,11 +921,12 @@ class FeedmDetails(mixins.FeedmMixin, CommonDetails):
 
 
 class GrpDetails(mixins.GrpMixin, CommonDetails):
+    template_name = 'bio_diversity/details_grp.html'
     fields = ["spec_id", "stok_id", "coll_id", "grp_year", "grp_valid", "comments", "created_by", "created_date", ]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["table_list"] = ["evnt", "grpd", "pair", "cont"]
+        context["table_list"] = ["evnt", "indv", "grpd", "pair", "cont"]
         anix_set = self.object.animal_details.filter(evnt_id__isnull=False, contx_id__isnull=True, loc_id__isnull=True,
                                                      indvt_id__isnull=True, indv_id__isnull=True, pair_id__isnull=True)
         evnt_list = list(dict.fromkeys([anix.evnt_id for anix in anix_set]))
@@ -963,6 +971,15 @@ class GrpDetails(mixins.GrpMixin, CommonDetails):
                                         "field_list": pair_field_list,
                                         "single_object": obj_mixin.model.objects.first()}
 
+        indv_list = models.Individual.objects.filter(grp_id_id=self.object.pk)
+        indv_field_list = ["pit_tag", "indv_valid"]
+        obj_mixin = mixins.IndvMixin
+        context["indv_context_dict"] = {"div_title": "{} Details".format(obj_mixin.title),
+                                        "sub_model_key": obj_mixin.key,
+                                        "objects_list": indv_list,
+                                        "field_list": indv_field_list,
+                                        "single_object": obj_mixin.model.objects.first()}
+
         return context
 
 
@@ -996,6 +1013,7 @@ class ImgcDetails(mixins.ImgcMixin, CommonDetails):
 
 
 class IndvDetails(mixins.IndvMixin, CommonDetails):
+    template_name = 'bio_diversity/details_indv.html'
     fields = ["grp_id", "spec_id", "stok_id", "coll_id", "indv_year", "ufid", "pit_tag", "indv_valid", "comments", "created_by",
               "created_date", ]
 
@@ -1297,7 +1315,7 @@ class TankDetails(mixins.TankMixin, CommonDetails):
                                        "single_object": obj_mixin.model.objects.first()}
 
         envt_list = [envt for contx in self.object.contxs.all() for envt in contx.env_treatment.all()]
-        envt_field_list = ["envtc_id", "amt", "unit_id", "duration", ]
+        envt_field_list = ["envtc_id", "amt", "unit_id", "concentration_str", "duration", ]
         obj_mixin = mixins.EnvtMixin
         context["envt_context_dict"] = {"div_title": "Container Treatments",
                                         "sub_model_key": obj_mixin.key,
@@ -2338,3 +2356,57 @@ class HelpTextHardDeleteView(UserPassesTestMixin, CommonHardDeleteView):
 
     def test_func(self):
         return utils.bio_diverisity_admin(self.request.user)
+
+
+class MortFormView(mixins.MortMixin, UserPassesTestMixin, CommonFormView):
+    template_name = 'shared_models/shared_entry_form.html'
+
+    nav_menu = 'bio_diversity/bio_diversity_nav.html'
+    site_css = 'bio_diversity/bio_diversity.css'
+    home_url_name = "bio_diversity:index"
+
+    def get_initial(self):
+        init = super().get_initial()
+        init["created_by"] = self.request.user.username
+        init["created_date"] = date.today
+        init["mort_date"] = date.today
+        if self.kwargs.get("iorg") == "indv":
+            init["indv_mort"]=self.kwargs.get("pk")
+        elif self.kwargs.get("iorg") == "grp":
+            init["grp_mort"]=self.kwargs.get("pk")
+        return init
+
+    def get_nav_menu(self):
+        if self.kwargs.get("pop"):
+            return None
+
+        return self.nav_menu
+
+    # Upon success most creation views will be redirected to the Individual List view. To send
+    # a successful creation view somewhere else, override this method
+    def get_success_url(self):
+        success_url = self.success_url if self.success_url else reverse_lazy("bio_diversity:list_indv")
+
+        if self.kwargs.get("pop"):
+            # create views intended to be pop out windows should close the window upon success
+            success_url = reverse_lazy("shared_models:close_me_no_refresh")
+
+        return success_url
+
+    # overrides the UserPassesTestMixin test to check that a user belongs to the bio_diversity_admin group
+    def test_func(self):
+        if self.admin_only:
+            return utils.bio_diverisity_admin(self.request.user)
+        else:
+            return utils.bio_diverisity_authorized(self.request.user)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+
+
+

@@ -5,6 +5,7 @@ from azure.storage.blob import BlockBlobService
 from decouple import config
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.models import Group
 from django.db.models import Q
 from django.template.defaultfilters import date
 from django.utils import timezone
@@ -17,13 +18,17 @@ from . import models
 
 
 def in_travel_admin_group(user):
-    if user.id:
-        return user.groups.filter(name='travel_admin').count() != 0
+    # make sure the following group exist:
+    admin_group, created = Group.objects.get_or_create(name="travel_admin")
+    if user:
+        return admin_group in user.groups.all()
 
 
 def in_adm_admin_group(user):
-    if user.id:
-        return user.groups.filter(name='travel_adm_admin').count() != 0
+    # make sure the following group exist:
+    admin_group, created = Group.objects.get_or_create(name="travel_adm_admin")
+    if user:
+        return admin_group in user.groups.all()
 
 
 def is_admin(user):
@@ -31,6 +36,7 @@ def is_admin(user):
 
 
 def is_approver(user, trip_request):
+    """ only for when reviewer status is pending and request status is active"""
     return get_related_request_reviewers(user).filter(request_id=trip_request.id).exists()
 
 
@@ -172,7 +178,7 @@ def get_request_reviewers(trip_request):
     - branch admin
     - branch head
     - ADM  --> THIS IS ACHIEVED INDIRECTLY THROUGH TRIP REVIEW
-    - RDG --> this step follows back tot the branch admin
+    - Expenditure Initiation --> this step follows back tot the branch admin
     """
 
     if trip_request.section:
@@ -239,12 +245,22 @@ def get_request_reviewers(trip_request):
                 if adm_special_reviewer:
                     models.Reviewer.objects.get_or_create(request=trip_request, user=adm_special_reviewer.user, role=5)
 
-        # RDG
-        #####
+        # RDG / Expenditure Initiation #
+        ################################
+
         # only do this if the trip is NOT virtual!
         if not trip_request.trip.is_virtual:
-            if trip_request.section.division.branch.region.head and trip_request.section.division.branch.region.head not in [t.user for t in travellers]:
-                models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.division.branch.region.head, role=6)
+            # IF domestic travel ("domestic travel and continental USA travel") AND if there is an expenditure initial approver
+            ## Note: we are using the ADM approval required field as a proxy for domestic travel
+            region_expenditure_initiation_qs = trip_request.section.division.branch.region.travel_default_reviewers.all()
+            if not trip_request.trip.is_adm_approval_required and region_expenditure_initiation_qs.exists():
+                r, created = models.Reviewer.objects.get_or_create(request=trip_request, user=region_expenditure_initiation_qs.first().user, role=6)
+                # if at this point, we should check if the trip is adm approval required. If it is not, there is a good change the final approver is showing
+                # up as both recommender and final approver. If so, we should delete this person as a recommender
+                if trip_request.reviewers.filter(user=r.user, role=2).exists():
+                    trip_request.reviewers.filter(user=region_expenditure_initiation_qs.first().user, role=2).first().delete()
+            elif trip_request.section.division.branch.region.head:
+                models.Reviewer.objects.get_or_create(request=trip_request, user=trip_request.section.division.branch.region.head, role=7)
 
         # ensure the process order makes sense
         count = 1
@@ -390,8 +406,8 @@ def __set_request_status__(trip_request, request):
                     # if role is 'adm'
                     elif reviewer.role == 5:
                         trip_request.status = 14
-                    # if role is 'rdg'
-                    elif reviewer.role == 6:
+                    # if role is 'rdg' or 'expenditure initiation'
+                    elif reviewer.role in [6, 7]:
                         trip_request.status = 15
 
     trip_request.save()
@@ -426,10 +442,10 @@ def approval_seeker(trip_request, suppress_email=False, request=None):
 
             # now, depending on the role of this reviewer, perhaps we want to send an email.
             # if they are a recommender, rev...
-            if next_reviewer.role in [1, 2, 3, 4, ] and request:  # essentially, just not the RDG or ADM
+            if next_reviewer.role in [1, 2, 3, 4, 6, ] and request:  # essentially, just not the RDG or ADM
                 email = emails.ReviewAwaitingEmail(request, trip_request, next_reviewer)
 
-            elif next_reviewer.role in [6, ] and request:  # if we are going for RDG signature...
+            elif next_reviewer.role in [7, ] and request:  # if we are going for RDG signature...
                 email = emails.RDGReviewAwaitingEmail(request, trip_request, next_reviewer)
 
             if email and not suppress_email:

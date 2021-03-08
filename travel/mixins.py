@@ -2,13 +2,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 
 from travel import models
-from travel.utils import in_travel_admin_group, in_adm_admin_group, can_modify_request, is_approver
+from travel.utils import in_travel_admin_group, in_adm_admin_group, can_modify_request, is_approver, is_admin
 
 
 class TravelAdminRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
     def test_func(self):
-        return in_travel_admin_group(self.request.user)
+        return is_admin(self.request.user)
 
     def dispatch(self, request, *args, **kwargs):
         user_test_result = self.get_test_func()()

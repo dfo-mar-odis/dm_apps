@@ -7,41 +7,38 @@ app_name = 'travel'
 urlpatterns = [
     # Download a file
     path('download/file/<str:file>/', views.get_file, name="get_file"),
-
     path('util/conf_details', views.get_conf_details, name='conf_details'),  # this should be moved to the API section
-    path('', views.IndexTemplateView.as_view(), name="index"), # tested
+    path('', views.IndexTemplateView.as_view(), name="index"),  # tested
 
     # Requests
     ##########
-    path('requests/', views.TripRequestListView.as_view(), name="request_list"),
-    path('requests/new/', views.TripRequestCreateView.as_view(), name="request_new"),
-    path('requests/<int:pk>/view/', views.TripRequestDetailView.as_view(), name="request_detail"),
+    path('requests/', views.TripRequestListView.as_view(), name="request_list"),  # tested
+    path('requests/new/', views.TripRequestCreateView.as_view(), name="request_new"),  # tested
+    path('requests/<int:pk>/view/', views.TripRequestDetailView.as_view(), name="request_detail"),  # tested
     path('requests/uuid/<slug:uuid>/', views.TripRequestDetailView.as_view(), name="request_detail_by_uuid"),  # for display in the TRAF
-    path('requests/<int:pk>/edit/', views.TripRequestUpdateView.as_view(), name="request_edit"),
-    path('requests/<int:pk>/delete/', views.TripRequestDeleteView.as_view(), name="request_delete"),
-    path('requests/<int:pk>/clone/', views.TripRequestCloneUpdateView.as_view(), name="request_clone"),
+    path('requests/<int:pk>/edit/', views.TripRequestUpdateView.as_view(), name="request_edit"),  # tested
+    path('requests/<int:pk>/delete/', views.TripRequestDeleteView.as_view(), name="request_delete"),  # tested
+    path('requests/<int:pk>/clone/', views.TripRequestCloneUpdateView.as_view(), name="request_clone"),  # tested
+    path('requests/<int:pk>/cancel/', views.TripRequestCancelUpdateView.as_view(), name="request_cancel"),  # tested
 
-    path('requests/<int:pk>/cancel/', views.TripRequestCancelUpdateView.as_view(), name="request_cancel"),
-    path('requests/<int:pk>/submit/', views.TripRequestSubmitUpdateView.as_view(), name="request_submit"),
-    path('requests/<int:pk>/TRAF/', views.TravelPlanPDF.as_view(), name="request_print"),
+    path('requests/<int:pk>/submit/', views.TripRequestSubmitUpdateView.as_view(), name="request_submit"),  # tested
+    path('requests/<int:pk>/TRAF/', views.TravelPlanPDF.as_view(), name="request_print"),  # tested
     path('requests/<int:pk>/reset-reviewers/', views.reset_request_reviewers, name="reset_request_reviewers"),
-    # this is called by request update form with reviewers need to be reset
+    # this is called by request update form when reviewers need to be reset
 
     # Trips
     #######
-    path('trips/', views.TripListView.as_view(), name="trip_list"),
-    path('trips/new/', views.TripCreateView.as_view(), name="trip_new"),
-
-    path('trips/<int:pk>/view/', views.TripDetailView.as_view(), name="trip_detail"),
-    path('trips/<int:pk>/edit/', views.TripUpdateView.as_view(), name="trip_edit"),
-    path('trips/<int:pk>/clone/', views.TripCloneView.as_view(), name="trip_clone"),
-    path('trips/<int:pk>/delete/', views.TripDeleteView.as_view(), name="trip_delete"),
-    path('trips/<int:pk>/cancel/', views.TripCancelUpdateView.as_view(), name="trip_cancel"),
-    path('trips/<int:pk>/review-process/', views.TripReviewProcessUpdateView.as_view(), name="trip_review_toggle"),
+    path('trips/', views.TripListView.as_view(), name="trip_list"),  # tested
+    path('trips/new/', views.TripCreateView.as_view(), name="trip_new"),  # tested
+    path('trips/<int:pk>/view/', views.TripDetailView.as_view(), name="trip_detail"),  # tested
+    path('trips/<int:pk>/edit/', views.TripUpdateView.as_view(), name="trip_edit"),  # tested
+    path('trips/<int:pk>/clone/', views.TripCloneView.as_view(), name="trip_clone"),  # tested
+    path('trips/<int:pk>/delete/', views.TripDeleteView.as_view(), name="trip_delete"),  # tested
+    path('trips/<int:pk>/cancel/', views.TripCancelUpdateView.as_view(), name="trip_cancel"),  # tested
+    path('trips/<int:pk>/review-process/', views.TripReviewProcessUpdateView.as_view(), name="trip_review_toggle"),  # tested
 
     # verification
-    path('trips/<int:pk>/verify/', views.TripVerifyUpdateView.as_view(), name="trip_verify"),
-
+    path('trips/<int:pk>/verify/', views.TripVerifyUpdateView.as_view(), name="trip_verify"),  # tested
     path('select-a-trip-to-reassign-requests-to/<int:pk>/', views.TripSelectFormView.as_view(), name="trip_reassign_select"),
     path('re-assign-requests-from-trip/<int:trip_a>/to/<int:trip_b>/', views.TripReassignConfirmView.as_view(),
          name="trip_reassign_confirm"),
@@ -92,15 +89,15 @@ urlpatterns = [
     path('settings/default-reviewers/<int:pk>/delete/', views.DefaultReviewerDeleteView.as_view(), name="default_reviewer_delete"),  # tested
 
     # Admin Users
-    path('settings/users/', views.UserListView.as_view(), name='user_list'), # tested
-    path('settings/users/<int:pk>/toggle/<str:type>/', views.toggle_user, name='toggle_user'), # tested
+    path('settings/users/', views.UserListView.as_view(), name='user_list'),  # tested
+    path('settings/users/<int:pk>/toggle/<str:type>/', views.toggle_user, name='toggle_user'),  # tested
 
     # Reports #
     ###########
-    path('reports/search/', views.ReportFormView.as_view(), name="reports"), # tested
-    path('reports/export-cfts-list/', views.export_cfts_list, name="export_cfts_list"), # tested
-    path('reports/trip-list/', views.export_trip_list, name="export_trip_list"), # tested
-    path('reports/upcoming-trips/', views.export_upcoming_trips, name="export_upcoming_trips"), # tested
-    path('reports/cfts/request/<int:trip_request>/', views.export_request_cfts, name="export_cfts_request"), # tested
-    path('reports/cfts/trip/<int:trip>/', views.export_request_cfts, name="export_cfts_trip"), # tested
+    path('reports/search/', views.ReportFormView.as_view(), name="reports"),  # tested
+    path('reports/export-cfts-list/', views.export_cfts_list, name="export_cfts_list"),  # tested
+    path('reports/trip-list/', views.export_trip_list, name="export_trip_list"),  # tested
+    path('reports/upcoming-trips/', views.export_upcoming_trips, name="export_upcoming_trips"),  # tested
+    path('reports/cfts/request/<int:trip_request>/', views.export_request_cfts, name="export_cfts_request"),  # tested
+    path('reports/cfts/trip/<int:trip>/', views.export_request_cfts, name="export_cfts_trip"),  # tested
 ]
