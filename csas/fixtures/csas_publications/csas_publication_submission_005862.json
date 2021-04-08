@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5862,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Atlantic herring (Clupea harengus harengus L.) on the Quebec North Shore (NAFO Division 4S) in 2010",
+            "title_fr": "Le hareng (Clupea harengus harengus L.) de la Côte-Nord du Québec (Division 4S de l'OPANO) en 2010",
+            "pub_year": 2011,
+            "lead_author_2": "François Grégoire",
+            "pub_num": "019",
+            "pages": 108,
+            "pdf_size": 6943,
+            "description": ""
+        }
+    }
+]

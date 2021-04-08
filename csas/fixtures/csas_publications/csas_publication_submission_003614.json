@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3614,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Forecast for central coast sockeye, pink and chum salmon in 2002",
+            "title_fr": "Prévisions concernant le saumon rouge, rose et chum en 2002",
+            "pub_year": 2002,
+            "lead_author_2": "L.B. Holtby",
+            "pub_num": "069",
+            "pages": 29,
+            "pdf_size": 290,
+            "description": ""
+        }
+    }
+]

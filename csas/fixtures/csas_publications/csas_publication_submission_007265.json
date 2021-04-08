@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7265,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Trends in the abundance and distribution of sea otters (Enhydra lutris) in British Columbia updated with 2013 survey results",
+            "title_fr": "Tendances relatives à l'abondance et à la répartition de la loutre de mer (Enhydra lutris) en Colombie-Britannique mises à jour d'après les résultats du relevé de 2013",
+            "pub_year": 2015,
+            "pub_num": "043",
+            "description": ""
+        }
+    }
+]

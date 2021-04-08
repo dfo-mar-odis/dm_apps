@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5345,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of a National Science Advisory Process to Review Canadian Experiences with Ecologically and Biologically Significant Areas (EBSA) in the Northeast Pacific; 29-30 June 2009",
+            "title_fr": "Compte rendu de la réunion de consultation scientifique nationale pour l'examen de l'expérience canadienne liée aux ZIEB et aux EMV dans le Nord Est du Pacifique; les 29 et 30 juin 2009",
+            "pub_year": 2009,
+            "pub_num": "035",
+            "pages": 30,
+            "pdf_size": 148,
+            "description": ""
+        }
+    }
+]

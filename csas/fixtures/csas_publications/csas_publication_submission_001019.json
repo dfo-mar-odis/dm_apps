@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1019,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Final Report of the 2000 Annual Meeting of the Fisheries Oceanography Committee Including the Report of the Workshop on the Cod Recruitment Dilemma; February 22-25, 2000",
+            "pub_year": 2000,
+            "lead_author_2": "D.P. Swain, FOC Chairperson, M. Castonguay (Cod Recruitment Worksohp)",
+            "pub_num": "017",
+            "pages": 113,
+            "pdf_size": 963,
+            "description": ""
+        }
+    }
+]

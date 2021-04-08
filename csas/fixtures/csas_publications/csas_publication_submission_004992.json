@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4992,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Cumberland Sound Greenland Halibut (Turbot) Inshore Fishery",
+            "title_fr": "Pêche côtière au flétan noir (flétan du Groenland) dans la baie Cumberland",
+            "pub_year": 2008,
+            "lead_author_2": "Treble, M.",
+            "pub_num": "040",
+            "pages": 20,
+            "pdf_size": 787,
+            "description": ""
+        }
+    }
+]

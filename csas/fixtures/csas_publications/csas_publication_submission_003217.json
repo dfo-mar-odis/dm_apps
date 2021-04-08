@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3217,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southern Gulf Northern Quahaug",
+            "title_fr": "Parlourde américaine du sud du Golfe",
+            "pub_year": 1996,
+            "lead_author_2": "Landry, T.;Sephton, T.W.",
+            "pub_num": "102",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

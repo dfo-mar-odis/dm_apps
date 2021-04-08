@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1079,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the cod stock in Divisions 2GH",
+            "pub_year": 1980,
+            "lead_author_2": "S. Gavaris; C.A. Bishop",
+            "pub_num": "063",
+            "pages": 9,
+            "pdf_size": 380,
+            "description": ""
+        }
+    }
+]

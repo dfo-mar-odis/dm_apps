@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1962,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Trends in prevalence of Bitter Crab Disease (Hematodinium spp.) in snow crab (Chionecetes opilio) at Newfoundland and Labrador",
+            "title_fr": "Tendances de la prévalence de la maladie du crabe amer (Hematodinium spp.) chez le crabe des neiges (Chionecetes opilio) de Terre-Neuve et du Labrador.",
+            "pub_year": 2001,
+            "lead_author_2": "E. G. Dawe, H. J. Drew, and R. T. Warren",
+            "pub_num": "086",
+            "pages": 18,
+            "pdf_size": 528,
+            "description": ""
+        }
+    }
+]

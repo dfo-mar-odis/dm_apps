@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7278,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Assessment of Northern Shrimp (Pandalus borealis) of the Eastern Scotian Shelf (SFAs 13-15); November 27, 2014",
+            "title_fr": "Compte rendu de l'évaluation régionale de la crevette nordique (Pandalus borealis) de l'est du plateau néo-écossais (ZPC 13 à 15); le 27 novembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Kristian Curran, Ph. 902-426-9920",
+            "pub_num": "030",
+            "pages": 11,
+            "pdf_size": 101,
+            "description": ""
+        }
+    }
+]

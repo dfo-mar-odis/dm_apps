@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4584,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2006 Assessment of Pollock in 4VWX and 5Zc",
+            "title_fr": "Évaluation de la goberge dans 4VWX et 5Zc en 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Stone, H., P. Perley, D. Clark.",
+            "pub_num": "088",
+            "pages": 56,
+            "pdf_size": 1945,
+            "description": ""
+        }
+    }
+]

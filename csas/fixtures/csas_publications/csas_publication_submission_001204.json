@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1204,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update of biomass estimates from Canadian research vessel surveys in NAFO Divisions 4TVWX to 1981",
+            "pub_year": 1982,
+            "lead_author_2": "Koeller, P.A.",
+            "pub_num": "024",
+            "pages": 10,
+            "pdf_size": 724,
+            "description": ""
+        }
+    }
+]

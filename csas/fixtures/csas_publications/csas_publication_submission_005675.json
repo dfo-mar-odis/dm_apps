@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5675,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Seventh meeting of the Canadian Eel Science Working Group; October 14-16, 2009",
+            "title_fr": "Septième réunion du Groupe canadien de travail scientifique sur l'anguille ; du 14 au 16 octobre 2009",
+            "pub_year": 2011,
+            "lead_author_2": "Veinott, Geoff (Co-Chair); Mailhot, Yves (Co-Chair); Deault, Julie (Coordinator) ",
+            "pub_num": "035",
+            "pages": 69,
+            "pdf_size": 354,
+            "description": ""
+        }
+    }
+]

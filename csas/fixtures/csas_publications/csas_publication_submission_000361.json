@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 361,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "CAFSAC invertebrates & marine plants document # 1 - Background data for CAFSAC Invertebrates and Marine Plants Subcommittee Meeting, Quebec City, 19th April/77",
+            "pub_year": 1977,
+            "lead_author_2": "J.F. Caddy",
+            "pub_num": "018",
+            "pages": 22,
+            "pdf_size": 1188,
+            "description": ""
+        }
+    }
+]

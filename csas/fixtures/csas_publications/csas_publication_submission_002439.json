@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2439,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An update of the status of the stock of American plaice in Subarea 2+ Div. 3K",
+            "pub_year": 1995,
+            "lead_author_2": "W.B. Brodie; J. Morgan; W.R. Bowering",
+            "pub_num": "035",
+            "pages": 23,
+            "pdf_size": 999,
+            "description": ""
+        }
+    }
+]

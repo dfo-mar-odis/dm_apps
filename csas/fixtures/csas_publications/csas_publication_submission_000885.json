@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 885,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Growth curves for Newfoundland lobsters from data on molt increment and proportion molting",
+            "pub_year": 1978,
+            "lead_author_2": "G.P. Ennis",
+            "pub_num": "029",
+            "pages": 11,
+            "pdf_size": 483,
+            "description": ""
+        }
+    }
+]

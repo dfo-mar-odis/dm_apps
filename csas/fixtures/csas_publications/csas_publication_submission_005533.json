@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5533,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Review of the Gilbert Bay Marine Protected Area monitoring indicators, protocols and strategies, and an assessment of the Gilbert Bay cod population",
+            "title_fr": "Examen des indicateurs, des protocoles et des stratégies de surveillance de la zone de protection marine de la baie Gilbert et évaluation de la population de morues de la baie Gilbert",
+            "pub_year": 2010,
+            "pub_num": "027",
+            "description": ""
+        }
+    }
+]

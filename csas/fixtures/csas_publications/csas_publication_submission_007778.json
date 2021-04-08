@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7778,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Model estimates of Cumberland Sound beluga (Delphinapterus leucas) population size and total allowable removals",
+            "title_fr": "Estimations modélisées de la taille de la population de béluga de la baie Cumberland (Delphinapterus leucas) et des prélèvements totaux autorisés",
+            "pub_year": 2016,
+            "lead_author_2": "Marcoux, M., and Hammill, M.O.",
+            "pub_num": "077",
+            "pages": 39,
+            "pdf_size": 1058,
+            "description": ""
+        }
+    }
+]

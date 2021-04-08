@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 710,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Acoustic surveys of Smith Sound, Trinity Bay, 1995-2000",
+            "pub_year": 2000,
+            "lead_author_2": "Rose, G.A.",
+            "pub_num": "119",
+            "pages": 22,
+            "pdf_size": 4039,
+            "description": ""
+        }
+    }
+]

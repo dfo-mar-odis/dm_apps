@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1401,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Prediction of 1 SW Atlantic salmon returns statistical area N, 1984",
+            "pub_year": 1983,
+            "lead_author_2": "E.M.P. Chadwick",
+            "pub_num": "084",
+            "pages": 8,
+            "pdf_size": 839,
+            "description": ""
+        }
+    }
+]

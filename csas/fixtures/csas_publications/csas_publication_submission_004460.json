@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4460,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "A review of rougheye rockfish Sebastes aleutianus along the Pacific coast of Canada: biology, distribution, and abundance trends",
+            "title_fr": "Examen du sébaste à oeil épineux (Sebastes aleutianus) dans les eaux de la côte canadienne du Pacifique : biologie, répartition et tendances en matière d'abondance",
+            "pub_year": 2005,
+            "lead_author_2": "Haigh, R., Olsen, N., Starr, P.",
+            "pub_num": "096",
+            "pages": 76,
+            "pdf_size": 2119,
+            "description": ""
+        }
+    }
+]

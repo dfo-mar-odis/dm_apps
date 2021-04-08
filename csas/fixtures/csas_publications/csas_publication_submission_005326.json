@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5326,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Review of Alternate Ballast Water Exchange Zones for vessel traffic to Newfoundland and Labrador and the Canadian Arctic",
+            "title_fr": "Examen de zones alternatives d'échange des eaux de ballast pour le trafic maritime faisant route vers Terre-Neuve et le Labrador ainsi que dans l'Arctique canadien",
+            "pub_year": 2010,
+            "pub_num": "026",
+            "pages": 7,
+            "pdf_size": 128,
+            "description": ""
+        }
+    }
+]

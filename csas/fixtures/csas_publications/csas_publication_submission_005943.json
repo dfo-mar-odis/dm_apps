@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5943,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock assessment for Pacific ocean perch (Sebastes alutus) in Queen Charlotte Sound, British Columbia in 2010",
+            "title_fr": "Évaluation du stock de sébastes à longue mâchoire (Sebastes alutus) dans le détroit de la Reine-Charlotte, en Colombie-Britannique, en 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Andrew Edwards / Marilyn Joyce",
+            "pub_num": "017",
+            "pages": 11,
+            "pdf_size": 127,
+            "description": ""
+        }
+    }
+]

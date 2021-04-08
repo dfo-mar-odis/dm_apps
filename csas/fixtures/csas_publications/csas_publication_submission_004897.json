@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4897,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Softshell Clam Stocks in Quebec's Coastal Waters in 2007",
+            "title_fr": "Évaluation des stocks de mye commune des eaux côtières du Québec en 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Giguère, M.",
+            "pub_num": "051",
+            "pages": 13,
+            "pdf_size": 458,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 903,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "The grouping of herring populations in the southern Gulf of St. Lawrence",
+            "pub_year": 1977,
+            "lead_author_2": "D.M. Ware",
+            "pub_num": "001",
+            "pages": 16,
+            "pdf_size": 645,
+            "description": ""
+        }
+    }
+]

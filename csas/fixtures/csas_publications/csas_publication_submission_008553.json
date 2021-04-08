@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8553,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Environmental risk assessment of the Glofish Galactic Purple and Cosmic Blue Danios; transgenic ornamental fish",
+            "lead_author_2": "Colin McGowan",
+            "description": ""
+        }
+    }
+]

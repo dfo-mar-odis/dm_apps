@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5728,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Stocking history, biological characteristics, and status of Atlantic salmon (Salmo salar) on Prince Edward Island",
+            "title_fr": "Historique d'empoissonnement, caractéristiques biologiques et état du saumon atlantique (Salmo salar) sur l'Île-du-Prince-Édouard",
+            "pub_year": 2010,
+            "lead_author_2": "D.K. Cairns, D.L. Guignion, T. Dupuis and R.E. MacFarlane",
+            "pub_num": "104",
+            "pages": 54,
+            "pdf_size": 620,
+            "description": ""
+        }
+    }
+]

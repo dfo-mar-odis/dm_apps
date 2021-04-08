@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3314,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Modelling of Redside Dace (Clinostomus elongatus) in Canada",
+            "title_fr": "Modélisation du potentiel de rétablissement du méné long (Clinostomus elongatus) au Canada",
+            "pub_year": 2008,
+            "lead_author_2": "Vélez-Espino, L.A., M.A. Koops.",
+            "pub_num": "005",
+            "pages": 27,
+            "pdf_size": 268,
+            "description": ""
+        }
+    }
+]

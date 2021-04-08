@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3251,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Halibut on the Scotian Shelf and Southern Grand Bank (Div. 4VWX 3NOPs)",
+            "title_fr": "Flétan de l'Atlantique du plateau néo-écossais et du sud des Grands bancs (Div. 4VWX 3NOPs)",
+            "pub_year": 2001,
+            "lead_author_2": "Kees Zwanenburg",
+            "pub_num": "A3-23",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

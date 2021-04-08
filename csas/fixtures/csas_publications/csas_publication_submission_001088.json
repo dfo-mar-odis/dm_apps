@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1088,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Fishing power and ecological impact on Gulf Chondrus (Irish moss) of modified Chondrus dragrakes",
+            "pub_year": 1980,
+            "lead_author_2": "J.D. Pringle; D. Jones; P. Rowe",
+            "pub_num": "072",
+            "pages": 54,
+            "pdf_size": 4212,
+            "description": ""
+        }
+    }
+]

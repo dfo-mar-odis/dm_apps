@@ -127,3 +127,32 @@ def dm2decdeg(d, m):
     except Exception as E:
         # print(E)
         pass
+
+
+def format_coordinates(lat, lng, output_format, sep="/"):
+    """
+    @param lat: latitude (dd)
+    @param lng: longitude (dd)
+    @param output_format: dd | dm
+    @param sep: the separator used to separate lat and long
+    @return: formatted html string
+    """
+    try:
+        if output_format == "dm":
+            dmx = decdeg2dm(lat)
+            dmy = decdeg2dm(lng)
+            mystr = mark_safe(f"lat: {int(dmx[0])}° {format(dmx[1], '4f')}'  / lng: {int(dmy[0])}° {format(dmy[1], '4f')}'")
+        else:
+            mystr = mark_safe(f"lat: {format(lat, '4f')}°  {sep} lng: {format(lng, '4f')}°")
+
+        return mystr
+    except:
+        return "---"
+
+
+def get_labels(model):
+    labels = {}
+    for field in model._meta.get_fields():
+        if hasattr(field, "name") and hasattr(field, "verbose_name"):
+            labels[field.name] = special_capitalize(field.verbose_name)
+    return labels

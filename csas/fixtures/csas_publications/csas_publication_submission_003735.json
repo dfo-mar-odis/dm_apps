@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3735,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A preliminary exploration of the Canadian observer and catch-effort data on bycatches of 3Ps cod",
+            "title_fr": "Étude préliminaire des données d'observateurs canadiens et des données de captures et d'effort sur les prises accessoires de morue dans 3Ps",
+            "pub_year": 2003,
+            "lead_author_2": "Chen, N.Y., Shelton, P.",
+            "pub_num": "011",
+            "pages": 22,
+            "pdf_size": 561,
+            "description": ""
+        }
+    }
+]

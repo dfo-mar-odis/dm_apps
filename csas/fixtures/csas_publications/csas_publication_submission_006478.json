@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6478,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop Fishery Area/Time Closure to Reduce Yellowtail Flounder By-catch on Georges Bank in 2012",
+            "title_fr": "Fermetures spatio-temporelles de la pêche du pétoncle destinées à réduire les captures accessoires de limande à queue jaune dans le banc Georges en 2012",
+            "pub_year": 2012,
+            "lead_author_2": "A. Reeves, J. Sameoto, L. Van Eeckhaute / T. Worcester / V. Myra",
+            "pub_num": "015",
+            "pages": 16,
+            "pdf_size": 747,
+            "description": ""
+        }
+    }
+]

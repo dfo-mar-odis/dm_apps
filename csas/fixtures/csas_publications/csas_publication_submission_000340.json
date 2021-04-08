@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 340,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Georges Bank cod stock in 5Zj,m .",
+            "pub_year": 1997,
+            "lead_author_2": "Hunt, J.J., Buzeta, M.I.",
+            "pub_num": "053",
+            "pages": 37,
+            "pdf_size": 2118,
+            "description": ""
+        }
+    }
+]

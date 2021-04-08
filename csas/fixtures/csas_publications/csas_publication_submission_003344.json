@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3344,
+        "fields": {
+            "series": 7,
+            "lead_region": [2, 1],
+            "title_en": "General overview of Atlantic Coast Snow Crab and Report on the status of Snow Crab in the Southern Gulf of St. Lawrence (Fishing Areas 12, 18, 19, 25, and 26)",
+            "title_fr": "Aperçu général du crabe des neige sur la côte atlantique et rapport sur l'état du crabe des neiges dans le sud du golfe du Saint-Laurent (zones de pêche 12, 18, 19, 25, 26)",
+            "pub_year": 1994,
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

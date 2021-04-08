@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4122,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Review of the Potential Hydrophysical-related Issues in Canada, Risks to Marine Mammals, and Monitoring and Mitigation Strategies for Seismic Activities",
+            "title_fr": "Revue des problématiques potentielles liées à l'hydrophysique au Canada, leurs risques pour les mammifères marins, et des stratégies de monitorage et d'atténuation dans le contexte d'activités sismiques",
+            "pub_year": 2004,
+            "lead_author_2": "Lawson, J., McQuinn, I.",
+            "pub_num": "121",
+            "pages": 59,
+            "pdf_size": 3693,
+            "description": ""
+        }
+    }
+]

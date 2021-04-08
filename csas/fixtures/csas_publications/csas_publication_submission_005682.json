@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5682,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of the Biological Sampling Program for British Columbia Herring",
+            "lead_author_2": "Jaclyn Cleary",
+            "description": ""
+        }
+    }
+]

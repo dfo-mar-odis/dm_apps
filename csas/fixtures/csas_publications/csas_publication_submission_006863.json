@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6863,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Razor Clam stock in Québec's Inshore Waters in 2012",
+            "title_fr": "Évaluation des stocks du couteau droit des eaux côtières du Québec en 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Brulotte, Sylvie",
+            "pub_num": "052",
+            "pages": 14,
+            "pdf_size": 239,
+            "description": ""
+        }
+    }
+]

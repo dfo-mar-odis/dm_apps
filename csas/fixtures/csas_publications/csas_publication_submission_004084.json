@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4084,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Risk Assessment for Asian Carps in Canada",
+            "title_fr": "Évaluation du risque posé par la carpe d'Asie au Canada",
+            "pub_year": 2004,
+            "lead_author_2": "Mandrak, N.E., Cudmore, B.",
+            "pub_num": "103",
+            "pages": 52,
+            "pdf_size": 2147,
+            "description": ""
+        }
+    }
+]

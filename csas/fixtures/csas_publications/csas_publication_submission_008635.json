@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8635,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Assessments on scallop stocks in the Quebec’s inshore waters; February 26, 2020",
+            "title_fr": "Compte rendu de l’examen régional par des pairs portant sur l’évaluation des stocks de pétoncle des eaux côtières du Québec; 26 février 2020",
+            "pub_year": 2020,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "018",
+            "pages": 12,
+            "pdf_size": 310,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3782,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4VsW cod to 2002",
+            "title_fr": "Bilan de l'état du stock de morue de 4VsW en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Fanning, L.P., Mohn, R.K., MacEachern, W.J.",
+            "pub_num": "027",
+            "pages": 45,
+            "pdf_size": 1968,
+            "description": ""
+        }
+    }
+]

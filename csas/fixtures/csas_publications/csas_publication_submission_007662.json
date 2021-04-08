@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7662,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Blue whale continuous frequentations of St. Lawrence habitats from multi-year PAM series",
+            "title_fr": "Fréquentation continue de la baleine bleue des habitats du Saint-Laurent à partir de la série pluriannuelle de monitorage par acoustique passive",
+            "pub_year": 2016,
+            "lead_author_2": "Yvan Simard, Nathalie Roy",
+            "pub_num": "091",
+            "pages": 19,
+            "pdf_size": 1003,
+            "description": ""
+        }
+    }
+]

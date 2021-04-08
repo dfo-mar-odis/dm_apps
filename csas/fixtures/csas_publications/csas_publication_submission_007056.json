@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7056,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Marine protected area network planning in the Western Arctic Bioregion: development and use of a classification system to identify ecological units as required planning components",
+            "title_fr": "Planification du réseau d'aires marines protégées dans la biorégion de l'ouest de l'Arctique : élaboration et utilisation d'un système de classification pour déterminer les unités écologiques en tant qu'éléments nécessaires à la planification",
+            "pub_year": 2015,
+            "lead_author_2": "R. Hodgson",
+            "pub_num": "020",
+            "pages": 46,
+            "pdf_size": 4288,
+            "description": ""
+        }
+    }
+]

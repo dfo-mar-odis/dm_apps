@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3634,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A perspective on the use of Performance Based Standards to assist in fish habitat management on the seafloor near salmon net pen operations in British Columbia",
+            "title_fr": "Point de vue concernant l'utilisation de normes axées sur la performance pour faciliter la gestion de l'habitat du poisson situé sur le fond marin, près d'installations d'élevage de saumons dans des enclos de filets en Colombie-Britannique",
+            "pub_year": 2002,
+            "lead_author_2": "C.D. Levings, J.M. Helfield, D.J. Stucchi, T.F. Sutherland",
+            "pub_num": "075",
+            "pages": 59,
+            "pdf_size": 815,
+            "description": ""
+        }
+    }
+]

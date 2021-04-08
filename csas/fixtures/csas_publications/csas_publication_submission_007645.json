@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7645,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Regional Science Peer Review of Habitat Ecosystem Assessment Tool (HEAT)",
+            "pub_year": 2020,
+            "lead_author_2": "Sommer Abdel-Fattah",
+            "pub_num": "028",
+            "description": ""
+        }
+    }
+]

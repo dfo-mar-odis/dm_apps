@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 139,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) in Highlands River, Bay St. George (SFA 13), Newfoundland in 1997",
+            "pub_year": 1998,
+            "lead_author_2": "Reddin, D.G., R.R. Whalen",
+            "pub_num": "113",
+            "pages": 21,
+            "pdf_size": 1455,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8233,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Regional Science Peer Review Assessment of the Instream Flow Needs for Fish and Fish Habitat in the Saskatchewan River below the E.B. Campbell Hydroelectric Station; May 9-10, 2018",
+            "title_fr": "Compte rendu de réponse des Sciences régional d’examen par les pairs évaluation du débit minimal requis pour le poisson et l’habitat du poisson dans la rivière Saskatchewan sous la station hydroélectrique E.B. Campbell; du 9 au 10 mai 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Eva Enders",
+            "pub_num": "019",
+            "pages": 24,
+            "pdf_size": 392,
+            "description": ""
+        }
+    }
+]

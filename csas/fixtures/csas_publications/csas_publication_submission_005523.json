@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5523,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 1],
+            "title_en": "Incidental catch, discards and potential post-release survival of fish captured in fixed-gear groundfish fisheries in NAFO 4T (Estuary and southern Gulf of St. Lawrence)",
+            "title_fr": "Les prises accidentelles, rejets et potentiel de survie suite à la remise à l'eau des poissons capturés dans les pêcheries de poissons de fond aux engins fixes dans l'OPANO 4T (Estuaire et sud du Golfe du Saint Laurent)",
+            "pub_year": 2010,
+            "lead_author_2": "Benoît, H.P., Hurlbut, T.",
+            "pub_num": "031",
+            "pages": 25,
+            "pdf_size": 156,
+            "description": ""
+        }
+    }
+]

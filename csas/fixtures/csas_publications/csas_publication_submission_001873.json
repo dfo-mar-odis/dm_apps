@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1873,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An assessment of Ascophyllum nodosum resources in Scotia Fundy",
+            "pub_year": 1989,
+            "lead_author_2": "G.J. Sharp; D.M. Tremblay",
+            "pub_num": "001",
+            "pages": 19,
+            "pdf_size": 1679,
+            "description": ""
+        }
+    }
+]

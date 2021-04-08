@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3839,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "National DFO Workshop on Quantifying Critical Habitat for Aquatic Species at Risk; 2-6 December 2002",
+            "title_fr": "Atelier national du MPO sur la quantification de l'habitat essentiel des espèces aquatiques en péril; du 2 au 6 décembre 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Randall, R.G., Dempson, J.B., Minns, C.K., Powles, H., Reist, J.D. (Editors/Éditeurs)",
+            "pub_num": "012",
+            "description": ""
+        }
+    }
+]

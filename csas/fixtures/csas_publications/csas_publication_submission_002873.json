@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2873,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Temperature, catch rate and catchability during the spring lobster fishery off eastern Cape Breton Island.",
+            "pub_year": 1997,
+            "lead_author_2": "Tremblay, M.J., Drinkwater, K.F.",
+            "pub_num": "119",
+            "pages": 26,
+            "pdf_size": 1046,
+            "description": ""
+        }
+    }
+]

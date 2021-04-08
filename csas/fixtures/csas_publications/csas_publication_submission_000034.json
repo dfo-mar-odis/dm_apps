@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 34,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of striped bass (Morone saxatilis) in the Gulf of St. Lawrence in 1997",
+            "pub_year": 1998,
+            "lead_author_2": "R.G. Bradford, G. Chaput",
+            "pub_num": "035",
+            "description": ""
+        }
+    }
+]

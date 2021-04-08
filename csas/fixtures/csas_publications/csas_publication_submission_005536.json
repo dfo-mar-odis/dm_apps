@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5536,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Buffalo River Inconnu (Stenodus leucichthys) Great Slave Lake, Northwest Territories, 1945-2009",
+            "title_fr": "Évaluation de l'inconnu (Stenodus leucichthys) de la rivière Buffalo, Grand lac des Esclaves, Territoires du Nord-Ouest, de 1945 à 2009",
+            "pub_year": 2012,
+            "lead_author_2": "Ross Tallman/ Melanie VanGerwen-Toyne",
+            "pub_num": "045",
+            "pages": 8,
+            "pdf_size": 459,
+            "description": ""
+        }
+    }
+]

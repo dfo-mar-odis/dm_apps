@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5872,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Zonal Advisory Process (ZAP) for the Assessment of Northern and Striped Shrimp, February 15-25, 2011",
+            "lead_author_2": "E. Dale Richards",
+            "description": ""
+        }
+    }
+]

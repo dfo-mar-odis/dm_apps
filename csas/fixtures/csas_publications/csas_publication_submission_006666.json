@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6666,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Workshop to Scope the Assessment of Human Impacts in the Coastal Zone of Eastern Nova Scotia: Application of the Maritimes Region Ecosystem Approach to Management Framework; 26-28 November, 2012",
+            "title_fr": "Compte rendu d'un atelier de la région des Maritimes pour déterminer la portée de l'Évaluation de l'impact des activités humaines sur la zone côtière de l'est de la Nouvelle-Écosse : mise en application du cadre de l'approche écosystémique à la gestion de la région des Maritimes; du 26 au 28 novembre 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Bennett, L.",
+            "pub_num": "031",
+            "pages": 40,
+            "pdf_size": 492,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3486,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Impact of a standard conduit fish counting fence on water quality in Campbellton River, 2001",
+            "title_fr": "Effets d'une barrière de dénombrement des poissons standard sur la qualité de l'eau de la rivière Campbellton en 2001",
+            "pub_year": 2002,
+            "lead_author_2": "P. Downton, G. Veinott, D.G. Reddin, D. Howse, R. Wight",
+            "pub_num": "026",
+            "pages": 42,
+            "pdf_size": 1335,
+            "description": ""
+        }
+    }
+]

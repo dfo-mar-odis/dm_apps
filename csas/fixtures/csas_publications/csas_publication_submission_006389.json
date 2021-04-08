@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6389,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Lobster Stocks of the Gaspé (LFAs 19, 20 and 21), Quebec in 2011",
+            "title_fr": "Évaluation des stocks de homard de la Gaspésie (ZPH 19, 20 et 21), Québec, en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Louise Gendron",
+            "pub_num": "015",
+            "pages": 14,
+            "pdf_size": 349,
+            "description": ""
+        }
+    }
+]

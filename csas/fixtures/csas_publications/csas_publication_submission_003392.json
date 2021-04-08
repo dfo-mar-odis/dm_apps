@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3392,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Current knowledge on the commercially import invertebrates (lobster and snow crab) in the proposed oil and gas exploration site and adjacent area (southern Gulf of St. Lawrence and Sidney Bight)",
+            "pub_year": 2001,
+            "lead_author_2": "Moriyasu, M., Davidson, L.-A., Lanteigne, M., Biron, M., Comeau, M., Hébert, M., Savoie, L., Surette, T., Wade, E., and C. Sabean",
+            "pub_num": "111",
+            "pages": 76,
+            "pdf_size": 5840,
+            "description": ""
+        }
+    }
+]

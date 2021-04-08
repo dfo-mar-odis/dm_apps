@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4662,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Regional Advisory Process Assessment for Gaspereau River Alewife; 26 March 2007",
+            "title_fr": "Compte rendu du Processus consultatif régional des provinces Maritimes sur l'évaluation de la population de gaspareau de la rivière Gaspereau; le 26 mars 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Boudreau, P.",
+            "pub_num": "009",
+            "pages": 16,
+            "pdf_size": 92,
+            "description": ""
+        }
+    }
+]

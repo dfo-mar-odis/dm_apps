@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 251,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment and biology of Greenland Halibut (Reinhardtius hippoglossoides) in the Gulf of St. Lawrence (4RST) in 1998",
+            "title_fr": "Évaluation et biologie du flétan du Groenland (Reinhardtius hippoglossoides) du golfe du Saint-Laurent (4RST) en 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Morin, B., Bernier, B.",
+            "pub_num": "185",
+            "pages": 57,
+            "description": ""
+        }
+    }
+]

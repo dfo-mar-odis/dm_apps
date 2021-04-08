@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8077,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the whelk fishery in Québec’s inshore waters",
+            "title_fr": "Évaluation de la pêche au buccin des eaux côtières du Québec",
+            "pub_year": 2018,
+            "lead_author_2": "Sylvie Brulotte",
+            "pub_num": "028",
+            "pages": 12,
+            "pdf_size": 532,
+            "description": ""
+        }
+    }
+]

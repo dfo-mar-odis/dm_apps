@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4606,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Request to dredge in the Sydenham River, Ontario with potential impact for endangered mussel species - review of habitat survey results",
+            "title_fr": "Demande de dragage de la rivière Sydenham (Ontario) et impact possible sur les espèces de moules en voie de disparition - Examen des résultats du relevé des sédiments",
+            "pub_year": 2007,
+            "lead_author_2": "Morris, T.",
+            "pub_num": "004b",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

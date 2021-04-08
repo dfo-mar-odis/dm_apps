@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8368,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of American Lobster (Homarus Americanus) in Lobster Fishing Areas 27–32",
+            "title_fr": "Évaluation du homard d’Amérique (Homarus Americanus) dans les zones de pêche du homard 27 à 32",
+            "pub_year": 2020,
+            "lead_author_2": "L. Bennett",
+            "pub_num": "026",
+            "pages": 51,
+            "pdf_size": 2440,
+            "description": ""
+        }
+    }
+]

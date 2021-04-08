@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1312,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock structure of yellowtail flounder in the Gulf of Maine area: Implications for management",
+            "pub_year": 1986,
+            "lead_author_2": "J.D. Neilson; P. Hurley; R.I. Perry",
+            "pub_num": "064",
+            "pages": 28,
+            "pdf_size": 1532,
+            "description": ""
+        }
+    }
+]

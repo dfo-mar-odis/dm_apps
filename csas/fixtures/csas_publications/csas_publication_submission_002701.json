@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2701,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Scallops in Quebec inshore waters",
+            "title_fr": "Pétoncles des eaux côtières du Québec",
+            "pub_year": 2001,
+            "lead_author_2": "Michel Giguère",
+            "pub_num": "C4-07",
+            "pages": 15,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5411,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the emerging Atlantic hagfish (Myxine glutinosa) fishery in NAFO Division 3O: Year V.",
+            "pub_year": 2018,
+            "lead_author_2": "Grant, S.M., Hiscock, W., Bishop, G., Sullivan, R.",
+            "description": ""
+        }
+    }
+]

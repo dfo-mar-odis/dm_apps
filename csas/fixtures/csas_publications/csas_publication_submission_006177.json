@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6177,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Summary of the 2016 snow crab trawl survey activities in the southern Gulf of St. Lawrence",
+            "title_fr": "Résumé des détails sur le relevé de crabe des neiges dans le sud du golfe du Saint-Laurent en 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Wade, E., Moriyasu, M., DeGrâce, P., Landry, J.-F., Allain, R., and Hébert, M.",
+            "pub_num": "082",
+            "pages": 58,
+            "pdf_size": 10172,
+            "description": ""
+        }
+    }
+]

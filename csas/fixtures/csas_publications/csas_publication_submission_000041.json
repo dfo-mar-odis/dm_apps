@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 41,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in Restigouche River in 1997",
+            "pub_year": 1998,
+            "lead_author_2": "A. Locke",
+            "pub_num": "042",
+            "description": ""
+        }
+    }
+]

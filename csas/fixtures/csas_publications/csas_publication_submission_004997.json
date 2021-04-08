@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4997,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Narrative description and quantification of the habitat requirements of Lake Sturgeon, Acipenser fulvescens in the Great Lakes and upper St. Lawrence River",
+            "title_fr": "Description narrative et quantification des besoins de l'esturgeon jaune (Acipenser fulvescens) en matière d'habitat dans les Grands Lacs et le cours supérieur du fleuve Saint-Laurent",
+            "pub_year": 2008,
+            "lead_author_2": "Randall, R.G.",
+            "pub_num": "015",
+            "pages": 16,
+            "pdf_size": 85,
+            "description": ""
+        }
+    }
+]

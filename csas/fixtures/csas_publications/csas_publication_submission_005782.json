@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5782,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biophysical Overview of the Laurentian Channel Study Area in Support of Marine Protected Area Development",
+            "lead_author_2": "N.D. Templeman",
+            "description": ""
+        }
+    }
+]

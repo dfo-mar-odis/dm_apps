@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5732,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment Framework for Sea Cucumber (Parastichopus californicus) in British Columbia",
+            "title_fr": "Cadre d'évaluation pour le concombre de mer (Parastichopus californicus) en Colombie-Britannique",
+            "pub_year": 2010,
+            "lead_author_2": "Nicholas Duprey, Claudia Hand,  Janet Lochead, & Wayne Hajas",
+            "pub_num": "105",
+            "pages": 44,
+            "pdf_size": 656,
+            "description": ""
+        }
+    }
+]

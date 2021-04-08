@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3518,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Northern shrimp (Pandalus borealis) off Baffin Island, Labrador and northeastern Newfoundland - second interim review",
+            "title_fr": "Deuxième examen provisoire de l'état des stocks de crevette nordique (Pandalus borealis) au large de l'île Baffin, du Labrador et du nord-est de Terre-Neuve",
+            "pub_year": 2002,
+            "lead_author_2": "D. Orr, D.G. Parsons, P.J. Veitch, D.J. Sullivan",
+            "pub_num": "035",
+            "pages": 70,
+            "pdf_size": 35930,
+            "description": ""
+        }
+    }
+]

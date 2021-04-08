@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4415,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock assessment report on Queen Charlotte Islands Pacific herring",
+            "title_fr": "Évaluation du stock du hareng du Pacifique des îles de la Reine Charlotte",
+            "pub_year": 2005,
+            "lead_author_2": "Schweigert, J.",
+            "pub_num": "067",
+            "pages": 5,
+            "pdf_size": 197,
+            "description": ""
+        }
+    }
+]

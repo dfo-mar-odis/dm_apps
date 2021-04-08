@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 70,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Survey of sea scallop abundance and distribution in western Northumberland Strait (SFA 22, June 1997)",
+            "pub_year": 1998,
+            "lead_author_2": "J.M. Hanson",
+            "pub_num": "071",
+            "description": ""
+        }
+    }
+]

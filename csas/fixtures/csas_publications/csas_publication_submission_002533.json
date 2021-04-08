@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2533,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Potential impacts of use of acoustic deterrant devices (ADDs) on marine mammals in the Quoddy Region based on a study conducted in British Columbia waters",
+            "pub_year": 1995,
+            "lead_author_2": "M. B. Strong; E. A. Trippel; D. S. Clark; J. D. Neilson; B. D. Chang",
+            "pub_num": "127",
+            "pages": 15,
+            "pdf_size": 396,
+            "description": ""
+        }
+    }
+]

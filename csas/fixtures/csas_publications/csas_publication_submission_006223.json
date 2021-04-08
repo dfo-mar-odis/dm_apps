@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6223,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "A review of the Pacific herring assessment framework and stock assessment and management advice for Pacific herring 2011 status and 2012 forecasts; September 7-9, 2011",
+            "title_fr": "Examen du cadre d'évaluation du hareng du Pacifique, avis sur l'évaluation et la gestion des stocks de hareng du Pacifique : état en 2011 et prévisions pour 2012 ; du 7 au 9 septembre 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Linnea Flostrand",
+            "pub_num": "062",
+            "pages": 46,
+            "pdf_size": 593,
+            "description": ""
+        }
+    }
+]

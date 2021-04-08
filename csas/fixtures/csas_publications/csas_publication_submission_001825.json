@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1825,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An adaptive framework for the estimation of population size",
+            "pub_year": 1988,
+            "lead_author_2": "Stratis Gavaris",
+            "pub_num": "029",
+            "pages": 12,
+            "pdf_size": 582,
+            "description": ""
+        }
+    }
+]

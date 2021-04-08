@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 295,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Bilan préliminaire de l'exploitation du saumon au Québec en 1990",
+            "pub_year": 1990,
+            "lead_author_2": "F. Caron; M. Shields",
+            "pub_num": "089",
+            "description": ""
+        }
+    }
+]

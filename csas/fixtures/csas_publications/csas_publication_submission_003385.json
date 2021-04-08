@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3385,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Rat River Dolly Varden",
+            "title_fr": "La Dolly Varden de la rivière Rat",
+            "pub_year": 2001,
+            "lead_author_2": "Dueck, Larry",
+            "pub_num": "D5-61",
+            "pages": 15,
+            "pdf_size": 563,
+            "description": ""
+        }
+    }
+]

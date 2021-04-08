@@ -1,0 +1,244 @@
+{% extends 'edna/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+
+  <div class="btns mb-3">
+    <a href="{% url 'edna:extraction_batch_edit' object.id %}" class="btn btn-warning btn-sm">{% trans "Edit" %}</a>
+    <a href="{% url 'edna:extraction_batch_delete' object.id %}" class="btn btn-danger btn-sm">{% trans "Delete" %}</a>
+
+  </div>
+
+  <table class="table table-sm">
+    {% for field in field_list %}
+      {% verbose_td_display object field th_width="200px" %}
+    {% endfor %}
+  </table>
+
+  <div id="app" class="mt-5">
+    <div class="mb-3">
+      <p class="h3">{% trans "Tubes" %}</p>
+      <button @click="addExtract(null)" class="btn btn-sm btn-primary">{% trans "Add a Tube" %}</button>
+      <button @click="addAllExtracts()" class="btn btn-sm btn-warning">{% trans "Import all un-extracted filters" %}</button>
+    </div>
+
+    <div class="row mb-3 px-1 py-1" style="width: 30%">
+      <div class="col">
+        <label for="">{% trans "Default extraction type" %}</label>
+        <select v-model="default_dna_extraction_protocol" class="form-control form-control-sm">
+          <option v-for="(obj, index) in dnaExtractionProtocolChoices" :value="obj.value">${obj.text}</option>
+        </select>
+      </div>
+    </div>
+
+    <div v-if="loading" class="loading mb-3 mt-3 mt-5">
+      <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+    <div v-else-if="!extracts.length">
+      <em>{% trans "No extracts have been added to this batch." %}</em>
+    </div>
+    <div v-else>
+      <div class="alert alert-danger" role="alert" v-if="extractErrorMsg">
+        <p class="mb-0 lead" v-html="extractErrorMsg"></p>
+      </div>
+      <table :class="{'unsaved-borders':unsavedChanges, 'saved-borders':!unsavedChanges}" style="width: 100%">
+        <thead>
+        <tr>
+          <th class="px-1 py-1">#</th>
+          <th class="px-1 py-1">Id</th>
+          <th class="px-1 py-1" style="width: 120px">${labels.filter}</th>
+          <th class="px-1 py-1" style="width: 220px">${labels.start_datetime} (yyyy-mm-dd HH:MM:SS)</th>
+          <th class="px-1 py-1" style="width: 210px">${labels.dna_extraction_protocol}</th>
+          <th class="px-1 py-1" style="width: 175px">${labels.storage_location}</th>
+          <th class="px-1 py-1">${labels.comments}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(e, index) in extracts" :key="e.id">
+          <td class="px-0 py-0 text-muted" tabindex="-1">${index+1}</td>
+          <td class="px-0  py-0 text-muted" tabindex="-1">${e.id}</td>
+          <td class="px-0 py-0">
+            <select v-model="e.filter" class="no-borders" @change="updateExtract(e)">
+              <option value="">{% trans "Extraction Blank" %}</option>
+              <option v-for="(obj, index) in filterChoices" :value="obj.value">${obj.text}</option>
+            </select>
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="e.start_datetime" @change="updateExtract(e)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <select v-model="e.dna_extraction_protocol" class="no-borders" @change="updateExtract(e)">
+              <option v-for="(obj, index) in dnaExtractionProtocolChoices" :value="obj.value">${obj.text}</option>
+            </select>
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="e.storage_location" @change="updateExtract(e)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="e.comments" @change="updateExtract(e)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <button class="btn py-0" @click="deleteExtract(e)"><span class="h5 mdi mdi-delete"></span></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block body_js %}
+
+  {{ block.super }}
+  <script type="application/javascript">
+  let extractBatchId = {{ object.id }};
+  var app = new Vue({
+    el: '#app',
+    delimiters: ["${", "}"],
+    data: {
+      currentUser: null,
+      default_dna_extraction_protocol: 1,
+      extractErrorMsg: null,
+      extracts: [],
+      labels: [],
+      loading: false,
+      filterChoices: [],
+      dnaExtractionProtocolChoices: [],
+      unsavedChanges: false
+    },
+    methods: {
+      addExtract(howMany) {
+        if (!howMany) howMany = Number(prompt("{% trans 'How many tubes do you want to add?' %}"));
+        if (howMany) {
+          for (let i = 0; i < howMany; i++) {
+            this.newExtract();
+          }
+        }
+      },
+      addAllExtracts() {
+        howMany = 0;
+        for (var i = 0; i < this.filterChoices.length; i++) {
+          if (!this.filterChoices[i].has_extract) {
+            howMany += 1;
+          }
+        }
+        if (howMany) {
+          filterArray = this.getQueuedFilters(howMany);
+          for (let i = 0; i < filterArray.length; i++) {
+            this.newExtract(filterArray[i]);
+          }
+        }
+      },
+      deleteExtract(extract) {
+        userInput = confirm("{% trans 'Are you sure you want to delete this tube?' %}");
+        if (userInput) {
+          let endpoint = `/api/edna/extracts/${extract.id}/`;
+          apiService(endpoint, "DELETE")
+              .then(response => {
+                this.$delete(this.extracts, this.extracts.indexOf(extract))
+              })
+        }
+      },
+      getBlankExtract(filter) {
+        let now = new Date(Date.now());
+        return {
+          extraction_batch: extractBatchId,
+          filter: filter,
+          dna_extraction_protocol: this.default_dna_extraction_protocol,
+          start_datetime: `${now.getFullYear()}-${now.getMonth()}-${now.getDay()} ${now.getHours()}:${now.getMinutes()}`,
+          storage_location: null,
+          comments: null,
+        }
+      },
+      getCurrentUser() {
+        let endpoint = `/api/edna/user/`;
+        apiService(endpoint)
+            .then(response => {
+              this.currentUser = response;
+            })
+      },
+      getExtractMetadata() {
+        let endpoint = `/api/edna/meta/models/extract/`;
+        apiService(endpoint).then(data => {
+          this.labels = data.labels;
+          this.dnaExtractionProtocolChoices = data.dna_extraction_protocol_choices;
+          this.filterChoices = data.filter_choices;
+        });
+      },
+      getExtracts() {
+        this.loading = true;
+        endpoint = `/api/edna/extracts/?batch=${extractBatchId}`;
+        apiService(endpoint)
+            .then(response => {
+              this.loading = false;
+              if (response.length && response[0].id) {
+                for (var i = 0; i < response.length; i++) {
+                  response[i].start_datetime = response[i].start_datetime.replace("T", " ").replace("Z", "")
+                  if (!response[i].filter) response[i].filter = "";
+
+                }
+                this.extracts = response;
+              }
+            })
+      },
+      getQueuedFilters(howMany) {
+        let filters = [...this.filterChoices];
+        myArray = []
+        let result;
+        for (let i = 0; i < howMany; i++) {
+          result = "";
+          for (let j = 0; j < filters.length; j++) {
+            let filter = filters[j];
+            if (!filter.has_extract) {
+              let index = filters.indexOf(filter);
+              result = filters.splice(index, 1)[0].value;
+              break;
+            }
+          }
+          myArray.push(result);
+        }
+        // return the results array
+        return myArray;
+      },
+      groomJSON(json) {
+        return JSON.stringify(json).replaceAll("{", "").replaceAll("}", "").replaceAll("[", " ").replaceAll("]", " ").replaceAll('"', "").replaceAll("non_field_errors:", "")
+      },
+      newExtract(filter) {
+        endpoint = `/api/edna/extracts/`;
+        data = this.getBlankExtract(filter)
+        apiService(endpoint, "POST", data)
+            .then(response => {
+              if (response.id) {
+                response.start_datetime = response.start_datetime.replace("T", " ").replace("Z", "")
+                if (!response.filter) response.filter = "";
+                this.extracts.push(response)
+                // refresh the filter choices
+                this.getExtractMetadata();
+              }
+            })
+      },
+      updateExtract(extract) {
+        this.extractErrorMsg = null;
+        endpoint = `/api/edna/extracts/${extract.id}/`;
+        apiService(endpoint, "PUT", extract)
+            .then(response => {
+              if (!response.id) this.extractErrorMsg = this.groomJSON(response);
+              else this.unsavedChanges = false;
+            })
+      },
+    },
+    created() {
+      this.getCurrentUser();
+      this.getExtractMetadata();
+      this.getExtracts();
+    },
+  });
+  </script>
+
+{% endblock %}

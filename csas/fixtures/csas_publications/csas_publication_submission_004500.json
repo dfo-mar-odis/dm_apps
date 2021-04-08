@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4500,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "A review of the analysis to evaluate the recovery of bowhead whales, Balaena mysticetus, in the eastern Canadian Arctic",
+            "title_fr": "Examen de l'analyse visant à évaluer le rétablissement des baleines boréales, Balaena mysticetus, dans l'est de l'Arctique canadien",
+            "pub_year": 2006,
+            "lead_author_2": "Alvarez-Flores, C.M.",
+            "pub_num": "054",
+            "pages": 40,
+            "pdf_size": 320,
+            "description": ""
+        }
+    }
+]

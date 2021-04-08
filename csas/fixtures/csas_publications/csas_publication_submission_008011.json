@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8011,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review on the Status Report on the Knowledge of the Fate and Behaviour of Diluted Bitumen in the Aquatic Environment; April 19-20, 2017",
+            "title_fr": "Compte rendu de l’examen national par les pairs du rapport de situation sur la connaissance du devenir et du comportement du bitume dilué dans les écosystèmes aquatique; 19 et 20 avril 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Gilles Olivier",
+            "pub_num": "012",
+            "pages": 16,
+            "pdf_size": 229,
+            "description": ""
+        }
+    }
+]

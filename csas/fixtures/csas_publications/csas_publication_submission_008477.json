@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8477,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Update of the Status of Cusk (Brosme brosme) in NAFO Divisions 4VWX5Z for 2019",
+            "title_fr": "Mise à jour sur l’état du stock de brosmes (Brosme brosme) dans les divisions 4VWX5Z pour 2019",
+            "pub_year": 2020,
+            "lead_author_2": "D. Clark",
+            "pub_num": "020",
+            "pages": 5,
+            "pdf_size": 524,
+            "description": ""
+        }
+    }
+]

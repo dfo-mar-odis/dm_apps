@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7229,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the assessment of the stock status of Atlantic salmon in DFO Gulf Region (Salmon Fishing Areas 15 to 18) to 2013.",
+            "lead_author_2": "Gérald Chaput",
+            "description": ""
+        }
+    }
+]

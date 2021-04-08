@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5096,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Pre-COSEWIC assessment of the Wavyrayed Lampmussel (Lampsilis fasciola)",
+            "title_fr": "Évaluation pré-COSEPAC de la lampsile fasciolée (Lampsilis fasciola)",
+            "pub_year": 2008,
+            "lead_author_2": "T.J. Morris, D.J. McGoldrick, J.L. Metcalfe-Smith, D. Zanatta, P.L. Gillis",
+            "pub_num": "083",
+            "pages": 45,
+            "pdf_size": 1123,
+            "description": ""
+        }
+    }
+]

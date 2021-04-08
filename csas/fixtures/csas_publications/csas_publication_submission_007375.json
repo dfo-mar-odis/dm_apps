@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7375,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Application of multiple population models to assess biological reference points of northern form Dolly Varden (Salvelinus malma malma) from the Rat River, Northwest Territories, Canada",
+            "lead_author_2": "Xinhua Zhu",
+            "description": ""
+        }
+    }
+]

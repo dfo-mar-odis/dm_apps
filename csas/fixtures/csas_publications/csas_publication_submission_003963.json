@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3963,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "White Hake in Divisions 3L, 3N, 30 and Subdivision 3Ps",
+            "title_fr": "Merluche blanche des divisions 3L, 3N et 3O ainsi que de la sous-division 3Ps",
+            "pub_year": 2002,
+            "lead_author_2": "Kulka, D.W.",
+            "pub_num": "A2-06",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

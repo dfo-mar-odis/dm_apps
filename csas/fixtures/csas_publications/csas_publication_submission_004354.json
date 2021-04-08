@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4354,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment on Subdivision 3Ps Witch Flounder",
+            "title_fr": "Évaluation du stock de plie grise de la sous-division 3Ps",
+            "pub_year": 2005,
+            "lead_author_2": "Dawn Maddock Parsons",
+            "pub_num": "050",
+            "pages": 6,
+            "pdf_size": 151,
+            "description": ""
+        }
+    }
+]

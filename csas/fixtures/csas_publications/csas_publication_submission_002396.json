@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2396,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) in the Highlands River, St. George's Bay (SFA 13), Newfoundland, 1993",
+            "pub_year": 1994,
+            "lead_author_2": "R.J. Gibson; J.P. King; K.G. Hillier",
+            "pub_num": "089",
+            "pages": 33,
+            "pdf_size": 1115,
+            "description": ""
+        }
+    }
+]

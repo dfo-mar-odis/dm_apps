@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5015,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Preliminary results from the groundfish and shrimp multidisciplinary survey from August 2007 in the northern Gulf of St. Lawrence",
+            "title_fr": "Résultats préliminaires du relevé multidisciplinaire de poissons de fond et de crevette d'août 2007 dans le nord du golfe du Saint-Laurent",
+            "pub_year": 2008,
+            "lead_author_2": "H. Bourdages, D. Archambault, B. Bernier, A. Fréchet, J. Gauthier, F. Grégoire, J. Lambert, L. Savard",
+            "pub_num": "046",
+            "pages": 77,
+            "description": ""
+        }
+    }
+]

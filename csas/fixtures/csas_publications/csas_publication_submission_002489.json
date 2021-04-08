@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2489,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Evaluation of the stock status of 4WX herring",
+            "pub_year": 1995,
+            "lead_author_2": "R.L. Stephenson; M.J. Power; J.B. Sochasky; F.J. Fife; D.G. Melvin; S. Gavaris; T.D. Iles; F. Page",
+            "pub_num": "083",
+            "pages": 71,
+            "pdf_size": 3098,
+            "description": ""
+        }
+    }
+]

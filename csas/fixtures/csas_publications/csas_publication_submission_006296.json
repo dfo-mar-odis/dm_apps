@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6296,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "What is 2.4? Placing Atlantic Salmon Conservation Requirements in the Context of the Precautionary Approach to Fisheries Management in the Maritimes Region",
+            "title_fr": "À quoi correspond le chiffre 2,4? Remettre les exigences en matière de conservation du saumon de l'Atlantique dans le contexte de l'approche de précaution pour la gestion des pêches de la région des Maritimes",
+            "pub_year": 2012,
+            "lead_author_2": "Jamie Gibson",
+            "pub_num": "043",
+            "pages": 25,
+            "pdf_size": 883,
+            "description": ""
+        }
+    }
+]

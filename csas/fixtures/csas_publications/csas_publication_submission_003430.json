@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3430,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Quota options for the Red Sea Urchin fishery in BC for fishing season 2002/2003",
+            "title_fr": "Options de quotas pour la pêche de l'oursin rouge en Colombie-Britannique en 2002-2003",
+            "pub_year": 2001,
+            "lead_author_2": "A. Campbell, D. Tzotzos, W. C. Hajas, L.L. Barton",
+            "pub_num": "141",
+            "pages": 48,
+            "pdf_size": 203,
+            "description": ""
+        }
+    }
+]

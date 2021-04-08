@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6073,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Considerations for the Estimation of Incidental Catch in the Eastern Canadian Swordfish/Other Tunas Longline Fishery Science Peer Review; July 11-12, 2011",
+            "title_fr": "Facteurs à considérer dans l'examen scientifique par les pairs de l'estimation des captures accessoires dans la pêche de l'espadon et des autres thonidés à la palangre dans l'est du Canada ; les 11 et 12 juillet 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Kirsten Clark",
+            "pub_num": "045",
+            "pages": 32,
+            "pdf_size": 171,
+            "description": ""
+        }
+    }
+]

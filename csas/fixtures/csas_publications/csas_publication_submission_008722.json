@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8722,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "2020 Maritimes Winter Research Vessel Survey Trends on Georges Bank",
+            "title_fr": "Tendances dans les relevés hivernaux par navire scientifique sur le banc de Georges, dans la région des Maritimes, en 2020",
+            "pub_year": 2020,
+            "lead_author_2": "Clark, Donald",
+            "pub_num": "048",
+            "pages": 34,
+            "pdf_size": 8851,
+            "description": ""
+        }
+    }
+]

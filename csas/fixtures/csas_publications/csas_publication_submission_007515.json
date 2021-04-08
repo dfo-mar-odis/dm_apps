@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7515,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Development of reference points for Atlantic Salmon (Salmo salar) that conform to the Precautionary Approach",
+            "title_fr": "Élaboration de points de référence pour le saumon de l'Atlantique (Salmo salar) conformes à l'approche de précaution",
+            "pub_year": 2015,
+            "lead_author_2": "Geoff Veinott",
+            "pub_num": "058",
+            "pages": 18,
+            "pdf_size": 389,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5733,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the Recovery Potential Assessment of Lake Sturgeon for Designatable Units 1-5; October 20-22, December 3 and 17, 2009",
+            "title_fr": "Compte rendu du processus de consultation scientifique régionale du Centre et de l'Arctique sur l'évaluation du potentiel de rétablissement de l'esturgeon jaune des unités désignables 1-5 ; du 20 au 22 octobre, les 3 et 17 décembre 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Holly Cleator and Lisa O'Connor",
+            "pub_num": "047",
+            "pages": 43,
+            "pdf_size": 213,
+            "description": ""
+        }
+    }
+]

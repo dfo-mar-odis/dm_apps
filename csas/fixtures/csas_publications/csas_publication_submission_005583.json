@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5583,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Regional Science Advisory Process on the Review of Assessment Protocols on Benthic Habitat in the Northeast Pacific; March 16-17, 2010",
+            "title_fr": "Processus de consultation scientifique régional pour l'examen des protocoles d'évaluation de l'habitat benthique dans le Pacifique Nord-Est ; les 16 et 17 mars 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Boutillier, J.",
+            "pub_num": "012",
+            "pages": 28,
+            "pdf_size": 136,
+            "description": ""
+        }
+    }
+]

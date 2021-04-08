@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1062,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1980 analyses of inshore cod stock in Subdivision 4Vn (May-Dec.)",
+            "pub_year": 1980,
+            "lead_author_2": "T.D. Beacham; B.A. Fowler; A.H. Vromans",
+            "pub_num": "016",
+            "pages": 24,
+            "pdf_size": 989,
+            "description": ""
+        }
+    }
+]

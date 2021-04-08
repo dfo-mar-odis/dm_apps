@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3182,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Miramichi smelt (Osmerus mordax)",
+            "title_fr": "Éperlan de la Miramichi (Osmerus mordax)",
+            "pub_year": 1996,
+            "lead_author_2": "DFO-MPO",
+            "pub_num": "013",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

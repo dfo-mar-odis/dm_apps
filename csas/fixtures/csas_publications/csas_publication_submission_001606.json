@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1606,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The exploitation and biological status of pollock in Divisions 4VWX and Subarea 5",
+            "pub_year": 1985,
+            "lead_author_2": "J. MacGlade; M.C. Annand; D. Beanlands",
+            "pub_num": "099",
+            "pages": 90,
+            "pdf_size": 2956,
+            "description": ""
+        }
+    }
+]

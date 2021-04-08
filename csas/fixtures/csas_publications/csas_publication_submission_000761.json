@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 761,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Estimated Bycatch in the British Columbia Shrimp Trawl Fishery",
+            "pub_year": 2000,
+            "lead_author_2": "Olsen, N., Boutillier, J.A., Convey, L.",
+            "pub_num": "168",
+            "pages": 54,
+            "pdf_size": 905,
+            "description": ""
+        }
+    }
+]

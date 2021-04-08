@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8436,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Update of indicators to 2019 of adult Atlantic Salmon for the Miramichi River (NB), Salmon Fishing Area 16, DFO Gulf Region",
+            "title_fr": "Mise à jour pour 2019 des indicateurs du saumon Atlantique adulte de la rivière Miramichi (N.-B.), zone de pêche du saumon 16 de la Région du Golfe du MPO",
+            "pub_year": 2020,
+            "lead_author_2": "Gerald Chaput",
+            "pub_num": "010",
+            "pages": 13,
+            "pdf_size": 1264,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1521,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Comparison of Arctic charr and Atlantic salmon catches in 114 and 127 mm mesh gill nets during the 1984 fishery at Makkovik and Bay of Islands, Labrador",
+            "pub_year": 1985,
+            "lead_author_2": "G.A. Black; J.B. Dempson; L.J. LeDrew",
+            "pub_num": "014",
+            "pages": 13,
+            "pdf_size": 756,
+            "description": ""
+        }
+    }
+]

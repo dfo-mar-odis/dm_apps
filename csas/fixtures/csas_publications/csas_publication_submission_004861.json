@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4861,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Commercial and subsistence harvests of bowhead whales (Balaena mysticetus) in the eastern Canadian Arctic and West Greenland",
+            "title_fr": "Chasse commerciale et de subsistance à la baleine boréale (Balaena mysticetus) dans l'est de l'Arctique canadien et l'ouest du Groenland",
+            "pub_year": 2008,
+            "lead_author_2": "Higdon, J.",
+            "pub_num": "008",
+            "pages": 59,
+            "pdf_size": 567,
+            "description": ""
+        }
+    }
+]

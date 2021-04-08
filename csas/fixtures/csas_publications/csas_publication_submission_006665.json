@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6665,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Science Peer Review Assessment of Incidental Catch in the Atlantic Canadian Swordfish/Other Tuna Longline Fishery; February 24-25, 2016",
+            "title_fr": "Compte rendu de la réunion régionale sur l’évaluation scientifique par les pairs des prises accessoires d’espadon et d’autres thons dans le cadre de la pêche à la palangre dans les eaux canadiennes de l’Atlantique; du 24 au 25 février 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Kristian Curran, Ph. 902-401-1752",
+            "pub_num": "054",
+            "pages": 28,
+            "pdf_size": 391,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7329,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of the evaluation of Ecologically and Biologically Significant Areas (EBSA) in the Eastern Arctic Biogeographic Region",
+            "title_fr": "Information à l'appui de l'évaluation des zones d'importance écologique et biologique (ZIEB) dans la région biogéographique de l'est de l'Arctique",
+            "pub_year": 2017,
+            "lead_author_2": "Schimnowski, O., Paulic, J.E., and Martin, K.A.",
+            "pub_num": "080",
+            "pages": 114,
+            "pdf_size": 12013,
+            "description": ""
+        }
+    }
+]

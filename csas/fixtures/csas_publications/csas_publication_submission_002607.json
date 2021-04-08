@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2607,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Estimation géostatistique de la production quotidienne d'oeufs chez le maquereau bleu (Scomber scombrus L.) du golfe du Saint-Laurent",
+            "pub_year": 1996,
+            "lead_author_2": "F. Grégoire; C. Bellehumeur",
+            "pub_num": "060",
+            "pages": 13,
+            "pdf_size": 596,
+            "description": ""
+        }
+    }
+]

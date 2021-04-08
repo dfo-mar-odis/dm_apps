@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6566,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Peer Review of the Framework for Lobster Fishing Areas (LFAs) 34-38 Lobster (Homarus americanus); July 10-12, 2012",
+            "title_fr": "Compte rendu de l'examen scientifique par les pairs de la région des Maritimes du cadre relatif aux zones de pêche du homard (Homarus americanus) 34 à 38; du 10 au 12 juillet 2012",
+            "pub_year": 2013,
+            "lead_author_2": "T. Worcester",
+            "pub_num": "035",
+            "pages": 43,
+            "pdf_size": 243,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6212,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "ASSESSMENT OF THE STATUS OF REDFISH IN NORTHWEST ATLANTIC FISHERIES ORGANIZATION (NAFO) SUBAREA 0",
+            "lead_author_2": "K. Hedges",
+            "description": ""
+        }
+    }
+]

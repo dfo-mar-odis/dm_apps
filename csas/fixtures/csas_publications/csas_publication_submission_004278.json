@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4278,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Guidance on Assessing Threats, Ecological Risk and Ecological Impacts for Species at Risk",
+            "title_fr": "Lignes directrices sur l'évaluation des menaces, des risques écologiques et des répercussions écologiques pour les espèces en péril",
+            "pub_year": 2014,
+            "lead_author_2": "Jennifer Shaw (Simon Nadeau)",
+            "pub_num": "013",
+            "description": ""
+        }
+    }
+]

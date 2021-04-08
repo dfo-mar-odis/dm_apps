@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1150,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Witch flounder in the Northern Gulf of St. Lawrence (NAFO Divisions 4RS)",
+            "pub_year": 1981,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "052",
+            "pages": 12,
+            "pdf_size": 625,
+            "description": ""
+        }
+    }
+]

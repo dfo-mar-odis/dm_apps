@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7977,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review of the Vulnerability assessment of biological components of the St. Lawrence to ship-source oil spills; January 24-25, 2017",
+            "title_fr": "Compte rendu de l’examen régional par des pairs portant sur l’évaluation de la vulnérabilité des composantes biologiques du Saint-Laurent aux déversements d'hydrocarbures provenant de navires; du 24 au 25 janvier  2017",
+            "pub_year": 2017,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "034",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4524,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pre-season run size forecasts for Fraser River sockeye for 2006",
+            "title_fr": "Prévision présaison des remontes de saumon rouge du fleuve Fraser pour 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Cass, A., M. Folkes, C. Parken, C. Wood",
+            "pub_num": "060",
+            "pages": 76,
+            "pdf_size": 605,
+            "description": ""
+        }
+    }
+]

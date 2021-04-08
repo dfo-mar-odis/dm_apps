@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3502,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Impact of harvesting on population trends of beluga in eastern Hudson Bay",
+            "title_fr": "Impact de la chasse sur la tendance de la population de bélugas de l'est de la Baie d'Hudson",
+            "pub_year": 2002,
+            "lead_author_2": "H. Bourdages, V. Lesage, M.O. Hammill, B. de March",
+            "pub_num": "036",
+            "pages": 46,
+            "pdf_size": 675,
+            "description": ""
+        }
+    }
+]

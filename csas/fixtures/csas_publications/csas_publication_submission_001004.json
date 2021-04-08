@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1004,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Marine Fisheries Subcommittee Regional Advisory Process Maritimes Region; 22-23 March 1999",
+            "title_fr": "Compte rendu de la réunion du Sous-comité des poissons de mer, Processus consultatif régional Maritimes, Région des Maritimes, les 22 et 23 mars 1999",
+            "pub_year": 1999,
+            "lead_author_2": "K.T. Frank",
+            "pub_num": "030",
+            "description": ""
+        }
+    }
+]

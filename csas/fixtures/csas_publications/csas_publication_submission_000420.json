@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 420,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An evaluation of the current status of southern Gulf herring",
+            "pub_year": 1980,
+            "lead_author_2": "G.H. Winters; J.A. Moores",
+            "pub_num": "054",
+            "pages": 50,
+            "pdf_size": 2101,
+            "description": ""
+        }
+    }
+]

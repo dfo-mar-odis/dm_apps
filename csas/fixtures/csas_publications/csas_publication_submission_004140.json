@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4140,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Lobster in the Magdalen Islands (LFA 22) in 2004",
+            "title_fr": "Homard des Iles-de-la-Madeleine (ZPH 22) en 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Gendron, L.",
+            "pub_num": "006",
+            "pages": 9,
+            "pdf_size": 279,
+            "description": ""
+        }
+    }
+]

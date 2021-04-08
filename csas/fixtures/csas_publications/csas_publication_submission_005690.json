@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5690,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Modifications to the Campelen 1800 Shrimp Survey Trawl",
+            "title_fr": "Modifications apportées au chalut de relevé Campelen 1800 utilisé pour la crevette",
+            "pub_year": 2014,
+            "lead_author_2": "T.D. Siferd and G. Legge",
+            "pub_num": "024",
+            "pages": 42,
+            "pdf_size": 2747,
+            "description": ""
+        }
+    }
+]

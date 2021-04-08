@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2855,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Biologie et exploitation de la mactre de Stimpson (Mactromeris polynyma) sur les côtes du Québec.",
+            "pub_year": 1997,
+            "lead_author_2": "Lambert, J., Goudreau, P.",
+            "pub_num": "101",
+            "pages": 44,
+            "pdf_size": 2453,
+            "description": ""
+        }
+    }
+]

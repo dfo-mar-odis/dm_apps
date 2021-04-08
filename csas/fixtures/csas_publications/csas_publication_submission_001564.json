@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1564,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Evaluation de la population de crevettes (Pandalus borealis) de la zone de pêche de Sept-Iles",
+            "pub_year": 1985,
+            "lead_author_2": "J. Fréchette; L. Savard; B. Portelance; P. Ouellet",
+            "pub_num": "057",
+            "description": ""
+        }
+    }
+]

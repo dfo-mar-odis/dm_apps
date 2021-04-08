@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3107,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southern Scotian Shelf and Bay of Fundy Haddock",
+            "title_fr": "L'aiglefin du sud du plateau néo-écossais et de la baie de Fundy",
+            "pub_year": 1997,
+            "lead_author_2": "Peter Hurley",
+            "pub_num": "A3-07",
+            "pages": 7,
+            "pdf_size": 164,
+            "description": ""
+        }
+    }
+]

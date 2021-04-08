@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2294,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Les nouvelles unités de gestion de la pêche à la crevette nordique (Pandalus borealis) dans le nord du golfe du Saint-Laurent",
+            "pub_year": 1993,
+            "lead_author_2": "L. Savard; S. Hurtubise; J.M. Sévigny",
+            "pub_num": "021",
+            "description": ""
+        }
+    }
+]

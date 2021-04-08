@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 633,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Oceanographic conditions in NAFO Subdivisions 3Pn and 3Ps during 1999 with comparisons to the long-term (1961-1990) average",
+            "pub_year": 2000,
+            "lead_author_2": "Colbourne, E.",
+            "pub_num": "049",
+            "pages": 21,
+            "pdf_size": 1180,
+            "description": ""
+        }
+    }
+]

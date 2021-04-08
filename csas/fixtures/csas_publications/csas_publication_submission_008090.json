@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8090,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review for the Assessment of Northern Shrimp in Shrimp Fishing Areas (SFAs) 4, 5 and 6",
+            "title_fr": "Compte rendu de l’examen régional par les pairs de l’évaluation de la crevette nordique dans les zones de pêche à la crevette (ZPC) 4, 5 et 6",
+            "pub_year": 2019,
+            "lead_author_2": "Erika Parrill",
+            "pub_num": "008",
+            "pages": 16,
+            "pdf_size": 326,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7095,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of ASSESSMENT OF NOVA SCOTIA (4VWX) SNOW CRAB",
+            "lead_author_2": "Christie Whelan",
+            "description": ""
+        }
+    }
+]

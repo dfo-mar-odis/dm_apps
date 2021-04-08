@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6587,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Review of the Organic Extractive Component of Integrated Multi-trophic Aquaculture (IMTA) in Southwest New Brunswick with Emphasis on the Blue Mussel",
+            "title_fr": "Examen de la composante d'extraction des éléments organiques de l'aquaculture multitrophique intégrée dans le sud-ouest du Nouveau-Brunswick, avec accent sur la moule bleue",
+            "pub_year": 2013,
+            "lead_author_2": "T. Worcester",
+            "pub_num": "056",
+            "pages": 16,
+            "pdf_size": 330,
+            "description": ""
+        }
+    }
+]

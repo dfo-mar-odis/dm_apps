@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7791,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Evaluation of Information Available to Support the Identification of Habitat Necessary for the Survival and Recovery of Basking Shark in Canadian Pacific Waters",
+            "title_fr": "Évaluation de l'information disponible pour la désignation de l'habitat essentiel à la survie et au rétablissement du requin-pèlerin dans les eaux canadiennes du Pacifique",
+            "pub_year": 2016,
+            "pub_num": "046",
+            "pages": 21,
+            "pdf_size": 933,
+            "description": ""
+        }
+    }
+]

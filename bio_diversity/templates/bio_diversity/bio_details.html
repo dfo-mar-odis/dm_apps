@@ -50,63 +50,12 @@
             </h5>
         </div>
     {% endif %}
-    {% if "cnt" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=cnt_context_dict %}
-    {% endif %}
-    {% if "cntd" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=cntd_context_dict %}
-    {% endif %}
-    {% if "env" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=env_context_dict %}
-    {% endif %}
-    {% if "envt" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=envt_context_dict %}
-    {% endif %}
-    {% if "evnt" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=evnt_context_dict %}
-    {% endif %}
-    {% if "grp" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=grp_context_dict %}
-    {% endif %}
-    {% if "grp_cont" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=grp_context_dict %}
-    {% endif %}
-    {% if "grpd" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=grpd_context_dict %}
-    {% endif %}
-    {% if "indv" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=indv_context_dict %}
-    {% endif %}
-     {% if "indv_cont" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=indv_context_dict %}
-    {% endif %}
-    {% if "indvd" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=indvd_context_dict %}
-    {% endif %}
-    {% if "loc" in table_list %}
-            {% include "bio_diversity/details_table_block.html" with context_dict=loc_context_dict %}
-    {% endif %}
-    {% if "pair" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=pair_context_dict %}
-    {% endif %}
-    {% if "prot" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=prot_context_dict %}
-    {% endif %}
-    {% if "matp" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=matp_context_dict %}
-    {% endif %}
-    {% if "sire" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=sire_context_dict %}
-    {% endif %}
-    {% if "spwnd" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=spwnd_context_dict %}
-    {% endif %}
-    {% if "tank" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=tank_context_dict %}
-    {% endif %}
-    {% if "trof" in table_list %}
-        {% include "bio_diversity/details_table_block.html" with context_dict=trof_context_dict %}
-    {% endif %}
+
+    {% for key, value in context_dict.items %}
+        {% if key in table_list %}
+            {%  include "bio_diversity/details_table_block.html" with context_dict=value %}
+        {% endif %}
+    {% endfor %}
 
     {% if "cont" in table_list %}
         {% if cont_evnt_list %}
@@ -133,6 +82,39 @@
         </div>
         {% endif %}
     {% endif %}
+    {% if 'img' in table_list %}
+    <div class="card border border-dark my-1" name="img-details">
+        <h5 class="card-header">{% trans "Images" %}
+            <span class="px-1">
+                <a class="btn btn-primary" name="add-new-img-btn" href="#" onclick="return pop('{% url 'bio_diversity:create_img' model_key object.pk 'pop' %}','all')" title="{% trans 'Add New Image' %}">{% trans 'Add New Image' %}</a>
+            </span>
+        </h5>
+        {% if object.images.count > 0 %}
+            <table class="table table-sm sortable table-hover">
+                <thead>
+                    {% for field in img_field_list %}
+                        <th>{% get_verbose_label img_object field %}</th>
+                    {% endfor %}
+                </thead>
+                <tbody>
+                    {% for obj in object.images.all %}
+                        {% if obj.img_png %}
+                            <tr href="{{ MEDIA_URL }}{{obj.img_png.url}}">
+                        {% endif %}
+                        {% for field in img_field_list %}
+                            <td>
+                                {% get_field_value obj field %}
+                            </td>
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+    {% endif %}
+
+
     {% endblock %}
 </div>
 {% endblock %}
@@ -152,7 +134,7 @@ var interval;
 // upon closing the drop menu the window is associated with is updated adding the new element
 // and setting it as the selected option
 function pop(url, tag) {
-    child = window.open(url, tag,'toolbar=0,status=0,height=500,width=600');
+    child = window.open(url, tag,'toolbar=0,status=0,height=600,width=800');
     child.onbeforeunload = function() {
         if(child.refresh && $('.is-invalid').length <= 0) {
             refreshTag(tag);

@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6062,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Meeting of the Newfoundland and Labrador Regional Adivsory (RAP) on Snow Crab, Sea Scallops and Whelk  February 28-March 11, 2011.",
+            "description": ""
+        }
+    }
+]

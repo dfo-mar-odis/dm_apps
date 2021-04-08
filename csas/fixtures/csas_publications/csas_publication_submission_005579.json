@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5579,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock Assessment and Harvest Advice for Rock Sole (Lepidopsetta spp.) in British Columbia",
+            "title_fr": "Évaluation de la fausse limande (Lepidopsetta sp.) et avis sur les prélèvements en Colombie-Britannique",
+            "pub_year": 2014,
+            "lead_author_2": "Kendra Holt",
+            "pub_num": "039",
+            "pages": 14,
+            "pdf_size": 628,
+            "description": ""
+        }
+    }
+]

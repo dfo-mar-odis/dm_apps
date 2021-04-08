@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8609,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of Bocaccio (Sebastes paucispinis) stock assessment for British Columbia in 2019, including guidance for rebuilding plans",
+            "lead_author_2": "Greg Workman",
+            "description": ""
+        }
+    }
+]

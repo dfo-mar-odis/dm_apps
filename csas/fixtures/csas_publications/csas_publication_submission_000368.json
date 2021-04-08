@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 368,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A model to determine stock size and management options for the Newfoundland hooded seal stock",
+            "pub_year": 1977,
+            "lead_author_2": "P.F. Lett",
+            "pub_num": "025",
+            "pages": 19,
+            "pdf_size": 995,
+            "description": ""
+        }
+    }
+]

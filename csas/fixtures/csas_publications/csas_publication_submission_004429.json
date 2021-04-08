@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4429,
+        "fields": {
+            "series": 4,
+            "lead_region": [6, 7],
+            "title_en": "Review of the latest data/analyses available on the status of two bowhead whale (Balaena mysticetus) populations in the eastern Canadian Arctic in preparation for the upcoming recovery potential assessment; March 9, 2006",
+            "title_fr": "Examen des dernières données et analyses disponibles sur l'état des baleines boréales (Balaena mysticetus) dans l'est de l'Arctique canadien en vue de l'évaluation prochaine de leur potentiel de rétablissement; le 9 mars 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Simon, P., K. Martin.",
+            "pub_num": "001",
+            "pages": 36,
+            "pdf_size": 677,
+            "description": ""
+        }
+    }
+]

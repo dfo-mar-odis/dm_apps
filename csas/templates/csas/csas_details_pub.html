@@ -328,6 +328,8 @@
                         {% if csas_admin %}
                             <br>
                             {% if object.pub_doc_location.all %}
+                    <h1>AAAAAAAAAAAAAAAAAAAAAAAAA</h1>
+                    {{object.pub_status}}
                                 {# ----- this publication documentation location exists, put a Update button #}
                                 {% for doc_location in object.pub_doc_location.all %}
                                     {% if doc_location.pk %}

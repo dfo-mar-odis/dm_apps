@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6839,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Update of the stock status indicators for the American lobster (Homarus americanus) stocks in the southern Gulf of St. Lawrence",
+            "title_fr": "Mise à jour des indicateurs de l’état des stocks de homard américain (Homarus americanus) du sud du golfe du Saint-Laurent",
+            "pub_year": 2016,
+            "lead_author_2": "Venitia Joseph",
+            "pub_num": "051",
+            "pages": 15,
+            "pdf_size": 851,
+            "description": ""
+        }
+    }
+]

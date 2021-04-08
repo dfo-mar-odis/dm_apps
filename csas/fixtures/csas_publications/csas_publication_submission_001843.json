@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1843,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4VsW cod in 1987",
+            "pub_year": 1988,
+            "lead_author_2": "L.P. Fanning; S.J. Smith; K.C.T. Zwanenburg; D. Beanlands",
+            "pub_num": "047",
+            "pages": 57,
+            "pdf_size": 2277,
+            "description": ""
+        }
+    }
+]

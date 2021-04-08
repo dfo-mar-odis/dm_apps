@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3061,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Salmon Cape Breton SFA 18 [part] & SFA 19",
+            "title_fr": "Saumon atlantique Cap-Breton ZPS 18 [partie] et ZPS 19",
+            "pub_year": 1998,
+            "lead_author_2": "Dr. Larry Marshall",
+            "pub_num": "D3-09",
+            "pages": 6,
+            "pdf_size": 114,
+            "description": ""
+        }
+    }
+]

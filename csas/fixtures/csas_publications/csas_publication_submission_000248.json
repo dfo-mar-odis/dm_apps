@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 248,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1999 assessment of snow crab, Chionoecetes opilio, stock in the southwestern Gulf of St. Lawrence (Areas 12-25/26, E and F)",
+            "pub_year": 2000,
+            "lead_author_2": "Hébert, M., Hébert, A., Wade, E., Surette, T., Giard, D., DeGrâce, P., Biron, M., Moriyasu, M.",
+            "pub_num": "014",
+            "pages": 57,
+            "pdf_size": 6769,
+            "description": ""
+        }
+    }
+]

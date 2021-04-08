@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2972,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subdivision 3Ps cod",
+            "pub_year": 2000,
+            "lead_author_2": "John Brattey",
+            "pub_num": "A2-02",
+            "pages": 13,
+            "pdf_size": 157,
+            "description": ""
+        }
+    }
+]

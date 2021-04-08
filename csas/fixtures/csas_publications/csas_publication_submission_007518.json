@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7518,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of zonal peer review meeting of the recovery potential assessment of White Hake populations from eastern Canada",
+            "lead_author_2": "Gérald Chaput",
+            "description": ""
+        }
+    }
+]

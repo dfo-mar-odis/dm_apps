@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6049,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Identification of Ecologically and Biologically Significant Areas (EBSAs) in the Canadian Arctic ",
+            "title_fr": "Identification de zones d'importance écologique et biologique (ZIEB) dans l'Arctique canadien ",
+            "pub_year": 2011,
+            "lead_author_2": "Cobb, D.G",
+            "pub_num": "070",
+            "pages": 44,
+            "pdf_size": 1485,
+            "description": ""
+        }
+    }
+]

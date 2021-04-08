@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 720,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the cod stock in NAFO Subdiv. 3Ps in October 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Brattey, J., Cadigan, N.G., Lilly,G.R., Murphy, E.F., Shelton, P.A., Stansbury, D.E.",
+            "pub_num": "134",
+            "pages": 107,
+            "pdf_size": 2666,
+            "description": ""
+        }
+    }
+]

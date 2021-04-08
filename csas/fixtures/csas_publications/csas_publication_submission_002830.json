@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2830,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Margaree River gaspereau fishery, 1995 and 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Chaput, G., LeBlanc, P., Crawford, R.",
+            "pub_num": "076",
+            "pages": 30,
+            "pdf_size": 1240,
+            "description": ""
+        }
+    }
+]

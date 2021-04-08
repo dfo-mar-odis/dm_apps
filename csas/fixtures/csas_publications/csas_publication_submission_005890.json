@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5890,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Genetic and Phenotypic Diversity and Divergence in Sympatric Lake Utopia Rainbow Smelt (Osmerus mordax)",
+            "title_fr": "Diversité et divergence génétiques et phénotypiques chez les populations sympatriques d'éperlan arc en ciel du lac Utopia (Osmerus mordax) ",
+            "pub_year": 2011,
+            "lead_author_2": "Rod Bradford / Tara McIntyre / Valerie Myra",
+            "pub_num": "008",
+            "pages": 34,
+            "pdf_size": 934,
+            "description": ""
+        }
+    }
+]

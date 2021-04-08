@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5402,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pacific sardine (Sardinops sagax) biomass and migration rates in British Columbia",
+            "title_fr": "Biomasse et taux de migration de la sardine du Pacifique (Sardinops Sagax) en Colombie-Britannique",
+            "pub_year": 2009,
+            "lead_author_2": "J. Schweigert, S. McFarlane and V. Hodes",
+            "pub_num": "088",
+            "pages": 18,
+            "pdf_size": 306,
+            "description": ""
+        }
+    }
+]

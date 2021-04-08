@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 84,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Logistic fates of Atlantic salmon (Salmo salar) at sea",
+            "pub_year": 1998,
+            "lead_author_2": "P.G. Amiro, S.F. O'Neil",
+            "pub_num": "085",
+            "description": ""
+        }
+    }
+]

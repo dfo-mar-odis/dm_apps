@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3700,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Metapopulation dynamics of British Columbia herring during cool and warm climate regimes",
+            "title_fr": "Dynamique de la métapopulation de hareng de la Colombie-Britannique pendant des régimes de temps chaud et de temps froid",
+            "pub_year": 2002,
+            "lead_author_2": "D.M. Ware, J. Schweigert",
+            "pub_num": "107",
+            "pages": 37,
+            "pdf_size": 4270,
+            "description": ""
+        }
+    }
+]

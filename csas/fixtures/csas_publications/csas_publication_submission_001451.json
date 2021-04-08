@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1451,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4VWX redfish for 1984",
+            "pub_year": 1984,
+            "lead_author_2": "K. Zwanenburg",
+            "pub_num": "045",
+            "pages": 24,
+            "pdf_size": 849,
+            "description": ""
+        }
+    }
+]

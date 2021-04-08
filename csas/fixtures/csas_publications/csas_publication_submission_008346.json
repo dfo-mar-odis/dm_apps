@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8346,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Characterization of Renibacterium salmoninarum and bacterial kidney disease to inform pathogen transfer risk assessments in British Columbia",
+            "title_fr": "Caractérisation de la bactérie Renibacterium salmoninarum et de la maladie bactérienne du rein pour informer les évaluations des risques de transfert d’agents pathogènes en Colombie Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Rhodes, L. D. and Mimeault, C",
+            "pub_num": "018",
+            "pages": 52,
+            "pdf_size": 914,
+            "description": ""
+        }
+    }
+]

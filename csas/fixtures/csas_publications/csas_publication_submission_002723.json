@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2723,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Sentinel Surveys 1995-2004: Catch per Unit Effort in NAFO Subdivision 3Ps",
+            "title_fr": "Relevés sentinelles 1995-2004 - Captures par unité d'effort dans la sous-division 3Ps de l'OPANO",
+            "pub_year": 2004,
+            "lead_author_2": "Maddock Parsons, D., Stead, R.",
+            "pub_num": "088",
+            "pages": 41,
+            "pdf_size": 1751,
+            "description": ""
+        }
+    }
+]

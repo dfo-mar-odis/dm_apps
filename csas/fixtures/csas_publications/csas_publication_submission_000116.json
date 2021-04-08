@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 116,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Decrease in percentage of wild chinook salmon entering the Strait of Georgia in 1996",
+            "pub_year": 1998,
+            "lead_author_2": "Z. Zhang, R.J. Beamish, B.E. Riddell",
+            "pub_num": "090",
+            "description": ""
+        }
+    }
+]

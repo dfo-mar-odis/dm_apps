@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 412,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Research survey population estimates for 4X offshore cod",
+            "pub_year": 1980,
+            "lead_author_2": "A. Sinclair",
+            "pub_num": "046",
+            "pages": 2,
+            "pdf_size": 316,
+            "description": ""
+        }
+    }
+]

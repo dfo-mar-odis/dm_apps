@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2795,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon stocks of southwest New Brunswick, 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Marshall, T.L., Jones, R., Pettigrew, T.",
+            "pub_num": "027",
+            "description": ""
+        }
+    }
+]

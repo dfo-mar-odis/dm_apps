@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 830,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Canadian herring fishery in ICNAF Div. 4V",
+            "pub_year": 1977,
+            "lead_author_2": "W.T. Stobo",
+            "pub_num": "010",
+            "pages": 3,
+            "pdf_size": 311,
+            "description": ""
+        }
+    }
+]

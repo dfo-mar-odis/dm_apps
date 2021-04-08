@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 817,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Smoothing Length Frequency Data via Kernel Density Estimation",
+            "title_fr": "Lissage de données de fréquence de longueur à l'aide de l'estimation de la densité par la méthode du noyau",
+            "pub_year": 2001,
+            "lead_author_2": "Healey, B.P., Cadigan, N.G.",
+            "pub_num": "071",
+            "pages": 25,
+            "pdf_size": 850,
+            "description": ""
+        }
+    }
+]

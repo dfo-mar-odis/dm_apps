@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7877,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information to support the assessment of Irvine Inlet Arctic Char (Salvelinus alpinus) in the Cumberland Sound area, Nunavut",
+            "lead_author_2": "M. Janjua",
+            "description": ""
+        }
+    }
+]

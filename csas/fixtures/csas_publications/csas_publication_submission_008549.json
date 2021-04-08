@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8549,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "État des stocks de homard des eaux côtières du Québec (ZPH 15 à 22) en 2018 - titre provisoire",
+            "lead_author_2": "Benoit Bruneau",
+            "description": ""
+        }
+    }
+]

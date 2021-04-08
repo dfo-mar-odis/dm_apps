@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8625,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Identification of ecological significance, knowledge gaps, and preliminary conservation objectives for the Southampton Island Ecologically and Biologically Significant Area",
+            "pub_year": 2020,
+            "lead_author_2": "Tracey Loewen",
+            "pub_num": "057",
+            "description": ""
+        }
+    }
+]

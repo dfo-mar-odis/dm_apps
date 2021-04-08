@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8673,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Aerial survey estimates of walrus in east Baffin and Hudson Strait",
+            "lead_author_2": "A. Mosnier, C. Matthews, M.O. Hammill",
+            "description": ""
+        }
+    }
+]

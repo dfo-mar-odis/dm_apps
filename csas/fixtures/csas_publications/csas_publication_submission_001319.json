@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1319,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Dispersion of tagged lobsters (Homarus americanus) in two areas of Northumberland Strait",
+            "pub_year": 1986,
+            "lead_author_2": "D.R. Maynard; Y. Chiasson",
+            "pub_num": "072",
+            "pages": 10,
+            "pdf_size": 564,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7148,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Optical, chemical, and biological oceanographic conditions on the Newfoundland and Labrador Shelf during 2013",
+            "title_fr": "Conditions océanographiques biologiques, chimiques et optiques sur la plate-forme continentale de Terre-Neuve-et-Labrador en 2013",
+            "pub_year": 2015,
+            "lead_author_2": "Pepin, P., Maillet, G., Fraser, S., Shears, T. and Redmond G.",
+            "pub_num": "027",
+            "pages": 42,
+            "pdf_size": 3789,
+            "description": ""
+        }
+    }
+]

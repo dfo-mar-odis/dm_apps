@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5773,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Information in Support of a Recovery Potential Assessment of Atlantic Mud-piddock (Barnea truncata) in Canada",
+            "title_fr": "L'information a l'appui de l'évaluation du potentiel de rétablissement de la pholade tronquée (Barnea truncata) au Canada",
+            "pub_year": 2010,
+            "lead_author_2": "A. Hebda / T. McIntyre / V. Myra",
+            "pub_num": "117",
+            "pages": 36,
+            "pdf_size": 2272,
+            "description": ""
+        }
+    }
+]

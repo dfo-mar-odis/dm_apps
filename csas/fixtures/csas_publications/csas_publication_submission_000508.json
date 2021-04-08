@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 508,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Implications on assessment of the British Columbia prawn populations with the adoption of a quota management system",
+            "pub_year": 1999,
+            "lead_author_2": "Boutillier, J., Bond, J.",
+            "pub_num": "130",
+            "pages": 13,
+            "pdf_size": 60,
+            "description": ""
+        }
+    }
+]

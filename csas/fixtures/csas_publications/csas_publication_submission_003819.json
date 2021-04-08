@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3819,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Summary of Herring Tagging in 4VWX, 1998 to 2003",
+            "title_fr": "Résumé des études d'étiquetage du hareng de 4VWX : 1998 - 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Mouland, N.E., Clark, K.J., Melvin, G.D., Annis, L.M.",
+            "pub_num": "043",
+            "pages": 28,
+            "pdf_size": 2024,
+            "description": ""
+        }
+    }
+]

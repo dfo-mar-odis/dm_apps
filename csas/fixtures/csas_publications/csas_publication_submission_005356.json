@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5356,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the cod (Gadus morhua) stock in NAFO Divisions 2J+3KL in 2009",
+            "title_fr": "Évaluation du stock de morue (Gadus morhua) dans les divisions 2J+3KL de l'OPANO en 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Brattey, J., Cadigan, N.G., Dwyer, K., Healey, B.P., Morgan, M.J., Murphy, E.F., Maddock Parsons, D., Power, D.",
+            "pub_num": "061",
+            "pages": 100,
+            "pdf_size": 1708,
+            "description": ""
+        }
+    }
+]

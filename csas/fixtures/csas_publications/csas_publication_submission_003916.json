@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3916,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Population Status of Eastern Georges Bank Cod (Unit Areas 5Zj,m) for 1978-2004",
+            "title_fr": "État du stock de morue de l'est du banc Georges (zones-unités 5Zj,m) pour la période 1978-2004",
+            "pub_year": 2003,
+            "lead_author_2": "Hunt, J.J., Hatt, B. and O’Brien, L.",
+            "pub_num": "096",
+            "pages": 51,
+            "pdf_size": 1067,
+            "description": ""
+        }
+    }
+]

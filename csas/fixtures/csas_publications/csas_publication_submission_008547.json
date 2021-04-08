@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8547,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of lobster (Homarus americanus) in the Gaspé (LFAs 19-21), Quebec, in 2018",
+            "title_fr": "Évaluation de l’état des stocks de homard (Homarus americanus) de la Gaspésie (ZPH 19, 20 et 21), Québec, en 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Benoit Bruneau",
+            "pub_num": "060",
+            "pages": 14,
+            "pdf_size": 1135,
+            "description": ""
+        }
+    }
+]

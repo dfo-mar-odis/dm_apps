@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5891,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Meeting of the National Marine Mammal Peer Review Committee; November 22-26, 2010",
+            "title_fr": "Réunion du Comité national d'examen par des pairs sur les mammifères marins ; du 22 au 26 novembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Don Bowen",
+            "pub_num": "003",
+            "pages": 88,
+            "pdf_size": 446,
+            "description": ""
+        }
+    }
+]

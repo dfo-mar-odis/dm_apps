@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4959,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process on the Assessment of Spiny Dogfish (Squalus acanthias); 14-15 November 2007",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif scientifique de la Région des Maritimes au sujet de l'évaluation de l'aiguillat commun (Squalus acanthias); les 14 et 15 novembre 2007",
+            "pub_year": 2008,
+            "lead_author_2": "Worcester, T.",
+            "pub_num": "009",
+            "pages": 24,
+            "pdf_size": 139,
+            "description": ""
+        }
+    }
+]

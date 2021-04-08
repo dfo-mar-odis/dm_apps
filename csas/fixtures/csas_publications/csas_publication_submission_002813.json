@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2813,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Summary of performance of the 1995 Newfoundland and Labrador snow crab fishery.",
+            "pub_year": 1997,
+            "lead_author_2": "Taylor, D.M., O'Keefe, P.G.",
+            "pub_num": "059",
+            "pages": 25,
+            "pdf_size": 767,
+            "description": ""
+        }
+    }
+]

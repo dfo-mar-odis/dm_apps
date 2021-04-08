@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1789,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Re-examination of 4T-Vn (Jan. - Apr.) cod otoliths collected in the period 1982-1985 for age (Including a report of the 4T-Vn (Jan.-Apr.) cod ageing workshop held in Moncton, June 22-24, 1987)",
+            "pub_year": 1987,
+            "lead_author_2": "G.A. Chouinard; L. Currie; J. Murphy",
+            "pub_num": "099",
+            "pages": 34,
+            "pdf_size": 1621,
+            "description": ""
+        }
+    }
+]

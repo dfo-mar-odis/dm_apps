@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8239,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Resource management under climate change: a risk-based strategy to develop climate-informed science advice",
+            "title_fr": "Gestion des ressources en période de changements climatiques : stratégie fondée sur les risques pour l’élaboration d’avis scientifiques qui tiennent compte du climat",
+            "pub_year": 2019,
+            "lead_author_2": "Duplisea, DE, Roux, M-J, Hunter, KL, and Rice, J.",
+            "pub_num": "044",
+            "pages": 50,
+            "pdf_size": 1503,
+            "description": ""
+        }
+    }
+]

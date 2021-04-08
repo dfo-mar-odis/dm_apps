@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 45,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Analyses of trends in returns of Atlantic salmon (Salmo salar) to rivers in Nova Scotia and Bay of Fundy, New Brunswick, and status of 1997 returns relative to forecasts",
+            "pub_year": 1998,
+            "lead_author_2": "P.G. Amiro, C.J. Harvie, S.F. O'Neil, T.L. Marshall",
+            "pub_num": "046",
+            "description": ""
+        }
+    }
+]

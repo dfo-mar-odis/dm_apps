@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6258,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional workshop on preliminary results from the multidisciplinary survey in 2011 in the Estuary and Northern Gulf of St. Lawrence; December 6, 2011",
+            "title_fr": "Atelier régional sur les résultats préliminaires du relevé multidisciplinaire pour 2011 dans l'estuaire et le nord du golfe du Saint-Laurent ; le 6 décembre 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "057",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1256,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "2+3K redfish",
+            "pub_year": 1983,
+            "lead_author_2": "D.B. Atkinson",
+            "pub_num": "023",
+            "pages": 19,
+            "pdf_size": 920,
+            "description": ""
+        }
+    }
+]

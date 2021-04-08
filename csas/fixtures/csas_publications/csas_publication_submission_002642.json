@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2642,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "4WX Herring",
+            "title_fr": "Hareng de 4WX",
+            "pub_year": 1996,
+            "pub_num": "018",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

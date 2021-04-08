@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7450,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Evaluation of soft shell data for legal-sized male Dungeness Crab (Metacarcinus magister) in Crab Management Areas E, G, and H in British Columbia, 2009-2013",
+            "title_fr": "Évaluation des données sur la carapace molle des crabes dormeurs (Metacarcinus magister) mâles de taille réglementaire dans les zones de gestion du crabe E, G et H en Colombie-Britannique, de 2009 à 2013",
+            "pub_year": 2015,
+            "pub_num": "047",
+            "pages": 11,
+            "pdf_size": 256,
+            "description": ""
+        }
+    }
+]

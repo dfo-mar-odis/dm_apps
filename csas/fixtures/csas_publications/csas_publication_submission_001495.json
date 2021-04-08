@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1495,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stream gradients and Atlantic salmon parr densities",
+            "pub_year": 1984,
+            "lead_author_2": "P.G. Amiro",
+            "pub_num": "089",
+            "pages": 22,
+            "pdf_size": 1123,
+            "description": ""
+        }
+    }
+]

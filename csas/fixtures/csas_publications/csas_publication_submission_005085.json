@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5085,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Ecological Assessment of Irish Moss (Chondrus Crispus) in Basin Head Marine Protected Area",
+            "title_fr": "Évaluation écologique de la mousse d'Irlande (Chondrus crispus) de la zone de protection marine Basin Head",
+            "pub_year": 2008,
+            "lead_author_2": "V. Joseph",
+            "pub_num": "059",
+            "pages": 16,
+            "pdf_size": 270,
+            "description": ""
+        }
+    }
+]

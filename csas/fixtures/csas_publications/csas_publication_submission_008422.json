@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8422,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Evaluation of potential direct genetic effects of the proposed Atlantic salmon (Salmo salar) aquaculture site expansion in southern Newfoundland",
+            "title_fr": "Évaluation des possibles effets génétiques directs du projet de création de nouveaux sites d’aquaculture de saumon de l’Atlantique (Salmo salar) dans le sud de Terre­Neuve­et­Labrador",
+            "pub_year": 2019,
+            "lead_author_2": "Bradbury, I., Duffy, S., Lehnert, S., Johannsson, R., Hlodver Fridriksson, J., Castellani, M., Burgetz, I., Sylvester, E., Messmer, A., Kelly, N., and Fleming, I.",
+            "pub_num": "074",
+            "pages": 25,
+            "pdf_size": 3262,
+            "description": ""
+        }
+    }
+]

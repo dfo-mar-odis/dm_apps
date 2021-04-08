@@ -1,5 +1,6 @@
 import inspect
 import math
+import os
 from datetime import date, datetime
 
 import pytz
@@ -16,7 +17,8 @@ from django.utils.translation import gettext_lazy as _
 
 from bio_diversity import models
 from bio_diversity.utils import comment_parser, enter_tank_contx, enter_indvd, year_coll_splitter, enter_env, \
-    create_movement_evnt, enter_grpd, enter_anix, val_unit_splitter, parse_concentration
+    create_movement_evnt, enter_grpd, enter_anix, val_unit_splitter, parse_concentration, enter_cnt, enter_cnt_det, \
+    enter_trof_contx, enter_mortality, enter_spwnd, naive_to_aware, create_tray, enter_tray_contx
 
 
 class CreatePrams(forms.ModelForm):
@@ -60,6 +62,8 @@ class CreateDatePrams(forms.ModelForm):
         return self.cleaned_data
 
 
+
+
 class CreateTimePrams(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -84,18 +88,16 @@ class CreateTimePrams(forms.ModelForm):
         # the end datetime is after the start datetime
         # and set the datetime values
         if cleaned_data["start_time"]:
-            start_time = datetime.strptime(cleaned_data["start_time"],
-                                           '%H:%M').time().replace(tzinfo=pytz.UTC)
+            start_time = datetime.strptime(cleaned_data["start_time"], '%H:%M').time()
         else:
-            start_time = datetime.min.time().replace(tzinfo=pytz.UTC)
-        cleaned_data["start_datetime"] = datetime.combine(cleaned_data["start_date"], start_time)
+            start_time = datetime.min.time()
+        cleaned_data["start_datetime"] = naive_to_aware(cleaned_data["start_date"], start_time)
         if cleaned_data["end_date"]:
             if cleaned_data["end_time"]:
-                end_time = datetime.strptime(cleaned_data["end_time"],
-                                             '%H:%M').time().replace(tzinfo=pytz.UTC)
+                end_time = datetime.strptime(cleaned_data["end_time"], '%H:%M').time()
             else:
-                end_time = datetime.min.time().replace(tzinfo=pytz.UTC)
-            cleaned_data["end_datetime"] = datetime.combine(cleaned_data["end_date"], end_time)
+                end_time = datetime.min.time()
+            cleaned_data["end_datetime"] = naive_to_aware(cleaned_data["end_date"], end_time)
 
         end_date = cleaned_data.get("end_date")
         end_time = cleaned_data.get("end_time")
@@ -141,6 +143,9 @@ class CntForm(CreatePrams):
         model = models.Count
         exclude = []
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['contx_id'].widget = forms.HiddenInput()
 
 class CntcForm(CreatePrams):
     class Meta:
@@ -198,7 +203,7 @@ class CdscForm(CreatePrams):
         exclude = []
 
 
-class CupForm(CreatePrams):
+class CupForm(CreateDatePrams):
     class Meta:
         model = models.Cup
         exclude = []
@@ -215,6 +220,10 @@ class DataForm(CreatePrams):
     class Meta:
         model = models.DataLoader
         exclude = []
+
+    egg_data_types = ((None, "---------"), ('Temperature', 'Temperature'), ('Picks', 'Picks'), ('Cross Mapping', 'Cross Mapping'))
+    egg_data_type = forms.ChoiceField(choices=egg_data_types, label=_("Type of data entry"))
+    trof_id = forms.ModelChoiceField(queryset=models.Trough.objects.all(), label="Trough")
 
     def __init__(self, request=None, *args, **kwargs):
         self.request = request
@@ -247,6 +256,7 @@ class DataForm(CreatePrams):
             parsed = True
 
             self.request.session["load_success"] = True
+            temp_envc_id = models.EnvCode.objects.filter(name="Temperature").get()
             for row in data_dict:
                 row_parsed = True
                 row_entered = False
@@ -271,72 +281,22 @@ class DataForm(CreatePrams):
                                                              rive_id=loc.rive_id, subr_id=loc.subr_id,
                                                              relc_id=loc.relc_id, loc_date=loc.loc_date).get()
 
-                    if enter_env(row["temp"], row_datetime, cleaned_data, "Temperature", loc_id=loc,):
+                    if enter_env(row["temp"], row_datetime, cleaned_data, temp_envc_id, loc_id=loc,):
                         row_entered = True
 
-                    cnt = False
-                    if not math.isnan(row["# of salmon collected"]):
-                        cnt = models.Count(loc_id_id=loc.pk,
-                                           spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
-                                           cntc_id=models.CountCode.objects.filter(name__iexact="Fish Caught").get(),
-                                           cnt=row["# of salmon collected"],
-                                           est=False,
-                                           created_by=cleaned_data["created_by"],
-                                           created_date=cleaned_data["created_date"],
-                                           )
-                        try:
-                            cnt.clean()
-                            cnt.save()
-                            row_entered = True
-                        except ValidationError:
-                            cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id, cnt=cnt.cnt).get()
+                    cnt_caught = enter_cnt(cleaned_data, cnt_value=row["# of salmon collected"], loc_pk=loc.pk, cnt_code="Fish Caught" )
+                    cnt_obs = enter_cnt(cleaned_data, cnt_value=row["# of salmon observed"], loc_pk=loc.pk, cnt_code="Fish Observed" )
 
-                    elif not math.isnan(row["# of salmon observed"]):
-                        cnt = models.Count(loc_id_id=loc.pk,
-                                           spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
-                                           cntc_id=models.CountCode.objects.filter(
-                                               name__iexact="Fish Observed").get(),
-                                           cnt=row["# of salmon observed"],
-                                           est=False,
-                                           created_by=cleaned_data["created_by"],
-                                           created_date=cleaned_data["created_date"],
-                                           )
-                        try:
-                            cnt.clean()
-                            cnt.save()
+                    if cnt_caught:
+                        if enter_cnt_det(cleaned_data, cnt_caught.pk, row["fishing seconds"], "Electrofishing Seconds"):
                             row_entered = True
-                        except ValidationError:
-                            cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id, cnt=cnt.cnt).get()
-                    if cnt:
-                        if not math.isnan(row["fishing seconds"]):
-                            cntd = models.CountDet(cnt_id=cnt,
-                                                   anidc_id=models.AnimalDetCode.objects.filter(name__iexact="Electrofishing Seconds").get(),
-                                                   det_val=row["fishing seconds"],
-                                                   qual_id=models.QualCode.objects.filter(name="Good").get(),
-                                                   created_by=cleaned_data["created_by"],
-                                                   created_date=cleaned_data["created_date"],
-                                                   )
-                            try:
-                                cntd.clean()
-                                cntd.save()
-                                row_entered = True
-                            except ValidationError:
-                                pass
-
-                        if not math.isnan(row["Voltage"]):
-                            cntd = models.CountDet(cnt_id=cnt,
-                                                   anidc_id=models.AnimalDetCode.objects.filter(name__iexact="Voltage").get(),
-                                                   det_val=row["Voltage"],
-                                                   qual_id=models.QualCode.objects.filter(name="Good").get(),
-                                                   created_by=cleaned_data["created_by"],
-                                                   created_date=cleaned_data["created_date"],
-                                                   )
-                            try:
-                                cntd.clean()
-                                cntd.save()
-                                row_entered = True
-                            except ValidationError:
-                                pass
+                        if enter_cnt_det(cleaned_data, cnt_caught.pk, row["Voltage"], "Voltage"):
+                            row_entered = True
+                    if cnt_obs:
+                        if enter_cnt_det(cleaned_data, cnt_obs.pk, row["fishing seconds"], "Electrofishing Seconds"):
+                            row_entered = True
+                        if enter_cnt_det(cleaned_data, cnt_obs.pk, row["Voltage"], "Voltage"):
+                            row_entered = True
 
                 except Exception as err:
                     parsed = False
@@ -382,11 +342,9 @@ class DataForm(CreatePrams):
                         anix_grp = anix_grp_qs.get()
                         grp = anix_grp.grp_id
 
-                    first_row_date = datetime.strptime(data["Year"][0] + data["Month"][0] + data["Day"][0],
-                                                       "%Y%b%d").replace(tzinfo=pytz.UTC)
-                    enter_grpd(anix_grp.pk, cleaned_data, first_row_date, data["# of salmon collected"].sum(), "Number of Fish")
+                    contx = enter_tank_contx(cleaned_data["tank_id"].name, cleaned_data, True, None, grp.pk, True)
 
-                    enter_tank_contx(cleaned_data["tank_id"].name, cleaned_data, True, None, grp.pk, False)
+                    enter_cnt(cleaned_data,  data["# of salmon collected"].sum(), contx_pk=contx.pk, cnt_code="Fish in Container", )
 
                 except Exception as err:
                     log_data += "Error parsing common data: \n"
@@ -408,6 +366,7 @@ class DataForm(CreatePrams):
             parsed = True
 
             self.request.session["load_success"] = True
+            temp_envc_id = models.EnvCode.objects.filter(name="Temperature").get()
             for row in data_dict:
                 row_parsed = True
                 row_entered = False
@@ -431,77 +390,22 @@ class DataForm(CreatePrams):
                                                              rive_id=loc.rive_id, subr_id=loc.subr_id,
                                                              relc_id=loc.relc_id, loc_date=loc.loc_date).get()
 
-                    if enter_env(row["Temperature"], row_date, cleaned_data, "Temperature", loc_id=loc,):
+                    if enter_env(row["Temperature"], row_date, cleaned_data, temp_envc_id, loc_id=loc,):
                         row_entered = True
 
-                    cnt = False
-                    if not math.isnan(row["# Parr Collected"]):
-                        cnt = models.Count(loc_id_id=loc.pk,
-                                           spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
-                                           cntc_id=models.CountCode.objects.filter(
-                                               name__iexact="Fish Caught").get(),
-                                           cnt=row["# Parr Collected"],
-                                           est=False,
-                                           created_by=cleaned_data["created_by"],
-                                           created_date=cleaned_data["created_date"],
-                                           )
-                        try:
-                            cnt.clean()
-                            cnt.save()
-                            row_entered = True
-                        except ValidationError:
-                            cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id,
-                                                              cnt=cnt.cnt).get()
+                    cnt_caught = enter_cnt(cleaned_data, cnt_value=row["# Parr Collected"], loc_pk=loc.pk, cnt_code="Fish Caught" )
+                    cnt_obs = enter_cnt(cleaned_data, cnt_value=row["# Parr Observed"], loc_pk=loc.pk, cnt_code="Fish Observed" )
 
-                    elif not math.isnan(row["# Parr Observed"]):
-                        cnt = models.Count(loc_id_id=loc.pk,
-                                           spec_id=models.SpeciesCode.objects.filter(name__iexact="Salmon").get(),
-                                           cntc_id=models.CountCode.objects.filter(
-                                               name__iexact="Fish Observed").get(),
-                                           cnt=row["# Parr Observed"],
-                                           est=False,
-                                           created_by=cleaned_data["created_by"],
-                                           created_date=cleaned_data["created_date"],
-                                           )
-                        try:
-                            cnt.clean()
-                            cnt.save()
+                    if cnt_caught:
+                        if enter_cnt_det(cleaned_data, cnt_caught.pk, row["Fishing seconds"], "Electrofishing Seconds"):
                             row_entered = True
-                        except ValidationError:
-                            cnt = models.Count.objects.filter(loc_id=cnt.loc_id, cntc_id=cnt.cntc_id,
-                                                              cnt=cnt.cnt).get()
-                    if cnt:
-                        if not math.isnan(row["Fishing seconds"]):
-                            cntd = models.CountDet(cnt_id=cnt,
-                                                   anidc_id=models.AnimalDetCode.objects.filter(
-                                                       name__iexact="Electrofishing Seconds").get(),
-                                                   det_val=row["Fishing seconds"],
-                                                   qual_id=models.QualCode.objects.filter(name="Good").get(),
-                                                   created_by=cleaned_data["created_by"],
-                                                   created_date=cleaned_data["created_date"],
-                                                   )
-                            try:
-                                cntd.clean()
-                                cntd.save()
-                                row_entered = True
-                            except ValidationError:
-                                pass
-
-                        if not math.isnan(row["Voltage"]):
-                            cntd = models.CountDet(cnt_id=cnt,
-                                                   anidc_id=models.AnimalDetCode.objects.filter(
-                                                       name__iexact="Voltage").get(),
-                                                   det_val=row["Voltage"],
-                                                   qual_id=models.QualCode.objects.filter(name="Good").get(),
-                                                   created_by=cleaned_data["created_by"],
-                                                   created_date=cleaned_data["created_date"],
-                                                   )
-                            try:
-                                cntd.clean()
-                                cntd.save()
-                                row_entered = True
-                            except ValidationError:
-                                pass
+                        if enter_cnt_det(cleaned_data, cnt_caught.pk, row["Voltage"], "Voltage"):
+                            row_entered = True
+                    if cnt_obs:
+                        if enter_cnt_det(cleaned_data, cnt_obs.pk, row["Fishing seconds"], "Electrofishing Seconds"):
+                            row_entered = True
+                        if enter_cnt_det(cleaned_data, cnt_obs.pk, row["Voltage"], "Voltage"):
+                            row_entered = True
 
                 except Exception as err:
                     parsed = False
@@ -547,10 +451,9 @@ class DataForm(CreatePrams):
                         anix_grp = anix_grp_qs.get()
                         grp = anix_grp.grp_id
 
-                    first_row_date = datetime.strptime(str(data["Year"][0])+str(data["Month"][0])+str(data["Day"][0]), "%Y%b%d").replace(tzinfo=pytz.UTC)
-                    enter_grpd(anix_grp.pk, cleaned_data, first_row_date, data["# Parr Collected"].sum(), "Number of Fish")
+                    contx = enter_tank_contx(cleaned_data["tank_id"].name, cleaned_data, True, None, grp.pk, True)
 
-                    enter_tank_contx(cleaned_data["tank_id"].name, cleaned_data, True, None, grp.pk, False)
+                    enter_cnt(cleaned_data,  data["# Parr Collected"].sum(), contx_pk=contx.pk, cnt_code="Fish in Container", )
 
                 except Exception as err:
                     log_data += "Error parsing common data: \n"
@@ -591,7 +494,7 @@ class DataForm(CreatePrams):
                 self.request.session["load_success"] = False
 
             if grp_id:
-                enter_anix(cleaned_data, grp_pk=grp_id)
+                anix_grp = enter_anix(cleaned_data, grp_pk=grp_id)
 
             for row in data_dict:
                 row_parsed = True
@@ -629,7 +532,7 @@ class DataForm(CreatePrams):
 
                     anix_indv = enter_anix(cleaned_data, indv_pk=indv.pk)
 
-                    anix_grp = enter_anix(cleaned_data, indv_pk=indv.pk, grp_pk=grp_id)
+                    enter_anix(cleaned_data, indv_pk=indv.pk, grp_pk=grp_id)
 
                     if enter_indvd(anix_indv.pk, cleaned_data, row_date, row["Length (cm)"], "Length", None):
                         row_entered = True
@@ -658,6 +561,14 @@ class DataForm(CreatePrams):
                     rows_parsed += 1
                 elif row_parsed:
                     rows_parsed += 1
+
+            from_tanks = data["from Tank"].value_counts()
+            for tank_name in from_tanks.keys():
+                fish_tagged_from_tank = int(from_tanks[tank_name])
+                contx = enter_tank_contx(tank_name, cleaned_data, None, grp_pk=grp_id, return_contx=True)
+                if contx:
+                    enter_cnt(cleaned_data, fish_tagged_from_tank, contx.pk, cnt_code="Pit Tagged")
+
             if not parsed:
                 self.request.session["load_success"] = False
             log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
@@ -758,6 +669,14 @@ class DataForm(CreatePrams):
                     rows_parsed += 1
                 elif row_parsed:
                     rows_parsed += 1
+
+            from_tanks = data["Origin Pond"].value_counts()
+            for tank_name in from_tanks.keys():
+                fish_tagged_from_tank = int(from_tanks[tank_name])
+                contx = enter_tank_contx(tank_name, cleaned_data, None, grp_pk=grp_id, return_contx=True)
+                if contx:
+                    enter_cnt(cleaned_data, fish_tagged_from_tank, contx.pk, cnt_code="Pit Tagged")
+
             if not parsed:
                 self.request.session["load_success"] = False
             log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
@@ -800,7 +719,7 @@ class DataForm(CreatePrams):
                         row_datetime = datetime.strptime(row["Year"] + row["Month"] + row["Day"],
                                                          "%Y%b%d").replace(tzinfo=pytz.UTC)
                         row_date =row_datetime.date()
-                        if enter_indvd(anix_indv.pk, cleaned_data, row_date, None, "Gender", sex_dict[row["SEX"]], comments=row["COMMENTS"]):
+                        if enter_indvd(anix_indv.pk, cleaned_data, row_date, sex_dict[row["SEX"]], "Gender", None, comments=row["COMMENTS"]):
                             row_entered = True
 
                         if create_movement_evnt(row["ORIGIN POND"], row["DESTINATION POND"], cleaned_data, row_datetime,
@@ -808,7 +727,7 @@ class DataForm(CreatePrams):
                             row_entered = True
 
                         if row["COMMENTS"]:
-                            comment_parser(row["COMMENTS"], anix_indv)
+                            comment_parser(row["COMMENTS"], anix_indv, row_date)
                     else:
                         break
 
@@ -841,25 +760,30 @@ class DataForm(CreatePrams):
                 return
             parsed = True
             self.request.session["load_success"] = True
+            temp_envc_id = models.EnvCode.objects.filter(name="Temperature").get()
+            oxlvl_envc_id = models.EnvCode.objects.filter(name="Oxygen Level").get()
+            ph_envc_id = models.EnvCode.objects.filter(name="pH").get()
+            disn_envc_id = models.EnvCode.objects.filter(name="Dissolved Nitrogen").get()
+
             for row in data_dict:
                 row_parsed = True
                 row_entered = False
                 try:
                     contx = enter_tank_contx(row["Pond"], cleaned_data, None, return_contx=True)
                     row_date = datetime.strptime(row["Year"] + row["Month"] + row["Day"],
-                                                     "%Y%b%d").replace(tzinfo=pytz.UTC).date()
+                                                 "%Y%b%d").replace(tzinfo=pytz.UTC).date()
                     if not math.isnan(row["Time (24HR)"]):
                         row_time = row["Time (24HR)"].replace(tzinfo=pytz.UTC)
                     else:
                         row_time = None
 
-                    if enter_env(row["Temp °C"], row_date, cleaned_data, "Temperature", contx=contx, env_start=row_time):
+                    if enter_env(row["Temp °C"], row_date, cleaned_data, temp_envc_id, contx=contx, env_start=row_time):
                         row_entered = True
-                    if enter_env(row["DO%"], row_date, cleaned_data, "Oxygen Level", contx=contx, env_start=row_time):
+                    if enter_env(row["DO%"], row_date, cleaned_data, oxlvl_envc_id, contx=contx, env_start=row_time):
                         row_entered = True
-                    if enter_env(row["pH"], row_date, cleaned_data, "pH", contx=contx, env_start=row_time):
+                    if enter_env(row["pH"], row_date, cleaned_data, ph_envc_id, contx=contx, env_start=row_time):
                         row_entered = True
-                    if enter_env(row["Dissolved Nitrogen %"], row_date, cleaned_data, "Dissolved Nitrogen", contx=contx, env_start=row_time):
+                    if enter_env(row["Dissolved Nitrogen %"], row_date, cleaned_data, disn_envc_id, contx=contx, env_start=row_time):
                         row_entered = True
 
                 except Exception as err:
@@ -882,7 +806,7 @@ class DataForm(CreatePrams):
         # ---------------------------MACTAQUAC SPAWNING DATA ENTRY----------------------------------------
         elif cleaned_data["evntc_id"].__str__() == "Spawning" and cleaned_data["facic_id"].__str__() == "Mactaquac":
             try:
-                data = pd.read_excel(cleaned_data["data_csv"], header=5, sheet_name="RECORDED matings")
+                data = pd.read_excel(cleaned_data["data_csv"], header=5,  engine='xlrd', sheet_name="RECORDED matings")
                 data_dict = data.to_dict('records')
             except Exception as err:
                 log_data += "\n File format not valid: {}".format(err.__str__())
@@ -910,29 +834,32 @@ class DataForm(CreatePrams):
                     anix_female = enter_anix(cleaned_data, indv_pk=indv_female.pk)
                     anix_male = enter_anix(cleaned_data, indv_pk=indv_male.pk)
 
-                    if enter_indvd(anix_female.pk, cleaned_data, row_date, None, "Gender", "Female"):
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, "Female", "Gender", None):
                         row_entered = True
 
                     if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Ln"], "Length", None):
                         row_entered = True
 
-                    if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Wt"], "Weight", None):
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, 1000 * row["Wt"], "Weight", None):
                         row_entered = True
 
-                    if enter_indvd(anix_male.pk, cleaned_data, row_date, None, "Gender", "Male"):
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, "Male", "Gender", None):
                         row_entered = True
 
                     if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Ln.1"], "Length", None):
                         row_entered = True
 
-                    if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Wt.1"], "Weight", None):
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, 1000 * row["Wt.1"], "Weight", None):
                         row_entered = True
 
                     # pair
                     prio_dict = {"H": "High", "M": "Normal", "P": "Low"}
                     pair = models.Pairing(start_date=row_date,
                                           prio_id=models.PriorityCode.objects.filter(
-                                              name__iexact=prio_dict[row["Pri..1"]]).get(),
+                                              name__iexact=prio_dict[row["Pri."]]).get(),
+                                          pair_prio_id=models.PriorityCode.objects.filter(
+                                              name__iexact=prio_dict[row["Pri..2"]]).get(),
+                                          cross=row["Tray #"],
                                           valid=True,
                                           indv_id=indv_female,
                                           comments=row["Comment"],
@@ -974,19 +901,13 @@ class DataForm(CreatePrams):
                     except ValidationError:
                         pass
 
-                    fecu_est = models.SpawnDet(pair_id=pair,
-                                               spwndc_id=models.SpawnDetCode.objects.filter(name="Fecundity").get(),
-                                               det_val=int(row["Exp. #"]),
-                                               qual_id=models.QualCode.objects.filter(name="Calculated").get(),
-                                               created_by=cleaned_data["created_by"],
-                                               created_date=cleaned_data["created_date"],
-                                               )
-                    try:
-                        fecu_est.clean()
-                        fecu_est.save()
-                        row_entered = True
-                    except ValidationError:
-                        pass
+                    # fecu/dud
+                    if row["Exp. #"] > 0:
+                        if enter_spwnd(pair.pk, cleaned_data, row["Exp. #"], "Fecundity", None, "Calculated"):
+                            row_entered = True
+                    else:
+                        if enter_spwnd(pair.pk, cleaned_data, row["Choice"], "Dud", None, "Good"):
+                            row_entered = True
 
                     # grp
                     anix_grp_qs = models.AniDetailXref.objects.filter(evnt_id=cleaned_data["evnt_id"],
@@ -1036,21 +957,25 @@ class DataForm(CreatePrams):
                 elif row_parsed:
                     rows_parsed += 1
 
-            # matp
+            # evntf
             indv_qs = models.Individual.objects.filter(pit_tag=data["Pit or carlin"][0])
             if len(indv_qs) == 1:
                 indv_female = indv_qs.get()
-                matp = models.MatingPlan(evnt_id_id=cleaned_data["evnt_id"].pk,
+                evntf = models.EventFile(evnt_id_id=cleaned_data["evnt_id"].pk,
                                          stok_id=indv_female.stok_id,
-                                         matp_xls=cleaned_data["data_csv"],
+                                         evntfc_id=models.EventFileCode.objects.filter(name="Mating Plan").get(),
+                                         evntf_xls=cleaned_data["data_csv"],
                                          created_by=cleaned_data["created_by"],
                                          created_date=cleaned_data["created_date"],
                                          )
                 try:
-                    matp.clean()
-                    matp.save()
-                except (ValidationError, IntegrityError):
-                    pass
+                    evntf.clean()
+                    evntf.save()
+                except (ValidationError, IntegrityError) as err:
+                    # delete mating plan if model did not save
+                    if type(err) == IntegrityError:
+                        if os.path.isfile(evntf.evntf_xls.path):
+                            os.remove(evntf.evntf_xls.path)
 
             if not parsed:
                 self.request.session["load_success"] = False
@@ -1061,7 +986,7 @@ class DataForm(CreatePrams):
         # ---------------------------COLDBROOK SPAWNING DATA ENTRY----------------------------------------
         elif cleaned_data["evntc_id"].__str__() == "Spawning" and cleaned_data["facic_id"].__str__() == "Coldbrook":
             try:
-                data = pd.read_excel(cleaned_data["data_csv"], header=5, sheet_name="Recording")
+                data = pd.read_excel(cleaned_data["data_csv"], header=5, engine='xlrd', sheet_name="Recording")
                 data_dict = data.to_dict('records')
             except Exception as err:
                 log_data += "\n File format not valid: {}".format(err.__str__())
@@ -1092,20 +1017,23 @@ class DataForm(CreatePrams):
                     if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Ln"], "Length", None):
                         row_entered = True
 
-                    if enter_indvd(anix_female.pk, cleaned_data, row_date, row["Wt"], "Weight", None):
+                    if enter_indvd(anix_female.pk, cleaned_data, row_date, 1000 * row["Wt"], "Weight", None):
                         row_entered = True
 
                     if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Ln.1"], "Length", None):
                         row_entered = True
 
-                    if enter_indvd(anix_male.pk, cleaned_data, row_date, row["Wt.1"], "Weight", None):
+                    if enter_indvd(anix_male.pk, cleaned_data, row_date, 1000 * row["Wt.1"], "Weight", None):
                         row_entered = True
 
                     # pair
                     prio_dict = {"H": "High", "M": "Normal", "P": "Low"}
                     pair = models.Pairing(start_date=row_date,
                                           prio_id=models.PriorityCode.objects.filter(
-                                              name__iexact=prio_dict[row["Pri..1"]]).get(),
+                                              name__iexact=prio_dict[row["Pri."]]).get(),
+                                          pair_prio_id=models.PriorityCode.objects.filter(
+                                              name__iexact=prio_dict[row["Pri..2"]]).get(),
+                                          cross=row["Tray #"],
                                           valid=True,
                                           indv_id=indv_female,
                                           comments=row["Comment"],
@@ -1147,19 +1075,13 @@ class DataForm(CreatePrams):
                     except ValidationError:
                         pass
 
-                    fecu_est = models.SpawnDet(pair_id=pair,
-                                               spwndc_id=models.SpawnDetCode.objects.filter(name="Fecundity").get(),
-                                               det_val=int(row["Exp. #"]),
-                                               qual_id=models.QualCode.objects.filter(name="Calculated").get(),
-                                               created_by=cleaned_data["created_by"],
-                                               created_date=cleaned_data["created_date"],
-                                               )
-                    try:
-                        fecu_est.clean()
-                        fecu_est.save()
-                        row_entered = True
-                    except ValidationError:
-                        pass
+                    # fecu/dud
+                    if row["Exp. #"] > 0:
+                        if enter_spwnd(pair.pk, cleaned_data, row["Exp. #"], "Fecundity", None, "Calculated"):
+                            row_entered = True
+                    else:
+                        if enter_spwnd(pair.pk, cleaned_data, row["Choice"], "Dud", None, "Good"):
+                            row_entered = True
 
                     # grp
                     anix_grp_qs = models.AniDetailXref.objects.filter(evnt_id=cleaned_data["evnt_id"],
@@ -1209,21 +1131,25 @@ class DataForm(CreatePrams):
                 elif row_parsed:
                     rows_parsed += 1
 
-            # matp
+            # evntf
             indv_qs = models.Individual.objects.filter(pit_tag=data["Pit tag"][0])
             if len(indv_qs) == 1:
                 indv_female = indv_qs.get()
-                matp = models.MatingPlan(evnt_id_id=cleaned_data["evnt_id"].pk,
+                evntf = models.EventFile(evnt_id_id=cleaned_data["evnt_id"].pk,
                                          stok_id=indv_female.stok_id,
-                                         matp_xls=cleaned_data["data_csv"],
+                                         evntfc_id=models.EventFileCode.objects.filter(name="Mating Plan"),
+                                         evntf_xls=cleaned_data["data_csv"],
                                          created_by=cleaned_data["created_by"],
                                          created_date=cleaned_data["created_date"],
                                          )
                 try:
-                    matp.clean()
-                    matp.save()
-                except (ValidationError, IntegrityError):
-                    pass
+                    evntf.clean()
+                    evntf.save()
+                except (ValidationError, IntegrityError) as err:
+                    # delete mating plan if model did not save
+                    if type(err) == IntegrityError:
+                        if os.path.isfile(evntf.evntf_xls.path):
+                            os.remove(evntf.evntf_xls.path)
 
             if not parsed:
                 self.request.session["load_success"] = False
@@ -1242,6 +1168,7 @@ class DataForm(CreatePrams):
                 return
             parsed = True
             self.request.session["load_success"] = True
+            water_envc_id = models.EnvCode.objects.filter(name="Water Level").get()
 
             for row in data_dict:
                 row_parsed = True
@@ -1271,7 +1198,7 @@ class DataForm(CreatePrams):
                         pass
 
                     water_level, height_unit = val_unit_splitter(row["Pond Level During Treatment"])
-                    enter_env(water_level, row_date, cleaned_data, "Water Level", contx=contx)
+                    enter_env(water_level, row_date, cleaned_data, water_envc_id, contx=contx)
 
                 except Exception as err:
                     parsed = False
@@ -1292,8 +1219,195 @@ class DataForm(CreatePrams):
             log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
                         "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
 
+        # ---------------------------TROUGH TEMPERATURE DATA ENTRY COLDBROOK----------------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Egg Development" and cleaned_data["egg_data_type"] == "Temperature" \
+                and cleaned_data["facic_id"].__str__() == "Coldbrook":
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], header=0, engine='openpyxl', sheet_name="Sheet1",
+                                     converters={"Hour": str, 'Year': str, 'Month': str, 'Day': str})
+                data = data.dropna(subset=["Temperature"])
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                log_data += "\n File format not valid: {}".format(err.__str__())
+                self.request.session["log_data"] = log_data
+                return
+            parsed = True
+            self.request.session["load_success"] = True
+
+            contx = enter_trof_contx(cleaned_data["trof_id"].name, cleaned_data, final_flag=None, return_contx=True)
+
+            qual_id = models.QualCode.objects.filter(name="Good").get()
+            envc_id = models.EnvCode.objects.filter(name="Temperature").get()
+
+            data["datetime"] = data.apply(lambda row: datetime.strptime(row["Year"] + "/" + row["Month"] + "/" +
+                                                                        row["Day"] + "/" + row["Hour"],
+                                                                        "%Y/%b/%d/%H").replace(tzinfo=pytz.UTC), axis=1)
+
+            data["env"] = data.apply(lambda row: enter_env(row["Temperature"], row["datetime"].date(), cleaned_data,
+                                                           envc_id, env_start=row["datetime"].time(), contx=contx,
+                                                           save=False, qual_id=qual_id), axis=1)
+
+            entered_list = models.EnvCondition.objects.bulk_create(list(data["env"].dropna()))
+
+            if not parsed:
+                self.request.session["load_success"] = False
+
+            log_data += "\n\n\n {} of {} rows entered to " \
+                        "database".format(len(entered_list), len(data_dict))
+
+        # ---------------------------TROUGH TEMPERATURE DATA ENTRY MACTAQUAC----------------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Egg Development" and cleaned_data["egg_data_type"] == "Temperature"\
+                and cleaned_data["facic_id"].__str__() == "Mactaquac":
+            try:
+                data = pd.read_csv(cleaned_data["data_csv"], encoding="mbcs", header=7)
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                log_data += "\n File format not valid: {}".format(err.__str__())
+                self.request.session["log_data"] = log_data
+                return
+            parsed = True
+            self.request.session["load_success"] = True
+
+            contx = enter_trof_contx(cleaned_data["trof_id"].name, cleaned_data, final_flag=None, return_contx=True)
+            qual_id = models.QualCode.objects.filter(name="Good").get()
+            envc_id = models.EnvCode.objects.filter(name="Temperature").get()
+
+            data["datetime"] = data.apply(lambda row: datetime.strptime(row["Date(yyyy-mm-dd)"] + ", " + row["Time(hh:mm:ss)"],
+                                                                        "%Y-%m-%d, %H:%M:%S").replace(tzinfo=pytz.UTC), axis=1)
+
+            data["env"] = data.apply(lambda row: enter_env(row["Temperature (°C)"], row["datetime"].date(), cleaned_data,
+                                                           envc_id, env_start=row["datetime"].time(), contx=contx,
+                                                           save=False, qual_id=qual_id), axis=1)
+
+            entered_list = models.EnvCondition.objects.bulk_create(list(data["env"].dropna()))
+
+            if not parsed:
+                self.request.session["load_success"] = False
+
+            log_data += "\n\n\n {} of {} rows entered to " \
+                        "database".format(len(entered_list), len(data_dict))
+        # ---------------------------CROSS TRAY MAPPING MACTAQUAC----------------------------------------
+        elif cleaned_data["evntc_id"].__str__() == "Egg Development" and cleaned_data["egg_data_type"] ==\
+                "Cross Mapping" and cleaned_data["facic_id"].__str__() == "Mactaquac":
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], engine='openpyxl', header=0)
+            except Exception as err:
+                log_data += "\n File format not valid: {}".format(err.__str__())
+                self.request.session["log_data"] = log_data
+                return
+            parsed = True
+            self.request.session["load_success"] = True
+
+            pair_qs = models.Pairing.objects.all().select_related('indv_id__stok_id')
+            data["pairs"] = data.apply(lambda row: pair_qs.filter(cross=row["Cross"], indv_id__stok_id__name=row["Stock"]).get(), axis=1)
+
+            anix_qs = models.AniDetailXref.objects.filter(pair_id__in=data["pairs"], grp_id__isnull=False).select_related('grp_id')
+            data["grps"] = data.apply(lambda row: anix_qs.filter(pair_id=row["pairs"]).get().grp_id, axis=1)
+
+            trof_qs = models.Trough.objects.filter(facic_id=cleaned_data["facic_id"])
+            data["trofs"] = data.apply(lambda row: trof_qs.filter(name=row["Trough"]).get(), axis=1)
+
+            # trays, date from cross
+            data["trays"] = data.apply(lambda row: create_tray(row["trofs"], row["Tray"], row["pairs"].start_date, cleaned_data, save=True), axis=1)
+            data_dict = data.to_dict('records')
+            for row in data_dict:
+                if enter_tray_contx(row["trays"], cleaned_data, final_flag=True, grp_pk=row["grps"].pk):
+                    rows_entered += 1
+
+            if not parsed:
+                self.request.session["load_success"] = False
+
+            log_data += "\n\n\n {} of {} rows entered to " \
+                        "database".format(rows_entered, len(data_dict))
+
+        # -------------------------------------GENERAL DATA ENTRY-------------------------------------------
         else:
-            log_data = "Data loading not set up for this event type.  No data loaded."
+            try:
+                data = pd.read_excel(cleaned_data["data_csv"], engine='openpyxl', header=0,
+                                     converters={'PIT': str, 'Year': str, 'Month': str, 'Day': str})
+                data["COMMENTS"] = data["COMMENTS"].fillna('')
+                data_dict = data.to_dict('records')
+            except Exception as err:
+                log_data += "\n File format not valid: {}".format(err.__str__())
+                self.request.session["log_data"] = log_data
+                return
+            parsed = True
+            self.request.session["load_success"] = True
+            sex_dict = {"M": "Male",
+                        "F": "Female",
+                        "I": "Immature"}
+            for row in data_dict:
+                row_parsed = True
+                row_entered = False
+                try:
+                    indv_qs = models.Individual.objects.filter(pit_tag=row["PIT"])
+                    if len(indv_qs) == 1:
+                        indv = indv_qs.get()
+                    else:
+                        row_entered = False
+                        row_parsed = False
+                        indv = False
+                        log_data += "Error parsing row: \n"
+                        log_data += str(row)
+                        log_data += "\nFish with PIT {} not found in db\n".format(row["PIT"])
+
+                    if indv:
+                        anix = enter_anix(cleaned_data, indv_pk=indv.pk)
+
+                        row_datetime = datetime.strptime(row["Year"] + row["Month"] + row["Day"],
+                                                         "%Y%b%d").replace(tzinfo=pytz.UTC)
+                        row_date = row_datetime.date()
+                        if enter_indvd(anix.pk, cleaned_data, row_date, sex_dict[row["SEX"]], "Gender", None, None):
+                            row_entered = True
+                        if enter_indvd(anix.pk, cleaned_data, row_date, row["Length (cm)"], "Length", None):
+                            row_entered = True
+                        if enter_indvd(anix.pk, cleaned_data, row_date, row["Weight (g)"], "Weight", None):
+                            row_entered = True
+                        if enter_indvd(anix.pk, cleaned_data, row_date, row["Vial"], "Vial", None):
+                            row_entered = True
+                        if type(row["Precocity (Y/N)"]) == str:
+                            if row["Precocity (Y/N)"].upper() == "Y":
+                                if enter_indvd(anix.pk, cleaned_data, row_date, None, "Animal Health",
+                                               "Tissue Sample"):
+                                    row_entered = True
+                        if type(row["Mortality (Y/N)"]) == str:
+                            if row["Mortality (Y/N)"].upper() == "Y":
+                                mort_evnt, mort_anix = enter_mortality(indv, cleaned_data, row_date)
+                        if type(row["Tissue Sample (Y/N)"]) == str:
+                            if row["Tissue Sample (Y/N)"].upper() == "Y":
+                                if enter_indvd(anix.pk, cleaned_data, row_date, None, "Animal Health",
+                                               "Tissue Sample"):
+                                    row_entered = True
+
+                        if enter_indvd(anix.pk, cleaned_data, row_date, row["Scale Envelope"], "Scale Envelope", None):
+                            row_entered=True
+                        if create_movement_evnt(row["ORIGIN POND"], row["DESTINATION POND"], cleaned_data, row_datetime,
+                                                indv_pk=indv.pk):
+                            row_entered = True
+
+                        if row["COMMENTS"]:
+                            comment_parser(row["COMMENTS"], anix, row_date)
+                    else:
+                        break
+
+                except Exception as err:
+                    parsed = False
+                    self.request.session["load_success"] = False
+                    log_data += "Error parsing row: \n"
+                    log_data += str(row)
+                    log_data += "\n Error: {}".format(err.__str__())
+                    break
+                if row_entered:
+                    rows_entered += 1
+                    rows_parsed += 1
+                elif row_parsed:
+                    rows_parsed += 1
+            if not parsed:
+                self.request.session["load_success"] = False
+            log_data += "\n\n\n {} of {} rows parsed \n {} of {} rows entered to " \
+                        "database".format(rows_parsed, len(data_dict), rows_entered, len(data_dict))
+
+            # log_data = "Data loading not set up for this event type.  No data loaded."
         self.request.session["log_data"] = log_data
 
 
@@ -1307,8 +1421,10 @@ class EnvForm(CreateTimePrams):
     class Meta:
         model = models.EnvCondition
         exclude = []
-        widgets = {
-        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['contx_id'].widget = forms.HiddenInput()
 
 
 class EnvcForm(CreatePrams):
@@ -1333,6 +1449,10 @@ class EnvtForm(CreatePrams):
     class Meta:
         model = models.EnvTreatment
         exclude = []
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['contx_id'].widget = forms.HiddenInput()
 
 
 class EnvtcForm(CreatePrams):
@@ -1361,6 +1481,18 @@ class EvntcForm(CreatePrams):
         exclude = []
 
 
+class EvntfForm(CreatePrams):
+    class Meta:
+        model = models.EventFile
+        exclude = []
+
+
+class EvntfcForm(CreatePrams):
+    class Meta:
+        model = models.EventFileCode
+        exclude = []
+
+
 class FacicForm(CreatePrams):
     class Meta:
         model = models.FacilityCode
@@ -1377,6 +1509,10 @@ class FeedForm(CreatePrams):
     class Meta:
         model = models.Feeding
         exclude = []
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['contx_id'].widget = forms.HiddenInput()
 
 
 class FeedcForm(CreatePrams):
@@ -1401,6 +1537,10 @@ class GrpdForm(CreatePrams):
     class Meta:
         model = models.GroupDet
         exclude = []
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['anix_id'].widget = forms.HiddenInput()
 
 
 class HeatForm(CreatePrams):
@@ -1433,6 +1573,7 @@ class HelpTextForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         clsmembers = [(cls[0], cls[0]) for cls in inspect.getmembers(models, inspect.isclass)]
+        clsmembers.insert(0, (None, "----"))
 
         self.fields['model'] = forms.ChoiceField(choices=clsmembers)
 
@@ -1477,6 +1618,10 @@ class IndvdForm(CreatePrams):
     class Meta:
         model = models.IndividualDet
         exclude = []
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['anix_id'].widget = forms.HiddenInput()
 
 
 class IndvtForm(CreateTimePrams):
@@ -1533,11 +1678,10 @@ class LocForm(CreatePrams):
     def save(self, commit=True):
         obj = super().save(commit=False)  # here the object is not commited in db
         if self.cleaned_data["start_time"]:
-            start_time = datetime.strptime(self.cleaned_data["start_time"],
-                                           '%H:%M').time().replace(tzinfo=pytz.UTC)
+            start_time = datetime.strptime(self.cleaned_data["start_time"], '%H:%M').time()
         else:
-            start_time = datetime.min.time().replace(tzinfo=pytz.UTC)
-        obj.loc_date = datetime.combine(self.cleaned_data["start_date"], start_time)
+            start_time = datetime.min.time()
+        obj.loc_date = naive_to_aware(self.cleaned_data["start_date"], start_time)
         obj.save()
         return obj
 
@@ -1548,15 +1692,9 @@ class LoccForm(CreatePrams):
         exclude = []
 
 
-class MatpForm(CreatePrams):
-    class Meta:
-        model = models.MatingPlan
-        exclude = []
-
 
 class MortForm(forms.Form):
     class Meta:
-        model = models.MatingPlan
         exclude = []
 
     gender_choices = ((None, "---------"), ('Male', 'Male'), ('Female', 'Female'), ('Immature', 'Immature'))
@@ -1566,7 +1704,8 @@ class MortForm(forms.Form):
     created_by = forms.CharField(required=True, max_length=32)
     indv_length = forms.DecimalField(required=False, max_digits=5, label=_("Individual Length (cm)"))
     indv_mass = forms.DecimalField(required=False, max_digits=5,  label=_("Individual Mass (g)"))
-    indv_vial = forms.DecimalField(required=False, max_digits=5,  label=_("Individual Vial"))
+    indv_vial = forms.CharField(required=False, max_length=8,  label=_("Individual Vial"))
+    scale_envelope = forms.CharField(required=False, max_length=8,  label=_("Scale Envelope Label"))
     indv_gender = forms.ChoiceField(required=False, choices=gender_choices,  label=_("Individual Gender"))
     observations = forms.ModelMultipleChoiceField(required=False, queryset=models.AniDetSubjCode.objects.filter(anidc_id__name="Mortality Observation") | models.AniDetSubjCode.objects.filter(anidc_id__name="Animal Health"),  label=_("Observations"))
     indv_mort = forms.IntegerField(required=False, max_value=10000000)
@@ -1583,7 +1722,7 @@ class MortForm(forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-        cleaned_data["mort_date"] = datetime.combine(cleaned_data["mort_date"], datetime.min.time()).replace(tzinfo=pytz.UTC)
+        cleaned_data["mort_date"] = naive_to_aware(cleaned_data["mort_date"])
 
         if not self.is_valid():
             return cleaned_data
@@ -1592,9 +1731,9 @@ class MortForm(forms.Form):
             indv = models.Individual.objects.filter(pk=cleaned_data["indv_mort"]).get()
             indv.indv_valid = False
             indv.save()
-            evnt = models.AniDetailXref.objects.filter(indv_id_id=cleaned_data["indv_mort"]).last().evnt_id
+            cleaned_data["evnt_id"] = models.AniDetailXref.objects.filter(indv_id_id=cleaned_data["indv_mort"]).last().evnt_id
         else:
-            evnt = models.AniDetailXref.objects.filter(grp_id_id=cleaned_data["grp_mort"]).last().evnt_id
+            cleaned_data["evnt_id"] = models.AniDetailXref.objects.filter(grp_id_id=cleaned_data["grp_mort"]).last().evnt_id
             grp = models.Group.objects.filter(pk=cleaned_data["grp_mort"]).get()
             indv = models.Individual(grp_id=grp,
                                      spec_id=grp.spec_id,
@@ -1609,31 +1748,17 @@ class MortForm(forms.Form):
             indv.save()
             cleaned_data["indv_mort"] = indv.pk
 
-        mortality_evnt = models.Event(evntc_id=models.EventCode.objects.filter(name="Mortality").get(),
-                                      facic_id=evnt.facic_id,
-                                      prog_id=evnt.prog_id,
-                                      perc_id=cleaned_data["perc_id"],
-                                      start_datetime=cleaned_data["mort_date"],
-                                      end_datetime=cleaned_data["mort_date"],
-                                      created_by=cleaned_data["created_by"],
-                                      created_date=cleaned_data["created_date"],
-                                      )
-        try:
-            mortality_evnt.clean()
-            mortality_evnt.save()
-        except (ValidationError, IntegrityError):
-            mortality_evnt = models.Event.objects.filter(evntc_id=mortality_evnt.evntc_id,
-                                                         facic_id=mortality_evnt.facic_id,
-                                                         prog_id=mortality_evnt.prog_id,
-                                                         start_datetime=mortality_evnt.start_datetime,
-                                                         end_datetime=mortality_evnt.end_datetime,
-                                                         ).get()
-        cleaned_data["evnt_id"] = mortality_evnt
+        mortality_evnt, anix = enter_mortality(indv, cleaned_data, cleaned_data["mort_date"])
 
-        anix = enter_anix(cleaned_data, indv_pk=cleaned_data["indv_mort"])
+        cleaned_data["evnt_id"] = mortality_evnt
+        cleaned_data["facic_id"] = mortality_evnt.facic_id
+
         if cleaned_data["grp_mort"]:
             anix_grp = enter_anix(cleaned_data, grp_pk=cleaned_data["grp_mort"])
             anix_both = enter_anix(cleaned_data, indv_pk=cleaned_data["indv_mort"], grp_pk=cleaned_data["grp_mort"])
+            tank = grp.current_tank(at_date=cleaned_data["mort_date"])[0]
+            contx = enter_tank_contx(tank.name, cleaned_data, grp_pk=grp.id, return_contx=True)
+            enter_cnt(cleaned_data, cnt_value=1, contx_pk=contx.id, cnt_code="Mortality")
 
         if cleaned_data["indv_length"]:
             enter_indvd(anix.pk, cleaned_data, cleaned_data["mort_date"], cleaned_data["indv_length"], "Length", None)
@@ -1641,8 +1766,10 @@ class MortForm(forms.Form):
             enter_indvd(anix.pk, cleaned_data, cleaned_data["mort_date"], cleaned_data["indv_mass"], "Weight", None)
         if cleaned_data["indv_vial"]:
             enter_indvd(anix.pk, cleaned_data, cleaned_data["mort_date"], cleaned_data["indv_vial"], "Vial", None)
+        if cleaned_data["scale_envelope"]:
+            enter_indvd(anix.pk, cleaned_data, cleaned_data["mort_date"], cleaned_data["scale_envelope"], "Scale Envelope", None)
         if cleaned_data["indv_gender"]:
-            enter_indvd(anix.pk, cleaned_data, cleaned_data["mort_date"], None, "Gender", cleaned_data["indv_gender"])
+            enter_indvd(anix.pk, cleaned_data, cleaned_data["mort_date"], cleaned_data["indv_gender"], "Gender", None)
 
         if cleaned_data["observations"].count() != 0:
             for adsc in cleaned_data["observations"]:
@@ -1720,6 +1847,31 @@ class RelcForm(CreatePrams):
     class Meta:
         model = models.ReleaseSiteCode
         exclude = []
+
+
+class ReportForm(forms.Form):
+    class Meta:
+        model = models.ReleaseSiteCode
+        exclude = []
+
+    REPORT_CHOICES = (
+        (None, "------"),
+        (1, "Facility Tanks Report (xlsx)"),
+        (2, "River Code Report Report (xlsx)"),
+    )
+    report = forms.ChoiceField(required=True, choices=REPORT_CHOICES)
+    facic_id = forms.ModelChoiceField(required=False,
+                                      queryset=models.FacilityCode.objects.all(),
+                                      label=_("Facility"))
+    stok_id = forms.ModelChoiceField(required=False,
+                                     queryset=models.StockCode.objects.all(),
+                                     label=_("Stock Code"))
+    on_date = forms.DateField(required=False, label=_("Report Date"))
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["on_date"].widget = forms.DateInput(attrs={"placeholder": "Click to select a date..",
+                                                               "class": "fp-date"})
 
 
 class RiveForm(CreatePrams):
@@ -1815,7 +1967,7 @@ class TeamForm(CreatePrams):
         exclude = []
 
 
-class TrayForm(CreatePrams):
+class TrayForm(CreateDatePrams):
     class Meta:
         model = models.Tray
         exclude = []

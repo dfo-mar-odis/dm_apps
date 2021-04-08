@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7350,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Peer Review of the 4X5Y Haddock Framework; October 22, 2014",
+            "lead_author_2": "Worcester, T.",
+            "description": ""
+        }
+    }
+]

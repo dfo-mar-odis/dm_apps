@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7446,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Assessment of an Eastern Scotian Shelf Shrimp (Pandalus borealis) Framework; April 14-15, 2015",
+            "title_fr": "Compte rendu de l’évaluation régionale du cadre de la crevette nordique (Pandalus borealis)",
+            "pub_year": 2016,
+            "lead_author_2": "Wheaton, Thomas",
+            "pub_num": "002",
+            "pages": 21,
+            "pdf_size": 159,
+            "description": ""
+        }
+    }
+]

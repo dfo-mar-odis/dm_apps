@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4000,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Unit 2 Redfish Stock Status Update",
+            "title_fr": "Mise à jour de l'état du stock de sébaste du l'UNITÉ 2",
+            "pub_year": 2004,
+            "lead_author_2": "Power, D.",
+            "pub_num": "016",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

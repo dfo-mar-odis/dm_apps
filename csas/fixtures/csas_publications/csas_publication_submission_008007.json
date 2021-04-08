@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8007,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of Atlantic Halibut (Hippoglossus hippoglossus) on the Scotian Shelf and Southern Grand Banks in NAFO Divisions 3NOPs4VWX5Zc",
+            "title_fr": "Mise à jour de l'état du stock de flétan (Hippoglossus hippoglossus) du plateau néo-écossais et du sud des grands bancs dans les divisions 3NOPs4VWX5Zc de l'OPANO",
+            "pub_year": 2018,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "022",
+            "pages": 9,
+            "pdf_size": 410,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3308,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "A Review of Ice Conditions and the Harp Seal Total Allowable Catch (TAC) for 2010",
+            "title_fr": "Un examen de l'état des glaces et du total autorisé de captures (TAC) du phoque du Groenland pour 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Hammill",
+            "pub_num": "004",
+            "pages": 14,
+            "pdf_size": 200,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7130,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Results from the 2012 and 2013 sentinel bottom-trawl surveys in the southern Gulf of St. Lawrence and comparisons with previous 2003 to 2011 surveys",
+            "title_fr": "Résultats des relevés par pêche sentinelle au chalut de fond de 2012 et 2013 dans le sud du golfe du Saint-Laurent et comparaison avec les relevés précédents de 2003 à 2011",
+            "pub_year": 2014,
+            "lead_author_2": "Luc Savoie",
+            "pub_num": "054",
+            "pages": 68,
+            "pdf_size": 5887,
+            "description": ""
+        }
+    }
+]

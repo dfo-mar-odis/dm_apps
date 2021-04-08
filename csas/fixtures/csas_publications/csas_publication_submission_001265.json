@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1265,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the cod stock in Subdivision 3Ps",
+            "pub_year": 1983,
+            "lead_author_2": "C.A. Bishop; S. Gavaris",
+            "pub_num": "032",
+            "pages": 36,
+            "pdf_size": 1294,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1012,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Ecosystem Approaches to Fisheries Management Workshop; 31 August-2 September 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Murphy, O., O'Boyle, R.",
+            "pub_num": "038",
+            "description": ""
+        }
+    }
+]

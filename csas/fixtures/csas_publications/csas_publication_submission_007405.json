@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7405,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Incorporating Habitat Suitability into Productivity Estimates for Sea Scallops in Scallop Fishing Area 29 West",
+            "title_fr": "Intégration des habitats propices aux estimations de la productivité des pétoncles géants de la zone de pêche du pétoncle 29 ouest",
+            "pub_year": 2016,
+            "lead_author_2": "Smith, S.J., and Sameoto, J.A.",
+            "pub_num": "107",
+            "pages": 28,
+            "pdf_size": 955,
+            "description": ""
+        }
+    }
+]

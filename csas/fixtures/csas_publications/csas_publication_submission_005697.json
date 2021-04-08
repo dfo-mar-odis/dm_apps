@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5697,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "February 9, 2010 - Stock Assessment of Georges Bank Scallop - Regional Advisory Meeting - MARITIMES",
+            "description": ""
+        }
+    }
+]

@@ -109,6 +109,10 @@ class FAQ(models.Model):
     question_fr = models.TextField(blank=True, null=True, verbose_name=_("question (fr)"))
     answer_en = models.TextField(blank=True, null=True, verbose_name=_("answer (en)"))
     answer_fr = models.TextField(blank=True, null=True, verbose_name=_("answer (fr)"))
+    order = models.IntegerField(blank=True, null=True, verbose_name=_("display order"))
+
+    class Meta:
+        ordering = ['order', "id"]
 
     @property
     def tquestion(self):
@@ -464,6 +468,10 @@ class Trip(models.Model):
             else:
                 can_proceed = True
                 reason = _("All actionable requests have been actioned.")
+        # this is a special case of the below scenario, where no trips are ready for ADM but should still proceed
+        elif self.requests.count() == self.requests.filter(Q(status=11) | Q(status=8) | Q(status=10) | Q(status=22)).count():
+            can_proceed = True
+            reason = _("All actionable requests have already been approved.")
         elif not self.requests.filter(status=14).exists():
             can_proceed = False
             reason = _("there are no requests ready for ADM approval.")
@@ -476,13 +484,13 @@ class Trip(models.Model):
 class TripRequest(models.Model):
     status_choices = (
         (8, _("Draft")),
-        (10, _("Denied")),
-        (11, _("Approved")),
+        (17, _("Pending Review")),
         (12, _("Pending Recommendation")),
         (14, _("Pending ADM Approval")),
         (15, _("Pending Expenditure Initiation")),
         (16, _("Changes Requested")),
-        (17, _("Pending Review")),
+        (10, _("Denied")),
+        (11, _("Approved")),
         (22, _("Cancelled")),
     )
     uuid = models.UUIDField(blank=True, null=True, verbose_name="unique identifier", editable=False)
@@ -519,6 +527,20 @@ class TripRequest(models.Model):
         self.save()
         # reset all the reviewer statuses
         utils.end_request_review_process(self)
+
+    def submit(self):
+        self.submitted = timezone.now()
+        # if there is not an original submission date, add one
+        if not self.original_submission_date:
+            self.original_submission_date = timezone.now()
+        # if the request is being resubmitted, this is a special case...
+        if self.status == 16:
+            self.status = 8  # it doesn't really matter what we set the status to. The approval_seeker func will handle this
+            self.save()
+        else:
+            # set all the reviewer statuses to 'queued'
+            self.save()
+            utils.start_request_review_process(self)
 
     @property
     def travellers_from_other_requests(self):
@@ -863,7 +885,7 @@ class Traveller(models.Model):
 
 
 class TravellerCost(models.Model):
-    traveller = models.ForeignKey(Traveller, on_delete=models.CASCADE, related_name="costs", verbose_name=_("traveller"), blank=True, null=True)
+    traveller = models.ForeignKey(Traveller, on_delete=models.CASCADE, related_name="costs", verbose_name=_("traveller"))
     cost = models.ForeignKey(Cost, on_delete=models.DO_NOTHING, related_name="trip_request_costs", verbose_name=_("cost"))
     rate_cad = models.FloatField(verbose_name=_("daily rate (CAD/day)"), blank=True, null=True)
     number_of_days = models.FloatField(verbose_name=_("number of days"), blank=True, null=True)
@@ -887,12 +909,12 @@ class TravellerCost(models.Model):
 
 class Reviewer(models.Model):
     status_choices = (
+        (4, _("Draft")),
+        (20, _("Queued")),
         (1, _("Pending")),
         (2, _("Approved")),
         (3, _("Denied")),
-        (4, _("Draft")),
         (5, _("Cancelled")),
-        (20, _("Queued")),
         (21, _("Skipped")),
     )
     role_choices = (
@@ -902,9 +924,9 @@ class Reviewer(models.Model):
         (4, _("ADM Recommender")),
         (5, _("ADM")),
         (6, _("Expenditure Initiation")),
-        (7, _("RDG (Expenditure Initiation)")), # this is temporary until RDG is actually looped into the process
+        (7, _("RDG (Expenditure Initiation)")),  # this is temporary until RDG is actually looped into the process
     )
-    request = models.ForeignKey(TripRequest, on_delete=models.CASCADE, related_name="reviewers", blank=True, null=True)  # todo remove the non-null!!!!
+    request = models.ForeignKey(TripRequest, on_delete=models.CASCADE, related_name="reviewers")  # todo remove the non-null!!!!
     order = models.IntegerField(null=True, verbose_name=_("process order"))
     user = models.ForeignKey(AuthUser, on_delete=models.DO_NOTHING, related_name="reviewers", verbose_name=_("DM Apps user"))
     role = models.IntegerField(verbose_name=_("role"), choices=role_choices)

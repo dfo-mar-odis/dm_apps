@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1013,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Autumn Finfish Stock Assessment Meeting Regional Advisory Process, Maritimes Region; 1-5 November 1999",
+            "pub_year": 1999,
+            "lead_author_2": "R.G. Halliday",
+            "pub_num": "039",
+            "description": ""
+        }
+    }
+]

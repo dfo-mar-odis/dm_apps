@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5778,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Wolffish (Anarhichas sp.) landings in the estuary and Gulf of St. Lawrence (1960-2009) recorded in commercial fisheries statistics ",
+            "title_fr": "Débarquements de loups (Anarhichas sp.) dans l'estuaire et le golfe du Saint-Laurent (1960-2009) selon les statistiques de pêche commerciale ",
+            "pub_year": 2010,
+            "lead_author_2": "Jean-François Ouellet",
+            "pub_num": "125",
+            "pdf_size": 290,
+            "description": ""
+        }
+    }
+]

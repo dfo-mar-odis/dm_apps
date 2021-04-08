@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4288,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of the impacts of dredging on fish species at risk in Lake St Clair, Ontario",
+            "title_fr": "Évaluation des impacts du dragage sur les espèces de poissons en péril dans le Lac St. Clair, Ontario",
+            "pub_year": 2015,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "050",
+            "pages": 6,
+            "pdf_size": 132,
+            "description": ""
+        }
+    }
+]

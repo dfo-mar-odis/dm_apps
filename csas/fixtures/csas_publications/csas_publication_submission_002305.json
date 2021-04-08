@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2305,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the southwest Scotian Shelf and Bay of Fundy cod",
+            "pub_year": 1993,
+            "lead_author_2": "S. Gavaris",
+            "pub_num": "032",
+            "pages": 27,
+            "pdf_size": 1389,
+            "description": ""
+        }
+    }
+]

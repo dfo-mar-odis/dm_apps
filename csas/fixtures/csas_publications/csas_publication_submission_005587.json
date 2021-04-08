@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5587,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Gulf Region Science Advisory Process on Reference Points and Assessment of Snow Crab from the southern Gulf of St. Lawrence; February 22 to 26, 2010",
+            "title_fr": "Compte-rendu de la Région du Golfe Processus de consultation scientifique sur les Points de Référence et l'Évaluation de Crabe des Neiges du sud du Golfe du Saint-Laurent ; du 22 au 26 février 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Chaput, G., Biron, M.",
+            "pub_num": "042",
+            "pages": 51,
+            "pdf_size": 316,
+            "description": ""
+        }
+    }
+]

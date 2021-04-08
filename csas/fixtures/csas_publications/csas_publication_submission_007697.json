@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7697,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Fishery performance and status indicators for the assessment of the NAFO Division 4T southern Gulf of St. Lawrence Atlantic herring (Clupea harengus) to 2014 and 2015",
+            "title_fr": "Indicateurs de performance et de l'état des pêches pour l'évaluation du hareng de l’Atlantique (Clupea harengus) dans la division 4T de l'OPANO au sud du golfe du Saint-Laurent pour 2014 et 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Jenni McDermid",
+            "pub_num": "060",
+            "pages": 71,
+            "pdf_size": 4374,
+            "description": ""
+        }
+    }
+]

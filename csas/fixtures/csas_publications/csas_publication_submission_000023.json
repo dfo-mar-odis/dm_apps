@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 23,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Age composition, growth and maturity of cod in inshore waters of 3Ps as determined from sentinel surveys",
+            "pub_year": 1998,
+            "lead_author_2": "Lilly, G.R., Brattey, J., Davis, M.B.",
+            "pub_num": "023",
+            "pages": 30,
+            "description": ""
+        }
+    }
+]

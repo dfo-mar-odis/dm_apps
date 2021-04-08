@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 925,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Meeting 5 - December 18, 1996 - Regional Advisory Process (RAP) Habitat Submcommittee: The Middle Shoal Channel Environmental Effects Monitoring Program",
+            "pub_year": 1997,
+            "lead_author_2": "H.B. Nicholls (Chairperson and Rapporteur)",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

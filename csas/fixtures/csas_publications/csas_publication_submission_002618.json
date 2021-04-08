@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2618,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of witch flounder in NAFO Division 4RST, 1995",
+            "pub_year": 1996,
+            "lead_author_2": "R. Morin; G.A. Chouinard; I. Forest-Gallant; G.A. Poirier",
+            "pub_num": "071",
+            "pages": 25,
+            "pdf_size": 1736,
+            "description": ""
+        }
+    }
+]

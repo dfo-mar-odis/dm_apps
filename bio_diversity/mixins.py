@@ -51,6 +51,7 @@ class CntdMixin:
     model = models.CountDet
     title = _("Count Detail")
     admin_only = False
+    img = True
 
 
 class CollMixin:
@@ -99,6 +100,7 @@ class CupdMixin:
     model = models.CupDet
     title = _("Cup Detail")
     admin_only = False
+    img = True
 
 
 class DataMixin:
@@ -181,6 +183,22 @@ class EvntcMixin:
     admin_only = True
 
 
+class EvntfMixin:
+    key = "evntf"
+    form_class = forms.EvntfForm
+    model = models.EventFile
+    title = _("Event Files")
+    admin_only = False
+
+
+class EvntfcMixin:
+    key = "evntfc"
+    form_class = forms.EvntfcForm
+    model = models.EventFileCode
+    title = _("Event File Code")
+    admin_only = True
+
+
 class FacicMixin:
     key = "facic"
     form_class = forms.FacicForm
@@ -235,6 +253,7 @@ class GrpdMixin:
     model = models.GroupDet
     title = _("Group Detail")
     admin_only = False
+    img = True
 
 
 class HeatMixin:
@@ -251,6 +270,7 @@ class HeatdMixin:
     model = models.HeathUnitDet
     title = _("Heath Unit Detail")
     admin_only = False
+    img = True
 
 
 class ImgMixin:
@@ -283,6 +303,7 @@ class IndvdMixin:
     model = models.IndividualDet
     title = _("Individual Detail")
     admin_only = False
+    img = True
 
 
 class IndvtMixin:
@@ -339,6 +360,7 @@ class LocMixin:
     form_class = forms.LocForm
     title = _("Location")
     admin_only = False
+    img = True
 
 
 class LoccMixin:
@@ -347,14 +369,6 @@ class LoccMixin:
     form_class = forms.LoccForm
     title = _("Location Code")
     admin_only = True
-
-
-class MatpMixin:
-    key = "matp"
-    form_class = forms.MatpForm
-    model = models.MatingPlan
-    title = _("Mating Plan")
-    admin_only = False
 
 
 class MortMixin:
@@ -434,6 +448,7 @@ class ProtfMixin:
     title = _("Protocol File")
     admin_only = False
 
+
 class QualMixin:
     key = 'qual'
     model = models.QualCode
@@ -448,6 +463,13 @@ class RelcMixin:
     form_class = forms.RelcForm
     title = _("Site Code")
     admin_only = True
+
+
+class ReportMixin:
+    key = 'repr'
+    form_class = forms.ReportForm
+    title = _("Reports")
+    admin_only = False
 
 
 class RiveMixin:
@@ -473,6 +495,7 @@ class SampMixin:
     title = _("Sample ")
     admin_only = False
 
+
 class SampcMixin:
     key = 'sampc'
     model = models.SampleCode
@@ -487,6 +510,8 @@ class SampdMixin:
     form_class = forms.SampdForm
     title = _("Sample Detail")
     admin_only = False
+    img = True
+
 
 class SireMixin:
     key = 'sire'
@@ -495,12 +520,15 @@ class SireMixin:
     title = _("Sire")
     admin_only = False
 
+
 class SpwndMixin:
     key = 'spwnd'
     model = models.SpawnDet
     form_class = forms.SpwndForm
     title = _("Spawning Detail")
     admin_only = False
+    img = True
+
 
 class SpwndcMixin:
     key = 'spwndc'
@@ -549,12 +577,15 @@ class TankMixin:
     title = _("Tank")
     admin_only = False
 
+
 class TankdMixin:
     key = 'tankd'
     model = models.TankDet
     form_class = forms.TankdForm
     title = _("Tank Detail")
     admin_only = False
+    img = True
+
 
 class TeamMixin:
     key = 'team'
@@ -563,6 +594,7 @@ class TeamMixin:
     title = _("Team")
     admin_only = False
 
+
 class TrayMixin:
     key = 'tray'
     model = models.Tray
@@ -570,12 +602,15 @@ class TrayMixin:
     title = _("Tray")
     admin_only = False
 
+
 class TraydMixin:
     key = 'trayd'
     model = models.TrayDet
     form_class = forms.TraydForm
     title = _("Tray Detail")
     admin_only = False
+    img = True
+
 
 class TribMixin:
     key = 'trib'
@@ -592,12 +627,15 @@ class TrofMixin:
     title = _("Trough")
     admin_only = False
 
+
 class TrofdMixin:
     key = 'trofd'
     model = models.TroughDet
     form_class = forms.TrofdForm
     title = _("Trough Detail")
     admin_only = False
+    img = True
+
 
 class UnitMixin:
     key = 'unit'

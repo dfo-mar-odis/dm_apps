@@ -37,10 +37,68 @@
 </style>
 {% endblock %}
 
-{% block body %}
+{% block subcontent %}
     {{ block.super }}
-{% endblock body %}
+    <div class="container-fluid container">
+        <h3>Model Fields</h3>
+        <table class="table">
+            <thead><tr><th>#</th><th>Label</th><th>Field Name</th></tr></thead>
+            <tbody id="field_names"></tbody>
+        </table>
+    </div>
+{% endblock subcontent %}
 
 {% block left_auth %}
     {% include "bio_diversity/bio_diversity_nav.html" %}
 {% endblock left_auth %}
+
+
+{% block jquery_import %}
+    <!-- The slim.min version of jquery doesn't include the ajax function so I've overridden in here -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+{% endblock %}
+
+{% block body_js %}
+    <script type="application/javascript">
+
+        function change_field_names(model, field) {
+            var id_field = field.replace(/-model/g, "-field_name");
+
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'bio_diversity:ajax_get_fields' %}",
+                data: {
+                    'model': model
+                },
+                dataType: 'json',
+                success: function(data) {
+                    var d = '';
+
+                    for(i=0; i < data['fields'].length; i++) {
+                        d += "<tr><td>" +(i+1) + "</td><td>" + data['fields'][i][1] + "</td><td>" + data['fields'][i][0] + "</td></tr>"
+                    }
+                    $("#field_names").html(d);
+                },
+                error: function(response) {
+                    alert(response["responseJSON"]["error"]);
+                }
+            });
+        }
+
+        $("input.form-control").focus(function() {
+            var field = $(this).attr('id');
+            var id_field = field.replace(/-field_name/g, "-model");
+            var model = $("#" + id_field).val();
+
+            change_field_names(model, field)
+        });
+
+        $("select.form-control").change(function() {
+            var model = $(this).val();
+            var field = $(this).attr('id');
+
+            change_field_names(model, field)
+        });
+    </script>
+    {{ block.super }}
+{% endblock body_js %}

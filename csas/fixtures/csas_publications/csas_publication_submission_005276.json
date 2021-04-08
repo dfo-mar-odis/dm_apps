@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5276,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Offshore Lobster in Lobster Fishing Area 41 (4X and 5Zc)",
+            "title_fr": "La pêche hauturière du homard de la zone de pêche du homard 41 (4X et 5Zc)",
+            "pub_year": 2009,
+            "lead_author_2": "Pezzack, D.S., C.M. Frail, A. Reeves, M.J. Tremblay.",
+            "pub_num": "023",
+            "description": ""
+        }
+    }
+]

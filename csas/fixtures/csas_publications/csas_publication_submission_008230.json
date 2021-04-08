@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8230,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Science information to support consideration of risks to Cultus Lake Sockeye Salmon in 2018",
+            "title_fr": "Information scientifique à l’appui de la prise en compte des risques pesant sur le saumon rouge du lac Cultus en 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Mary Theiss",
+            "pub_num": "052",
+            "pages": 16,
+            "pdf_size": 390,
+            "description": ""
+        }
+    }
+]

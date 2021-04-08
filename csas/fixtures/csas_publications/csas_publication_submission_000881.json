@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 881,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Herring assessment in Div. 4WX",
+            "pub_year": 1978,
+            "lead_author_2": "W.T. Stobo; D.F. Gray; K. Metuzals",
+            "pub_num": "025",
+            "pages": 17,
+            "pdf_size": 1208,
+            "description": ""
+        }
+    }
+]

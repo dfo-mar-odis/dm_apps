@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8039,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Design Guidance for a Network of Marine Protected Areas in the Scotian Shelf Bioregion (Part 2); Nov 2-3, 2016",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

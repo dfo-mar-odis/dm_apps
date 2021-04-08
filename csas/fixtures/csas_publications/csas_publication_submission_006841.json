@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6841,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Integrated fishery stock assessment plan for sustainable harvest of lake whitefish in GSL, NWT",
+            "lead_author_2": "Xinhua Zhu",
+            "description": ""
+        }
+    }
+]

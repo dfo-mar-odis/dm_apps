@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1369,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of pollock (Pollachius virens) in Division 4VWX and Subdivision 5Zc for 1993",
+            "pub_year": 1994,
+            "lead_author_2": "E.A. Trippel; L.L. Brown",
+            "pub_num": "067",
+            "pages": 44,
+            "pdf_size": 1569,
+            "description": ""
+        }
+    }
+]

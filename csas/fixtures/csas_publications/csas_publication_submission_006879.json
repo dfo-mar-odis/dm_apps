@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6879,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Meeting of the 2016 National Marine Mammal Peer Review Committee (NMMPRC); October 17-21, 2017",
+            "title_fr": "Compte rendu de la réunion Comité national d’examen par les pairs sur les mammifères marins (CNEPMM) de 2016; du 17 au 21 octobre 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Abraham, C.",
+            "pub_num": "011",
+            "pages": 29,
+            "pdf_size": 606,
+            "description": ""
+        }
+    }
+]

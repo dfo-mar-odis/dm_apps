@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5568,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Physical Oceanographic Conditions in the Gulf of St. Lawrence in 2009",
+            "title_fr": "Conditions d'océanographie physique dans le golfe du Saint-Laurent en 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Galbraith, P.S.",
+            "pub_num": "035",
+            "pages": 77,
+            "pdf_size": 11075,
+            "description": ""
+        }
+    }
+]

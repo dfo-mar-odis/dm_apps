@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8374,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review of a reproducible data synopsis for over 100 species of British Columbia groundfish; November 22-23, 2018",
+            "title_fr": "Compte rendu de l’examen, par les pairs de la région du Pacifique, d’une synthèse des données reproductible pour plus de 100 espèces de poisson de fond de la Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Mary Thiess",
+            "pub_num": "011",
+            "pages": 28,
+            "pdf_size": 427,
+            "description": ""
+        }
+    }
+]

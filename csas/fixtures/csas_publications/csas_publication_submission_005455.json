@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5455,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of a National Science Advisory Process to Review the Potential Impacts of Fishing Gears (excluding mobile bottom-contacting gears) on Marine Habitats and Communities; January 11-14, 2010",
+            "title_fr": "Compte rendu d'un processus de consultation scientifique nationale d'étude des impacts possibles des engins de pêche (sauf les engins mobiles en contact avec le fond) sur les communautés et les habitats marins; du 11 au 14 janvier 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Jake Rice, and Andrea White",
+            "pub_num": "002",
+            "pages": 35,
+            "pdf_size": 176,
+            "description": ""
+        }
+    }
+]

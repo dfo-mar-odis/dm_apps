@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4630,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment for British Columbia Herring in 2006 and Forecasts of the Potential Catch in 2007",
+            "title_fr": "Évaluation de 2006 des stocks de hareng de la Colombie-Britannique et prévisions des prises pour 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Schweigert, J., V. Haist.",
+            "pub_num": "002",
+            "pages": 71,
+            "pdf_size": 1351,
+            "description": ""
+        }
+    }
+]

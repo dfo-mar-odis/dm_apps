@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4248,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Musquash Estuary: A Proposed Monitoring Framework for the Marine Protected Area (MPA) and Intertidal Area Administered (AIA) by Fisheries and Oceans Canada ",
+            "title_fr": "Estuaire de la Musquash : Proposition de cadre de surveillance de la zone de protection marine (ZPM) et de la zone intertidale administrée par Pêches et Océans Canada",
+            "pub_year": 2011,
+            "lead_author_2": "J. Andrew Cooper, Kristian Curran, Rabindra Singh, Blythe Chang, and Fred H. Page /  Eddy Kennedy / Valerie Myra",
+            "pub_num": "055",
+            "pages": 39,
+            "pdf_size": 425,
+            "description": ""
+        }
+    }
+]

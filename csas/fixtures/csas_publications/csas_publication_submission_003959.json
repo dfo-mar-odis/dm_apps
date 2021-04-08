@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3959,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Status and Lake-Based Production Relationships for Wild Skeena River Sockeye Salmon",
+            "title_fr": "État des stocks de saumon rouge sauvage de la rivière Skeena et relations avec la production en lac",
+            "pub_year": 2004,
+            "lead_author_2": "Cox-Rogers, S., Hume, J.M.B., Shortreed, K.S.",
+            "pub_num": "010",
+            "pages": 60,
+            "pdf_size": 1262,
+            "description": ""
+        }
+    }
+]

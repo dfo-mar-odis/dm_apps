@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2413,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1991-1994 Bay of Fundy scallop stock surveys and fishery statistics: Brier Island and Lurcher Shoal and an evaluation of the effectiveness of the meat count by regulation for these stocks",
+            "pub_year": 1995,
+            "lead_author_2": "E. Kenchington; M.J. Lundy; D.L. Roddick",
+            "pub_num": "009",
+            "pages": 24,
+            "pdf_size": 1622,
+            "description": ""
+        }
+    }
+]

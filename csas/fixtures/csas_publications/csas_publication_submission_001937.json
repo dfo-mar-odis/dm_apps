@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1937,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of American Plaice, Hippoglossoides platessoides, in NAFO Division 4T",
+            "pub_year": 1989,
+            "lead_author_2": "Ross Tallman; Alan Sinclair",
+            "pub_num": "065",
+            "pages": 40,
+            "pdf_size": 1889,
+            "description": ""
+        }
+    }
+]

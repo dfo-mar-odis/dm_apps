@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6773,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Bayesian State Space Biomass Dynamic Modelling and Assessment of 4VWX Silver Hake 1993-2012",
+            "title_fr": "Évaluation et modélisation de la dynamique de la biomasse du modèle bayésien de type état-espace pour le merlu argenté de 4VWX de 1993 à 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Cook, A.M.",
+            "pub_num": "009",
+            "pages": 38,
+            "pdf_size": 920,
+            "description": ""
+        }
+    }
+]

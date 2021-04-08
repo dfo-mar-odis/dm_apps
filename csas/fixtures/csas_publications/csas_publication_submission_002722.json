@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2722,
+        "fields": {
+            "series": 8,
+            "lead_region": [1],
+            "title_en": "Potential Impacts of Seismic Energy on Snow Crab",
+            "title_fr": "Impacts possibles de la prospection sismique sur le crabe des neiges",
+            "pub_year": 2004,
+            "lead_author_2": "Chadwick, M.",
+            "pub_num": "003",
+            "pages": 5,
+            "pdf_size": 58,
+            "description": ""
+        }
+    }
+]

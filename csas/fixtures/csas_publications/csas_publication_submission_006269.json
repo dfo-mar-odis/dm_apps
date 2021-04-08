@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6269,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Transport and dispersal of sea lice bath therapeutants from salmon farm net-pens and well-boats operated in Southwest New Brunswick: a mid-project perspective and perspective for discussion",
+            "title_fr": "Transport et dispersion des produits thérapeutiques contre le pou du poisson des installations salmonicoles utilisés en bassins à partir de parcs en filet et de bateaux viviers",
+            "pub_year": 2014,
+            "lead_author_2": "Page, F., Chang, B.D., Beattie, M., Losier, R., McCurdy, P., Bakker, J., Haughn, K., Thorpe, B., Fife, J., Scouten, S., Bartlett, G., and Ernst, B.",
+            "pub_num": "102",
+            "pages": 68,
+            "pdf_size": 5504,
+            "description": ""
+        }
+    }
+]

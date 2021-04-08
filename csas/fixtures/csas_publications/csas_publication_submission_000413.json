@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 413,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1979 4WX herring assessment",
+            "pub_year": 1980,
+            "lead_author_2": "M.M. Sinclair; T.D. Iles",
+            "pub_num": "047",
+            "pages": 47,
+            "pdf_size": 1725,
+            "description": ""
+        }
+    }
+]

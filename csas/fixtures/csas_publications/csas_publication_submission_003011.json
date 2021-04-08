@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3011,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Salmon Maritime Provinces : Overview for 1999",
+            "title_fr": "Stocks de saumon atlantique des provinces Maritimes: Vue d'ensemble (1999)",
+            "pub_year": 2000,
+            "lead_author_2": "John Ritter",
+            "pub_num": "D3-14",
+            "pages": 38,
+            "pdf_size": 629,
+            "description": ""
+        }
+    }
+]

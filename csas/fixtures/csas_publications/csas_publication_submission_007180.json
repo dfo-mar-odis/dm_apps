@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7180,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Assessment of the Newfoundland West Coast (4R) Herring Stocks; June 11, 2014",
+            "title_fr": "Compte rendu de l'examen régional par des pairs sur l'évaluation du hareng de la côte ouest de Terre-Neuve (4R); 11 juin 2014",
+            "pub_year": 2014,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "027",
+            "pages": 12,
+            "pdf_size": 205,
+            "description": ""
+        }
+    }
+]

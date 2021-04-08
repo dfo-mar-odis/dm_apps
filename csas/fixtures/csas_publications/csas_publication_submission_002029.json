@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2029,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process on the Assessments of Scotia-Fundy Groundfish Stocks; 23 October 2006 and 16 - 17 November 2006",
+            "title_fr": "Compte rendu des réunions du Processus consultatif des provinces Maritimes au sujet des stocks de poisson de fond de Scotia-Fundy; le 23 octobre 2006 et les 16 et 17 novembre 2006",
+            "pub_year": 2006,
+            "pub_num": "035",
+            "pages": 22,
+            "pdf_size": 111,
+            "description": ""
+        }
+    }
+]

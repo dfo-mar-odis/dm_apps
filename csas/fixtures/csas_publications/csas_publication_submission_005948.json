@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5948,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Science advice from the risk assessment for ship-mediated introductions of aquatic nonindigenous species to the Canadian Arctic",
+            "title_fr": "Avis scientifique découlant de l'évaluation du risque d'introduction, par les navires, d'espèces aquatiques non indigènes dans l'arctique canadien",
+            "pub_year": 2011,
+            "lead_author_2": "Heather Niblock",
+            "pub_num": "067",
+            "pages": 11,
+            "pdf_size": 212,
+            "description": ""
+        }
+    }
+]

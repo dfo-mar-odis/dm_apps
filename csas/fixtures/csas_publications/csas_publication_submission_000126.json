@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 126,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Northern Labrador Arctic charr and Atlantic salmon: catch and effort update for 1997",
+            "pub_year": 1998,
+            "lead_author_2": "M. Shears, J.B. Dempson",
+            "pub_num": "100",
+            "description": ""
+        }
+    }
+]

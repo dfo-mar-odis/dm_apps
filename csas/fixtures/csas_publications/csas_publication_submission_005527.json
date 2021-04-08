@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5527,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Science Advisory Process concerning corals, sponges, and hydrothermal vents in Canadian waters; March 9 - 12, 2010",
+            "title_fr": "Processus national de consultation scientifique concernant les coraux, les éponges et les griffons hydrothermaux dans les eaux canadiennes; du 9 au 12 mars 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Brodie, W.B., Campbell, S., White, A.",
+            "pub_num": "027",
+            "pages": 54,
+            "pdf_size": 275,
+            "description": ""
+        }
+    }
+]

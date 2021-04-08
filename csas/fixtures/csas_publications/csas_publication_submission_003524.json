@@ -1,0 +1,19 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3524,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Herring acoustic surveys for 2001 in NAFO Divisions 4WX",
+            "title_fr": "Relevés acoustiques du hareng de 2001 dans les divisions 4VWX de l'OPANO",
+            "pub_year": 2002,
+            "lead_author_2": "G.D. Melvin, L. M.Annis, M.J. Power, F.J. Fife, K.J. Clark, R.L Stephenson,
+K.J. Clark, and R.L. Stephenson",
+            "pub_num": "044",
+            "pages": 51,
+            "pdf_size": 545,
+            "description": ""
+        }
+    }
+]

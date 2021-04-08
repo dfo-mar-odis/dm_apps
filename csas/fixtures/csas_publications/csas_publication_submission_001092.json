@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1092,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Fortune Bay herring: A stock in the process of executing the limbo",
+            "pub_year": 1980,
+            "lead_author_2": "G.H. Winters; J.A. Moores",
+            "pub_num": "076",
+            "pages": 16,
+            "pdf_size": 849,
+            "description": ""
+        }
+    }
+]

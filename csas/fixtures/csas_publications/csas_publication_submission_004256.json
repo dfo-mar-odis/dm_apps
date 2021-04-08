@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4256,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Sources of Bias and Uncertainty in Seal Diet Composition: Hard Part and Fatty Acid Analysis",
+            "title_fr": "Sources de biais et d'incertitudes en ce qui concerne la composition du régime alimentaire du phoque : analyse des parties dures et des acides gras",
+            "pub_year": 2011,
+            "lead_author_2": "W.D. Bowen",
+            "pub_num": "025",
+            "pages": 24,
+            "pdf_size": 165,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2069,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An investigation of white hake (Urophycis tenuis) population structure in the southern Gulf of St. Lawrence NAFO Division 4T using morphometric and meristic characters",
+            "pub_year": 1990,
+            "lead_author_2": "Thomas Hurlbut; Douglas Clay",
+            "pub_num": "068",
+            "pages": 59,
+            "pdf_size": 2975,
+            "description": ""
+        }
+    }
+]

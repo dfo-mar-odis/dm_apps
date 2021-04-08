@@ -1,0 +1,20 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3899,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Atlantic mackerel (Scomber scombrus L.) fishery and biology in NAFO Subareas 3 and 4 in 2002",
+            "title_fr": "Pêche et biologie du maquereau (Scomber scombus L.) des sous-régions 3 et 4 de l'OPANO en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Grégoire, F., Lévesque, C., Guérin, J., Hudon, J. and Lavers, J.
+
+Réviseurs : Jean-Denis Lambert et Jean-Louis Beaulieu",
+            "pub_num": "085",
+            "pages": 40,
+            "pdf_size": 2085,
+            "description": ""
+        }
+    }
+]

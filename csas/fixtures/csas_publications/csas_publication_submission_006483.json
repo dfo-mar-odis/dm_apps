@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6483,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Risk-based Assessment Framework to Identify Priorities for Ecosystem-based Oceans Management in the Pacific Region",
+            "title_fr": "Cadre d'évaluation fondé sur les risques visant à déterminer les priorités pour la gestion écosystémique des océans dans la région du Pacifique",
+            "pub_year": 2012,
+            "lead_author_2": "John Holmes",
+            "pub_num": "044",
+            "pages": 13,
+            "pdf_size": 353,
+            "description": ""
+        }
+    }
+]

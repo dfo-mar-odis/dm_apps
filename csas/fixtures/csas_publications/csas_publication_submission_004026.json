@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4026,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Allowable Harm Assessment for Inner Bay of Fundy Atlantic Salmon",
+            "title_fr": "Évaluation des dommages acceptables au saumon atlantique de l'arrière-baie de Fundy",
+            "pub_year": 2004,
+            "lead_author_2": "Amero, P., McPherson, A.,",
+            "pub_num": "030",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

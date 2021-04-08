@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5892,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional advisory meeting on the Recovery Potential Assessment of Pacific Eulachon (Thaleichthys pacificus); March 23-24, 2011",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région du Pacifique sur l’Évaluation du potentiel de rétablissement (EPR) de l'eulakan (Thaleichthys pacificus); du 23 au 24 mars 2011",
+            "pub_year": 2017,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "004",
+            "pages": 53,
+            "pdf_size": 641,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2080,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic salmon of the Saint John River, N.B., above Mactaquac, 1989",
+            "pub_year": 1990,
+            "lead_author_2": "T.L. Marshall",
+            "pub_num": "079",
+            "pages": 23,
+            "pdf_size": 1158,
+            "description": ""
+        }
+    }
+]

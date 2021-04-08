@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4319,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Provinces Regional Advisory Process 4T / 4VWX Herring Stocks; 29-31 March 2005",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional des provinces Maritimes sur les stocks de hareng de 4T et de 4VWX; du 29 au 31 mars 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Neilson, J.D.",
+            "pub_num": "014",
+            "pages": 33,
+            "pdf_size": 246,
+            "description": ""
+        }
+    }
+]

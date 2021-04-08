@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7800,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Abundance indices and selectivity curves from experimental multi-panel gillnets for the southern Gulf of Saint. Lawrence fall herring fishery",
+            "title_fr": "Indices d'abondance et courbes de sélectivité issus de la pêche aux filets maillants expérimentaux à panneaux multiples du hareng d'automne dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2016,
+            "lead_author_2": "Tobie Surette",
+            "pub_num": "067",
+            "pages": 29,
+            "pdf_size": 1032,
+            "description": ""
+        }
+    }
+]

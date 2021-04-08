@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4724,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Gaspereau River Alewife",
+            "title_fr": "Évaluation du gaspareau de la rivière Gaspereau",
+            "pub_year": 2007,
+            "lead_author_2": "Bradford, R.",
+            "pub_num": "030",
+            "pages": 8,
+            "pdf_size": 276,
+            "description": ""
+        }
+    }
+]

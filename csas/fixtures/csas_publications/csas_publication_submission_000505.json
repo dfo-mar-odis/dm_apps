@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 505,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A review of hooking mortality rates for marine recreational coho and chinook salmon fisheries in British Columbia",
+            "pub_year": 1999,
+            "lead_author_2": "Cox-Rogers, S., Gjernes, T., Fast, E.",
+            "pub_num": "127",
+            "pages": 17,
+            "pdf_size": 186,
+            "description": ""
+        }
+    }
+]

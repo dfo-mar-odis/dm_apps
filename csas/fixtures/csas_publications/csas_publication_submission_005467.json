@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5467,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Quantifying the fluvial habitat needed for the re-introduction of Atlantic Salmon (Salmo salar) in Lake Ontario ",
+            "title_fr": "Quantification de l'habitat fluvial nécessaire à la réintroduction du saumon atlantique (Salmo salar) dans le lac Ontario",
+            "pub_year": 2009,
+            "lead_author_2": "R.G. Randall",
+            "pub_num": "110",
+            "pages": 18,
+            "pdf_size": 1150,
+            "description": ""
+        }
+    }
+]

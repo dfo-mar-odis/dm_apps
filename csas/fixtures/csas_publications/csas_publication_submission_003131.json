@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3131,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Scotian Shelf Scallop",
+            "title_fr": "Pétoncle de l'est du plateau néo-écossais",
+            "pub_year": 1997,
+            "lead_author_2": "Ginette Robert",
+            "pub_num": "C3-19",
+            "pages": 4,
+            "pdf_size": 57,
+            "description": ""
+        }
+    }
+]

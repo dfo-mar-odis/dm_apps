@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6878,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Considerations for Marine Protected Area network planning on the Atlantic Coast of Nova Scotia with a focus on the identification of Ecologically and Biologically Significant Areas",
+            "title_fr": "Éléments à prendre en compte dans le cadre de la planification du réseau d'aires marines protégées sur la côte atlantique de la Nouvelle-Écosse axée sur l'identification des zones d'importance écologique et biologique",
+            "pub_year": 2013,
+            "lead_author_2": "Gromack, A., and Allard, K.",
+            "pub_num": "066",
+            "pages": 37,
+            "pdf_size": 291,
+            "description": ""
+        }
+    }
+]

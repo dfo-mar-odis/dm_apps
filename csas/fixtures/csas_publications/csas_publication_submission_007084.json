@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7084,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Comparison of methods to estimate grey seal pup production at different colonies",
+            "title_fr": "Comparaison des méthodes pour évaluer la production de jeunes phoques gris dans différentes colonies",
+            "pub_year": 2017,
+            "lead_author_2": "Hammill, M.O., Dale, J., Stenson, G.B., den Heyer, C., Gosselin, J.-F., Leblanc, P., and Johnston, D.W.",
+            "pub_num": "041",
+            "pages": 23,
+            "pdf_size": 1896,
+            "description": ""
+        }
+    }
+]

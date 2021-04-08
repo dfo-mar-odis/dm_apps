@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4891,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The status of cod in the Northern Gulf of St. Lawrence (3Pn, 4RS) in 2006",
+            "title_fr": "L'état du stock de morue du nord du golfe du Saint-Laurent (3Pn, 4RS) en 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Fréchet, A., J. Gauthier, P. Schwab, H. Bourdages, C. Tournois, J. Spingle, M. Way, F. Collier.",
+            "pub_num": "068",
+            "pages": 89,
+            "description": ""
+        }
+    }
+]

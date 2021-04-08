@@ -22,6 +22,8 @@ var app = new Vue({
     userRequests: [],
     userTripRequestReviews: [],
     userTripReviews: [],
+    faqs: [],
+    faqSearch: '',
 
     // vuetify
     alignTop: false,
@@ -53,6 +55,15 @@ var app = new Vue({
           .then(response => {
             if (response.length) {
               this.adminWarnings = response;
+            }
+          })
+    },
+    getFAQs() {
+      let endpoint = `/api/travel/faqs/`;
+      apiService(endpoint)
+          .then(response => {
+            if (response.length) {
+              this.faqs = response;
             }
           })
     },
@@ -105,9 +116,22 @@ var app = new Vue({
     isNCRAdmin() {
       return this.currentUser.is_ncr_admin;
     },
+    foundFAQs() {
+      if (this.faqSearch && this.faqSearch !== '') {
+        myArray = []
+        for (var i = 0; i < this.faqs.length; i++) {
+          if (this.faqs[i].tquestion.toLowerCase().search(this.faqSearch.toLowerCase()) > -1 || this.faqs[i].tanswer.toLowerCase().search(this.faqSearch.toLowerCase()) > -1) {
+            myArray.push(this.faqs[i])
+          }
+        }
+        return myArray
+      }
+      return this.faqs
+    }
   },
   created() {
     this.getCurrentUser()
+    this.getFAQs()
   },
   mounted() {
   },

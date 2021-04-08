@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5187,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Preliminary assessment of the suitability of Canadian Great Lakes tributaries for Asian Carp spawning",
+            "pub_year": 2020,
+            "lead_author_2": "Mandrak, N.E., Grafe, S., Lewin, A., and Hunter, P.",
+            "pub_num": "042",
+            "description": ""
+        }
+    }
+]

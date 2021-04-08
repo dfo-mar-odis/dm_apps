@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4643,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery potential assessment for white sturgeon",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'esturgeon blanc",
+            "pub_year": 2007,
+            "lead_author_2": "Wood, C.W.",
+            "pub_num": "014",
+            "pages": 7,
+            "pdf_size": 168,
+            "description": ""
+        }
+    }
+]

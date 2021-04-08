@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2481,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Analysis of replacement in eight northwest Atlantic cod stocks",
+            "pub_year": 1995,
+            "lead_author_2": "P.A. Shelton",
+            "pub_num": "075",
+            "pages": 11,
+            "pdf_size": 447,
+            "description": ""
+        }
+    }
+]

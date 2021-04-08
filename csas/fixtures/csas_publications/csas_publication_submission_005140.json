@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5140,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment and Management Advice for the British Columbia Pacific Herring Stocks: 2012 Assessment and 2013 Forecasts",
+            "lead_author_2": "Cleary, Jaclyn",
+            "description": ""
+        }
+    }
+]

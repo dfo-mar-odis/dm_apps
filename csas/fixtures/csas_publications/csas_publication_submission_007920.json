@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7920,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of Main Indicators of Stock Status for Units 1 and 2 Redfish in 2016",
+            "title_fr": "Mise à jour des principaux indicateurs de l'état des stocks de sébastes des unités 1 et 2 en 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Daniel Duplisea",
+            "pub_num": "023",
+            "pages": 10,
+            "pdf_size": 713,
+            "description": ""
+        }
+    }
+]

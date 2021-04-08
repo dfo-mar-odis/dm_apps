@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3563,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Estimated Consumption of Atlantic Cod (Gadus morhuas) And Some Other Prey By Grey seals (Halichoerus grypus) And Harp seals(Phoca groenlandica), In The Southern Gulf Of St Lawrence (NAFO zone 4T)",
+            "pub_year": 2002,
+            "lead_author_2": "Hammill, M.O., Stenson, G.B.",
+            "pub_num": "054",
+            "pages": 38,
+            "pdf_size": 857,
+            "description": ""
+        }
+    }
+]

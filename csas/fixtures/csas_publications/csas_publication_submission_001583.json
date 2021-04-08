@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1583,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Analysis of the cod stock in NAFO Division 2GH",
+            "pub_year": 1985,
+            "lead_author_2": "J. Baird; C. Bishop",
+            "pub_num": "076",
+            "pages": 7,
+            "pdf_size": 487,
+            "description": ""
+        }
+    }
+]

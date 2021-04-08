@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 485,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Developing an overall indicator for monitoring temporal variation in fish size at age and its application to cod (Gadus morhua) in the Northwest Atlantic, NAFO subdivision 3Ps",
+            "pub_year": 1999,
+            "lead_author_2": "Chen, Y., Mello, L.G.S.",
+            "pub_num": "115",
+            "pages": 16,
+            "pdf_size": 1414,
+            "description": ""
+        }
+    }
+]

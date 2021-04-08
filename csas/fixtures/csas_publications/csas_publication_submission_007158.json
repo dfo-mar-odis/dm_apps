@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7158,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Potential monitoring indicators, protocols and strategies for the Anguniaqvia Niqiqyuam Area of Interest",
+            "title_fr": "Indicateurs, protocoles et stratégies de surveillance possibles pour la zone d'intérêt Anguniaqvia Niquiqyuam",
+            "pub_year": 2017,
+            "lead_author_2": "Schimnowski, O., Chmelnitsky, E., Hedges, K. and Loseto, L.",
+            "pub_num": "003",
+            "pages": 28,
+            "pdf_size": 712,
+            "description": ""
+        }
+    }
+]

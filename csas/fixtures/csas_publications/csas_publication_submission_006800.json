@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6800,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Potential exposure and associated biological effects from aquaculture pest and pathogen treatments:  anti-sea lice pesticides (part II)",
+            "title_fr": "Exposition potentielle et effets biologiques connexes issus des traitements des parasites et des agents pathogènes en aquaculture : pesticides contre le pou du poisson (partie II)",
+            "pub_year": 2013,
+            "lead_author_2": "Ingrid Burgetz",
+            "pub_num": "049",
+            "pages": 26,
+            "pdf_size": 728,
+            "description": ""
+        }
+    }
+]

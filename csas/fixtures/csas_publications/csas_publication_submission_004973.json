@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4973,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Review of the Midwest Project Environmental Impact Statement and compensation Plan",
+            "title_fr": "Examen de l'énoncé des incidences environnementales et du plan de compensation pour le projet Midwest",
+            "pub_year": 2008,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "005",
+            "pages": 10,
+            "pdf_size": 82,
+            "description": ""
+        }
+    }
+]

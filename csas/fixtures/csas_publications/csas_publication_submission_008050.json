@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8050,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings for Review of risks and benefits of Collaboration for Atlantic Salmon Tomorrow’s (CAST) Smolt-to-Adult Supplementation (SAS) Experiment Proposal ; January 22-23, 2018",
+            "lead_author_2": "Justine Mannion",
+            "description": ""
+        }
+    }
+]

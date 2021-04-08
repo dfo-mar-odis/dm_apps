@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7588,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Technical review of final 3D modelling - potential effects of marine structures on site hydrodynamics and sedimentation from the construction of the Pacific Northwest liquefied natural gas terminal",
+            "title_fr": "Examen technique de la modélisation finale en 3D des effets potentiels des structures marines sur l'hydrodynamique du site et le transport des sédiments découlant de la construction d'un terminal de gaz naturel liquéfié dans le nord-ouest du Pacifique",
+            "pub_year": 2016,
+            "lead_author_2": "MacDougall",
+            "pub_num": "007",
+            "pages": 19,
+            "pdf_size": 185,
+            "description": ""
+        }
+    }
+]

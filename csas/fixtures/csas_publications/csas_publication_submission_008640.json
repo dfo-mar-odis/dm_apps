@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8640,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a Recovery Potential Assessment of Channel Darter (Percina copelandi) in Canada, Lake Erie (DU1) and Lake Ontario (DU2) Populations",
+            "title_fr": "Information à l’appui d’une évaluation du potentiel de rétablissement des populations de fouille-roche gris (Percina copelandi) du lac Érié (UD1) et du lac Ontario (UD2) au Canada",
+            "pub_year": 2020,
+            "lead_author_2": "Andrews, D.W., and Drake, D.A.R.",
+            "pub_num": "031",
+            "pages": 33,
+            "pdf_size": 10188,
+            "description": ""
+        }
+    }
+]

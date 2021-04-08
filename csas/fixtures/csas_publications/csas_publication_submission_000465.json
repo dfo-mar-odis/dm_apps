@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 465,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Discussion on a Precautionary approach for management of the red sea urchin fishery in British Columbia",
+            "pub_year": 1999,
+            "lead_author_2": "Campbell, A., Boutillier, J., Rogers, J.",
+            "pub_num": "094",
+            "pages": 49,
+            "pdf_size": 508,
+            "description": ""
+        }
+    }
+]

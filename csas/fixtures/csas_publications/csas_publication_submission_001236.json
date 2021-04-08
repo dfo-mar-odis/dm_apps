@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1236,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of snow crab (Chionoecetes opilio) stocks in Newfoundland in 1980",
+            "pub_year": 1983,
+            "lead_author_2": "D.M. Taylor; P.G. O'Keefe",
+            "pub_num": "003",
+            "pages": 40,
+            "pdf_size": 1476,
+            "description": ""
+        }
+    }
+]

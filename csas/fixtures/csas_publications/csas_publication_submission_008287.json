@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8287,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Peer Review of the 3Ps Atlantic Cod Stock Assessment; October 16-18, 2018",
+            "title_fr": "Compte rendu de l’examen régional par les pairs de l’évaluation du stock de morue franche dans la sous-division 3Ps, Région de Terre-Neuve-et-Labrador, du 16 au 18 octobre 2018",
+            "pub_year": 2019,
+            "lead_author_2": "E. Parrill",
+            "pub_num": "031",
+            "pages": 20,
+            "pdf_size": 341,
+            "description": ""
+        }
+    }
+]

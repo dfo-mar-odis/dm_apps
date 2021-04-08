@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8386,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Harvest Advice for Pacific Sardine (Sardinops sagax) in British Columbia Waters for 2019 Season",
+            "title_fr": "Avis sur les prélèvements de sardines du Pacifique (Sardinops sagax) dans les eaux de la Colombie-Britannique pour la saison 2019",
+            "pub_year": 2019,
+            "lead_author_2": "Chris Grandin",
+            "pub_num": "027",
+            "pages": 6,
+            "pdf_size": 198,
+            "description": ""
+        }
+    }
+]

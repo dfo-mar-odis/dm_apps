@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4935,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Physical Oceanographic Conditions in the Gulf of St. Lawrence in 2007",
+            "title_fr": "Conditions d'océanographie physique dans le golfe du Saint-Laurent en 2007",
+            "pub_year": 2008,
+            "lead_author_2": "Galbraith, P.S., D. Gilbert, R.G. Pettipas, J. Chassé, C. Lafleur, B. Pettigrew, P. Larouche, L. Devine.",
+            "pub_num": "001",
+            "pages": 59,
+            "pdf_size": 8551,
+            "description": ""
+        }
+    }
+]

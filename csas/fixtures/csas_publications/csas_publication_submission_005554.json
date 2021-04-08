@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5554,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "State of the Pacific Ocean 2009",
+            "title_fr": "État de l'océan Pacifique 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Irvine, J.",
+            "pub_num": "034",
+            "pages": 23,
+            "pdf_size": 3182,
+            "description": ""
+        }
+    }
+]

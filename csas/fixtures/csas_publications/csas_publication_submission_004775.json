@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4775,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of a National Science Advisory Process to Provide Guidance on the Development of a Framework and Principles for the Biogeographic Classification of Canadian Marine Areas; 15-16 June 2009",
+            "title_fr": "Compte rendu du processus de consultation scientifique national pour la formulation d'orientations en vue de l'élaboration d'un cadre et de principes pour la classification biogéographique des zones marines canadiennes; 15-16 juin 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Rice, J., White, A.",
+            "pub_num": "039",
+            "pages": 31,
+            "pdf_size": 148,
+            "description": ""
+        }
+    }
+]

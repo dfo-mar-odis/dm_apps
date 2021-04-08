@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3179,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southern Gulf of St. Lawrence Herring",
+            "title_fr": "Hareng Sud du golfe du Saint-Laurent",
+            "pub_year": 1996,
+            "pub_num": "010",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

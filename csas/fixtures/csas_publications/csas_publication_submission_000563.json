@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 563,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A factor to convert meat weight to round weight in the Iceland scallop, Chlamys islandica, in Newfoundland",
+            "pub_year": 1999,
+            "lead_author_2": "Naidu, K.S., Cahill, F.M., Seward, E.M.",
+            "pub_num": "183",
+            "pages": 17,
+            "pdf_size": 1769,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4968,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Evaluation of Captive Breeding Facilities in the Context of their Contribution to Conservation of Biodiversity",
+            "title_fr": "Évaluation des installations d'élevage en captivité dans le contexte de leur contribution à la conservation de la biodiversité",
+            "pub_year": 2008,
+            "lead_author_2": "Rice, Jake",
+            "pub_num": "027",
+            "pages": 14,
+            "pdf_size": 288,
+            "description": ""
+        }
+    }
+]

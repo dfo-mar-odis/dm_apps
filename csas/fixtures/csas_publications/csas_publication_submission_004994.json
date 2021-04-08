@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4994,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Polybrominated Diphenylethers (PBDEs) in the Canadian marine environment: an emerging health risk for fish, marine mammals and their habitat",
+            "title_fr": "Les polybromodiphényléthers (PBDE) dans le milieu marin canadien : un risque émergent pour la santé des poissons, des mammifères marins et pour leur habitat",
+            "pub_year": 2008,
+            "lead_author_2": "Ross, P.S., C.M. Couillard, M. Ikonomou, S. Johannessen, M. Lebeuf, R. Macdonald, G. Tomy.",
+            "pub_num": "036",
+            "pages": 27,
+            "pdf_size": 503,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8128,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "2018 Assessment of 4VWX Herring",
+            "title_fr": "Évaluation du hareng de 4VWX de 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Jennifer Ford",
+            "pub_num": "052",
+            "pages": 26,
+            "pdf_size": 1317,
+            "description": ""
+        }
+    }
+]

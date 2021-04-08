@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8512,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Habitat associations of juvenile American Lobster in three nearshore areas of newfoundland",
+            "lead_author_2": "D. Lancaster et al.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4548,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An Assessment of Critical Habitats of Resident Killer Whales in Waters off the Pacific Coast of Canada",
+            "title_fr": "Évaluation des habitats essentiels des populations résidentes d'orques dans les eaux de la côte du Pacifique du Canada",
+            "pub_year": 2006,
+            "lead_author_2": "Ford, J.K.B.",
+            "pub_num": "072",
+            "pages": 39,
+            "pdf_size": 1103,
+            "description": ""
+        }
+    }
+]

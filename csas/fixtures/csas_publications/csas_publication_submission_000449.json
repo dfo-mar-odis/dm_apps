@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 449,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Interpreting Atlantic salmon (Salmo salar) angling statistics on the Margaree River, Nova Scotia",
+            "pub_year": 1990,
+            "lead_author_2": "R.R. Claytor; S.F. O'Neil",
+            "pub_num": "024",
+            "pages": 34,
+            "pdf_size": 1731,
+            "description": ""
+        }
+    }
+]

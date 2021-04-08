@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4432,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status and indictors for the lobster fishery in Lobster Fishing Area 34",
+            "title_fr": "État des stocks de homard et indicateurs pour la pêche dans la zone 34",
+            "pub_year": 2006,
+            "lead_author_2": "Pezzack, D., J. Tremblay, R. Claytor, C. Frail, S. Smith.",
+            "pub_num": "010",
+            "pages": 147,
+            "pdf_size": 4289,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1395,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An efficiency estimate on the Millbank estuarial sampling trap, Miramichi River, New Brunswick, 1973",
+            "pub_year": 1983,
+            "lead_author_2": "G.E. Turner",
+            "pub_num": "078",
+            "pages": 12,
+            "pdf_size": 518,
+            "description": ""
+        }
+    }
+]

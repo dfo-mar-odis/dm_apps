@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3048,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scallops in Scallop Production Area 4 (Bay of Fundy)",
+            "title_fr": "Pétoncles de la zone de production de pétoncles 4 (Baie de Fundy)",
+            "pub_year": 1998,
+            "lead_author_2": "M.J. Lundy, S.J. Smith",
+            "pub_num": "C3-22",
+            "pages": 6,
+            "pdf_size": 195,
+            "description": ""
+        }
+    }
+]

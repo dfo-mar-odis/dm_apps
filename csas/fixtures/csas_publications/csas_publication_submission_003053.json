@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3053,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Cape Breton Lobster (LFAs 27-30)",
+            "title_fr": "Homard de l'est du Cap-Breton (ZPH 27-30)",
+            "pub_year": 1998,
+            "lead_author_2": "M. John Tremblay",
+            "pub_num": "C3-59",
+            "pages": 6,
+            "pdf_size": 110,
+            "description": ""
+        }
+    }
+]

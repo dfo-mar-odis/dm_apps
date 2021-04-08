@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6717,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Update of the northern shrimp Pandalus borealis commercial fishery indices in the Estuary and the northern Gulf of St. Lawrence in 2012",
+            "title_fr": "Mise à jour des indices de la pêche commerciale à la crevette nordique Pandalus borealis de l'estuaire et du nord du golfe du Saint-Laurent en 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Louise Savard",
+            "pub_num": "003",
+            "pages": 52,
+            "pdf_size": 1590,
+            "description": ""
+        }
+    }
+]

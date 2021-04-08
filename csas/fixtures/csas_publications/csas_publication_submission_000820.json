@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 820,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Incorporating uncertainty into estimates of Atlantic cod, capelin and Arctic cod consumption by harp seals in NAFO Divisions 2J3KL.",
+            "title_fr": "Tenir compte de l'incertitude dans l'estimation de la consommation de morue franche (Gadus morhua), de capelan (Mallotus villosus) et de morue polaire (Boreogadus saida) par le phoque du",
+            "pub_year": 2001,
+            "lead_author_2": "Stenson, G. B., Perry, E.",
+            "pub_num": "074",
+            "pages": 35,
+            "pdf_size": 542,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,53 @@
+{% extends "shared_models/generic_form.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+
+{% block jquery_import %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block bug_create %}
+    {% include "fisheriescape/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+    {% include "fisheriescape/base/_app_title.html" %}
+    {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block header %}
+    {{ block.super }}
+    {% include "fisheriescape/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+    {{ form.media }}
+    {{ block.super }}
+{% endblock body %}
+
+{# TODO: can fix the map orientation but need to figure out how to change the id below to have no float #}
+{#{% block form %}#}
+{#    <style>#}
+{#        #id_polygon_div_map {#}
+{#            float: none;#}
+{#    </style>#}
+{#    <div id="id_polygon_div_map">{{ form.media }}</div>#}
+{#    {{ form }}#}
+{#{% endblock %}#}
+
+{% block left_auth %}
+    {% include "fisheriescape/base/_nav_left_auth.html" %}
+{% endblock left_auth %}
+
+
+{#<body>#}
+{#{{ form.media }}#}
+{#   <form>#}
+{#      {{form}}#}
+{#      <button class="btn btn-primary" type="submit">Save</button>#}
+{#   </form>#}
+{#</body>#}
+

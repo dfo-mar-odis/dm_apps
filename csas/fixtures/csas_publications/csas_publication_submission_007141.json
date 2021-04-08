@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7141,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Effect of the 2015 narwhal (Monodon monoceros) entrapment on the Eclipse Sound narwhal stock",
+            "title_fr": "Incidence de l’emprisonnement de narvals (Monodon monoceros) dans les glaces en 2015 sur le stock de narvals du détroit d'Eclipse",
+            "pub_year": 2019,
+            "lead_author_2": "Watt, C.A., Marcoux, M., Dunn, J.B., Hodgson, R., Moore, R., and Ferguson, S.H.",
+            "pub_num": "030",
+            "pages": 16,
+            "pdf_size": 618,
+            "description": ""
+        }
+    }
+]

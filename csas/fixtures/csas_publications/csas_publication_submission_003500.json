@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3500,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Mortality rates of coho salmon caught by commercial salmon gillnets and the effectiveness of revival tanks and reduced soak time for decreasing coho mortality rates",
+            "title_fr": "Taux de mortalité du saumon coho capturé accessoirement dans la pêche commerciale du saumon au filet maillant et efficacité des bassins de réanimation et de courts temps de mouillage pour réduire les taux de mortalité",
+            "pub_year": 2001,
+            "lead_author_2": "N.B. Hargreaves and C. Tovey",
+            "pub_num": "154",
+            "pages": 57,
+            "pdf_size": 485,
+            "description": ""
+        }
+    }
+]

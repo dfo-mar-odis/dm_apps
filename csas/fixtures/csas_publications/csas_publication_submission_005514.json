@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5514,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Northern Shrimp (Pandalus borealis) in SFA 0, 2, 3 and Striped Shrimp (Pandalus montagui) in SFA 2, 3 and 4 west of 63°W",
+            "title_fr": "Évaluation des stocks de crevettes nordiques (Pandalus borealis) des ZPC 0, 2 et 3 et de crevettes ésopes (Pandalus montagui) des ZPC 2, 3 et 4, à l'ouest de 63°O",
+            "pub_year": 2010,
+            "lead_author_2": "Siferd, T.",
+            "pub_num": "024",
+            "pages": 20,
+            "pdf_size": 1025,
+            "description": ""
+        }
+    }
+]

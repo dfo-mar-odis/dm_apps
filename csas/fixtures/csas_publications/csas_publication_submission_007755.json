@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7755,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Meteorological, sea ice and physical oceanographic conditions on the Scotian Shelf and in the Gulf of Maine during 2015",
+            "title_fr": "Conditions météorologiques, océanographiques physiques et de la glace de mer sur le plateau néo-écossais et dans le golfe du Maine en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Hébert et al",
+            "pub_num": "083",
+            "pages": 54,
+            "pdf_size": 8859,
+            "description": ""
+        }
+    }
+]

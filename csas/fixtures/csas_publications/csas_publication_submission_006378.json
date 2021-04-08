@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6378,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Identification of Ecologically and Biologically Significant Areas on the West Coast of Vancouver Island and the Strait of Georgia, and in some nearshore areas on the North Coast: Phase II - Designation of EBSAs",
+            "title_fr": "Désignation des zones d'importance écologique et biologique sur la côte Ouest de l'île de Vancouver et dans le détroit de Géorgie, et dans certaines zones littorales de la côte Nord : Phase II - Désignation des ZIEB",
+            "pub_year": 2014,
+            "lead_author_2": "Glen Jamieson and Chantel Levesque",
+            "pub_num": "101",
+            "pages": 43,
+            "pdf_size": 3154,
+            "description": ""
+        }
+    }
+]

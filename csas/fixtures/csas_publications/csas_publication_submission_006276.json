@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6276,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Conservation Units for Skeena Steelhead (Oncorhynchus mykiss)",
+            "lead_author_2": "Art Tautz",
+            "description": ""
+        }
+    }
+]

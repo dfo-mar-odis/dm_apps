@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5663,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information Relevant to a Recovery Potential Assessment of Lake Sturgeon: Winnipeg River-English River Populations (DU5)",
+            "title_fr": "Renseignements pertinents pour l'évaluation du potentiel de rétablissement de l'esturgeon jaune : populations de la rivière Winnipeg et de la rivière English (UD 5)",
+            "pub_year": 2010,
+            "lead_author_2": "H. Cleator, K.A. Martin, T.C. Pratt, C. Barth, Barry Corbett, M. Duda and D. Leroux",
+            "pub_num": "084",
+            "pages": 40,
+            "pdf_size": 477,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4607,
+        "fields": {
+            "series": 5,
+            "lead_region": [4, 2, 1],
+            "title_en": "Recovery Assessment Report for the St. Lawrence Estuary, Southern Gulf of St. Lawrence and Bay of Fundy Striped Bass (Morone saxatilis) Populations",
+            "title_fr": "Évaluation du rétablissement des populations de bar rayé (Morone saxatilis) de l'estuaire du Saint-Laurent, du sud du golfe du Saint-Laurent et de la baie de Fundy",
+            "pub_year": 2006,
+            "lead_author_2": "Lanteigne, M.",
+            "pub_num": "053",
+            "pages": 21,
+            "pdf_size": 646,
+            "description": ""
+        }
+    }
+]

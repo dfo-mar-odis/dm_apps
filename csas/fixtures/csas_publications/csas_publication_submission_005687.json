@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5687,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "A Complement to the 2005 Framework for Developing Science Advice on Recovery Targets in the Context of the Species At Risk Act",
+            "title_fr": "Complément au cadre de 2005 pour l'élaboration d'avis scientifiques concernant les cibles de rétablissement dans le contexte de la Loi sur les espèces en péril",
+            "pub_year": 2010,
+            "lead_author_2": "Nadeau, S.",
+            "pub_num": "061",
+            "pages": 9,
+            "pdf_size": 77,
+            "description": ""
+        }
+    }
+]

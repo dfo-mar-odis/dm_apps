@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3490,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Environmental conditions and harvests in various fisheries for salmonids in Labrador, 2001",
+            "title_fr": "Conditions environnementales et prises réalisées dans le cadre des diverses pêches de salmonidés au Labrador en 2001",
+            "pub_year": 2002,
+            "lead_author_2": "D. G. Reddin, R. Anthony, M. Andersen, and / et G. Andrew",
+            "pub_num": "030",
+            "pages": 21,
+            "pdf_size": 285,
+            "description": ""
+        }
+    }
+]

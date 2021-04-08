@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6990,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Zonal Peer Review Process of Recovery Potential Assessment of the American Eel in Eastern Canada",
+            "lead_author_2": "Sherry Walker (editor)",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3381,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A proposed MPA boundary identification process for reproductive refugium establishment, using lingcod (Ophiodon elongatus) as an example focal species",
+            "pub_year": 2001,
+            "lead_author_2": "Jamieson, G.S., Dixon, S.",
+            "pub_num": "106",
+            "pages": 20,
+            "pdf_size": 1000,
+            "description": ""
+        }
+    }
+]

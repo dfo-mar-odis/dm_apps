@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3776,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Thorny Skate in Divisions 3L, 3N, 3O and Subdivision 3Ps",
+            "title_fr": "Raie épineuse des divisions 3L, 3N et 3O ainsi que de la subdivision 3Ps",
+            "pub_year": 2003,
+            "lead_author_2": "Kulka, D.W.",
+            "pub_num": "023",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

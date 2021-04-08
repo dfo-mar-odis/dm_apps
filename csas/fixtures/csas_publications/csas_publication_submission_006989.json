@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6989,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Grey Seal Population Trends in Canadian Waters, 1960-2016 and harvest advice",
+            "title_fr": "Tendances de la population de phoques gris dans les eaux canadiennes de 1960 à 2016 et avis sur la récolte",
+            "pub_year": 2017,
+            "lead_author_2": "M.O. Hammill, den Heyer, C.E., Bowen, W.D., and Lang, S.L.C.",
+            "pub_num": "052",
+            "pages": 35,
+            "pdf_size": 1038,
+            "description": ""
+        }
+    }
+]

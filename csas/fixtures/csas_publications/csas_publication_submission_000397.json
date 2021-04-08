@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 397,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Variability in abundance of Atlantic redfish derived from Canadian summer groundfish surveys on the Scotian Shelf (1970-1979)",
+            "pub_year": 1980,
+            "lead_author_2": "D. Clay",
+            "pub_num": "031",
+            "pages": 41,
+            "pdf_size": 1863,
+            "description": ""
+        }
+    }
+]

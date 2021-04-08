@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7253,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Identification of duplicate sightings from the 2013 double-platform High Arctic Cetacean Survey",
+            "title_fr": "Identification des observations effectuées en double dans le cadre de l'inventaire à deux plateformes des cétacés de l'Extrême-Arctique de 2013",
+            "pub_year": 2015,
+            "lead_author_2": "D. Pike, T. Doniol-Valcroze",
+            "pub_num": "034",
+            "pages": 27,
+            "pdf_size": 428,
+            "description": ""
+        }
+    }
+]

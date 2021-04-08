@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5850,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Catches, effort and catches per unit of effort of the northern shrimp commercial fishery in the Estuary and the northern Gulf of St. Lawrence from 1982 to 2010",
+            "title_fr": "Captures, effort et captures par unité d'effort de la pêche commerciale à la crevette nordique de l'estuaire et du nord du golfe du Saint-Laurent entre 1982 et 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Louise Savard",
+            "pub_num": "032",
+            "pages": 53,
+            "pdf_size": 696,
+            "description": ""
+        }
+    }
+]

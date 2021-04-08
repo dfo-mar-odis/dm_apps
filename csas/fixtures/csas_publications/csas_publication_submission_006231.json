@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6231,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Possible disappearance of a white hake (Urophycis tenuis) spawning component in Baie Verte (Northumberland Strait): Evidence from fixed station sampling in July 1985, July 1986, June 1994 and July 2001",
+            "title_fr": "La possibilité qu'une composante génitrice de la merluche blanche (Urophycis tenuis) soit disparue de la région Baie Verte du Détroit Northumberland : évidences basées sur des relevés de stations fixes entrepris en juillet 1985 et 1986, en juin 1994 et en juillet 2001",
+            "pub_year": 2011,
+            "lead_author_2": "Tom Hurlbut",
+            "pub_num": "103",
+            "pages": 14,
+            "pdf_size": 502,
+            "description": ""
+        }
+    }
+]

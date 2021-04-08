@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3691,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of cod in Division 4X in 2002",
+            "title_fr": "Évaluation de la morue de la division 4X en 2002",
+            "pub_year": 2002,
+            "lead_author_2": "D.S. Clark, S. Gavaris and / et J.M. Hinze",
+            "pub_num": "105",
+            "pages": 51,
+            "pdf_size": 1210,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5363,
+        "fields": {
+            "series": 6,
+            "lead_region": [6, 8],
+            "title_en": "Advice relevant to the identification of critical habitats for North Pacific Humpback Whales (Megaptera novaeangliae)",
+            "title_fr": "Avis relatif à la désignation des habitats essentiels du rorqual à bosse du Pacifique Nord (Megaptera novaeangliae)",
+            "pub_year": 2009,
+            "pub_num": "016",
+            "pages": 14,
+            "pdf_size": 393,
+            "description": ""
+        }
+    }
+]

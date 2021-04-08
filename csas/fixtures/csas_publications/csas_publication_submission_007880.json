@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7880,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Review of Habitat Suitability Indices (HSIs) for priority and common fish species in the Athabasca oil sands region",
+            "title_fr": "Examen des indices de qualité de l'habitat (IQH) pour les espèces de poissons prioritaires et communes de la région des sables bitumineux de l'Athabasca",
+            "pub_year": 2017,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "017",
+            "pages": 8,
+            "pdf_size": 209,
+            "description": ""
+        }
+    }
+]

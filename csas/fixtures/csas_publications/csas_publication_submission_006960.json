@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6960,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "A Set of Simulation Modelling Tools to Evaluate Alternative Commercial No-Take Reserve Network Designs for Shallow-Water Benthic Invertebrates in British Columbia",
+            "title_fr": "Trousse d'outils de modélisation pour simulation visant à évaluer différents réseaux de réserves interdites à la récolte commerciale pour les invertébrés benthiques des eaux peu profondes en Colombie-Britannique",
+            "pub_year": 2015,
+            "lead_author_2": "Nicholas Duprey",
+            "pub_num": "026",
+            "description": ""
+        }
+    }
+]

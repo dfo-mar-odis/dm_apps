@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3756,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Shrimp in the Estuary and the Gulf of St. Lawrence in 2002",
+            "title_fr": "La crevette de l'estuaire et du golfe du Saint-Laurent en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Savard, L.",
+            "pub_num": "014",
+            "pages": 12,
+            "description": ""
+        }
+    }
+]

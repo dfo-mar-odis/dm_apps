@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 181,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1998 Assessment of Pollock (Pollachius virens) in NAFO Divisions 4VWX and Subdivision 5Zc",
+            "pub_year": 1998,
+            "lead_author_2": "John D. Neilson, Peter Perley, Cecil Nelson",
+            "pub_num": "144",
+            "description": ""
+        }
+    }
+]

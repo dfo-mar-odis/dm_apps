@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3418,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Lingcod in the Strait of Georgia",
+            "pub_year": 2001,
+            "lead_author_2": "King, J.R.",
+            "pub_num": "132",
+            "pages": 42,
+            "pdf_size": 325,
+            "description": ""
+        }
+    }
+]

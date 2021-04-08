@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7812,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Application of a framework to assess vulnerability of biological components to ship-source oil spills in the marine environment in the Pacific Region",
+            "title_fr": "Application d'un Cadre d'évaluation de la vulnérabilité des composantes biologiques du milieu marin de la région du Pacifique aux déversements d'hydrocarbures provenant de navires",
+            "pub_year": 2017,
+            "lead_author_2": "Sarah Patton",
+            "pub_num": "013",
+            "pages": 22,
+            "pdf_size": 727,
+            "description": ""
+        }
+    }
+]

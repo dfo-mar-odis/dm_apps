@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5366,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Information on Atlantic salmon (Salmo salar) from Salmon Fishing Area 18 (Gulf Nova Scotia) of relevance to the development of a COSEWIC status report",
+            "title_fr": "Renseignements sur le Saumon atlantique (Salmo salar) de la zone de pêche du saumon 18 (golfe de la Nouvelle-Écosse) utiles pour la préparation du rapport de situation du COSEPAC",
+            "pub_year": 2009,
+            "lead_author_2": "Breau, C., Chaput, G., LeBlanc, P.H., Mallet, P.",
+            "pub_num": "076",
+            "pages": 57,
+            "pdf_size": 758,
+            "description": ""
+        }
+    }
+]

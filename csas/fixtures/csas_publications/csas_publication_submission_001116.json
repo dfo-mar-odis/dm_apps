@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1116,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Northwest Atlantic mackerel stock assessment - 1981",
+            "pub_year": 1981,
+            "lead_author_2": "J.J. Maguire",
+            "pub_num": "018",
+            "pages": 22,
+            "pdf_size": 1143,
+            "description": ""
+        }
+    }
+]

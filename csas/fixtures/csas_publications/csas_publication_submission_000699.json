@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 699,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Status and Genetics of Coho Salmon from the Interior Fraser River",
+            "pub_year": 2000,
+            "lead_author_2": "Irvine, J.R., Withler, R.E., Bradford, M.J., Bailey, R.E., Lehmann, S., Wilson, K., Candy, J., Shaw, W.S.",
+            "pub_num": "125",
+            "pages": 49,
+            "pdf_size": 786,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 462,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The Labrador component of prefishery abundance of North America Atlantic salmon (Salmon salar L.) in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Reddin, D.G.",
+            "pub_num": "091",
+            "pages": 21,
+            "pdf_size": 1894,
+            "description": ""
+        }
+    }
+]

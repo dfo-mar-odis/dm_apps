@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3547,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Oceanographic Conditions in the Gulf of St. Lawrence during year 2000",
+            "title_fr": "Les conditions océanographiques dans le golfe du Saint-Laurent au cours de l'an 2000",
+            "pub_year": 2001,
+            "lead_author_2": "Jacques Plourde",
+            "pub_num": "G4-01",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

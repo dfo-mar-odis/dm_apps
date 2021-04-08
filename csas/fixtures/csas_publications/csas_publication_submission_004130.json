@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4130,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Harvests in various fisheries for salmonids, Atlantic salmon returns to rivers and environmental conditions in Labrador, 2004",
+            "title_fr": "Captures dans diverses pêches de salmonidés, remontes de saumons atlantiques dans les rivières et conditions environnementales au Labrador en 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Reddin, D.J., R.J. Poole, W. King, S. Oliver, R. Nuna, T. Parr.",
+            "pub_num": "006",
+            "pages": 28,
+            "pdf_size": 211,
+            "description": ""
+        }
+    }
+]

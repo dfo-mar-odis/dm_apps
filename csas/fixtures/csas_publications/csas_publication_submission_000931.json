@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 931,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Spring Meeting Marine Fisheries Subcommittee; 21-25 April 1997",
+            "pub_year": 1997,
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

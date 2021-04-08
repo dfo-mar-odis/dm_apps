@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6837,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Chemical and Biological Oceanographic Conditions in the Estuary and Gulf of St. Lawrence during 2011 and 2012",
+            "title_fr": "Conditions océanographiques chimiques et biologiques dans l'estuaire et le golfe du Saint-Laurent en 2011 et 2012",
+            "pub_year": 2014,
+            "lead_author_2": "Plourde et al  (QC)",
+            "pub_num": "049",
+            "pages": 51,
+            "pdf_size": 4912,
+            "description": ""
+        }
+    }
+]

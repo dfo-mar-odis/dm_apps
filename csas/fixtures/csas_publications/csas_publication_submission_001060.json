@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1060,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Labrador Pink shrimp resources, Divisions 2H and 2J",
+            "pub_year": 1980,
+            "lead_author_2": "D.G. Parsons; G.E. Tucker; P.J. Veitch",
+            "pub_num": "014",
+            "pages": 44,
+            "pdf_size": 1694,
+            "description": ""
+        }
+    }
+]

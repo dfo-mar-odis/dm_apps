@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2859,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of 4X winter flounder, yellowtail flounder, and amerian plaice.",
+            "pub_year": 1997,
+            "lead_author_2": "Stobo, W.T., Fowler, G.M., Smith, S.J.",
+            "pub_num": "105",
+            "pages": 76,
+            "pdf_size": 5504,
+            "description": ""
+        }
+    }
+]

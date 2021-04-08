@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5163,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Updated stock status of commercially harvested Arctic Char (Salvelinus alpinus) from the Jayko and Halokvik rivers, NU: A summary of harvest, catch-effort and biological information",
+            "pub_year": 2019,
+            "lead_author_2": "L. Harris",
+            "pub_num": "062",
+            "description": ""
+        }
+    }
+]

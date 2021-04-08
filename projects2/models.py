@@ -15,7 +15,7 @@ from projects2 import emails
 from projects2.utils import get_risk_rating
 from shared_models import models as shared_models
 # Choices for language
-from shared_models.models import SimpleLookup, Lookup, HelpTextLookup
+from shared_models.models import SimpleLookup, Lookup, HelpTextLookup, MetadataFields
 from shared_models.utils import get_metadata_string
 
 YES_NO_CHOICES = (
@@ -826,9 +826,8 @@ class StatusReport(models.Model):
         (6, _("Aborted / cancelled")),
     )
     project_year = models.ForeignKey(ProjectYear, related_name="reports", on_delete=models.CASCADE, editable=False)
-    status = models.IntegerField(default=1, editable=True, choices=status_choices)
-    major_accomplishments = models.TextField(blank=True, null=True, verbose_name=_(
-        "major accomplishments"))
+    status = models.IntegerField(default=3, editable=True, choices=status_choices)
+    major_accomplishments = models.TextField(blank=True, null=True, verbose_name=_("major accomplishments"))
     major_issues = models.TextField(blank=True, null=True, verbose_name=_("major issues encountered"))
     target_completion_date = models.DateTimeField(blank=True, null=True, verbose_name=_("target completion date"))
     rationale_for_modified_completion_date = models.TextField(blank=True, null=True, verbose_name=_(
@@ -1066,7 +1065,7 @@ class Activity(models.Model):
         return self.updates.first()
 
 
-class ActivityUpdate(models.Model):
+class ActivityUpdate(MetadataFields):
     status_choices = (
         (7, _("In progress")),
         (8, _("Completed")),

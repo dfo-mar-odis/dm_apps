@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8708,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Coral and Sponge Mitigations in Relation to Exploratory Drilling Programs in the Newfoundland and Labrador Region",
+            "lead_author_2": "Eugene Lee",
+            "description": ""
+        }
+    }
+]

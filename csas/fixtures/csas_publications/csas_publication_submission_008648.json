@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8648,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Advice from the assessment of the risk to Fraser River Sockeye Salmon due to Tenacibaculum maritimum transfer from Atlantic Salmon farms in the Discovery Islands area, British Columbia",
+            "title_fr": "Avis découlant de l’évaluation du risque pour le saumon rouge du fleuve Fraser attribuable au transfert de la bactérie Tenacibaculum maritimum à partir des fermes d’élevage de saumon atlantique situées dans la région des îles Discovery (Colombie-Britannique)",
+            "pub_year": 2020,
+            "lead_author_2": "Lily Weber",
+            "pub_num": "044",
+            "pages": 18,
+            "pdf_size": 1045,
+            "description": ""
+        }
+    }
+]

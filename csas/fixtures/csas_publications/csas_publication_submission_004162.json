@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4162,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 4],
+            "title_en": "Stock assessment of Northern Quebec (Nunavik) Beluga (Delphinapterus leucas)",
+            "title_fr": "Évaluation du stock de béluga du nord du Québec (Nunavik) (Delphinapterus leucas)",
+            "pub_year": 2005,
+            "lead_author_2": "Hammill, Mike, V. Lesage",
+            "pub_num": "020",
+            "pages": 11,
+            "pdf_size": 131,
+            "description": ""
+        }
+    }
+]

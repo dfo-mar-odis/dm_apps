@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8539,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on the Risk Assessment of Permitted Human Activities in Rockfish Conservation Areas in British Columbia",
+            "pub_year": 2020,
+            "lead_author_2": "Lisa Setterington",
+            "pub_num": "026",
+            "description": ""
+        }
+    }
+]

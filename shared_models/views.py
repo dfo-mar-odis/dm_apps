@@ -996,7 +996,7 @@ class UserCreateView(AdminRequiredMixin, CommonPopoutFormView):
             first_name=first_name,
             last_name=last_name,
             password="pbkdf2_sha256$120000$ctoBiOUIJMD1$DWVtEKBlDXXHKfy/0wKCpcIDYjRrKfV/wpYMHKVrasw=",
-            is_active=1,
+            is_active=True,
             email=email,
         )
 

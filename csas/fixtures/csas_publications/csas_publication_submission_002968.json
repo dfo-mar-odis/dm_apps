@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2968,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Rougheye Rockfish British Columbia Coast",
+            "pub_year": 1999,
+            "lead_author_2": "Norm Olsen",
+            "pub_num": "A6-15",
+            "pages": 6,
+            "pdf_size": 934,
+            "description": ""
+        }
+    }
+]

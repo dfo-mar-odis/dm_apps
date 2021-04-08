@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3873,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Regional Advisory Process Meeting on Inner Bay of Fundy Atlantic Salmon in support of a COSEWIC Submission; 11-12 June 2003",
+            "title_fr": "Compte rendu du Processus consultatif régional Réunion sur le saumon atlantique de l'arrière-baie de Fundy à l'appui d'une évaluation du COSEPAC; les 11 et 12 juin 2003",
+            "pub_year": 2003,
+            "lead_author_2": "O'Boyle, R.N.",
+            "pub_num": "024",
+            "pages": 33,
+            "pdf_size": 229,
+            "description": ""
+        }
+    }
+]

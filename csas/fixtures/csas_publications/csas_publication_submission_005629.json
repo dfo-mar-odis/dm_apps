@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5629,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Updated Methods For Assessing Harvest Rules For Fraser River Sockeye Salmon (Oncorhynchus nerka)",
+            "title_fr": "Méthodes mises à jour pour l'évaluation des règles de pêche au saumon rouge (Oncorhynchus nerka) du fleuve Fraser",
+            "pub_year": 2011,
+            "lead_author_2": "A-M. Huang",
+            "pub_num": "133",
+            "pages": 182,
+            "pdf_size": 11562,
+            "description": ""
+        }
+    }
+]

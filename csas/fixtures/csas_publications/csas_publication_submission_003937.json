@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3937,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Newfoundland and Labrador 2002 Shellfish RAP Proceedings; March 5-8, 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Ennis, G.P.",
+            "pub_num": "037",
+            "pages": 21,
+            "pdf_size": 305,
+            "description": ""
+        }
+    }
+]

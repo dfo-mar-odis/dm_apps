@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4213,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status and indicators for the Bay of Fundy lobster fishery, Lobster Fishing Areas 35, 36 & 38",
+            "title_fr": "État des stocks de homard et indicateurs pour la pêche de homard de la Baie de Fundy, zones de pêche du homard 35, 36 et 38",
+            "pub_year": 2007,
+            "lead_author_2": "Robichaud, D., D. Pezzack.",
+            "pub_num": "041",
+            "pages": 75,
+            "pdf_size": 4121,
+            "description": ""
+        }
+    }
+]

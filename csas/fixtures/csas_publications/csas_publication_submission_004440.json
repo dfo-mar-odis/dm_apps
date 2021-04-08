@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4440,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Perspectives on the marine ecology of Atlantic salmon (Salmo salar) in the Northwest Atlantic",
+            "title_fr": "Perspectives sur l'écologie marine du saumon atlantique (Salmo salar) dans l'Atlantique Nord Ouest",
+            "pub_year": 2006,
+            "lead_author_2": "Reddin, D.G.",
+            "pub_num": "018",
+            "pages": 45,
+            "pdf_size": 781,
+            "description": ""
+        }
+    }
+]

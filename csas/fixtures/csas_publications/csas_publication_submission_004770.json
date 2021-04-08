@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4770,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Using Qualitative Risk Evaluations to Prioritize Resource Assessment Activities for Fraser River Sockeye",
+            "title_fr": "Évaluations qualitatives du risque pour prioriser les activités d'évaluation des ressources visant le saumon rouge du Fraser",
+            "pub_year": 2009,
+            "lead_author_2": "Pestal, G., Cass, A.",
+            "pub_num": "071",
+            "pages": 89,
+            "pdf_size": 1206,
+            "description": ""
+        }
+    }
+]

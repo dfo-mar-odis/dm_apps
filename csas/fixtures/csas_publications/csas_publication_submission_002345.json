@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2345,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Variability in the position of the Shelf/Slope front near the mouth of the Laurentian Channel",
+            "pub_year": 1994,
+            "lead_author_2": "K.F. Drinkwater; G.L. Bugden",
+            "pub_num": "010",
+            "pages": 12,
+            "pdf_size": 386,
+            "description": ""
+        }
+    }
+]

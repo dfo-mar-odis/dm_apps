@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4988,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Assessment of the marine environment monitoring program for the Eastmain-Rupert-1-A project",
+            "title_fr": "Examen du programme de suivi en milieu marin pour le projet Eastmain-Rupert 1-A",
+            "pub_year": 2008,
+            "lead_author_2": "Starr, M., P. Larouche, C. Cyr",
+            "pub_num": "008",
+            "pages": 4,
+            "pdf_size": 48,
+            "description": ""
+        }
+    }
+]

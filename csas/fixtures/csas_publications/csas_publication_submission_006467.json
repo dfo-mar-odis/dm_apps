@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6467,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Calculation of the Atlantic mackerel (Scomber scombrus L.) spawning biomass from the ichthyoplankton surveys conducted on the west coast of Newfoundland between 2004 and 2009",
+            "title_fr": "Calcul de la biomasse reproductrice de maquereau bleu (Scomber scombrus L.) des relevés d'ichtyoplancton réalisés sur la côte ouest de Terre-Neuve entre 2004 et 2009",
+            "pub_year": 2012,
+            "lead_author_2": "François Grégoire",
+            "pub_num": "137",
+            "pages": 40,
+            "pdf_size": 2459,
+            "description": ""
+        }
+    }
+]

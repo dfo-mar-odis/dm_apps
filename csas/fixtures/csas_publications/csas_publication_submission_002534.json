@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2534,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution and acoustic backscatter of herring in NAFO Division 4T, October 1994",
+            "pub_year": 1995,
+            "lead_author_2": "C. LeBlanc; J. Dale; L. Mello",
+            "pub_num": "128",
+            "pages": 33,
+            "pdf_size": 1339,
+            "description": ""
+        }
+    }
+]

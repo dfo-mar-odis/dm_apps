@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1552,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Annual assessment of herring in NAFO Division 4T",
+            "pub_year": 1985,
+            "lead_author_2": "M. Ahrens",
+            "pub_num": "045",
+            "pages": 38,
+            "pdf_size": 1504,
+            "description": ""
+        }
+    }
+]

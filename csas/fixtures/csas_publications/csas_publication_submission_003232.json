@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3232,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Monkfish in Divisions 3L, 3N, 3O and 3Ps",
+            "title_fr": "Baudroie des divisions 3L, 3N, 3O et 3Ps",
+            "pub_year": 1996,
+            "lead_author_2": "Kulka, D.",
+            "pub_num": "089",
+            "description": ""
+        }
+    }
+]

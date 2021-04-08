@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8353,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Characterization of piscine orthoreovirus (PRV) and associated diseases to inform pathogen transfer risk assessments in British Columbia",
+            "title_fr": "Caractérisation de l’orthoréovirus pisciaire (RVP) et des maladies associées pour guider les évaluations des risques de transfert d’agents pathogènes en Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Mark Polinski and Kyle Garver",
+            "pub_num": "035",
+            "pages": 40,
+            "pdf_size": 883,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6733,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An update on the biology, population status, distribution, and landings of wolffish (Anarhichus denticulatus, A. minor, and A. lupus) in the Canadian Atlantic and Arctic Oceans",
+            "title_fr": "Mise à jour concernant les caractéristiques biologiques, la situation des populations, la répartition et les débarquements de loups de mer (Anarhichus denticulatus, A. minor et A. lupus) dans les eaux canadiennes des océans Arctique et Atlantique",
+            "pub_year": 2013,
+            "lead_author_2": "Simpson, M.R., D. Chabot, K. Hedges, J. Simon, C.M. Miri, and L.G.S. Mello",
+            "pub_num": "089",
+            "pages": 87,
+            "pdf_size": 10340,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3013,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "State of phytoplankton, Zooplankton and Krill on the Scotian Shelf in 1998",
+            "title_fr": "État du phytoplancton, du zooplancton et du krill sur le plateau néo-écossais en 1998",
+            "pub_year": 2000,
+            "lead_author_2": "Dr. D. Sameoto, Dr. G. Harrison",
+            "pub_num": "G3-02",
+            "pages": 9,
+            "pdf_size": 280,
+            "description": ""
+        }
+    }
+]

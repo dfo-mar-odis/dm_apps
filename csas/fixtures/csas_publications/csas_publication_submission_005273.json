@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5273,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of BEPCO's Exploration Drilling Environmental Assessment Update",
+            "title_fr": "Examen de la mise à jour de l'évaluation environnementale du projet de forage d'exploration de la compagnie BEPCo",
+            "pub_year": 2009,
+            "lead_author_2": "Burridge, L., Cogswell, A., Harris, L., Kenchington, E., Lee, K., Loder, J., Smith, P., Worcester, T.",
+            "pub_num": "009",
+            "pages": 7,
+            "pdf_size": 42,
+            "description": ""
+        }
+    }
+]

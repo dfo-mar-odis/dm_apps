@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7028,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "The ability of hydrodynamic models to inform decisions on the siting and management of aquaculture facilities in British Columbia",
+            "title_fr": "Capacité des modèles hydrodynamiques à éclairer les décisions concernant le choix du site et la gestion des installations d'aquaculture en Colombie-Britannique",
+            "pub_year": 2015,
+            "lead_author_2": "Mike Foreman, Peter Chandler, Dario Stucchi, Kyle Garver, Ming Guo, John Morrison, Darren Tuele",
+            "pub_num": "005",
+            "pages": 56,
+            "pdf_size": 3470,
+            "description": ""
+        }
+    }
+]

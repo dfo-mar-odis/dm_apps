@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5306,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the DFO Taxonomic Standards Workshop ; 16-17 January 2008",
+            "title_fr": "Compte rendu d'un atelier taxonomique de normes de DFO; les 16-17 janvier 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Kennedy, M.",
+            "pub_num": "021",
+            "pages": 33,
+            "pdf_size": 487,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5493,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Rock Crab of the Coastal Waters of Quebec in 2009",
+            "title_fr": "Le crabe commun des eaux côtières du Québec en 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Gendron, L.",
+            "pub_num": "010",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8375,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A reproducible data synopsis for over 100 species of British Columbia groundfish",
+            "title_fr": "Synthèse des données reproductibles pour plus de 100 espèces de poissons de fond de la Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Anderson, S.C., Keppel, E.A., Edwards, A.M.",
+            "pub_num": "041",
+            "pages": 328,
+            "pdf_size": 111180,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 743,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Estimating stock biomass from tow-by-tow data for Pacific Groundfish",
+            "pub_year": 2000,
+            "lead_author_2": "Schnute, J., Haigh, R.",
+            "pub_num": "155",
+            "pages": 35,
+            "pdf_size": 696,
+            "description": ""
+        }
+    }
+]

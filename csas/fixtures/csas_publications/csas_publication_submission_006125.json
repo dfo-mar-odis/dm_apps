@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6125,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in Support of Monitoring Protocols and Strategies for Selected Indicators in the Tarium Niryutait Marine Protected Area (TNMPA)",
+            "title_fr": "Renseignements en appui aux protocoles et aux stratégies de surveillance pour les indicateurs choisis dans l'aire marine protégée de Tarium Niryutait",
+            "pub_year": 2012,
+            "lead_author_2": "Joclyn Paulic/Jeff Higdon",
+            "pub_num": "113",
+            "pages": 34,
+            "pdf_size": 751,
+            "description": ""
+        }
+    }
+]

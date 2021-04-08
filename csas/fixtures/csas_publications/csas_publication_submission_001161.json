@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1161,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Variation in annual growth in a Newfoundland population of lobsters (Homarus americanus) in relation to temperature conditions",
+            "pub_year": 1981,
+            "lead_author_2": "G.P. Ennis",
+            "pub_num": "063",
+            "pages": 6,
+            "pdf_size": 2161,
+            "description": ""
+        }
+    }
+]

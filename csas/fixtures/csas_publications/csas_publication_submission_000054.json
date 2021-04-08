@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 54,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock composition of cod aggregations near the mouth of the Gulf of St. Lawrence in January 1996 based on an analysis of otolith elemental fingerprints",
+            "pub_year": 1998,
+            "lead_author_2": "S.E. Campana, G. Chouinard, M. Hanson, A. Fréchet, J. Brattey",
+            "pub_num": "055",
+            "description": ""
+        }
+    }
+]

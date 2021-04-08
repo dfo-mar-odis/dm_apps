@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5450,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Marine Survival Forecast of Southern British Columbia coho",
+            "title_fr": "Prévisions concernant la survie en mer du saumon coho du sud de la Colombie-Britannique pour 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Baillie, S.",
+            "pub_num": "073",
+            "pages": 10,
+            "pdf_size": 117,
+            "description": ""
+        }
+    }
+]

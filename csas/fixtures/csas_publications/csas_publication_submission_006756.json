@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6756,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Biogeographic Classification Framework to Inform Bioregional Marine Protected Area Network Design in Pacific Region; February 12-14, 2013",
+            "title_fr": "Compte rendu de la réunion régionale d'examen par des pairs du Pacifique portant sur le Cadre pour la classification biogéographique qui servira de base à la conception d'un réseau biorégional de zones de protection marine dans la région du Pacifique; du 12 au 14 février 2013",
+            "pub_year": 2015,
+            "lead_author_2": "Holmes, John",
+            "pub_num": "027",
+            "pages": 30,
+            "pdf_size": 227,
+            "description": ""
+        }
+    }
+]

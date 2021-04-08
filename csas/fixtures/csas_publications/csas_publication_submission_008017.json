@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8017,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Criteria for release of rehabilitated marine mammals",
+            "title_fr": "Critères de remise en liberté des mammifères marins réhabilités",
+            "pub_year": 2018,
+            "lead_author_2": "Daoust, P-Y.",
+            "pub_num": "030",
+            "pages": 18,
+            "pdf_size": 351,
+            "description": ""
+        }
+    }
+]

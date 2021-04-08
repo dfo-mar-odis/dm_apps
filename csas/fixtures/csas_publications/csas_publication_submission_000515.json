@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 515,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Stock Status of Witch Flounder in NAFO Subdivision 3Ps",
+            "pub_year": 1999,
+            "lead_author_2": "Bowering, W.R.",
+            "pub_num": "144",
+            "pages": 31,
+            "pdf_size": 2110,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 667,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Trawl and acoustic survey in southern Bonavista Bay - Observations on demersal distribution of Atlantic cod",
+            "pub_year": 2000,
+            "lead_author_2": "Anderson, J. T., Dalley, E. L.",
+            "pub_num": "095",
+            "pages": 15,
+            "pdf_size": 2865,
+            "description": ""
+        }
+    }
+]

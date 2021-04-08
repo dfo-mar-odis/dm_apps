@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4781,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of Newfoundland and Labrador Snow Crab",
+            "title_fr": "Évaluation du crabe des neiges de Terre-Neuve et du Labrador",
+            "pub_year": 2010,
+            "lead_author_2": "Dawe, E.G., Mullowney, D.R.J.",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

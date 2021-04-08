@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1324,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Fishery and biological characteristics of the 4S herring stocks in 1985",
+            "pub_year": 1986,
+            "lead_author_2": "C. Trudeau; I.H. McQuinn",
+            "pub_num": "077",
+            "pages": 23,
+            "pdf_size": 1165,
+            "description": ""
+        }
+    }
+]

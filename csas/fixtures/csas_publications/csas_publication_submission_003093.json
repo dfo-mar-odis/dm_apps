@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3093,
+        "fields": {
+            "series": 7,
+            "lead_region": [4, 2, 1, 5],
+            "title_en": "Atlantic Salmon Eastern Canada Overview for 1996",
+            "title_fr": "Saumon atlantique Est du Canada Aperçu pour 1996",
+            "pub_year": 1997,
+            "lead_author_2": "Bruce Atkinson, John S. Loch, R. Chatelain",
+            "pub_num": "D0-01",
+            "pages": 19,
+            "pdf_size": 664,
+            "description": ""
+        }
+    }
+]

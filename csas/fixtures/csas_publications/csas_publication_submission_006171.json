@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6171,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Evaluating the robustness of management procedures for the Sablefish (Anoplopoma fimbria) fishery in British Columbia, Canada for 2017-18",
+            "title_fr": "Un modèle révisé d’exploitation de la Morue charbonnière (Anoplopoma fimbria) en Colombie-Britannique, au Canada, pour 2017-2018",
+            "pub_year": 2017,
+            "lead_author_2": "John Holmes",
+            "pub_num": "017",
+            "pages": 14,
+            "pdf_size": 662,
+            "description": ""
+        }
+    }
+]

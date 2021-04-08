@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5669,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An Examination of Loggerhead Sea Turtle (Caretta caretta) Encounters in the Canadian Swordfish and Tuna Longline Fishery, 2002-2008",
+            "title_fr": "Examen des rencontres de caouannes (Caretta caretta) dans la pêche canadienne de l'espadon et du thon à la palangre (2002 2008)",
+            "pub_year": 2010,
+            "lead_author_2": "S.D. Paul, A. Hanke, S.C. Smith, and J.D. Neilson",
+            "pub_num": "088",
+            "pages": 38,
+            "pdf_size": 1192,
+            "description": ""
+        }
+    }
+]

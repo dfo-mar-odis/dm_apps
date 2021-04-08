@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7332,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Pre-COSEWIC Review of the Sakinaw Sockeye Salmon (Oncorhynchus nerka) Population 2014",
+            "title_fr": "Examen pré-COSEPAC de la population du saumon rouge (Oncorhynchus nerka) du lac Sakinaw en 2014",
+            "pub_year": 2015,
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

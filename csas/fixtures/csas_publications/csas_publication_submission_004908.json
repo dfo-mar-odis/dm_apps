@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4908,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Initial investigations on potential impacts of reductions in spawn survey and bio-sampling program effort on herring stock assessments and management advice",
+            "title_fr": "Études initiales sur les impacts possibles de la réduction des relevés de la ponte et de l'échantillonnage biologique sur l'évaluation des stocks et les conseils relatifs à la gestion de la pêche du hareng",
+            "pub_year": 2007,
+            "lead_author_2": "Haist, V., J. Schweigert.",
+            "pub_num": "081",
+            "pages": 21,
+            "pdf_size": 155,
+            "description": ""
+        }
+    }
+]

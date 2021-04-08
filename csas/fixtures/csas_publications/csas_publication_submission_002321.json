@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2321,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Variation in September near-bottom temperatures in the southern Gulf of St. Lawrence 1971-1992",
+            "pub_year": 1993,
+            "lead_author_2": "D.P. Swain",
+            "pub_num": "048",
+            "pages": 17,
+            "pdf_size": 1333,
+            "description": ""
+        }
+    }
+]

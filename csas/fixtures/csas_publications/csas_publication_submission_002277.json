@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2277,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Evaluation of the status of the Nain stock unit Arctic charr population in 1992",
+            "pub_year": 1993,
+            "lead_author_2": "J.B. Dempson",
+            "pub_num": "004",
+            "pages": 31,
+            "pdf_size": 1545,
+            "description": ""
+        }
+    }
+]

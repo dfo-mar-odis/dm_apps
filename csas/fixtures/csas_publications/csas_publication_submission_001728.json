@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1728,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Subdivision 4Vn cod (May-December): Status review for the 1986 fishing year",
+            "pub_year": 1987,
+            "lead_author_2": "S.J. Smith",
+            "pub_num": "039",
+            "pages": 32,
+            "pdf_size": 1421,
+            "description": ""
+        }
+    }
+]

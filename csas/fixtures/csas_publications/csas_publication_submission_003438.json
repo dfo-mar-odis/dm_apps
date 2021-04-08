@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3438,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Physical Oceanographic and Geological Setting of a Possible Oil and Gas Industry in the Queen Charlotte Basin",
+            "title_fr": "Océanographie physique et géologie du bassin de la Reine-Charlotte en vue d'une éventuelle exploitation industrielle du pétrole et du gaz",
+            "pub_year": 2002,
+            "lead_author_2": "W. Cretney, W. Crawford, D. Masson and T. Hamilton",
+            "pub_num": "004",
+            "pages": 39,
+            "pdf_size": 4500,
+            "description": ""
+        }
+    }
+]

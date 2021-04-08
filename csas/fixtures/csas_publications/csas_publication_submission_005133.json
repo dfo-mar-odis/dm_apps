@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5133,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Recovery Potential Assessment for Atlantic sturgeon (Acipenser oxyrinchus) St. Lawrence Population: Habitat and Threats",
+            "title_fr": "Évaluation du potentiel de rétablissement de la population d'esturgeon noir (Acipenser oxyrinchus) du Saint-Laurent: habitat et menaces",
+            "pub_year": 2013,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "037",
+            "description": ""
+        }
+    }
+]

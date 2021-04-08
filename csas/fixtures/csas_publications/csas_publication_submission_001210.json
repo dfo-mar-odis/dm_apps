@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1210,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of redfish in Divisions 4RST",
+            "pub_year": 1982,
+            "lead_author_2": "C.A. Gavaris; D.B. Atkinson",
+            "pub_num": "030",
+            "pages": 24,
+            "pdf_size": 1260,
+            "description": ""
+        }
+    }
+]

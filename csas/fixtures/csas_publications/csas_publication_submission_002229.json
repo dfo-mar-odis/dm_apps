@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2229,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Subdivision 4Vn Cod (May - December): Update of stock status for 1991",
+            "pub_year": 1992,
+            "lead_author_2": "T.C. Lambert",
+            "pub_num": "081",
+            "pages": 34,
+            "description": ""
+        }
+    }
+]

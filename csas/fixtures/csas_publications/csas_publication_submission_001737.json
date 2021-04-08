@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1737,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biomass and abundance of haddock in NAFO Divisions 3NO and Subdivision 3Ps from research vessel surveys along with estimates of commercial catch and effort",
+            "pub_year": 1987,
+            "lead_author_2": "C.A. Bishop; J.W. Baird; H.F. Hicks",
+            "pub_num": "048",
+            "pages": 22,
+            "pdf_size": 1067,
+            "description": ""
+        }
+    }
+]

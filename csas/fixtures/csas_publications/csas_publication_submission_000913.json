@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 913,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Spatial correlations in catch rates, annual landings, and lobster sizes among port clusters in the LFA 33 lobster fishery",
+            "title_fr": "Corrélations spatiales dans les taux de capture, les débarquements annuels et les tailles de homard entre des regroupements de ports dans la pêche du homard dans la ZPH 33",
+            "pub_year": 2001,
+            "lead_author_2": "R. Claytor, S. Nolan, and R. Duggan",
+            "pub_num": "019",
+            "pages": 58,
+            "pdf_size": 11000,
+            "description": ""
+        }
+    }
+]

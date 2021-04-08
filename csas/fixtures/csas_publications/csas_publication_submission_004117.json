@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4117,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Northern Abalone Case Study for the Determination of SARA Critical Habitat",
+            "title_fr": "Étude de cas sur l'ormeau nordique visant à déterminer son habitat essentiel dans le contexte de la LEP",
+            "pub_year": 2004,
+            "lead_author_2": "Jamieson, G.S., E.J. Gregr, C. Robinson.",
+            "pub_num": "117",
+            "pages": 63,
+            "pdf_size": 2706,
+            "description": ""
+        }
+    }
+]

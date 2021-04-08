@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2086,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Lobster stock assessment for LFA 31",
+            "pub_year": 1991,
+            "lead_author_2": "J.D. Pringle; R.E. Duggan",
+            "pub_num": "021",
+            "pages": 15,
+            "pdf_size": 786,
+            "description": ""
+        }
+    }
+]

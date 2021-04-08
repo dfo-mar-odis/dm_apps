@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1477,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recent events in the scallop fishery of the Bay of Fundy and its approaches",
+            "pub_year": 1984,
+            "lead_author_2": "G. Robert; M.J. Lundy; M.A.E. Connolly",
+            "pub_num": "071",
+            "pages": 41,
+            "pdf_size": 2145,
+            "description": ""
+        }
+    }
+]

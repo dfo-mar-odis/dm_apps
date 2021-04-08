@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4620,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Atlantic mackerel (Scomber scombrus L.) fishery, biology, diet composition and predation in NAFO Subareas 3 and 4 in 2005",
+            "title_fr": "Pêche, biologie, régime alimentaire et prédation du maquereau bleu (Scomber scombrus L.) dans les sous-régions 3 et 4 de l'OPANO en 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Grégoire, F., C. Savenkoff, D. Chabot.",
+            "pub_num": "095",
+            "pages": 90,
+            "description": ""
+        }
+    }
+]

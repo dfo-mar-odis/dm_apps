@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7860,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review  of stock status and sustainable harvest levels for Arctic Char in Naulinniarvik Lake Arctic Char fishery, Nunavut",
+            "lead_author_2": "S. Angoyuak",
+            "description": ""
+        }
+    }
+]

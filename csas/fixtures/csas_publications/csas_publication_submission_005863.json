@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5863,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Maritimes Research Vessel Survey Trends",
+            "title_fr": "Tendances dans les relevés par navire scientifique dans la Région des Maritimes",
+            "pub_year": 2011,
+            "lead_author_2": "D. Clark / T. McIntyre / V. Myra",
+            "pub_num": "003",
+            "pages": 30,
+            "pdf_size": 1557,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3712,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Winter Skate on the Eastern Scotian Shelf (4VsW)",
+            "title_fr": "Raie tachetée de l'est du plaeau néo-écossais",
+            "pub_year": 2002,
+            "lead_author_2": "Simon, J.",
+            "pub_num": "A3-29",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

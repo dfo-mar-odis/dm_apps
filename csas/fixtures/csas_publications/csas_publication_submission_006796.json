@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6796,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in Support of the Identification of Ecologically Significant Species, Functional Groups and Community Properties (ESSCP) in the Western Arctic Biogeographic Region",
+            "title_fr": "Renseignements à l’appui de l’identification d’espèces, de groupes fonctionnels et de propriétés des communautés d’importance écologique dans la région biogéographique de l’Arctique de l’Ouest",
+            "pub_year": 2018,
+            "lead_author_2": "Cobb, D.G., MacPhee, S., Paulic, J., Martin, K., Roy, V., Reist, J., Michel, C., Niemi, A., Richardson, E., and Black, A.",
+            "pub_num": "027",
+            "pages": 70,
+            "pdf_size": 2894,
+            "description": ""
+        }
+    }
+]

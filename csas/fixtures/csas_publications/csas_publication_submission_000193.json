@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 193,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Genetic impacts on wild Atlantic salmon (Salmo salar L.) stocks of escaped farm conspecifics: An assessment of risk",
+            "pub_year": 1998,
+            "lead_author_2": "E. Verspoor",
+            "pub_num": "156",
+            "description": ""
+        }
+    }
+]

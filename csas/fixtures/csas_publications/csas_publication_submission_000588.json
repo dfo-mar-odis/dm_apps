@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 588,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Hydrological Conditions for Atlantic Salmon Rivers in the Maritime Provinces in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Caissie, D.",
+            "pub_num": "189",
+            "pages": 31,
+            "pdf_size": 958,
+            "description": ""
+        }
+    }
+]

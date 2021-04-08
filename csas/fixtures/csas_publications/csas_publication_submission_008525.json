@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8525,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment - Okanagan Chinook Salmon (Oncorhynchus Tshawytscha) (2019)",
+            "title_fr": "Évaluation du potentiel de rétablissement : Saumon quinnat de l’Okanagan (Oncorhynchus tshawytscha) (2019)",
+            "pub_year": 2019,
+            "lead_author_2": "Nicholas Komick",
+            "pub_num": "052",
+            "pages": 15,
+            "pdf_size": 684,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 777,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Atlantic salmon (Salmo salar L.) stock of Harry's River/Pinchgut Brook, Newfoundland, 2000.",
+            "title_fr": "État du stock de saumon atlantique (Salmo salar L.) de la rivière Harry et du ruisseau Pinchgut, à Terre-Neuve, en 2000",
+            "pub_year": 2001,
+            "lead_author_2": "C.C. Mullins, D. Caines, S.L. Lowe",
+            "pub_num": "033",
+            "pages": 38,
+            "pdf_size": 690,
+            "description": ""
+        }
+    }
+]

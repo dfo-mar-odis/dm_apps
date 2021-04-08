@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6745,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the assessment of the rock crab in Quebec inshore waters; February 5 2013",
+            "title_fr": "Compte rendu de l'examen régional par des pairs portant sur l'évaluation des stocks de crabe commun des eaux côtières du Québec ; 5 février 2013",
+            "pub_year": 2013,
+            "lead_author_2": "S. Dubé",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

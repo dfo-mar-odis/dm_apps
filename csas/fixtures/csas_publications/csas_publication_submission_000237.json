@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 237,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Banquereau Bank Artic Surfclam, 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Roddick, D., Smith, S.J.",
+            "pub_num": "069",
+            "pages": 29,
+            "pdf_size": 4258,
+            "description": ""
+        }
+    }
+]

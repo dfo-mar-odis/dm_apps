@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6761,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information to support the pathways of effects assessment for the Darnley Bay Area of Interest for Marine Protected Area designation",
+            "lead_author_2": "Martin, K.",
+            "description": ""
+        }
+    }
+]

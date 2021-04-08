@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3701,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "At-sea observer coverage for catch monitoring of British Columbia hook and line fisheries",
+            "title_fr": "Contrôle en mer des prises à la ligne et hameçon en Colombie-Britannique",
+            "pub_year": 2002,
+            "lead_author_2": "R. Haigh, J. Schnute, L. Lacko, C. Eros, G. Workman, B. Ackerman",
+            "pub_num": "108",
+            "pages": 61,
+            "pdf_size": 2510,
+            "description": ""
+        }
+    }
+]

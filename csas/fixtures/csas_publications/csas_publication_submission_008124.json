@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8124,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Review of the Dominion Diamond Ekati ULC Jay Project Offsetting Plan, January 2018",
+            "title_fr": "Examen du plan de compensation du projet Jay de Dominion Diamond Ekati ULC, janvier 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Joclyn Paulic",
+            "pub_num": "029",
+            "pages": 21,
+            "pdf_size": 1002,
+            "description": ""
+        }
+    }
+]

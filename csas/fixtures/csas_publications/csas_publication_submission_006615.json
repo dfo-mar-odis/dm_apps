@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6615,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Morphology and life history of the Great Slave Lake ciscoes (Salmoniformes: Coregoninae)",
+            "title_fr": "Morphologie et cycle biologique des ciscos du Grand lac des Esclaves (Salmoniformes : corégoninés)",
+            "pub_year": 2013,
+            "lead_author_2": "Muir, A.M., Vecsei, P., Power, M., Krueger, C.C.,and Reist, J.D.",
+            "pub_num": "047",
+            "pages": 34,
+            "pdf_size": 1075,
+            "description": ""
+        }
+    }
+]

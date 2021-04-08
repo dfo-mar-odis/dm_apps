@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5386,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Chinook salmon predation by resident killer whales: seasonal and regional selectivity, stock identity of prey, and consumption rates",
+            "title_fr": "Prédation du saumon quinnat par les épaulards résidents : sélectivité saisonnière et régionale, identité des stocks de proies et taux de consommation",
+            "pub_year": 2009,
+            "lead_author_2": "Ford J.K.B.,  Wright, B.M., Ellis, G.M., Candy, J.R.",
+            "pub_num": "101",
+            "pages": 47,
+            "pdf_size": 3056,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1292,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary analysis of A.T. Cameron - Lady Hammond comparative fishing experiments 1979-81",
+            "pub_year": 1983,
+            "lead_author_2": "Koeller, P. Smith, S.J.",
+            "pub_num": "059",
+            "pages": 39,
+            "pdf_size": 1703,
+            "description": ""
+        }
+    }
+]

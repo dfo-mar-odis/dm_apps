@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6301,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Predicting organic enrichment under marine finfish farms in southwestern New Brunswick, Bay of Fundy: Comparisons of model predictions with results from spatially-intensive sediment sulfide sampling",
+            "title_fr": "Prévision de l'enrichissement organique dans les sites d'élevage de poissons marins dans la baie de Fundy, au sud-ouest du Nouveau-Brunswick : comparaisons des modèles de prévisions avec des résultats tirés des d'échantillonnage spatialement-intensif de sulfures dans les sédiments",
+            "pub_year": 2012,
+            "lead_author_2": "Blythe Chang",
+            "pub_num": "078",
+            "pages": 150,
+            "pdf_size": 8400,
+            "description": ""
+        }
+    }
+]

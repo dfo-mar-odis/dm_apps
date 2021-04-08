@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7370,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Harvest level decisions, monitoring, and communications in an adaptive co-management setting: Dolly Varden (Salvelinus malma malma) harvest in the Inuvialuit Settlement Region and the Gwich’in Settlement Area 2009-2014",
+            "lead_author_2": "Ellen Lea",
+            "description": ""
+        }
+    }
+]

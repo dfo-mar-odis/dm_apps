@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1021,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Green Sea Urchins Regional Advisory Process Maritimes Region; May 23-24 and 26, 2000",
+            "pub_year": 2000,
+            "lead_author_2": "T.L. Marshall, Chairperson",
+            "pub_num": "019",
+            "pages": 28,
+            "pdf_size": 107,
+            "description": ""
+        }
+    }
+]

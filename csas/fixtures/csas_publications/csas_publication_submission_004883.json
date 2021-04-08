@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4883,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Analysis for Chinook Salmon Okanagan Population, Oncorhynchus Tshawytscha",
+            "title_fr": "Analyse du potentiel de rétablissement de la population de saumons quinnats de l'Okanagan, Oncorhynchus tshawytscha",
+            "pub_year": 2007,
+            "lead_author_2": "Davis, C., H. Wright, T. Brown, B. Phillips, R. Sharma, C. Parken.",
+            "pub_num": "065",
+            "pages": 98,
+            "pdf_size": 1885,
+            "description": ""
+        }
+    }
+]

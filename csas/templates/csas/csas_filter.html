@@ -57,27 +57,26 @@
     <div class="row mt-2">
         <div class="col card border border-dark">
             <div class="card-body">
-            <form class="form" action="." method="get" id="filter-form" style="width: 90%; font-size: medium">
-                <div class="row">
+                <form class="form" action="." method="get" id="filter-form" style="width: 90%; font-size: medium">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                {% for field in filter.form %}
+                                    <div class="col-2">
+                                        {% bootstrap_field field placeholder="" size="small" %}
+                                    </div>
 
-                    <div class="col">
-                        <div class="row">
-                    {% for field in filter.form %}
-                        <div class="col-2">
-                            {% bootstrap_field field placeholder="" size="small" %}
-                        </div>
-
-                    {% endfor %}
+                                {% endfor %}
                             </div>
                         </div>
-                    <div class="col-1 mt-4">
-                        <div class="btn-group">
-                            <input type="submit" value="Filter" class="btn btn-warning btn-sm">
-                            <a href="." class="btn btn-success btn">Clear</a>
+                        <div class="col-1 mt-4">
+                            <div class="btn-group">
+                                <input type="submit" value="Filter" class="btn btn-warning btn-sm">
+                                <a href="." class="btn btn-success btn">Clear</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
             </div>
         </div>
     </div>
@@ -92,7 +91,17 @@
                         <th>{% get_verbose_label filter.qs.first field %}</th>
                     {% endfor %}
                     {% if details_url %}
-                        <th></th>
+                        {% if key == 'req' %}
+                            <th style="width:400px"></th>
+                        {% elif key == 'met' %}
+                            <th style="width:620px"></th>
+                        {% elif key == 'pub' %}
+                            <th style="width:630px"></th>
+                        {% elif key == 'con' %}
+                            <th style="width:215px"></th>
+                        {% else %}
+                            <th></th>
+                        {% endif %}
                     {% endif %}
                     {% if editable and update_url and auth  %}
                         <th></th>
@@ -251,8 +260,18 @@
                                             <a class="btn btn-outline-primary btn-sm"> {% trans 'Status' %} </a>
                                         {% endif %}
 
-                                        <a class="btn btn-secondary btn-sm"
-                                           href="{% url ''|add:'csas:create_req_CSAS' %}">{% trans 'Status Update' %}</a>
+                                        {% for req_meeting in obj.req_meeting.all %}
+                                            <a class="btn btn-secondary btn-sm" href="#"
+                                               onclick="return popitup('{% url ''|add:'csas:details_met' req_meeting.pk %}','popoutWindow')"
+                                               title="{% trans 'Add' %}">{% trans 'Go To Meeting ' %}</a>
+                                        {% endfor %}
+                                        {% if not obj.req_meeting.all %}
+                                            <a class="btn btn-secondary btn-sm"
+                                               href="{% url ''|add:'csas:create_met' %}">{% trans 'Create Meeting' %}</a>
+                                        {% endif %}
+
+                                        {# --- <a class="btn btn-secondary btn-sm" --- #}
+                                        {# ---   href="{% url ''|add:'csas:create_req_CSAS' %}">{% trans 'Status Update' %}</a> --- #}
 
                                         {# ===================================================================== #}
                                         <a class="btn btn-secondary btn-sm" href="#"

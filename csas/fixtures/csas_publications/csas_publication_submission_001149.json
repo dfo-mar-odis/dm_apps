@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1149,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Stock assessment of American plaice in NAFO Subarea 2 - Division 3K",
+            "pub_year": 1981,
+            "lead_author_2": "T.K. Pitt; W.B. Brodie",
+            "pub_num": "051",
+            "pages": 17,
+            "pdf_size": 6273,
+            "description": ""
+        }
+    }
+]

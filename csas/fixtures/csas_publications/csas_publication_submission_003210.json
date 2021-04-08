@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3210,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Scotian Shelf Haddock",
+            "title_fr": "L'Aiglefin de l'est du plateau néo-écossais",
+            "pub_year": 1996,
+            "lead_author_2": "Zwanenburg, K.",
+            "pub_num": "068",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

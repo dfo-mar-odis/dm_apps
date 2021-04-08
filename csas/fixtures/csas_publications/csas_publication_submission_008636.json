@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8636,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_fr": "Évaluation des stocks de pétoncles des eaux côtières du Québec en 2019",
+            "pub_year": 2020,
+            "lead_author_2": "Rénald Belley",
+            "pub_num": "054",
+            "description": ""
+        }
+    }
+]

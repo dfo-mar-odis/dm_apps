@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1115,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Division 4VWX redfish: Assessment and estimate of total allowable catch for 1982",
+            "pub_year": 1981,
+            "lead_author_2": "T.J. Kenchington",
+            "pub_num": "017",
+            "pages": 39,
+            "pdf_size": 15159,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 697,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Oceanographic conditions in the Estuary and the Gulf of St. Lawrence in 1999: zooplankton",
+            "pub_year": 2000,
+            "lead_author_2": "Harvey, M., Runge, J.A., St-Pierre, J.F., Joly, P.",
+            "pub_num": "117",
+            "pages": 19,
+            "pdf_size": 871,
+            "description": ""
+        }
+    }
+]

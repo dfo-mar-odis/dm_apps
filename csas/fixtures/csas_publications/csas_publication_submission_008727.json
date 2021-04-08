@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8727,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Blackspotted / Rougheye Rockfish (Type I and Type II) stock assessment for British Columbia in 2020",
+            "lead_author_2": "Greg Workman",
+            "description": ""
+        }
+    }
+]

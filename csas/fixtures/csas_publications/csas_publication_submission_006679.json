@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6679,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "A National Synthesis of the Fisheries and Oceans Canada Ecosystem Research Initiative",
+            "title_fr": "Une syntèse nationale des initiatives de recherche écosystémique de Pêches et Océans Canada",
+            "pub_year": 2013,
+            "lead_author_2": "White, A.L., R.I. Perry, M.A. Koops, R.G. Randall, A. Bundy, P. Lawton, M. Koen-Alonso, D. Masson, P.S. Galbraith, M. Lebeuf, M. Lanteigne, and C. Hoover",
+            "pub_num": "027",
+            "pages": 34,
+            "pdf_size": 401,
+            "description": ""
+        }
+    }
+]

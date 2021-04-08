@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 685,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results of the 1999 Fish Harvesters' Committees questionnaire and a comparison of sentinel and commercial catch rates for NAFO Divisions 2J3KL",
+            "pub_year": 2000,
+            "lead_author_2": "Jarvis, H., Stead, R.",
+            "pub_num": "103",
+            "pages": 13,
+            "pdf_size": 6390,
+            "description": ""
+        }
+    }
+]

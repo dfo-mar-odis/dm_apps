@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2798,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the NAFO Division 4T Atlantic herring stock, 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Claytor, R.R., Leclair, C.,  Sinclair, A., Poirier, G., Paulin, L.",
+            "pub_num": "030",
+            "pages": 114,
+            "pdf_size": 5220,
+            "description": ""
+        }
+    }
+]

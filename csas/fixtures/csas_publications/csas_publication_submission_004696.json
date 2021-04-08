@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4696,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 2],
+            "title_en": "Recovery potential assessment for right whale (Western North Atlantic population)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la baleine noire (population de l'ouest de l'Atlantique Nord)",
+            "pub_year": 2007,
+            "lead_author_2": "Smedbol, R.K.",
+            "pub_num": "027",
+            "pages": 9,
+            "pdf_size": 89,
+            "description": ""
+        }
+    }
+]

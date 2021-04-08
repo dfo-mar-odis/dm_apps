@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6287,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery potential assessment of Mountain Sucker (Catostomus platyrhynchus), Milk River populations (DU2)",
+            "title_fr": "Évaluation du potentiel de rétablissement du meunier des montagnes (Catostomus platyrhynchus), populations de la rivière Milk (UD2)",
+            "pub_year": 2013,
+            "lead_author_2": "Cleator, Holly",
+            "pub_num": "032",
+            "pages": 18,
+            "pdf_size": 522,
+            "description": ""
+        }
+    }
+]

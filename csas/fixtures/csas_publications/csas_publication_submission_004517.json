@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4517,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Zonal Workshop on the Identification of Ecologically and Biologically Significant Areas (EBSA) within the Gulf of St. Lawrence and Estuary; February 21-23, 2006",
+            "title_fr": "Compte-rendu de l'atelier zonal sur l'identification des zones d'importance écologique et biologique (ZIEB) dans le Golfe du Saint Laurent et l'estuaire; du 21 au 23 février 2006",
+            "pub_year": 2006,
+            "lead_author_2": "MPO",
+            "pub_num": "011",
+            "pages": 71,
+            "pdf_size": 2982,
+            "description": ""
+        }
+    }
+]

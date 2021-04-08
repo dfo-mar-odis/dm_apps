@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1064,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biomass estimates from Canadian research vessel surveys on the Scotian Shelf and in the Gulf of St. Lawrence from 1970 to 1979",
+            "pub_year": 1980,
+            "lead_author_2": "Koeller, P.A.",
+            "pub_num": "018",
+            "pages": 17,
+            "pdf_size": 791,
+            "description": ""
+        }
+    }
+]

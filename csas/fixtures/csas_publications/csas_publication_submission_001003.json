@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1003,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Inner Bay of Fundy Salmon Working Group, Regional Advisory Process Maritimes Region; September 27, 1999",
+            "pub_year": 1999,
+            "lead_author_2": "E. Kenchington, Chairman",
+            "pub_num": "029",
+            "pages": 39,
+            "description": ""
+        }
+    }
+]

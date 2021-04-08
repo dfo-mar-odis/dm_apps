@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7689,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Putting offsetting and monitoring on the map: tracking and monitoring fish habitat and productivity changes using GIS",
+            "title_fr": "Mettre en place sur la carte les mesures de compensation et de surveillance : suivre et surveiller l’habitat du poisson et les changements de productivité au moyen d’un système d’information géographique",
+            "pub_year": 2016,
+            "lead_author_2": "Bakelaar, C.N., Doolittle, A.G., Randall, R.G., Doherty, A., and Thomas, J.",
+            "pub_num": "041",
+            "pages": 14,
+            "pdf_size": 329,
+            "description": ""
+        }
+    }
+]

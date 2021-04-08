@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7154,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review Meeting on the Precautionary Approach Reference Points for the Atlantic Mackerel in Subareas 3 and 4; March 20, 2014",
+            "title_fr": "Compte rendu de l'examen régional par des pairs sur les points de référence de l'approche de précaution pour le maquereau bleu des sous-régions 3 et 4; le 20 mars 2014",
+            "pub_year": 2014,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "022",
+            "pages": 8,
+            "pdf_size": 58,
+            "description": ""
+        }
+    }
+]

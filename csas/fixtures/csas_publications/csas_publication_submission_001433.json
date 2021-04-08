@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1433,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "An adaptation of \"APL programs for stock assessments\" for an 8088-based microcomputer",
+            "pub_year": 1984,
+            "lead_author_2": "D. Rivard; M. Joly",
+            "pub_num": "027",
+            "pages": 18,
+            "pdf_size": 913,
+            "description": ""
+        }
+    }
+]

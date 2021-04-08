@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4954,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Protocol for the detection of fish Species At Risk in Ontario Great Lakes Area (OGLA)",
+            "title_fr": "Protocole pour la détection des espèces de poisson en péril dans la Zone Ontario-Grands Lacs (ZOGL)",
+            "pub_year": 2008,
+            "lead_author_2": "Portt, C.B., G.A. Coker, N.E. Mandrak, D.L. Ming",
+            "pub_num": "026",
+            "pages": 37,
+            "pdf_size": 223,
+            "description": ""
+        }
+    }
+]

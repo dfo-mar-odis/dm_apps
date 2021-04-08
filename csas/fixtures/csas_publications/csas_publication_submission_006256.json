@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6256,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Integrated Biological Status Assessments Under the Wild Salmon Policy Using Standardized Metrics and Expert Judgement: Fraser River Sockeye Salmon (Oncorhynchus nerka) Case Studies",
+            "title_fr": "Évaluation de l'état biologique intégré en vertu de la Politique concernant le saumon sauvage à l'aide de paramètres normalisés et de l'avis des spécialistes : études de cas du saumon rouge du fleuve Fraser (Oncorhynchus nerka)",
+            "pub_year": 2012,
+            "lead_author_2": "Sue Grant",
+            "pub_num": "106",
+            "pages": 137,
+            "pdf_size": 1169,
+            "description": ""
+        }
+    }
+]

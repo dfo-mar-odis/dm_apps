@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8061,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Update of stock status indicators for Northern Shrimp, Pandalus Borealis, and Striped Shrimp, Pandalus montagui, in the Western and Eastern Assessment Zones, February 2018",
+            "title_fr": "Mise à jour des indicateurs de l’état des stocks des crevettes nordiques, Pandalus borealis, et les crevettes ésopes, Pandalus montagui, dans les zones d’évaluation ouest et est pour 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Joclyn Paulic",
+            "pub_num": "012",
+            "description": ""
+        }
+    }
+]

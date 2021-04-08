@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2131,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic herring in NAFO Division 4T, 1990",
+            "title_fr": "Évaluation du hareng de l'Atlantique dans la division 4T de l'OPANO, 1990",
+            "pub_year": 1991,
+            "lead_author_2": "R.R. Claytor; G. Nielsen; H.M.C. Dupuis; D.K. Cairns",
+            "pub_num": "066",
+            "pages": 76,
+            "pdf_size": 3501,
+            "description": ""
+        }
+    }
+]

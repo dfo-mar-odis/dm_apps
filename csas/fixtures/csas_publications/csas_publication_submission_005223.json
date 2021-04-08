@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5223,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Seasonal movements and abundance of beluga in northern Quebec (Nunavik) based on weekly sightings information",
+            "title_fr": "Renseignements sur les déplacements saisonniers et l'abondance du béluga dans le nord du Québec (Nunavik) d'après les observations hebdomadaire",
+            "pub_year": 2009,
+            "lead_author_2": "Hammill, M., Lesage, V.",
+            "pub_num": "010",
+            "pages": 18,
+            "pdf_size": 236,
+            "description": ""
+        }
+    }
+]

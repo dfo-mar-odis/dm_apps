@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4806,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Run reconstruction and Escapement Goals fo Alsek River Sockeye Salmon",
+            "lead_author_2": "Michael Chamberlain",
+            "description": ""
+        }
+    }
+]

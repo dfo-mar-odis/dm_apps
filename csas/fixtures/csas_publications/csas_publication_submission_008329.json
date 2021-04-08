@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8329,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Regional Peer Review of the Binational Ecological RIsk Assessment for Black Carp in the Great Lakes Basin",
+            "lead_author_2": "Andrew Drake",
+            "description": ""
+        }
+    }
+]

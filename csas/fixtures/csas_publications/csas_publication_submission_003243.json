@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3243,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southern Gulf Bar Clam",
+            "title_fr": "Mactre d'Amérique du sud du Golfe",
+            "pub_year": 1996,
+            "lead_author_2": "Sephton,T.",
+            "pub_num": "100",
+            "pages": 2,
+            "description": ""
+        }
+    }
+]

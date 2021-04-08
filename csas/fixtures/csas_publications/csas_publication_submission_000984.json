@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 984,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Final Report of the 1998 Annual Meeting of the Fisheries Oceanography Committee; February 24-26, 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Ken Drinkwater, Chairperson",
+            "pub_num": "010",
+            "pages": 42,
+            "pdf_size": 390,
+            "description": ""
+        }
+    }
+]

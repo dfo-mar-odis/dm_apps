@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6121,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science Advice to Support Development of a Fisheries Protection Policy For Canada",
+            "title_fr": "Avis scientifique pour guider l'élaboration d'une politique sur la protection des pêches au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Wysocki, R.",
+            "pub_num": "063",
+            "description": ""
+        }
+    }
+]

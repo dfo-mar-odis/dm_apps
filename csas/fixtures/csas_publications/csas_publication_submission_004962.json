@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4962,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Centre for Integrated Aquaculture Science (CIAS), Fisheries and Oceans Canada: Report from the March 26, 2007, CIAS National Conference Call to Discuss Prioirty Research Required Within DFO Pertaining to Sustainable Aquaculture Production (Revised: July 2008); March 26, 2007",
+            "title_fr": "Centre de recherche intégrée en aquaculture (CRIA), Pêches et Océans Canada : Rapport sur la téléconférence nationale tenue le 26 mars 2007 pour discuter des priorités de recherche à établir au sein du MPO en matière de production aquacole durable (révisé : juillet 2008); le 26 mars 2007",
+            "pub_year": 2008,
+            "lead_author_2": "Kennedy, E., F. Page.",
+            "pub_num": "010",
+            "pages": 38,
+            "pdf_size": 265,
+            "description": ""
+        }
+    }
+]

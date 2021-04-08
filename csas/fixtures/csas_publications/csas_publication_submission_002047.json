@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2047,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Stock status of the southern Gulf of St. Lawrence cod stock (4T and 4V (Jan.-Apr.)) in 1990",
+            "title_fr": "État du stock de morue du sud du Golfe du St. Laurent (4T et 4Vn (jan.-avr.)) en 1990",
+            "pub_year": 1990,
+            "lead_author_2": "G.A. Chouinard; G.A. Nielsen; L.G. Currie; J.P. Murphy",
+            "pub_num": "046",
+            "pages": 58,
+            "pdf_size": 2558,
+            "description": ""
+        }
+    }
+]

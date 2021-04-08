@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6130,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Analysis of catch options for aboriginal and recreational fisheries for Atlantic salmon from the Margaree River (Nova Scotia) for 2012",
+            "title_fr": "Analyse des options de captures dans les pêches autochtones et récréatives du saumon atlantique de la rivière Margaree (Nouvelle-Écosse) pour 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Cindy Breau",
+            "pub_num": "093",
+            "pages": 53,
+            "pdf_size": 469,
+            "description": ""
+        }
+    }
+]

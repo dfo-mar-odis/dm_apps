@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 838,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Status of the stock of Atlantic mackerel (Scomber scombrus L.) in NAFO Subareas 3 and 4 in 2000",
+            "title_fr": "État du stock de maquereau bleu (Scomber scombrus L.) des sous-régions 3-4 de l'OPANO pour 2000",
+            "pub_year": 2001,
+            "lead_author_2": "Grégoire, F., Morrier, G., Lévesque, C., Hudon, J.",
+            "pub_num": "081",
+            "pages": 130,
+            "pdf_size": 5790,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7838,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Threat Assessment for Loggerhead Sea Turtle (Caretta caretta), Northwest Atlantic Population",
+            "title_fr": "Évaluation des menaces pour la tortue caouanne (Caretta caretta), population du nord-ouest de l’Atlantique",
+            "pub_year": 2017,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "014",
+            "pages": 33,
+            "pdf_size": 448,
+            "description": ""
+        }
+    }
+]

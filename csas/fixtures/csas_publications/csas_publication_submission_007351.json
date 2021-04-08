@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7351,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "4X5Y Haddock 2014 Framework Assessment: Data Inputs and Exploratory Modelling",
+            "title_fr": "Évaluation du cadre de travail de 2014 pour l'aiglefin des divisions 4X5Y : Saisie de données et modélisation exploratoire",
+            "pub_year": 2015,
+            "lead_author_2": "H. Stone",
+            "pub_num": "022",
+            "pages": 94,
+            "pdf_size": 4916,
+            "description": ""
+        }
+    }
+]

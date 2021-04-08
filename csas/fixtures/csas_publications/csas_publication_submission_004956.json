@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4956,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Status of Southwest Nova Scotia Inshore Hardshell Clam Stocks",
+            "title_fr": "État des stocks côtiers de certains coquillages bivalves dans le sud-ouest de la Nouvelle-Écosse",
+            "pub_year": 2008,
+            "lead_author_2": "Roddick, D., M. Showell",
+            "pub_num": "007",
+            "pages": 9,
+            "pdf_size": 218,
+            "description": ""
+        }
+    }
+]

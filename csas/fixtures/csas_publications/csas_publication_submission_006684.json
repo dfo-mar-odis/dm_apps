@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6684,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional recovery potential assessment of Plains Minnow (Hybognathus placitus) in Canada; 12 December 2012",
+            "title_fr": "Compte rendu sur l'évaluation du potentel de rétablissement du méné des plaines (Hybognathus placitus) au Canada ; 12 décembre 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Martin, Kathleen",
+            "pub_num": "019",
+            "pages": 21,
+            "pdf_size": 343,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1526,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The efficiency of meat recovery from sea and Iceland scallops in the Canadian offshore fishery",
+            "pub_year": 1985,
+            "lead_author_2": "K.S. Naidu",
+            "pub_num": "019",
+            "pages": 17,
+            "pdf_size": 674,
+            "description": ""
+        }
+    }
+]

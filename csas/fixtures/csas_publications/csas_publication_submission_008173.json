@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8173,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Basis for A Precautionary Approach and Decision Making Framework for the Newfoundland and Labrador Snow Crab (Chionoecetes opilio) Fishery",
+            "title_fr": "Base d’une approche de précaution et d’un cadre décisionnel pour la pêche du crabe des neiges (Chionoecetes opilio) à Terre-Neuve-et-Labrador",
+            "pub_year": 2018,
+            "lead_author_2": "Mullowney, D., Baker, K., Pedersen, E., and Osborne, D.",
+            "pub_num": "054",
+            "pages": 70,
+            "pdf_size": 2520,
+            "description": ""
+        }
+    }
+]

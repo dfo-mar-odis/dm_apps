@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6616,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Patterns of morphological diversity in ciscoes distributed within three of Manitoba's glacial relict lakes, with reference to Shortjaw Cisco (Coregonus zenithicus)",
+            "title_fr": "Tendances en matière de diversité morphologique chez les ciscos répartis dans trois des reliquats de lacs glaciaires du Manitoba par rapport au cisco à mâchoires égales (Coregonus zenithicus)",
+            "pub_year": 2013,
+            "lead_author_2": "Boguski, D.A., Murray, L., Pratt, T.C., Johnson, J.D., and Reist, J.D.",
+            "pub_num": "107",
+            "pages": 24,
+            "pdf_size": 690,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2281,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The inshore capelin fishery in NAFO Div. 3K in 1992 and a comparison of mean lengths in NAFO Div. 3K and Div. 3L",
+            "pub_year": 1993,
+            "lead_author_2": "B.S. Nakashima; J. Carscadden",
+            "pub_num": "008",
+            "pages": 26,
+            "pdf_size": 1265,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6939,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Temporal trends of PBDEs in adult and newborn beluga (Delphinapterus leucas) from the St. Lawrence Estuary",
+            "title_fr": "Tendances temporelles des PBDE chez les bélugas (Delphinapterus leucas) adultes et nouveau-nés de l'estuaire du Saint-Laurent",
+            "pub_year": 2013,
+            "lead_author_2": "Michel Lebeuf, Meriem Raach, Lena Measures, Nadia Ménard and Mike Hammill",
+            "pub_num": "120",
+            "pages": 16,
+            "pdf_size": 126,
+            "description": ""
+        }
+    }
+]

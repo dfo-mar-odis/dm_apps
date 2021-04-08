@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5489,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of whether upstream passage for Lake Sturgeon is needed at the Pointe du Bois Generating Station (Winnipeg River)",
+            "title_fr": "Évaluation de la nécessité d'une passe à esturgeons jaunes vers l'amont à la station hydroélectrique de Pointe-du-Bois (rivière Winnipeg)",
+            "pub_year": 2009,
+            "lead_author_2": "Pratt, T.",
+            "pub_num": "083",
+            "pages": 11,
+            "pdf_size": 2165,
+            "description": ""
+        }
+    }
+]

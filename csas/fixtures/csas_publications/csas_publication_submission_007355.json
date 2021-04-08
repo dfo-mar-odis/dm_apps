@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7355,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "2015 Assessment of Northern Shrimp, Pandalus borealis, and Striped Shrimp, Pandalus montagui, in the eastern and western assessment zones",
+            "title_fr": "Évaluation des stocks de crevette nordique, Pandalus borealis, et de crevette ésope, Pandalus montagui, en 2015 dans les zones d'évaluation est et ouest",
+            "pub_year": 2015,
+            "lead_author_2": "Kathleen Martin",
+            "pub_num": "017",
+            "description": ""
+        }
+    }
+]

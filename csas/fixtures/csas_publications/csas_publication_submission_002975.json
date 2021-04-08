@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2975,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Monkfish in Divisions 3L, 3N, 3O and subdivisions 3Ps",
+            "pub_year": 2000,
+            "lead_author_2": "Dave Kulka",
+            "pub_num": "A2-20",
+            "pages": 4,
+            "pdf_size": 335,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7065,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Arctic Char (Salvelinus alpinus) in the Darnley Bay area of the Northwest Territories",
+            "title_fr": "Évaluation du stock d'ombles chevaliers (Salvelinus alpinus) dans la région de la baie Darnley, dans les Territoires du Nord-Ouest",
+            "pub_year": 2015,
+            "lead_author_2": "C. Gallagher",
+            "pub_num": "024",
+            "pages": 12,
+            "pdf_size": 319,
+            "description": ""
+        }
+    }
+]

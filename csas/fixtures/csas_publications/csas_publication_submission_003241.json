@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3241,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Gulf Rock Crab (Cancer irroratus)",
+            "title_fr": "Crabe commun du golfe (Cancer irroratus)",
+            "pub_year": 1996,
+            "lead_author_2": "mallet, P. ; Landsburg, W.",
+            "pub_num": "098",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

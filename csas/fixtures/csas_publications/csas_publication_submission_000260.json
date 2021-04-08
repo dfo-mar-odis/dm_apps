@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 260,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Science Strategic Project on the Precautionary Approach in Canada, Proceedings of the second Workshop; 1-5 November 1999",
+            "pub_year": 1999,
+            "lead_author_2": "L. Richards, J. Schnute",
+            "pub_num": "041",
+            "pages": 103,
+            "pdf_size": 20,
+            "description": ""
+        }
+    }
+]

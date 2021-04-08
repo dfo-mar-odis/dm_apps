@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7551,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Updated Information on Fishing Bycatch of Atlantic Salmon, Inner Bay of Fundy Population, and its Impact on the Survival or Recovery of this Atlantic Salmon Designatable Unit (DU)",
+            "title_fr": "Mise à jour des renseignements sur les prises accessoires de la population de saumon de l'atlantique de l'intérieur de la baie de fundy et de leurs répercussions sur la survie ou le rétablissement de cette unité désignable du saumon de l'atlantique",
+            "pub_year": 2016,
+            "lead_author_2": "Stephanie Ratelle",
+            "pub_num": "023",
+            "pages": 26,
+            "pdf_size": 1083,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8057,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Framework for Determination of Pacific Salmon Commission Reference Points for Status Determination and Associated Allowable Exploitation Rates for Select Canadian Southern Coho Salmon Management Units",
+            "title_fr": "Cadre pour la détermination des points de référence de la Commission du saumon du Pacifique permettant de définir les états et les taux d’exploitation admissibles connexes pour certaines zones de gestion canadiennes du saumon coho du sud",
+            "pub_year": 2018,
+            "lead_author_2": "Mary Thiess",
+            "pub_num": "016",
+            "pages": 22,
+            "pdf_size": 582,
+            "description": ""
+        }
+    }
+]

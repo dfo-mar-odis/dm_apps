@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 638,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical oceanographic conditions on the Scotian Shelf and in the Gulf of Maine during 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Drinkwater, K.F., Petrie, B., Pettipas, R.G., Petrie, W.M., Soukhovtsev, V.",
+            "pub_num": "060",
+            "pages": 47,
+            "pdf_size": 2199,
+            "description": ""
+        }
+    }
+]

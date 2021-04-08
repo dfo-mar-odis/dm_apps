@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4283,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Applicability of the use of visual indicators [presence of Beggiatoa and/or Opportunistic Polychaete Complexes (OPC)] to identify benthic changes due to aquaculture on various substrates",
+            "title_fr": "L'utilisation de la présence de Beggiatoa et des complexes de polychètes opportunistes (CPO) comme indicateurs de changement de l'habitat benthique attribuable à des activités piscicoles",
+            "pub_year": 2014,
+            "lead_author_2": "D. Hamoutene, L. Sheppard, J. Mersereau, V. Oldford, T. Bungay, F.Salvo, S. Dufour, and G. Mabrouk",
+            "pub_num": "063",
+            "pages": 22,
+            "pdf_size": 206,
+            "description": ""
+        }
+    }
+]

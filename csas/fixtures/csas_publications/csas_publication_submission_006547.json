@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6547,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Age Determination without Tears: Statistical Estimation of Silver Hake (Merluccius bilinearis) Age Composition on the Basis of Otolith Weight and Fish Length ",
+            "title_fr": "Détermination de l'âge sans interruption : Estimation statistique de la composition selon l'âge du merlu argenté (Merluccius bilinearis) d'après le poids des otolithes et la longueur du poisson",
+            "pub_year": 2012,
+            "lead_author_2": "S. Campana",
+            "pub_num": "079",
+            "pages": 21,
+            "pdf_size": 293,
+            "description": ""
+        }
+    }
+]

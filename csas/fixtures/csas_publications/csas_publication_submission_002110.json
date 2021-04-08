@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2110,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Hooded seal, Cystophora cristata, feeding and interactions with commercial fisheries in Newfoundland",
+            "pub_year": 1991,
+            "lead_author_2": "G. B. Stenson; I.H. Ni; S.A. Ross; D. McKinnon",
+            "pub_num": "045",
+            "pages": 16,
+            "pdf_size": 893,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6267,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Peer-review Meeting on Guidelines on Defining Potential Exposure and Associated Biological Effects from Aquaculture Pest and Pathogen Treatments: Anti-Sea Lice Bath Treatments in the Bay of Fundy, New Brunswick; November 2-3, 2011",
+            "title_fr": "Réunion nationale d'examen par les pairs des recommandations pour définir l'exposition potentielle et les effets biologiques connexes issus des traitements des parasites et des agents pathogènes en aquaculture : bains contre le pou du poisson dans la baie de Fundy (Nouveau-Brunswick) ; du 2 au 3 novembre 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Jay Parsons",
+            "pub_num": "050",
+            "pages": 26,
+            "pdf_size": 139,
+            "description": ""
+        }
+    }
+]

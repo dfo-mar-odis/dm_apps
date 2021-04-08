@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3737,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Pelagic Subcommittee Meeting; February 5, 2003",
+            "pub_year": 2003,
+            "lead_author_2": "King, J.",
+            "pub_num": "001",
+            "pages": 14,
+            "pdf_size": 60,
+            "description": ""
+        }
+    }
+]

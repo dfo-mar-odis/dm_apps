@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3315,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery target and long-term projections for the Black Redhorse (Moxostoma duquesnei)",
+            "title_fr": "Cible de rétablissement et projections à long terme pour le chevalier noir (Moxostoma duquesnei)",
+            "pub_year": 2008,
+            "lead_author_2": "L.A. Vélez-Espino, M.A. Koops.",
+            "pub_num": "006",
+            "pages": 19,
+            "pdf_size": 165,
+            "description": ""
+        }
+    }
+]

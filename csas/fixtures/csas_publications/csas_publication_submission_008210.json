@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8210,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Genetic Change in Inner Bay of Fundy Atlantic Salmon (Salmo salar) Across Three Generations of Captive Breeding and Rearing",
+            "title_fr": "Évaluer la réussite de la conservation des caractéristiques génétiques de la population de saumons de l’Atlantique (Salmo salar) de l’intérieur de la baie de Fundy sur trois générations de reproduction et d’élevage en captivité",
+            "pub_year": 2018,
+            "lead_author_2": "O’Reilly, P.T., Harvie, C., McWilliam, S., Lenentine, B., and Jones, R.",
+            "pub_num": "044",
+            "pages": 12,
+            "pdf_size": 499,
+            "description": ""
+        }
+    }
+]

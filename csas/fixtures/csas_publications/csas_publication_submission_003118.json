@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3118,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southwest Nova Winter Flounder, American Plaice and Yellowtail Flounder",
+            "title_fr": "La plie rouge, la plie canadienne et la limande à queue jaune du sud-ouest de la Nouvelle-écosse",
+            "pub_year": 1997,
+            "lead_author_2": "Wayne Stobo",
+            "pub_num": "A3-21",
+            "pages": 8,
+            "pdf_size": 545,
+            "description": ""
+        }
+    }
+]

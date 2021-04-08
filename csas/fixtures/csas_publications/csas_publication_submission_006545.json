@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6545,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Leatherback Turtle (Dermochelys coriacea) Fisheries and Non-Fisheries Related Interactions in Atlantic Canadian Waters",
+            "title_fr": "Évaluation des interactions entre les tortues luth (Dermochelys coriacea) et les activités liées ou non à la pêche dans les eaux du Canada atlantique",
+            "pub_year": 2012,
+            "lead_author_2": "R. O’Boyle / Tana Worcester / Valerie Myra",
+            "pub_num": "063",
+            "pages": 102,
+            "pdf_size": 3820,
+            "description": ""
+        }
+    }
+]

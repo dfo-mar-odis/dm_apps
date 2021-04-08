@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7383,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Indicators of Atlantic Salmon (Salmo salar) stock status for Prince Edward Island (SFA 17) and Gulf Nova Scotia (SFA 18) in DFO Gulf Region for 2014",
+            "title_fr": "Indicateurs de l'état des stocks de saumons de l'Atlantique (Salmo salar) de l'Île-du-Prince-Édouard (ZPS 17) et du golfe de la Nouvelle-Écosse (ZPS 18) dans la région du Golfe du MPO pour 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Chaput, G.",
+            "pub_num": "016",
+            "pages": 9,
+            "pdf_size": 253,
+            "description": ""
+        }
+    }
+]

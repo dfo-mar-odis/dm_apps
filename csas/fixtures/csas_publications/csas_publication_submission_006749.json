@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6749,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Atlantic surfclam in the coastal waters of the Îles-de-la-Madeleine in 2012",
+            "title_fr": "Évaluation des stocks de la mactre de l'Atlantique des eaux côtières des Îles-de-la-Madeleine en 2012",
+            "pub_year": 2013,
+            "lead_author_2": "S. Dubé",
+            "pub_num": "016",
+            "pages": 15,
+            "pdf_size": 627,
+            "description": ""
+        }
+    }
+]

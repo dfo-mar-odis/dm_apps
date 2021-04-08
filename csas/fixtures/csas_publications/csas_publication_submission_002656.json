@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2656,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Shortfin Mako Shark",
+            "title_fr": "Le requin-taupe bleu",
+            "pub_year": 1996,
+            "lead_author_2": "O'Boyle, B.",
+            "pub_num": "032",
+            "pages": 2,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8194,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A Regional Assessment of Ecological Attributes in Rockfish Conservation Areas in British Columbia",
+            "title_fr": "Une évaluation régionale des paramètres écologiques des aires de conservation du sébaste en Colombie-Britannique",
+            "pub_year": 2020,
+            "lead_author_2": "Dunham, J.S., Yu, F., Haggarty, D., Deleys, N. and Yamanaka, L.",
+            "pub_num": "026",
+            "pages": 94,
+            "pdf_size": 3212,
+            "description": ""
+        }
+    }
+]

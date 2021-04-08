@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1840,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of Divisions 4RST Redfish (Sebastes spp.)",
+            "pub_year": 1988,
+            "lead_author_2": "E. Laberge",
+            "pub_num": "044",
+            "pages": 44,
+            "pdf_size": 1955,
+            "description": ""
+        }
+    }
+]

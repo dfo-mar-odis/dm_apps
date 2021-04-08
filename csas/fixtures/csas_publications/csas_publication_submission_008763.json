@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8763,
+        "fields": {
+            "series": 6,
+            "lead_region": [],
+            "title_en": "Assessment of the Ecological Impact of the Grassy Mountain Coal Project on Westslope Cutthroat Trout in the Blairmore and Gold Creek Watersheds, Alberta",
+            "title_fr": "Évaluation de l’impact écologique du projet de mine de charbon Grassy Mountain sur la truite fardée versant de l’Ouest dans les bassins hydrographiques Blairmore et Gold Creek (Alberta)",
+            "pub_year": 2020,
+            "lead_author_2": "Joclyn Paulic",
+            "pub_num": "052",
+            "pages": 23,
+            "pdf_size": 1312,
+            "description": ""
+        }
+    }
+]

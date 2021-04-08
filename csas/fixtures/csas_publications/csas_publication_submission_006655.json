@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6655,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Abundance estimate of eastern Hudson Bay beluga and James Bay, summer 2011",
+            "title_fr": "Estimation de l'abondance des bélugas de l'est de la baie d'Hudson et de la baie James, été 2011",
+            "pub_year": 2013,
+            "lead_author_2": "J.-F. Gosselin, T. Doniol-Valcroze, M.O. Hammill",
+            "pub_num": "016",
+            "pages": 27,
+            "pdf_size": 890,
+            "description": ""
+        }
+    }
+]

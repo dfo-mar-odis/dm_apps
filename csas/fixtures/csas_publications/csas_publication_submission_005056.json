@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5056,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Measurements of Chemical Contaminants and Toxicological Effects in the Gully",
+            "title_fr": "Mesures des contaminants chimiques et des effets toxicologiques dans le Goulet",
+            "pub_year": 2008,
+            "lead_author_2": "P. Yeats, J. Hellou, T. King, B. Law",
+            "pub_num": "066",
+            "pages": 25,
+            "pdf_size": 418,
+            "description": ""
+        }
+    }
+]

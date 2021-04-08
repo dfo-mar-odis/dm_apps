@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8550,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Science Review of Additional Documents Submitted June 18–August 29, 2019 for the Final Environmental Impact Statement Addendum for the Baffinland Mary River Project Phase 2",
+            "title_fr": "Examen scientifique des documents supplémentaires soumis du 18 juin au 29 aout 2019 pour l’addenda de l’énoncé final des incidences environnementales portant sur la phase 2 du projet de Baffinland à Mary River",
+            "pub_year": 2019,
+            "lead_author_2": "Paulic, Joclyn",
+            "pub_num": "038",
+            "pages": 45,
+            "pdf_size": 1039,
+            "description": ""
+        }
+    }
+]

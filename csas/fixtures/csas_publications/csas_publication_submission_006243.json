@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6243,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Binational Ecological Risk Assessment of Bigheaded Carps (Hypophthalmichthys spp.) for the Great Lakes Basin",
+            "title_fr": "Évaluation du risque écologique posé par les carpes à grosse tête (Hypophthalmichthys sp.) dans le bassin des Grands Lacs",
+            "pub_year": 2011,
+            "lead_author_2": "Becky Cudmore, Nick Mandrak, John Dettmers, Duane Chapman, Michael Hoff, Cynthia Kolar",
+            "pub_num": "114",
+            "pages": 63,
+            "pdf_size": 1096,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1159,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Exploratory fishing for herring in NAFO Division 4T, spring 1981",
+            "pub_year": 1981,
+            "lead_author_2": "A. Sinclair; R.J. Allain",
+            "pub_num": "061",
+            "pages": 10,
+            "pdf_size": 4506,
+            "description": ""
+        }
+    }
+]

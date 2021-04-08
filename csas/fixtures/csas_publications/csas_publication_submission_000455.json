@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 455,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "In-season forecast for Atlantic salmon (Salmo salar L.) returning to Campbellton River in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Reddin, D.G.,",
+            "pub_num": "084",
+            "pages": 16,
+            "pdf_size": 1341,
+            "description": ""
+        }
+    }
+]

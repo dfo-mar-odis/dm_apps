@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5596,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Stock Assessment of Arctic Char, Salvelinus alpinus, from the Isuituq System, Nunavut",
+            "title_fr": "Évaluation des stocks d'omble chevalier, Salvelinus alpinus, du réseau hydrographique de la rivière Isuituq, au Nunavut",
+            "pub_year": 2010,
+            "lead_author_2": "Les N. Harris",
+            "pub_num": "060",
+            "pages": 20,
+            "pdf_size": 345,
+            "description": ""
+        }
+    }
+]

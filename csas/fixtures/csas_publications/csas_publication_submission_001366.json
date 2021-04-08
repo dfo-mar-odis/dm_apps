@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1366,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A model of grey seal predation on 4VsW cod and its effects on the dynamics and potential yield of cod",
+            "pub_year": 1994,
+            "lead_author_2": "R. Mohn; W.D. Bowen",
+            "pub_num": "064",
+            "pages": 43,
+            "pdf_size": 1915,
+            "description": ""
+        }
+    }
+]

@@ -88,6 +88,7 @@ class DivisionFactory(factory.django.DjangoModelFactory):
     branch = factory.SubFactory(BranchFactory)
     name = factory.LazyAttribute(lambda o: faker.word())
     head = factory.SubFactory(UserFactory)
+    admin = factory.SubFactory(UserFactory)
 
     @staticmethod
     def get_valid_data():
@@ -106,6 +107,7 @@ class SectionFactory(factory.django.DjangoModelFactory):
     division = factory.SubFactory(DivisionFactory)
     head = factory.SubFactory(UserFactory)
     name = factory.LazyAttribute(lambda o: faker.word())
+    admin = factory.SubFactory(UserFactory)
 
     @staticmethod
     def get_valid_data():

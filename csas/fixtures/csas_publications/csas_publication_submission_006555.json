@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6555,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Review of Long-term Monitoring Protocols for New and Upgraded Hydroelectric Projects in British Columbia and Yukon Territory; June 20-21, 2011",
+            "title_fr": "Examen du Protocole de surveillance à long terme des projets hydroélectriques nouveaux et mis à niveau en Colombie-Britannique et au Yukon ; les 20 et 21 juin 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Bruce Clark",
+            "pub_num": "045",
+            "pages": 28,
+            "pdf_size": 124,
+            "description": ""
+        }
+    }
+]

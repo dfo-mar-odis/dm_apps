@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4723,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "National Federal-Provincial-Territorial Coastal Management Areas Workshop; May 16-17, 2007",
+            "title_fr": "Atelier fédéral-provincial-territorial sur les zones de gestion côtière; les 16 et 17 mai 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Chadwick, M., R. Henry.",
+            "pub_num": "025",
+            "pages": 113,
+            "pdf_size": 755,
+            "description": ""
+        }
+    }
+]

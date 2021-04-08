@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6691,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Risk-based assessment of climate change impacts and risks on the biological systems and infrastructure within Fisheries and Oceans Canada's mandate - Freshwater Large Aquatic Basin",
+            "title_fr": "Évaluation fondée sur les risques des impacts et des menaces que les changements climatiques présentent pour l'infrastructure et les systèmes biologiques qui relèvent du mandat de Pêches et Océans Canada - Grand bassin aquatique d'eau douce",
+            "pub_year": 2013,
+            "lead_author_2": "Fortin, Marie-Claude",
+            "pub_num": "011",
+            "pages": 43,
+            "pdf_size": 1634,
+            "description": ""
+        }
+    }
+]

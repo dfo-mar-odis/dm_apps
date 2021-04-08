@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5473,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "CEMAM Workshop on Bayesian Modelling of Marine Mammal Population Dynamics; 27-29 March 2007",
+            "title_fr": "Atelier du CEMAM sur la modélisation bayésienne de la dynamique des populations de mammifères marins ; 27-29 mars 2007",
+            "pub_year": 2009,
+            "lead_author_2": "Richard, Pierre",
+            "pub_num": "058",
+            "pages": 54,
+            "pdf_size": 714,
+            "description": ""
+        }
+    }
+]

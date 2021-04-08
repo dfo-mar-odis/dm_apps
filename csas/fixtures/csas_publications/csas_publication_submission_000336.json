@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 336,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop stock status for 1996 - eastern Scotian Shelf and German Bank.",
+            "pub_year": 1997,
+            "lead_author_2": "Robert, G., Butler, M.",
+            "pub_num": "049",
+            "pages": 42,
+            "pdf_size": 2180,
+            "description": ""
+        }
+    }
+]

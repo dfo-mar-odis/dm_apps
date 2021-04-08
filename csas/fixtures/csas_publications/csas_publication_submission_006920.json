@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6920,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Review and update of southern BC Chinook conservation unit assignments",
+            "title_fr": "Examen et mise à jour des désignations d'unités de conservation du saumon quinnat du sud de la Colombie-Britannique",
+            "pub_year": 2013,
+            "pub_num": "022",
+            "pages": 25,
+            "pdf_size": 387,
+            "description": ""
+        }
+    }
+]

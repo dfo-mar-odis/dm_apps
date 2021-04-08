@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6447,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "State of the Pacific Ocean 2011",
+            "title_fr": "État de l'océan Pacifique en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "James Irvine & Bill Crawford",
+            "pub_num": "046",
+            "pages": 7,
+            "pdf_size": 136,
+            "description": ""
+        }
+    }
+]

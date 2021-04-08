@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1849,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the American plaice stock in NAFO subdivision 3Ps",
+            "pub_year": 1988,
+            "lead_author_2": "W.B. Brodie",
+            "pub_num": "053",
+            "pages": 28,
+            "pdf_size": 1582,
+            "description": ""
+        }
+    }
+]

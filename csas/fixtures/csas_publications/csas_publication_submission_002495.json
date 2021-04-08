@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2495,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Spawning and recruitment of northern cod as measured by pelagic juvenile cod surveys following stock collapse, 1991-1994",
+            "pub_year": 1995,
+            "lead_author_2": "J.T. Anderson; E.L. Dalley",
+            "pub_num": "089",
+            "pages": 26,
+            "pdf_size": 1524,
+            "description": ""
+        }
+    }
+]

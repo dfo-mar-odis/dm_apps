@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3393,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The possible environmental impacts of petroleum exploration activities in the southern Gulf and Sydney Bight ecosystems",
+            "pub_year": 2001,
+            "lead_author_2": "P.R. Boudreau, G.C. Harding, K. Lee and P.D. Keizer",
+            "pub_num": "112",
+            "pages": 27,
+            "pdf_size": 350,
+            "description": ""
+        }
+    }
+]

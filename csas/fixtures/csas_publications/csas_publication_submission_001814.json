@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1814,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Two-phased survey design for shrimp off Labrador",
+            "pub_year": 1988,
+            "lead_author_2": "D.G. Parsons",
+            "pub_num": "018",
+            "pages": 10,
+            "pdf_size": 702,
+            "description": ""
+        }
+    }
+]

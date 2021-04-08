@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6994,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of main indicators of the stock status of Atlantic halibut in the Gulf of St. Lawrence (4RST) in 2013",
+            "title_fr": "Mise à jour des principaux indicateurs de l'état du stock du flétan atlantique du golfe du Saint-Laurent (4RST) en 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Diane Archambault",
+            "pub_num": "002",
+            "pages": 7,
+            "pdf_size": 307,
+            "description": ""
+        }
+    }
+]

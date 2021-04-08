@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4711,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Georges Bank Scallops (Placopecten magellanicus)",
+            "title_fr": "Évaluation du pétoncle du banc Georges (Placopecten magellanicus)",
+            "pub_year": 2007,
+            "lead_author_2": "Jonsen, I.D.",
+            "pub_num": "026",
+            "pages": 8,
+            "pdf_size": 156,
+            "description": ""
+        }
+    }
+]

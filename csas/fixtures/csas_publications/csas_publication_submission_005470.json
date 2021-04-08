@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5470,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the workshop on indicators of stock status of softshell clam (Mya arenaria); October 26, 2004",
+            "title_fr": "Compte rendu de l'atelier sur les indicateurs de l'état des stocks de mye (Mya arenaria); 26 octobre 2004",
+            "pub_year": 2009,
+            "lead_author_2": "Sylvie Brulotte",
+            "pub_num": "057",
+            "description": ""
+        }
+    }
+]

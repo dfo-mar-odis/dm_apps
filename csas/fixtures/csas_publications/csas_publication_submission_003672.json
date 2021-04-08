@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3672,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Review of Atlantic Walrus (Odobenus rosmarus rosmarus) in Canada",
+            "title_fr": "État des stocks de morse (Odobenus rosmarus rosmarus) au Canada",
+            "pub_year": 2002,
+            "lead_author_2": "Stewart, R.E.A.",
+            "pub_num": "091",
+            "pages": 21,
+            "pdf_size": 288,
+            "description": ""
+        }
+    }
+]

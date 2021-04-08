@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6781,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review of Screening-Level Risk Assessment Protocols for Freshwater Non-indigenous Species; March 19-21, 2013",
+            "title_fr": "Compte rendu de l'examen national par des pairs des protocoles d'évaluation préalable des risques pour des espèces d'eau douce non indigènes; du 19 au 21 mars 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Sherry Walker",
+            "pub_num": "004",
+            "pages": 24,
+            "pdf_size": 171,
+            "description": ""
+        }
+    }
+]

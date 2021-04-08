@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1941,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the Newfoundland snow crab, Chionoecetes opilio, fishery - 1988",
+            "pub_year": 1989,
+            "lead_author_2": "D.M. Taylor; P.G. O'Keefe",
+            "pub_num": "069",
+            "pages": 31,
+            "pdf_size": 1258,
+            "description": ""
+        }
+    }
+]

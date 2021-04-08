@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8260,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Science Advice to Support the Jeopardy Assessment Framework for Permitting under the Species at Risk Ac",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8363,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Seasonal Movement of Redside Dace (Clinostomus elongatus) in relation to abiotic and biotic factors",
+            "title_fr": "Déplacements saisonniers du méné long (Clinostomus elongatus) en fonction des facteurs abiotiques et biotiques",
+            "pub_year": 2019,
+            "lead_author_2": "Drake, D.A.R., and Poesch, M.S.",
+            "pub_num": "077",
+            "pages": 30,
+            "pdf_size": 707,
+            "description": ""
+        }
+    }
+]

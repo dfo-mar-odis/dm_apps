@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 680,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Newfoundland and Labrador Snow Crab Resource in 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Dawe, E., Drew, H.J., Beck, P.C., Veitch, P.J.",
+            "pub_num": "121",
+            "pages": 44,
+            "pdf_size": 4650,
+            "description": ""
+        }
+    }
+]

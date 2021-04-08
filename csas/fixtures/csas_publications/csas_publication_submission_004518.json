@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4518,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "The intentional scuttling of surplus and derelict vessels: Some effects on marine biota and their habitats in British Columbia waters, 2002",
+            "title_fr": "Sabordage intentionnel de navires en surplus et épaves : quelques effets sur le biote marin et sur les habitats",
+            "pub_year": 2006,
+            "lead_author_2": "Smiley, B.D.",
+            "pub_num": "059",
+            "pages": 114,
+            "pdf_size": 9838,
+            "description": ""
+        }
+    }
+]

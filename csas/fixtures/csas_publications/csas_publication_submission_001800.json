@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1800,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A photographic survey for snow crab (Chionoecetes opilio) in Conception Bay, Newfoundland",
+            "pub_year": 1988,
+            "lead_author_2": "E.G. Dawe; D.M. Taylor; P.C. Beck; H.J. Drew",
+            "pub_num": "004",
+            "pages": 9,
+            "pdf_size": 678,
+            "description": ""
+        }
+    }
+]

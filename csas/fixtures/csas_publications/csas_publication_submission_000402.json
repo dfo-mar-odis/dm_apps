@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 402,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Flatfish 4VWX update of the status in 1979 of: American plaice, yellowtail flounder, witch flounder, winter flounder, Atlantic halibut and Greenland halibut",
+            "pub_year": 1980,
+            "lead_author_2": "K.I. Metuzals",
+            "pub_num": "036",
+            "pages": 21,
+            "pdf_size": 872,
+            "description": ""
+        }
+    }
+]

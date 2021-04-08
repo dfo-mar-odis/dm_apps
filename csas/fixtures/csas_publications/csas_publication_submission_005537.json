@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5537,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of Assessment of Buffalo River Inconnu, (Stenodus leucichthys), Great Slave Lake, Northwest Territories, 1945-2009",
+            "title_fr": "Information à l'appui de l'évaluation de l'inconnu, (Stenodus leucichthys), de la rivière Buffalo, Grand lac des Esclaves, Territoires du Nord-Ouest, de 1945 à 2009",
+            "pub_year": 2012,
+            "lead_author_2": "Melanie VanGerwen-Toyne, Chris Day, Stacey Frame, Fred Taptuna, Deanna Leonard, Ross Tallman",
+            "pub_num": "069",
+            "pages": 88,
+            "pdf_size": 4412,
+            "description": ""
+        }
+    }
+]

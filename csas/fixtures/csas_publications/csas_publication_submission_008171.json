@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8171,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Summary of Locations in British Columbia, Canada Supporting Invasive Tunicate Species and European Green Crab as of 2017",
+            "title_fr": "Sommaire des emplacements en colombie britannique (canada) confirmant la présence d’espèces de tuniciers envahissants et du crabe européen en 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Lesley MacDougall",
+            "pub_num": "047",
+            "pages": 20,
+            "pdf_size": 4842,
+            "description": ""
+        }
+    }
+]

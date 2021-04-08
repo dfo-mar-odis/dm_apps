@@ -1,0 +1,42 @@
+{% extends "shared_models/generic_base.html" %}
+
+{% block bug_create %}
+  {% include "fisheriescape/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+  {% include "fisheriescape/base/_app_title.html" %}
+  {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block header %}
+  {{ block.super }}
+  {% include "fisheriescape/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+  {{ block.super }}
+{% endblock body %}
+
+{% block left_auth %}
+  {% include "fisheriescape/base/_nav_left_auth.html" %}
+{% endblock left_auth %}
+
+{% block leaflet %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+          crossorigin=""></script>
+  <style>
+  .leaflet-container {
+      height: 400px;
+      width: 600px;
+  }
+  .leaflet-control-layers-base {
+      text-align: left;
+  }
+
+  </style>
+{% endblock leaflet %}

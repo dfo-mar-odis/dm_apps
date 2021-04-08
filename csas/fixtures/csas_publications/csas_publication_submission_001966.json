@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1966,
+        "fields": {
+            "series": 7,
+            "lead_region": [4, 2, 5],
+            "title_en": "Atlantic Salmon Abundance Overview for 1997",
+            "title_fr": "Vue d'ensemble de l'abondance du saumon de l'Atlantique en 1997",
+            "pub_year": 1998,
+            "lead_author_2": "Bruce Atkinson, John S. Loch, R. Chatelain",
+            "pub_num": "D0-02",
+            "pages": 21,
+            "description": ""
+        }
+    }
+]

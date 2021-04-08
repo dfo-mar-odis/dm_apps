@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6021,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Precautionary Approach Limit Reference Points for Atlantic Cod (Gadus morhua) in NAFO Divisions 4X5Yb and 5Zjm",
+            "title_fr": "Points de référence limites conformes à l'approche de précaution pour la morue franche (Gadus morhua) des divisions 4X5Yb et 5Zjm de l'OPANO",
+            "pub_year": 2011,
+            "lead_author_2": "D.S. Clark, K.J. Clark, I.V. Andrushchenko / T. Worcester / V. Myra",
+            "pub_num": "085",
+            "pages": 12,
+            "pdf_size": 215,
+            "description": ""
+        }
+    }
+]

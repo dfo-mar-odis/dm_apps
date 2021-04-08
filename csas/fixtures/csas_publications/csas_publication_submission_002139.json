@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2139,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A biological update of witch flounder, Glyptocephalus cynoglossus, in NAFO Divisions 4R and 4S",
+            "pub_year": 1991,
+            "lead_author_2": "R. Tallman; I. Forest-Gallant",
+            "pub_num": "074",
+            "pages": 21,
+            "pdf_size": 1254,
+            "description": ""
+        }
+    }
+]

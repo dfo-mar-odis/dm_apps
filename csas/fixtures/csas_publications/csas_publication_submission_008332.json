@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8332,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Modelling Arrival, Establishment, Spread, and Ecological Impacts of Black Carp, Mylopharyngodon piceus, in the Great Lakes Basin",
+            "lead_author_2": "Andrew Drake",
+            "description": ""
+        }
+    }
+]

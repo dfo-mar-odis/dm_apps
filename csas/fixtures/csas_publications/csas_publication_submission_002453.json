@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2453,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Summary of the food fishery for cod in NAFO divisions 2J, 3K, 3L and 3Ps in 1993 and 1994",
+            "pub_year": 1995,
+            "lead_author_2": "D.W. Kulka; R. Stead; D. Lane; L. Russel",
+            "pub_num": "047",
+            "pages": 26,
+            "pdf_size": 1497,
+            "description": ""
+        }
+    }
+]

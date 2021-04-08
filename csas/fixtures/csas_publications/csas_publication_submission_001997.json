@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1997,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Salmon Subcommittee Meeting; October 16, 2003",
+            "title_fr": "Compte rendu de la réunion du sous-comité du CEESP sur le saumon tenue; le 16 octobre 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Tanasichuk, R.W.",
+            "pub_num": "032",
+            "pages": 19,
+            "pdf_size": 235,
+            "description": ""
+        }
+    }
+]

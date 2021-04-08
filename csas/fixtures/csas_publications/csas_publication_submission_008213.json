@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8213,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Review of the Science Associated with the Inner Bay of Fundy Atlantic Salmon Live Gene Bank and Supplementation Programs",
+            "title_fr": "Examen de la science associée à la banque de gènes vivants du saumon de l’intérieur de la baie de Fundy et aux programmes d’ensemencement",
+            "pub_year": 2018,
+            "pub_num": "041",
+            "pages": 37,
+            "pdf_size": 2255,
+            "description": ""
+        }
+    }
+]

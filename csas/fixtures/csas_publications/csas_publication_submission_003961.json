@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3961,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Regional Advisory Process on Lobster from LFA 25; February 3, 2004",
+            "title_fr": "Comptes-rendus du processus consultatif régional du homard de ZPH 25; le 3 février, 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Chaput, G.",
+            "pub_num": "001",
+            "pages": 23,
+            "pdf_size": 122,
+            "description": ""
+        }
+    }
+]

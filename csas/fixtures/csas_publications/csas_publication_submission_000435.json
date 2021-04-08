@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 435,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon stocks, Gulf Region, Newfoundland and Labrador, 1986",
+            "pub_year": 1987,
+            "lead_author_2": "J.L. Peppar; C.C. Mullins",
+            "pub_num": "004",
+            "pages": 37,
+            "pdf_size": 1873,
+            "description": ""
+        }
+    }
+]

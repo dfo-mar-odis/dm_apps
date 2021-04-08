@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1102,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The inshore herring fisheries in the southern Gulf of St. Lawrence",
+            "pub_year": 1981,
+            "lead_author_2": "S.N. Messieh; D.S. Moore",
+            "pub_num": "004",
+            "pages": 22,
+            "pdf_size": 1185,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2696,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Lobster of the Inshore Waters of Quebec in 2000",
+            "title_fr": "Homard des eaux côtières du Québec en 2000",
+            "pub_year": 2001,
+            "lead_author_2": "Louise Gendron",
+            "pub_num": "C4-05",
+            "pages": 14,
+            "description": ""
+        }
+    }
+]

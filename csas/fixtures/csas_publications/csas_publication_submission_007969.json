@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7969,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review on the Evaluation of the Scientific Evidence to Inform the Probability of Effectiveness of Mitigation Measures in Reducing Shipping-Related Noise Levels Received by Southern Resident Killer Whales",
+            "lead_author_2": "Olivier, Gilles (Caroline Longtin)",
+            "description": ""
+        }
+    }
+]

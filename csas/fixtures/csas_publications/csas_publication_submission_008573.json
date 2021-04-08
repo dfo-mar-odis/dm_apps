@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8573,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Optical, Chemical, and Biological Oceanographic Conditions on the Scotian Shelf and in the Eastern Gulf of Maine during 2018",
+            "title_fr": "Conditions océanographiques optiques, chimiques et biologiques du plateau néo-écossais et de l’est du golfe du Maine en 2018",
+            "pub_year": 2020,
+            "lead_author_2": "Casault, B., Johnson, C., Devred, E., Head, E., Cogswell, A., and Spry, J.",
+            "pub_num": "037",
+            "pages": 71,
+            "pdf_size": 12550,
+            "description": ""
+        }
+    }
+]

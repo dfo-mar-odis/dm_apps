@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 12,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Update of discarding of cod in the shrimp and cod directed fisheries in NAFO Divisions 2J, 3K and 3L",
+            "pub_year": 1998,
+            "lead_author_2": "D.W. Kulka",
+            "pub_num": "012",
+            "pages": 10,
+            "description": ""
+        }
+    }
+]

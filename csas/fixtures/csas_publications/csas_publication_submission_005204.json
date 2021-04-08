@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5204,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Cumulative Effects Assessment for Northern and Southern Resident Killer Whale Populations in the Northeast Pacific",
+            "title_fr": "Évaluation des effets cumulatifs sur les populations d’épaulards résidents du nord et du sud dans le Pacifique Nord-Est",
+            "pub_year": 2019,
+            "lead_author_2": "Murray, C., Hannah, L.C., Doniol-Valcroze, T., Wright B., Stredulinksky, E., Locke, A., R. Lacy",
+            "pub_num": "056",
+            "pages": 98,
+            "pdf_size": 2930,
+            "description": ""
+        }
+    }
+]

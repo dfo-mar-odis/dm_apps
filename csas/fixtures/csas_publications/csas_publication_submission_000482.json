@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 482,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Resource status of northern shrimp (Pandalus borealis) off Baffin Island, Labrador and northeastern Newfoundland second interim review",
+            "pub_year": 1999,
+            "lead_author_2": "Parsons, D.G., Veitch, P.J., Evans, G.T.",
+            "pub_num": "112",
+            "pages": 54,
+            "pdf_size": 6881,
+            "description": ""
+        }
+    }
+]

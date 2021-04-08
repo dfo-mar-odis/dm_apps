@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6402,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Target Reference points",
+            "lead_author_2": "Peter Shelton et al.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 277,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Spawning and river escapement requirements for Atlantic salmon of the Saint John River, New Brunswick",
+            "pub_year": 1983,
+            "lead_author_2": "T.L. Marshall; G.H. Penney",
+            "pub_num": "066",
+            "pages": 20,
+            "pdf_size": 814,
+            "description": ""
+        }
+    }
+]

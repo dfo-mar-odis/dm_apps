@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1416,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Comparison of two harvesting strategies for the Georges Bank scallop stock",
+            "pub_year": 1984,
+            "lead_author_2": "R.K. Mohn; G. Robert",
+            "pub_num": "010",
+            "pages": 35,
+            "pdf_size": 1458,
+            "description": ""
+        }
+    }
+]

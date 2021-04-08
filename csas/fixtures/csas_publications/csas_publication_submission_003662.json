@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3662,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Final Report of the Fisheries Oceanography Committee 2002 Annual Meeting; March 25-28, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Ouellet, Patrick, Drinkwater, K.F.",
+            "pub_num": "021",
+            "pages": 64,
+            "pdf_size": 1160,
+            "description": ""
+        }
+    }
+]

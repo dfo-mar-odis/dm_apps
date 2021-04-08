@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6172,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Regional Peer Review on Evaluating the Robustness of Management Procedures for the Sablefish (Anoplopoma fimbria) Fishery in British Columbia, Canada for 2017-18",
+            "lead_author_2": "John Holmes",
+            "description": ""
+        }
+    }
+]

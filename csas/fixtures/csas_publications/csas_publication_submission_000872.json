@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 872,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Growth of cod (Gadus morhua) - A laboratory study",
+            "pub_year": 1978,
+            "lead_author_2": "K.C. Waiwood",
+            "pub_num": "016",
+            "pages": 15,
+            "pdf_size": 706,
+            "description": ""
+        }
+    }
+]

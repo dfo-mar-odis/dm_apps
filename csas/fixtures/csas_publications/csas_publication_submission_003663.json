@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3663,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A discussion paper on possible new stock groupings (Conservation Units) for Fraser River chinook salmon",
+            "title_fr": "Document de travail sur les nouveaux agrégats possibles de stocks (unités de conservation) pour le saumon quinnat du Fraser",
+            "pub_year": 2002,
+            "lead_author_2": "J. R. Candy, J. R. Irvine, C. K. Parken, S. L. Lemke, R. E. Bailey, M. Wetklo and K. Jonsen",
+            "pub_num": "085",
+            "pages": 58,
+            "pdf_size": 465,
+            "description": ""
+        }
+    }
+]

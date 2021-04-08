@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7058,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Advisory Process  \"Evaluating the Effects of Changes in Monitoring and Assessment Frequency on Management Advice for Canadian Fisheries\"",
+            "lead_author_2": "Martha Krohn and  Lisa Setterington",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7699,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceeding sof the regional peer review meeting on the stock assessment of Yellowtail flounder (Limanda ferruginea) of the southern Gulf of St. Lawrence (NAFO Div. 4T) to 2015, February 29 and March 1, 2016",
+            "lead_author_2": "Chaput, Gérald",
+            "description": ""
+        }
+    }
+]

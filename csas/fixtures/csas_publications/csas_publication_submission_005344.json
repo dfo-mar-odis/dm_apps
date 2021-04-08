@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5344,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Habitat Use of Copper Redhorse and Quantifying Habitat Quality - part 1; March 17-18, 2009",
+            "title_fr": "Utilisation de l'habitat par le chevalier cuivré et quantification de la qualité de l'habitat - partie 1 ; du 17 au 18 mars 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Cyr, C., Bouchard, H.",
+            "pub_num": "030",
+            "description": ""
+        }
+    }
+]

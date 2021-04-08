@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3313,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Basking Sharks in Atlantic Canada",
+            "title_fr": "État du requin-pèlerin de l'Atlantique canadien",
+            "pub_year": 2008,
+            "lead_author_2": "Campana, S.E., J. Gibson, J. Brazner, L. Marks, W. Joyce, J.-F. Gosselin, R.D. Kenney, P. Shelton, M. Simpson, J. Lawson.",
+            "pub_num": "004",
+            "pages": 67,
+            "pdf_size": 3668,
+            "description": ""
+        }
+    }
+]

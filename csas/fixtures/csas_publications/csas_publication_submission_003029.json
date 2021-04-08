@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3029,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "White Hake in 4VWX and 5",
+            "title_fr": "Merluche blanche de 4VWX et 5",
+            "pub_year": 1998,
+            "lead_author_2": "Mark Fowler",
+            "pub_num": "A3-10",
+            "pages": 5,
+            "pdf_size": 134,
+            "description": ""
+        }
+    }
+]

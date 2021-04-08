@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1371,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Environmental overview for the southern Gulf of St. Lawrence in 1993",
+            "pub_year": 1994,
+            "lead_author_2": "G.A. Chouinard; D.P. Swain",
+            "pub_num": "069",
+            "pages": 20,
+            "pdf_size": 963,
+            "description": ""
+        }
+    }
+]

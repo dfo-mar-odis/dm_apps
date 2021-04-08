@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6134,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Annual Meeting of the National Marine Mammal Peer Review Committee; October 29 - November 2, 2012",
+            "title_fr": "Compte rendu de la réunion annuelle du Comité national d'examen par des pairs sur les mammifères marins; du 29 octobre au 2 novembre 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Don Bowen and Christine Abraham",
+            "pub_num": "024",
+            "pages": 40,
+            "pdf_size": 308,
+            "description": ""
+        }
+    }
+]

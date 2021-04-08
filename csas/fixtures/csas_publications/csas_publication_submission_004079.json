@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4079,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of pollock in 4VWX5Zc using a Framework Approach",
+            "title_fr": "Évaluation-cadre de la goberge dans 4VWX5Zc",
+            "pub_year": 2004,
+            "lead_author_2": "Neilson, J.D., P. Perley, S. Gavaris",
+            "pub_num": "099",
+            "pages": 53,
+            "pdf_size": 452,
+            "description": ""
+        }
+    }
+]

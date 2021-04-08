@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8565,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_fr": "Compte rendu de la 21e rencontre annuelle du Programme de Monitorage de la Zone Atlantique; 19-22 mars 2019",
+            "lead_author_2": "Peter Galbraith",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3585,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the DFO Workshop on Implementing the Precautionary Approach in Assessments and Advice; December 10-14, 2001",
+            "title_fr": "Compte-rendu de l'atelier du MPO sur la mise en oeuvre de l'approche de précaution dans les évaluations et les avis; du 10 au 14 décembre 2001",
+            "pub_year": 2002,
+            "lead_author_2": "Denis Rivard and Jake Rice, Chairpersons",
+            "pub_num": "009",
+            "pages": 107,
+            "pdf_size": 875,
+            "description": ""
+        }
+    }
+]

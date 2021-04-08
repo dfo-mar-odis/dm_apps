@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 734,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Reconstructing the Offshore Pandalus jordani Trawl Fishery off the West Coast of Vancouver Island and Simulating Alternative Management Policies",
+            "pub_year": 2000,
+            "lead_author_2": "Martell, S., Boutillier, J., Nguyen, H., Walters, C.",
+            "pub_num": "149",
+            "pages": 38,
+            "pdf_size": 378,
+            "description": ""
+        }
+    }
+]

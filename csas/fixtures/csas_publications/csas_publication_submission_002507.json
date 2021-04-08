@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2507,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update of information on the 4X haddock stock",
+            "pub_year": 1995,
+            "lead_author_2": "S. Smith",
+            "pub_num": "101",
+            "pages": 27,
+            "pdf_size": 1260,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2403,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Catch-at-age and weight-at-age of Atlantic herring catches in NAFO divisions 4T and 4Vn, 1978-1993",
+            "pub_year": 1994,
+            "lead_author_2": "F. Mowbray; C. Bourque",
+            "pub_num": "096",
+            "pages": 39,
+            "pdf_size": 2050,
+            "description": ""
+        }
+    }
+]

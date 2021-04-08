@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5023,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Abundance based index Assessment Options for Dungeness crab, (Cancer magister) and spot prawn, (Pandalus platyceros)",
+            "title_fr": "Méthodes d'évaluation des indices d'abondance pour le crabe dormeur (Cancer magister) et la crevette tachetée (Pandalus platyceros)",
+            "pub_year": 2008,
+            "lead_author_2": "K.H. Fong, G.E. Gillespie",
+            "pub_num": "049",
+            "pages": 52,
+            "pdf_size": 452,
+            "description": ""
+        }
+    }
+]

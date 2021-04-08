@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7616,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "River Herring Assessment for the Tusket River, Nova Scotia",
+            "title_fr": "Évaluation du gaspareau de la rivière Tusket en Nouvelle-Écosse",
+            "pub_year": 2016,
+            "lead_author_2": "Bowlby, H.D., and Gibson, A.J.F.",
+            "pub_num": "106",
+            "pages": 50,
+            "pdf_size": 3486,
+            "description": ""
+        }
+    }
+]

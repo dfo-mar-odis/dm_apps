@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5949,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Risk Assessment for ship-mediated introductions of aquatic nonindigenous species to the Canadian Arctic",
+            "title_fr": "Évaluation du risque d'introduction d'espèces aquatiques non indigènes par les navires dans l'Arctique canadien",
+            "pub_year": 2011,
+            "lead_author_2": "F.T. Chan, J.E. Bronnenhuber, J.N. Bradie, K.L. Howland, N. Simard and S.A. Bailey",
+            "pub_num": "105",
+            "pages": 99,
+            "pdf_size": 1588,
+            "description": ""
+        }
+    }
+]

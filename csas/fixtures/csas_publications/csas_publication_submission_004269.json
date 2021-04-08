@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4269,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Recovery Potential Assessment for the Anticosti Island Atlantic Salmon Metapopulation",
+            "title_fr": "Évaluation du potentiel de rétablissement de la métapopulation de saumon atlantique de l'île d'Anticosti",
+            "pub_year": 2013,
+            "lead_author_2": "Charley Cyr",
+            "pub_num": "070",
+            "pages": 24,
+            "pdf_size": 538,
+            "description": ""
+        }
+    }
+]

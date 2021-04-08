@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4369,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of cod in Division 4X in 2005",
+            "title_fr": "Évaluation de la morue dans la division 4X en 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Clark, D.S.",
+            "pub_num": "078",
+            "pages": 35,
+            "pdf_size": 414,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4625,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of the Atlantic mackerel (Scomber scombrus L.) spawning stock biomass from the 2003, 2004, and 2005 egg surveys",
+            "title_fr": "Évaluation de la biomasse reproductrice du maquereau bleu (Scomber scombrus L.) selon les relevés des oeufs réalisés en 2003, 2004 et 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Grégoire, F., C. Lévesque, J.-L. Beaulieu, J. Hudon.",
+            "pub_num": "100",
+            "pages": 54,
+            "pdf_size": 3246,
+            "description": ""
+        }
+    }
+]

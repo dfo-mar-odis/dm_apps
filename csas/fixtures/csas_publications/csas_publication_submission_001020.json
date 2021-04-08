@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1020,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Workshop on Research Strategies into the Causes of Declining Atlantic Salmon Returns to North American Rivers; June 12-14, 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Shane O'Neil, John Ritter, and Kimberly Robichaud-LeBlanc (Editors).",
+            "pub_num": "018",
+            "description": ""
+        }
+    }
+]

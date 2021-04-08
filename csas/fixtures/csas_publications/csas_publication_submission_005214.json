@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5214,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Marine Mammal Peer Review Committee: Stock assessment of Northern Quebec (Nunavik) Beluga (Delphinapterus leucas); February 16-17, 2009",
+            "title_fr": "Comité national d'examen par les pairs sur les mammifères marins : Évaluation du stock de béluga du Nord du Québec (Nunavik) (Delphinapterus leucas); 16 et 17 février 2009",
+            "pub_year": 2009,
+            "lead_author_2": "D. Bowen",
+            "pub_num": "002",
+            "pages": 22,
+            "pdf_size": 114,
+            "description": ""
+        }
+    }
+]

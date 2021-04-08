@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7357,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Divisions 2G-3K Northern Shrimp (Pandalus borealis) and 2G Striped Shrimp (Pandalus montagui) in 2014",
+            "lead_author_2": "Katherine Skanes",
+            "description": ""
+        }
+    }
+]

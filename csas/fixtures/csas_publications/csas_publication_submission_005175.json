@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5175,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on the Evaluation of the Internet Recreational Effort and Catch (iREC) Survey methods; 2-3 June, 2015",
+            "title_fr": "Compte rendu de l'examen par les pairs régional du Pacifique sur l'évaluation des méthodes utilisées pour le sondage électronique de l’effort et des prises de la pêche récréative; les 2 et 3 juin 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Karen Hunter",
+            "pub_num": "003",
+            "pages": 32,
+            "pdf_size": 260,
+            "description": ""
+        }
+    }
+]

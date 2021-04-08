@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7112,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Accuracy and Utility of the Atlantic Salmon Licence Stub (Angler Log) Return Program in Newfoundland and Labrador",
+            "title_fr": "Précision et utilité du Programme de retour des talons de permis de pêche au saumon de l'Atlantique (registre des pêcheurs à la ligne) à Terre-Neuve-et-Labrador",
+            "pub_year": 2014,
+            "lead_author_2": "G. Veinott and N. Cochrane",
+            "pub_num": "035",
+            "pages": 19,
+            "pdf_size": 402,
+            "description": ""
+        }
+    }
+]

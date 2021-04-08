@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1217,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "East coast Newfoundland herring same old story: Stocks in decline!",
+            "pub_year": 1982,
+            "lead_author_2": "J.P. Wheeler; G.H. Winters",
+            "pub_num": "037",
+            "pages": 14,
+            "pdf_size": 823,
+            "description": ""
+        }
+    }
+]

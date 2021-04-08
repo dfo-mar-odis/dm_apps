@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5837,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of snow crab in the southern Gulf of St. Lawrence (Areas 12, 19, 12E and 12F)",
+            "title_fr": "Évaluation du crabe des neiges du sud du golfe du Saint-Laurent (zones 12, 19, 12E et 12F) ",
+            "pub_year": 2011,
+            "lead_author_2": "Moriyasu, Mikio",
+            "pub_num": "002",
+            "pages": 19,
+            "pdf_size": 609,
+            "description": ""
+        }
+    }
+]

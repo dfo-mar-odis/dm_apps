@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3468,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "White Hake in 4VWX and 5",
+            "title_fr": "Merluche blanche de 4VWX et 5",
+            "pub_year": 2001,
+            "lead_author_2": "Bundy, Alida",
+            "pub_num": "A3-10",
+            "pages": 12,
+            "description": ""
+        }
+    }
+]

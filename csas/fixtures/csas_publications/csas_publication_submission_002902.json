@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2902,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Biological background for the development of a new fishery for the grooved Tanner crab (Chionoecetes tanneri) off British Columbia.",
+            "pub_year": 1997,
+            "lead_author_2": "Phillips, A.C., Lauzier, R.",
+            "pub_num": "148",
+            "pages": 81,
+            "pdf_size": 5584,
+            "description": ""
+        }
+    }
+]

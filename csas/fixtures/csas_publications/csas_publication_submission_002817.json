@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2817,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Bay of Fundy scallop stock assessment: areas 2, 3, 4, 5, 7.",
+            "pub_year": 1997,
+            "lead_author_2": "Kenchington, E., Lundy, M.J., . Smith, S.J.",
+            "pub_num": "063",
+            "pages": 100,
+            "pdf_size": 7208,
+            "description": ""
+        }
+    }
+]

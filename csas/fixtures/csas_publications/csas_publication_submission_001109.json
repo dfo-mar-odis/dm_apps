@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1109,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Consideration of the stable age distribution assumption in 'analytical' yield models",
+            "pub_year": 1981,
+            "lead_author_2": "M. Sinclair; R. O'Boyle, T.D. Iles",
+            "pub_num": "011",
+            "pages": 12,
+            "pdf_size": 6281,
+            "description": ""
+        }
+    }
+]

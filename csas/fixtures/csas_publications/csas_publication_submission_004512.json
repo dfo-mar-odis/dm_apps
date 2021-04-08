@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4512,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process: Evaluation of the Ecosystem Overview and Assessment Report for the Bras d'Or Lakes, Nova Scotia; 2-3 November 2005",
+            "title_fr": "Compte rendu du Processus consultatif régional des Maritimes: Rapport d'aperçu et d'évaluation de l'écosystème du lac Bras d'Or, Nouvelle Écosse; les 2 et 3 novembre 2005",
+            "pub_year": 2006,
+            "lead_author_2": "MPO",
+            "pub_num": "007",
+            "pages": 196,
+            "pdf_size": 8761,
+            "description": ""
+        }
+    }
+]

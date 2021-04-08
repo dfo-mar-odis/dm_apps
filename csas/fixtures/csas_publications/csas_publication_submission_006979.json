@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6979,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Review of the Information for the Identification of Critical Habitat for Morrison Creek Lamprey",
+            "title_fr": "Examen de l'information servant à la désignation de l'habitat essentiel de la lamproie du ruisseau Morrison",
+            "pub_year": 2015,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "009",
+            "pages": 10,
+            "pdf_size": 246,
+            "description": ""
+        }
+    }
+]

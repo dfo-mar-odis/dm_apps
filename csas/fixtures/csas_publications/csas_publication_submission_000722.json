@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 722,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of Redfish in Division 3O",
+            "title_fr": "État du stock de sébaste dans la division 3O",
+            "pub_year": 2000,
+            "lead_author_2": "Power, D.",
+            "pub_num": "137",
+            "pages": 22,
+            "pdf_size": 889,
+            "description": ""
+        }
+    }
+]

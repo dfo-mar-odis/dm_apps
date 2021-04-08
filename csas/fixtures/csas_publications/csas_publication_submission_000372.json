@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 372,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Analysis of stock size and yield of Fortune Bay herring",
+            "pub_year": 1977,
+            "lead_author_2": "G.H. Winters; J.A. Moores",
+            "pub_num": "029",
+            "pages": 14,
+            "pdf_size": 633,
+            "description": ""
+        }
+    }
+]

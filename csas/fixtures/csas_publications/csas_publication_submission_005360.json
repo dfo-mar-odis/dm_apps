@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5360,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Long-term variability in phytoplankton and zooplankton abundance in the Northwest Atlantic in Continuous Plankton Recorder (CPR) samples",
+            "title_fr": "Variabilité à long terme de l'abondance de phytoplancton et de zooplancton dans l'Atlantique Nord-Ouest selon les échantillons de l'enregistreur continu du plancton (CPR)",
+            "pub_year": 2009,
+            "lead_author_2": "Head, E., Pepin, P.",
+            "pub_num": "063",
+            "pages": 35,
+            "pdf_size": 1312,
+            "description": ""
+        }
+    }
+]

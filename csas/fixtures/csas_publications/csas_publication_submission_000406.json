@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 406,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The effect of discarding on estimates of total removals in the 1980 Division 4Vn winter cod fishery",
+            "pub_year": 1980,
+            "lead_author_2": "A. Sinclair",
+            "pub_num": "040",
+            "pages": 10,
+            "pdf_size": 779,
+            "description": ""
+        }
+    }
+]

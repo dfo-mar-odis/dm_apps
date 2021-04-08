@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7281,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Zonal Peer Review on the Pre-COSEWIC Assessment for Blue Shark (Prionace glauca); December 2, 2014",
+            "title_fr": "Compte rendu de l'examen par des pairs zonal sur le pré-COSEPAC concernant le requin bleu (Prionace glauca); le 2 décembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Kristian Curran, Ph. 902-426-9920",
+            "pub_num": "018",
+            "pages": 19,
+            "pdf_size": 156,
+            "description": ""
+        }
+    }
+]

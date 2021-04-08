@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5786,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Updated framework for the pink and spiny scallop (Chlamys rubida and C. hastata) dive fishery in British Columbia",
+            "title_fr": "Mise à jour du cadre sur la pêche en plongée au pétoncle rose (Chlamys rubida) et au pétoncle épineux (C. hastata) en Colombie-Britannique",
+            "pub_year": 2010,
+            "lead_author_2": "Maria Surry",
+            "pub_num": "078",
+            "pages": 11,
+            "pdf_size": 881,
+            "description": ""
+        }
+    }
+]

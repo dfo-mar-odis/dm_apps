@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6208,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Assessment of the Fate of Emamectin Benzoate, the Active Ingredient in SLICE®, near Aquaculture Facilities in British Columbia and its Effect on Spot Prawns (Pandalus platyceros)",
+            "title_fr": "Évaluation du devenir du Benzoate d'Émamectine, l'ingrédient actif du SLICE®, près des installations d'aquaculture en Colombie-Britannique et de ses effets sur la crevette tachetée du Pacifique (Pandalus Platyceros)",
+            "pub_year": 2011,
+            "lead_author_2": "Andrew Ross",
+            "pub_num": "082",
+            "pages": 12,
+            "pdf_size": 221,
+            "description": ""
+        }
+    }
+]

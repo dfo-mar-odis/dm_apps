@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3630,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Coho Salmon in Georgia Basin",
+            "title_fr": "Les saumons coho dans le bassin de Georgia",
+            "pub_year": 2002,
+            "pub_num": "D6-07",
+            "pages": 6,
+            "pdf_size": 260,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1881,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The northern shrimp fisheries off Newfoundland-Labrador in 1988",
+            "pub_year": 1989,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch",
+            "pub_num": "009",
+            "pages": 46,
+            "pdf_size": 2248,
+            "description": ""
+        }
+    }
+]

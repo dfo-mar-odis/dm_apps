@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8041,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Design Strategies for the Scotian Shelf Bioregional Marine Protected Area Network",
+            "pub_year": 2019,
+            "lead_author_2": "Marty King et al.",
+            "pub_num": "067",
+            "description": ""
+        }
+    }
+]

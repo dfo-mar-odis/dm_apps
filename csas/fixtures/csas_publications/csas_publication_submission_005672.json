@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5672,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Region Science Advisory Process for Spiny Dogfish (Squalus acanthius) in British Columbia, Canada; May 17, 2010",
+            "title_fr": "Processus d'avis scientifique régional pour l'aiguillat commun (Squalus acanthius) en Colombie-Britannique, Canada ; 17 mai 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Workman, G.",
+            "pub_num": "071",
+            "pages": 26,
+            "pdf_size": 172,
+            "description": ""
+        }
+    }
+]

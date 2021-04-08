@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2560,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An assessment of areas for scallop broodstock protection in the approaches to the Bay of Fundy",
+            "pub_year": 1996,
+            "lead_author_2": "E. Kenchington; M.J. Lundy",
+            "pub_num": "013",
+            "pages": 22,
+            "pdf_size": 2308,
+            "description": ""
+        }
+    }
+]

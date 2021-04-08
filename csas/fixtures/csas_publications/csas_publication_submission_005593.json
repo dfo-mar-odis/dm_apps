@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5593,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of Data and Model Assumptions on the Calculation of Management Parameters using the Pacific Herring Assessment Model (ISCAM)",
+            "lead_author_2": "Cleary, Jaclyn",
+            "description": ""
+        }
+    }
+]

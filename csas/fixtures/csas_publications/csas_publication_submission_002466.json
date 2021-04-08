@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2466,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the winter flounder in NAFO Division 4T, 1994",
+            "pub_year": 1995,
+            "lead_author_2": "R. Morin; I. Forest-Gallant; J.M. Hanson; R. Hébert; D. Swain",
+            "pub_num": "060",
+            "pages": 27,
+            "pdf_size": 1284,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4523,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the Atlantic mackerel for the Northwest Atlantic (Subareas 3 and 4) in 2005",
+            "title_fr": "Évaluation du stock de maquereau bleu du nord-ouest de l'Atlantique (sous-régions 3 et 4) en 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "033",
+            "pages": 17,
+            "pdf_size": 560,
+            "description": ""
+        }
+    }
+]

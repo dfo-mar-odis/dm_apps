@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1935,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic herring in NAFO Division 4T, 1988",
+            "pub_year": 1989,
+            "lead_author_2": "E.M.P. Chadwick; D.K. Cairns; H.M. Dupuis",
+            "pub_num": "063",
+            "pages": 61,
+            "pdf_size": 2644,
+            "description": ""
+        }
+    }
+]

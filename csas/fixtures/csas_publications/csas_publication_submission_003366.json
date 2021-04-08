@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3366,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Workshop on \"The Northwest Atlantic Ecosystem - A Basin Scale Approach\"; 21-23 June 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Erica Head, Pierre Pepin, and Jeffrey Runge",
+            "pub_num": "023",
+            "pages": 113,
+            "pdf_size": 11220,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8066,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Environmental and Indirect Human Health Risk Assessment of the Glofish® Electric Green® Tetra and the Glofish® Long-Fin Electric Green® Tetra (Gymnocorymbus ternetzi): A Transgenic Ornamental Fish",
+            "title_fr": "Évaluation des risques pour l’environnement et des risques indirects pour la santé humaine du tétra GlofishMD Electric GreenMD et du tétra à longues nageoires GlofishMD Electric GreenMD (Gymnocorymbus ternetzi) : un poisson d’ornement transgénique",
+            "pub_year": 2018,
+            "lead_author_2": "Jay Parsons",
+            "pub_num": "027",
+            "pages": 23,
+            "pdf_size": 375,
+            "description": ""
+        }
+    }
+]

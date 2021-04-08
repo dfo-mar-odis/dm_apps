@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7809,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Redfish Stocks (Sebastes fasciatus and S. mentella) in Units 1 and 2 in 2015",
+            "title_fr": "Évaluation des stocks de sébastes (Sebastes fasciatus et S. mentella) des unités 1 et 2 en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Brassard, C.",
+            "pub_num": "047",
+            "pages": 21,
+            "pdf_size": 2661,
+            "description": ""
+        }
+    }
+]

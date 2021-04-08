@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5683,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Recommendations for managing brook trout, Salvelinus fontinalis, stocks on the Jonathans Brook watershed, Newfoundland and Labrador, Canada, using fisheries dependent and independent data",
+            "title_fr": "Recommandations pour la gestion des stocks d'omble de fontaine, Salvelinus fontinalis, du bassin hydrographique Jonathans Brook, à Terre-Neuve-et-Labrador, au Canada, à l'aide de données qui dépendent des pêches ou non ",
+            "pub_year": 2010,
+            "lead_author_2": "Keefe, D.G., Perry, R.C.",
+            "pub_num": "095",
+            "pdf_size": 481,
+            "description": ""
+        }
+    }
+]

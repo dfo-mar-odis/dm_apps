@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1108,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1980 4WX herring fishery",
+            "pub_year": 1981,
+            "lead_author_2": "M. Sinclair; T.D. Iles",
+            "pub_num": "010",
+            "pages": 42,
+            "pdf_size": 17202,
+            "description": ""
+        }
+    }
+]

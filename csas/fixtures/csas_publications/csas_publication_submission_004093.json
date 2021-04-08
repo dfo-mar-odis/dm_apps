@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4093,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of a Workshop on Research into Causes of Recent Low Survival of Atlantic Salmon at Sea - Newfoundland and Labrador Perspective; February 11, 2004",
+            "title_fr": "Compte rendu d'un atelier concernant la recherche sur les causes du faible taux de survie récent du saumon de l'Atlantique en mer - Point de vue de Terre-Neuve-et-Labrador; 11 février 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Porter, T.R.",
+            "pub_num": "038",
+            "pages": 51,
+            "pdf_size": 228,
+            "description": ""
+        }
+    }
+]

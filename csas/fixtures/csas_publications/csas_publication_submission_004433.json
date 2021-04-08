@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4433,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Effects of Shellfish Aquaculture on Fish Habitat",
+            "title_fr": "Effets de la conchyliculture sur l'habitat du poisson",
+            "pub_year": 2006,
+            "lead_author_2": "McKindsey, C.W., M.R. Anderson, P. Barnes, S. Courtenay, T. Landry, M. Skinner.",
+            "pub_num": "011",
+            "pages": 92,
+            "pdf_size": 593,
+            "description": ""
+        }
+    }
+]

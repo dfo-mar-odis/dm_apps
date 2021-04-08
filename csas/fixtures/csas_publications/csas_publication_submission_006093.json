@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6093,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4, 5],
+            "title_en": "Northwest Atlantic Harp Seals Population Trends, 1952-2012 ",
+            "title_fr": "Tendances de la population de phoques du Groenland de l'Atlantique Nord-Ouest, 1952-2012 ",
+            "pub_year": 2011,
+            "lead_author_2": "M.O. Hammill, G.B. Stenson, T. Doniol-Valcroze, A. Mosnier",
+            "pub_num": "099",
+            "pages": 31,
+            "pdf_size": 254,
+            "description": ""
+        }
+    }
+]

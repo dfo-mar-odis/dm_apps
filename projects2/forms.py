@@ -830,10 +830,12 @@ class ReportSearchForm(forms.Form):
         (5, "SAR Workplan (xlsx)"),
         (6, "Regional Staff Allocation (csv)"),
         (7, "HR Project-Position Allocation (csv)"),
+        (8, "Capital Request Costs (csv)"),
     )
     report = forms.ChoiceField(required=True, choices=REPORT_CHOICES)
     year = forms.ChoiceField(required=False, label=gettext_lazy('Fiscal Year'))
     region = forms.ChoiceField(required=False, label=gettext_lazy('DFO Region'))
+    division = forms.ChoiceField(required=False, label=gettext_lazy('DFO Division'))
     section = forms.ChoiceField(required=False, label=gettext_lazy('DFO Section'))
 
     def __init__(self, *args, **kwargs):
@@ -842,10 +844,13 @@ class ReportSearchForm(forms.Form):
         fy_choices.insert(0, (None, "-------"))
         region_choices = [(obj.id, str(obj)) for obj in shared_models.Region.objects.all()]
         region_choices.insert(0, (None, "All"))
+        division_choices = [(obj.id, obj) for obj in shared_models.Division.objects.all()]
+        division_choices.insert(0, (None, "All"))
         section_choices = [(obj.id, obj.full_name) for obj in shared_models.Section.objects.filter(projects2__isnull=False).distinct()]
         section_choices.insert(0, (None, "All"))
         self.fields['year'].choices = fy_choices
         self.fields['region'].choices = region_choices
+        self.fields['division'].choices = division_choices
         self.fields['section'].choices = section_choices
         self.fields['section'].widget.attrs = chosen_js
 

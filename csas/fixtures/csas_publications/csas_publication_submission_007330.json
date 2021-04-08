@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7330,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Harvest advice for Pacific Sardine (Sardinops sagax) in British Columbia waters for the 2015 season",
+            "title_fr": "Avis sur les prélèvements de Sardines du Pacifique (Sardinops Sagax) dans les eaux de la Colombie Britannique pour la saison 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "009",
+            "pages": 6,
+            "pdf_size": 108,
+            "description": ""
+        }
+    }
+]

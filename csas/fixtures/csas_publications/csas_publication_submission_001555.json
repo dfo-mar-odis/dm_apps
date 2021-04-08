@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1555,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Sequential population analysis of 4VsW cod following the 1984 fishery",
+            "pub_year": 1985,
+            "lead_author_2": "A. Sinclair; S. Gavaris",
+            "pub_num": "048",
+            "pages": 28,
+            "pdf_size": 1337,
+            "description": ""
+        }
+    }
+]

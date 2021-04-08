@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7223,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Spiny Dogfish in the Northwest Atlantic",
+            "title_fr": "Évaluation de l'aiguillat commun de l'Atlantique Nord-Ouest",
+            "pub_year": 2014,
+            "lead_author_2": "Mark Fowler",
+            "pub_num": "055",
+            "description": ""
+        }
+    }
+]

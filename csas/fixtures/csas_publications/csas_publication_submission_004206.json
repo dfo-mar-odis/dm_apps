@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4206,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 2],
+            "title_en": "Benthic monitoring methods for habitat management of finfish mariculture in Canada",
+            "title_fr": "Méthodes de monitorage benthique pour la gestion de l'habitat de pisciculture au Canada",
+            "pub_year": 2005,
+            "lead_author_2": "Wildish, D.J., G.W. Pohle, B.T. Hargrave, T.F. Sutherland, M.R. Anderson.",
+            "pub_num": "039",
+            "pages": 42,
+            "pdf_size": 541,
+            "description": ""
+        }
+    }
+]

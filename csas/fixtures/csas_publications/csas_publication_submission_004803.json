@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4803,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Northern Shrimp (SFAs 4-6)",
+            "description": ""
+        }
+    }
+]

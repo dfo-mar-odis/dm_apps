@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2833,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Evaluation of age-specific and length specific estimates of juvenile Atlantic salmon (Salmo salar L.) abundance in the Experimental Ponds Area as predictors of adult returns to the Gander River.",
+            "pub_year": 1997,
+            "lead_author_2": "Knoechel, R., Ryan, P.M.,  O'Connell, M.F.",
+            "pub_num": "079",
+            "pages": 11,
+            "pdf_size": 538,
+            "description": ""
+        }
+    }
+]

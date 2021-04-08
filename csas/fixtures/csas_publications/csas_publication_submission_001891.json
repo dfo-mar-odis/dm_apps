@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1891,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop fishing grounds on the Scotian Shelf - 1988",
+            "pub_year": 1989,
+            "lead_author_2": "G. Robert; M.J. Lundy; M.A.E. Butler-Connolly",
+            "pub_num": "019",
+            "pages": 33,
+            "pdf_size": 1305,
+            "description": ""
+        }
+    }
+]

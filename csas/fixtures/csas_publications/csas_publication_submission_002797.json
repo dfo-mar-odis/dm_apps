@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2797,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Capelin in subarea 2J3KL",
+            "pub_year": 1997,
+            "lead_author_2": "Newfoundland Science",
+            "pub_num": "029",
+            "description": ""
+        }
+    }
+]

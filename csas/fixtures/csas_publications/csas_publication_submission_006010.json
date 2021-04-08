@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6010,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Sgaan Kinghlas Bowie Seamount Marine Protected Area Monitoring Indicators, Protocols and Strategies",
+            "pub_year": 2011,
+            "lead_author_2": "Sarah Davies",
+            "pub_num": "022",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7656,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Distribution, movements and habitat fidelity patterns of Fin Whales (Balaenoptera physalus) in Canadian Pacific Waters",
+            "title_fr": "Tendances dans la répartition, les déplacements et la fidélité à l’habitat du rorqual commun (Balaenoptera physalus) dans les eaux canadiennes du Pacifique",
+            "pub_year": 2017,
+            "lead_author_2": "Nichol, L.M., Abernethy, R.M., Wright, B.M., Heaslip, S., Spaven, L.D., Towers, J.R., Pilkington, J.F., Stredulinsky, E.H., Ford, J.K.B.",
+            "pub_num": "004",
+            "pages": 59,
+            "pdf_size": 2593,
+            "description": ""
+        }
+    }
+]

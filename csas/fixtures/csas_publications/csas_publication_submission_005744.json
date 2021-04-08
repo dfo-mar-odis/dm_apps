@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5744,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the LFA 41 Offshore Jonah Crab (Cancer borealis) (NAFO 4X and 5Zc)",
+            "title_fr": "Évaluation des stocks de crabe nordique (Cancer borealis) extracôtiers de la ZPH 41 (division 4X et sous division 5Zc de l'OPANO)",
+            "pub_year": 2010,
+            "lead_author_2": "D.S. Pezzack, C.M. Frail, A. Reeves, M.J. Tremblay / T. Worcester / V. Myra",
+            "pub_num": "113",
+            "pages": 60,
+            "pdf_size": 4651,
+            "description": ""
+        }
+    }
+]

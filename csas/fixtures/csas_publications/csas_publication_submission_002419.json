@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2419,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Mainland Gulf Nova Scotia Atlantic salmon (Salmo salar) stock status, 1994",
+            "pub_year": 1995,
+            "lead_author_2": "R.R. Claytor; R. Jones; P. LeBlanc; G. Chaput",
+            "pub_num": "015",
+            "pages": 33,
+            "pdf_size": 1103,
+            "description": ""
+        }
+    }
+]

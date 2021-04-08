@@ -1,0 +1,218 @@
+
+.container-fluid, .container {
+    /*margin-top: 15px;*/
+    padding: 15px;
+    font-size: small;
+}
+
+.crumbs {
+    background-color: rgba(255, 255, 255, 0);
+
+}
+
+.curvy {
+    border-radius: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+table, td {
+    font-size: small;
+}
+
+
+h1 {
+    font-size: 60px;
+}
+
+.small-btn-text {
+    font-size: 11px;
+}
+
+
+.toolbar {
+    background-color: #dfd2f6;
+    border: #4c4c4c 1px solid;
+    border-radius: 10px;
+}
+
+.toolbar2 {
+    background-color: #e3e0e3;
+    border-radius: 10px;
+    border: #4c4c4c 1px solid;
+}
+
+.vgroup {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.custom-btn {
+    text-align: left;
+}
+
+.icon {
+    padding-right: 5px;
+}
+
+.narrow-col {
+    width: 30%
+}
+
+.draft {
+    background-color: #fff396;
+}
+
+.submitted {
+    background-color: #ffda84;
+}
+
+.reviewed {
+    background-color: #a2c4fa;
+}
+
+.approved {
+    background-color: #a8ffb8;
+}
+
+.cancelled {
+    background-color: #c1c1c1;
+}
+
+.not-approved {
+    background-color: #ff9191;
+}
+
+
+.to-the-right {
+    width: 125px;
+
+}
+
+.w50 {
+    width: 50px;
+}
+
+.w75 {
+    width: 75px;
+}
+
+.w85 {
+    width: 85px;
+}
+
+.w90 {
+    width: 90px;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.w150 {
+    width: 150px;
+}
+
+.w200 {
+    width: 200px;
+}
+
+.w250 {
+    width: 250px;
+}
+
+
+.w300 {
+    width: 300px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.filter {
+    font-size: small;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 2.5px;
+    margin-top: 2.5px;
+}
+
+label.filter {
+    margin-right: 5px;
+}
+
+.form-control {
+    font-size: small;
+}
+
+/*For side bar  https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp */
+/* The sidebar menu */
+@media screen {
+    .sidebar {
+        height: 100%; /* 100% Full-height */
+        width: 225px; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color: #e2e2e2;
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    }
+
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+        transition: margin-left .5s; /* If you want a transition effect */
+        margin-left: 225px; /* If you want a transition effect */
+        padding: 20px;
+    }
+}
+
+.high {
+    background-color: pink;
+}
+
+.uncertain {
+    background-color: yellow;
+}
+
+.certain {
+    background-color: greenyellow;
+}
+
+.bg-light-green {
+    background-color: #ddfabe;
+}
+
+/*!* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) *!*/
+/*@media screen and (max-height: 450px) {*/
+/*  .sidebar {padding-top: 15px;}*/
+/*}*/
+
+.shadowbox {
+    background-color: #eeeeee;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.95);
+}
+
+
+.no-borders {
+    border: 0;
+    width: 100%;
+}
+
+/*.no-borders:focus {*/
+/*    outline: none;*/
+/*}*/
+
+.saved-borders > thead > tr > th, .saved-borders > tbody > tr > td  {
+    border: green 1px solid;
+}
+
+.unsaved-borders > thead > tr > th, .unsaved-borders > tbody > tr > td  {
+    border: red 1px solid;
+}

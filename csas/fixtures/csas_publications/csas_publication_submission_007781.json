@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7781,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Review and Evaluation of Fishing-Related Incidental Mortality for Pacific Salmon",
+            "title_fr": "Examen et évaluation de la mortalité accidentelle liée à la pêche pour le saumon du Pacifique",
+            "pub_year": 2016,
+            "lead_author_2": "Mary Thiess",
+            "pub_num": "049",
+            "pages": 11,
+            "pdf_size": 378,
+            "description": ""
+        }
+    }
+]

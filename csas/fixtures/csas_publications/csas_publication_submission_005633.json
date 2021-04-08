@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5633,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Advisory Process to Assess Scallops (Placopecten magellanicus) in Scallop Fishing Area (SFA) 29 West of Longitude 65º30'W.",
+            "lead_author_2": "Worcester, T.",
+            "description": ""
+        }
+    }
+]

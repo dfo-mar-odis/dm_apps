@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6577,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review - Adapting Monitoring Protocols and Strategies for the Gilbert Bay Marine Protected Area; December 8, 2016",
+            "title_fr": "Compte rendu de la réunion régionale d’examen par les pairs – Adapter lesprotocoles et les stratégies de surveillance pour la zone de protection marine de la baie Gilbert; le 8 décembre 2016",
+            "pub_year": 2020,
+            "lead_author_2": "E. Parrill",
+            "pub_num": "007",
+            "pages": 13,
+            "pdf_size": 578,
+            "description": ""
+        }
+    }
+]

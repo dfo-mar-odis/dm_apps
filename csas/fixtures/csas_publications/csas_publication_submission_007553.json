@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7553,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Run Timing and Diversion Rate Models for Fraser River Sockeye",
+            "title_fr": "Modèles de période de montaison et du taux de déviation pour le saumon rouge du fleuve Fraser",
+            "pub_year": 2016,
+            "lead_author_2": "Peter Chandler",
+            "pub_num": "008",
+            "pages": 10,
+            "pdf_size": 1389,
+            "description": ""
+        }
+    }
+]

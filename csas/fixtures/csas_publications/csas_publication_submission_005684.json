@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5684,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Zonal Advisory Process for the Pre-COSEWIC Assessment of Atlantic, Northern and Spotted Wolffish; September 14-15, 2010",
+            "title_fr": "Processus de consultation scientifique zonal concernant l'évaluation pré-COSEPAC des loups atlantique, à tête large et tacheté ; les 14 et 15 septembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Templeman, N., Dwyer, K.",
+            "pub_num": "032",
+            "pages": 37,
+            "pdf_size": 249,
+            "description": ""
+        }
+    }
+]

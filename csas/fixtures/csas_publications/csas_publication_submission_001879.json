@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1879,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation des concentrations de crevettes (Pandalus borealis) du golfe du Saint-Laurent",
+            "pub_year": 1989,
+            "lead_author_2": "Louise Savard",
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5028,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Updated Review of Scientific Information on Impacts of Seismic Survey Sound on Marine Mammals, 2004-present",
+            "title_fr": "Évaluation actualisée des renseignements scientifiques relatifs à l'impact des bruits sismiques sur les mammifères marins, de 2004 jusqu'à présent",
+            "pub_year": 2008,
+            "lead_author_2": "P. Abgrall, V.D. Moulton,  W.J. Richardson",
+            "pub_num": "087",
+            "pages": 72,
+            "pdf_size": 486,
+            "description": ""
+        }
+    }
+]

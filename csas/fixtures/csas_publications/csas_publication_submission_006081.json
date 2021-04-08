@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6081,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of lobster off the coast of eastern Cape Breton and the eastern and south shores of Nova Scotia (LFAs 27-33) ",
+            "title_fr": "Évaluation des homards au large des côtes à l'est du cap Breton et dans les régions côtières à l'est et au sud de la Nouvelle-Écosse (ZPH 27 à 33)",
+            "pub_year": 2012,
+            "lead_author_2": "M.J. Tremblay, D.S. Pezzack, C. Denton, M. Cassista-Da Ros, S.J. Smith, A.R. Reeves, A. Silva, S. Armsworthy / T. Worcester / V. Myra",
+            "pub_num": "022",
+            "pages": 118,
+            "pdf_size": 3355,
+            "description": ""
+        }
+    }
+]

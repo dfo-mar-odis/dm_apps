@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7918,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of softshell clam (Mya arenaria) of Québec’s coastal waters in 2016 – Methodology and Results",
+            "title_fr": "Évaluation de la mye commune (Mya arenaria) des eaux côtières du Québec en 2016 – méthodologie et résultats",
+            "pub_year": 2018,
+            "lead_author_2": "Brulotte, S.",
+            "pub_num": "004",
+            "description": ""
+        }
+    }
+]

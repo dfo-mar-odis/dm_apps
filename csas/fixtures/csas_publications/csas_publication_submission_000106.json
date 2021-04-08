@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 106,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Le crabe des neiges de l'estuaire et du nord du golfe du Saint-Laurent: État des populations de 1995 à 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Dufour, R., Dallaire, J.P.",
+            "pub_num": "019",
+            "description": ""
+        }
+    }
+]

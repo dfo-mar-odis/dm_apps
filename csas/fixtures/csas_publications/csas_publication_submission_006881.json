@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6881,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Evaluation of Atlantic Sturgeon (Acipenser oxyrinchus) from the Bay of Fundy Population to Inform a CITES Non-Detriment Finding",
+            "title_fr": "Évaluation de la population d'esturgeon noir (Acipenser oxyrinchus) dans la baie de Fundy pour documenter un avis de commerce non préjudiciable de la CITES",
+            "pub_year": 2013,
+            "lead_author_2": "White, Andrea",
+            "pub_num": "047",
+            "pages": 153,
+            "pdf_size": 9,
+            "description": ""
+        }
+    }
+]

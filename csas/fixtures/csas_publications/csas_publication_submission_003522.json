@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3522,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Pacific Cod off the West Coast of Vancouver Island and in Hecate Strait, November 2001",
+            "title_fr": "Évaluation de la morue du Pacifique de la côte ouest de l'île de Vancouver et du détroit d'Hécate, novembre 2001",
+            "pub_year": 2001,
+            "lead_author_2": "A. Sinclair, S. Martell and J. Boutillier",
+            "pub_num": "159",
+            "pages": 61,
+            "pdf_size": 1540,
+            "description": ""
+        }
+    }
+]

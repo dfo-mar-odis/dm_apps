@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 997,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the RAP meeting on Hudson Bay/Foxe Basin bowhead; 17-18 June, 1999",
+            "pub_year": 1999,
+            "pub_num": "023",
+            "pages": 22,
+            "pdf_size": 387,
+            "description": ""
+        }
+    }
+]

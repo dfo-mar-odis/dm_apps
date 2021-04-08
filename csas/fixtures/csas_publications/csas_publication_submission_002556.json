@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2556,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Aspects of the biology of northern shrimp Pandalus borealis on the Scotian Shelf",
+            "pub_year": 1996,
+            "lead_author_2": "Koeller, P.",
+            "pub_num": "009",
+            "pages": 35,
+            "pdf_size": 1868,
+            "description": ""
+        }
+    }
+]

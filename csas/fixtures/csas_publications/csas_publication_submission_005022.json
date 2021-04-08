@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5022,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Northern shrimp and snow crab Stock Assessments of the 2007 fishing season in the Quebec Region; February 4-6 and 12, 2008",
+            "title_fr": "Évaluations des stocks de crevette et de crabe des neiges de la région du Québec suivant la saison de pêche 2007; du 4 au 6 février et le 12 février 2008",
+            "pub_year": 2008,
+            "lead_author_2": "C. Cyr, D. Gascon",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

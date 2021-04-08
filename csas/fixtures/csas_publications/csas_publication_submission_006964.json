@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6964,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Regional Peer Review on the West Coast Vancouver Island Chinook Salmon Escapement Estimation and Stock Aggregation Procedures; June 18-20, 2013",
+            "title_fr": "Compte rendu de l'examen régional par des pairs sur les procédures d'estimation des échappées de saumon quinnat de la côte ouest de l'île de Vancouver et de regroupement des stocks; du 18 au 20 juin 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Marilyn Hargreaves",
+            "pub_num": "025",
+            "pages": 70,
+            "pdf_size": 964,
+            "description": ""
+        }
+    }
+]

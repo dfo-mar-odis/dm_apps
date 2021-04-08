@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3926,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Regional Advisory Process of the Georges Bank Scallop Stock; 24 June 2003",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional des provinces Maritimes portant sur le stock de pétoncle du banc Georges; le 24 juin 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Smith, S.J.",
+            "pub_num": "036",
+            "pages": 17,
+            "pdf_size": 152,
+            "description": ""
+        }
+    }
+]

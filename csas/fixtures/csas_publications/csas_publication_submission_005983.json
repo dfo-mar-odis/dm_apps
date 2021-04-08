@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5983,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Ecosystem Research Initiative (ERI): Integrated Advice on the Summer Habitat of the St. Lawrence Estuary Beluga (Delphinapterus leucas)",
+            "title_fr": "Initiative de Recherche Écosystémique (IRÉ) : avis intégré sur l’habitat estival du béluga (Delphinapterus leucas) de l’estuaire du Saint-Laurent",
+            "pub_year": 2016,
+            "lead_author_2": "Jean-François Gosselin",
+            "pub_num": "030",
+            "pages": 11,
+            "pdf_size": 1051,
+            "description": ""
+        }
+    }
+]

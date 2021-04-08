@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6369,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Biological synopsises for three exotic molluscs, Manila Clam (Venerupis philippinarum), Pacific Oyster (Crassostrea gigas) and Japanese Scallop (Mizuhopecten yessoensis) licensed for Aquaculture in British Columbia",
+            "title_fr": "Sommaires biologiques pour trois mollusques exotiques, Palourde Japonaise (Venerupis philippinarum), Huître Creuse du Pacifique (Crassostrea gigas) et Pétoncle Japonais (Mizuhopecten yessoensis) pour lesquels on a accordé un permis d'aquaculture en Colombie-Britannique",
+            "pub_year": 2012,
+            "lead_author_2": "Graham E. Gillespie1, Susan M. Bower2, Kerry L. Marcus3 and Dorothee Kieser2",
+            "pub_num": "013",
+            "pages": 102,
+            "pdf_size": 862,
+            "description": ""
+        }
+    }
+]

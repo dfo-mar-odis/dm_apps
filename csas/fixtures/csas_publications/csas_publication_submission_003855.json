@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3855,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Cod stocks rebuilding and fish bioenergetics : low productivity hypothesis",
+            "title_fr": "Le rétablissement des stocks de morue et la bio-énergétique des poissons: l'hypothèse d'une faible productivité",
+            "pub_year": 2003,
+            "lead_author_2": "Dutil, J.D., Gauthier, J., Lambert, Y., Fréchet, A., Chabot, D.",
+            "pub_num": "060",
+            "pages": 43,
+            "pdf_size": 435,
+            "description": ""
+        }
+    }
+]

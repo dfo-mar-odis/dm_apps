@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1973,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Newfoundland Region Groundfish Overview",
+            "pub_year": 1998,
+            "lead_author_2": "Bruce Atkinson",
+            "pub_num": "A2-19",
+            "pages": 10,
+            "pdf_size": 112,
+            "description": ""
+        }
+    }
+]

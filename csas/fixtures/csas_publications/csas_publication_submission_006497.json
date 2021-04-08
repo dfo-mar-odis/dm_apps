@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6497,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Smooth skate (Malacoraja senta) in the southern Gulf of St. Lawrence: life history, and trends from 1971-2010 in abundance, distribution and potential threats ",
+            "title_fr": "Situation de la raie lisse (Malacoraja senta) dans le sud du golfe du Saint-Laurent : caractéristiques du cycle de vie, les tendances dans l'abondance et la distribution depuis 1971 à 2010, et les menaces potentielles",
+            "pub_year": 2012,
+            "lead_author_2": "Swain, D.P., Benoît, H.P., and Aubry, É",
+            "pub_num": "033",
+            "pages": 37,
+            "pdf_size": 990,
+            "description": ""
+        }
+    }
+]

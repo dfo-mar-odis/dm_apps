@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3369,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Factors Limiting Juvenile Sockeye Production and Enhancement Potential for Selected BC Nursery Lakes",
+            "pub_year": 2001,
+            "lead_author_2": "K.S. Shortreed, K.F. Morton, K. Malange and J.M.B. Hume",
+            "pub_num": "098",
+            "pages": 70,
+            "pdf_size": 582,
+            "description": ""
+        }
+    }
+]

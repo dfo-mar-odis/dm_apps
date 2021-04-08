@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1534,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Bay of Fundy scallop stocks assessment, 1984",
+            "pub_year": 1985,
+            "lead_author_2": "G. Robert; M.A.E. Butler-Connolly; M.J. Lundy",
+            "pub_num": "027",
+            "pages": 29,
+            "pdf_size": 1111,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1625,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of management units in the Gulf of Maine Area: Argentina silus (Ascanius)",
+            "pub_year": 1986,
+            "lead_author_2": "R.G. Halliday",
+            "pub_num": "008",
+            "pages": 9,
+            "pdf_size": 598,
+            "description": ""
+        }
+    }
+]

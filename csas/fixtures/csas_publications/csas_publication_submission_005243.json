@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5243,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Cod in Division 4X in 2008",
+            "title_fr": "Évaluation de la morue dans la division 4X en 2008",
+            "pub_year": 2009,
+            "lead_author_2": "D. Clark, J. Emberley",
+            "pub_num": "018",
+            "pages": 107,
+            "pdf_size": 2699,
+            "description": ""
+        }
+    }
+]

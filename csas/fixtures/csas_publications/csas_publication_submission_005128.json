@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5128,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of Newfoundland East and South Coast Herring Stocks to Spring of 2011",
+            "title_fr": "Évaluation des stocks de hareng des côtes est et sud de Terre-Neuve jusqu'au printemps 2011",
+            "pub_year": 2011,
+            "lead_author_2": "C. Bourne",
+            "pub_num": "076",
+            "pages": 27,
+            "pdf_size": 283,
+            "description": ""
+        }
+    }
+]

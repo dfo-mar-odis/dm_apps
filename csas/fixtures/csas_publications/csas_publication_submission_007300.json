@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7300,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Preliminary results from the groundfish and shrimp multidisciplinary survey in August 2014 in the Estuary and northern Gulf of St. Lawrence",
+            "title_fr": "Résultats préliminaires du relevé multidisciplinaire de poissons de fond et de crevette d'août 2014 dans l'estuaire et le nord du golfe du Saint-Laurent",
+            "pub_year": 2014,
+            "lead_author_2": "Bourdages, H., Brassard, C., Desgagnés, M., Galbraith, P., Gauthier, J., Lambert, J., Légaré, B., Parent, E. et Schwab P.",
+            "pub_num": "115",
+            "pages": 101,
+            "pdf_size": 8211,
+            "description": ""
+        }
+    }
+]

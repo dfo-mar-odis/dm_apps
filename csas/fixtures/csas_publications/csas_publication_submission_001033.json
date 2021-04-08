@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1033,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland Regional Advisory Process for 2J3KL Cod and 3LNO Skate; March 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Evans, G.T.",
+            "pub_num": "031",
+            "pages": 45,
+            "pdf_size": 159,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4748,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Assessment Framework for Northern Shrimp (Pandalus borealis) off Labrador and the northeastern coast of Newfoundland; May 28-30, 2007",
+            "title_fr": "Compte rendu sur le cadre d'évaluation de la crevette nordique (Pandalus borealis) au large du Labrador et sur la côte nord est de Terre Neuve; du 28 au 30 mai 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Cadigan, N., J. Ennis.",
+            "pub_num": "034",
+            "pages": 69,
+            "pdf_size": 1125,
+            "description": ""
+        }
+    }
+]

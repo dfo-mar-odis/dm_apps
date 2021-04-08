@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4940,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Viability of the southern Gulf of St. Lawrence cod population",
+            "title_fr": "Viabilité de la population de morue du sud du golfe du Saint-Laurent",
+            "pub_year": 2008,
+            "lead_author_2": "Swain, D.P. G.A. Chouinard",
+            "pub_num": "018",
+            "pages": 13,
+            "description": ""
+        }
+    }
+]

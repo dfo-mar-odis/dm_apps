@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1960,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Thornyheads (Shortspine and Longspine) British Columbia Coast",
+            "pub_year": 1999,
+            "lead_author_2": "Olsen, Norm",
+            "pub_num": "A6-12",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

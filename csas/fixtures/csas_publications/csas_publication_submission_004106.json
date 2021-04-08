@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4106,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review Meeting on the Level of Allowable Harm for Newfoundland and Labrador Atlantic Cod, Laurentian North Atlantic Cod, Cusk and Bocaccio in Support of Species at Risk; Halifax; October 25-29, 2004",
+            "title_fr": "Compte rendu de la réunion nationale d'examen par les pairs sur l'étendue des dommages admissibles pour les populations de morue de l'atlantique de Terre-Neuve et du Labrador, du nord Laurentien, ainsi que du brosme et du bocaccio dans le contexte des espèces en péril; Halifax; du 25 au 29 octobre 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Allen, Chris",
+            "pub_num": "040",
+            "pages": 73,
+            "pdf_size": 376,
+            "description": ""
+        }
+    }
+]

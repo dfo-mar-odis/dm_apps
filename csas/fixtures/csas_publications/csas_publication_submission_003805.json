@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3805,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Semi-parametric estimation of tag loss and reporting rates for tag-recovery experiments using exact time-at-liberty data",
+            "pub_year": 2003,
+            "lead_author_2": "Cadigan, N., Brattey, J.",
+            "pub_num": "038",
+            "pages": 21,
+            "pdf_size": 526,
+            "description": ""
+        }
+    }
+]

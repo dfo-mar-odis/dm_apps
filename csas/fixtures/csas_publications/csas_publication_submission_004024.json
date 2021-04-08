@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4024,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Snow Crab of the Estuary and Northern Gulf of St. Lawrence (areas 13 to 17 and 12A, 12B and 12C) in 2003",
+            "title_fr": "Crabe des neiges de l'estuaire et du nord du golfe du Saint-Laurent (zones 13 à 17 et 12A, 12B et 12C) en 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Dufour, R.",
+            "pub_num": "024",
+            "pages": 14,
+            "description": ""
+        }
+    }
+]

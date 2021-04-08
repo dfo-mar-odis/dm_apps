@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4751,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on mollusks in Quebec coastal waters in 2005; January 17 and 26, 2006",
+            "title_fr": "Évaluations des stocks de mollusques eaux côtières du Québec en 2005; 17 et 26 janvier 2006",
+            "pub_year": 2008,
+            "lead_author_2": "McQuinn, I. S. Brulotte, C. Cyr.",
+            "pub_num": "003",
+            "pages": 20,
+            "description": ""
+        }
+    }
+]

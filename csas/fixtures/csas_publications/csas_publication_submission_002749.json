@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2749,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "État des stocks de homard des côtes du Québec en 1995 et analyse des mesures de conservation",
+            "pub_year": 1996,
+            "lead_author_2": "L. Gendron",
+            "pub_num": "123",
+            "pages": 63,
+            "pdf_size": 2773,
+            "description": ""
+        }
+    }
+]

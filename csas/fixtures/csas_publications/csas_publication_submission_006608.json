@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6608,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Importance of bycatch in the northern shrimp fishery in the Estuary and northern Gulf of St. Lawrence",
+            "title_fr": "Importance des prises accessoires dans la pêche à la crevette nordique de l'estuaire et du nord du golfe du Saint-Laurent",
+            "pub_year": 2012,
+            "lead_author_2": "Louise Savard",
+            "pub_num": "066",
+            "pages": 14,
+            "pdf_size": 512,
+            "description": ""
+        }
+    }
+]

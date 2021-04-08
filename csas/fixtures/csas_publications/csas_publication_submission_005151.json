@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5151,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of regional peer review meeting on the Assessment of the Estuary and Gulf of St. Lawrence (4RST) Capelin stock in 2012; February 28, 2013",
+            "title_fr": "Compte rendu de l'examen régional par des pairs portant sur l'évaluation du stock de capelan de l'estuaire et du golfe du Saint-Laurent (Divisions 4RST) en 2012 ; 28 février 2013",
+            "pub_year": 2013,
+            "lead_author_2": "S. Dubé",
+            "pub_num": "011",
+            "pages": 11,
+            "pdf_size": 198,
+            "description": ""
+        }
+    }
+]

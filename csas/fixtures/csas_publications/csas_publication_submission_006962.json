@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6962,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pilot ecosystem risk assessment to assess cumulative risk to species in the Pacific North Coast Integrated Management Area (PNCIMA)",
+            "title_fr": "Évaluation pilote des risques pour l'écosystème en vue d'évaluer les risques cumulatifs pour les espèces dans la zone de gestion intégrée de la côte nord du Pacifique",
+            "pub_year": 2016,
+            "lead_author_2": "Murray, C.C., Mach, M.E., and O, M.",
+            "pub_num": "049",
+            "pages": 66,
+            "pdf_size": 1027,
+            "description": ""
+        }
+    }
+]

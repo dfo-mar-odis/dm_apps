@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3862,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment Framework for Strait of Georgia Lingcod",
+            "title_fr": "Cadre d'évaluation du stock de morue-lingue du Détroit de Georgia",
+            "pub_year": 2003,
+            "lead_author_2": "King, J.R., McFarlane, G.A., Surry, A.M.",
+            "pub_num": "062",
+            "pages": 66,
+            "pdf_size": 512,
+            "description": ""
+        }
+    }
+]

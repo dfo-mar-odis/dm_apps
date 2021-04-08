@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5650,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish GEAC survey",
+            "lead_author_2": "Dwyer, K., Power, D.",
+            "description": ""
+        }
+    }
+]

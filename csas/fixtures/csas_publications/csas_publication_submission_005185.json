@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5185,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Annotated Bibliography of Grass Carp (Ctenopharyngodon idella) from Russian-language Literature",
+            "title_fr": "Bibliographie commentée fournissant un résumé de l'information disponible sur la carpe de roseau (Ctenopharyngodon idella) dans la littérature russe",
+            "pub_year": 2016,
+            "lead_author_2": "Bogutskaya, N., Jones, L.A., Mandrak, N.E., and Cudmore, B.",
+            "pub_num": "094",
+            "pages": 48,
+            "pdf_size": 531,
+            "description": ""
+        }
+    }
+]

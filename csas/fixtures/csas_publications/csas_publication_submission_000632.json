@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 632,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Oceanographic conditions in NAFO Divisions 2J 3KLMNO during 1999 with comparisons to the long-term (1961-1990) average",
+            "pub_year": 2000,
+            "lead_author_2": "Colbourne, E.",
+            "pub_num": "048",
+            "pages": 53,
+            "pdf_size": 3067,
+            "description": ""
+        }
+    }
+]

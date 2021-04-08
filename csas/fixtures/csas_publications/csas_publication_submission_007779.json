@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7779,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on A Review of International Best Practices to Assigning Species to Tiers for the Purposes of Stock Assessment Based on Data Availability and Richness; May 30-31, 2016",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région du Pacifique sur l’Examen des pratiques exemplaires internationales pour l’attribution des espèces des poissons de fond à des tiers pour fins d’évaluation des stocks fondés sur la disponibilité et l’abondance de données; du 30 au 31 mai 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Rowan Haigh",
+            "pub_num": "051",
+            "pages": 81,
+            "pdf_size": 1287,
+            "description": ""
+        }
+    }
+]

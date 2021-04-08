@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3540,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Yellowtail Rockfish",
+            "pub_year": 1999,
+            "lead_author_2": "Yellowtail Rockfish",
+            "pub_num": "A6-07",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

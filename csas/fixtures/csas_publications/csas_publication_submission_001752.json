@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1752,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Mackerel (Scomber scombrus) egg abundance in the southern gulf of St. Lawrence from 1979 to 1986, and the use of the estimate for stock assessment",
+            "pub_year": 1987,
+            "lead_author_2": "P. Ouellet",
+            "pub_num": "062",
+            "pages": 40,
+            "pdf_size": 1910,
+            "description": ""
+        }
+    }
+]

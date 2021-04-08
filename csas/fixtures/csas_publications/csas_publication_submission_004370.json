@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4370,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "2003 State of the Ocean: Chemical and Biological Oceanographic Conditions in the Estuary and Gulf of St. Lawrence",
+            "title_fr": "État de l'océan en 2003: les conditions chimiques et biologiques dans l'estuaire et le golfe du Saint-Laurent",
+            "pub_year": 2005,
+            "lead_author_2": "Harvery, M., Starr, M.",
+            "pub_num": "053",
+            "pages": 20,
+            "pdf_size": 1001,
+            "description": ""
+        }
+    }
+]

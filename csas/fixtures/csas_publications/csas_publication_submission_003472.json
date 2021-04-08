@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3472,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Atlantic Halibut of the Gulf of St Lawrence (Divisions 4RST) - Update (2000)",
+            "title_fr": "Le flétan atlantique du golfe du Saint-Laurent (divisions 4RST) - Mise à jour (2000)",
+            "pub_year": 2001,
+            "lead_author_2": "Diane Archambault",
+            "pub_num": "A4-02",
+            "pages": 6,
+            "description": ""
+        }
+    }
+]

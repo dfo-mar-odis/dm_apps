@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8053,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Reassessment of the Ecologically and Biologically Significant Areas (EBSAS) in the Pacific Northern Shelf Bioregion",
+            "title_fr": "Réévaluation des zones d’importance écologique et biologique (ZIEB) dans la biorégion du plateau du Pacifique Nord",
+            "pub_year": 2018,
+            "lead_author_2": "Nadja Steiner",
+            "pub_num": "040",
+            "pages": 22,
+            "pdf_size": 1463,
+            "description": ""
+        }
+    }
+]

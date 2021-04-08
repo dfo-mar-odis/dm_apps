@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7374,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of Stock Status Indicators for Northern Shrimp in the Estuary and Gulf of St. Lawrence",
+            "title_fr": "Mise à jour de l’indicateur de l’état des stocks de crevette nordique de l’estuaire et du golfe du Saint-Laurent",
+            "pub_year": 2017,
+            "lead_author_2": "Hugo Bourdages",
+            "pub_num": "008",
+            "pages": 7,
+            "pdf_size": 1451,
+            "description": ""
+        }
+    }
+]

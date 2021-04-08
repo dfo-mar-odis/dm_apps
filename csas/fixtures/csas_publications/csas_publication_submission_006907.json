@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6907,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Science Review of the Revised (2013) Old Harry Prospect Exploration Drilling Program",
+            "title_fr": "Examen scientifique du programme de forage d'exploration de la zone prometteuse de Old Harry révisé (2013)",
+            "pub_year": 2013,
+            "lead_author_2": "Meade, J.",
+            "pub_num": "018",
+            "pages": 31,
+            "pdf_size": 210,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6859,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Big skate (Raja binoculata) and Longnose skate (R. rhina) stock assessments for British Columbia",
+            "title_fr": "Évaluations des stocks de raie biocellée (Raja binoculata) et de pocheteau long-nez (R. rhina) en Colombie-Britannique",
+            "pub_year": 2014,
+            "lead_author_2": "Jackie King",
+            "pub_num": "027",
+            "description": ""
+        }
+    }
+]

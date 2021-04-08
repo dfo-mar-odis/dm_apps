@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7758,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the assessment of the lobster in Quebec’s inshore waters in 2016; February 25 and 26, 2016",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l'évaluation du homard des eaux côtières du Québec en 2016; du 25 au 26 février 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "005",
+            "pages": 14,
+            "pdf_size": 174,
+            "description": ""
+        }
+    }
+]

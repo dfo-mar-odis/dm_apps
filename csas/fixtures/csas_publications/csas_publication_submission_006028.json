@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6028,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Georges Bank Scallops (Placopecten magellanicus)",
+            "title_fr": "Évaluation du stock de pétoncle (Placopecten magellanicus) du banc Georges ",
+            "pub_year": 2011,
+            "lead_author_2": "Hubley, Brad",
+            "pub_num": "059",
+            "pages": 12,
+            "pdf_size": 214,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4304,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 4, 5],
+            "title_en": "Stock Assessment of Northwest Atlantic Harp Seals (Pagophilus groenlandicus)",
+            "title_fr": "Évaluation des stocks de phoques du Groenland dans l'Atlantique Nord-Ouest (Pagophilus groenlandicus)",
+            "pub_year": 2005,
+            "lead_author_2": "Stenson, Garry; Hammill, Mike",
+            "pub_num": "037",
+            "pages": 12,
+            "pdf_size": 236,
+            "description": ""
+        }
+    }
+]

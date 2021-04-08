@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 975,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Invertebrate Subcommittee Meeting; January, 1999",
+            "pub_year": 1999,
+            "lead_author_2": "M. Stocker, I. Winther (Editors)",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2880,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Review of the Newfoundland losbter fishery.",
+            "pub_year": 1997,
+            "lead_author_2": "Ennis, G.P., Collins, P.W., Badcock, G.D., Dawe, G.",
+            "pub_num": "126",
+            "pages": 55,
+            "pdf_size": 2339,
+            "description": ""
+        }
+    }
+]

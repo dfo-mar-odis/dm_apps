@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 598,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Rock crab off Eastern Nova Scotia: Stock Status and Evaluation of Exploratory Fishery",
+            "pub_year": 2000,
+            "lead_author_2": "Tremblay, M.J., Reeves , A.",
+            "pub_num": "023",
+            "pages": 25,
+            "pdf_size": 5543,
+            "description": ""
+        }
+    }
+]

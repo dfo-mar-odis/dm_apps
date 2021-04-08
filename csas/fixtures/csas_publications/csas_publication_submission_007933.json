@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7933,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Recovery potential assessment for the Little Quarry Lake Stickleback species pair (Gasterosteus aculeatus)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la paire d'espèces d'épinoches (gasterosteus aculeatus) du lac Little Quarry",
+            "pub_year": 2018,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "006",
+            "pages": 15,
+            "pdf_size": 628,
+            "description": ""
+        }
+    }
+]

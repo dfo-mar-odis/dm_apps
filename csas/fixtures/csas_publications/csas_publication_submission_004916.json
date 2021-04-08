@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4916,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Potential impacts of the British Columbia herring roe fishery on the spatial and temporal distribution of herring spawn: examination of the serial depletion hypothesis",
+            "title_fr": "Répercussions possibles de la pêche du hareng rogué en Colombie-Britannique sur la répartition spatiale et temporelle de la ponte de hareng : examen de l'hypothèse d'épuisement continu",
+            "pub_year": 2007,
+            "lead_author_2": "Hay, D.E., P.B. McCarter, K.S. Daniel.",
+            "pub_num": "086",
+            "pages": 97,
+            "pdf_size": 4563,
+            "description": ""
+        }
+    }
+]

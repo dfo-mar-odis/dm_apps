@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7402,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Scallops (Placopecten magellanicus) in Scallop Fishing Area (SFA) 29 West of Longitude 65°30'W",
+            "title_fr": "Évaluation du stock de pétoncles (Placopecten magellanicus) de la zone de pêche du pétoncle (ZPP) 29 à l’ouest de la longitude 65° 30' O",
+            "pub_year": 2015,
+            "lead_author_2": "Jessica Sameoto, Ph. 902-426-9780",
+            "pub_num": "035",
+            "pages": 13,
+            "pdf_size": 439,
+            "description": ""
+        }
+    }
+]

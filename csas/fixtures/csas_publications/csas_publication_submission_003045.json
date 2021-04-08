@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3045,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southern Gulf of St. Lawrence Sea Scallop",
+            "title_fr": "Pétoncle géant du sud du golfe du Saint-Laurent",
+            "pub_year": 1998,
+            "lead_author_2": "Mark Hanson",
+            "pub_num": "C3-16",
+            "pages": 5,
+            "pdf_size": 68,
+            "description": ""
+        }
+    }
+]

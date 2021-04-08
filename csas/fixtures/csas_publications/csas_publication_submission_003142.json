@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3142,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Salmon Northumberland Strait Nova Scotia part of SFA 18",
+            "title_fr": "Saumon atlantique détroit de Northumberland Nouvelle-Écosse - Partie de la ZPS 18",
+            "pub_year": 1997,
+            "lead_author_2": "Shane O'Neil",
+            "pub_num": "D3-08",
+            "pages": 5,
+            "pdf_size": 108,
+            "description": ""
+        }
+    }
+]

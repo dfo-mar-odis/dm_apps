@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8521,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review Meeting on the Assessment of the Estuary and northern Gulf of St. Lawrence Snow Crab stocks; February 12 and 14, 2019",
+            "title_fr": "Compte rendu de l’examen régional par des pairs portant sur l'évaluation des stocks de crabe des neiges de l'estuaire et du nord du golfe du Saint-Laurent; 12 et 14 février 2019",
+            "pub_year": 2019,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "021",
+            "pages": 19,
+            "pdf_size": 325,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2480,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Did the feeding level of the cod off southern Labrador and eastern Newfoundland decline in the 1990s?",
+            "pub_year": 1995,
+            "lead_author_2": "G.R. Lilly",
+            "pub_num": "074",
+            "pages": 25,
+            "pdf_size": 1522,
+            "description": ""
+        }
+    }
+]

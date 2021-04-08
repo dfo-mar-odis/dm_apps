@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6206,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Assessment of a proposed quota increase for the commercial Arctic Char fishery in the Lauchlan River (Cambridge Bay, Nunavut)",
+            "title_fr": "Évaluation d’une augmentation de quota proposée pour la pêche commerciale de l’omble chevalier dans la rivière Lauchlan (la baie Cambridge, Nunavut)",
+            "pub_year": 2020,
+            "lead_author_2": "Tallman, Ross / Muhammad Yamen Janjua",
+            "pub_num": "049",
+            "pages": 14,
+            "pdf_size": 975,
+            "description": ""
+        }
+    }
+]

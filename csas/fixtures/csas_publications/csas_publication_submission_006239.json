@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6239,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Reference points for redfish (Sebastes mentella and Sebastes fasciatus) in the northwest Atlantic",
+            "title_fr": "Points de référence pour le sébaste (Sebastes mentella et Sebastes fasciatus) dans l'Atlantique Nord-Ouest",
+            "pub_year": 2012,
+            "lead_author_2": "Daniel Duplisea",
+            "pub_num": "004",
+            "pages": 19,
+            "pdf_size": 254,
+            "description": ""
+        }
+    }
+]

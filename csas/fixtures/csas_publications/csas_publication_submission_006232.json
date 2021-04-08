@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6232,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Pre-COSEWIC Review of white hake (Urophycis tenuis) in the northern Gulf of St. Lawrence",
+            "lead_author_2": "Johanne Gauthier",
+            "description": ""
+        }
+    }
+]

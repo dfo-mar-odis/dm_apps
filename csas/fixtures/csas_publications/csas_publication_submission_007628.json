@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7628,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "An Assessment of Sea Scallop on the St. Pierre Bank (Subdivision 3Ps)",
+            "title_fr": "Évaluation du pétoncle géant dans le banc de Saint-Pierre (sous-division 3Ps)",
+            "pub_year": 2016,
+            "lead_author_2": "E. Coughlan",
+            "pub_num": "032",
+            "pages": 7,
+            "pdf_size": 591,
+            "description": ""
+        }
+    }
+]

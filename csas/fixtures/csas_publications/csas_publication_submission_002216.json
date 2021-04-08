@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2216,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Georges Bank (5Z) herring 1992 Update",
+            "pub_year": 1992,
+            "lead_author_2": "G.D. Melvin; J.B. Sochasky; M.J. Power; F.J. Fife; W.H. Dougherty",
+            "pub_num": "068",
+            "pages": 22,
+            "description": ""
+        }
+    }
+]

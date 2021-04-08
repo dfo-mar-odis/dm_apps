@@ -44,11 +44,11 @@ def is_adm(user):
     try:
         if hasattr(user, "travel_default_reviewers") and user.travel_default_reviewers.special_role == 5:
             return True
-        national_branch = shared_models.Region.objects.get(name__icontains="national")
-        if user == national_branch.head:
+        national_region = shared_models.Region.objects.get(name__icontains="national")
+        if user == national_region.head:
             return True
-    except:
-        print("Cannot find branch named: 'national'")
+    except Exception as ex:
+        print("Cannot find region named: 'national'", ex)
 
 
 def is_trip_approver(user, trip):
@@ -586,20 +586,6 @@ def trip_approval_seeker(trip, request):
                 trip.save()
 
 
-# DELETE!!
-def get_related_trips(user):
-    """give me a user and I'll send back a queryset with all related trips, i.e.
-     they are the request.user | they are the request.created_by | they are a traveller on a child trip"""
-
-    # all individual or group requests where user =user (this should include parent requests)
-    tr_ids = [tr.id for tr in models.TripRequest.objects.filter(parent_request__isnull=True, user=user)]
-    # all trips that were created by user
-    tr_ids.extend([tr.id for tr in models.TripRequest.objects.filter(parent_request__isnull=True, created_by=user)])
-    # all trips where the user is a traveller on a group trip
-    tr_ids.extend([tr.parent_request.id for tr in models.TripRequest.objects.filter(parent_request__isnull=False, user=user)])
-    return models.TripRequest.objects.filter(id__in=tr_ids)
-
-
 def get_related_requests(user):
     """give me a user and I'll send back a queryset with all related trip requests, i.e.
      they are a traveller || they are the request.created_by"""
@@ -629,7 +615,8 @@ def get_adm_eligible_trips():
     keepers = list()
     for t in trips:
         # only get trips that have attached travellers and that are in an active status (i.e. not draft=8, cancelled=22, denied=10)
-        if t.status not in [10, 22, 8] and t.travellers.exists():
+        # (the trip.travellers prop is handling this filtering!)
+        if t.travellers.exists():
             # only get trips that are within three months from the closest date
             if t.date_eligible_for_adm_review and t.date_eligible_for_adm_review <= timezone.now():
                 keepers.append(t.id)

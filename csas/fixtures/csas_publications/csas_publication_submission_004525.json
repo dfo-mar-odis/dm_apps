@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4525,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Skate in Divisions 3L, 3N, 3O and Subdivision 3Ps",
+            "pub_year": 1998,
+            "lead_author_2": "Kulka, D.W.",
+            "pub_num": "A2-18",
+            "pages": 5,
+            "pdf_size": 448,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5302,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Georges Bank 'a' Scallop (Placopecten magellanicus) Annual Stock Assessment: Survey Design",
+            "title_fr": "Évaluation annuelle du stock de pétoncles « a » du banc Georges (Placopecten magellanicus) : conception du relevé",
+            "pub_year": 2009,
+            "lead_author_2": "Hubley, B., S.J. Smith, I.D. Jonsen, and J. Sameoto.",
+            "pub_num": "033",
+            "pages": 49,
+            "pdf_size": 603,
+            "description": ""
+        }
+    }
+]

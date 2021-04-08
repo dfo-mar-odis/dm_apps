@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2182,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop fishing grounds on the Scotian Shelf - 1991",
+            "pub_year": 1992,
+            "lead_author_2": "G. Robert; M.A.E. Butler",
+            "pub_num": "034",
+            "pages": 27,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2231,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Étude d'évolution spatio-temporelle des populations de capelan du Golfe du Saint-Laurent",
+            "pub_year": 1992,
+            "lead_author_2": "J.D. Lambert; D. Roby",
+            "pub_num": "083",
+            "description": ""
+        }
+    }
+]

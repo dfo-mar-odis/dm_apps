@@ -53,30 +53,33 @@
   </div>
 
   <div class="mb-5">
+    <div class="float-right">
+      <input type="text" class="form-control" placeholder="{% trans "Search for keywords here" %}" style="width: 500px" v-model="faqSearch">
+    </div>
     <h3>{% trans "Frequently Asked Questions (FAQ)" %}</h3>
     <div class="container">
       <div id="accordion">
-        {% for q in faqs %}
-
+        <div v-for="(faq, index) in foundFAQs" :key="index">
           <div class="card">
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="true"
-                        aria-controls="collapse{{ forloop.counter }}" style="text-align: left">
-                  {{ q.tquestion }}
+                <button class="btn btn-link" data-toggle="collapse" :data-target="`#collapse${ index }`" aria-expanded="true"
+                        :aria-controls="`collapse${ index }`" style="text-align: left">
+                  <span v-html="faq.tquestion"></span>
                 </button>
               </h5>
             </div>
 
-            <div id="collapse{{ forloop.counter }}" class="collapse" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordion">
+            <div :id="`collapse${ index}`" class="collapse" :aria-labelledby="`heading${ index }`" data-parent="#accordion">
               <div class="card-body">
-                {{ q.tanswer|safe }}
+                <span v-html="faq.tanswer"></span>
               </div>
             </div>
           </div>
-        {% endfor %}
 
+        </div>
       </div>
+
     </div>
   </div>
 </div>

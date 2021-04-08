@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5049,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Inner Bay of Fundy Atlantic Salmon",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon atlantique de l'arrière baie de Fundy",
+            "pub_year": 2008,
+            "lead_author_2": "J. Gibson",
+            "pub_num": "050",
+            "pages": 34,
+            "pdf_size": 506,
+            "description": ""
+        }
+    }
+]

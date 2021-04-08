@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7339,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Porbeagle (Lamna nasus) in Atlantic Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement de la maraîche (Lamna nasus) au Canada atlantique",
+            "pub_year": 2015,
+            "lead_author_2": "Campana, S.E., Fowler, M., Houlihan, D., Joyce, W., Showell, M., Simpson, M., Miri, C., and Eagles, M.",
+            "pub_num": "041",
+            "pages": 49,
+            "pdf_size": 4493,
+            "description": ""
+        }
+    }
+]

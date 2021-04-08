@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1635,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Practical key for molt stage determination of the snow crab, Chionoecetes opilio, by means of setal development observation in the endite of the maxilla",
+            "pub_year": 1986,
+            "lead_author_2": "M. Moriyasu; P. Mallet",
+            "pub_num": "018",
+            "pages": 18,
+            "pdf_size": 1042,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6317,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Cautions on using the BACI design in environmental effects monitoring programs",
+            "lead_author_2": "Karen E. Smokorowski and Robert G. Randall",
+            "description": ""
+        }
+    }
+]

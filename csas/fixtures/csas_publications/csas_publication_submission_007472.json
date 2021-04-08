@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7472,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Development of risk-based indicators for Endeavour Hydrothermal Vents Marine Protected Area using the ecological risk assessment framework",
+            "title_fr": "Élaboration d'indicateurs fondés sur les risques pour la zone de protection marine du champ hydrothermal Endeavour à l'aide du cadre d'évaluation du risque écologique",
+            "pub_year": 2015,
+            "lead_author_2": "John Holmes",
+            "pub_num": "053",
+            "pages": 26,
+            "pdf_size": 532,
+            "description": ""
+        }
+    }
+]

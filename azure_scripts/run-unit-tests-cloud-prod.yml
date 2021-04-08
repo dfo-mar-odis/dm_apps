@@ -1,0 +1,32 @@
+pool:
+  vmImage: 'Ubuntu 18.04'
+
+trigger:
+  - glf_dev
+
+steps:
+  - task: UsePythonVersion@0
+    displayName: 'Use Python 3.8'
+    inputs:
+      versionSpec: 3.8
+
+  - script: |
+      # install pre-requisites
+      python -m pip install --upgrade pip setuptools wheel
+      python -m pip install -r requirements.txt
+      mkdir media
+      mkdir media/temp
+      mkdir media/travel
+      mkdir media/travel/temp
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    displayName: 'Install Prerequisites '
+
+  - script: |
+      python manage.py test -b  shared_models.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for shared models'
+
+  - script: |
+      python manage.py test -b travel.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for travel'

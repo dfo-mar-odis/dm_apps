@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4503,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Examination of Industry Trawl Survey of April 2006 in Relation to the Assessment of the Snow Crab in CFA 16",
+            "title_fr": "Examen du relevé au chalut de l'industrie d'avril 2006 dans le contexte de l'évaluation du crabe des neiges de la zone 16",
+            "pub_year": 2006,
+            "lead_author_2": "Gascon, D., Sainte-Marie, B.",
+            "pub_num": "026",
+            "pages": 6,
+            "pdf_size": 160,
+            "description": ""
+        }
+    }
+]

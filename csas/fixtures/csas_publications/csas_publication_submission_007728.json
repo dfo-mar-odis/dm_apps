@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7728,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Evaluation of the effects of habitat restoration on fish species at risk within Crown Marsh, Long Point Bay, Lake Erie, Ontario",
+            "title_fr": "Évaluation des effets de la restauration de l'habitat sur les espèces de poissons en péril dans le marais Crown de la baie Long Point sur le lac Érié en Ontario",
+            "pub_year": 2016,
+            "lead_author_2": "N.A. Rook, N.E. Mandrak, S.M. Reid, and J. Barnucz",
+            "pub_num": "059",
+            "pages": 38,
+            "pdf_size": 2224,
+            "description": ""
+        }
+    }
+]

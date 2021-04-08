@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1099,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Catch prediction for the snow crab (Chionoecetes opilio O. Fabricius) fishery in the southwestern Gulf of St. Lawrence: A problem of predation by cod (Gadus morhua L.)",
+            "pub_year": 1981,
+            "lead_author_2": "R. Bailey",
+            "pub_num": "001",
+            "pages": 12,
+            "pdf_size": 670,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 535,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4X Haddock in 1998 and the first half of 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Hurley, P., Black, G., Comeau, P., Mohn, R.K.",
+            "pub_num": "147",
+            "pages": 80,
+            "pdf_size": 5639,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6951,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Impacts of a flexible Total Allowable Take system on beluga conservation in the Nunavik Marine Region",
+            "title_fr": "Impacts d'un système flexible de total autorisé de captures sur la conservation du beluga dans la région du Nunavik",
+            "pub_year": 2014,
+            "lead_author_2": "Doniol-Valcroze, T., Gosselin, J.-F. and Hammill, M.O.",
+            "pub_num": "004",
+            "pages": 22,
+            "pdf_size": 726,
+            "description": ""
+        }
+    }
+]

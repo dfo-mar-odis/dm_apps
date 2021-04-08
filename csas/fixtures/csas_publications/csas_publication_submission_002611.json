@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2611,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Maturity of female cod in 2J3KL",
+            "pub_year": 1996,
+            "lead_author_2": "J. Morgan; J. Brattey",
+            "pub_num": "064",
+            "pages": 12,
+            "pdf_size": 482,
+            "description": ""
+        }
+    }
+]

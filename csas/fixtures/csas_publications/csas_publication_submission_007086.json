@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7086,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Thermal habitat of the Atlantic mackerel: Depth of 8 °C isotherm in the southern Gulf of St. Lawrence between 1960-2014",
+            "title_fr": "Habitat thermique du maquereau bleu; profondeur de l'isotherme de 8 °C dans le sud du golfe du Saint-Laurent entre 1960 et 2014",
+            "pub_year": 2014,
+            "lead_author_2": "F. Grégoire et P. Galbraith",
+            "pub_num": "116",
+            "description": ""
+        }
+    }
+]

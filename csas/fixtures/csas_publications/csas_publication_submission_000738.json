@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 738,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Campbell/Quinsam Chinook Salmon (Oncorhynchus tshawytscha)",
+            "pub_year": 2000,
+            "lead_author_2": "Nagtegaal, D.A., Riddell, B., Lehmann, S., Ewart, D., Adkins, B.",
+            "pub_num": "151",
+            "pages": 64,
+            "pdf_size": 1720,
+            "description": ""
+        }
+    }
+]

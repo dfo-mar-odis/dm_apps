@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4412,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Quebec coastal waters Stimpson's surfclam stocks in 2005",
+            "title_fr": "Évaluation des stocks de mactre de Stimpson des eaux cotières du Québec en 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Hugo Bourdages",
+            "pub_num": "002",
+            "pages": 8,
+            "pdf_size": 222,
+            "description": ""
+        }
+    }
+]

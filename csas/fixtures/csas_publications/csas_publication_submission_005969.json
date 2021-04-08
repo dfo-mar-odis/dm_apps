@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5969,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment and status of Striped Bass (Morone saxatilis) in the Southern Gulf of St. Lawrence, 2006 to 2010",
+            "title_fr": "Évaluation de la situation du bar rayé (Morone saxatilis) dans le sud du golfe du Saint-Laurent, 2006 à 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Scott Douglas (Gulf), Gerald Chaput (Gulf)",
+            "pub_num": "097",
+            "pages": 26,
+            "pdf_size": 477,
+            "description": ""
+        }
+    }
+]

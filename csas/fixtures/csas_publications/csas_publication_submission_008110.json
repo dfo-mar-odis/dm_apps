@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8110,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Relative strength of three cohorts (2015-17) of Atlantic Cod, from nearshore surveys of demersal age 0 and 1 juveniles in Newman Sound, Bonavista Bay",
+            "title_fr": "Vigueur relative de trois cohortes (2015-2017) de morues franches d’après les relevés côtiers des juvéniles démersaux d’âges 0 et 1 dans le bras Newman, baie de Bonavista",
+            "pub_year": 2019,
+            "lead_author_2": "Robert S. Gregory, Kate L. Dalley, Brianna H. Newton, Philip S. Sargent, Emma L.L. Cooke",
+            "pub_num": "012",
+            "pages": 15,
+            "pdf_size": 752,
+            "description": ""
+        }
+    }
+]

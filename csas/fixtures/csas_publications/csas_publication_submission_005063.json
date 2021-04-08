@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5063,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Biological Basis for the Protection of Large Lobsters in Lobster Fishing Areas 33 to 38",
+            "title_fr": "Fondement Biologique de la protection de homards de grande taille dans les zones de pêche du homard 33 à 38",
+            "pub_year": 2008,
+            "lead_author_2": "J. Tremblay",
+            "pub_num": "017",
+            "pages": 16,
+            "pdf_size": 138,
+            "description": ""
+        }
+    }
+]

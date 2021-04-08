@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 21,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of Redfish in Unit 2 (Laurentian Channel Management Unit)",
+            "pub_year": 1998,
+            "lead_author_2": "Power, D., Atkinson, B.",
+            "pub_num": "021",
+            "pages": 41,
+            "description": ""
+        }
+    }
+]

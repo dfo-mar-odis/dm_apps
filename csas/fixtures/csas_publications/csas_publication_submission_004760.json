@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4760,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An Overview of Meteorological, Sea Ice and Sea-Surface Temperature Conditions off Eastern Canada during 2007",
+            "title_fr": "Vue d'ensemble des conditions météorologiques, des conditions de glace de mer et des températures à la surface de la mer au large de l'est du Canada en 2007",
+            "pub_year": 2008,
+            "lead_author_2": "Petrie, B., R.G. Pettipas,  W.M. Petrie.",
+            "pub_num": "016",
+            "pages": 42,
+            "pdf_size": 8820,
+            "description": ""
+        }
+    }
+]

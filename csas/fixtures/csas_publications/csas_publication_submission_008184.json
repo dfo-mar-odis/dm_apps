@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8184,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "A review of functional monitoring methods to assess mitigation, restoration, and offsetting activities in Canada",
+            "title_fr": "Examen de la surveillance fonctionnelle pour évaluer les activités d’atténuation, de restauration et de compensation au Canada",
+            "pub_year": 2019,
+            "lead_author_2": "Braun, D.C., Smokorowski, K.E., Bradford, M.J., and Glover, L.",
+            "pub_num": "057",
+            "pages": 86,
+            "pdf_size": 2142,
+            "description": ""
+        }
+    }
+]

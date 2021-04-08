@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1075,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Estimation of the herring spawning biomass near Isle Verte in the St. Lawrence estuary from an intensive larval survey in 1979",
+            "pub_year": 1980,
+            "lead_author_2": "F. Auger; H. Powles",
+            "pub_num": "059",
+            "pages": 29,
+            "pdf_size": 1263,
+            "description": ""
+        }
+    }
+]

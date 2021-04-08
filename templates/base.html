@@ -3,11 +3,16 @@
 {% load i18n %}
 
 
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
+
+  {# block for loading leaflet tags  #}
+  {% block leaflet %}
+  {% endblock leaflet %}
 
   {#  Include all css files  #}
   {% include "_base_css.html" %}

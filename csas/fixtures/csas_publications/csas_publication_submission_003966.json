@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3966,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Groundfish Subcommittee Meeting of January 21-22, 2004",
+            "title_fr": "Procès-verbal de la réunion du Sous-comité sur le poisson de fond du CEESP, tenue les 21 et 22 janvier 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Romaine, S.",
+            "pub_num": "002",
+            "pages": 30,
+            "pdf_size": 230,
+            "description": ""
+        }
+    }
+]

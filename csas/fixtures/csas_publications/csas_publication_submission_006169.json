@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6169,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review Process for the Recovery Potential Assessment for Atlantic Salmon (Salmo salar), Southern Newfoundland Designatable Unit (DU); February 14-16, 2012",
+            "title_fr": "Compte rendu de la réunion régionale d'examen par les pairs au sujet de l'évaluation du potentiel de rétablissement (EPR) de l'unité désignable du saumon de l'Atlantique du sud de Terre-Neuve (Salmo salar); du 14 au 16 février 2012",
+            "pub_year": 2014,
+            "lead_author_2": "Ben Davis",
+            "pub_num": "011",
+            "pages": 17,
+            "pdf_size": 131,
+            "description": ""
+        }
+    }
+]

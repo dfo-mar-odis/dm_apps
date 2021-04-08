@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6522,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Assessment of Northwest Atlantic Fisheries Organization (NAFO) Subdivision 3Ps Atlantic Cod, and the Assessments of Redfish in Northwest Atlantic Fisheries Organization (NAFO) Subarea 0, and Subarea 2 and Division 3K (joint proceedings with 0+2+3K Redfish Assessment)",
+            "lead_author_2": "J. Meade",
+            "description": ""
+        }
+    }
+]

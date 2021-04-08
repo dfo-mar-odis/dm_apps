@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1811,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Détermination d'un niveau de récolte admissible de l'algue brune (Ascophyllum nodosum) sur la rive sud de l'estuaire du Saint-Laurent (Anse-au-Persil, Saint-Fabien-sur-Mer et Métis)",
+            "pub_year": 1988,
+            "lead_author_2": "L. Gendron; P. Bergeron; L. Gosselin",
+            "pub_num": "015",
+            "description": ""
+        }
+    }
+]

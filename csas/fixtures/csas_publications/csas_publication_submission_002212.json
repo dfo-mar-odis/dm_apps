@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2212,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The Cape Breton experiment on legal minimum lobster size increase: an intermediate report",
+            "pub_year": 1992,
+            "lead_author_2": "D. Maynard; F. Savoie; W. Landsburg; G. Roach; E. Wade",
+            "pub_num": "064",
+            "pages": 47,
+            "description": ""
+        }
+    }
+]

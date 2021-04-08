@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 943,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Fall Meeting: Marine Fisheries Subcommittee - Regional Advisory Process (RAP) of the Maritimes Region; 6-10 Octoer 1997",
+            "pub_year": 1997,
+            "lead_author_2": "M. Sinclair and M. Chadwick",
+            "pub_num": "019",
+            "description": ""
+        }
+    }
+]

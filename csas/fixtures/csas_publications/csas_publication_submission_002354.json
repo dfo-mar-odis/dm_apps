@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2354,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic salmon of the Saint John River above Mactaquac and of the Nashwaak River, N.B., 1993",
+            "pub_year": 1994,
+            "lead_author_2": "T.L. Marshall; J.D. Cameron",
+            "pub_num": "019",
+            "pages": 41,
+            "pdf_size": 2139,
+            "description": ""
+        }
+    }
+]

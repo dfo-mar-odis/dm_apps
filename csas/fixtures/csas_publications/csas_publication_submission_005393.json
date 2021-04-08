@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5393,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Recent Trends and Management Changes in the American Lobster (Homarus americanus) Fishery in Newfoundland",
+            "title_fr": "Tendances et changements en gestion récents concernant la pêche du homard américain (Homarus americanus) à Terre Neuve et Labrador ",
+            "pub_year": 2009,
+            "lead_author_2": "R. Collins, D. Stansbury, P. Veitch and J. Janes",
+            "pub_num": "096",
+            "description": ""
+        }
+    }
+]

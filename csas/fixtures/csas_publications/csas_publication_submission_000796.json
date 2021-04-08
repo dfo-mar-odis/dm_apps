@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 796,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical oceanographic conditions on the Scotian Shelf and in the Gulf of Maine during 2000",
+            "title_fr": "Conditions océanographiques physiques en 2000 sur la plate-forme Scotian et dans le golfe du Maine",
+            "pub_year": 2001,
+            "lead_author_2": "Drinkwater, K., B. Petrie, R. Pettipas, L. Petrie and V. Soukhovtsev",
+            "pub_num": "055",
+            "pages": 47,
+            "pdf_size": 1830,
+            "description": ""
+        }
+    }
+]

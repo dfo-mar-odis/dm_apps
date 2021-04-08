@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2580,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of the 4VWX3NOPs halibut stock",
+            "pub_year": 1996,
+            "lead_author_2": "C. Annand; D. Beanlands",
+            "pub_num": "033",
+            "pages": 31,
+            "pdf_size": 1643,
+            "description": ""
+        }
+    }
+]

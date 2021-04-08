@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7986,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Genetically Based Targets for Enhanced Contributions to Canadian Pacific Chinook Salmon Populations",
+            "title_fr": "Génétiquement selon cibles pour Contributions accrues aux Populations canadiennes Saumon Chinook",
+            "pub_year": 2018,
+            "lead_author_2": "Withler, R., Bradford, M.J., Willis, D.M., and Holt, C.",
+            "pub_num": "019",
+            "pages": 100,
+            "pdf_size": 10700,
+            "description": ""
+        }
+    }
+]

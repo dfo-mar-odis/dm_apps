@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1457,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "American plaice in NAFO Subdivision 3Ps - An assessment update",
+            "pub_year": 1984,
+            "lead_author_2": "W.B. Brodie",
+            "pub_num": "051",
+            "pages": 7,
+            "pdf_size": 354,
+            "description": ""
+        }
+    }
+]

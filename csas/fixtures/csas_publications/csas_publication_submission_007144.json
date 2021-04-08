@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7144,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Oceanographic conditions in the Atlantic zone in 2013",
+            "title_fr": "Conditions océanographiques dans la zone Atlantique en 2013",
+            "pub_year": 2014,
+            "lead_author_2": "P. Pepin",
+            "pub_num": "050",
+            "description": ""
+        }
+    }
+]

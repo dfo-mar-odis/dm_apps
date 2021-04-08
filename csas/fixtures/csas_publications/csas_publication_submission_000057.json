@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 57,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Shifts in fishing effort, commercial landings, and resource distribution of groundfish in NAFO Div. 4X",
+            "pub_year": 1998,
+            "lead_author_2": "D. Clark, J. Neilson, P. Hurley, P. Perley, M. Fowler",
+            "pub_num": "058",
+            "description": ""
+        }
+    }
+]

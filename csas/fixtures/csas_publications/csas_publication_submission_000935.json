@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 935,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Minutes of Science Workshops on Southern Gulf of St. Lawrence Groundfish, 28 November - 11 December 1996",
+            "title_fr": "Comptes rendus des Ateliers des Sciences sur le Poisson de fond du sud du Golfe du St-Laurent; 28 novembre au 11 décembre 1996",
+            "pub_year": 1997,
+            "lead_author_2": "G. Chouinard, Chair",
+            "pub_num": "011",
+            "description": ""
+        }
+    }
+]

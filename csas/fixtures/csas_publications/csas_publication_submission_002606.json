@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2606,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Description of the Atlantic mackerel (Scomber scombrus L.) fishery since 1985 and preliminary results for 1995",
+            "title_fr": "Description de la pêche au maquereau bleu (Scomber scombrus L.) depuis 1985 et résultats préliminaires pour 1995",
+            "pub_year": 1996,
+            "lead_author_2": "F. Grégoire",
+            "pub_num": "059",
+            "pages": 80,
+            "pdf_size": 5062,
+            "description": ""
+        }
+    }
+]

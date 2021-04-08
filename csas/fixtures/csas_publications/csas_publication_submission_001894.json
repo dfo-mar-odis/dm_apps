@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1894,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Less Leslie please",
+            "pub_year": 1989,
+            "lead_author_2": "R.J. Miller; R.K. Mohn",
+            "pub_num": "022",
+            "pages": 14,
+            "pdf_size": 1041,
+            "description": ""
+        }
+    }
+]

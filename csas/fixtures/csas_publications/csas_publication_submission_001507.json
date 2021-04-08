@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1507,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Analysis of by-catches observed in the Scotian Shelf foreign fishery and their impact on domestic fisheries",
+            "pub_year": 1984,
+            "lead_author_2": "D.E. Waldron; A.F. Sinclair",
+            "pub_num": "101",
+            "pages": 52,
+            "pdf_size": 2114,
+            "description": ""
+        }
+    }
+]

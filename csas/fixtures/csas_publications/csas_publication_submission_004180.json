@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4180,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Groundfish Subcommittee Meeting; January 18-20, 2005",
+            "title_fr": "Compte rendu de la réunion du sous-comité du poisson de fond du CEESP; 18-20 janvier 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Fargo, J.",
+            "pub_num": "003",
+            "pages": 30,
+            "pdf_size": 244,
+            "description": ""
+        }
+    }
+]

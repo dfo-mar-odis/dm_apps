@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6703,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pacific Ocean Perch (Sebastes alutus) stock assessment for the west coast of Vancouver Island, British Columbia",
+            "title_fr": "Évaluation des stocks de sébaste à longue mâchoire (Sebastes alutus) sur la côte ouest de l'île de Vancouver, en Colombie Britannique",
+            "pub_year": 2013,
+            "lead_author_2": "Andrew M. Edwards, Rowan Haigh, and Paul J. Starr",
+            "pub_num": "093",
+            "pages": 141,
+            "pdf_size": 6225,
+            "description": ""
+        }
+    }
+]

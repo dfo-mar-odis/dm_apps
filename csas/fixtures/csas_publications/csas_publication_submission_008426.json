@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8426,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock assessment of Northern cod (NAFO Divisions 2J3KL) in 2019",
+            "title_fr": "Évaluation du stock de morue du nord (Divisions 2J3KL de l’OPANO) en 2019",
+            "pub_year": 2019,
+            "lead_author_2": "K. Dwyer",
+            "pub_num": "050",
+            "pages": 20,
+            "pdf_size": 1031,
+            "description": ""
+        }
+    }
+]

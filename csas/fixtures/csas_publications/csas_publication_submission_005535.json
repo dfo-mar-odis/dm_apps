@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5535,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Harvest allocation modelling for narwhal (Monodon Monoceros) stocks shared between eastern Canada and West Greenland",
+            "title_fr": "Modélisation de la répartition des prises pour les stocks de narvals (Monodon monoceros) partagés entre l’est du Canada et l’ouest du Groenland",
+            "pub_year": 2019,
+            "lead_author_2": "Cortney A. Watt, Lars Witting, Marianne Marcoux, Thomas Doniol-Valcroze, Rikke Guldborg Hansen, Roderick Hobbs Steven H. Ferguson, and Mads Peter Heide-Jørgensen",
+            "pub_num": "031",
+            "pages": 31,
+            "pdf_size": 1890,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 942,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Inter-Regional Ageing Workshop; June 17-18, 1997",
+            "pub_year": 1997,
+            "lead_author_2": "D. Beanlands",
+            "pub_num": "018",
+            "description": ""
+        }
+    }
+]

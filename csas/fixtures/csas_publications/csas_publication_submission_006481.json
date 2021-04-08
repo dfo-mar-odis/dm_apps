@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6481,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Thorny skate (Amblyraja radiata) in the southern Gulf of St. Lawrence: life history, and trends from 1971 to 2010 in abundance, distribution and potential threats",
+            "title_fr": "Situation de la raie épineuse (Amblyraja radiata) dans le sud du golfe du Saint-Laurent : caractéristiques du cycle de vie, les tendances dans l'abondance et la distribution depuis 1971 à 2010, et les menaces potentielles",
+            "pub_year": 2012,
+            "lead_author_2": "Swain, D.P., Benoît, H.P., Daigle, D., and Aubry, É.",
+            "pub_num": "032",
+            "pages": 45,
+            "pdf_size": 1568,
+            "description": ""
+        }
+    }
+]

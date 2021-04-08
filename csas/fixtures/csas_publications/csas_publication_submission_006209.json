@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6209,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Environmental Fate and Potential Biological Effects of the Anti-Parasitic Chemo-therapeutant Emamectin Benzoate (active ingredient of SLICE®) in the Canadian Marine Environment.",
+            "lead_author_2": "Michael Ikonomou",
+            "description": ""
+        }
+    }
+]

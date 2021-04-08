@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7723,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "A framework to assess vulnerability of biological components to ship-source oil spills in the marine environment",
+            "title_fr": "Cadre d’évaluation de la vulnérabilité des composantes biologiques du milieu marin aux déversements d’hydrocarbures provenant de navires",
+            "pub_year": 2017,
+            "lead_author_2": "Thornborough, K., Hannah, L., St. Germain, C., and O, M.",
+            "pub_num": "038",
+            "pages": 30,
+            "pdf_size": 589,
+            "description": ""
+        }
+    }
+]

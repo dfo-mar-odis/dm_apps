@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 893,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Inshore-offshore SW Nova Scotia lobster stock interaction: a hypothesis",
+            "pub_year": 1978,
+            "lead_author_2": "A.B. Stasko",
+            "pub_num": "037",
+            "pages": 10,
+            "pdf_size": 1212,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7646,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Development and Evaluation of the Habitat Ecosystem Assessment Tool (HEAT)",
+            "title_fr": "Élaboration et évaluation de l’outil d’évaluation de l’habitat et de l’écosystème (HEAT)",
+            "pub_year": 2019,
+            "lead_author_2": "Gavin Christie and Sophie Foster",
+            "pub_num": "046",
+            "pages": 14,
+            "pdf_size": 527,
+            "description": ""
+        }
+    }
+]

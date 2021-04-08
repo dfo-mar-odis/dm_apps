@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1741,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1986 southwest Gulf of St. Lawrence midshore snow crab, Chionoecetes opilio, fishery - a review of catch, effort and biological trends",
+            "pub_year": 1987,
+            "lead_author_2": "K.G. Davidson; M. Comeau; P. Mallet; E.J. Wade",
+            "pub_num": "052",
+            "pages": 29,
+            "pdf_size": 1556,
+            "description": ""
+        }
+    }
+]

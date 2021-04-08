@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5395,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of DFO Science information for Atlantic salmon (Salmo salar) populations in the Southern Upland region of Nova Scotia",
+            "title_fr": "Examen de l'information scientifique détenue par le MPO sur les populations de saumon atlantique (Salmo salar) dans la région des hautes-terres du sud de la Nouvelle-Écosse",
+            "pub_year": 2009,
+            "lead_author_2": "Gibson, A.J.F, H.D. Bowlby, D. Sam, and P.G. Amiro",
+            "pub_num": "081",
+            "pages": 89,
+            "pdf_size": 969,
+            "description": ""
+        }
+    }
+]

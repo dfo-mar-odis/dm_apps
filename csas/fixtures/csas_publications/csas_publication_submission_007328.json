@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7328,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Ecologically and Biologically Significant Areas in Canada’s Eastern Arctic Biogeographic Region, 2015",
+            "title_fr": "Zones d'importance écologique et biologique dans la région biogéographique de l'est de l'Arctique du Canada, 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "049",
+            "pages": 18,
+            "pdf_size": 786,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3836,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Peer Review of Snow Crab Stock in the Gulf of St  Lawrence, Gulf Region; 11-13 February 2003",
+            "title_fr": "Procès-verbal des séances d'examen par les pairs pour le crabe des neiges du sud du golfe du Saint-Laurent, Région du Golfe; du 11 au 13 février 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Lanteinge, M.",
+            "pub_num": "011",
+            "pages": 40,
+            "description": ""
+        }
+    }
+]

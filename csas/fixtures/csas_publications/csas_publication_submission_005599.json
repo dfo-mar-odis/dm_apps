@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5599,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "The Strait of Georgia Ecosystem Research Initiative - towards an ecosystem-based approach to management.",
+            "lead_author_2": "Perry, I.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3560,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Pacific Cod in Hecate Strait",
+            "pub_year": 1999,
+            "lead_author_2": "Alan Sinclair",
+            "pub_num": "A6-01",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

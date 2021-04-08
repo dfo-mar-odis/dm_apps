@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2512,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Flat Bay River stock of Atlantic salmon (Salmo salar L.) in 1994",
+            "pub_year": 1995,
+            "lead_author_2": "C. Bourgeois; J. Murray",
+            "pub_num": "106",
+            "pages": 6,
+            "pdf_size": 232,
+            "description": ""
+        }
+    }
+]

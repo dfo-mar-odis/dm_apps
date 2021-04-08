@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7839,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Peer Review of the Assessment of Sea Cucumber in NAFO Subdivision 3Ps, and the Newfoundland and Labrador Snow Crab Assessment; February 21 23, 2017",
+            "title_fr": "Compte rendu du processus régional d’examen par les pairs de Terre-Neuve-et-Labrador sur l’évaluation du concombre de mer sur le banc de Saint-Pierre et sur l’évaluation du crabe des neiges de Terre-Neuve-et-Labrador; du 21 au 23 février 2017",
+            "pub_year": 2017,
+            "lead_author_2": "J. Meade",
+            "pub_num": "044",
+            "pages": 30,
+            "pdf_size": 244,
+            "description": ""
+        }
+    }
+]

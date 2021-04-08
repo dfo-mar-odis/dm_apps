@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1107,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An examination of the status of the Newfoundland west coast herring stock",
+            "pub_year": 1981,
+            "lead_author_2": "J.A. Moores; G.H. Winters; C.I. Barbour",
+            "pub_num": "009",
+            "pages": 37,
+            "pdf_size": 2029,
+            "description": ""
+        }
+    }
+]

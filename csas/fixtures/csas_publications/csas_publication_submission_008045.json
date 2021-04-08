@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8045,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of snow crab (Chionoecetes opilio) in the southern Gulf of St. Lawrence (Areas 12, 19, 12E and 12F) to 2017 and advice for the 2018 fishery",
+            "title_fr": "Évaluation du crabe des neiges (Chionoecetes opilio) du sud du golfe du Saint-Laurent (zones 12, 19, 12E et 12F) jusqu’en 2017 et avis pour la pêche de 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

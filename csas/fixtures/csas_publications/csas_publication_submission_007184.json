@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7184,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Effect of environmental variability on the Atlantic Herring 4R stock dynamics in the Gulf of St. Lawrence",
+            "lead_author_2": "S. Plourde",
+            "description": ""
+        }
+    }
+]

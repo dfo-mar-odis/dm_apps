@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7502,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the national peer review of Science Advice on Regional Productivity Benchmarks; September 29 to October 1, 2015",
+            "title_fr": "Compte rendu de la réunion d'examen national par les pairs sur l’Avis scientifique sur les points de référence de la productivité régionale; du 29 septembre au 1er octobre 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Foster, S.",
+            "pub_num": "037",
+            "pages": 18,
+            "pdf_size": 215,
+            "description": ""
+        }
+    }
+]

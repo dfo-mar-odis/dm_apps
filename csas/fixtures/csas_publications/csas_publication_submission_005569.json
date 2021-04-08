@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5569,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Summary of the Rapid Response to Round Goby (Neogobius melanostomus) in Pefferlaw Brook with an Evaluation of the National Rapid Response Framework based on the Pefferlaw Brook Experience",
+            "title_fr": "Sommaire de l'intervention rapide à la suite de la découverte du gobie à taches noires (Neogobius melanostomus) dans le ruisseau Pefferlaw et évaluation du cadre national d'intervention rapide d'après l'expérience acquise au ruisseau Pefferlaw",
+            "pub_year": 2010,
+            "lead_author_2": "P.E. Dimond, N.E., Mandrak and B. Brownson (N.E. Mandrak contact)",
+            "pub_num": "036",
+            "pages": 39,
+            "pdf_size": 652,
+            "description": ""
+        }
+    }
+]

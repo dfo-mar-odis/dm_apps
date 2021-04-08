@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1974,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "East and Southeast Newfoundland Herring",
+            "pub_year": 1998,
+            "lead_author_2": "John Wheeler",
+            "pub_num": "B2-01",
+            "pages": 8,
+            "pdf_size": 530,
+            "description": ""
+        }
+    }
+]

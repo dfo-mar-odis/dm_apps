@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8769,
+        "fields": {
+            "series": 3,
+            "title_en": "Lake Superior Pygmy Whitefish (Prosopium coulterii) population trends, habitat characteristics, and abundance",
+            "pub_year": 2020,
+            "lead_author_2": "van der Lee, A.S., and Koops, M.A.",
+            "pub_num": "074",
+            "description": ""
+        }
+    }
+]

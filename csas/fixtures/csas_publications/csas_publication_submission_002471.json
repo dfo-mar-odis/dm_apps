@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2471,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An update of the stock status of 3KLP lumpfish",
+            "pub_year": 1995,
+            "lead_author_2": "D.E. Stansbury; E.F. Murphy; C.A. Bishop",
+            "pub_num": "065",
+            "pages": 20,
+            "pdf_size": 685,
+            "description": ""
+        }
+    }
+]

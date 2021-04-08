@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3151,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Prince Edward Island Eels, Gaspereau; Silversides, and Smelts",
+            "title_fr": "Anguille, gaspareau, capucette et éperlan de l'Île-du-Prince-Édouard",
+            "pub_year": 1997,
+            "lead_author_2": "David Cairns",
+            "pub_num": "D3-18",
+            "pages": 5,
+            "pdf_size": 101,
+            "description": ""
+        }
+    }
+]

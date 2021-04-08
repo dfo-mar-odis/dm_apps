@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3857,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Groundfish Subcommittee Meeting; May 20, 2003",
+            "title_fr": "Procès-verbal de la réunion du souscomité du poisson de fond du CEESP; le 20 mai 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Fargo, J., Romaine, S.",
+            "pub_num": "017",
+            "pages": 15,
+            "pdf_size": 64,
+            "description": ""
+        }
+    }
+]

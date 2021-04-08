@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 281,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Herring spawning bed survey in Miramichi Bay, N.B., in spring 1983",
+            "pub_year": 1983,
+            "lead_author_2": "S. Messieh; R. Pottle; P. MacPherson; T. Hurlbut",
+            "pub_num": "070",
+            "pages": 21,
+            "pdf_size": 710,
+            "description": ""
+        }
+    }
+]

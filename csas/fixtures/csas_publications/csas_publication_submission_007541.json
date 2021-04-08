@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7541,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Estimate of Cumberland Sound beluga (Delphinapterus leucas) population size from the 2014 visual and photographic aerial survey",
+            "title_fr": "Abondance de la population de béluga (Delphinapterus leucas) de la baie Cumberland Sound obtenue à partir de relevés visuels et photographiques lors du survol de 2014",
+            "pub_year": 2016,
+            "lead_author_2": "Marianne Marcoux, Brent G. Young, Natalie C. Asselin, Cortney A. Watt, J. Blair Dunn, Steven H. Ferguson",
+            "pub_num": "037",
+            "pages": 23,
+            "pdf_size": 589,
+            "description": ""
+        }
+    }
+]

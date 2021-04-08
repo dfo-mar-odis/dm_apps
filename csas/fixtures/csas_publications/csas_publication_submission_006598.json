@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6598,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Oceanographic conditions of salmon farming areas with attention to those factors that may influence the biology and ecology of sea lice, Lepeophtherius salmonis and Caligus spp., and their control",
+            "title_fr": "Conditions océanographiques des zones de salmoniculture, en particulier les facteurs susceptibles d'avoir une incidence sur la biologie et l'écologie du pou du poisson (Lepeophtherius salmonis et Caligus sp.) et la lutte contre celui-ci.;",
+            "pub_year": 2014,
+            "lead_author_2": "Kathy Brewer-Dalton",
+            "pub_num": "048",
+            "pages": 53,
+            "pdf_size": 4526,
+            "description": ""
+        }
+    }
+]

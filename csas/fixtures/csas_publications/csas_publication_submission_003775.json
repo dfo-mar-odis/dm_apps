@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3775,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Newfoundland Lobster",
+            "title_fr": "Homard de Terre-Neuve",
+            "pub_year": 2003,
+            "lead_author_2": "Ennis, G.P., Collins, R.K.",
+            "pub_num": "022",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

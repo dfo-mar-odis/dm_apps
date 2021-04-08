@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4835,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Southwestern Nova Scotia (4X) Snow Crab",
+            "title_fr": "Évaluation du crabe des neiges du sud-ouest de la Nouvelle-Écosse (4X)",
+            "pub_year": 2007,
+            "lead_author_2": "Choi, J.S., B.M. Zisserson.",
+            "pub_num": "040",
+            "pages": 21,
+            "pdf_size": 1318,
+            "description": ""
+        }
+    }
+]

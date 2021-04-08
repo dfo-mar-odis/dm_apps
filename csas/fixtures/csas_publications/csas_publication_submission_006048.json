@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6048,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Identification of Ecologically and Biologically Significant Areas (EBSAs) in the Canadian Arctic; June 14-17, 2011",
+            "title_fr": "Détermination des zones d'importance écologique et biologique (ZIEB) de l'Arctique canadien ; du 14 au 17 juin 2011",
+            "pub_year": 2011,
+            "pub_num": "047",
+            "pages": 41,
+            "pdf_size": 242,
+            "description": ""
+        }
+    }
+]

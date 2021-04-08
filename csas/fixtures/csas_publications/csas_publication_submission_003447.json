@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3447,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pre-season run size forecast for Fraser River Sockeye in 2002",
+            "title_fr": "Prévision pré-saison des remontes de saumon rouge dans le Fraser en 2002",
+            "pub_year": 2001,
+            "lead_author_2": "Cass, A.",
+            "pub_num": "147",
+            "pages": 47,
+            "pdf_size": 328,
+            "description": ""
+        }
+    }
+]

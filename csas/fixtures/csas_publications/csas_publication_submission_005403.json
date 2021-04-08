@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5403,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Harvest advice for Eastern Hudson Bay belugas",
+            "title_fr": "Avis sur le prélèvement de bélugas de l'est de la baie d'Hudson",
+            "pub_year": 2009,
+            "lead_author_2": "Mike Hammill",
+            "pub_num": "089",
+            "pages": 17,
+            "pdf_size": 149,
+            "description": ""
+        }
+    }
+]

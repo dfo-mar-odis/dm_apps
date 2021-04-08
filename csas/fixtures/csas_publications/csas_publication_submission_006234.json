@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6234,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "A pre-COSEWIC assessment of White Hake (Urophycis tenuis) in Newfoundland and Labrador waters",
+            "title_fr": "Évaluation pré-COSEPAC de la merluche blanche (Urophycis tenuis) dans les eaux de Terre-Neuve-et-Labrador",
+            "pub_year": 2012,
+            "lead_author_2": "Simpson, M.R., C.M. Miri, and L.G.S. Mello",
+            "pub_num": "038",
+            "pages": 60,
+            "pdf_size": 4538,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5688,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 1],
+            "title_en": "Status of American Eel and progress on achieving management goals",
+            "title_fr": "État de l'anguille d'Amérique et progrès relatifs aux objectifs de gestion",
+            "pub_year": 2010,
+            "lead_author_2": "Veinott, G., Bradford, R., Cairns, D., Pratt, T., Castonguay, M., Mailhot, Y., Mathers, A.",
+            "pub_num": "062",
+            "pages": 26,
+            "pdf_size": 210,
+            "description": ""
+        }
+    }
+]

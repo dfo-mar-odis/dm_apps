@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1784,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Atlantic cod stock on Georges Bank, NAFO Division 5Z and Subarea 6, in 1986",
+            "pub_year": 1987,
+            "lead_author_2": "J.J. Hunt",
+            "pub_num": "094",
+            "pages": 53,
+            "pdf_size": 1994,
+            "description": ""
+        }
+    }
+]

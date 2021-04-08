@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6246,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of Maritimes Science Advisory Processes to Assess Bay of Fundy Scallops (Placopecten magellanicus) in 2008, 2009, and 2011; 11-12 December 2008, 9 November 2009, and 16-17 November 2011",
+            "title_fr": "Compte rendu des processus d'avis scientifique de la région des Maritimes pour l'évaluation des stocks de pétoncles de la baie de Fundy (Placopecten magellanicus) en 2008, 2009 et 2011; les 11 et 12 décembre 2008, le 9 novembre 2009 et les 16 et 17 novembre 2011",
+            "pub_year": 2013,
+            "lead_author_2": "Tana Worcester",
+            "pub_num": "033",
+            "pages": 48,
+            "pdf_size": 251,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2356,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Implications of temperature and haddock associations on survey abundance trends",
+            "pub_year": 1994,
+            "lead_author_2": "S.J. Smith; F. Page",
+            "pub_num": "021",
+            "pages": 34,
+            "pdf_size": 1118,
+            "description": ""
+        }
+    }
+]

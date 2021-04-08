@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4623,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Distribution and abundance of the Atlantic mackerel (Scomber scombrus L.) eggs and larvae from the ichthyoplankton surveys conducted in the southern Gulf of St. Lawrence between 1965 to 1975",
+            "title_fr": "Distribution et abondance des oeufs et des larves de maquereau bleu (Scomber scombrus L.) des relevés d'ichtyoplancton réalisés dans le sud du golfe du Saint-Laurent entre 1965 et 1975",
+            "pub_year": 2006,
+            "lead_author_2": "Grégoire, F., C. Lafleur.",
+            "pub_num": "098",
+            "pages": 120,
+            "pdf_size": 15848,
+            "description": ""
+        }
+    }
+]

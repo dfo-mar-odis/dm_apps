@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6166,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Eastport Marine Protected Area (MPA) Case Study in Support of Ecosystems Goods and Services Valuation",
+            "title_fr": "Étude de cas à l'appui de l'évaluation des biens et services liés à l'écosystème de la zone de protection marine (ZPM) d'Eastport",
+            "pub_year": 2014,
+            "pub_num": "014",
+            "pages": 9,
+            "pdf_size": 470,
+            "description": ""
+        }
+    }
+]

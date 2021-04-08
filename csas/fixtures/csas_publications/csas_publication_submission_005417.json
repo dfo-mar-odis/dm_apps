@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5417,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Assessment of ice sportfishing season in the Saguenay River in 2004 ; December 14, 2004",
+            "title_fr": "Évaluation de la pêche sportive hivernale dans le fjord du Saguenay en 2004; 14 décembre 2004",
+            "pub_year": 2009,
+            "lead_author_2": "Lambert, J.-D.",
+            "pub_num": "048",
+            "pages": 19,
+            "pdf_size": 89,
+            "description": ""
+        }
+    }
+]

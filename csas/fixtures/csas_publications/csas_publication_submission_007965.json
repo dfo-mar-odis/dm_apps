@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7965,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of Lobster (Homarus americanus) in the Bay of Fundy (Lobster Fishing Areas 35-38)",
+            "title_fr": "Mise à jour de l'état du stock de homard (Homarus americanus) dans la baie de Fundy (zones de pêche au homard 35 à 38)",
+            "pub_year": 2017,
+            "lead_author_2": "L. Bennett",
+            "pub_num": "039",
+            "pages": 7,
+            "pdf_size": 289,
+            "description": ""
+        }
+    }
+]

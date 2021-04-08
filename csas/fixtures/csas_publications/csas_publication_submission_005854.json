@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5854,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Stock Assessment of Atlantic Halibut of the Gulf of St. Lawrence (NAFO Division 4RST) for 2009 and 2010",
+            "title_fr": "Évaluation du stock de flétan atlantique du golfe du Saint-Laurent (division OPANO 4RST) pour 2009 et 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Diane Archambault",
+            "pub_num": "012",
+            "pages": 20,
+            "pdf_size": 566,
+            "description": ""
+        }
+    }
+]

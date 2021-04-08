@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4066,
+        "fields": {
+            "series": 7,
+            "lead_region": [4, 5],
+            "title_en": "Allowable Harm Assessment for Laurentian North Cod",
+            "title_fr": "Évaluation des dommages admissibles pour la morue du Nord laurentien",
+            "pub_year": 2004,
+            "lead_author_2": "J. Brattey, Fréchet, A.",
+            "pub_num": "041",
+            "pages": 10,
+            "pdf_size": 700,
+            "description": ""
+        }
+    }
+]

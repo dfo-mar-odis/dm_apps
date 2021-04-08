@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3789,
+        "fields": {
+            "series": 7,
+            "lead_region": [2, 1],
+            "title_en": "Atlantic Salmon Maritimes Provinces Overview for 2002",
+            "title_fr": "Survol des stocks de saumon des provinces Maritimes (2002)",
+            "pub_year": 2003,
+            "lead_author_2": "Chaput, G., Marshall, L.",
+            "pub_num": "026",
+            "pages": 46,
+            "description": ""
+        }
+    }
+]

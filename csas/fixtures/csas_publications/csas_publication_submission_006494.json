@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6494,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Regional Peer Review Meeting on the Determination of Skeena Steelhead (Oncorhynchus mykiss) Conservation Units",
+            "lead_author_2": "Michael Folkes",
+            "description": ""
+        }
+    }
+]

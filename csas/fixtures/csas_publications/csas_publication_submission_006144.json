@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6144,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scotian Shelf Shrimp 2012-2013",
+            "title_fr": "Crevette du plateau néo-écossais (2012-2013)",
+            "pub_year": 2013,
+            "lead_author_2": "Hardie, D., Covey, M., and King, M.",
+            "pub_num": "034",
+            "pages": 49,
+            "pdf_size": 2400,
+            "description": ""
+        }
+    }
+]

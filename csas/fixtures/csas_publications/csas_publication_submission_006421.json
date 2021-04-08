@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6421,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "A biomass Limit Reference Point for the NAFO 4T American plaice (Hippoglossoides platessoides) fishery",
+            "title_fr": "Un point de référence limite de la biomasse pour la pêche de la plie canadienne (Hippoglossoides platessoides) dans la zone 4T de l'OPANO",
+            "pub_year": 2012,
+            "lead_author_2": "Rod Morin",
+            "pub_num": "108",
+            "pages": 39,
+            "pdf_size": 605,
+            "description": ""
+        }
+    }
+]

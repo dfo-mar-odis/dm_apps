@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4182,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock Status of Atlantic Salmon (Salmo salar) in the Cheticamp River, Cape Breton Highlands National Park, Nova Scotia, for 2004",
+            "title_fr": "État de la ressource de saumon atlantique (Salmo salar) de la rivière Chéticamp, Parc National du Cap Breton, Nouvelle-Écosse, pour 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Landry, D., G. Chaput, J. Bridgland.",
+            "pub_num": "022",
+            "pages": 23,
+            "pdf_size": 314,
+            "description": ""
+        }
+    }
+]

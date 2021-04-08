@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2688,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Southern Gulf of St. Lawrence Snow Crab (Areas 12, E and F)",
+            "title_fr": "Crabe des neiges du sud du golfe du Saint-Laurent (zones 12, E et F)",
+            "pub_year": 2002,
+            "lead_author_2": "Marcel Hébert, Mikio Moriyasu",
+            "pub_num": "C3-01",
+            "pages": 13,
+            "pdf_size": 1490,
+            "description": ""
+        }
+    }
+]

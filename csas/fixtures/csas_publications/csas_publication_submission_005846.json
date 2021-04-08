@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5846,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Scotian Shelf Snow Crab in 2009",
+            "title_fr": "Évaluation intégrée du stock de crabes des neiges résidant sur le plateau néo-écossais en 2009",
+            "pub_year": 2011,
+            "lead_author_2": "J.S. Choi & B.M. Zisserson / R. Claytor / V. Myra",
+            "pub_num": "005",
+            "pages": 96,
+            "pdf_size": 4550,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2001,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Region Salmonid Stock Assessment Meeting; November 2003",
+            "title_fr": "Compte rendu de l'évaluation des stocks de salmonidés de la région de Terre-Neuve et du Labrador; novembre 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Mullins, C.C.",
+            "pub_num": "035",
+            "pages": 54,
+            "pdf_size": 577,
+            "description": ""
+        }
+    }
+]

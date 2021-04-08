@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7081,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Empirical estimation of the instantaneous rate of natural mortality (M) of Atlantic mackerel (Scomber scombrus L.) of NAFO Subareas 3 and 4",
+            "title_fr": "Estimation empirique du taux instantané de mortalité naturelle (M) du maquereau bleu (Scomber scombrus L.) des sous-régions 3 et 4 de l'OPANO",
+            "pub_year": 2014,
+            "lead_author_2": "Grégoire, F. et McQuinn, I.",
+            "pub_num": "078",
+            "description": ""
+        }
+    }
+]

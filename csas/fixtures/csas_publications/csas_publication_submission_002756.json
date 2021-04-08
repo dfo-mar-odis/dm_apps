@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2756,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Preliminary results of license stub return system in the Newfoundland Region, 1994",
+            "pub_year": 1996,
+            "lead_author_2": "M.F. O'Connell; E. Ash; N.M. Cochrane",
+            "pub_num": "130",
+            "pages": 34,
+            "pdf_size": 1530,
+            "description": ""
+        }
+    }
+]

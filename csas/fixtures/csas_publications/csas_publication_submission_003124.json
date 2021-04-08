@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3124,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Nova Scotia Snow Crab",
+            "title_fr": "Crabe des neiges de l'est de la Nouvelle-Écosse",
+            "pub_year": 1997,
+            "lead_author_2": "Mikio Moriyasu",
+            "pub_num": "C3-02",
+            "pages": 5,
+            "pdf_size": 97,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 834,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of fishery for witch and American plaice in ICNAF Subdivision 3Pn and Divisions 4RS",
+            "pub_year": 1977,
+            "lead_author_2": "T.K. Pitt",
+            "pub_num": "014",
+            "pages": 3,
+            "pdf_size": 224,
+            "description": ""
+        }
+    }
+]

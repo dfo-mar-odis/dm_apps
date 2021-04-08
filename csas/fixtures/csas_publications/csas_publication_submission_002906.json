@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2906,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Yellowtail Flounder on Georges Bank",
+            "title_fr": "Limande à queue jaune du banc Georges",
+            "pub_year": 2001,
+            "lead_author_2": "Heath Stone",
+            "pub_num": "A3-15",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

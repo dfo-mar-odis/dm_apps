@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8320,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review on Environmental and Indirect Human Health Risk Assessment for the Manufacture and Production of Sterile AquAdvantage® Salmon at a Land-Based and Contained Facility near Rollo Bay, PEI; December 11-13, 2018",
+            "title_fr": "Compte rendu de l'examen national par les pairs concernant l’évaluation des risques pour l’environnement et des risques indirects pour la santé humaine liés à la fabrication et à la production du saumon AquAdvantageMD stérile dans une installation terrestre et confinée près de Rollo Bay (Î.-P.-É); du 11 au 13 décembre 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Shauna Baillie, Sherry Walker, Colin McGowan",
+            "pub_num": "028",
+            "pages": 24,
+            "pdf_size": 677,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8603,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment for 11 Designatable Units of Fraser River Chinook Salmon, Oncorhynchus tshawytcha, Part 1: Elements 1 to 11",
+            "lead_author_2": "Richard Bailey",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 437,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update of the Scotian Shelf shrimp - 1989",
+            "pub_year": 1990,
+            "lead_author_2": "M.A.E. Butler - Connolly; G. Robert",
+            "pub_num": "012",
+            "pages": 14,
+            "pdf_size": 825,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4156,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment Report on Newfoundland and Labrador Snow Crab",
+            "title_fr": "Rapport d'évaluation des stocks de crabe des neiges de Terre-Neuve et du Labrador",
+            "pub_year": 2005,
+            "lead_author_2": "Dawe, E., D.Taylor.",
+            "pub_num": "017",
+            "pages": 27,
+            "pdf_size": 151,
+            "description": ""
+        }
+    }
+]

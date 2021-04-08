@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2355,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status of Atlantic salmon (Salmo salar) in the Miramichi River, 1993",
+            "pub_year": 1994,
+            "lead_author_2": "G. Chaput; D. Moore; M. Biron; R. Claytor",
+            "pub_num": "020",
+            "pages": 80,
+            "pdf_size": 3011,
+            "description": ""
+        }
+    }
+]

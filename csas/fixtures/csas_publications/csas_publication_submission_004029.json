@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4029,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Firth River Dolly Varden",
+            "title_fr": "La Dolly Varden de la rivière Firth",
+            "pub_year": 2002,
+            "lead_author_2": "Stephenson, S.",
+            "pub_num": "D5-63",
+            "pages": 12,
+            "description": ""
+        }
+    }
+]

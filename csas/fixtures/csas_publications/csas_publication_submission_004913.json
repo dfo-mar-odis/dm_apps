@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4913,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Assessing allowable harm and recovery efforts in Lake Ontario Atlantic salmon (Salmo salar)",
+            "title_fr": "Évaluation des dommages admissibles et des efforts de rétablissement concernant le saumon atlantique (Salmo salar) du lac Ontario",
+            "pub_year": 2007,
+            "lead_author_2": "Vélez-Espino, L.A., M.A. Koops",
+            "pub_num": "083",
+            "pages": 31,
+            "pdf_size": 264,
+            "description": ""
+        }
+    }
+]

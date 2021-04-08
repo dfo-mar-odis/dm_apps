@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3892,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Green Sea Urchin (Strongylocentrotus droebachiensis) Stocks",
+            "title_fr": "Évaluation des stocks d'oursin vert (Strongylocentrotus droebachiensis) en Colombie-Britanique en 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Perry, R. I., Zhang, Z. and Waddell, B.J.",
+            "pub_num": "082",
+            "pages": 56,
+            "pdf_size": 1280,
+            "description": ""
+        }
+    }
+]

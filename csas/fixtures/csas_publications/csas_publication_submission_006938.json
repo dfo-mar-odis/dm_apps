@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6938,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Causes of mortality in St. Lawrence Estuary beluga (Delphinapterus leuca) from 1983 to 2012",
+            "title_fr": "Causes de mortalité des bélugas (Delphinapterus leuca) de l'estuaire de Saint-Laurent de 1983 à 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Stéphane Lair, D. Martineau, Lena N. Measures",
+            "pub_num": "119",
+            "pages": 41,
+            "pdf_size": 330,
+            "description": ""
+        }
+    }
+]

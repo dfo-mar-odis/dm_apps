@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8321,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "The identification of provisional reference points and harvest rate options for the commercial Red Sea Urchin (Mesocentrotus franciscanus) fishery in British Columbia",
+            "title_fr": "Détermination des points de référence provisoires et des options de taux de récolte pour la pêche commerciale de l’oursin rouge (Mesocentrotus franciscanus) en Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Lyanne Curtis",
+            "pub_num": "036",
+            "pages": 12,
+            "pdf_size": 787,
+            "description": ""
+        }
+    }
+]

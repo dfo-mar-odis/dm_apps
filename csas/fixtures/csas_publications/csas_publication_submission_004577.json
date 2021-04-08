@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4577,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Updates concerning unaccounted fishing mortalities",
+            "title_fr": "Mise à jour concernant les mortalités par pêche non comptabilisées",
+            "pub_year": 2006,
+            "lead_author_2": "Fréchet, A. C. Savenkoff, J. Gauthier.",
+            "pub_num": "086",
+            "pages": 21,
+            "pdf_size": 399,
+            "description": ""
+        }
+    }
+]

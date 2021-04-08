@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1277,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biological update of the inshore cod stock in Subdivision 4Vn (May-December) for 1982",
+            "pub_year": 1983,
+            "lead_author_2": "S.J. Smith",
+            "pub_num": "044",
+            "pages": 29,
+            "pdf_size": 1134,
+            "description": ""
+        }
+    }
+]

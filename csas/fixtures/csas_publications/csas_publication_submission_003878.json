@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3878,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of striped shrimp(Pandalus Montagui, Leach, 1814) stocks from Resolution Island south along the coast of Labrador to the Grand Banks",
+            "title_fr": "Une évaluation des stocks de crevette ésope (Pandalus montagui, Leach, 1814) du sud de l'île Resolution le long de la côte du Labrador jusqu'aux Grands Bancs",
+            "pub_year": 2003,
+            "lead_author_2": "Orr, D.C., Parsons, D.G., Veitch, P.J. and Sullivan, D.J.",
+            "pub_num": "070",
+            "pages": 31,
+            "pdf_size": 815,
+            "description": ""
+        }
+    }
+]

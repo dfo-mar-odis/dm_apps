@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7224,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Age and growth interpretation of Grass Pickerel (Esox americanus vermiculatus) in two northern populations",
+            "lead_author_2": "Julia Colm",
+            "description": ""
+        }
+    }
+]

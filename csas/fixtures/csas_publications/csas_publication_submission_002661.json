@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2661,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Banquereau Bank Arctic Surfclam",
+            "title_fr": "Mactre de stimpson du Banquereau",
+            "pub_year": 1996,
+            "lead_author_2": "D. Roddick",
+            "pub_num": "037",
+            "pages": 2,
+            "description": ""
+        }
+    }
+]

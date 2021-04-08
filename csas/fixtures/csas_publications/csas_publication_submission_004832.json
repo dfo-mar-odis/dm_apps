@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4832,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Size at 50% maturity for southern Gulf of St. Lawrence herring (NAFO 4T)",
+            "title_fr": "Taille du hareng du sud du golfe du Saint Laurent (division 4T de l'OPANO) à 50 % de maturité",
+            "pub_year": 2007,
+            "lead_author_2": "LeBlanc, C., R. Morin",
+            "pub_num": "019",
+            "pages": 5,
+            "pdf_size": 86,
+            "description": ""
+        }
+    }
+]

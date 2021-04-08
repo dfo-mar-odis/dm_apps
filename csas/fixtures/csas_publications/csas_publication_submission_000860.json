@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 860,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Gulf of St. Lawrence herring stock complex - spring 1978 status report",
+            "pub_year": 1978,
+            "lead_author_2": "P.F. Lett; R.N. O'Boyle; S.N. Messieh",
+            "pub_num": "004",
+            "pages": 23,
+            "pdf_size": 1136,
+            "description": ""
+        }
+    }
+]

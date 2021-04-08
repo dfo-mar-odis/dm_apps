@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8380,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Evaluation of Management Procedures for Pacific Herring (Clupea pallasii) in the Haida Gwaii, Prince Rupert District, and the Central Coast Management Areas of British Columbia",
+            "title_fr": "Évaluation des procédures de gestion du hareng du Pacifique (Clupea pallasii) dans les zones de gestion de la région de Haida Gwaii, du district de Prince Rupert et de la côte centrale de la Colombie-Britannique",
+            "pub_year": 2020,
+            "lead_author_2": "Jaclyn Cleary",
+            "pub_num": "003",
+            "pages": 35,
+            "pdf_size": 1818,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6739,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Production Areas in the Bay of Fundy: Stock Status for 2012 and Forecast for 2013",
+            "title_fr": "Zones de production du pétoncle dans la baie de Fundy: état du stock en 2012 et prévisions pour 2013",
+            "pub_year": 2013,
+            "lead_author_2": "L. Nasmith, B. Hubley, S.J. Smith, A. Glass",
+            "pub_num": "004",
+            "pages": 118,
+            "pdf_size": 4684,
+            "description": ""
+        }
+    }
+]

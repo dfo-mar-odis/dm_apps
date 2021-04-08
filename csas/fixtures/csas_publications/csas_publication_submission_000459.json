@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 459,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) In Indian Bay Brook, Middle Brook, and Terra Nova River (SFA 5), Northeast Brook, Trepassey (SFA 9), and Northeast River, Placentia (SFA 10), Newfoundland, in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "O'Connell, M.F., Walsh, A., M. Cochrane",
+            "pub_num": "088",
+            "pages": 117,
+            "pdf_size": 7882,
+            "description": ""
+        }
+    }
+]

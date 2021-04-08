@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1786,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The status of the NAFO Divisions 4VWX + Subarea 5 pollock resource during 1970-1986 with yield projected to 1988",
+            "pub_year": 1987,
+            "lead_author_2": "C. Annand; D. Beanlands; J. McMillan; R. O'Boyle",
+            "pub_num": "096",
+            "pages": 56,
+            "pdf_size": 2625,
+            "description": ""
+        }
+    }
+]

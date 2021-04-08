@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 890,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Prognoses of yield and abundance of southeast Newfoundland herring for 1979",
+            "pub_year": 1978,
+            "lead_author_2": "G.H. Winters; J.A. Moores",
+            "pub_num": "034",
+            "pages": 12,
+            "pdf_size": 1007,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8450,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a recovery potential assessment of River Darter, Percina shumardi (Great Lakes-Upper St. Lawrence populations) in Ontario",
+            "pub_year": 2019,
+            "lead_author_2": "Chantelle Sawatzky",
+            "pub_num": "063",
+            "description": ""
+        }
+    }
+]

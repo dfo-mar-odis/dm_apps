@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3969,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "American Plaice in the Southern Gulf of St. Lawrence (Div.  4T)",
+            "title_fr": "Plie canadienne du sud du golfe du St. Laurent (div. 4T)",
+            "pub_year": 2004,
+            "lead_author_2": "Morin, R.",
+            "pub_num": "004",
+            "pages": 5,
+            "pdf_size": 280,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6104,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Review of Methods for Eastern Canada-West Greenland Bowhead Whale (Balaena mysticetus) Population Abundance Estimation",
+            "title_fr": "Évaluation des méthodes d'estimation de l'abondance de la population de baleines boréales (Balaena mysticetus) de l'est du Canada et de l'ouest du Groenland",
+            "pub_year": 2012,
+            "lead_author_2": "Steve Ferguson, Bill Koski",
+            "pub_num": "017",
+            "pages": 26,
+            "pdf_size": 512,
+            "description": ""
+        }
+    }
+]

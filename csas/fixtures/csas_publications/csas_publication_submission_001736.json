@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1736,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Le maquereau bleu (Scomber scombrus Linné) du nord-ouest de l'Atlantique, sous-régions 2 à 6 de l'OPANO",
+            "pub_year": 1987,
+            "lead_author_2": "M. Castonguay; J. Landry",
+            "pub_num": "047",
+            "pages": 34,
+            "pdf_size": 1449,
+            "description": ""
+        }
+    }
+]

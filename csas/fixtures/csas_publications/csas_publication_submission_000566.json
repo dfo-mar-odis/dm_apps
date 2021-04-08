@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 566,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Status of anadromous Arctic charr (Salvelinus alpinus) of the Hornaday River, Northwest Territories, as assessed through community-based sampling of the subsistence fishery, August-September 1990-1998",
+            "pub_year": 1999,
+            "lead_author_2": "Harwood, L",
+            "pub_num": "182",
+            "pages": 32,
+            "pdf_size": 904,
+            "description": ""
+        }
+    }
+]

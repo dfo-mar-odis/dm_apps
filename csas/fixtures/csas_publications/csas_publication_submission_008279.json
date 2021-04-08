@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8279,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Fishery and Stock Status of the Sea Scallop (Placopecten magellanicus) from the Southern Gulf of St. Lawrence to 2016",
+            "title_fr": "L’état de la pêche et des stocks de pétoncle géant (Placopecten magellanicus) du sud du golfe du Saint-Laurent jusqu’en 2016",
+            "pub_year": 2019,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "006",
+            "pages": 24,
+            "pdf_size": 2118,
+            "description": ""
+        }
+    }
+]

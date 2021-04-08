@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6729,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Capelin (Mallotus villosus) recruitment indices in NAFO Division 3KL",
+            "title_fr": "Indices de recrutement pour le capelan (Mallotus villosus) dans la division 3KL de l'OPANO",
+            "pub_year": 2013,
+            "lead_author_2": "Nakashima, B.S., and Mowbray, F.K.",
+            "pub_num": "091",
+            "pages": 32,
+            "pdf_size": 553,
+            "description": ""
+        }
+    }
+]

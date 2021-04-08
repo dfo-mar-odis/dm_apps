@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3465,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Landings and Biological Data Update for NAFO Division 4S Herring (Clupea harengus harengus L.)",
+            "title_fr": "Mise à jour des débarquements et des données biologiques du hareng (Clupea harengus harengus L.) de la division 4S de l'OPANO",
+            "pub_year": 2002,
+            "lead_author_2": "F. Grégoire, L. Lefebvre, M. Beaudoin",
+            "pub_num": "019",
+            "pages": 41,
+            "pdf_size": 2780,
+            "description": ""
+        }
+    }
+]

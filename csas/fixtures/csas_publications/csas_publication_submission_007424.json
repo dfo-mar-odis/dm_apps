@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7424,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Physical Oceanographic Conditions in the Gulf of St. Lawrence in 2014",
+            "title_fr": "Conditions océanographiques physiques dans le golfe du Saint-Laurent en 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Galbraith, P.S., Chassé, J., Nicot, P., Caverhill, C., Gilbert, D., Pettigrew, B., Lefaivre, D., Brickman, D., Devine, L., and Lafleur, C.",
+            "pub_num": "032",
+            "pages": 87,
+            "pdf_size": 16444,
+            "description": ""
+        }
+    }
+]

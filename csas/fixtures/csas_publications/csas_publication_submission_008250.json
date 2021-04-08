@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8250,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Pacifc Cod (Gadus macrocephalus) for Hecate Strait and Queen Charlotte Sound (Area 5ABCD), and West Coast Vancouver Island (Area 3CD) in 2018",
+            "title_fr": "Évaluation de la morue du Pacifque (Gadus macrocephalus) pour le détroit d’Hécate et le bassin de la Reine-Charlotte (zone 5ABCD), ainsi que pour la côte ouest de l’île de Vancouver (zone 3CD) en 2018",
+            "pub_year": 2020,
+            "lead_author_2": "Forrest, R.E., Anderson, S.C., Grandin, C.J., and Starr, P.J.",
+            "pub_num": "070",
+            "pages": 220,
+            "pdf_size": 12385,
+            "description": ""
+        }
+    }
+]

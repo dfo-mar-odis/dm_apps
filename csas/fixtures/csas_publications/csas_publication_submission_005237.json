@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5237,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Pre-season run size forecasts for Fraser River sockeye and pink salmon in 2009",
+            "title_fr": "Prévisions d'avant-saison concernant l'importance de la montaison du saumon rouge et du saumon rose du Fraser en 2009",
+            "pub_year": 2009,
+            "lead_author_2": "S. Grant, A. Cass",
+            "pub_num": "022",
+            "pages": 17,
+            "pdf_size": 174,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1910,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Mortality rates of alewife in the southern Gulf of St. Lawrence",
+            "pub_year": 1989,
+            "lead_author_2": "G.J. Chaput; D.R. Alexander",
+            "pub_num": "038",
+            "pages": 23,
+            "pdf_size": 1037,
+            "description": ""
+        }
+    }
+]

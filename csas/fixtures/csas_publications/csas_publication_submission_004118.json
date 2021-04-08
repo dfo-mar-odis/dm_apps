@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4118,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Ecological and Oceanographic Criteria for Alternate Ballast Water Exchange Zones in the Pacific Region",
+            "title_fr": "Critères écologiques et océanographiques des zones alternatives pour l'échange des eaux de ballast dans la Région du Pacifique",
+            "pub_year": 2004,
+            "lead_author_2": "Levings, C.D., M.G.G. Foreman.",
+            "pub_num": "118",
+            "pages": 43,
+            "pdf_size": 2506,
+            "description": ""
+        }
+    }
+]

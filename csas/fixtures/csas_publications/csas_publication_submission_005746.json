@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5746,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Science Review of a Benthic Invertebrate Community Baseline Survey Report for Sydney Harbour, Nova Scotia",
+            "title_fr": "Examen scientifique du rapport d'un relevé de référence sur la communauté d'invertébrés benthiques du port de Sydney, en Nouvelle-Écosse",
+            "pub_year": 2010,
+            "lead_author_2": "M. Wong, L. Bennett / T. Worcester / V. Myra",
+            "pub_num": "013",
+            "pages": 4,
+            "pdf_size": 32,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2587,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon stocks of the Saint John River and southwest New Brunswick, 1995",
+            "pub_year": 1996,
+            "lead_author_2": "T.L. Marshall; R. Jones",
+            "pub_num": "040",
+            "pages": 53,
+            "pdf_size": 3345,
+            "description": ""
+        }
+    }
+]

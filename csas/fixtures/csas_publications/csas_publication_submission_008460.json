@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8460,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment – Cultus Lake Sockeye Salmon (Oncorhynchus nerka) (2019)",
+            "title_fr": "Évaluation du potentiel de rétablissement – saumon rouge (Oncorhynchus nerka) du lac Cultus (2019)",
+            "pub_year": 2020,
+            "lead_author_2": "Dan Selbie",
+            "pub_num": "011",
+            "pages": 18,
+            "pdf_size": 1095,
+            "description": ""
+        }
+    }
+]

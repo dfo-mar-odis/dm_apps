@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3057,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Salmon Chaleur Bay SFA 15",
+            "title_fr": "Saumon atlantique de la baie des Chaleurs - ZPS 15",
+            "pub_year": 1998,
+            "lead_author_2": "Dr. Andrea Locke",
+            "pub_num": "D3-01",
+            "pages": 6,
+            "pdf_size": 107,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5886,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment for the Umatilla Dace (Rhinichthys Umatilla)",
+            "title_fr": "Évaluation du potentiel de rétablissement du naseux d'Umatilla (Rhinichthys umatilla)",
+            "pub_year": 2011,
+            "lead_author_2": "Brian Harvey/Tom Brown",
+            "pub_num": "107",
+            "pages": 46,
+            "pdf_size": 595,
+            "description": ""
+        }
+    }
+]

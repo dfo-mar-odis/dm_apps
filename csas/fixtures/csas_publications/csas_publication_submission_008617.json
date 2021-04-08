@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8617,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review for the Assessment of 3Ps Sea Scallop and 2HJ3KLNOP4R Snow Crab",
+            "lead_author_2": "E. Parrill",
+            "description": ""
+        }
+    }
+]

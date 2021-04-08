@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8683,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Review of Drill Release Risk Assessments for Exploration Drilling Projects proposed by BHP Canada (Orphan Basin Region) and Chevron Canada Limited (West Flemish Pass)",
+            "title_fr": "Examen des évaluations des risques liés aux rejets de forage des projets d’exploration proposés par BHP Canada (région du bassin Orphan) et Chevron Canada Limited (passe Flamande Ouest)",
+            "pub_year": 2020,
+            "lead_author_2": "N. Wells",
+            "pub_num": "036",
+            "pages": 8,
+            "pdf_size": 344,
+            "description": ""
+        }
+    }
+]

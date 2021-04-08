@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8624,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Regional Science Peer Review on the Biophysical and Ecological Overview of the Southampton Island Ecologically and Biologically Significant Area; December 5-6, 2018",
+            "title_fr": "Compte rendu de la réunion régionale d’examen scientifique par les pairs sur l’aperçu biophysique et écologique de la zone d’importance écologique et biologique de l’île Southampton; du 5 au 6 décembre 2018",
+            "pub_year": 2020,
+            "lead_author_2": "Karen Dunmall",
+            "pub_num": "014",
+            "pages": 22,
+            "pdf_size": 487,
+            "description": ""
+        }
+    }
+]

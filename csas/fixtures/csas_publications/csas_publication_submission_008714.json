@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8714,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Development of a Monitoring Framework for the Establishment of a Commercial Whelk Fishery in the Maritimes Region (4Vs and 4W)",
+            "lead_author_2": "M. Wilcox",
+            "description": ""
+        }
+    }
+]

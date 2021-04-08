@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6750,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of Atlantic surfclam, Spisula solidissima, in the coastal waters of the Îles-de-la-Madeleine, Québec - methodology and results",
+            "title_fr": "Évaluation des stocks de la mactre de l'Atlantique, Spisula solidissima, des eaux côtières des Îles-de-la-Madeleine, Québec - méthodologies et résultats",
+            "pub_year": 2013,
+            "lead_author_2": "Brulotte, S.",
+            "pub_num": "082",
+            "description": ""
+        }
+    }
+]

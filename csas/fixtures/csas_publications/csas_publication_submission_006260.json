@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6260,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Current Status of Northwest Atlantic Harp Seals, (Pagophilus groenlandicus)",
+            "title_fr": "Mise à jour sur l'état de la population de phoques du Groenland (Pagophilus groenlandicus) du nord-ouest de l'Atlantique",
+            "pub_year": 2011,
+            "lead_author_2": "Mike Hammill et Gary Stenson",
+            "pub_num": "070",
+            "pages": 15,
+            "pdf_size": 412,
+            "description": ""
+        }
+    }
+]

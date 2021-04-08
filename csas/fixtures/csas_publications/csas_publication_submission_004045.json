@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4045,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Status of Cambridge Bay Anadromous Arctic Char Stocks, 2003",
+            "title_fr": "État des stocks d'omble chevalier anadrome de la baie Cambridge",
+            "pub_year": 2004,
+            "lead_author_2": "Day, A.C., B. de March.",
+            "pub_num": "052",
+            "pages": 82,
+            "pdf_size": 1872,
+            "description": ""
+        }
+    }
+]

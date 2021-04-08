@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7931,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Residual infectious pancreatic necrosis (IPN) transmission risk from Arctic Char transfers into British Columbia",
+            "title_fr": "Risque résiduel de transmission de la nécrose pancréatique infectieuse lié au transfert de l’omble chevalier en Colombie-Britannique",
+            "pub_year": 2017,
+            "lead_author_2": "Mark Higgins",
+            "pub_num": "041",
+            "pages": 34,
+            "pdf_size": 443,
+            "description": ""
+        }
+    }
+]

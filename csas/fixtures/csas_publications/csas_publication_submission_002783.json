@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2783,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Description of the capelin (Mallotus villosus) fishery in the Estuary and Gulf of St. Lawrence, 1996",
+            "title_fr": "Description de la pêche au capelan (Mallotus villosus) dans l'estuaire et le golfe du Saint-Laurent pour 1996",
+            "pub_year": 1997,
+            "lead_author_2": "Grégoire, F., Lévesque, C., Hudson, J.",
+            "pub_num": "015",
+            "description": ""
+        }
+    }
+]

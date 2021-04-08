@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8775,
+        "fields": {
+            "series": 6,
+            "title_en": "SUPPLEMENT TO THE BIOPHYSICAL AND ECOLOGICAL OVERVIEW FOR SOUTHAMPTON ISLAND (SI) EBSA TO INCLUDE ADDITIONAL AREAS WITHIN THE SOUTHAMPTON ISLAND AREA OF INTEREST (AOI)",
+            "pub_year": 2020,
+            "lead_author_2": "Tracey Loewen",
+            "pub_num": "055",
+            "description": ""
+        }
+    }
+]

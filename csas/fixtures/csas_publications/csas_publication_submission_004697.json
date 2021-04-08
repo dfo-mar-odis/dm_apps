@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4697,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 8],
+            "title_en": "Recovery Potential Assessment for Sea Otters (Enhydra lutris)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la loutre de mer (Enhydra lutris)",
+            "pub_year": 2007,
+            "lead_author_2": "Nichol, L.",
+            "pub_num": "031",
+            "pages": 9,
+            "pdf_size": 229,
+            "description": ""
+        }
+    }
+]

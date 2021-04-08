@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1712,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Sequential population analysis on the Nain assessment unit Arctic charr population in 1986",
+            "pub_year": 1987,
+            "lead_author_2": "J.B. Dempson; L.J. LeDrew",
+            "pub_num": "023",
+            "pages": 13,
+            "pdf_size": 913,
+            "description": ""
+        }
+    }
+]

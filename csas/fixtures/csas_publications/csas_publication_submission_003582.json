@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3582,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "American plaice in Subdivision 3Ps",
+            "pub_year": 1999,
+            "lead_author_2": "Johanne Morgan",
+            "pub_num": "A2-12",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

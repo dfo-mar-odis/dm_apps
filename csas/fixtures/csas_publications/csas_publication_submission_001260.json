@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1260,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation des stocks de crevette (Pandalus borealis) du golfe Saint-Laurent",
+            "pub_year": 1983,
+            "lead_author_2": "S.S.M. Labonté; Y. Lavergne; L. Savard",
+            "pub_num": "027",
+            "description": ""
+        }
+    }
+]

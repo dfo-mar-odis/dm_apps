@@ -1,0 +1,20 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3939,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Standardized CPUE indice development for the estuary and northern gulf of St. Lawrence snow crab",
+            "title_fr": "Développement d'un indice de PUE standardisé dans la pêche au crabe des neiges de l'estuaire et du nord du golfe Saint-Laurent",
+            "pub_year": 2003,
+            "lead_author_2": "Bourdages, H. and/ et Dufour, R.
+
+Réviseurs : Louise Savard et Dominique Gascon",
+            "pub_num": "116",
+            "pages": 25,
+            "pdf_size": 305,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2217,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1991 4WX herring assessment",
+            "pub_year": 1992,
+            "lead_author_2": "R.L. Stephenson; M.J. Power; J.B. Sochasky; W.H. Dougherty; F.J. Fife; G.D. Melvin; D.E. Lane",
+            "pub_num": "069",
+            "pages": 51,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1877,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Minimum size regulations and the implications for yield and value in the Canadian Atlantic halibut fishery",
+            "pub_year": 1989,
+            "lead_author_2": "John D. Neilson; W.R. Bowering",
+            "pub_num": "005",
+            "pages": 11,
+            "pdf_size": 1153,
+            "description": ""
+        }
+    }
+]

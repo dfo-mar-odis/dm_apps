@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6136,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Assessment of Pugnose Minnow (Opsopoeodus emiliae) in Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement du petit-bec (Opsopoeodus emiliae) au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "069",
+            "pages": 19,
+            "pdf_size": 392,
+            "description": ""
+        }
+    }
+]

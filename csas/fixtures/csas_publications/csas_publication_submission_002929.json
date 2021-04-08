@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2929,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Georges Bank Cod",
+            "title_fr": "Morue de l'est du banc Georges",
+            "pub_year": 1999,
+            "lead_author_2": "Joseph Hunt",
+            "pub_num": "A3-04",
+            "pages": 6,
+            "pdf_size": 103,
+            "description": ""
+        }
+    }
+]

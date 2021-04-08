@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1151,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Witch flounder in NAFO Divisions 2J and 3KL - another by-catch",
+            "pub_year": 1981,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "053",
+            "pages": 16,
+            "pdf_size": 5624,
+            "description": ""
+        }
+    }
+]

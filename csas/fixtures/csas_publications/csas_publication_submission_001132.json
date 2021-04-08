@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1132,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of American plaice in NAFO 4T",
+            "pub_year": 1981,
+            "lead_author_2": "K. Metuzals",
+            "pub_num": "034",
+            "pages": 34,
+            "pdf_size": 9545,
+            "description": ""
+        }
+    }
+]

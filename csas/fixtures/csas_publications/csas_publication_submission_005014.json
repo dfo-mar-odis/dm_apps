@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5014,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Groundfish Stock Assessments of the 2007 fishing season in the Quebec Region; February 25 to 29, 2008",
+            "title_fr": "Évaluations des stocks de poisson de fonds de la région du Québec suivant la saison de pêche 2007; du 25 au 29 février 2008",
+            "pub_year": 2008,
+            "lead_author_2": "C. Cyr",
+            "pub_num": "019",
+            "pages": 53,
+            "pdf_size": 261,
+            "description": ""
+        }
+    }
+]

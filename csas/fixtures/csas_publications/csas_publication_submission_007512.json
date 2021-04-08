@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7512,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Methodology of the Pacific Marine Ecological Classification System and its Application to the Northern and Southern Shelf Bioregions",
+            "title_fr": "Méthodes d'application du système de classification de l'écologie marine du Pacifique aux biorégions des plateaux nord et sud",
+            "pub_year": 2016,
+            "lead_author_2": "Rubidge, E., Gale, K.S.P., Curtis, J.M.R., McClelland, E., Feyrer, L., Bodtker, K., and Robb, C.",
+            "pub_num": "035",
+            "pages": 135,
+            "pdf_size": 7828,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 585,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Historical review (1994-1998) and assessment of the 1999 exploratory snow crab (Chionoecetes opilio) fishery off southwestern Nova Scotia (NAFO Division 4X)",
+            "pub_year": 2000,
+            "lead_author_2": "Biron, M., Campbell, R., Moriyasu, M.",
+            "pub_num": "018",
+            "pages": 32,
+            "pdf_size": 1906,
+            "description": ""
+        }
+    }
+]

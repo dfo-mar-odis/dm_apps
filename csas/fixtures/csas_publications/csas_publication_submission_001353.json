@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1353,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Étude de la discrimination des populations de capelan (Mallotus villosus) des divisions 4RST de l'OPANO",
+            "pub_year": 1990,
+            "lead_author_2": "Jean-Denis Lambert; Dominique Roby; Jean-Marie Sévigny",
+            "pub_num": "038",
+            "description": ""
+        }
+    }
+]

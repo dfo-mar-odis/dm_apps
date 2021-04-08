@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4053,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "The British Columbia longspine thornyhead fishery: analysis of survey and commercial data (1996-2003)",
+            "title_fr": "Pêche du sébastolobe à longues épines en Colombie-Britannique : analyse des données provenant des relevés et des pêches commerciales (1996-2003)",
+            "pub_year": 2004,
+            "lead_author_2": "Schnute, J., Haigh, R., Krishka, B., Sinclair, A., Starr, P.",
+            "pub_num": "059",
+            "pages": 81,
+            "pdf_size": 5341,
+            "description": ""
+        }
+    }
+]

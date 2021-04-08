@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5252,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment for British Columbia Herring in 2008 and Forecasts of the Potential Catch in 2009",
+            "title_fr": "Évaluation des stocks de harengs de la Colombie-Britannique en 2008 et prévisions de prises potentielles en 2009",
+            "pub_year": 2009,
+            "lead_author_2": "J. Schweigert, Christensen, L.B., Haist, V.",
+            "pub_num": "019",
+            "pages": 65,
+            "pdf_size": 896,
+            "description": ""
+        }
+    }
+]

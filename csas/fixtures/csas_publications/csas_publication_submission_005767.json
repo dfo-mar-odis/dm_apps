@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5767,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Assessment of the winter range of Baffin Bay narwhals",
+            "title_fr": "Évaluation de l'aire d'hivernage des narvals de la baie de Baffin",
+            "pub_year": 2013,
+            "lead_author_2": "Richard, P.R., Treble, M.A., and LeBlanc, B.",
+            "pub_num": "069",
+            "pages": 13,
+            "pdf_size": 2094,
+            "description": ""
+        }
+    }
+]

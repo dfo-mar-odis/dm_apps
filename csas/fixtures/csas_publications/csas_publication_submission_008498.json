@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8498,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment – Interior Fraser Coho (Oncorhynchus kisutch)",
+            "title_fr": "Évaluation du potentiel de rétablissement : Saumon coho du Fraser intérieur (Oncorhynchus kisutch)",
+            "pub_year": 2019,
+            "lead_author_2": "Bruce Patten",
+            "pub_num": "043",
+            "pages": 23,
+            "pdf_size": 950,
+            "description": ""
+        }
+    }
+]

@@ -37,9 +37,11 @@
   function hideAll() {
     $(".year_div").addClass("gone");
     $(".region_div").addClass("gone");
+    $(".division_div").addClass("gone");
     $(".section_div").addClass("gone");
     $("#id_year").prop("required", false);
     $("#id_region").prop("required", false);
+    $("#id_division").prop("required", false);
     $("#id_section").prop("required", false);
   }
 
@@ -73,6 +75,14 @@
     else if (reportChoice === "6") {
       $(".year_div").removeClass("gone");
       $(".region_div").removeClass("gone");
+      $("#id_year").prop("required", true);
+      $("#id_region").prop("required", true);
+    }
+    else if (reportChoice === "8") {
+      $(".year_div").removeClass("gone");
+      $(".region_div").removeClass("gone");
+      $(".division_div").removeClass("gone");
+      $(".section_div").removeClass("gone");
       $("#id_year").prop("required", true);
       $("#id_region").prop("required", true);
     }

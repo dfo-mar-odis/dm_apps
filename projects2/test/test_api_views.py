@@ -18,11 +18,11 @@ class TestActivityListCreateAPIView(CommonTest):
         self.staff = FactoryFloor.LeadStaffFactory()
         self.instance = self.staff.project_year
         self.obj = FactoryFloor.ActivityFactory(project_year=self.instance)
-        self.test_url = reverse("activity-list", args=[self.instance.pk])
+        self.test_url = reverse("projects2-activity-list", args=[self.instance.pk])
 
     @tag("api", 'activity-list')
     def test_url(self):
-        self.assert_correct_url("activity-list", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-activity-list", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/activities/")
 
     @tag("api", 'activity-list')
@@ -84,11 +84,11 @@ class TestCapitalCostListCreateAPIView(CommonTest):
         self.staff = FactoryFloor.LeadStaffFactory()
         self.instance = self.staff.project_year
         self.cost = FactoryFloor.CapitalCostFactory(project_year=self.instance)
-        self.test_url = reverse("capital-list", args=[self.instance.pk])
+        self.test_url = reverse("projects2-capital-list", args=[self.instance.pk])
 
     @tag("api", 'capital-cost')
     def test_url(self):
-        self.assert_correct_url("capital-list", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-capital-list", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/capital-costs/")
 
     @tag("api", 'capital-cost')
@@ -150,11 +150,11 @@ class TestCollaborationListCreateAPIView(CommonTest):
         self.staff = FactoryFloor.LeadStaffFactory()
         self.instance = self.staff.project_year
         self.obj = FactoryFloor.CollaborationFactory(project_year=self.instance)
-        self.test_url = reverse("collaboration-list", args=[self.instance.pk])
+        self.test_url = reverse("projects2-collaboration-list", args=[self.instance.pk])
 
     @tag("api", 'collaboration-list')
     def test_url(self):
-        self.assert_correct_url("collaboration-list", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-collaboration-list", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/collaborations/")
 
     @tag("api", 'collaboration-list')
@@ -214,11 +214,11 @@ class TestCurrentUser(CommonTest):
     def setUp(self):
         super().setUp()
         self.user = self.get_and_login_user()
-        self.test_url = reverse("current-project-user")
+        self.test_url = reverse("projects2-current-user")
 
     @tag("api", 'current-project-user')
     def test_url(self):
-        self.assert_correct_url("current-project-user", expected_url_path=f"/api/project-planning/user/")
+        self.assert_correct_url("projects2-current-user", expected_url_path=f"/api/project-planning/user/")
 
     @tag("api", 'current-project-user')
     def test_authenticated(self):
@@ -264,11 +264,11 @@ class TestFileListCreateAPIView(CommonTest):
         self.staff = FactoryFloor.LeadStaffFactory()
         self.instance = self.staff.project_year
         self.obj = FactoryFloor.FileFactory(project_year=self.instance)
-        self.test_url = reverse("file-list", args=[self.instance.pk])
+        self.test_url = reverse("projects2-file-list", args=[self.instance.pk])
 
     @tag("api", 'file-list')
     def test_url(self):
-        self.assert_correct_url("file-list", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-file-list", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/files/")
 
     @tag("api", 'file-list')
@@ -330,11 +330,11 @@ class TestFileListCreateAPIView(CommonTest):
 #         self.staff = FactoryFloor.LeadStaffFactory()
 #         self.instance = self.staff.project_year
 #         self.obj = FactoryFloor.ReviewFactory(project_year=self.instance)
-#         self.test_url = reverse("review-list", args=[self.instance.pk])
+#         self.test_url = reverse("projects2-review-list", args=[self.instance.pk])
 #
 #     @tag("api", 'review-list')
 #     def test_url(self):
-#         self.assert_correct_url("review-list", test_url_args=[self.instance.pk],
+#         self.assert_correct_url("projects2-review-list", test_url_args=[self.instance.pk],
 #                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/reviews/")
 #
 #     @tag("api", 'review-list')
@@ -391,11 +391,11 @@ class TestFTEBreakdownAPIView(CommonTest):
     def setUp(self):
         super().setUp()
         self.user = self.get_and_login_user()
-        self.test_url = reverse("fte-breakdown", args=None)
+        self.test_url = reverse("projects2-fte-breakdown", args=None)
 
     @tag("api", 'fte-breakdown')
     def test_url(self):
-        self.assert_correct_url("fte-breakdown", test_url_args=None, expected_url_path=f"/api/project-planning/fte-breakdown/")
+        self.assert_correct_url("projects2-fte-breakdown", test_url_args=None, expected_url_path=f"/api/project-planning/fte-breakdown/")
 
     @tag("api", 'fte-breakdown')
     def test_authenticated(self):
@@ -470,11 +470,11 @@ class TestOMCostListCreateAPIView(CommonTest):
         self.staff = FactoryFloor.LeadStaffFactory()
         self.instance = self.staff.project_year
         self.om_cost = FactoryFloor.OMCostFactory(project_year=self.instance)
-        self.test_url = reverse("om-list", args=[self.instance.pk])
+        self.test_url = reverse("projects2-om-list", args=[self.instance.pk])
 
     @tag("api", 'om-list')
     def test_url(self):
-        self.assert_correct_url("om-list", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-om-list", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/om-costs/")
 
     @tag("api", 'om-list')
@@ -530,11 +530,11 @@ class TestProjectListAPIView(CommonTest):
         super().setUp()
         self.user = self.get_and_login_user()
         self.instance = FactoryFloor.ProjectFactory()
-        self.test_url = reverse("project-list", args=None)
+        self.test_url = reverse("projects2-project-list", args=None)
 
     @tag("api", 'project-list')
     def test_url(self):
-        self.assert_correct_url("project-list", test_url_args=None, expected_url_path=f"/api/project-planning/projects/")
+        self.assert_correct_url("projects2-project-list", test_url_args=None, expected_url_path=f"/api/project-planning/projects/")
 
     @tag("api", 'project-list')
     def test_authenticated(self):
@@ -567,11 +567,11 @@ class TestProjectRetrieveAPIView(CommonTest):
         super().setUp()
         self.user = self.get_and_login_user()
         self.instance = FactoryFloor.ProjectFactory()
-        self.test_url = reverse("project-detail", args=[self.instance.pk])
+        self.test_url = reverse("projects2-project-detail", args=[self.instance.pk])
 
     @tag("api", 'project-detail')
     def test_url(self):
-        self.assert_correct_url("project-detail", test_url_args=[self.instance.pk], expected_url_path=f"/api/project-planning/projects/{self.instance.pk}/")
+        self.assert_correct_url("projects2-project-detail", test_url_args=[self.instance.pk], expected_url_path=f"/api/project-planning/projects/{self.instance.pk}/")
 
     @tag("api", 'project-detail')
     def test_authenticated(self):
@@ -607,11 +607,11 @@ class TestProjectYearListAPIView(CommonTest):
         super().setUp()
         self.user = self.get_and_login_user()
         self.instance = FactoryFloor.ProjectYearFactory()
-        self.test_url = reverse("year-list", args=None)
+        self.test_url = reverse("projects2-year-list", args=None)
 
     @tag("api", 'year-list')
     def test_url(self):
-        self.assert_correct_url("year-list", test_url_args=None, expected_url_path=f"/api/project-planning/project-years/")
+        self.assert_correct_url("projects2-year-list", test_url_args=None, expected_url_path=f"/api/project-planning/project-years/")
 
     @tag("api", 'year-list')
     def test_authenticated(self):
@@ -651,11 +651,11 @@ class TestProjectYearRetrieveAPIView(CommonTest):
         super().setUp()
         self.user = self.get_and_login_user()
         self.instance = FactoryFloor.ProjectYearFactory()
-        self.test_url = reverse("year-detail", args=[self.instance.pk])
+        self.test_url = reverse("projects2-year-detail", args=[self.instance.pk])
 
     @tag("api", 'year-detail')
     def test_url(self):
-        self.assert_correct_url("year-detail", test_url_args=[self.instance.pk], expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/")
+        self.assert_correct_url("projects2-year-detail", test_url_args=[self.instance.pk], expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/")
 
     @tag("api", 'year-detail')
     def test_authenticated(self):
@@ -695,11 +695,11 @@ class TestProjectYearSubmitAPIView(CommonTest):
         self.instance.status = 1
         self.instance.save()
 
-        self.test_url = reverse("year-submit", args=[self.instance.pk])
+        self.test_url = reverse("projects2-year-submit", args=[self.instance.pk])
 
     @tag("api", 'year-submit')
     def test_url(self):
-        self.assert_correct_url("year-submit", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-year-submit", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/submit/")
 
     @tag("api", 'year-submit')
@@ -756,11 +756,11 @@ class TestProjectYearUnsubmitAPIView(CommonTest):
         self.instance.status = 1
         self.instance.save()
         self.instance.submit()
-        self.test_url = reverse("year-unsubmit", args=[self.instance.pk])
+        self.test_url = reverse("projects2-year-unsubmit", args=[self.instance.pk])
 
     @tag("api", 'year-unsubmit')
     def test_url(self):
-        self.assert_correct_url("year-unsubmit", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-year-unsubmit", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/unsubmit/")
 
     @tag("api", 'year-unsubmit')
@@ -811,11 +811,11 @@ class TestStaffListCreateAPIView(CommonTest):
         self.user = self.get_and_login_user()
         self.staff = FactoryFloor.LeadStaffFactory()
         self.instance = self.staff.project_year
-        self.test_url = reverse("staff-list", args=[self.instance.pk])
+        self.test_url = reverse("projects2-staff-list", args=[self.instance.pk])
 
     @tag("api", 'staff-list')
     def test_url(self):
-        self.assert_correct_url("staff-list", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-staff-list", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/staff/")
 
     @tag("api", 'staff-list')
@@ -873,11 +873,11 @@ class TestStatusReportListCreateAPIView(CommonTest):
         self.staff = FactoryFloor.LeadStaffFactory()
         self.instance = self.staff.project_year
         self.obj = FactoryFloor.StatusReportFactory(project_year=self.instance)
-        self.test_url = reverse("status-report-list", args=[self.instance.pk])
+        self.test_url = reverse("projects2-status-report-list", args=[self.instance.pk])
 
     @tag("api", 'status-report-list')
     def test_url(self):
-        self.assert_correct_url("status-report-list", test_url_args=[self.instance.pk],
+        self.assert_correct_url("projects2-status-report-list", test_url_args=[self.instance.pk],
                                 expected_url_path=f"/api/project-planning/project-years/{self.instance.pk}/status-reports/")
 
     @tag("api", 'status-report-list')

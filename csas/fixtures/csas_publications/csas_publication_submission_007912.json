@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7912,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review of Science Advice on Marine Productivity Benchmarks; March 28-30, 2017",
+            "title_fr": "Compte rendu de l’examen national par les pairs de l’avis scientifique sur les points de référence de la productivité marine; du 28 au 30 mars 2017",
+            "pub_year": 2017,
+            "lead_author_2": "Keith Clarke, Mike Bradford (Lauren: rapporteur)",
+            "pub_num": "041",
+            "pages": 23,
+            "pdf_size": 290,
+            "description": ""
+        }
+    }
+]

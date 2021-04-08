@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1729,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Shell height-meat weight allometry of Georges Bank scallop (Placopecten magellanicus) stocks",
+            "pub_year": 1987,
+            "lead_author_2": "G. Robert; M.J. Lundy",
+            "pub_num": "040",
+            "pages": 39,
+            "pdf_size": 1822,
+            "description": ""
+        }
+    }
+]

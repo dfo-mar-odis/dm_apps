@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1453,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Saint John River, N.B. Atlantic salmon in 1983 and forecast of returns in 1984",
+            "pub_year": 1984,
+            "lead_author_2": "G.H. Penney; T.L. Marshall",
+            "pub_num": "047",
+            "pages": 34,
+            "pdf_size": 1373,
+            "description": ""
+        }
+    }
+]

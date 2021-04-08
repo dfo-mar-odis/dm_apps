@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 408,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Multiple fertilizations and extrusions in female Homarus americanus",
+            "pub_year": 1980,
+            "lead_author_2": "S.L. Waddy; D.E. Aiken",
+            "pub_num": "042",
+            "pages": 4,
+            "pdf_size": 268,
+            "description": ""
+        }
+    }
+]

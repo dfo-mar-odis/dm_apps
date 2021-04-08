@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7819,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Spawner abundance and biological characteristics of Striped Bass (Morone saxatilis) in the southern Gulf of St. Lawrence in 2016",
+            "title_fr": "Abondance de reproducteurs et caractéristiques biologiques du bar rayé (Morone saxatilis) du sud du golfe du Saint-Laurent en 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "012",
+            "pages": 7,
+            "pdf_size": 349,
+            "description": ""
+        }
+    }
+]

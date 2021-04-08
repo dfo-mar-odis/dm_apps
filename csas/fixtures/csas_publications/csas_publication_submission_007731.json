@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7731,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Update on the identification, description and spatial and temporal use of striped bass (Morone saxatilis) habitats by the St. Lawrence River population, Quebec",
+            "title_fr": "Mise à jour des connaissances sur l’identification, la description et l’utilisation spatio-temporelle des habitats du bar rayé (Morone saxatilis) de la population du fleuve Saint-Laurent, Québec",
+            "pub_year": 2017,
+            "lead_author_2": "Valiquette, E., Harvey, V. and Pelletier, A.-M.",
+            "pub_num": "005",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4595,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution, Abundance, and Life History of Malacoraja senta (Smooth Skate) in Canadian Atlantic Waters With Reference to its Global Distribution",
+            "title_fr": "Répartition, abondance et cycle biologique de Malacoraja senta (raie à queue de velours) dans les eaux atlantiques canadiennes par rapport à sa répartition globale",
+            "pub_year": 2006,
+            "lead_author_2": "Kulka, D.W., D. Swain, M.R Simpson, C.M. Miri, J. Simon, J. Gauthier, R. McPhie, J. Sulikowski, L. Hamilton",
+            "pub_num": "093",
+            "pages": 140,
+            "pdf_size": 10429,
+            "description": ""
+        }
+    }
+]

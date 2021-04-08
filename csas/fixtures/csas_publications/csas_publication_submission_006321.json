@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6321,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Arctic Marine Biodiversity: Indicators for Monitoring Coral and Sponge Megafauna in the Eastern Arctic",
+            "title_fr": "Biodiversité Marine Arctique: Indicateurs pour un suivi de la mégaufaune de coraux et d'éponges dans l'est de l'Arctique",
+            "pub_year": 2012,
+            "lead_author_2": "E. Kenchington, T. Siferd, C. Lirette",
+            "pub_num": "003",
+            "pages": 42,
+            "pdf_size": 2372,
+            "description": ""
+        }
+    }
+]

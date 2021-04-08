@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1128,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Conversion of weights of Atlantic salmon with viscera-removed and heads-on to round weight at West Greenland",
+            "pub_year": 1981,
+            "lead_author_2": "D.G. Reddin",
+            "pub_num": "030",
+            "pages": 7,
+            "pdf_size": 496,
+            "description": ""
+        }
+    }
+]

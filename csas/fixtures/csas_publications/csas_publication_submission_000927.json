@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 927,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Meeting of CSAS and Regional RAP Coordinators; November 13, 1996",
+            "pub_year": 1997,
+            "lead_author_2": "Dr. J.R. Rice",
+            "pub_num": "003",
+            "description": ""
+        }
+    }
+]

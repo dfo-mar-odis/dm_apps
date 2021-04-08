@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4882,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Fraser River Eulachon (Thaleichthys pacificus): 2007 Population Assessment and Harvest Recommendations for 2008",
+            "title_fr": "Eulakane du fleuve Fraser (Thaleichthys pacificus) - Évaluation de la population en 2007 et recommandations concernant l'exploitation pour 2008",
+            "pub_year": 2007,
+            "lead_author_2": "Therriault, T.",
+            "pub_num": "048",
+            "pages": 6,
+            "pdf_size": 152,
+            "description": ""
+        }
+    }
+]

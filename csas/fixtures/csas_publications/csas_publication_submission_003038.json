@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3038,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southern Gulf of St. Lawrence Herring",
+            "title_fr": "Hareng du sud du golfe du Saint-Laurent",
+            "pub_year": 1998,
+            "lead_author_2": "Ross Claytor",
+            "pub_num": "B3-01",
+            "pages": 10,
+            "pdf_size": 108,
+            "description": ""
+        }
+    }
+]

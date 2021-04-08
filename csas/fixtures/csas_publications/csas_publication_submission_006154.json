@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6154,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Reproductive Status of the American Lobster in Southwest Nova Scotia and the Bay of Fundy (Lobster Fishing Areas 34-38)",
+            "title_fr": "État reproducteur du homard d'Amérique dans le Sud-Ouest de la Nouvelle-Écosse et de la Baie de Fundy (Zones Pêche du Homard 34-38)",
+            "pub_year": 2014,
+            "lead_author_2": "J. Gaudette",
+            "pub_num": "045",
+            "pages": 35,
+            "pdf_size": 455,
+            "description": ""
+        }
+    }
+]

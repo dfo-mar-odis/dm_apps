@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4772,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Herring multi-stock analysis: Integration of tagging data and evaluation of alternative dynamics",
+            "title_fr": "Analyse de divers stocks de hareng: Intégration des données de marquage et évaluation de diverses dynamiques",
+            "pub_year": 2009,
+            "lead_author_2": "Haist, V., Schweigert, J.",
+            "pub_num": "072",
+            "pages": 56,
+            "pdf_size": 632,
+            "description": ""
+        }
+    }
+]

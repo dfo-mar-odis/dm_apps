@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1023,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "2000 Redfish Zonal Assessment Process; 14-16 November 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Jake Rice",
+            "pub_num": "021",
+            "pages": 25,
+            "pdf_size": 313,
+            "description": ""
+        }
+    }
+]

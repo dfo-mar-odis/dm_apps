@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6551,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Résultat du relevé à l'oursin à l'embouchure du Saguenay (titre provisoire)",
+            "title_fr": "Résultat du relevé à l'oursin à l'embouchure du Saguenay (titre provisoire)",
+            "lead_author_2": "Bernard Sainte-Marie",
+            "description": ""
+        }
+    }
+]

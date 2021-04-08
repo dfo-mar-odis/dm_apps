@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7858,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Stock assessment of Arctic Char (Salvelinus alpinus) from the Jayko and Halokvik Rivers, Nunavut",
+            "lead_author_2": "L. Harris",
+            "description": ""
+        }
+    }
+]

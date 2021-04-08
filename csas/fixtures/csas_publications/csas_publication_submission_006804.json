@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6804,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings from the regional assessment of Arctic Char (Salvelinus alpinus) in the Sylvia Grinnell River, Nunavut, 2009-2011; March 18, 2013",
+            "title_fr": "Compte rendu de l'évaluation régionale de l'omble chevalier (Salvelinus alpinus) dans la rivière Sylvia Grinnell, au Nunavut, en 2009-2011",
+            "pub_year": 2013,
+            "lead_author_2": "Melanie VanGerwen-Toyne",
+            "pub_num": "020",
+            "pages": 14,
+            "pdf_size": 124,
+            "description": ""
+        }
+    }
+]

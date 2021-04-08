@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4310,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Fish Habitat Considerations Associated with Hydro-Electric Developments in Quebec Region",
+            "title_fr": "Considérations relatives à l'habitat du poisson associées aux aménagements hydroélectriques dans la région du Québec",
+            "pub_year": 2005,
+            "lead_author_2": "Bain, H., M. Stoneman",
+            "pub_num": "038",
+            "pages": 6,
+            "pdf_size": 80,
+            "description": ""
+        }
+    }
+]

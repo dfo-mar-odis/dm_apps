@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 273,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Annual Atlantic Salmon Stock Assessment Meeting Regional Advisory Process for the Maritimes and Gulf Fisheries Management Regions; December 13-15, 1999",
+            "pub_year": 2000,
+            "lead_author_2": "J. Ritter",
+            "pub_num": "012",
+            "description": ""
+        }
+    }
+]

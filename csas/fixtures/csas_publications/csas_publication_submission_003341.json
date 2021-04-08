@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3341,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Report on the Status of Harp Seals in the Northwest Atlantic",
+            "title_fr": "Compilation des rapports des phoques du Groenland de l'Atlantique Nord-Ouest",
+            "pub_year": 1995,
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

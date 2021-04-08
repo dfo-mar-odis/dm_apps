@@ -3,7 +3,11 @@ var app = new Vue({
   el: '#app',
   delimiters: ["${", "}"],
   data: {
+    showSidebar: false,
     showOverview: true,
+    collapseOverview: true,
+    collapseFinancials: true,
+    collapseSubmit: true,
     currentUser: null,
     canModify: false,
     showSubmit: false,
@@ -33,6 +37,8 @@ var app = new Vue({
     omCostToEdit: {},
     showNewOMCostModal: false,
     showOldOMCostModal: false,
+    omCostLabels: [],
+    omCategoryChoices: [],
 
     // capital costs
     capital_cost_loading: false,
@@ -47,6 +53,11 @@ var app = new Vue({
     activityToEdit: {},
     showNewActivityModal: false,
     showOldActivityModal: false,
+    activityLabels: [],
+    activityTypeChoices: [],
+    likelihoodChoices: [],
+    impactChoices: [],
+    riskRatingChoices: [],
 
     // collaborations
     collaboration_loading: false,
@@ -71,21 +82,22 @@ var app = new Vue({
 
   },
   methods: {
-    //these can probably be deleted
     displayOverview() {
-      this.showOverview = true
-      this.showSubmit = false
+      this.collapseOverview = false;
+      // this.projectYear = {};
     },
     displaySubmit() {
       this.showSubmit = true
       this.showOverview = false
     },
     displayProjectYear(yearId) {
-      this.showOverview = true;
-      this.getProjectYear(yearId)
+      // this.showOverview = true;
+      // this.getProjectYear(yearId)
+      window.location.hash = "#project-year"
+      window.location.search = `?project_year=${yearId}`
+      // update the query params
+
     },
-
-
     getProjectYear(yearId) {
       this.py_loading = true;
       let endpoint = `/api/project-planning/project-years/${yearId}/`;
@@ -310,6 +322,13 @@ var app = new Vue({
             })
       }
     },
+    cloneActivity(activity) {
+      let endpoint = `/api/project-planning/activities/${activity.id}/?clone=true`;
+      apiService(endpoint, "POST")
+          .then(response => {
+            if (!response.detail) this.getActivities(activity.project_year_id);
+          })
+    },
 
     openActivityModal(activity) {
       if (!activity) {
@@ -464,7 +483,8 @@ var app = new Vue({
       window.location.href = `/project-planning/project-years/${projectYearId}/clone/`
     },
     goStatusReportDetail(statusReportId) {
-      window.location.href = `/project-planning/status-reports/${statusReportId}/view/`
+      url = `/project-planning/status-reports/${statusReportId}/view/`;
+      win = window.open(url, '_blank');
     },
     isABase(name) {
       if (name && name.length) {
@@ -481,46 +501,41 @@ var app = new Vue({
         return name.toLowerCase().search("c-base") > -1
       }
     },
-  },
-
-  filters: {
-    floatformat: function (value, precision = 2) {
-      if (value == null) return '';
-      value = Number(value).toFixed(precision).toLocaleString("en");
-      return value
+    getActivityMetadata() {
+      let endpoint = `/api/project-planning/meta/models/activity/`;
+      apiService(endpoint).then(data => {
+        this.activityLabels = data.labels;
+        this.activityTypeChoices = data.type_choices;
+        this.likelihoodChoices = data.likelihood_choices;
+        this.impactChoices = data.impact_choices;
+        this.riskRatingChoices = data.risk_rating_choices;
+      });
     },
-    currencyFormat: function (value, precision = 2) {
-      if (value == null) return '';
-      value = accounting.formatNumber(value, precision);
-      return value
+    getOMCostMetadata() {
+      let endpoint = `/api/project-planning/meta/models/om-cost/`;
+      apiService(endpoint).then(data => {
+        this.omCostLabels = data.labels;
+        this.omCategoryChoices = data.om_category_choices;
+      });
     },
-    zero2NullMark: function (value) {
-      if (!value || value === "0.00" || value == 0) return '---';
-      return value
-    },
-    nz: function (value, arg = "---") {
-      if (value == null || value === "None") return arg;
-      return value
-    },
-    yesNo: function (value) {
-      if (value == null || value == false || value == 0) return 'No';
-      return "Yes"
-    },
-    percentage: function (value, decimals) {
-      // https://gist.github.com/belsrc/672b75d1f89a9a5c192c
-      if (!value) {
-        value = 0;
+    markActivity(activity, action) {
+      if (action === "complete" || action === "incomplete") {
+        if (action === "complete") msg = markActivityAsComplete;
+        else msg = markActivityAsIncomplete;
+        let userInput = prompt(msg);
+        if (userInput !== null) {
+          this.project_loading = true;
+          let endpoint = `/api/project-planning/activities/${activity.id}/?action=${action}`;
+          apiService(endpoint, "POST", userInput)
+              .then(response => {
+                this.project_loading = false;
+                this.getProjectYear(activity.project_year_id)
+              })
+        }
       }
 
-      if (!decimals) {
-        decimals = 0;
-      }
+    },
 
-      value = value * 100;
-      value = Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
-      value = value + '%';
-      return value;
-    }
   },
   computed: {
     financial_totals() {
@@ -560,6 +575,8 @@ var app = new Vue({
 
   },
   created() {
+    this.getActivityMetadata();
+    this.getOMCostMetadata();
     this.getProjectFinancials(projectId)
     this.getCurrentUser(projectId)
     this.getProject(projectId)

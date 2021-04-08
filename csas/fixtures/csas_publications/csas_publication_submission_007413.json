@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7413,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review on the assessment of the northern Gulf of St. Lawrence (3Pn, 4RS) cod stock; February 19, 2015",
+            "title_fr": "Compte rendu de l’examen par des pairs régional sur l’évaluation de la morue du nord du golfe Saint-Laurent (3Pn, 4RS); 19 février 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "024",
+            "pages": 10,
+            "pdf_size": 90,
+            "description": ""
+        }
+    }
+]

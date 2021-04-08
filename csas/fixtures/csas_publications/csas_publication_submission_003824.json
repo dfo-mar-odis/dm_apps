@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3824,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status of Cultus Lake Sockeye Salmon (Oncorhynchus nerka)",
+            "title_fr": "État du stock de saumon rouge (Oncorhynchus nerka) du lac Cultus",
+            "pub_year": 2002,
+            "lead_author_2": "Schubert, N.D., Beacham, T.D., Cass, A.J., Cone, T.E., Fanos, B.P., Foy, M., Gable, J.H., Grout, J.A., Hume, J.M.B., Johnson, M., Morton, K.F., Shortreed, K.S., Staley M.J., Withler, R.E.",
+            "pub_num": "064",
+            "pages": 119,
+            "pdf_size": 1996,
+            "description": ""
+        }
+    }
+]

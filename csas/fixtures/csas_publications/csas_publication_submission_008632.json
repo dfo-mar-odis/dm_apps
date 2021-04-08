@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8632,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation de 23 gisements de mye commune (Mya arenaria) de la Haute-Côte-Nord de 2016 à 2019",
+            "lead_author_2": "Sylvie Brulotte",
+            "description": ""
+        }
+    }
+]

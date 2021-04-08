@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7157,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Anguniaqvia Niqiqyuam Area of Interest: monitoring indicators, protocols and strategies",
+            "title_fr": "Zone d’intérêt Anguniaqvia Niqiqyuam : indicateurs, protocoles et stratégies de surveillance",
+            "pub_year": 2015,
+            "lead_author_2": "DFO (contact K. Hedges)",
+            "pub_num": "025",
+            "pages": 15,
+            "pdf_size": 326,
+            "description": ""
+        }
+    }
+]

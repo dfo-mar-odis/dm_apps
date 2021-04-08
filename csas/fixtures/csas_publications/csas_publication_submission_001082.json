@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1082,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Prospects for the development of color phases for lobster population studies",
+            "pub_year": 1980,
+            "lead_author_2": "D.E. Aiken; S.L. Waddy",
+            "pub_num": "066",
+            "pages": 9,
+            "pdf_size": 674,
+            "description": ""
+        }
+    }
+]

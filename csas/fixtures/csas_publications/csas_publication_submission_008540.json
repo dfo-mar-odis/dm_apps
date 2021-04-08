@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8540,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Risk assessment of permitted human activities in Rockfish Conservation Areas in British Columbia",
+            "title_fr": "Évaluation des risques liés aux activités humaines autorisées dans les aires de conservation du sébaste en Colombie­Britannique",
+            "pub_year": 2020,
+            "lead_author_2": "Thornborough, K.J., Lancaster, D., Dunham, J.S., Yu, F., Ladell, N., Deleys, N., Yamanaka, L.",
+            "pub_num": "020",
+            "pages": 289,
+            "pdf_size": 5390,
+            "description": ""
+        }
+    }
+]

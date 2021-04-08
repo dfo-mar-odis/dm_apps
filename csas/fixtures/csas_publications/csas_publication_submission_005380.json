@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5380,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4, 5],
+            "title_en": "Estimating pup production of Northwest Atlantic Harp Seals, (Pagophilus groenlandicus): Results of the 2008 surveys",
+            "title_fr": "Estimation de la production de petits chez les phoques du Groenland de l'Atlantique Nord Ouest, (Pagophilus groenlandicus) : Résultats des relevés de 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Stenson, G. B., M.O. Hammill and J. W. Lawson.",
+            "pub_num": "103",
+            "pages": 43,
+            "pdf_size": 1110,
+            "description": ""
+        }
+    }
+]

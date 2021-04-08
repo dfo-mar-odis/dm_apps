@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4871,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process for 2J3KL Cod, 2007; March 27-30, 2007 and April 2-5 and 10th, 2007",
+            "title_fr": "Compte rendu de la réunion du Processus de consultation scientifique régional de Terre-Neuve et du Labrador concernant la morue de 2J3KL en 2007; du 27 au 30 mars 2007 et du 2 au 5 avril 2007",
+            "pub_year": 2007,
+            "lead_author_2": "D. Power (Meeting Chairperson); D. Richards (CSA Coordinator); B. Atkinson (Contractual Agreement)",
+            "pub_num": "044",
+            "pages": 49,
+            "pdf_size": 180,
+            "description": ""
+        }
+    }
+]

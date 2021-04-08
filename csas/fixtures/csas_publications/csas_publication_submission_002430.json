@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2430,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Skates in NAFO Divisions 3LNO and Subdivision 3Ps: A preliminary examination",
+            "pub_year": 1995,
+            "lead_author_2": "D.B. Atkinson",
+            "pub_num": "026",
+            "pages": 10,
+            "pdf_size": 429,
+            "description": ""
+        }
+    }
+]

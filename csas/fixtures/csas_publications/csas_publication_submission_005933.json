@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5933,
+        "fields": {
+            "series": 5,
+            "lead_region": [2, 1],
+            "title_en": "Recovery Potential Assessment for the Laurentian South Designatable Unit of Atlantic Cod (Gadus morhua)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la morue franche (Gadus morhua) de l'unité désignable du Sud laurentien",
+            "pub_year": 2011,
+            "lead_author_2": "Doug Swain",
+            "pub_num": "028",
+            "pages": 39,
+            "pdf_size": 357,
+            "description": ""
+        }
+    }
+]

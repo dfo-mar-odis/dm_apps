@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4371,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Production Areas in the Bay of Fundy: Stock Status for 2005 and Forecast for 2006",
+            "title_fr": "Zones de production de pétoncle dans la baie de Fundy : état des stocks en 2005 et prévisions pour 2006",
+            "pub_year": 2005,
+            "lead_author_2": "Smith, S.J., M.J. Lundy, D. Roddick, S. Rowe.",
+            "pub_num": "079",
+            "pages": 72,
+            "pdf_size": 1683,
+            "description": ""
+        }
+    }
+]

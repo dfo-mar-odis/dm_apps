@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 670,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical and Biological Monitoring at Prince 5 during 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Page, F.H., Ringuette, M., Spry, J., Clement, P.",
+            "pub_num": "098",
+            "pages": 27,
+            "pdf_size": 1368,
+            "description": ""
+        }
+    }
+]

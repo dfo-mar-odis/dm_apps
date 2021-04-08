@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1679,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic salmon, Salmo salar, in the Margaree River, Nova Scotia, 1986",
+            "pub_year": 1986,
+            "lead_author_2": "P.R. Claytor; C. Léger",
+            "pub_num": "093",
+            "pages": 21,
+            "pdf_size": 843,
+            "description": ""
+        }
+    }
+]

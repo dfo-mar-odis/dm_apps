@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 784,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Persistent Organic Pollutants (POPs) in British Columbia Harbour Seals and Killer Whales",
+            "pub_year": 2000,
+            "lead_author_2": "Addison, R.F., Ross, P.S.",
+            "pub_num": "171",
+            "pages": 26,
+            "pdf_size": 303,
+            "description": ""
+        }
+    }
+]

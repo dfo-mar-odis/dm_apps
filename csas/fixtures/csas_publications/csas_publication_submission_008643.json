@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8643,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of the southern Gulf of St. Lawrence (NAFO Division 4T-4Vn) spring and fall spawner components of Atlantic Herring (Clupea harengus) with advice for the 2020 and 2021 fisheries",
+            "title_fr": "Évaluation du Hareng de l’Atlantique (Clupea harengus), composantes des reproducteurs de printemps et d’automne, du sud du golfe du Saint-Laurent (division 4T-4Vn de l’OPANO) et avis pour les pêches de 2020 et de 2021",
+            "pub_year": 2020,
+            "lead_author_2": "Mark Laflamme",
+            "pub_num": "029",
+            "pages": 40,
+            "pdf_size": 3132,
+            "description": ""
+        }
+    }
+]

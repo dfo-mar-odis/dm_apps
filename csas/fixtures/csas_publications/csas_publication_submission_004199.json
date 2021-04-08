@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4199,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 2],
+            "title_en": "Eutrophication Impacts of Marine Finfish Aquaculture",
+            "title_fr": "Répercussions de l'eutrophisation due à l'élevage de poissons marins",
+            "pub_year": 2005,
+            "lead_author_2": "Strain, P.M.",
+            "pub_num": "034",
+            "pages": 41,
+            "pdf_size": 580,
+            "description": ""
+        }
+    }
+]

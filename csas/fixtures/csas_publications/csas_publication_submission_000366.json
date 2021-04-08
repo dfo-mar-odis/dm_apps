@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 366,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Research on hooded seals in the western North Atlantic in 1977",
+            "pub_year": 1977,
+            "lead_author_2": "D.E. Sergeant",
+            "pub_num": "023",
+            "pages": 13,
+            "pdf_size": 506,
+            "description": ""
+        }
+    }
+]

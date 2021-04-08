@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5834,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review meeting to develop advice on fish swimming performance curves; February 9, 2011",
+            "title_fr": "Compte rendu de la revue par les pairs régionale pour développer avis scientifique sur les courbes de performance natatoire des poissons; le 9 février 2011",
+            "pub_year": 2016,
+            "lead_author_2": "Cleator, Holly and Martin, Kathleen",
+            "pub_num": "001",
+            "pages": 24,
+            "pdf_size": 203,
+            "description": ""
+        }
+    }
+]

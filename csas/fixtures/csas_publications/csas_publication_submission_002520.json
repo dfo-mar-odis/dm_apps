@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2520,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Correspondence analysis of length frequencies of cod samples from 4T, 4Vn, and 4Vs",
+            "pub_year": 1995,
+            "lead_author_2": "G. A. Nielsen; A. F. Sinclair",
+            "pub_num": "114",
+            "pages": 20,
+            "pdf_size": 459,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6128,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the assessment of the impact of northern shrimp trawling on habitat and benthic communities in the Estuary and northern Gulf of St. Lawrence; May 17, 2012",
+            "title_fr": "Compte rendu de l'examen régional par des pairs portant sur l'évaluation de l'impact du chalutage à la crevette nordique sur l'habitat et les communautés benthiques dans l'estuaire et le nord du golfe du Saint-Laurent ; 17 mai 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Sonia Michaud",
+            "pub_num": "032",
+            "pdf_size": 108,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6311,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Evaluating Habitat Compensation in Insular Newfoundland Rivers: What have we Learned?",
+            "title_fr": "Évaluation des activités de compensation de l'habitat dans les rivières de l'île de Terre-Neuve : qu'avons-nous appris?",
+            "pub_year": 2016,
+            "lead_author_2": "Keith D. Clarke",
+            "pub_num": "069",
+            "pages": 24,
+            "pdf_size": 658,
+            "description": ""
+        }
+    }
+]

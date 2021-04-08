@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 599,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Sablefish Stock Assessment for 1999 and Recommended Yield Options for 2000 and 2001",
+            "pub_year": 1999,
+            "lead_author_2": "Haist, V., Hilborn, R., Saunders, M.",
+            "pub_num": "195",
+            "pages": 78,
+            "pdf_size": 580,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 840,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "2001 Assessment of Stock Status for Coho Salmon From the Interior Fraser River",
+            "title_fr": "Évaluation pour 2001 de l'état du stock de saumon coho du cours supérieur du Fraser.",
+            "pub_year": 2001,
+            "lead_author_2": "Irvine, J.R., Parken, C.K, Chen, D.G., Candy, J., Ming, T., Supernault, J., Shaw, W., and Bailey, R.E.",
+            "pub_num": "083",
+            "pages": 68,
+            "pdf_size": 735,
+            "description": ""
+        }
+    }
+]

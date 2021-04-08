@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6001,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scotian Shelf Shrimp 2010-2011",
+            "title_fr": "Crevette Néo-écossais 2010-2011",
+            "pub_year": 2011,
+            "lead_author_2": "David Hardie",
+            "pub_num": "102",
+            "pages": 82,
+            "pdf_size": 4363,
+            "description": ""
+        }
+    }
+]

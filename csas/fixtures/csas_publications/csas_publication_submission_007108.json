@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7108,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of Northern Wolffish, Spotted Wolffish, and Atlantic Wolffish in the Atlantic and Arctic Oceans",
+            "title_fr": "Évaluation du loup à tête large, du loup tacheté et du loup atlantique des océans Atlantique et Arctique",
+            "pub_year": 2014,
+            "lead_author_2": "Collins, R.K., Simpson, M.R., Miri, C.M., Mello, L.G.S., Chabot, D., Hedges, K,.Benoît, H., McIntyre, T.M.",
+            "pub_num": "034",
+            "pages": 90,
+            "pdf_size": 11305,
+            "description": ""
+        }
+    }
+]

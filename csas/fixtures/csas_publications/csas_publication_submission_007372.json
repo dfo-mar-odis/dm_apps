@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7372,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Dolly Varden from the Rat River, Northwest Territories 2009–2014",
+            "title_fr": "Évaluation du Dolly Varden de la Rivière Rat, dans les Territoires du Nord-Ouest 2009–2014",
+            "pub_year": 2016,
+            "lead_author_2": "Colin Gallagher",
+            "pub_num": "058",
+            "pages": 18,
+            "pdf_size": 588,
+            "description": ""
+        }
+    }
+]

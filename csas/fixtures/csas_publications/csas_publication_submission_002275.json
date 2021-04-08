@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2275,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Oceanographic conditions during the annual fall groundfish survey in NAFO divisions 2J3KL",
+            "pub_year": 1993,
+            "lead_author_2": "E. Colbourne",
+            "pub_num": "002",
+            "pages": 47,
+            "pdf_size": 2131,
+            "description": ""
+        }
+    }
+]

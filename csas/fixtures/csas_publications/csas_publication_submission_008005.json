@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8005,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of Atlantic Cod (Gadus morhua) in NAFO Divisions 4X5Yb",
+            "title_fr": "Mise à jour sur l'état du stock de morues franches (Gadus morhua) dans les divisions 4X et 5Yb de l'OPANO",
+            "pub_year": 2018,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "020",
+            "pages": 9,
+            "pdf_size": 656,
+            "description": ""
+        }
+    }
+]

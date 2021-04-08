@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4225,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Size at sexual maturity and catch characteristics of the yellowtail and winter flounder fishery in the Magdalen Islands",
+            "title_fr": "Taille à la maturité sexuelle et caractéristiques des captures de la pêche à la limande à queue jaune et la plie rouge aux Îles-de-la-Madeleine",
+            "pub_year": 2009,
+            "lead_author_2": "Morin, R.",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

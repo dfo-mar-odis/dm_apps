@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8144,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Threat Assessment for Atlantic Mud-piddock (Barnea truncata), Canadian Population",
+            "title_fr": "Évaluation des menaces pesant sur la pholade tronquée de l’Atlantique (Barnea truncata), population canadienne",
+            "pub_year": 2019,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "033",
+            "pages": 28,
+            "pdf_size": 641,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7789,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Update to the assessment framework for Goose Barnacles (CaɁinwa; Pollicipes polymerus) incorporating Local Ecological Knowledge and advancements in technology in Clayoquot Sound off the West Coast of Canada",
+            "title_fr": "Mise à jour du cadre d'évaluation du pouce-pied (CaɁinwa; Pollicipes polymerus) afin d'intégrer les connaissances écologiques locales et les avancées technologiques dans la baie Clayoquot au large de la côte Ouest du Canada",
+            "pub_year": 2016,
+            "lead_author_2": "Gagne, A., Picco, C., Rutherford, D., and Rogers, J.",
+            "pub_num": "096",
+            "pages": 41,
+            "pdf_size": 1725,
+            "description": ""
+        }
+    }
+]

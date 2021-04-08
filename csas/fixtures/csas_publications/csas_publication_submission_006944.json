@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6944,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Density-Dependent and Density-Independent Factors Influencing Reproductive Rates in Northwest Atlantic Harp Seals, Pagophilus groenlandicus",
+            "title_fr": "Facteurs dépendants et indépendants de la densité qui ont une incidence sur les taux de reproduction du phoque du Groenland (Pagophilus groenlandicus) de l'Atlantique Nord-Ouest",
+            "pub_year": 2014,
+            "lead_author_2": "G.B. Stenson, D. Wakeham, A. Buren and M. Koen-Alonso",
+            "pub_num": "058",
+            "pages": 26,
+            "pdf_size": 685,
+            "description": ""
+        }
+    }
+]

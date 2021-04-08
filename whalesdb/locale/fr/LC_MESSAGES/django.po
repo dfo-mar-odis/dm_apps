@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: test\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 14:58-0400\n"
+"POT-Creation-Date: 2021-03-15 21:31-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,14 +17,14 @@ msgstr "nom"
 msgid "description_en"
 msgstr "description_fr"
 
-#: .\whalesdb\mixins.py:12 .\whalesdb\models.py:281
+#: .\whalesdb\mixins.py:12 .\whalesdb\models.py:282
 #: .\whalesdb\templates\whalesdb\index.html:95
 #: .\whalesdb\test\test_mixins.py:34
 msgid "Cruise"
 msgstr ""
 
 #: .\whalesdb\mixins.py:19 .\whalesdb\models.py:14 .\whalesdb\models.py:66
-#: .\whalesdb\models.py:272 .\whalesdb\test\test_mixins.py:45
+#: .\whalesdb\models.py:273 .\whalesdb\test\test_mixins.py:45
 #, fuzzy
 msgid "Deployment"
 msgstr "employé MPO"
@@ -71,11 +71,11 @@ msgid "Equipment Owner"
 msgstr "Équipement de laboratoire"
 
 #: .\whalesdb\mixins.py:82 .\whalesdb\models.py:47 .\whalesdb\models.py:64
-#: .\whalesdb\models.py:120 .\whalesdb\models.py:178 .\whalesdb\models.py:207
+#: .\whalesdb\models.py:120 .\whalesdb\models.py:179 .\whalesdb\models.py:208
 #: .\whalesdb\templates\whalesdb\_details_dep.html:55
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:45
 #: .\whalesdb\templates\whalesdb\index.html:42
 #: .\whalesdb\templates\whalesdb\index.html:45
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:45
 #: .\whalesdb\test\test_mixins.py:133
 #, fuzzy
 msgid "Equipment"
@@ -109,7 +109,7 @@ msgstr "Projet"
 msgid "Channel Information"
 msgstr "Information de voyageur"
 
-#: .\whalesdb\mixins.py:124 .\whalesdb\models.py:327 .\whalesdb\models.py:358
+#: .\whalesdb\mixins.py:124 .\whalesdb\models.py:328 .\whalesdb\models.py:359
 #: .\whalesdb\templates\whalesdb\_details_dep.html:56
 #: .\whalesdb\test\test_mixins.py:210
 msgid "Dataset"
@@ -127,7 +127,7 @@ msgstr "Liste des enregistrements"
 msgid "Recording Event Type"
 msgstr "type d'enregistrement"
 
-#: .\whalesdb\mixins.py:145 .\whalesdb\models.py:340 .\whalesdb\models.py:378
+#: .\whalesdb\mixins.py:145 .\whalesdb\models.py:341 .\whalesdb\models.py:379
 #: .\whalesdb\test\test_mixins.py:243
 msgid "Recording Schedule"
 msgstr ""
@@ -139,7 +139,6 @@ msgid "Recording Stage"
 msgstr "Liste des enregistrements"
 
 #: .\whalesdb\mixins.py:159 .\whalesdb\templates\whalesdb\index.html:96
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:82
 #: .\whalesdb\test\test_mixins.py:265
 #, fuzzy
 msgid "Time Zone"
@@ -156,7 +155,7 @@ msgstr "Section"
 msgid "Station"
 msgstr "Section"
 
-#: .\whalesdb\mixins.py:180 .\whalesdb\models.py:365
+#: .\whalesdb\mixins.py:180 .\whalesdb\models.py:366
 #: .\whalesdb\test\test_mixins.py:298
 #, fuzzy
 msgid "Team Member"
@@ -179,9 +178,9 @@ msgstr "Organisation"
 msgid "Hydrophone"
 msgstr ""
 
-#: .\whalesdb\models.py:50 .\whalesdb\models.py:154 .\whalesdb\models.py:209
-#: .\whalesdb\models.py:300 .\whalesdb\models.py:310 .\whalesdb\models.py:351
-#: .\whalesdb\models.py:366
+#: .\whalesdb\models.py:50 .\whalesdb\models.py:154 .\whalesdb\models.py:210
+#: .\whalesdb\models.py:301 .\whalesdb\models.py:311 .\whalesdb\models.py:352
+#: .\whalesdb\models.py:367
 msgid "Notes"
 msgstr "Remarques"
 
@@ -211,7 +210,7 @@ msgstr ""
 msgid "Depth Rating"
 msgstr "Paramètres"
 
-#: .\whalesdb\models.py:78 .\whalesdb\models.py:208 .\whalesdb\models.py:371
+#: .\whalesdb\models.py:78 .\whalesdb\models.py:209 .\whalesdb\models.py:372
 msgid "Description"
 msgstr "Description"
 
@@ -220,7 +219,7 @@ msgstr "Description"
 msgid "Recorder"
 msgstr "enregistrement"
 
-#: .\whalesdb\models.py:87 .\whalesdb\models.py:386
+#: .\whalesdb\models.py:87 .\whalesdb\models.py:387
 #, fuzzy
 msgid "Channel Number"
 msgstr "Numéro"
@@ -311,245 +310,250 @@ msgstr ""
 msgid "Has Internal Hydrophone"
 msgstr ""
 
-#: .\whalesdb\models.py:179 .\whalesdb\models.py:275 .\whalesdb\models.py:362
+#: .\whalesdb\models.py:175
+#, fuzzy
+msgid "Equipment Type (fr)"
+msgstr "Achat d'équipement"
+
+#: .\whalesdb\models.py:180 .\whalesdb\models.py:276 .\whalesdb\models.py:363
 #: .\whalesdb\templates\whalesdb\_details_rec.html:69
 msgid "Date"
 msgstr "Date"
 
-#: .\whalesdb\models.py:180
+#: .\whalesdb\models.py:181
 msgid "Issue"
 msgstr ""
 
-#: .\whalesdb\models.py:181
+#: .\whalesdb\models.py:182
 msgid "Repair"
 msgstr ""
 
-#: .\whalesdb\models.py:182
+#: .\whalesdb\models.py:183
 #, fuzzy
 msgid "Repaired By"
 msgstr "Créé par"
 
-#: .\whalesdb\models.py:183
+#: .\whalesdb\models.py:184
 #, fuzzy
 msgid "Deployment(s) Affected"
 msgstr "employé MPO"
 
-#: .\whalesdb\models.py:184
+#: .\whalesdb\models.py:185
 msgid "Has a Recording been Affected"
 msgstr ""
 
-#: .\whalesdb\models.py:188
+#: .\whalesdb\models.py:189
 #, fuzzy
 msgid "Parameter Code"
 msgstr "Nom de famille"
 
-#: .\whalesdb\models.py:197 .\whalesdb\models.py:259 .\whalesdb\models.py:304
-#: .\whalesdb\models.py:329 .\whalesdb\models.py:370 .\whalesdb\models.py:395
+#: .\whalesdb\models.py:198 .\whalesdb\models.py:260 .\whalesdb\models.py:305
+#: .\whalesdb\models.py:330 .\whalesdb\models.py:371 .\whalesdb\models.py:396
 #: .\whalesdb\templates\whalesdb\_details_rec.html:39
 msgid "Name"
 msgstr "Nom"
 
-#: .\whalesdb\models.py:199
+#: .\whalesdb\models.py:200
 msgid "Max Depth"
 msgstr ""
 
-#: .\whalesdb\models.py:200
+#: .\whalesdb\models.py:201
 msgid "Setup Image Link"
 msgstr ""
 
-#: .\whalesdb\models.py:203
+#: .\whalesdb\models.py:204
 msgid "Setup Image"
 msgstr ""
 
-#: .\whalesdb\models.py:205
+#: .\whalesdb\models.py:206
 msgid "Setup PDF"
 msgstr ""
 
-#: .\whalesdb\models.py:260
+#: .\whalesdb\models.py:261
 msgid "URL"
 msgstr ""
 
-#: .\whalesdb\models.py:264
+#: .\whalesdb\models.py:265
 msgid "Type"
 msgstr "Type"
 
-#: .\whalesdb\models.py:274 .\whalesdb\models.py:360
+#: .\whalesdb\models.py:275 .\whalesdb\models.py:361
 #, fuzzy
 msgid "Event Type"
 msgstr "Type d'entrée"
 
-#: .\whalesdb\models.py:276 .\whalesdb\models.py:363
+#: .\whalesdb\models.py:277 .\whalesdb\models.py:364
 #: .\whalesdb\templates\whalesdb\_details_rec.html:70
 #, fuzzy
 msgid "Time"
 msgstr "Durée en semaines"
 
-#: .\whalesdb\models.py:277 .\whalesdb\models.py:361
+#: .\whalesdb\models.py:278 .\whalesdb\models.py:362
 #, fuzzy
 msgid "Timezone"
 msgstr "Durée en semaines"
 
-#: .\whalesdb\models.py:284
+#: .\whalesdb\models.py:285
 msgid "Ship Latitude"
 msgstr ""
 
-#: .\whalesdb\models.py:286
+#: .\whalesdb\models.py:287
 msgid "Ship Longitude"
 msgstr ""
 
-#: .\whalesdb\models.py:288
+#: .\whalesdb\models.py:289
 msgid "Ship Depth"
 msgstr ""
 
-#: .\whalesdb\models.py:290
+#: .\whalesdb\models.py:291
 msgid "MCAL Latitude"
 msgstr ""
 
-#: .\whalesdb\models.py:292
+#: .\whalesdb\models.py:293
 msgid "MCAL Longitude"
 msgstr ""
 
-#: .\whalesdb\models.py:294
+#: .\whalesdb\models.py:295
 msgid "MCAL Depth"
 msgstr ""
 
-#: .\whalesdb\models.py:295
+#: .\whalesdb\models.py:296
 msgid "Team"
 msgstr ""
 
-#: .\whalesdb\models.py:297
+#: .\whalesdb\models.py:298
 #, fuzzy
 msgid "Instrument Condition"
 msgstr "Détails de l'entrée"
 
-#: .\whalesdb\models.py:298
+#: .\whalesdb\models.py:299
 #, fuzzy
 msgid "Weather Conditions"
 msgstr "Organisation partenaire"
 
-#: .\whalesdb\models.py:299
+#: .\whalesdb\models.py:300
 #, fuzzy
 msgid "Log Location"
 msgstr "Section"
 
-#: .\whalesdb\models.py:305
+#: .\whalesdb\models.py:306
 msgid "Code"
 msgstr ""
 
-#: .\whalesdb\models.py:306
+#: .\whalesdb\models.py:307
 msgid "Revision"
 msgstr "Révision"
 
-#: .\whalesdb\models.py:307
+#: .\whalesdb\models.py:308
 msgid "Latitude"
 msgstr ""
 
-#: .\whalesdb\models.py:308
+#: .\whalesdb\models.py:309
 msgid "Longitude"
 msgstr ""
 
-#: .\whalesdb\models.py:309
+#: .\whalesdb\models.py:310
 msgid "Depth"
 msgstr ""
 
-#: .\whalesdb\models.py:330
+#: .\whalesdb\models.py:331
 msgid "Size (GB)"
 msgstr ""
 
-#: .\whalesdb\models.py:331 .\whalesdb\templates\whalesdb\_details_rec.html:39
+#: .\whalesdb\models.py:332 .\whalesdb\templates\whalesdb\_details_rec.html:39
 msgid "Gain"
 msgstr ""
 
-#: .\whalesdb\models.py:332
+#: .\whalesdb\models.py:333
 msgid "Voltage"
 msgstr ""
 
-#: .\whalesdb\models.py:338
+#: .\whalesdb\models.py:339
 #, fuzzy
 msgid "Equipment Deployment"
 msgstr "Achat d'équipement"
 
-#: .\whalesdb\models.py:342
+#: .\whalesdb\models.py:343
 msgid "Dataset Timezone"
 msgstr ""
 
-#: .\whalesdb\models.py:344
+#: .\whalesdb\models.py:345
 msgid "In Water Timezone"
 msgstr ""
 
-#: .\whalesdb\models.py:345
+#: .\whalesdb\models.py:346
 #, fuzzy
 msgid "In Water Start Date"
 msgstr "Date de début"
 
-#: .\whalesdb\models.py:346
+#: .\whalesdb\models.py:347
 msgid "In Water Start Time"
 msgstr ""
 
-#: .\whalesdb\models.py:347
+#: .\whalesdb\models.py:348
 #, fuzzy
 msgid "In Water End Date"
 msgstr "Date de fin"
 
-#: .\whalesdb\models.py:348
+#: .\whalesdb\models.py:349
 msgid "In Water End Time"
 msgstr ""
 
-#: .\whalesdb\models.py:349
+#: .\whalesdb\models.py:350
 msgid "HD Backup 1"
 msgstr ""
 
-#: .\whalesdb\models.py:350
+#: .\whalesdb\models.py:351
 msgid "HD Backup 2"
 msgstr ""
 
-#: .\whalesdb\models.py:379
+#: .\whalesdb\models.py:380
 msgid "Period"
 msgstr ""
 
-#: .\whalesdb\models.py:387
+#: .\whalesdb\models.py:388
 msgid "Schedule"
 msgstr ""
 
-#: .\whalesdb\models.py:388
+#: .\whalesdb\models.py:389
 msgid "(A)ctive or (S)leep"
 msgstr ""
 
-#: .\whalesdb\models.py:389 .\whalesdb\templates\whalesdb\details_rsc.html:30
+#: .\whalesdb\models.py:390 .\whalesdb\templates\whalesdb\details_rsc.html:30
 #, fuzzy
 msgid "Duration"
 msgstr "Section"
 
-#: .\whalesdb\models.py:390
+#: .\whalesdb\models.py:391
 msgid "Rate (Hz)"
 msgstr ""
 
-#: .\whalesdb\models.py:394 .\whalesdb\models.py:403
+#: .\whalesdb\models.py:395 .\whalesdb\models.py:404
 #, fuzzy
 msgid "Abbreviation"
 msgstr "Organisation"
 
-#: .\whalesdb\models.py:396
+#: .\whalesdb\models.py:397
 msgid "Offset"
 msgstr ""
 
-#: .\whalesdb\models.py:404
+#: .\whalesdb\models.py:405
 msgid "Last Name"
 msgstr "Nom de famille"
 
-#: .\whalesdb\models.py:405
+#: .\whalesdb\models.py:406
 msgid "First Name"
 msgstr "Prénom"
 
-#: .\whalesdb\models.py:418
+#: .\whalesdb\models.py:419
 msgid "English text"
 msgstr ""
 
-#: .\whalesdb\models.py:419
+#: .\whalesdb\models.py:420
 msgid "French text"
 msgstr ""
 
-#: .\whalesdb\models.py:423 .\whalesdb\models.py:424
+#: .\whalesdb\models.py:424 .\whalesdb\models.py:425
 msgid "eng_text"
 msgstr ""
 
@@ -664,6 +668,110 @@ msgstr "Remarques"
 msgid "Add Recording Event"
 msgstr "Liste des enregistrements"
 
+#: .\whalesdb\templates\whalesdb\base\_app_title.html:2
+msgid "Whales"
+msgstr ""
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:9
+#, fuzzy
+msgid "Settings"
+msgstr "Section"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:14
+msgid "Help Text"
+msgstr ""
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:24
+#: .\whalesdb\templates\whalesdb\index.html:25
+#: .\whalesdb\templates\whalesdb\index.html:28
+#, fuzzy
+msgid "Deployments"
+msgstr "employé MPO"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:28
+#, fuzzy
+msgid "Deployment List"
+msgstr "employé MPO"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:32
+#: .\whalesdb\templates\whalesdb\index.html:33
+#, fuzzy
+msgid "Stations"
+msgstr "Section"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:35
+#: .\whalesdb\templates\whalesdb\index.html:34
+msgid "Projects"
+msgstr "Projets"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:38
+#: .\whalesdb\templates\whalesdb\index.html:35
+#, fuzzy
+msgid "Mooring Setups"
+msgstr "Détails de financement:"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:49
+#, fuzzy
+msgid "Equipment List"
+msgstr "Équipement de laboratoire"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:53
+msgid "Make and Model List"
+msgstr ""
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:60
+#: .\whalesdb\templates\whalesdb\index.html:67
+msgid "Datasets"
+msgstr ""
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:64
+#, fuzzy
+msgid "Dataset List"
+msgstr "Contacts du MPO"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:67
+#, fuzzy
+msgid "Recording Schedule List"
+msgstr "Détails de financement:"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:71
+#, fuzzy
+msgid "Team Member List"
+msgstr "Supprimer"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:78
+msgid "Other"
+msgstr "Autre"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:82
+#, fuzzy
+msgid "Cruise List"
+msgstr "Utilisateur"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:86
+#, fuzzy
+msgid "Managed Equipment Type Codes"
+msgstr "Achat d'équipement"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:89
+#, fuzzy
+msgid "Managed Recorder Type Codes"
+msgstr "type d'enregistrement"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:92
+#, fuzzy
+msgid "Managed Parameter Codes"
+msgstr "Nom de famille"
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:95
+msgid "Manged Time Zone codes"
+msgstr ""
+
+#: .\whalesdb\templates\whalesdb\base\whales_nav_menu.html:98
+#, fuzzy
+msgid "Manged Station Event Codes"
+msgstr "Section"
+
 #: .\whalesdb\templates\whalesdb\details_eqp.html:14
 #: .\whalesdb\templates\whalesdb\whales_details.html:14
 #, fuzzy
@@ -691,34 +799,10 @@ msgstr "Accueil GD"
 msgid "Whale Equipment Metadata Repository"
 msgstr ""
 
-#: .\whalesdb\templates\whalesdb\index.html:25
-#: .\whalesdb\templates\whalesdb\index.html:28
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:24
-#, fuzzy
-msgid "Deployments"
-msgstr "employé MPO"
-
 #: .\whalesdb\templates\whalesdb\index.html:30
 #, fuzzy
 msgid "New Deployment"
 msgstr "employé MPO"
-
-#: .\whalesdb\templates\whalesdb\index.html:33
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:32
-#, fuzzy
-msgid "Stations"
-msgstr "Section"
-
-#: .\whalesdb\templates\whalesdb\index.html:34
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:35
-msgid "Projects"
-msgstr "Projets"
-
-#: .\whalesdb\templates\whalesdb\index.html:35
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:38
-#, fuzzy
-msgid "Mooring Setups"
-msgstr "Détails de financement:"
 
 #: .\whalesdb\templates\whalesdb\index.html:47
 #, fuzzy
@@ -729,11 +813,6 @@ msgstr "Équipement de laboratoire"
 #, fuzzy
 msgid "Recording Datasets"
 msgstr "Liste des enregistrements"
-
-#: .\whalesdb\templates\whalesdb\index.html:67
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:60
-msgid "Datasets"
-msgstr ""
 
 #: .\whalesdb\templates\whalesdb\index.html:69
 #, fuzzy
@@ -762,84 +841,47 @@ msgstr "Supprimer"
 msgid "Other Lookups"
 msgstr ""
 
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:9
+#: .\whalesdb\templates\whalesdb\managed_formset.html:19
 #, fuzzy
-msgid "Settings"
-msgstr "Section"
-
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:14
-msgid "Help Text"
-msgstr ""
-
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:28
-#, fuzzy
-msgid "Deployment List"
-msgstr "employé MPO"
-
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:49
-#, fuzzy
-msgid "Equipment List"
-msgstr "Équipement de laboratoire"
-
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:53
-msgid "Make and Model List"
-msgstr ""
-
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:64
-#, fuzzy
-msgid "Dataset List"
-msgstr "Contacts du MPO"
-
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:67
-#, fuzzy
-msgid "Recording Schedule List"
-msgstr "Détails de financement:"
-
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:71
-#, fuzzy
-msgid "Team Member List"
+#| msgid "Delete"
+msgid "delete"
 msgstr "Supprimer"
 
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:78
-msgid "Other"
-msgstr "Autre"
+#: .\whalesdb\utils.py:18
+msgid "Sorry, you need to be a whales admin in order to access this page."
+msgstr ""
 
-#: .\whalesdb\templates\whalesdb\whales_nav_menu.html:86
-#, fuzzy
-msgid "Cruise List"
-msgstr "Utilisateur"
-
-#: .\whalesdb\views.py:25
+#: .\whalesdb\views.py:24
 #, fuzzy
 msgid "The value curve has been successfully deleted."
 msgstr "Le coût a été supprimé avec succès."
 
-#: .\whalesdb\views.py:35
+#: .\whalesdb\views.py:34
 #, fuzzy
 msgid "The attachment has been successfully removed."
 msgstr "L'accord a été supprimé avec succès."
 
-#: .\whalesdb\views.py:45
+#: .\whalesdb\views.py:44 .\whalesdb\views.py:786 .\whalesdb\views.py:789
 #, fuzzy
 msgid "The recording stage has been successfully deleted."
 msgstr "Le coût a été supprimé avec succès."
 
-#: .\whalesdb\views.py:54
+#: .\whalesdb\views.py:53
 msgid "Whale Equipment Metadata Database"
 msgstr ""
 
-#: .\whalesdb\views.py:765
+#: .\whalesdb\views.py:747
 msgid "Are you sure you want to delete the following from the database?"
 msgstr ""
 
-#: .\whalesdb\views.py:766
+#: .\whalesdb\views.py:748
 msgid "You will not be able to recover this object."
 msgstr ""
 
-#: .\whalesdb\views.py:801
+#: .\whalesdb\views.py:851
 msgid "Whales Help Text"
 msgstr ""
 
-#: .\whalesdb\views.py:802
+#: .\whalesdb\views.py:852
 msgid "Manage Help Texts"
 msgstr ""

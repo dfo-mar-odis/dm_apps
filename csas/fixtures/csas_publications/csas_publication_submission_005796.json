@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5796,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Management procedures for the multi-gear sablefish (Anoplopoma fimbria) fishery in British Columbia, Canada",
+            "title_fr": "Procédures de gestion de la pêche à la morue charbonnière (Anoplopoma fimbria) à l'aide de divers engins de pêche en Colombie-Britannique (Canada)",
+            "pub_year": 2011,
+            "lead_author_2": "Kronlund, Rob",
+            "pub_num": "063",
+            "pages": 140,
+            "pdf_size": 1813,
+            "description": ""
+        }
+    }
+]

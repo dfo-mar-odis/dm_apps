@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8338,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Lobster (Homarus americanus) in Lobster Fishing Area 33 for 2018",
+            "title_fr": "Évaluation du homard (Homarus americanus) dans la zone de pêche au homard 33 pour 2018",
+            "pub_year": 2020,
+            "lead_author_2": "Jennifer Ford",
+            "pub_num": "002",
+            "pages": 16,
+            "pdf_size": 1352,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4833,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Workshop to Review Science Considerations in the Development of Conservation Objectives for the Placentia Bay-Grand Banks Large Ocean Management Area; May 1 - 2, 2007",
+            "title_fr": "Compte rendu de l'atelier d'examen des considérations scientifiques relatives à l'élaboration d'objectifs de conservation pour la zone étendue de gestion océanique de la baie de Plaisance et des Grands Bancs; 1 et 2 mai 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Davis, M.B., B. Hickey, N. D. Templeman.",
+            "pub_num": "035",
+            "pages": 44,
+            "pdf_size": 217,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3978,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Summary of Monitoring and Live Gene Bank Activities for Inner Bay of Fundy Salmon in 2003",
+            "title_fr": "Résumé des activités de surveillance et de la banque de gènes vivants pour le saumon atlantique de l'intérieur de la baie de Fundy en 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Gibson, A. J. F., Jones, R.A., O’Neil, S.F., Flanagan, J.J., Amiro, P.G.",
+            "pub_num": "016",
+            "pages": 49,
+            "pdf_size": 1901,
+            "description": ""
+        }
+    }
+]

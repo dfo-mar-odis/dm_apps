@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3444,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A new Traffic Light Assessment for northern shrimp (Pandalus borealis) on the eastern Scotian Shelf",
+            "title_fr": "Nouvelle évaluation du stock de crevette nordique (Pandalus borealis) de l'est de la plate-forme Scotian selon la méthode des feux de circulation",
+            "pub_year": 2002,
+            "lead_author_2": "Koeller, P., Covey, M., King, M.",
+            "pub_num": "006",
+            "pages": 52,
+            "pdf_size": 950,
+            "description": ""
+        }
+    }
+]

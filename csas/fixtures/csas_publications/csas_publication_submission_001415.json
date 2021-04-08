@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1415,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An assessment of the Northwest Atlantic grey seal (Halichoerus grypus) population for 1983",
+            "pub_year": 1984,
+            "lead_author_2": "K. Zwanenburg",
+            "pub_num": "009",
+            "pages": 31,
+            "pdf_size": 1030,
+            "description": ""
+        }
+    }
+]

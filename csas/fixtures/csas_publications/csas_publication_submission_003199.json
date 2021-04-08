@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3199,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Atlantic Halibut in the Gulf of St. Lawrence",
+            "title_fr": "Le flétan atlantique du Golfe",
+            "pub_year": 1996,
+            "lead_author_2": "Archambault, D.",
+            "pub_num": "057",
+            "description": ""
+        }
+    }
+]

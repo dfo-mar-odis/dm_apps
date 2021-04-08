@@ -1,44 +1,49 @@
 {% load i18n %}
 
-<div class="mb-5" id="submit">
-  <h2>
-    {% trans "Project Status (By Year)" %}
-  </h2>
+<div class="mb-3" id="submit">
+  <div class="section-card">
+    <div class="point" @click="collapseSubmit = !collapseSubmit">
+      <h4>
+        {% trans "Submission Status" %}
+      </h4>
+    </div>
 
+    <div v-if="!collapseSubmit">
+      <table class="table table-sm" style="width: 75%;">
+        <thead>
+        <tr>
+          <th>{% trans "Fiscal Year" %}</th>
+          <th>{% trans "Status" %}</th>
+          <th>{% trans "Submit / Unsubmit" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(year, index) in project.years">
+          <td>${year.display_name}</td>
+          <td v-html="year.formatted_status"></td>
 
-  <table class="table table-sm" style="width: 75%;">
-    <thead>
-    <tr>
-      <th>{% trans "Fiscal Year" %}</th>
-      <th>{% trans "Status" %}</th>
-      <th>{% trans "Submit / Unsubmit" %}</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr v-for="(year, index) in project.years">
-      <td>${year.display_name}</td>
-      <td v-html="year.formatted_status"></td>
+          <td>
+            <button
+              v-if="year.submitted && year.status != 4"
+              class="btn btn-sm btn-danger py-0 px-1 no-print"
+              @click="submitProjectYear(year, 'unsubmit')"
+            >{% trans "Click to un-submit" %}</button>
 
-      <td>
-        <button
-          v-if="year.submitted && year.status != 4"
-          class="btn btn-sm btn-danger py-0 px-1 no-print"
-          @click="submitProjectYear(year, 'unsubmit')"
-        >{% trans "Click to un-submit" %}</button>
+            <button
+              v-else-if="!year.submitted"
+              class="btn btn-sm btn-success py-0 px-1 no-print"
+              @click="submitProjectYear(year, 'submit')"
+            >{% trans "Click to submit" %}</button>
 
-        <button
-          v-else-if="!year.submitted"
-          class="btn btn-sm btn-success py-0 px-1 no-print"
-          @click="submitProjectYear(year, 'submit')"
-        >{% trans "Click to submit" %}</button>
+            <p v-else><em>{% trans "Cannot unsubmit approved projects" %}</em></p>
 
-        <p v-else><em>{% trans "Cannot unsubmit approved projects" %}</em></p>
+          </td>
 
-      </td>
+        </tr>
 
-    </tr>
+        </tbody>
 
-    </tbody>
-
-  </table>
+      </table>
+    </div>
+  </div>
 </div>

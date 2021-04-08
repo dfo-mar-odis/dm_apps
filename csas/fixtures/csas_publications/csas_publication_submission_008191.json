@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8191,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Assessment of the Distribution, Movements, and Habitat Use of Northern Bottlenose Whales on the Scotian Shelf to Support the Identification of Important Habitat",
+            "title_fr": "Évaluation de la répartition, des déplacements et de l’utilisation de l’habitat de la baleine à bec commune sur le plateau néo-écossais à l’appui de la désignation de l’habitat important",
+            "pub_year": 2020,
+            "pub_num": "008",
+            "pages": 10,
+            "pdf_size": 3947,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8151,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Harvest Advice for Pacific Sardine (Sardinops sagax) in British Columbia Waters for 2018",
+            "title_fr": "Avis sur les prélèvements de sardines du Pacifique (Sardinops sagax) dans les eaux de la Colombie-Britannique pour la saison 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Linnea Flostrand",
+            "pub_num": "041",
+            "pages": 7,
+            "pdf_size": 165,
+            "description": ""
+        }
+    }
+]

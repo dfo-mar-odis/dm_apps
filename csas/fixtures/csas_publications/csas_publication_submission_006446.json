@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6446,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "State of physical, biological, and selected fishery resources of Pacific Canadian marine ecosystems in 2011",
+            "title_fr": "État des ressources physiques et biologiques et de certaines ressources halieutiques des écosystèmes des eaux canadiennes du Pacifique en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "James Irvine & Bill Crawford",
+            "pub_num": "072",
+            "pages": 152,
+            "pdf_size": 9560,
+            "description": ""
+        }
+    }
+]

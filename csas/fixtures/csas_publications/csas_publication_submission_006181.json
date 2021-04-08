@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6181,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of the Stock Assessment of Eastern Scotian Shelf Shrimp in Shrimp Fishing Areas (SFAs) 13-15",
+            "title_fr": "Compte rendu de l’examen régional par les pairs de l’évaluation du stock de crevettes de l’est du plateau néo-écossais dans les zones de pêche à la crevette (ZPC) 13 à 15",
+            "pub_year": 2019,
+            "lead_author_2": "L. Bennett",
+            "pub_num": "003",
+            "pages": 13,
+            "pdf_size": 283,
+            "description": ""
+        }
+    }
+]

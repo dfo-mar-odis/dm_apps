@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2424,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Pup production of harp seals, (Phoca groenlandica) in the northwest Atlantic during 1994",
+            "pub_year": 1995,
+            "lead_author_2": "G. Stenson; M.O. Hammill; M.C.S. Kingsley; B.Sjare; W.G. Warren; R.A. Myers",
+            "pub_num": "020",
+            "pages": 32,
+            "pdf_size": 1291,
+            "description": ""
+        }
+    }
+]

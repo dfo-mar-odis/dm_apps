@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 254,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "1999 Pup production of harp seals, Phoca groenlandica, in the Northwest Atlantic",
+            "pub_year": 2000,
+            "lead_author_2": "Stenson, G.B., Hammill, M.O., Gosselin, J.F., Sjare, B.",
+            "pub_num": "080",
+            "pages": 35,
+            "pdf_size": 395,
+            "description": ""
+        }
+    }
+]

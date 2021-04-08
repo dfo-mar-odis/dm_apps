@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1197,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The feasibility of a limited foreign test fishery for Redfish in NAFO Division 4VWX",
+            "pub_year": 1982,
+            "lead_author_2": "K. Zwanenburg",
+            "pub_num": "017",
+            "pages": 16,
+            "pdf_size": 921,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8663,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "An update on eastern Hudson Bay beluga abundance and impacts of harvesting on the stock",
+            "lead_author_2": "M.O. Hammill, A. Mosnier & X Bordeleau",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7161,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of Newfoundland and Labrador Snow Crab",
+            "title_fr": "Évaluation du crabe des neiges de Terre-Neuve et du Labrador",
+            "pub_year": 2014,
+            "pub_num": "037",
+            "description": ""
+        }
+    }
+]

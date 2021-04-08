@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3521,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Abundance indices of beluga in James Bay, eastern Hudson Bay and Ungava Bay in summer 2001",
+            "title_fr": "Indices d'abondance des bélugas de la Baie James, de l'est de la Baie d'Hudson et de la Baie Ungava durant l'été 2001",
+            "pub_year": 2002,
+            "lead_author_2": "Jean-François Gosselin, Véronique Lesage, Mike O. Hammill and Hugo Bourdages",
+            "pub_num": "042",
+            "pages": 28,
+            "pdf_size": 1300,
+            "description": ""
+        }
+    }
+]

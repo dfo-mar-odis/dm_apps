@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2820,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distributions of Atlantic cod and American plaice during the September 1996 survey of the southern Gulf of St. Lawrence and their relation to historical patterns.",
+            "pub_year": 1997,
+            "lead_author_2": "Swain, D.P., Poirer, G.A.",
+            "pub_num": "066",
+            "pages": 18,
+            "pdf_size": 2210,
+            "description": ""
+        }
+    }
+]

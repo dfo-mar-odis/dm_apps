@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6186,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Regional Science Peer Review of the Optimal Strategy for Invasive Species Control to Ensure Survival and Recovery of Atlantic Whitefish in the Petote Rivière Lakes",
+            "lead_author_2": "Lottie Bennett",
+            "description": ""
+        }
+    }
+]

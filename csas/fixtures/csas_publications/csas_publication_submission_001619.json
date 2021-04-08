@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1619,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Miramichi River, 1985",
+            "pub_year": 1986,
+            "lead_author_2": "R.G. Randall; E.M.P. Chadwick; E.J. Shofield",
+            "pub_num": "002",
+            "pages": 23,
+            "pdf_size": 1070,
+            "description": ""
+        }
+    }
+]

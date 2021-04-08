@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8001,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of rock crab stock status in Quebec in 2016",
+            "title_fr": "Évaluation de l’état des stocks de crabe commun du Québec en 2016",
+            "pub_year": 2018,
+            "lead_author_2": "Benoit Bruneau",
+            "pub_num": "044",
+            "pages": 16,
+            "pdf_size": 2394,
+            "description": ""
+        }
+    }
+]

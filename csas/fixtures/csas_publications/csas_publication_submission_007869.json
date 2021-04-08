@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7869,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Results of an informal survey of Canadian Atlantic mackerel commercial, recreational and bait fishers",
+            "title_fr": "Résultats d’une enquête informelle auprès de pêcheurs canadiens de maquereaux Atlantique à des fins commerciales, récréatives et appât",
+            "pub_year": 2017,
+            "lead_author_2": "Van Beveren, E., Castonguay, M., Doniol-Valcroze, T., and Duplisea, D.",
+            "pub_num": "029",
+            "pages": 31,
+            "pdf_size": 1108,
+            "description": ""
+        }
+    }
+]

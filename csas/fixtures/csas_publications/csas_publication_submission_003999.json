@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3999,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Summary of Results of the 2003 Queen Charlotte Sound Bottom Trawl Survey",
+            "title_fr": "Sommaire des résultats du relevé au chalut de fond effectué en 2003 dans le bassin de la Reine-Charlotte",
+            "pub_year": 2004,
+            "lead_author_2": "Stanley, R.D., Starr, P., Olsen, N., Haigh, R.",
+            "pub_num": "028",
+            "pages": 58,
+            "pdf_size": 745,
+            "description": ""
+        }
+    }
+]

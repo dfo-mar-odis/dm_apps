@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7970,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Literature review and analysis of measures and actions that could mitigate the impacts of shipping related noise on endangered southern resident killer whales (SRKW) in Haro Strait",
+            "lead_author_2": "Rob Williams, Scott Veirs, Val Veirs, Erin Ashe, Natalie Mastick (Caroline Longtin)",
+            "description": ""
+        }
+    }
+]

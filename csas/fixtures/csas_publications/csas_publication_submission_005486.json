@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5486,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Recovery Potential Assessment for Spring Cisco (Coregonus sp.)",
+            "title_fr": "Évaluation du potentiel de rétablissement du cisco de printemps (Coregonus sp.)",
+            "pub_year": 2010,
+            "lead_author_2": "Cyr, Charley",
+            "pub_num": "009",
+            "pages": 9,
+            "pdf_size": 83,
+            "description": ""
+        }
+    }
+]

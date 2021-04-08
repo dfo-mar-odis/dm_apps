@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2468,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "What can we learn about lumpfish mortality from sex ratio data?",
+            "pub_year": 1995,
+            "lead_author_2": "J.M. Hoenig",
+            "pub_num": "062",
+            "pages": 11,
+            "pdf_size": 484,
+            "description": ""
+        }
+    }
+]

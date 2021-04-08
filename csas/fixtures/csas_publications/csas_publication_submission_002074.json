@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2074,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of Atlantic herring in NAFO Division 4T, 1989",
+            "title_fr": "Évaluation du hareng de l'Atlantique dans la division 4T de l'OPANO, 1989",
+            "pub_year": 1990,
+            "lead_author_2": "R.R. Claytor; E.M.P. Chadwick; H.M.C. Dupuis",
+            "pub_num": "073",
+            "pages": 67,
+            "pdf_size": 3181,
+            "description": ""
+        }
+    }
+]

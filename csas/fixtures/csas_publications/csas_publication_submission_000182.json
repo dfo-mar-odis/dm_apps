@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 182,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Winter Skate Fishery In Division 4VsW",
+            "pub_year": 1998,
+            "lead_author_2": "Simon, J.E., K.T. Frank",
+            "pub_num": "145",
+            "description": ""
+        }
+    }
+]

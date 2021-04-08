@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7820,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Update of indicators of Atlantic Salmon (Salmo salar) in DFO Gulf Region Salmon Fishing Areas 15 - 18 for 2016",
+            "title_fr": "Mise à jour des indicateurs du saumon de l'Atlantique (Salmo salar) dans la région du Golfe du MPO (zones de pêche du saumon 15 à 18) pour 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "013",
+            "pages": 20,
+            "pdf_size": 1296,
+            "description": ""
+        }
+    }
+]

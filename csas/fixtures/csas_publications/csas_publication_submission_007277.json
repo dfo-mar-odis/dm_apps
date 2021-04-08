@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7277,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop (Placopecten magellanicus) in Scallop Production Areas 1 to 6 in the Bay of Fundy: Stock Status Update for 2014",
+            "title_fr": "Pétoncle (Placopecten magellanicus) dans les zones de production de pétoncles 1 à 6 de la baie de Fundy : mise à jour de l'état du stock pour 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Leslie Nasmith, Ph. 902-405-4431",
+            "pub_num": "002",
+            "description": ""
+        }
+    }
+]

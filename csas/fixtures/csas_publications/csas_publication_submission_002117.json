@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2117,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An assessment of Ascophyllum nodosum resources in Scotia/Fundy 1990",
+            "pub_year": 1991,
+            "lead_author_2": "G.J. Sharp; R.E. Semple",
+            "pub_num": "052",
+            "pages": 30,
+            "pdf_size": 1951,
+            "description": ""
+        }
+    }
+]

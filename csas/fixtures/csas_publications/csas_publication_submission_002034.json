@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2034,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Recovery Potential Assessment of Atlantic Shortfin Mako, White Shark, and Loggerhead Turtle; 28-30 November 2006",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional concernant l'évaluation du potentiel de rétablissement du requin taupe bleu, du requin blanc et de la carette de l'Atlantique; 28-30 novembre 2006",
+            "pub_year": 2006,
+            "lead_author_2": "O'Boyle, Robert",
+            "pub_num": "039",
+            "pages": 23,
+            "pdf_size": 119,
+            "description": ""
+        }
+    }
+]

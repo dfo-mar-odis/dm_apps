@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6697,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Assessment protocol for commercial harvest of Pacific oysters (Crassostrea gigas) in British Columbia",
+            "title_fr": "Protocole d'évaluation visant la pêche commerciale de l'huître du Pacifique (Crassostrea gigas) en Colombie-Britannique",
+            "pub_year": 2014,
+            "lead_author_2": "Norgard, Tammy",
+            "pub_num": "029",
+            "pages": 5,
+            "pdf_size": 254,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1104,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Estimates of potential yield for shrimp (Pandalus montagui) in the eastern Hudson Strait and Ungava Bay",
+            "pub_year": 1981,
+            "lead_author_2": "D.G. Parsons; G.E. Tucker; P.J. Veitch",
+            "pub_num": "006",
+            "pages": 22,
+            "pdf_size": 986,
+            "description": ""
+        }
+    }
+]

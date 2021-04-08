@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3150,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Gaspereau Maritimes Region Overview",
+            "title_fr": "Gaspareau Région des Maritimes Aperçu",
+            "pub_year": 1997,
+            "lead_author_2": "John Ritter",
+            "pub_num": "D3-17",
+            "pages": 11,
+            "pdf_size": 186,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2064,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A snow crab, Chionoecetes opilio, fishery collapse in Newfoundland",
+            "pub_year": 1990,
+            "lead_author_2": "D.M. Taylor; P.G. O'Keefe; C. Fitzpatrick",
+            "pub_num": "063",
+            "pages": 12,
+            "pdf_size": 726,
+            "description": ""
+        }
+    }
+]

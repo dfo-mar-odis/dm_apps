@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 14:57-0400\n"
+"POT-Creation-Date: 2021-03-15 21:31-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,19 +77,19 @@ msgstr ""
 msgid "fiscal year"
 msgstr ""
 
-#: .\events\models.py:33 .\events\models.py:138 .\events\models.py:171
+#: .\events\models.py:33 .\events\models.py:139 .\events\models.py:172
 msgid "date last modified"
 msgstr ""
 
-#: .\events\models.py:34 .\events\models.py:139 .\events\models.py:172
+#: .\events\models.py:34 .\events\models.py:140 .\events\models.py:173
 msgid "last modified by"
 msgstr ""
 
-#: .\events\models.py:36 .\events\models.py:141 .\events\models.py:174
+#: .\events\models.py:36 .\events\models.py:142 .\events\models.py:175
 msgid "date created"
 msgstr ""
 
-#: .\events\models.py:37 .\events\models.py:142 .\events\models.py:175
+#: .\events\models.py:37 .\events\models.py:143 .\events\models.py:176
 msgid "created by"
 msgstr ""
 
@@ -97,78 +97,78 @@ msgstr ""
 msgid "parent event"
 msgstr ""
 
-#: .\events\models.py:90
+#: .\events\models.py:91
 msgid "first name"
 msgstr ""
 
-#: .\events\models.py:91
+#: .\events\models.py:92
 msgid "last name"
 msgstr ""
 
-#: .\events\models.py:92
+#: .\events\models.py:93
 msgid "phone"
 msgstr ""
 
-#: .\events\models.py:93
+#: .\events\models.py:94
 msgid "email"
 msgstr ""
 
-#: .\events\models.py:94
+#: .\events\models.py:95
 msgid "language preference"
 msgstr ""
 
-#: .\events\models.py:96
+#: .\events\models.py:97
 msgid "Function"
 msgstr ""
 
-#: .\events\models.py:97
+#: .\events\models.py:98
 msgid "Association"
 msgstr ""
 
-#: .\events\models.py:98
+#: .\events\models.py:99
 msgid "status"
 msgstr ""
 
-#: .\events\models.py:99
+#: .\events\models.py:100
 msgid "date invitation was sent"
 msgstr ""
 
-#: .\events\models.py:116
+#: .\events\models.py:117
 msgid "attendee"
 msgstr ""
 
-#: .\events\models.py:117
+#: .\events\models.py:118
 msgid "date"
 msgstr ""
 
-#: .\events\models.py:133
+#: .\events\models.py:134
 msgid "type"
 msgstr ""
 
-#: .\events\models.py:134
+#: .\events\models.py:135
 msgid "note"
 msgstr ""
 
-#: .\events\models.py:135
+#: .\events\models.py:136
 msgid "complete?"
 msgstr ""
 
-#: .\events\models.py:165
+#: .\events\models.py:166
 msgid "url (English)"
 msgstr ""
 
-#: .\events\models.py:166
+#: .\events\models.py:167
 msgid "url (French)"
 msgstr ""
 
-#: .\events\models.py:190 .\events\models.py:191
+#: .\events\models.py:191 .\events\models.py:192
 msgid "file_en"
 msgstr ""
 
-#: .\events\models.py:199 .\events\models.py:200
+#: .\events\models.py:200 .\events\models.py:201
 msgid "url_en"
 msgstr ""
 
-#: .\events\models.py:206
+#: .\events\models.py:207
 msgid "name"
 msgstr ""

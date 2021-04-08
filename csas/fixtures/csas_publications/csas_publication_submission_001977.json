@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1977,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Report on the Status of Hooded Seals in the Northwest Atlantic",
+            "pub_year": 1996,
+            "lead_author_2": "Stenson, G.",
+            "pub_num": "108",
+            "pages": 5,
+            "pdf_size": 82,
+            "description": ""
+        }
+    }
+]

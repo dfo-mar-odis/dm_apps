@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7238,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Eastern Cape Breton Atlantic Salmon (Salmo salar): Status, Past and Present Abundance, Life History, and Trends",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon atlantique de l'est du Cap-Breton (Salmo salar) : Situation, abondance passée et présente, cycle biologique et tendances",
+            "pub_year": 2014,
+            "lead_author_2": "A.L. Levy and A.J.F. Gibson  / Tana Worcester / Valerie Myra",
+            "pub_num": "099",
+            "pages": 77,
+            "pdf_size": 2428,
+            "description": ""
+        }
+    }
+]

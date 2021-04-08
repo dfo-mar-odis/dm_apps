@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3821,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Environmental conditions in the Labrador Sea in Spring 2002",
+            "title_fr": "Conditions ambiantes dans la mer du Labrador au printemps 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Hendry, R.M., Clarke, R.A., Lazier, R.J.N., Yashayaev, I.M.",
+            "pub_num": "044",
+            "pages": 33,
+            "pdf_size": 962,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4894,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Review of the structure, the abundance and distribution of American plaice (Hippoglossoides platessoides) in Atlantic Canada in a species-at-risk context",
+            "title_fr": "Examen de la structure, de l'abondance et de la répartition de la plie canadienne (Hippoglossoides platessoides) dans l'Atlantique canadien, dans le contexte des espèces en péril",
+            "pub_year": 2007,
+            "lead_author_2": "Busby, C.D, M.J. Morgan, K.S. Dwyer, G.M. Fowler, R. Morin, M. Treble, D. Maddock Parsons, D. Archambault.",
+            "pub_num": "069",
+            "pages": 94,
+            "pdf_size": 3275,
+            "description": ""
+        }
+    }
+]

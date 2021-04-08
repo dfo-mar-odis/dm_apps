@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8000,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review of the Stock Assessment of Rock Crab in Quebec Inshore Waters; February 28 - March 1, 2017",
+            "title_fr": "Compte rendu de l’examen par des pairs régional sur l’évaluation des stocks de crabe commun des eaux côtières du Québec ; du 28 février au 1e mars 2017",
+            "pub_year": 2017,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "049",
+            "description": ""
+        }
+    }
+]

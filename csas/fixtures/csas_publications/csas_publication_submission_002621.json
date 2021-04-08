@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2621,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biological update for haddock in Division 4TVW in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "K. Zwanenburg",
+            "pub_num": "074",
+            "pages": 45,
+            "pdf_size": 3035,
+            "description": ""
+        }
+    }
+]

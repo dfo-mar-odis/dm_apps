@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5960,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Regional Advisory Process on European Green Crab, (Carcinus maenas), Populations and Mitigations in the Newfoundland and Labrador Region; March 17, 2010",
+            "title_fr": "Processus de consultation scientifique régional sur les populations de crabes verts Européens (Carcinus maenas) et sur les mesures d'atténuation à Terre-Neuve ; le 17 mars 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Dawe, Earl",
+            "pub_num": "020",
+            "pages": 29,
+            "pdf_size": 125,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2828,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A biological review of the commercial diadromous fisheries of Prince Edward Island.",
+            "pub_year": 1997,
+            "lead_author_2": "Cairns, D.K.",
+            "pub_num": "074",
+            "pages": 57,
+            "pdf_size": 2954,
+            "description": ""
+        }
+    }
+]

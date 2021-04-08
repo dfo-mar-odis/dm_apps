@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6450,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Information in support of the identification of critical habitat for speckled dace (Rhinichthys osculus) ",
+            "title_fr": "Information à l'appui de la détermination de l'habitat essentiel du naseux moucheté (Rhinichthys osculus)",
+            "pub_year": 2012,
+            "lead_author_2": "Tom Brown",
+            "pub_num": "065",
+            "pages": 33,
+            "pdf_size": 322,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2493,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in Salmon Fishing Area 15, Gulf Region, New Brunswick, 1994",
+            "pub_year": 1995,
+            "lead_author_2": "A. Locke; R. Pickard; F. Mowbray; A. Madden; P. Cameron",
+            "pub_num": "087",
+            "pages": 44,
+            "pdf_size": 1343,
+            "description": ""
+        }
+    }
+]

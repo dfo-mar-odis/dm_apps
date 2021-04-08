@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4233,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Advisory Meeting on Ocean Fertilization Consequences and Impacts; September 29-30, 2009",
+            "title_fr": "Réunion d'avis scientifique nationale sur les conséquences et impacts de la fertilisation; les 29 et 30 septembre 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Gilbert, D., Lyon, P.",
+            "pub_num": "025",
+            "pages": 28,
+            "pdf_size": 140,
+            "description": ""
+        }
+    }
+]

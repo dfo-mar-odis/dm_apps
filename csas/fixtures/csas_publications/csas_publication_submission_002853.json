@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2853,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary Results from the September 1997 Groundfish Survey in the Southern Gulf of St. Lawrence.",
+            "pub_year": 1997,
+            "lead_author_2": "Chouinard, G.A., Poirer, G.A., Sinclair, A.F., Swain, D.P.,  Hurlbut, T., Morin, R.",
+            "pub_num": "099",
+            "pages": 40,
+            "pdf_size": 2093,
+            "description": ""
+        }
+    }
+]

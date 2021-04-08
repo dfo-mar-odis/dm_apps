@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2076,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Describing the risk associated with a given quota when the stock assessment is based on sequential population analysis",
+            "pub_year": 1990,
+            "lead_author_2": "John M. Hoenig; James W. Baird; Victor R. Restrepo",
+            "pub_num": "075",
+            "pages": 13,
+            "pdf_size": 763,
+            "description": ""
+        }
+    }
+]

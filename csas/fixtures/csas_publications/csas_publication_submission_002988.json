@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2988,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Winter skate on the Eastern Scotian Shelf (4VsW)",
+            "title_fr": "Raie tachetée de l'est du plateau néo-écossais (4VsW)",
+            "pub_year": 2000,
+            "lead_author_2": "Jim Simon",
+            "pub_num": "A3-29",
+            "pages": 9,
+            "pdf_size": 215,
+            "description": ""
+        }
+    }
+]

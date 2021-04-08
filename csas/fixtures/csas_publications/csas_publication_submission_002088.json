@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2088,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update of the Scotian Shelf shrimp fishery-1990",
+            "pub_year": 1991,
+            "lead_author_2": "M.A.E. Butler; G. Robert",
+            "pub_num": "023",
+            "pages": 15,
+            "pdf_size": 757,
+            "description": ""
+        }
+    }
+]

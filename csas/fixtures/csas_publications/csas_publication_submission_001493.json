@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1493,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1984 assessment of 5Ze haddock",
+            "pub_year": 1984,
+            "lead_author_2": "K.G. Waiwood; J.D. Neilson",
+            "pub_num": "087",
+            "pages": 35,
+            "pdf_size": 1890,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 173,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Second Year Results of Surveys Directed at Cod in NAFO Division 3Ps",
+            "pub_year": 1999,
+            "lead_author_2": "McClintock, J.",
+            "pub_num": "034",
+            "pages": 17,
+            "pdf_size": 982,
+            "description": ""
+        }
+    }
+]

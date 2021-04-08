@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3238,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "White Hake in 4VWX and 5Zc",
+            "title_fr": "Merluche blanche de 4VWX et 5Zc",
+            "pub_year": 1996,
+            "lead_author_2": "Sinclair, Mike",
+            "pub_num": "095",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

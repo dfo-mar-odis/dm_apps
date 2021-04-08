@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4566,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Pelagic Subcommittee Meeting; September 7-8, 2006",
+            "title_fr": "Compte rendu de la réunion du CEESP sur les poissons pélagiques; 7 et 8 septembre, 2006",
+            "pub_year": 2006,
+            "lead_author_2": "M. Potyrala",
+            "pub_num": "025",
+            "pages": 29,
+            "pdf_size": 120,
+            "description": ""
+        }
+    }
+]

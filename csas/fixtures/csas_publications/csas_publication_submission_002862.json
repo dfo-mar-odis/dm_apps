@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2862,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4X haddock in 1996 and the first half of 1997.",
+            "pub_year": 1997,
+            "lead_author_2": "Hurley, P.C.F., Black, G.A.P., Mohn, R.K., Corneau, P.",
+            "pub_num": "108",
+            "pages": 101,
+            "pdf_size": 5452,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1487,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Analyses of eastern Scotian Shelf haddock (4VW)",
+            "pub_year": 1984,
+            "lead_author_2": "R. Mahon; P. Simpson; D.E. Waldron",
+            "pub_num": "081",
+            "pages": 42,
+            "pdf_size": 1878,
+            "description": ""
+        }
+    }
+]

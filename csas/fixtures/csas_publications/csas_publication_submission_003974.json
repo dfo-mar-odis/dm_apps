@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3974,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Results from the August 2003 sentinel mobile survey of the southern Gulf of St.  Lawrence",
+            "title_fr": "Résultats du relevé par pêche sentinelle au chalut de fond d'août 2003 dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2004,
+            "lead_author_2": "Poirier, G.A., Currie, L.",
+            "pub_num": "014",
+            "pages": 39,
+            "pdf_size": 1157,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 982,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process of Sea Scallop and Bay of Fundy Rockweed; 14-16 April 1998 and 18 September 1998",
+            "title_fr": "Procès-verbaux du Processus consultatif régional des Maritimes sur le pétoncle géant et du ascophylle noueuse de la baie de Fundy, du 14 au 16 avril 1998 et du 18 septembre 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Michael Chadwick, Chairperson",
+            "pub_num": "008",
+            "description": ""
+        }
+    }
+]

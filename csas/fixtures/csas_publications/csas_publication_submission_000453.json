@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 453,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Exploits River stock of Atlantic salmon (Salmo salar) in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Bourgeois, C.E., Murray, J., Mercer, V.",
+            "pub_num": "082",
+            "pages": 27,
+            "pdf_size": 1984,
+            "description": ""
+        }
+    }
+]

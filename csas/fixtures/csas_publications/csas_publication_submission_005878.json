@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5878,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A framework for an ecosystem-based approach to managing the Strait of Georgia.",
+            "lead_author_2": "Marilyn Joyce/Jim Boutillier",
+            "description": ""
+        }
+    }
+]

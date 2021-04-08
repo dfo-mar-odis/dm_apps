@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7233,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Status of Atlantic salmon (Salmo salar) in Salmon Fishing Area 15 (Gulf New Brunswick) to 2013",
+            "lead_author_2": "Paul Cameron",
+            "description": ""
+        }
+    }
+]

@@ -5,11 +5,6 @@
 {% load i18n %}
 {% bootstrap_css %}
 
-{% block title %}
-    {% trans title %}
-{% endblock title %}
-
-
 {% block field_override %}
     <div class="card border border-dark my-1">
         <h5 class="card-header">{% trans title %}</h5>
@@ -24,52 +19,11 @@
         {% else %}
             <a class="btn btn-primary disabled" href="#" onclick="return pop('{% url 'bio_diversity:create_mort' 'indv' object.pk  'pop'%}')" title="{% trans 'Record Mortality' %}">{% trans 'Record Mortality' %}</a>
         {% endif %}
+        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'bio_diversity:plot_growth' 'indv' object.pk  'pop'%}')" title="{% trans 'Plot Growth Chart' %}">{% trans 'Plot Growth Chart' %}</a>
         </div>
-
-
     </div>
 {% endblock field_override %}
 
-
-{% block body_js %}
-
-{# if the view includes a path to a javascript file in a java_script context variable, include it here #}
-{% if java_script %}
-{% include ''|add:java_script %}
-{% endif %}
-
-<script>
-
-var interval;
-
-// This is a method of opening a child window and testing to see if/when it closes
-// upon closing the drop menu the window is associated with is updated adding the new element
-// and setting it as the selected option
-function pop(url, tag) {
-    child = window.open(url, tag,'toolbar=0,status=0,height=500,width=600');
-    child.onbeforeunload = function() {
-        if(child.refresh && $('.is-invalid').length <= 0) {
-            refreshTag(tag);
-        }
-    }
-
-    return false;
-}
-
-function refreshTag(tag) {
-    if( tag == "all" ) {
-        interval = setInterval( function() {
-            location.reload(true);
-            clearInterval(interval);
-        }, 1000);
-    } else {
-        console.log("refresh called on: '" + tag + "'");
-        var id_tag = "#"+tag;
-        $(id_tag).load("# "+id_tag+">*");
-    }
-}
-</script>
-{% endblock %}
 
 
 

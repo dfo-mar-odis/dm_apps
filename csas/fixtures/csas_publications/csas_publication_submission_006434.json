@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6434,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Estimated returns of Atlantic salmon (Salmo salar) to the Miramichi River and each branch, 1998 to 2011",
+            "title_fr": "Estimations des montaisons de saumon atlantique (Salmo salar) à la rivière Miramichi et pour chacun des affluents, 1998 à 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Gerald Chaput",
+            "pub_num": "102",
+            "pages": 58,
+            "pdf_size": 1094,
+            "description": ""
+        }
+    }
+]

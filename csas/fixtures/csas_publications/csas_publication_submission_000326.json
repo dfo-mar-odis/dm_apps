@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 326,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An update on the status of salmonid resources in the Morell, Valleyfield, Dunk, West, and Mills rivers -Prince Edward Island",
+            "pub_year": 1994,
+            "lead_author_2": "K. Davidson; R. Angus",
+            "pub_num": "004",
+            "pages": 17,
+            "pdf_size": 578,
+            "description": ""
+        }
+    }
+]

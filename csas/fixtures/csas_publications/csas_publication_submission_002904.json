@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2904,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Southern Gulf of St. Lawrence Groundfish; February 26-March 1, 2001",
+            "title_fr": "Poisson de fond du sud du golfe du Saint-Laurent; le 26 février au 1 mars 2001",
+            "pub_year": 2001,
+            "lead_author_2": "David Cairns",
+            "pub_num": "014",
+            "pages": 39,
+            "pdf_size": 263,
+            "description": ""
+        }
+    }
+]

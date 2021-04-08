@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1302,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "NAFO Subarea 2 and Division 3K Redfish",
+            "pub_year": 1986,
+            "lead_author_2": "D. Power; D.B. Atkinson",
+            "pub_num": "054",
+            "pages": 26,
+            "pdf_size": 1495,
+            "description": ""
+        }
+    }
+]

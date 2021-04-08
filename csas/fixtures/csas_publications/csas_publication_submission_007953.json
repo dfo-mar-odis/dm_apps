@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7953,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Western Component (4Xopqrs5) Pollock Harvest Control Rule Update and Indicators Report",
+            "title_fr": "Rapport de mise à jour et des indicateurs sur la règle de contrôle des prises de goberge dans la composante ouest (4Xopqrs5)",
+            "pub_year": 2017,
+            "lead_author_2": "Bennett, Lottie",
+            "pub_num": "028",
+            "pages": 11,
+            "pdf_size": 720,
+            "description": ""
+        }
+    }
+]

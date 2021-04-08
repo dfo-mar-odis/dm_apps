@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 937,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the 13th Canada/USA Fisheries Discussions; 8-10 October 1996",
+            "pub_year": 1997,
+            "lead_author_2": "J.D. Neilson (Canada) and S. Clark (USA)",
+            "pub_num": "013",
+            "description": ""
+        }
+    }
+]

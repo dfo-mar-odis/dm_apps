@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7583,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the national peer review of the National Risk Assessment of Recreational Boating as a Vector for Aquatic Invasive Species; December 8-11, 2015",
+            "title_fr": "Compte rendu de l'examen national par les pairs de l'évaluation nationale des risques associés à la navigation de plaisance comme vecteur de propagation des espèces aquatiques envahissantes; du 8 au 11 décembre 2015",
+            "pub_year": 2017,
+            "lead_author_2": "Olivier, G. (contact: Ashley Kling)",
+            "pub_num": "022",
+            "pages": 31,
+            "pdf_size": 422,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7562,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Scallops (Placopecten magellanicus) in Scallop Production Areas 1 to 6 in the Bay of Fundy",
+            "title_fr": "Évaluation des stocks de pétoncles (Placopecten magellanicus) des zones de production de pétoncles 1 à 6 de la baie de Fundy",
+            "pub_year": 2016,
+            "lead_author_2": "Leslie Nasmith, Ph. 902-426-4315",
+            "pub_num": "004",
+            "pages": 19,
+            "pdf_size": 749,
+            "description": ""
+        }
+    }
+]

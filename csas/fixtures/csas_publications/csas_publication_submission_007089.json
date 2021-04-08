@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7089,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Offshore Ecologically and Biologically Significant Areas in the Scotian Shelf Bioregion",
+            "title_fr": "Zones d'importance écologique et biologique au large des côtes de la biorégion du plateau néo-écossais",
+            "pub_year": 2016,
+            "lead_author_2": "King, M., Fenton, D., Aker, J. and Serdynska, A.",
+            "pub_num": "007",
+            "pages": 100,
+            "pdf_size": 9658,
+            "description": ""
+        }
+    }
+]

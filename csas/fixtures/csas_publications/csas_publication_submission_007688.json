@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7688,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "A framework for assessing vulnerability of biological components to ship-source oil spills",
+            "title_fr": "Cadre d’évaluation de la vulnérabilité des composantes biologiques aux déversements d’hydrocarbures provenant de navires",
+            "pub_year": 2017,
+            "lead_author_2": "Miriam O",
+            "pub_num": "032",
+            "pages": 10,
+            "pdf_size": 297,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1959,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "American Plaice and Yellowtail Flounder on the Eastern Scotian Shelf (Div. 4VW)",
+            "title_fr": "Plie canadienne et limande à queue jaune de l'est du plateau néo-écossais (Div. 4VW)",
+            "pub_year": 2000,
+            "lead_author_2": "Mark Fowler",
+            "pub_num": "A3-34",
+            "pages": 10,
+            "pdf_size": 927,
+            "description": ""
+        }
+    }
+]

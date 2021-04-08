@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7888,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Assessment of the risk to Fraser River sockeye salmon due to Infectious Hematopoietic Necrosis Virus transfer from Atlantic salmon farms located in the Discovery Islands area, British Columbia",
+            "lead_author_2": "Olivier, G.; Parsons, Jay",
+            "description": ""
+        }
+    }
+]

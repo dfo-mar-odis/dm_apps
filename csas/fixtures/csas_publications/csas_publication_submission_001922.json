@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1922,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation du stock de sébaste (Sebastes spp.) des divisions 4RST de l'OPANO",
+            "pub_year": 1989,
+            "lead_author_2": "E. Laberge; S. Hurtubise",
+            "pub_num": "050",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1669,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biomass and population biology as observed from research surveys in the southern Gulf of St. Lawrence: cod, white hake, haddock, plaice, herring and redfish",
+            "pub_year": 1986,
+            "lead_author_2": "D. Clay",
+            "pub_num": "083",
+            "pages": 66,
+            "pdf_size": 2878,
+            "description": ""
+        }
+    }
+]

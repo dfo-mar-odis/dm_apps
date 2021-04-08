@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7290,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Wild Salmon Policy Biological Status Assessment for Conservation Units of Interior Fraser River Coho Salmon (Oncorhynchus kisutch)",
+            "lead_author_2": "Chuck Parken",
+            "description": ""
+        }
+    }
+]

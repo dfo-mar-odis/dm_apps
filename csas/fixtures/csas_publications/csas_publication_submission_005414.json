@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5414,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Review of the \"Terra Nova 2008 Environmental Effects Monitoring Program Year 6\"",
+            "title_fr": "Examen du « Programme de surveillance des effets environnementaux du champ pétrolifère Terra Nova en 2008 - 6e année »",
+            "pub_year": 2009,
+            "lead_author_2": "Anderson, M.R.",
+            "pub_num": "017",
+            "description": ""
+        }
+    }
+]

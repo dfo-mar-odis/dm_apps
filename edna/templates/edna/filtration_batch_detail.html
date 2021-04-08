@@ -1,0 +1,261 @@
+{% extends 'edna/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+
+  <div class="btns mb-3">
+    <a href="{% url 'edna:filtration_batch_edit' object.id %}" class="btn btn-warning btn-sm">{% trans "Edit" %}</a>
+    <a href="{% url 'edna:filtration_batch_delete' object.id %}" class="btn btn-danger btn-sm">{% trans "Delete" %}</a>
+
+  </div>
+
+  <table class="table table-sm">
+    {% for field in field_list %}
+      {% verbose_td_display object field th_width="200px" %}
+    {% endfor %}
+  </table>
+
+  <div id="app" class="mt-5">
+    <div class="mb-3">
+      <p class="h3">{% trans "Filters" %}</p>
+      <button @click="addFilter(null)" class="btn btn-sm btn-primary">{% trans "Add a Filter" %}</button>
+      <button @click="addAllFilters" class="btn btn-sm btn-warning">{% trans "Import un-filtered samples" %}</button>
+    </div>
+
+    <div class="row mb-3 px-1 py-1" style="width: 30%">
+      <div class="col">
+        <label for="">{% trans "Default filtration type" %}</label>
+        <select v-model="default_filtration_type" class="form-control form-control-sm">
+          <option v-for="(obj, index) in filtrationTypeChoices" :value="obj.value">${obj.text}</option>
+        </select>
+      </div>
+      <div class="col">
+        <label for="">{% trans "Default filtration volume (ml)" %}</label>
+        <input type="text" class="form-control form-control-sm" v-model="default_filtration_volume_ml">
+      </div>
+    </div>
+
+    <div v-if="loading" class="loading mb-3 mt-3 mt-5">
+      <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+    <div v-else-if="!filters.length">
+      <em>{% trans "No filters have been added to this batch." %}</em>
+    </div>
+    <div v-else>
+      <div class="alert alert-danger" role="alert" v-if="filterErrorMsg">
+        <p class="mb-0 lead" v-html="filterErrorMsg"></p>
+      </div>
+      <table :class="{'unsaved-borders':unsavedChanges, 'saved-borders':!unsavedChanges}" style="width: 100%">
+        <thead>
+        <tr>
+          <th class="px-1 py-1">#</th>
+          <th class="px-1 py-1">Id</th>
+          <th class="px-1 py-1" style="width: 120px">{% trans "Unique sample ID" %}</th>
+          <th class="px-1 py-1" style="width: 220px">${labels.start_datetime} (yyyy-mm-dd HH:MM:SS)</th>
+          <th class="px-1 py-1" style="width: 210px">${labels.filtration_type}</th>
+          <th class="px-1 py-1" style="width: 110px">${labels.filtration_volume_ml}</th>
+          <th class="px-1 py-1" style="width: 110px">${labels.duration_min}</th>
+          <th class="px-1 py-1" style="width: 175px">${labels.storage_location}</th>
+          <th class="px-1 py-1">${labels.comments}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(f, index) in filters" :key="f.id">
+          <td class="px-0 py-0 text-muted" tabindex="-1">${index+1}</td>
+          <td class="px-0  py-0 text-muted" tabindex="-1">${f.id}</td>
+          <td class="px-0 py-0">
+            <select v-model="f.sample" class="no-borders" @change="updateFilter(f)">
+              <option value="">{% trans "Blank" %}</option>
+              <option v-for="(obj, index) in sampleChoices" :value="obj.value">${obj.text}</option>
+            </select>
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="f.start_datetime" @change="updateFilter(f)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <select v-model="f.filtration_type" class="no-borders" @change="updateFilter(f)">
+              <option v-for="(obj, index) in filtrationTypeChoices" :value="obj.value">${obj.text}</option>
+            </select>
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="f.filtration_volume_ml" @change="updateFilter(f)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="f.duration_min" @change="updateFilter(f)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="f.storage_location" @change="updateFilter(f)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <input type="text" class="no-borders" v-model="f.comments" @change="updateFilter(f)" @keypress="unsavedChanges=true">
+          </td>
+          <td class="px-0 py-0">
+            <button class="btn py-0" @click="deleteFilter(f)"><span class="h5 mdi mdi-delete"></span></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block body_js %}
+
+  {{ block.super }}
+  <script type="application/javascript">
+  let filterBatchId = {{ object.id }};
+  var app = new Vue({
+    el: '#app',
+    delimiters: ["${", "}"],
+    data: {
+      currentUser: null,
+      default_filtration_type: 1,
+      default_filtration_volume_ml: 1000,
+      filterErrorMsg: null,
+      filters: [],
+      filtrationTypeChoices: [],
+      labels: [],
+      loading: false,
+      sampleChoices: [],
+      unsavedChanges: false
+
+    },
+    methods: {
+      addFilter(howMany) {
+        if (!howMany) howMany = Number(prompt("{% trans 'How many filters do you want to add?' %}"));
+        if (howMany) {
+          for (let i = 0; i < howMany; i++) {
+            this.newFilter();
+          }
+        }
+      },
+      addAllFilters() {
+        howMany = 0;
+        for (var i = 0; i < this.sampleChoices.length; i++) {
+          if (!this.sampleChoices[i].has_filter) {
+            howMany += 1;
+          }
+        }
+        if (howMany) {
+          sampleArray = this.getQueuedSamples(howMany);
+          for (let i = 0; i < sampleArray.length; i++) {
+            this.newFilter(sampleArray[i]);
+          }
+        }
+      },
+      deleteFilter(filter) {
+        userInput = confirm("{% trans 'Are you sure you want to delete this filter?' %}");
+        if (userInput) {
+          let endpoint = `/api/edna/filters/${filter.id}/`;
+          apiService(endpoint, "DELETE")
+              .then(response => {
+                this.$delete(this.filters, this.filters.indexOf(filter))
+              })
+        }
+      },
+      getBlankFilter(sample) {
+        let now = new Date(Date.now());
+        return {
+          filtration_batch: filterBatchId,
+          sample: sample,
+          filtration_type: this.default_filtration_type,
+          start_datetime: `${now.getFullYear()}-${now.getMonth()}-${now.getDay()} ${now.getHours()}:${now.getMinutes()}`,
+          duration_min: null,
+          filtration_volume_ml: this.default_filtration_volume_ml,
+          storage_location: null,
+          comments: null,
+        }
+      },
+      getCurrentUser() {
+        let endpoint = `/api/edna/user/`;
+        apiService(endpoint)
+            .then(response => {
+              this.currentUser = response;
+            })
+      },
+      getFilterMetadata() {
+        let endpoint = `/api/edna/meta/models/filter/`;
+        apiService(endpoint).then(data => {
+          this.labels = data.labels;
+          this.filtrationTypeChoices = data.filtration_type_choices;
+          this.sampleChoices = data.sample_choices;
+        });
+      },
+      getFilters() {
+        this.loading = true;
+        endpoint = `/api/edna/filters/?batch=${filterBatchId}`;
+        apiService(endpoint)
+            .then(response => {
+              this.loading = false;
+              if (response.length && response[0].id) {
+                for (var i = 0; i < response.length; i++) {
+                  response[i].start_datetime = response[i].start_datetime.replace("T", " ").replace("Z", "")
+                  if (!response[i].sample) response[i].sample = "";
+
+                }
+                this.filters = response;
+              }
+            })
+      },
+      getQueuedSamples(howMany) {
+        let samples = [...this.sampleChoices];
+        console.log(samples)
+        myArray = []
+        let result;
+        for (let i = 0; i < howMany; i++) {
+          result = "";
+          for (let j = 0; j < samples.length; j++) {
+            let sample = samples[j];
+            if (!sample.has_filter) {
+              let index = samples.indexOf(sample);
+              result = samples.splice(index, 1)[0].value;
+              break;
+            }
+          }
+          myArray.push(result);
+        }
+        // return the results array
+        return myArray;
+      },
+      groomJSON(json) {
+        return JSON.stringify(json).replaceAll("{", "").replaceAll("}", "").replaceAll("[", " ").replaceAll("]", " ").replaceAll('"', "").replaceAll("non_field_errors:", "")
+      },
+      newFilter(sample) {
+        endpoint = `/api/edna/filters/`;
+        data = this.getBlankFilter(sample)
+        apiService(endpoint, "POST", data)
+            .then(response => {
+              if (response.id) {
+                response.start_datetime = response.start_datetime.replace("T", " ").replace("Z", "")
+                if (!response.sample) response.sample = "";
+                this.filters.push(response)
+                // refresh the sample choices
+                this.getFilterMetadata();
+              }
+            })
+      },
+      updateFilter(filter) {
+        this.filterErrorMsg = null;
+        endpoint = `/api/edna/filters/${filter.id}/`;
+        apiService(endpoint, "PUT", filter)
+            .then(response => {
+              if (!response.id) this.filterErrorMsg = this.groomJSON(response);
+              else this.unsavedChanges = false;
+            })
+      },
+    },
+    created() {
+      this.getCurrentUser();
+      this.getFilterMetadata();
+      this.getFilters();
+    },
+  });
+  </script>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 537,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Origins of two recruitment pulses of 0-group Atlantic cod (Gadus morhua) in Bonavista Bay, Newfoundland during 1999, determined from genetic variation",
+            "pub_year": 2000,
+            "lead_author_2": "Beacham, T.D., Gregory, R.S., Brattey, J.",
+            "pub_num": "093",
+            "pages": 10,
+            "pdf_size": 72,
+            "description": ""
+        }
+    }
+]

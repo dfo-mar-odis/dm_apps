@@ -2,7 +2,14 @@
 {% load static %}
 {% load custom_tags %}
 {% load bootstrap4 %}
-<div class="container">
+
+<div v-if="!showSidebar">
+  <button class="{{ btn_class_black }} ml-2" @click="showSidebar=true" data-toggle="tooltip" title="{% trans "Open sidebar" %}">
+    <span class="mdi mdi-arrow-collapse-right"></span>
+  </button>
+</div>
+<div v-else class="container">
+  <button class="{{ btn_class_black }} float-right mb-3" @click="showSidebar=false"><span class="mdi mdi-arrow-collapse-left"></span></button>
   <h5>
     {% trans "Filters" %}
   </h5>

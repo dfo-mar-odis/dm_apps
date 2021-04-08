@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4909,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Science Workshop on \"Critical Habitat and Recovery Potential Assessment Framework\"; 27-30 August, 2007",
+            "title_fr": "Atelier national des Sciences sur « l'habitat essentiel et le cadre d'évaluation du potentiel de rétablissement »; du 27 au 30 août 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Rice, Sutton",
+            "pub_num": "057",
+            "pages": 96,
+            "pdf_size": 580,
+            "description": ""
+        }
+    }
+]

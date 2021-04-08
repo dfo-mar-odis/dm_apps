@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7677,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Comparison of video methods used  to survey epifaunal communities in association with aquaculture activities",
+            "lead_author_2": "Terri Sutherland (Erika Throleifson)",
+            "description": ""
+        }
+    }
+]

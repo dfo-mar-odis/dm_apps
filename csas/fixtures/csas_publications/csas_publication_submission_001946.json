@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1946,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary results of the lobster (Homarus americanus) minimum carapace size increase program in the Gulf Cape Breton, N.S. fisheries",
+            "pub_year": 1989,
+            "lead_author_2": "Linda Currie; Greg Roach; Daniel Ferron; Wade Landsburg",
+            "pub_num": "074",
+            "pages": 14,
+            "pdf_size": 830,
+            "description": ""
+        }
+    }
+]

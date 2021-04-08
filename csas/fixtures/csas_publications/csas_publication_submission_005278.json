@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5278,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Biomass of northern shrimp (Pandalus borealis) and striped shrimp (Pandalus montagui) in Shrimp Fishing Area 2",
+            "title_fr": "Biomasse de la crevette nordique (Pandalus borealis) et de la crevette ésope (Pandalus montagui) dans la zone de pêche à la crevette 2",
+            "pub_year": 2009,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "011",
+            "pages": 25,
+            "pdf_size": 523,
+            "description": ""
+        }
+    }
+]

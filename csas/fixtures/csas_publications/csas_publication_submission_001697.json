@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1697,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Détermination d'un niveau de récolte admissible de laminaires Laminaria longicruris dans la Baie des Chaleurs, Québec",
+            "pub_year": 1987,
+            "lead_author_2": "L. Gendron",
+            "pub_num": "008",
+            "description": ""
+        }
+    }
+]

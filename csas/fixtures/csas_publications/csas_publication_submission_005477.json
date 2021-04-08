@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5477,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Stock assessment update for British Columbia canary rockfish",
+            "title_fr": "Mise à jour de l'évaluation du stock de sébastes canaris en Colombie-Britannique",
+            "pub_year": 2009,
+            "lead_author_2": "Stanley, R.",
+            "pub_num": "019",
+            "pages": 39,
+            "pdf_size": 491,
+            "description": ""
+        }
+    }
+]

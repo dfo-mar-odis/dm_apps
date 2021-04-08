@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8149,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of the NAFO Division 4T southern Gulf of St. Lawrence Atlantic herring (Clupea harengus) in 2016-2017",
+            "title_fr": "Évaluation des stocks de hareng de l’Atlantique (Clupea harengus) de la division 4T de l’OPANO dans le sud du golfe du Saint-Laurent en 2016 et 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Jenni McDermid",
+            "pub_num": "052",
+            "description": ""
+        }
+    }
+]

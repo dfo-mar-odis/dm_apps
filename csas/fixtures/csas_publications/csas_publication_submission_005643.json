@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5643,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Review of the Southern Newfoundland Strategic Environmental Assessment",
+            "title_fr": "Examen de l'évaluation environnementale stratégique du sud de Terre-Neuve",
+            "pub_year": 2010,
+            "pub_num": "008",
+            "pages": 26,
+            "pdf_size": 123,
+            "description": ""
+        }
+    }
+]

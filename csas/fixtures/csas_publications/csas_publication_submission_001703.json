@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1703,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Prospects for a sea scallop fishery on St. Pierre Bank in 1987",
+            "pub_year": 1987,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill",
+            "pub_num": "014",
+            "pages": 17,
+            "pdf_size": 1024,
+            "description": ""
+        }
+    }
+]

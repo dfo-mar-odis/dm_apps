@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 263,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Fisheries Management Studies Working Group; 12 January 2000",
+            "pub_year": 2000,
+            "lead_author_2": "R.G. Halliday",
+            "pub_num": "002",
+            "description": ""
+        }
+    }
+]

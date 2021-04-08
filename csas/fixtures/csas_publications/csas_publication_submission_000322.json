@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 322,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biological evaluation of the 1992 4WX herring fishery",
+            "pub_year": 1993,
+            "lead_author_2": "R.L. Stephenson; M.J. Power; J.B. Sochasky; U. Buerkle; F.J. Fife; G.D. Melvin",
+            "pub_num": "076",
+            "pages": 80,
+            "pdf_size": 3413,
+            "description": ""
+        }
+    }
+]

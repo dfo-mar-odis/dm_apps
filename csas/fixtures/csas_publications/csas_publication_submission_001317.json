@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1317,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the witch flounder stock on St. Pierre Bank (NAFO Subdivision 3Ps)",
+            "pub_year": 1986,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "070",
+            "pages": 12,
+            "pdf_size": 650,
+            "description": ""
+        }
+    }
+]

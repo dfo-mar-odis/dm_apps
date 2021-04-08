@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5772,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Advice relevant to the identification of critical habitat for copper redhorse (Moxostoma hubbsi)",
+            "title_fr": "Avis sur la désignation de l'habitat essentiel du chevalier cuivré (Moxostoma hubbsi)",
+            "pub_year": 2010,
+            "lead_author_2": "Cyr, Charley",
+            "pub_num": "072",
+            "pages": 12,
+            "pdf_size": 150,
+            "description": ""
+        }
+    }
+]

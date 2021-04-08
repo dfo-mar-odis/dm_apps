@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4541,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Atlantic Halibut on the Scotian Shelf and Southern Grand Banks (Div. 3NOPs4VWX5Zc) - Industry/DFO Longline Survey Results to 2005",
+            "title_fr": "Flétan du plateau Néo-écossais et du sud des Grands Bancs (div. 3NOPs4VWX5Zc) - résultats du relevé à la palangre réalisé par l'industrie et le MPO jusqu'en 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Armsworthy, S., S. Wilson, R.K. Mohn.",
+            "pub_num": "065",
+            "pages": 35,
+            "pdf_size": 415,
+            "description": ""
+        }
+    }
+]

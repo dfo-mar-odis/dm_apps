@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 551,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary Results from the September 1999 Groundfish Survey in the Southern Gulf of St. Lawrence",
+            "title_fr": "Résultats préliminaires du relevé de septembre 1999 sur les poissons de fond dans le sud du Golfe du Saint-Laurent",
+            "pub_year": 1999,
+            "lead_author_2": "Poirier, G., Chouinard, G.A., Swain, D.P., Hurlbut, T., LeBlanc, C., Morin, R.",
+            "pub_num": "162",
+            "pages": 48,
+            "pdf_size": 518,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8504,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Alberta’s Fisheries Sustainability Assessment: A Guide to Assessing Population Status, and Quantifying Cumulative Effects using the Joe Modelling Technique",
+            "title_fr": "Évaluation de la durabilité des pêches de l’Alberta : Guide pour évaluer la situation d’une population de poissons et quantifier les effets cumulatifs connexes au moyen de la modélisation de Joe",
+            "pub_year": 2019,
+            "lead_author_2": "L. MacPherson, M. Sullivan, J. Reilly and A. Paul.",
+            "pub_num": "058",
+            "pages": 52,
+            "pdf_size": 1580,
+            "description": ""
+        }
+    }
+]

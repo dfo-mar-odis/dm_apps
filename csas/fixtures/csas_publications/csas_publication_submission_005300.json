@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5300,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An Overview of Meteorological, Sea Ice and Sea-Surface Temperature Conditions off Nova Scotia and the Gulf of Maine during 2008",
+            "title_fr": "Bilan des conditions météorologiques, des conditions de la glace de mer et des températures de surface de la mer au large de la Nouvelle-Écosse et dans le golfe du Maine en 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Petrie, B., Pettipas, R.G., Petrie, W.M.",
+            "pub_num": "041",
+            "pages": 38,
+            "pdf_size": 6442,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5647,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process for the Review of the Gilbert Bay Marine Protected Area monitoring indicators, protocols and strategies, and an assessment of the Gilbert Bay cod population; October 22, 2009",
+            "title_fr": "Compte rendu du processus de consultation scientifique régional de Terre-Neuve et du Labrador sur l'examen des indicateurs, des protocoles et des stratégies de surveillance de la zone de protection marine de la baie Gilbert et sur l'évaluation de la population de morue de la baie Gilbert; le 22 octobre 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Templeman, N.D.",
+            "pub_num": "024",
+            "pages": 31,
+            "pdf_size": 211,
+            "description": ""
+        }
+    }
+]

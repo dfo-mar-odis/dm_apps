@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4834,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "A quantitative approach to assessing allowable harm in species at risk: application to the Laurentian black redhorse (Moxostoma duquesnei)",
+            "title_fr": "Approche quantitative pour l'évaluation des dommages admissibles causés aux espèces en péril : application au chevalier noir (Moxostoma duquesnei)",
+            "pub_year": 2007,
+            "lead_author_2": "Vélez-Espino, L.A., M.A. Koops.",
+            "pub_num": "051",
+            "pages": 32,
+            "pdf_size": 241,
+            "description": ""
+        }
+    }
+]

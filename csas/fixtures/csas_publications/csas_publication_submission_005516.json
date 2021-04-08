@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5516,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on rock crab in the Quebec's inshore waters; February 2, 2010",
+            "title_fr": "Évaluation des stocks de crabe commun des eaux côtières du Québec; 2 février 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Gendron, L.",
+            "pub_num": "014",
+            "pages": 16,
+            "description": ""
+        }
+    }
+]

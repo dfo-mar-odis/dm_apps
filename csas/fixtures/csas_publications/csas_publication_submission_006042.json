@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6042,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process on the Assessment Framework for Southwest Nova Scotia/Bay of Fundy Herring; January 24-28, 2011",
+            "title_fr": "Compte rendu d'une réunion tenue dans le cadre du processus de consultation scientifique de la Région des Maritimes au sujet du hareng du sud ouest de la Nouvelle Écosse et de la baie de Fundy ; du 24 au 28 janvier 2011",
+            "pub_year": 2011,
+            "lead_author_2": "R. Claytor / T. McIntyre / V. Myra",
+            "pub_num": "031",
+            "pages": 34,
+            "pdf_size": 165,
+            "description": ""
+        }
+    }
+]

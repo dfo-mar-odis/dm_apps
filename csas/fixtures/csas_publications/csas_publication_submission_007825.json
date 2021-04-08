@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7825,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review for the Re-evaluation of the Placentia Bay-Grand Banks Large Ocean Management Area to identify Ecologically and Biologically Significant Areas; January 17-18, 2017",
+            "lead_author_2": "Keith Clarke/Erika Parrill",
+            "description": ""
+        }
+    }
+]

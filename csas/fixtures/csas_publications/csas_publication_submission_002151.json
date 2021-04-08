@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2151,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Summary of catch statistics by sub-area and assessment unit for the northern Labrador Arctic charr and Atlantic salmon fisheries in 1991",
+            "pub_year": 1992,
+            "lead_author_2": "J.B. Dempson; M. Shears",
+            "pub_num": "003",
+            "pages": 30,
+            "description": ""
+        }
+    }
+]

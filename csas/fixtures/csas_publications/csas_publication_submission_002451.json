@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2451,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Management activities for 1994 and early 1995 in the Scotia-Fundy Region",
+            "pub_year": 1995,
+            "lead_author_2": "C. Annand; J. Hansen",
+            "pub_num": "045",
+            "pages": 33,
+            "pdf_size": 1493,
+            "description": ""
+        }
+    }
+]

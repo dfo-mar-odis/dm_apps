@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6636,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Limit Reference Points and Minimum Populations of Harp Seals (Pagophilus groenlandicus)",
+            "title_fr": "Points de référence limite et populations minimales de phoques du Groenland (Pagophilus groenlandicus)",
+            "pub_year": 2012,
+            "pub_num": "067",
+            "pages": 10,
+            "pdf_size": 194,
+            "description": ""
+        }
+    }
+]

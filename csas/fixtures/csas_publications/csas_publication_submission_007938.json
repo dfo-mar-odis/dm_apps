@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7938,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Review of Design Strategies for the Northern Shelf Bioregion Marine Protected Area Network",
+            "lead_author_2": "Miriam O",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7088,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Pup production of Northwest Atlantic grey seals in the Gulf of St. Lawrence (Wp_7b)",
+            "title_fr": "La production de jeunes phoques gris de l’Atlantique Nord-Ouest dans le golfe du Saint Laurent",
+            "pub_year": 2017,
+            "lead_author_2": "Hammill, M.O., Gosselin, J-F., and Stenson, G.B.",
+            "pub_num": "043",
+            "pages": 18,
+            "pdf_size": 526,
+            "description": ""
+        }
+    }
+]

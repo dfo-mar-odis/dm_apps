@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1153,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Greenland halibut in the Gulf of St. Lawrence - From immigrants to emigrants",
+            "pub_year": 1981,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "055",
+            "pages": 11,
+            "pdf_size": 3429,
+            "description": ""
+        }
+    }
+]

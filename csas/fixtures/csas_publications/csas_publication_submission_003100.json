@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3100,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Iceland Scallop: Grand Banks of Newfoundland (NAFO Div. 3LN) and Strait of Belle Isle (NAFO Div. 4R)",
+            "pub_year": 1997,
+            "lead_author_2": "K.S. Naidu",
+            "pub_num": "C2-07",
+            "pages": 6,
+            "pdf_size": 315,
+            "description": ""
+        }
+    }
+]

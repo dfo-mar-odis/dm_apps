@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4675,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process for 3Ps Cod; October 16-20, 2006",
+            "title_fr": "Compte rendu du processus consultatif régional de Terre-Neuve-et-Labrador sur la morue dans 3Ps; du 16 au 20 octobre 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Morgan, J., Bishop, C., Wells, N.",
+            "pub_num": "016",
+            "pages": 32,
+            "pdf_size": 158,
+            "description": ""
+        }
+    }
+]

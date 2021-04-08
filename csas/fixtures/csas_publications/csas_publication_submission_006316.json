@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6316,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Methods to determine the efficacy of utilizing artificial scallop and rock reefs as fish habitat compensation in inshore Newfoundland",
+            "title_fr": "Méthodes visant à déterminer l'efficacité de l'utilisation de récifs artificiels de pétoncles et de roches comme compensation de l'habitat du poisson dans les eaux côtières de Terre-Neuve",
+            "pub_year": 2017,
+            "lead_author_2": "Warren, T.N., and Roberge, M.M.",
+            "pub_num": "047",
+            "pages": 22,
+            "pdf_size": 805,
+            "description": ""
+        }
+    }
+]

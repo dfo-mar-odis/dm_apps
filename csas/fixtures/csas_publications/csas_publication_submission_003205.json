@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3205,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "State of the Ocean: Scotian Shelf, Bay of Fundy and Gulf of Maine",
+            "title_fr": "État de l'océan : plateau néo-écossais, baie de Fundy et golfe du Maine",
+            "pub_year": 1996,
+            "lead_author_2": "Page, F.;Drinkwater, K.",
+            "pub_num": "063",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

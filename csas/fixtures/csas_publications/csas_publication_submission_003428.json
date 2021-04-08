@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3428,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Peer Review of Snow Crab Stocks in the Gulf of St. Lawrence Gulf Fisheries Management Region; February 13-16, 2001",
+            "title_fr": "Procès-verbale des séances d'examen par les pairs pour le crabe des neiges du Sud du golfe du Saint-Laurent Région de geation des pêches du Golfe; du 13 au 16 février 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Jake Rice, Chairperson",
+            "pub_num": "041",
+            "pages": 28,
+            "pdf_size": 270,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6071,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Zonal Advisory Process on the Recovery Potential Assessment of Acadian Redfish (Sebastes fasciatus), Atlantic Canada Designatable Unit (DU) and Deepwater redfish (S. mentella), Northern and Gulf of St. Lawrence - Laurentian Channel DUs; March 8-9, 2011",
+            "title_fr": "Processus consultatif scientifique zonal sur l'évaluation du potentiel de rétablissement du sébaste d'Acadie (Sebastes fasciatus) de l'unité désignable du Canada atlantique et du sébaste atlantique (S. mentella) des unités désignables du golfe du Saint-Laurent/chenal laurentien et du nord ; les 8 et 9 mars 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "044",
+            "pages": 31,
+            "pdf_size": 168,
+            "description": ""
+        }
+    }
+]

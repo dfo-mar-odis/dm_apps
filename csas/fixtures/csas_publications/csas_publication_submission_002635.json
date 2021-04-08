@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2635,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of cod in Division 4X in 1996",
+            "pub_year": 1996,
+            "lead_author_2": "D.S. Clark; L.L. Brown",
+            "pub_num": "101",
+            "pages": 43,
+            "pdf_size": 2436,
+            "description": ""
+        }
+    }
+]

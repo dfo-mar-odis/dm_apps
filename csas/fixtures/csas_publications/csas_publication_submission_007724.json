@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7724,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Stock Assessment of Northern cod (Divisions 2J3KL); March 21-24 and March 30-31, 2016",
+            "title_fr": "Compte rendu de l’évaluation du stock de morue du nord (Divisions 2J3KL) ; Du 21 au 24 mars et les 30 au 31 mars 2016",
+            "pub_year": 2018,
+            "lead_author_2": "J. Meade",
+            "pub_num": "003",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5638,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the 2009 Recovery Potential Assessment (RPA) for Atlantic Whitefish (Coregonus huntsmani); 24-25 March 2009",
+            "title_fr": "Compte rendu de l'évaluation du potentiel de rétablissement du corégone atlantique (Coregonus huntsmani) de 2009; les 24 et 25 mars 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Worcester, T.",
+            "pub_num": "021",
+            "pages": 25,
+            "pdf_size": 117,
+            "description": ""
+        }
+    }
+]

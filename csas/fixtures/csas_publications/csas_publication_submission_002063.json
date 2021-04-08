@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2063,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of the cod-haddock-pollock combined quota system for the under 65' mobile gear sector in the Western Scotia-Fundy Region",
+            "pub_year": 1990,
+            "lead_author_2": "R. Mohn; R.G. Halliday; C. Annand",
+            "pub_num": "062",
+            "pages": 13,
+            "pdf_size": 806,
+            "description": ""
+        }
+    }
+]

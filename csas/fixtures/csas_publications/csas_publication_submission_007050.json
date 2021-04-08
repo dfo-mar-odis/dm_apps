@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7050,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Technical Review of the Effects of the Site C Clean Energy Project on Fish and Fish Habitat of the Peace River, British Columbia",
+            "title_fr": "Examen technique des effets du projet d'énergie propre du site C sur les poissons de la riviére de la Paix (Colombie-Britannique) et leur habitat",
+            "pub_year": 2014,
+            "pub_num": "011",
+            "description": ""
+        }
+    }
+]

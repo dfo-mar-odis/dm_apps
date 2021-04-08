@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4616,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Presentation and Review of the Benthic Mapping Project in Scallop Fishing Area 29, Southwest Nova Scotia; 16 February 2006",
+            "title_fr": "Présentation et examen du projet de cartes benthiques dans la zone de pêche du pétoncle 29, au sud ouest de la Nouvelle-Écosse; le 16 février 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Smith, S.",
+            "pub_num": "047",
+            "pages": 50,
+            "pdf_size": 4527,
+            "description": ""
+        }
+    }
+]

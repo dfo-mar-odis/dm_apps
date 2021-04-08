@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 818,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Stock Structure, Movements, and Exploitation of Atlantic Cod (Gadus morhua) in NAFO Divs. 2J+3KL based on Tagging Experiments conducted during 1999-2000",
+            "title_fr": "Structure, déplacements et exploitation des stocks de morue (Gadus morhua) des divisions 2J+3KL de l'OPANO d'après des expériences d'étiquetage menées en 1999-2000",
+            "pub_year": 2001,
+            "lead_author_2": "Brattey, J., Porter, D., Goerge, C.",
+            "pub_num": "072",
+            "pages": 35,
+            "pdf_size": 1680,
+            "description": ""
+        }
+    }
+]

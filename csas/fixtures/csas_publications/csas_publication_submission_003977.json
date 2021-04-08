@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3977,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Update on effort standardization for the in-season monitoring of the prawn by trap fishery",
+            "title_fr": "Bilan de la normalisation de l'effort pour la surveillance en saison de la pêche des crevettes au casier",
+            "pub_year": 2004,
+            "lead_author_2": "Rutherford, D.T., H. Nguyen, G.E. Gillespie.",
+            "pub_num": "015",
+            "pages": 17,
+            "pdf_size": 169,
+            "description": ""
+        }
+    }
+]

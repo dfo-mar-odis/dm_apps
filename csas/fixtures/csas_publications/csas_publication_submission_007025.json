@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7025,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of the Interior Fraser Coho Salmon (Oncorhynchus kisutch) Management Unit Relative to the 2006 Conservation Strategy Recovery Objectives",
+            "title_fr": "Évaluation de l'unité de gestion du saumon coho (Oncorhynchus kisutch) du Fraser intérieur par rapport aux objectifs de rétablissement de la stratégie de conservation de 2006",
+            "pub_year": 2014,
+            "lead_author_2": "Scott Decker, Bruce Patten, Mike Hawkshaw, Joel Sawada, Lester Jantz",
+            "pub_num": "086",
+            "pages": 75,
+            "pdf_size": 2074,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7174,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the regional peer review of the assessment of Atlantic herring in the southern Gulf of St. Lawrence (NAFO Div. 4T) to 2013, March 11-12, 2014",
+            "lead_author_2": "Gerald Chaput",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5883,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment for Rocky Mountain ridged mussel (Gonidea angulata)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la gonidée des Rocheuses (Gonidea angulata)",
+            "pub_year": 2011,
+            "lead_author_2": "Ray Lauzier/Lily Stanton",
+            "pub_num": "109",
+            "pages": 43,
+            "pdf_size": 814,
+            "description": ""
+        }
+    }
+]

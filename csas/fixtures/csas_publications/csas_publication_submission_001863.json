@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1863,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Movement of offshore lobster (Homarus americanus) displaced to coastal areas of Nova Scotia",
+            "pub_year": 1988,
+            "lead_author_2": "D.R. Duggan; D.S. Pezzack",
+            "pub_num": "067",
+            "pages": 14,
+            "pdf_size": 1789,
+            "description": ""
+        }
+    }
+]

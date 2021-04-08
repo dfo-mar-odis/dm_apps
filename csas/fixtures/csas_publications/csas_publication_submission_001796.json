@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1796,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Atlantic salmon of the LaHave River, Nova Scotia, in 1986 and forecast of returns in 1987",
+            "pub_year": 1987,
+            "lead_author_2": "R.E. Cutting; E.M. Jefferson; S.F. O'Neil",
+            "pub_num": "106",
+            "pages": 18,
+            "pdf_size": 887,
+            "description": ""
+        }
+    }
+]

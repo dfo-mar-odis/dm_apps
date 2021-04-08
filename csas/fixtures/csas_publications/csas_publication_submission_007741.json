@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7741,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of the Assessment of Northern and Striped Shrimp; April 6-8, 2016",
+            "title_fr": "Compte rendu de la réunion d’examen régional par les pairs sur l’Évaluation de la crevette nordique et de la crevette ésope; du 6 au 8 avril 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Erika Parrill",
+            "pub_num": "053",
+            "pages": 24,
+            "pdf_size": 271,
+            "description": ""
+        }
+    }
+]

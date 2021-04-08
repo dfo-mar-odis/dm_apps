@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4113,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Changes in Distribution and Habitat Associations of Wolffish (Anarhichidae) in the Grand Banks and Labrador Shelf",
+            "title_fr": "Changements dans la répartition des loups de mer (Anarhichidae) et l'habitat fréquenté sur les Grands Bancs et le plateau continental du Labrador",
+            "pub_year": 2004,
+            "lead_author_2": "Kulka D.W., M.R. Simpson, R.G. Hooper.",
+            "pub_num": "113",
+            "pages": 48,
+            "pdf_size": 1766,
+            "description": ""
+        }
+    }
+]

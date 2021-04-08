@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3723,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Updates on Selected Scotian Shelf Groundfish Stocks in 2002",
+            "title_fr": "Mises à jour de l'état de certains stocks de poisson de fond du plateau néo-écossais en 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Fanning, P., Nielson, J., Showell, M., Branton, R., McRuer, J., Fowler, M., Comeau, P.",
+            "pub_num": "A3-35",
+            "pages": 30,
+            "description": ""
+        }
+    }
+]

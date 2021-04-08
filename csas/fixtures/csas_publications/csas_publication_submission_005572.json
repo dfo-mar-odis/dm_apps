@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5572,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the zonal advisory process for Redfish in Units 1 & 2; February 25 and 26, 2010",
+            "title_fr": "Compte rendu du processus de consultation scientifique zonal sur le sébaste des unités 1 et 2; 25 et 26 février 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Gascon, D.; Dubé, S.",
+            "pub_num": "018",
+            "pages": 28,
+            "pdf_size": 151,
+            "description": ""
+        }
+    }
+]

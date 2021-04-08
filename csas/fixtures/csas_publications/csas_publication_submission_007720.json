@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7720,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of Northern Cod (NAFO Divs. 2J3KL) in 2016",
+            "title_fr": "Évaluation du stock de morue du Nord (Divisions 2J3KL de l’OPANO) en 2016",
+            "pub_year": 2016,
+            "lead_author_2": "J. Brattey",
+            "pub_num": "026",
+            "pages": 17,
+            "pdf_size": 413,
+            "description": ""
+        }
+    }
+]

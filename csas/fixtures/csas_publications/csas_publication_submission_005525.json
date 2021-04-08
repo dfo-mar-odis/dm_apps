@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5525,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Spatial Analysis of Coral and Sponge Densities with Associated Fishing Effort in Proximity to Hatton Basin (NAFO Divisions 2G-0B)",
+            "title_fr": "Analyse spatiale des concentrations de corail et d'éponge avec l'effort de pêche associé à proximité du bassin Hatton (divisions 2G-0B de l'OPANO)",
+            "pub_year": 2010,
+            "lead_author_2": "Wareham, V.E., Ollerhead, N.E. and Gilkinson, K.D.",
+            "pub_num": "058",
+            "pages": 40,
+            "pdf_size": 3157,
+            "description": ""
+        }
+    }
+]

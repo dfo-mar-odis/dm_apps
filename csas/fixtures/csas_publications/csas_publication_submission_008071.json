@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8071,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of northern shrimp stocks in the Estuary and Gulf of St. Lawrence in 2017: data from the research survey",
+            "title_fr": "Évaluation des stocks de crevette nordique de l’estuaire et du golfe du Saint-Laurent en 2017 : données du relevé de recherche",
+            "pub_year": 2018,
+            "lead_author_2": "Bourdages, H., Marquis, M.C., Nozères, C. and Ouellette-Plante, J.",
+            "pub_num": "057",
+            "pages": 71,
+            "pdf_size": 17546,
+            "description": ""
+        }
+    }
+]

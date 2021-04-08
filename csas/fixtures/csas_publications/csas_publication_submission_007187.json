@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7187,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Freshwater cage aquaculture: ecosystems impacts from dissolved and particulate waste phosphorus",
+            "title_fr": "Aquaculture en cage en eau douce : impacts écosystémiques des déchets de phosphore dissous et sous forme de particules",
+            "pub_year": 2015,
+            "lead_author_2": "Contact C. Busby",
+            "pub_num": "051",
+            "pages": 24,
+            "pdf_size": 454,
+            "description": ""
+        }
+    }
+]

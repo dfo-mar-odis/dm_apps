@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 835,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) stocks of insular Newfoundland (SFAs 3-14A), 2000",
+            "title_fr": "État des stocks de saumons atlantique (Salmo salar L.) de l'île de Terre-Neuve (ZPS 3-14A) en 2000",
+            "pub_year": 2001,
+            "lead_author_2": "M.F. O'Connell, J.B. Dempson, C.C. Mullins, D.G. Reddin, N.M. Cochrane and D. Caines",
+            "pub_num": "078",
+            "pages": 73,
+            "pdf_size": 3110,
+            "description": ""
+        }
+    }
+]

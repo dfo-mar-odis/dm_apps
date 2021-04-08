@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6672,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information to support the re-assessment of ecologically and biologically significant areas (EBSAs) in the Beaufort Sea Large Ocean Management Area",
+            "title_fr": "Renseignements à l'appui de la réévaluation des zones d'importance écologique et biologique (ZIEB) dans la zone étendue de gestion des océans de la mer de Beaufort",
+            "pub_year": 2014,
+            "lead_author_2": "Joclyn Paulic/Don Cobb",
+            "pub_num": "097",
+            "pages": 41,
+            "pdf_size": 2681,
+            "description": ""
+        }
+    }
+]

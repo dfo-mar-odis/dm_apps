@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5044,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of green sea urchin of the North Shore of the St. Lawrence Estuary in 2008",
+            "title_fr": "Évaluation de l'oursin vert de la côte nord de l'estuaire du Saint-Laurent en 2008",
+            "pub_year": 2008,
+            "lead_author_2": "B. Sainte-Marie",
+            "pub_num": "048",
+            "pages": 13,
+            "pdf_size": 240,
+            "description": ""
+        }
+    }
+]

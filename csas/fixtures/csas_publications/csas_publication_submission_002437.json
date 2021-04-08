@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2437,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of 2GH cod, 3LNO haddock, 3Ps haddock and 3Ps pollock",
+            "pub_year": 1995,
+            "lead_author_2": "E. Murphy; C. A. Bishop",
+            "pub_num": "033",
+            "pages": 30,
+            "pdf_size": 989,
+            "description": ""
+        }
+    }
+]

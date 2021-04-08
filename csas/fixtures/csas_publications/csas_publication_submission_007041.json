@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7041,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Framework Assessment and 2013 Update using a Stage-based Population Model for Spiny Dogfish (Squalus acanthias) in the Northwest Atlantic",
+            "title_fr": "Évaluation du cadre et mise à jour de 2013 selon un modèle de population axé sur les étapes pour l'aiguillat commun (Squalus acanthias) dans l'Atlantique Nord‑Ouest",
+            "pub_year": 2015,
+            "lead_author_2": "Fowler, G.M. and Campana, S.E.",
+            "pub_num": "065",
+            "pages": 139,
+            "pdf_size": 3630,
+            "description": ""
+        }
+    }
+]

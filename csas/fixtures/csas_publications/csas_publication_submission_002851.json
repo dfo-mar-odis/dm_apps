@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2851,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The interaction of wind, temperature, and catch rate of lobster homarus americanus on the Acadian peninsula .",
+            "pub_year": 1997,
+            "lead_author_2": "Comeau, M., Drinkwater, K.",
+            "pub_num": "097",
+            "pages": 18,
+            "pdf_size": 825,
+            "description": ""
+        }
+    }
+]

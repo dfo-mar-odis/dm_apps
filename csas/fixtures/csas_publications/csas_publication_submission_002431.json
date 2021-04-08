@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2431,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update of the status of 4Vn cod: 1994",
+            "pub_year": 1995,
+            "lead_author_2": "T.C. Lambert; S. Wilson",
+            "pub_num": "027",
+            "pages": 12,
+            "pdf_size": 463,
+            "description": ""
+        }
+    }
+]

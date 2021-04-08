@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3720,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of 2001 Chinook Returns to the West Coast Vancouver Island, Forecast of the 2002 Return to the Stamp River / Robertson Creek Hatchery Indicator Stock, and Outlook for other WCVI Chinook Stocks",
+            "title_fr": "Remontes du saumon quinnat sur la côte ouest de l'île de Vancouver en 2001, prévision de la remonte de 2002 du stock indicateur de la rivière Stamp et de l'écloserie du ruisseau Robertson et perspectives pour les autres stocks de saumon quinnat de la côte ouest de l'île de Vancouver",
+            "pub_year": 2002,
+            "lead_author_2": "B.E. Riddell, W. Luedke, J. Till, S. Taylor, A. Tompkins",
+            "pub_num": "119",
+            "pages": 44,
+            "pdf_size": 270,
+            "description": ""
+        }
+    }
+]

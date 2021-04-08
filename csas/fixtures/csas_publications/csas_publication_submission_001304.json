@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1304,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution, abundance, and preliminary estimates of producton potential for the ocean quahaug (Arctica islandica) and Stimpson's surf clam (Spisula polynyma) on the Scotian Shelf",
+            "pub_year": 1986,
+            "lead_author_2": "T.W. Rowell; T. Amaratunga",
+            "pub_num": "056",
+            "pages": 21,
+            "pdf_size": 1173,
+            "description": ""
+        }
+    }
+]

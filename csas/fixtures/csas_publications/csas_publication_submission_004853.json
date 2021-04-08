@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4853,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Annual Meeting of the National Marine Mammal Peer Review Committee (NMMPRC); October 29 - November 1, 2007",
+            "title_fr": "Réunion annuelle de Comité national d'examen par les pairs sur les mammifères marins (CNEPMM); du 29 octobre au 1er novembre 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Bowen, D., K. Martin",
+            "pub_num": "056",
+            "pages": 90,
+            "pdf_size": 524,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4028,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Babbage River Dolly Varden",
+            "title_fr": "La Dolly Varden de la rivière Babbage",
+            "pub_year": 2002,
+            "lead_author_2": "Stephenson, S.",
+            "pub_num": "D5-62",
+            "pages": 12,
+            "description": ""
+        }
+    }
+]

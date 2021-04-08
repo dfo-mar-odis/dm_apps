@@ -25,17 +25,6 @@ def get_name(self):
 User.add_to_class("__str__", get_name)
 
 
-class RequestType(models.Model):
-    request_type = models.CharField(max_length=255)
-    financial_follow_up_needed = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.request_type
-
-    class Meta:
-        ordering = ['request_type', ]
-
-
 class Tag(models.Model):
     tag = models.CharField(max_length=255)
 
@@ -74,11 +63,34 @@ class Ticket(models.Model):
     WISHLIST = '4'
     URGENT = '5'
     PRIORITY_CHOICES = (
-        (HIGH, 'High'),
-        (MED, 'Medium'),
-        (LOW, 'Low'),
-        (WISHLIST, 'Wish List'),
-        (URGENT, 'Urgent'),
+        (HIGH, _('High')),
+        (MED, _('Medium')),
+        (LOW, _('Low')),
+        (WISHLIST, _('Wish List')),
+        (URGENT, _('Urgent')),
+    )
+    request_type_choices = (
+        (1, _('Software request / installation')),
+        (2, _('System Adoption')),
+        (3, _('Database creation')),
+        (4, _('Data sharing / publication')),
+        (5, _('Process development')),
+        (6, _('Hardware')),
+        (7, _('Data entry / digitization')),
+        (8, _('Permissions')),
+        (9, _('Database maintenance')),
+        (12, _('Software issue (licensing)')),
+        (13, _('Disk recovery')),
+        (14, _('Hardware and software')),
+        (15, _('Security exemption')),
+        (16, _('App development')),
+        (17, _('Report development')),
+        (18, _('Other')),
+        (19, _('App enhancement')),
+        (20, _('Bug')),
+        (21, _('Quality control element')),
+        (22, _('Data transfer')),
+        (23, _('New Shiny App')),
     )
 
     title = models.CharField(max_length=255)
@@ -87,10 +99,10 @@ class Ticket(models.Model):
     dm_assigned = models.ManyToManyField(User, limit_choices_to={"is_staff": True},
                                          verbose_name=_("ticket assigned to"), blank=True, related_name="dm_assigned_tickets")
     section = models.ForeignKey(shared_models.Section, on_delete=models.DO_NOTHING, blank=True, null=True)
-    request_type = models.ForeignKey(RequestType, on_delete=models.DO_NOTHING)
+    request_type = models.IntegerField(verbose_name=_("type of request"), choices=request_type_choices, default=20)
     status = models.ForeignKey(Status, default=2, on_delete=models.DO_NOTHING)
-    priority = models.CharField(default='2', max_length=1, choices=PRIORITY_CHOICES)
-    description = models.TextField(blank=True, null=True)
+    priority = models.CharField(default='2', max_length=1, choices=PRIORITY_CHOICES, verbose_name=_("priority level"))
+    description = models.TextField(blank=True, null=True, verbose_name=_("description"))
     financial_coding = models.CharField(max_length=100, blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     notes_html = models.TextField(blank=True, null=True, verbose_name="Notes")
@@ -98,8 +110,7 @@ class Ticket(models.Model):
     date_closed = models.DateTimeField(null=True, blank=True)
     date_modified = models.DateTimeField(auto_now=True)
     people_notes = models.TextField(blank=True, null=True)
-    resolved_email_date = models.DateTimeField(null=True, blank=True,
-                                               verbose_name="Notification sent to primary contact")
+    resolved_email_date = models.DateTimeField(null=True, blank=True, verbose_name="Notification sent to primary contact")
     # SERVICE DESK FIELDS
     sd_ref_number = models.CharField(max_length=8, null=True, blank=True, verbose_name="Service desk reference #")
     sd_ticket_url = models.URLField(null=True, blank=True, verbose_name="Service desk ticket URL")

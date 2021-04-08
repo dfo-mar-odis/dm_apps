@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5608,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Science Review of a Preconstruction Caged Bivalve Study for the Marine Baseline Monitoring Program at Sydney Harbour, Nova Scotia",
+            "title_fr": "Examen scientifique d'une étude sur les mollusques bivalves élevés en cage avant les travaux de construction pour le Marine Baseline Monitoring Program dans le port de Sydney, en Nouvelle-Écosse",
+            "pub_year": 2010,
+            "lead_author_2": "L. Bennett, E. Kennedy, M. Wong, B. Law",
+            "pub_num": "007",
+            "pages": 6,
+            "pdf_size": 40,
+            "description": ""
+        }
+    }
+]

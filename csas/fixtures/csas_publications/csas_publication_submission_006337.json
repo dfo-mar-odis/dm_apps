@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6337,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Centre for Science Advice, Pacific Region Review of A framework for an ecosystem-based approach to managing the Strait of Georgia, British Columbia; February 16-17, 2011",
+            "title_fr": "Compte rendu du Centre des avis scientifique de la région du Pacifique sur l'Examen du cadre d'une approche écosystémique dans la gestion du détroit de Georgia, en Colombie-Britannique ; les 16 et 17 février 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Marilyn Joyce & Jim Boutillier",
+            "pub_num": "069",
+            "pages": 25,
+            "pdf_size": 150,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7735,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review of the Assessment of the West Coast of Newfoundland (4R) herring stocks in 2015; March 8, 2016",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l'Évaluation des stocks de hareng de la côte ouest de Terre-Neuve (4R) en 2015; le 8 mars 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Yvan Lambert",
+            "pub_num": "019",
+            "pages": 10,
+            "pdf_size": 91,
+            "description": ""
+        }
+    }
+]

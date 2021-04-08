@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 845,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The stock composition of Atlantic salmon off west Greenland and in the Labrador Sea in 1978 and a comparison to other years",
+            "pub_year": 1979,
+            "lead_author_2": "D.G. Reddin, R.F. Burfitt; W.H. Lear",
+            "pub_num": "003",
+            "pages": 27,
+            "pdf_size": 996,
+            "description": ""
+        }
+    }
+]

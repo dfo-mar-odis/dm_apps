@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6393,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Framework for Assessing the Ecological Flow Requirements to Support Fisheries in Canada",
+            "title_fr": "Cadre d'évaluation des exigences relatives au débit écologique nécessaire pour soutenir les pêches au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Roger Wysocki",
+            "pub_num": "017",
+            "pages": 16,
+            "pdf_size": 396,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7284,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Western Component (4Xopqrs5) Pollock Harvest Control Rule Update Report",
+            "title_fr": "Rapport de mise à jour sur la règle de contrôle des prises de goberge dans la composante Ouest (4Xopqrs5)",
+            "pub_year": 2015,
+            "lead_author_2": "Heath Stone, Ph. 902-426-3501",
+            "pub_num": "003",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6270,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of potential environmental risks associated with the use of pesticides to treat Atlantic salmon against infestations of sea lice in southwest New Brunswick, Canada",
+            "title_fr": "Examen des risques environnementaux potentiels liés à l'utilisation de pesticides pour traiter le saumon de l'Atlantique contre les infestations de pou du poisson dans le sud-ouest du Nouveau-Brunswick, au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Les Burridge",
+            "pub_num": "050",
+            "pages": 30,
+            "pdf_size": 269,
+            "description": ""
+        }
+    }
+]

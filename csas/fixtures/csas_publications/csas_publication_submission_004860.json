@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4860,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "A review and re-analysis of Cosens et al. (2006) aerial survey assessment of bowhead whale abundance for the eastern Canadian Arctic",
+            "title_fr": "Examen et nouvelle analyse de l'évaluation par Cosens et coll. (2006) des relevés aériens de l'abondance du stock de baleines boréales de l'est de l'Arctique canadien",
+            "pub_year": 2007,
+            "lead_author_2": "Dueck, L., P. Richard, S. Cosens.",
+            "pub_num": "080",
+            "pages": 33,
+            "pdf_size": 1040,
+            "description": ""
+        }
+    }
+]

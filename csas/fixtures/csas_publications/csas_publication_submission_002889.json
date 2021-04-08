@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2889,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Analysis of Zn hook and line logbook data: Strait of Georgia management region.",
+            "pub_year": 1997,
+            "lead_author_2": "Kronlund, A.R., Yamanaka, K.L.",
+            "pub_num": "135",
+            "pages": 45,
+            "pdf_size": 2337,
+            "description": ""
+        }
+    }
+]

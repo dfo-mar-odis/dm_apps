@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 99,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1998 snow crab (Chionoecetes opilio) fisheries off eastern Nova Scotia (Areas 20 to 24 (and 4X)), Canada",
+            "pub_year": 1999,
+            "lead_author_2": "Biron, M., Moriyasu, M., Wade, E., DeGrâce, P., Campbell, R., Hébert, M.",
+            "pub_num": "012",
+            "pages": 58,
+            "pdf_size": 5031,
+            "description": ""
+        }
+    }
+]

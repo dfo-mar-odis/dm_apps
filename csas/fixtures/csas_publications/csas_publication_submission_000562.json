@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 562,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of by-catch in the 1997 and 1998 shrimp trawl fisheries in British Columbia, with emphasis on eulachons",
+            "pub_year": 1999,
+            "lead_author_2": "Hay, D.E., Harbo, R., Boutillier, J., Wylie, E., Convey, L., McCarter, P.B.",
+            "pub_num": "179",
+            "pages": 47,
+            "pdf_size": 8688,
+            "description": ""
+        }
+    }
+]

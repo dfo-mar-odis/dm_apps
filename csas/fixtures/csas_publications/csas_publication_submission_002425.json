@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2425,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Model estimates of harp seal numbers at age for the northwest Atlantic",
+            "pub_year": 1995,
+            "lead_author_2": "P. Shelton; G.B. Stenson; B. Sjare; W.G. Warren",
+            "pub_num": "021",
+            "pages": 23,
+            "pdf_size": 1142,
+            "description": ""
+        }
+    }
+]

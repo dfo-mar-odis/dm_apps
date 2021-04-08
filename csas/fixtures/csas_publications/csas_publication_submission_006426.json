@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6426,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Results from the 2011 sentinel bottom-trawl survey in the southern Gulf of St. Lawrence and comparisons with previous 2003 to 2010 surveys",
+            "title_fr": "Résultats du relevé par pêche sentinelle au chalut de fond 2011 dans le sud du golfe du Saint-Laurent et comparaison avec les relevés précédents de 2003 à 2010",
+            "pub_year": 2012,
+            "lead_author_2": "Savoie, L.",
+            "pub_num": "068",
+            "pages": 59,
+            "pdf_size": 2274,
+            "description": ""
+        }
+    }
+]

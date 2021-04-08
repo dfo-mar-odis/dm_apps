@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3717,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Production Areas in the Bay of Fundy and Scallop Fishing Area 29 in 2002: Stock status and forecast",
+            "title_fr": "Zones de production du pétoncle dans la baie de Fundy et Zone de pêche 29 du pétoncle en 2002 : état du stock et prévisions",
+            "pub_year": 2003,
+            "lead_author_2": "Smith, S.J., Lundy, M.J., Roddick, D., Pezzack, D., Frail, C.",
+            "pub_num": "010",
+            "pages": 103,
+            "pdf_size": 3257,
+            "description": ""
+        }
+    }
+]

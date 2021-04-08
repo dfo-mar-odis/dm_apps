@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4137,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Peer Review on Potential Impacts of Seismic Energy on Snow Crab; September 29, 2004",
+            "title_fr": "Compte rendu de l'examen par les pairs des impacts possibles de l'énergie sismique sur le crabe des neiges; le 29 septembre 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Robichaud, L.",
+            "pub_num": "045",
+            "pages": 56,
+            "pdf_size": 361,
+            "description": ""
+        }
+    }
+]

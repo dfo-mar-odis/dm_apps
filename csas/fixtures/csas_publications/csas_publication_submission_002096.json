@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2096,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Can we calibrate pot CPUE with Leslie analyses?",
+            "pub_year": 1991,
+            "lead_author_2": "J.M. Hoenig; E.G. Dawe; D.M. Taylor",
+            "pub_num": "031",
+            "pages": 5,
+            "pdf_size": 187,
+            "description": ""
+        }
+    }
+]

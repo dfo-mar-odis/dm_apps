@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1675,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The effect of freezer storage on herring length and maturity stage determination",
+            "pub_year": 1986,
+            "lead_author_2": "J.J. Hunt; G. Martin; G.A. Chouinard",
+            "pub_num": "089",
+            "pages": 13,
+            "pdf_size": 616,
+            "description": ""
+        }
+    }
+]

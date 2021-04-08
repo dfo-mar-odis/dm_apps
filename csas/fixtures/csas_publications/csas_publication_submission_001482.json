@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1482,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock report for American plaice (Hippoglossoides platessoides (Fabricius)) and other flatfishes in the Gulf of St. Lawrence. Including a discussion of discard levels and mesh selectivity of plaice.",
+            "pub_year": 1984,
+            "lead_author_2": "D. Clay; G. Chouinard; T. Hurlbut; L. Currie, H. Clay",
+            "pub_num": "076",
+            "pages": 30,
+            "pdf_size": 1646,
+            "description": ""
+        }
+    }
+]

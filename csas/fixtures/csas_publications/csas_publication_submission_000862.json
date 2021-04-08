@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 862,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Trends in the witch fishery on St. Pierre Bank",
+            "pub_year": 1978,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "006",
+            "pages": 10,
+            "pdf_size": 549,
+            "description": ""
+        }
+    }
+]

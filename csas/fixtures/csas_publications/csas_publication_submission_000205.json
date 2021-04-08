@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 205,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Factors Affecting the Health of Farmed and Wild Fish Populations: A Perspective from British Columbia",
+            "pub_year": 1998,
+            "lead_author_2": "S. St. Hilaire, M. Kent, G. Iwama",
+            "pub_num": "168",
+            "description": ""
+        }
+    }
+]

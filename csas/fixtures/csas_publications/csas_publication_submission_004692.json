@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4692,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Regional Advisory Process on Banquereau Bank Arctic Surfclam and Sable Bank and St. Mary's Bay Ocean Quahog Assessment; 20 April 2007",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif scientifique des provinces Maritimes sur l'évaluation de la mactre de Stimpson du Banquereau et du quahog nordique du banc de l'île de Sable et de la baie St. Mary's; le 20 avril 2007",
+            "pub_year": 2007,
+            "lead_author_2": "O’Boyle, R.",
+            "pub_num": "019",
+            "pages": 16,
+            "pdf_size": 78,
+            "description": ""
+        }
+    }
+]

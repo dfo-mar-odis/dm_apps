@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3853,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Lobster stock status in the Magdalen Islands (LFA 22) in 2002",
+            "title_fr": "État des stocks de homard aux îles de la Madeleine (Zone 22) en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Gendron, L., Savard, G.",
+            "pub_num": "058",
+            "pages": 65,
+            "pdf_size": 755,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 584,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop stock update for the Grand Manan and Southwest New Brunswick, SPA 6 - 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Butler, M.A.E., Lundy, M.J., Roddick, D.",
+            "pub_num": "174",
+            "pages": 34,
+            "pdf_size": 2682,
+            "description": ""
+        }
+    }
+]

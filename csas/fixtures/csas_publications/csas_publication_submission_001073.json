@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1073,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Geographical size differences in Canadian offshore lobsters",
+            "pub_year": 1980,
+            "lead_author_2": "A.B. Stasko; R.W. Pye",
+            "pub_num": "057",
+            "pages": 12,
+            "pdf_size": 743,
+            "description": ""
+        }
+    }
+]

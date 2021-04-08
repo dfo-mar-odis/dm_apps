@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2790,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Atlantic salmon (Salmo salar L.) stock status on rivers in the Northumberland Strait, Nova Scotia area, in 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "O’Neil, S.F., Longard, D.A., Harvie, C.J.",
+            "pub_num": "022",
+            "description": ""
+        }
+    }
+]

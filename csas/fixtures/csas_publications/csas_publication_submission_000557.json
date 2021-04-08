@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 557,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update on the status of scallops in Scallop Production Area 4 in the Bay of Fundy for 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Smith, S.J., Lundy, M.J.",
+            "pub_num": "124",
+            "pages": 68,
+            "pdf_size": 1781,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5784,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Winter diet of grey seals in Cabot Strait",
+            "title_fr": "Régime alimentaire hivernal des phoques gris dans le détroit de Cabot",
+            "pub_year": 2010,
+            "lead_author_2": "Stenson, G.",
+            "pub_num": "128",
+            "pages": 25,
+            "pdf_size": 331,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6699,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Stock assessment for Pacific Ocean Perch in Areas 3CD and 5DE (British Columbia); and A Simultaneous Stock Assessment of Five Rockfishes in British Columbia Waters: Splitnose, Greenstriped, Redstripe, Harlequin and Sharpchin Rockfish; November 6-9, 2012",
+            "title_fr": "Compte rendu de l'examen par les pairs de la région du Pacifique sur l' Évaluation des stocks de sébaste à longue mâchoire dans les zones 3CD et 5DE (Colombie-Britannique); et Évaluation simultanée des stocks de cinq sébastes des eaux de la Colombie-Britannique : bec-de-lièvre, à bandes vertes, à raie rouge, arlequin et à menton pointu ; Le 6 au 9 novembre 2012",
+            "pub_year": 2015,
+            "lead_author_2": "Edwards, Andrew",
+            "pub_num": "065",
+            "pages": 50,
+            "pdf_size": 422,
+            "description": ""
+        }
+    }
+]

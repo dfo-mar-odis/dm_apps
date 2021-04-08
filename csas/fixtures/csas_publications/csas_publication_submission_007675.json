@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7675,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings from the National Peer Review Meeting on the Effects of Aquaculture Activities on Hard Seabed Ecosystems and Advice on Monitoring Protocols; March 1-2, 2016",
+            "lead_author_2": "Ingrid Burgetz (Thorleifson, Erika)",
+            "description": ""
+        }
+    }
+]

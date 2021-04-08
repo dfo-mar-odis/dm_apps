@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7409,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Summary of 2013 and 2014 Herring Acoustic Surveys in Northwest Atlantic Fisheries Organization (NAFO) Divisions 4VWX",
+            "title_fr": "Résumé des relevés acoustiques sur le hareng effectués en 2013 et 2014 dans les divisions 4VWX de l'Organisation des pêches de l'Atlantique Nord-Ouest (OPANO)",
+            "pub_year": 2016,
+            "lead_author_2": "Singh, R., Dalton, A, Clay, A., and Melvin, G.D.",
+            "pub_num": "005",
+            "pages": 208,
+            "pdf_size": 9504,
+            "description": ""
+        }
+    }
+]

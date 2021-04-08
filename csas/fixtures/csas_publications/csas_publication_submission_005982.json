@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5982,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceeding of the regional peer review meeting on the St. Lawrence Estuary Ecosystem Research Initiative: habitats frequently occupied by Beluga whales and the food web responsible for the presence of Rorqual whales in the St. Lawrence Estuary; March 28 - April 1, 2011",
+            "title_fr": "Compte rendu de l'examen par des pairs régional portant sur l'Initiative de recherche écosystémique de l'estuaire du Saint-Laurent : habitat estival fréquenté par le béluga et réseau trophique responsables de la présence des grands rorquals dans l'estuaire maritime du Saint-Laurent ; 28 mars - 1 avril 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Sonia Dubé et Alice Bui",
+            "pub_num": "005",
+            "pages": 59,
+            "description": ""
+        }
+    }
+]

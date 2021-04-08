@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 379,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1979 review of inshore cod stock in Subdivision 4Vn (May-Dec.)",
+            "pub_year": 1979,
+            "lead_author_2": "D.F. Gray; B.A. Fowler; O.V. Maessen",
+            "pub_num": "049",
+            "pages": 19,
+            "pdf_size": 666,
+            "description": ""
+        }
+    }
+]

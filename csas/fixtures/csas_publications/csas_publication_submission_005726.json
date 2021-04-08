@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5726,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessing the status of the cod (Gadus morhua) stock in NAFO Subdivision 3Ps in 2009 - results from a Zonal Assessment Process (February/March 2009) and a Regional Assessment Process (September/ October 2009)",
+            "title_fr": "Évaluation de l'état du stock de morue (Gadus morhua) dans la sous-division 3Ps de l'OPANO en 2009 - résultats d'un processus d'évaluation zonale (février-mars 2009) et d'un processus d'évaluation régionale (septembre-octobre 2009)",
+            "pub_year": 2010,
+            "lead_author_2": "B.P. Healey, E.F. Murphy, J. Brattey, N.G. Cadigan, M.J. Morgan, D. Maddock Parsons, D. Power, K. Dwyer, and J-C. Mahé",
+            "pub_num": "102",
+            "pages": 99,
+            "pdf_size": 3629,
+            "description": ""
+        }
+    }
+]

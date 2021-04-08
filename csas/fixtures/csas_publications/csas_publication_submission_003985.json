@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3985,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Cambridge Bay Arctic Char",
+            "title_fr": "Omble chevalier de la baie Cambridge",
+            "pub_year": 2004,
+            "lead_author_2": "Kristofferson, A.H., Day, A.C.",
+            "pub_num": "010",
+            "pages": 15,
+            "pdf_size": 413,
+            "description": ""
+        }
+    }
+]

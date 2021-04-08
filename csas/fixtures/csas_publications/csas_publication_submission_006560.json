@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6560,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status and Trends Indices for American Eel and Elver in Maritimes Region",
+            "lead_author_2": "R. Bradford",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2006,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Consideration of the use of the .22 caliber rimfire Winchester magnum cartridge for instant killing of young harp seals (Pagophilus groenlandicus)",
+            "title_fr": "Considération de l'emploi de la cartouche de calibre .22 Winchester magnum à percussion annulaire pour l'abattage instantané des jeunes phoques du Groenland (Pagophilus groenlandicus)",
+            "pub_year": 2004,
+            "lead_author_2": "Daoust, P-Y, Cattet, M.",
+            "pub_num": "072",
+            "pages": 37,
+            "pdf_size": 2970,
+            "description": ""
+        }
+    }
+]

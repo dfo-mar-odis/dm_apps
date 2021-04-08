@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 631,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A progress report on the control of growth and recruitment overfishing in the shrimp trap fishery in British Columbia",
+            "pub_year": 1999,
+            "lead_author_2": "Bouthillier, J.A., Bond, J.A.",
+            "pub_num": "202",
+            "pages": 23,
+            "pdf_size": 391,
+            "description": ""
+        }
+    }
+]

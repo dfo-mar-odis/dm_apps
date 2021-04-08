@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8551,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Environmental and Indirect Human Health Risk Assessment of GloFish® Cosmic Blue® and Galactic Purple® Danios (Danio rerio): Transgenic Ornamental Fishes; July 4, 2019",
+            "title_fr": "Compte rendu de l’évaluation des risques pour l’environnement et des risques indirects pour la santé humaine posés par les poissons zèbres GloFishMD Cosmic BlueMD et Galactic PurpleMD (Danio rerio) : poissons d’ornement transgéniques; le 4 juillet 2019",
+            "pub_year": 2020,
+            "lead_author_2": "Sherry Walker and Melissa Gagne",
+            "pub_num": "005",
+            "pages": 20,
+            "pdf_size": 574,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4424,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Spawning Stock Biomass Reference Points for Southern Gulf of St. Lawrence Herring",
+            "title_fr": "Hareng du sud du golfe du Saint-Laurent - Niveaux de référence applicables a la biomasse du stock reproducteur",
+            "pub_year": 2005,
+            "lead_author_2": "Chouinard, G., C. LeBlanc.",
+            "pub_num": "070",
+            "pages": 7,
+            "pdf_size": 154,
+            "description": ""
+        }
+    }
+]

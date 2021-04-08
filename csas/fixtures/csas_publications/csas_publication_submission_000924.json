@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 924,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of Peer Review and Client Consultations of Marine and Invertebrates Stocks in the Southern Gulf of St. Lawrence; March 18-22, 1996",
+            "title_fr": "Procès-verbaux des consultations avec les clients et des séances d'examen par les pairs pour les poissons de mer et les invertébrés du sud du golfe du St-Laurent; du 18 au 22 mars 1996",
+            "pub_year": 1996,
+            "lead_author_2": "M. Chadwick",
+            "pub_num": "009",
+            "description": ""
+        }
+    }
+]

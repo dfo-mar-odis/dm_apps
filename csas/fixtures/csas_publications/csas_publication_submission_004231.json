@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4231,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of Survey Methodologies for Monitoring Olympia Oyster (Ostrea lurida Carpenter, 1864) Populations in British Columbia",
+            "title_fr": "Évaluation des méthodes de relevés pour la surveillance des populations d'huîtres plates du Pacifique (Ostrea lurida Carpenter, 1864) en Colombie-Britannique",
+            "pub_year": 2010,
+            "lead_author_2": "Tammy Norgard, Sarah Davies, Lily Stanton and Graham E. Gillespie",
+            "pub_num": "006",
+            "pages": 62,
+            "pdf_size": 998,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5905,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery potential assessment of Western Silvery Minnow (Hybognathus argyritis) in Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement du méné d'argent de l'Ouest (Hybognathus argyritis) au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Martin, Kathleen",
+            "pub_num": "063",
+            "pages": 15,
+            "pdf_size": 357,
+            "description": ""
+        }
+    }
+]

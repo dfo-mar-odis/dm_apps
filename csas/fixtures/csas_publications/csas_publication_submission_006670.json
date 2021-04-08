@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6670,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional re-evaluation of Ecologically and Biologically Significant Areas (EBSA) in the Beaufort Sea; November 20-22, 2012",
+            "title_fr": "Compte rendu de la réévaluation régionale des zones d'importance écologique et biologique (ZIEB) dans la mer de Beaufort; le 20-22 novembre, 2012",
+            "pub_year": 2014,
+            "lead_author_2": "Shannon MacPhee/Joclyn Paulic",
+            "pub_num": "037",
+            "pages": 21,
+            "pdf_size": 289,
+            "description": ""
+        }
+    }
+]

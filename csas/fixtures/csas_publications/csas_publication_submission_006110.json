@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6110,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Advisory Process to Review the Assessment Report and Proposed Conservation Objectives for St. Anns Bank Area of Interest (AOI); 25-26 January 2012",
+            "title_fr": "Compte rendu d'un processus consultatif scientifique de la Région des Maritimes visant l'examen du rapport d'évaluation et des objectifs de conservation proposés pour la zone d'intérêt (ZI) de la région du banc de Sainte­Anne ; 25 et 26 janvier 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Lottie Bennett/Tana Worcester",
+            "pub_num": "018",
+            "pages": 17,
+            "pdf_size": 93,
+            "description": ""
+        }
+    }
+]

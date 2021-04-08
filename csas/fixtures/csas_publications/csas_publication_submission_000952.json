@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 952,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of Peer Review and Client Consultations of Snow Crab in the Southern Gulf of St. Lawrence; January 30-31, 1997",
+            "title_fr": "Procès-verbaux des consultations avec les clients et des séances d'examen par les pairs pour le crabe des neiges du sud du Golfe St-Laurent; 30 et 31 janvier 1997",
+            "pub_year": 1997,
+            "lead_author_2": "M. Chadwick, Chairperson",
+            "pub_num": "028",
+            "description": ""
+        }
+    }
+]

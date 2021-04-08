@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 560,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Distribution of spawning eulachon stocks in the central coast of British Columbia as indicated by larval surveys",
+            "pub_year": 1999,
+            "lead_author_2": "McCarter, P.B., Hay, D.E.",
+            "pub_num": "177",
+            "pages": 67,
+            "pdf_size": 436,
+            "description": ""
+        }
+    }
+]

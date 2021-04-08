@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 691,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Management of the Nova Scotia Sea Urchin Fishery: a Nearly Successful Habitat Based Management Regime",
+            "title_fr": "Gestion de la pêche de l'oursin de Nouvelle-Écosse : quasi-réussite d'un régime de gestion axé sur l'habitat",
+            "pub_year": 2000,
+            "lead_author_2": "Miller, R.J., Nolan, S.C.",
+            "pub_num": "109",
+            "pages": 42,
+            "pdf_size": 436,
+            "description": ""
+        }
+    }
+]

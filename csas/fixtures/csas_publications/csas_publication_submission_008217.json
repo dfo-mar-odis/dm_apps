@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8217,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Review of the Environmental Impact Statement for the Placentia Bay Atlantic Salmon Aquaculture Project",
+            "title_fr": "Examen de l’énoncé des incidences environnementales pour la proposition de projet d’aquaculture du saumon de l’Atlantique dans la baie Placentia",
+            "pub_year": 2018,
+            "lead_author_2": "Erika Parrill",
+            "pub_num": "045",
+            "pages": 26,
+            "pdf_size": 440,
+            "description": ""
+        }
+    }
+]

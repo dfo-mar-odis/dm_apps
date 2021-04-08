@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1672,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1986 Canada/USA age comparisons for 5Z haddock",
+            "pub_year": 1986,
+            "lead_author_2": "K.G. Waiwood; J. Penttila; N. McFarlane; N. Munroe; S. Gavaris",
+            "pub_num": "086",
+            "pages": 11,
+            "pdf_size": 655,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7331,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review on the Assessment of the whelk fishery in Quebec’s Inshore Waters; March 10, 2015",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l’évaluation de la pêche au buccin des eaux côtières du Québec; le 10 mars 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

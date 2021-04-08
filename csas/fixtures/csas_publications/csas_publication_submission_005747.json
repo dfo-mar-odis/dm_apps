@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5747,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "A Canadian Rapid Response Framework for Aquatic Invasive Species ",
+            "title_fr": "Un Cadre Canadien d'Intervention Rapide contre les Espèces Aquatiques Envahissantes ",
+            "pub_year": 2010,
+            "lead_author_2": "A. Locke, N. E. Mandrak and T.W. Therriault",
+            "pub_num": "114",
+            "pages": 36,
+            "pdf_size": 169,
+            "description": ""
+        }
+    }
+]

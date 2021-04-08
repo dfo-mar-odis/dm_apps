@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6905,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physiographic Subtidal Classification of the Scotian Shelf Bioregion and Environs",
+            "lead_author_2": "Greenlaw, M. A",
+            "description": ""
+        }
+    }
+]

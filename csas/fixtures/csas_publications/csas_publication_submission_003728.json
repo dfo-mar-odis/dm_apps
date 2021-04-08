@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3728,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "White Hake in 4VWX and 5",
+            "title_fr": "Merluche blanche des divisions 4VWX et de la zone 5",
+            "pub_year": 2002,
+            "lead_author_2": "Bundy, A.",
+            "pub_num": "A3-10",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

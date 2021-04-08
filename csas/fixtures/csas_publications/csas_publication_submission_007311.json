@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7311,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "A science-based approach to assessing the impact of human activities on ecosystem components and function",
+            "title_fr": "Approche scientifique pour évaluer l'impact des activités humaines sur les composantes et les fonctions écosystémiques",
+            "pub_year": 2015,
+            "lead_author_2": "White, A.",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

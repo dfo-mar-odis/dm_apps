@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 886,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A model and computer program used to assess yield per recruit in Newfoundland lobster stocks",
+            "pub_year": 1978,
+            "lead_author_2": "G.P. Ennis; S.A. Akenhead",
+            "pub_num": "030",
+            "pages": 13,
+            "pdf_size": 954,
+            "description": ""
+        }
+    }
+]

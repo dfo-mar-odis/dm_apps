@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1983,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scotian Shelf Red Crab",
+            "title_fr": "Crabe rouge du plateau néo-écossais",
+            "pub_year": 1996,
+            "lead_author_2": "Duggan, D. ; Lawton, P.",
+            "pub_num": "114",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

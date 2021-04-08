@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6969,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a Recovery Potential Assessment of Black Redhorse (Moxostoma duquesnei) in Canada",
+            "lead_author_2": "William Glass",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5255,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process on the Assessment of Pollock in Divs. 4VWX and 5Zc ; 19 January 2009",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif scientifique de la Région des Maritimes portant sur l'évaluation de la goberge des divisions 4VWX et 5Zc; 19 janvier 2009",
+            "pub_year": 2009,
+            "lead_author_2": "M. Showell",
+            "pub_num": "017",
+            "pages": 16,
+            "pdf_size": 75,
+            "description": ""
+        }
+    }
+]

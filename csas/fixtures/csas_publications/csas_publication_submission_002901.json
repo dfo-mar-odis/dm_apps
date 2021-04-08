@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2901,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Slope rockfish stock assessment for the west coast of Canada in 1997 and recommended yield options for 1998.",
+            "pub_year": 1997,
+            "lead_author_2": "Richards, L.J., Olsen, N.,  Schnute, J., Haigh, R.",
+            "pub_num": "147",
+            "pages": 61,
+            "pdf_size": 2948,
+            "description": ""
+        }
+    }
+]

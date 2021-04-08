@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1188,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A method to estimate potential 2-SW salmon harvest in Fishery Statistical Districts 1, 2, 3, and 7 of Cape Breton Island, Nova Scotia",
+            "pub_year": 1982,
+            "lead_author_2": "T.L. Marshall",
+            "pub_num": "008",
+            "pages": 8,
+            "pdf_size": 526,
+            "description": ""
+        }
+    }
+]

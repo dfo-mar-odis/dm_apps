@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 572,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Miramichi River, 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Chaput, G., Hayward, J., Moore, D., Shaesgreen, J., Dubee, B.",
+            "pub_num": "004",
+            "pages": 85,
+            "pdf_size": 949,
+            "description": ""
+        }
+    }
+]

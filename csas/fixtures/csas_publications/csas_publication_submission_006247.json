@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6247,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Production Areas in the Bay of Fundy: Stock Status for 2011 and Forecast for 2012",
+            "title_fr": "Zones de production du pétoncle dans la baie de Fundy: état du stock en 2011 et prévisions pour 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Stephen Smith",
+            "pub_num": "009",
+            "pages": 130,
+            "pdf_size": 7483,
+            "description": ""
+        }
+    }
+]

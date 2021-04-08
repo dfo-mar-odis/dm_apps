@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5582,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional science peer review of the freshwater Ecologically and Biologically Significant Areas and Ecologically Significant Species criteria assessment;  November 19-20, 2013",
+            "title_fr": "Compte rendu de l'examen par des pairs régional de l'évaluation des zones d'importance écologique et biologique et des critères relatifs aux espèces d'importance écologique en eau douce; les 19 et 20 novembre 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "018",
+            "pages": 17,
+            "pdf_size": 120,
+            "description": ""
+        }
+    }
+]

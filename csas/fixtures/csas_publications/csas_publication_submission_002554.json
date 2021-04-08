@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2554,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Incorporating ecosystem information into the Fisheries Assessment Process: Can we develop a quantitative \"Plankton Index\"?",
+            "pub_year": 1996,
+            "lead_author_2": "W.G. Harrison; D.D. Sameoto",
+            "pub_num": "007",
+            "pages": 17,
+            "pdf_size": 683,
+            "description": ""
+        }
+    }
+]

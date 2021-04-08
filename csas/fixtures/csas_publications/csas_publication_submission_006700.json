@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6700,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Pacific Ocean Perch (Sebastes alutus) stock assessments for the west coast of Vancouver Island and the north and west coasts of Haida Gwaii, British Columbia",
+            "title_fr": "Évaluations des stocks de sébaste à longue mâchoire (Sebastes alutus) sur la côte ouest de l'île de Vancouver et les côtes nord et ouest de Haida Gwaii, en Colombie-Britannique",
+            "pub_year": 2013,
+            "lead_author_2": "Edwards, Andrew",
+            "pub_num": "038",
+            "pages": 10,
+            "pdf_size": 239,
+            "description": ""
+        }
+    }
+]

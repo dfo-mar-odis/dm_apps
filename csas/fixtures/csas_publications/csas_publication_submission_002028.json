@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2028,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Effects of Seismic Energy on Fish: A Literature Review",
+            "title_fr": "Effets de l'énergie sismique sur les poissons - Examen de la littérature",
+            "pub_year": 2006,
+            "lead_author_2": "Worcester, T.",
+            "pub_num": "092",
+            "pages": 72,
+            "pdf_size": 1386,
+            "description": ""
+        }
+    }
+]

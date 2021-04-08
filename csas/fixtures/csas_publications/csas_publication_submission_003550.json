@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3550,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Queen Charlotte Islands Herring",
+            "title_fr": "Hareng des îles de la Reine-Charlotte",
+            "pub_year": 2001,
+            "lead_author_2": "Jake Schweigert",
+            "pub_num": "B6-03",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

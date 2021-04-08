@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1025,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the RAP Meeting on Eastern Beaufort Sea Beluga; 29-30 March, 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Mike Papst and Larry Dueck, Chairpersons",
+            "pub_num": "023",
+            "pages": 10,
+            "pdf_size": 54,
+            "description": ""
+        }
+    }
+]

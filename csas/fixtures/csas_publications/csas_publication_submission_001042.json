@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1042,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Salmon Subcommittee Meeting; February 7- March 2, 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Stocker, M., Macdonald, A.",
+            "pub_num": "004",
+            "pages": 39,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4264,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Methods and models used in the 2012 assessment of the snow crab (Chionoecetes opilio), stock in the southern Gulf of St. Lawrence",
+            "title_fr": "Méthodes et modèles servant à l'évaluation de 2012 du stock de crabe des neiges (Chionoecetes opilio) dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2013,
+            "lead_author_2": "Wade, E., Moriyasu, M., and Hébert, M",
+            "pub_num": "113",
+            "pages": 55,
+            "pdf_size": 3627,
+            "description": ""
+        }
+    }
+]

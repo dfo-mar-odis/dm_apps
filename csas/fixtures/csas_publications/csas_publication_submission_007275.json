@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7275,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Estimated abundance of the Western Hudson Bay beluga stock from the 2015 visual and photographic aerial survey",
+            "title_fr": "Estimation de l'abondance du stock de bélugas de l'ouest de la baie d'Hudson à partir des relevés visuels et photographiques aériens de 2015",
+            "pub_year": 2017,
+            "lead_author_2": "Matthews, C.J.D., Watt, C.A., Asselin, N.C., Dunn, J.B., Young, B.G., Montsion, L.M., Westdal, K.H., Hall, P.A., Orr, J.R., Ferguson, S.H., and Marcoux, M.",
+            "pub_num": "061",
+            "pages": 25,
+            "pdf_size": 951,
+            "description": ""
+        }
+    }
+]

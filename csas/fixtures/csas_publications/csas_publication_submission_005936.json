@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5936,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Recovery Potential Assessment for the Laurentian South designatable unit of Atlantic Cod (Gadus morhua): historical trends and projections at the DU level",
+            "lead_author_2": "Doug Swain, Bob Mohn, Mark Showell, Sherrylynn Rowe",
+            "description": ""
+        }
+    }
+]

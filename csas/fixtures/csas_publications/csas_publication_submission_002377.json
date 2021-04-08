@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2377,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of witch flounder in NAFO divisions 4RST",
+            "pub_year": 1994,
+            "lead_author_2": "R. Morin; I. Forest-Gallant; T. Hurlbut",
+            "pub_num": "042",
+            "pages": 27,
+            "pdf_size": 1059,
+            "description": ""
+        }
+    }
+]

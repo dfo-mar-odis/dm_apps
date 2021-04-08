@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8511,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of American Lobster",
+            "lead_author_2": "E. Coughlan et al.",
+            "description": ""
+        }
+    }
+]

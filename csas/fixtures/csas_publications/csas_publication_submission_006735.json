@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6735,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Morphometric and meristic variability of wolffish (Anarhichas sp.) in Newfoundland and Labrador waters",
+            "title_fr": "Variabilité morphométrique et méristique du loup de mer (Anarhichas sp.) dans les eaux de Terre-Neuve-et-Labrador",
+            "pub_year": 2013,
+            "lead_author_2": "Simpson, M.R., Mello, L.G.S. and Miri, C.M.",
+            "pub_num": "085",
+            "pages": 38,
+            "pdf_size": 1782,
+            "description": ""
+        }
+    }
+]

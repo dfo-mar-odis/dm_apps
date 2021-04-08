@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3206,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Finfish Community Trends",
+            "title_fr": "Tendances des communautés de poissons",
+            "pub_year": 1996,
+            "lead_author_2": "Zwannenberg, K.;Swain, D.",
+            "pub_num": "064",
+            "pages": 6,
+            "description": ""
+        }
+    }
+]

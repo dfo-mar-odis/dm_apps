@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5173,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Regional Peer Review on Redbanded Rockfish (Sebastes babcocki) Stock Assessment for the Pacific Coast of Canada in 2014; December 9, 2014",
+            "title_fr": "Compte rendu de la réunion d'examen par des pairs régional sur l'Évaluation du stock du sébaste à bandes rouges (Sebastes babcocki) sur la côte du Pacifique du Canada en 2014; le 9 décembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Kate Rutherford",
+            "pub_num": "032",
+            "pages": 20,
+            "pdf_size": 153,
+            "description": ""
+        }
+    }
+]

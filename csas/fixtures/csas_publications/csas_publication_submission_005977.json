@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5977,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of a Regional Advisory Process Workshop on approaches to define nutrient enrichment criteria in southern Gulf of St. Lawrence estuaries",
+            "lead_author_2": "Chaput, Gérald",
+            "description": ""
+        }
+    }
+]

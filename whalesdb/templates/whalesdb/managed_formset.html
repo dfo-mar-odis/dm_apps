@@ -1,0 +1,37 @@
+{% extends "shared_models/generic_formset.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block bug_create %}
+    {% include "whalesdb/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+    {% include "whalesdb/base/_app_title.html" %}
+    {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block delete_link %}
+  {% if delete_url_name %}
+  <td>
+    <a class="delete-btn red-font" href="#" delete_url="{% url delete_url_name key form.instance.id %}"
+       object-name="{{ form.instance }}">
+      ({% trans "delete" %})
+    </a>
+  </td>
+  {% endif %}
+{% endblock delete_link %}
+
+{% block header %}
+    {{ block.super }}
+    {% include "whalesdb/base/_style.html" %}
+    {% include "whalesdb/base/_background_img.html" %}
+{% endblock %}
+
+{% block body %}
+    {{ block.super }}
+{% endblock body %}
+
+{% block left_auth %}
+    {% include "whalesdb/base/whales_nav_menu.html" %}
+{% endblock left_auth %}

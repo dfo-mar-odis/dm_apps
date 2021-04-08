@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2382,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Timing of cod migrations into and out of the Gulf of St. Lawrence based on commercial fisheries, 1986-93",
+            "pub_year": 1994,
+            "lead_author_2": "A. Sinclair; L. Currie",
+            "pub_num": "047",
+            "pages": 18,
+            "pdf_size": 808,
+            "description": ""
+        }
+    }
+]

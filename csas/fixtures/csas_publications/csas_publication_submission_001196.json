@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1196,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of Scotian Shelf shrimp fishery",
+            "pub_year": 1982,
+            "lead_author_2": "R.K. Mohn; M.L. Etter",
+            "pub_num": "016",
+            "pages": 11,
+            "pdf_size": 689,
+            "description": ""
+        }
+    }
+]

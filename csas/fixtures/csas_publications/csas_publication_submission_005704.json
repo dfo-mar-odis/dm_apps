@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5704,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 1, 5],
+            "title_en": "Status of American Eel in Newfoundland and Labrador Region: Prepared for the Pre-COSEWIC and Eel Zonal Advisory Process (ZAP), Ottawa, August 31 to Sept 3, 2010",
+            "title_fr": "État de l'anguille d'Amérique dans la région de Terre-Neuve-et-Labrador : document préparé en vue des réunions pré-COSEPAC et du processus de consultation scientifique zonal (PCSZ) sur l'anguille, tenues à Ottawa, du 31 août au 3 septembre 2010",
+            "pub_year": 2010,
+            "lead_author_2": "G. Veinott and K. Clarke",
+            "pub_num": "138",
+            "pages": 24,
+            "pdf_size": 178,
+            "description": ""
+        }
+    }
+]

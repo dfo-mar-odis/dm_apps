@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2766,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Indices of marine habitat for Atlantic salmon (Salmon salar) and trends in survival of hatchery-origin smolts",
+            "pub_year": 1996,
+            "lead_author_2": "C.J. Harvie; P.G. Amiro",
+            "pub_num": "140",
+            "pages": 18,
+            "pdf_size": 785,
+            "description": ""
+        }
+    }
+]

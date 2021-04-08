@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4857,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An evaluation of Steller sea lion (Eumetopias jubatus) pup counts from 35mm oblique images",
+            "title_fr": "Évaluation des dénombrements de petits de l'otarie de Steller(Eumetopias jubatus) à partir d'images 35 mm prises à angle oblique",
+            "pub_year": 2008,
+            "lead_author_2": "P. F. Olesiuk, D.G. Calkins, K.W. Pitcher, W.L. Perryman, C. Stinchcomb, M. Lynn",
+            "pub_num": "064",
+            "pages": 48,
+            "pdf_size": 927,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5328,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Development of precautionary management strategies for the British Columbia sablefish (Anoplopoma fimbria) fishery",
+            "title_fr": "Élaboration de stratégies de gestion préventives pour la pêche de la morue charbonnière (Anoplopoma fimbria) en Colombie-Britannique",
+            "pub_year": 2009,
+            "lead_author_2": "Cox, S.P., Kronlund, A.R., Wyeth, M.R.",
+            "pub_num": "043",
+            "pages": 155,
+            "pdf_size": 1718,
+            "description": ""
+        }
+    }
+]

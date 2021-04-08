@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4974,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential and Potential Critical Habitat for the Nooksack Dace (Rhinichthys cataractae sp.)",
+            "title_fr": "Potentiel de rétablissement et habitat essentiel potentiel du naseux de Nooksack (Rhinichthys cataractae sp.)",
+            "pub_year": 2008,
+            "lead_author_2": "Schubert, N.",
+            "pub_num": "031",
+            "pages": 6,
+            "pdf_size": 83,
+            "description": ""
+        }
+    }
+]

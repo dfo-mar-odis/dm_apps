@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7721,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "2015 Stock Status Update for Scallop (Placopecten Magellanicus) in Scallop Fishing Area 29 West of Longitude of 65º30’",
+            "title_fr": "Mise à jour de 2015 de l'état du stock de pétoncles (Placopecten Magellanicus) de la zone de pêche du pétoncle (ZPP) 29 à l'ouest de la longitude 65° 30'",
+            "pub_year": 2016,
+            "lead_author_2": "Jessica Sameoto / Lottie Bennett / Valerie Myra",
+            "pub_num": "028",
+            "pages": 14,
+            "pdf_size": 519,
+            "description": ""
+        }
+    }
+]

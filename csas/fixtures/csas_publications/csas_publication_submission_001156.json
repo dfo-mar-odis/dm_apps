@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1156,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish assessment for Divisions 4RST",
+            "pub_year": 1981,
+            "lead_author_2": "W.D. McKone; C. Gavaris; W.E. Legge",
+            "pub_num": "058",
+            "pdf_size": 6622,
+            "description": ""
+        }
+    }
+]

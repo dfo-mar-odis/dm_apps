@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3162,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Oceanographic Conditions in the Gulf of St. Lawrence in 1996",
+            "title_fr": "Conditions océanographiques dans le golfe du Saint-Laurent en 1996",
+            "pub_year": 1997,
+            "lead_author_2": "Denis Gilbert",
+            "pub_num": "G4-01",
+            "pages": 8,
+            "pdf_size": 218,
+            "description": ""
+        }
+    }
+]

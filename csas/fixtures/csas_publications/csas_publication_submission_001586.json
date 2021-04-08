@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1586,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Nematodes in cod collected from NAFO Division 2J, 3K, 3L and 3Ps in autumn, 1983",
+            "pub_year": 1985,
+            "lead_author_2": "R. Wells; J.H.C. Pippy; C.A. Bishop",
+            "pub_num": "079",
+            "pages": 14,
+            "pdf_size": 828,
+            "description": ""
+        }
+    }
+]

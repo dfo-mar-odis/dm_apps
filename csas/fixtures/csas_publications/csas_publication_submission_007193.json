@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7193,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Euthanasia techniques for small and large cetaceans",
+            "title_fr": "Techniques d'euthanasie pour les petits et grands cétacés",
+            "pub_year": 2014,
+            "lead_author_2": "Abraham, Christine",
+            "pub_num": "046",
+            "pages": 9,
+            "pdf_size": 390,
+            "description": ""
+        }
+    }
+]

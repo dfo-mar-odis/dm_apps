@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2532,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An overview of the scallop fishery in the Bay of Fundy 1986 to 1994 with a report on fishing activity trends amongst the dual license holders in the full bay fleet",
+            "pub_year": 1995,
+            "lead_author_2": "E. Kenchington; M. J. Lundy; D. L. Roddick",
+            "pub_num": "126",
+            "pages": 41,
+            "pdf_size": 2095,
+            "description": ""
+        }
+    }
+]

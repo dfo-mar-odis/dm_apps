@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1046,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Fisheries Management Studies Working Group ; 8-11 January 2001",
+            "pub_year": 2001,
+            "lead_author_2": "R.G. Halliday and R. Mohn, Chairmen",
+            "pub_num": "008",
+            "pages": 48,
+            "description": ""
+        }
+    }
+]

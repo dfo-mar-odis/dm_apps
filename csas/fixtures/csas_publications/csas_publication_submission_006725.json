@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6725,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Modelling of Hickorynut (Obovaria olivaria) in Canada",
+            "title_fr": "Modélisation du potentiel de rétablissement de l'obovarie olivâtre (Obovaria olivaria) au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Jennifer Young",
+            "pub_num": "022",
+            "pages": 17,
+            "pdf_size": 578,
+            "description": ""
+        }
+    }
+]

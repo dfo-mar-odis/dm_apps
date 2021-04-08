@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8680,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Biophysical and Ecological overview of the Fundian Channel-Browns Bank Area of Interest (AOI), November 27–29, 2018, December 19, 2018, and February 26, 2019",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

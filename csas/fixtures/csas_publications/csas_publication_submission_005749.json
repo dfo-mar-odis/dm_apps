@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5749,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Zonal Advisory Process of Atlantic Herring (NAFO Divisions 4VWX); March 17, 2008",
+            "title_fr": "Compte Rendu du Processus de Consultation Zonal pour le Hareng Atlantique (Zones de l'OPANO 4VWX); le 17 mars 2008",
+            "pub_year": 2010,
+            "lead_author_2": "Chaput, G.",
+            "pub_num": "050",
+            "pages": 36,
+            "pdf_size": 191,
+            "description": ""
+        }
+    }
+]

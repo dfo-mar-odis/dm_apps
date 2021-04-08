@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6675,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "The extent and nature of exposure to fishery induced remobilized sediment on the Hecate Strait and Queen Charlotte Sound glass sponge reef",
+            "title_fr": "L'ampleur et la nature de l'exposition à la remobilisation des sédiments provoquée par la pêche dans les récifs d'éponges siliceuses du détroit d'Hécate et du détroit de la Reine Charlotte",
+            "pub_year": 2013,
+            "lead_author_2": "Boutillier, J., Masson, D., Fain, I., Conway, K., Lintern, G., Davies, S., Mahaux, P., Olsen, N., Nguyen, H. and Rutherford, K.",
+            "pub_num": "075",
+            "pages": 84,
+            "pdf_size": 8806,
+            "description": ""
+        }
+    }
+]

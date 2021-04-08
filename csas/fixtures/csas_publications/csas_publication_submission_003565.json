@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3565,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Optical, chemical and biological oceanographic conditions on the Scotian Shelf, in the Gulf of Maine and the Southern Gulf of St. Lawrence in 2001",
+            "title_fr": "Conditions océanographiques optiques, chimiques et biologiques sur la plate-forme Scotian, dans le golfe du Maine et dans le sud du golfe du Saint-Laurent en 2001",
+            "pub_year": 2002,
+            "lead_author_2": "G. Harrison, D. Sameoto, J. Spry, K. Pauley, H. Maass and V. Soukhovtsev",
+            "pub_num": "056",
+            "pages": 51,
+            "pdf_size": 6290,
+            "description": ""
+        }
+    }
+]

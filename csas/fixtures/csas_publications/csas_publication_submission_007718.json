@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7718,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review Meeting on the Assessment of the Estuary and Northern Gulf of St. Lawrence Snow Crab Stocks; February 16-17, 2016",
+            "title_fr": "Compte rendu de l’examen par des pairs régional sur l'évaluation des stocks de crabe des neiges de l'estuaire et du nord du golfe du Saint-Laurent; du 16 au 17 février 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Denis Chabot (président) et Sonia Dubé (Rapporteure)",
+            "pub_num": "012",
+            "pages": 18,
+            "description": ""
+        }
+    }
+]

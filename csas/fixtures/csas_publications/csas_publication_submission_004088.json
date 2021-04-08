@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4088,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Observations on interactions between seals and salmon in Newfoundland and Labrador Rivers",
+            "title_fr": "Observations sur les interactions entre les phoques et les saumons dans les cours d'eau de Terre-Neuve et du Labrador",
+            "pub_year": 2004,
+            "lead_author_2": "Sjare, B., D. Reddin.",
+            "pub_num": "104",
+            "pages": 21,
+            "pdf_size": 563,
+            "description": ""
+        }
+    }
+]

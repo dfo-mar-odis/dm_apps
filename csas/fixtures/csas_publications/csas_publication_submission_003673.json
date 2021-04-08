@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3673,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Genetic relationships among Atlantic walrus (Odobenus rosmarus rosmarus) in the Foxe Basin and the Resolute Bay-Bathurst Island area",
+            "title_fr": "Relations génétiques entre le morse atlantique (Odobenus rosmarus rosmarus) du bassin de Foxe et de la région Resolute Bay-Bathurst Island",
+            "pub_year": 2002,
+            "lead_author_2": "de March, B.G.E., Maiers, L.D., Stewart, R.E.A.",
+            "pub_num": "092",
+            "pages": 20,
+            "pdf_size": 369,
+            "description": ""
+        }
+    }
+]

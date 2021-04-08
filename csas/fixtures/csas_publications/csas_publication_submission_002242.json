@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2242,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Monitoring fluctuations in pelagic fish availability with seabirds",
+            "pub_year": 1992,
+            "lead_author_2": "W.A. Montevecchi; R.A. Myers",
+            "pub_num": "094",
+            "pages": 20,
+            "description": ""
+        }
+    }
+]

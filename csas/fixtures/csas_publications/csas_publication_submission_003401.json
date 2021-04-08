@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3401,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Summary of information on the biology of exploited groundfish species and bluefin tuna in the southern Gulf of St. Lawrence",
+            "title_fr": "Résumé de l'information sur la biologie du thon rouge et des espèces de poisson de fond exploitées dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2001,
+            "lead_author_2": "D. Archambault, G.A. Chouinard, T. Hurlbut, B. Morin, R. Morin, S.D. Paul, G.A. Poirier, J.M. Porter, D.P.Swain",
+            "pub_num": "120",
+            "pages": 54,
+            "pdf_size": 2380,
+            "description": ""
+        }
+    }
+]

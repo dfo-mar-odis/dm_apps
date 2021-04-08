@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 309,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon stocks, Gulf Region, Newfoundland and Labrador, 1990",
+            "pub_year": 1991,
+            "lead_author_2": "C.C. Mullins; R.A. Jones",
+            "pub_num": "010",
+            "pages": 56,
+            "pdf_size": 2454,
+            "description": ""
+        }
+    }
+]

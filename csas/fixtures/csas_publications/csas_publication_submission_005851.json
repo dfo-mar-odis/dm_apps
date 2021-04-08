@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5851,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the Assessment of the Estuary and Northern Gulf of St. Lawrence Snow Crab Stocks; February 7 to 9 and 17, 2011",
+            "title_fr": "Processus consultatif scientifique régional sur l'évaluation des stocks de crabe des neiges de l'estuaire et du nord du golfe du Saint-Laurent ; du 7 au 9 et 17 février 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Dubé, Sonia",
+            "pub_num": "018",
+            "pages": 29,
+            "pdf_size": 149,
+            "description": ""
+        }
+    }
+]

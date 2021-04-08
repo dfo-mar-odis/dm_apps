@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5019,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the Estuary and Northern Gulf of St. Lawrence (Areas 13 to 17 and 12A, 12B and 12C) Snow Crab Stocks in 2007",
+            "title_fr": "Évaluation du stock de crabe des neiges de l'estuaire et du golfe du Saint-Laurent (zones 13 à 17 et 12A, 12B et 12C) en 2007",
+            "pub_year": 2008,
+            "lead_author_2": "J. Lambert",
+            "pub_num": "043",
+            "pages": 22,
+            "pdf_size": 285,
+            "description": ""
+        }
+    }
+]

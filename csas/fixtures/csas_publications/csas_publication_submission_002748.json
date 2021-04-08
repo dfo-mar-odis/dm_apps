@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2748,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Restigouche River in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "A. Locke; R. Pickard; F. Mowbray; G. Landry; A. Madden; P. D'Amours",
+            "pub_num": "122",
+            "pages": 42,
+            "pdf_size": 1806,
+            "description": ""
+        }
+    }
+]

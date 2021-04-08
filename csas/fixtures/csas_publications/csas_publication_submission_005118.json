@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5118,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the First Workshop of the Stock Assessment Methods Committee; January 7-8, 2009",
+            "title_fr": "Compte rendu du premier atelier du Comité des méthodes d'évaluation des stocks; les 7 et 8 janvier 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Cadigan, N., Kristmanson, J.",
+            "pub_num": "022",
+            "pages": 76,
+            "pdf_size": 521,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 533,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Trends in spring and winter research CPUE of shrimp in Hawke Channel, 1994-1999",
+            "pub_year": 1999,
+            "lead_author_2": "Rose, G.A., Hiscock, W.",
+            "pub_num": "154",
+            "pages": 11,
+            "pdf_size": 221,
+            "description": ""
+        }
+    }
+]

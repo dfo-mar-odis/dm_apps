@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4349,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An Assessment of White Sturgeon Stock Status and Trends in the Lower Fraser River",
+            "title_fr": "Évaluation de l'état du stock d'esturgeon blanc et des tendances dans le bas-Fraser",
+            "pub_year": 2005,
+            "lead_author_2": "Walters, C., J. Korman, S. McAdam.",
+            "pub_num": "066",
+            "pages": 68,
+            "pdf_size": 404,
+            "description": ""
+        }
+    }
+]

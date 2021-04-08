@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4843,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of data collected during the annual sea cucumber (Parastichopus californicus) fishery in British Columbia and recommendations for a rotational harvest strategy based on simulation modelling",
+            "title_fr": "Examen des données recueillies au cours de la pêche annuelle du concombre de mer (Parastichopus californicus) en Colombie-Britannique et recommandations pour une stratégie de récolte par rotation basée sur un modèle de simulation",
+            "pub_year": 2007,
+            "lead_author_2": "Humble, S.R., C.M. Hand, W.K. de la Mare.",
+            "pub_num": "054",
+            "pages": 55,
+            "pdf_size": 403,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7255,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Abundance estimates of narwhal stocks in the Canadian High Arctic in 2013",
+            "title_fr": "Estimation de l’abondance des stocks de narval dans les eaux canadiennes de l’Extrême-Arctique en 2013",
+            "pub_year": 2015,
+            "lead_author_2": "Doniol-Valcroze, T, Gosselin, J.F., Pike, D., Lawson, J., Asselin, N., Hedges, K., and Ferguson, S.",
+            "pub_num": "060",
+            "pages": 41,
+            "pdf_size": 1950,
+            "description": ""
+        }
+    }
+]

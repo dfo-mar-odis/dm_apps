@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 610,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of north Labrador Arctic charr stocks, 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Dempson, J.B., Shears, M.",
+            "pub_num": "033",
+            "pages": 43,
+            "pdf_size": 3479,
+            "description": ""
+        }
+    }
+]

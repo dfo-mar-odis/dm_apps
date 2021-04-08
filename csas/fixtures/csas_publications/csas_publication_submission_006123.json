@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6123,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "A Science-based Interpretation and Framework for Considering the Contribution of the Relevant Fish to the Ongoing Productivity of Commercial, Recreational or Aboriginal Fisheries",
+            "title_fr": "Interprétation scientifique et cadre pour la considération de la contribution des poissons pertinents à la productivité continue des pêches commerciale, récréative ou autochtone",
+            "pub_year": 2012,
+            "lead_author_2": "M. Koops, K. Smokorowski, and M. Koen-Alonso",
+            "pub_num": "141",
+            "pages": 31,
+            "pdf_size": 420,
+            "description": ""
+        }
+    }
+]

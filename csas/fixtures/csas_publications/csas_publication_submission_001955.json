@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1955,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "State of phytoplankton and zooplankton in the Estuary and northwestern Gulf of St. Lawrence during 1999",
+            "title_fr": "Etat du phytoplancton et du zooplancton dans l'estuaire et le nord-ouest du golfe du Saint-Laurent en 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Michel Starr, Michel Harvey",
+            "pub_num": "C4-18",
+            "pages": 8,
+            "pdf_size": 808,
+            "description": ""
+        }
+    }
+]

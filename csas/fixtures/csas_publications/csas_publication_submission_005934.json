@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5934,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Recovery Potential Assessment for the Laurentian South designatable unit of Atlantic Cod (Gadus morhua):  the southern Gulf of St. Lawrence cod stock (NAFO Div. 4T-4Vn(Nov-Apr))",
+            "title_fr": "Évaluation du potentiel de rétablissement de la morue franche (Gadus morhua) de l'unité désignable du Sud laurentien : morue franche du sud du golfe du Saint-Laurent (division 4T-4Vn (nov.-avril) de l'OPANO)",
+            "pub_year": 2012,
+            "lead_author_2": "D.P. Swain, L. Savoie, and É. Aubry",
+            "pub_num": "052",
+            "pages": 54,
+            "pdf_size": 1816,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2757,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Georges Bank Scallop stock assessment - 1995",
+            "pub_year": 1996,
+            "lead_author_2": "G. Robert; M.A.E. Butler",
+            "pub_num": "131",
+            "pages": 42,
+            "pdf_size": 2371,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6236,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science advisory report on the review of pathways of effects models describing the potential impacts of marine renewable energy devices.",
+            "lead_author_2": "Mike Stoneman / Keith Clarke",
+            "description": ""
+        }
+    }
+]

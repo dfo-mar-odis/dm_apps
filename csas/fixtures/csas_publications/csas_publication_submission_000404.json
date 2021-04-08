@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 404,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "4VsW cod assessment",
+            "pub_year": 1980,
+            "lead_author_2": "J.-J. Maguire",
+            "pub_num": "038",
+            "pages": 20,
+            "pdf_size": 1111,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 655,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "By-catch of Greenland halibut (Reinhardtius hippoglossoides) in the offshore shrimp fishery",
+            "pub_year": 2000,
+            "lead_author_2": "Orr, D.C., Kulka, D. W., Veitch, P.J., Firth, J.",
+            "pub_num": "070",
+            "pages": 26,
+            "pdf_size": 2149,
+            "description": ""
+        }
+    }
+]

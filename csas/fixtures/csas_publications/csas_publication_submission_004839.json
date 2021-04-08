@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4839,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Regional Advisory Process on Stock Assessment of Areas 1, 3, 4, 5, and 6 Scallop Stocks; 12-13 December 2006",
+            "title_fr": "Compte rendu des réunions du Processus consultatif régional des Maritimes sur l'évaluation des stocks de pétoncle des zones 1, 3, 4, 5 et 6; les 12 et 13 décembre 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Claytor, R.",
+            "pub_num": "037",
+            "pages": 25,
+            "pdf_size": 118,
+            "description": ""
+        }
+    }
+]

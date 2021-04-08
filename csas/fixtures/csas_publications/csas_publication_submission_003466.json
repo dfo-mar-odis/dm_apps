@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3466,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Sablefish",
+            "title_fr": "La morue charbonnière",
+            "pub_year": 2002,
+            "lead_author_2": "A.R. Kronlund (Rob)",
+            "pub_num": "A6-02",
+            "pages": 4,
+            "pdf_size": 67,
+            "description": ""
+        }
+    }
+]

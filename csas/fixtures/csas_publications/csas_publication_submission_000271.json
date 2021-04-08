@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 271,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process of Inshore Scallop; 24-25 November 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Lavoie, L.",
+            "pub_num": "010",
+            "pages": 19,
+            "pdf_size": 79,
+            "description": ""
+        }
+    }
+]

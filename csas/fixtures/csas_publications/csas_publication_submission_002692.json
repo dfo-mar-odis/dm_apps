@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2692,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Western Cape Breton Snow Crab (Area 19)",
+            "title_fr": "Crabe des neiges de l'ouest du Cap-Breton (zone 19)",
+            "pub_year": 2002,
+            "lead_author_2": "Marcel Hébert, Elmler Wade",
+            "pub_num": "C3-70",
+            "pages": 10,
+            "pdf_size": 1350,
+            "description": ""
+        }
+    }
+]

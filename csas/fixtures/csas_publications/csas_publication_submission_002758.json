@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2758,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop on the Scotian Shalf for 1995 - eastern Scotian Shelf and German Bank",
+            "pub_year": 1996,
+            "lead_author_2": "G. Robert; M.A.E. Butler",
+            "pub_num": "132",
+            "pages": 33,
+            "pdf_size": 1848,
+            "description": ""
+        }
+    }
+]

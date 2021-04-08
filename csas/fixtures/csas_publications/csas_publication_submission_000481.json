@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 481,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A review of the biology and fisheries of the Goose barnacle (Pollicipes polymerus Sowerby, 1833)",
+            "pub_year": 1999,
+            "lead_author_2": "Lauzier, R.B.",
+            "pub_num": "111",
+            "pages": 30,
+            "pdf_size": 456,
+            "description": ""
+        }
+    }
+]

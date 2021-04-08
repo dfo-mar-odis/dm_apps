@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5995,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Development of a juvenile index of abundance for 4WX Atlantic herring",
+            "lead_author_2": "Gary Melvin",
+            "description": ""
+        }
+    }
+]

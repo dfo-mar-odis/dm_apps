@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8259,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Science Advice to Support the Jeopardy Assessment Framework for Permitting under the Species at Risk Ac",
+            "lead_author_2": "Karine Robert, Keith Clarke",
+            "description": ""
+        }
+    }
+]

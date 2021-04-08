@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3531,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Iceland Scallop in Newfoundland and Labrador",
+            "pub_year": 2001,
+            "lead_author_2": "K.S. Naidu",
+            "pub_num": "C2-07",
+            "pages": 6,
+            "description": ""
+        }
+    }
+]

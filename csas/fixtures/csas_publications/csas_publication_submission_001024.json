@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1024,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Peer Review of Snow Crab in the Southern Gulf of St. Lawrence, Gulf Fisheries Management Region; 18-20 January, 2000",
+            "title_fr": "Procès-verbaux des séances d'examen par les pairs pour le crabe des neiges du sud du Golfe St-Laurent Région de gestion des pêches du Golfe; du 18 au 20 janvier 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Michael Chadwick",
+            "pub_num": "022",
+            "pages": 19,
+            "description": ""
+        }
+    }
+]

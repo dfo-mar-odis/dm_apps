@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8145,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Biophysical and Ecological Overview of the Eastern Shore Islands, March 20-21, 2018",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

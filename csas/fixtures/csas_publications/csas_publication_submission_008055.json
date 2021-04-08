@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8055,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock assessment for Walleye Pollock (Theragra chalcogramma) in British Columbia in 2016",
+            "lead_author_2": "Rowan Haigh",
+            "description": ""
+        }
+    }
+]

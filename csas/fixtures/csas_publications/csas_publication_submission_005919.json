@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5919,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Stock Assessment and Management Advice for BC Pacific Herring: 2016 Status and 2017 Forecast",
+            "title_fr": "Évaluation du stock et Conseil de gestion sur le hareng du Pacifique en Colombie-Britannique : état du stock en 2016 et prévisions pour 2017",
+            "pub_year": 2016,
+            "lead_author_2": "Jaclyn Cleary",
+            "pub_num": "052",
+            "pages": 56,
+            "pdf_size": 3080,
+            "description": ""
+        }
+    }
+]

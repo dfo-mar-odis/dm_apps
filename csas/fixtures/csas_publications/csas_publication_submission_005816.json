@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5816,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of capelin in SA 2 + Div. 3KL in 2010",
+            "title_fr": "Évaluation du stock de capelan de la sous-zone 2 et des divisions 3KL en 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Brian, Nakashima",
+            "pub_num": "090",
+            "pages": 16,
+            "pdf_size": 180,
+            "description": ""
+        }
+    }
+]

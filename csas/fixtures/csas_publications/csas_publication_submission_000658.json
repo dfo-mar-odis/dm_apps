@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 658,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Lower bounds on the exploitation of cod (Gadus morhua) in NAFO Subdiv. 3Ps and Divs. 3KL in 1997-1999 from tagging experiments",
+            "pub_year": 2000,
+            "lead_author_2": "Cadigan, N., Brattey, J.",
+            "pub_num": "073",
+            "pages": 53,
+            "pdf_size": 689,
+            "description": ""
+        }
+    }
+]

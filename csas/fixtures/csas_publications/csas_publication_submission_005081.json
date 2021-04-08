@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5081,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 8],
+            "title_en": "Recovery Potential assessment of the humpback whale, Pacific population",
+            "title_fr": "Évaluation du potentiel de rétablissement de la population de rorquals à bosse du Pacifique",
+            "pub_year": 2009,
+            "lead_author_2": "J. Ford",
+            "pub_num": "048",
+            "description": ""
+        }
+    }
+]

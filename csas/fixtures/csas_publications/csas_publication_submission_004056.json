@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4056,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Lobster stock status on the Quebec North Shore (LFAs 15, 16 and 18) in 2003",
+            "title_fr": "État des stocks de homard de la Côte-Nord du Québec (Zones 15, 16 et 18) en 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Gendron, L., Savard, G., Paille, N.",
+            "pub_num": "062",
+            "pages": 52,
+            "pdf_size": 394,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8022,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop Fishery Area/Time Closure to Protect Atlantic Cod (Gadus morhua) Spawning Aggregations in NAFO Division 5Z (Georges Bank)",
+            "title_fr": "Fermetures spatio-temporelles de la pêche au pétoncle destinées à protéger les bancs de reproducteurs de morues franches (Gadus morhua) dans la division 5Z de l’OPANO (banc de Georges)",
+            "pub_year": 2018,
+            "lead_author_2": "David Keith",
+            "pub_num": "013",
+            "pages": 6,
+            "pdf_size": 253,
+            "description": ""
+        }
+    }
+]

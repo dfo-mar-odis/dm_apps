@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7211,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Characterization and Analysis of Fisheries Related Risks to Significant Species, Habitats and Ecosystem/Community Properties within the Proposed Scott Islands marine National Wildlife Area",
+            "title_fr": "Caractérisation et analyse des risques liés aux pêches pour les espèces importantes, les habitats, et les attributs des écosystèmes et des communautés dans le secteur de la réserve nationale marine de faune proposée aux îles Scott",
+            "pub_year": 2016,
+            "lead_author_2": "Boutillier, J.",
+            "pub_num": "015",
+            "pages": 79,
+            "pdf_size": 2708,
+            "description": ""
+        }
+    }
+]

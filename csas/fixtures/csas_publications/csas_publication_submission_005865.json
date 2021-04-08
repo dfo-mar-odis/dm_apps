@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5865,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Lumpfish in the Gulf of St. Lawrence (3Pn, 4RST) in 2010",
+            "title_fr": "Évaluation de la lompe du golfe du Saint-Laurent (3Pn, 4RST) en 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Alain Fréchet",
+            "pub_num": "005",
+            "pages": 11,
+            "pdf_size": 551,
+            "description": ""
+        }
+    }
+]

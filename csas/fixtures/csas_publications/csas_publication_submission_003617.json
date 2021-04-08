@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3617,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Northern Shrimp (Pandalus borealis) - Div. OB to 3K",
+            "title_fr": "Crevette nordique (Pandalus borealis) - Div. OB à 3K",
+            "pub_year": 2002,
+            "pub_num": "C2-05",
+            "pages": 13,
+            "pdf_size": 450,
+            "description": ""
+        }
+    }
+]

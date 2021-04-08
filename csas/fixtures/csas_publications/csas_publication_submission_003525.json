@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3525,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2002 evaluation of 4VWX herring",
+            "title_fr": "Évaluation des stocks de hareng dans 4VWX en 2002",
+            "pub_year": 2002,
+            "lead_author_2": "M.J. Power, R.L. Stephenson, L.M. Annis, F.J. Fife, K.J. Clark and G.D. Melvin",
+            "pub_num": "045",
+            "pages": 105,
+            "pdf_size": 4630,
+            "description": ""
+        }
+    }
+]

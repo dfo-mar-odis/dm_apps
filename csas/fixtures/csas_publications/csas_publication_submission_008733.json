@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8733,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Management Procedure Framework for Groundﬁsh in British Columbia",
+            "lead_author_2": "Sean Anderson",
+            "description": ""
+        }
+    }
+]

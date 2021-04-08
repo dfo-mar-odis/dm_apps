@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 458,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Juvenile Atlantic salmon (Salmo salar L.) Abundance in the Experimental Ponds Area relative to subsequent adult returns to Gander River as a index of marine survival: apparent evidence for density-dependant marine mortality",
+            "pub_year": 1999,
+            "lead_author_2": "Knoechel, R., Ryan, P.M., O'Connell, M.F.",
+            "pub_num": "087",
+            "pages": 11,
+            "pdf_size": 161,
+            "description": ""
+        }
+    }
+]

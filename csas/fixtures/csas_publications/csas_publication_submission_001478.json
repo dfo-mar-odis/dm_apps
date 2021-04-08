@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1478,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1983 4WX herring fishery",
+            "pub_year": 1984,
+            "lead_author_2": "T.D. Iles; M.J. Power; P.M. Mace; G.N. White; F.G. Peacock",
+            "pub_num": "072",
+            "pages": 42,
+            "pdf_size": 1969,
+            "description": ""
+        }
+    }
+]

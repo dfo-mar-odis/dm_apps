@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5070,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 4],
+            "title_en": "Recovery potential assessment for freshwater Harbour seal, Phoca vitulina mellonae, (Lac des Loups Marins Designated Units (DU))",
+            "title_fr": "Évaluation du potentiel de rétablissement du phoque commun d'eau douce, Phoca vitulina mellonae, (unité désignable (UD) du lac des Loups marins)",
+            "pub_year": 2008,
+            "lead_author_2": "Y. Dubé, M. Hammill",
+            "pub_num": "062",
+            "pages": 11,
+            "pdf_size": 720,
+            "description": ""
+        }
+    }
+]

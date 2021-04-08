@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3794,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Exploitation rates and movements of Atlantic cod (Gadus morhua) in NAFO Divs. 3KL based on tagging experiments conducted during 1997-2002",
+            "title_fr": "Taux d'exploitation et déplacements de la morue de l'Atlantique (Gadus morhua) dans les divisions 3KL de l'OPANO basés sur des expériences de marquage menées de 1997 à 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Brattey, J., Healey, B.P.",
+            "pub_num": "032",
+            "pages": 28,
+            "pdf_size": 1147,
+            "description": ""
+        }
+    }
+]

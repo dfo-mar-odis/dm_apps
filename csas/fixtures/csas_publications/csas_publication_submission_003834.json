@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3834,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A review of the biology of opal squid (Loligo opalescens Berry), and of selected Loliginid squid fisheries",
+            "title_fr": "Synthèse sur la biologie du calmar opale (Loligo opalescens Berry) et sur certaines pêches aux calmars loliginidés",
+            "pub_year": 2002,
+            "lead_author_2": "Walthers, L.C., Gillespie, G.E.",
+            "pub_num": "131",
+            "pages": 111,
+            "pdf_size": 654,
+            "description": ""
+        }
+    }
+]

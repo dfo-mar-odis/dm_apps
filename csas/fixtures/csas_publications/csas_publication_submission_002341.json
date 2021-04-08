@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2341,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of the biomass of the northern Gulf of St. Lawrence cod stock (3Pn,4RS) in 1992",
+            "title_fr": "Évaluation de la biomasse du stock de morue du nord du golfe du Saint-Laurent (3Pn,4RS) en 1992",
+            "pub_year": 1993,
+            "lead_author_2": "A. Fréchet; Y. Gagnon",
+            "pub_num": "068",
+            "pages": 42,
+            "pdf_size": 2756,
+            "description": ""
+        }
+    }
+]

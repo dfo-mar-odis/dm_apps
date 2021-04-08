@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1670,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Results of the acoustic survey of herring in the southern Gulf of St. Lawrence and Sydney Bight, November 1985",
+            "pub_year": 1986,
+            "lead_author_2": "R. Shotton",
+            "pub_num": "084",
+            "pages": 40,
+            "pdf_size": 1516,
+            "description": ""
+        }
+    }
+]

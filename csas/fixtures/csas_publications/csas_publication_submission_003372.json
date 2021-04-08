@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3372,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 2001,
+            "pub_num": "028",
+            "description": ""
+        }
+    }
+]

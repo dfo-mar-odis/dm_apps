@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3462,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the scallop stock in scallop production area 6 in the Bay of Fundy for 2001",
+            "title_fr": "Évaluation du stock de pétoncle de la zone de production du pétoncle 6 (baie de Fundy) en 2001",
+            "pub_year": 2002,
+            "lead_author_2": "D. Roddick, M. Butler",
+            "pub_num": "016",
+            "pages": 28,
+            "pdf_size": 890,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6873,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science Advice from the National Risk Assessment for Ballast Water Introductions of Aquatic Nonindigenous Species to Canada",
+            "title_fr": "Avis scientifique découlant de l'évaluation nationale du risque d'introduction au Canada d'espèces aquatiques non indigènes par les eaux de ballast",
+            "pub_year": 2013,
+            "lead_author_2": "Sophie Foster, Sherry Walker,",
+            "pub_num": "064",
+            "description": ""
+        }
+    }
+]

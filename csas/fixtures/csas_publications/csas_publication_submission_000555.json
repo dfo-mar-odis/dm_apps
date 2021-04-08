@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 555,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Coho Stocks on the West Coast of Vancouver Island, 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Baillie, S., Patten, B., Till, J., Simpson, K., Luedke, W., Tschaplinski, P.",
+            "pub_num": "166",
+            "pages": 43,
+            "pdf_size": 161,
+            "description": ""
+        }
+    }
+]

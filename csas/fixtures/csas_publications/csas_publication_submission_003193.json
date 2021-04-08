@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3193,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Oceanographic Conditions in the Gulf of St. Lawrence in 1995",
+            "title_fr": "Conditions océanographiques dans le golfe du Saint-Laurent en 1995",
+            "pub_year": 1996,
+            "lead_author_2": "Gilbert, D.",
+            "pub_num": "051",
+            "description": ""
+        }
+    }
+]

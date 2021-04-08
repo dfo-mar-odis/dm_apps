@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8518,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "L’état des stocks des sébastes (Sebastes mentella et S. fasciatus) de l’unité 1 en 2019",
+            "lead_author_2": "Caroline Senay",
+            "description": ""
+        }
+    }
+]

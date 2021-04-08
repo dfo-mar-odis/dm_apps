@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2267,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Georges Bank cod and haddock ageing workshop",
+            "pub_year": 1992,
+            "lead_author_2": "M.I. Buzeta; J.J. Hunt; L. Van Eeckhaute; N. Munroe",
+            "pub_num": "119",
+            "pages": 34,
+            "pdf_size": 1506,
+            "description": ""
+        }
+    }
+]

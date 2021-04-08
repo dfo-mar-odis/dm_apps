@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 898,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status and assessment of Northumberland Strait scallop stocks",
+            "pub_year": 1978,
+            "lead_author_2": "G.S. Jamieson",
+            "pub_num": "042",
+            "pages": 44,
+            "pdf_size": 1908,
+            "description": ""
+        }
+    }
+]

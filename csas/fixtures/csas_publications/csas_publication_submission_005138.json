@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5138,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the National Advisory meeting on the National Risk Assessment for bloody red shrimp (Hemimysis anomalum); January 30, 2008",
+            "title_fr": "Compte rendu de l'évaluation nationale du risque posé par la crevette rouge sang (Hemimysis anomalum); 30 janvier 2008",
+            "pub_year": 2015,
+            "lead_author_2": "Cudmore, Becky",
+            "pub_num": "019",
+            "pages": 21,
+            "pdf_size": 166,
+            "description": ""
+        }
+    }
+]

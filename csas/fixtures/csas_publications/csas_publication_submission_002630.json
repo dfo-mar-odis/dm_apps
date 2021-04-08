@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2630,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Preliminary report of an acoustic survey of inner Placentia Bay, November, 1995",
+            "pub_year": 1996,
+            "lead_author_2": "G.A. Rose",
+            "pub_num": "096",
+            "pages": 11,
+            "pdf_size": 997,
+            "description": ""
+        }
+    }
+]

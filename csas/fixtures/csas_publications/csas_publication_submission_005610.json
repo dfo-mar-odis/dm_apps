@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5610,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the west coast of Newfoundland (Division 4R) herring stocks in 2009",
+            "title_fr": "Évaluation des stocks de hareng de la côte ouest de Terre-Neuve (Division 4R) en 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "032",
+            "pages": 11,
+            "pdf_size": 407,
+            "description": ""
+        }
+    }
+]

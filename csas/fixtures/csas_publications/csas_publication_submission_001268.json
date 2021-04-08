@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1268,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of American plaice in NAFO Subdivision 3Ps for 1982",
+            "pub_year": 1983,
+            "lead_author_2": "W.B. Brodie; T.K. Pitt",
+            "pub_num": "035",
+            "pages": 9,
+            "pdf_size": 246,
+            "description": ""
+        }
+    }
+]

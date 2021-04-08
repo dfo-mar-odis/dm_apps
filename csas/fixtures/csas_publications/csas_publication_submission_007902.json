@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7902,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop Fishery Area/Time Closure to Protect Cod Spawning Aggregations in 5Z (Georges Bank)",
+            "title_fr": "Fermetures spatio-temporelles de la pêche du pétoncle destinées à protéger les bancs de morue qui frayent dans 5Z (banc de Georges)",
+            "pub_year": 2017,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "027",
+            "pages": 6,
+            "pdf_size": 240,
+            "description": ""
+        }
+    }
+]

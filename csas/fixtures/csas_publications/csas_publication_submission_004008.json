@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4008,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biological and Chemical Oceanographic conditions on the Newfoundland Shelf during 2003",
+            "title_fr": "Conditions océanographiques, biologiques et chimiques sur le plateau Terre Neuvien au cours de l'année 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Pepin, P., Maillet, G.L., Fraser, S., Lane, D.",
+            "pub_num": "033",
+            "pages": 55,
+            "pdf_size": 2337,
+            "description": ""
+        }
+    }
+]

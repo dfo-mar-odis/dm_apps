@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7631,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review of the Information in support of the identification of critical habitat for Rocky Mountain Ridged Mussel (Gonidea angulata)",
+            "lead_author_2": "Sheena Majewski",
+            "description": ""
+        }
+    }
+]

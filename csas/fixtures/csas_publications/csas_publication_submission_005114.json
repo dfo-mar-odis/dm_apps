@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5114,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of Newfoundland and Labrador Atlantic Salmon - 2008",
+            "title_fr": "Évaluation du stock de saumon atlantique de Terre-Neuve et du Labrador - 2008",
+            "pub_year": 2008,
+            "lead_author_2": "Bourgeois, C",
+            "pub_num": "063",
+            "pages": 21,
+            "pdf_size": 172,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7732,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Assessments on scallop stocks in the Quebec’s inshore waters; February 24, 2016",
+            "title_fr": "Compte rendu de l’examen régional par des pairs portant sur l’évaluation des stocks de pétoncle des eaux côtières du Québec; 24 février 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Hugo Bourdages (président)",
+            "pub_num": "002",
+            "description": ""
+        }
+    }
+]

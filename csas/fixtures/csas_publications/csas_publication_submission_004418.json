@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4418,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Scientific Advice for input to the Allowable Harm Assessment for Interior Fraser Coho Salmon",
+            "title_fr": "Avis scientifique à intégrer à l'évaluation des dommages admissibles pour le saumon coho du Fraser intérieur",
+            "pub_year": 2005,
+            "lead_author_2": "Folkes, M., B. Ionson, J.R. Irvine",
+            "pub_num": "093",
+            "pages": 51,
+            "pdf_size": 514,
+            "description": ""
+        }
+    }
+]

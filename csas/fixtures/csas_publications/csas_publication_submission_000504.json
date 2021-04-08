@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 504,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Trends in abundance and pre-season 1999 stock size forecasts for major sockeye, pink and chum salmon stocks in northern British Columbia",
+            "pub_year": 1999,
+            "lead_author_2": "Wood, C., Rutherford, D., Jantz, L.",
+            "pub_num": "126",
+            "pages": 52,
+            "pdf_size": 245,
+            "description": ""
+        }
+    }
+]

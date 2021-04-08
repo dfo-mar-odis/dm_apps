@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7870,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation analytique du maquereau bleu (Scomber scombrus L.) des sous-régions 3-4 de l’OPANO: utilisation d’un modèle censuré pour prendre en compte les captures non-déclarées",
+            "lead_author_2": "Thomas Doniol-Volcroze",
+            "description": ""
+        }
+    }
+]

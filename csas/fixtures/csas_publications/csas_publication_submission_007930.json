@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7930,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Évaluation des stocks de hareng de la Côte-Nord - titre provisoire",
+            "title_fr": "Évaluation des stocks de hareng de la Côte-Nord - titre provisoire",
+            "lead_author_2": "Kim Émond",
+            "description": ""
+        }
+    }
+]

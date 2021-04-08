@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 644,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the cod stock in NAFO Divisions 2J+3KL",
+            "pub_year": 2000,
+            "lead_author_2": "Lilly, G.R., Shelton, P.A., Brattey, J., Cadigan, N.G., Murphy, E.F., Stansbury, D.E.",
+            "pub_num": "063",
+            "pages": 123,
+            "pdf_size": 7808,
+            "description": ""
+        }
+    }
+]

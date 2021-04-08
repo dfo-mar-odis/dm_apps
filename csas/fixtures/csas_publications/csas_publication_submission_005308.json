@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5308,
+        "fields": {
+            "series": 5,
+            "lead_region": [4, 1, 5],
+            "title_en": "Conservation objectives for the Ecologically and Biologically Significant Areas (EBSA) of the Estuary and Gulf of St. Lawrence",
+            "title_fr": "Objectifs de conservation pour les Zones d'Importance Écologique et Biologique (ZIEB) de l'estuaire et du golfe du Saint-Laurent",
+            "pub_year": 2009,
+            "lead_author_2": "Réjean Dufour, Michel Gilbert, Marc Lanteigne, Nadine Templeman",
+            "pub_num": "049",
+            "pages": 10,
+            "pdf_size": 138,
+            "description": ""
+        }
+    }
+]

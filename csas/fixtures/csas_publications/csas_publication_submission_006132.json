@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6132,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the recovery potential assessment for Atlantic sturgeon (Acipenser oxyrinchus) St. Lawrence Population; Febuary 21, 2012",
+            "title_fr": "Compte rendu de l'examen par des pairs régional sur l'évaluation du potentiel de rétablissement de la population d'esturgeon noir (Acipenser oxyrinchus) du Saint-Laurent ; 21 février 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "039",
+            "description": ""
+        }
+    }
+]

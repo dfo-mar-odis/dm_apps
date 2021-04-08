@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5904,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery potential modelling of Western Silvery minnow (Hybognathus argyritis) in Canada",
+            "title_fr": "Modélisation du potentiel de rétablissement du méné d'argent de l'Ouest (Hybognathus argyritis) au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Young, Jennifer",
+            "pub_num": "084",
+            "pages": 22,
+            "pdf_size": 327,
+            "description": ""
+        }
+    }
+]

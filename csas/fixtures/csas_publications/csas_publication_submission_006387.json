@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6387,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of whelks stocks of Québec's coastal waters",
+            "title_fr": "Évaluation des stocks de buccin des eaux côtières du Québec",
+            "pub_year": 2012,
+            "lead_author_2": "Sylvie Brulotte",
+            "pub_num": "058",
+            "description": ""
+        }
+    }
+]

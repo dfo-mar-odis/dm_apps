@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5548,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Distribution of cold-water coral, sponges and sponge reefs in British Columbia with options for identifying significant encounters ",
+            "title_fr": "Répartition des coraux, éponges et récifs d'éponges d'eaux froides en Colombie-Britannique avec options aux fins de repérage des rencontres importantes",
+            "pub_year": 2010,
+            "lead_author_2": "Finney, J., Boutillier, P.",
+            "pub_num": "090",
+            "pages": 15,
+            "pdf_size": 447,
+            "description": ""
+        }
+    }
+]

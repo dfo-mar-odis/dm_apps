@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 74,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Catch at age of 2J3KL cod in the diet of harp seals",
+            "pub_year": 1998,
+            "lead_author_2": "D.E. Stansbury, P.A. Shelton, G.B. Stenson, B. Sjare, G.R. Lilly",
+            "pub_num": "075",
+            "description": ""
+        }
+    }
+]

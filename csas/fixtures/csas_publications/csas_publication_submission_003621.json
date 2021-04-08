@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3621,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Peer Review of Groundfish and Lobster in the Southern Gulf of St. Lawrence; February 25 - March 1, 2002",
+            "title_fr": "Procès-verbal des séances d'examen par les pairs pour le poisson de fonds et l'homard du sud du Golfe du Saint- Laurent; du 25 février au 1 mars 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Gillis, D.",
+            "pub_num": "011",
+            "pages": 66,
+            "pdf_size": 588,
+            "description": ""
+        }
+    }
+]

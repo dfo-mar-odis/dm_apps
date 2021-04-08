@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8204,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Abundance and distribution of megafauna during the North Atlantic International Sighting Survey (NAISS) in August 2016",
+            "lead_author_2": "J. Lawson and J.F. Gosselin",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6430,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Regional Advisory Peer Review Meeting of Stock Assessment for Atlantic Salmon from the southern Gulf of St. Lawrence (Gulf NB, Gulf NS, PEI)",
+            "lead_author_2": "David Cairns",
+            "description": ""
+        }
+    }
+]

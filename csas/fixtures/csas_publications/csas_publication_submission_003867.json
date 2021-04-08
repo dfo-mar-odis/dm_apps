@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3867,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Zonal assessment Meeting - Atlantic Cod; February 17-26, 2003",
+            "title_fr": "Compte rendu de la réunion sur le Processus d'évaluation zonale-Morue franche; 17-26 février 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Rice, J., Rivard, D.",
+            "pub_num": "021",
+            "pages": 151,
+            "description": ""
+        }
+    }
+]

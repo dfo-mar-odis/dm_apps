@@ -1,0 +1,76 @@
+{% extends 'edna/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+  .my-btn {
+      font-size: small;
+  }
+
+  #map {
+      height: 300px; /* The height is 400 pixels */
+      width: 100%; /* The width is the width of the web page */
+  }
+  </style>
+
+
+
+  <div class="btns mb-3">
+    <a href="{% url 'edna:sample_edit' object.id %}" class="btn btn-warning btn-sm">{% trans "Edit" %}</a>
+    <a href="{% url 'edna:sample_delete' object.id %}" class="btn btn-danger btn-sm">{% trans "Delete" %}</a>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col">
+      <table class="table table-sm">
+        {% for field in field_list %}
+          {% verbose_td_display object field th_width="200px" display_time=True %}
+        {% endfor %}
+      </table>
+    </div>
+    <div class="col-4">
+      <div id="map">
+      </div>
+    </div>
+  </div>
+
+
+  <script type="application/javascript">
+  function initialize() {
+    {% if object.get_point %}
+      map = new L.Map("map", {
+        center: new L.LatLng({{ object.get_point.x }}, {{ object.get_point.y }}),
+        zoom: 8,
+      });
+    {% else %}
+      map = new L.Map("map", {
+        center: new L.LatLng(47.71949771358633, -64.10716523195102),
+        zoom: 6,
+      });
+    {% endif %}
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map)
+
+    L.marker(
+        [{{object.get_point.x}}, {{ object.get_point.y }}],
+        {
+          title: '{{object}}',
+        }
+    ).addTo(map).bindPopup("<b>Bottle Id:</b> {{object}}");
+
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    initialize()
+
+  });
+  </script>
+
+{% endblock %}

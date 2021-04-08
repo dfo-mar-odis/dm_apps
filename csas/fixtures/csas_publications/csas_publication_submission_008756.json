@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8756,
+        "fields": {
+            "series": 6,
+            "title_en": "Stock Status Update of American Lobster in Lobster Fishing Areas (LFA) 35",
+            "lead_author_2": "Tara McIntyre",
+            "description": ""
+        }
+    }
+]

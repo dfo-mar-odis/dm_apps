@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3568,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Analytical assessment and risk analyses for the stock of spring-spawning herring (Clupea harengus harengus L.) on the west coast of Newfoundland (NAFO Division 4R) in 2001",
+            "title_fr": "Évaluation analytique et analyses de risque du stock de hareng (Clupea harengus harengus L.) de printemps de la côte ouest de Terre- Neuve (Division 4R de l'OPANO) en 2001",
+            "pub_year": 2002,
+            "lead_author_2": "Grégoire, F., Lefebvre, L.",
+            "pub_num": "059",
+            "pages": 60,
+            "pdf_size": 1289,
+            "description": ""
+        }
+    }
+]

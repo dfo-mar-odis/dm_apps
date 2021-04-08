@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6253,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recommendations for Cultus Pygmy Sculpin Critical Habitat",
+            "title_fr": "Recommandations relatives à l'habitat essentiel du chabot pygmée",
+            "pub_year": 2011,
+            "lead_author_2": "Eric Chiang",
+            "pub_num": "074",
+            "pages": 9,
+            "pdf_size": 152,
+            "description": ""
+        }
+    }
+]

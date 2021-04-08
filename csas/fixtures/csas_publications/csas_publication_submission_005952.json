@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5952,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Allocation model for landed catches from Baffin Bay narwhal stocks",
+            "title_fr": "Modèle d'attribution des prises débarquées des stocks de narvals de la baie de Baffin",
+            "pub_year": 2011,
+            "lead_author_2": "Pierre Richard",
+            "pub_num": "056",
+            "pages": 31,
+            "pdf_size": 1787,
+            "description": ""
+        }
+    }
+]

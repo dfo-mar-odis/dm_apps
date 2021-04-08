@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4397,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Recovery potential assessment of 4T and 4VW winter skate (Leucoraja ocellata): biology, current status and threats",
+            "title_fr": "Évaluation du potentiel de rétablissement de la raie tachetée (Leucoraja ocellata) de 4T et 4VW : biologie, situation actuelle et menaces",
+            "pub_year": 2006,
+            "lead_author_2": "Swain, D.P., Simon, J.E., Harris, L.E., H.P. Benoît.",
+            "pub_num": "003",
+            "pages": 69,
+            "pdf_size": 7948,
+            "description": ""
+        }
+    }
+]

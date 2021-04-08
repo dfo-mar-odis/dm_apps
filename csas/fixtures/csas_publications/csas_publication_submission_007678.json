@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7678,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Effects of Aquaculture Activities on Hard Seabed Ecosystems and Advice on Monitoring Protocols",
+            "lead_author_2": "Ingrid Burgetz (Thorleifson, Erika)",
+            "description": ""
+        }
+    }
+]

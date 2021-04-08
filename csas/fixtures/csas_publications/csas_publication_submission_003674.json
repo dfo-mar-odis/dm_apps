@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3674,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the RAP Meeting on Atlantic Walrus; 29-30 January, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Larry Dueck, Chairperson",
+            "pub_num": "024",
+            "pages": 20,
+            "pdf_size": 370,
+            "description": ""
+        }
+    }
+]

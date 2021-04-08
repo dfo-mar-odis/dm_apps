@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 218,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon (Salmo salar) in the Tabusintac River in 1998 and summary of the 1996 stock assessment",
+            "pub_year": 1999,
+            "lead_author_2": "Douglass, S.G., Swasson, D., Bradford, R.G., Joe, M.",
+            "pub_num": "050",
+            "pages": 29,
+            "pdf_size": 124,
+            "description": ""
+        }
+    }
+]

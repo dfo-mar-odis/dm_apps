@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6115,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Precautionary Approach Reference Points for Arctic Surfclams (Mactromeris polynyma)",
+            "title_fr": "Points de référence de l'approche de précaution pour la mactre de Stimpson (Mactromeris polynyma)",
+            "pub_year": 2013,
+            "lead_author_2": "Roddick, D",
+            "pub_num": "007",
+            "pages": 16,
+            "pdf_size": 427,
+            "description": ""
+        }
+    }
+]

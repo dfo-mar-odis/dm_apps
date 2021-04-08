@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6230,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Pre-COSEWIC review of variation in the abundance, distribution and productivity of white hake (Urophycis tenuis) in the southern Gulf of St. Lawrence, 1971-2010",
+            "title_fr": "Revue pré-COSÉPAC des variations de l'abondance, de la distribution, et de la productivité de la merluche blanche (Urophycis tenuis) dans le sud du golfe du Saint-Laurent depuis 1971 à 2010",
+            "pub_year": 2012,
+            "lead_author_2": "Swain, D. P., Hurlbut, T. R. and Benoît, H. P.",
+            "pub_num": "066",
+            "pages": 77,
+            "pdf_size": 3242,
+            "description": ""
+        }
+    }
+]

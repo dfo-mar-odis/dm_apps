@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8190,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of Stock Status Indicators for Scallop in Subarea 20A in the Magdalen Islands",
+            "title_fr": "Mise à jour des indicateurs de l’état des stocks de pétoncle de la sous-sone 20A aux Îles-de-la-Madeleine",
+            "pub_year": 2019,
+            "lead_author_2": "Jean Lambert",
+            "pub_num": "020",
+            "pages": 6,
+            "pdf_size": 477,
+            "description": ""
+        }
+    }
+]

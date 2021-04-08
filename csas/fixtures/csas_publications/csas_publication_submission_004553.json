@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4553,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Salmon Subcommittee Meeting; May 17-18, 2006",
+            "title_fr": "Compte rendu de la réunion du sous-comité du CEESP sur le saumon; 17-18 mai 2006",
+            "pub_year": 2006,
+            "lead_author_2": "B. Riddell",
+            "pub_num": "018",
+            "pages": 23,
+            "pdf_size": 125,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 467,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status report for northern Labrador Arctic charr, 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Dempson, J.B., Shears, M.",
+            "pub_num": "096",
+            "pages": 37,
+            "pdf_size": 2941,
+            "description": ""
+        }
+    }
+]

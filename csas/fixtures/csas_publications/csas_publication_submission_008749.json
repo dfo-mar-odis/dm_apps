@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8749,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Science Advice on Limit Reference Points for Northern Shrimp (Pandalus borealis) and Striped Shrimp (Pandalus montagui) in the Eastern and Western Assessment Zones",
+            "title_fr": "Avis scientifique sur les points de référence limites pour la crevette nordique (Pandalus borealis) et la crevette ésope (Pandalus montagui) dans les zones d’évaluation est et ouest",
+            "pub_year": 2020,
+            "lead_author_2": "D. Boguski",
+            "pub_num": "053",
+            "pages": 13,
+            "pdf_size": 1090,
+            "description": ""
+        }
+    }
+]

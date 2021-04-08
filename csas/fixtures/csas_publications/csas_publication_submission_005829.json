@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5829,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional advisory process on the stock status of Lake Whitefish (Coregonus clupeaformis) in Great Slave Lake; January 26-27, 2011",
+            "title_fr": "Compte rendu du processus de consultation régionale sur l'état du stock du grand corégone (Coregonus clupeaformis) dans le Grand lac des Esclaves ; les 26 et 27 janvier 2011",
+            "pub_year": 2015,
+            "lead_author_2": "A. Chris Day",
+            "pub_num": "037",
+            "pages": 12,
+            "pdf_size": 113,
+            "description": ""
+        }
+    }
+]

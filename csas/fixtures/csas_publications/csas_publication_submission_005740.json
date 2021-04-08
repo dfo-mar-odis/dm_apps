@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5740,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Modelling of Eastern Pondmussel (Ligumia nasuta), Fawnsfoot (Truncilla donaciformis), Mapleleaf (Quadrula quadrula), and Rainbow (Villosa iris) in Canada ",
+            "title_fr": "Modélisation du potential de rétablissement de la ligumie pointue (Ligumia nasuta), de la troncille pied-de-faon (Truncilla donaciformis), de la mulette feuille d'érable (Quadrula quadrula) et de la villeuse irisée (Villosa iris) au Canada",
+            "pub_year": 2010,
+            "lead_author_2": "Young, J. A. M. and M. A. Koops.",
+            "pub_num": "119",
+            "pages": 14,
+            "pdf_size": 142,
+            "description": ""
+        }
+    }
+]

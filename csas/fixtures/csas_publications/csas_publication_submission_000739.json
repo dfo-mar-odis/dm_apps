@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 739,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of utility of aerial overflight based estimates versus mark-recapture estimates of chinook salmon escapement to the Nicola River, B.C.",
+            "pub_year": 2000,
+            "lead_author_2": "Bailey, R.E., Parken, C.K., Irvine, J.R., Rosenberger, B., Farwell, M.K.",
+            "pub_num": "152",
+            "pages": 35,
+            "pdf_size": 1090,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4621,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Data update on the Atlantic mackerel (Scomber scombrus L.) fishery covered by the Nova Scotia Observer Program (1977-2005)",
+            "title_fr": "Mise à jour des données de la pêche au maquereau bleu (Scomber scombrus L.) couverte par le programme des observateurs de la Nouvelle-Écosse (1977-2005)",
+            "pub_year": 2006,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "096",
+            "pages": 48,
+            "pdf_size": 14124,
+            "description": ""
+        }
+    }
+]

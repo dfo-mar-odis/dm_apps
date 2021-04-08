@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2470,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of gaspereau in the Margaree River 1993 and 1994",
+            "pub_year": 1995,
+            "lead_author_2": "R.R. Claytor; P. LeBlanc; R. Jones; G. Chaput",
+            "pub_num": "064",
+            "pages": 35,
+            "pdf_size": 1467,
+            "description": ""
+        }
+    }
+]

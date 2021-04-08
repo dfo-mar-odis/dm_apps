@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1613,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A computer based method for separating herring spawning groups using digitized otolith morphometrics",
+            "pub_year": 1985,
+            "lead_author_2": "S. Messieh; C. MacDougall",
+            "pub_num": "106",
+            "pages": 13,
+            "pdf_size": 825,
+            "description": ""
+        }
+    }
+]

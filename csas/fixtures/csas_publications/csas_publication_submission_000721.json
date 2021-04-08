@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 721,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of Redfish in Unit 2",
+            "title_fr": "État du stock de sébaste dans l'unité 2",
+            "pub_year": 2000,
+            "lead_author_2": "Power, D., Mowbray, F.",
+            "pub_num": "136",
+            "pages": 56,
+            "pdf_size": 3800,
+            "description": ""
+        }
+    }
+]

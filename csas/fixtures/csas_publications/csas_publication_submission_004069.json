@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4069,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Ocean Data Inventory (ODI): A Database of Ocean Current, Temperature and Salinity Time Series for the Northwest Atlantic",
+            "title_fr": "Inventaire des données océaniques (ODI) : une base de données sur les séries chronologiques de données sur les courants océaniques, la température et la salinité pour l'Atlantique Nord-Ouest",
+            "pub_year": 2004,
+            "lead_author_2": "Gregory, D.N.",
+            "pub_num": "097",
+            "pages": 11,
+            "pdf_size": 292,
+            "description": ""
+        }
+    }
+]

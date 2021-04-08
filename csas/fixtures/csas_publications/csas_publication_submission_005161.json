@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5161,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of American Lobster in Newfoundland",
+            "title_fr": "Évaluation du homard d'Amérique à Terre-Neuve-et-Labrador",
+            "pub_year": 2013,
+            "lead_author_2": "Katherine Skanes",
+            "pub_num": "068",
+            "pages": 16,
+            "pdf_size": 512,
+            "description": ""
+        }
+    }
+]

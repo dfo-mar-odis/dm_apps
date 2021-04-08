@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2016,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Oceanographic conditions in the Estuary and the Gulf of St. Lawrence during 2003: zooplankton",
+            "title_fr": "Conditions océanographiques dans l'estuaire et le golfe Saint-Laurent en 2003: zooplancton",
+            "pub_year": 2004,
+            "lead_author_2": "Harvey, M., St-Pierre, J.F., Devine, L., Gagné, A., Gagnon, Y., Beaulieu, M.F.",
+            "pub_num": "080",
+            "pages": 31,
+            "pdf_size": 326,
+            "description": ""
+        }
+    }
+]

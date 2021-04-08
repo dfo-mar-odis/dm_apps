@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8783,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "2020 STOCK STATUS UPDATE FOR AMERICAN PLAICE IN NAFO SUBAREA 2 + DIV. 3K",
+            "lead_author_2": "L. Wheeland",
+            "description": ""
+        }
+    }
+]

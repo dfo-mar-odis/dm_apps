@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2777,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results of 1996 3L inshore/nearshore snow crab time-series cruises.",
+            "pub_year": 1997,
+            "lead_author_2": "Taylor, D.M., O'Keefe, P.G., Veitch, P.J.",
+            "pub_num": "009",
+            "description": ""
+        }
+    }
+]

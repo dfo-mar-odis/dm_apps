@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7630,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Sea Scallop (Placopecten magellanicus) on St. Pierre Bank",
+            "title_fr": "Évaluation du pétoncle géant (Placopecten magellanicus) sur le banc de Saint­Pierre",
+            "pub_year": 2020,
+            "lead_author_2": "Coughlan, E., Hynick, E., and D. Stansbury",
+            "pub_num": "005",
+            "pages": 31,
+            "pdf_size": 963,
+            "description": ""
+        }
+    }
+]

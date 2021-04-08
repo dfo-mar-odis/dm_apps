@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8716,
+        "fields": {
+            "series": 3,
+            "title_en": "Assessment of Scotian Shelf Snow Crab in 2019",
+            "lead_author_2": "Zisserson, Ben",
+            "description": ""
+        }
+    }
+]

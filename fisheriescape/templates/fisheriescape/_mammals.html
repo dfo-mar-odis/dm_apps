@@ -1,0 +1,56 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+{% load verbose_names %}
+
+<div class="">
+    <h3>
+        {% trans "Marine Mammals:" %}
+    </h3>
+</div>
+
+{% if object.marine_mammals.count == 0 %}
+    <em>
+        {% trans "No marine mammals have been added to this fishery" %}
+    </em><br>
+{% else %}
+
+    <table class="table table-hover table-sm" style="width: 100%">
+        <tr>
+            {% for field in mammals_field_list %}
+            <th>
+                {% get_verbose_label random_mammals field %}
+            </th>
+            {% endfor %}
+        </tr>
+        <tbody>
+        {% for obj in object.marine_mammals.all %}
+            <tr>
+            {% for field in mammals_field_list %}
+                {% if field == "website" %}
+                    <td>
+                        <a href="{{ obj.website }}" target="_blank">{{ obj.website }}</a>
+                     </td>
+                {% elif field == "latin_name" %}
+                    <td>
+                        <em>{% get_field_value obj field %}</em>
+                    </td>
+                {% else %}
+                    <td>
+                    {% get_field_value obj field %}
+                    </td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+
+
+
+
+
+
+

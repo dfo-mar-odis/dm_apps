@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1759,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A brief biological update on the 1986 4VWX flatfish fisheries",
+            "pub_year": 1987,
+            "lead_author_2": "J.D. Neilson; P. Perley",
+            "pub_num": "069",
+            "pages": 15,
+            "pdf_size": 520,
+            "description": ""
+        }
+    }
+]

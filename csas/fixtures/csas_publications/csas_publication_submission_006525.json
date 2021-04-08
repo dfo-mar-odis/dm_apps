@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6525,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock assessment update for Bocaccio (Sebastes paucispinis) in British Columbia waters for 2012",
+            "title_fr": "Mise à jour de l'évaluation des stocks de bocaccio (Sebastes paucispinis) dans les eaux de la Colombie-Britannique en 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Rick Stanley",
+            "pub_num": "059",
+            "pages": 12,
+            "pdf_size": 235,
+            "description": ""
+        }
+    }
+]

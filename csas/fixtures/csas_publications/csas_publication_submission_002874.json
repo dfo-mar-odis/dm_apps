@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2874,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Plankton and Nekton of the northeast Newfoundland Shelf and Grand Banks in 1996 compared to 1994 and 1995.",
+            "pub_year": 1997,
+            "lead_author_2": "Dalley, E.L., Anderson, J.T.",
+            "pub_num": "120",
+            "pages": 27,
+            "pdf_size": 3809,
+            "description": ""
+        }
+    }
+]

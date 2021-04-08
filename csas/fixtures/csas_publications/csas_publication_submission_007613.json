@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7613,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Stock Status Update of Northern and Striped Shrimp in SFAs 4, 5 and 6",
+            "title_fr": "Mise à jour de l'état du stock de crevette nordique et de crevette ésope dans les ZPC 4, 5 et 6",
+            "pub_year": 2016,
+            "lead_author_2": "Dwyer, K.",
+            "pub_num": "013",
+            "pages": 18,
+            "pdf_size": 1108,
+            "description": ""
+        }
+    }
+]

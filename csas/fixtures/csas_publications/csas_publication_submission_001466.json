@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1466,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the west coast of Newfoundland herring stock in 1983",
+            "pub_year": 1984,
+            "lead_author_2": "L. Cleary; I.H. McQuinn",
+            "pub_num": "060",
+            "pages": 46,
+            "pdf_size": 2248,
+            "description": ""
+        }
+    }
+]

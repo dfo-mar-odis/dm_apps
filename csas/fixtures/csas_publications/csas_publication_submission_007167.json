@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7167,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Lobster (Homarus americanus) off Southwest Nova Scotia (Lobster Fishing Area 34): 2014 Stock Status Update",
+            "title_fr": "Homard (Homarus Americanus) au large du sud-ouest de la Nouvelle-Écosse (zone de pêche du homard 34) : Mise à jour sur l'état du stock de 2014",
+            "pub_year": 2014,
+            "lead_author_2": "John Tremblay",
+            "pub_num": "036",
+            "description": ""
+        }
+    }
+]

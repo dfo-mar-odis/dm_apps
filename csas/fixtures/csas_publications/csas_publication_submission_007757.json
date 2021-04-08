@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7757,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Physical Oceanographic Conditions on the Newfoundland and Labrador Shelf during 2015",
+            "title_fr": "Évaluation de l’environnement océanographique physique sur la plateforme continentale de Terre-Neuve-et-Labrador en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Colbourne, E., Holden, J., Senciall, D., Bailey, W., Snook, S., and Higdon, J.",
+            "pub_num": "079",
+            "pages": 45,
+            "pdf_size": 9490,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4266,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Model-based estimation of commercial- sized snow crab (Chionoecetes opilio) abundance in the southern Gulf of St. Lawrence, 1980-2012, using data from two bottom trawl surveys",
+            "title_fr": "Estimation fondée sur un modèle de l'abondance des crabes des neiges (Chionoecetes opilio) de taille commerciale dans le sud du golfe du Saint-Laurent de 1980 à 2012 au moyen de données provenant de deux relevés au chalut de fond",
+            "pub_year": 2013,
+            "lead_author_2": "Benoît, H.P., and Cadigan, N.",
+            "pub_num": "114",
+            "pages": 55,
+            "pdf_size": 3665,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2840,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1996 assessment of Snow crab (Chionoecetes opilio) stock in the southern Gulf of St. Lawrence (Areas 12, 18, 19, 25/26, and Zones E and F)",
+            "title_fr": "Évaluation de 1996 du stock de crabe des neiges (Chionoecetes opilio) dans le sud du golfe du St-Laurent (zones 12, 18, 19, 25/26 et zones E & F)",
+            "pub_year": 1997,
+            "lead_author_2": "Hébert, M., Wade, E., Degrâce, P., Biron, M., Moiriyasu, M.",
+            "pub_num": "086",
+            "pages": 61,
+            "pdf_size": 3750,
+            "description": ""
+        }
+    }
+]

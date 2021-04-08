@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2860,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of witch flounder in Division 4VWX in 1997.",
+            "pub_year": 1997,
+            "lead_author_2": "McRuer, J., Halliday, R.G., Branton, R.M., Showell, M.A., Mohn, R.",
+            "pub_num": "106",
+            "pages": 41,
+            "pdf_size": 2491,
+            "description": ""
+        }
+    }
+]

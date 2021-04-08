@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5619,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the CSAS Peer-review of the Risk Assessment for New Zealand Mud Snail in Canadian Waters; 24-25 March, 2010",
+            "title_fr": "Compte rendu de l'examen par les pairs du SCCS concernant l'évaluation des risques que la nasse de la Nouvelle-Zélande pose pour les eaux canadiennes; 24 et 25 mars 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Therriault, T.",
+            "pub_num": "023",
+            "pages": 46,
+            "pdf_size": 223,
+            "description": ""
+        }
+    }
+]

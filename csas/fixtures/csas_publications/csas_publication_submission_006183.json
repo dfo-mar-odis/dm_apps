@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6183,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Eastern Scotian Shelf Shrimp 2016–2017",
+            "title_fr": "Crevette de l’est du plateau néo-écossais, 2016 à 2017",
+            "pub_year": 2020,
+            "lead_author_2": "Broome, J., Covey, M., Nickerson, K., and Hardie, D.",
+            "pub_num": "044",
+            "pages": 48,
+            "pdf_size": 1939,
+            "description": ""
+        }
+    }
+]

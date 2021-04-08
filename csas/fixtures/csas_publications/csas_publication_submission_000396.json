@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 396,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Species and stocks of redfish in NAFO Divisions 4VWX",
+            "pub_year": 1980,
+            "lead_author_2": "T.J. Kenchington",
+            "pub_num": "030",
+            "pages": 35,
+            "pdf_size": 1415,
+            "description": ""
+        }
+    }
+]

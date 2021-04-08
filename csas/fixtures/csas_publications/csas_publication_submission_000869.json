@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 869,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "4VsW cod assessment for 1978 (Addendum 1)",
+            "pub_year": 1978,
+            "lead_author_2": "D.F. Gray",
+            "pub_num": "013",
+            "pdf_size": 1228,
+            "description": ""
+        }
+    }
+]

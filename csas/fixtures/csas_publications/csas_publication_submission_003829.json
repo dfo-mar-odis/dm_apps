@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3829,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Western Cape Breton Snow Crab (Area 18)",
+            "title_fr": "Crabe des neiges de l'ouest du Cape-Breton (zone 18)",
+            "pub_year": 2003,
+            "lead_author_2": "Hébert, M., Moriyasu, M.",
+            "pub_num": "033",
+            "pages": 12,
+            "pdf_size": 1073,
+            "description": ""
+        }
+    }
+]

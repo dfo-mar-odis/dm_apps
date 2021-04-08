@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6139,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Use of eelgrass habitats by fish in eastern Canada",
+            "title_fr": "Utilisation des habitats de zostère par les poissons dans l'Est du Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Joseph, V., Schmidt, A.L., and Gregory, R.S.",
+            "pub_num": "138",
+            "pages": 14,
+            "pdf_size": 55,
+            "description": ""
+        }
+    }
+]

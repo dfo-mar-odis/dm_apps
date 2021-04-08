@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2725,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Quantifying uncertainty in estimates of Atlantic cod (Gadus morhua) consumption by harp seals (Phoca groenlandica)",
+            "title_fr": "Quantification de l'incertitude dans les estimations de la quantité de morues (Gadus morhua) consommées par les phoques du Groënland (Phoca groenlandica)",
+            "pub_year": 2004,
+            "lead_author_2": "Stenson, G.B., M. O. Hammill",
+            "pub_num": "089",
+            "pages": 32,
+            "pdf_size": 320,
+            "description": ""
+        }
+    }
+]

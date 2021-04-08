@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1577,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A new method of preparing gadoid otoliths",
+            "pub_year": 1985,
+            "lead_author_2": "M. Strong; J.J. Hunt; R.K. Robichaud",
+            "pub_num": "070",
+            "pages": 13,
+            "pdf_size": 733,
+            "description": ""
+        }
+    }
+]

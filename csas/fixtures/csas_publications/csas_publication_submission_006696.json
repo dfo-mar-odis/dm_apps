@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6696,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the regional peer review meeting on an Assessment Protocol for Commercial Harvest of Pacific Oysters (Crassostrea-gigas) in British Columbia; December 4, 2012",
+            "title_fr": "Compte rendu de la réunion régionale d'examen Protocole d'évaluation pour la récolte commerciale d'huîtres sauvages (Crassostrea gigas) en Colombie-Britannique; le 4 décembre 2012",
+            "pub_year": 2014,
+            "lead_author_2": "Duprey, Nicholas",
+            "pub_num": "047",
+            "pages": 19,
+            "pdf_size": 287,
+            "description": ""
+        }
+    }
+]

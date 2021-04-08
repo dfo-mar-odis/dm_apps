@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8218,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the meeting on developing a framework for the qualitative assessment of the dependability of catch data from existing fisheries monitoring tools",
+            "lead_author_2": "Nicholas Duprey",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2196,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Atlantic cod stock on Georges Bank in unit areas 5Zj and 5Zm, 1978-91",
+            "pub_year": 1992,
+            "lead_author_2": "J.J. Hunt; M.I. Buzeta",
+            "pub_num": "048",
+            "pages": 23,
+            "description": ""
+        }
+    }
+]

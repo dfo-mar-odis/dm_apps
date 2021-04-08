@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3009,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Inshore Gulf of Maine Rock Crab (Cancer irroratus)",
+            "title_fr": "Crabe commun (Cancer irroratus) des côtes du golfe du Maine",
+            "pub_year": 2000,
+            "lead_author_2": "David Robichaud, Peter Lawton",
+            "pub_num": "C3-67",
+            "pages": 8,
+            "pdf_size": 155,
+            "description": ""
+        }
+    }
+]

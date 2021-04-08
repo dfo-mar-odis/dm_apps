@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7036,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Maritimes research vessel survey trends on Georges Bank",
+            "title_fr": "Tendances dans les relevés par navire scientifique dans la région des Maritimes – banc Georges",
+            "pub_year": 2014,
+            "lead_author_2": "Don Clark",
+            "pub_num": "018",
+            "description": ""
+        }
+    }
+]

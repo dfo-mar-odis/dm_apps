@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 527,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the 1998 Newfoundland and Labrador snow crab fishery",
+            "pub_year": 1999,
+            "lead_author_2": "Taylor, D., P.G. O'Keefe",
+            "pub_num": "143",
+            "pages": 30,
+            "pdf_size": 2246,
+            "description": ""
+        }
+    }
+]

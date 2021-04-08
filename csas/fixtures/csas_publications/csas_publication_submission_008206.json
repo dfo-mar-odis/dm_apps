@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8206,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Translocation of live-stranded newborn St. Lawrence Estuary belugas (Delphinapterus leucas) for adoption by nearby females: a review of past responses, and assessment of feasibility and risks.",
+            "title_fr": "Déplacement de bélugas (Delphinapterus leucas) nouveau-nés de l'estuaire du Saint-Laurent destinés à l'adoption par des femelles: examen des réponses passées et évaluation de la faisabilité et des risques.",
+            "pub_year": 2020,
+            "lead_author_2": "Robert Michaud, Janie Giard, Albert Michaud and Michel Moisan",
+            "pub_num": "006",
+            "pages": 15,
+            "pdf_size": 540,
+            "description": ""
+        }
+    }
+]

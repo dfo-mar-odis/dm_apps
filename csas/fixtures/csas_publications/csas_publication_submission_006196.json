@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6196,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status of BC Pacific Herring (Clupea pallasi) in 2017 and forecasts for 2018",
+            "title_fr": "État des stocks de hareng du Pacifique (Clupea pallasii) dans les eaux de la Colombie-Britannique en 2017 et prévisions pour 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Cleary, J.S., Hawkshaw, S., Grinnell, M.H., et Grandin, C.",
+            "pub_num": "028",
+            "pages": 290,
+            "pdf_size": 23319,
+            "description": ""
+        }
+    }
+]

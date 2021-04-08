@@ -166,15 +166,6 @@ class TestRscList(CommonListTest, TestCase):
         self.assertEquals(True, response.context["editable"])
 
 
-@tag('rtt', 'filter')
-class TestRttList(CommonListTest, TestCase):
-
-    def setUp(self):
-        super().setUp()
-
-        self.test_url = reverse_lazy('whalesdb:list_rtt')
-
-
 @tag('stn', 'filter')
 class TestStnList(CommonListTest, TestCase):
 

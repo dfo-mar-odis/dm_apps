@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7032,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of Bay of Fundy Scallop Assessment",
+            "lead_author_2": "Christie Whelan",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2177,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of haddock on eastern Georges Bank",
+            "pub_year": 1992,
+            "lead_author_2": "S. Gavaris; L. Van Eeckhaute",
+            "pub_num": "029",
+            "pages": 32,
+            "description": ""
+        }
+    }
+]

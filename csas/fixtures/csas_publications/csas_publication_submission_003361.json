@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3361,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Pacific Ocean Perch British Columbia Coast",
+            "pub_year": 1999,
+            "lead_author_2": "Olsen, Norm",
+            "pub_num": "A6-11",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8781,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "SCIENCE RESPONSE: 2020 STOCK STATUS UPDATE FOR NORTHERN COD",
+            "pub_year": 2021,
+            "lead_author_2": "K. Dwyer",
+            "pub_num": "004",
+            "description": ""
+        }
+    }
+]

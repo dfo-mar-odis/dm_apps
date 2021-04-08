@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 429,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Haddock in management unit 4TVW: An assessment of present resource status - 1986",
+            "pub_year": 1986,
+            "lead_author_2": "k. Zwanenburg; P. Fanning; R. Mahon; D. Waldron; P. Simpson",
+            "pub_num": "117",
+            "pages": 51,
+            "pdf_size": 2143,
+            "description": ""
+        }
+    }
+]

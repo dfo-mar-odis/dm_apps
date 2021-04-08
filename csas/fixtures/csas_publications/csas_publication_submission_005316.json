@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5316,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information Relevant to a Recovery Potential Assessment of Pure Native Westslope Cutthroat Trout, Alberta Population (Revised February 2010)",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement de la truite fardée pure et indigène du versant occidental (populations de l'Alberta) (Révisé en février 2010)",
+            "pub_year": 2009,
+            "lead_author_2": "Cleator, H., Earle, J., Fitch, L., Humphries, S., Koops, M., Martin, K., Mayhood, D., Petry, S., Pacas, C., Stelfox, J.,  Wig, D.",
+            "pub_num": "036",
+            "pages": 28,
+            "pdf_size": 329,
+            "description": ""
+        }
+    }
+]

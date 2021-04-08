@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3569,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Long-term projections in a Precautionary Approach context for the herring (Clupea harengus harengus) of the West Coast of Newfoundland (NAFO Division 4R)",
+            "title_fr": "Projections à long terme dans un contexte d'Approche de précaution pour le hareng (Clupea harengus harengus) de la côte ouest de Terre-Neuve (Division 4R de l'OPANO)",
+            "pub_year": 2002,
+            "lead_author_2": "Grégoire, F., Rivard, D.",
+            "pub_num": "060",
+            "pages": 25,
+            "pdf_size": 445,
+            "description": ""
+        }
+    }
+]

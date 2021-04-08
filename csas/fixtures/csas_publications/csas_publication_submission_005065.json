@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5065,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Cultus Lake Sockeye Population Viability Analysis",
+            "title_fr": "Analyse de la viabilité de la population de saumons rouges du Cultus Lake",
+            "pub_year": 2008,
+            "lead_author_2": "J. Korman, J. Grout",
+            "pub_num": "072",
+            "pages": 51,
+            "pdf_size": 1925,
+            "description": ""
+        }
+    }
+]

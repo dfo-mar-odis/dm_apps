@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7066,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Harvest, catch-effort, and biological information of Arctic Char (Salvelinus alpinus) collected from subsistence harvest monitoring programs at Hornaday River, Lasard Creek, and Tippitiuyak, Darnley Bay, Northwest Territories",
+            "title_fr": "Information sur la récolte, les prises par unité d’effort et la biologie de l’omble chevalier (Salvelinus alpinus) recueillie dans le cadre des programmes de surveillance des pêches de subsistance dans la rivière Hornaday, le ruisseau Lasard et à Tippitiuyak, dans la baie Darnley, dans les Territoires du Nord-Ouest",
+            "pub_year": 2016,
+            "lead_author_2": "Gallagher, C.P., Howland, K.L., and Harwood, L.",
+            "pub_num": "108",
+            "pages": 86,
+            "pdf_size": 2045,
+            "description": ""
+        }
+    }
+]

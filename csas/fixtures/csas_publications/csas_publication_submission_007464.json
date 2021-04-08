@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7464,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Ecological Risk Assessment of Arctic Shipping for Ecosystem Based Management – A Case Study for the Lancaster Sound Ecologically and Biologically Significant Area (EBSA)",
+            "lead_author_2": "Paulic, J.",
+            "description": ""
+        }
+    }
+]

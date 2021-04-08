@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3306,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on Northern Shrimp in the Estuary and Gulf of St. Lawrence; January 27 and 28, 2010",
+            "title_fr": "Évaluation des stocks de crevette du golfe et de l'estuaire du Saint-Laurent; 27 et 28 janvier 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Lambert, J.",
+            "pub_num": "006",
+            "pages": 18,
+            "pdf_size": 97,
+            "description": ""
+        }
+    }
+]

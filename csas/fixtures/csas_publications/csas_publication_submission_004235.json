@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4235,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Quantifying habitat requirements of four freshwater species at risk in Canada: Northern Madtom, Spotted Gar, Lake Chubsucker, and Pugnose Shiner ",
+            "title_fr": "Quantification des besoins en matière d'habitat de quatre espèces d'eau douce en péril au Canada : le chat-fou du Nord, le lépisosté tacheté, le sucet de lac et le méné camus",
+            "pub_year": 2009,
+            "lead_author_2": "Vélez-Espino, L.A., Randall, R.G. and Koops, M.A. (contact Marten Koops)",
+            "pub_num": "115",
+            "pages": 25,
+            "pdf_size": 230,
+            "description": ""
+        }
+    }
+]

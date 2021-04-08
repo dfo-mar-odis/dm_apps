@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 522,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An evaluation of inseason echosounding estimates of British Columbian herring biomass",
+            "pub_year": 1999,
+            "lead_author_2": "Tanasichuk, R.W.",
+            "pub_num": "167",
+            "pages": 9,
+            "pdf_size": 394,
+            "description": ""
+        }
+    }
+]

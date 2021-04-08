@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3370,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the cod stock in NAFO Subdivision 3Ps in October 2001",
+            "title_fr": "Évaluation d'octobre 2001 du stock de morue de la sous-division 3Ps de l'OPANO",
+            "pub_year": 2001,
+            "lead_author_2": "J. Brattey, N. G. Cadigan, B. P. Healey, G. R. Lilly, E. F. Murphy, P. A. Shelton, D. E. Stansbury, M.J. Morgan, and J.-C. Mahé",
+            "pub_num": "099",
+            "pages": 129,
+            "pdf_size": 3020,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4290,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Impacts of dredging on fish species at risk in Lake St. Clair, Ontario",
+            "title_fr": "Impacts du dragage sur les espèces de poissons en péril dans le lac Sainte‑Claire, en Ontario",
+            "pub_year": 2015,
+            "lead_author_2": "Barnucz, J., Mandrak, N.E., Bouvier, L.D., Gaspardy, R., Price, D.A.",
+            "pub_num": "018",
+            "pages": 17,
+            "pdf_size": 366,
+            "description": ""
+        }
+    }
+]

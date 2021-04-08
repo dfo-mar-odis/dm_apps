@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4282,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Use of remote video survey methodology in monitoring benthic impacts from finfish aquaculture on the south coast of Newfoundland (Canada)",
+            "title_fr": "L'utilisation de l'imagerie vidéo pour la surveillance de l'effet des activités aquacoles sur les écosystèmes benthiques de la côte Sud de Terre Neuve",
+            "pub_year": 2014,
+            "lead_author_2": "G. Mabrouk, T. Bungay, D. Drover, and D. Hamoutene",
+            "pub_num": "039",
+            "pages": 20,
+            "pdf_size": 283,
+            "description": ""
+        }
+    }
+]

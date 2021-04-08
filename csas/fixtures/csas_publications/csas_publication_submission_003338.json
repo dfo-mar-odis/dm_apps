@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3338,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Compilation of the Reports on the Status of Groundfish Stocks of the Gulf of St. Lawrence",
+            "title_fr": "Compilation des rapports sur l'état des stocks de poissons de fond du Golfe Saint-Laurent",
+            "pub_year": 1995,
+            "pub_num": "005",
+            "description": ""
+        }
+    }
+]

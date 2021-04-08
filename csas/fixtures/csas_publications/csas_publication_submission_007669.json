@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7669,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Identification of habitats important to the blue whale in the western North Atlantic",
+            "title_fr": "Identification des habitats importants pour le rorqual bleu dans l'ouest de l'Atlantique Nord",
+            "pub_year": 2018,
+            "lead_author_2": "Lesage, V.",
+            "pub_num": "003",
+            "pages": 16,
+            "pdf_size": 3654,
+            "description": ""
+        }
+    }
+]

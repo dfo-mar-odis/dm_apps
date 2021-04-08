@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2264,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The extent and importance of rockweed as a habitat for finfish, shellfish, and other species",
+            "pub_year": 1992,
+            "lead_author_2": "K.H. Mann",
+            "pub_num": "116",
+            "pages": 8,
+            "pdf_size": 624,
+            "description": ""
+        }
+    }
+]

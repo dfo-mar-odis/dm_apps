@@ -1,0 +1,49 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+{% load verbose_names %}
+
+<div class="">
+    <h3>
+        {% trans "Fishery Seasons:" %}
+    </h3>
+</div>
+
+{% if object.species.count == 0 %}
+    <em>
+        {% trans "No fishery seasons have been added to this area" %}
+    </em><br>
+{% else %}
+
+    <table class="table table-hover table-sm" style="width: 100%">
+        <tr>
+            {% for field in fishery_field_list %}
+            <th>
+                {% get_verbose_label random_fishery field %}
+            </th>
+            {% endfor %}
+        </tr>
+        <tbody>
+        {% for obj in object.species.all %}
+            <tr>
+            {% for field in fishery_field_list %}
+                {% if field == "species" %}
+                    <td>
+                        <a href="{% url 'fisheriescape:fishery_detail' obj.id %}">{{obj.species.english_name}}</a>
+                     </td>
+                {% else %}
+                    <td>
+                    {% get_field_value obj field %}
+                    </td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+
+
+
+

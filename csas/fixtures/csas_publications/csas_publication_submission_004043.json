@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4043,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Atlantic salmon (Salmo salar L.) smolt production estimates and biological characteristics from tributaries and the Restigouche River, 2002 and 2003",
+            "title_fr": "Production et caractéristiques biologiques du stade saumonneau du saumon atlantique (Salmo salar L.) des tributaires et de la rivière Restigouche, en 2002 et 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Chaput, G., Arsenault, M., Benwell, I., Cameron, P., Connell, C., Mathews, M., Listiguj First Nation",
+            "pub_num": "051",
+            "pages": 66,
+            "pdf_size": 975,
+            "description": ""
+        }
+    }
+]

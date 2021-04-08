@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2993,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "4VWX Herring",
+            "title_fr": "Hareng de 4VWX",
+            "pub_year": 2000,
+            "lead_author_2": "Michael Power, Rob Stephenson, Gary Melvin",
+            "pub_num": "B3-03",
+            "pages": 11,
+            "pdf_size": 148,
+            "description": ""
+        }
+    }
+]

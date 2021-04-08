@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8628,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Information for identification of candidate critical habitat of Athabasca Rainbow Trout (Oncorhynchus mykiss)",
+            "title_fr": "Information sur l’identification d’emplacements potentiels de l’habitat essentiel de la truite arc-en-ciel de l’Athabasca (Oncorhynchus mykiss)",
+            "pub_year": 2020,
+            "pub_num": "029",
+            "pages": 31,
+            "pdf_size": 4191,
+            "description": ""
+        }
+    }
+]

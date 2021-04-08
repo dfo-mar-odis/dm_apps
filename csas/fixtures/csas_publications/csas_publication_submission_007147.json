@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7147,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Meteorological, Sea Ice and Physical Oceanographic Conditions on the Scotian Shelf and in the Gulf of Maine during 2013",
+            "title_fr": "Conditions météorologiques, de la glace de mer et océanographiques physiques sur le plateau néo-écossais et dans le golfe du Maine en 2013",
+            "pub_year": 2014,
+            "lead_author_2": "D. Hébert, R. Pettipas, D. Brickman, and M. Dever / P. Pepin / T. Worcester",
+            "pub_num": "070",
+            "pages": 45,
+            "pdf_size": 5471,
+            "description": ""
+        }
+    }
+]

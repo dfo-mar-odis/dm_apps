@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7939,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Review of Design Strategies for the Northern Shelf Bioregion Marine Protected Area Network",
+            "title_fr": "Stratégies de conception du réseau de zones de protection marine de la biorégion de la plate-forme Nord",
+            "pub_year": 2019,
+            "lead_author_2": "Miriam O",
+            "pub_num": "026",
+            "pages": 29,
+            "pdf_size": 1750,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7555,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review of the pre-COSEWIC assessment for Lake Sturgeon Designatable Units 1–6; October 27–29, 2015",
+            "title_fr": "Compte rendu de l'examen zonal par les pairs préalable à l'évaluation du COSEPAC concernant l'esturgeon jaune (Acipenser fulvescens), unités désignables 1–6, au Canada; du 27 au 29 octobre 2015",
+            "pub_year": 2016,
+            "lead_author_2": "K. Martin",
+            "pub_num": "009",
+            "pages": 54,
+            "pdf_size": 3768,
+            "description": ""
+        }
+    }
+]

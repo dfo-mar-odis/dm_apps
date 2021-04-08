@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 507,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Run size forecasts for Fraser River sockey and pink salmon in 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Cass, A.",
+            "pub_num": "129",
+            "pages": 49,
+            "pdf_size": 215,
+            "description": ""
+        }
+    }
+]

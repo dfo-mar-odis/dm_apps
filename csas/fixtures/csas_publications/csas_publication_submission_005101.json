@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5101,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Contaminants in Canadian Arctic Bowhead whales",
+            "title_fr": "Contaminants chez les baleines boréales du Canada",
+            "pub_year": 2009,
+            "lead_author_2": "Stern, G.A.",
+            "pub_num": "028",
+            "pages": 11,
+            "pdf_size": 102,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5143,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A synthesis of the outcomes from the Strait of Georgia Ecosystem Research Initiative, and their ecosystem-based management and policy implications",
+            "lead_author_2": "Ian Perry & Diane Masson",
+            "description": ""
+        }
+    }
+]

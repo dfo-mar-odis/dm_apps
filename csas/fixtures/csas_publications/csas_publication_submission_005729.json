@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5729,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Evaluation of narwhal with respect to making a CITES non-detriment finding",
+            "title_fr": "Évaluation de narval aux fins de l'établissement d'un avis de commerce non préjudiciable de la CITES",
+            "pub_year": 2010,
+            "pub_num": "011",
+            "pages": 9,
+            "pdf_size": 109,
+            "description": ""
+        }
+    }
+]

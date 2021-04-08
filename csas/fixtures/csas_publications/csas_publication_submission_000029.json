@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 29,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon stocks of southwest New Brunswick, 1996",
+            "pub_year": 1998,
+            "lead_author_2": "T.L. Marshall, C.J. Harvie, R. Jones",
+            "pub_num": "030",
+            "pages": 63,
+            "description": ""
+        }
+    }
+]

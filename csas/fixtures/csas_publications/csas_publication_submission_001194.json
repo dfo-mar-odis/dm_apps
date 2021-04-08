@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1194,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution of herring in the Northern Gulf of St. Lawrence in winter",
+            "pub_year": 1982,
+            "lead_author_2": "J.A. Moores; G.R. Lilly",
+            "pub_num": "014",
+            "pages": 22,
+            "pdf_size": 1226,
+            "description": ""
+        }
+    }
+]

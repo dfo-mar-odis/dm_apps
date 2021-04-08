@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 90,
+        "fields": {
+            "series": 3,
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 1999,
+            "lead_author_2": "Bradford, R.G., Chaput, G., Douglas, S., Hayward, J.",
+            "pub_num": "002",
+            "description": ""
+        }
+    }
+]

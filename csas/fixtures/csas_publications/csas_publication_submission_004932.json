@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4932,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock Assessment Report on Pacific Sardine",
+            "title_fr": "Évaluation du stock de sardines du Pacifique",
+            "pub_year": 2008,
+            "lead_author_2": "Schweigert, J.",
+            "pub_num": "013",
+            "pages": 6,
+            "pdf_size": 120,
+            "description": ""
+        }
+    }
+]

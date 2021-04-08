@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 333,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Results of 1996 research surveys of sea scallop abundance in areas near Grand Manan Island and Cape Spencer, Bay of Fundy.",
+            "pub_year": 1997,
+            "lead_author_2": "Hanson, J.M.",
+            "pub_num": "046",
+            "pages": 20,
+            "pdf_size": 780,
+            "description": ""
+        }
+    }
+]

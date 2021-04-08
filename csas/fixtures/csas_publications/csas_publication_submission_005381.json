@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5381,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4, 5],
+            "title_en": "Modelling Northwest Atlantic harp seal populations: modifying an Excel model to R",
+            "title_fr": "Modélisation des populations de phoques du Groenland du Nord-Ouest de l'Atlantique : modification d'un modèle Excel en R",
+            "pub_year": 2009,
+            "lead_author_2": "M.O. Hammill, B. Ferland-Raymond, L.-P. Rivest and G. B. Stenson",
+            "pub_num": "108",
+            "pages": 15,
+            "pdf_size": 487,
+            "description": ""
+        }
+    }
+]

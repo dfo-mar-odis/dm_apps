@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1355,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Newfoundland east and southeast coast herring - An assessment of stocks in 1992 and 1993",
+            "pub_year": 1994,
+            "lead_author_2": "J.P. Wheeler; G.H. Winters; R. Chaulk",
+            "pub_num": "053",
+            "pages": 49,
+            "pdf_size": 2574,
+            "description": ""
+        }
+    }
+]

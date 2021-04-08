@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2769,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Will more egg production increase lobster fishery yields in LFAs 31-32-33?",
+            "pub_year": 1997,
+            "lead_author_2": "Miller, R.J., Nolan, S.C., Duggan, S.E.",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

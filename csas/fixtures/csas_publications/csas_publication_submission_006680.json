@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6680,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Southern Upland Atlantic Salmon: Population Dynamics and Viability",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon de l'Atlantique des hautes terres du Sud : Dynamique et viabilité des populations",
+            "pub_year": 2012,
+            "lead_author_2": "A.J.F. Gibson and R.R. Claytor / Tana Worcester / Lisa Savoie",
+            "pub_num": "142",
+            "pages": 133,
+            "pdf_size": 4910,
+            "description": ""
+        }
+    }
+]

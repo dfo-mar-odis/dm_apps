@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6100,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "A synthesis of narwhal (Monodon monoceros) scientific advice and Inuit knowledge collected during Nunavut community consultations (May 25-31, 2011)",
+            "title_fr": "Synthèse des avis scientifiques et du savoir inuit sur les narvals (Monodon monoceros) transmis lors des consultations communautaires au Nunavut (tenues du 25 au 31 mai 2011)",
+            "pub_year": 2012,
+            "lead_author_2": "Andrea White",
+            "pub_num": "001",
+            "pages": 16,
+            "pdf_size": 67,
+            "description": ""
+        }
+    }
+]

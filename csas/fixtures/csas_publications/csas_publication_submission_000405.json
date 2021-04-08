@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 405,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Further yield per recruit analyses for Newfoundland lobsters",
+            "pub_year": 1980,
+            "lead_author_2": "G.P. Ennis",
+            "pub_num": "039",
+            "pages": 14,
+            "pdf_size": 849,
+            "description": ""
+        }
+    }
+]

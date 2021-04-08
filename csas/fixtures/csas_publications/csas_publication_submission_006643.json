@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6643,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Population Assessment: Steller Sea Lion (Eumetopias jubatus): Update (SAR_9a)",
+            "lead_author_2": "Olesiuk, P.",
+            "description": ""
+        }
+    }
+]

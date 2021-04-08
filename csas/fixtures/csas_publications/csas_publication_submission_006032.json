@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6032,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Development of a St. Lawrence Estuary Marine Protected Area Ecological Monitoring Plan",
+            "title_fr": "Développement d'un plan de suivi écologique de la zone de protection marine de l'estuaire du Saint-Laurent",
+            "pub_year": 2012,
+            "lead_author_2": "Provencher, Lizon",
+            "pub_num": "039",
+            "pages": 25,
+            "pdf_size": 275,
+            "description": ""
+        }
+    }
+]

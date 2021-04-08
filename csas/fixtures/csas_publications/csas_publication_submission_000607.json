@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 607,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Rocky and Little Rivers Stocks of Atlantic salmon (Salmo salar L.) of the Newfoundland Region in 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Bourgeois, C.E., Murray,J., and Mercer, V.",
+            "pub_num": "030",
+            "pages": 19,
+            "pdf_size": 259,
+            "description": ""
+        }
+    }
+]

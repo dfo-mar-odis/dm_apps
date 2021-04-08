@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 140,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Spatial and temporal variation in Atlantic salmon abundance in the Newfoundland-Labrador region with emphasis on factors that may have contributed to low returns in 1997",
+            "pub_year": 1998,
+            "lead_author_2": "J.B. Dempson, D.G. Reddin, M.F. O'Connell, J. Helbig, C.E. Bourgeois, C. Mullins, T.R. Porter, G. Lilly, J. Carscadden, G.B. Stenson, D. Kulka",
+            "pub_num": "114",
+            "description": ""
+        }
+    }
+]

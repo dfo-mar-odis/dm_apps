@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5632,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Assessment of Area 23 Sockeye and 2010 Forecast (Barkley Sound, Alberni Inlet)",
+            "title_fr": "Évaluation du saumon rouge dans le secteur 23 et prévisions 2010 (détroit Barkley et passage Alberni)",
+            "pub_year": 2012,
+            "lead_author_2": "A-M. Huang",
+            "pub_num": "033",
+            "pages": 13,
+            "pdf_size": 151,
+            "description": ""
+        }
+    }
+]

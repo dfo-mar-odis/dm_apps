@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4799,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Recovery potential assessments for Eastern sand darter, Copper redhorse and Channel darter - Part 1; December 11-12, 2006",
+            "title_fr": "Compte rendu de l'examen par des pairs régional sur l'évaluation du potentiel de rétablissement du dard de sable, du chevalier cuivré et du fouille-roche gris - Partie 1 ; 11-12 décembre 2006",
+            "pub_year": 2012,
+            "pub_num": "040",
+            "description": ""
+        }
+    }
+]

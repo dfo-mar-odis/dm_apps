@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 311,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Margaree River gaspereau fishery, 1990",
+            "pub_year": 1991,
+            "lead_author_2": "G. Chaput; C. LaBlanc; G. Nielsen",
+            "pub_num": "012",
+            "pages": 24,
+            "pdf_size": 1139,
+            "description": ""
+        }
+    }
+]

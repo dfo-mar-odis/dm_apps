@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5508,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Advisory Process on the Assessment of Nova Scotia Snow Crab; February 24-25, 2010",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

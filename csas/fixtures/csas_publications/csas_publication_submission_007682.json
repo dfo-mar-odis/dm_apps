@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7682,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review of the Delineation of Significant Areas of Cold-Water Corals and Sponge-Dominated Communities in Canada’s Atlantic and Eastern Arctic Marine Waters; March 8-10, 2016",
+            "title_fr": "Compte rendu de l’examen national par les pairs de la délimitation des zones importantes de communautés dominées par les coraux et les éponges d’eau froide dans les eaux marines du Canada atlantique et de l’est de l’Arctique; du 8 au 10 mars 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Britanny Beauchamp",
+            "pub_num": "030",
+            "pages": 24,
+            "pdf_size": 304,
+            "description": ""
+        }
+    }
+]

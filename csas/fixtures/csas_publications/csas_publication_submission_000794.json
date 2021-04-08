@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 794,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical environmental conditions in the southern Gulf of St. Lawrence during 2000",
+            "title_fr": "Conditions du milieu physique dans le sud du golfe du Saint-Laurent au cours de l'année 2000",
+            "pub_year": 2001,
+            "lead_author_2": "K.F. Drinkwater, R.G. Pettipas, W.M. Petrie",
+            "pub_num": "053",
+            "pages": 39,
+            "pdf_size": 3070,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1087,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Interaction of the lobster, scallop, and Irish moss fisheries off Borden, Prince Edward Island",
+            "pub_year": 1980,
+            "lead_author_2": "J.D. Pringle; D. Jones",
+            "pub_num": "071",
+            "pages": 17,
+            "pdf_size": 1231,
+            "description": ""
+        }
+    }
+]

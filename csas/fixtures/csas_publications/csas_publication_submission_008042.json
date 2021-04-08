@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8042,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of the Stock Framework for American Lobster in Lobster Fishing Areas (LFAs) 27-33",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

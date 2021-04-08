@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6052,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of the Proposed Environmental Effects Monitoring (EEM) Plan for the Deep Panuke Offshore Petroleum Production Operations",
+            "title_fr": "Examen du plan d'étude de suivi des effets sur l'environnement (ESEE) des activités de production pétrolière extracôtière proposé dans le cadre du projet Deep Panuke",
+            "pub_year": 2011,
+            "lead_author_2": "K. Lee, J. Payne, H. Niu, T. King, G. Wohlgeschaffen, B. Robinson",
+            "pub_num": "008",
+            "pages": 9,
+            "pdf_size": 77,
+            "description": ""
+        }
+    }
+]

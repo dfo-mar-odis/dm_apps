@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4089,
+        "fields": {
+            "series": 7,
+            "lead_region": [6],
+            "title_en": "Revised Framework for Evaluation of Scope for Harm under Section 73 of the Species at Risk Act",
+            "title_fr": "Cadre révisé pour l'évaluation de l'étendue des dommages admissibles en vertu de l'article 73 de la Loi sur les espèces en péril",
+            "pub_year": 2004,
+            "lead_author_2": "Rice, J., Allen, C.",
+            "pub_num": "048",
+            "pages": 7,
+            "pdf_size": 133,
+            "description": ""
+        }
+    }
+]

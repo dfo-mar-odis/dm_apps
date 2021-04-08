@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3747,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Witch Flounder (Divisions 4RST)",
+            "title_fr": "Plie grise (divisions 4RST)",
+            "pub_year": 2003,
+            "pub_num": "005",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

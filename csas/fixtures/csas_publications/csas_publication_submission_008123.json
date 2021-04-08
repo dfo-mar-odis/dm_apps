@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8123,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Pre-season run size forecasts for Fraser River Sockeye (Oncorhynchus nerka) salmon in 2018",
+            "title_fr": "Prévisions d’avant-saison de l’effectif de la montaison du saumon rouge (Oncorhynchus nerka) du fleuve Fraser en 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Sue Grant",
+            "pub_num": "034",
+            "pdf_size": 2729,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1200,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Distribution and abundance of capelin in the Northwestern Gulf of St. Lawrence fall trawl survey",
+            "pub_year": 1982,
+            "lead_author_2": "S.S.M. Labonté",
+            "pub_num": "020",
+            "pages": 18,
+            "pdf_size": 1174,
+            "description": ""
+        }
+    }
+]

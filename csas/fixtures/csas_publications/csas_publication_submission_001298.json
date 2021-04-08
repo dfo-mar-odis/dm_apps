@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1298,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Short term movements of snow crabs (Chionoecetes opilio) in the Bay of Islands, Newfoundland, as monitored by ultrasonic tracking",
+            "pub_year": 1986,
+            "lead_author_2": "D.R. Maynard; D.A. Robichaud",
+            "pub_num": "050",
+            "pages": 15,
+            "pdf_size": 898,
+            "description": ""
+        }
+    }
+]

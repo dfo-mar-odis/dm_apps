@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5203,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Cumulative Effects Assessment for Northern and Southern Resident Killer Whale (Orcinus Orca) Populations in the Northeast Pacific",
+            "title_fr": "Évaluation des effets cumulatifs sur les populations d’épaulards résidents du nord et du sud (orcinus orca) dans le pacifique nord-est",
+            "pub_year": 2019,
+            "lead_author_2": "Gilles Olivier",
+            "pub_num": "030",
+            "pages": 14,
+            "pdf_size": 695,
+            "description": ""
+        }
+    }
+]

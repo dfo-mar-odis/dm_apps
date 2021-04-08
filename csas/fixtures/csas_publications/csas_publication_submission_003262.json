@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3262,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Sakinaw Lake Sockeye Salmon",
+            "title_fr": "Saumon Rouge du Lac Sakinaw",
+            "pub_year": 2002,
+            "lead_author_2": "Clyde B. Murray",
+            "pub_num": "D6-13",
+            "pages": 6,
+            "pdf_size": 94,
+            "description": ""
+        }
+    }
+]

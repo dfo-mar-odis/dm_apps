@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2523,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Bias and variability in age determination comparisons for 5Z j,m cod (1991-94)",
+            "pub_year": 1995,
+            "lead_author_2": "M-I. Buzeta",
+            "pub_num": "117",
+            "pages": 14,
+            "pdf_size": 547,
+            "description": ""
+        }
+    }
+]

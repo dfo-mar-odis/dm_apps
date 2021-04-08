@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8758,
+        "fields": {
+            "series": 3,
+            "title_en": "A Framework for Conditioning Operating Models for Southwest Nova Scotia/Bay of Fundy Spawning Component of 4VXW Herring",
+            "lead_author_2": "T. Carruthers, A. Hordyk, Q. Huynh, R. Singh, T. Barrett",
+            "description": ""
+        }
+    }
+]

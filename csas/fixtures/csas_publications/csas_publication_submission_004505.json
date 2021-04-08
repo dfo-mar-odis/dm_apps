@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4505,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Workshop to assess population dynamics of cyclic Fraser River sockeye and implications for management; February 7-8, 2006",
+            "title_fr": "Compte rendu de l'atelier d'évaluation de la dynamique des populations de saumon rouge du fleuve Fraser à dominance cyclique et la gestion de celles-ci; 7 et 8 février 2006",
+            "pub_year": 2006,
+            "pub_num": "004",
+            "pages": 24,
+            "pdf_size": 119,
+            "description": ""
+        }
+    }
+]

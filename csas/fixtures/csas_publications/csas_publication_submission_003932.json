@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3932,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Preliminary Results from the September 2003 Bottom-trawl Survey of the Southern Gulf of St. Lawrence",
+            "title_fr": "Résultats Préliminaires du Relevé au Chalut de Fond de Septembre 2003 dans le Sud du Golfe du Saint-Laurent",
+            "pub_year": 2003,
+            "lead_author_2": "Poirier, G.A., Hurlbut, T., Swain, D.P., Chouinard, G.A., Benoît, H. P., LeBlanc, C. and Currie, L.",
+            "pub_num": "112",
+            "pages": 28,
+            "pdf_size": 900,
+            "description": ""
+        }
+    }
+]

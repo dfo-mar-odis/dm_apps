@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7060,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "A model for simulating harvest strategies to evaluate the effects of changes in assessment frequency: An application to Northern Shrimp",
+            "title_fr": "Un modèle de simulation de stratégies de récolte pour évaluer les effets des changements de la fréquence des avis : une application à la crevette nordique",
+            "pub_year": 2014,
+            "lead_author_2": "Bourdages, H. et Desgagnés, M",
+            "pub_num": "041",
+            "pages": 19,
+            "pdf_size": 573,
+            "description": ""
+        }
+    }
+]

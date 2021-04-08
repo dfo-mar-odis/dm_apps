@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7660,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Habitats of Special Importance to Resident Killer Whales (Orcinus orca) off the West Coast of Canada",
+            "title_fr": "Habitats d’importance particulière pour les épaulards (Orcinus orca) résidents de la côte ouest du Canada",
+            "pub_year": 2017,
+            "lead_author_2": "Ford, J.K.B., Pilkington, J.F., Reira, A., Otsuki, M., Gisborne, B., Abernethy, R.M., Stredulinsky, E.H., Towers, J.R., and Ellis, G.M.",
+            "pub_num": "035",
+            "pages": 65,
+            "pdf_size": 3762,
+            "description": ""
+        }
+    }
+]

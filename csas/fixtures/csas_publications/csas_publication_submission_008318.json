@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8318,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Environmental risk assessment for the Manufacture and Production of Sterile AquAdvantage Salmon at a Lan-based and contained facility near Rollo Bay, PEI",
+            "pub_year": 2020,
+            "lead_author_2": "Colin McGowan, Rosalind Leggatt, Sherry Walker",
+            "pub_num": "076",
+            "description": ""
+        }
+    }
+]

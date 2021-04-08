@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1682,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "CAFSAC assessment software catalog",
+            "pub_year": 1986,
+            "lead_author_2": "Assessment computation working group of CAFSAC",
+            "pub_num": "096",
+            "pages": 24,
+            "pdf_size": 1571,
+            "description": ""
+        }
+    }
+]

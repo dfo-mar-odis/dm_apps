@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8034,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of the 3Ps White Hake Stock Assessment, and the 3LNOPs Monkfish Stock Assessment; November 1, 2017",
+            "title_fr": "Compte rendu de l’examen régional par les pairs de l’évaluation du stock de merluches blanches dans la sous-division 3Ps, et de l’évaluation du stock de baudroies dans les divisions 3LNOPs; 1er novembre 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Katherine Skanes (Chair) & Chelsea Boaler (Rapporteur)",
+            "pub_num": "017",
+            "pages": 12,
+            "pdf_size": 373,
+            "description": ""
+        }
+    }
+]

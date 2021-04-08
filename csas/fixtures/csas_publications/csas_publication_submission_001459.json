@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1459,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Summary tables of recreational and commercial Atlantic salmon harvests of the Scotia-Fundy Region, 1967-1983",
+            "pub_year": 1984,
+            "lead_author_2": "R.E. Cutting",
+            "pub_num": "053",
+            "pages": 28,
+            "pdf_size": 1540,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4336,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Capelin (Mallotus villosus) of the Estuary and Gulf of St. Lawrence (NAFO Divisions 4RST) in 2004",
+            "title_fr": "Capelan (Mallotus villosus) de l'estuaire et du golfe du Saint-Laurent (divisions 4RST de l'OPANO) en 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Grégoire, F., C. Savenkoff, D. Chabot.",
+            "pub_num": "058",
+            "pages": 61,
+            "pdf_size": 7567,
+            "description": ""
+        }
+    }
+]

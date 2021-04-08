@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7391,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Technical review of predicted effects and proposed mitigation of underwater noise and potential vessel strikes on marine mammals, from the December 2013 Facilities Application and supplemental information for the Trans Mountain Expansion Project",
+            "title_fr": "Examen technique des effets prévus et des mesures d'atténuation proposées du bruit sous-marin et des collisions avec des navires sur les mammifères marins présentés dans la demande d'installation de décembre 2013 relative au projet d'agrandissement de Trans Mountain et dans ses documents connexes",
+            "pub_year": 2015,
+            "lead_author_2": "Lesley MacDougall",
+            "pub_num": "022",
+            "description": ""
+        }
+    }
+]

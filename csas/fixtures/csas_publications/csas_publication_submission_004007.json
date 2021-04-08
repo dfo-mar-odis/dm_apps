@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4007,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "The Northern Gulf of St. Lawrence (3Pn, 4RS) cod in 2003",
+            "title_fr": "La morue du nord du golfe du Saint-Laurent (3Pn, 4RS) en 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Fréchet, A.",
+            "pub_num": "019",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

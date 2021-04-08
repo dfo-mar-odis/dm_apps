@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 219,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Overview of meteorological and sea ice conditions off eastern Canada during 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Drinkwater, K., R.G. Pettipas, W.N. Petrie",
+            "pub_num": "051",
+            "pages": 29,
+            "pdf_size": 1235,
+            "description": ""
+        }
+    }
+]

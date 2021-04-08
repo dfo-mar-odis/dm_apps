@@ -18,6 +18,11 @@ from . import utils
 #
 
 
+def activate_all_users():
+    for u in User.objects.filter(is_active=False):
+        u.is_active = True
+        u.save()
+
 def resave_requests():
     for obj in models.TripRequest.objects.all():
         obj.save()

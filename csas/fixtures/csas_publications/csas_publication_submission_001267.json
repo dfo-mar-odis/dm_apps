@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1267,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status of pollock in NAFO Division 4VWX and Subarea 5",
+            "pub_year": 1983,
+            "lead_author_2": "J.M. McGlade; M.C. Annand; D. Beanlands",
+            "pub_num": "034",
+            "pages": 33,
+            "pdf_size": 1431,
+            "description": ""
+        }
+    }
+]

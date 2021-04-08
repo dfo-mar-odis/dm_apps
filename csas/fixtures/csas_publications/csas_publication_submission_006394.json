@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6394,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Review of approaches and methods to assess Environmental Flows across Canada and internationally",
+            "title_fr": "Examen des approches et des méthodes d'évaluation des débits environnementaux au Canada et à l'échelle internationale",
+            "pub_year": 2012,
+            "lead_author_2": "Linnansaari, T., Monk, W.A., Baird, D.J. and Curry, R.A.",
+            "pub_num": "039",
+            "pages": 82,
+            "pdf_size": 2903,
+            "description": ""
+        }
+    }
+]

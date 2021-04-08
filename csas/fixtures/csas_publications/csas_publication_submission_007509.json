@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7509,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment for the Outside Population of Yelloweye Rockfish (Sebastes ruberrimus) for British Columbia, Canada in 2014",
+            "title_fr": "Évaluation du stock de sébastes aux yeux jaunes (Sebastes ruberrimus) des eaux extérieures de la Colombie-Britannique, Canada, 2014",
+            "pub_year": 2018,
+            "lead_author_2": "Yamanaka, K.L., McAllister, M.M., Etienne, M., Edwards, A.M., and Haigh, R.",
+            "pub_num": "001",
+            "pages": 159,
+            "pdf_size": 11874,
+            "description": ""
+        }
+    }
+]

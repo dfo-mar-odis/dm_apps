@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2837,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary results on groundfish catches in the 1996 CALANUS II survey of the Magdalen Islands.",
+            "pub_year": 1997,
+            "lead_author_2": "Morin, R.",
+            "pub_num": "083",
+            "pages": 15,
+            "pdf_size": 708,
+            "description": ""
+        }
+    }
+]

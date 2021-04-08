@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5518,
+        "fields": {
+            "series": 4,
+            "lead_region": [7, 4],
+            "title_en": "Proceedings of the Zonal Science Advisory Process on the Recovery Potential Assessment of Channel Darter; 30 November - 1 December 2009",
+            "title_fr": "Compte rendu du processus zonal de consultation scientifique sur l'évaluation du potentiel de rétablissement du fouille-roche gris; le 30 novembre - 1 décembre 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Bouvier, L.",
+            "pub_num": "016",
+            "pages": 46,
+            "pdf_size": 232,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7195,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Advice on Euthanasia Techniques for Small and Large Cetaceans",
+            "title_fr": "Avis sur les techniques d'euthanasie pour les petits et grands cétacés",
+            "pub_year": 2014,
+            "lead_author_2": "Pierre-Yves Daoust and Arthur Ortenburger",
+            "pub_num": "111",
+            "pages": 43,
+            "pdf_size": 808,
+            "description": ""
+        }
+    }
+]

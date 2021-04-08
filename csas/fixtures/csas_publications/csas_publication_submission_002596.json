@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2596,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Abundance of Iceland scallops in NAFO Division 4R (Strait of Belle Isle) declines further in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill; E.M. Seward",
+            "pub_num": "049",
+            "pages": 22,
+            "pdf_size": 834,
+            "description": ""
+        }
+    }
+]

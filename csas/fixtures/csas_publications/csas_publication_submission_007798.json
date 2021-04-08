@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7798,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Principal predators and consumption of juvenile and adult Atlantic Herring (Clupea harengus) in the southern Gulf of St. Lawrence",
+            "title_fr": "Principaux prédateurs et consommation de harengs de l'Atlantique (Clupea harengus) juvéniles et adultes dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2016,
+            "lead_author_2": "Hugues Benoît",
+            "pub_num": "065",
+            "pages": 50,
+            "pdf_size": 1558,
+            "description": ""
+        }
+    }
+]

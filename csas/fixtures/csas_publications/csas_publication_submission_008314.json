@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8314,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Information to support for the assessment of Northern Shrimp, Pandalus borealis, and Striped Shrimp, Pandalus montagui, in the Eastern and Western Assessment Zones, February 2019",
+            "lead_author_2": "W. Walkusz",
+            "description": ""
+        }
+    }
+]

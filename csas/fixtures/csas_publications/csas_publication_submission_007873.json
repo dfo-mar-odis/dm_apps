@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7873,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "2017 Assessment of Newfoundland east and south coast Atlantic herring (Clupea harengus) stock complexes",
+            "title_fr": "Évaluation de 2017 des complexes de stocks de hareng de l’Atlantique (Clupea harengus) des côtes est et sud de Terre-Neuve-et-Labrador",
+            "pub_year": 2018,
+            "lead_author_2": "Bourne, C., Mowbray, F., Squires, B., and Koen-Alonso, M.",
+            "pub_num": "026",
+            "pages": 50,
+            "pdf_size": 4466,
+            "description": ""
+        }
+    }
+]

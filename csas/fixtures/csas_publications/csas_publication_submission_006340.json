@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6340,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science Advice for Identifying Indicators for Monitoring Arctic Marine Biodiversity in Canada",
+            "title_fr": "Avis Scientifique sur la définition des indicateurs pour la surveillance de la biodiversité marine dans l'Arctique canadien",
+            "pub_year": 2012,
+            "lead_author_2": "Jill Watkins, Elly Chmlentski Sherry Walker, Joclyn Paulic",
+            "pub_num": "053",
+            "pages": 23,
+            "pdf_size": 257,
+            "description": ""
+        }
+    }
+]

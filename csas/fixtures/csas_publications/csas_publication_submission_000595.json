@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 595,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Distribution, Abundance, Biology and Fisheries Potential of the Exotic Varnish Clam (Nuttallia obscurata) in British Columbia",
+            "pub_year": 1999,
+            "lead_author_2": "Gillespie, G.E., Parker, M., Merilees, W.",
+            "pub_num": "193",
+            "pages": 44,
+            "pdf_size": 2279,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+unique_sample_identifier,site_identifier,site_description,samplers,datetime,latitude,longitude,comments
+100,Site 993,Miramichi Lake,Jane Doe,2020-08-21 12:30,46.463301,-66.989402,Rainy
+101,Site 993,Miramichi Lake,Jane Doe,2020-08-21 12:47,46.459786,-66.967846,
+102,Site 993,Miramichi Lake,Jane Doe,2020-08-21 12:47,46.459786,-66.967846,
+103,Site 993,Miramichi Lake,Jane Doe,2020-08-21 12:47,46.459786,-66.967846,
+105,site 17,Lake Brook,Michael Smith,2020-08-21 13:05,46.463684,-66.964937,
+106,site 17,Lake Brook,Michael Smith,2020-08-21 13:05,46.463684,-66.964937,
+107,site 17,Lake Brook,Michael Smith,2020-08-21 13:05,46.463684,-66.964937,
+108,Site 994,Miramichi Lake,Michael Smith,2020-08-21 10:45,46.462735,-66.965679,
+109,Site 994,Miramichi Lake,Michael Smith,2020-08-21 10:45,46.462735,-66.965679,
+110,Site 994,Miramichi Lake,Michael Smith,2020-08-21 10:45,46.462735,-66.965679,
+111,Site 5,SMW River,JFK,2020-08-26 10:35,46.507534,-66.949769,Water temp : 18C
+112,Site 5,SMW River,JFK,2020-08-26 10:35,46.507534,-66.949769,Water temp : 18C
+113,Site 5,SMW River,JFK,2020-08-26 10:35,46.507534,-66.949769,Water temp : 18C
+114,Site 14,SMW River,JFK,2020-08-26 12:25,46.54391,-66.85485,Water temp : 18C
+115,Site 14,SMW River,JFK,2020-08-26 12:25,46.54391,-66.85485,Water temp : 18C
+117,Site 14,SMW River,JFK,2020-08-26 12:25,46.54391,-66.85485,Water temp : 18C

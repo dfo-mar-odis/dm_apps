@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 938,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Fisheries Management Subcommittee Meeting; 9 July 1997",
+            "pub_year": 1997,
+            "pub_num": "014",
+            "description": ""
+        }
+    }
+]

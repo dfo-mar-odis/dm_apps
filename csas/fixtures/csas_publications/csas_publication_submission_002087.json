@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2087,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Forecasts of MSW salmon returns to the Saint John River using non-parametric and parametric models",
+            "pub_year": 1991,
+            "lead_author_2": "C.J. Harvie; P.G. Amiro",
+            "pub_num": "022",
+            "pages": 19,
+            "pdf_size": 1105,
+            "description": ""
+        }
+    }
+]

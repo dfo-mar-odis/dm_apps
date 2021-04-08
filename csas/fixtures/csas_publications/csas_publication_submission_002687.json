@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2687,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Science Review Meeting on Species at Risk Issues; March 18-22, 2002",
+            "title_fr": "Compte rendu de la réunion de la revue national des sciences au sujet des espèces en péril; le 18-22 mars, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Howard Powles",
+            "pub_num": "007",
+            "pages": 69,
+            "pdf_size": 460,
+            "description": ""
+        }
+    }
+]

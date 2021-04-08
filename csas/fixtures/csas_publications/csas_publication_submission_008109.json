@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8109,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of the Northern Cod (NAFO Divs. 2J3KL) stock in 2018",
+            "lead_author_2": "K. Dwyer",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1685,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A non-equilibrium production model for Divisions 4RST redfish",
+            "pub_year": 1986,
+            "lead_author_2": "D. Rivard; S. Gavaris",
+            "pub_num": "099",
+            "pages": 11,
+            "pdf_size": 633,
+            "description": ""
+        }
+    }
+]

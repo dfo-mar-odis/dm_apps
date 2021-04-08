@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3225,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subdivision 3Ps Haddock",
+            "title_fr": "Aiglefin de la subdivision 3Ps",
+            "pub_year": 1996,
+            "lead_author_2": "Murphy, E.",
+            "pub_num": "082",
+            "description": ""
+        }
+    }
+]

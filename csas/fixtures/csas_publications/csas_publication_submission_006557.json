@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6557,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the regional peer review meeting of the assessment of the status of the southern Gulf of St. Lawrence snow crab stock; February 7 and 8, 2012",
+            "title_fr": "Compte rendu de l'examen par des pairs régional sur l'évaluation de l'état du stock de crabe des neiges du sud du golfe du Saint-Laurent ; les 7 et 8 février, 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Marc Lanteigne",
+            "pub_num": "051",
+            "pages": 66,
+            "pdf_size": 841,
+            "description": ""
+        }
+    }
+]

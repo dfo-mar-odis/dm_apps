@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8241,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Discussion on Priorities, Monitoring, and Provision of Science Advice for Small-Scale Fisheries in the Maritimes Region, August 21-22, 2018",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

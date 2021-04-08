@@ -71,6 +71,7 @@ def fill_n_submit_form(browser, data, exclude=[]):
                 form_field.send_keys(str(data[field_key]))
             elif field_key not in ["created_by", "created_date"]:
                 # text fields
+                form_field.clear()
                 form_field.send_keys(str(data[field_key]).replace("\n", " "))
     submit_btn = browser.find_element_by_xpath("//button[@class='btn btn-success']")
     scroll_n_click(browser, submit_btn)
@@ -122,13 +123,13 @@ class TestHomePageTitle(CommonFunctionalTest):
         self.assertIn('Biodiversity', self.browser.title, "not on correct page")
 
 
-@tag("Functional", "Evnt")
-class TestEvntFunctional(CommonFunctionalTest):
+@tag("Functional", "Indv")
+class TestIndvFunctional(CommonFunctionalTest):
     # put factories in setUp and not in class to make factory boy use selenium database.
     def setUp(self):
         super().setUp()
-        self.object_verbose = 'Event'
-        self.object_data = BioFactoryFloor.EvntFactory.build_valid_data()
+        self.object_verbose = 'Individual'
+        self.object_data = BioFactoryFloor.IndvFactory()
 
     def test_create_interaction(self):
         # user starts on app homepage:
@@ -140,295 +141,11 @@ class TestEvntFunctional(CommonFunctionalTest):
         scroll_n_click(self.browser, lookup_btn)
         self.assertIn(self.object_verbose, self.browser.title, "not on correct page")
 
-        # user creates a new instance of the lookup
-        self.browser.find_element_by_xpath("//a[@class='btn btn-primary' and contains(text(), '+')]").click()
-        fill_n_submit_form(self.browser, self.object_data)
-
         # user checks to make sure that the instance is created
         details_table = self.browser.find_element_by_xpath("//table[@id='details_table']/tbody")
-        evntc_used = EventCode.objects.filter(pk=self.object_data["evntc_id"]).get().__str__()
+        stok_used = self.object_data.stok_id.__str__()
         rows = details_table.find_elements_by_tag_name("tr")
-        self.assertIn(evntc_used, [get_col_val(row, 1) for row in rows])
-
-
-@tag("Functional", "Evnt")
-class TestEvntDetailsFunctional(CommonFunctionalTest):
-    # put factories in setUp and not in class to make factory boy use selenium database.
-    def setUp(self):
-        super().setUp()
-        self.evnt_data = BioFactoryFloor.EvntFactory()
-        self.evnt_data.prog_id.valid = True
-
-    def nav_to_details_view(self):
-        # user navigates to a details view for an event
-        self.browser.get("{}{}{}".format(self.live_server_url, "/en/bio_diversity/details/evnt/", self.evnt_data.id))
-        self.assertIn('Event', self.browser.title, "not on correct page")
-
-    def test_add_locations(self):
-        self.nav_to_details_view()
-        # user adds a location to the event
-        location_data = BioFactoryFloor.LocFactory.build_valid_data()
-        rows = add_feature(self, location_data, "loc", "evnt")
-        locc_used = LocCode.objects.filter(pk=location_data["locc_id"]).get().__str__()
-        self.assertIn(locc_used, [get_col_val(row, 0) for row in rows])
-
-    def test_add_individual(self):
-        self.nav_to_details_view()
-        # user adds a new individual to the event
-        indv_data = BioFactoryFloor.IndvFactory.build_valid_data()
-        rows = add_feature(self, indv_data, "indv", "")
-        ufid_used = indv_data["ufid"]
-        self.assertIn(ufid_used, [get_col_val(row, 0) for row in rows])
-
-    def test_add_existing_individual_nav_back_btn(self):
-        self.nav_to_details_view()
-        # user adds an existing individual to the event:
-        indv = BioFactoryFloor.IndvFactory()
-        indv_details = self.browser.find_element_by_xpath('//div[@name="indv-details"]')
-        indv_btn = indv_details.find_element_by_xpath('//a[@name="add-existing_indv-btn"]')
-        indv_data = {"indv_id": indv.pk}
-        open_n_fill_popup(self, indv_btn, indv_data)
-        try:
-            details_table = self.browser.find_element_by_xpath("//div[@name='indv-details']//table/tbody")
-        except NoSuchElementException:
-            return self.fail("No individuals in details table")
-        ufid_used = indv.ufid
-        rows = details_table.find_elements_by_tag_name("tr")
-        self.assertIn(ufid_used, [get_col_val(row, 0) for row in rows])
-
-        # User clicks on first individual reviews its details and returns to the event details
-        first_ufid = rows[0].find_element_by_tag_name("td").text
-        indv_btn = rows[0].find_element_by_name("indv-details-btn")
-        scroll_n_click(self.browser, indv_btn)
-        description_ufid = self.browser.find_element_by_xpath("//span[@class='font-weight-bold' and contains(text(), "
-                                                              "'ABL Fish UFID :')]/following-sibling::span")
-        self.assertEqual(first_ufid, description_ufid.text)
-        self.browser.find_element_by_name("back-btn").click()
-        try:
-            details_table = self.browser.find_element_by_xpath("//div[@name='indv-details']//table/tbody")
-        except NoSuchElementException:
-            return self.fail("No individuals in details table")
-        rows = details_table.find_elements_by_tag_name("tr")
-        self.assertIn(first_ufid, [get_col_val(row, 0) for row in rows])
-
-    def test_clone_individual(self):
-        self.nav_to_details_view()
-
-        # user adds a new individual to the event
-        indv_data = BioFactoryFloor.IndvFactory.build_valid_data()
-        rows = add_feature(self, indv_data, "indv", "")
-        ufid_used = indv_data["ufid"]
-        self.assertIn(ufid_used, [get_col_val(row, 0) for row in rows])
-
-        # user clones this indivdual:
-        indv_clone_data = {"ufid": "new_ufid"}
-        rows = add_feature(self, indv_clone_data, "indv", "", True)
-        self.assertIn("new_ufid", [get_col_val(row, 0) for row in rows])
-
-    def test_add_group(self):
-        self.nav_to_details_view()
-        # user adds a new individual to the event
-        grp_data = BioFactoryFloor.GrpFactory.build_valid_data()
-        rows = add_feature(self, grp_data, "grp", "")
-        stok_used = StockCode.objects.filter(pk=grp_data["stok_id"]).get().__str__()
-        self.assertIn(stok_used, [get_col_val(row, 0) for row in rows])
-
-    def test_add_contx(self):
-        self.nav_to_details_view()
-        # user add a container cross reference to the event
-        contx_data = BioFactoryFloor.ContxFactory.build_valid_data()
-        rows = add_feature(self, contx_data, "contx", "evnt")
-        tank_used = Tank.objects.filter(pk=contx_data["tank_id"]).get().__str__()
-        self.assertIn(tank_used, [get_col_val(row, 0) for row in rows])
-
-    def test_add_protocol(self):
-        self.nav_to_details_view()
-        # user adds a protocol to the event
-        prot_data = BioFactoryFloor.ProtFactory.build_valid_data()
-        prot_data["valid"] = True
-        prot_data["evntc_id"] = self.evnt_data.evntc_id.id
-        evnt_prog = Program.objects.filter(pk=self.evnt_data.prog_id.id).get()
-        evnt_prog.valid = True
-        evnt_prog.save()
-        rows = add_feature(self, prot_data, "prot", "prog")
-        evntc_used = EventCode.objects.filter(pk=prot_data["evntc_id"]).get().__str__()
-        self.assertIn(evntc_used, [get_col_val(row, 0) for row in rows])
-
-
-@tag("Functional", "Instc")
-class InstcTestSimpleLookup(CommonFunctionalTest):
-
-    def setUp(self):
-        super().setUp()
-        self.lookup_verbose = 'Instrument Code'
-        self.lookup_data = BioFactoryFloor.InstcFactory.build_valid_data()
-
-    def test_full_interaction(self):
-        # user starts on app homepage:
-        self.browser.get("{}{}".format(self.live_server_url, "/en/bio_diversity/"))
-
-        # user clicks on a common lookup, ends up a list view
-        lookup_btn = self.browser.find_element_by_xpath("//a[@class='btn btn-secondary btn-lg' and contains(text(), "
-                                                        "'{}')]".format(self.lookup_verbose))
-        scroll_n_click(self.browser, lookup_btn)
-        self.assertIn(self.lookup_verbose, self.browser.title, "not on correct page")
-
-        # user creates a new instance of the lookup
-        self.browser.find_element_by_xpath("//a[@class='btn btn-primary' and contains(text(), '+')]").click()
-        fill_n_submit_form(self.browser, self.lookup_data)
-
-        # user checks to make sure that the instance is created
-        details_table = self.browser.find_element_by_xpath("//table[@id='details_table']/tbody")
-        rows = details_table.find_elements_by_tag_name("tr")
-        self.assertIn(self.lookup_data["name"], [get_col_val(row, 0) for row in rows])
-
-        # user looks at details of newly created object:
-        new_object_row = False
-        for row in rows:
-            name_cell = row.find_elements_by_tag_name("td")[0]
-            if name_cell.text == self.lookup_data["name"]:
-                new_object_row = row
-        new_object_row.find_element_by_xpath("//a[@class='btn btn-primary btn-sm my-1' and contains(text(), "
-                                             "'Details')]").click()
-        description_detail_element = self.browser.find_element_by_xpath("//span[@class='font-weight-bold'and "
-                                                                        "contains(text(), 'Description (en) : ')]"
-                                                                        "/following-sibling::span")
-        self.assertEqual(description_detail_element.text, self.lookup_data["description_en"].replace("\n", " "),
-                         "Description does not match input")
-
-        # user updates the instances details and goes on their way
-        self.browser.find_element_by_xpath("//a[@class='btn btn-primary' and@title='Update']").click()
-        name_field = self.browser.find_element_by_xpath("//input[@name='name']")
-        name_field.clear()
-        new_name = "updated name"
-        name_field.send_keys(new_name)
-        submit_btn = self.browser.find_element_by_xpath("//button[@class='btn btn-success']")
-        scroll_n_click(self.browser, submit_btn)
-
-        details_table = self.browser.find_element_by_xpath("//table[@id='details_table']/tbody")
-        rows = details_table.find_elements_by_tag_name("tr")  # get all of the rows in the table
-        self.assertNotIn(self.lookup_data["name"], [get_col_val(row, 0) for row in rows])
-        self.assertIn(new_name, [get_col_val(row, 0) for row in rows])
-
-
-@tag("Functional", "Instdc")
-class InstdcTestSimpleLookup(CommonFunctionalTest):
-
-    def setUp(self):
-        super().setUp()
-        self.lookup_verbose = 'Instrument Detail Code'
-        self.lookup_data = BioFactoryFloor.InstdcFactory.build_valid_data()
-
-    def test_full_interaction(self):
-        # user starts on app homepage:
-        self.browser.get("{}{}".format(self.live_server_url, "/en/bio_diversity/"))
-
-        # user clicks on a common lookup, ends up a list view
-        lookup_btn = self.browser.find_element_by_xpath("//a[@class='btn btn-secondary btn-lg' and contains(text(), "
-                                                        "'{}')]".format(self.lookup_verbose))
-        scroll_n_click(self.browser, lookup_btn)
-        self.assertIn(self.lookup_verbose, self.browser.title, "not on correct page")
-
-        # user creates a new instance of the lookup
-        self.browser.find_element_by_xpath("//a[@class='btn btn-primary' and contains(text(), '+')]").click()
-        fill_n_submit_form(self.browser, self.lookup_data)
-
-        # user checks to make sure that the instance is created
-        details_table = self.browser.find_element_by_xpath("//table[@id='details_table']/tbody")
-        rows = details_table.find_elements_by_tag_name("tr")
-        self.assertIn(self.lookup_data["name"], [get_col_val(row, 0) for row in rows])
-
-        # user looks at details of newly created object:
-        new_object_row = False
-        for row in rows:
-            name_cell = row.find_elements_by_tag_name("td")[0]
-            if name_cell.text == self.lookup_data["name"]:
-                new_object_row = row
-
-        new_object_row.find_element_by_xpath("//a[@class='btn btn-primary btn-sm my-1' and contains(text(), "
-                                             "'Details')]").click()
-        description_detail_element = self.browser.find_element_by_xpath("//span[@class='font-weight-bold'and "
-                                                                        "contains(text(), 'Description (en) : ')]"
-                                                                        "/following-sibling::span")
-        self.assertEqual(description_detail_element.text, self.lookup_data["description_en"].replace("\n", " "),
-                         "Description does not match input")
-
-        # user updates the instances details and goes on their way
-        self.browser.find_element_by_xpath("//a[@class='btn btn-primary' and@title='Update']").click()
-        name_field = self.browser.find_element_by_xpath("//input[@name='name']")
-        name_field.clear()
-        new_name = "updated name"
-        name_field.send_keys(new_name)
-        submit_btn = self.browser.find_element_by_xpath("//button[@class='btn btn-success']")
-        scroll_n_click(self.browser, submit_btn)
-
-        details_table = self.browser.find_element_by_xpath("//table[@id='details_table']/tbody")
-        rows = details_table.find_elements_by_tag_name("tr")  # get all of the rows in the table
-        self.assertNotIn(self.lookup_data["name"], [get_col_val(row, 0) for row in rows])
-        self.assertIn(new_name, [get_col_val(row, 0) for row in rows])
-
-
-@tag("Functional", "Loc")
-class TestLocDetailsFunctional(CommonFunctionalTest):
-    # put factories in setUp and not in class to make factory boy use selenium database.
-    def setUp(self):
-        super().setUp()
-        self.loc_data = BioFactoryFloor.LocFactory()
-
-    def nav_to_details_view(self):
-        # user navigates to a details view for a location
-        self.browser.get("{}{}{}".format(self.live_server_url, "/en/bio_diversity/details/loc/", self.loc_data.id))
-        self.assertIn('Location', self.browser.title, "not on correct page")
-
-    def test_add_env(self):
-        self.nav_to_details_view()
-
-        # user adds a new environment condition to the location
-        env_data = BioFactoryFloor.EnvFactory.build_valid_data()
-        rows = add_feature(self, env_data, "env", "loc")
-        envc_used = EnvCode.objects.filter(pk=env_data["envc_id"]).get().__str__()
-        self.assertIn(envc_used, [get_col_val(row, 0) for row in rows])
-
-
-@tag("Functional", "Prog")
-class TestProgDetailsFunctional(CommonFunctionalTest):
-    # put factories in setUp and not in class to make factory boy use selenium database.
-    def setUp(self):
-        super().setUp()
-        self.prog_data = BioFactoryFloor.ProgFactory(valid=True)
-
-    def nav_to_details_view(self):
-        # user navigates to a details view for a program
-        self.browser.get("{}{}{}".format(self.live_server_url, "/en/bio_diversity/details/prog/", self.prog_data.id))
-        self.assertIn('Program', self.browser.title, "not on correct page")
-
-    def test_add_protocol_nav_back_btn(self):
-        self.nav_to_details_view()
-
-        # user adds a new protocol to the program
-        prot_data = BioFactoryFloor.ProtFactory.build_valid_data()
-        rows = add_feature(self, prot_data, "prot", "prog")
-        protc_used = ProtoCode.objects.filter(pk=prot_data["protc_id"]).get().__str__()
-        self.assertIn(protc_used, [get_col_val(row, 0) for row in rows])
-
-        # User clicks on first protocol, reviews its details and returns to the program details
-        try:
-            details_table = self.browser.find_element_by_xpath("//div[@name='prot-details']//table/tbody")
-        except NoSuchElementException:
-            return self.fail("No protocols in details table")
-        rows = details_table.find_elements_by_tag_name("tr")
-        first_protc = rows[0].find_element_by_tag_name("td").text
-        scroll_n_click(self.browser, rows[0])
-        description_ufid = self.browser.find_element_by_xpath("//span[@class='font-weight-bold' and contains(text(), "
-                                                              "'Protocol Code :')]/following-sibling::span")
-        self.assertEqual(first_protc, description_ufid.text)
-        self.browser.find_element_by_name("back-btn").click()
-        try:
-            details_table = self.browser.find_element_by_xpath("//div[@name='prot-details']//table/tbody")
-        except NoSuchElementException:
-            return self.fail("No protocols in details table")
-        rows = details_table.find_elements_by_tag_name("tr")
-        self.assertIn(first_protc, [get_col_val(row, 0) for row in rows])
+        self.assertIn(stok_used, [get_col_val(row, 2) for row in rows])
 
 
 @tag("Functional", "Prot")

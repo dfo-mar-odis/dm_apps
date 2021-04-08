@@ -148,7 +148,25 @@ class MeetingFormMedia(forms.ModelForm):
 class PublicationForm(forms.ModelForm):
     class Meta:
         model = models.PubPublication
-        exclude = []
+        exclude = ['lead_author_2', 'other_author_2']
+        widgets = {
+            "other_authors": Textarea(attrs={"rows": 3, "cols": 20}),
+            "citation": Textarea(attrs={"rows": 1, "cols": 20}),
+            # don't know why, client can't be set as rows=3, otherwise the name list doesn't show
+            # as if the text area is too small
+            # "client": Textarea(attrs={"rows": 3, "cols": 20}),
+            "description": Textarea(attrs={"rows": 3, "cols": 20})
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['citation'].wigets = forms.Select(choices=models.PubPublication.objects.all())
+
+
+class PublicationForm_2(forms.ModelForm):
+    class Meta:
+        model = models.PubPublication
+        exclude = ['lead_author', 'other_author']
         widgets = {
             "other_authors": Textarea(attrs={"rows": 3, "cols": 20}),
             "citation": Textarea(attrs={"rows": 1, "cols": 20}),

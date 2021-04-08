@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8464,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Recovery Potential Assessment – Fraser River Sockeye Salmon (Oncorhynchus nerka) – Ten Designatable Units",
+            "lead_author_2": "John Candy",
+            "description": ""
+        }
+    }
+]

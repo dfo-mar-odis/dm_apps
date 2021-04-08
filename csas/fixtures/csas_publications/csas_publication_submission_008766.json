@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8766,
+        "fields": {
+            "series": 3,
+            "title_en": "Recovery Potential Assessment for Lower Fraser River White Sturgeon 2020",
+            "lead_author_2": "Paul Grant",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8163,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Indirect Effects of Bottom-Contact Fishing Activities (By Trap Gear) on Sponge Reefs in the Strait of Georgia and Howe Sound",
+            "title_fr": "Effets indirects des activités de pêche (aux trappes) en contact avec le fond sur les récifs d’eponges dans le détroit de Georgie et la baie howe",
+            "pub_year": 2018,
+            "lead_author_2": "Peter Chandler",
+            "pub_num": "042",
+            "pages": 24,
+            "pdf_size": 1926,
+            "description": ""
+        }
+    }
+]

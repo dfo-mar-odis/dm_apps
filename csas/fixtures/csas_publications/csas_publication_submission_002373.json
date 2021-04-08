@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2373,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Unit 3 redfish population and fishery trends",
+            "pub_year": 1994,
+            "lead_author_2": "R.M. Branton; R.G. Halliday",
+            "pub_num": "038",
+            "pages": 34,
+            "pdf_size": 1695,
+            "description": ""
+        }
+    }
+]

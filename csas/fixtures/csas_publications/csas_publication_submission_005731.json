@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5731,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the review of the preliminary results from the groundfish and shrimp multidisciplinary survey in August 2010 in the Estuary and Northern Gulf of St. Lawrence; October 13, 2010",
+            "title_fr": "Processus consultatif scientifique régional portant l'examen des résultats préliminaires du relevé multidisciplinaire de poissons de fond et de crevette d'août 2010 dans l'estuaire et le nord du golfe du Saint-Laurent ; le 13 octobre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "026",
+            "description": ""
+        }
+    }
+]

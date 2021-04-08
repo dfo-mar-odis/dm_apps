@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1430,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Collection and interpretation of catch and effort data from the Division 3L inshore capelin fishery",
+            "pub_year": 1984,
+            "lead_author_2": "B.S. Nakashima",
+            "pub_num": "024",
+            "pages": 17,
+            "pdf_size": 812,
+            "description": ""
+        }
+    }
+]

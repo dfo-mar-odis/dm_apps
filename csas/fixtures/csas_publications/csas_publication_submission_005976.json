@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5976,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Temperature conditions in the southern Gulf of St. Lawrence during 2010 relevant to snow crab",
+            "lead_author_2": "J. Chassé (Gulf), R.G. Pettipas (MAR)",
+            "description": ""
+        }
+    }
+]

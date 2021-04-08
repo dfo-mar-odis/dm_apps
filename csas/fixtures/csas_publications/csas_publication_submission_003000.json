@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3000,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Northern Shrimp on the Eastern Scotian Shelf",
+            "title_fr": "Crevette nordique de l'est du plateau néo-écossais (ZPC 13-15)",
+            "pub_year": 2000,
+            "lead_author_2": "Koeller, P.",
+            "pub_num": "C3-15",
+            "pages": 6,
+            "pdf_size": 183,
+            "description": ""
+        }
+    }
+]

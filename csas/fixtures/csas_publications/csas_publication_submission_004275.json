@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4275,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science Advice on Offsetting Techniques for Managing the Productivity of Freshwater Fisheries",
+            "title_fr": "Avis scientifique sur les techniques de compensation pour gérer la productivité des pêches en eau douce",
+            "pub_year": 2013,
+            "lead_author_2": "Roger Wysocki / Jake Rice",
+            "pub_num": "074",
+            "pages": 25,
+            "pdf_size": 194,
+            "description": ""
+        }
+    }
+]

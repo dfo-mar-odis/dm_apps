@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7843,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of the Sea Cucumber (Cucumaria frondosa) Resource on the St. Pierre Bank (NAFO Subdivision 3Ps) in 2016",
+            "title_fr": "Une évaluation de l’holothurie (Cucumaria frondosa) sur le banc de Saint-Pierre (sous-division 3Ps de l’OPANO) en 2016",
+            "pub_year": 2018,
+            "lead_author_2": "Pantin, J. R., Coughlan, E. J., Hynick, E. M., and Skanes, K. R.",
+            "pub_num": "024",
+            "pages": 28,
+            "pdf_size": 1939,
+            "description": ""
+        }
+    }
+]

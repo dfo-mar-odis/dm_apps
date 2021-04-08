@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5227,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Marine Mammal Peer Review Committee - Annual Meeting; November 17- 20, 2008",
+            "title_fr": "Comité national d'examen par des pairs sur les mammifères marins - Réunion annuelle; du 17 au 20 novembre 2008",
+            "pub_year": 2009,
+            "lead_author_2": "D. Bowen, C. Abraham",
+            "pub_num": "005",
+            "pages": 55,
+            "pdf_size": 252,
+            "description": ""
+        }
+    }
+]

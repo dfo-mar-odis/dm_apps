@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6914,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceeedings of the National peer review meeting on  the potential effects surrounding the importation of European–origin Atlantic Salmon to East Coast Canadian Atlantic Salmon populations and habitats",
+            "title_fr": ">>>SEE TASK",
+            "lead_author_2": "Michael Chadwick/Jay Parsons",
+            "description": ""
+        }
+    }
+]

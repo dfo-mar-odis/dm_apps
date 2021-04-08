@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8447,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Assessment – River Darter, Percina shumardi (Great Lakes-Upper St. Lawrence populations)",
+            "title_fr": "Évaluation du potentiel de rétablissement – dard de rivière, Percina shumardi (populations des Grands Lacs et du Haut-Saint-Laurent)",
+            "pub_year": 2019,
+            "lead_author_2": "Chantelle Sawatzky",
+            "pub_num": "051",
+            "pages": 19,
+            "pdf_size": 910,
+            "description": ""
+        }
+    }
+]

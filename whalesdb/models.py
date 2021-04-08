@@ -172,6 +172,7 @@ class EqrRecorderProperties(models.Model):
 
 class EqtEquipmentTypeCode(shared_models.Lookup):
     name = models.CharField(unique=True, max_length=50, verbose_name=_("Equipment Type"))
+    nom = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Equipment Type (fr)"))
 
 
 class EtrTechnicalRepairEvent(models.Model):

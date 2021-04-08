@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 20,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Exploitation rates and population size of cod in Placentia Bay, Subdivision 3Ps: estimates from a new mark-recapture study",
+            "pub_year": 1998,
+            "lead_author_2": "J. Brattey, N. Cadigan",
+            "pub_num": "020",
+            "pages": 29,
+            "pdf_size": 2930,
+            "description": ""
+        }
+    }
+]

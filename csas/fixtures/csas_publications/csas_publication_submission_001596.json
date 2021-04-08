@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1596,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The Canadian offshore lobster fishery 1971-1984: Catch history, stock condition and management options",
+            "pub_year": 1985,
+            "lead_author_2": "D.S. Pezzack; D.R. Duggan",
+            "pub_num": "089",
+            "pages": 26,
+            "pdf_size": 1321,
+            "description": ""
+        }
+    }
+]

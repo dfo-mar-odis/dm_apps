@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 594,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Hexactinellid Sponge Reefs on the British Columbia Continental Shelf: Geological and Biological Structure with a Perspective on their Role in the Shelf Ecosystem",
+            "pub_year": 1999,
+            "lead_author_2": "Conway, K.W.",
+            "pub_num": "192",
+            "pages": 21,
+            "pdf_size": 10280,
+            "description": ""
+        }
+    }
+]

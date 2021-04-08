@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4591,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop Fishery Area/Time Closure to Reduce Yellowtail Flounder Bycatch on Georges Bank in 2007",
+            "title_fr": "Fermetures spatiales et temporelles de la pêche au pétoncle sur le banc Georges en 2007 afin de réduire les prises accessoires de limande à queue jaune",
+            "pub_year": 2007,
+            "lead_author_2": "Stone, H., L. Van Eeckhaute.",
+            "pub_num": "001",
+            "pages": 27,
+            "description": ""
+        }
+    }
+]

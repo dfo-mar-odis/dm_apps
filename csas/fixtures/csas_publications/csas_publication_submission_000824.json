@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 824,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Status of capelin (Mallotus villosus) stocks in the Gulf of St. Lawrence",
+            "pub_year": 1977,
+            "lead_author_2": "R.N. O'Boyle; P.F. Lett",
+            "pub_num": "004",
+            "pages": 18,
+            "pdf_size": 756,
+            "description": ""
+        }
+    }
+]

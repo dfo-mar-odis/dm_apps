@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5597,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "By-catch in the shrimp fishery from Shrimp Fishing Areas 0-3, 1979 to 2009",
+            "title_fr": "Prises accessoires de la pêche à la crevette pratiquée dans les zones de pêches à la crevette 0-3, de 1979 à 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Siferd, T.",
+            "pub_num": "037",
+            "pages": 83,
+            "pdf_size": 6221,
+            "description": ""
+        }
+    }
+]

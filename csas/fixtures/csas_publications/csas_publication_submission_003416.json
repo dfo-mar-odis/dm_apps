@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3416,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Preliminary Results from the September 2001 Groundfish Survey in the Southern Gulf of St. Lawrence",
+            "title_fr": "Résultats Préliminaires du Relevé de Septembre 2001 sur les Poissons de Fond dans le Sud du Golfe du Saint-Laurent",
+            "pub_year": 2001,
+            "lead_author_2": "Poirier, G.A., Chouinard, G.A., Swain, D.P., Hurlbut, T., LeBlanc, C., Morin, R., Drinkwater, K.F.",
+            "pub_num": "130",
+            "pages": 47,
+            "pdf_size": 2280,
+            "description": ""
+        }
+    }
+]

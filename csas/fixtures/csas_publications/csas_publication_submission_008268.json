@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8268,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of the Herring (Clupea harengus) in Northwest Atlantic Fisheries Organization (NAFO) Division 4VWX Framework: Review of Data Inputs",
+            "lead_author_2": "K. Smedbol",
+            "description": ""
+        }
+    }
+]

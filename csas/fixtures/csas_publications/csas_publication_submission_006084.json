@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6084,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A pre-COSEWIC assessment of thorny skate (Amblyraja radiata Donovan, 1808) on the Grand Bank, Newfoundland Shelf, Labrador and northern waters",
+            "title_fr": "Évaluation pré-COSEPAC de la raie épineuse (Amblyraja radiata Donovan, 1808) dans les régions du Grand Banc, du plateau continental de Terre-Neuve, du Labrador et dans les eaux nordiques ",
+            "pub_year": 2011,
+            "lead_author_2": "Simpson, M.R., L.G.S. Mello, C.M. Miri, M. Treble and T. Siferd",
+            "pub_num": "084",
+            "pages": 60,
+            "pdf_size": 9657,
+            "description": ""
+        }
+    }
+]

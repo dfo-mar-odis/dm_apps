@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3648,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of three Wolfish species (Anarhichus lupus, A. minor and A. denticulatus) in Newfoundland waters (NAFO Divisions 2GHJ3KLNOP)",
+            "title_fr": "État des stocks de trois espèces de loup de mer (Anarhichus lupus, A. minor et A. denticulatus) dans les eaux terre-neuviennes (divisions 2GHJ3KLNOP de l'OPANO)",
+            "pub_year": 2002,
+            "lead_author_2": "M. R. Simpson and / et D. W. Kulka",
+            "pub_num": "078",
+            "pages": 97,
+            "pdf_size": 27260,
+            "description": ""
+        }
+    }
+]

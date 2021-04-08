@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5717,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 1],
+            "title_en": "Changes in size-dependent mortality in the southern Gulf of St. Lawrence marine fish community ",
+            "title_fr": "Variations de la mortalité liée à la taille dans la communauté de poissons marins du sud du golfe du Saint-Laurent ",
+            "pub_year": 2011,
+            "lead_author_2": "Benoît, H. and D. Swain.",
+            "pub_num": "039",
+            "pages": 26,
+            "pdf_size": 311,
+            "description": ""
+        }
+    }
+]

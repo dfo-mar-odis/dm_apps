@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1215,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "3P Redfish",
+            "pub_year": 1982,
+            "lead_author_2": "D.B. Atkinson; C.A. Gavaris",
+            "pub_num": "035",
+            "pages": 43,
+            "pdf_size": 1671,
+            "description": ""
+        }
+    }
+]

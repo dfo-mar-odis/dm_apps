@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4970,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Workshop on Establishing a CIAS Research Work Plan for Ecosystem-Based Management of Aquaculture; February 28 - March 1, 2007 (Revised: July 2008)",
+            "title_fr": "Atelier d'établissement d'un plan de travaux de recherche à l'intention du CSIA pour la gestion écosystémique de l'aquaculture; du 28 février au 1er mars (révisé: juillet 2008)",
+            "pub_year": 2008,
+            "lead_author_2": "Kennedy, E., F. Page",
+            "pub_num": "011",
+            "pages": 85,
+            "pdf_size": 811,
+            "description": ""
+        }
+    }
+]

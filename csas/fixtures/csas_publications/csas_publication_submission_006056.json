@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6056,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Zonal Science Advisory Process on the 13th Annual meeting of the Atlantic Zone Monitoring Program (AZMP); March 22-24, 2011",
+            "title_fr": "Processus consultatif scientifique zonal portant sur la 13e réunion annuelle du Programme de Monitorage de la Zone Atlantique (PMZA) ; du 22 au 24 mars, 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Jacques A. Gagné",
+            "pub_num": "036",
+            "pages": 48,
+            "pdf_size": 284,
+            "description": ""
+        }
+    }
+]

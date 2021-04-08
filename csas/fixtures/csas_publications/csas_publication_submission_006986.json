@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6986,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of freshwater Ecologically and Biologically Significant Areas (EBSA) and Ecologically Significant Species (ESS) criteria",
+            "title_fr": "Évaluation des critères relatifs aux zones d'importance écologique et biologique (ZIEB) et aux espèces d'importance écologique (EIE) en eau douce",
+            "pub_year": 2014,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "025",
+            "description": ""
+        }
+    }
+]

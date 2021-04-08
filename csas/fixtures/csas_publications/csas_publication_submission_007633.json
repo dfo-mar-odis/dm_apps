@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7633,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Information in support of the identification of critical habitat for the Rocky Mountain Ridged Mussel (Gonidea angulata)",
+            "title_fr": "Information à l’appui de la désignation de l’habitat essentiel de la gonidée des Rocheuses (Gonidea angulata)",
+            "pub_year": 2018,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "040",
+            "pages": 63,
+            "pdf_size": 5523,
+            "description": ""
+        }
+    }
+]

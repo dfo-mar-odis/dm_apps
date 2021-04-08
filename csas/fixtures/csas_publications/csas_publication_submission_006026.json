@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6026,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Advisory Process for the Stock Assessment of Northern (2J3KL) Cod in 2011",
+            "lead_author_2": "Vanessa Sutton-Pande",
+            "description": ""
+        }
+    }
+]

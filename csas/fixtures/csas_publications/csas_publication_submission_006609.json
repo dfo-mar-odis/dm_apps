@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6609,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Bycatch in the Estuary and Gulf of St. Lawrence Northern shrimp fishery",
+            "title_fr": "Prises accessoires de la pêche à la crevette nordique dans l'estuaire et le golfe du Saint-Laurent",
+            "pub_year": 2012,
+            "lead_author_2": "Louise Savard, Johanne Gauthier, Hugo Bourdages et Mathieu Desgagnés",
+            "pub_num": "151",
+            "pdf_size": 2214,
+            "description": ""
+        }
+    }
+]

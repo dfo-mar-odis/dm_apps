@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8044,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the regional peer review meeting on the stock assessment of the southern Gulf of St. Lawrence snow crab stock to 2017 and catch advice for the 2018 fishery; January 24-25, 2018",
+            "title_fr": "Compte rendu de la réunion d'examen par les pairs régionale sur l'évaluation de l’état du stock de crabe des neiges du sud du golfe du Saint-Laurent jusqu’en 2017 et avis pour la pêche de 2018; du 24 au 25 janvier, 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Marc Lanteigne",
+            "pub_num": "016",
+            "pages": 23,
+            "pdf_size": 297,
+            "description": ""
+        }
+    }
+]

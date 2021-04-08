@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6821,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the regional peer review meeting of a stock assessment of Northern Cod (Div. 2J3KL).",
+            "lead_author_2": "Contact: L. Sheppard; Author: Anna Olafsdottir",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2949,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Update on Selected Scallop Production Areas in the Bay of Fundy in 1999",
+            "title_fr": "Bilan sur certaines zones de production de pétoncle de la baie de Fundy",
+            "pub_year": 1999,
+            "lead_author_2": "D. Roddick, S.J. Smith, M.J. Lundy [and] M.A.E. Butler",
+            "pub_num": "C3-63",
+            "pages": 11,
+            "pdf_size": 577,
+            "description": ""
+        }
+    }
+]

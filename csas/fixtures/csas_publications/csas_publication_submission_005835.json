@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5835,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of fish swimming performance curves",
+            "title_fr": "Évaluation des courbes de performance natatoire des poissons",
+            "pub_year": 2016,
+            "lead_author_2": "Cleator, Holly and Martin, Kathleen",
+            "pub_num": "001",
+            "pages": 11,
+            "pdf_size": 138,
+            "description": ""
+        }
+    }
+]

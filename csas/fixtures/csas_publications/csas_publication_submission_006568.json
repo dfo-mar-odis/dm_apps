@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6568,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Optical, Chemical, and Biological Oceanographic Conditions in the Gulf of St. Lawrence in 2009-2011",
+            "lead_author_2": "M. Starr",
+            "description": ""
+        }
+    }
+]

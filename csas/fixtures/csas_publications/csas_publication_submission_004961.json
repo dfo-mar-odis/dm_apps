@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4961,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential for the Speckled Dace (Rhinichthys osculus)",
+            "title_fr": "Évaluation du potentiel de rétablissement du naseux moucheté (Rhinichthys osculus)",
+            "pub_year": 2008,
+            "lead_author_2": "Schubert, N.",
+            "pub_num": "030",
+            "pages": 8,
+            "pdf_size": 88,
+            "description": ""
+        }
+    }
+]

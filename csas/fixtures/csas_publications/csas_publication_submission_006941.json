@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6941,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Ecosystem perspective on changes and anomalies in the Gulf of St. Lawrence: a context in support of the management of the St. Lawrence beluga whale population",
+            "title_fr": "Perspectives sur les changements et les anomalies dans l'écosystème du golfe du Saint-Laurent : un contexte en support à la gestion de la population de béluga du Saint-Laurent",
+            "pub_year": 2013,
+            "lead_author_2": "Plourde, S., Galbraith, P., Lesage, V., Grégoire, F., Bourdage, H., Gosselin, J.-F., McQuinn, I., and Scarratt, M.",
+            "pub_num": "129",
+            "pages": 34,
+            "pdf_size": 945,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1057,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Gear selectivity and escapement mortality of Atlantic salmon in drift nets at West Greenland",
+            "pub_year": 1980,
+            "lead_author_2": "W.G. Doubleday; D.G. Reddin",
+            "pub_num": "011",
+            "pages": 10,
+            "pdf_size": 711,
+            "description": ""
+        }
+    }
+]

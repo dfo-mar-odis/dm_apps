@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2664,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Overview of the Status of Canadian Managed Groundfish Stocks in the Gulf of St. Lawrence and in the Canadian Atlantic",
+            "title_fr": "Aperçu de la situation des stocks de poisson de fond gérés par le Canada dans le golfe du Saint-Laurent et l'Atlantique Canadien.",
+            "pub_year": 1996,
+            "pub_num": "040",
+            "pages": 20,
+            "description": ""
+        }
+    }
+]

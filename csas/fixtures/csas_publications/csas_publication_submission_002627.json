@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2627,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Overview of Atlantic cod (Gadus morhua) stock structure in NAFO subdivision 3Ps inferred from tagging studies",
+            "pub_year": 1996,
+            "lead_author_2": "J. Brattey",
+            "pub_num": "093",
+            "pages": 19,
+            "pdf_size": 1015,
+            "description": ""
+        }
+    }
+]

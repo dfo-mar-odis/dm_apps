@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 469,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A Model for managing Exploitation of Brook Trout (Salvelinus fontinalis Mitchill.) in Indian Bay Brook, Newfoundland",
+            "pub_year": 1999,
+            "lead_author_2": "Lester, N.P., Korver, R.M., vanZyll de Jong, M.C., Norris, W., Wicks, B.L.",
+            "pub_num": "098",
+            "pages": 11,
+            "pdf_size": 762,
+            "description": ""
+        }
+    }
+]

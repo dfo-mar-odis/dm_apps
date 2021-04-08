@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1383,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of NAFO Division 4T southern gulf of St. Lawrence herring stock, 1995",
+            "pub_year": 1996,
+            "lead_author_2": "R. Claytor; C. Leblanc; J. Dale; G. Nielsen; L. Paulin; C. MacDougall; C. Bourque",
+            "pub_num": "079",
+            "pages": 138,
+            "pdf_size": 6918,
+            "description": ""
+        }
+    }
+]

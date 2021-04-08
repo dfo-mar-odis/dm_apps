@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7525,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Information in Support of Recovery Potential Assessment for White Hake (Urophycis tenuis) from the Scotian Shelf (NAFO Divs. 4VWX5z)",
+            "title_fr": "Information à l’appui de l’évaluation du potentiel de rétablissement de la population de merluche blanche (Urophycis tenuis) du plateau néo-écossais (division 4VWX5z de l’OPANO)",
+            "pub_year": 2016,
+            "lead_author_2": "Guénette, S., and D. Clark.",
+            "pub_num": "100",
+            "pages": 43,
+            "pdf_size": 1379,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 269,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process of the Eastern Scotian Shelf Shrimp; November 23, 1999",
+            "title_fr": "Compte rendu du Processus consultatif régional des provinces Maritimes concernant la crevette de l'est du plateau néo-écossais; le 23 novembre 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Chairperson: René Lavoie",
+            "pub_num": "008",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6927,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Within- and among-population genetic variation in Outer Bay of Fundy Atlantic Salmon (Salmo salar L.), with special emphasis on the Saint John River system in the context of recent human impacts",
+            "title_fr": "Diversité génétique au sein des populations et entre les populations de saumons de l’Atlantique (Salmo salar L.) de l'extérieur de la baie de Fundy, en particulier dans le réseau hydrographique du fleuve Saint-Jean dans le contexte de répercussions récentes de l'activité humaine",
+            "pub_year": 2014,
+            "lead_author_2": "O'Reilly, P.T., Jones, R., and Rafferty, S.",
+            "pub_num": "069",
+            "pages": 40,
+            "pdf_size": 1013,
+            "description": ""
+        }
+    }
+]

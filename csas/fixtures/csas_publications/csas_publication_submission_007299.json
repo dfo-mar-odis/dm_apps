@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7299,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review on 2014 Groundfish and Northern Shrimp Abundance and Biomass Index Trends from the DFO Multidisciplinary Survey in the Northern Gulf of St. Lawrence; December 8, 2014",
+            "title_fr": "Compte rendu de l'examen régional par des pairs portant sur les tendances des indices d'abondance et de biomasse des poissons de fond et de la crevette nordique du relevé multidisciplinaire du MPO dans l'estuaire et le nord du golfe du Saint-Laurent en 2014; 8 décembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Charley Cyr",
+            "pub_num": "010",
+            "description": ""
+        }
+    }
+]

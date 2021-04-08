@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3993,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An update of the status of the cod (Gadus morhua) stock in NAFO Divisions 2J+3KL in March 2004",
+            "title_fr": "Mise à jour de l'état du stock de morue (Gadus morhua) des divisions 2J+3KL de l'OPANO en mars 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Lilly, G.R., Murphy, E.F., Healey, B.P., Maddock Parsons, D., Stead, R.",
+            "pub_num": "023",
+            "pages": 59,
+            "pdf_size": 4029,
+            "description": ""
+        }
+    }
+]

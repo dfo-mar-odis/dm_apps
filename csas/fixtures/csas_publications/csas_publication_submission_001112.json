@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1112,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of several Northern Labrador Arctic charr stocks",
+            "pub_year": 1981,
+            "lead_author_2": "J.B. Dempson",
+            "pub_num": "014",
+            "pages": 15,
+            "pdf_size": 2176,
+            "description": ""
+        }
+    }
+]

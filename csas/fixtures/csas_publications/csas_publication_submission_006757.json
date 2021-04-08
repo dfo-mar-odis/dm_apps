@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6757,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Key elements in the development of a hierarchical marine ecological classification system to support ecosystem approaches to management in Pacific Canada",
+            "title_fr": "Éléments clés de l'élaboration d'un système de classification hiérarchique de l'écologie marine à l'appui d'approches écosystémiques de gestion dans le Canada Pacifique",
+            "pub_year": 2013,
+            "lead_author_2": "Boutillier, Jim",
+            "pub_num": "065",
+            "pages": 14,
+            "pdf_size": 210,
+            "description": ""
+        }
+    }
+]

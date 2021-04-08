@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4011,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Petrale Sole Stock Assessment for 2003 and Recommendations for Management in 2004",
+            "title_fr": "Évaluation du stock de plie de Californie de 2003 et recommandations pour sa gestion en 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Starr, P.J., Fargo, J.",
+            "pub_num": "036",
+            "pages": 92,
+            "pdf_size": 1320,
+            "description": ""
+        }
+    }
+]

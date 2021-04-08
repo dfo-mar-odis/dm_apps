@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6092,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Historical Abundance of Northwest Atlantic harp seals (Pagophilus groenlandicus): influence of harvesting and climate ",
+            "title_fr": "Abondance historique du phoque du Groenland dans l'Atlantique Nord-Ouest (Pagophilus groenlandicus) : influence de la récolte et du climat",
+            "pub_year": 2011,
+            "lead_author_2": "Mike Hammill, Garry Stenson",
+            "pub_num": "100",
+            "pages": 20,
+            "pdf_size": 589,
+            "description": ""
+        }
+    }
+]

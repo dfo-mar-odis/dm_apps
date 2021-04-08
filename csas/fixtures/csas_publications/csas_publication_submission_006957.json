@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6957,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Annual Meeting of the National Marine Mammal Peer Review Committee (NMMPRC); October 7-11, 2013",
+            "title_fr": "Compte rendu de la réunion annuelle du Comité national d'examen par les pairs sur les mammifères marins (CNEPMM); du 7 au 11 octobre 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Abraham, C.",
+            "pub_num": "030",
+            "pages": 29,
+            "pdf_size": 215,
+            "description": ""
+        }
+    }
+]

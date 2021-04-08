@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4628,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Recovery potential assessment of northern bottlenose whale, Scotian Shelf population",
+            "title_fr": "Évaluation du potentiel de rétablissement de la baleine à bec commune, population du plateau néo-écossais",
+            "pub_year": 2007,
+            "lead_author_2": "Harris, L.E.",
+            "pub_num": "011",
+            "pages": 8,
+            "pdf_size": 162,
+            "description": ""
+        }
+    }
+]

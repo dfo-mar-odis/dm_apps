@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5271,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the Recovery Potential Assessment of pure native Westslope Cutthroat Trout, Alberta Population; 12 May and 5 June 2009",
+            "title_fr": "Compte rendu du processus régional de consultation scientifique du Centre et de l'Arctique sur l'évaluation du potentiel de rétablissement de la truite fardée versant de l'ouest indigène de lignée pure (population de l'Alberta) ; les 12 mai et 5 juin 2009",
+            "pub_year": 2009,
+            "lead_author_2": "K. Martin (Editor) / H. Cleator (Chair)",
+            "pub_num": "027",
+            "pages": 26,
+            "pdf_size": 161,
+            "description": ""
+        }
+    }
+]

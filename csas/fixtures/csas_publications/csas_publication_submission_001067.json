@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1067,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An analysis of growth and maturation of the 4WX herring management unit",
+            "pub_year": 1980,
+            "lead_author_2": "A. Sinclair; M. Sinclair; T.D. Iles",
+            "pub_num": "021",
+            "pages": 32,
+            "pdf_size": 1195,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2045,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1989 4X cod fishery",
+            "pub_year": 1990,
+            "lead_author_2": "S. Campana; J. Hamel",
+            "pub_num": "044",
+            "pages": 47,
+            "pdf_size": 2112,
+            "description": ""
+        }
+    }
+]

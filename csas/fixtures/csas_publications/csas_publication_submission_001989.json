@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1989,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Moonsnail",
+            "title_fr": "Natice",
+            "pub_year": 1996,
+            "lead_author_2": "Kenchington, E.",
+            "pub_num": "120",
+            "pages": 2,
+            "description": ""
+        }
+    }
+]

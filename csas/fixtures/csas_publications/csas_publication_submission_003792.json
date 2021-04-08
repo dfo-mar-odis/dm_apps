@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3792,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Survey protocol for the removal of allowable numbers of northern abalone, Haliotis kamtschatkana, for use as broodstock in aquaculture in British Columbia",
+            "title_fr": "Protocole de relevé pour le prélèvement d'un nombre autorisé d'ormeaux nordiques (Haliotis kamtschatkana) aux fins d'établissement de stocks de géniteurs de culture en Colombie-Britannique",
+            "pub_year": 2002,
+            "lead_author_2": "Lessard, J., Campbell, A., Hajas, W.",
+            "pub_num": "126",
+            "pages": 42,
+            "pdf_size": 906,
+            "description": ""
+        }
+    }
+]

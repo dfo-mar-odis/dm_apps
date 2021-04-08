@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3189,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subarea 2 + 3K Redfish",
+            "title_fr": "Sébaste sous-zone 2+3K",
+            "pub_year": 1996,
+            "lead_author_2": "Power, D.",
+            "pub_num": "047",
+            "description": ""
+        }
+    }
+]

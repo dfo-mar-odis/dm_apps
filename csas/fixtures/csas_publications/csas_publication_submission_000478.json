@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 478,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Recent trends in the population of Northwest Atlantic Harp Seals, Phoca groenlandica",
+            "pub_year": 1999,
+            "lead_author_2": "Stenson, G.B., Healey, B., Shelton, P.A., Sjare, B.",
+            "pub_num": "107",
+            "pages": 24,
+            "pdf_size": 2124,
+            "description": ""
+        }
+    }
+]

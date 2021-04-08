@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7641,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Arctic Char (Salvelinus alpinus) in the Ulukhaktok area of the Northwest Territories",
+            "title_fr": "Évaluation du stock d’ombles chevaliers (Salvelinus alpinus) dans la région d’Ulukhaktok, dans les Territoires du Nord-Ouest",
+            "pub_year": 2016,
+            "lead_author_2": "Gallagher, C.P.",
+            "pub_num": "038",
+            "pages": 12,
+            "pdf_size": 443,
+            "description": ""
+        }
+    }
+]

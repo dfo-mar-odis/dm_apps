@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4749,
+        "fields": {
+            "series": 5,
+            "lead_region": [7, 5],
+            "title_en": "Assessment of Northern Shrimp (Pandalus borealis) and Striped Shrimp (Pandalus montagui) in Shrimp Fishing Areas 0, 2 and 3",
+            "title_fr": "Évaluation des stocks de crevettes nordiques (Pandalus borealis) et de crevettes ésopes (Pandalus montagui) dans les zones de pêche à la crevette 0, 2 et 3",
+            "pub_year": 2008,
+            "lead_author_2": "Siferd, T.",
+            "pub_num": "018",
+            "pages": 19,
+            "pdf_size": 249,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7014,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Evaluation of Compliance to the Precautionary Approach of Harvest Decision Rules for the Snow Crab (Chionoecetes opilio) Stock of the Southern Gulf of St. Lawrence",
+            "title_fr": "Évaluation de la Conformité avec l'Approche de Précaution des Règles de Décision Relatives au Stock de Crabes des Neiges (Chionoescetes opilio) du Sud du Golfe du Saint-Laurent",
+            "pub_year": 2014,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "083",
+            "pages": 62,
+            "pdf_size": 905,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4870,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Recovery Potential Assessment Report of Copper Redhorse (Moxostoma hubbsi)",
+            "title_fr": "Évaluation du potentiel de rétablissement du chevalier cuivré (Moxostoma hubbsi)",
+            "pub_year": 2007,
+            "lead_author_2": "Cyr, C.",
+            "pub_num": "043",
+            "pages": 18,
+            "pdf_size": 142,
+            "description": ""
+        }
+    }
+]

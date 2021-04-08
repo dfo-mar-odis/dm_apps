@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7222,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "A management framework for Nunavik beluga",
+            "title_fr": "Un cadre de gestion pour le béluga du Nunavik",
+            "pub_year": 2017,
+            "lead_author_2": "Hammill, M.O., Stenson, G.B., and Doniol-Valcroze, T.",
+            "pub_num": "060",
+            "pages": 39,
+            "pdf_size": 852,
+            "description": ""
+        }
+    }
+]

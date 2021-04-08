@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4400,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Recovery Potential Assessment for Winter Skate in the southern Gulf of St. Lawrence (NAFO Division 4t)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la raie tachetée du sud du golfe Saint-Laurent (division 4T de l'OPANO)",
+            "pub_year": 2005,
+            "lead_author_2": "Doug Swain",
+            "pub_num": "063",
+            "pages": 13,
+            "pdf_size": 227,
+            "description": ""
+        }
+    }
+]

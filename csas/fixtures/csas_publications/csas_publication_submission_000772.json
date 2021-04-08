@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 772,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon at Highlands River, Bay St. George, SFA 13, Newfoundland.",
+            "title_fr": "État du stock de saumon atlantique de la rivière Highlands, tributaire de la baie St. George (ZPS 13), à Terre-Neuve",
+            "pub_year": 2001,
+            "lead_author_2": "Dempson, J. B., G. Clarke",
+            "pub_num": "028",
+            "pages": 33,
+            "pdf_size": 1000,
+            "description": ""
+        }
+    }
+]

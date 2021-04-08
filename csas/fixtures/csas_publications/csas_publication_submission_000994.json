@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 994,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Final Report of the 1999 Annual Meeting of the Fisheries Oceanography Committee; March 17-19, 1999",
+            "pub_year": 1999,
+            "lead_author_2": "D.P. Swain, Chairperson",
+            "pub_num": "020",
+            "pages": 51,
+            "pdf_size": 742,
+            "description": ""
+        }
+    }
+]

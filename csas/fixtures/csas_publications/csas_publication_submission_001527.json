@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1527,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Offshore fleet directs fishing effort on the Iceland scallop",
+            "pub_year": 1985,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill",
+            "pub_num": "020",
+            "pages": 13,
+            "pdf_size": 673,
+            "description": ""
+        }
+    }
+]

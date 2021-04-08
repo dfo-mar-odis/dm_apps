@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6294,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Reference Points for Scallop Fisheries in the Maritimes Region",
+            "title_fr": "Niveaux de référence - pêche au pétoncle, région des Maritimes",
+            "pub_year": 2012,
+            "lead_author_2": "Stephen Smith",
+            "pub_num": "018",
+            "pages": 18,
+            "pdf_size": 436,
+            "description": ""
+        }
+    }
+]

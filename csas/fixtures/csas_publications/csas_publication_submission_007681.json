@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7681,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Delineation of Significant Areas of Coldwater Corals and Sponge-Dominated Communities in Canada's Atlantic and Eastern Arctic Marine Waters and their Overlap with Fishing Activity",
+            "title_fr": "Délimitation des zones importantes de communautés dominées par les coraux et les éponges d'eau froide dans les eaux marines du Canada atlantique et de l'est de l'Arctique et chevauchement avec les activités de pêche",
+            "pub_year": 2017,
+            "lead_author_2": "Christie Whelan and Lisa Setterington",
+            "pub_num": "007",
+            "pages": 45,
+            "pdf_size": 3538,
+            "description": ""
+        }
+    }
+]

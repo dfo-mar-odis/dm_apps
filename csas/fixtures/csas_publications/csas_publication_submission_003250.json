@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3250,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Cod in Sydney Bight (Div. 4Vn)",
+            "title_fr": "Morue du Sydney Bight (Div. 4Vn)",
+            "pub_year": 2001,
+            "lead_author_2": "Mohn, R.",
+            "pub_num": "A3-02",
+            "pages": 10,
+            "description": ""
+        }
+    }
+]

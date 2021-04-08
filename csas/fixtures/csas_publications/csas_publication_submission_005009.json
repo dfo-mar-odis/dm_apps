@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5009,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Optical, chemical and biological oceanographic conditions in the Maritimes region in 2007",
+            "title_fr": "Propriétés optiques, chimiques et biologiques de l'océan dans la région des Maritimes, en 2007",
+            "pub_year": 2008,
+            "lead_author_2": "Harrison, G., C. Johnson, E. Head, J. Spry, K. Pauley, H. Maass, M. Kennedy, C. Porter, V. Soukhovtsev.",
+            "pub_num": "044",
+            "pages": 66,
+            "pdf_size": 5411,
+            "description": ""
+        }
+    }
+]

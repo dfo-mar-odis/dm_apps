@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4333,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the meeting on scientific advice for the Atlantic seal management plan; September 7-8, 2005",
+            "title_fr": "Compte rendu de la réunion concernant l'avis scientifique relatif au plan de gestion des phoques de l'Atlantique; les 7 et 8 septembre 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Simon, Patrice",
+            "pub_num": "017",
+            "pages": 31,
+            "pdf_size": 159,
+            "description": ""
+        }
+    }
+]

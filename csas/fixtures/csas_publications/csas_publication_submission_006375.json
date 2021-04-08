@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6375,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Regional Advisory Peer Review Meeting of the Assessment of stock status of Atlantic herring (Clupea harengus) from the southern Gulf of St. Lawrence (NAFO Div. 4T); March 6 and 7, 2012",
+            "title_fr": "Compte rendu de l'examen par des pairs régional sur l'évaluation de l'état du stock de hareng (Clupea harengus) du sud du golfe du Saint-Laurent (division 4T de l'OPANO), les 6 et 7 mars, 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Chaput, Gérald",
+            "pub_num": "052",
+            "pages": 12,
+            "pdf_size": 106,
+            "description": ""
+        }
+    }
+]

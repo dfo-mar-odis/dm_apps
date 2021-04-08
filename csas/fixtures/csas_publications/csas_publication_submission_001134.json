@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1134,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "What does purse seine catch-per-unit-effort measure? A simple fishery model",
+            "pub_year": 1981,
+            "lead_author_2": "H. Powles",
+            "pub_num": "036",
+            "pages": 27,
+            "pdf_size": 10063,
+            "description": ""
+        }
+    }
+]

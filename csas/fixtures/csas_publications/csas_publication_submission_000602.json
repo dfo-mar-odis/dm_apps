@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 602,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "American Plaice Catch Results from Fall 1999 Survey in NAFO Division 3Ps",
+            "pub_year": 2000,
+            "lead_author_2": "McClintock, J.",
+            "pub_num": "025",
+            "pages": 23,
+            "pdf_size": 457,
+            "description": ""
+        }
+    }
+]

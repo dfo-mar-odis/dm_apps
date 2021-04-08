@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4555,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A review of quillback rockfish Sebastes maliger along the Pacific coast of Canada: biology, distribution and abundance trends",
+            "title_fr": "Examen du sébaste à dos épineux (Sebastes maliger) dans les eaux baignant la côte canadienne du Pacifique : biologie, répartition et tendances en matière d'abondance",
+            "pub_year": 2006,
+            "lead_author_2": "Yamanaka, K.L., L.C. Lacko, K. Miller-Saunders, C. Grandin, J.K. Lochead, J.C. Martin, N. Olsen, S.S. Wallace",
+            "pub_num": "077",
+            "pages": 68,
+            "pdf_size": 2362,
+            "description": ""
+        }
+    }
+]

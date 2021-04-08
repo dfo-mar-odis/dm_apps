@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7064,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional assessment of and recommended sustainable harvest level for Arctic Char from the Hornaday River, Northwest Territories; February 6 and 7, 2014",
+            "title_fr": "Compte rendu de l'examen régional par les pairs de l'Évaluation du stock d'ombles chevaliers dans la région de la baie Darnley, dans les Territoires du Nord-Ouest; les 6 et 7 février 2014",
+            "pub_year": 2015,
+            "lead_author_2": "C. Gallagher",
+            "pub_num": "013",
+            "pages": 15,
+            "pdf_size": 144,
+            "description": ""
+        }
+    }
+]

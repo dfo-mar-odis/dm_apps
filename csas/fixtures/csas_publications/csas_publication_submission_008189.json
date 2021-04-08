@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8189,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Abundance estimates and total allowable landed catch model estimates from the 2017 photographic and visual aerial survey of the Cumberland Sound beluga (Delphinapterus leucas) population",
+            "lead_author_2": "Watt et al",
+            "description": ""
+        }
+    }
+]

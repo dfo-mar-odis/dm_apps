@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5545,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Summary of 2009 Herring Acoustic Surveys in NAFO Divisions 4VWX",
+            "title_fr": "Résumé des relevés acoustiques sur le hareng effectués en 2009 dans les divisions 4VWX de l'OPANO",
+            "pub_year": 2010,
+            "lead_author_2": "M.J. Power, G.D. Melvin, A. Clay",
+            "pub_num": "098",
+            "pages": 103,
+            "pdf_size": 2681,
+            "description": ""
+        }
+    }
+]

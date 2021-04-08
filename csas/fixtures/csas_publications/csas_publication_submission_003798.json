@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3798,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "4VWX Herring",
+            "title_fr": "Hareng de 4VWX",
+            "pub_year": 2003,
+            "lead_author_2": "Power, M.J.",
+            "pub_num": "027",
+            "pages": 12,
+            "pdf_size": 281,
+            "description": ""
+        }
+    }
+]

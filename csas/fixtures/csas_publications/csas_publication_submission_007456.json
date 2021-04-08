@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7456,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Mapping areas of high phytoplankton biomass in the offshore component of the Scotian Shelf Bioregion: A remotely-sensed approach",
+            "title_fr": "Cartographie des zones de biomasse phytoplanctonique élevée dans la composante hauturière de la biorégion du plateau néo-écossais : une approche par télédétection",
+            "pub_year": 2015,
+            "lead_author_2": "Cesar Fuentes-Yaco",
+            "pub_num": "036",
+            "pages": 44,
+            "pdf_size": 5784,
+            "description": ""
+        }
+    }
+]

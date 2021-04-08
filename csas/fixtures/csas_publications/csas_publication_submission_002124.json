@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2124,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A critical review of mark-recapture estimation of northwest Atlantic harp seal production 1977-1983",
+            "pub_year": 1991,
+            "lead_author_2": "W.G. Warren",
+            "pub_num": "059",
+            "pages": 12,
+            "pdf_size": 944,
+            "description": ""
+        }
+    }
+]

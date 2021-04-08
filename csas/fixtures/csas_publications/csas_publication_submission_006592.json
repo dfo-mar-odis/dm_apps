@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6592,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Adapting Monitoring Protocols and Strategies for the Gilbert Bay Marine Protected Area",
+            "title_fr": "Adaptation des protocoles et des stratégies de surveillance pour la zone de protection marine de la baie Gilbert",
+            "pub_year": 2017,
+            "lead_author_2": "C.J. Morris",
+            "pub_num": "021",
+            "pages": 8,
+            "pdf_size": 257,
+            "description": ""
+        }
+    }
+]

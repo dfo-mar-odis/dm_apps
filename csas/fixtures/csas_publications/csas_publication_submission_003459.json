@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3459,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pandalus danae, Coonstripe shrimp: A Review of the Biology and Recommended Assessment Framework for Directed Fisheries",
+            "title_fr": "La crevette des quais Pandalus danae : survol de sa biologie et cadre d'évaluation recommandé pour les pêches dirigées",
+            "pub_year": 2001,
+            "lead_author_2": "J.S. Dunham and J.A. Boutillier",
+            "pub_num": "151",
+            "pages": 47,
+            "pdf_size": 2900,
+            "description": ""
+        }
+    }
+]

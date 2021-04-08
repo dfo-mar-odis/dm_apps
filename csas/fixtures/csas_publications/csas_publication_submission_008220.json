@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8220,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Review of catch monitoring tools used in Canadian fisheries",
+            "title_fr": "Examen des outils de surveillance des prises utilisés dans les pêches canadiennes",
+            "pub_year": 2019,
+            "lead_author_2": "Beauchamp, B., Benoît, H., and Duprey, N.",
+            "pub_num": "010",
+            "pages": 53,
+            "pdf_size": 1002,
+            "description": ""
+        }
+    }
+]

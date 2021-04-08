@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7045,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on evaluating transfers of harvested shellfish products, from the west to the east coast of Vancouver Island, as a potential vector for European Green Crab (Carcinus maenas) and other non-indigenous invertebrate species; December 3-4, 2013",
+            "title_fr": "Compte rendu de l'examen par les pairs de la Région du Pacifique sur l'évaluation du transfert de produits de mollusques récoltés de la côte ouest vers la côte est de l'île de Vancouver comme vecteur potentiel du crabe vert (Carcinus maenas) et d'autres espèces invertébrées non indigènes ; Du 3 au 4 décembre 2013",
+            "pub_year": 2015,
+            "lead_author_2": "Nicholas Duprey",
+            "pub_num": "048",
+            "pages": 22,
+            "pdf_size": 183,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3248,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Krill on the Scotian Shelf",
+            "title_fr": "Krill du plateau néo-écossais",
+            "pub_year": 1996,
+            "lead_author_2": "Pringle, J.",
+            "pub_num": "106",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

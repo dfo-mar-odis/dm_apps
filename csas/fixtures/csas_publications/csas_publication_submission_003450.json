@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3450,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Information on fish and fisheries data available for NAFO Subdivision 4Vn",
+            "title_fr": "Information concernant les données disponibles sur les poissons et les pêches dans la sous-division 4Vn de l'OPANO",
+            "pub_year": 2002,
+            "lead_author_2": "K. Zwanenburg, P. Gonzalez, S. Wilson, D. Beanlands and P. Hurley",
+            "pub_num": "009",
+            "pages": 31,
+            "pdf_size": 865,
+            "description": ""
+        }
+    }
+]

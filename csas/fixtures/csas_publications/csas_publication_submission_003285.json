@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3285,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Salmon Subcommittee Meeting; March 16-17, 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Thomas, G.",
+            "pub_num": "006",
+            "pages": 32,
+            "pdf_size": 191,
+            "description": ""
+        }
+    }
+]

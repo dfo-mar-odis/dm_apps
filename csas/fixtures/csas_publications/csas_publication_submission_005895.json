@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5895,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in Support of a Recovery Potential Assessment of Carmine Shiner (Notropis percobromus)",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement de la tête carminée (Notropis percobromus)",
+            "pub_year": 2013,
+            "lead_author_2": "Watkinson, Doug",
+            "pub_num": "014",
+            "pages": 20,
+            "pdf_size": 519,
+            "description": ""
+        }
+    }
+]

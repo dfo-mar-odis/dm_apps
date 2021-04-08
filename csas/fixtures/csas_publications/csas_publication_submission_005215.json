@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5215,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Index estimates of abundance for beluga in eastern Hudson Bay, James Bay and Ungava Bay in summer 2008",
+            "title_fr": "Indice de l'abondance des bélugas dans l'est de la baie d'Hudson, la baie James et la baie d'Ungava à l'été 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Gosselin, J.-F., Lesage, V., Hammill, M.",
+            "pub_num": "006",
+            "pages": 25,
+            "pdf_size": 722,
+            "description": ""
+        }
+    }
+]

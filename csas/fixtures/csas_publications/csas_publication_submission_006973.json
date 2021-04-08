@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6973,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of the Forecasting Methodologies for Pacific Herring (Clupea pallasii)",
+            "lead_author_2": "Rob Kronlund",
+            "description": ""
+        }
+    }
+]

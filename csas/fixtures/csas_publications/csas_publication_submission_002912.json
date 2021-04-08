@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2912,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Preliminary Studies of Density Stratification and Fluorescence on the Newfoundland Shelf",
+            "title_fr": "Études préliminaires de la stratification de densité et de la fluorescence sur la plate-forme de Terre-Neuve",
+            "pub_year": 2001,
+            "lead_author_2": "J. D. C. Craig, E. B. Colbourne and G. L. Maillet",
+            "pub_num": "085",
+            "pages": 26,
+            "pdf_size": 1008,
+            "description": ""
+        }
+    }
+]

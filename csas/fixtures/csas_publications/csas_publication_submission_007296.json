@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7296,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Modelling carrying capacity of bivalve aquaculture: a review of definitions and methods",
+            "title_fr": "Modélisation de la capacité de charge de l'aquaculture des bivalves : un examen des définitions et des méthodes",
+            "pub_year": 2015,
+            "lead_author_2": "Luc Comeau",
+            "pub_num": "002",
+            "pages": 36,
+            "pdf_size": 301,
+            "description": ""
+        }
+    }
+]

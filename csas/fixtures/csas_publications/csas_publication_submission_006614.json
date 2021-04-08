@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6614,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "The biology and relative abundance of Shortjaw Cisco (Coregonus zenithicus) in Lake Nipigon",
+            "title_fr": "Biologie et abondance relative du cisco à mâchoires égales (Coregonus zenithicus) dans le lac Nipigon",
+            "pub_year": 2013,
+            "lead_author_2": "Tom Pratt",
+            "pub_num": "063",
+            "pages": 18,
+            "pdf_size": 215,
+            "description": ""
+        }
+    }
+]

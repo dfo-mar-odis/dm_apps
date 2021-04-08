@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2462,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A review of the west coast of Newfoundland (NAFO Division 4R) herring fishery data (1973 to 1994)",
+            "pub_year": 1995,
+            "lead_author_2": "I.H. McQuinn; L. Lefebvre",
+            "pub_num": "056",
+            "pages": 41,
+            "pdf_size": 2282,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3611,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Estuary and Gulf of St. Lawrence Shrimp (Pandalus borealis) Stock Assessment for the 1990-2001 Period",
+            "title_fr": "Évaluation des stocks de crevette (Pandalus borealis) de l'estuaire et du golfe du Saint-Laurent pour la période 1990-2001",
+            "pub_year": 2002,
+            "lead_author_2": "Louise Savard, Hugues Bouchard et Hugo Bourdages",
+            "pub_num": "068",
+            "pages": 90,
+            "pdf_size": 3250,
+            "description": ""
+        }
+    }
+]

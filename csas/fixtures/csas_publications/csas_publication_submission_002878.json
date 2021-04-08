@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2878,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The nekton of the coastal and shelf waters of Newfoundland.",
+            "pub_year": 1997,
+            "lead_author_2": "Anderson, J.T., Dalley, E.L.",
+            "pub_num": "124",
+            "pages": 31,
+            "pdf_size": 2286,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3827,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Pacific Hake (offshore)",
+            "title_fr": "Merlu du pacifique (stock du large)",
+            "pub_year": 2003,
+            "lead_author_2": "Kronlund, A.R., McFarlane, G.A., Sinclair, A.F.",
+            "pub_num": "032",
+            "pages": 5,
+            "pdf_size": 151,
+            "description": ""
+        }
+    }
+]

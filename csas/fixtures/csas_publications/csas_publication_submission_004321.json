@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4321,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Newfoundland & Labrador Atlantic Salmon 2002 StockStatus Update",
+            "title_fr": "Mise à jour de l'état des stocks de saumon atlantique de Terre-Neuve et du Labrador en 2002",
+            "pub_year": 2002,
+            "pub_num": "D2-01",
+            "pages": 20,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4040,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Regional Advisory Process Meeting on the Level of Allowable Mortality for Leatherback Turtle in Support of Species at Risk; 31 March 2004",
+            "title_fr": "Compte rendu d'une réunion du Processus consultatif régional au sujet de la mortalité acceptable d'une espèce en péril, la tortue luth; 31 mars 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Sinclair, M.",
+            "pub_num": "011",
+            "pages": 19,
+            "pdf_size": 105,
+            "description": ""
+        }
+    }
+]

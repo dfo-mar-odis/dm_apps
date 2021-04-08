@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6899,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Peer Review of the Assessment of SFA 29 West of 65º30' Scallop.",
+            "lead_author_2": "T. Worcester",
+            "description": ""
+        }
+    }
+]

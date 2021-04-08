@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7612,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish Catch Results from the Summer 2009, 2011 and 2014 Surveys in Unit 2",
+            "title_fr": "Résultats des prises de sébaste tirés des relevés de l'été 2009, 2011 et 2014 dans l'unité 2",
+            "pub_year": 2016,
+            "lead_author_2": "Kulka, D.W., Atkinson, D.B.",
+            "pub_num": "019",
+            "pages": 37,
+            "pdf_size": 2048,
+            "description": ""
+        }
+    }
+]

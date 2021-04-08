@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2947,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Banquereau Bank Arctic Surfclam",
+            "title_fr": "Mactre de Stimpson du Banquereau",
+            "pub_year": 1999,
+            "lead_author_2": "D. Roddick",
+            "pub_num": "C3-34",
+            "pages": 3,
+            "pdf_size": 76,
+            "description": ""
+        }
+    }
+]

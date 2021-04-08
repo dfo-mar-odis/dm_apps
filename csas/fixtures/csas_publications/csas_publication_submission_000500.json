@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 500,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of a new assessment and management framework for west coast shrimp stocks",
+            "pub_year": 1999,
+            "lead_author_2": "Boutillier, J.A., Bond,J.A., Nguyen , H.",
+            "pub_num": "124",
+            "pages": 28,
+            "pdf_size": 275,
+            "description": ""
+        }
+    }
+]

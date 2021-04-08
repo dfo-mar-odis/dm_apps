@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1370,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution of groundfish and herring during the 1994 Cabot Strait survey",
+            "pub_year": 1994,
+            "lead_author_2": "G.A. Chouinard",
+            "pub_num": "068",
+            "pages": 24,
+            "pdf_size": 932,
+            "description": ""
+        }
+    }
+]

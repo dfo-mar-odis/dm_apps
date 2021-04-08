@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7568,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Risks and benefits of juvenile to adult captive-reared supplementation activities to fitness of wild Atlantic salmon (Salmo salar)",
+            "title_fr": "Risques et avantages des activités d'ensemencement avec du saumon juvénile élevé en captivité jusqu'à l'âge adulte pour la valeur adaptative du saumon de l'Atlantique sauvage (Salmo salar)",
+            "pub_year": 2016,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "017",
+            "pages": 32,
+            "pdf_size": 1087,
+            "description": ""
+        }
+    }
+]

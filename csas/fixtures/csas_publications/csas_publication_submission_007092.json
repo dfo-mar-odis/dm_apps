@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7092,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Mapping Biodiversity on the Scotian Shelf and in the Bay of Fundy",
+            "title_fr": "Cartographier la biodiversité pour le plateau néo-écossais et la baie de Fundy",
+            "pub_year": 2016,
+            "lead_author_2": "Ward-Paige, C.A., and Bundy, A.",
+            "pub_num": "006",
+            "pages": 95,
+            "pdf_size": 9381,
+            "description": ""
+        }
+    }
+]

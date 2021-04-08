@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8395,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "The evolution and probabilities of North Atlantic right whale presence among areas of the Gulf of St Lawrence subject to shipping and fishing regulations",
+            "lead_author_2": "Christopher T Taggart, Hansen D Johnson, Kimberley TA Davies et al.",
+            "description": ""
+        }
+    }
+]

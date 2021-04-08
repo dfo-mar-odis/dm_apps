@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 854,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish assessment Division 3O",
+            "pub_year": 1979,
+            "lead_author_2": "W.D. McKone; C.A. Gavaris",
+            "pub_num": "034",
+            "pages": 14,
+            "pdf_size": 612,
+            "description": ""
+        }
+    }
+]

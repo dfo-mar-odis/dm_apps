@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1242,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Summary of catch and effort statistics in the recreational and commercial Labrador Atlantic Salmon, Salmo salar, fishery, 1982",
+            "pub_year": 1983,
+            "lead_author_2": "J.B. Dempson; G. Furey",
+            "pub_num": "009",
+            "pages": 14,
+            "pdf_size": 662,
+            "description": ""
+        }
+    }
+]

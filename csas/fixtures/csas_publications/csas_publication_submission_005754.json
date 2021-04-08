@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5754,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Advice on the northern Hudson Bay narwhal population based on stock dynamic modelling of 1982-2008 aerial surveys",
+            "title_fr": "Avis sur la population de narvals du nord de la baie d'Hudson fondés sur la modélisation de la dynamique des stocks dérivés des relevés aériens de 1982 à 2008",
+            "pub_year": 2012,
+            "lead_author_2": "DFO (P. Richard )",
+            "pub_num": "047",
+            "pages": 6,
+            "pdf_size": 220,
+            "description": ""
+        }
+    }
+]

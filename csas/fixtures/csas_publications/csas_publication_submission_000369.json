@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 369,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Tom Curran's maps of movements of hooded and harp seals on the Front between 1971 and 1976",
+            "pub_year": 1977,
+            "lead_author_2": "T. Curran; P.F. Lett",
+            "pub_num": "026",
+            "pages": 7,
+            "pdf_size": 548,
+            "description": ""
+        }
+    }
+]

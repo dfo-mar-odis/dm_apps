@@ -1,0 +1,19 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6009,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Endeavour Hydrothermal Vents Marine Protected Area Monitoring Indicators, Protocols and Strategies",
+            "title_fr": "Indicateurs, protocoles et stratégies de surveillance pour la zone de protection marine du champ hydrothermal Endeavour",
+            "pub_year": 2011,
+            "lead_author_2": "Miriam O
+Miriam O.",
+            "pub_num": "035",
+            "pages": 11,
+            "pdf_size": 141,
+            "description": ""
+        }
+    }
+]

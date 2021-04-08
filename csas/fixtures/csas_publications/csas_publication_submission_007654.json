@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7654,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the regional peer review meeting on potential impacts of hydrated lime treatments associated with proposed expansion of mussel production in Malpeque Bay, PEI",
+            "lead_author_2": "Gérald Chaput",
+            "description": ""
+        }
+    }
+]

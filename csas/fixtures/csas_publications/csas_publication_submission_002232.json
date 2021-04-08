@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2232,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The distribution of cod (Gadus morhua L.) in relation to oxygen level and temperature in the northern Gulf of St. Lawrence",
+            "pub_year": 1992,
+            "lead_author_2": "D. D'Amours",
+            "pub_num": "084",
+            "pages": 15,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 480,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Follow-up to the assessment of Atlantic salmon in the Saint John River drainage, N.B., 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Marshall, T.L., Jones, R., Anderson, L.",
+            "pub_num": "109",
+            "pages": 42,
+            "pdf_size": 3547,
+            "description": ""
+        }
+    }
+]

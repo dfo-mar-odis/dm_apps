@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 234,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution of 0 and 1 group cod in nearshore waters of Placentia Bay (NAFO Subdivision 3Ps), 1997 - 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Robichaud, D., Rose. G.A.",
+            "pub_num": "066",
+            "pages": 12,
+            "pdf_size": 1040,
+            "description": ""
+        }
+    }
+]

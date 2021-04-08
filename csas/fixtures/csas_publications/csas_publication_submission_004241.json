@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4241,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process (RAP) for Capelin (Subarea 2 + Div. 3KL); October 26-28, 2010",
+            "title_fr": "Compte rendu du processus de consultation scientifique régional (PCSR) de Terre-Neuve et du Labrador sur le capelan (sous-zone 2 + div. 3KL) ; du 26 au 28 octobre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Vanessa Sutton-Pande/Christina Bourne",
+            "pub_num": "024",
+            "pages": 25,
+            "pdf_size": 105,
+            "description": ""
+        }
+    }
+]

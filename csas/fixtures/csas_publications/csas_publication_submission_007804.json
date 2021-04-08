@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7804,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Technical review of Roberts Bank Terminal 2 environmental assessment: section 10.3 – assessing ecosystem productivity",
+            "title_fr": "Examen technique de l'évaluation environnementale du Terminal 2 à Roberts Bank : section 10.3 – évaluation de la productivité de l'écosystème",
+            "pub_year": 2016,
+            "lead_author_2": "Ian Perry",
+            "pub_num": "050",
+            "pages": 23,
+            "pdf_size": 392,
+            "description": ""
+        }
+    }
+]

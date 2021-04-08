@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7482,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Ecological Risk Assessment of Grass Carp (Ctenopharyngodon idella) for the Great Lakes Basin",
+            "title_fr": "Évaluation du risque écologique de la carpe de roseau (Ctenopharyngodon idella) dans le bassin des Grands Lacs",
+            "pub_year": 2016,
+            "lead_author_2": "Becky Cudmore",
+            "pub_num": "057",
+            "pages": 9,
+            "pdf_size": 532,
+            "description": ""
+        }
+    }
+]

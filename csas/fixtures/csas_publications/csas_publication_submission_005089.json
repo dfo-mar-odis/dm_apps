@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5089,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of shrimp stocks in the Estuary and Gulf of St. Lawrence in 2008",
+            "title_fr": "Évaluation des stocks de crevette de l'estuaire et du golfe du Saint-Laurent en 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Savard, L.",
+            "pub_num": "001",
+            "pages": 12,
+            "pdf_size": 431,
+            "description": ""
+        }
+    }
+]

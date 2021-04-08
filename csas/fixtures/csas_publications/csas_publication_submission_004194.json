@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4194,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Stock Assessment Report on 4VWX Herring (revised)",
+            "title_fr": "Rapport d'évaluation des stocks de hareng de 4VWX (révisé)",
+            "pub_year": 2005,
+            "lead_author_2": "Power, M., R. Stephenson.",
+            "pub_num": "033",
+            "pages": 11,
+            "pdf_size": 167,
+            "description": ""
+        }
+    }
+]

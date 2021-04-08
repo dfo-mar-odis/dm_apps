@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3566,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock assessment of Georges Bank yellowtail flounder for 2002",
+            "title_fr": "Bilan de 2002 de l'état du stock de limande à queue jaune du Banc Georges (5Zjmnh)",
+            "pub_year": 2002,
+            "lead_author_2": "H. H. Stone",
+            "pub_num": "057",
+            "pages": 80,
+            "pdf_size": 1270,
+            "description": ""
+        }
+    }
+]

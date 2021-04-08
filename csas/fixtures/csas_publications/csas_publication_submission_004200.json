@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4200,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "The suitability of DEPOMOD for use in the management of finfish aquaculture sites, with specific reference to Pacific Region",
+            "title_fr": "La pertinence de DEPOMOD comme outil de gestion de la pisciculture, plus particulièrement pour la Région du Pacifique",
+            "pub_year": 2005,
+            "lead_author_2": "Chamberlain, J., D. Stucchi, L. Lu, C. Levings.",
+            "pub_num": "035",
+            "pages": 57,
+            "pdf_size": 1220,
+            "description": ""
+        }
+    }
+]

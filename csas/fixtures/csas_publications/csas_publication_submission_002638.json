@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2638,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The status of monkfish in 4VWX5ZC",
+            "pub_year": 1996,
+            "lead_author_2": "D. Beanlands; C. Annand",
+            "pub_num": "104",
+            "pages": 35,
+            "pdf_size": 1593,
+            "description": ""
+        }
+    }
+]

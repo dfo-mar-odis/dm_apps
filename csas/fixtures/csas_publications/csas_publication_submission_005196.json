@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5196,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Scotian Shelf Snow Crab",
+            "title_fr": "Évaluation du crabe des neiges en Nouvelle-Écosse",
+            "pub_year": 2019,
+            "lead_author_2": "L. Bennett",
+            "pub_num": "053",
+            "pages": 30,
+            "pdf_size": 2208,
+            "description": ""
+        }
+    }
+]

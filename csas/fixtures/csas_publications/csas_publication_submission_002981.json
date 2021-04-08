@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2981,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Environmental Conditions in Newfoundland Region during 1999",
+            "pub_year": 2000,
+            "lead_author_2": "E. Coulbourne",
+            "pub_num": "G2-01",
+            "pages": 8,
+            "pdf_size": 2,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4496,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Update on investigations of bowhead whale (Balaena mysticetus) movements in the eastern Arctic, 2003-2005, based on satellite-linked telemetry",
+            "title_fr": "Mise à jour des études sur les déplacements des baleines boréales (Balaena mysticetus) dans l'est de l'Arctique, de 2003 à 2005, grâce à la télémétrie par satellite",
+            "pub_year": 2006,
+            "lead_author_2": "Dueck, L.P., M.P. Hiede-Jørgensen, M.V. Jensen, L.D. Postma.",
+            "pub_num": "050",
+            "pages": 27,
+            "pdf_size": 898,
+            "description": ""
+        }
+    }
+]

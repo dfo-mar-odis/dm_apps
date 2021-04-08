@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 665,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution and biomass of capelin, Arctic cod and sand lance on the Northeast Newfoundland Shelf and Grand Bank as deduced from bottom-trawl surveys",
+            "pub_year": 2000,
+            "lead_author_2": "Lilly, G., Simpson, M.",
+            "pub_num": "091",
+            "pages": 40,
+            "pdf_size": 1137,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4955,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Cusk (Brosme brosme)",
+            "title_fr": "Évaluation du potentiel de rétablissement du brosme (Brosme brosme)",
+            "pub_year": 2008,
+            "lead_author_2": "Harris, L.",
+            "pub_num": "024",
+            "pages": 11,
+            "pdf_size": 136,
+            "description": ""
+        }
+    }
+]

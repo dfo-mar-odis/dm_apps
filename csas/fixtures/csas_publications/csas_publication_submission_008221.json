@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8221,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Unified framework for the statistical assessment of fishery monitoring programs",
+            "title_fr": "Cadre unifié pour l’évaluation statistique des programmes de surveillance des pêches",
+            "pub_year": 2019,
+            "lead_author_2": "Allard, J, and Benoît, H.P.",
+            "pub_num": "013",
+            "pages": 69,
+            "pdf_size": 1375,
+            "description": ""
+        }
+    }
+]

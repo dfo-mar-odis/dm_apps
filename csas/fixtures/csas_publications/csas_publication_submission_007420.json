@@ -1,0 +1,19 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7420,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Chemical and Biological Oceanographic Conditions in the Estuary and Gulf of St. Lawrence during 2014",
+            "title_fr": "Conditions océanographiques chimiques et biologiques dans l’estuaire et le golfe du Saint-Laurent en 2014",
+            "pub_year": 2015,
+            "lead_author_2": "L. Devine, S. Plourde, M. Starr, J.-F. St-Pierre, L. St-Amand,
+P. Joly and P. S. Galbraith",
+            "pub_num": "071",
+            "pages": 51,
+            "pdf_size": 4160,
+            "description": ""
+        }
+    }
+]

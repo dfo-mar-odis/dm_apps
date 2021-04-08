@@ -15,6 +15,7 @@ urlpatterns = [
     path('index_pacific/',                          views.IndexPCView.as_view(),          name="index_pc"),
     path('index_meeting/',                          views.IndexMeetingView.as_view(),     name="index_met"),
     path('index_publication/',                      views.IndexPublicationView.as_view(), name="index_pub"),
+    path('index_publication_type/',                 views.IndexPublicationTypeView.as_view(), name="index_pub_type"),
 
     # for Requests
     path('request/',                                views.RequestList.as_view(),          name="list_req"),
@@ -30,6 +31,8 @@ urlpatterns = [
     path('request/',                                views.RequestList.as_view(),          name="list_req_CSAS"),
 
     path('request/new/',                            views.RequestEntry.as_view(),         name="create_req"),
+    path('request_status/new/<int:req_id>/<str:pop>/', views.RequestEntryCSAS.as_view(),  name="create_req_status"),
+    path('request_status/new/',                        views.RequestEntryCSAS.as_view(),  name="create_req_status"),
     path('request_CSAS/new/',                       views.RequestEntryCSAS.as_view(),     name="create_req_CSAS"),
 
     path('request/update/<int:pk>/',                views.RequestUpdate.as_view(),        name="update_req"),
@@ -117,6 +120,7 @@ urlpatterns = [
     path('publication/pacific/',                                 views.PublicationListPC.as_view(),           name="list_pub_pc"),
 
     path('publication/new/',                                     views.PublicationEntry.as_view(),            name="create_pub"),
+    path('publication/new_2/',                                   views.PublicationEntry_2.as_view(),          name="create_pub_2"),
     path('publication_status/new/<int:pub_id>/<str:pop>/',       views.PublicationEntryStatus.as_view(),      name="create_pub_status"),
     path('publication_status/new/',                              views.PublicationEntryStatus.as_view(),      name="create_pub_status"),
     path('publication_trans_info/new/<int:pub_id>/<str:pop>/',   views.PublicationEntryTransInfo.as_view(),   name="create_pub_trans_info"),

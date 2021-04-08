@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4814,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Assessment of Skeena River Chum (Oncorhynchus keta) Stock",
+            "lead_author_2": "Michael Chamberlain",
+            "description": ""
+        }
+    }
+]

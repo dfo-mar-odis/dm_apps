@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2836,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Zooplankton changes along the Halifax and Louisbourg transects in 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Sameoto, D., Kennedy, M.K., Cochrane, N.",
+            "pub_num": "082",
+            "pages": 14,
+            "pdf_size": 1442,
+            "description": ""
+        }
+    }
+]

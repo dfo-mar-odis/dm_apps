@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4631,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery potential assessment for white sturgeon populations listed under the Species at Risk Act",
+            "title_fr": "Évaluation du potentiel de rétablissement des populations d'esturgeon blanc inscrites en vertu de la Loi sur les espèces en péril",
+            "pub_year": 2007,
+            "lead_author_2": "Wood, C.C., D. Sneep, S. McAdam, J. Korman, T. Hatfield",
+            "pub_num": "003",
+            "pages": 34,
+            "pdf_size": 238,
+            "description": ""
+        }
+    }
+]

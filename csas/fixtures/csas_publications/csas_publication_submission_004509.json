@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4509,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Benthic Habitat Classification Workshop Meeting of the Maritimes Regional Advisory Process: Maintenance of the Diversity of Ecosystem Types - Phase II: Classification and Characterization of Scotia-Fundy Benthic Habitats; 20-22 July 2005",
+            "title_fr": "Compte rendu de l'atelier du Processus consultatif régional des Maritimes sur la classification des habitats benthiques: Maintien de la diversité des types d'écosystèmes - Phase II : classification et caractérisation des habitats benthiques de Sotia Fundy; 20-22 juillet 2005",
+            "pub_year": 2006,
+            "lead_author_2": "MPO",
+            "pub_num": "006",
+            "pages": 41,
+            "pdf_size": 1454,
+            "description": ""
+        }
+    }
+]

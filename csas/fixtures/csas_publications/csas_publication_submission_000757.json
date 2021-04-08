@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 757,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Lingcod stock assessment and recommended yield options for 2001",
+            "pub_year": 2000,
+            "lead_author_2": "King, J., Surry, A.M.",
+            "pub_num": "164",
+            "pages": 50,
+            "pdf_size": 1768,
+            "description": ""
+        }
+    }
+]

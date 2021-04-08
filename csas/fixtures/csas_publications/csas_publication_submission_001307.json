@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1307,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Management units and the squid resources of the Gulf of Maine, Illex illecebrosus and Loligo pealei",
+            "pub_year": 1986,
+            "lead_author_2": "T.W. Rowell",
+            "pub_num": "059",
+            "pages": 20,
+            "pdf_size": 1386,
+            "description": ""
+        }
+    }
+]

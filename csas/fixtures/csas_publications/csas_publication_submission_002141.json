@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2141,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of American plaice, Hippoglossoides platessoides, in NAFO Division 4T",
+            "pub_year": 1991,
+            "lead_author_2": "R. Tallman; I. Forest-Gallant",
+            "pub_num": "076",
+            "pages": 42,
+            "pdf_size": 2024,
+            "description": ""
+        }
+    }
+]

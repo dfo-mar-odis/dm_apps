@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2452,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The midshore lobster fishery off southwestern Nova Scotia: Inception, development and current status",
+            "pub_year": 1995,
+            "lead_author_2": "D.R. Duggan; D.S. Pezzack",
+            "pub_num": "046",
+            "pages": 39,
+            "pdf_size": 2474,
+            "description": ""
+        }
+    }
+]

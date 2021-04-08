@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6043,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Methods for the Identification of Critical Habitat for Freshwater Mussels",
+            "title_fr": "Évaluation des méthodes de désignation de l'habitat essentiel des moules d'eau douce",
+            "pub_year": 2011,
+            "lead_author_2": "DFO (contact Lynn Bouvier)",
+            "pub_num": "047",
+            "pages": 15,
+            "pdf_size": 1489,
+            "description": ""
+        }
+    }
+]

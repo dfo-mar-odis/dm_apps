@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4405,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Status of witch flounder in NAFO divisions 4RST, February 2006",
+            "title_fr": "L'état de la plie grise dans les divisions 4RST de l'OPANO, février 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Swain, D.P., R.B. Morin",
+            "pub_num": "005",
+            "pages": 54,
+            "pdf_size": 2351,
+            "description": ""
+        }
+    }
+]

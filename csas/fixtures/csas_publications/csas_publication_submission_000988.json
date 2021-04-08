@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 988,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the National Marine Mammal Review Committee; February 1-5, 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Dr. Jacques A. Gagné, Chairperson",
+            "pub_num": "014",
+            "pages": 23,
+            "pdf_size": 72,
+            "description": ""
+        }
+    }
+]

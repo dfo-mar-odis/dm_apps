@@ -62,11 +62,16 @@
     >
       <td>${p.project.id}</td>
       <td>${p.display_name}</td>
-      <td>${p.project.title}</td>
+      <td>
+        <a class="text-primary pointy" @click="goProjectDetail(p)">
+          ${p.project.title}
+        </a>
+      </td>
+
       <td>${p.project.default_funding_source}</td>
       <td>${p.project.functional_group}</td>
       <td v-if="showColumnLeads">${p.project.lead_staff}</td>
-      <td v-html="p.formatted_status"></td>
+      <td :class="p.status_class" v-html="p.status_display"></td>
 
       <td v-if="showColumnAllocation">
         <span v-if="p.review">${p.review.allocated_budget | nz(0) | currencyFormat | zero2NullMark}</span>
@@ -116,11 +121,6 @@
         </button>
       </td>
 
-      <td class="">
-        <button @click="goProjectDetail(p)" class="{{ btn_class }} btn-outline-primary">
-          <span class="mdi mdi-arrow-top-right text-primary"></span>
-        </button>
-      </td>
 
     </tr>
     </tbody>

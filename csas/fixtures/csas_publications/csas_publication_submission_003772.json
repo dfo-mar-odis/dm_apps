@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3772,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Annual Trends in Abundance and Bycatch Removals of Blue Hake (Antimora rostrata Gunther 1878) in the Northwest Atlantic",
+            "title_fr": "Tendances annuelles de l'abondance et des prises accessoires du hoki (Antimora rostrata Günther 1878) dans l'Atlantique Nord-Ouest",
+            "pub_year": 2003,
+            "lead_author_2": "D.W. Kulka, M.R. Simpson",
+            "pub_num": "022",
+            "pages": 37,
+            "pdf_size": 1170,
+            "description": ""
+        }
+    }
+]

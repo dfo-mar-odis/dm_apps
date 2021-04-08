@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6034,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the Review of the St. Lawrence Estuary Marine Protected Area Ecological Monitoring Plan; May 3-5, 2011",
+            "title_fr": "Processus consultatif scientifique régional sur l'examen du plan de suivi écologique de la zone de protection marine Estuaire du Saint-Laurent ; du 3 au 5 mai 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Cyr, Charley",
+            "pub_num": "037",
+            "description": ""
+        }
+    }
+]

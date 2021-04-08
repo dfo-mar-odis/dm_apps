@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 25,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Semi-parametric inferences about fish stock size using sequential population analysis (SPA) and quasi-lilelihood theory",
+            "pub_year": 1998,
+            "lead_author_2": "N. Cadigan",
+            "pub_num": "025",
+            "pages": 34,
+            "description": ""
+        }
+    }
+]

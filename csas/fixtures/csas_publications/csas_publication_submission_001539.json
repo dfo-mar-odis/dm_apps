@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1539,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An analytical assessment of the 4X cod fishery",
+            "pub_year": 1985,
+            "lead_author_2": "S. Campana; J. Simon",
+            "pub_num": "032",
+            "pages": 40,
+            "pdf_size": 1991,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6400,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Applying the Precautionary Approach to Marine Mammal Harvests in Canada",
+            "title_fr": "Application de l'approche de précaution à la récolte de mammifères marins au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Stenson, G., M. Hammill, S. Ferguson, R. Stewart, T. Doniol-Valcroze.",
+            "pub_num": "107",
+            "pages": 17,
+            "pdf_size": 94,
+            "description": ""
+        }
+    }
+]

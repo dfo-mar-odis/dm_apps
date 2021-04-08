@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6721,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process on NAFO Subdivsion 3Ps Cod and Thorny Skate",
+            "lead_author_2": "CSA-NL Regional Office",
+            "description": ""
+        }
+    }
+]

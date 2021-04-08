@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3638,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Rock crab of the inshore waters of Quebec",
+            "title_fr": "Le Crabe commun des eaux côtières du Québec",
+            "pub_year": 2002,
+            "pub_num": "C4-02",
+            "pages": 8,
+            "pdf_size": 450,
+            "description": ""
+        }
+    }
+]

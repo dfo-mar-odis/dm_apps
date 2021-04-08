@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6046,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Adding a breakwater to the pilot wharf at Les Escoumins, Quebec: Potential impacts on marine mammals",
+            "title_fr": "Ajout d'un brise-lame au quai des pilotes de Les Escoumins, Québec - Effets potentiels sur les mammifères marins",
+            "pub_year": 2011,
+            "lead_author_2": "Hammill, M., Lesage, V., Simard, Y.",
+            "pub_num": "007",
+            "pages": 11,
+            "pdf_size": 61,
+            "description": ""
+        }
+    }
+]

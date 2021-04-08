@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5670,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Loggerhead Sea Turtles (Caretta caretta) in Atlantic Canada: Biology, Status, Recovery Potential, and Measures for Mitigation",
+            "title_fr": "La caouanne (Caretta caretta) au Canada atlantique : biologie, situation, potentiel de rétablissement et mesures d'atténuation",
+            "pub_year": 2010,
+            "lead_author_2": "Harris, L.E., W.E. Gross, R.K. Smedbol, and L.H. Bondt.",
+            "pub_num": "089",
+            "pdf_size": 2400,
+            "description": ""
+        }
+    }
+]

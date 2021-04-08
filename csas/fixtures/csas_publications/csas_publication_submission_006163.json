@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6163,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of Atlantic Halibut on the Scotian Shelf and Southern Grand Banks (NAFO Divs. 3NOPs4VWX5Zc)",
+            "title_fr": "Mise à jour de l'état du stock de flétan du plateau néo-écossais et du sud des Grands Bancs (divisions 3NOPs4VWX5Zc de l'OPANO)",
+            "pub_year": 2014,
+            "lead_author_2": "Cornelia den Heyer",
+            "pub_num": "016",
+            "description": ""
+        }
+    }
+]

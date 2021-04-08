@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7524,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for the Atlantic and northern Gulf of St. Lawrence designatable unit of the White Hake (Urophycis tenuis): the Scotian Shelf and Bay of Fundy stock (NAFO Divisions 4VW & 4X)",
+            "lead_author_2": "Tara McIntyre, MAR Region",
+            "description": ""
+        }
+    }
+]

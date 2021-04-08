@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3629,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "West Coast Vancouver Island Coho",
+            "title_fr": "Les saumons coho de la côte ouest de l'île de Vancouver",
+            "pub_year": 2002,
+            "pub_num": "D6-06",
+            "pages": 5,
+            "pdf_size": 1120,
+            "description": ""
+        }
+    }
+]

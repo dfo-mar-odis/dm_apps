@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6362,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Science Review of the Old Harry Prospect Exploration Drilling Program",
+            "title_fr": "Examen scientifique du programme de forage d'exploration de la zone prometteuse de Old Harry",
+            "pub_year": 2013,
+            "lead_author_2": "Nadine Templeman",
+            "pub_num": "014",
+            "pages": 55,
+            "pdf_size": 697,
+            "description": ""
+        }
+    }
+]

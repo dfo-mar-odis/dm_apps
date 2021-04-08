@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2140,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of the southern Gulf of St. Lawrence snow crab (Chionoecetes opilio) management zone boundaries",
+            "pub_year": 1991,
+            "lead_author_2": "Y. Chiasson; M. Hébert; M. Moriyasu",
+            "pub_num": "075",
+            "pages": 15,
+            "pdf_size": 952,
+            "description": ""
+        }
+    }
+]

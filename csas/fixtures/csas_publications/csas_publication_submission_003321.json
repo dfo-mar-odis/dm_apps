@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3321,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Equilibrium analyses of the recovery feasibility of four Atlantic salmon (Salmo salar) in Nova Scotia and Southwest New Brunswick",
+            "title_fr": "Analyses de la taille à l'équilibre de quatre populations de saumon atlantique (Salmo salar) en Nouvelle-Écosse et dans le sud-ouest du Nouveau-Brunswick dans la perspective de leur rétablissement",
+            "pub_year": 2008,
+            "lead_author_2": "Gibson, A.J.F., R. Jones, P. Amiro.",
+            "pub_num": "010",
+            "pages": 50,
+            "pdf_size": 307,
+            "description": ""
+        }
+    }
+]

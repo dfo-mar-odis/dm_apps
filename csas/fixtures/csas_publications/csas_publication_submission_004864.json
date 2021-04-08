@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4864,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Can We Calculate Total Allowable Harvests for Walrus Using Potential Biological Removal?",
+            "title_fr": "Pouvons-nous calculer les prélèvements totaux admissibles pour le morse au moyen du prélèvement biologique potentiel?",
+            "pub_year": 2008,
+            "lead_author_2": "Stewart, R.",
+            "pub_num": "025",
+            "pages": 16,
+            "pdf_size": 595,
+            "description": ""
+        }
+    }
+]

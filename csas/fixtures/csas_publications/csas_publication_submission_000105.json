@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 105,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Temperature conditions on the Scotian shelf and in the southern Gulf of St. Lawrence relevant to snow crab",
+            "pub_year": 1999,
+            "lead_author_2": "Drinkwater, K., Pettipas, R.G., Petrie, W.M.",
+            "pub_num": "018",
+            "pages": 31,
+            "pdf_size": 1138,
+            "description": ""
+        }
+    }
+]

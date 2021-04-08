@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 304,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon stocks of Scotia-Fundy Region, 1990",
+            "pub_year": 1991,
+            "lead_author_2": "P.G. Amiro; R.E. Cutting; B.M. Jessop; T.L. Marshall; S.F. O'Neil",
+            "pub_num": "005",
+            "pages": 24,
+            "pdf_size": 1172,
+            "description": ""
+        }
+    }
+]

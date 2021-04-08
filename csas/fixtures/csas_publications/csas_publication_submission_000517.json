@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 517,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Report of the 1998-1999 4VWX Herring and Mackerel Tagging Program and Plans for 1999-2000",
+            "pub_year": 1999,
+            "lead_author_2": "Paul, S.",
+            "pub_num": "138",
+            "pages": 25,
+            "pdf_size": 357,
+            "description": ""
+        }
+    }
+]

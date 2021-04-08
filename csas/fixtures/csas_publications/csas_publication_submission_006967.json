@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6967,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the regional peer review of the information for the identification of critical habitat for Cowichan (Vancouver) lamprey",
+            "lead_author_2": "Chrys Neville",
+            "description": ""
+        }
+    }
+]

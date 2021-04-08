@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3240,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Monkfish on the Scotian Shelf and Northeast Georges Bank",
+            "title_fr": "Baudroie du plateau néo-écossais et du nord-est du banc Georges",
+            "pub_year": 1996,
+            "lead_author_2": "beanlands, D.",
+            "pub_num": "097",
+            "pages": 6,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2436,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update on the status of Unit 3 redfish: 1994",
+            "pub_year": 1995,
+            "lead_author_2": "R. Branton",
+            "pub_num": "032",
+            "pages": 16,
+            "pdf_size": 877,
+            "description": ""
+        }
+    }
+]

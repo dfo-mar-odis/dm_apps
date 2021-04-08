@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6934,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Trends in the trophic ecology of St. Lawrence beluga (Delphinapterus leucas) over the period 1988-2012, based on stable isotope analysis",
+            "title_fr": "Évolution de l'écologie alimentaire des bélugas du Saint-Laurent (Delphinapterus leucas) de 1988-2012, d'après l'analyse d'isotopes stables",
+            "pub_year": 2013,
+            "lead_author_2": "Véronique Lesage",
+            "pub_num": "126",
+            "pages": 29,
+            "pdf_size": 340,
+            "description": ""
+        }
+    }
+]

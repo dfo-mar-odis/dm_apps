@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5217,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Harvest statistics for beluga in Nunavik, 2005-2008",
+            "title_fr": "Statistiques de chasse au béluga au Nunavik, 2005-2008",
+            "pub_year": 2009,
+            "lead_author_2": "V. Lesage, D. Baillargeon, S. Turgeon, D.W. Doidge",
+            "pub_num": "007",
+            "pages": 25,
+            "pdf_size": 536,
+            "description": ""
+        }
+    }
+]

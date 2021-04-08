@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2564,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The fishery for Pandalus montagui in the Hudson Strait/ Ungava Bay area 1979-1995",
+            "pub_year": 1996,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch; D.W. Kulka",
+            "pub_num": "017",
+            "pages": 7,
+            "pdf_size": 326,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 367,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Critical analysis of two Harp seal population models",
+            "pub_year": 1977,
+            "lead_author_2": "R.K. Mohn",
+            "pub_num": "024",
+            "pages": 15,
+            "pdf_size": 752,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7054,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review for developing a marine protected area network in the Western Arctic Bioregion - validating the process and identifying Priority Conservation Areas; February 17-19, 2014",
+            "title_fr": "Compte rendu de l'examen régional par les pairs pour la création d'un réseau d'aires marines protégées (RAMP) dans la biorégion de l'ouest de l'Arctique - Validation du processus et désignation des aires de conservation prioritaires; du 17 au 19 février 2014",
+            "pub_year": 2015,
+            "lead_author_2": "R. Hodgson",
+            "pub_num": "012",
+            "pages": 29,
+            "pdf_size": 217,
+            "description": ""
+        }
+    }
+]

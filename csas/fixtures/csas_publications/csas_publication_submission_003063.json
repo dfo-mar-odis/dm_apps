@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3063,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Salmon Southern Nova Scotia SFA 21",
+            "title_fr": "Saumon atlantique Sud de la Nouvelle-Écosse ZPS 21",
+            "pub_year": 1998,
+            "lead_author_2": "Peter G. Amiro",
+            "pub_num": "D3-11",
+            "pages": 4,
+            "pdf_size": 125,
+            "description": ""
+        }
+    }
+]

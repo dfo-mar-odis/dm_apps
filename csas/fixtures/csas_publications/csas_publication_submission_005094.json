@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5094,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Comparison of strip- and line-transect sampling to estimate density and abundance of ringed seals (Phoca hispida) in western Hudson Bay, 2007 and 2008",
+            "title_fr": "Comparaison de l'échantillonnage en bande et en ligne pour estimer la densité et l'abondance de phoques annelés (Phoca hispida) dans l'ouest de la baie d'Hudson en 2007 et 2008",
+            "pub_year": 2009,
+            "lead_author_2": "M. Chambellant, S.H. Ferguson",
+            "pub_num": "002",
+            "pages": 24,
+            "pdf_size": 315,
+            "description": ""
+        }
+    }
+]

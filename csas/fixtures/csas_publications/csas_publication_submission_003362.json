@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3362,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Central Coast Herring",
+            "pub_year": 1998,
+            "lead_author_2": "Schweigert, Jake",
+            "pub_num": "B6-02",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

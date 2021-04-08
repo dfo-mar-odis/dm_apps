@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5768,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Winter range of Baffin Bay narwhals",
+            "title_fr": "Aire d'hivernage des narvals de la baie de Baffin",
+            "pub_year": 2013,
+            "lead_author_2": "DFO (P. Richard)",
+            "pub_num": "053",
+            "pages": 6,
+            "pdf_size": 943,
+            "description": ""
+        }
+    }
+]

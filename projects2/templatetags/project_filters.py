@@ -80,3 +80,11 @@ def in_field_group(value, arg):
             "other_lab_support_needs",
         ]:
             return True
+
+
+@register.filter
+def strip_label(val):
+    try:
+        return val.split("|")[0]
+    except:
+        return val

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7602,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on A revised operating model for Sablefish (Anoplopoma fimbria) in British Columbia, Canada; January 20, 2016",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région du Pacifique sur l’Élaboration du modèle d'exploitation de la morue charbonnière (Anoplopoma fimbria) en Colombie-Britannique, au Canada; le 20 janvier 2016",
+            "pub_year": 2016,
+            "lead_author_2": "John Holmes and Julia Bradshaw",
+            "pub_num": "027",
+            "pages": 21,
+            "pdf_size": 194,
+            "description": ""
+        }
+    }
+]

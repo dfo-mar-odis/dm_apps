@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7340,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Peer Review Process on the Status of Subarea (SA) 2 and Divisions 3KL Capelin and Divisions 3KL and Subdivision 3Ps Herring; February 3-5, 2015",
+            "title_fr": "Compte rendu du processus régional d'examen par les pairs de Terre-Neuve-et-Labrador sur l'état du stock de capelan dans la sous-zone 2 et les divisions 3KL et l'état du stock de hareng dans les divisions 3KL et la sous-division 3Ps ; du 3 au 5 février 2015",
+            "pub_year": 2015,
+            "lead_author_2": "J. Meade",
+            "pub_num": "044",
+            "pages": 22,
+            "pdf_size": 366,
+            "description": ""
+        }
+    }
+]

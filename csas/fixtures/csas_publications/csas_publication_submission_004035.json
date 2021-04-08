@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4035,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Marine Mammal Peer Review Committee St. Andrews, New-Brunswick; ; April 20-23, 2004",
+            "title_fr": "Compte rendu du Comité national d'examen par les pairs sur les mammifères marins St. Andrews, Nouveau-Brunswick; 20 au 23 avril 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Landry, J.",
+            "pub_num": "009",
+            "pages": 104,
+            "pdf_size": 966,
+            "description": ""
+        }
+    }
+]

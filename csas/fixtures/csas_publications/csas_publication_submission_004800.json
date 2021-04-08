@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4800,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Modelling the Cosmos 2600 shrimp trawl",
+            "title_fr": "Modélisation du chalut à crevettes Cosmos 2600",
+            "pub_year": 2010,
+            "lead_author_2": "Siferd, T.",
+            "pub_num": "071",
+            "pages": 12,
+            "pdf_size": 70,
+            "description": ""
+        }
+    }
+]

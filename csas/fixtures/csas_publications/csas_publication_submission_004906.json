@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4906,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Identification of ecologically and biologically significant areas (EBSA) in the Estuary and Gulf of St. Lawrence: Primary production",
+            "title_fr": "Identification de zones d'importance écologique et biologique (ZIEB) pour l'estuaire et le golfe du Saint-Laurent: production primaire",
+            "pub_year": 2007,
+            "lead_author_2": "Lavoie, D., M. Starr, B. Zakardjian, P. Larouche",
+            "pub_num": "079",
+            "pages": 33,
+            "pdf_size": 2475,
+            "description": ""
+        }
+    }
+]

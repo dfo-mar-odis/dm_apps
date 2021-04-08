@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5086,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "The Basin Head Irish Moss (Chondrus crispus) Population Abundance and Distribution 1980 to 2008",
+            "title_fr": "L'abondance et la répartition de la population de la mousse d'Irlande (Chondrus crispus) de Basin Head de 1980 à 2008",
+            "pub_year": 2010,
+            "lead_author_2": "Sharp, G., R. Semple, H. Vandermeulen, M. Wilson, C. LaRocque, S. Nebel.",
+            "pub_num": "054",
+            "pages": 38,
+            "pdf_size": 815,
+            "description": ""
+        }
+    }
+]

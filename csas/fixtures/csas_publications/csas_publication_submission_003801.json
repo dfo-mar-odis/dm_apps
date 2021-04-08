@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3801,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Biogeochemical Benchmarks for Source Identification of Contaminants from an Offshore Oil and Gas Industry",
+            "title_fr": "Repères biogéochimiques pour la détermination des sources de contaminants produits par des activités pétrolières et gazières extracôtières",
+            "pub_year": 2002,
+            "lead_author_2": "Cretney, W., Yunker, M., Yeats, P.",
+            "pub_num": "129",
+            "pages": 27,
+            "pdf_size": 400,
+            "description": ""
+        }
+    }
+]

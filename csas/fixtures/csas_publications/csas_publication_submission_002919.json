@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2919,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Northern (2J3KL) Cod",
+            "pub_year": 1999,
+            "lead_author_2": "Lilly, George",
+            "pub_num": "A2-01",
+            "pages": 11,
+            "pdf_size": 150,
+            "description": ""
+        }
+    }
+]

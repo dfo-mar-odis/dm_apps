@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5492,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of the NAFO Division 4T southern Gulf of St. Lawrence herring stocks in 2009",
+            "title_fr": "Évaluation des stocks de hareng de la zone 4T de l'OPANO dans le sud du golfe du Saint-Laurent en 2009",
+            "pub_year": 2010,
+            "lead_author_2": "LeBlanc, C.H., Swain, D., MacDougall,C., Bourque, C.",
+            "pub_num": "059",
+            "pages": 153,
+            "pdf_size": 1853,
+            "description": ""
+        }
+    }
+]

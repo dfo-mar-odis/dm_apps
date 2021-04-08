@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2004,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock indicators for LFA 33 with respect to management changes implemented in 2000",
+            "title_fr": "Indicateur du stock de homard de la ZPH 33 à l'égard des changements en gestion mis en oeuvre en 2000",
+            "pub_year": 2004,
+            "lead_author_2": "Claytor, R.",
+            "pub_num": "071",
+            "pages": 77,
+            "pdf_size": 2235,
+            "description": ""
+        }
+    }
+]

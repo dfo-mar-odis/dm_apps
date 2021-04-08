@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3811,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Workshop to Develop Guidelines for Support of Southern Upland NS and Eastern Cape Breton Island Atlantic Salmon; 12-13 September 2001",
+            "title_fr": "Compte rendu d'un atelier visant à élaborer des lignes directrices pour soutenir les populations de saumon atlantique du sud du bas-plateau de la Nouvelle-Écosse et de l'est de l'île du Cap-Breton; les 12 et 13 septembre 2001",
+            "pub_year": 2003,
+            "lead_author_2": "Marshall, T.L., Stevens, G., Rutherford, K.",
+            "pub_num": "006",
+            "pages": 74,
+            "pdf_size": 2475,
+            "description": ""
+        }
+    }
+]

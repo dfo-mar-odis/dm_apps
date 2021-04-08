@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 474,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Stock structure and seasonal migration patterns of Atlantic cod (Gadus morhua) based on inshore tagging experiments in Divs. 3KL during 1995-97",
+            "pub_year": 1999,
+            "lead_author_2": "Brattey, J.",
+            "pub_num": "103",
+            "pages": 19,
+            "pdf_size": 602,
+            "description": ""
+        }
+    }
+]

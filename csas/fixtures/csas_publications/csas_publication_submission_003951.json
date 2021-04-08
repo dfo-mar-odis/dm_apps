@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3951,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Stimpson's surf clam in Quebec inshore waters in 2003",
+            "title_fr": "La mactre de Stimpson des eaux côtières du Québec en 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Giguère, M.",
+            "pub_num": "002",
+            "pages": 7,
+            "pdf_size": 308,
+            "description": ""
+        }
+    }
+]

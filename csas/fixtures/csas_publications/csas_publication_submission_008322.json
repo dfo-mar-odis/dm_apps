@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8322,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on The identification of candidate reference points and harvest rate options for the commercial Red Sea Urchin (Mesocentrotus franciscanus) fishery in British Columbia",
+            "lead_author_2": "Lyanne Curtis",
+            "description": ""
+        }
+    }
+]

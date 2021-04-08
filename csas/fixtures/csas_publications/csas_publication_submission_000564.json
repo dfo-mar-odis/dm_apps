@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 564,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Evaluation of the 1998 4WX herring acoustic surveys",
+            "pub_year": 1999,
+            "lead_author_2": "Melvin, G.D., Scheidl, T., Fife, F.J., Power, M.J., Boates, S., Clark, K., Stephenson, R.L.",
+            "pub_num": "180",
+            "pages": 32,
+            "pdf_size": 3287,
+            "description": ""
+        }
+    }
+]

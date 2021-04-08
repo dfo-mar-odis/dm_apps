@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1888,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A review of DFO concerns regarding possible impacts of a fixed-link crossing of Northumberland Strait",
+            "pub_year": 1989,
+            "lead_author_2": "J.C. Rice; C. Morry; T. Sephton; G. Seibert; S. Messieh; B. Hargrave; R.D. Alexander",
+            "pub_num": "016",
+            "pages": 44,
+            "pdf_size": 2463,
+            "description": ""
+        }
+    }
+]

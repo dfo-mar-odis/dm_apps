@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4502,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Impacts of Trawl Gears and Scallop Dredges on Benthic Habitats, Populations and Communities",
+            "title_fr": "Effets des engins de chalutage et des dragues à pétoncles sur les habitats, les populations et les communautés benthiques",
+            "pub_year": 2006,
+            "lead_author_2": "Rice, Jake, Blain H.",
+            "pub_num": "025",
+            "pages": 13,
+            "pdf_size": 119,
+            "description": ""
+        }
+    }
+]

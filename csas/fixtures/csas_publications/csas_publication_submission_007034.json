@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7034,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Lobster (Homarus americanus) in Lobster Fishing Area 41 (4X + 5Zc)",
+            "title_fr": "Évaluation du homard (Homarus americanus) de la zone de pêche du homard 41 (4X + 5Zc)",
+            "pub_year": 2014,
+            "lead_author_2": "Doug Pezzack",
+            "pub_num": "034",
+            "description": ""
+        }
+    }
+]

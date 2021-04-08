@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3433,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Further Investigations of the Fisheries Potential of the Exotic Varnish Clam (Nuttallia obscurata) in British Columbia",
+            "title_fr": "Études approfondies sur le potentiel halieutique de la nutallie obscure (Nuttallia obscurata) en Colombie-Britannique",
+            "pub_year": 2001,
+            "lead_author_2": "Gillespie, G.E., Rusch, B., Gormican, S.J., Marshal, R., Munroe, D.",
+            "pub_num": "143",
+            "pages": 60,
+            "pdf_size": 650,
+            "description": ""
+        }
+    }
+]

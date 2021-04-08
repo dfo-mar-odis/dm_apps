@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4685,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Lack of Recovery in St. Lawrence Estuary beluga",
+            "title_fr": "Absence de rétablissement du béluga de l'estuaire du Saint-Laurent",
+            "pub_year": 2007,
+            "lead_author_2": "Hammill, M.O., L.N. Measures, J.-F. Gosselin, V. Lesage.",
+            "pub_num": "026",
+            "pages": 23,
+            "pdf_size": 194,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1276,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The offshore cod fishery in 4X: A biological update",
+            "pub_year": 1983,
+            "lead_author_2": "J.A. Gagné; L. Currie; K. Waiwood;",
+            "pub_num": "043",
+            "pages": 43,
+            "pdf_size": 1436,
+            "description": ""
+        }
+    }
+]

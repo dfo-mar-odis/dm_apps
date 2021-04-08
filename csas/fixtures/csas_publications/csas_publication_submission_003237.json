@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3237,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Pollock in 4VWX5Zc",
+            "title_fr": "Goberge de 4VWX5Zc",
+            "pub_year": 1996,
+            "lead_author_2": "Sinclair, Mike",
+            "pub_num": "094",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

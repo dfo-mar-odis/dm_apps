@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2551,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of American eel elver fishery in Scotia-Fundy area, Maritimes Region",
+            "pub_year": 1996,
+            "lead_author_2": "B. M. Jessop",
+            "pub_num": "004",
+            "pages": 7,
+            "pdf_size": 412,
+            "description": ""
+        }
+    }
+]

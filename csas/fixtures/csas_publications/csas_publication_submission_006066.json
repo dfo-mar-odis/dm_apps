@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6066,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Western Atlantic Bluefin Tuna (Thunnus thynnus) in Canadian Waters",
+            "title_fr": "Évaluation du potentiel de rétablissement du thon rouge de l'Atlantique Ouest (Thunnus thynnus) dans les eaux canadienne",
+            "pub_year": 2011,
+            "lead_author_2": "J. Neilson / L. Harris / V. Myra",
+            "pub_num": "056",
+            "pages": 17,
+            "pdf_size": 330,
+            "description": ""
+        }
+    }
+]

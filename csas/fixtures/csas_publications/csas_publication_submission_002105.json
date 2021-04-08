@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2105,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Risk analysis of 4VsW cod",
+            "pub_year": 1991,
+            "lead_author_2": "R, Mohn",
+            "pub_num": "040",
+            "pages": 21,
+            "pdf_size": 959,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 468,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Brook Trout (Salvelinus fontinalis Mitchill.) Population Dynamics and Recreational Fishery in Indian Bay Brook, Newfoundland (1995-1998)",
+            "pub_year": 1999,
+            "lead_author_2": "vanZyll de Jong, M.C., Lester, N.P., Korver, R.M., Norris, W., Wicks, B.L.",
+            "pub_num": "097",
+            "pages": 43,
+            "pdf_size": 2171,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7352,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Overview of Discards from Canadian Commercial Groundfish Fisheries in Northwest Atlantic Fisheries Organization (NAFO) Divisions 4X5Yb for 2007-2011",
+            "title_fr": "Aperçu des rejets de poisson de fond liés aux pêches commerciales canadiennes dans les divisions 4X5Yb de l'Organisation des pêches de l'Atlantique Nord-Ouest entre 2007 et 2011",
+            "pub_year": 2015,
+            "lead_author_2": "Clark, K.J., Hansen, S.C., and Gale, J.",
+            "pub_num": "054",
+            "pages": 55,
+            "pdf_size": 1167,
+            "description": ""
+        }
+    }
+]

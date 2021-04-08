@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6111,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop Fishery Area/Time Closure to Protect Cod Spawning Aggregations in 5Z (Georges Bank)",
+            "title_fr": "Fermetures spatio-temporelles de la pêche du pétoncle destinées à protéger les bancs de morue qui frayent dans 5Z (banc Georges)",
+            "pub_year": 2012,
+            "lead_author_2": "Alan Reeves",
+            "pub_num": "011",
+            "pages": 8,
+            "pdf_size": 202,
+            "description": ""
+        }
+    }
+]

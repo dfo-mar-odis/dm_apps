@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 76,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results of the 1997 Fleming survey of demersal juvenile cod in the coastal zone of eastern Newfoundland",
+            "pub_year": 1998,
+            "lead_author_2": "Methven, D.A., D.C. Schneider, D.W. Ings, M.B. Davis",
+            "pub_num": "077",
+            "description": ""
+        }
+    }
+]

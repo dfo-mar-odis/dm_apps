@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5274,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Lobster in Lobster Fishing Area 41 (4X + 5Zc)",
+            "title_fr": "Évaluation du homard de la zone de pêche du homard 41 (4X + 5Zc)",
+            "pub_year": 2009,
+            "lead_author_2": "Pezzack, D.",
+            "pub_num": "033",
+            "pages": 15,
+            "pdf_size": 597,
+            "description": ""
+        }
+    }
+]

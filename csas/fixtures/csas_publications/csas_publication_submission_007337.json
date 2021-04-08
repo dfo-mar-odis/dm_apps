@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7337,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Zonal Peer Review of the Recovery Potential Assessment for Porbeagle (Lamna nasus) in Atlantic Canada; February 19-20, 2015",
+            "title_fr": "Compte rendu de l’examen zonal par des pairs sur l’Évaluation du potentiel de rétablissement de la maraîche (Lamna nasus) au Canada atlantique ; les 19 et 20 février 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Kristian Curran",
+            "pub_num": "036",
+            "pages": 18,
+            "pdf_size": 154,
+            "description": ""
+        }
+    }
+]

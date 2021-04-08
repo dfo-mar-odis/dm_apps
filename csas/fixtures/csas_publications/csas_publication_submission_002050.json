@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2050,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Effects of revising 4T herring catch-at-age matrices on the 1989 assessment",
+            "pub_year": 1990,
+            "lead_author_2": "R.R. Claytor; H.M.C. Dupuis",
+            "pub_num": "049",
+            "pages": 39,
+            "pdf_size": 1570,
+            "description": ""
+        }
+    }
+]

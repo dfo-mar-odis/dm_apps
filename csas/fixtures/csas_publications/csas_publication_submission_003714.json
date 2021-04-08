@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3714,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pre-season run size forecasts for Fraser River sockeye and pink salmon in 2003",
+            "title_fr": "Prévisions pré-saison des remontes de saumon rouge et de saumon rose du Fraser en 2003",
+            "pub_year": 2002,
+            "lead_author_2": "A. Cass",
+            "pub_num": "116",
+            "pages": 32,
+            "pdf_size": 212,
+            "description": ""
+        }
+    }
+]

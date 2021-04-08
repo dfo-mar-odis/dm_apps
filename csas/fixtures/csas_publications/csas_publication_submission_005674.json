@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5674,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Recovery potential assessment of Roundnose Grenadier (Coryphaenoides rupestris Gunnerus, 1765) in Northwest Atlantic waters ",
+            "title_fr": "Évaluation du potentiel de rétablissement du grenadier de roche (Coryphaenoides rupestris Gunnerus, 1765) dans les eaux de l'Atlantique Nord-Ouest",
+            "pub_year": 2011,
+            "lead_author_2": "M.R. Simpson, C.M. Miri, J.M. Mercer, J. Bailey, D. Power, D. Themelis, and M. Treble",
+            "pub_num": "077",
+            "pages": 74,
+            "pdf_size": 2479,
+            "description": ""
+        }
+    }
+]

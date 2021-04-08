@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1360,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Yield per recruit analysis and minimum meat weight recommendations for the Bay of Fundy scallop fishery",
+            "pub_year": 1994,
+            "lead_author_2": "D.L. Roddick; M.J. Lundy; E. Kenchington",
+            "pub_num": "058",
+            "pages": 15,
+            "pdf_size": 662,
+            "description": ""
+        }
+    }
+]

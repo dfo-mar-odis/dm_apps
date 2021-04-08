@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1787,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An evaluation of the population dynamics of 4X haddock during 1962-87 with yield projected to 1988",
+            "pub_year": 1987,
+            "lead_author_2": "R. O'Boyle; D. Wallace",
+            "pub_num": "097",
+            "pages": 57,
+            "pdf_size": 2257,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4701,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Peer Review Meeting (by teleconference): Review of \"A proposal to reduce risk of vessel and right whale collision in the Roseway Basin region of the SW Scotian Shelf\"; November 3, 2006",
+            "title_fr": "Réunion d'examen national par les pairs (par téléconférence) : Examen de la « Proposition de réduction du risque de collision entre les navires et les baleines noires dans la région du bassin Roseway du sud-ouest du plateau néo-écossais »; le 3 novembre 2006",
+            "pub_year": 2010,
+            "lead_author_2": "Simon, P. L. Harris.",
+            "pub_num": "028",
+            "pages": 21,
+            "pdf_size": 897,
+            "description": ""
+        }
+    }
+]

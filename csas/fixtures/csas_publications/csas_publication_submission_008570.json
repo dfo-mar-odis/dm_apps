@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8570,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical Oceanographic Conditions in the Labrador Sea",
+            "lead_author_2": "Igor Yashayaev",
+            "description": ""
+        }
+    }
+]

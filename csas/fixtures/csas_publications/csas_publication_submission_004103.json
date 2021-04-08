@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4103,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scope for human-induced mortality in the context of Atlantic whitefish (Coregonus huntsmani) survival and recovery",
+            "title_fr": "Niveau de tolérance de mortalité anthropique du corégone atlantique (Coregonus huntsmani) en regard de sa survie et de son rétablissement",
+            "pub_year": 2004,
+            "lead_author_2": "Bradford, R.G., H. Schaefer, G. Stevens.",
+            "pub_num": "110",
+            "pages": 50,
+            "pdf_size": 2653,
+            "description": ""
+        }
+    }
+]

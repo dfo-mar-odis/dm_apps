@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 423,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Overview of lacustrine stocking experiments with swim-up and fall-fingerling Atlantic salmon (Salmo salar) in Newfoundland",
+            "pub_year": 1986,
+            "lead_author_2": "V.A. Pepper",
+            "pub_num": "111",
+            "pages": 13,
+            "pdf_size": 646,
+            "description": ""
+        }
+    }
+]

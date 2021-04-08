@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1290,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Quelques données sur le flétan du Groenland de 4RST",
+            "pub_year": 1983,
+            "lead_author_2": "C. Tremblay",
+            "pub_num": "057",
+            "description": ""
+        }
+    }
+]

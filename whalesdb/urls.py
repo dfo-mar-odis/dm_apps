@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views, utils
 
 app_name = 'whalesdb'
 
@@ -101,10 +101,6 @@ urlpatterns = [
     path('update/tea/<int:pk>/', views.TeaUpdate.as_view(), name="update_tea"),
     path('list/tea/', views.TeaList.as_view(), name="list_tea"),
 
-    path('create/rtt/', views.RttCreate.as_view(), name="create_rtt"),
-    path('list/rtt/', views.RttList.as_view(), name="list_rtt"),
-    path('details/rtt/<int:pk>/', views.RttDetails.as_view(), name="details_rtt"),
-
     path('create/rec/', views.RecCreate.as_view(), name="create_rec"),
     path('create/rec/<int:eda>/', views.RecCreate.as_view(), name="create_rec"),
     path('list/rec/', views.RecList.as_view(), name="list_rec"),
@@ -118,11 +114,22 @@ urlpatterns = [
     path('update/ret/<int:pk>/', views.RetUpdate.as_view(), name="update_ret"),
 
     path('create/rci/<int:rec_id>/<str:pop>/', views.RciCreate.as_view(), name="create_rci"),
+    path('delete/rci/<int:pk>/', views.rci_delete, name="delete_rci"),
 
     path('create/ree/<int:rec_id>/<str:pop>/', views.ReeCreate.as_view(), name="create_ree"),
 
     path('settings/help-texts/', views.HelpTextFormsetView.as_view(), name="manage_help_texts"),
     path('settings/help-text/<int:pk>/delete/', views.HelpTextHardDeleteView.as_view(), name="delete_help_text"),
+
+    path('ajax/get_fields/', utils.ajax_get_fields, name='ajax_get_fields'),
+
+    # managed lists
+    path('settings/delete-managed/<str:key>/<int:pk>/', views.delete_managed, name="delete_managed"),
+    path('settings/managed-eqt/', views.EqtMangedView.as_view(), name="managed_eqt"),
+    path('settings/managed-ert/', views.ErtMangedView.as_view(), name="managed_ert"),
+    path('settings/managed-prm/', views.PrmMangedView.as_view(), name="managed_prm"),
+    path('settings/managed-rtt/', views.RttMangedView.as_view(), name="managed_rtt"),
+    path('settings/managed-set/', views.SetMangedView.as_view(), name="managed_set"),
 
 ]
 

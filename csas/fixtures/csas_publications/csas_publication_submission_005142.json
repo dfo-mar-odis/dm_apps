@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5142,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the regional peer review of a synthesis of the outcomes from the Strait of Georgia Ecosystem Research Initiative, and their ecosystem-based management and policy implications; September 11-13, 2012",
+            "title_fr": "Compte rendu de la réunion d'examen régional par les pairs d'une synthèse des résultats de l'initiative de recherche écosystémique du détroit de Géorgie et leurs répercussions sur la gestion et les politiques en matière d'écosystèmes ; du 11-13 septembre 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Marilyn Joyce",
+            "pub_num": "045",
+            "pages": 30,
+            "pdf_size": 248,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1350,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Evaluation of the impacts of the Atlantic Salmon Management Plan (1984-88) in the Newfoundland Region",
+            "pub_year": 1990,
+            "lead_author_2": "M.F. O'Connell; J.B. Dempson; D.G. Reddin",
+            "pub_num": "035",
+            "pages": 46,
+            "pdf_size": 2146,
+            "description": ""
+        }
+    }
+]

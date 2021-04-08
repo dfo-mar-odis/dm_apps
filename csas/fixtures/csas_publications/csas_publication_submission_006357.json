@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6357,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Lobster stock status in the coastal waters of Québec (LFAs 15 to 22) in 2011 and determination of reference points for the implementation of a precautionary approach in the Magdalen Islands (LFA 22)",
+            "title_fr": "État des stocks de homard des eaux côtières du Québec (ZPH 15 à 22) en 2011 et détermination de points de référence pour la mise en oeuvre d'une approche de précaution aux Îles-de-la-Madeleine (ZPH 22)",
+            "pub_year": 2012,
+            "lead_author_2": "Gendron, L., G. Savard.",
+            "pub_num": "010",
+            "pages": 160,
+            "pdf_size": 2058,
+            "description": ""
+        }
+    }
+]

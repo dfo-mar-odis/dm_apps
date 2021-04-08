@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2009,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1990s a Unique Decade for Plankton Change in the Northwest Atlantic",
+            "title_fr": "Les années 1990 : une décennie unique de changements dans le plancton dans l'Atlantique Nord Ouest",
+            "pub_year": 2004,
+            "lead_author_2": "Sameoto, D.",
+            "pub_num": "074",
+            "pages": 21,
+            "pdf_size": 2832,
+            "description": ""
+        }
+    }
+]

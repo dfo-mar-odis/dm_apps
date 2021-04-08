@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1470,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An assessment of the 4T herring stock",
+            "pub_year": 1984,
+            "lead_author_2": "M. Ahrens; G. Nielsen",
+            "pub_num": "064",
+            "pages": 36,
+            "pdf_size": 1467,
+            "description": ""
+        }
+    }
+]

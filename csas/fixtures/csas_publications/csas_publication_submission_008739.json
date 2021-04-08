@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8739,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Assessment of the risk to Fraser River Sockeye Salmon due to viral haemorrhagic septicaemia virus IVa (VHSV-IVa) transfer from Atlantic Salmon farms in the Discovery Islands area, British Columbia",
+            "pub_year": 2020,
+            "lead_author_2": "Parsons, G. J., Burgetz, I. J., Weber, L., Garver, K. A., Jones, S. R. M., Johnson, S., Hawley, L., Davis, B., Aubry, P., Wade, J. and Mimeault, C.",
+            "pub_num": "065",
+            "description": ""
+        }
+    }
+]

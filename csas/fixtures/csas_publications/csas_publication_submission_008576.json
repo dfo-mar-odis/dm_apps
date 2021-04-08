@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8576,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Updated Estimates of Harp Seal Bycatch and Total Removals in the Northwest Atlantic",
+            "title_fr": "Estimations actualisées des prises accessoires et des prélèvements totaux de phoques du Groenland dans l’Atlantique Nord-Ouest",
+            "pub_year": 2020,
+            "lead_author_2": "Stenson, G.B. and Upward, P.",
+            "pub_num": "014",
+            "pages": 23,
+            "pdf_size": 1013,
+            "description": ""
+        }
+    }
+]

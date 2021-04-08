@@ -187,6 +187,14 @@ class URLTest(TestCase):
     def test_url_update_pop_eqr_view(self):
         self.basic_en_url_test('whalesdb:update_eqr', 'whalesdb/update/eqr/1/pop/', views.EqrUpdate, [1, 'pop'])
 
+    @tag('eqt', 'url', 'managed')
+    def test_url_managed_rtt_view(self):
+        self.basic_en_url_test('whalesdb:managed_eqt', 'whalesdb/settings/managed-eqt/', views.EqtMangedView)
+
+    @tag('ert', 'url', 'managed')
+    def test_url_managed_rtt_view(self):
+        self.basic_en_url_test('whalesdb:managed_ert', 'whalesdb/settings/managed-ert/', views.ErtMangedView)
+
     @tag('etr', 'url', 'list')
     def test_url_list_etr_view(self):
         self.basic_en_url_test('whalesdb:list_etr', 'whalesdb/list/etr/', views.EtrList)
@@ -255,6 +263,10 @@ class URLTest(TestCase):
     def test_url_details_prj_view(self):
         self.basic_en_url_test('whalesdb:details_prj', 'whalesdb/details/prj/1/', views.PrjDetails, [1])
 
+    @tag('prm', 'url', 'managed')
+    def test_url_managed_prm_view(self):
+        self.basic_en_url_test('whalesdb:managed_prm', 'whalesdb/settings/managed-prm/', views.PrmMangedView)
+
     @tag('rsc', 'url', 'create')
     def test_url_create_rsc_view(self):
         self.basic_en_url_test('whalesdb:create_rsc', 'whalesdb/create/rsc/', views.RscCreate)
@@ -278,6 +290,10 @@ class URLTest(TestCase):
     @tag('rst', 'url', 'delete')
     def test_url_delete_rst_view(self):
         self.basic_en_url_test('whalesdb:delete_rst', 'whalesdb/delete/rst/1/', views.rst_delete, [1])
+
+    @tag('set', 'url', 'managed')
+    def test_url_managed_set_view(self):
+        self.basic_en_url_test('whalesdb:managed_set', 'whalesdb/settings/managed-set/', views.SetMangedView)
 
     @tag('stn', 'url', 'create')
     def test_url_create_stn_view(self):
@@ -333,17 +349,9 @@ class URLTest(TestCase):
     def test_url_list_tea_view(self):
         self.basic_en_url_test('whalesdb:list_tea', 'whalesdb/list/tea/', views.TeaList)
 
-    @tag('rtt', 'url', 'list')
-    def test_url_list_rtt_view(self):
-        self.basic_en_url_test('whalesdb:list_rtt', 'whalesdb/list/rtt/', views.RttList)
-
-    @tag('rtt', 'url', 'details')
-    def test_url_details_rtt_view(self):
-        self.basic_en_url_test('whalesdb:details_rtt', 'whalesdb/details/rtt/1/', views.RttDetails, [1])
-
-    @tag('rtt', 'url', 'create')
-    def test_url_create_rtt_view(self):
-        self.basic_en_url_test('whalesdb:create_rtt', 'whalesdb/create/rtt/', views.RttCreate)
+    @tag('rtt', 'url', 'managed')
+    def test_url_managed_rtt_view(self):
+        self.basic_en_url_test('whalesdb:managed_rtt', 'whalesdb/settings/managed-rtt/', views.RttMangedView)
 
     @tag('rec', 'url', 'create')
     def test_url_create_rec_view(self):
@@ -376,6 +384,10 @@ class URLTest(TestCase):
     @tag('rci', 'url', 'create', 'pop')
     def test_url_create_rci_pop_ste_view(self):
         self.basic_en_url_test('whalesdb:create_rci', 'whalesdb/create/rci/1/pop/', views.RciCreate, [1, 'pop'])
+
+    @tag('rci', 'url', 'delete', 'pop')
+    def test_url_delete_rci_pop_ste_view(self):
+        self.basic_en_url_test('whalesdb:delete_rci', 'whalesdb/delete/rci/1/', views.rci_delete, [1])
 
     @tag('ree', 'url', 'create', 'pop')
     def test_url_create_set_pop_ree_view(self):

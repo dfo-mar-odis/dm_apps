@@ -6,7 +6,7 @@
 
 <div class="mb-5">
   <div class="mb-2 neighbours">
-    <h2>{% trans "Status Reports" %}</h2>
+    <p class="lead">{% trans "Status Reports" %}</p>
   </div>
   <div v-if="!status_report_loading" class="mb-3 neighbours">
     <button @click="openStatusReportModal()" class="{{ btn_class_1 }} no-print" v-if="canModify">
@@ -66,10 +66,10 @@
           {% endif %}
         {% endfor %}
         <td class="to-the-right" >
-          <button @click="goStatusReportDetail(item.id, 'print')" class="no-print">
+          <button @click="goStatusReportDetail(item.id, 'print')" class="{{ btn_class_2 }} no-print">
             <span class="mdi mdi-printer"></span>
           </button>
-          <button v-if="canModify" @click="goStatusReportDetail(item.id)" class="no-print">
+          <button v-if="canModify" @click="goStatusReportDetail(item.id)" class="{{ btn_class_2 }} no-print">
             <span class="mdi mdi-arrow-top-right"></span>
             {% trans "open" %}
           </button>

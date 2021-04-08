@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8152,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Status of the Hagfish (Myxine glutinosa) Fishery in the Maritimes Region",
+            "title_fr": "État de la pêche de la myxine (Myxine glutinosa) dans la région des maritimes",
+            "pub_year": 2018,
+            "lead_author_2": "Jennifer Ford",
+            "pub_num": "048",
+            "pages": 39,
+            "pdf_size": 1497,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3382,
+        "fields": {
+            "series": 7,
+            "lead_region": [6],
+            "title_en": "Update on the Status of Redfish Stocks in the Northwest Atlantic: Redfish in Units 1 and 2, and in Division 3O",
+            "title_fr": "Mise à jour de l'état des stocks de sébaste dans l'Atlantique nord-ouest: sébaste des unités 1 et 2 et de la division 3O",
+            "pub_year": 2001,
+            "lead_author_2": "Power D.",
+            "pub_num": "A1-01",
+            "pages": 23,
+            "pdf_size": 1310,
+            "description": ""
+        }
+    }
+]

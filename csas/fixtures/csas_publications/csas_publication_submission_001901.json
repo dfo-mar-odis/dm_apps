@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1901,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Margaree River gaspereau fishery, 1988",
+            "pub_year": 1989,
+            "lead_author_2": "G.J. Chaput; C.H. LeBlanc",
+            "pub_num": "029",
+            "pages": 29,
+            "pdf_size": 1070,
+            "description": ""
+        }
+    }
+]

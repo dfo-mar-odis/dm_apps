@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5910,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Concept Paper for an Encounter Response Protocol for Fisheries Management",
+            "title_fr": "Document de conception concernant un protocole d'intervention en cas de rencontre pour la gestion des pêches",
+            "pub_year": 2011,
+            "lead_author_2": "Boutillier, J., J.L. Finney, J.C. Rice",
+            "pub_num": "010",
+            "pages": 25,
+            "pdf_size": 620,
+            "description": ""
+        }
+    }
+]

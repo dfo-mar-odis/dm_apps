@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6891,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Harvest rates and movements of cod (Gadus morhua) in NAFO Divs. 3KL from tagging and acoustic telemetry",
+            "title_fr": "Taux de récolte et déplacements de la morue (Gadus morhua) dans la division 3KL de l'Organisation des pêches de l'Atlantique Nord-Ouest (OPANO) provenant du marquage et de la télémétrie acoustique",
+            "pub_year": 2013,
+            "lead_author_2": "J. Brattey",
+            "pub_num": "104",
+            "pages": 36,
+            "pdf_size": 2427,
+            "description": ""
+        }
+    }
+]

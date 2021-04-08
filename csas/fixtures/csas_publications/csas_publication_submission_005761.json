@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5761,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Advice on size and trend of the Cumberland Sound beluga whale population, 1990 to 2009",
+            "title_fr": "Avis scientifique sur la taille et les tendances de la population de bélugas de la baie Cumberland, de 1990 à 2009",
+            "pub_year": 2013,
+            "lead_author_2": "Ferguson, S.",
+            "pub_num": "003",
+            "pages": 6,
+            "pdf_size": 196,
+            "description": ""
+        }
+    }
+]

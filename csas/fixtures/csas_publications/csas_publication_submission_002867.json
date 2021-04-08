@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2867,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of Redfish in Unit 2 (Laurentian Channel Management Unit).",
+            "pub_year": 1997,
+            "lead_author_2": "Power, D., Orr, D.",
+            "pub_num": "113",
+            "pages": 44,
+            "pdf_size": 2445,
+            "description": ""
+        }
+    }
+]

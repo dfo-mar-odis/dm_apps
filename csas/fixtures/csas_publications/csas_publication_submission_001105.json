@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1105,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Review of abundance indices and stock assessment for shrimp (Pandalus borealis) in the Labrador channels",
+            "pub_year": 1981,
+            "lead_author_2": "D.G. Parsons; G.E. Tucker; P.J. Veitch",
+            "pub_num": "007",
+            "pages": 41,
+            "pdf_size": 1251,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1673,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of haddock in NAFO Division 5Z",
+            "pub_year": 1986,
+            "lead_author_2": "S. Gavaris; K.G. Waiwood",
+            "pub_num": "087",
+            "pages": 34,
+            "pdf_size": 1690,
+            "description": ""
+        }
+    }
+]

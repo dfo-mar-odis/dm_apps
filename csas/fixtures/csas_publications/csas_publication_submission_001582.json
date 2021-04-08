@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1582,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Une évaluation du maquereau du nord-ouest de l'Atlantique, sous-régions 2 à 6",
+            "pub_year": 1985,
+            "lead_author_2": "B. Mercille; J.J. Maguire",
+            "pub_num": "075",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5695,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Synthesis of biological and harvest information used to assess populations of northern form Dolly Varden (Salvelinus malma malma) in Canada. Part I: Rat River",
+            "title_fr": "Synthèse des données biologiques etdes renseignements sur la récolteutilisés pour évaluer les populations dela forme nordique du Dolly Varden(Salvelinus malma malma) au Canada –Partie I : le Dolly Varden de la rivière Rat",
+            "pub_year": 2011,
+            "lead_author_2": "M.-J. Roux, K.L. Howland, C.P. Gallagher, R.F. Tallman",
+            "pub_num": "132",
+            "pages": 85,
+            "pdf_size": 452,
+            "description": ""
+        }
+    }
+]

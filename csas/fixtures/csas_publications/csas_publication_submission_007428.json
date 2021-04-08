@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7428,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Coast of Bays Metrics: Geography, Hydrology and Physical Oceanography of an Aquaculture Area of the South Coast of Newfoundland",
+            "title_fr": "Mesures de la Coast of Bays: géographie, hydrologie et océanographie physique d'une zone aquacole de la côte sud de Terre-Neuve",
+            "pub_year": 2017,
+            "lead_author_2": "Donnet, S., Ratsimandresy, A.W., Goulet, P., Doody, C., Burke, S., and Cross, S.",
+            "pub_num": "076",
+            "pages": 119,
+            "pdf_size": 20856,
+            "description": ""
+        }
+    }
+]

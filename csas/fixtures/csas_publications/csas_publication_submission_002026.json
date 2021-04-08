@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2026,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Development of a Closed Area in NAFO 0A to protect Narwhal Over-Wintering Grounds, including Deep-sea Corals",
+            "title_fr": "Développement d'une zone fermée de la division 0A de l'OPANO afin de protéger les aires de répartition du narval en hiver, notamment les coraux des grands fonds",
+            "pub_year": 2007,
+            "lead_author_2": "Treble, M.",
+            "pub_num": "002",
+            "pages": 16,
+            "pdf_size": 409,
+            "description": ""
+        }
+    }
+]

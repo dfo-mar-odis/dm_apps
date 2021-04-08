@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3292,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Development of a New Fishery for Tanner Crabs (Chionoecetes tanneri Rathbun, 1893) off British Columbia: 2003 Status Report",
+            "title_fr": "Développement d'une pêche nouvelle au crabe des neiges du Pacifique (Chionoecetes tanneri Rathbun, 1893) au large de la Colombie-Britannique : Rapport d'état pour 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Gillespie, G.E., K.H. Fong, A.C. Phillips, G.R. Meyer, J.A. Boutillier.",
+            "pub_num": "132",
+            "pages": 97,
+            "pdf_size": 2270,
+            "description": ""
+        }
+    }
+]

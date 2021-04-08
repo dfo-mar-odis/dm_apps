@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1257,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish of NAFO Division 3O",
+            "pub_year": 1983,
+            "lead_author_2": "D.B. Atkinson",
+            "pub_num": "024",
+            "pages": 9,
+            "pdf_size": 238,
+            "description": ""
+        }
+    }
+]

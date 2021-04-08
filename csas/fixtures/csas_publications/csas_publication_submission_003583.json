@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3583,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Witch Flounder in NAFO Subdivision 3Ps",
+            "pub_year": 1999,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "A2-09",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6710,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Assessment for the American Eel (Anguilla rostrata) in eastern Canada: functional description of habitat",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'anguille d'Amérique (Anguilla rostrata) dans l'est du Canada : description fonctionnelle de l'habitat",
+            "pub_year": 2013,
+            "lead_author_2": "Pratt, T.C., Bradford, R.G., Cairns, D.K., Castonguay, M., Chaput, G., Clarke, K.D., and Mathers, A",
+            "pub_num": "132",
+            "pages": 54,
+            "pdf_size": 1567,
+            "description": ""
+        }
+    }
+]

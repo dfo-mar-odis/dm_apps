@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 375,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Georges Bank (ICNAF Subdivision 5Ze) scallop stock 1972-76 incorporated",
+            "pub_year": 1977,
+            "lead_author_2": "J.F. Caddy; G.S. Jamieson",
+            "pub_num": "032",
+            "pages": 23,
+            "pdf_size": 487,
+            "description": ""
+        }
+    }
+]

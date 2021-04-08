@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1770,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic herring in NAFO Division 4T, 1987",
+            "pub_year": 1987,
+            "lead_author_2": "E.M.P. Chadwick; G.A. Nielsen",
+            "pub_num": "080",
+            "pages": 48,
+            "pdf_size": 1891,
+            "description": ""
+        }
+    }
+]

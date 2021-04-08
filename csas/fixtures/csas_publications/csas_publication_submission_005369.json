@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5369,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Scientific Information in Support of Identifying Critical Habitat for SARA-listed White Sturgeon Populations in Canada: Nechako, Columbia, Kootenay and Upper Fraser (2009)",
+            "title_fr": "Information scientifique en appui à l'identification de l'habitat essentiel des populations d'esturgeons blancs inscrites à la liste de la LEP au Canada : Nechako, Columbia, Kootenay et haut Fraser (2009)",
+            "pub_year": 2012,
+            "lead_author_2": "Hatfield, T., Coopper, T. and McAdam, S.",
+            "pub_num": "153",
+            "pages": 111,
+            "pdf_size": 14115,
+            "description": ""
+        }
+    }
+]

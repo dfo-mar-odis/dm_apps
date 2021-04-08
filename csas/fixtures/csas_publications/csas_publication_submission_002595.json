@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2595,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Stock status of Atlantic salmon from Conne River, SFA 11, Newfoundland, 1995",
+            "pub_year": 1996,
+            "lead_author_2": "J.B. Dempson; G. Furey",
+            "pub_num": "048",
+            "pages": 31,
+            "pdf_size": 1280,
+            "description": ""
+        }
+    }
+]

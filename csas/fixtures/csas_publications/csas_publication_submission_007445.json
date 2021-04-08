@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7445,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Désignation des zones d'importance écologique et biologique (ZIEB) dans la région côtière du golfe du Saint-Laurent fondée sur la répartition des invertébrés benthiques (Titre provisoire)",
+            "title_fr": "Désignation des zones d'importance écologique et biologique (ZIEB) dans la région côtière du golfe du Saint-Laurent fondée sur la répartition des invertébrés benthiques (Titre provisoire)",
+            "lead_author_2": "Chris McKindsey",
+            "description": ""
+        }
+    }
+]

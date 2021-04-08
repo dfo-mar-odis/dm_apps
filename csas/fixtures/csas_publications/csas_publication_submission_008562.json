@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8562,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Review of the indicators and recommendations of an Ecological Monitoring Plan for the Banc-des-Américains proposed Marine Protected Area (MPA), May 22-23, 2018",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur la revue des indicateurs et recommandations d’un plan de suivi écologique pour l’aire marine protégée (AMP) proposée du Banc-des-Américains, du 22 au 23 mai 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Virginie Christopherson",
+            "pub_num": "024",
+            "pages": 17,
+            "pdf_size": 314,
+            "description": ""
+        }
+    }
+]

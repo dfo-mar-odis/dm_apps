@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 800,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Brief Review of Biological Characteristics and Assessment of the Commercial Gaspereau Fishery on the Lower Saint John River, N. B.",
+            "title_fr": "Aperçu des caractéristiques biologiques du gaspareau de la rivière Saint-Jean inférieure (N.-B.) et évaluation de sa pêche commerciale",
+            "pub_year": 2001,
+            "lead_author_2": "Jessop, B.M.",
+            "pub_num": "060",
+            "pages": 32,
+            "pdf_size": 740,
+            "description": ""
+        }
+    }
+]

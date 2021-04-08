@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1505,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary monitoring of short term movements for lobsters (Homarus americanus) in the Bideford River, Prince Edward Island, using ultrasonic telemetry",
+            "pub_year": 1984,
+            "lead_author_2": "D.R. Maynard; G.Y. Conan",
+            "pub_num": "099",
+            "pages": 21,
+            "pdf_size": 879,
+            "description": ""
+        }
+    }
+]

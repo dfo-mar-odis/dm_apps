@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 804,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 2001,
+            "lead_author_2": "Perry, G. N., T. H. Brown",
+            "pub_num": "040",
+            "description": ""
+        }
+    }
+]

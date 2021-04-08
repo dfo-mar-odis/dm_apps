@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6385,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Fishing Area 29: Stock status and update for 2012",
+            "title_fr": "Zone de pêche 29 du pétoncle: état du stock et mise à jour pour 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Stephen Smith",
+            "pub_num": "042",
+            "pages": 67,
+            "pdf_size": 1800,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3616,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Newfoundland and Labrador Snow Crab",
+            "title_fr": "Crabe des neiges de Terre-Neuve et du Labrador",
+            "pub_year": 2002,
+            "pub_num": "C2-01",
+            "pages": 10,
+            "pdf_size": 320,
+            "description": ""
+        }
+    }
+]

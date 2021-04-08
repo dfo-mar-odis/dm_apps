@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1812,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Exploitation du Pétoncle aux Îles-de-la-Madeleine en 1987",
+            "pub_year": 1988,
+            "lead_author_2": "M. Giguère; B. Légaré",
+            "pub_num": "016",
+            "pages": 38,
+            "description": ""
+        }
+    }
+]

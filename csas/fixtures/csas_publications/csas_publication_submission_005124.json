@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5124,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Habitat Utilization in the Vicinity of Three Proposed Finfish Aquaculture Sites in Shelburne County, Nova Scotia",
+            "title_fr": "Utilisation de l'habitat à proximité de trois sites aquacoles de poissons proposés dans le comté de Shelburne (Nouvelle-Écosse)",
+            "pub_year": 2011,
+            "lead_author_2": "L. Bennett, C. Denton , M. Greenlaw, P. Lawton, D. Pezzack, D. Roddick, J. Simon, S. Smith, J. Tremblay / L. Bennett / V. Myra",
+            "pub_num": "015",
+            "pages": 11,
+            "pdf_size": 464,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3274,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "An exploratory analysis of the northern Gulf of St. Lawrence (3Pn4RS) Atlantic cod (Gadus morhua) tagging database",
+            "title_fr": "Analyse exploratoire de la base de données du marquage de la morue (Gadus morhua) du nord du Golfe du Saint-Laurent (3Pn4RS)",
+            "pub_year": 2004,
+            "lead_author_2": "Brattey, J., Healey, B.",
+            "pub_num": "044",
+            "pages": 36,
+            "pdf_size": 503,
+            "description": ""
+        }
+    }
+]

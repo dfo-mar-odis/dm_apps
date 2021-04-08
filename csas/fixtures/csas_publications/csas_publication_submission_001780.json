@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1780,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Impact of dragraking on the reproductive capacity of southern Gulf of St. Lawrence Irish Moss (Chondrus crispus)",
+            "pub_year": 1987,
+            "lead_author_2": "T. Chopin; J.D. Pringle; R.E. Semple",
+            "pub_num": "090",
+            "pages": 16,
+            "pdf_size": 1430,
+            "description": ""
+        }
+    }
+]

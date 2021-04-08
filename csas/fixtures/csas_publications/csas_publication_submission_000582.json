@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 582,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop production areas 2, 3 and 7 in the Bay of Fundy: Stock status update for 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Smith, S.J., Lundy, M.J., Claytor, R.",
+            "pub_num": "171",
+            "pages": 38,
+            "pdf_size": 1038,
+            "description": ""
+        }
+    }
+]

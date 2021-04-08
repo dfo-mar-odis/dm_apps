@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8402,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the Îles-de-la-Madeleine Atlantic Surfclam stock in 2018",
+            "title_fr": "Évaluation du stock de mactre de l'Atlantique des Îles-de-la-Madeleine en 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Sylvie Brulotte",
+            "pub_num": "031",
+            "pages": 13,
+            "pdf_size": 936,
+            "description": ""
+        }
+    }
+]

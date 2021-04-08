@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 726,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "The harvest of beluga whales in Canada's Western Arctic: hunter-based monitoring of the size and composition of the catch",
+            "pub_year": 2000,
+            "lead_author_2": "Harwood, L.",
+            "pub_num": "141",
+            "pages": 24,
+            "pdf_size": 437,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4798,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Quebec Regional Science Advisory Process on the Review of the Manicouagan MPA Ecological Monitoring Plan; June 21-22, 2010",
+            "title_fr": "Compte rendu de la réunion du processus consultatif scientifique de la région du Québec portant sur l'examen du plan de suivi écologique de la ZPM Manicouagan; les 21 et 22 juin 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Cyr, C.",
+            "pub_num": "044",
+            "pages": 20,
+            "pdf_size": 101,
+            "description": ""
+        }
+    }
+]

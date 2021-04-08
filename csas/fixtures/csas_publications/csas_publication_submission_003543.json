@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3543,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "English Sole Hecate Strait (Areas 5C/D)",
+            "pub_year": 1999,
+            "lead_author_2": "Jeff Fargo",
+            "pub_num": "A6-05",
+            "pages": 23,
+            "description": ""
+        }
+    }
+]

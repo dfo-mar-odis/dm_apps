@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1427,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The fishery for shrimp (Pandalus borealis) and status of the stock in the Hopedale Channel (Div. 2H) 1983",
+            "pub_year": 1984,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch",
+            "pub_num": "021",
+            "pages": 28,
+            "pdf_size": 1170,
+            "description": ""
+        }
+    }
+]

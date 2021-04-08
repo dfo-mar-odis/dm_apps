@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 962,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Transboundary Resources Assessment Committee; 20-14 April 1998",
+            "pub_year": 1998,
+            "lead_author_2": "R.N. O'Boyle, Chairman",
+            "pub_num": "010",
+            "description": ""
+        }
+    }
+]

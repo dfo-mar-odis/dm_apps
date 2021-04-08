@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1190,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An update of the assessment of shrimp (Pandalus borealis) stocks off Labrador",
+            "pub_year": 1982,
+            "lead_author_2": "D.G. Parsons; G.E. Tucker; P.J. Veitch",
+            "pub_num": "010",
+            "pages": 36,
+            "pdf_size": 1497,
+            "description": ""
+        }
+    }
+]

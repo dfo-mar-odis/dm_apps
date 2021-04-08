@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3734,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Workshop on Reference Points for Gadoids, Ottawa; November 5-8, 2002",
+            "title_fr": "Atelier national sur les points de référence concernant les gadidés, Ottawa; 5-8 novembre 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Denis Rivard, Jake Rice",
+            "pub_num": "033",
+            "pages": 21,
+            "pdf_size": 385,
+            "description": ""
+        }
+    }
+]

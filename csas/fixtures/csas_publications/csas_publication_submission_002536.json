@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2536,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Nepisiguit River, New Brunswick, 1994",
+            "pub_year": 1995,
+            "lead_author_2": "A. Locke; F. Mowbray; R. Claytor",
+            "pub_num": "130",
+            "pages": 52,
+            "pdf_size": 1660,
+            "description": ""
+        }
+    }
+]

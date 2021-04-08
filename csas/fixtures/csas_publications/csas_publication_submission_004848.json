@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4848,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Application of QBRAT for a Risk Assessment of the Invasive Tunicate Didemnum sp. in British Columbia",
+            "title_fr": "Application de l'OQRB à l'évaluation du risque de l'espèce de tunicier envahissante Didemnum en Colombie-Britannique",
+            "pub_year": 2007,
+            "lead_author_2": "Herborg, L.M., T. W. Therriault",
+            "pub_num": "056",
+            "pages": 28,
+            "pdf_size": 887,
+            "description": ""
+        }
+    }
+]

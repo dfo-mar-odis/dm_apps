@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2677,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2001 Summer Groundfish Survey update for selected Scotia-Fundy groundfish stocks",
+            "pub_year": 2001,
+            "lead_author_2": "R. Branton and G. Black",
+            "pub_num": "096",
+            "pages": 63,
+            "pdf_size": 4880,
+            "description": ""
+        }
+    }
+]

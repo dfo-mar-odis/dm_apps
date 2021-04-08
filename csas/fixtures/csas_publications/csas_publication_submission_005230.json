@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5230,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Estimation of the exploitation rate of the northern Gulf of St. Lawrence (3Pn,4RS) Atlantic Cod (Gadus morhua) stock, based on tagging data",
+            "title_fr": "Estimation du taux d'exploitation du stock de morue franche (Gadus morhua) du nord du golfe du Saint-Laurent (3Pn,4RS), à partir de données de marquage",
+            "pub_year": 2009,
+            "lead_author_2": "A. Le Bris, A. Fréchet, J.-C. Brêthes",
+            "pub_num": "012",
+            "pages": 38,
+            "pdf_size": 939,
+            "description": ""
+        }
+    }
+]

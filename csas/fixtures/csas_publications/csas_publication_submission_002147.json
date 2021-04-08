@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2147,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the 4T-Vn (Jan.-Apr.) cod stock - a mid year look",
+            "pub_year": 1991,
+            "lead_author_2": "J.M. Hanson; G.A. Chouinard; G.A. Nielsen",
+            "pub_num": "082",
+            "pages": 26,
+            "pdf_size": 1124,
+            "description": ""
+        }
+    }
+]

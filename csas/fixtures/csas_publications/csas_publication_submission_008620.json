@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8620,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Evaluating the Robustness of Candidate Management Procedures in the BC Sablefish (Anoplopoma fibria) Fishery for 2019-2020",
+            "title_fr": "Évaluation de la robustesse des procédures de gestion proposées pour la pêche à la morue charbonnière (Anoplopoma fimbria) en C.-B., 2019-2020",
+            "pub_year": 2020,
+            "lead_author_2": "Brendan Connors",
+            "pub_num": "025",
+            "pages": 37,
+            "pdf_size": 2439,
+            "description": ""
+        }
+    }
+]

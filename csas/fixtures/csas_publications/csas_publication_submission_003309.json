@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3309,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "2009 Review of the Deep Panuke Environmental Effects Monitoring Plan",
+            "title_fr": "Examen 2009 du plan de suivi des effets environnementaux du projet Deep Panuke",
+            "pub_year": 2010,
+            "pub_num": "003",
+            "pages": 6,
+            "pdf_size": 73,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7027,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Regional Peer Review meeting for Assessment of the ability of hydrodynamic and particle tracking models to inform decisions on siting and management of marine finfish aquaculture facilities in British Columbia",
+            "lead_author_2": "Chrys Nevlile",
+            "description": ""
+        }
+    }
+]

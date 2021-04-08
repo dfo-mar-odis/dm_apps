@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4795,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Assessment of Spotted Gar (Lepisosteus oculatus) in Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement du Lépisosté tacheté (Lepisosteus oculatus) au Canada",
+            "pub_year": 2010,
+            "lead_author_2": "Bouvier, L.",
+            "pub_num": "047",
+            "pages": 15,
+            "pdf_size": 203,
+            "description": ""
+        }
+    }
+]

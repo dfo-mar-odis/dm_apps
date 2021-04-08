@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4260,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Vertebrate Predator Control: Effects on Prey Populations in Terrestrial and Aquatic Ecosystems",
+            "title_fr": "Contrôle des prédateurs vertébrés : effets sur les populations de proies dans les écosystèmes terrestres et aquatiques",
+            "pub_year": 2011,
+            "lead_author_2": "W.D. Bowen and D. Lidgard / M. Chadwick / V. Myra",
+            "pub_num": "028",
+            "pages": 39,
+            "pdf_size": 194,
+            "description": ""
+        }
+    }
+]

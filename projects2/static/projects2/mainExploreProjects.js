@@ -2,6 +2,7 @@ var app = new Vue({
   el: '#app',
   delimiters: ["${", "}"],
   data: {
+    showSidebar: true,
     currentUser: {},
     isAdminOrMgmt: false,
     hover: false,
@@ -81,19 +82,19 @@ var app = new Vue({
       if (!endpoint) {
         endpoint = `/api/project-planning/project-years/`;
         // apply filters
-        endpoint += `?is_hidden=${this.filter_is_hidden};` +
-            `id=${this.filter_id};` +
-            `title=${this.filter_title};` +
-            `staff=${this.filter_staff};` +
-            `fiscal_year=${this.filter_fiscal_year};` +
-            `tag=${this.filter_tag};` +
-            `theme=${this.filter_theme};` +
-            `functional_group=${this.filter_functional_group};` +
-            `funding_source=${this.filter_funding_source};` +
-            `region=${this.filter_region};` +
-            `division=${this.filter_division};` +
-            `section=${this.filter_section};` +
-            `status=${this.filter_status};`
+        endpoint += `?is_hidden=${this.filter_is_hidden}&` +
+            `id=${this.filter_id}&` +
+            `title=${this.filter_title}&` +
+            `staff=${this.filter_staff}&` +
+            `fiscal_year=${this.filter_fiscal_year}&` +
+            `tag=${this.filter_tag}&` +
+            `theme=${this.filter_theme}&` +
+            `functional_group=${this.filter_functional_group}&` +
+            `funding_source=${this.filter_funding_source}&` +
+            `region=${this.filter_region}&` +
+            `division=${this.filter_division}&` +
+            `section=${this.filter_section}&` +
+            `status=${this.filter_status}&`
 
       }
 

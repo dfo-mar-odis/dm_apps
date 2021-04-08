@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7216,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Comparison of the Fishery and Conservation Performance of Fixed- and Abundance-Based Exploitation Regimes for Coho Salmon in Southern British Columbia",
+            "title_fr": "Comparaison du rendement des pêches et des activités de conservation relatives aux régimes d'exploitation fixes et fondés sur l'abondance du saumon coho dans le sud de la Colombie-Britannique",
+            "pub_year": 2014,
+            "lead_author_2": "Josh Korman and Arlene Tompkins",
+            "pub_num": "090",
+            "pages": 46,
+            "pdf_size": 840,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2035,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Request to dredge in the Sydenham River, Ontario with potential impact for endangered mussel species",
+            "title_fr": "Demande de dragage de la rivière Sydenham, Ontario, pouvant avoir des répercussions sur les espèces de moules en voie de disparition",
+            "pub_year": 2007,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "004",
+            "pages": 3,
+            "pdf_size": 39,
+            "description": ""
+        }
+    }
+]

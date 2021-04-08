@@ -1,0 +1,38 @@
+{% load i18n %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'edna:index' %}">
+  {% trans "Home" %}
+</a></li>
+
+{% if is_admin %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'edna:reports' %}">
+      {% trans "Reports" %}
+    </a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+      {% trans "Settings" %}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="{% url 'edna:species_list' %}">
+        {% trans "Species" %}
+      </a>
+       <a class="dropdown-item" href="{% url 'edna:manage_tags' %}">
+        {% trans "Tags" %}
+      </a>
+      <a class="dropdown-item" href="{% url 'edna:manage_filtration_types' %}">
+        {% trans "Fitlration Types" %}
+      </a>
+      <a class="dropdown-item" href="{% url 'edna:manage_dna_extraction_protocols' %}">
+        {% trans "DNA Extraction Protocols" %}
+      </a>
+    </div>
+  </li>
+{% endif %}
+
+
+
+
+

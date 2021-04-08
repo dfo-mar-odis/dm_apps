@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7701,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "The Status of Yellowtail Flounder in NAFO Division 4T to 2015",
+            "title_fr": "État de la limande à queue jaune dans la division 4T de l’OPANO jusqu’en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Surette, T., and Swain, D.P.",
+            "pub_num": "058",
+            "pages": 84,
+            "pdf_size": 2722,
+            "description": ""
+        }
+    }
+]

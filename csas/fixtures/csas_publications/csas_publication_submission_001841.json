@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1841,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4T American plaice",
+            "pub_year": 1988,
+            "lead_author_2": "Ross Tallman; Alan Sinclair",
+            "pub_num": "045",
+            "pages": 49,
+            "pdf_size": 1965,
+            "description": ""
+        }
+    }
+]

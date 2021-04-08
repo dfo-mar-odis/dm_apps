@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3908,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subdivision 3Ps cod",
+            "title_fr": "Morue de la sous-division 3Ps",
+            "pub_year": 2003,
+            "lead_author_2": "Brattey, J.",
+            "pub_num": "043",
+            "pages": 14,
+            "description": ""
+        }
+    }
+]

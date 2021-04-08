@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5008,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Population Status and Threats of Lake Sturgeon in Designatable Unit 8 (Great Lakes / St. Lawrence River Watersheds)",
+            "title_fr": "État de la population d'esturgeons jaunes et menaces pesant sur celle-ci dans l'unité désignable 8 (bassin hydrographique des Grands Lacs et du Saint-Laurent)",
+            "pub_year": 2008,
+            "lead_author_2": "Pratt, T.C.",
+            "pub_num": "043",
+            "pages": 37,
+            "pdf_size": 738,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,26 @@
+{% extends 'edna/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+
+  <div class="btns mb-3">
+    <a href="{% url 'edna:species_edit' object.id %}" class="btn btn-warning btn-sm">{% trans "Edit" %}</a>
+    <a href="{% url 'edna:species_delete' object.id %}" class="btn btn-danger btn-sm">{% trans "Delete" %}</a>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col">
+      <table class="table table-sm" style="width: 50%">
+        {% for field in field_list %}
+          {% verbose_td_display object field %}
+        {% endfor %}
+      </table>
+    </div>
+    <div class="col">
+      <div id="map">
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

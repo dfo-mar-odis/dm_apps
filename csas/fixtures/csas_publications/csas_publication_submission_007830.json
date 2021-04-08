@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7830,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Northern Shrimp, Pandalus borealis, and Striped Shrimp, Pandalus montagui, in the Eastern and Western Assessment Zones, February 2017",
+            "title_fr": "Évaluation des stocks de crevette nordique, Pandalus borealis, et de crevette ésope, Pandalus montagui, dans les zones d'évaluation est et ouest, février 2017",
+            "pub_year": 2017,
+            "lead_author_2": "Wojciech Walkusz",
+            "pub_num": "010",
+            "pages": 23,
+            "pdf_size": 807,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3286,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Habitat Subcommittee Meeting; April 6-7, 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Antcliffe, B.",
+            "pub_num": "007",
+            "pages": 29,
+            "pdf_size": 115,
+            "description": ""
+        }
+    }
+]

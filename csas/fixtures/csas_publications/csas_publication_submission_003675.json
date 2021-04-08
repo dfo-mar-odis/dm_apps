@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3675,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The Distribution of Pollock (Pollachius virens) in NAFO Subdivision 3Ps",
+            "title_fr": "La Distribution de Pollock (Pollachius virens) dans la sous-division 3Ps de l'OPANO",
+            "pub_year": 2003,
+            "lead_author_2": "Murphy, E.F.",
+            "pub_num": "004",
+            "pages": 22,
+            "pdf_size": 25,
+            "description": ""
+        }
+    }
+]

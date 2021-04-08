@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1568,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Redfish in management unit 4VWX: A history of stock definition and assessment of present status",
+            "pub_year": 1985,
+            "lead_author_2": "K. Zwanenburg",
+            "pub_num": "061",
+            "pages": 52,
+            "pdf_size": 2076,
+            "description": ""
+        }
+    }
+]

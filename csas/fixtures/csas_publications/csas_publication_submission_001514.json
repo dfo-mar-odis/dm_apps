@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1514,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Monitoring the foraging activity of lobsters and associated species by underwater television",
+            "pub_year": 1985,
+            "lead_author_2": "G.Y. Conan; D. Maynard",
+            "pub_num": "007",
+            "pages": 16,
+            "pdf_size": 752,
+            "description": ""
+        }
+    }
+]

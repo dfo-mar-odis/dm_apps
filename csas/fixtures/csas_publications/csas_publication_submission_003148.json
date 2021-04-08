@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3148,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Salmon Maritimes Region Overview",
+            "title_fr": "Saumon atlantique Région des Maritimes Vue d'ensemble",
+            "pub_year": 1997,
+            "lead_author_2": "John Ritter",
+            "pub_num": "D3-14",
+            "pages": 13,
+            "pdf_size": 247,
+            "description": ""
+        }
+    }
+]

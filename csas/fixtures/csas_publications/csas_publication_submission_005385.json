@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5385,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 8],
+            "title_en": "Chinook salmon abundance levels and survival of resident killer whales",
+            "title_fr": "Niveau d'abondance de saumon quinnat et survie des épaulards résidants",
+            "pub_year": 2009,
+            "lead_author_2": "Ford",
+            "pub_num": "075",
+            "pages": 8,
+            "pdf_size": 207,
+            "description": ""
+        }
+    }
+]

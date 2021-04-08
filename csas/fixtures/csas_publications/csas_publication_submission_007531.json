@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7531,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of Spatial Scale for the Assessment of Northern Shrimp in SFAs 4 7; August 12-13, 2014",
+            "title_fr": "Compte rendu de l’examen par les pairs de l’échelle spatiale pour l’évaluation de la crevette nordique des zones de pêche à la crevette 4 à 7; du 12 au 13 août 2014",
+            "pub_year": 2016,
+            "lead_author_2": "James Meade",
+            "pub_num": "045",
+            "pages": 22,
+            "pdf_size": 375,
+            "description": ""
+        }
+    }
+]

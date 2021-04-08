@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7851,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review - Assessment of Atlantic Salmon in Newfoundland and Labrador; February 28-March 1, 2017",
+            "title_fr": "Compte rendu de l'examen régional par les pairs sur la mise à jour de la situation du saumon de l'Atlantique à Terre-Neuve-et-Labrador; du 28 février au 1 mars 2017",
+            "pub_year": 2017,
+            "lead_author_2": "Erika Parrill & Julie Whalen",
+            "pub_num": "045",
+            "pages": 22,
+            "pdf_size": 188,
+            "description": ""
+        }
+    }
+]

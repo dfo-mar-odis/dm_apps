@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3359,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Status of Arctic Charr Stocks in Labrador",
+            "title_fr": "État des stocks d'omble chevalier du Labrador",
+            "pub_year": 1993,
+            "pub_num": "009",
+            "description": ""
+        }
+    }
+]

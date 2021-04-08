@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1216,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1981 4WX herring fishery",
+            "pub_year": 1982,
+            "lead_author_2": "M. Sinclair; J. Simon; W.T. Stobo; T.D. Iles",
+            "pub_num": "036",
+            "pages": 33,
+            "pdf_size": 1662,
+            "description": ""
+        }
+    }
+]

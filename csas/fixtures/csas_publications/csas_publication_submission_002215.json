@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2215,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Comparison of Canadian and United States larval herring surveys on Georges Bank 1987-91",
+            "pub_year": 1992,
+            "lead_author_2": "G.D. Melvin; F.J. Fife",
+            "pub_num": "067",
+            "pages": 27,
+            "description": ""
+        }
+    }
+]

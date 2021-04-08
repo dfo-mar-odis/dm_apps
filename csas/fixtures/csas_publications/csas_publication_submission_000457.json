@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 457,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) in Gander River, Notre Dame Bay (SFA 4), Newfoundland, 1998",
+            "pub_year": 1999,
+            "lead_author_2": "O'Connell, M.F., Walsh, A., M. Cochrance",
+            "pub_num": "086",
+            "pages": 45,
+            "pdf_size": 3122,
+            "description": ""
+        }
+    }
+]

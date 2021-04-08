@@ -24,13 +24,19 @@
     @keydown.esc.prevent="closeModals()"
   >
 
-    <div id="mySidebar" class="sidebar no-print">
+    <div id="mySidebar" :class="{'sidebar-opened':showSidebar,'sidebar-closed':!showSidebar, 'no-print':true}">
       {% include "projects2/project_detail/_console.html" %}
     </div>
 
-    <div id="main">
+    <div :class="{'main-opened':showSidebar, 'main-closed':!showSidebar, 'no-print':true}">
       {% include "shared_models/_generic_breadcrumbs.html" %}
-      {% include "shared_models/_generic_title_area.html" %}
+
+      <div class="mb-3">
+        <h2 class="">{{ h1|safe }}</h2>
+        <p class="lead text-muted mt-1 mb-0">{% trans "Project ID:" %} {{ object.id }}</p>
+      </div>
+
+
       {% bootstrap_messages %}
       <div v-if="canModify" class="alert alert-primary no-print" role="alert" style="width: 60%">
         <p class="mb-0">
@@ -41,93 +47,88 @@
 
 
         <div class="col">
-
-
           <div v-if="showOverview">
+            <div class="mb-3">
+              <div class="section-card">
+                <div class="pointy" @click="collapseOverview = !collapseOverview">
+                  <div v-if="canModify" class="mb-3 float-right">
+                    <button class="btn btn-sm btn-outline-secondary no-print" @click="goProjectEdit(project.id)">
+                      <span class="mdi mdi-pencil"></span> {% trans "Edit" %}
+                    </button>
+                  </div>
+                  <h4 id="overview"> {% trans "Project Overview" %} </h4>
+                </div>
+                <div v-if="!collapseOverview">
+                  {% trans "<span class='red-font'>missing</span>" as nulltext %}
+                  <table class="table table-sm mb-5">
+                    {% for field in project_field_list %}
+                      {% if "overview" in field %}
+                        <tr>
+                          <th>{% get_verbose_label object field %}</th>
+                          <td>
+                            {{ object.overview_html|nz:nulltext }}
+                          </td>
+                        </tr>
+                      {% elif "references" in field %}
+                        <tr>
+                          <th>
+                            {% get_verbose_label object field %}
+                            (<a href="{% url 'projects2:project_references' object.id %}">{% trans "manage" %}</a>)
+                          </th>
+                          <td>
+                            {% if object.references.exists %}
+                              <ul>
+                                {% for ref in object.references.all %}
+                                  <li>{{ ref.short_citation_html|safe }}</li>
+                                {% endfor %}
+                              </ul>
+                            {% else %}
+                              ---
+                            {% endif %}
+                          </td>
+                        </tr>
 
-            <div v-if="canModify" class="float-right">
-              <button class="no-print"
-                      @click="goProjectEdit(project.id)">
-                <span class="mdi mdi-pencil"></span>
-                {% trans "Edit" %}
-              </button>
-
+                      {% elif "csrf_theme" in field %}
+                        <tr>
+                          <th>{% get_verbose_label object field %}</th>
+                          <td>
+                            {% if object.client_information %}
+                              {{ object.client_information.csrf_priority.csrf_sub_theme.csrf_theme }}
+                            {% else %}
+                              ---
+                            {% endif %}
+                          </td>
+                        </tr>
+                      {% elif "csrf_sub_theme" in field %}
+                        <tr>
+                          <th>{% get_verbose_label object field %}</th>
+                          <td>
+                            {% if object.client_information %}
+                              {{ object.client_information.csrf_priority.csrf_sub_theme }}
+                            {% else %}
+                              ---
+                            {% endif %}
+                          </td>
+                        </tr>
+                      {% elif "csrf_priority" in field %}
+                        <tr>
+                          <th>{% get_verbose_label object field %}</th>
+                          <td>
+                            {% if object.client_information %}
+                              {{ object.client_information.csrf_priority }} ({{ object.client_information.csrf_priority.code }})
+                            {% else %}
+                              ---
+                            {% endif %}
+                          </td>
+                        </tr>
+                      {% else %}
+                        {% verbose_td_display object field th_width="30%" td_width="70%" nullmark=nulltext %}
+                      {% endif %}
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
             </div>
-
-
-            <h2 id="overview">
-              {% trans "Overview" %}
-            </h2>
-
-            {% trans "<span class='red-font'>missing</span>" as nulltext %}
-
-            <table class="table table-sm mb-5">
-              {% for field in project_field_list %}
-                {% if "overview" in field %}
-                  <tr>
-                    <th>{% get_verbose_label object field %}</th>
-                    <td>
-                      {{ object.overview_html|nz:nulltext }}
-                    </td>
-                  </tr>
-                {% elif "references" in field %}
-                  <tr>
-                    <th>
-                      {% get_verbose_label object field %}
-                      (<a href="{% url 'projects2:project_references' object.id %}">{% trans "manage" %}</a>)
-                    </th>
-                    <td>
-                      {% if object.references.exists %}
-                        <ul>
-                          {% for ref in object.references.all %}
-                            <li>{{ ref.short_citation_html|safe }}</li>
-                          {% endfor %}
-                        </ul>
-                      {% else %}
-                        ---
-                      {% endif %}
-                    </td>
-                  </tr>
-
-                {% elif "csrf_theme" in field %}
-                  <tr>
-                    <th>{% get_verbose_label object field %}</th>
-                    <td>
-                      {% if object.client_information %}
-                        {{ object.client_information.csrf_priority.csrf_sub_theme.csrf_theme }}
-                      {% else %}
-                        ---
-                      {% endif %}
-                    </td>
-                  </tr>
-                {% elif "csrf_sub_theme" in field %}
-                  <tr>
-                    <th>{% get_verbose_label object field %}</th>
-                    <td>
-                      {% if object.client_information %}
-                        {{ object.client_information.csrf_priority.csrf_sub_theme }}
-                      {% else %}
-                        ---
-                      {% endif %}
-                    </td>
-                  </tr>
-                {% elif "csrf_priority" in field %}
-                  <tr>
-                    <th>{% get_verbose_label object field %}</th>
-                    <td>
-                      {% if object.client_information %}
-                        {{ object.client_information.csrf_priority }} ({{ object.client_information.csrf_priority.code }})
-                      {% else %}
-                        ---
-                      {% endif %}
-                    </td>
-                  </tr>
-                {% else %}
-
-                  {% verbose_td_display object field th_width="30%" td_width="70%" nullmark=nulltext %}
-                {% endif %}
-              {% endfor %}
-            </table>
 
             {% include "projects2/project_detail/_project_financials.html" %}
 
@@ -135,66 +136,70 @@
 
 
             <div class="mb-5" id="project-year">
-              <div class="mb-2 neighbours">
-                <h2>{% trans "Project Years" %}</h2>
+              <div class="section-card">
+
+                <div class="mb-2 neighbours">
+                  <h4>{% trans "Project Years" %}</h4>
+                </div>
+                <div class="mb-3">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item" v-for="(year, index) in project.years" :key="index">
+                      <a @click="displayProjectYear(year.id)" :class="{ 'nav-link': true, 'active': year.id == projectYear.id }" href="#project-year">
+                        <span v-if="year.submitted" class="text-primary lead"> ${ year.display_name }</span>
+                        <span v-else class="text-danger lead"> ${ year.display_name } ({% trans "draft" %})</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a v-if="canModify && project.years && project.years.length " href="#" class="nav-link" data-toggle="modal"
+                         data-target="#new-year-modal"
+                         title="{% trans "Add a new year to this project" %}">
+                        <span class="lead">{% trans "Add Project Year" %}</span>
+                      </a>
+                      <a v-else-if="canModify" href="{% url 'projects2:year_new' object.id %}" class="nav-link">
+                        <span class="lead">{% trans "Add Project Year" %}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+
+                <div v-if="projectYear.id">
+                  {% include "projects2/project_detail/_project_year_detail.html" %}
+                  {% include "projects2/project_detail/_project_year_modal_form.html" %}
+
+                  <modal v-if="showNewStaffModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'staff'"></modal>
+                  <modal v-if="showOldStaffModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'staff'"
+                         :my_staff="staffToEdit"></modal>
+
+                  <modal v-if="showNewOMCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'om_cost'"></modal>
+                  <modal v-if="showOldOMCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'om_cost'"
+                         :my_om_cost="omCostToEdit"></modal>
+
+                  <modal v-if="showNewCapitalCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'capital_cost'"></modal>
+                  <modal v-if="showOldCapitalCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'capital_cost'"
+                         :my_capital_cost="capitalCostToEdit"></modal>
+
+                  <modal v-if="showNewActivityModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'activity'"></modal>
+                  <modal v-if="showOldActivityModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'activity'"
+                         :my_activity="activityToEdit"></modal>
+
+                  <modal v-if="showNewCollaborationModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'collaboration'"></modal>
+                  <modal v-if="showOldCollaborationModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'collaboration'"
+                         :my_collaboration="collaborationToEdit"></modal>
+
+                  <modal v-if="showNewStatusReportModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'status_report'"></modal>
+                  <modal v-if="showOldStatusReportModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'status_report'"
+                         :my_status_report="statusReportToEdit"></modal>
+
+                  <modal v-if="showNewFileModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'file'"></modal>
+                  <modal v-if="showOldFileModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'file'"
+                         :my_file="fileToEdit"></modal>
+
+                </div>
+
+
               </div>
-              <ul class="nav nav-tabs">
-                <li class="nav-item" v-for="(year, index) in project.years" :key="index">
-                  <a @click="displayProjectYear(year.id)" :class="{ 'nav-link': true, 'active': year.id == projectYear.id }" href="#project-year">
-                    <span v-if="year.submitted" class="text-primary lead"> ${ year.display_name }</span>
-                    <span v-else class="text-danger lead"> ${ year.display_name } ({% trans "draft" %})</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a v-if="canModify && project.years && project.years.length " href="#" class="nav-link" data-toggle="modal"
-                     data-target="#new-year-modal"
-                     title="{% trans "Add a new year to this project" %}">
-                    <span class="lead">{% trans "Add Project Year" %}</span>
-                  </a>
-                  <a v-else-if="canModify" href="{% url 'projects2:year_new' object.id %}" class="nav-link">
-                    <span class="lead">{% trans "Add Project Year" %}</span>
-                  </a>
-                </li>
-
-              </ul>
-
             </div>
-
-            <div v-if="projectYear.id">
-              {% include "projects2/project_detail/_project_year_detail.html" %}
-              {% include "projects2/project_detail/_project_year_modal_form.html" %}
-
-              <modal v-if="showNewStaffModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'staff'"></modal>
-              <modal v-if="showOldStaffModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'staff'"
-                     :my_staff="staffToEdit"></modal>
-
-              <modal v-if="showNewOMCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'om_cost'"></modal>
-              <modal v-if="showOldOMCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'om_cost'"
-                     :my_om_cost="omCostToEdit"></modal>
-
-              <modal v-if="showNewCapitalCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'capital_cost'"></modal>
-              <modal v-if="showOldCapitalCostModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'capital_cost'"
-                     :my_capital_cost="capitalCostToEdit"></modal>
-
-              <modal v-if="showNewActivityModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'activity'"></modal>
-              <modal v-if="showOldActivityModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'activity'"
-                     :my_activity="activityToEdit"></modal>
-
-              <modal v-if="showNewCollaborationModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'collaboration'"></modal>
-              <modal v-if="showOldCollaborationModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'collaboration'"
-                     :my_collaboration="collaborationToEdit"></modal>
-
-              <modal v-if="showNewStatusReportModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'status_report'"></modal>
-              <modal v-if="showOldStatusReportModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'status_report'"
-                     :my_status_report="statusReportToEdit"></modal>
-
-              <modal v-if="showNewFileModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'file'"></modal>
-              <modal v-if="showOldFileModal" @close="closeModals(projectYear)" :year="projectYear" :mtype="'file'"
-                     :my_file="fileToEdit"></modal>
-
-            </div>
-
-
           </div>
 
           <div v-if="!showOverview">
@@ -269,6 +274,9 @@
   var deleteSelfMsg = "{% trans "Are you sure you want to remove yourself?" %}\n\n{% trans "WARNING: This action might result in you loosing the ability to modify this project." %}"
   var processOTMsg = "{% trans "Do you want to add this OT description to the current staff member?" %}"
   var projectId = "{{ object.id }}"
+  let markActivityAsComplete = "{% trans "Do you want to mark this activity as 'complete'? \n\nYou may provide comments below (optional)." %}"
+  let markActivityAsIncomplete = "{% trans "Do you want to mark this activity as 'incomplete'?  \n\nYou may provide comments below (optional)." %}"
+
 
   function activateChosen() {
     var config = {
@@ -282,7 +290,7 @@
 
   </script>
 
-  <script src="{% static '/projects2/mainProjectDetail.js' %}?version=1.5" type="application/javascript"></script>
+  <script src="{% static '/projects2/mainProjectDetail.js' %}?version=1.10" type="application/javascript"></script>
   <script src="{% static '/projects2/mainProjectDetailModal.js' %}?version=1.0" type="application/javascript"></script>
 
   {% if request.GET.project_year %}

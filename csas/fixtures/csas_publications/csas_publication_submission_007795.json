@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7795,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Abundance indices of Atlantic herring (Clupea harengus) from the southern Gulf of St. Lawrence September multispecies bottom-trawl survey",
+            "title_fr": "Indices de l'abondance du hareng de l’Atlantique (Clupea harengus) du sud du golfe du Saint-Laurent tirés du relevé plurispécifique au chalut de fond réalisé en septembre",
+            "pub_year": 2016,
+            "lead_author_2": "Tobie Surette",
+            "pub_num": "064",
+            "pages": 40,
+            "pdf_size": 1528,
+            "description": ""
+        }
+    }
+]

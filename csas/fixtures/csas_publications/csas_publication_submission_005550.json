@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5550,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Hydrothermal Vent Ecosystems ",
+            "title_fr": "Écosystèmes des cheminées hydrothermales",
+            "pub_year": 2010,
+            "lead_author_2": "Banoub, J.",
+            "pub_num": "050",
+            "pages": 31,
+            "pdf_size": 1290,
+            "description": ""
+        }
+    }
+]

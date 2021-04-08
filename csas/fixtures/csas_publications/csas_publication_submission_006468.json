@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6468,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Results of the Atlantic mackerel (Scomber scombrus L.) egg surveys conducted in the southern Gulf of St. Lawrence from 2008 to 2011",
+            "title_fr": "Résultats des relevés des oeufs de maquereau bleu (Scomber scombrus L.) réalisés dans le sud du golfe du Saint-Laurent de 2008 à 2011",
+            "pub_year": 2013,
+            "lead_author_2": "Grégoire, F., Gendron, M.-F., Beaulieu, J.-L. et Lévesque, I",
+            "pub_num": "035",
+            "pages": 62,
+            "pdf_size": 8098,
+            "description": ""
+        }
+    }
+]

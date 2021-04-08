@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8747,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings for the regional peer review meeting on Science Advice on Limit Reference Points for Northern Shrimp, Pandalus borealis, and Striped Shrimp, Pandalus montagui, in the Western and Eastern Assessment Zones; May 12–13, 2020",
+            "title_fr": "Compte rendu de la réunion régionale d’examen par des pairs portant sur l’Avis scientifique sur les points de référence limites pour la crevette nordique, Pandalus borealis, et la crevette ésope, Pandalus montagui, dans les zones d’évaluation ouest et est; du 12 au 13 mai 2020",
+            "pub_year": 2020,
+            "lead_author_2": "D. Boguski",
+            "pub_num": "024",
+            "pages": 17,
+            "pdf_size": 433,
+            "description": ""
+        }
+    }
+]

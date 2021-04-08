@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8433,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of stock status indicators for northern Gulf of St. Lawrence (3Pn, 4RS) Atlantic cod in 2019",
+            "title_fr": "Mise à jour des indicateurs de l’état du stock de morue franche du nord du golfe du Saint-Laurent (3Pn, 4RS) en 2019",
+            "pub_year": 2020,
+            "lead_author_2": "Claude Brassard",
+            "pub_num": "007",
+            "pages": 7,
+            "pdf_size": 580,
+            "description": ""
+        }
+    }
+]

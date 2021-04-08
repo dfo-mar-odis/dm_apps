@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 97,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Résultats de la mission exploratoire d'hydroacoustique concernant le capelan (Mallotus villosus) de la côte ouest de Terre-Neuve",
+            "pub_year": 1999,
+            "lead_author_2": "Grégoire, F., Samson, Y.",
+            "pub_num": "010",
+            "description": ""
+        }
+    }
+]

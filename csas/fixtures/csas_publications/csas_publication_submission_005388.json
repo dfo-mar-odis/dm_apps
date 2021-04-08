@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5388,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 7],
+            "title_en": "Survey index of the northern Hudson Bay narwhal stock, August 2008",
+            "title_fr": "Indice du relevé du stock de narvals du nord de la baie d'Hudson - août 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Richard, P.",
+            "pub_num": "082",
+            "pages": 4,
+            "pdf_size": 85,
+            "description": ""
+        }
+    }
+]

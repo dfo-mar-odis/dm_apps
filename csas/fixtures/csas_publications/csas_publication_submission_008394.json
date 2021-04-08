@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8394,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "North Atlantic right whale abundance, demography and residency in the southern Gulf of St. Lawrence derived from directed aerial surveys",
+            "title_fr": "Abondance, démographie et résidence de la baleine noire de l’Atlantique Nord dans le sud du golfe du Saint-Laurent, d’après les relevés aériens ciblé",
+            "pub_year": 2020,
+            "lead_author_2": "Cole, T.V.N., Crowe, L.M., Corkeron, P.J., and Vanderlaan, A.S.M.",
+            "pub_num": "063",
+            "pages": 19,
+            "pdf_size": 597,
+            "description": ""
+        }
+    }
+]

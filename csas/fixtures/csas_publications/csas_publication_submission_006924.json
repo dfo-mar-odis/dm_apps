@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6924,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Outer Bay of Fundy Atlantic Salmon (Salmo Salar): Population Dynamics and Viability",
+            "title_fr": "Évaluation du potentiel de rétablissement (EPR) du saumon de l'Atlantique (Salmo salar) de l’extérieur de la baie de Fundy : Analyses de la viabilité de la population",
+            "pub_year": 2016,
+            "lead_author_2": "J. Gibson",
+            "pub_num": "032",
+            "pages": 92,
+            "pdf_size": 1749,
+            "description": ""
+        }
+    }
+]

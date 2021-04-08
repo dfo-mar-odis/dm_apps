@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4404,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock Assessment and Quota Options for the Green Sea Urchin (Strongylocentrotus droebachiensis) fishery in British Columbia, 2006-2009",
+            "title_fr": "Évaluation du stock et options de quotas pour la pêche à l'oursin vert (Strongylocentrotus droebachiensis) en Colombie-Britannique, 2006-2009",
+            "pub_year": 2005,
+            "lead_author_2": "R. Ian Perry, Zane Zhang, and Brenda Waddell",
+            "pub_num": "064",
+            "pages": 11,
+            "pdf_size": 171,
+            "description": ""
+        }
+    }
+]

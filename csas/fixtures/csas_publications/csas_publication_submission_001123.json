@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1123,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the eastern Scotian Shelf (4VW) haddock stock with projections to 1982",
+            "pub_year": 1981,
+            "lead_author_2": "G.N. White, 3rd; D.E. Waldron; R.N. O'Boyle",
+            "pub_num": "025",
+            "pages": 63,
+            "pdf_size": 24054,
+            "description": ""
+        }
+    }
+]

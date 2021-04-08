@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6064,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Inter-laboratory verification of ageing consistency for Atlantic herring (Clupea harengus harengus) otoliths",
+            "title_fr": "Vérification inter-laboratoire de la concordance dans la détermination d'âge d'otolithes de hareng (Clupea harengus harengus) ",
+            "pub_year": 2011,
+            "lead_author_2": "Robert Miller",
+            "pub_num": "075",
+            "pages": 14,
+            "pdf_size": 229,
+            "description": ""
+        }
+    }
+]

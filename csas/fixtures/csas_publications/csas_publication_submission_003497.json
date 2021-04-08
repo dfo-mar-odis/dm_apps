@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3497,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Workshop on the Groundfish Sentinel Program; November 07 - 09, 2001",
+            "title_fr": "Atelier sur le programme sentinelle du poisson de fond; 7 au 9 novembre 2001",
+            "pub_year": 2002,
+            "lead_author_2": "David J. Gillis/ Chairperson",
+            "pub_num": "003",
+            "pages": 95,
+            "pdf_size": 1490,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1139,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "4TVn (Jan-Apr) cod assessment",
+            "pub_year": 1981,
+            "lead_author_2": "M. Sinclair; J.J. Maguire",
+            "pub_num": "041",
+            "pages": 37,
+            "pdf_size": 11936,
+            "description": ""
+        }
+    }
+]

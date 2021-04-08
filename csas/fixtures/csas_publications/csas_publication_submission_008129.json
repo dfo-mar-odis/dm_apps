@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8129,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2018 Evaluation of Northwest Atlantic Fisheries Organization (NAFO) Divisions 4VWX Herring",
+            "title_fr": "Évaluation des stocks de hareng des divisions 4VWX de l’Organisation des pêches de l’Atlantique Nord-Ouest (OPANO) en 2018",
+            "pub_year": 2020,
+            "lead_author_2": "Singh, R., Knox, D., MacIntyre, A., and Melvin, G.D.",
+            "pub_num": "062",
+            "pages": 162,
+            "pdf_size": 11034,
+            "description": ""
+        }
+    }
+]

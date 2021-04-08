@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6760,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of stressors, impacts and Pathways of Effects for the Darnley Bay Anuniaqvia Niqiqyuam Area of Interest for Marine Protected Area designation",
+            "title_fr": "Évaluation des agents de stress, des impacts et des séquences des effets dans la zone d'intérêt Anuniaqvia Niqiqyuam/baie Darnley dans le cadre de la désignation des zones de protection marine",
+            "pub_year": 2014,
+            "lead_author_2": "Oksana Schimnowski / Margaret Treble",
+            "pub_num": "002",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1077,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Updated assessment of the eastern Scotian Shelf (4VW) haddock stock with projections to 1981",
+            "pub_year": 1980,
+            "lead_author_2": "D.E. Waldron",
+            "pub_num": "061",
+            "pages": 32,
+            "pdf_size": 1537,
+            "description": ""
+        }
+    }
+]

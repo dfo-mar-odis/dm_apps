@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7244,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science-Guidance for Fisheries Protection Policy: Advice on Equivalent Adult Calculation",
+            "title_fr": "Orientations scientifiques relatives à la politique sur la protection des pêches : avis sur le calcul des équivalents adultes",
+            "pub_year": 2015,
+            "lead_author_2": "Pastershank, Georgine",
+            "pub_num": "011",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6559,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Review of the 2011 snow crab (Chionoecetes opilio) fishery performance in the southern Gulf of St. Lawrence (Areas 12, 19, 12E and 12F)",
+            "title_fr": "Revue de la performance de la pêche au crabe des neiges (Chionoecetes opilio) dans le sud du golfe du Saint-Laurent (zones 12, 19, 12E et 12F) en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Marcel Hébert",
+            "pub_num": "086",
+            "pages": 49,
+            "pdf_size": 2538,
+            "description": ""
+        }
+    }
+]

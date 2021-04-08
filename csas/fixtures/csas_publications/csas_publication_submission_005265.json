@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5265,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Revisions to the official DFO commercial Pacific Salmon catch estimates for 1996-2004",
+            "title_fr": "Révisions des estimations officielles du MPO concernant les prises de la pêche commerciale au saumon du Pacifique de 1996 à 2004",
+            "pub_year": 2009,
+            "lead_author_2": "Houtman, R., Irvine, J.",
+            "pub_num": "031",
+            "pages": 26,
+            "pdf_size": 155,
+            "description": ""
+        }
+    }
+]

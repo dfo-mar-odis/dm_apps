@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6601,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Monitoring for sea lice on wild salmon in western and eastern Canada",
+            "title_fr": "Surveillance du pou du poisson sur le saumon sauvage dans l'Ouest et l'Est du Canada",
+            "pub_year": 2014,
+            "lead_author_2": "Johnson, S. C. and Jones S.R.M.",
+            "pub_num": "060",
+            "pages": 112,
+            "pdf_size": 2345,
+            "description": ""
+        }
+    }
+]

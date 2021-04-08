@@ -1,0 +1,153 @@
+{% extends "fisheriescape/base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+
+    <style>
+        body{
+            background-image: url({% static "/img/fisheriescape/water.jpg" %});
+            background-size: cover;
+        }
+
+        h1{
+            text-align: center;
+            color: #0824de;
+        }
+
+        .card {
+            text-align: center;
+            width: 350px;
+            cursor: pointer;
+        {#background-color: #eeeeee;#} box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            margin: 10px
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            height: 30px;
+        }
+
+        .card-img {
+            height: 170px;
+        }
+
+        .card-btns {
+            padding-bottom: 30px;
+
+        }
+
+        .card-body {
+            padding-bottom: 0px;
+
+        }
+
+        .card-img-top {
+            padding: 30px;
+
+        }
+
+        .card-text {
+            height: 5px;
+        }
+
+        .big {
+            font-size: 7em;
+            font-weight: bold;
+        }
+
+        .my-btn {
+            margin-top: 5px;
+            width: 65%
+        }
+
+        .jumbotron {
+            {#background-color: rgba(255, 255, 255, 1);#}
+            background-color: transparent;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            border-radius: 25px;
+            margin-top: 15px;
+            padding: 15px;
+            {#background-color: transparent;#}
+            font-size: small;
+        }
+
+    </style>
+
+    <div class="container">
+        <div class="jumbotron my-auto">
+            <h1>Fisheries Landscape Tool</h1>
+        </div>
+    </div>
+
+
+ <div class="container">
+
+  <div class="jumbotron py-3 mx-0">
+
+    {# Warnings #}
+    <div class="mb-3">
+      {% autoescape off %}
+        {% bootstrap_messages size='small' %}
+      {% endautoescape %}
+    </div>
+
+    <div class="mb-3 text" style="font-size: 16px;">
+      <p>
+        {% blocktrans %}
+            <h3>Welcome to the Fisheries Landscape Tool.</h3>This tool is under development, but feel free to explore the database below.<br><br>
+            <ul>
+                <li><b>'Fishery List'</b> is a database of fisheries with their areas, dates, gear types, and marine mammal potential interactions.</li>
+                <li><b>'MAP'</b> is an interactive map where you can turn on and off fishing area layers and then click on the one you want to take you to the information page.</li>
+                <li><b>'Species List'</b> refers to the species fished.</li>
+                <li><b>'Fishery Area List'</b> is a list of all the fishery areas and their maps.</li>
+            </ul>
+
+        {% endblocktrans %}
+      </p>
+    </div>
+  </div>
+ </div>
+
+<!--Card container-->
+
+<div class="container">
+
+<!--    Tables Card-->
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="card border border-dark">
+                <div class="card-header">
+                    <h2>{% trans 'Fishery Landscape' %}</h2>
+                </div>
+                <div class="card-img">
+                    <img class="mh-80" src="{% static 'img/fisheriescape/fish.jpg' %}" alt="Card image" style="width: 80%; height: 120%">
+                </div>
+                <div class="card-body">
+                    <div class="btns">
+                        <a href="{% url 'fisheriescape:fishery_list' %}" class="btn my-btn btn btn-primary">Fishery List</a>
+                        <a href="{% url 'fisheriescape:map_view' %}" class="btn my-btn btn btn-primary">MAP</a>
+                        <br><br>
+                        <a href="{% url 'fisheriescape:species_list' %}" class="btn my-btn btn btn-primary">Species List</a>
+                        <a href="{% url 'fisheriescape:fishery_area_list' %}" class="btn my-btn btn btn-primary">Fishery Area List</a>
+
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

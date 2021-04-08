@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6705,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Regional Peer Review of the 2012 Framework and Assessment for 4VWX Silver Hake; Part 1: May 30-31, 2012; Part 2: November 15-16, 2012; Part 3: December 11, 2012",
+            "title_fr": "Compte rendu de l'examen régional par les pairs du cadre et de l'évaluation pour le merlu argenté des divisions 4VWX de 2012 de la région des Maritimes; Partie 1 : 30 au 31 mai 2012, Partie 2 : 15 au 16 novembre 2012, Partie 3 : 11 décembre 2012",
+            "pub_year": 2013,
+            "lead_author_2": "T. Worcester",
+            "pub_num": "012",
+            "pages": 56,
+            "pdf_size": 1108,
+            "description": ""
+        }
+    }
+]

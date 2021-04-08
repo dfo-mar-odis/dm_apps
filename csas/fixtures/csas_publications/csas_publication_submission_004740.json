@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4740,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A risk assessment framework for Pacific herring stocks in British Columbia",
+            "title_fr": "Un cadre d'évaluation du risque pour les stocks de hareng du Pacifique en Colombie-Britannique",
+            "pub_year": 2007,
+            "lead_author_2": "Schweigert, J.F., C. Fu, C.C. Wood, T.W. Therriault.",
+            "pub_num": "047",
+            "pages": 78,
+            "pdf_size": 1222,
+            "description": ""
+        }
+    }
+]

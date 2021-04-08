@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3842,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Transboundary Resource Assessment Committee (TRAC): Report of Meeting held; 10-14 February 2003",
+            "title_fr": "Comité d'évaluation des ressources transfrontalières (CERT): Rapport de la réunion; du 10 au 14 février 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Gavaris, S.",
+            "pub_num": "014",
+            "pages": 33,
+            "pdf_size": 305,
+            "description": ""
+        }
+    }
+]

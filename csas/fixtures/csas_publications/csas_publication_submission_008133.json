@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8133,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Assessment of Leatherback sea turtle (Dermochelys coriacea) Fishery and Non-Fishery Interactions in Canadian Waters: 2018 Update",
+            "title_fr": "Évaluation des interactions entre les tortues luths (Dermochelys coriacea) et les activités liées ou non à la pêche dans les eaux canadiennes : mise à jour de 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Jennifer Ford",
+            "pub_num": "032",
+            "pages": 10,
+            "pdf_size": 632,
+            "description": ""
+        }
+    }
+]

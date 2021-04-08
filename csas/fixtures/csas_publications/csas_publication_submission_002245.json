@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2245,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Cold water and recruitment in 2J3KL cod",
+            "pub_year": 1992,
+            "lead_author_2": "R.A. Myers; K. Drinkwater; N. Barrowman",
+            "pub_num": "097",
+            "pages": 13,
+            "pdf_size": 705,
+            "description": ""
+        }
+    }
+]

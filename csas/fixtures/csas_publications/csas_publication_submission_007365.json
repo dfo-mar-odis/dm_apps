@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7365,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Marine Screening-Level Risk Assessment Protocol for Marine Non-Indigenous Species",
+            "title_fr": "Protocole d'évaluation préalable des risques pour les espèces aquatiques marines non indigènes",
+            "pub_year": 2015,
+            "lead_author_2": "Eddy Kennedy, Ph. 902-440-6225",
+            "pub_num": "044",
+            "description": ""
+        }
+    }
+]

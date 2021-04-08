@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 758,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock assessment for British Columbia herring in 2000 and forecasts of the potential catch in 2001",
+            "pub_year": 2000,
+            "lead_author_2": "Schweigert, J.",
+            "pub_num": "165",
+            "pages": 74,
+            "pdf_size": 1134,
+            "description": ""
+        }
+    }
+]

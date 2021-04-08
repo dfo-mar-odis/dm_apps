@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 305,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Definition of juvenile areas for the 4T-Vn (January-April) cod stock",
+            "pub_year": 1991,
+            "lead_author_2": "G.A. Chouinard; J.M. Hanson; G.A. Nielsen",
+            "pub_num": "006",
+            "pages": 24,
+            "pdf_size": 1065,
+            "description": ""
+        }
+    }
+]

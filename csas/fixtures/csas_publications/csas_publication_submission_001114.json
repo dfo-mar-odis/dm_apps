@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1114,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A stock-recruitment relationship for Atlantic salmon in Western Arm Brook",
+            "pub_year": 1981,
+            "lead_author_2": "E.M.P. Chadwick",
+            "pub_num": "016",
+            "pages": 7,
+            "pdf_size": 301,
+            "description": ""
+        }
+    }
+]

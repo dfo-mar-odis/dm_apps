@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2316,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Commercial fishery based estimate of pollock abundance on the Scotian Shelf",
+            "pub_year": 1993,
+            "lead_author_2": "A.R. Hanke",
+            "pub_num": "043",
+            "pages": 6,
+            "pdf_size": 467,
+            "description": ""
+        }
+    }
+]

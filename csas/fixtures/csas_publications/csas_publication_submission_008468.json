@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8468,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pre-COSEWIC review of Northern Abalone (Haliotis kamtschatkana) along the Pacific Coast of Canada",
+            "pub_year": 2021,
+            "lead_author_2": "Zane Zhang",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

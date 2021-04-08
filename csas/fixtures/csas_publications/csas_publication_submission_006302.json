@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6302,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Regional Science Advisory Meeting on the Status of Atlantic Salmon in Newfoundland & Labrador",
+            "lead_author_2": "R. Jamieson",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1721,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A summary of commercial catch rate data for the 1986 Prince Edward Island bar clam (Spisula solidissima) fishery",
+            "pub_year": 1987,
+            "lead_author_2": "T.W. Sephton; C.F. Bryan",
+            "pub_num": "032",
+            "pages": 13,
+            "pdf_size": 879,
+            "description": ""
+        }
+    }
+]

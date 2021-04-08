@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1381,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the NAFO Division 4T southern Gulf of St. Lawrence herring stock, 1993",
+            "title_fr": "Évaluation du stock de hareng du sud du golfe du Saint-Laurent dans la division 4T de l'OPANO, 1993",
+            "pub_year": 1994,
+            "lead_author_2": "R.R. Claytor; F. Mowbray; C. LeBlanc; C. Bourque; C. MacDougall",
+            "pub_num": "079",
+            "pages": 123,
+            "pdf_size": 5288,
+            "description": ""
+        }
+    }
+]

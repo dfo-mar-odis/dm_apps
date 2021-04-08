@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5762,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 4, 5],
+            "title_en": "Stock assessment of Northwest Atlantic grey seals (Halichoerus Grypus)",
+            "title_fr": "Évaluation du stock de phoques gris (Halichoerus Grypus) du Nord-Ouest de l'Atlantique",
+            "pub_year": 2010,
+            "lead_author_2": "Hammill, Stenson",
+            "pub_num": "091",
+            "pages": 12,
+            "pdf_size": 258,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6495,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of Thorny Skate (Amblyraja radiata Donovan, 1808) in NAFO Subdivision 3Ps and Divisions 3LNO",
+            "title_fr": "Évaluation de la raie épineuse, (Amblyraja radiata, Donovan, 1808) dans la sous-division 3Ps et les divisions 3LNO de l'Organisation des pêches de l'Atlantique Nord-Ouest (OPANO)",
+            "pub_year": 2012,
+            "lead_author_2": "Simpson, M.R., C.M. Miri, and L.G.S. Mello",
+            "pub_num": "139",
+            "pages": 41,
+            "pdf_size": 2954,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3715,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of striped bass (Morone saxatilis) in the Maritime Provinces in the context of species at risk",
+            "title_fr": "Evaluation du bar rayé (Morone saxatilis) des provinces maritimes dans un contexte des espèces en péril",
+            "pub_year": 2003,
+            "lead_author_2": "Douglas, S.G., Bradford, R.G., Chaput, G.",
+            "pub_num": "008",
+            "pages": 55,
+            "pdf_size": 1897,
+            "description": ""
+        }
+    }
+]

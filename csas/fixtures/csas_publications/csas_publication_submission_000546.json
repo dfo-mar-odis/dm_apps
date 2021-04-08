@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 546,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An analytical assessment of the porbeagle shark (Lamna nasus) population in the northwest Atlantic",
+            "pub_year": 1999,
+            "lead_author_2": "Campana, S., Marks, L., Joyce, W., Hurley, P., Showell, M., Kulka, D.",
+            "pub_num": "158",
+            "pages": 58,
+            "pdf_size": 5273,
+            "description": ""
+        }
+    }
+]

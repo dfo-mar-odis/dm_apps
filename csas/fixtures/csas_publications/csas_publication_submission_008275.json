@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8275,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The Saguenay Fjord Winter recreational groundfish fishery, 1996­2018",
+            "title_fr": "La pêche récréative hivernale au poisson de fond dans le fjord du Saguenay de 1996 à 2018",
+            "pub_year": 2020,
+            "lead_author_2": "Gauthier, J., Marquis, M.-C., Valentin, A. E. and Parent, É.",
+            "pub_num": "054",
+            "pages": 66,
+            "pdf_size": 5111,
+            "description": ""
+        }
+    }
+]

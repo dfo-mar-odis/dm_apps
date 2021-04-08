@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1237,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Scallop survey in NAFO Division 3Ps (including Green, St. Pierre, and Burgeo Banks)",
+            "pub_year": 1983,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill; D.B. Lewis",
+            "pub_num": "004",
+            "pages": 27,
+            "pdf_size": 1242,
+            "description": ""
+        }
+    }
+]

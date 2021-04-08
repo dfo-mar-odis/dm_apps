@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3297,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Rock crab of the inshore waters of Quebec",
+            "title_fr": "Le crabe commun des eaux côtières du Québec",
+            "pub_year": 2005,
+            "lead_author_2": "Lambert, J.",
+            "pub_num": "030",
+            "pages": 12,
+            "pdf_size": 222,
+            "description": ""
+        }
+    }
+]

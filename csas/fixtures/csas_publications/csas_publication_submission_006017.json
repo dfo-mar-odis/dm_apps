@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6017,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of Gulf and Maritimes Zonal Science Advisory Process Framework Meeting for Atlantic Cod Assessment Models, Medium-term Projections, and Reference Points; December 6-8, 2010",
+            "title_fr": "Compte rendu de la réunion-cadre du processus de consultation scientifique zonal du Golfe et des Maritimes sur les modèles d'évaluation, les projections à moyen terme et les points de référence pour la morue franche ; du 6 au 8 décembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Gerald Chaput",
+            "pub_num": "051",
+            "pages": 45,
+            "pdf_size": 377,
+            "description": ""
+        }
+    }
+]

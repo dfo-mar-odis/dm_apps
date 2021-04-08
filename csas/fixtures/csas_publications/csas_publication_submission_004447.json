@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4447,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessments of Atlantic salmon stocks in southern and western New Brunswick (SFA 23), an update to 2005",
+            "title_fr": "Évaluations des stocks de saumon atlantique dans le sud-ouest du Nouveau-Brunswick - mise à jour pour 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Jones, R.A., L. Anderson, J.J. Flanagan, T. Goff.",
+            "pub_num": "025",
+            "pages": 86,
+            "pdf_size": 1172,
+            "description": ""
+        }
+    }
+]

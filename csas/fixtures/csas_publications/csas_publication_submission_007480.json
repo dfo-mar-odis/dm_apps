@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7480,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Ecological Consequences of Grass Carp, Ctenopharyngodon idella, in the Great Lakes Basin: vegetation, fishes and birds",
+            "title_fr": "Conséquences écologiques de la présence de la carpe de roseau, Ctenopharyngodon idella, dans le bassin des Grands Lacs : végétation, poissons et oiseaux",
+            "pub_year": 2016,
+            "lead_author_2": "Gertzen, E.L., Midwood, J.D, Wiemann, N., and Koops, M.A.",
+            "pub_num": "117",
+            "pages": 57,
+            "pdf_size": 2455,
+            "description": ""
+        }
+    }
+]

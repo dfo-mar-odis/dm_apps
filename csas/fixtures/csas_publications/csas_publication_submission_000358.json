@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 358,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of cod stock in the eastern Gulf of St. Lawrence",
+            "pub_year": 1977,
+            "lead_author_2": "R. Wells",
+            "pub_num": "015",
+            "pages": 9,
+            "pdf_size": 546,
+            "description": ""
+        }
+    }
+]

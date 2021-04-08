@@ -64,7 +64,7 @@
       <a v-if="canModify && trip.requests.length === 0" class="btn btn-danger" href="{% url 'travel:trip_delete' object.id %}{{ view.get_query_string }}">
         {% trans "Delete" %}
       </a>
-      <a class="btn btn-success" href="{% url 'travel:request_new' %}?trip={{ object.id }}{{ view.get_query_string }}">
+      <a class="btn btn-success" href="{% url 'travel:request_new' %}?{{ view.get_query_string }};trip={{ object.id }}">
         {% trans "Start a Request" %}
       </a>
     </div>

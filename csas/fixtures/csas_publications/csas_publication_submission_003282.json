@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3282,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Temperature Conditions in Lobster Fishing Areas 27-33 on the Scotian Shelf: 1999-2003",
+            "title_fr": "Caractéristiques de la Température dans les Aires de Pêche du homard 27-33 sur le Plateau Néo-Écossais pour la Période 1999-2003",
+            "pub_year": 2004,
+            "lead_author_2": "Petrie, B., Pettipas, R.G.",
+            "pub_num": "046",
+            "pages": 38,
+            "pdf_size": 1295,
+            "description": ""
+        }
+    }
+]

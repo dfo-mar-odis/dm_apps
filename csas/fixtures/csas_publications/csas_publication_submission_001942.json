@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1942,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary survey of subtidal mussel resources in southwestern Nova Scotia",
+            "pub_year": 1989,
+            "lead_author_2": "G.J. Sharp; T. Amaratunga; D.M. Tremblay",
+            "pub_num": "070",
+            "pages": 21,
+            "pdf_size": 1321,
+            "description": ""
+        }
+    }
+]

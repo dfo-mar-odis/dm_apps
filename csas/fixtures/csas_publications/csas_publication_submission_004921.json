@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4921,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "An Assessment of the Potential for Recovery of West Coast Transient Killer Whales Using Coastal Waters of British Columbia",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'épaulard migrateur du Pacifique Nord-Est vivant dans les eaux côtières de la Colombie-Britannique",
+            "pub_year": 2007,
+            "lead_author_2": "J.K.B. Ford, G.M. Ellis, J.W. Durban",
+            "pub_num": "088",
+            "pages": 38,
+            "pdf_size": 289,
+            "description": ""
+        }
+    }
+]

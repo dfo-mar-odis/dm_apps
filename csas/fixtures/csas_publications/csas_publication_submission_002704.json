@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2704,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Final Report of the 2001 Annual Meeting of the Fisheries Oceanography Committee; March 27-30, 2001",
+            "pub_year": 2002,
+            "lead_author_2": "Swain, D., Ouellet, P.",
+            "pub_num": "008",
+            "pages": 53,
+            "pdf_size": 1760,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7053,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Integrated Biological Status of Southern British Columbia Chinook Salmon (Oncorhynchus tshawytscha) Under the Wild Salmon Policy",
+            "title_fr": "État biologique intégré du saumon quinnat (oncorhynchus tshawytscha) du sud de la Colombie-Britannique en vertu de la politique concernant le saumon sauvage",
+            "pub_year": 2016,
+            "lead_author_2": "Bruce Patten",
+            "pub_num": "042",
+            "pages": 15,
+            "pdf_size": 551,
+            "description": ""
+        }
+    }
+]

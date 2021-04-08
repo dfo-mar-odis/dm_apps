@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 100,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Newfoundland East and Southeast Coast Herring - An Assessment of Stocks to the Spring of 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Wheeler, J.P., Squires, B., Williams, P.",
+            "pub_num": "013",
+            "pages": 172,
+            "pdf_size": 14925,
+            "description": ""
+        }
+    }
+]

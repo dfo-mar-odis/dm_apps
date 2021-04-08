@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 630,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Quota options for the Red Sea urchin fishery in British Columbia for fishing season 2001",
+            "pub_year": 1999,
+            "lead_author_2": "Campbell, A., Hajas, W., Bureau, D.",
+            "pub_num": "201",
+            "pages": 67,
+            "pdf_size": 800,
+            "description": ""
+        }
+    }
+]

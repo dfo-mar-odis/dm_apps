@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3088,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "West Coast Vancouver Island Herring",
+            "pub_year": 1998,
+            "lead_author_2": "Jake Schweigert",
+            "pub_num": "B6-04",
+            "pages": 4,
+            "pdf_size": 72,
+            "description": ""
+        }
+    }
+]

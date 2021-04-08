@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5988,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the Assessment of the sea cucumber fishery in the Estuary and Northern Gulf of St. Lawrence; May 5, 2011",
+            "title_fr": "Processus consultatif scientifique régional portant sur l'évaluation de la pêche au concombre de mer dans l'estuaire et le nord du golfe du Saint-Laurent ; le 5 mai 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Cyr, Charley",
+            "pub_num": "019",
+            "description": ""
+        }
+    }
+]

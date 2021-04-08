@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7943,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Environmental conditions in the Labrador Sea during 2016",
+            "lead_author_2": "Yashayaev et al",
+            "description": ""
+        }
+    }
+]

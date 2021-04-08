@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3718,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Fraser River Eulachon Biomass Assessments and Spawning Distribution: 1995-2002",
+            "title_fr": "Évaluations de la biomasse et répartition des lieux de reproduction de l'eulakane du fleuve Fraser de 1995 à 2002",
+            "pub_year": 2002,
+            "lead_author_2": "D. E. Hay, P. B. McCarter, R. Joy, M. Thompson, K. West",
+            "pub_num": "117",
+            "pages": 58,
+            "pdf_size": 635,
+            "description": ""
+        }
+    }
+]

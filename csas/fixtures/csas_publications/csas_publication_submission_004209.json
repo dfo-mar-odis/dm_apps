@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4209,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process Stock Assessment Update of SPA 1,3,4,5 and 6 Scallop Stocks; 8-9 December 2004",
+            "title_fr": "Réunion du Processus consultatif régional des provinces Maritimes Mise à jour des évaluations des stocks de pétoncle des APP 1,3,4,5 et 6; 8-9 décembre 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Lavoie, R.",
+            "pub_num": "049",
+            "pages": 27,
+            "pdf_size": 212,
+            "description": ""
+        }
+    }
+]

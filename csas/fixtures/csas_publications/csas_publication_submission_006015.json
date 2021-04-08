@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6015,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment and Recovery Potential Assessment for Quillback Rockfish (Sebastes maliger) on the Pacific Coast of Canada ",
+            "title_fr": "Évaluation des stocks et évaluation du potentiel de rétablissement du sébaste à dos épineux (Sebastes maliger) dans les eaux côtières canadiennes du Pacifique ",
+            "pub_year": 2011,
+            "lead_author_2": "Lynne Yamanaka",
+            "pub_num": "135",
+            "pages": 102,
+            "pdf_size": 1065,
+            "description": ""
+        }
+    }
+]

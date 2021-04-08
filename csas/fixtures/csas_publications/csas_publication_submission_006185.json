@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6185,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Offshore American Lobster (Homaurs americanus) in Lobster Fishing Area 41",
+            "title_fr": "Évaluation du homard d’Amérique (Homarus americanus) de haute mer dans la zone de pêche du homard (ZPH) 41 en 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Cook, A.M., Hubley, P.B., and Denton, C.",
+            "pub_num": "034",
+            "pages": 81,
+            "pdf_size": 4824,
+            "description": ""
+        }
+    }
+]

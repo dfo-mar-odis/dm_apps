@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 280,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "An assessment of the southern Gulf of St. Lawrence herring stock complex",
+            "pub_year": 1983,
+            "lead_author_2": "L. Cleary",
+            "pub_num": "069",
+            "pages": 40,
+            "pdf_size": 1768,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6926,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Recovery Potential for the Outer Bay of Fundy Population of Atlantic Salmon (Salmo salar): Status, Trends, Distribution, Life History Characteristics and Recovery Targets",
+            "title_fr": "Évaluation du potentiel de rétablissement de la population de saumon de l'Atlantique (Salmo salar) de l'extérieur de la baie de Fundy : État, tendances, répartition, caractéristiques du cycle vital et objectifs de rétablissement",
+            "pub_year": 2014,
+            "lead_author_2": "Jones, R.A., Anderson, L., and Clarke, C.N.",
+            "pub_num": "008",
+            "pages": 100,
+            "pdf_size": 4138,
+            "description": ""
+        }
+    }
+]

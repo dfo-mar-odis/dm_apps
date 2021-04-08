@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7841,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Newfoundland and Labrador Snow Crab (Chionoecetes opilio) in 2016",
+            "title_fr": "Évaluation du stock de crabes des neiges (Chionoecetes opilio) de Terre­Neuve­et­Labrador en 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Mullowney, D., Coffey, W., Baker, K., Evans, G., Fiander, D., Colbourne, E., Maddock Parsons, D., Koen-Alonso, M., and Wells, N.",
+            "pub_num": "081",
+            "pages": 180,
+            "pdf_size": 12750,
+            "description": ""
+        }
+    }
+]

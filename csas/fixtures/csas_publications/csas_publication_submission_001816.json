@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1816,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Evaluation of the Bay of Fundy scallop stock and its fishery - (plus a yield per recruit analysis)",
+            "pub_year": 1988,
+            "lead_author_2": "G. Robert; M.A.E. Butler-Connolly; M.J. Lundy",
+            "pub_num": "020",
+            "pages": 35,
+            "pdf_size": 1436,
+            "description": ""
+        }
+    }
+]

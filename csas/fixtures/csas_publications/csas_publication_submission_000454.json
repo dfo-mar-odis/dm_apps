@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 454,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar) in Campbellton River, Notre Dame Bay (SFA 4), in Newfoundland",
+            "pub_year": 1999,
+            "lead_author_2": "Downton, P.R., Reddin, D.G.",
+            "pub_num": "083",
+            "pages": 50,
+            "pdf_size": 3885,
+            "description": ""
+        }
+    }
+]

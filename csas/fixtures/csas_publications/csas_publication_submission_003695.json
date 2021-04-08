@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3695,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Invertebrate Subcommittee Meeting; November 25-28, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "West, K.",
+            "pub_num": "030",
+            "pages": 31,
+            "pdf_size": 150,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1035,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Meeting on Scotian Shelf Groundfish Stocks, Regional Advisory Process, Maritimes Region; 30 October- 3 November 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Joe Hunt, Chairperson",
+            "pub_num": "033",
+            "pages": 32,
+            "pdf_size": 143,
+            "description": ""
+        }
+    }
+]

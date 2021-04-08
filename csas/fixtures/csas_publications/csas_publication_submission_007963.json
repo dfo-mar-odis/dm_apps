@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7963,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Atlantic mackerel (Scomber scombrus L.) in NAFO Subareas 3 and 4 in 2016",
+            "title_fr": "Le maquereau bleu (Scomber scombrus L.) dans les sous-régions 3 et 4 de l’OPANO en 2016",
+            "pub_year": 2018,
+            "lead_author_2": "Doniol-Valcroze, T., Van Beveren, E., Légaré, B., Girard, L. et Castonguay, M.",
+            "pub_num": "062",
+            "pages": 56,
+            "pdf_size": 2839,
+            "description": ""
+        }
+    }
+]

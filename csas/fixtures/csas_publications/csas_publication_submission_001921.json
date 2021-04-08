@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1921,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of eastern Georges Bank haddock",
+            "pub_year": 1989,
+            "lead_author_2": "Stratis Gavaris",
+            "pub_num": "049",
+            "pages": 27,
+            "pdf_size": 1104,
+            "description": ""
+        }
+    }
+]

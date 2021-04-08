@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5987,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Update of the estimation of northern shrimp (Pandalus borealis) biomass and abundance from the trawl survey in the Estuary and the northern Gulf of St. Lawrence in 2010",
+            "title_fr": "Mise à jour de l'estimation de biomasse et d'abondance de la crevette nordique (Pandalus borealis) à partir du relevé de chalutage dans l'estuaire et le nord du golfe du Saint-Laurent en 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Savard, L.",
+            "pub_num": "043",
+            "pages": 34,
+            "pdf_size": 981,
+            "description": ""
+        }
+    }
+]

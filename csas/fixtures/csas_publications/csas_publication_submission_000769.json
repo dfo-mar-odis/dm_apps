@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 769,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of NAFO Division 4T American plaice, February 2001",
+            "title_fr": "État de la plie canadienne de la division 4T de l'OPANO, février 2001",
+            "pub_year": 2001,
+            "lead_author_2": "R. Morin, I. Forest, G. Poirier",
+            "pub_num": "023",
+            "pages": 70,
+            "pdf_size": 1390,
+            "description": ""
+        }
+    }
+]

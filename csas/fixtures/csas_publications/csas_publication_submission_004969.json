@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4969,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "State of the Pacific Ocean 2007",
+            "title_fr": "État de l'océan Pacifique 2007",
+            "pub_year": 2008,
+            "lead_author_2": "Crawford, B., J. Irvine.",
+            "pub_num": "028",
+            "pages": 21,
+            "description": ""
+        }
+    }
+]

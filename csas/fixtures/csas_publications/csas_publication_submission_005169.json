@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5169,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review of a Risk-Based Framework for assessing Cumulative Impacts of Marine Development Projects (MDPs) on Marine Mammals and Turtles; March 3-5, 2015",
+            "title_fr": "Compte rendu de la réunion d’examen national par les pairs d’un cadre fondé sur les risques pour l’évaluation des répercussions cumulatives des projets de développement maritime (PDM) sur les mammifères marins et les tortues de mer; du 3 au 5 mars 2015",
+            "pub_year": 2017,
+            "lead_author_2": "Veronique Lesage, Jack Lawson",
+            "pub_num": "026",
+            "pages": 47,
+            "pdf_size": 1241,
+            "description": ""
+        }
+    }
+]

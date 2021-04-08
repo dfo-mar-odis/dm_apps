@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8278,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Update of the stock status indicators of the American lobster (Homarus americanus) stock of the southern Gulf of St. Lawrence to 2018",
+            "title_fr": "Mise à jour jusqu’en 2018 des indicateurs de l’état des stock de homard américain (Homarus americanus) du sud du golfe du Saint-Laurent",
+            "pub_year": 2019,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "008",
+            "pages": 18,
+            "pdf_size": 1501,
+            "description": ""
+        }
+    }
+]

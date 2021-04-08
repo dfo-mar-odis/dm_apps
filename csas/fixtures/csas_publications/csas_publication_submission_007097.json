@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7097,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Evaluation of a Fisheries Risk Assessment Tool (FRAT) for the Mackenzie Gas Pipeline",
+            "title_fr": "Examen de l'outil d'évaluation des risques liés aux pêches pour le pipeline de la vallée du Mackenzie",
+            "pub_year": 2014,
+            "lead_author_2": "N. Mochnacz",
+            "pub_num": "019",
+            "pages": 8,
+            "pdf_size": 311,
+            "description": ""
+        }
+    }
+]

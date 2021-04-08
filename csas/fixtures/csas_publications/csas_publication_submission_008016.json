@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8016,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Advice on Criteria for the Release of Rehabilitated Marine Mammals",
+            "title_fr": "Avis sur les critères de remise en liberté des mammifères marins réhabilités",
+            "pub_year": 2018,
+            "lead_author_2": "Garry Stenson",
+            "pub_num": "026",
+            "pages": 11,
+            "pdf_size": 295,
+            "description": ""
+        }
+    }
+]

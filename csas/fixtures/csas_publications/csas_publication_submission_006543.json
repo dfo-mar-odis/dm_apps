@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6543,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Southern Upland Atlantic Salmon",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon atlantique des hautes terres du Sud",
+            "pub_year": 2013,
+            "lead_author_2": "J. Gibson",
+            "pub_num": "009",
+            "description": ""
+        }
+    }
+]

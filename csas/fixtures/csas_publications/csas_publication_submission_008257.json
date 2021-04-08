@@ -1,0 +1,10 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8257,
+        "fields": {
+            "series": 6,
+            "description": ""
+        }
+    }
+]

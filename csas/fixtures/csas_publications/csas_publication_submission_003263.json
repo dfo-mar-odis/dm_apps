@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3263,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of American plaice in NAFO Subdivision 3Ps",
+            "title_fr": "Évaluation de la plie canadienne de la sous-division 3Ps de l'OPANO",
+            "pub_year": 2002,
+            "lead_author_2": "M. J. Morgan, W. B. Brodie, D. Power and / et S. J. Walsh",
+            "pub_num": "093",
+            "pages": 41,
+            "pdf_size": 995,
+            "description": ""
+        }
+    }
+]

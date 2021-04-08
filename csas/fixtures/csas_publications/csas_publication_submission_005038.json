@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5038,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Framework and Assessment for American Lobster, Homarus americanus, Fisheries in the Southern Gulf of St. Lawrence: LFA 23, 24, 25, 26A and 26B",
+            "title_fr": "Cadre de travail et évaluation des pêcheries de homard, Homarus americanus, dans le sud-ouest du golfe du Saint-Laurent : ZPH 23, 24, 25, 26A et 26B",
+            "pub_year": 2008,
+            "lead_author_2": "M. Comeau, J.M. Hanson, A. Rondeau, M. Mallet, J. Chassé",
+            "pub_num": "054",
+            "pages": 115,
+            "pdf_size": 3805,
+            "description": ""
+        }
+    }
+]

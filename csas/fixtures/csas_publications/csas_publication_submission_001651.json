@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1651,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the American plaice stock in NAFO Subarea 3Ps",
+            "pub_year": 1986,
+            "lead_author_2": "W.B. Brodie",
+            "pub_num": "034",
+            "pages": 16,
+            "pdf_size": 1096,
+            "description": ""
+        }
+    }
+]

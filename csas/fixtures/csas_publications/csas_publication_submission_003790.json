@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3790,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Update assessment of Silvergray rockfish (Sebastes brevispinis)",
+            "title_fr": "Mise à jour de l'évaluation du sébaste argenté (Sebastes brevispinis)",
+            "pub_year": 2002,
+            "lead_author_2": "Stanley, R.D., Olsen, N.",
+            "pub_num": "128",
+            "pages": 117,
+            "pdf_size": 2510,
+            "description": ""
+        }
+    }
+]

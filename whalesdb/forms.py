@@ -3,7 +3,6 @@ from whalesdb import models
 from django.forms import modelformset_factory
 
 import shared_models.models as shared_models
-import sys
 import inspect
 
 
@@ -299,6 +298,18 @@ class TeaForm(forms.ModelForm):
         }
 
 
+class LookupForm(forms.ModelForm):
+    class Meta:
+        fields = ['name', 'nom', 'description_en', 'description_fr']
+
+
+EqtFormset = modelformset_factory(model=models.EqtEquipmentTypeCode, form=LookupForm, extra=1, )
+ErtFormset = modelformset_factory(model=models.ErtRecorderType, form=LookupForm, extra=1, )
+PrmFormset = modelformset_factory(model=models.PrmParameterCode, form=LookupForm, extra=1, )
+RttFormset = modelformset_factory(model=models.RttTimezoneCode, form=RttForm, extra=1, )
+SetFormset = modelformset_factory(model=models.SetStationEventCode, form=LookupForm, extra=1, )
+
+
 MODEL_CHOICES = (("1", "One"), ("2", "Two"))
 
 
@@ -317,7 +328,7 @@ class HelpTextForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         clsmembers = [(cls[0], cls[0]) for cls in inspect.getmembers(models, inspect.isclass)]
-        clsmembers.insert(0, ('', ''))
+        clsmembers.insert(0, (None, "----"))
 
         self.fields['model'] = forms.ChoiceField(choices=clsmembers)
 

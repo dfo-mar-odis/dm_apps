@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6571,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Distribution of Northern shrimp fishing effort in the Estuary and Gulf of St. Lawrence",
+            "title_fr": "Distribution de l'effort de pêche à la crevette nordique dans l'estuaire et le golfe du Saint-Laurent",
+            "pub_year": 2012,
+            "lead_author_2": "Louise Savard",
+            "pub_num": "092",
+            "pdf_size": 1168,
+            "description": ""
+        }
+    }
+]

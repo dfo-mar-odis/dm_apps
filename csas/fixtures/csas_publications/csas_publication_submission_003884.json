@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3884,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Can Hydroacoustic Survey Approaches Yield Abundance Indices of Pollock on the Scotian Shelf?",
+            "title_fr": "Peut-on obtenir des indices d'abondance de la goberge sur le plateau néo-écossais par des relevés hydroacoustiques?",
+            "pub_year": 2003,
+            "lead_author_2": "Neilson, J. D., Perley, P., Stevens, C., Clark, D. and Melvin, G.",
+            "pub_num": "075",
+            "pages": 34,
+            "pdf_size": 4716,
+            "description": ""
+        }
+    }
+]

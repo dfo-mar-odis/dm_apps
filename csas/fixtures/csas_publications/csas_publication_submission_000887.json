@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 887,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Yield per recruit assessments for Newfoundland lobster stocks",
+            "pub_year": 1978,
+            "lead_author_2": "G.P. Ennis",
+            "pub_num": "031",
+            "pages": 18,
+            "pdf_size": 802,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4902,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Scientific information used in the recovery potential assessment for the speckled dace (Rhinichthys osculus)",
+            "title_fr": "Évaluation du potentiel de rétablissement du naseux moucheté (Rhinichthys osculus)",
+            "pub_year": 2007,
+            "lead_author_2": "Harvey, B.",
+            "pub_num": "074",
+            "pages": 25,
+            "pdf_size": 228,
+            "description": ""
+        }
+    }
+]

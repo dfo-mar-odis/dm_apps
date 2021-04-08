@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6075,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Review of Approaches to Assess Survival of Released Catch from Canadian Large Pelagic Longline Fisheries",
+            "title_fr": "Examen de méthodes d'évaluation de la survie des captures remises à l'eau dans les pêches canadiennes de gros poissons pélagiques à la palangre",
+            "pub_year": 2011,
+            "lead_author_2": "J.D. Neilson, J.D., S.D. Busawon, I.V. Andrushchenko, S.E. Campana, E.H. Carruthers, L.E. Harris, M. Stokesbury / T. Worcester / V. Myra",
+            "pub_num": "091",
+            "pages": 39,
+            "pdf_size": 1199,
+            "description": ""
+        }
+    }
+]

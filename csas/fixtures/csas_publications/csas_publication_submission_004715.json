@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4715,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Regional Advisory Process on Scallop Fishing Area (SFA) 29 Assessment; 12 April 2007",
+            "title_fr": "Compte rendu du Processus consultatif régional des Maritimes sur l'évaluation des stocks de la zone de pêche du pétoncle (ZPP) 29; le 12 avril 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Claytor, R.",
+            "pub_num": "022",
+            "pages": 16,
+            "pdf_size": 139,
+            "description": ""
+        }
+    }
+]

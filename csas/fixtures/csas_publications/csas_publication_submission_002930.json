@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2930,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Cod on the Southern Scotian Shelf and in the Bay of Fundy (Div. 4X/5Y)",
+            "title_fr": "Morue du sud du plateau néo-écossais et de la baie de Fundy (Div. 4X/5Y)",
+            "pub_year": 1999,
+            "lead_author_2": "Donald Clark",
+            "pub_num": "A3-05",
+            "pages": 6,
+            "pdf_size": 68,
+            "description": ""
+        }
+    }
+]

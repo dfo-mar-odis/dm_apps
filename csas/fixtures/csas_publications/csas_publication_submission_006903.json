@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6903,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "A Review of Scientific Evidence Supporting Generic Productivity-State Response Curves",
+            "lead_author_2": "Dr. Marten Koops et al (lead author)",
+            "description": ""
+        }
+    }
+]

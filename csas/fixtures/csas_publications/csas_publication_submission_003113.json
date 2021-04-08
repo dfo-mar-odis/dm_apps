@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3113,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Georges Bank Haddock",
+            "title_fr": "Aiglefin de l'est du banc Georges",
+            "pub_year": 1997,
+            "lead_author_2": "Stratis Gavaris, Lou Van Eckhaute",
+            "pub_num": "A3-08",
+            "pages": 9,
+            "pdf_size": 163,
+            "description": ""
+        }
+    }
+]

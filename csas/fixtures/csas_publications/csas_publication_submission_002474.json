@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2474,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution and recruitment of demersal cod (ages 0+, 1+ and 2+) in the coastal zone, NAFO Divisions 3K and 3L",
+            "pub_year": 1995,
+            "lead_author_2": "D.C. Schneider; D.A. Methven; D. Ings",
+            "pub_num": "068",
+            "pages": 9,
+            "pdf_size": 337,
+            "description": ""
+        }
+    }
+]

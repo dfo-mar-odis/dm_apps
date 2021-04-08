@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3832,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process Meeting on the assessment framework for 4T herring; 18-19 March 2003",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional des provinces Maritimes sur le cadre d'évaluation du hareng de 4T; les 18 et 19 mars 2003",
+            "pub_year": 2003,
+            "lead_author_2": "O'Boyle, R.N.",
+            "pub_num": "009",
+            "pages": 29,
+            "pdf_size": 226,
+            "description": ""
+        }
+    }
+]

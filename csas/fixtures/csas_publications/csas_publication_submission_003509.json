@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3509,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 2002,
+            "lead_author_2": "McClintock, J.",
+            "pub_num": "039",
+            "description": ""
+        }
+    }
+]

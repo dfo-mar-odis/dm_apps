@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1074,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment update of American plaice in ICNAF Subarea 2 and Division 3K",
+            "pub_year": 1980,
+            "lead_author_2": "T.K. Pitt",
+            "pub_num": "058",
+            "pages": 13,
+            "pdf_size": 619,
+            "description": ""
+        }
+    }
+]

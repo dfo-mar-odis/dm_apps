@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3203,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "The Black Dogfish in the Gulf of St. Lawrence",
+            "title_fr": "L' aiguillat noir dans le golfe du Saint-Laurent",
+            "pub_year": 1996,
+            "lead_author_2": "Gascon, D.",
+            "pub_num": "061",
+            "description": ""
+        }
+    }
+]

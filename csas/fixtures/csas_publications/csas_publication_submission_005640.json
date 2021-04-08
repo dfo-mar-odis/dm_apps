@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5640,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a Recovery Potential Assessment of Wavy-rayed Lampmussel (Lampsilis fasciola) in Canada",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement de la lampsile fasciolée (Lampsilis fasciola) au Canada",
+            "pub_year": 2010,
+            "lead_author_2": "Bouvier, L., Morris, T.",
+            "pub_num": "074",
+            "pages": 31,
+            "pdf_size": 230,
+            "description": ""
+        }
+    }
+]

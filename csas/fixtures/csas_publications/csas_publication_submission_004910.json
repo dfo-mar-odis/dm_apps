@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4910,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Stock Assessment Report on Scallops (Placopecten magellanicus) in Scallop Production Areas 1 to 6 in the Bay of Fundy",
+            "title_fr": "Évaluation des stocks de pétoncles (Placopecten magellanicus) des zones de production de pétoncles 1 à 6",
+            "pub_year": 2007,
+            "lead_author_2": "Smith, S.",
+            "pub_num": "054",
+            "pages": 32,
+            "pdf_size": 867,
+            "description": ""
+        }
+    }
+]

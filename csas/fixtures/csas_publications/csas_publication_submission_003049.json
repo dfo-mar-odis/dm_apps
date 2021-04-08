@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3049,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scotian Shelf Ocean Quahaug",
+            "title_fr": "Quahog nordique du plateau néo-écossais",
+            "pub_year": 1998,
+            "lead_author_2": "R.E. (Ron) Duggan",
+            "pub_num": "C3-37",
+            "pages": 4,
+            "pdf_size": 142,
+            "description": ""
+        }
+    }
+]

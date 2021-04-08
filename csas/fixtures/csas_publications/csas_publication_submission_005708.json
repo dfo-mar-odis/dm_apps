@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5708,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Occurrences of Anguillicoloides crassus, an invasive parasitic nematode, infecting American eel (Anguilla rostrata) collected from New Brunswick and Nova Scotia Rivers: 2008-2009",
+            "title_fr": "Présence d'Anguillicoloides crassus, nématode parasite envahissant, qui infecte les anguilles d'Amérique (Anguilla rostrata) recueillies dans les rivières du Nouveau-Brunswick et de la Nouvelle-Écosse : 2008-2009",
+            "pub_year": 2012,
+            "lead_author_2": "D.M. Campbell, R.G. Bradford, and K.M.M. Jones",
+            "pub_num": "082",
+            "pages": 23,
+            "pdf_size": 412,
+            "description": ""
+        }
+    }
+]

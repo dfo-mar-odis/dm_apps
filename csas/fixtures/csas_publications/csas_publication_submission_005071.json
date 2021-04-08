@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5071,
+        "fields": {
+            "series": 4,
+            "lead_region": [7, 4, 2, 1, 5],
+            "title_en": "Fifth Meeting of the Canadian Eel Science Working Group, 9-11 October 2007",
+            "title_fr": "Cinquième rénion du Groupe canadien de travail scientifique sur l'anguille; du 9 au 11 octobre 2007",
+            "pub_year": 2008,
+            "lead_author_2": "D. Cairns, Y. Mailhot (Co-chairs), J. Hallett, David Cairns (Editors)",
+            "pub_num": "027",
+            "pages": 66,
+            "pdf_size": 414,
+            "description": ""
+        }
+    }
+]

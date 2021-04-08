@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5032,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the workshops held for preparing the ecological monitoring framework of the future Manicouagan Marine Protected Area, Québec; December 15, 2006, January 24, 2007, March 7, 2007",
+            "title_fr": "Compte rendu des ateliers sur l'élaboration du cadre de suivi écologique de la future zone de protection marine Manicouagan, Québec; le 15 décembre 2006, le 24 janvier 2007, le 7 mars 2007",
+            "pub_year": 2008,
+            "lead_author_2": "J. Munro",
+            "pub_num": "023",
+            "pages": 112,
+            "description": ""
+        }
+    }
+]

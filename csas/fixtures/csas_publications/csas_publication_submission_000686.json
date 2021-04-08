@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 686,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Cadmium in BC farmed oysters: A review of available data, potential sources, research needs and possible mitigation strategies",
+            "pub_year": 2000,
+            "lead_author_2": "Kruzynski, G.M.",
+            "pub_num": "104",
+            "pages": 37,
+            "pdf_size": 7599,
+            "description": ""
+        }
+    }
+]

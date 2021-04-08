@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6882,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the identification of additional Ecologically and Biologically Significant Areas (EBSAs) within the Newfoundland and Labrador Shelves Bioregion; October 23-25, 2012.",
+            "lead_author_2": "Nadine Templeman, Garry Stenson",
+            "description": ""
+        }
+    }
+]

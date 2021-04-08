@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2932,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Georges Bank Haddock",
+            "title_fr": "Aiglefin de l'est du banc Georges",
+            "pub_year": 1999,
+            "lead_author_2": "Gavaris, S.;Van Eeckhaute, L.",
+            "pub_num": "A3-08",
+            "pages": 8,
+            "pdf_size": 113,
+            "description": ""
+        }
+    }
+]

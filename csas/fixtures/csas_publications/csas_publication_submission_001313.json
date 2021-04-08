@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1313,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Gulf of Maine Area lobster management areas, and suggestions on stock structure",
+            "pub_year": 1986,
+            "lead_author_2": "D.S. Pezzack; J.D. Pringle",
+            "pub_num": "065",
+            "pages": 17,
+            "pdf_size": 1620,
+            "description": ""
+        }
+    }
+]

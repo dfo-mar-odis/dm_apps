@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5441,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "2010 Canadian Marine Ecosystem Status and Trends Report",
+            "title_fr": "Rapport sur l'état et les tendances des écosystèmes marins canadiens en 2010",
+            "pub_year": 2010,
+            "pub_num": "030",
+            "pages": 38,
+            "pdf_size": 1596,
+            "description": ""
+        }
+    }
+]

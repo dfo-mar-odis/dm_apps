@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8492,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "3Ps SAM",
+            "lead_author_2": "Juliette Champagnat",
+            "description": ""
+        }
+    }
+]

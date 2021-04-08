@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8686,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Threat Assessment for the Leatherback Sea Turtle (Dermochelys coriacea), Northwest Atlantic Subpopulation",
+            "title_fr": "Évaluation des menaces pesant sur la sous-population de tortue luth (Dermochelys coriacea) de l’Atlantique Nord-Ouest",
+            "pub_year": 2020,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "039",
+            "pages": 46,
+            "pdf_size": 658,
+            "description": ""
+        }
+    }
+]

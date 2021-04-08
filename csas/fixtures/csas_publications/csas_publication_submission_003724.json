@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3724,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "East and Southeast Newfoundland Atlantic Herring",
+            "title_fr": "Hareng de l'est et du sud-est de Terre-Neuve",
+            "pub_year": 2002,
+            "lead_author_2": "Wheeler, J.",
+            "pub_num": "B2-01",
+            "pages": 21,
+            "description": ""
+        }
+    }
+]

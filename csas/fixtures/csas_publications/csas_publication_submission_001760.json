@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1760,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Crabe des neiges (Chionoecetes opilio) de l'estuaire et du nord du golfe Saint-Laurent: Évaluation de 1986",
+            "pub_year": 1987,
+            "lead_author_2": "R. Bailey; J.M. Coutu",
+            "pub_num": "070",
+            "description": ""
+        }
+    }
+]

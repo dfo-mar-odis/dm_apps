@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3261,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Oceanographic conditions in NAFO Subdivisions 3Pn and 3Ps during 2001 with comparisons to the previous year and the long-term (1971-2000) average",
+            "title_fr": "Conditions océanographiques dans les sous-divisions 3Pn et 3Ps de l'OPANO en 2001 par rapport à l'année précédente et à la moyenne à long terme (1971-2000)",
+            "pub_year": 2002,
+            "lead_author_2": "E. Colbourne",
+            "pub_num": "024",
+            "pages": 20,
+            "pdf_size": 6550,
+            "description": ""
+        }
+    }
+]

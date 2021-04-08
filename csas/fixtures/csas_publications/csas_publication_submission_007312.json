@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7312,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of a National Peer Review on Ecological Risk Criteria to Support Integrated Oceans Management; December 9-11, 2014",
+            "title_fr": "Compte rendu de l’examen national par les pairs sur les critères de risque écologique à l'appui de la gestion intégrée des océans; du 9 au 11 décembre 2014",
+            "pub_year": 2017,
+            "lead_author_2": "White, A.",
+            "pub_num": "032",
+            "pages": 16,
+            "pdf_size": 127,
+            "description": ""
+        }
+    }
+]

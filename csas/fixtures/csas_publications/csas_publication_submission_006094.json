@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6094,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Information on abundance and harvest of eastern Hudson Bay beluga (Delphinapterus leucas)",
+            "title_fr": "Information sur l'abondance et la récolte de bélugas (Delphinapterus leucas) de l'est de la baie d'Hudson",
+            "pub_year": 2011,
+            "lead_author_2": "Thomas Doniol-Valcroze, Mike O. Hammill, Véronique Lesage",
+            "pub_num": "119",
+            "pages": 21,
+            "pdf_size": 419,
+            "description": ""
+        }
+    }
+]

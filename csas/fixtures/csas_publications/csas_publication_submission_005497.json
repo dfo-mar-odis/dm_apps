@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5497,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Impacts of Fishing Gears other than Bottom Trawls, Dredges, Gillnets and Longlines on Aquatic Biodiversity and Vulnerable Marine Ecosystems",
+            "title_fr": "Impacts des engins de pêche autres que les chaluts de fond, les dragues, les filets maillants et les palangres sur la biodiversité aquatique et les écosystèmes marins vulnérables",
+            "pub_year": 2010,
+            "lead_author_2": "Donaldson, A., Gabriel, C., Harvey, B.J., Carolsfeld, J.",
+            "pub_num": "011",
+            "pages": 90,
+            "pdf_size": 920,
+            "description": ""
+        }
+    }
+]

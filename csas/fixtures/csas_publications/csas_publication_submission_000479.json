@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 479,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Follow-up to the assessment of Atlantic salmon in selected rivers of Cape Breton Island, 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Marshall, T.L., Rutherford, K., LeBlanc, P., Jones, R.",
+            "pub_num": "108",
+            "pages": 57,
+            "pdf_size": 4866,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6405,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Ecosystem Consideration in the implementation of PA",
+            "lead_author_2": "Jake Rice et al.",
+            "description": ""
+        }
+    }
+]

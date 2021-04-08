@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1329,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon stocks of Scotia-Fundy Region, 1989",
+            "pub_year": 1989,
+            "lead_author_2": "S.F. O'Neil; T.L. Marshall; P.G. Amiro; R.E. Cutting",
+            "pub_num": "080",
+            "pages": 14,
+            "pdf_size": 780,
+            "description": ""
+        }
+    }
+]

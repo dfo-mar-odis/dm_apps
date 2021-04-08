@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 167,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment of Thompson River/Upper Fraser River Coho Salmon",
+            "pub_year": 1999,
+            "lead_author_2": "Irvine, J.R., Wilson, K., Rosenberger, B., Cook, R.",
+            "pub_num": "028",
+            "pages": 66,
+            "pdf_size": 643,
+            "description": ""
+        }
+    }
+]

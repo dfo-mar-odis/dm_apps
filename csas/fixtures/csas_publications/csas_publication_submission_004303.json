@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4303,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Invertebrate Subcommittee Meeting; April 12-14, 2005",
+            "title_fr": "Compte rendu de la réunion du sous-comité des invertébrés du CEESP; 12-14 avril 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Boutillier, J.",
+            "pub_num": "010",
+            "pages": 36,
+            "pdf_size": 283,
+            "description": ""
+        }
+    }
+]

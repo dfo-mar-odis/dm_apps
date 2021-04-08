@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7589,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Review of Reference Points used in the Precautionary Approach for Northern Shrimp (Pandalus borealis) in Shrimp Fishing Area 6",
+            "title_fr": "Examen des points de référence utilisés dans l’approche de précaution pour la crevette nordique (Pandalus borealis) dans la zone de pêche à la crevette 6",
+            "pub_year": 2017,
+            "lead_author_2": "E. Parrill",
+            "pub_num": "009",
+            "pages": 17,
+            "pdf_size": 961,
+            "description": ""
+        }
+    }
+]

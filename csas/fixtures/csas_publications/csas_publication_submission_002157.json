@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2157,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The 1991 inshore capelin fishery in NAFO Div. 3K",
+            "pub_year": 1992,
+            "lead_author_2": "B.S. Nakashima; R.W. Harnum",
+            "pub_num": "009",
+            "pages": 19,
+            "description": ""
+        }
+    }
+]

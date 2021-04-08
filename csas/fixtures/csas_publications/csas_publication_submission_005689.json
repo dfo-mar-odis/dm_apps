@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5689,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Science advice from a risk assessment of five sessile tunicate species",
+            "title_fr": "Avis scientifique issu de l'Évaluation des risques posés par cinq espèces de tuniciers sessiles",
+            "pub_year": 2012,
+            "pub_num": "049",
+            "pages": 31,
+            "pdf_size": 2963,
+            "description": ""
+        }
+    }
+]

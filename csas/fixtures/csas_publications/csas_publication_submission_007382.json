@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7382,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Indices of abundance to 2014 for six groundfish species based on the September research vessel and August sentinel vessel bottom-trawl surveys in the southern Gulf of St. Lawrence",
+            "title_fr": "Indices des abondances jusqu’en 2014 de six espèces de poisson de fond provenant des relevés aux chaluts de fond de navire de recherche en septembre et de la pêche sentinelle en août dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2015,
+            "lead_author_2": "Savoie, L.",
+            "pub_num": "085",
+            "pages": 58,
+            "pdf_size": 16795,
+            "description": ""
+        }
+    }
+]

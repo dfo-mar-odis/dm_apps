@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5425,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Information relevant to the identification of Critical Habitats of North Pacific Humpback Whales (Megaptera novaeangliae) in British Columbia",
+            "title_fr": "Renseignements pertinents en vue de la désignation des habitats essentiels pour les rorquals à bosse (Megaptera novaeangliae) du Pacifique Nord en Colombie-Britannique",
+            "pub_year": 2009,
+            "lead_author_2": "Nichol, L.M., R. Abernethy, L. Flostrand, T.S. Lee, J.K.B. Ford.",
+            "pub_num": "116",
+            "pages": 44,
+            "pdf_size": 1306,
+            "description": ""
+        }
+    }
+]

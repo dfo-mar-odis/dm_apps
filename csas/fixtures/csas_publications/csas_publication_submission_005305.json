@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5305,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the National Workshop on the Impacts of Seals on Fish Populations in Eastern Canada (Part 2); 24-28 November, 2008",
+            "title_fr": "Compte rendu de l'atelier national sur les répercussions des phoques sur les populations de poissons dans l'est du Canada (2ième partie); du 24 au 28 novembre 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Bowen, D.",
+            "pub_num": "020",
+            "pages": 136,
+            "pdf_size": 1065,
+            "description": ""
+        }
+    }
+]

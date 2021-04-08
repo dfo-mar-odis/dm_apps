@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1110,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Fishing effort and catch-per-unit-effort of the inshore herring fisheries in the southern Gulf of St. Lawrence, 1973-1980",
+            "pub_year": 1981,
+            "lead_author_2": "S.N. Messieh",
+            "pub_num": "012",
+            "pages": 17,
+            "pdf_size": 5826,
+            "description": ""
+        }
+    }
+]

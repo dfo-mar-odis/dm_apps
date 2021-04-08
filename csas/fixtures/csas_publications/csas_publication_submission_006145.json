@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6145,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Summary of Grass Pickerel survey in Beaver Creek, Ontario, 2009 - 2015",
+            "lead_author_2": "Julia Colm",
+            "description": ""
+        }
+    }
+]

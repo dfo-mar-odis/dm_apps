@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4780,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Zonal Advisory Meeting for the Recovery Potential Assessment (RPA) of Roundnose Grenadier ; February 11, 2010",
+            "title_fr": "Compte rendu de la réunion de consultation scientifique zonale sur l’évaluation du potential de rétablissement (EPR) du grenadier de roche ; le 11 février 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Houston, K.",
+            "pub_num": "010",
+            "pages": 23,
+            "pdf_size": 121,
+            "description": ""
+        }
+    }
+]

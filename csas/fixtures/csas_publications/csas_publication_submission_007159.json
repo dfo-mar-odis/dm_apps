@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7159,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop Fishery Area/Time Closure to Reduce Yellowtail Flounder By-catch on Georges Bank in 2014",
+            "title_fr": "Fermetures spatiotemporelles de la pêche au pétoncle destinées à réduire les prises accessoires de limandes à queue jaune sur le banc Georges en 2014",
+            "pub_year": 2014,
+            "lead_author_2": "Eric Gross & Alan Reeves / Lottie Bennett / Valerie Myra",
+            "pub_num": "034",
+            "description": ""
+        }
+    }
+]

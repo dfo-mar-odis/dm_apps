@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1686,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1985 stock status of Division 4RST redfish",
+            "pub_year": 1986,
+            "lead_author_2": "P.J. Rubec; J. Wright; D. Phillips; L. Waite",
+            "pub_num": "100",
+            "pages": 70,
+            "pdf_size": 2869,
+            "description": ""
+        }
+    }
+]

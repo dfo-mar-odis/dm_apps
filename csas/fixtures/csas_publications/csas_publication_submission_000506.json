@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 506,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "1999 Assessment of Thompson River/ Upper Fraser River Coho Salmon",
+            "pub_year": 1999,
+            "lead_author_2": "Irvine, J.R., Bailey, R.E., Bradford, M.J., Kadowaki, R.K., Shaw, W.S.",
+            "pub_num": "128",
+            "pages": 40,
+            "pdf_size": 296,
+            "description": ""
+        }
+    }
+]

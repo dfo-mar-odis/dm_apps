@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2248,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary analysis of research survey and commercial indices for 4TVn cod up to 1992",
+            "pub_year": 1992,
+            "lead_author_2": "A. Sinclair",
+            "pub_num": "100",
+            "pages": 9,
+            "pdf_size": 682,
+            "description": ""
+        }
+    }
+]

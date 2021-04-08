@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5078,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 7],
+            "title_en": "Review of aerial survey estimates for ringed seals (Phoca hispida) in western Hudson Bay",
+            "title_fr": "Examen des estimations par relevés aériens pour les phoques annelés (Phoca hispida) de la côte Ouest de la baie d'Hudson",
+            "pub_year": 2009,
+            "lead_author_2": "S.H. Fergusson",
+            "pub_num": "004",
+            "pages": 5,
+            "pdf_size": 77,
+            "description": ""
+        }
+    }
+]

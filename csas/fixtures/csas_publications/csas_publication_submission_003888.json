@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3888,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Stock separation of narwhal (Monodon monoceros) based on organochlorine contaminants",
+            "title_fr": "Discrimination des stocks de narval (Monodon monoceros) au Canada en fonction de leurs teneurs en contaminants organochlorés",
+            "pub_year": 2003,
+            "lead_author_2": "de March, B.G.E. and Stern, G.",
+            "pub_num": "079",
+            "pages": 20,
+            "pdf_size": 3335,
+            "description": ""
+        }
+    }
+]

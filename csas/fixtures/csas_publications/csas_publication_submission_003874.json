@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3874,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Application of the Precautionary Approach and Conservation Reference Points to the Management of Atlantic Seals: A Discussion Paper",
+            "title_fr": "Application de l'approche de précaution et de points de référence pour la conservation à la gestion des phoques de l'Atlantique : Document de travail",
+            "pub_year": 2003,
+            "lead_author_2": "Hammill, M. and G. Stenson",
+            "pub_num": "067",
+            "pages": 23,
+            "pdf_size": 181,
+            "description": ""
+        }
+    }
+]

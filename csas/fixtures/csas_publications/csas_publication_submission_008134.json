@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8134,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Assessment of Maritimes Region (4VWX) Snow Crab  (Chionoecetes opilio, O. Fabricius); February 23, 2018",
+            "lead_author_2": "Jennifer Ford",
+            "description": ""
+        }
+    }
+]

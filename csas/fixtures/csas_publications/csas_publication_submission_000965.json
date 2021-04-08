@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 965,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the RAP on Mackenzie River Inconnu; 28 July 1998",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional concernant l'inconnu du Mackenzie; le 28 juillet 1998",
+            "pub_year": 1998,
+            "pub_num": "013",
+            "pages": 10,
+            "pdf_size": 44,
+            "description": ""
+        }
+    }
+]

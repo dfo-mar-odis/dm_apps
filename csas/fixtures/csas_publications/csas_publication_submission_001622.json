@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1622,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Exploitation levels of the Cape Breton snow crab fishery (Area 1 and 7) for 1984",
+            "pub_year": 1986,
+            "lead_author_2": "R.J. Cormier; M. Comeau",
+            "pub_num": "005",
+            "pages": 15,
+            "pdf_size": 976,
+            "description": ""
+        }
+    }
+]

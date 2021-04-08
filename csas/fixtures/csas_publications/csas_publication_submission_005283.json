@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5283,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of Atlantic Towing Limited's Monitoring Plan for the 'Shovelmaster' Barge",
+            "title_fr": "Examen du plan de suivi d'Atlantic Towing Limited pour la barge « Shovel Master » ",
+            "pub_year": 2009,
+            "pub_num": "012",
+            "pages": 7,
+            "pdf_size": 118,
+            "description": ""
+        }
+    }
+]

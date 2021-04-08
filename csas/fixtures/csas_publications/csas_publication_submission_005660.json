@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5660,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information Relevant to a Recovery Potential Assessment of Lake Sturgeon: Saskatchewan River Populations (DU2)",
+            "title_fr": "Renseignements pertinents pour l'évaluation du potentiel de rétablissement de l'esturgeon jaune : populations de la rivière Saskatchewan (UD 2)",
+            "pub_year": 2010,
+            "lead_author_2": "H. Cleator, K.A. Martin, T.C. Pratt, R. Campbell, M. Pollock and D. Watters",
+            "pub_num": "081",
+            "pages": 42,
+            "pdf_size": 830,
+            "description": ""
+        }
+    }
+]

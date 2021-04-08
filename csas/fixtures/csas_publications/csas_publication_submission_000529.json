@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 529,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Reconciliation of processed catch statistics with log data for 1992-97 flatfish in 4VWX/5Y",
+            "pub_year": 1999,
+            "lead_author_2": "Fowler, G.M., Stobo, W.T.",
+            "pub_num": "149",
+            "pages": 31,
+            "pdf_size": 1574,
+            "description": ""
+        }
+    }
+]

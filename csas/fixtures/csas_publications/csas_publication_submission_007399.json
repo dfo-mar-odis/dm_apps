@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7399,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review on the Assessment of the Stimpson's surfclam fishery in Quebec's Inshore Waters; March 11, 2015",
+            "title_fr": "Compte rendu de l'examen régional par des pairs sur l'évaluation de la pêche à la mactre de Stimpson des eaux côtières du Québec; 11 mars 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "017",
+            "description": ""
+        }
+    }
+]

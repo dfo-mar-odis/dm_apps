@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2999,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "LFA 41 Offshore Lobsters",
+            "title_fr": "Homard de haute mer de la ZPH 41",
+            "pub_year": 2000,
+            "lead_author_2": "Douglas Pezzack",
+            "pub_num": "C3-14",
+            "pages": 13,
+            "pdf_size": 170,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3657,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Wolffish in Divisions 2GHJ, 3KLNO, and Subdivisions 3Ps/3Pn",
+            "title_fr": "Loup des divisions 2GHJ et 3KLNO ainsi que les subdivisions 3Ps/3Pn",
+            "pub_year": 2002,
+            "pub_num": "A2-16",
+            "pages": 6,
+            "pdf_size": 620,
+            "description": ""
+        }
+    }
+]

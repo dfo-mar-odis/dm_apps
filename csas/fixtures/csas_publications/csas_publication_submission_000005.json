@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5,
+        "fields": {
+            "series": 3,
+            "lead_region": [4, 5],
+            "title_en": "Status of witch flounder in NAFO Division 4RST, January 1998",
+            "pub_year": 1998,
+            "lead_author_2": "R. Morin, D. Swain, G. Poirier",
+            "pub_num": "004",
+            "pages": 51,
+            "pdf_size": 6899,
+            "description": ""
+        }
+    }
+]

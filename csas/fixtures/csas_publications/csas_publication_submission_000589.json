@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 589,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Cod in the Southern Gulf of St. Lawrence, February 2000",
+            "title_fr": "Évaluation du stock de morue du sud du Golfe du St-Laurent, février 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Chouinard, G.A., Currie,L., Sinclair , A., Poirier, G.",
+            "pub_num": "019",
+            "pages": 121,
+            "pdf_size": 3081,
+            "description": ""
+        }
+    }
+]

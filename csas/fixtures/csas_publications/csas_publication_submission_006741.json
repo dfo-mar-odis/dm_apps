@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6741,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the assessment of the ice sportfishing in the Saguenay River; November 22, 2012",
+            "title_fr": "Compte rendu de l'examen régional par des pairs portant sur l'évaluation de la pêche sportive hivernale dans le fjord du Saguenay ; 22 novembre 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "057",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

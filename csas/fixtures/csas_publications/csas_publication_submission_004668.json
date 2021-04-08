@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4668,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An assessment of the snow crab resident on the Scotian Shelf in 2006",
+            "title_fr": "Évaluation de stock du crabe des neiges du plateau continental de la Nouvelle-Écosse en 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Choi, J.S., Zisserson, B.M.",
+            "pub_num": "017",
+            "pages": 93,
+            "pdf_size": 5678,
+            "description": ""
+        }
+    }
+]

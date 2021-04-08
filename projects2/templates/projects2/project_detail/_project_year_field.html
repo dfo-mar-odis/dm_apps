@@ -6,6 +6,8 @@
   <td v-html='projectYear.metadata'></td>
 {% elif "allocated" in field %}
   <td v-html='projectYear.allocated_budget'></td>
+{% elif "it_needs" in field %}
+  <td v-html='projectYear.it_needs'></td>
 {% elif "total_score" in field %}
   <td>
     ${ projectYear.review_score_percentage } (${ projectYear.review_score_fraction })
@@ -17,7 +19,7 @@
   <td v-html='projectYear.{{ field }}_html'></td>
 
 {% elif  "requires_" in field or "has_" in field or "eligible" in field %}
-  <td>${ projectYear.{{ field }} | yesNo }</td>
+  <td>${ projectYear.{{ field|strip_label }} | yesNo }</td>
 
 {% else %}
   <td v-html='projectYear.{{ field }}'></td>

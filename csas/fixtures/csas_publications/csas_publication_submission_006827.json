@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6827,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Update of Sentinel Survey Results in NAFO Divisions 2J3KL for 1995-2012",
+            "title_fr": "Derniers résultats des relevés des pêches sentinelles dans les divisions 2J3KL de l'OPANO : 1995-2012",
+            "pub_year": 2014,
+            "lead_author_2": "D. Maddock Parsons",
+            "pub_num": "014",
+            "pages": 20,
+            "pdf_size": 1550,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5126,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scallop Fishery Area/Time Closure to Protect Cod Spawning Aggregations in 5Z (Georges Bank) in 2011",
+            "title_fr": "Fermetures spatio-temporelles de la pêche du pétoncle destinées à protéger les bancs de morue qui frayent dans 5Z (banc Georges) en 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Kirsten Clark, Amy Glass, Jessica Sameoto / Tara McIntyre / Valerie Myra",
+            "pub_num": "014",
+            "pages": 8,
+            "pdf_size": 158,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1628,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock-recruitment relationships for alewives and blueback herring returning to the Mactaquac Dam, Saint John River, New Brunswick",
+            "pub_year": 1986,
+            "lead_author_2": "B.M. Jessop",
+            "pub_num": "011",
+            "pages": 21,
+            "pdf_size": 925,
+            "description": ""
+        }
+    }
+]

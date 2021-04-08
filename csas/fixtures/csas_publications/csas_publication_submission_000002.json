@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status of Coho Salmon Stocks Adjacent to the Strait of Georgia, including the lower Fraser River",
+            "pub_year": 1999,
+            "lead_author_2": "Simpson, K., Semple, R., Baillie, S., Adkins, B., Lehmann, S.",
+            "pub_num": "133",
+            "pages": 76,
+            "pdf_size": 419,
+            "description": ""
+        }
+    }
+]

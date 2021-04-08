@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2890,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A review of the biology of the Pacific milky venus clam (Compsomyax subdiaphana) and the fisheries of related subtidal species.",
+            "pub_year": 1997,
+            "lead_author_2": "Lauzier, R.",
+            "pub_num": "136",
+            "pages": 40,
+            "pdf_size": 2393,
+            "description": ""
+        }
+    }
+]

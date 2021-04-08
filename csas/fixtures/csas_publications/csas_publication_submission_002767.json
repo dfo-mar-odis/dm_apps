@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2767,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recent trends in the lobster fishery off eastern Cape Breton (LFA 27-30): catch rate and exploitation",
+            "pub_year": 1996,
+            "lead_author_2": "M.J. Tremblay; M.D. Eagles",
+            "pub_num": "141",
+            "pages": 22,
+            "pdf_size": 1008,
+            "description": ""
+        }
+    }
+]

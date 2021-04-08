@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 864,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Effects of a by-catch of young redfish in the Port au Choix shrimp fishery - First implications",
+            "pub_year": 1978,
+            "lead_author_2": "D.G. Parsons",
+            "pub_num": "008",
+            "pages": 18,
+            "pdf_size": 1102,
+            "description": ""
+        }
+    }
+]

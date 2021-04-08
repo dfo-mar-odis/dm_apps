@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4312,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Peer Review for the Southern Gulf of St. Lawrence Groundfish Stocks, Gulf Region; February 28 - March 2, 2005",
+            "title_fr": "Procès-verbal des séances d'examen par les pairs pour les stocks de poissons de fond du sud du golfe du Saint-Laurent, Région du Golfe; du 28 février au 2 mars 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Marc Lanteigne",
+            "pub_num": "012",
+            "pages": 47,
+            "pdf_size": 318,
+            "description": ""
+        }
+    }
+]

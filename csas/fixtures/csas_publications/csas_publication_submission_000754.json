@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 754,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock Status of Atlantic Salmon (Salmo Salar) in the Miramichi River, 2000",
+            "pub_year": 2001,
+            "lead_author_2": "Chaput, G., Moore, D., Hayward, J., Shaesgreen, J., Dubee, B.",
+            "pub_num": "008",
+            "pages": 89,
+            "pdf_size": 2050,
+            "description": ""
+        }
+    }
+]

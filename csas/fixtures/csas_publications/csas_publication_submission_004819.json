@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4819,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Regional Advisory Process on the Buffalo River Inconnu (Stenodus leucichthys) population, Great Slave Lake, Northwest Territories; March 30-31, 2010",
+            "title_fr": "Compte rendu du processus de consultation scientifique régional sur la population d'inconnu (Stenodus leucichthys) de la rivière Buffalo, Grand Lac des Esclaves, Territoires du Nord-Ouest ; les 30-31 mars 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Melanie Toyne",
+            "pub_num": "005",
+            "pages": 19,
+            "pdf_size": 96,
+            "description": ""
+        }
+    }
+]

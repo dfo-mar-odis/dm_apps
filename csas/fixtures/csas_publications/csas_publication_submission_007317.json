@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7317,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the national peer review of the Fluidigm® BioMark™ platform: Evaluation to assess fitness for purpose in microbial monitoring; December 2 – 4, 2014",
+            "title_fr": "Compte rendu de l'examen national par les pairs de la plateforme BioMarkMC de Fluidigm®: évaluation visant à déterminer son adéquation pour la surveillance microbienne ; Du 2 au 4 décembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Stefanov, Ivan",
+            "pub_num": "039",
+            "pages": 30,
+            "pdf_size": 859,
+            "description": ""
+        }
+    }
+]

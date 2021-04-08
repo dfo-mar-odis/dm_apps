@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6803,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Estimates of the effects of sea lice chemical therapeutants on non-target organisms associated with releases of therapeutants from tarped net pens and well boat bath treatments.",
+            "lead_author_2": "Fred Page and Les Burridge (Burgetz, Ingrid)",
+            "description": ""
+        }
+    }
+]

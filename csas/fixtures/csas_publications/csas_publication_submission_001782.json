@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1782,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Impact of the 4Vn winter fishery on the yield of the southern Gulf of St. Lawrence cod stock",
+            "pub_year": 1987,
+            "lead_author_2": "G.A. Chouinard; A.F. Sinclair",
+            "pub_num": "092",
+            "pages": 10,
+            "pdf_size": 583,
+            "description": ""
+        }
+    }
+]

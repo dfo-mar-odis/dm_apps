@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7241,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "2014 Stock Status Update for Lobster Fishing Area 41 (4X + 5Zc) Lobster",
+            "title_fr": "Mise à jour de l'état du stock de homard de la zone de pêche du homard 41 (4x + 5zc) de 2014",
+            "pub_year": 2014,
+            "lead_author_2": "Manon Cassista-Da Ros",
+            "pub_num": "051",
+            "description": ""
+        }
+    }
+]

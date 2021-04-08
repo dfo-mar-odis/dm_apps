@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2877,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Analyses of the catch at length and evaluation of the Maximum Sustainable Yield for the capelin (Mallotus villosus) of NAFO Division 4R).",
+            "title_fr": "Analyses des captures à la longueur et évaluation du Rendement Maximal Soutenu pour le capelan de la Division de l'OPANO 4R",
+            "pub_year": 1997,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "123",
+            "pages": 49,
+            "pdf_size": 4799,
+            "description": ""
+        }
+    }
+]

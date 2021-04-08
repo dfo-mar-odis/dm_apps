@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5262,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Modelling of Rainbow Trout, Oncorhynchus mykiss (Athabasca River Populations)",
+            "title_fr": "Modélisation du potentiel de rétablissement de la truite arc-en-ciel, Oncorhynchus mykiss (populations de la rivière Athabasca)",
+            "pub_year": 2018,
+            "lead_author_2": "Caskenette, A.L., and Koops M.A.",
+            "pub_num": "021",
+            "pages": 34,
+            "pdf_size": 1040,
+            "description": ""
+        }
+    }
+]

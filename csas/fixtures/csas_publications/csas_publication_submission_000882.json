@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 882,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the stock of shrimp (Pandalus borealis) in the Esquiman Channel, Gulf of St. Lawrence",
+            "pub_year": 1978,
+            "lead_author_2": "E.J. Sandeman",
+            "pub_num": "026",
+            "pages": 15,
+            "pdf_size": 2188,
+            "description": ""
+        }
+    }
+]

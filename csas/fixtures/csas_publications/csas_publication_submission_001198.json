@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1198,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Le flétan du Groenland du golfe du Saint-Laurent (4RST): Conséquences de son exploitation et évaluation de son recrutement",
+            "pub_year": 1982,
+            "lead_author_2": "C. Tremblay",
+            "pub_num": "018",
+            "description": ""
+        }
+    }
+]

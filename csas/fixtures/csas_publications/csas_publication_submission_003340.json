@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3340,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scotia-Fundy Spring 1995 Groundfish Stock Status Report",
+            "title_fr": "Rapport sur l'État des stocks de poissons de fond - Région Scotia-Fundy printemps 1995",
+            "pub_year": 1995,
+            "pub_num": "006",
+            "description": ""
+        }
+    }
+]

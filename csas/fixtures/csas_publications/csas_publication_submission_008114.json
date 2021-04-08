@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8114,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Ecological Risk Assessment for the Effects of Human Activities at the Hecate Strait and Queen Charlotte Sound Glass Sponge Reefs Marine Protected Area",
+            "title_fr": "Évaluation des risques écologiques liés aux effets des activités humaines dans la zone de protection marine des récifs d’éponges siliceuses du détroit d’Hécate et du bassin de la Reine Charlotte",
+            "pub_year": 2019,
+            "lead_author_2": "Hannah, L., Thornborough, K., and Thiess, M.",
+            "pub_num": "048",
+            "pages": 145,
+            "pdf_size": 6661,
+            "description": ""
+        }
+    }
+]

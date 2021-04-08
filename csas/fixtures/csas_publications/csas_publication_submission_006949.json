@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6949,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Genetic kinship analyses of bowhead whales (Balaena mysticetus) sampled in Foxe Basin and Cumberland Sound, Nunavut, Canada",
+            "title_fr": "Analyses des indices de filiation génétique des baleines boréales (Balaena mysticetus) échantillonnées dans le bassin Foxe et la baie Cumberland au Nunavut (Canada)",
+            "pub_year": 2014,
+            "lead_author_2": "Lianne Postma, Lucy Johnson, Denise Tenkula, Stephen Petersen, Bernard LeBlanc, Jeff Higdon, Cory Matthews and Steve Ferguson",
+            "pub_num": "018",
+            "pages": 20,
+            "pdf_size": 387,
+            "description": ""
+        }
+    }
+]

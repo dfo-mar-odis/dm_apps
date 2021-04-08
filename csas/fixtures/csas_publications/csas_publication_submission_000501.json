@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 501,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Estimate of 1998 Recreational Halibut Catch in British Columbia Waters",
+            "pub_year": 1999,
+            "lead_author_2": "King, J.R., Gjernes, T.W.",
+            "pub_num": "121",
+            "pages": 25,
+            "pdf_size": 756,
+            "description": ""
+        }
+    }
+]

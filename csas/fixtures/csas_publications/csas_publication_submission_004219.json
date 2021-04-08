@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4219,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Conservation Status Report for Silver Lamprey (Ichthyomyzon unicuspis) in Canada",
+            "title_fr": "Rapport sur l'état de conservation de la lamproie argentée (Ichthyomyzon unicuspis) au Canada",
+            "pub_year": 2007,
+            "lead_author_2": "Neave, F.B., G.A. Bravener, N.E. Mandrak.",
+            "pub_num": "043",
+            "pages": 57,
+            "pdf_size": 1028,
+            "description": ""
+        }
+    }
+]

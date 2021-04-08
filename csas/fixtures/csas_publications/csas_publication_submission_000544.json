@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 544,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Framework for Pink (Chlamys rubida) and Spiny (C. hastata) Scallop Fisheries in Waters off the West Coast of Canada",
+            "pub_year": 2000,
+            "lead_author_2": "Lauzier, R.B., Campagna, S., Hinder, R.",
+            "pub_num": "123",
+            "pages": 37,
+            "pdf_size": 318,
+            "description": ""
+        }
+    }
+]

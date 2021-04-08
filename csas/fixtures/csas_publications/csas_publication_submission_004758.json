@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4758,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 7],
+            "title_en": "Total allowable harvest recommendations for Nunavut narwhal and beluga populations",
+            "title_fr": "Recommandations concernant la récolte totale autorisée au sein des populations de narvals et de bélugas du Nunavut",
+            "pub_year": 2008,
+            "lead_author_2": "Richard, Pierre",
+            "pub_num": "035",
+            "pages": 7,
+            "pdf_size": 270,
+            "description": ""
+        }
+    }
+]

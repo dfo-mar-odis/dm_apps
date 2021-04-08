@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2503,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of Atlantic salmon population Sand Hill River, Labrador, 1995",
+            "pub_year": 1995,
+            "lead_author_2": "D.G. Reddin; P.B. Short; M.F. O'Connell; A.D. Walsh",
+            "pub_num": "097",
+            "pages": 31,
+            "pdf_size": 1167,
+            "description": ""
+        }
+    }
+]

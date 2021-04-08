@@ -507,6 +507,22 @@ class IndexPublicationView(TemplateView):
         return context
 
 
+# Create index view for new publication
+#
+class IndexPublicationTypeView(TemplateView):
+    template_name = 'csas/index_pub_type.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        if self.request.user:
+            context['auth'] = utils.csas_authorized(self.request.user)
+            context['csas_admin'] = utils.csas_admin(self.request.user)
+            context['csas_super'] = utils.csas_super(self.request.user)
+
+        return context
+
+
 # ----------------------------------------------------------------------------------------------------
 # Create "Request" views
 #
@@ -676,7 +692,8 @@ class RequestDetails(DetailsCommon):
               'zonal', 'zonal_text', 'issue', 'consequence_text', 'assistance', 'assistance_text', 'priority',
               'rationale', 'proposed_timing', 'rationale_for_timing', 'funding', 'funding_notes',
               'science_discussion', 'science_discussion_notes', 'coordinator_name', 'director_name',
-              'adviser_submission', 'rd_submission', 'decision_date', ]
+              'fiscal_year_text', 'submission_date', 'adviser_submission', 'rd_submission',
+              'received_date', 'signature']
 
 
 class RequestDetailsCSAS(DetailsCommon):
@@ -685,7 +702,8 @@ class RequestDetailsCSAS(DetailsCommon):
     model = models.ReqRequestCSAS
     template_name = "csas/csas_details_req_status.html"
 
-    fields = ['request', 'status', 'trans_title', 'decision', 'decision_exp', 'decision_date', ]
+    fields = ['request', 'status', 'trans_title', 'decision', 'decision_exp', 'rationale_for_decision',
+              'decision_date', ]
 
 
 class RequestConfirmDeleteFrLists(DetailsCommon):
@@ -1142,10 +1160,10 @@ class MeetingDetails(DetailsCommon):
     model = models.MetMeeting
     template_name = "csas/csas_details_met.html"
 
-    fields = ['id', 'title_en', 'title_fr', 'status', 'status_notes', 'quarter', 'month', 'start_date', 'end_date',
-              'range_en', 'range_fr', 'location_prov', 'location_city',
-              'scope', 'process_type', 'lead_region', 'other_region', 'exp_publication', 'chair', 'csas_contact',
-              'program_contact',  'chair_comments', 'description']
+    fields = ['id', 'request', 'title_en', 'title_fr', 'status', 'status_notes', 'quarter', 'month', 'start_date',
+              'end_date', 'range_en', 'range_fr', 'location_prov', 'location_city', 'scope', 'process_type',
+              'lead_region', 'other_region', 'exp_publication', 'chair', 'csas_contact', 'program_contact',
+              'chair_comments', 'description']
 
 
 class MeetingDetailsDocs(DetailsCommon):
@@ -1211,6 +1229,17 @@ class PublicationEntry(CsasCreateCommon):
     title = _('New Publication Details Entry')
     model = models.PubPublication
     form_class = forms.PublicationForm
+
+    def get_success_url(self):
+        if 'pop' in self.kwargs:
+            return reverse_lazy('shared_models:close_me')
+        return reverse_lazy('csas:details_pub', args=(self.object.pk,))
+
+
+class PublicationEntry_2(CsasCreateCommon):
+    title = _('New Publication Details Entry')
+    model = models.PubPublication
+    form_class = forms.PublicationForm_2
 
     def get_success_url(self):
         if 'pop' in self.kwargs:
@@ -1346,7 +1375,8 @@ class PublicationList(CsasListCommon):
     model = models.PubPublication
     filterset_class = filters.PublicationFilter
 
-    fields = ['id', 'series', 'title_en', 'lead_region', 'lead_author', 'other_author', 'pub_year']
+    fields = ['id', 'series', 'title_en', 'lead_region', 'pub_year']
+    # fields = ['id', 'series', 'title_en', 'lead_region', 'lead_author', 'other_author', 'pub_year']
 
 
 class PublicationListNA(CsasListCommon):

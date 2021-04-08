@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4276,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A Review of Methods Used to Offset Residual Impacts of Development Projects on Fisheries Productivity",
+            "title_fr": "Examen des méthodes utilisées pour compenser les impacts résiduels des projets de développement sur la productivité des pêches",
+            "pub_year": 2013,
+            "lead_author_2": "Loughlin, K.G., Clarke, K.D.",
+            "pub_num": "097",
+            "pages": 78,
+            "pdf_size": 503,
+            "description": ""
+        }
+    }
+]

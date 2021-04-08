@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2325,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results of the 1992 aerial survey of capelin (Mallotus villosus) schools using the compact airborne spectrographic imager (CASI)",
+            "pub_year": 1993,
+            "lead_author_2": "B.S. Nakashima",
+            "pub_num": "052",
+            "pages": 15,
+            "pdf_size": 591,
+            "description": ""
+        }
+    }
+]

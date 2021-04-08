@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2953,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "1998 State of the Ocean: Scotian Shelf, Bay of Fundy and Gulf of Maine",
+            "title_fr": "État de l'océan en 1998 : plateau néo-écossais, baie de Fundy et golfe du Maine",
+            "pub_year": 1999,
+            "lead_author_2": "Ken Drinkwater",
+            "pub_num": "G3-01",
+            "pages": 7,
+            "pdf_size": 421,
+            "description": ""
+        }
+    }
+]

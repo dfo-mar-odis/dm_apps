@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1773,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the northeastern Gulf of St. Lawrence Iceland scallop (Chlamys islandica) stock - 1986",
+            "pub_year": 1987,
+            "lead_author_2": "M. Lanteigne; L.A. Davidson",
+            "pub_num": "083",
+            "pages": 21,
+            "pdf_size": 1264,
+            "description": ""
+        }
+    }
+]

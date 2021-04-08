@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5068,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Biological Risk Assessment for Smallmouth bass (Micropterus dolomieu) and Largemouth bass (Micropterus salmoides) in British Columbia",
+            "title_fr": "Évaluation du risque biologique posé par l'achigan à petite bouche (Micropterus dolomieu) et l'achigan à grande bouche(Micropterus salmoides) en Colombie-Britannique",
+            "pub_year": 2008,
+            "lead_author_2": "C. Tovey, M.J. Bradford, L-M. Herborg",
+            "pub_num": "075",
+            "pages": 47,
+            "pdf_size": 789,
+            "description": ""
+        }
+    }
+]

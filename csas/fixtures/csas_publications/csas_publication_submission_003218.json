@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3218,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Cusk on the Scotian Shelf",
+            "title_fr": "Le brosme du plateau néo-écossais",
+            "pub_year": 1996,
+            "lead_author_2": "Zwanenburg, K.",
+            "pub_num": "075",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

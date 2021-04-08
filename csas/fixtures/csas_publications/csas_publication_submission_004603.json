@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4603,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Assessment Framework Workshop on Southern Gulf of St. Lawrence Snow Crab (Areas 12, E, F and 19) Gulf Regional Advisory Process; 11 - 14 October 2005",
+            "title_fr": "Compte rendu de l'atelier sur le cadre d'évaluation du crabe des neiges du sud du golfe du Saint-Laurent (zones 12, E, F et 19); du 11 au 14 octobre 2005",
+            "pub_year": 2006,
+            "lead_author_2": "O'Boyle, Robert",
+            "pub_num": "042",
+            "pages": 61,
+            "pdf_size": 989,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6417,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of witch flounder (Glyptocephalus cynoglossus) in the Gulf of St. Lawrence (NAFO Div. 4RST)",
+            "title_fr": "Évaluation de la plie grise (Glyptocephalus cynoglossus) dans le golfe du Saint Laurent (divisions 4RST de L'OPANO)",
+            "pub_year": 2012,
+            "lead_author_2": "Doug Swain",
+            "pub_num": "017",
+            "pages": 14,
+            "pdf_size": 471,
+            "description": ""
+        }
+    }
+]

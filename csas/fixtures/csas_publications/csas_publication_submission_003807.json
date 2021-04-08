@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3807,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of the 4T southern Gulf of St. Lawrence herring stocks in 2002",
+            "title_fr": "Évaluation des stocks de hareng de la zone 4T de l'OPANO dans le sud du Golfe du Saint-Laurent en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "LeBlanc, C.H., Poirier, G.A., Chouinard, G., MacDougall, C.",
+            "pub_num": "040",
+            "pages": 115,
+            "pdf_size": 3635,
+            "description": ""
+        }
+    }
+]

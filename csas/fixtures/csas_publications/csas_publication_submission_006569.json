@@ -1,0 +1,19 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6569,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Ecologically and biologically significant areas in the Estuary and Gulf of St. Lawrence: small pelagic fishes",
+            "title_fr": "Zones d'Importance Écologiques et Biologiques dans l'Estuaire et le Golfe du St. Laurent : les petits poissons pélagiques ",
+            "pub_year": 2012,
+            "lead_author_2": "Ian H. McQuinn, Marie-Noëlle Bourassa, Coralie Tournois, 
+François Grégoire and Daniel Baril",
+            "pub_num": "087",
+            "pages": 79,
+            "pdf_size": 6521,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2699,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Eastern Nova Scotia Snow Crab",
+            "title_fr": "Crabe des neiges de l'est de la Nouvelle-Écosse",
+            "pub_year": 2001,
+            "lead_author_2": "Michel Biron
+Mikio Moriyasu",
+            "pub_num": "C3-02",
+            "pages": 9,
+            "description": ""
+        }
+    }
+]

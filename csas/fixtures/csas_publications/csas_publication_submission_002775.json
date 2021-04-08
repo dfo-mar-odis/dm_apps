@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2775,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Newfoundland and Labrador snow crab in 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Dawe, E.G., Taylor, D.M.,  Veitch, P.J., Drew, H.J.,  Beck, P.C., O'Keefe, P.G.",
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

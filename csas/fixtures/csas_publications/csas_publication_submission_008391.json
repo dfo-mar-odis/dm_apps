@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8391,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Spatial and temporal distribution of North Atlantic right whale acoustic detections on the Eastern Canadian continental shelf using passive acoustic monitoring",
+            "lead_author_2": "Durette-Morin, D., Evers, C., Davies, K.T.A., Moors-Murphy, H., Lawson, J.W.,
+Martin, B.4, Taggart, C.T.1",
+            "description": ""
+        }
+    }
+]

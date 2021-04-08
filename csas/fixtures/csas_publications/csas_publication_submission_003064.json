@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3064,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Atlantic Salmon Inner Bay of Fundy SFA 22 & part of SFA 23",
+            "title_fr": "Saumon atlantique Fond de la baie de Fundy ZPS 22 et partie de la ZPS 23",
+            "pub_year": 1998,
+            "lead_author_2": "Peter G. Amiro",
+            "pub_num": "D3-12",
+            "pages": 5,
+            "pdf_size": 150,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4297,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Estimates of a Biologically-Based Spawning Goal and Biological Benchmarks for the Canadian-Origin Taku River Coho Stock Aggregate",
+            "title_fr": "Estimations d'un objectif de frai fondé sur des données biologiques et points de référence biologiques pour l'ensemble des stocks de saumons coho d'origine canadienne de la rivière Taku",
+            "pub_year": 2015,
+            "lead_author_2": "Pestal, G. and Johnston, S.",
+            "pub_num": "048",
+            "pages": 123,
+            "pdf_size": 4011,
+            "description": ""
+        }
+    }
+]

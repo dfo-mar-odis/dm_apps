@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1445,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Relationship between West Greenland and Canadian 1-sea-winter salmon catches",
+            "pub_year": 1984,
+            "lead_author_2": "D.G. Reddin",
+            "pub_num": "039",
+            "pages": 11,
+            "pdf_size": 557,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5591,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of a Regional Advisory Process to Review the Community Aquatic Monitoring Program (CAMP) and its Use to Infer the Ecological Health of Bays and Estuaries in the Southern Gulf of St. Lawrence; March 17 and 18, 2010",
+            "title_fr": "Compte-rendu du Processus de consultation régional de l'examen du Programme communautaire de surveillance aquatique (PCSA) et de son utilité pour renseigner sur la santé écologique des baies et des estuaires du sud du golfe du Saint-Laurent ; les 17 et 18 mars 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Morin, R.",
+            "pub_num": "029",
+            "pages": 45,
+            "pdf_size": 215,
+            "description": ""
+        }
+    }
+]

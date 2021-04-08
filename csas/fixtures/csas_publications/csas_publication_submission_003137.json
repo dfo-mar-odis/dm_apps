@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3137,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Area 6 Southwest New Brunswick Scallop",
+            "title_fr": "Pétoncle de la zone 6, sud-ouest du Nouveau-Brunswick",
+            "pub_year": 1997,
+            "lead_author_2": "E. Kenchington",
+            "pub_num": "C3-25",
+            "pages": 3,
+            "pdf_size": 73,
+            "description": ""
+        }
+    }
+]

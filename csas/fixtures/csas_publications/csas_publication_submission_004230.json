@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4230,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Marine Mammal Peer Review Committee - Annual Meeting; November 16-20, 2009",
+            "title_fr": "Réunion annuelle du Comité national d'examen par les pairs sur les mammifères marins; du 16 au 20 novembre 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Bowen, Don",
+            "pub_num": "003",
+            "pages": 50,
+            "pdf_size": 271,
+            "description": ""
+        }
+    }
+]

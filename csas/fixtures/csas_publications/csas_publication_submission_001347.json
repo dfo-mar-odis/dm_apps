@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1347,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Evaluation of the 1989 gaspereau fishery (Alosa aestivalis and A. pseudoharengus) from the Miramichi River, New Brunswick",
+            "pub_year": 1990,
+            "lead_author_2": "Gérald J. Chaput; Claude H. LeBlanc",
+            "pub_num": "032",
+            "pages": 43,
+            "pdf_size": 1913,
+            "description": ""
+        }
+    }
+]

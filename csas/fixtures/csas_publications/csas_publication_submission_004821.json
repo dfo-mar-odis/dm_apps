@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4821,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Regional Science Advisory Process on the Recovery Potential Assessment of Lake Chubsucker (Erimyzon sucetta); 9 March 2011",
+            "title_fr": "Compte rendu du processus de consultation scientifique régional sur l'évaluation du potentiel de rétablissement du sucet de lac (Erimyzon sucetta) ; le 9 mars 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Lynne Bouvier",
+            "pub_num": "007",
+            "pages": 21,
+            "pdf_size": 90,
+            "description": ""
+        }
+    }
+]

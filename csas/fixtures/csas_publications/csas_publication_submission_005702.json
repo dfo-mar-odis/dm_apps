@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5702,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Information in support of a Recovery Potential Assessment of Eastern Sand Darter (Ammocrypta pellucida) in Québec",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement du dard de sable (Ammocrypta pellucida) au Québec",
+            "pub_year": 2010,
+            "lead_author_2": "J. Boucher et S. Garceau",
+            "pub_num": "100",
+            "pages": 39,
+            "pdf_size": 237,
+            "description": ""
+        }
+    }
+]

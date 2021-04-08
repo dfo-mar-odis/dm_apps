@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7507,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on the stock assessment for the outside population of Yelloweye Rockfish (Sebastes ruberrimus) for British Columbia, Canada in 2014; September 15, 16, and 24, 2015",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région du Pacifique sur l’Évaluation du stock de sébastes aux yeux jaunes (sebastes reberrimus) des eaux extérieures de la Colombie-Britannique en 2014",
+            "pub_year": 2016,
+            "lead_author_2": "Kate Rutherford",
+            "pub_num": "041",
+            "pages": 43,
+            "pdf_size": 445,
+            "description": ""
+        }
+    }
+]

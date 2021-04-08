@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 813,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2001 Update of Stock Status of Georges Bank (5Zjmnh) Yellowtail Flounder",
+            "title_fr": "Bilan de 2001 de l'état du stock de limande à queue jaune du banc Georges (5Zjmnh).",
+            "pub_year": 2001,
+            "lead_author_2": "Stone, H., Legault, C., Cadrin, S., Gavaris, S., Neilson, J., Perley, P.",
+            "pub_num": "068",
+            "pages": 88,
+            "pdf_size": 1270,
+            "description": ""
+        }
+    }
+]

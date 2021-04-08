@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5286,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution and Preliminary Abundance Estimates for Cetaceans Seen During Canada's Marine Megafauna Survey - A Component of the 2007 TNASS",
+            "title_fr": "Distribution et Estimations Préliminaires d'Abondance des Cétacés au Cours du Relevé de la Mégafaune Marine du Canada - Une Composante de l'Édition 2007 de TNASS",
+            "pub_year": 2009,
+            "lead_author_2": "Lawson, J.W., Gosselin, J.-F.",
+            "pub_num": "031",
+            "pages": 34,
+            "pdf_size": 476,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3395,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Oil and gas exploration off Cape Breton: Information concerning the biology and fishery of the Atlantic mackerel (Scomber scombrus) present in this area.",
+            "title_fr": "Exploration du pétrole et du gaz sur les côtes du Cap-Breton : Informations concernant la biologie et la pêche du maquereau bleu (Scomber scombrus L.) présent dans cette région",
+            "pub_year": 2001,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "114",
+            "pages": 52,
+            "pdf_size": 1380,
+            "description": ""
+        }
+    }
+]

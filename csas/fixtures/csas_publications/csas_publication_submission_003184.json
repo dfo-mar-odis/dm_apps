@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3184,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Zooplankton changes along the Newfoundland - Georges Bank 1994 CPR Line and Halifax Line",
+            "title_fr": "Changements dans le zooplancton le long de l'axe CPR Terre-Neuve - Banc Georges en 1994 et de l'axe de Halifax en 1995",
+            "pub_year": 1996,
+            "lead_author_2": "Sameoto, D.",
+            "pub_num": "042",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

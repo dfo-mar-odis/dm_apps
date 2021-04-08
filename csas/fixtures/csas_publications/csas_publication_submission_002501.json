@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2501,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Atlantic salmon (Salmo salar L.) stock recovery in the Gander River, Newfoundland with projections to 1999",
+            "pub_year": 1995,
+            "lead_author_2": "P.M. Ryan; R. Knoechel; M.F. O'Connell; E.G.M. Ash",
+            "pub_num": "095",
+            "pages": 16,
+            "pdf_size": 726,
+            "description": ""
+        }
+    }
+]

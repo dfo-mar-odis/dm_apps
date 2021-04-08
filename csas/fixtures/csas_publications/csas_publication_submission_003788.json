@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3788,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of Thorny skate (Amblyraja radiata Donovan, 1808) in NAFO Divisions 3L, 3N, 3O and Subdivision 3Ps",
+            "title_fr": "État du stock de raie épineuse (Amblyraja radiata Donovan, 1808) dans les divisions 3L, 3N et 3O et la sous-division 3Ps de l'OPANO",
+            "pub_year": 2003,
+            "lead_author_2": "Kulka, D.W., Miri, C.M.",
+            "pub_num": "031",
+            "pages": 73,
+            "pdf_size": 4737,
+            "description": ""
+        }
+    }
+]

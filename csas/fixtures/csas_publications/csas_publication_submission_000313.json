@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 313,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The status of the Atlantic salmon stock of Humber River/Bay of Islands, Newfoundland",
+            "pub_year": 1991,
+            "lead_author_2": "G. Chaput; C. Mullins",
+            "pub_num": "014",
+            "pages": 28,
+            "pdf_size": 1054,
+            "description": ""
+        }
+    }
+]

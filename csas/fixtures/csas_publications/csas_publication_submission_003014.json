@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3014,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Chemical and Biological Oceanographic Conditions in 1998 and 1999 - Maritimes Region",
+            "title_fr": "Conditions chimiques et biologiques de l'océan en 1998-1999 - Région des Maritimes",
+            "pub_year": 2000,
+            "lead_author_2": "Dr. G. Harrison",
+            "pub_num": "G3-03",
+            "pages": 9,
+            "pdf_size": 975,
+            "description": ""
+        }
+    }
+]

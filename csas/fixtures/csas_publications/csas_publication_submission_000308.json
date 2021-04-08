@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 308,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Improving the performance of classification and composition methodology for salmon of mixed continental origin at West Greenland",
+            "pub_year": 1991,
+            "lead_author_2": "R.B. Millar; D.G. Reddin",
+            "pub_num": "009",
+            "pages": 16,
+            "pdf_size": 825,
+            "description": ""
+        }
+    }
+]

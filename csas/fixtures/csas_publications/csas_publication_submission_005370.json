@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5370,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Information on Atlantic salmon (Salmo salar) from Salmon Fishing Area 15 (Gulf New Brunswick) of relevance to the development of the COSEWIC status report",
+            "title_fr": "Renseignements sur le saumon de l'Atlantique (Salmo salar) de la zone de pêche du saumon 15 (Golfe Nouveau-Brunswick) en vue de la préparation du rapport de situation par le COSEPAC",
+            "pub_year": 2009,
+            "lead_author_2": "P. Cameron, G. Chaput, and P. Mallet",
+            "pub_num": "078",
+            "pages": 44,
+            "pdf_size": 370,
+            "description": ""
+        }
+    }
+]

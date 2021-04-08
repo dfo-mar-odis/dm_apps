@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2504,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Environmental conditions in Atlantic Canada, summer 1995 with comparison to the 1961-1990 average",
+            "pub_year": 1995,
+            "lead_author_2": "E. Colbourne",
+            "pub_num": "098",
+            "pages": 31,
+            "pdf_size": 1393,
+            "description": ""
+        }
+    }
+]

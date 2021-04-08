@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6274,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A pre-COSEWIC assessment of three species of Wolffish (Anarhichas denticulatus, A. minor, and A. lupus) in Canadian waters of the Northwest Atlantic Ocean",
+            "title_fr": "Évaluation pré-COSEPAC de trois espèces de loups de mer (Anarhichas denticulatus, A. minor, et A. lupus) dans les eaux canadiennes du nord-ouest de l'Atlantique",
+            "pub_year": 2011,
+            "lead_author_2": "Simpson, M.R., L.G.S. Mello, C.M. Miri, and M. Treble",
+            "pub_num": "122",
+            "pages": 73,
+            "pdf_size": 12596,
+            "description": ""
+        }
+    }
+]

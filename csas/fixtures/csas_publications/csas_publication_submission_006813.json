@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6813,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "2013 Assessment of 4VWX Herring",
+            "title_fr": "Évaluation du hareng de 4VWX de 2013",
+            "pub_year": 2013,
+            "lead_author_2": "K. Clark",
+            "pub_num": "045",
+            "pages": 17,
+            "pdf_size": 494,
+            "description": ""
+        }
+    }
+]

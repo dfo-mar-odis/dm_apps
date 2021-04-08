@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6581,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The Gully Marine Protected Area Data Assessment",
+            "title_fr": "Évaluation des données sur la zone de protection marine du Gully",
+            "pub_year": 2015,
+            "lead_author_2": "Allard, K., Cochrane, N., Curran, K., Fenton, D., Koropatnick, T., Gjerdrum, C., Greenan, B.J.W., Head, E., Macnab, P., Moors-Murphy, H., Serdynska, A., Trzcinski, M.K., Vaughan, M., and Whitehead, H.",
+            "pub_num": "056",
+            "pages": 173,
+            "pdf_size": 8410,
+            "description": ""
+        }
+    }
+]

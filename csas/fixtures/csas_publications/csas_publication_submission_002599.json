@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2599,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of southern Gulf of St. Lawrence cod stock, March 1996",
+            "pub_year": 1996,
+            "lead_author_2": "A. Sinclair; G. Chouinard; L. Currie",
+            "pub_num": "052",
+            "pages": 75,
+            "pdf_size": 4288,
+            "description": ""
+        }
+    }
+]

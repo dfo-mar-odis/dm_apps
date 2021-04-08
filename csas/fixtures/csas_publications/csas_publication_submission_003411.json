@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3411,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Metapopulation structure and dynamics of British Columbia herring",
+            "pub_year": 2001,
+            "lead_author_2": "Ware, D., Schweigert, J.",
+            "pub_num": "127",
+            "pages": 28,
+            "pdf_size": 3810,
+            "description": ""
+        }
+    }
+]

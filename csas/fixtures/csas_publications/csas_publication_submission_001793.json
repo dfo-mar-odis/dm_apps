@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1793,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Haddock in 4TVW - Population status and catch projection for 1988",
+            "pub_year": 1987,
+            "lead_author_2": "K. Zwanenburg; P. Fanning",
+            "pub_num": "103",
+            "pages": 38,
+            "pdf_size": 1741,
+            "description": ""
+        }
+    }
+]

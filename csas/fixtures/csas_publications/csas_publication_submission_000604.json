@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 604,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Exploratory Jonah Crab, Cancer borealis, Fishery in Lobster Fishing Area 33 (1997 - 1999)",
+            "pub_year": 2000,
+            "lead_author_2": "Adams, B., Reeves, A., Miller, R.",
+            "pub_num": "027",
+            "pages": 32,
+            "pdf_size": 205,
+            "description": ""
+        }
+    }
+]

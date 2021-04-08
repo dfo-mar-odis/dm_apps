@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5530,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Impacts and risks associated with a Greenland Halibut (Reinhardtius hippoglossoides) gillnet fishery in inshore areas of NAFO Subarea 0",
+            "title_fr": "Impacts et risques connexes d'une pêche au filet maillant visant le flétan du Groenland (Reinhardtius hippoglossoides) dans les secteurs côtiers de la sous-zone 0 de l'OPANO",
+            "pub_year": 2010,
+            "lead_author_2": "Treble and Stewart.",
+            "pub_num": "032",
+            "pdf_size": 569,
+            "description": ""
+        }
+    }
+]

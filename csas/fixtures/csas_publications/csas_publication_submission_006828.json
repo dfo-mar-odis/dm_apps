@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6828,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review for the identification of ecologically significant species, and community properties for the Western Arctic Biogeographic Region; November 8-9, 2016",
+            "title_fr": "Compte rendu de l’examen régional par les pairs pour l’identification des espèces et des attributs des communautés d’importance écologique dans la région biogéographique de l’ouest de l’Arctique; du 8 au 9 novembre 2016",
+            "pub_year": 2018,
+            "lead_author_2": "K. Martin",
+            "pub_num": "009",
+            "pages": 28,
+            "pdf_size": 525,
+            "description": ""
+        }
+    }
+]

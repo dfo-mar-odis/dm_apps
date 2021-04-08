@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4379,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process on Eastern Scotian Shelf Shrimp; 29 November 2005",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional des Maritimes sur la crevette de l'est du plateau néo écossais; 29 novembre 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Porter, Julie",
+            "pub_num": "022",
+            "description": ""
+        }
+    }
+]

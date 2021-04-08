@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1575,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Spawning potential and spawning requirements of Atlantic salmon in the Miramichi River, New Brunswick",
+            "pub_year": 1985,
+            "lead_author_2": "R.G. Randall",
+            "pub_num": "068",
+            "pages": 19,
+            "pdf_size": 807,
+            "description": ""
+        }
+    }
+]

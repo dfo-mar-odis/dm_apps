@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7693,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of Scotian Shelf Snow Crab Assessment Results for 2015",
+            "title_fr": "Examen des résultats de l’évaluation du stock de crabes des neiges du plateau néo-écossais pour 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Jae Choi",
+            "pub_num": "035",
+            "pages": 30,
+            "pdf_size": 3080,
+            "description": ""
+        }
+    }
+]

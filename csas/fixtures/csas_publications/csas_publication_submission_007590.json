@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7590,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review of the Shortspine Thornyhead (Sebastolobus alascanus) Stock Assessment for the Pacific Coast of Canada in 2015; December 10, 11, and 18, 2015",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région du Pacifique sur l'Évaluation du stock du sébastolobe à courtes épines (Sebastolobus alascanus) dans la côte du Pacifique du Canada en 2015; les 10, 11 et 18 décembre 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Surry, M.",
+            "pub_num": "040",
+            "pages": 31,
+            "pdf_size": 634,
+            "description": ""
+        }
+    }
+]

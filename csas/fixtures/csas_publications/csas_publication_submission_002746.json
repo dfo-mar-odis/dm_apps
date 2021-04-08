@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2746,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Morell, Mill, Dunk, West and Valleyfield rivers, Prince Edward Island, in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "D. Cairns; R. Angus; M. Murray; K. Davidson",
+            "pub_num": "120",
+            "pages": 36,
+            "pdf_size": 2029,
+            "description": ""
+        }
+    }
+]

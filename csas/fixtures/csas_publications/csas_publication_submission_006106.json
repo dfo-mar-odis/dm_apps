@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6106,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of snow crab in the southern Gulf of St. Lawrence (Areas 12, 19, 12E and 12F) and advice for the 2012 fishery",
+            "title_fr": "Évaluation du crabe des neiges du sud du golfe du Saint-Laurent (zones 12, 19, 12E et 12F) et avis pour la pêche de 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Mikio Moriyasu, Marc Lanteigne, Gérald Chaput",
+            "pub_num": "003",
+            "pages": 23,
+            "pdf_size": 623,
+            "description": ""
+        }
+    }
+]

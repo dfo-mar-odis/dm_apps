@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2201,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Suivi des captures de maquereau bleu (Scomber scombrus L.) en 1991 pour les sous-régions 2 à 6 de l'OPANO et évaluation de la biomasse reproductrice du golfe du St-Laurent",
+            "pub_year": 1992,
+            "lead_author_2": "F. Grégoire",
+            "pub_num": "053",
+            "pages": 39,
+            "description": ""
+        }
+    }
+]

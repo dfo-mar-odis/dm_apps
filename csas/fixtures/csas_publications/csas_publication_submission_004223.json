@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4223,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the lake sturgeon recovery planning workshop; 28 February to 1 March 2006",
+            "title_fr": "Compte rendu de l'atelier de planification du rétablissement de l'esturgeon jaune; 28 février au 1er mars 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Hnytka, F.N., D.B. Stewart.",
+            "pub_num": "030",
+            "pages": 183,
+            "pdf_size": 24987,
+            "description": ""
+        }
+    }
+]

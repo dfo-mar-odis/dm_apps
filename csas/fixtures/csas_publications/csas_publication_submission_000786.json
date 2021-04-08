@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 786,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The gaspereau fisheries (Alosa pseudoharengus and A. eastivalis) of the Miramichi River with updates on the fishery of the Richibucto river of Gulf New Brunswick.",
+            "pub_year": 2001,
+            "lead_author_2": "Chaput, G., Atkinson, G.",
+            "pub_num": "047",
+            "pages": 39,
+            "pdf_size": 863,
+            "description": ""
+        }
+    }
+]

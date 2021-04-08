@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3766,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Estimation of mean annual natural mortality for adult male snow crab, Chionoecetes opilio, in the southern Gulf of St. Lawrence",
+            "title_fr": "Estimation du taux de mortalité naturelle chez les males adultes du crabe des neiges Chionoecetes opilio dans le sud du Golfe Saint-Laurent",
+            "pub_year": 2003,
+            "lead_author_2": "Wade, E., Surette, T., Apoloo, J., Moriyasu, M.",
+            "pub_num": "017",
+            "pages": 31,
+            "pdf_size": 443,
+            "description": ""
+        }
+    }
+]

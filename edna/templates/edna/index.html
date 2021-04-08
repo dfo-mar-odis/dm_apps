@@ -1,0 +1,56 @@
+{% extends "edna/base.html" %}
+{% load i18n %}
+{% load static %}
+{% load custom_tags %}
+
+{% block header %}
+  {{ block.super }}
+  {% include "edna/_background_img.html" %}
+{% endblock %}
+
+{% block content %}
+
+  {% echo "btn btn-outline-dark " as btn_class %}
+  {% echo "btn btn-outline-secondary " as admin_btn_class %}
+  <br>
+  <div class="container bg-light curvy mb-3 mt-5 shadowbox">
+    <div class="float-left">
+      <img src="{% static 'edna/Edna_Krabappel.png' %}" alt="" width="200px">
+    </div>
+    <div class="">
+      <h1 class="text-center mt-3 mb-5">
+        {% trans "Welcome to eDNA Krabappel" %}
+      </h1>
+      <h3 class="text-center text-muted">
+        {% trans "eDNA Sample Archive and Tracking Tool" %}
+      </h3>
+    </div>
+    <div class="mb-5"></div>
+    <div class="text-right">
+      <a href="{% url 'edna:collection_list' %}" class="btn btn-primary">{% trans "Collections" %}</a>
+      <div class="btn-group mr-5">
+        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+          {% trans "Lab Services" %}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="{% url 'edna:filtration_batch_list' %}">Sample Filtration</a>
+          <a class="dropdown-item" href="{% url 'edna:extraction_batch_list' %}">DNA Extraction</a>
+          <a class="dropdown-item" href="{% url 'edna:pcr_batch_list' %}">qPCR</a>
+        </div>
+      </div>
+
+{#      <a href="#" class="btn btn-warning">{% trans "Start a Batch" %}</a>#}
+{#      <a href="#" class="btn btn-dark mr-5">{% trans "Find a Batch" %}</a>#}
+      <a href="{% static 'edna/edna_sampling_fieldsheet.docx' %}" class="btn btn-outline-primary"><span
+        class="mdi mdi-file-document mr-1 text-primary"></span>{% trans "Download eDNA Fieldsheet" %}</a>
+    </div>
+  </div>
+
+
+  </div>
+
+
+{% endblock %}
+
+

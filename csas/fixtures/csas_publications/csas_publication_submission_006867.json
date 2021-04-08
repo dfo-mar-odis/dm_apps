@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6867,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Quebec Region Science Advisory Process on the Assessment of the Gulf of St. Lawrence Greenland Halibut Stock (4RST); February 26, 2013",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif scientifique de la région du Québec portant sur l'évaluation du stock de flétan du Groenland du golfe du Saint-Laurent (4RST); 26 février 2013",
+            "pub_year": 2013,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "028",
+            "pages": 11,
+            "pdf_size": 71,
+            "description": ""
+        }
+    }
+]

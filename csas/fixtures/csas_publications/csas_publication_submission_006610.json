@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6610,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of the Donkin Export Coking Coal Project Environmental Assessment",
+            "title_fr": "Examen de l'évaluation environnementale du projet d'exportation de charbon cokéfiable Donkin",
+            "pub_year": 2012,
+            "lead_author_2": "Trevor Floyd / Tana Worcester / Valerie Myra",
+            "pub_num": "038",
+            "pages": 9,
+            "pdf_size": 121,
+            "description": ""
+        }
+    }
+]

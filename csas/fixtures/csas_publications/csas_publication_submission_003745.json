@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3745,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Winter Flounder in the Southern Gulf of St-Lawrence (4T)",
+            "title_fr": "Plie rouge du sud du golfe du Saint-Laurent (div. 4T)",
+            "pub_year": 2003,
+            "pub_num": "003",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

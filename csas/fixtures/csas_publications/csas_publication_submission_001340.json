@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1340,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Revised HYDAS calibration estimates for data acquired between May 1987 and February 1989",
+            "pub_year": 1990,
+            "lead_author_2": "C.R. Stevens; C.C. Lang",
+            "pub_num": "025",
+            "pages": 6,
+            "pdf_size": 268,
+            "description": ""
+        }
+    }
+]

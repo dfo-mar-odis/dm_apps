@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7194,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer-Review on Euthanasia Techniques for Small and Large Cetaceans; June 23 and June 26, 2014",
+            "title_fr": "Compte rendu de l'examen par les pairs au sujet des techniques d'euthanasie pour les grands et les petits cétacés; le 23 et le 26 juin 2014",
+            "pub_year": 2014,
+            "lead_author_2": "Christine Abraham",
+            "pub_num": "046",
+            "pages": 8,
+            "pdf_size": 182,
+            "description": ""
+        }
+    }
+]

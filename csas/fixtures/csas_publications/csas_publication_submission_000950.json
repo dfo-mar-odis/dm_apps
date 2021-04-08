@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 950,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Salmon Subcommittee Meeting December 1-5, 1997 and the Steering Committee Meeting January 6-7, 1998",
+            "pub_year": 1997,
+            "lead_author_2": "M. Stocker, Chair",
+            "pub_num": "026",
+            "description": ""
+        }
+    }
+]

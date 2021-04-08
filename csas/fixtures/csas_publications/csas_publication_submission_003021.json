@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3021,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Oceanographic Conditions in the Newfoundland Region during 1997",
+            "pub_year": 1998,
+            "lead_author_2": "E. Coulbourne",
+            "pub_num": "G2-01",
+            "pages": 8,
+            "pdf_size": 210,
+            "description": ""
+        }
+    }
+]

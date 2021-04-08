@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6999,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Promising Indicators of Fisheries Productivity for the Fisheries Protection Program Assessment Framework",
+            "title_fr": "Indicateurs prometteurs de la productivité des pêches pour le cadre d'évaluation du Programme de protection des pêches",
+            "pub_year": 2014,
+            "lead_author_2": "Derrick de Kerckhove (consultant)",
+            "pub_num": "108",
+            "pages": 75,
+            "pdf_size": 892,
+            "description": ""
+        }
+    }
+]

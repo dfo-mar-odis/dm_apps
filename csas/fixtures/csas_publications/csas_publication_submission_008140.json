@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8140,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review on the assessment of the Gulf of St. Lawrence capelin stock (4RST); February 27, 2018",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l’évaluation du stock de capelan du golfe du Saint-Laurent (4RST); le 27 février 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "010",
+            "pages": 11,
+            "pdf_size": 162,
+            "description": ""
+        }
+    }
+]

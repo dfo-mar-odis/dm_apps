@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4345,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process for Skates in Divisions 3LNO and Subdivision 3Ps; March 12-14, 2003",
+            "title_fr": "Compte rendu de la réuinon du processus consultatif régional deTerre-Neuve-et-Labrador sur raie épineuse des Divisions 3L, 3N, et 3O ainsi que de la Subdivions 3Ps; du 12 au 14 mars 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Richards, E. Dale",
+            "pub_num": "050",
+            "pages": 18,
+            "pdf_size": 79,
+            "description": ""
+        }
+    }
+]

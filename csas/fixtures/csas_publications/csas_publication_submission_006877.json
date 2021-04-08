@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6877,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Musquash Estuary Marine Protected Area (MPA): Data Assessment",
+            "title_fr": "Zone de protection marine de l'estuaire Musquash (ZPM) : Évaluation des données",
+            "pub_year": 2014,
+            "lead_author_2": "Bennett, L. (Editor)",
+            "pub_num": "001",
+            "pages": 62,
+            "pdf_size": 4253,
+            "description": ""
+        }
+    }
+]

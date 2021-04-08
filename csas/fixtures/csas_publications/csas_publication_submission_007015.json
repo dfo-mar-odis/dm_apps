@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7015,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Assessment of proposed schedule D conditions on aquaculture licences in the province of Ontario",
+            "title_fr": "Évaluation de la proposition des conditions de l'annexe D des permis d'aquaculture en Ontario",
+            "pub_year": 2014,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

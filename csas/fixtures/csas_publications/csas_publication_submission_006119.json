@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6119,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Development of Reference Points for Inshore Lobster in the Maritimes Region (LFAs 27-38)",
+            "title_fr": "Élaboration de points de référence pour le homard côtier de la région des Maritimes (zones de pêche du homard 27 à 38)",
+            "pub_year": 2012,
+            "lead_author_2": "John Tremblay",
+            "pub_num": "028",
+            "pages": 22,
+            "pdf_size": 158,
+            "description": ""
+        }
+    }
+]

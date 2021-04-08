@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7325,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Trends in the biomass, distribution, size composition and model-based estimates of commercial abundance of snow crab (Chionoecetes opilio) based on the multi-species bottom trawl survey of the southern Gulf of St. Lawrence, 1980-2014",
+            "title_fr": "Tendances de la biomasse, de la distribution, de la composition des tailles et des estimations selon les modèles de l’abondance de crabe des neiges (Chionoecetes opilio) de taille commerciale basé sur le relevé au chalut de fond du crabe du neige et du relevé multi-espèces au chalut de fond du sud du Golfe du St.-Laurent, 1980 à 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Benoît, H.",
+            "pub_num": "084",
+            "pages": 30,
+            "pdf_size": 2934,
+            "description": ""
+        }
+    }
+]

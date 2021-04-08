@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7114,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Advice on an acceptable level of Greenland Halibut catches in the Gulf of St. Lawrence for the 2014-2015 fishing season",
+            "title_fr": "Avis sur un niveau acceptable des captures de flétan du Groenland du golfe du Saint-Laurent pour la saison de pêche 2014-2015",
+            "pub_year": 2014,
+            "lead_author_2": "Hugo Bourdages",
+            "pub_num": "022",
+            "pages": 3,
+            "pdf_size": 231,
+            "description": ""
+        }
+    }
+]

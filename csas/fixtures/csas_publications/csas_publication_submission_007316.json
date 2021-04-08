@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7316,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Equivalency metrics for the determination of offset requirements for the Fisheries Protection Program",
+            "title_fr": "Paramètres d'équivalence visant l'établissement d'exigences de compensation aux fins du Programme de protection des pêches",
+            "pub_year": 2016,
+            "lead_author_2": "Bradford, M.J., Smokorowski, K.E. Clarke, K.D., Keatley, B.E. and Wong, M.C.",
+            "pub_num": "046",
+            "pages": 38,
+            "pdf_size": 344,
+            "description": ""
+        }
+    }
+]

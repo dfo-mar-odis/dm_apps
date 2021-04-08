@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7116,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Framework assessment for SFA 29 West scallop fishery",
+            "title_fr": "Évaluation du cadre pour la pêche du pétoncle dans la ZPP 29 Ouest",
+            "pub_year": 2014,
+            "lead_author_2": "S.J. Smith, L. E. Nasmith, A. Glass, B. Hubley, and J. A. Sameoto",
+            "pub_num": "110",
+            "pages": 74,
+            "pdf_size": 1891,
+            "description": ""
+        }
+    }
+]

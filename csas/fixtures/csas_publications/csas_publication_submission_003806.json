@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3806,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Abundance of resident Atlantic cod in Gilbert Bay, Labrador, based on mark recapture, sampling catch per unit effort and commercial tag return data collected from 1998 to 2002",
+            "title_fr": "Abondance de la morue atlantique résidente dans la baie Gilbert, au Labrador, basée sur des données de marquage et recapture, de prises par unité d'effort et de retours d'étiquettes dans la pêche commerciale de 1998 à 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Morris, C.J., Green, J.M., Simms, J.M.",
+            "pub_num": "039",
+            "pages": 20,
+            "pdf_size": 1336,
+            "description": ""
+        }
+    }
+]

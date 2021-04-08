@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1169,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The effect of scallop fishing on lobsters in the western Northumberland Strait",
+            "pub_year": 1981,
+            "lead_author_2": "G.S. Jamieson; M. Etter; R.A. Chandler",
+            "pub_num": "071",
+            "pages": 19,
+            "pdf_size": 7977,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5436,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 2],
+            "title_en": "Pathway of effects of chemical inputs from the aquaculture activities in Canada ",
+            "title_fr": "Séquence des effets des produits chimiques utilisés en production aquicole au Canada",
+            "pub_year": 2010,
+            "lead_author_2": "Burridge, L, Doe, K., Ernst, W.",
+            "pub_num": "017",
+            "pages": 63,
+            "pdf_size": 378,
+            "description": ""
+        }
+    }
+]

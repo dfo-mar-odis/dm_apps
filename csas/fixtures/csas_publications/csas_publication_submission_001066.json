@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1066,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An analysis of some biological characteristics of the 4X juvenile herring fishery",
+            "pub_year": 1980,
+            "lead_author_2": "A. Sinclair; M. Sinclair; T.D. Iles",
+            "pub_num": "020",
+            "pages": 28,
+            "pdf_size": 1216,
+            "description": ""
+        }
+    }
+]

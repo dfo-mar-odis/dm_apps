@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4301,
+        "fields": {
+            "series": 5,
+            "lead_region": [7, 4],
+            "title_en": "Recovery Assessment Report on Cumberland Sound, Ungava Bay, Eastern Hudson Bay, and St. Lawrence Beluga Populations (delphinapterus leucas)",
+            "title_fr": "Évaluation du potentiel de rétablissement des populations de bélugas de la baie Cumberland, de la baie d'Ungava, de l'est de la baie d'Hudson et du Saint-Laurent (Delphinapterus leucas)",
+            "pub_year": 2005,
+            "lead_author_2": "Mike Hammill, Pierre Richard",
+            "pub_num": "036",
+            "pages": 14,
+            "pdf_size": 565,
+            "description": ""
+        }
+    }
+]

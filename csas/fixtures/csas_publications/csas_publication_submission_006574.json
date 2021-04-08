@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6574,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a Recovery Potential Assessment of Silver Shiner (Notropis photogenis) in Canada",
+            "title_fr": "Information donnée à l'appui d'une évaluation du potentiel de rétablissement du méné-miroir (Notropis photogenis) au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "130",
+            "pages": 37,
+            "pdf_size": 729,
+            "description": ""
+        }
+    }
+]

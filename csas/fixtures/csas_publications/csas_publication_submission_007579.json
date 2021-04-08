@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7579,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scotian Shelf Silver Hake (NAFO Divisions 4VWX) Stock Status Update for 2015-2016",
+            "title_fr": "Mise à jour de 2015-2016 sur l’état du stock de merlu argenté du plateau néo-écossais (Divisions 4VWX de l’OPANO)",
+            "pub_year": 2016,
+            "lead_author_2": "Daphne Themalis",
+            "pub_num": "027",
+            "pages": 10,
+            "pdf_size": 368,
+            "description": ""
+        }
+    }
+]

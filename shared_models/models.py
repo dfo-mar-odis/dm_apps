@@ -104,6 +104,26 @@ class HelpTextLookup(models.Model):
         abstract = True
 
 
+class MetadataFields(models.Model):
+    # metadata
+    created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False, related_name='%(class)s_created_by')
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    updated_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False, related_name='%(class)s_updated_by')
+    updated_at = models.DateTimeField(auto_now=True, editable=False)
+
+    class Meta:
+        abstract = True
+
+    @property
+    def metadata(self):
+        return get_metadata_string(
+            self.created_at,
+            self.created_by,
+            self.updated_at,
+            self.updated_by,
+        )
+
+
 # CONNECTED APPS: tickets, travel, projects, sci_fi
 class FiscalYear(models.Model):
     full = models.TextField(blank=True, null=True)

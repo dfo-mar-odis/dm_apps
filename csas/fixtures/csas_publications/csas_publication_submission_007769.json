@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7769,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Effects of dredging activities on St. Lawrence beluga and their habitat",
+            "title_fr": "Effets des activités de dragage sur le béluga du Saint-Laurent et son habitat",
+            "pub_year": 2016,
+            "lead_author_2": "Véronique Lesage",
+            "pub_num": "033",
+            "pages": 17,
+            "pdf_size": 275,
+            "description": ""
+        }
+    }
+]

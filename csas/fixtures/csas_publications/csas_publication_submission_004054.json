@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4054,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Analytical assessment and risk analyses for the herring (Clupea harengus harengus L.) stocks on the west coast of Newfoundland (NAFO Division 4R) in 2002",
+            "title_fr": "Évaluation analytique et analyses de risque pour les stocks de hareng (Clupea harengus harengus L.) de la côte ouest de Terre-Neuve (Division 4R de l'OPANO) en 2002",
+            "pub_year": 2004,
+            "lead_author_2": "Grégoire, F., Lefebvre, L, Lavers, J.",
+            "pub_num": "060",
+            "pages": 95,
+            "pdf_size": 1581,
+            "description": ""
+        }
+    }
+]

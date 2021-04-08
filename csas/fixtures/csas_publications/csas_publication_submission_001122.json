@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1122,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An assessment of the 4X haddock stock for the 1962-80 period",
+            "pub_year": 1981,
+            "lead_author_2": "R. O'Boyle",
+            "pub_num": "024",
+            "pages": 54,
+            "pdf_size": 23971,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8238,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Incorporating climate, oceanographic and ecological change considerations into population assessments: A review of Fisheries and Oceans Canada’s science advisory process.",
+            "title_fr": "Intégration des considérations relatives aux changements climatiques, océanographiques et écologiques dans les évaluations des populations: examen du processus de consultation scientifique de Pêches et Océans Canada",
+            "pub_year": 2019,
+            "lead_author_2": "Pepin, P., King, J. Holt, C., Gurney-Smith, H., Shackell, N., Hedges, K., and Bundy, A.",
+            "pub_num": "043",
+            "pages": 70,
+            "pdf_size": 2161,
+            "description": ""
+        }
+    }
+]

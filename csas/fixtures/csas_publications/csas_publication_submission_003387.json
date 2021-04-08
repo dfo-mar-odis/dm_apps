@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3387,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Marine and Estuarine Riparian Habitats and their role in Coastal Ecosystems, Pacific Region",
+            "pub_year": 2001,
+            "lead_author_2": "Levings, C., Jamieson, G.",
+            "pub_num": "109",
+            "pages": 42,
+            "pdf_size": 2300,
+            "description": ""
+        }
+    }
+]

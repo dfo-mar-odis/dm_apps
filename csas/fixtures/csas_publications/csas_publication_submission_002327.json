@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2327,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Estimate of the spawning stock of mackerel (Scomber scombrus L.) in the Gulf of St. Lawrence and monitoring of catches for NAFO subareas 2-6 in 1992",
+            "title_fr": "Estimation du stock reproducteur de maquereau (Scomber scombrus L.) du golfe du Saint-Laurent et suivi des captures pour les sous-régions 2-6 de l'OPANO en 1992",
+            "pub_year": 1993,
+            "lead_author_2": "F. Grégoire",
+            "pub_num": "054",
+            "pages": 75,
+            "pdf_size": 4148,
+            "description": ""
+        }
+    }
+]

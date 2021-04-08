@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6133,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Ocean Quahog (Arctica islandica) Stock in Southwest New Brunswick",
+            "title_fr": "Évaluation des stocks de quahog nordique (Arctica islandica) du sud-ouest du Nouveau-Brunswick",
+            "pub_year": 2012,
+            "lead_author_2": "D. Roddick / Tana Worcester",
+            "pub_num": "129",
+            "pages": 36,
+            "pdf_size": 1783,
+            "description": ""
+        }
+    }
+]

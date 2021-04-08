@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5771,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Stable isotope and fatty acid analyses of samples from entrapped narwhals (Monodon monoceros) ",
+            "title_fr": "Les analyses des isotopes stables et des acides gras des échantillons de narvals (Monodon monoceros) piégés",
+            "pub_year": 2010,
+            "lead_author_2": "Cortney A. Watt and Steven H. Ferguson",
+            "pub_num": "134",
+            "pages": 16,
+            "pdf_size": 301,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5312,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Workshop on Canadian Science and Management Strategies for Sea Cucumber (Cucumaria frondosa); 17-18 June 2008",
+            "title_fr": "Compte rendu d'un atelier sur les stratégies canadiennes en matière d'étude scientifique et de gestion de l'holothurie (Cucumaria frondosa); les 17 et 18 juin 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Claytor, R.,  Worcester, T.",
+            "pub_num": "023",
+            "pages": 36,
+            "pdf_size": 226,
+            "description": ""
+        }
+    }
+]

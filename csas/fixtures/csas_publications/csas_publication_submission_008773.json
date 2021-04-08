@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8773,
+        "fields": {
+            "series": 6,
+            "title_en": "Additional Analyses of Ballast Water Management Scenarios to Reduce the Establishment of Harmful Aquatic Species Across Canada and the Great Lakes",
+            "title_fr": "Analyses supplémentaires des scénarios de gestion des eaux de ballast pour réduire l'établissement d'espèces aquatiques nuisibles au Canada et dans les Grands Lacs",
+            "pub_year": 2020,
+            "lead_author_2": "Sarah Bailey",
+            "pub_num": "053",
+            "pages": 26,
+            "pdf_size": 694,
+            "description": ""
+        }
+    }
+]

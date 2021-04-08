@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6649,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Force needed to effectively fracture skulls of grey and harp seal beaters using a hakapik",
+            "title_fr": "Force nécessaire pour fracturer efficacement le crâne de brasseurs de phoques gris et de phoques du Groenland à l'aide d'un hakapik",
+            "pub_year": 2012,
+            "lead_author_2": "Roy, L.D., E. Jenson, and M. Hiltz",
+            "pub_num": "134",
+            "pages": 13,
+            "pdf_size": 628,
+            "description": ""
+        }
+    }
+]

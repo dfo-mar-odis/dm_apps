@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4866,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Species at Risk: Habitat Quantification Literature Review",
+            "title_fr": "Espèces en péril : Quantification de l'habitat et examen de la documentation",
+            "pub_year": 2007,
+            "lead_author_2": "McCarthy, J.H.",
+            "pub_num": "060",
+            "pages": 23,
+            "pdf_size": 171,
+            "description": ""
+        }
+    }
+]

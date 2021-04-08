@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 619,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) Populations in Crabbes and Robinson Rivers, and Middle Barachois, Fischells and Flat Bay Brooks, Newfoundland, 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Porter, T.R.",
+            "pub_num": "042",
+            "pages": 42,
+            "pdf_size": 1983,
+            "description": ""
+        }
+    }
+]

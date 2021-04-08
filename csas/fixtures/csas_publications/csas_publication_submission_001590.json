@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1590,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Biological update of the 4S herring stock in 1984",
+            "pub_year": 1985,
+            "lead_author_2": "D. Tremblay",
+            "pub_num": "083",
+            "pages": 12,
+            "pdf_size": 451,
+            "description": ""
+        }
+    }
+]

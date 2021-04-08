@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3823,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Halibut on the Scotian Shelf and Southern Grand Banks - Current Estimates of Population Status",
+            "title_fr": "État de la population de flétan du plateau néo-écossais et du sud des Grands Bancs",
+            "pub_year": 2003,
+            "lead_author_2": "Zwanenburg, K., Wilson, S., Branton, R., Brien, P.",
+            "pub_num": "046",
+            "pages": 34,
+            "pdf_size": 892,
+            "description": ""
+        }
+    }
+]

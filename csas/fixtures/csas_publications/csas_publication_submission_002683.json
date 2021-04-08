@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2683,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biological and chemical oceanographic conditions on the Newfoundland shelf during 2001 with comparisons with earlier observations",
+            "title_fr": "Conditions Oceanographiques Biologiques et Chimiques sur le Plateau Terre-Neuvien au cours de l'Annee 2001 avec une comparaison avec les observations anterieures",
+            "pub_year": 2002,
+            "lead_author_2": "P. Pepin and / et G.L. Maillet",
+            "pub_num": "052",
+            "pages": 61,
+            "pdf_size": 5420,
+            "description": ""
+        }
+    }
+]

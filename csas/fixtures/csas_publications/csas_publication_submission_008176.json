@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8176,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Optical, Chemical, and Biological Oceanographic Conditions on the Newfoundland and Labrador Shelf during 2016-2017",
+            "title_fr": "Conditions optiques, chimiques et biologiques de l’océan sur le plateau continental de Terre-Neuve-et-Labrador au cours de 2016-2017",
+            "pub_year": 2019,
+            "lead_author_2": "Maillet, G., Bélanger, D., Doyle, G., Robar, A., S. Fraser, Higdon, J., Ramsay, D. and P. Pepin",
+            "pub_num": "055",
+            "pages": 43,
+            "pdf_size": 4166,
+            "description": ""
+        }
+    }
+]

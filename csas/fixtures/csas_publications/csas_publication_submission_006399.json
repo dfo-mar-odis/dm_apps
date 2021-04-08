@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6399,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Considerations for defining reference points for semelparous species, with emphasis on anadromous salmonid species including iteroparous salmonids",
+            "title_fr": "Considérations sur la définition de points de référence pour les espèces sémelpares, particulièrement les espèces de salmonidés anadromes, y compris les salmonidés itéropares",
+            "pub_year": 2012,
+            "lead_author_2": "Gérald Chaput et al.",
+            "pub_num": "146",
+            "pages": 53,
+            "pdf_size": 424,
+            "description": ""
+        }
+    }
+]

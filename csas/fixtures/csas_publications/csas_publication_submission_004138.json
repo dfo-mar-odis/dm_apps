@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4138,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Lobster on the North Shore (LFA's 15, 16 and 18) and around Anticosti Island (LFA 17) in 2004",
+            "title_fr": "Homard de la Cote-Nord (ZPH 15, 16 et 18) et de l'ile d'Anticosti (ZPH 17) en 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Gendron, L.",
+            "pub_num": "004",
+            "pages": 8,
+            "pdf_size": 213,
+            "description": ""
+        }
+    }
+]

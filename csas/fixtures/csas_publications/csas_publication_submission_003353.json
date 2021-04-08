@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3353,
+        "fields": {
+            "series": 7,
+            "lead_region": [4, 2, 1, 5],
+            "title_en": "Redfish in the St. Lawrence, on St. Pierre Bank, and on the Scotian Shelf (Units 1, 2, 3) - Review of Stock Status and Stocks Structure",
+            "title_fr": "Sébaste du golfe du Saint-Laurent, du banc Saint-Pierre et de la plate-forme néo-écossaise (unités 1, 2, et 3) - Examen de l'état et de la structure des stocks",
+            "pub_year": 1993,
+            "pub_num": "002",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4475,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of Northern (2J3KL) cod in 2006",
+            "title_fr": "Évaluation du stock de morue du nord (2J3KL) en 2006",
+            "pub_year": 2006,
+            "lead_author_2": "George Lilly",
+            "pub_num": "015",
+            "pages": 23,
+            "pdf_size": 282,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2207,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation du stock de sébaste (Sebastes spp.) du golfe du Saint-Laurent: 4RST + 3Pn4Vn (jan. - mai)",
+            "pub_year": 1992,
+            "lead_author_2": "B. Morin; B. Bernier",
+            "pub_num": "059",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6005,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "2010 Update on the status of American Eel (Anguilla rostrata) in Ontario ",
+            "title_fr": "Mise à jour de 2010 sur l'état de l'anguille d'Amérique (Anguilla rostrata) en Ontario",
+            "pub_year": 2011,
+            "lead_author_2": "Pratt T.C., Mathers A.",
+            "pub_num": "050",
+            "pages": 24,
+            "pdf_size": 279,
+            "description": ""
+        }
+    }
+]

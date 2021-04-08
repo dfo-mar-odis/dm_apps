@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5540,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Alternate Ballast Water Exchange Zones for the Newfoundland and Labrador Region - An Aquatic Invasive Species Risk Assessment Based on Oceanographic Modelling, Ecologically and Biologically Significant Areas and the Sustainability of Fisheries and Aquaculture",
+            "title_fr": "Zones alternatives de renouvellement de l'eau de ballast pour la région de Terre Neuve et Labrador - Une évaluation du risque pour les espèces aquatiques envahissantes fondée sur la modélisation océanographique, les zones d'importance écologique et biologique et la durabilité des pêches et de l'aquaculture",
+            "pub_year": 2010,
+            "lead_author_2": "Cynthia H. McKenzie, Guoqi Han, Moqin He, Terri Wells, Gary Maillet",
+            "pub_num": "087",
+            "pages": 47,
+            "pdf_size": 1413,
+            "description": ""
+        }
+    }
+]

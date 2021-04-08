@@ -2,7 +2,7 @@ pool:
   vmImage: 'Ubuntu 18.04'
 
 trigger:
-  - glf_dev
+  - None
 
 steps:
   - task: UsePythonVersion@0
@@ -27,63 +27,72 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     displayName: 'Install Prerequisites '
 
-#  - script: |
-#      python manage.py test -b  shared_models.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for shared models'
-#
-#  - script: |
-#      python manage.py test -b projects2.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for projects (v2)'
+  - script: |
+      python manage.py test -b  shared_models.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for shared models'
 
   - script: |
-      python manage.py test -b travel.test
+      python manage.py test -b projects2.test
     condition: succeededOrFailed()
-    displayName: 'Tests for travel'
+    displayName: 'Tests for projects (v2)'
 
 #  - script: |
-#      python manage.py test -b whalesdb.test
+#      python manage.py test -b travel.test
 #    condition: succeededOrFailed()
-#    displayName: 'Tests for whalesdb'
-#
-#  - script: |
-#      python manage.py test -b inventory.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for inventory'
-#
-#  - script: |
-#      python manage.py test -b shiny.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for shiny'
-#
-#  - script: |
-#      python manage.py test -b ihub.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for ihub'
-#
-#  - script: |
-#      python manage.py test -b csas.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for csas'
-#
-#  - script: |
-#      python manage.py test -b cruises.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for cruises'
-#
-#  - script: |
-#      python manage.py test -b whalebrary.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for whalebrary'
-#
-#  - script: |
-#      python manage.py test --exclude-tag=Functional -b bio_diversity.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for biodiversity'
-#
-#
-#  - script: |
-#      python manage.py test -b scuba.test
-#    condition: succeededOrFailed()
-#    displayName: 'Tests for scuba'
+#    displayName: 'Tests for travel'
+
+  - script: |
+      python manage.py test -b whalesdb.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for whalesdb'
+
+  - script: |
+      python manage.py test -b inventory.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for inventory'
+
+  - script: |
+      python manage.py test -b shiny.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for shiny'
+
+  - script: |
+      python manage.py test -b ihub.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for ihub'
+
+  - script: |
+      python manage.py test -b csas.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for csas'
+
+  - script: |
+      python manage.py test -b cruises.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for cruises'
+
+  - script: |
+      python manage.py test -b whalebrary.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for whalebrary'
+
+  - script: |
+      python manage.py test --exclude-tag=Functional -b bio_diversity.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for biodiversity'
+
+  - script: |
+      python manage.py test -b scuba.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for scuba'
+
+  - script: |
+      python manage.py test -b edna.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for eDNA'
+
+  - script: |
+      python manage.py test -b fisheriescape.test
+    condition: succeededOrFailed()
+    displayName: 'Tests for fisheriescape'

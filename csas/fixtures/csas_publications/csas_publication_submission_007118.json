@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7118,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings for the assessment of scallops in SFA 29 W",
+            "lead_author_2": "Christie Whelan",
+            "description": ""
+        }
+    }
+]

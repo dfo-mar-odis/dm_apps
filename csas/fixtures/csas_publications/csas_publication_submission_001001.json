@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1001,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Fisheries Management Studies Working Group; 24-25 February 1999 and 21-23 June 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Halliday, R.G.",
+            "pub_num": "027",
+            "description": ""
+        }
+    }
+]

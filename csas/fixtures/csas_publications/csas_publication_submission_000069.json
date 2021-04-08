@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 69,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Brown's Bank North scallop stock assessment - 1997",
+            "pub_year": 1998,
+            "lead_author_2": "G. Robert, M.A.E. Butler",
+            "pub_num": "070",
+            "description": ""
+        }
+    }
+]

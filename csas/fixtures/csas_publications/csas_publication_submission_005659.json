@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5659,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Impact of at sea disposal on resident killer whale (Orcinus orca) critical habitat: Science in support of risk management",
+            "title_fr": "Impact des immersions en mer sur l'habitat essentiel des épaulards (Orcinus Orca) résidents - La science à l'appui de la gestion des risques",
+            "pub_year": 2010,
+            "lead_author_2": "S.C.H. Grant",
+            "pub_num": "046",
+            "pages": 9,
+            "pdf_size": 241,
+            "description": ""
+        }
+    }
+]

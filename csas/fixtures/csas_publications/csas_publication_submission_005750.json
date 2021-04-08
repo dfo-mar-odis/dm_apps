@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5750,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Guidelines for applying updated methods for assessing harvest rules for Fraser River sockeye salmon (Oncorhynchus nerka)",
+            "title_fr": "Directives pour l'utilisation de méthodes mises à jour pour l'évaluation des règles de pêche au saumon rouge du fleuve Fraser (Oncorhynchus nerka)",
+            "pub_year": 2010,
+            "lead_author_2": "Ann-Marie Huang and Marilyn Joyce",
+            "pub_num": "070",
+            "pages": 8,
+            "pdf_size": 106,
+            "description": ""
+        }
+    }
+]

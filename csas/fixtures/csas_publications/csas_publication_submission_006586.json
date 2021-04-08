@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6586,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of the Potential Near-and Far-Field Effects of the Organic Extractive Component of Integrated Multi-Trophic Aquaculture (IMTA) in Southwest New Brunswick with Emphasis on the Blue Mussel (Mytilus edulis)",
+            "title_fr": "Examen des effets potentiels dans le milieu environnant et à distance de la composante d'extraction des éléments organiques de l'aquaculture multitrophique intégrée dans le sud-ouest du Nouveau-Brunswick, avec accent sur la moule bleue (Mytilus edulis)",
+            "pub_year": 2014,
+            "lead_author_2": "Shawn M.C. Robinson and Gregor K. Reid / Tana Worcester / Valerie Myra",
+            "pub_num": "026",
+            "pages": 67,
+            "pdf_size": 828,
+            "description": ""
+        }
+    }
+]

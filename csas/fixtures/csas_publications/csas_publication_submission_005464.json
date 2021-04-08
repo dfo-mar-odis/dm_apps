@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5464,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on Atlantic surf clam from Magdalen Islands; January 27, 2010",
+            "title_fr": "Évaluation des stocks de mactre de l'Atlantique des Îles-de-la-Madeleine; 27 janvier 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Brulotte, S.",
+            "pub_num": "001",
+            "pages": 13,
+            "description": ""
+        }
+    }
+]

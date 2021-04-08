@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6458,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Harvest Scenarios for Atlantic Mackerel (Scomber scombrus L.) for the 2012 and 2013 Fishing Seasons",
+            "title_fr": "Scénarios de captures du maquereau bleu (Scomber scombrus L.) pour les saisons de pêche 2012 et 2013",
+            "pub_year": 2012,
+            "lead_author_2": "François Grégoire",
+            "pub_num": "012",
+            "pages": 4,
+            "pdf_size": 43,
+            "description": ""
+        }
+    }
+]

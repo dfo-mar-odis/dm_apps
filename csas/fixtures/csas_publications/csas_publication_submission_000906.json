@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 906,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Food and feeding of the Atlantic herring (Clupea harengus L.) in the Gulf of St. Lawrence and adjacent waters",
+            "pub_year": 1979,
+            "lead_author_2": "S. Messieh; H. Powles; G. Côté",
+            "pub_num": "015",
+            "pages": 19,
+            "pdf_size": 806,
+            "description": ""
+        }
+    }
+]

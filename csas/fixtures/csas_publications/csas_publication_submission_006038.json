@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6038,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Western Component Pollock (4Xopqrs5) Management Strategy Evaluation Science Peer Review; 9-10 May 2011",
+            "title_fr": "Compte rendu de l'examen scientifique par les pairs concernant l'évaluation de la stratégie de gestion de la goberge de la composante Ouest (4Xopqrs5); 9-10 mai 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Julie Porter, Stefan Leslie",
+            "pub_num": "034",
+            "pages": 33,
+            "pdf_size": 225,
+            "description": ""
+        }
+    }
+]

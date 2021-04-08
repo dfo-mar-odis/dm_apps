@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2918,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Meeting on Turtle By-Catch in Canadian Atlantic Fisheries Hayes Boardroom, BIO; 20 March 2001",
+            "pub_year": 2001,
+            "lead_author_2": "O'Boyle, R. (Chair)",
+            "pub_num": "017",
+            "pages": 31,
+            "pdf_size": 212,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6657,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Spatial Distribution, Area of Impact Estimates for the Principle Sources of Human-Induced Mortality for American Eel, and standard estimates of elver recruitment and adult production for American Eel (Anguilla rostrata) in Maritimes Region",
+            "lead_author_2": "R. Bradford",
+            "description": ""
+        }
+    }
+]

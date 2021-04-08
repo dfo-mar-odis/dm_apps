@@ -5,29 +5,32 @@
 {% bootstrap_css %}
 
 <div class="card border border-dark my-1" name={{context_dict.sub_model_key|add:"-details"}}>
-        <h5 class="card-header">{% trans context_dict.div_title %}
-            <span>
-                <a class="btn btn-secondary" href={{"#"|add:context_dict.sub_model_key|add:"-list"}} data-toggle="collapse">+</a>
-            </span>
-        </h5>
-        {% if context_dict.objects_list %}
-            <table class="table table-sm sortable table-hover collapse" id={{context_dict.sub_model_key|add:"-list"}}>
-                <thead>
+    <h5 class="card-header">{% trans context_dict.div_title %}
+        <span>
+            {% if context_dict.add_btn_url %}
+                <a class="btn btn-primary" href="#" onclick="return pop('{% url 'bio_diversity:create_'|add:context_dict.sub_model_key object.pk 'pop' %}','all')" title="{% trans 'Add' %}">{% trans 'Add New '|add:context_dict.div_title %}</a>
+            {% endif %}
+            <a class="btn btn-secondary" href={{"#"|add:context_dict.sub_model_key|add:"-list"}} data-toggle="collapse">+</a>
+        </span>
+    </h5>
+    {% if context_dict.objects_list %}
+        <table class="table table-sm sortable table-hover collapse" id={{context_dict.sub_model_key|add:"-list"}}>
+            <thead>
+                {% for field in context_dict.field_list %}
+                    <th>{% get_verbose_label context_dict.single_object field %}</th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for obj in context_dict.objects_list %}
+                    <tr href="{% url 'bio_diversity:details_'|add:context_dict.sub_model_key model_key object.id obj.id %}">
                     {% for field in context_dict.field_list %}
-                        <th>{% get_verbose_label context_dict.single_object field %}</th>
+                        <td>
+                            {% get_field_value obj field %}
+                        </td>
                     {% endfor %}
-                </thead>
-                <tbody>
-                    {% for obj in context_dict.objects_list %}
-                        <tr href="{% url 'bio_diversity:details_'|add:context_dict.sub_model_key model_key object.id obj.id %}">
-                        {% for field in context_dict.field_list %}
-                            <td>
-                                {% get_field_value obj field %}
-                            </td>
-                        {% endfor %}
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
  </div>

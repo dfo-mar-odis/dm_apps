@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3177,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Quebec Green Sea Urchin",
+            "title_fr": "L'oursin vert du Québec",
+            "pub_year": 1996,
+            "lead_author_2": "Lyse Godbout",
+            "pub_num": "008",
+            "description": ""
+        }
+    }
+]

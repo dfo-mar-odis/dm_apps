@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2665,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "State of the ocean: Northwest Atlantic",
+            "title_fr": "État de l'océan : Atlantique Nord-Ouest",
+            "pub_year": 1996,
+            "lead_author_2": "Drinkwater, K.",
+            "pub_num": "041",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

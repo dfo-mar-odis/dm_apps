@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 221,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Shelf Rockfish Assessment for 1998 and Recommended Yield Options for 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Stanley, R.",
+            "pub_num": "053",
+            "pages": 57,
+            "pdf_size": 3993,
+            "description": ""
+        }
+    }
+]

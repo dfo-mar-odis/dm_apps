@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8040,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Design Strategies for a Network of Marine Protected Areas in the Scotian Shelf Bioregion",
+            "title_fr": "Stratégies pour la conception d’un réseau d’aires marines protégées dans la biorégion du plateau néo-écossais",
+            "pub_year": 2018,
+            "lead_author_2": "Tana Worcester",
+            "pub_num": "006",
+            "pages": 23,
+            "pdf_size": 518,
+            "description": ""
+        }
+    }
+]

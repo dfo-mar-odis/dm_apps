@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2234,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation de gisements de mactre de Stimpson, Mactromeris polynyma, dans le golfe du Saint-Laurent: Resultats préliminaires",
+            "pub_year": 1992,
+            "lead_author_2": "T. Landry; E. Wade; M. Giguère",
+            "pub_num": "086",
+            "description": ""
+        }
+    }
+]

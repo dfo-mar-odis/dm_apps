@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5149,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "An Assessment of Northern Shrimp and Striped Shrimp in the Eastern Assessment Zone and Western Assessment Zone (Shrimp Fishing Areas 2 and 3)",
+            "title_fr": "Évaluation des stocks de crevette nordique et de crevette ésope dans les zones d'évaluation Est et Ouest (zones de pêche de la crevette 2 et 3)",
+            "pub_year": 2014,
+            "lead_author_2": "T. Siferd",
+            "pub_num": "028",
+            "pages": 63,
+            "pdf_size": 1310,
+            "description": ""
+        }
+    }
+]

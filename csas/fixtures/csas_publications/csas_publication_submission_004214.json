@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4214,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "DFO/FSRS Inshore Ecosystem: Project Data Synthesis Workshop; 19-20 March 2007",
+            "title_fr": "Projet MPO-FSRS sur l'écosystème côtier: Atelier de synthèse des données; les 19 et 20 mars 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Bundy, A., C. MacKenzie, C. den Heyer.",
+            "pub_num": "028",
+            "pages": 67,
+            "pdf_size": 1255,
+            "description": ""
+        }
+    }
+]

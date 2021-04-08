@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8150,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of the southern Gulf of St. Lawrence (NAFO Div. 4T) spring and fall spawner components of Atlantic herring (Clupea harengus) with advice for the 2018 and 2019 fisheries",
+            "title_fr": "Évaluation du hareng de l’Atlantique (Clupea harengus), composantes des reproducteurs de printemps et d’automne, du sud du golfe du Saint-Laurent (division 4T de l’OPANO) et avis pour les pêches de 2018 et de 2019",
+            "pub_year": 2018,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "029",
+            "pages": 30,
+            "pdf_size": 2902,
+            "description": ""
+        }
+    }
+]

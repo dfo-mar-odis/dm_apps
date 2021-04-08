@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7816,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Assessment of 4X5Y Haddock; November 28 to 29, 2016",
+            "lead_author_2": "Kirsten Clark",
+            "description": ""
+        }
+    }
+]

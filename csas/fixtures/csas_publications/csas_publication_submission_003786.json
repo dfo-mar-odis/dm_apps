@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3786,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the workshop on Strategies for strengthening the Link between the Atlantic Zone Monitoring Program (AZMP) and Stock Assessment; November 13 to 15, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Ouellet, P.",
+            "pub_num": "034",
+            "description": ""
+        }
+    }
+]

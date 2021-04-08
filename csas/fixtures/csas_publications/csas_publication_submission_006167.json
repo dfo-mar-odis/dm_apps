@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6167,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the biological indicators for the Eastport Marine Protected Area (MPA): A case study in support of an ecosystem goods and services valuation of MPAs",
+            "title_fr": "Évaluation des indicateurs biologiques pour la zone de protection marine (ZPM) d'Eastport : étude de cas à l'appui de l'évaluation des biens et services liés aux ZPM",
+            "pub_year": 2017,
+            "lead_author_2": "Lewis, S., Coughlan, E., Pepin, P. and Skanes, K.",
+            "pub_num": "001",
+            "pages": 51,
+            "pdf_size": 4047,
+            "description": ""
+        }
+    }
+]

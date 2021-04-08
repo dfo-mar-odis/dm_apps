@@ -33,8 +33,8 @@
     <tbody>
     <tr>
       <th>{% trans "Name" %}</th>
-      <th>${ reviewerLabels.status}</th>
-      <th>${ reviewerLabels.status_date}</th>
+      <th style="width: 125px">${ reviewerLabels.status}</th>
+      <th style="width: 125px">${ reviewerLabels.status_date}</th>
       <th>${ reviewerLabels.comments}</th>
     </tr>
     <tr v-for="(reviewer, index) in t.request_obj.reviewer_history">

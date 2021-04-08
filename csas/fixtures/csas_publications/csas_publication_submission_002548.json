@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2548,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Oceanographic conditions in the Newfoundland Region during 1995 with comparison to the 1961-1990 average",
+            "pub_year": 1996,
+            "lead_author_2": "E. Colbourne",
+            "pub_num": "001",
+            "pages": 46,
+            "pdf_size": 1890,
+            "description": ""
+        }
+    }
+]

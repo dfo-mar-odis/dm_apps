@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1450,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Lobster distribution on the Scotian Shelf and implications to the Jonah Crab fisheries",
+            "pub_year": 1984,
+            "lead_author_2": "D.S. Pezzack",
+            "pub_num": "044",
+            "pages": 17,
+            "pdf_size": 1257,
+            "description": ""
+        }
+    }
+]

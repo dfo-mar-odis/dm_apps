@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2065,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Long-term observations on tagged male snow crab, Chionoecetes opilio, movements in Bonavista Bay, Newfoundland",
+            "pub_year": 1990,
+            "lead_author_2": "David M. Taylor",
+            "pub_num": "064",
+            "pages": 9,
+            "pdf_size": 765,
+            "description": ""
+        }
+    }
+]

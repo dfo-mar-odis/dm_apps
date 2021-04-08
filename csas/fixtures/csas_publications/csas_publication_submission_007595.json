@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7595,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A cohort time-series Von Bertalanffy growth model for Northern cod (Gadus morhua), and estimation of the age of tagged cod",
+            "title_fr": "Modèle de croissance de Von Bertalanffy d'une série chronologique de la cohorte de morues du Nord (Gadus morhua) et estimation de l'âge des morues marquées",
+            "pub_year": 2016,
+            "lead_author_2": "Cadigan, N. and Konrad, C.",
+            "pub_num": "017",
+            "pages": 42,
+            "pdf_size": 3445,
+            "description": ""
+        }
+    }
+]

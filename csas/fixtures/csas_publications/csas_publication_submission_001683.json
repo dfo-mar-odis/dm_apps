@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1683,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock structure of American shad, Alosa sapidissima, in the Gulf of Maine and Bay of Fundy",
+            "pub_year": 1986,
+            "lead_author_2": "M.J. Dadswell",
+            "pub_num": "097",
+            "pages": 31,
+            "pdf_size": 1543,
+            "description": ""
+        }
+    }
+]

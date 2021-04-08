@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2616,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Growth and condition of cod in subdivision 3Ps as determined from trawl surveys (1972-1996) and sentinel surveys (1995)",
+            "pub_year": 1996,
+            "lead_author_2": "G. R. Lilly",
+            "pub_num": "069",
+            "pages": 39,
+            "pdf_size": 1584,
+            "description": ""
+        }
+    }
+]

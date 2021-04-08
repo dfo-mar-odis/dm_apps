@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3116,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Yellowtail Flounder On Georges Bank",
+            "title_fr": "Limande à  queue jaune du banc Georges",
+            "pub_year": 1997,
+            "lead_author_2": "John Neilson",
+            "pub_num": "A3-15",
+            "pages": 6,
+            "pdf_size": 90,
+            "description": ""
+        }
+    }
+]

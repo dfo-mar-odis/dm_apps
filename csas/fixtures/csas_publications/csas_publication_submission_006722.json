@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6722,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessing the status of the cod (Gadus morhua) stock in NAFO Subdivision 3Ps in 2012",
+            "title_fr": "Évaluation de l'état du stock de morue (Gadus morhua) dans la sous-division 3Ps de l'OPANO en 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Healey, B.P., Murphy, E.F., Brattey, J., Morgan, M.J., Maddock Parsons, D., and J. Vigneau.",
+            "pub_num": "087",
+            "pages": 89,
+            "pdf_size": 3914,
+            "description": ""
+        }
+    }
+]

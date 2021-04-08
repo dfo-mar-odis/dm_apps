@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1890,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Bay of Fundy scallop stock assessment for 1988, a year of record landings",
+            "pub_year": 1989,
+            "lead_author_2": "G. Robert; M.A.E. Butler-Connolly; M.J. Lundy",
+            "pub_num": "018",
+            "pages": 38,
+            "pdf_size": 2170,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1554,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The eastern Scotian Shelf (4VW) haddock stock and fishery in 1984, with an historical perspective on stock and recruitment back to 1948",
+            "pub_year": 1985,
+            "lead_author_2": "R. Mahon; P. Simpson; D.E. Waldron",
+            "pub_num": "047",
+            "pages": 64,
+            "pdf_size": 3001,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8765,
+        "fields": {
+            "series": 4,
+            "title_en": "Proceedings of the Pacific regional peer review on Recovery Potential Assessment – White Sturgeon, Lower Fraser Designatable Unit",
+            "lead_author_2": "Nicholas Komick",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 652,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Phase 1 framework for undertaking an ecological assessment of the outer rocky intertidal zone",
+            "pub_year": 1999,
+            "lead_author_2": "Jamieson, G., Lauzier, R., Gillespie, G.",
+            "pub_num": "209",
+            "pages": 33,
+            "pdf_size": 108,
+            "description": ""
+        }
+    }
+]

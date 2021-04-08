@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4348,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Physical oceanographic conditions in NAFO Division 3P during 2005 - possible influences on the distribution and abundance of Atlantic cod (Gadus morhua)",
+            "title_fr": "Conditions océanographiques physiques dans la division 3P de l'OPANO en 2005 - effets possibles sur la répartition et l'abondance de la morue (Gadus morhua)",
+            "pub_year": 2005,
+            "lead_author_2": "Colbourne, E.B., E.F. Murphy.",
+            "pub_num": "065",
+            "pages": 23,
+            "pdf_size": 3079,
+            "description": ""
+        }
+    }
+]

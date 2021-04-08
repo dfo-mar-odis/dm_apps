@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3678,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Review of Measures to Control Size at First Capture of Groundfish on the Scotian Shelf with Special Reference to Haddock in NAFO Div. 4VW",
+            "title_fr": "Examen des mesures visant à assurer une taille minimale à la première capture du poisson de fond de la plate-forme Scotian, en particulier l'aiglefin dans les divisions 4VW de l'OPANO",
+            "pub_year": 2002,
+            "lead_author_2": "R. G. Halliday",
+            "pub_num": "100",
+            "pages": 19,
+            "pdf_size": 680,
+            "description": ""
+        }
+    }
+]

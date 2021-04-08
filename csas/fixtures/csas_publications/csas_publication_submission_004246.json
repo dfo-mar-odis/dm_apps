@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4246,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Advisory Process to Develop a Framework for Monitoring the Musquash Estuary Marine Protected Area (MPA) and Administered Intertidal Area (AIA); December 9-10, 2010",
+            "title_fr": "Compte rendu d'une réunion du Processus de consultation scientifique de la Région des Maritimes concernant l'établissement d'un cadre de surveillance de la zone de protection marine (ZPA) de l'estuaire du MPO et de la zone intertidale administrée par le MPO ; les 9 et 10 décembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "E. Kennedy / K. Curran / V. Myra",
+            "pub_num": "030",
+            "pages": 27,
+            "pdf_size": 142,
+            "description": ""
+        }
+    }
+]

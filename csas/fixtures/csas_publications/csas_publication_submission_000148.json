@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 148,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Observations of temporal and spatial variability in density and relative condition factor of Juvenile Atlantic salmon (Salmo salar L.) in the Harry's River drainage system, insular Newfoundland, from 1987-1997",
+            "pub_year": 1998,
+            "lead_author_2": "R. Knoechel, J.L. FitzGerald, C.C. Mullins",
+            "pub_num": "122",
+            "description": ""
+        }
+    }
+]

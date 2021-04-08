@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4972,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Estimates of Total Allowable Removals for the eastern Canada/West Greenland population of Bowhead Whales",
+            "title_fr": "Estimation du total autorisé de prélèvements pour la population de baleines boréales de l'est du Canada /ouest du Groenland",
+            "pub_year": 2008,
+            "lead_author_2": "Dueck, L.",
+            "pub_num": "030",
+            "pages": 6,
+            "pdf_size": 49,
+            "description": ""
+        }
+    }
+]

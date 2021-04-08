@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4640,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Trends in Groundfish Bottom Trawl Fishing Activity in BC",
+            "title_fr": "Tendances relatives aux activités de pêche au chalut de fond en C.-B.",
+            "pub_year": 2007,
+            "lead_author_2": "Sinclair, A.",
+            "pub_num": "006",
+            "pages": 26,
+            "pdf_size": 390,
+            "description": ""
+        }
+    }
+]

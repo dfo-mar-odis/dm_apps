@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4268,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the recovery potential assessment for Atlantic Salmon population in Anticosti Island; December 4-5, 2012",
+            "title_fr": "Compte rendu de la revue régionale par des pairs sur l'évaluation du potentiel de rétablissement de la population de saumon atlantique de l'île d'Anticosti ; 4-5 décembre 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "058",
+            "description": ""
+        }
+    }
+]

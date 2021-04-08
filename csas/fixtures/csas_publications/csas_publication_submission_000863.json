@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 863,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An analytical assessment of the witch flounder stock in the Gulf of St. Lawrence (ICNAF Divisions 4R and 4S)",
+            "pub_year": 1978,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "007",
+            "pages": 12,
+            "pdf_size": 699,
+            "description": ""
+        }
+    }
+]

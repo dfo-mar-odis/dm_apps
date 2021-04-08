@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 806,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) in Middle Brook (SFA 5), Northeast Brook, Trepassey (SFA 9), and Northeast River, Placentia (SFA 10), Newfoundland, in 2000",
+            "title_fr": "État des stocks de saumons atlantique (Salmo salar L.) du ruisseau Middle (ZPS 5), du ruisseau Northeast, Trepassey (ZPS 9) et de la rivière Northeast, Placentia (ZPS 10), Terre-Neuve, en l'an 2000",
+            "pub_year": 2001,
+            "lead_author_2": "M.F. O'Connell, A. Walsh and N. M. Cochrane",
+            "pub_num": "042",
+            "pages": 90,
+            "pdf_size": 3900,
+            "description": ""
+        }
+    }
+]

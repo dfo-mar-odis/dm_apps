@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5887,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Review of Recovery Potential Assessment for the Umatilla Dace (Rhinichtys umatilla); March 14, 2011",
+            "title_fr": "Compte rendu de l'examen de l'évaluation du potentiel de rétablissement du naseux d'Umatilla (Rhinichtys umatilla) ; 14 mars 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "049",
+            "pages": 31,
+            "pdf_size": 240,
+            "description": ""
+        }
+    }
+]

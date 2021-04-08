@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2753,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in Northumberland Strait, Nova Scotia rivers in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "S. O'Neil; D.A. Longard; C.J. Harvie",
+            "pub_num": "127",
+            "pages": 46,
+            "pdf_size": 1989,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8670,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Habitat use of La Perouse Bank by Resident Killer Whales inferred from passive acoustic monitoring",
+            "lead_author_2": "T Doniol-Valcroze and J Pilkington",
+            "description": ""
+        }
+    }
+]

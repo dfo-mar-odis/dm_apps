@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8427,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of stock status indicators for Greenland Halibut in the Gulf of St. Lawrence (4RST) in 2019",
+            "title_fr": "Mise à jour des indicateurs de suivi de l’état du stock de flétan du Groenland du golfe du Saint-Laurent (4RST) en 2019",
+            "pub_year": 2020,
+            "lead_author_2": "Johanne Gauthier",
+            "pub_num": "005",
+            "pages": 8,
+            "pdf_size": 755,
+            "description": ""
+        }
+    }
+]

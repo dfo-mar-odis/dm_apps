@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7884,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Update to estimation methods for Geoduck (Panopea generosa) stock index",
+            "title_fr": "Mise à jour des methods d’estimation de l’indice de la taille du stock de panope (Panopea generosa)",
+            "pub_year": 2017,
+            "lead_author_2": "Bureau, D.",
+            "pub_num": "070",
+            "pages": 64,
+            "pdf_size": 1990,
+            "description": ""
+        }
+    }
+]

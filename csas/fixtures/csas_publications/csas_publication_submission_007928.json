@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7928,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review Assessment of Herring Stocks in the North Shore of Quebec (4S) in 2016; April 12, 2017",
+            "title_fr": "Compte rendu de l’examen par des pairs régional sur l’évaluation des stocks de hareng de la Côte-Nord du Québec (4S) en 2016; le 12 avril 2017",
+            "pub_year": 2017,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "020",
+            "pages": 10,
+            "pdf_size": 119,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4285,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Characterization of the impacts of finfish aquaculture on hard bottom substrates in NL region, including changes in biodiversity, biophysical characteristics, and habitat functionality",
+            "lead_author_2": "D. Hamoutene",
+            "description": ""
+        }
+    }
+]

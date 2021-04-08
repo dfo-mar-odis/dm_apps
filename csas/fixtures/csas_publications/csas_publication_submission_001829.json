@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1829,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Movement of lobsters (Homarus americanus) in St. George's Bay effect on the standing stock",
+            "pub_year": 1988,
+            "lead_author_2": "D.R. Maynard; A.W. Landsburg; Y. Chiasson",
+            "pub_num": "033",
+            "pages": 7,
+            "pdf_size": 399,
+            "description": ""
+        }
+    }
+]

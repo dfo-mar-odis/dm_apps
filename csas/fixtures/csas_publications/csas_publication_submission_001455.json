@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1455,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Observations on the capelin stock in Div. 2J3K",
+            "pub_year": 1984,
+            "lead_author_2": "J. Carscadden; B.S. Nakashima; D.S. Miller",
+            "pub_num": "049",
+            "pages": 42,
+            "pdf_size": 1355,
+            "description": ""
+        }
+    }
+]

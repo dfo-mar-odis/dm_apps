@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 242,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Overview of 1998 Hydrographic Sampling Effort and Near-Surface Water Temperature and Salinity Conditions During the Canadian Research Vessel Groundfish Summer Surveys Conducted on the Scotian Shelf and in the Bay of Fundy (4VWX)",
+            "pub_year": 1999,
+            "lead_author_2": "Losier, R., Page, F., McCurdy, P., Ringuette, M., McRuer, J.",
+            "pub_num": "074",
+            "pages": 28,
+            "pdf_size": 1691,
+            "description": ""
+        }
+    }
+]

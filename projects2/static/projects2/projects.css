@@ -166,7 +166,7 @@ label.filter {
 /*For side bar  https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp */
 /* The sidebar menu */
 @media screen {
-    .sidebar {
+    .sidebar-opened {
         height: 100%; /* 100% Full-height */
         width: 225px; /* 0 width - change this with JavaScript */
         position: fixed; /* Stay in place */
@@ -179,13 +179,31 @@ label.filter {
         transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
     }
 
+    .sidebar-closed {
+        height: 100%; /* 100% Full-height */
+        width: 50px; /* 0 width - change this with JavaScript */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Stay on top */
+        top: 0;
+        left: 0;
+        background-color: #e2e2e2;
+        /*overflow-x: hidden; !* Disable horizontal scroll *!*/
+        padding-top: 60px; /* Place content 60px from the top */
+        transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    }
 
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-    #main {
+    .main-opened {
         transition: margin-left .5s; /* If you want a transition effect */
         margin-left: 225px; /* If you want a transition effect */
         padding: 20px;
     }
+    .main-closed {
+        transition: margin-left .5s; /* If you want a transition effect */
+        margin-left: 20px; /* If you want a transition effect */
+        padding: 20px;
+    }
+
 }
 
 .high {
@@ -214,3 +232,21 @@ label.filter {
 /*@media screen and (max-height: 450px) {*/
 /*  .sidebar {padding-top: 15px;}*/
 /*}*/
+
+
+.section-card {
+    /*cursor: pointer;*/
+    /*background-color: #eeeeee;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 100%;
+    margin: 10px;
+    padding: 15px;
+    /*background-color: rgba(255, 255, 255, 0.85);*/
+    border-radius: 10px;
+}
+
+
+.pointy {
+    cursor: pointer;
+}

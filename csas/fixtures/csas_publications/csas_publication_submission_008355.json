@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8355,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review Meeting on the Assessment of the Effectiveness of Mitigation Measures in Reducing the Potential Impacts of Oil and Gas Exploration and Production on Areas with Defined Benthic Conservation Objectives; June 26-28, 2018.",
+            "title_fr": "Compte rendu de la réunion nationale d’examen par les pairs sur l’évaluation de l’efficacité des mesures d’atténuation pour réduire les répercussions potentielles de l’exploration et de la production pétrolières et gazières sur les zones visées par des objectifs de conservation benthique définis; du 26 au 28 juin 2018.",
+            "pub_year": 2020,
+            "lead_author_2": "Mike Chadwick",
+            "pub_num": "021",
+            "pages": 23,
+            "pdf_size": 388,
+            "description": ""
+        }
+    }
+]

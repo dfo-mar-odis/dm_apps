@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3699,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An evaluation of a recruitment forecasting procedure for Strait of Georgia herring",
+            "title_fr": "Évaluation d'une méthode de prévision du recrutement chez le hareng du détroit de Georgia",
+            "pub_year": 2002,
+            "lead_author_2": "R.W. Tanasichuk",
+            "pub_num": "106",
+            "pages": 26,
+            "pdf_size": 163,
+            "description": ""
+        }
+    }
+]

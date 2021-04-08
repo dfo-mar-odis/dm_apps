@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3356,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "DFO Atlantic Fisheries Stock Status Report - Pelagic Fisheries 1993",
+            "title_fr": "MPO Pêches de l'Atlantique, rapport sur l'état des stocks - poissons pélagiques 1993",
+            "pub_year": 1993,
+            "pub_num": "006",
+            "description": ""
+        }
+    }
+]

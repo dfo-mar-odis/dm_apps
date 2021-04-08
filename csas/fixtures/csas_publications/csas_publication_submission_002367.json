@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2367,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A description of the cod stock structure in Placentia Bay, NAFO Subdivision 3Ps",
+            "pub_year": 1994,
+            "lead_author_2": "M.B. Davis; P. Lundrigan; P. Ripley",
+            "pub_num": "032",
+            "pages": 17,
+            "pdf_size": 791,
+            "description": ""
+        }
+    }
+]

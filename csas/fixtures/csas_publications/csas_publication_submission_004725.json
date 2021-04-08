@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4725,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southwestern New Brunswick Green Sea Urchins",
+            "title_fr": "Oursin vert du sud-ouest du Nouveau-Brunswick",
+            "pub_year": 1996,
+            "lead_author_2": "Robinson, S.",
+            "pub_num": "131",
+            "pages": 5,
+            "pdf_size": 107,
+            "description": ""
+        }
+    }
+]

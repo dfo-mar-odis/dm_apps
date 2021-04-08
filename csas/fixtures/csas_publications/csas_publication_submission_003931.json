@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3931,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Potential Indicators of Pollock Productivity",
+            "title_fr": "Indicateurs potentiels de la productivité de la goberge",
+            "pub_year": 2003,
+            "lead_author_2": "Neilson, J.D.",
+            "pub_num": "111",
+            "pages": 15,
+            "pdf_size": 191,
+            "description": ""
+        }
+    }
+]

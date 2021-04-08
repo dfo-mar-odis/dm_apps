@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8478,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of Haddock (Melanogrammus aeglefinus) in NAFO Divisions 4X5Y",
+            "title_fr": "Mise à jour de l’état du stock d’aiglefin (Melanogrammus aeglefinus) dans les divisions 4X5Y de l’OPANO",
+            "pub_year": 2020,
+            "lead_author_2": "M. Finley",
+            "pub_num": "021",
+            "pages": 13,
+            "pdf_size": 1643,
+            "description": ""
+        }
+    }
+]

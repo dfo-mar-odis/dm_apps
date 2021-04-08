@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5144,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "A synthesis of the outcomes from the Strait of Georgia Ecosystem Research Initiative, and development of an ecosystem approach to management",
+            "title_fr": "Synthèse des résultats du Projet de recherche sur l'écosystème du détroit de Georgie et mise au point d'une approche écosystémique de la gestion",
+            "pub_year": 2012,
+            "lead_author_2": "Ian Perry & Diane Masson",
+            "pub_num": "072",
+            "pages": 14,
+            "pdf_size": 737,
+            "description": ""
+        }
+    }
+]

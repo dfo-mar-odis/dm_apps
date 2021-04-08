@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1968,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "1997 State of the Ocean: Northwest Atlantic",
+            "title_fr": "État de l'océan en 1997 : Atlantique Nord-Ouest",
+            "pub_year": 1998,
+            "lead_author_2": "Ken Drinkwater",
+            "pub_num": "G0-01",
+            "pages": 10,
+            "pdf_size": 870,
+            "description": ""
+        }
+    }
+]

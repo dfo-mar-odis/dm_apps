@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 82,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The Gully: A Scientific Review of its Environment and Ecosystem",
+            "pub_year": 1998,
+            "lead_author_2": "W. Glen Harrison, D. G. Fenton (editors)",
+            "pub_num": "083",
+            "pages": 295,
+            "pdf_size": 176570,
+            "description": ""
+        }
+    }
+]

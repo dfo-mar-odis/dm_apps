@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3546,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "1998 Newfoundland & Labrador Atlantic Salmon Stock Status",
+            "pub_year": 1999,
+            "lead_author_2": "R. Porter",
+            "pub_num": "D2-01",
+            "pages": 19,
+            "description": ""
+        }
+    }
+]

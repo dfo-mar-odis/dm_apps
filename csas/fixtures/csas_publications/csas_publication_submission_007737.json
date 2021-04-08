@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7737,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Review of Rotational Management of Fisheries and its Application to Canadian East Coast Arctic Surfclam (Mactromeris polynyma)",
+            "title_fr": "Examen de la gestion rotationnelle des pêches et son application à la mactre de Stimpson (Mactromeris polynyma) sur la côte Est du Canada",
+            "pub_year": 2017,
+            "lead_author_2": "O’Boyle, R., Roddick, D., and Sinclair, M.",
+            "pub_num": "066",
+            "pages": 38,
+            "pdf_size": 336,
+            "description": ""
+        }
+    }
+]

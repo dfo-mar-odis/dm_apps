@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5609,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Quebec Region Science Advisory Process on the Assessment of the West coast of Newfoundland herring (4R) Stocks; May 4th, 2010",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif scientifique de la région du Québec portant l'évaluation des stocks de hareng de la côte ouest de Terre-Neuve (4R); le 4 mai 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Castonguay, M., Dubé, S.",
+            "pub_num": "022",
+            "pages": 21,
+            "pdf_size": 116,
+            "description": ""
+        }
+    }
+]

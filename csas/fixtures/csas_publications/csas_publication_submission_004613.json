@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4613,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process on Eastern Scotian Shelf Shrimp; 5 December 2006",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional concernant la crevette de l'est du plateau néo-écossais; le 5 décembre 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Stobo, W.",
+            "pub_num": "046",
+            "pages": 14,
+            "pdf_size": 87,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6794,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on A Framework for identifying ecological conservation priorities for marine protected area (MPA) network design in the Northern Shelf Bioregion",
+            "lead_author_2": "O, Miriam",
+            "description": ""
+        }
+    }
+]

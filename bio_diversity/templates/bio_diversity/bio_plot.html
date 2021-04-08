@@ -1,0 +1,31 @@
+{% extends "bio_diversity/bio_diversity_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block title %}
+    {% trans title %}
+{% endblock title %}
+
+{% block content%}
+
+<div class="container mt-1">
+    <div class="card border border-dark my-1" name={{context_dict.sub_model_key|add:"-details"}}>
+        <h5 class="card-header" >{% trans title%}</h5>
+        <div class="card-body">
+            {{ the_div |safe }}
+            <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-2.2.3.min.js"></script>
+            {{ the_script |safe }}
+        </div>
+        <div>
+            {% if data_file_url %}
+                <a class="btn btn-primary" name="get-data-file-btn" href={{data_file_url}} title="{% trans 'Download Data' %}">{% trans 'Download Data' %}</a>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

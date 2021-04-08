@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1537,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Movement of scallops Placopecten magellanicus (Gmelin, 1791) (Mollusca: Pectinidae) on Georges Bank",
+            "pub_year": 1985,
+            "lead_author_2": "G.D. Melvin; M.J. Dadswell; R.A. Chandler",
+            "pub_num": "030",
+            "pages": 29,
+            "pdf_size": 916,
+            "description": ""
+        }
+    }
+]

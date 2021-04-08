@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1892,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_fr": "Évaluation de la pêcherie du pétoncle géant (Placopecten magellanicus) dans le sud du golfe du Saint Laurent - 1988",
+            "pub_year": 1989,
+            "lead_author_2": "Marc Lanteigne, Leslie-Anne Davidson",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

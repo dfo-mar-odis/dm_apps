@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2499,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Estimates of cod mortality in the Newfoundland Region from tagging",
+            "pub_year": 1995,
+            "lead_author_2": "R.A. Myers; N.J. Barrowman; J.M. Hoenig",
+            "pub_num": "093",
+            "pages": 29,
+            "pdf_size": 1079,
+            "description": ""
+        }
+    }
+]

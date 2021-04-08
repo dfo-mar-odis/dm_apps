@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2561,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1995 Bay of Fundy scallop stock assessments: Digby and 1995 landings by statistical district for the Bay of Fundy",
+            "pub_year": 1996,
+            "lead_author_2": "E. Kenchington; D.L. Roddick; M.J. Lundy",
+            "pub_num": "014",
+            "pages": 71,
+            "pdf_size": 4098,
+            "description": ""
+        }
+    }
+]

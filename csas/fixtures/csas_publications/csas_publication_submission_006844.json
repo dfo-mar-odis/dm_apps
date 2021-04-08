@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6844,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Evaluation of Capture Efficiency and Mesh-Sized Gillnet Selectivity for Important Fishes in Great Slave Lake, Northwest Territories, Canada",
+            "lead_author_2": "Xinhua Zhu",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3639,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "2001 State of the Ocean: Chemical and Biological Oceanographic Conditions in the Newfoundland Region",
+            "title_fr": "État de l'océan en 2001 : conditions océanographiques chimiques et biologiques dans la Région de Terre-Neuve",
+            "pub_year": 2002,
+            "pub_num": "G2-02",
+            "pages": 7,
+            "pdf_size": 671,
+            "description": ""
+        }
+    }
+]

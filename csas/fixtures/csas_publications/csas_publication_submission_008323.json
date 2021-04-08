@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8323,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Identification of Provisional Reference Points and Harvest Rate Options for the Commercial Red Sea Urchin (Mesocentrotus franciscanus) Fishery in British Columbia",
+            "title_fr": "Détermination des points de référence possibles et des options de taux de récolte pour la pêche commerciale de l’oursin rouge (Mesocentrotus franciscanus) en Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Lochead, J., Zhang, Z., and Leus, D.",
+            "pub_num": "061",
+            "pages": 74,
+            "pdf_size": 3176,
+            "description": ""
+        }
+    }
+]

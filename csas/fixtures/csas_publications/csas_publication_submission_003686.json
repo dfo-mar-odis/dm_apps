@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3686,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Cumberland Sound Beluga",
+            "title_fr": "Béluga de la baie Cumberland",
+            "pub_year": 2002,
+            "lead_author_2": "Richard, P.",
+            "pub_num": "E5-32",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

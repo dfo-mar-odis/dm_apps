@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8115,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Development of risk-based indicators for the Hecate Strait/Queen Charlotte Sound Glass Sponge Reefs Marine Protected Area",
+            "title_fr": "Établissement d’indicateurs fondés sur le risque pour la zone de protection marine des récifs d’éponges siliceuses du détroit d’Hécate et du bassin de la Reine-Charlotte",
+            "pub_year": 2019,
+            "lead_author_2": "Thornborough, K, and Dunham, J.",
+            "pub_num": "004",
+            "pages": 126,
+            "pdf_size": 1503,
+            "description": ""
+        }
+    }
+]

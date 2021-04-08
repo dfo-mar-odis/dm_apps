@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 103,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Slope rockfish assessment for the West Coast of Canada in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Schnute, J.T., Olsen, N., Haigh, R.",
+            "pub_num": "016",
+            "pages": 85,
+            "pdf_size": 3570,
+            "description": ""
+        }
+    }
+]

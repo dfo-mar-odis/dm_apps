@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2339,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Estimating trends in F from length frequency data",
+            "pub_year": 1993,
+            "lead_author_2": "A. Sinclair; K. Zwanenburg; P. Hurley",
+            "pub_num": "066",
+            "pages": 6,
+            "pdf_size": 416,
+            "description": ""
+        }
+    }
+]

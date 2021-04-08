@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6401,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Reference Points for data-poor Species",
+            "lead_author_2": "Jake Rice et al.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3778,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scallop Production Areas (SPAs) in the Bay of Fundy",
+            "title_fr": "Zones de production de pétoncles (ZPP) de la baie de Fundy",
+            "pub_year": 2003,
+            "pub_num": "025",
+            "pages": 25,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7702,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceeding sof the regional peer review meeting on the stock assessment of American plaice (Hippoglossoides platessoides) of the southern Gulf of St. Lawrence (NAFO Div. 4T) to 2015, MArch 1 and 2, 2016",
+            "lead_author_2": "Chaput, Gérald",
+            "description": ""
+        }
+    }
+]

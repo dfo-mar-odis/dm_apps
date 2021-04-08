@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 36,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status of Atlantic salmon (Salmo salar L.) on the eastern shore of Nova Scotia, Salmon Fishing Area 20, in 1997",
+            "pub_year": 1998,
+            "lead_author_2": "O'Neil, S.F., Harvie, C.J., Longard, D.A.",
+            "pub_num": "037",
+            "description": ""
+        }
+    }
+]

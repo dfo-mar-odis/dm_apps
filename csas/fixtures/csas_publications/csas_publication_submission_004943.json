@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4943,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Preliminary Results from the September 2007 Bottom-trawl Survey of the Southern Gulf of St. Lawrence",
+            "title_fr": "Résultats préliminaires du relevé au chalut de fond de septembre 2007 dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2008,
+            "lead_author_2": "Hurlbut, T., T. Surette, D.P. Swain, R. Morin, G. Chouinard, H.P. Benoît, C. LeBlanc",
+            "pub_num": "019",
+            "pages": 53,
+            "pdf_size": 2337,
+            "description": ""
+        }
+    }
+]

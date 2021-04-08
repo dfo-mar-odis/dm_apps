@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6029,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Peer Review on the Georges Bank Scallop Assessment; May 5, 2011",
+            "title_fr": "Compte rendu de l'examen par des pairs de la Région des Maritimes des évaluations du stock de pétoncles du banc Georges ; le 5 mai 2011",
+            "pub_year": 2012,
+            "lead_author_2": "McIntyre, Tara",
+            "pub_num": "024",
+            "pages": 11,
+            "pdf_size": 55,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5694,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional pre-COSEWIC assessment for Dolly Varden, Salvelinus malma malma, (western Arctic populations) in Canada; November 4-6, 2008",
+            "title_fr": "Compte rendu de l'évaluation régionale pré-COSEPAC du Dolly Varden, Salvelinus malma malma, (populations de l'ouest de l'Arctique) au Canada; du 4 au 6 novembre 2008",
+            "pub_year": 2014,
+            "lead_author_2": "Martin, Kathleen",
+            "pub_num": "006",
+            "pages": 34,
+            "pdf_size": 513,
+            "description": ""
+        }
+    }
+]

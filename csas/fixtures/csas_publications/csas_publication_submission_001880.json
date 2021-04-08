@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1880,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Observations on 4RST capelin in the Gulf of St. Lawrence (A retrospective, 1984-1987)",
+            "pub_year": 1989,
+            "lead_author_2": "Jean-Denis Lambert; Brigitte Bernier",
+            "pub_num": "008",
+            "pages": 33,
+            "pdf_size": 1625,
+            "description": ""
+        }
+    }
+]

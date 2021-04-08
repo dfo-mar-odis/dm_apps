@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2585,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Standardisation de l'aire balayée par les traits de la mission d'été du Alfred Needler",
+            "title_fr": "Standardisation de l'aire balayée par les traits de la mission d'été du Alfred Needler",
+            "pub_year": 1996,
+            "lead_author_2": "P. Gagnon",
+            "pub_num": "038",
+            "pages": 8,
+            "pdf_size": 451,
+            "description": ""
+        }
+    }
+]

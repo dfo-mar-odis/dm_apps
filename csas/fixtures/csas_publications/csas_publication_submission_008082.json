@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8082,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of American Lobster (Homarus americanus) in Lobster Fishing Areas (LFAs) 27-33",
+            "title_fr": "Mise à jour de l’état du stock de homard d’Amérique (Homarus americanus) dans les zones de pêche du homard (ZPH) 27 à 33",
+            "pub_year": 2018,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "030",
+            "pages": 8,
+            "pdf_size": 604,
+            "description": ""
+        }
+    }
+]

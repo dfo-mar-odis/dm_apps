@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1585,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1984 4WX herring fishery",
+            "pub_year": 1985,
+            "lead_author_2": "R.L. Stephenson; M.J. Power; T.D. Iles; P.M. Mace",
+            "pub_num": "078",
+            "pages": 58,
+            "pdf_size": 2406,
+            "description": ""
+        }
+    }
+]

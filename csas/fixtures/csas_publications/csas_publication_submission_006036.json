@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6036,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Production model fitting and projection for Atlantic redfish (Sebastes fasciatus and Sebastes mentella) to assess recovery potential and allowable harm",
+            "title_fr": "Ajustement du modèle de production et projection pour le sébaste atlantique (Sebastes fasciatus et Sebastes mentella) afin d'évaluer le potentiel de rétablissement et les dommages admissibles",
+            "pub_year": 2011,
+            "lead_author_2": "McAllister, M., Duplisea, D.E.",
+            "pub_num": "057",
+            "pages": 81,
+            "pdf_size": 685,
+            "description": ""
+        }
+    }
+]

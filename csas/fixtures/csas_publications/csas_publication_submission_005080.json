@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5080,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 7],
+            "title_en": "Advice relevant to identification of Eastern Canadian Arctic Bowhead (Balaena mysticetus) critical habitat",
+            "title_fr": "Avis relatif à la désignation de l'habitat essentiel de la baleine boréale (balaena mysticetus) - population de l'est de l'Arctique Canadien",
+            "pub_year": 2008,
+            "lead_author_2": "S. Ferguson",
+            "pub_num": "060",
+            "pages": 6,
+            "pdf_size": 830,
+            "description": ""
+        }
+    }
+]

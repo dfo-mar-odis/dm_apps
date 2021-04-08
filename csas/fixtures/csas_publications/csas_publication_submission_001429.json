@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1429,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Miramichi River estuary gaspereau fishery, 1983",
+            "pub_year": 1984,
+            "lead_author_2": "D.R. Alexander; A.H. Vromans",
+            "pub_num": "023",
+            "pages": 23,
+            "pdf_size": 1164,
+            "description": ""
+        }
+    }
+]

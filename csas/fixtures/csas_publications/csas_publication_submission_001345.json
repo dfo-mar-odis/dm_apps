@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1345,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Prospects for distinguishing morphometrically mature and immature crabs: an alternate management strategy for the snow crab fishery",
+            "pub_year": 1990,
+            "lead_author_2": "E.B. Safran; T.P. Foyle; R.W. Elner",
+            "pub_num": "030",
+            "pages": 22,
+            "pdf_size": 1100,
+            "description": ""
+        }
+    }
+]

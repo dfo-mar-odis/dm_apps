@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6850,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of the Rock Crab (Cancer irroratus) fishery in the southern Gulf of St. Lawrence for 2006 to 2011",
+            "title_fr": "Évaluation de la pêche du crabe commun (Cancer irroratus) dans le sud du golfe du Saint-Laurent, de 2006 à 2011",
+            "pub_year": 2013,
+            "lead_author_2": "Marc Lanteigne",
+            "pub_num": "030",
+            "pages": 17,
+            "pdf_size": 618,
+            "description": ""
+        }
+    }
+]

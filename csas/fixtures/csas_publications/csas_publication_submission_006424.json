@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6424,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "The status of NAFO Division 4T winter flounder (Pseudopleuronectes americanus), February 2012",
+            "title_fr": "État de la plie rouge (Pseudopleuronectes americanus) de la division 4T de l'OPANO, février 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Rod Morin",
+            "pub_num": "053",
+            "pages": 63,
+            "pdf_size": 1185,
+            "description": ""
+        }
+    }
+]

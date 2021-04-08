@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3938,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Scotian Shelf silver hake population to 2003",
+            "title_fr": "Évaluation de la population du merlu argenté du plateau néo-écossais d'après les données jusqu'à 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Showell, M.A., Beanlands, D., Mohn, R.K., Fowler, G.M.",
+            "pub_num": "117",
+            "pages": 40,
+            "pdf_size": 665,
+            "description": ""
+        }
+    }
+]

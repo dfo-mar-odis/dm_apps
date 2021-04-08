@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6023,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Recovery potential assessment for the Newfoundland and Labrador Designatable Unit (NAFO Divs. 2GHJ, 3KLNO) of Atlantic Cod (Gadus morhua)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la morue franche (Gadus morhua) de l'unité désignable de Terre-Neuve et du Labrador (div. 2GHJ, 3KLNO de l'OPANO)",
+            "pub_year": 2011,
+            "lead_author_2": "D. Power",
+            "pub_num": "037",
+            "pages": 30,
+            "pdf_size": 279,
+            "description": ""
+        }
+    }
+]

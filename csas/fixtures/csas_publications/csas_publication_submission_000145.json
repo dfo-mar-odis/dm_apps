@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 145,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Atlantic Salmon (Salmo salar L.) in Big Brook (Michaels River), Labrador, 1997",
+            "pub_year": 1998,
+            "lead_author_2": "D.G. Reddin, P.B. Short",
+            "pub_num": "119",
+            "pages": 22,
+            "pdf_size": 972,
+            "description": ""
+        }
+    }
+]

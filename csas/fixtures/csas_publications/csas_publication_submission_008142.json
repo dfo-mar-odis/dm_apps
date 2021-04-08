@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8142,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Le capelan (Mallotus villosus) de l’estuaire et du golfe du Saint-Laurent (Divisions 4RST de l'OPANO) (titre provisoire)",
+            "lead_author_2": "Andrew Smith",
+            "description": ""
+        }
+    }
+]

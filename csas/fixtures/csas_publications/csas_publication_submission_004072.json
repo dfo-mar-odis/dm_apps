@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4072,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Allowable Harm Assessment for Cusk in Atlantic Canada",
+            "title_fr": "Évaluation des dommages acceptables concernant le brosme dans les eaux canadiennes de l'Atlantique",
+            "pub_year": 2004,
+            "lead_author_2": "Harris, Lei",
+            "pub_num": "044",
+            "pages": 5,
+            "pdf_size": 260,
+            "description": ""
+        }
+    }
+]

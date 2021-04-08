@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1573,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the southern Gulf of St. Lawrence scallop stocks - 1984",
+            "pub_year": 1985,
+            "lead_author_2": "J. Worms; M. Lanteigne",
+            "pub_num": "066",
+            "pages": 31,
+            "pdf_size": 1440,
+            "description": ""
+        }
+    }
+]

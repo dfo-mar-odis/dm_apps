@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6520,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Drivers of northern cod trajectory: using a simple dynamic model as a tool for testing alternative competing hypotheses",
+            "lead_author_2": "A.D. Buren/M. Koen-Alonso/G. Stenson",
+            "description": ""
+        }
+    }
+]

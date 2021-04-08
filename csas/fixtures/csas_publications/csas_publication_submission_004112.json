@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4112,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Alternative Ballast Water Exchange Zones; 30 November - 1 December 2004",
+            "title_fr": "Zones alternatives pour l'échange des eaux de lest; 30 novembre au 1er décembre 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Paradis, S.",
+            "pub_num": "042",
+            "pages": 29,
+            "pdf_size": 442,
+            "description": ""
+        }
+    }
+]

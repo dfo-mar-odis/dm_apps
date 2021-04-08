@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1008,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Invertebrate Subcommittee Meeting; November 30 - December 2, 1999",
+            "pub_year": 1999,
+            "pub_num": "034",
+            "pages": 33,
+            "pdf_size": 717,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5479,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Advisory Process on the Status of Cambridge Bay Anadromous Arctic Char Stocks; 27-28 January, 2010",
+            "title_fr": "Compte rendu du processus de consultation scientifique régional du Centre et de l'Arctique concernant l'état des stocks d'omble chevalier anadrome de la baie Cambridge; les 27 et 28 janvier 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Carmichael, T., Tallman, R.",
+            "pub_num": "046",
+            "pages": 17,
+            "pdf_size": 74,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2174,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic salmon in the Margaree River, Nova Scotia, 1991",
+            "pub_year": 1992,
+            "lead_author_2": "G. Chaput; R. Jones; L. Forsythe",
+            "pub_num": "026",
+            "pages": 40,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7542,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Estimates of abundance and total allowable removals for Hudson Bay-Davis Strait and South and East Hudson Bay Atlantic walrus (Odobenus rosmarus rosmarus) stocks",
+            "title_fr": "Estimations de l'abondance et prélèvements totaux autorisés pour les stocks de morses de l'Atlantique (Odobenus rosmarus rosmarus) de la baie d'Hudson et du détroit de Davis et de la partie sud et est de la Baie d'Hudson",
+            "pub_year": 2015,
+            "lead_author_2": "Hammill, M.",
+            "pub_num": "063",
+            "pages": 15,
+            "pdf_size": 754,
+            "description": ""
+        }
+    }
+]

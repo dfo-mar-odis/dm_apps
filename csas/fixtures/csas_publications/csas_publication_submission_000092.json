@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 92,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Striped bass culture in eastern Canada",
+            "pub_year": 1999,
+            "lead_author_2": "Cairns, D., Robichaud-Leblanc, K., Bradford, R., Peterson, R.H, Angus, R.",
+            "pub_num": "004",
+            "pages": 12,
+            "pdf_size": 102,
+            "description": ""
+        }
+    }
+]

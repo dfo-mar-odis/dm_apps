@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4570,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Habitat-based methods to estimate escapement goals for data limited Chinook salmon stocks in British Columbia, 2004",
+            "title_fr": "Méthode axée sur l'habitat pour estimer les objectifs d'échappée pour les stocks de saumon quinnat de la Colombie-Britannique pour lesquels les données sont rares, 2004",
+            "pub_year": 2006,
+            "lead_author_2": "Parken, C.K., R.E. McNicol, J.R. Irvine.",
+            "pub_num": "083",
+            "pages": 74,
+            "pdf_size": 1118,
+            "description": ""
+        }
+    }
+]

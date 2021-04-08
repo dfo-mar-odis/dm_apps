@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4660,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Regional Advisory Process on Assessment and Management Strategy Framework for Banquereau Arctic Surfclam and Ocean Quahogs on Sable Bank and in St. Mary's Bay; 17-18 January 2007-4-5 April 2007",
+            "title_fr": "Compte rendu des réunions du Processus consultatif régional des provinces Maritimes sur le cadre applicable à l'évaluation et à la stratégie de gestion de la mactre de Stimpson du Banquereau et du quahog nordique du banc de l'île de Sable et de la baie St. Mary's; les 17 et 18 janvier 2007-les 4 et 5 avril 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Boudreau, P., O'Boyle, R.",
+            "pub_num": "008",
+            "pages": 42,
+            "pdf_size": 288,
+            "description": ""
+        }
+    }
+]

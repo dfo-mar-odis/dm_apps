@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4818,
+        "fields": {
+            "series": 3,
+            "lead_region": [7, 4],
+            "title_en": "Recovery Potential Modelling of Eastern Sand Darter (Ammocrypta pellucida) in Canada ",
+            "title_fr": "Modélisation du potentiel de rétablissement du dard de sable (Ammocrypta pellucida) au Canada",
+            "pub_year": 2011,
+            "lead_author_2": "Mary Finch, Luis A. Vélez- Espino, Susan E. Doka, Michael Power and Marten A. Koops",
+            "pub_num": "020",
+            "pages": 40,
+            "pdf_size": 397,
+            "description": ""
+        }
+    }
+]

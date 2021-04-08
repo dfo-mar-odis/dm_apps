@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6473,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Peer Review Meeting: Reference Points for American Plaice (Hippoglossoides platessoides) in NAFO SA2+DIV. 3K AND SUBDIV. 3PS",
+            "lead_author_2": "Brian Healey",
+            "description": ""
+        }
+    }
+]

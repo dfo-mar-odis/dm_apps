@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1390,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (salmo salar L.) in eleven rivers of Bay St. George (SFA 13) Newfoundland, 1994",
+            "pub_year": 1996,
+            "lead_author_2": "D.G. Reddin; C.C. Mullins",
+            "pub_num": "086",
+            "pages": 71,
+            "pdf_size": 3014,
+            "description": ""
+        }
+    }
+]

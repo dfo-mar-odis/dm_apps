@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2715,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Report of the Seal Exclusion Zone Workshop; 11-13 May 2004",
+            "title_fr": "Rapport de l'atelier sur les zones d'exclusion des phoques; 11 au 13 mai 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Bowen, W.D.",
+            "pub_num": "022",
+            "pages": 68,
+            "pdf_size": 597,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 933,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceeding of the Atlantic Zonal Herring Workshop; March 24-27, 1997",
+            "pub_year": 1997,
+            "lead_author_2": "Dr. J. Rice",
+            "pub_num": "009",
+            "description": ""
+        }
+    }
+]

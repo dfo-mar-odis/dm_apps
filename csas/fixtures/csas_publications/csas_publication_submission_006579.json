@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6579,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Zonal Peer Review Process to Review the pre-COSEWIC Assessment for Porbeagle Shark",
+            "lead_author_2": "Worcester, Tana",
+            "description": ""
+        }
+    }
+]

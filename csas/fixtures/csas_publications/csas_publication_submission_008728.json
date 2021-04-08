@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8728,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Rougheye/Blackspotted Rockfish (Sebastes aleutianus/melanostictus) Stock Assessment for British Columbia in 2020",
+            "title_fr": "Évaluation des stocks du complexe des sébastes à œil épineux et à taches noires (Sebastes aleutianus/melanostictus) de la Colombie-Britannique en 2020",
+            "pub_year": 2020,
+            "lead_author_2": "Greg Workman",
+            "pub_num": "047",
+            "pages": 18,
+            "pdf_size": 1689,
+            "description": ""
+        }
+    }
+]

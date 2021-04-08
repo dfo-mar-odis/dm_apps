@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2135,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Étude des captures de maquereaux (Scomber scombrus L.) enregistrées aux trappes d''un pêcheur de Dingwall, Nouvelle-Écosse, pour la période comprise entre 1983 et 1990",
+            "pub_year": 1991,
+            "lead_author_2": "F. Grégoire",
+            "pub_num": "070",
+            "pages": 19,
+            "pdf_size": 1201,
+            "description": ""
+        }
+    }
+]

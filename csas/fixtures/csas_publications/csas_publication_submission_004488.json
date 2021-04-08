@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4488,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Management strategies for recovery of northern cod",
+            "title_fr": "Stratégies de gestion pour le rétablissement de la morue du Nord",
+            "pub_year": 2006,
+            "lead_author_2": "Shelton, P.A.",
+            "pub_num": "044",
+            "pages": 20,
+            "pdf_size": 346,
+            "description": ""
+        }
+    }
+]

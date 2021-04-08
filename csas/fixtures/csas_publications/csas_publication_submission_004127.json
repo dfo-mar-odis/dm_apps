@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4127,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Peer review meetings conducted by the National Marine Mammal Peer Review Committee from February to May 2005; February 10, 21 and 25 and May 2-6, 2005",
+            "title_fr": "Compte rendu des réunions tenues par le Comité national d'examen par les pairs sur les mammifères marins de février à mai 2005; les 10, 21 et 25 février et du 2 au 6 mai 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Landry, Jean",
+            "pub_num": "001",
+            "pages": 160,
+            "pdf_size": 1458,
+            "description": ""
+        }
+    }
+]

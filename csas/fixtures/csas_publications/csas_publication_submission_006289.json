@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6289,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery potential modelling of Mountain Sucker (Catostomus platyrhynchus), Milk River populations",
+            "title_fr": "Modélisation du potentiel de rétablissement des populations de meunier des montagnes (Catostomus platyrhynchus) de la rivière Milk",
+            "pub_year": 2013,
+            "lead_author_2": "Young, J.A.M., and Koops, M.A.",
+            "pub_num": "029",
+            "pages": 22,
+            "pdf_size": 430,
+            "description": ""
+        }
+    }
+]

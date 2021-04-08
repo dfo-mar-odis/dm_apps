@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7797,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment framework for fall-spawning Atlantic herring (Clupea harengus) in the southern Gulf of St. Lawrence (NAFO Div. 4T): Population models and status in 2014",
+            "title_fr": "Cadre d'évaluation de la composante des reproducteurs d'automne du hareng de l'Atlantique (Clupea harengus) dans le sud du golfe du Saint-Laurent (division 4T de l'OPANO) : modèles de population et état en 2014",
+            "pub_year": 2016,
+            "lead_author_2": "Doug Swain",
+            "pub_num": "066",
+            "pages": 68,
+            "pdf_size": 6421,
+            "description": ""
+        }
+    }
+]

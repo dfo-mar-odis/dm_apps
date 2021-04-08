@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8031,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessing the status of the Haddock (Melanogrammus aeglefinus) stock in NAFO Divisions 3LNO in 2017",
+            "lead_author_2": "Danny Ings et al.",
+            "description": ""
+        }
+    }
+]

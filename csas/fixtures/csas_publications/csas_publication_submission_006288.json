@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6288,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a recovery potential assessment of Mountain Sucker (Catostomus platyrhynchus), Milk River populations (Designatable Unit 2)",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement du meunier des montagnes (Catostomus platyrhynchus), populations de la rivière Milk (unité désignable 2)",
+            "pub_year": 2013,
+            "lead_author_2": "Boguski, D.A., and Watkinson, D.A.",
+            "pub_num": "028",
+            "pages": 48,
+            "pdf_size": 1110,
+            "description": ""
+        }
+    }
+]

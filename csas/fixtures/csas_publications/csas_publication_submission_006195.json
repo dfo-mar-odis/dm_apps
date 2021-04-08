@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6195,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock assessment for Pacific Herring (Clupea pallasii) in British Columbia in 2017 and forecast for 2018",
+            "title_fr": "Évaluation des stocks de hareng du Pacifique (Clupea pallasii) dans les eaux de la Colombie-Britannique en 2017 et prévisions pour 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Jaclyn Cleary",
+            "pub_num": "002",
+            "pages": 31,
+            "pdf_size": 2758,
+            "description": ""
+        }
+    }
+]

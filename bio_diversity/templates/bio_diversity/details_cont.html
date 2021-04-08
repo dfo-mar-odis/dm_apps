@@ -1,0 +1,24 @@
+{% extends "bio_diversity/bio_details.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block field_override %}
+    <div class="card border border-dark my-1">
+        <h5 class="card-header">{% trans title %}</h5>
+        <div class="card-body">
+        {% for field in fields %}
+        <div class="row" >
+                <div class="container"><span class="font-weight-bold">{% get_verbose_label object field %} : </span><span>{% get_field_value object field display_time=True%}</span></div>
+        </div>
+        {% endfor %}
+        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'bio_diversity:plot_maturity_rate' model_key object.pk  'pop'%}')" title="{% trans 'Plot Maturity Rate' %}">{% trans 'Plot Maturity Rate' %}</a>
+        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'bio_diversity:plot_temp_data' model_key object.pk  'pop'%}')" title="{% trans 'Plot Temperature Data' %}">{% trans 'Plot Temperature Data' %}</a>
+        </div>
+    </div>
+{% endblock field_override %}
+
+
+

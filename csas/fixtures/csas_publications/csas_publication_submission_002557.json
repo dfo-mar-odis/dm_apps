@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2557,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Results from the experimental shrimp trap fishery in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "Koeller, P.",
+            "pub_num": "010",
+            "pages": 13,
+            "pdf_size": 560,
+            "description": ""
+        }
+    }
+]

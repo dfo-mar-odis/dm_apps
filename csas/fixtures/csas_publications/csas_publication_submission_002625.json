@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2625,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of the cod stock in NAFO subdivision 3Ps",
+            "pub_year": 1996,
+            "lead_author_2": "P.A. Shelton; D.E. Stansbury; E.F. Murphy; J. Brattey; G.R. Lilly",
+            "pub_num": "091",
+            "pages": 82,
+            "pdf_size": 3697,
+            "description": ""
+        }
+    }
+]

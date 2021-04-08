@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1054,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Change in weight of Atlantic salmon from the  West Greenland to home waters fisheries",
+            "pub_year": 1980,
+            "lead_author_2": "D.G. Reddin",
+            "pub_num": "008",
+            "pages": 10,
+            "pdf_size": 528,
+            "description": ""
+        }
+    }
+]

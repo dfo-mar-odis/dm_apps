@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3190,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subarea 2 + 3K American Plaice",
+            "title_fr": "Plie canadienne sous-zone 2 + 3K",
+            "pub_year": 1996,
+            "lead_author_2": "Brodie, B.",
+            "pub_num": "048",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,171 @@
+{% extends "shared_models/generic_base.html" %}
+
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+
+{% block subcontent %}
+  <style>
+  table, td, th {
+      border: black 1px solid;
+  }
+
+  .red-font {
+      color: red;
+      font-weight: bold;
+
+  }
+
+  </style>
+
+  <script>
+  window.resizeTo(width = 1000, height = 800);
+  </script>
+  <div class="container">
+
+    <h1>
+      {% trans "Sample Import Form:" %}
+    </h1>
+    <ul>
+      <li>
+        {% trans "the file must be in csv format" %}
+      </li>
+      <li>
+        {% trans "the order of the columns in the file is NOT important" %}
+      </li>
+      <li>
+        {% trans "the presence of extra headers (i.e. not listed below) will be ignored" %}
+      </li>
+      <li>
+        {% trans "the file must have the follow format (headers should be in lowercase!):" %}
+      </li>
+      <li>
+        {% trans "red = mandatory" %}
+      </li>
+    </ul>
+    <table>
+      <thead>
+
+
+      <tr>
+        <th class="py-1 px-1 red-font">unique_sample_identifier</th>
+        <th class="py-1 px-1">site_identifier</th>
+        <th class="py-1 px-1">site_description</th>
+        <th class="py-1 px-1">samplers</th>
+        <th class="py-1 px-1 red-font">datetime</th>
+        <th class="py-1 px-1 red-font">latitude</th>
+        <th class="py-1 px-1 red-font">longitude</th>
+        <th class="py-1 px-1">comments</th>
+      </tr>
+      </thead>
+      <tr>
+        <td class="py-1 px-1">
+          <ul>
+            <li>must be unique within database</li>
+            <li>string or integer</li>
+            <li>ideally this would be from an issued bottle id label</li>
+          </ul>
+        </td>
+        <td class="py-1 px-1">
+          <ul>
+            <li>site ID</li>
+            <li>meaningful only to client</li>
+          </ul>
+        </td>
+        <td class="py-1 px-1">
+          <ul>
+            <li>site description</li>
+            <li>text description of site where sample was collected</li>
+          </ul>
+        </td>
+        <td class="py-1 px-1">
+          <ul>
+            <li>name of samplers</li>
+          </ul>
+        </td>
+        <td class="py-1 px-1">
+          <ul>
+            <li>date and time of sample collection</li>
+            <li>format MUST follow: YYYY-mm-dd HH:MM</li>
+          </ul>
+        </td>
+        <td class="py-1 px-1">
+          <ul>
+            <li>positive float</li>
+            <li>decimal degrees</li>
+          </ul>
+        </td>
+        <td class="py-1 px-1">
+          <ul>
+            <li>negative float</li>
+            <li>decimal degrees</li>
+          </ul>
+        </td>
+        <td class="py-1 px-1">
+          <ul>
+            <li>optional field comments</li>
+          </ul>
+        </td>
+      </tr>
+
+    </table>
+
+    <div class="mb-3 mt-3">
+      EXAMPLE:
+      <table>
+        <thead>
+        <tr>
+          <th class="py-1 px-1">unique_sample_identifier</th>
+          <th class="py-1 px-1">site_identifier</th>
+          <th class="py-1 px-1">site_description</th>
+          <th class="py-1 px-1">samplers</th>
+          <th class="py-1 px-1">datetime</th>
+          <th class="py-1 px-1">latitude</th>
+          <th class="py-1 px-1">longitude</th>
+          <th class="py-1 px-1">comments</th>
+        </tr>
+        </thead>
+        {% for item in example_obj %}
+          <tr>
+            <td class="py-1 px-1">{{ item.unique_sample_identifier }}</td>
+            <td class="py-1 px-1">{{ item.site_identifier }}</td>
+            <td class="py-1 px-1">{{ item.site_description }}</td>
+            <td class="py-1 px-1">{{ item.samplers }}</td>
+            <td class="py-1 px-1">{{ item.datetime }}</td>
+            <td class="py-1 px-1">{{ item.latitude }}</td>
+            <td class="py-1 px-1">{{ item.latitude }}</td>
+            <td class="py-1 px-1">{{ item.comments }}</td>
+          </tr>
+        {% endfor %}
+
+      </table>
+    </div>
+    <div class="mb-3">
+      <p>Click
+        <a href="{% static 'edna/sample_import_template.csv' %}">here</a>
+        to download this example as a template</p>
+    </div>
+
+
+    <form method="post" class="form" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% for field in form %}
+
+        <h2 class="red-font">WARNING: running this function will overwrite any samples with the same name unique identifier.</h2>
+        <h3>Please select the file to upload:</h3>
+        {{ field }}
+      {% endfor %}
+
+      <br>
+      <br>
+
+      <button type="submit" class="btn btn-success">{% trans "Submit" %}</button>
+      <br>
+      <br>
+      <a class="btn btn-secondary" href="#" onclick="window.close()">{% trans "Cancel" %}</a>
+
+    </form>
+
+  </div>
+
+{% endblock %}

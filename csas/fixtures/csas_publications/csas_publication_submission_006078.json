@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6078,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of the Sydney Tar Ponds Remediation Project Marine Environmental Effects Monitoring Program Year 1 Results",
+            "title_fr": "Examen des résultats de la première année du Programme de surveillance des effets sur le milieu marin associés au Projet d'assainissement des étangs de goudron de Sydney",
+            "pub_year": 2011,
+            "lead_author_2": "J. Smith, M. Wong, T. King, B. Law, C. DiBacco, B. Ernst / L. Bennett / V. Myra",
+            "pub_num": "013",
+            "pages": 23,
+            "pdf_size": 119,
+            "description": ""
+        }
+    }
+]

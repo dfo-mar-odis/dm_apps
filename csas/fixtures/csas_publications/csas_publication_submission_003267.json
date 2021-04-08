@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3267,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Salmon Subcommittee Meeting; October 23, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "R. Tanasichuk",
+            "pub_num": "025",
+            "pages": 30,
+            "pdf_size": 250,
+            "description": ""
+        }
+    }
+]

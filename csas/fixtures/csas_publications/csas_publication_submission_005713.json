@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5713,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Summer Overlap Between a Central-place Forager And Its Prey in the Southern Gulf of St. Lawrence ",
+            "title_fr": "Chevauchement estival entre un prédateur s'alimentant depuis un point central et ses proies dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2010,
+            "lead_author_2": "Harvey, V., M. Hammill, Doug Swain.",
+            "pub_num": "131",
+            "pages": 52,
+            "pdf_size": 5676,
+            "description": ""
+        }
+    }
+]

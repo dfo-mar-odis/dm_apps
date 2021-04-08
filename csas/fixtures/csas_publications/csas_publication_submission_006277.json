@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6277,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings on the Regional Peer Review of the Evaluation of Data and Model Assumptions on the Calculation of Management Parameters using the Pacific Herring Assessment Model (ISCAM); June 27 & 28, 2012",
+            "title_fr": "Compte rendu de la réunion d'examen régional par les pairs de l'Évaluation des données et des hypothèses du modèle concernant le calcul des paramètres de gestion à l'aide du modèle d'évaluation du hareng du Pacifique (MSIPA) ; les 27 et 28 juin 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Linnea Flostrand",
+            "pub_num": "043",
+            "pages": 36,
+            "pdf_size": 209,
+            "description": ""
+        }
+    }
+]

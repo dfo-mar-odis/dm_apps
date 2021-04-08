@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1111,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Aerial survey of herring gillnets in the southern Gulf of St. Lawrence",
+            "pub_year": 1981,
+            "lead_author_2": "S.N. Messieh; P. Macpherson",
+            "pub_num": "013",
+            "pages": 29,
+            "pdf_size": 12298,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 324,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Richibucto River, New Brunswick in 1992, 1993",
+            "pub_year": 1994,
+            "lead_author_2": "G. Atkinson; R.R. Claytor",
+            "pub_num": "002",
+            "pages": 22,
+            "pdf_size": 693,
+            "description": ""
+        }
+    }
+]

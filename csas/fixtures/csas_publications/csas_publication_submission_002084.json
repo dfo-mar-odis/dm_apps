@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2084,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Atlantic salmon (Salmo salar L.) smolt production parameter values for fluvial and lacustrine habitats in Insular Newfoundland",
+            "pub_year": 1991,
+            "lead_author_2": "M.F. O'Connell; J.B. Dempson; R.J. Gibson",
+            "pub_num": "019",
+            "pages": 11,
+            "pdf_size": 734,
+            "description": ""
+        }
+    }
+]

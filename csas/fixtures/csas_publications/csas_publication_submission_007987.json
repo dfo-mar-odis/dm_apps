@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7987,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Review of genetically based targets for enhanced contributions to Canadian pacific Chinook Salmon populations",
+            "title_fr": "Examen des objectifs génétiques pour la mise en valeur des populations canadiennes de saumon quinnat du Pacifique",
+            "pub_year": 2018,
+            "lead_author_2": "Lesley MacDougall",
+            "pub_num": "001",
+            "pages": 12,
+            "pdf_size": 465,
+            "description": ""
+        }
+    }
+]

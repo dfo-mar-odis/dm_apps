@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4698,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 2],
+            "title_en": "Assessment of the recovery potential of the Scotian Shelf population of northern bottlenose whale, Hyperoodon ampullatus",
+            "title_fr": "Évaluation du potentiel de rétablissement de la population du plateau néo-écossais de la baleine à bec commune, Hyperoodon ampullatus",
+            "pub_year": 2007,
+            "lead_author_2": "Harris, L.E., C.L. Waters, R.K. Smedbol, D.C. Millar.",
+            "pub_num": "078",
+            "pages": 30,
+            "pdf_size": 659,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8499,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Interior Fraser Coho Salmon Recovery Potential Assessment",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon coho du Fraser intérieur",
+            "pub_year": 2020,
+            "lead_author_2": "Arbeider, M., Ritchie, L., Braun, D., Jenewein, B., Rickards, K., Dionne, K., Holt, C., Labelle, M., Nicklin, P., Mozin, P., Grant, P., Parken, C., and Bailey, R.",
+            "pub_num": "025",
+            "pages": 222,
+            "pdf_size": 8131,
+            "description": ""
+        }
+    }
+]

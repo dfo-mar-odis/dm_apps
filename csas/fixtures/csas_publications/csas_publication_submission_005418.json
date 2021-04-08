@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5418,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Precautionary reference point estimates for northern Gulf of St. Lawrence (3Pn4RS) cod (Gadus morhua) and methods for their calculation",
+            "title_fr": "Estimation des points de référence pour l'approche de précaution pour la morue (Gadus morhua) du nord du golfe du Saint-Laurent (3Pn4RS) et méthodes pour leur calcul",
+            "pub_year": 2009,
+            "lead_author_2": "D. Duplisea, A. Fréchet",
+            "pub_num": "097",
+            "pages": 28,
+            "pdf_size": 276,
+            "description": ""
+        }
+    }
+]

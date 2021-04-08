@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3875,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Harvest Simulations for 2003-2006 Harp Seal Management Plan",
+            "title_fr": "Étude de cas de l'approche de précaution sur les bélugas de l'est de la baie d'Hudson: modèles d'analyse de risque pour la cogestion",
+            "pub_year": 2003,
+            "lead_author_2": "Hammill, M. and G. Stenson.",
+            "pub_num": "068",
+            "pages": 33,
+            "pdf_size": 332,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3396,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Oil and Gas Exploration in the Southeastern Gulf of St. Lawrence: A review of information on pinnipeds and cetaceans in the area",
+            "pub_year": 2001,
+            "lead_author_2": "M.O. Hammill, V. Lesage, Y. Dubé and L.N. Measures",
+            "pub_num": "115",
+            "pages": 40,
+            "pdf_size": 490,
+            "description": ""
+        }
+    }
+]

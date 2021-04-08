@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3441,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Manila Clams (Area 7)",
+            "pub_year": 2001,
+            "lead_author_2": "Graham E. Gillespie",
+            "pub_num": "C6-17",
+            "pages": 5,
+            "pdf_size": 465,
+            "description": ""
+        }
+    }
+]

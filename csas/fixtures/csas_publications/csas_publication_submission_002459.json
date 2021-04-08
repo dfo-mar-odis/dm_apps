@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2459,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Review of the status of the northern Gulf of St. Lawrence cod stock (3Pn4RS) in 1994",
+            "title_fr": "Revue de l'état du stock de morue du nord du golfe du Saint-Laurent (3Pn,4RS) en 1994",
+            "pub_year": 1995,
+            "lead_author_2": "A. Fréchet; P. Schwab",
+            "pub_num": "053",
+            "pages": 19,
+            "pdf_size": 1462,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 706,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The collapse of 2+3K American plaice: was it overfishing?",
+            "pub_year": 2000,
+            "lead_author_2": "Morgan, M.J., Brodie, W.B., Kulka, D.W.",
+            "pub_num": "131",
+            "pages": 17,
+            "pdf_size": 324,
+            "description": ""
+        }
+    }
+]

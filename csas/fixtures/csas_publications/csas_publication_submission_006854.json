@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6854,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Review of control and eradication activities in 2010 to 2012 targeting Smallmouth Bass in Miramichi Lake, New Brunswick",
+            "title_fr": "Examen des activités de contrôle et d'éradication de 2010 à 2012 ciblant l'achigan à petite bouche dans le lac Miramichi au Nouveau-Brunswick",
+            "pub_year": 2013,
+            "pub_num": "012",
+            "pages": 19,
+            "pdf_size": 800,
+            "description": ""
+        }
+    }
+]

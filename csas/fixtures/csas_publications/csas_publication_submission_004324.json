@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4324,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "A Comprehensive Framework for Assessing Changes in Fish Habitat Productive Capacity Resulting From Large Hydroelectric Projects",
+            "title_fr": "Un protocole d'évaluation des changements de capacité de production de l'habitat du poisson lors de grands projets hydroélectriques",
+            "pub_year": 2005,
+            "lead_author_2": "Bérubé, M., R. Verdon, G. Durocher, J-C Guay.",
+            "pub_num": "051",
+            "pages": 40,
+            "pdf_size": 5864,
+            "description": ""
+        }
+    }
+]

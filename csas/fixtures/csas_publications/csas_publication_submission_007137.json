@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7137,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Lake Winnipeg Zebra Mussel treatment",
+            "title_fr": "Traitement Contre la moule Zébrée dans le Lac Winnipeg",
+            "pub_year": 2014,
+            "pub_num": "031",
+            "pages": 12,
+            "pdf_size": 782,
+            "description": ""
+        }
+    }
+]

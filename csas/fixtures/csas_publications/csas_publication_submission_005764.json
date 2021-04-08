@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5764,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recent trends in Abundance of Steller Sea Lions (Eumetopias jubatus) in British Columbia",
+            "title_fr": "Les tendances récentes de l'abondance de l'otarie de Steller (Eumetopias jubatus) en Colombie-Britannique",
+            "pub_year": 2018,
+            "lead_author_2": "Olesiuk, P.F.",
+            "pub_num": "006",
+            "pages": 72,
+            "pdf_size": 2104,
+            "description": ""
+        }
+    }
+]

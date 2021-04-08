@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1168,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Fishery characteristics and stock status of Georges Bank scallops",
+            "pub_year": 1981,
+            "lead_author_2": "G. S. Jamieson; M.J. Lundy; G.L. Kerr; N.B. Witherspoon",
+            "pub_num": "070",
+            "pages": 40,
+            "pdf_size": 17223,
+            "description": ""
+        }
+    }
+]

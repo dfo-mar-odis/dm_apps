@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7043,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of the Northwest Atlantic Spiny Dogfish (Squalus acanthias) Framework and Assessment; January 20-21, 2014, and May 29, 2014",
+            "title_fr": "Compte rendu de la réunion d'examen par les pairs liée à l'aiguillat commun (Squalus acanthias) dans l'Atlantique Nord-Ouest – Cadre et évaluation; les 20 et 21 janvier 2014 et le 29 mai 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Christie Whelan",
+            "pub_num": "061",
+            "pages": 18,
+            "pdf_size": 138,
+            "description": ""
+        }
+    }
+]

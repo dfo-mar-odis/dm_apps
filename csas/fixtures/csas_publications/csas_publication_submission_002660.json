@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2660,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Georges Bank Herring",
+            "title_fr": "Le hareng du banc Georges",
+            "pub_year": 1996,
+            "lead_author_2": "Melvin, G.",
+            "pub_num": "036",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

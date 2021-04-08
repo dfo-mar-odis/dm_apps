@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1795,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic salmon, (Salmo salar), in the Margaree River, 1987",
+            "pub_year": 1987,
+            "lead_author_2": "R.R. Claytor; G.J. Chaput; G.J. Lutzac",
+            "pub_num": "105",
+            "pages": 36,
+            "pdf_size": 1426,
+            "description": ""
+        }
+    }
+]

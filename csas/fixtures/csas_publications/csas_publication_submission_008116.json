@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8116,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Ecological risk assessment and selection of risk-based indicators for the Hecate Strait and Queen Charlotte Sound Glass Sponge Reefs Marine Protected Area",
+            "title_fr": "Évaluation du risque écologique et choix d'indicateurs fondés sur le risque pour la zone de protection marine des récifs d'éponges siliceuses du Détroit d'Hécate et du bassin de la Reine-Charlotte",
+            "pub_year": 2018,
+            "lead_author_2": "Jeffrey Lemieux",
+            "pub_num": "040",
+            "pages": 19,
+            "pdf_size": 1612,
+            "description": ""
+        }
+    }
+]

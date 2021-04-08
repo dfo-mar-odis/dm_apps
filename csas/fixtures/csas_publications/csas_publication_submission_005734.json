@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5734,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Quebec Region Science Advisory Process on the Assessment of Habitat Quality and Habitat Use by Copper Redhorse - part 2; March 18, 2010",
+            "title_fr": "Compte rendu de la réunion du processus consultatif scientifique de la région du Québec portant sur l'évaluation de la qualité de l'habitat et de son utilisation par le chevalier cuivré - partie 2; le 18 mars 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "048",
+            "pages": 18,
+            "description": ""
+        }
+    }
+]

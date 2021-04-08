@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 296,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Situation du saumon de la rivière de la Trinité en 1990",
+            "pub_year": 1990,
+            "lead_author_2": "F. Caron",
+            "pub_num": "090",
+            "description": ""
+        }
+    }
+]

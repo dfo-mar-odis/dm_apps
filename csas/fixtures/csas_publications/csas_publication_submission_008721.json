@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8721,
+        "fields": {
+            "series": 6,
+            "title_en": "Stock Status Update of Scallop (Placopecten magellanicus) in Scallop Production Areas 1 to 6 in the Bay of Fundy",
+            "lead_author_2": "Lottie Bennett",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7950,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Stock assessment for Pacific Ocean Perch (Sebastes alutus) in Queen Charlotte Sound, British Columbia in 2017",
+            "lead_author_2": "Lesley MacDougall",
+            "description": ""
+        }
+    }
+]

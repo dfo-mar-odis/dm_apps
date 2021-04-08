@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8569,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical Oceanographic Conditions on the Scotian Shelf and in the Gulf of Maine during 2018",
+            "title_fr": "Conditions océanographiques physiques sur le plateau néo-écossais et dans le golfe du Maine en 2018",
+            "pub_year": 2020,
+            "lead_author_2": "Hebert, D., Pettipas, R., and Brickman, D.",
+            "pub_num": "036",
+            "pages": 56,
+            "pdf_size": 18192,
+            "description": ""
+        }
+    }
+]

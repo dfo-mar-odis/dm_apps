@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3729,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Wolffish on the Scotian Shelf, Georges Bank and in the Bay of Fundy (4VWX and 5YZe)",
+            "title_fr": "Loup atlantique du plateau néo-écossais, du banc Georges et de la bie de Fundy (4VWX et 5YZe)",
+            "pub_year": 2002,
+            "lead_author_2": "Jewett, Tara",
+            "pub_num": "A3-31",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

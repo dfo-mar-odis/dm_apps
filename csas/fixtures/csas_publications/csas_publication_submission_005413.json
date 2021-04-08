@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5413,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biological analysis of 3OPns Atlantic hagfish (Myxine glutinosa).",
+            "lead_author_2": "Grant, S.M., Bishop, G.,  Sullivan, R.",
+            "description": ""
+        }
+    }
+]

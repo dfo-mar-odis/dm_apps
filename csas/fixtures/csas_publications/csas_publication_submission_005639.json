@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5639,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the Recovery Potential Assessment of Wavy-rayed Lampmussel ; 26 May 2010",
+            "title_fr": "Compte rendu du Processus de consultation scientifique régional du Centre et de l'Arctique sur l'évaluation du potentiel de rétablissement de la lampsile fasciolée; le 26 mai 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Morris, T., Koops, M.,  Bouvier, L.",
+            "pub_num": "031",
+            "pages": 23,
+            "pdf_size": 99,
+            "description": ""
+        }
+    }
+]

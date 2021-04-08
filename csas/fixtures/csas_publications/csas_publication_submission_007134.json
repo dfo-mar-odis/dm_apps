@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7134,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Review of Mitigation and Monitoring Measures for Seismic Survey Activities in and near the Habitat of Cetacean Species at Risk",
+            "title_fr": "Examen des mesures d'atténuation et de surveillance dans le cadre des activités de levés sismiques dans l'habitat d'espèces de cétacés en péril et à proximité de celui-ci",
+            "pub_year": 2015,
+            "lead_author_2": "Hilary B. Moors-Murphy and Jim Theriault",
+            "pub_num": "005",
+            "pages": 33,
+            "pdf_size": 490,
+            "description": ""
+        }
+    }
+]

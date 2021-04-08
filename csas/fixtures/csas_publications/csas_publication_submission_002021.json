@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2021,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Workshop on Collaboration in Fisheries Science; February 17-19 2004",
+            "title_fr": "Compte rendu de l'Atelier national sur la collaboration dans le domaine des sciences halieutiques; du 17 au 19 février 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Gillis, D.J.",
+            "pub_num": "026",
+            "pages": 83,
+            "pdf_size": 683,
+            "description": ""
+        }
+    }
+]

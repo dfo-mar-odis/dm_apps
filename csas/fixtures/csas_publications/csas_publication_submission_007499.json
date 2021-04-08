@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7499,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Modelling the effects of chemical and physical drivers on fisheries productivity metrics across rivers of varying hydrological regimes: lessons learned from NSERC HydroNet 2009-2015",
+            "title_fr": "Modélisation des effets des facteurs chimiques et physiques sur les paramètres de productivité des pêches dans des rivières ayant des régimes hydrologiques différents : leçons retenues du réseau HydroNet du CRSNG de 2009 à 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Boisclair, D., Lapointe, M., Saint-Hilaire, A., Rasmussen, J.B., Senay, C., Lanthier, G., Bourque, G., Guénard, G., Macnaughton, C.J., Harvey-Lavoie, S.",
+            "pub_num": "033",
+            "pages": 69,
+            "pdf_size": 1862,
+            "description": ""
+        }
+    }
+]

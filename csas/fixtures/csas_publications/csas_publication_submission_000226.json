@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 226,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Inshore Rockfish Stock Assessment for the West coast of Canada in 1998 and Recommendations for 2000",
+            "pub_year": 1999,
+            "lead_author_2": "Kronlund, A.R., Yamanaka, K.L., Workman, G.D.",
+            "pub_num": "058",
+            "pages": 54,
+            "pdf_size": 4347,
+            "description": ""
+        }
+    }
+]

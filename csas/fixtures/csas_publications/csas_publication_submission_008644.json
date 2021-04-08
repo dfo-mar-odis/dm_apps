@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8644,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National peer review on Science Advice for Pathways of Effects for Marine Shipping",
+            "lead_author_2": "Jeffrey Lemieux",
+            "description": ""
+        }
+    }
+]

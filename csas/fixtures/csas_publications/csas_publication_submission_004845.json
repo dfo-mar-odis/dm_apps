@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4845,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process for 3Ps Cod; November 5-9, 2007",
+            "title_fr": "Compte rendu du Processus de consultation régional de Terre-Neuve-et-Labrador sur la morue de 3Ps; du 5 au 9 novembre 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Atkinson, B., G. Evans, D. Richards",
+            "pub_num": "039",
+            "pages": 41,
+            "pdf_size": 236,
+            "description": ""
+        }
+    }
+]

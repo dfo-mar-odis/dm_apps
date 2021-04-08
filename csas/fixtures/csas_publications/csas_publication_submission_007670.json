@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7670,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessing the risk of lethal ship strikes to humpback (Megaptera novaeangliae) and fin (Balaenoptera physalus) whales off the west coast of Vancouver Island, Canada",
+            "title_fr": "Évaluer le risque de collisions mortelles avec des navires pour le rorqual à bosse (Megaptera novaeangliae) et le rorqual commun (Balaenoptera physalus) au large de la côte ouest de l'île de Vancouver, au Canada",
+            "pub_year": 2017,
+            "lead_author_2": "Nichol, L.M., Wright, B.M., O’Hara, P., and Ford, J.K.B.",
+            "pub_num": "007",
+            "pages": 40,
+            "pdf_size": 2186,
+            "description": ""
+        }
+    }
+]

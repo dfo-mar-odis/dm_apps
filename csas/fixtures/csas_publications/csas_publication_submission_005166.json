@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5166,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of NAFO Subdivision 3Ps Witch Flounder",
+            "title_fr": "Évaluation du stock de plie grise de la sous-division 3Ps de l'OPANO",
+            "pub_year": 2013,
+            "lead_author_2": "D. Maddock Parsons",
+            "pub_num": "077",
+            "pages": 8,
+            "pdf_size": 510,
+            "description": ""
+        }
+    }
+]

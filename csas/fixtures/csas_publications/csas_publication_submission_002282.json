@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2282,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The status of alewife and blueback herring stocks in Scotia-Fundy Region as indicated by catch-effort statistics",
+            "pub_year": 1993,
+            "lead_author_2": "B.M. Jessop",
+            "pub_num": "009",
+            "pages": 17,
+            "pdf_size": 1137,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8743,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment – Grey Whale, Pacific Coast Feeding Group population, Western Pacific population",
+            "lead_author_2": "K Gavrilchuck, T Doniol-Valcroze",
+            "description": ""
+        }
+    }
+]

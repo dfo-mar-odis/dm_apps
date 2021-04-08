@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7632,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Information needed in support of the identification of the habitat necessary for the survival and recovery of Rocky Mountain Ridged Mussel (Gonidea angulata)",
+            "title_fr": "Information requise afin de désigner l’habitat nécessaire à la survie et au rétablissement de la gonidée des rocheuses (Gonidea angulata)",
+            "pub_year": 2017,
+            "lead_author_2": "Sheena Majewsk",
+            "pub_num": "018",
+            "pages": 14,
+            "pdf_size": 311,
+            "description": ""
+        }
+    }
+]

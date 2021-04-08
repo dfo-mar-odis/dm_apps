@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8113,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Environmental Risk Assessment of the Glofish® Electric Green® Tetra and the Glofish® Long-Fin Electric Green® Tetra: Transgenic Ornamental Fish, Imported to Canada, For Sale in the Pet Trade",
+            "title_fr": "Évaluation du risque environnemental pour le tétra GloFishMD Electric GreenMD et le tétra à longues nageoires GloFishMD Electric GreenMD : des poissons d’ornement transgéniques importés au Canada pour le commerce des animaux domestiques",
+            "pub_year": 2018,
+            "lead_author_2": "R. Leggatt, N. Johnson, and C. McGowan",
+            "pub_num": "049",
+            "pages": 66,
+            "pdf_size": 1558,
+            "description": ""
+        }
+    }
+]

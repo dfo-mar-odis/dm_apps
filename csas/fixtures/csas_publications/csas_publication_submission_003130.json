@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3130,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Browns Bank Scallop",
+            "title_fr": "Pétoncle du banc Browns",
+            "pub_year": 1997,
+            "lead_author_2": "Ginette Robert",
+            "pub_num": "C3-18",
+            "pages": 4,
+            "pdf_size": 69,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 627,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Framework for goose barnacle (Pollicipes polymerus Sowerby, 1833) fishery in waters off the West Coast of Canada",
+            "pub_year": 1999,
+            "lead_author_2": "Lauzier, R.B.",
+            "pub_num": "198",
+            "pages": 27,
+            "pdf_size": 98,
+            "description": ""
+        }
+    }
+]

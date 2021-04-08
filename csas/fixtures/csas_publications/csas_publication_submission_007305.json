@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7305,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Catch of non-targeted species in the Scotian Shelf and Southern Grand Banks (NAFO Divisions 3NOPs4VWX5Z) Atlantic Halibut Longline Fishery",
+            "title_fr": "Prises d'espèces non ciblées dans la pêche à la palangre du flétan sur le plateau néo-écossais et dans le sud des Grands Bancs (divisions 3NOPs4VWX5Zc de l'OPANO)",
+            "pub_year": 2015,
+            "lead_author_2": "Nell den Heyer & Themelis",
+            "pub_num": "042",
+            "pages": 30,
+            "pdf_size": 688,
+            "description": ""
+        }
+    }
+]

@@ -6,7 +6,7 @@
 
 <div class="mb-5">
   <div class="mb-2 neighbours">
-    <h2>{% trans "Supporting Resources" %}</h2>
+    <p class="lead">{% trans "Supporting Resources" %}</p>
   </div>
   <div v-if="!file_loading" class="btn-group mb-3 neighbours">
     <button @click="openFileModal()"class="{{ btn_class_1 }} no-print" v-if="canModify">
@@ -63,8 +63,8 @@
           {% endif %}
         {% endfor %}
         <td class="to-the-right" v-if="canModify">
-          <button @click="openFileModal(item)" class="no-print"><span class="mdi mdi-pencil"></span></button>
-          <button @click="deleteFile(item)" class="no-print"><span class="mdi mdi-delete"></span></button>
+          <button @click="openFileModal(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-pencil"></span></button>
+          <button @click="deleteFile(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-delete"></span></button>
         </td>
       </tr>
       </tbody>

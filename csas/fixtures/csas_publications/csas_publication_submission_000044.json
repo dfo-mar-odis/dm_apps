@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 44,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recruitment of the North American stock of Atlantic salmon (Salmo salar) relative to annual indices of smolt production and winter habitat in the northwest Atlantic",
+            "pub_year": 1998,
+            "lead_author_2": "P. G. Amiro",
+            "pub_num": "045",
+            "description": ""
+        }
+    }
+]

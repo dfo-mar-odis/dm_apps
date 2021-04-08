@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 711,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Silvergray rockfish (Sebastes brevispinis) assessment for 2000 and recommended yield options for 2002",
+            "pub_year": 2000,
+            "lead_author_2": "Stanley, R.D., Kronlund, A.R.",
+            "pub_num": "173",
+            "pages": 116,
+            "pdf_size": 1667,
+            "description": ""
+        }
+    }
+]

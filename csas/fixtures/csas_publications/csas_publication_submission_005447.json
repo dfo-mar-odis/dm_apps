@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5447,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of a National Science Advisory Process to Review the Marine Component of the 2010 Ecosystem Status and Trends Report (ESTR); 1-4 December 2009",
+            "title_fr": "Compte rendu d'un processus national d'avis scientifique visant à examiner la composante maritime du Rapport sur l'état et les tendances des écosystèmes (RETE) de 2010; les 1-4 décembre 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Simon, P., White, A., Smith, R.",
+            "pub_num": "034",
+            "pages": 33,
+            "pdf_size": 170,
+            "description": ""
+        }
+    }
+]

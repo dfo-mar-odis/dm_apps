@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3676,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Status of Div. 4X/5Y Haddock in 2002",
+            "title_fr": "Évaluation de l'état du stock d'aiglefin des divisions 4X5Y en 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Hurley, P.C.F., G.A.P. Black, J.E. Simon, R.K. Mohn and P.A. Comeau",
+            "pub_num": "098",
+            "pages": 78,
+            "pdf_size": 1271,
+            "description": ""
+        }
+    }
+]

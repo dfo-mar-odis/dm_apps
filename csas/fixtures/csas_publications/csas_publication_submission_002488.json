@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2488,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic Salmon stocks in Salmon Fishing Area 19, eastern Cape Breton Island, 1994",
+            "pub_year": 1995,
+            "lead_author_2": "P.G. Amiro; D.A. Longard",
+            "pub_num": "082",
+            "pages": 35,
+            "pdf_size": 1300,
+            "description": ""
+        }
+    }
+]

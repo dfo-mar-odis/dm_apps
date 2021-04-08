@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7935,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Science Guidance on Design Strategies for a Network of Marine Protected Areas in the Newfoundland and Labrador Shelves Bioregion",
+            "title_fr": "Lignes directrices scientifiques sur les stratégies de conception d’un réseau d’aires marines protégées dans la biorégion des plateaux de Terre-Neuve-et-Labrador",
+            "pub_year": 2017,
+            "lead_author_2": "Nadine Wells & Erika Parrill",
+            "pub_num": "046",
+            "pages": 27,
+            "pdf_size": 347,
+            "description": ""
+        }
+    }
+]

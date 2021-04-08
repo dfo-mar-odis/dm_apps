@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5383,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4, 5],
+            "title_en": "A preliminary evaluation of the performance of the Canadian management approach for harp seals using simulation studies",
+            "title_fr": "Une évaluation préliminaire du rendement de l'approche de gestion canadienne des phoques du Groenland à l'aide d'études de simulation",
+            "pub_year": 2009,
+            "lead_author_2": "Hammill, M.O. and G.B. Stenson",
+            "pub_num": "093",
+            "pages": 51,
+            "pdf_size": 489,
+            "description": ""
+        }
+    }
+]

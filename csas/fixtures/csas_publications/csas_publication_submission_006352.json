@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6352,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Dolly Varden (Salvelinus malma malma) from the Big Fish River: abundance estimates, effective population size, biological characteristics, and contribution to the coastal mixed-stock fishery",
+            "title_fr": "Dolly Varden(Salvelinus malma malma) de la rivière Big Fish : estimations de l'abondance, taille effective de la population, caractéristiques biologiques et contribution à la pêche côtière de stocks mélangés",
+            "pub_year": 2013,
+            "lead_author_2": "Gallagher,C.P., Howland, K.L., Harris, L.N., Bajno, R., Sandstrom, S., Loewen, T., and Reist, J.",
+            "pub_num": "059",
+            "pages": 51,
+            "pdf_size": 1464,
+            "description": ""
+        }
+    }
+]

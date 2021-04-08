@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 104,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Flatfish Stock Assessment for the West Coast of Canada for 1998 and recommended yield options for 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Fargo, J.",
+            "pub_num": "017",
+            "pages": 51,
+            "pdf_size": 2093,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 569,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 2000,
+            "lead_author_2": "Paul, C., Baker, R.",
+            "pub_num": "002",
+            "description": ""
+        }
+    }
+]

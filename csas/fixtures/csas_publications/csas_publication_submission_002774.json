@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2774,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Synopsis of the 1996 fishery for Iceland scallops in NAFO Div. 4R (Strait of Belle Isle).",
+            "pub_year": 1997,
+            "lead_author_2": "Naidu, K.S., Cahill, F.M.,  Veitch, P.J., Seward, E.M.",
+            "pub_num": "006",
+            "description": ""
+        }
+    }
+]

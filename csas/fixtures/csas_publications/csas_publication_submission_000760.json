@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 760,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of Horse Clam Stock Dynamics for a Directed Subtidal Horse Clam (Tresus capax and Tresus nuttallii) Fishery in British Columbia",
+            "pub_year": 2000,
+            "lead_author_2": "Zhang, Z., Campbell, A.",
+            "pub_num": "167",
+            "pages": 54,
+            "pdf_size": 2423,
+            "description": ""
+        }
+    }
+]

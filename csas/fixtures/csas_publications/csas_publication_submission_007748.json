@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7748,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Seasonal variation in the composition of fishes caught during trawl-based surveys of Little Bear Creek, Ontario",
+            "title_fr": "Variation saisonnière de la composition des prises de poissons effectuées dans le cadre des relevés au chalut du ruisseau Little Bear, en Ontario",
+            "pub_year": 2016,
+            "lead_author_2": "Scott M. Reid, Anita LeBaron, and Jason Barnucz",
+            "pub_num": "070",
+            "pages": 19,
+            "pdf_size": 485,
+            "description": ""
+        }
+    }
+]

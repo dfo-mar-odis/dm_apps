@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7914,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Towards Regional Benchmarks of Fish Productivity in Nearshore Marine Ecosystems: Model Framework, Habitat Comparisons, and Examination of Regional Data",
+            "title_fr": "Vers des points de référence régionaux pour la productivité du poisson dans les écosystèmes côtiers : cadre modèle, comparaisons d’habitats et examen de données régionales",
+            "pub_year": 2017,
+            "lead_author_2": "Wong, M.C., and Dowd, M.",
+            "pub_num": "078",
+            "pages": 53,
+            "pdf_size": 1061,
+            "description": ""
+        }
+    }
+]

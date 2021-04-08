@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2529,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) in Gander River, Notre Dame Bay (SFA 4), Newfoundland, 1994",
+            "pub_year": 1995,
+            "lead_author_2": "M. F. O'Connell; D. G. Reddin; E. G. M. Ash",
+            "pub_num": "123",
+            "pages": 25,
+            "pdf_size": 981,
+            "description": ""
+        }
+    }
+]

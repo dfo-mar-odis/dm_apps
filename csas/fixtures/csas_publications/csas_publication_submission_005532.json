@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5532,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Indicators, impacts and recovery of temperate deepwater marine ecosystems following fishing disturbance",
+            "title_fr": "Indicateurs, répercussions et rétablissement des écosystèmes marins tempérés en eau profonde à la suite de perturbations causées par la pêche",
+            "pub_year": 2012,
+            "lead_author_2": "Janelle M.R. Curtis, Katrina Poppe, and Chris Wood",
+            "pub_num": "125",
+            "pages": 42,
+            "pdf_size": 926,
+            "description": ""
+        }
+    }
+]

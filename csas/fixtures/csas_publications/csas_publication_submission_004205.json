@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4205,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 2],
+            "title_en": "A Preliminary Perspective on Dissolved Oxygen Standards and Models in the Marine Coastal Zone with Particular Consideration of Finfish Aquaculture in the southwest New Brunswick portion of the Bay of Fundy",
+            "title_fr": "Perspective préliminaire sur les normes et les modèles applicables à l'oxygène dissous dans la zone marine côtière, en prêtant une attention particulière à la pisciculture dans les eaux de la baie de Fundy situées au sud-ouest du Nouveau-Brunswick",
+            "pub_year": 2005,
+            "lead_author_2": "Page, F.",
+            "pub_num": "038",
+            "pages": 52,
+            "pdf_size": 316,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6865,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Context and reinterpretation of reported redfish catch in Unit 1+2 in the 1980s and 1990s based on interviews with industry participants",
+            "title_fr": "Contexte et interprétation des captures de sébastes déclarées dans les unités 1 et 2 dans les années 1980 et 1990 sur la base d’entrevues avec des participants de l'industrie",
+            "pub_year": 2016,
+            "lead_author_2": "Duplisea, D.E.",
+            "pub_num": "103",
+            "pages": 16,
+            "pdf_size": 359,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3424,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of the Canadian longspine thornyhead (Sebastolobus altivelis) for 2001",
+            "title_fr": "Évaluation des stocks de sébastolobe à longues épines (Sebastolobus altivelis) au Canada en 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Starr, P.J.",
+            "pub_num": "136",
+            "pages": 58,
+            "pdf_size": 1540,
+            "description": ""
+        }
+    }
+]

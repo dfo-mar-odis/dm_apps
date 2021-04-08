@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8443,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Sentinel Surveys 1995-2018 – Catch rates and biological information on Atlantic Cod (Gadus morhua) in NAFO Divisions 2J3KL",
+            "lead_author_2": "Mello et al.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5900,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery potential modelling of Rocky Mountain Sculpin (Cottus sp.), Eastslope populations, in Alberta",
+            "title_fr": "Modélisation du potentiel de rétablissement du chabot des montagnes Rocheuses (Cottus sp.) (populations du versant est) en Alberta",
+            "pub_year": 2013,
+            "lead_author_2": "Young, Jennifer",
+            "pub_num": "061",
+            "pages": 21,
+            "pdf_size": 507,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1708,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status of Atlantic argentine in Div. 4VWX",
+            "pub_year": 1987,
+            "lead_author_2": "C.E. Dale; R.G. Halliday",
+            "pub_num": "019",
+            "pages": 11,
+            "pdf_size": 616,
+            "description": ""
+        }
+    }
+]

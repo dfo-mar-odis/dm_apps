@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2626,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Temporal trends in the age and length at maturity of Atlantic cod (Gadus morhua) from NAFO Subdivision 3Ps",
+            "pub_year": 1996,
+            "lead_author_2": "J. Brattey; M.J. Morgan",
+            "pub_num": "092",
+            "pages": 18,
+            "pdf_size": 671,
+            "description": ""
+        }
+    }
+]

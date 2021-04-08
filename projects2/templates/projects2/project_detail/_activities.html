@@ -6,7 +6,7 @@
 
 <div class="mb-5">
   <div class="mb-2 neighbours">
-    <h2>{% trans "Activities" %}</h2>
+    <p class="lead">{% trans "Activities" %}</p>
   </div>
   <div v-if="!activity_loading" class="btn-group mb-3 neighbours">
     <button @click="openActivityModal()" class="{{ btn_class_1 }} no-print" v-if="canModify">
@@ -32,36 +32,35 @@
 
     <table v-else class="table table-sm" style="width: auto">
       <thead>
-      {% get_activity_field_list as activity_field_list %}
-      {% for field in activity_field_list %}
-        <th>
-          {% get_verbose_label random_activity field %}
-        </th>
-      {% endfor %}
+      <tr>
+        <th style="width: 100px">${activityLabels.type}</th>
+        <th style="width: 150px">${activityLabels.name}</th>
+        <th>${activityLabels.description}</th>
+        <th style="width: 120px">{% trans "Target date" %}</th>
+        <th style="width: 120px">${activityLabels.responsible_party}</th>
+        <th style="width: 120px">{% trans "Latest status" %}</th>
+        <th class="text-center" style="width: 50px">{% trans "Completed?" %}</th>
+      </tr>
+
       </thead>
       <tbody>
       <tr v-for="(item, index) in activities">
-        {% for field in activity_field_list %}
-          {% if "latest_update" in field %}
-            <td class="w150" v-html="item.latest_update"></td>
-          {% elif "target" in field %}
-            <td class="w150">${item.target_date_display | nz }</td>
-          {% elif "type" in field %}
-            <td class="w100">${item.type_display }</td>
-          {% elif "risk_rating" in field %}
-            <td class="w100">
-              <span v-if="item.risk_rating_display" :class="`${item.risk_rating_display.toLowerCase()}`">${item.risk_rating_display }</span>
-              <span v-else>${item.risk_rating_display }</span>
-            </td>
-          {% elif "name" in field %}
-            <td class="w250">${ item.{{ field }} | nz}</td>
-          {% else %}
-            <td>${ item.{{ field }} | nz}</td>
-          {% endif %}
-        {% endfor %}
+        <td v-html="item.type_display"></td>
+        <td v-html="item.name"></td>
+        <td v-html="item.description"></td>
+        <td>${item.target_date_display|nz}</td>
+        <td v-html="item.responsible_party"></td>
+        <td v-html="item.latest_update"></td>
+        <td v-if="canModify" class="text-center">
+          <button @click="markActivity(item, 'incomplete')" v-if="item.latest_update.toLowerCase().search('complete') > -1" class="no-print btn"><span
+            class="mdi mdi-checkbox-marked-outline h5" data-toggle="tooltip" title="mark as incompleted"></span></button>
+          <button @click="markActivity(item, 'complete')" v-else class="no-print btn"><span class="mdi mdi-checkbox-blank-outline h5" data-toggle="tooltip"
+                                                                                            title="mark as completed"></span></button>
+        </td>
         <td class="to-the-right" v-if="canModify">
-          <button @click="openActivityModal(item)" class="no-print"><span class="mdi mdi-pencil"></span></button>
-          <button @click="deleteActivity(item)" class="no-print"><span class="mdi mdi-delete"></span></button>
+          <button @click="openActivityModal(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-pencil"></span></button>
+          <button @click="cloneActivity(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-content-copy" data-toggle="tooltip" title="clone"></span></button>
+          <button @click="deleteActivity(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-delete"></span></button>
         </td>
       </tr>
       </tbody>

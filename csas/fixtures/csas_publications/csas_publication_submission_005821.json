@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5821,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Framework for the Assessment of the Scotian Shelf and Southern Grand Banks Atlantic Halibut Stock",
+            "title_fr": "Cadre d'évaluation du stock de flétan de l'Atlantique du plateau néo-écossais et du sud des Grands Bancs",
+            "pub_year": 2011,
+            "lead_author_2": "K. Trzcinski, S. Armsworthy, S. Wilson, R. Mohn, S. Campana",
+            "pub_num": "002",
+            "pages": 118,
+            "pdf_size": 2161,
+            "description": ""
+        }
+    }
+]

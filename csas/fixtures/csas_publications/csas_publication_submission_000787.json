@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 787,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The Capelin (Mallotus villosus) Fishery in the Estuary and Gulf of St LawrenceDivisions 4RST) in 1999 and 2000",
+            "title_fr": "Description de la pêche au capelan (Mallotus villosus) dans l'estuaire et le golfe du Saint-Laurent (division 4RST) pour 1999 et 2000.",
+            "pub_year": 2001,
+            "lead_author_2": "Jean-Louis Beaulieu",
+            "pub_num": "048",
+            "pages": 57,
+            "pdf_size": 2760,
+            "description": ""
+        }
+    }
+]

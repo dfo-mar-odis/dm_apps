@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1475,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status and assessment of St. Pierre Bank scallop stocks 1982-83",
+            "pub_year": 1984,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill",
+            "pub_num": "069",
+            "pages": 56,
+            "pdf_size": 2209,
+            "description": ""
+        }
+    }
+]

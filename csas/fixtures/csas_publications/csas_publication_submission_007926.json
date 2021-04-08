@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7926,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "A Framework for the Development of Standard Methods to Evaluate the Toxicity of Petroleum Hydrocarbons on Aquatic Organisms",
+            "title_fr": "Cadre pour l'élaboration de méthodes normalisées afin d'évaluer la toxicité des hydrocarbures pétroliers sur les organismes aquatiques",
+            "pub_year": 2017,
+            "lead_author_2": "Judith Leblanc",
+            "pub_num": "053",
+            "pages": 24,
+            "pdf_size": 452,
+            "description": ""
+        }
+    }
+]

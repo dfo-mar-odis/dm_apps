@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4574,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Relative efficiency of the Wilfred Templeman and Alfred Needler research vessels using a Campelen 1800 shrimp trawl in NAFO Subdivision 3Ps and Divisions 3LN",
+            "title_fr": "Étude de l'efficacité relative des navires Wilfred Templeman et Alfred Needler utilisant le chalut à crevettes 1800 Campelen dans la sous-division 3Ps et les divisions 3LN de l'OPANO",
+            "pub_year": 2006,
+            "lead_author_2": "Cadigan, N.G., S.J. Walsh, W. Brodie.",
+            "pub_num": "085",
+            "pages": 63,
+            "pdf_size": 2473,
+            "description": ""
+        }
+    }
+]

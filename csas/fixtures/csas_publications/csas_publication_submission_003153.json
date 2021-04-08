@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3153,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "State of phytoplankton, zooplankton and krill on the Scotian Shelf in 1996",
+            "title_fr": "État du phytoplancton, du zooplancton et du krill sur le plateau néo-écossais en 1996",
+            "pub_year": 1997,
+            "lead_author_2": "D. Sameoto",
+            "pub_num": "G3-02",
+            "pages": 4,
+            "pdf_size": 128,
+            "description": ""
+        }
+    }
+]

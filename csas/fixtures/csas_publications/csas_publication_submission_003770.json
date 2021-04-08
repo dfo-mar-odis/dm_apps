@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3770,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Salmon Subcommittee Meeting; March 4-5, 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Tanasichuk, R.",
+            "pub_num": "005",
+            "description": ""
+        }
+    }
+]

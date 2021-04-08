@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 640,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Life history of Pacific sardine and a suggested framework for determining a B.C. catch quota",
+            "pub_year": 1999,
+            "lead_author_2": "Ware,D.M.",
+            "pub_num": "204",
+            "pages": 19,
+            "pdf_size": 187,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1688,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An aerial survey estimate of pup production of hooded seals (Cystophora cristata) in the Gulf of St. Lawrence during March 1986",
+            "pub_year": 1986,
+            "lead_author_2": "G.B. Stenson; D. Wakeham",
+            "pub_num": "102",
+            "pages": 11,
+            "pdf_size": 698,
+            "description": ""
+        }
+    }
+]

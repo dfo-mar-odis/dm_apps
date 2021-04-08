@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2668,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Habitat Subcommittee Meeting; June 26-27, 2001",
+            "pub_year": 2001,
+            "lead_author_2": "M. Stocker and J. Pringle (Editors)",
+            "pub_num": "024",
+            "pages": 21,
+            "pdf_size": 51,
+            "description": ""
+        }
+    }
+]

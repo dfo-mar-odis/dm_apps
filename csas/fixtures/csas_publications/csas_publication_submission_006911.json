@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6911,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A pre-COSEWIC assessment of Porbeagle Shark (Lamna nasus) in Newfoundland and Labrador waters",
+            "title_fr": "Évaluation pré-COSEPAC du requin-taupe commun (Lamna nasus) dans les eaux de Terre-Neuve-et-Labrador",
+            "pub_year": 2013,
+            "lead_author_2": "M.R. Simpson and C.M. Miri",
+            "pub_num": "088",
+            "pages": 23,
+            "pdf_size": 3797,
+            "description": ""
+        }
+    }
+]

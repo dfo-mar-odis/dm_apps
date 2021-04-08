@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4294,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Initial simulation trials for the new 3Ps cod harvest strategy",
+            "lead_author_2": "P. Shelton",
+            "description": ""
+        }
+    }
+]

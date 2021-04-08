@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4847,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Zonal Workshop Review of the Information on Redfish (Sebastes sp.) available from DFO Science Sector for the COSEWIC Assessment, Discrimination of Redfish Stocks of Units 1 and 2, Index Fishery Review; September 19th and 20th, 2007",
+            "title_fr": "Compte rendu de l'atelier zonal, Examen de l'information dont dispose le secteur des Sciences du MPO sur le sébaste (Sebaste sp.) pour l'évaluation du COSEPAC, Discrimination des stocks de sébaste des unités 1 et 2, Examen de la pêche indicatrice; 19 et 20 septembre 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Gascon, D.",
+            "pub_num": "040",
+            "pages": 33,
+            "description": ""
+        }
+    }
+]

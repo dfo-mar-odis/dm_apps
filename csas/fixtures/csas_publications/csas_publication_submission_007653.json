@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7653,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Characterization of the American lobster (Homarus americanus) habitat and fishery to inform marine spatial planning in Malpeque Bay, PEI",
+            "title_fr": "Caractérisation de l'habitat et de la pêche du homard de l'Atlantique (Homarus americanus) pour documenter la planification de l'espace marin dans la baie Malpeque, à l'Île-du-Prince-Édouard",
+            "pub_year": 2016,
+            "lead_author_2": "Marc Ouellette, Michel Comeau",
+            "pub_num": "025",
+            "pages": 44,
+            "pdf_size": 4205,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7392,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review of the Gulf of St. Lawrence (4RST) Atlantic Halibut Stock Assessment; February 17, 2015",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l’évaluation du flétan atlantique du golfe du Saint-Laurent (4RST) ; 17 février 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "035",
+            "pages": 8,
+            "pdf_size": 81,
+            "description": ""
+        }
+    }
+]

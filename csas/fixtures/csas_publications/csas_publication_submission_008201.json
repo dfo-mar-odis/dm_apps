@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8201,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Estimated Abundance and Total Allowable Landed Catch for the Eclipse Sound Narwhal Stock",
+            "title_fr": "Estimation de l’abondance des narvals dans le détroit d’Éclipse et total autorisé des captures débarquées",
+            "pub_year": 2020,
+            "lead_author_2": "Paulic, Joclyn",
+            "pub_num": "051",
+            "pages": 8,
+            "pdf_size": 392,
+            "description": ""
+        }
+    }
+]

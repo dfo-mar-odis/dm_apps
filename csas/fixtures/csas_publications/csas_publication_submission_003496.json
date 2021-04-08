@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3496,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Joint Canada-USA Review Group on the Stock Assessment of Coastal Pacific Hake/Whiting Stock off the West Coast of North America; February 20-22, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Jagielo, T., Sinclair, A.",
+            "pub_num": "002",
+            "pages": 18,
+            "pdf_size": 84,
+            "description": ""
+        }
+    }
+]

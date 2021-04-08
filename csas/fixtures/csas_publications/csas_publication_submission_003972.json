@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3972,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "White Hake in the Southern Gulf of St. Lawrence (Div. 4T)",
+            "title_fr": "Merluche blanche du sud du golfe du St. Laurent (div. 4T)",
+            "pub_year": 2004,
+            "lead_author_2": "Hurlbut, T.",
+            "pub_num": "007",
+            "pages": 6,
+            "pdf_size": 233,
+            "description": ""
+        }
+    }
+]

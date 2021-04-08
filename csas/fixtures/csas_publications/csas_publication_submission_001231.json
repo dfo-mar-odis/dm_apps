@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1231,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Prediction of 2-SW and older Atlantic salmon returning to the Millbank trap, Miramichi River, New Brunswick",
+            "pub_year": 1982,
+            "lead_author_2": "T.L Marshall; J.L. Peppar; E.J. Schofield",
+            "pub_num": "051",
+            "pages": 28,
+            "pdf_size": 530,
+            "description": ""
+        }
+    }
+]

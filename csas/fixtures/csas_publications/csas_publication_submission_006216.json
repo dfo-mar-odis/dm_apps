@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6216,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of the Arctic Surfclam (Mactromeris polynyma) Stock on Banquereau in 2010",
+            "title_fr": "Évaluation du stock de mactres de Stimpson (Mactromeris polynyma) du Banquereau en 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Dale Roddick",
+            "pub_num": "068",
+            "pages": 12,
+            "pdf_size": 1093,
+            "description": ""
+        }
+    }
+]

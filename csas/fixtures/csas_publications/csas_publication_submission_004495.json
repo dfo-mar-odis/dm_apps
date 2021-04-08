@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4495,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "A Harvest Strategy Compliant with the Precautionary Approach",
+            "title_fr": "Stratégie de pêche en conformité avec l'approche de précaution",
+            "pub_year": 2006,
+            "lead_author_2": "Ghislain Chouinard, Rice, Jake.",
+            "pub_num": "023",
+            "pages": 7,
+            "pdf_size": 104,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 663,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Preliminary estimates of harp seal by-catch in the Newfoundland lumpfish fishery",
+            "pub_year": 2000,
+            "lead_author_2": "Walsh, D., Sjare, B., Stenson, G.B.",
+            "pub_num": "078",
+            "pages": 16,
+            "pdf_size": 126,
+            "description": ""
+        }
+    }
+]

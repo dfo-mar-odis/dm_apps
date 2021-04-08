@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8158,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Review of the Environmental Impact Statement for the Nexen Energy Flemish Pass Exploration Drilling Project (2018-2028)",
+            "title_fr": "Examen de l’énoncé des incidences environnementales du projet de forage exploratoire dans la passe Flamande de Nexen Energy (2018-2028)",
+            "pub_year": 2018,
+            "lead_author_2": "Jim Meade",
+            "pub_num": "039",
+            "pages": 15,
+            "pdf_size": 616,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3660,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Limits to overfishing: reference points in the context of the Canadian perspective on the precautionary approach",
+            "title_fr": "Limites de surpêche : points de référence dans le contexte de la perspective du Canada en matière d'approche de précaution",
+            "pub_year": 2002,
+            "lead_author_2": "Peter A. Shelton and Jake C. Rice",
+            "pub_num": "084",
+            "pages": 30,
+            "pdf_size": 345,
+            "description": ""
+        }
+    }
+]

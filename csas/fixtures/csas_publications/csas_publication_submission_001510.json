@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1510,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Intercalibration of research survey results obtained by different vessels",
+            "pub_year": 1985,
+            "lead_author_2": "L.P. Fanning",
+            "pub_num": "003",
+            "pages": 43,
+            "pdf_size": 1481,
+            "description": ""
+        }
+    }
+]

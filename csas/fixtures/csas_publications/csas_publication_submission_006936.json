@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6936,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "St. Lawrence Estuary beluga (Delphinapterus leucas) population parameters based on photo-identification surveys, 1989-2012",
+            "title_fr": "Paramètres de la population de béluga du Saint-Laurent (Delphinapterus leucas) basés sur les relevés de photo-identification, 1989-2012",
+            "pub_year": 2013,
+            "lead_author_2": "Michaud, R.",
+            "pub_num": "130",
+            "pages": 31,
+            "pdf_size": 677,
+            "description": ""
+        }
+    }
+]

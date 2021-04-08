@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6958,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review of a Simulation Modelling Tool to Evaluate Alternative Fishery Closure Network Designs for Shallow-water Benthic Invertebrates in British Columbia; October 23-24, 2013",
+            "title_fr": "Compte rendu de l'examen par les pairs régional du Pacifique sur l’outil de modélisation pour simulation visant à évaluer différents réseaux de zones fermées à la pêche des invertébrés benthiques des eaux peu profondes en Colombie-Britannique; les 23 et 24 octobre 2013",
+            "pub_year": 2016,
+            "lead_author_2": "Pearce, C.",
+            "pub_num": "004",
+            "pages": 30,
+            "pdf_size": 226,
+            "description": ""
+        }
+    }
+]

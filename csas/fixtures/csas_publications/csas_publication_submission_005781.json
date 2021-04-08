@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5781,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Biophysical Overview of the Placentia Bay Grand Banks Large Ocean Management Area (LOMA) Area of Interest (AOI)",
+            "lead_author_2": "N.D. Templeman",
+            "description": ""
+        }
+    }
+]

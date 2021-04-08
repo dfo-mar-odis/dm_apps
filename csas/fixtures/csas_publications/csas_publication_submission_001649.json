@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1649,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of juvenile Atlantic salmon stocks of the Stewiacke River in 1984 and forecasts of recruits to fisheries in 1986 and 1987",
+            "pub_year": 1986,
+            "lead_author_2": "P.G. Amiro; A.J. McNeill",
+            "pub_num": "032",
+            "pages": 40,
+            "pdf_size": 1580,
+            "description": ""
+        }
+    }
+]

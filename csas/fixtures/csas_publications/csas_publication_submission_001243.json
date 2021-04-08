@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1243,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Northern Shrimp (Pandalus borealis) resources in the Hopedale and Cartwright Channels (Div. 2H and 2J) considering decreasing fishing effort in recent years",
+            "pub_year": 1983,
+            "lead_author_2": "D.G. Parsons; G.E. Tucker; P.J. Veitch",
+            "pub_num": "010",
+            "pages": 27,
+            "pdf_size": 2441,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6743,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Update of data from a gillnet research survey in the Saguenay Fjord from 2000 to 2012",
+            "title_fr": "Mise à jour des données du relevé de recherche au filet maillant dans le fjord du Saguenay de 2000 à 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Johanne Gauthier, Hugo Bourdages, Renée Morneau, Mathieu Desgagnés, Jean-Guy Rondeau et Patrice Goudreau",
+            "pub_num": "167",
+            "description": ""
+        }
+    }
+]

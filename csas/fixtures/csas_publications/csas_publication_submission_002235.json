@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2235,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Locaton of offshore fishing effort in NAFO Subdivision 3Ps in 1990, 1991 and 1992 from Canadian surveillance data",
+            "pub_year": 1992,
+            "lead_author_2": "R. Gélinas; D. Rivard",
+            "pub_num": "087",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

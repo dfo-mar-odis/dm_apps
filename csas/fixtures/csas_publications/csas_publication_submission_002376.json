@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2376,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of the status of 4VWX, 3NOPs halibut stocks",
+            "pub_year": 1994,
+            "lead_author_2": "C. Annand; D. Beanlands",
+            "pub_num": "041",
+            "pages": 30,
+            "pdf_size": 1268,
+            "description": ""
+        }
+    }
+]

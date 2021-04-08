@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4581,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Marine Mammal Peer Review Committee; May 29-June 1, 2006",
+            "title_fr": "Comité national d'examen par les pairs sur les mammifères marins; du 29 mai au 1er juin 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Simon, Patrice",
+            "pub_num": "029",
+            "pages": 48,
+            "pdf_size": 1183,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3948,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Temperature Variability in the Coastal Waters of Eastern Newfoundland",
+            "title_fr": "Variabilité de la température des eaux côtière de l'est de Terre-Neuve",
+            "pub_year": 2004,
+            "lead_author_2": "Craig, J.D.C. and Colbourne, E.B.",
+            "pub_num": "004",
+            "pages": 19,
+            "pdf_size": 25,
+            "description": ""
+        }
+    }
+]

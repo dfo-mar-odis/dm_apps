@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7338,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Porbeagle (Lamna nasus) in Atlantic Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement de la maraîche (Lamna nasus) au Canada atlantique",
+            "pub_year": 2015,
+            "lead_author_2": "Steven Campana / Christie Whelan / Valerie Myra",
+            "pub_num": "048",
+            "pages": 18,
+            "pdf_size": 672,
+            "description": ""
+        }
+    }
+]

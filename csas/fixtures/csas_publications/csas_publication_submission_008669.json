@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8669,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Information on the use of La Perouse Bank by Resident Killer Whales within their Critical Habitat",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7673,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "POPULATION ASSESSMENT PACIFIC HARBOUR SEAL (PHOCA VITULINA RICHARDSI) IN THE STRAIT OF GEORGIA",
+            "lead_author_2": "Sheena Majewski",
+            "description": ""
+        }
+    }
+]

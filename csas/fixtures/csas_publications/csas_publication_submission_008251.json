@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8251,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Assessment of British Columbia Pacific Cod for Areas 3CD, and 5ABCD in 2018",
+            "lead_author_2": "Greg Workman",
+            "description": ""
+        }
+    }
+]

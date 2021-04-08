@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 384,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4VWX-5-6 pollock",
+            "pub_year": 1980,
+            "lead_author_2": "L. Cleary",
+            "pub_num": "001",
+            "pages": 37,
+            "pdf_size": 1301,
+            "description": ""
+        }
+    }
+]

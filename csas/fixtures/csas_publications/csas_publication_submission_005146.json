@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5146,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Subdivision 3Ps offshore whelk: a preliminary assessment of male size at maturity",
+            "title_fr": "Buccin Commun des eaux hauturières de 3Ps : Évaluation préliminaire de la taille des mâles à la maturité",
+            "pub_year": 2013,
+            "lead_author_2": "D. Stansbury",
+            "pub_num": "066",
+            "pages": 8,
+            "pdf_size": 204,
+            "description": ""
+        }
+    }
+]

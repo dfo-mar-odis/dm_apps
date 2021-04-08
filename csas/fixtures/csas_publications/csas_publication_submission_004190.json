@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4190,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Eastern Nova Scotia Snow Crab",
+            "title_fr": "Crabe des neiges de l'est de la Nouvelle-Écosse",
+            "pub_year": 2005,
+            "lead_author_2": "Choi, J.S., Zisserson, B.M, Reeves, A.R.",
+            "pub_num": "032",
+            "pages": 11,
+            "pdf_size": 686,
+            "description": ""
+        }
+    }
+]

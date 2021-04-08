@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3349,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Report on the status of the shrimp resource in the Northwest Atlantic in areas off Newfoundland and Labrador, in the Gulf of St. Lawrence, and on the Scotian Shelf",
+            "title_fr": "Rapport sur l'état des resources en crevettes de l'Atlantique nord-ouest au large de Terre-Neuve et du Labrador, dans le golfe du Saint-Laurent et sur le plateau néo-écossais",
+            "pub_year": 1994,
+            "pub_num": "006",
+            "description": ""
+        }
+    }
+]

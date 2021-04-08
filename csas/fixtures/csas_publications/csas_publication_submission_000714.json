@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 714,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Witch Flounder Catch Results from Fall 2000 GEAC Survey in NAFO Subdivision 3Ps.",
+            "title_fr": "Résultats de captures de plie grise obtenus lors du relevé effectué par le GEAC à l'automne 2000 dans la sous-division 3Ps de l'OPANO.",
+            "pub_year": 2001,
+            "lead_author_2": "McClintock, J.",
+            "pub_num": "014",
+            "pages": 22,
+            "pdf_size": 356,
+            "description": ""
+        }
+    }
+]

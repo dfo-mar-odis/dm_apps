@@ -499,27 +499,6 @@ class TestRstCreate(CommonCreateTest, TestCase):
         self.assertEquals(self.rsc_id, response.context['form'].initial['rsc'])
 
 
-@tag('rtt', 'create')
-class TestRttCreate(CommonCreateTest, TestCase):
-
-    rtt_id = 1
-
-    def setUp(self):
-        super().setUp()
-
-        self.data = Factory.RttFactory.get_valid_data()
-        self.test_url = reverse_lazy('whalesdb:create_rtt')
-
-        # Since this is intended to be used as a pop-out form, the html file should start with an underscore
-        self.test_expected_template = 'shared_models/shared_entry_form.html'
-
-        self.expected_view = views.RstCreate
-
-        self.expected_form = forms.RstForm
-
-        self.expected_success_url = reverse_lazy("whalesdb:list_rtt")
-
-
 @tag('ste', 'create')
 class TestSteCreate(CommonCreateTest, TestCase):
 

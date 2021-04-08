@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3389,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Decadal Time-Series of Invertebrate Zooplankton on the Newfoundland Shelf and Grand Banks 1991-1999",
+            "title_fr": "Série chronologique décennale de l'abondance du zooplancton invertébré sur la plate-forme de Terre-Neuve et les Grands bancs (1991 -1999)",
+            "pub_year": 2001,
+            "lead_author_2": "Dalley, E.L., Anderson, J.T., Davies, D.J.",
+            "pub_num": "110",
+            "pages": 30,
+            "pdf_size": 1570,
+            "description": ""
+        }
+    }
+]

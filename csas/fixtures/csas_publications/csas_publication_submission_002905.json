@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2905,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Striped Bass (Morone saxatilis) Southern Gulf of St. Lawrence",
+            "title_fr": "Bar rayé (Morone saxatilis) du sud du golfe du Saint-Laurent",
+            "pub_year": 2001,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "D3-15",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

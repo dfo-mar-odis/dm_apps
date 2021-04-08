@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5082,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process on the Assessment of Scallops (Placopecten magellanicus) in Scallop Fishing Area (SFA) 29 West of Longitude 65°30'W; 30 April 2008",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif scientifique de la Région des Maritimes au sujet de l'évaluation du pétoncle géant (Placopecten magellanicus) de la zone de pêche du pétoncle 29 à l'ouest de la longitude 65°30' O; le 30 avril 2008",
+            "pub_year": 2008,
+            "lead_author_2": "M. Showell",
+            "pub_num": "028",
+            "pages": 15,
+            "pdf_size": 120,
+            "description": ""
+        }
+    }
+]

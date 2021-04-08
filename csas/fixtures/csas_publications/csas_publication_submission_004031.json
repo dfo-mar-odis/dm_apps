@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4031,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Determination of Allowable Harm for Spotted (Anarhichas minor) and Northern (Anarhichas denticulatus) Wolffish",
+            "title_fr": "Détermination des dommages admissibles pour le loup tacheté (Anarhichas minor) et le loup à tête large (Anarhichas denticulatus)",
+            "pub_year": 2004,
+            "lead_author_2": "Kulka D. W., Simpson, M.R.",
+            "pub_num": "049",
+            "pages": 35,
+            "pdf_size": 779,
+            "description": ""
+        }
+    }
+]

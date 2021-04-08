@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8331,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Ecological Risk Assessment of Black Carp (Mylopharyngodon piceus) for the Great Lakes Basin",
+            "lead_author_2": "Andrew Drake",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1914,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution and acoustic backscatter of herring in NAFO Divisions 4T and 4Vn, November-December 1988",
+            "pub_year": 1989,
+            "lead_author_2": "D.K. Cairns; J.A. Wright; E.M.P. Chadwick",
+            "pub_num": "042",
+            "pages": 52,
+            "pdf_size": 2222,
+            "description": ""
+        }
+    }
+]

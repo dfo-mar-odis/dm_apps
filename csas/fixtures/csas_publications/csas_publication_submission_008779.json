@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8779,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Considerations for the design of rebuilding strategies for Canadian fish stocks",
+            "lead_author_2": "Brittany Beauchamp",
+            "description": ""
+        }
+    }
+]

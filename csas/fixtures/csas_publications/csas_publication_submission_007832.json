@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7832,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review of the assessment of Eastern Beaufort Sea beluga; January 24-26, 2017",
+            "lead_author_2": "S. MacPhee",
+            "description": ""
+        }
+    }
+]

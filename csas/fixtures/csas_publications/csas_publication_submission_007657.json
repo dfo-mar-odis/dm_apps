@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7657,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Patterns of Fin whale (Balaenoptera physalus) Seasonality and Relative Distribution in Canadian Pacific Waters Inferred from Passive Acoustic Monitoring",
+            "title_fr": "Profils de la saisonnalité et de la répartition relative du rorqual commun (Balaenoptera physalus) dans les eaux du Pacifique canadien inférés grâce à la surveillance acoustique passive",
+            "pub_year": 2018,
+            "lead_author_2": "Pilkington, J.F., Stredulinsky, E.H., Abernethy, R.M., and Ford, J.K.B.",
+            "pub_num": "032",
+            "pages": 32,
+            "pdf_size": 1633,
+            "description": ""
+        }
+    }
+]

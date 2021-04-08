@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2796,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The Atlantic region acid rain monitoring program in acidified Atlantic salmon rivers: trends and present status.",
+            "pub_year": 1997,
+            "lead_author_2": "Watt, W.",
+            "pub_num": "028",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8772,
+        "fields": {
+            "series": 4,
+            "title_en": "Proceedings of the Regional Peer Review of Quantifying Changes in the Distribution of Atlantic Cod and Yellowtail Flounder on Georges Bank",
+            "lead_author_2": "Bennett, Lottie",
+            "description": ""
+        }
+    }
+]

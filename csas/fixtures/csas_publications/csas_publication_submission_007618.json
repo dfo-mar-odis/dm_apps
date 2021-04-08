@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7618,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Recovery Potential Assessment - White Sturgeon, Upper Fraser Designatable Unit; March 30 – April 1, 2016",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région du Pacifique sur l’évaluation du potentiel de rétablissement de la population d'esturgeon blanc du haut Fraser; du 30 mars au 1 avril 2016.",
+            "pub_year": 2016,
+            "lead_author_2": "Tom Therriault",
+            "pub_num": "025",
+            "pages": 36,
+            "pdf_size": 348,
+            "description": ""
+        }
+    }
+]

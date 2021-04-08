@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1716,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Perspectives on the Bay of Fundy scallop stock and its fishery",
+            "pub_year": 1987,
+            "lead_author_2": "G. Robert; M.A.E. Butler-Connolly; M.J. Lundy",
+            "pub_num": "027",
+            "pages": 30,
+            "pdf_size": 1323,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8228,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A Review of the Use of Recompression Devices as a Tool for Reducing the Effects of Barotrauma on Rockfishes in British Columbia",
+            "title_fr": "Examen de l’utilisation de dispositifs de recompression comme outils pour réduire les effets des barotraumatismes chez les sébastes en Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Haggarty, D.R.",
+            "pub_num": "042",
+            "pages": 40,
+            "pdf_size": 732,
+            "description": ""
+        }
+    }
+]

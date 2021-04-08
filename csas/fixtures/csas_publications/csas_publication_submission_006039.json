@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6039,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Technical Details Underlying the Management Strategy Evaluation Process Leading to Selection of a Management Procedure for Western Component (4Xopqrs5) Pollock",
+            "title_fr": "Aspects techniques du processus d'évaluation de la stratégie de gestion utilisé pour choisir une procédure de gestion de la goberge de la composante Ouest (4Xopqrs5)",
+            "pub_year": 2011,
+            "lead_author_2": "Rademeyer, Rebecca A.",
+            "pub_num": "090",
+            "pages": 39,
+            "pdf_size": 3472,
+            "description": ""
+        }
+    }
+]

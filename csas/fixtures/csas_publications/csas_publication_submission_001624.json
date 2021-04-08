@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1624,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Analyses of the 1983 aerial survey of harp seals at the front: corrections for the birthing curve and counting error",
+            "pub_year": 1986,
+            "lead_author_2": "R.A. Myers; W.D. Bowen",
+            "pub_num": "007",
+            "pages": 25,
+            "pdf_size": 1096,
+            "description": ""
+        }
+    }
+]

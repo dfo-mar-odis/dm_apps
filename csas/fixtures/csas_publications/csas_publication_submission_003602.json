@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3602,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "West Coast Vancouver Island Coho Salmon",
+            "pub_year": 1999,
+            "lead_author_2": "Kent Simpson",
+            "pub_num": "D6-06",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

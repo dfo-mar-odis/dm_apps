@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 339,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Marine environmental conditions in the Northwest Atlantic during 1996 potentially impacting Atlantic salmon (Salmo salar).",
+            "pub_year": 1997,
+            "lead_author_2": "Drinkwater, K.F., Pettipas, R.,  Petrie, L.",
+            "pub_num": "052",
+            "pages": 31,
+            "pdf_size": 1828,
+            "description": ""
+        }
+    }
+]

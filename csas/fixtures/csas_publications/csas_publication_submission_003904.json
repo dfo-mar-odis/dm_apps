@@ -1,0 +1,20 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3904,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Atlantic herring (Clupea harengus harengus L.) on the west coast of Newfoundland (NAFO Division 4R) in 2002",
+            "title_fr": "Le hareng (Clupea harengus L.) de la côte ouest de Terre-Neuve (Division 4R de l'OPANO) en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Grégoire, F., Lefebvre, L., Guérin, J., Hudon, J. and Lavers, J.
+
+Réviseurs : Michel Giguère & Jean Lambert",
+            "pub_num": "090",
+            "pages": 56,
+            "pdf_size": 3735,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3224,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subdivision 3Ps Cod",
+            "title_fr": "Morue de la subdivision 3Ps",
+            "pub_year": 1996,
+            "lead_author_2": "Shelton, P.",
+            "pub_num": "081",
+            "description": ""
+        }
+    }
+]

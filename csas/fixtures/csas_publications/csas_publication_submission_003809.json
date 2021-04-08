@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3809,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Northern Anchovy",
+            "title_fr": "Anchois du Pacifique",
+            "pub_year": 2002,
+            "lead_author_2": "Therriault, T., Rusch, R.",
+            "pub_num": "B6-08",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

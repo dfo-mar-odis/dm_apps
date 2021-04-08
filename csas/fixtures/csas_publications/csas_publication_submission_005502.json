@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5502,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery potential assessment of Lake Sturgeon: Winnipeg River-English River populations (Designatable Unit 5)",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'esturgeon jaune : Populations des rivières Winnipeg et English (unité désignable 5)",
+            "pub_year": 2010,
+            "lead_author_2": "T.C. Pratt",
+            "pub_num": "052",
+            "pages": 25,
+            "pdf_size": 397,
+            "description": ""
+        }
+    }
+]

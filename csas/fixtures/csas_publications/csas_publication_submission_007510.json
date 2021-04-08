@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7510,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the zonal peer review on the Evaluation of Hierarchical Marine Ecological Classification Systems for Pacific and Maritimes Regions; September 29 –October 2, 2015",
+            "title_fr": "Compte rendu de l'examen zonal par les pairs sur l'évaluation des systèmes de classification hiérarchique de l'écologie marine pour les régions du Pacifique et des Maritimes; du 29 septembre au 2 octobre 2015",
+            "pub_year": 2016,
+            "lead_author_2": "John Holmes and Nadja Steiner",
+            "pub_num": "016",
+            "pages": 70,
+            "pdf_size": 585,
+            "description": ""
+        }
+    }
+]

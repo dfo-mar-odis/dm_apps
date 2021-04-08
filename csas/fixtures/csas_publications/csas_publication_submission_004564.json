@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4564,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Optical, chemical and biological oceanographic conditions in the Maritimes/Gulf regions in 2005",
+            "title_fr": "Conditions océanographiques optiques, chimiques et biologiques dans les régions des Maritimes et du Golfe en 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Harrison, G., D. Sameoto, J. Spry, K. Pauley, H. Maass, M. Kennedy, C. Porter, V. Soukhovtsev.",
+            "pub_num": "081",
+            "pages": 54,
+            "pdf_size": 5361,
+            "description": ""
+        }
+    }
+]

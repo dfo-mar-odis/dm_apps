@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5551,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Mapping the distribution of deep-sea corals in the Northern Gulf of St. Lawrence using both scientific and local ecological knowledge",
+            "title_fr": "Cartographie de la répartition des coraux de grande profondeur dans le nord du Golfe du Saint-Laurent basée sur les connaissances scientifiques et écologiques de la région",
+            "pub_year": 2010,
+            "lead_author_2": "Colpron, E.C., Edinger, E. N. and Neis, B.",
+            "pub_num": "047",
+            "pages": 19,
+            "pdf_size": 4449,
+            "description": ""
+        }
+    }
+]

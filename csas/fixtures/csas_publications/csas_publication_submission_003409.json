@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3409,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Phase 0 Review of the Environmental Impacts of Intertidal Shellfish Aquaculture in Baynes Sound",
+            "title_fr": "Phase 0 Examen des impacts environnementaux de la conchyliculture en zone intertidale dans la baie Baynes",
+            "pub_year": 2001,
+            "lead_author_2": "Jamieson, G.S., Chew, L., Gillespie, G. Robinson, A., Bendell-Young, L., Heath, W., Bravender, B., Tompkins, A., Nishimura, D., Doucette, P.",
+            "pub_num": "125",
+            "pages": 104,
+            "pdf_size": 4070,
+            "description": ""
+        }
+    }
+]

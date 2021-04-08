@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8687,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Approaches for Assessing and Monitoring Representation, Replication, and Connectivity in Marine Conservation Networks",
+            "title_fr": "Approches pour évaluer et surveiller la représentation, la réplication et la connectivité dans les réseaux de conservation marine",
+            "pub_year": 2020,
+            "lead_author_2": "Balbar, A.C, Daigle, R.M., Heaslip, S.G., Jeffery, N.W., Proudfoot, B., Robb, C.K., Rubidge, E. and Stanley R.",
+            "pub_num": "050",
+            "pages": 64,
+            "pdf_size": 1909,
+            "description": ""
+        }
+    }
+]

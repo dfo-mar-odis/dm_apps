@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1524,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An analysis and interpretation of the 1984 data on research and commercial fishing for shrimp (Pandalus borealis) in the Cartwright and Hopedale channels",
+            "pub_year": 1985,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch",
+            "pub_num": "017",
+            "pages": 30,
+            "pdf_size": 1280,
+            "description": ""
+        }
+    }
+]

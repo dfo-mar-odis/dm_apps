@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3597,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Varnish Clam",
+            "pub_year": 1999,
+            "lead_author_2": "Graham E. Gillespie",
+            "pub_num": "C6-13",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

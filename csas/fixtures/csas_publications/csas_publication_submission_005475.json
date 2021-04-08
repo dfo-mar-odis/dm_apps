@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5475,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Walleye (Sander vitreus) from Tathlina Lake, Northwest Territories",
+            "title_fr": "Évaluation du doré jaune (Sander vitreus) du lac Tathlina, dans les Territoires du Nord-Ouest",
+            "pub_year": 2010,
+            "lead_author_2": "Colin Gallagher",
+            "pub_num": "035",
+            "pages": 13,
+            "pdf_size": 318,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2662,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Cape Breton Toad Crab",
+            "title_fr": "Crabe-araignée de l'est du Cap-Breton",
+            "pub_year": 1996,
+            "lead_author_2": "Michael Eagles and John Tremblay",
+            "pub_num": "038",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

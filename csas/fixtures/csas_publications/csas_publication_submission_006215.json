@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6215,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Maritimes Research Vessel Survey Trends",
+            "title_fr": "Tendances dans les relevés par navire scientifique dans la région des Maritimes",
+            "pub_year": 2012,
+            "lead_author_2": "D. Clark, J. Emberley, K. Clark, H. Stone, P. Hurley, J. Simon, V. Docherty, W. Williams, T. Worcester / T. Worcester / V. Myra",
+            "pub_num": "004",
+            "pages": 55,
+            "pdf_size": 3664,
+            "description": ""
+        }
+    }
+]

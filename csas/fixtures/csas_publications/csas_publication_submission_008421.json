@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8421,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of the Marine Harvest Atlantic Canada Aquaculture Siting Baseline Assessments",
+            "lead_author_2": "E. Novaczek",
+            "description": ""
+        }
+    }
+]

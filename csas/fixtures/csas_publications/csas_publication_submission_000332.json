@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 332,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Babine Lake sockeye salmon: stock status and forecasts for 1998.",
+            "pub_year": 1997,
+            "lead_author_2": "Wood, C., Rutherford, D., Bailey, D., Jakubowski, M.",
+            "pub_num": "045",
+            "pages": 57,
+            "pdf_size": 2306,
+            "description": ""
+        }
+    }
+]

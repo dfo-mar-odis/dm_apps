@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8037,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Sea Cucumber stock status update in NAFO Subdivision 3Ps",
+            "title_fr": "Mise à jour sur la situation du stock d'holothuries de la sous-division 3Ps de l'OPANO",
+            "pub_year": 2018,
+            "lead_author_2": "Julia Pantin",
+            "pub_num": "010",
+            "description": ""
+        }
+    }
+]

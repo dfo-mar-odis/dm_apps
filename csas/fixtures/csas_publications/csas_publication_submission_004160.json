@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4160,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biological and Chemical Oceanographic conditions on the Newfoundland and Labrador Shelf during 2004",
+            "title_fr": "Conditions océanographiques, biologiques et chimiques sur le plateau de Terre-Neuve en 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Pepin, P., G.L. Maillet, S. Fraser, D. Lane.",
+            "pub_num": "015",
+            "pages": 66,
+            "pdf_size": 2534,
+            "description": ""
+        }
+    }
+]

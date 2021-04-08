@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8701,
+        "fields": {
+            "series": 4,
+            "title_en": "Proceedings of the Framework Review for the Assessment of Snow Crab (Chionoecetes opilio) in Maritimes Region (NAFO Division 4VWX)",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

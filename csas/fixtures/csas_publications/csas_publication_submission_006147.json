@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6147,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Regional Peer Review of the Recovery Potential Assessment for Atlantic Salmon (Eastern Cape Breton Designatable Unit)",
+            "lead_author_2": "Worcester, Tana",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4648,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the workshop on the St. Lawrence Estuary beluga - review of carcass program; November 14 - 17, 2005",
+            "title_fr": "Compte rendu de l'atelier sur le béluga de l'estuaire du Saint-Laurent - Revue du programme des carcasses; 14 au 17 novembre 2005",
+            "pub_year": 2007,
+            "lead_author_2": "Measures, L.",
+            "pub_num": "005",
+            "pages": 99,
+            "pdf_size": 567,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8753,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "STOCK STATUS UPDATE FOR LOBSTER (HOMARUS AMERICANUS) IN LOBSTER FISHING AREA 36 AND 38",
+            "lead_author_2": "Howse, Victoria",
+            "description": ""
+        }
+    }
+]

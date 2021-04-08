@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6150,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Eastern Cape Breton Atlantic Salmon (Salmo salar): Population Viability Analyses",
+            "title_fr": "Évaluation du potentiel de rétablissement (EPR) du saumon de l'Atlantique (Salmo salar) de l'est du Cap-Breton : Analyses de la viabilité de la population",
+            "pub_year": 2014,
+            "lead_author_2": "A. J. F. Gibson and A. L. Levy",
+            "pub_num": "005",
+            "pages": 48,
+            "pdf_size": 634,
+            "description": ""
+        }
+    }
+]

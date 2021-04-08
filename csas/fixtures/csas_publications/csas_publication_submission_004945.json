@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4945,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the physical oceanographic environment on the Newfoundland and Labrador Shelf during 2007",
+            "title_fr": "Évaluation de l'environment océanographique physique sur la plate-forme continentale de Terre-Neuve et du Labrador en 2007",
+            "pub_year": 2008,
+            "lead_author_2": "Colbourne, E., J. Craig. C. Fitzpatrick, D. Senciall, P. Stead, W. Bailey",
+            "pub_num": "020",
+            "pages": 21,
+            "pdf_size": 2349,
+            "description": ""
+        }
+    }
+]

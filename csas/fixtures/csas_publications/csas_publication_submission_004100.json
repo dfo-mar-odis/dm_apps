@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4100,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2004 Summer Groundfish Survey update for selected Scotia-Fundy groundfish stocks",
+            "title_fr": "Mise à jour du relevé de l'été 2004 sur les poissons de fond pour les stocks particuliers du plateau néo-écossais et de la baie de Fundy",
+            "pub_year": 2004,
+            "lead_author_2": "Branton, R., G. Black",
+            "pub_num": "108",
+            "pages": 64,
+            "pdf_size": 4752,
+            "description": ""
+        }
+    }
+]

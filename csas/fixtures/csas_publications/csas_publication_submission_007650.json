@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7650,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment for the Upper Fraser River White Sturgeon Designatable Unit - 2016",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'esturgeon blanc de l'unité désignable du haut Fraser – 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Tom Therriault",
+            "pub_num": "040",
+            "pages": 15,
+            "pdf_size": 438,
+            "description": ""
+        }
+    }
+]

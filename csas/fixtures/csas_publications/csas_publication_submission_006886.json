@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6886,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "An ecological and oceanographical assessment of alternate ballast water exchange zones in the Canadian eastern Arctic",
+            "title_fr": "Évaluation écologique et océanographique de la zone de renouvellement des eaux de ballast de l'Arctique canadien de l'Est",
+            "pub_year": 2015,
+            "lead_author_2": "Stewart, D.B., Nudds, S.H., Howland, K.L., Hannah, C.G., and Higdon, J.W.",
+            "pub_num": "037",
+            "pages": 44,
+            "pdf_size": 6411,
+            "description": ""
+        }
+    }
+]

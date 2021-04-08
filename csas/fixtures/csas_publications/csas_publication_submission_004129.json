@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4129,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Diving characteristics and sightability estimates of eastern Arctic bowhead whales, Balaena mysticetus, based on satellite-linked telemetry",
+            "title_fr": "Caractéristiques de plongée et estimations de la détectabilité des baleines boréales de l'est de l'Arctique, Balaena mysticetus, d'après la télémétrie satellite",
+            "pub_year": 2005,
+            "lead_author_2": "Dueck, L.P., M.P. Hiede-Jørgensen, M.V. Jensen, L.D. Postma.",
+            "pub_num": "005",
+            "pages": 40,
+            "pdf_size": 310,
+            "description": ""
+        }
+    }
+]

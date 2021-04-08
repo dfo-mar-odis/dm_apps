@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2569,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1995 assessment of Georges Bank yellowtail flounder",
+            "pub_year": 1996,
+            "lead_author_2": "S. Gavaris; J.J. Hunt; J.D.Nielson; F. Page",
+            "pub_num": "022",
+            "pages": 32,
+            "pdf_size": 1974,
+            "description": ""
+        }
+    }
+]

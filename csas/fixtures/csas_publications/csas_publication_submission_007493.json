@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7493,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Considerations for Identification of Effective Area-based Conservation Measures",
+            "title_fr": "Facteurs à prendre en compte pour déterminer les mesures de conservation efficaces par zone",
+            "pub_year": 2016,
+            "lead_author_2": "Ellen Kenchington",
+            "pub_num": "020",
+            "pages": 58,
+            "pdf_size": 530,
+            "description": ""
+        }
+    }
+]

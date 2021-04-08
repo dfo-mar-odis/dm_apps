@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5774,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process on the Assessment of Atlantic Halibut on the Scotian Shelf and Grand Banks; November 16-17, 2010",
+            "title_fr": "Compte rendu de la réunion tenue dans le cadre du Processus consultatif scientifique de la Région des Maritimes pour l'évaluation du flétan de l'Atlantique du plateau néo-écossais et des Grands Bancs ; 16-17 novembre 2010",
+            "pub_year": 2012,
+            "lead_author_2": "McIntyre, T.",
+            "pub_num": "008",
+            "pages": 20,
+            "pdf_size": 99,
+            "description": ""
+        }
+    }
+]

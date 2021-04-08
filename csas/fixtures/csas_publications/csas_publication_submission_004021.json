@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4021,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Northern Shrimp (Pandalus borealis) Stock Status Update Div. 0B to 3K",
+            "title_fr": "Mise à jour de l'état des stocks de crevette nordique (Pandalus borealis) des div. 0B à 3K",
+            "pub_year": 2004,
+            "lead_author_2": "Orr, D.",
+            "pub_num": "022",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

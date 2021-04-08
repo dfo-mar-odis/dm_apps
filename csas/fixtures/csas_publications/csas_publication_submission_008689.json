@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8689,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Population status update for the northern resident killer whale (Orcinus orca) in 2019",
+            "title_fr": "Mise à jour de l’état de la population d’épaulards résidents du nord (Orcinus orca) en 2019",
+            "pub_year": 2020,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "040",
+            "pages": 12,
+            "pdf_size": 376,
+            "description": ""
+        }
+    }
+]

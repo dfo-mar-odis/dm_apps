@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5256,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Pollock in Div. 4VWX+5",
+            "title_fr": "Goberge des divisions 4VWX+5",
+            "pub_year": 2009,
+            "lead_author_2": "H. Stone",
+            "pub_num": "025",
+            "pages": 13,
+            "pdf_size": 195,
+            "description": ""
+        }
+    }
+]

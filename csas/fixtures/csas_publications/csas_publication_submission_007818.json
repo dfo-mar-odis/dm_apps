@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7818,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Potential for measuring production forgone as a metric for assessing project impacts to habitat on fisheries productivity",
+            "title_fr": "Potentiel de mesure du manque à produire comme paramètre aux fins de l'évaluation des impacts des projets dans l'habitat sur la productivité des pêches",
+            "pub_year": 2017,
+            "lead_author_2": "Randall, R.G., Bradford, M.J., Koops, M.A., and van der Lee, A.",
+            "pub_num": "020",
+            "pages": 19,
+            "pdf_size": 438,
+            "description": ""
+        }
+    }
+]

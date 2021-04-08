@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7739,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A pre-COSEWIC assessment of Roughhead Grenadier (Macrourus berglax) in Canadian Atlantic and Arctic Waters",
+            "title_fr": "Examen pré-COSEPAC concernant le grenadier berglax (Macrourus berglax) dans les eaux canadiennes de l’Atlantique et de l’Arctique",
+            "pub_year": 2017,
+            "lead_author_2": "Simpson, M.R., Themelis, D.E., Treble, M., Miri, C.M., Collins, R.K., and Mello, L.G.S.",
+            "pub_num": "045",
+            "pages": 93,
+            "pdf_size": 11358,
+            "description": ""
+        }
+    }
+]

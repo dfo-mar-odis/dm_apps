@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2741,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Divison 3O redfish - status update",
+            "pub_year": 1996,
+            "lead_author_2": "D. Power; D.B. Atkinson; W.B. Brodie",
+            "pub_num": "115",
+            "pages": 19,
+            "pdf_size": 963,
+            "description": ""
+        }
+    }
+]

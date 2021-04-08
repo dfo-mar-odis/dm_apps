@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4765,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Review of Selected Biogeographic Classification Systems with Relevance to the Canadian Marine Environment",
+            "title_fr": "Examen de systèmes de classification biogéographique choisis liés au milieu marin du Canada",
+            "pub_year": 2009,
+            "lead_author_2": "O'Boyle, Robert",
+            "pub_num": "066",
+            "pages": 87,
+            "pdf_size": 1927,
+            "description": ""
+        }
+    }
+]

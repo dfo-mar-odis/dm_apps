@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 773,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of north Labrador anadromous Arctic charr stocks, 2000.",
+            "title_fr": "État des stocks d'omble chevalier anadrome du nord du Labrador en 2000",
+            "pub_year": 2001,
+            "lead_author_2": "Dempson, J. B., M. Shears",
+            "pub_num": "029",
+            "pages": 45,
+            "pdf_size": 459,
+            "description": ""
+        }
+    }
+]

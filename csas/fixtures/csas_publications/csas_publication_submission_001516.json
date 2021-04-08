@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1516,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Disponibilité de la crevette Pandalus borealis aux engins de pêche en fonction de l'heure du jour et efficacité relative des chaluts à crevettes",
+            "pub_year": 1985,
+            "lead_author_2": "B. Portelance; J. Fréchette",
+            "pub_num": "009",
+            "description": ""
+        }
+    }
+]

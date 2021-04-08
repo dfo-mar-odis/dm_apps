@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2875,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Prises accessoires des chalutiers et distribution des larves de lancon (Ammodytes sp.) dans l'estuaire et le golfe du Saint-Laurent",
+            "pub_year": 1997,
+            "lead_author_2": "Grégoire, F., Lévesque, C.",
+            "pub_num": "121",
+            "pages": 27,
+            "pdf_size": 2934,
+            "description": ""
+        }
+    }
+]

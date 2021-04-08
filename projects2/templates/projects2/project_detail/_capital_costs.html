@@ -6,7 +6,7 @@
 
 <div class="mb-5">
   <div class="mb-2 neighbours">
-    <h2>{% trans "Capital Costs" %}</h2>
+    <p class="lead">{% trans "Capital Costs" %}</p>
   </div>
   <div v-if="!capital_cost_loading" class="mb-3 neighbours">
     <button @click="openCapitalCostModal()"class="{{ btn_class_1 }} no-print" v-if="canModify">
@@ -66,8 +66,8 @@
           {% endif %}
         {% endfor %}
         <td class="to-the-right" v-if="canModify">
-          <button @click="openCapitalCostModal(item)" class="no-print"><span class="mdi mdi-pencil"></span></button>
-          <button @click="deleteCapitalCost(item)" class="no-print"><span class="mdi mdi-delete"></span></button>
+          <button @click="openCapitalCostModal(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-pencil"></span></button>
+          <button @click="deleteCapitalCost(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-delete"></span></button>
         </td>
       </tr>
       </tbody>

@@ -7,21 +7,7 @@
 {% block jquery_import %}<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>{% endblock %}
 
 {% block header %}
-    <style>
-        {% if site_css %}
-        {% include site_css %}
-        {% else %}
-        body {
-            background-image: url("{% static 'img/whalesdb/whale-background.jpg' %}");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-        .card, .jumbotron {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        {% endif %}
-    </style>
+    {% include "whalesdb/base/_background_img.html" %}
 
 {% endblock %}
 
@@ -32,7 +18,7 @@
 {% endblock body %}
 
 {% block left_all %}
-{% include "whalesdb/whales_nav_menu.html" %}
+{% include "whalesdb/base/whales_nav_menu.html" %}
 {% endblock left_all %}
 
 {% block left_unauth %}

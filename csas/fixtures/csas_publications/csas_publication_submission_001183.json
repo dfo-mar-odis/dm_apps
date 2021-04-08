@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1183,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Interception in Nova Scotian coastal waters of Nova Scotia salmon returning to home rivers",
+            "pub_year": 1982,
+            "lead_author_2": "T.L. Marshall",
+            "pub_num": "003",
+            "pages": 18,
+            "pdf_size": 1175,
+            "description": ""
+        }
+    }
+]

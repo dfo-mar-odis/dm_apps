@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2658,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Blue Shark",
+            "title_fr": "Le requin bleu",
+            "pub_year": 1996,
+            "lead_author_2": "O'Boyle, B.",
+            "pub_num": "034",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

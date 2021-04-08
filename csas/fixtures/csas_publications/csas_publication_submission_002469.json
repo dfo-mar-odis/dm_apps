@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2469,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Atlantic salmon (Salmo salar) stock of the Margaree River, Nova Scotia, 1994",
+            "pub_year": 1995,
+            "lead_author_2": "R.R. Claytor; R. Jones; P. LeBlanc; L. Forsyth; G. Chaput",
+            "pub_num": "063",
+            "pages": 71,
+            "pdf_size": 2692,
+            "description": ""
+        }
+    }
+]

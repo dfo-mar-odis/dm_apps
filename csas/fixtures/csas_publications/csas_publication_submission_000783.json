@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 783,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the cod stock in NAFO Divisions 2J+3KL.",
+            "title_fr": "Évaluation du stock de morue dans les divisions 2J+3KL de l'OPANO",
+            "pub_year": 2001,
+            "lead_author_2": "G.R. Lilly, P.A. Shelton, J. Brattey, N.G. Cadigan, B.P. Healey, E.F. Murphy, and D.E. Stansbury",
+            "pub_num": "044",
+            "pages": 149,
+            "pdf_size": 7050,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 567,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The potential impact of seal and seabird predation on North American Atlantic salmon",
+            "pub_year": 2000,
+            "lead_author_2": "Cairns, D.K., Reddin, D.G.",
+            "pub_num": "012",
+            "pages": 36,
+            "pdf_size": 791,
+            "description": ""
+        }
+    }
+]

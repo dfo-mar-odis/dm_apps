@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1604,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Croissance du homard, Homarus americanus, dans les parties nord et sud de l'archipel des Iles-de-la-Madeleine",
+            "pub_year": 1985,
+            "lead_author_2": "P. Dubé",
+            "pub_num": "097",
+            "description": ""
+        }
+    }
+]

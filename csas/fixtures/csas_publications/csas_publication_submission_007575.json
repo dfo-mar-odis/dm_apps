@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7575,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Status of Cusk (Brosme brosme) in NAFO Divisions 4VWX5Z Under the Precautionary Approach Framework",
+            "title_fr": "Situation du brosme (Brosme brosme) dans les divisions 4VWX5Z de l'OPANO au regard du cadre de l'approche de précaution",
+            "pub_year": 2016,
+            "lead_author_2": "Don Clark",
+            "pub_num": "014",
+            "pages": 4,
+            "pdf_size": 97,
+            "description": ""
+        }
+    }
+]

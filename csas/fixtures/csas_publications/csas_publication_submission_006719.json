@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6719,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of Thorny Skate (Amblyraja radiata Donovan, 1808) in NAFO Subdivision 3Ps",
+            "lead_author_2": "Mark Simpson",
+            "description": ""
+        }
+    }
+]

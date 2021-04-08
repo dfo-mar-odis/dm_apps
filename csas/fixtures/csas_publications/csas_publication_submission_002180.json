@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2180,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Effects of changing fishing mortality on Atlantic salmon (Salmo salar L.) egg deposition in Gander River",
+            "pub_year": 1992,
+            "lead_author_2": "T.R. Porter; M.F. O'Connell",
+            "pub_num": "032",
+            "pages": 16,
+            "description": ""
+        }
+    }
+]

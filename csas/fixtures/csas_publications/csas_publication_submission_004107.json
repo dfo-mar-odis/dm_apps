@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4107,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Harvests in various fisheries for salmonids and environmental conditions in Labrador, 2003",
+            "title_fr": "Captures dans diverses pêches de salmonidés et conditions environnementales dans le Labrador en 2003",
+            "pub_year": 2004,
+            "lead_author_2": "Reddin, D.G., W. King, S. Oliver, R. Nuna, R. J. Poole.",
+            "pub_num": "111",
+            "pages": 24,
+            "pdf_size": 284,
+            "description": ""
+        }
+    }
+]

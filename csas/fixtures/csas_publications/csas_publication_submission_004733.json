@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4733,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Scientific Review of the Environmental Registration Document for the Proposed Alton Natural Gas Storage Project",
+            "title_fr": "Examen scientifique du document d'inscription à l'évaluation environnementale pour le projet de stockage de gaz naturel proposé par Alton",
+            "pub_year": 2007,
+            "lead_author_2": "Worcester, T.",
+            "pub_num": "013",
+            "pages": 8,
+            "pdf_size": 50,
+            "description": ""
+        }
+    }
+]

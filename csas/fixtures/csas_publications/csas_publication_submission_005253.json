@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5253,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Science Evaluation of the Environmental Impact Statement for the Lower Churchill Hydroelectric Generation Project to Identify Deficiencies with Respect to Fish and Fish Habitat",
+            "title_fr": "Évaluation scientifique de l'étude d'impact environnemental du projet de centrale de production hydroélectrique dans la partie inférieure du fleuve Churchill afin de relever les lacunes concernant la protection du poisson et de son habitat",
+            "pub_year": 2009,
+            "lead_author_2": "K. Clarke",
+            "pub_num": "024",
+            "pages": 11,
+            "pdf_size": 116,
+            "description": ""
+        }
+    }
+]

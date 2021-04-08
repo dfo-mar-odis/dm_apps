@@ -406,13 +406,13 @@ def get_project_year_field_list(project_year=None):
 
         # SPECIALIZED EQUIPMENT COMPONENT
         #################################
-        'requires_specialized_equipment',
+        'requires_specialized_equipment|{}'.format(_("requires specialized equipment?")),
         'technical_service_needs' if not project_year or project_year.requires_specialized_equipment else None,
         'mobilization_needs' if not project_year or project_year.requires_specialized_equipment else None,
 
         # FIELD COMPONENT
         #################
-        'has_field_component',
+        'has_field_component|{}'.format(_("has field component?")),
         'vehicle_needs' if not project_year or project_year.has_field_component else None,
         'ship_needs' if not project_year or project_year.has_field_component else None,
         'coip_reference_id' if not project_year or project_year.has_field_component else None,
@@ -438,7 +438,7 @@ def get_project_year_field_list(project_year=None):
         'requires_other_lab_support' if not project_year or project_year.has_lab_component else None,
         'other_lab_support_needs' if not project_year or project_year.has_lab_component else None,
 
-        'it_needs',
+        'it_needs|{}'.format(_("special IT requirements")),
         'additional_notes',
         'coding',
         'submitted',
@@ -571,6 +571,7 @@ def get_activity_update_field_list():
         'activity',
         'status',
         'notes_html|{}'.format("notes"),
+        'metadata|{}'.format("meta"),
     ]
     return my_list
 

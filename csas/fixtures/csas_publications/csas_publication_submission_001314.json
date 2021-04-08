@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1314,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Operating instructions and validation of Marine Fish Division, Scotia-Fundy Region's survey data management system (SMS) and delta distribution analysis package (DAP)",
+            "pub_year": 1986,
+            "lead_author_2": "R. O'Boyle; D. Wallace",
+            "pub_num": "066",
+            "pages": 40,
+            "pdf_size": 2183,
+            "description": ""
+        }
+    }
+]

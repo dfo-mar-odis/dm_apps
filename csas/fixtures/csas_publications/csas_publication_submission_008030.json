@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8030,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of NAFO Divisions 3LNO Haddock",
+            "title_fr": "Évaluation des stocks d'aiglefins dans les divisions 3LNO de l'opano",
+            "pub_year": 2018,
+            "lead_author_2": "Danny Ings",
+            "pub_num": "009",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3739,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 2001 / 2002 Snow crab (Chionoecetes opilio) fishery off southwest Nova Scotia (NAFO Division 4X)",
+            "title_fr": "Évaluation de la pêche du crabe des neiges (Chionoecetes opilio) du sud-ouest de la Nouvelle-Écosse (Division 4X de l'OPANO)",
+            "pub_year": 2003,
+            "lead_author_2": "Biron, M., Sabean, C., Savoie, L., Moriyasu, M.",
+            "pub_num": "013",
+            "pages": 37,
+            "pdf_size": 1542,
+            "description": ""
+        }
+    }
+]

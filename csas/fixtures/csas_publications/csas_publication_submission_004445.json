@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4445,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock Status of Atlantic Salmon (Salmo salar L.) from rivers of the Gulf Region, SFA 15 to 18",
+            "title_fr": "État des stocks de saumon atlantique (Salmo salar L.) des rivières de la Région du Golfe, ZPS 15 à 18",
+            "pub_year": 2006,
+            "lead_author_2": "Chaput, G., P. Cameron, D. Moore, D. Cairns, P. LeBlanc.",
+            "pub_num": "023",
+            "pages": 37,
+            "pdf_size": 827,
+            "description": ""
+        }
+    }
+]

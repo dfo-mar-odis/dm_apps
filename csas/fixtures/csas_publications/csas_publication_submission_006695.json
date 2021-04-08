@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6695,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Information relevant to the identification of critical habitat for Leatherback Sea Turtles (Dermochelys coriacea) in Canadian Pacific waters",
+            "title_fr": "Renseignements pertinents pour la désignation de l'habitat essentiel de la tortue luth (Dermochelys coriacea) dans les eaux canadiennes du Pacifique",
+            "pub_year": 2015,
+            "lead_author_2": "Gregr, E.J., Gryba, R., James, M.C., Brotz, L., and Thornton, S.J.",
+            "pub_num": "079",
+            "pages": 39,
+            "pdf_size": 2438,
+            "description": ""
+        }
+    }
+]

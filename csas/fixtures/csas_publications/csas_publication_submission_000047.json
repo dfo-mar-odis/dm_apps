@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 47,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Decision rules for the 4Vn overwintering herring fishery",
+            "pub_year": 1998,
+            "lead_author_2": "R. Claytor, C. LeBlanc",
+            "pub_num": "048",
+            "description": ""
+        }
+    }
+]

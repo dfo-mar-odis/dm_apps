@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7386,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Habitat-Based Model and Stock-Recruit Productivity Estimates for Coho Salmon in Georgia Strait Mainland, Georgia Strait Vancouver Island and Lower Fraser Management Units",
+            "title_fr": "Modèle fondé sur l'habitat et estimations de la productivité stock-recrutement du saumon coho dans les zones de gestion du détroit de Georgie (continent), du détroit de Georgie (île de Vancouver) et du bas Fraser",
+            "pub_year": 2015,
+            "lead_author_2": "Noble, C.A.J., Korman J. and Bocking, R.",
+            "pub_num": "050",
+            "pages": 101,
+            "pdf_size": 2342,
+            "description": ""
+        }
+    }
+]

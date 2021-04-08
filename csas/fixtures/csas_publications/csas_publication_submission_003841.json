@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3841,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Central Coast Integrated Management Marine Environmental Quality Workshop; June 5-7, 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Jamieson, G.S., Bauer, B., Vandermeulen, H.",
+            "pub_num": "013",
+            "pages": 86,
+            "pdf_size": 510,
+            "description": ""
+        }
+    }
+]

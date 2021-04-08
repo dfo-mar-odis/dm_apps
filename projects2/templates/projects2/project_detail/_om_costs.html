@@ -6,7 +6,7 @@
 
 <div class="mb-5">
   <div class="mb-2 neighbours">
-    <h2>{% trans "O&M Costs" %}</h2>
+    <p  class="lead">{% trans "O&M Costs" %}</p>
   </div>
 
   <div v-if="!om_cost_loading" class="mb-3 neighbours">
@@ -38,51 +38,34 @@
       {% trans "No O&M costs have been added to this year of the project" %}
     </div>
 
-    <table
-      v-else
-      class="table table-sm"
-      style="width: auto"
-    >
+    <table v-else class="table table-sm" style="width: 95%">
       <thead>
-      {% get_om_field_list as om_field_list %}
-      {% for field in om_field_list %}
-        {% if field == "description" %}
-          <th style="width: 600px">
-            {% get_verbose_label random_om_cost field %}
-          </th>
-        {% else %}
-          <th>
-            {% get_verbose_label random_om_cost field %}
-          </th>
-        {% endif %}
-      {% endfor %}
+      <tr>
+        <th style="width: 125px">{% trans "Category type" %}</th>
+        <th style="width: 175px">${omCostLabels.om_category}</th>
+        <th>${omCostLabels.description}</th>
+        <th style="width: 120px">${omCostLabels.funding_source}</th>
+        <th style="width: 120px">${omCostLabels.amount}</th>
+      </tr>
       </thead>
       <tbody>
       <tr v-for="(item, index) in om_costs">
-        {% for field in om_field_list %}
-          {% if "funding_source" in field %}
-            <td class="w150">
-              <span v-if="isABase(item.funding_source_display)" class="a-base py-1 px-1">${item.funding_source_display | nz }</span>
-              <span v-else-if="isBBase(item.funding_source_display)" class="b-base py-1 px-1">${item.funding_source_display | nz }</span>
-              <span v-else-if="isCBase(item.funding_source_display)" class="c-base py-1 px-1">${item.funding_source_display | nz }</span>
-              <span v-else>${item.funding_source_display | nz }</span>
-            </td>
-          {% elif "category_type" in field %}
-            <td>${item.category_type | nz }</td>
-          {% elif "om_category" in field %}
-            <td>${item.om_category_display | nz }</td>
-          {% elif "amount" in field %}
-            <td>
-              <span v-if="item.amount == 0||!item.amount" class="major-error py-1 px-1">${item.amount | currencyFormat}</span>
-              <span v-else>${item.amount | currencyFormat}</span>
-            </td>
-          {% else %}
-            <td>${ item.{{ field }} | nz}</td>
-          {% endif %}
-        {% endfor %}
+        <td>${item.category_type|nz}</td>
+        <td>${item.om_category_display|nz}</td>
+        <td>${item.description|nz}</td>
+        <td>
+          <span v-if="isABase(item.funding_source_display)" class="a-base py-1 px-1">${item.funding_source_display | nz }</span>
+          <span v-else-if="isBBase(item.funding_source_display)" class="b-base py-1 px-1">${item.funding_source_display | nz }</span>
+          <span v-else-if="isCBase(item.funding_source_display)" class="c-base py-1 px-1">${item.funding_source_display | nz }</span>
+          <span v-else>${item.funding_source_display | nz }</span>
+        </td>
+        <td>
+          <span v-if="item.amount == 0||!item.amount" class="major-error py-1 px-1">${item.amount | currencyFormat}</span>
+          <span v-else>${item.amount | currencyFormat}</span>
+        </td>
         <td class="to-the-right" v-if="canModify">
-          <button @click="openOMCostModal(item)" class="no-print"><span class="mdi mdi-pencil"></span></button>
-          <button @click="deleteOMCost(item)" class="no-print"><span class="mdi mdi-delete"></span></button>
+          <button @click="openOMCostModal(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-pencil"></span></button>
+          <button @click="deleteOMCost(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-delete"></span></button>
         </td>
       </tr>
       </tbody>

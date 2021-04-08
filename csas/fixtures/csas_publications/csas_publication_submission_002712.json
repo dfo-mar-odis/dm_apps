@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2712,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Regional Advisory Process Meeting on the Level of Allowable Harm for Inner Bay of Fundy Atlantic Salmon in Support of Species at Risk; 6 April 2004",
+            "title_fr": "Compte rendu d'une réunion du Processus consultatif régional au sujet des dommages acceptables au saumon atlantique de l'arrière-baie de Fundy en tant qu'espèce en péril; le 6 avril 2004",
+            "pub_year": 2004,
+            "lead_author_2": "O'Boyle, R.",
+            "pub_num": "020",
+            "pages": 19,
+            "pdf_size": 104,
+            "description": ""
+        }
+    }
+]

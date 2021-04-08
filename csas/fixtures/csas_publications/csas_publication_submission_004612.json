@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4612,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of Herring in the Southern Gulf of St. Lawrence (NAFO Div. 4T)",
+            "title_fr": "Évaluation du hareng du sud du golfe du Saint-Laurent (division 4T de l'OPANO)",
+            "pub_year": 2007,
+            "lead_author_2": "LeBlanc, C.",
+            "pub_num": "005",
+            "pages": 12,
+            "pdf_size": 150,
+            "description": ""
+        }
+    }
+]

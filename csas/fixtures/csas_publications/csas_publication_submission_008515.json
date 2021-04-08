@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8515,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An update of american Plaice (Hippoglossoides platessoides) in Atlantic Canada in a species-at-risk context",
+            "lead_author_2": "L. Wheeland et al.",
+            "description": ""
+        }
+    }
+]

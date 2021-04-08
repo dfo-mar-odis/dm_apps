@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6529,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Southern Upland Atlantic Salmon: Status, Past and Present Abundance, Life History and Trends",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon de l'Atlantique des hautes terres du Sud : Situation, abondance passée et actuelle, cycle biologique et tendances",
+            "pub_year": 2013,
+            "lead_author_2": "J. Gibson (for H. Bowlby on mat leave)",
+            "pub_num": "005",
+            "pages": 77,
+            "pdf_size": 1258,
+            "description": ""
+        }
+    }
+]

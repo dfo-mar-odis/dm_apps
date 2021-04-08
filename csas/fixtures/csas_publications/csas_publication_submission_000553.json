@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 553,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An assessment of Kitsumkalum River summer chinook, a north coast indicator stock",
+            "pub_year": 1999,
+            "lead_author_2": "McNicol, R.E.",
+            "pub_num": "164",
+            "pages": 49,
+            "pdf_size": 3683,
+            "description": ""
+        }
+    }
+]

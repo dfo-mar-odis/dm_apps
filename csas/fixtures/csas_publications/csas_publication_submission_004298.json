@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4298,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Prey selection and food sharing by fish-eating 'resident' killer whales (Orcinus orca) in British Columbia",
+            "title_fr": "Sélection des proies et partage de la nourriture par les épaulards (Orcinus orca) « résidants » piscivores, en Colombie-Britannique",
+            "pub_year": 2005,
+            "lead_author_2": "Ford, J.K.B., G.M. Ellis.",
+            "pub_num": "041",
+            "pages": 34,
+            "pdf_size": 265,
+            "description": ""
+        }
+    }
+]

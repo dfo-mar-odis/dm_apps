@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1751,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1986 4T herring gillnet questionnaire",
+            "pub_year": 1987,
+            "lead_author_2": "G. Nielsen",
+            "pub_num": "061",
+            "pages": 221,
+            "pdf_size": 1232,
+            "description": ""
+        }
+    }
+]

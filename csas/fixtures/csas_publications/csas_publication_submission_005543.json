@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5543,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 2009 German Bank Spawning Ground Tagging Turnover Rates ",
+            "title_fr": "Taux de roulement du hareng dans les frayères du banc German en 2009 d'après une opération de marquage",
+            "pub_year": 2010,
+            "lead_author_2": "Emily Maxner, G.D. Melvin, M.J. Power, T. Worcester and V. Myra",
+            "pub_num": "110",
+            "pages": 40,
+            "pdf_size": 228,
+            "description": ""
+        }
+    }
+]

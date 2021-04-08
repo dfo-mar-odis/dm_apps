@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6606,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Analyses of newly molted commercial-sized male crab percentages in landings in the southwestern Gulf of St. Lawrence snow crab fishery (Area 12): Why the estimated percentages were abnormally higher in the 2009 and 2010 seasons?",
+            "title_fr": "Analyses des pourcentages de mâles nouvellement mués dans les débarquements de la pêcherie du crabe des neiges (zone 12) dans le sud du golfe du Saint-Laurent : Pourquoi les pourcentages estimés étaient anormalement élevés en 2009 et 2010 ?",
+            "pub_year": 2012,
+            "pub_num": "118",
+            "pages": 19,
+            "pdf_size": 201,
+            "description": ""
+        }
+    }
+]

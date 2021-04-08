@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7214,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information to support the Ikaluit Lake (Robert Peel Inlet) Arctic Char (Salvelinus alpinus) Assessment",
+            "lead_author_2": "Z. Martin and R. Tallman",
+            "description": ""
+        }
+    }
+]

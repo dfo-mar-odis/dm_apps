@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3271,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Movements of Atlantic cod (Gadus morhua) in NAFO Subdiv. 3Ps and updated estimates of exploitation from tagging experiments in 1997-2002",
+            "title_fr": "Déplacements de la morue (Gadus morhua) dans la sous-division 3Ps de l'OPANO et estimations mises à jour de l'exploitation d'après des expériences d'étiquetage de poissons effectuées de 1997 à 2002",
+            "pub_year": 2002,
+            "lead_author_2": "J. Brattey, D. R. Porter, and C. W. George",
+            "pub_num": "097",
+            "pages": 27,
+            "pdf_size": 2330,
+            "description": ""
+        }
+    }
+]

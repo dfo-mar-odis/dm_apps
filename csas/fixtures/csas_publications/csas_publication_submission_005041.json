@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5041,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Population Viability Analysis of Inner Bay of Fundy Atlantic Salmon with and without Live Gene Banking",
+            "title_fr": "Analyse de la viabilité des populations du saumon atlantique de l'arrière-baie de Fundy avec et sans banques de gènes vivants",
+            "pub_year": 2008,
+            "lead_author_2": "A.J.F. Gibson, H.D. Bowlby, J.R. Bryan, P.G. Amiro",
+            "pub_num": "057",
+            "pages": 77,
+            "pdf_size": 1568,
+            "description": ""
+        }
+    }
+]

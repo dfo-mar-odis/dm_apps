@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1722,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An update of the status of the witch flounder resource in NAFO Divisions 2J, 3K and 3L",
+            "pub_year": 1987,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "033",
+            "pages": 17,
+            "pdf_size": 1234,
+            "description": ""
+        }
+    }
+]

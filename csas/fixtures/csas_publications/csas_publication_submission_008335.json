@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8335,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Assessment Framework for 4X5Y Atlantic Cod: Part 2 – Review of Modelling Approaches, November 6-7, 2018",
+            "lead_author_2": "Kirsten Clark",
+            "description": ""
+        }
+    }
+]

@@ -618,5 +618,1295 @@
             "description_en": null,
             "description_fr": null
         }
+    },
+    {
+        "model": "csas.SttStatus",
+        "pk": 1,
+        "fields": {
+            "name": "On",
+            "nom": "On(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.SttStatus",
+        "pk": 2,
+        "fields": {
+            "name": "In Planning",
+            "nom": "In Planning(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.SttStatus",
+        "pk": 3,
+        "fields": {
+            "name": "Internal",
+            "nom": "Internal(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.SttStatus",
+        "pk": 4,
+        "fields": {
+            "name": "Off",
+            "nom": "Off(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.SttStatus",
+        "pk": 5,
+        "fields": {
+            "name": "Cancelled",
+            "nom": "Cancelled(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MeqQuarter",
+        "pk": 1,
+        "fields": {
+            "name": "Spring (April-June)",
+            "nom": "Spring (April-June)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MeqQuarter",
+        "pk": 2,
+        "fields": {
+            "name": "Summer (July-September)",
+            "nom": "Summer (July-September)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MeqQuarter",
+        "pk": 3,
+        "fields": {
+            "name": "Fall (October-December)",
+            "nom": "Fall (October-December)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MeqQuarter",
+        "pk": 4,
+        "fields": {
+            "name": "Winter (January-March)",
+            "nom": "Winter (January-March)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 1,
+        "fields": {
+            "name": "January",
+            "nom": "January(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 2,
+        "fields": {
+            "name": "February",
+            "nom": "February(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 3,
+        "fields": {
+            "name": "March",
+            "nom": "March(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 4,
+        "fields": {
+            "name": "April",
+            "nom": "April(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 5,
+        "fields": {
+            "name": "May",
+            "nom": "May(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 6,
+        "fields": {
+            "name": "June",
+            "nom": "June(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 7,
+        "fields": {
+            "name": "July",
+            "nom": "July(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 8,
+        "fields": {
+            "name": "August",
+            "nom": "August(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 9,
+        "fields": {
+            "name": "September",
+            "nom": "September(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 10,
+        "fields": {
+            "name": "October",
+            "nom": "October(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 11,
+        "fields": {
+            "name": "November",
+            "nom": "November(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MemMeetingMonth",
+        "pk": 12,
+        "fields": {
+            "name": "December",
+            "nom": "December(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 1,
+        "fields": {
+            "name": "Alberta",
+            "nom": "Alberta(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 2,
+        "fields": {
+            "name": "British Columbia",
+            "nom": "British Columbia(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 3,
+        "fields": {
+            "name": "Manitoba",
+            "nom": "Manitoba(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 4,
+        "fields": {
+            "name": "New Brunswick",
+            "nom": "New Brunswick(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 5,
+        "fields": {
+            "name": "Newfoundland and Labrador",
+            "nom": "Newfoundland and Labrador(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 6,
+        "fields": {
+            "name": "Northwest Territories",
+            "nom": "Northwest Territories(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 7,
+        "fields": {
+            "name": "Nova Scotia",
+            "nom": "Nova Scotia(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 8,
+        "fields": {
+            "name": "Nunavut",
+            "nom": "Nunavut(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 9,
+        "fields": {
+            "name": "Ontario",
+            "nom": "Ontario(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 10,
+        "fields": {
+            "name": "Prince Edward Island",
+            "nom": "Prince Edward Island(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 11,
+        "fields": {
+            "name": "Quebec",
+            "nom": "Quebec(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 12,
+        "fields": {
+            "name": "Saskatchewan",
+            "nom": "Saskatchewan(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationProv",
+        "pk": 13,
+        "fields": {
+            "name": "Yukon",
+            "nom": "Yukon(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 11,
+        "fields": {
+            "name": "Banff",
+            "nom": "Banff(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 12,
+        "fields": {
+            "name": "Calgary",
+            "nom": "Calgary(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 13,
+        "fields": {
+            "name": "Edmonton",
+            "nom": "Edmonton(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 14,
+        "fields": {
+            "name": "Lethbridge",
+            "nom": "Lethbridge(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 15,
+        "fields": {
+            "name": "Red Deer",
+            "nom": "Red Deer(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 16,
+        "fields": {
+            "name": "St. Albert",
+            "nom": "St. Albert(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 21,
+        "fields": {
+            "name": "Abbotsford",
+            "nom": "Abbotsford(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 22,
+        "fields": {
+            "name": "Burnaby",
+            "nom": "Burnaby(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 23,
+        "fields": {
+            "name": "Kelowna",
+            "nom": "Kelowna(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 24,
+        "fields": {
+            "name": "Richmond",
+            "nom": "Richmond(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 25,
+        "fields": {
+            "name": "Vancouver",
+            "nom": "Vancouver(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 26,
+        "fields": {
+            "name": "Victoria",
+            "nom": "Victoria(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 31,
+        "fields": {
+            "name": "Brandon",
+            "nom": "Brandon(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 32,
+        "fields": {
+            "name": "Portage la Prairie",
+            "nom": "Portage la Prairie(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 33,
+        "fields": {
+            "name": "Steinbach",
+            "nom": "Steinbach(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 34,
+        "fields": {
+            "name": "Thompson",
+            "nom": "Thompson(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 35,
+        "fields": {
+            "name": "Winnipeg",
+            "nom": "Winnipeg(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 41,
+        "fields": {
+            "name": "Fredericton",
+            "nom": "Fredericton(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 42,
+        "fields": {
+            "name": "Moncton",
+            "nom": "Moncton(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 43,
+        "fields": {
+            "name": "Quispamsis-Rothesay",
+            "nom": "Quispamsis-Rothesay(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 44,
+        "fields": {
+            "name": "Saint Andrews",
+            "nom": "Saint Andrews(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 45,
+        "fields": {
+            "name": "Saint John",
+            "nom": "Saint John(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 51,
+        "fields": {
+            "name": "Conception Bay South",
+            "nom": "Conception Bay South(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 52,
+        "fields": {
+            "name": "Corner Brook",
+            "nom": "Corner Brook(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 53,
+        "fields": {
+            "name": "Mount Pearl",
+            "nom": "Mount Pearl(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 54,
+        "fields": {
+            "name": "Paradise",
+            "nom": "Paradise(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 55,
+        "fields": {
+            "name": "St. John's",
+            "nom": "St. John's(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 61,
+        "fields": {
+            "name": "Fort Smith",
+            "nom": "Fort Smith(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 62,
+        "fields": {
+            "name": "Hay River",
+            "nom": "Hay River(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 63,
+        "fields": {
+            "name": "Inuvik",
+            "nom": "Inuvik(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 64,
+        "fields": {
+            "name": "Yellowknife",
+            "nom": "Yellowknife(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 71,
+        "fields": {
+            "name": "Antigonish",
+            "nom": "Antigonish(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 72,
+        "fields": {
+            "name": "Bridgewater",
+            "nom": "Bridgewater(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 73,
+        "fields": {
+            "name": "Cape Breton - Sydney",
+            "nom": "Cape Breton - Sydney(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 74,
+        "fields": {
+            "name": "Glace Bay",
+            "nom": "Glace Bay(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 75,
+        "fields": {
+            "name": "Halifax",
+            "nom": "Halifax(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 76,
+        "fields": {
+            "name": "Pictou",
+            "nom": "Pictou(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 77,
+        "fields": {
+            "name": "Truro",
+            "nom": "Truro(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 78,
+        "fields": {
+            "name": "Yarmouth",
+            "nom": "Yarmouth(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 81,
+        "fields": {
+            "name": "Arviat",
+            "nom": "Arviat(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 82,
+        "fields": {
+            "name": "Baker Lake",
+            "nom": "Baker Lake(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 83,
+        "fields": {
+            "name": "Cambridge Bay",
+            "nom": "Cambridge Bay(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 84,
+        "fields": {
+            "name": "Iqaluit",
+            "nom": "Iqaluit(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 85,
+        "fields": {
+            "name": "Rankin Inlet",
+            "nom": "Rankin Inlet(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 91,
+        "fields": {
+            "name": "Brampton",
+            "nom": "Brampton(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 92,
+        "fields": {
+            "name": "Hamilton",
+            "nom": "Hamilton(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 93,
+        "fields": {
+            "name": "Kitchener",
+            "nom": "Kitchener(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 94,
+        "fields": {
+            "name": "London",
+            "nom": "London(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 95,
+        "fields": {
+            "name": "Mississauga",
+            "nom": "Mississauga(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 96,
+        "fields": {
+            "name": "Ottawa",
+            "nom": "Ottawa(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 97,
+        "fields": {
+            "name": "Richmond Hill",
+            "nom": "Richmond Hill(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 98,
+        "fields": {
+            "name": "Toronto",
+            "nom": "Toronto(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 99,
+        "fields": {
+            "name": "Windsor",
+            "nom": "Windsor(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 101,
+        "fields": {
+            "name": "Charlottetown",
+            "nom": "Charlottetown(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 102,
+        "fields": {
+            "name": "Cornwall",
+            "nom": "Cornwall(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 103,
+        "fields": {
+            "name": "Stratford",
+            "nom": "Stratford(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 104,
+        "fields": {
+            "name": "Summerside",
+            "nom": "Summerside(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 105,
+        "fields": {
+            "name": "Three Rivers",
+            "nom": "Three Rivers(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 111,
+        "fields": {
+            "name": "Montreal",
+            "nom": "Montreal(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 112,
+        "fields": {
+            "name": "Ottawa - Gatineau",
+            "nom": "Ottawa - Gatineau(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 113,
+        "fields": {
+            "name": "Quebec City",
+            "nom": "Quebec City(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 114,
+        "fields": {
+            "name": "Sherbrooke",
+            "nom": "Sherbrooke(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 115,
+        "fields": {
+            "name": "Trois-Rivières",
+            "nom": "Trois-Rivières(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 121,
+        "fields": {
+            "name": "Moose Jaw",
+            "nom": "Moose Jaw(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 122,
+        "fields": {
+            "name": "Prince Albert",
+            "nom": "Prince Albert(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 123,
+        "fields": {
+            "name": "Regina",
+            "nom": "Regina(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 124,
+        "fields": {
+            "name": "Saskatoon",
+            "nom": "Saskatoon(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 125,
+        "fields": {
+            "name": "Swift Current",
+            "nom": "Swift Current(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 131,
+        "fields": {
+            "name": "Carmacks",
+            "nom": "Carmacks(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 132,
+        "fields": {
+            "name": "Dawson",
+            "nom": "Dawson(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 133,
+        "fields": {
+            "name": "Haines Junction",
+            "nom": "Haines Junction(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 134,
+        "fields": {
+            "name": "Watson Lake",
+            "nom": "Watson Lake(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.LocLocationCity",
+        "pk": 135,
+        "fields": {
+            "name": "Whitehorse",
+            "nom": "Whitehorse(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.ScpScope",
+        "pk": 1,
+        "fields": {
+            "name": "Regional",
+            "nom": "Regional(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.ScpScope",
+        "pk": 2,
+        "fields": {
+            "name": "Zonal",
+            "nom": "Zonal(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.ScpScope",
+        "pk": 3,
+        "fields": {
+            "name": "National",
+            "nom": "National(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.AptAdvisoryProcessType",
+        "pk": 1,
+        "fields": {
+            "name": "Advisory Meeting",
+            "nom": "Advisory Meeting(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.AptAdvisoryProcessType",
+        "pk": 2,
+        "fields": {
+            "name": "Science Response",
+            "nom": "Science Response(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.AptAdvisoryProcessType",
+        "pk": 3,
+        "fields": {
+            "name": "Frameworks",
+            "nom": "Frameworks(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 1,
+        "fields": {
+            "name": "SAR",
+            "nom": "SAR(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 2,
+        "fields": {
+            "name": "SR",
+            "nom": "SR(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 3,
+        "fields": {
+            "name": "RES",
+            "nom": "RES(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 4,
+        "fields": {
+            "name": "PRO",
+            "nom": "PRO(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 5,
+        "fields": {
+            "name": "SAR-AS",
+            "nom": "SAR-AS(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 6,
+        "fields": {
+            "name": "SRR-RS",
+            "nom": "SRR-RS(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 7,
+        "fields": {
+            "name": "SSR",
+            "nom": "SSR(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PsePublicationSeries",
+        "pk": 8,
+        "fields": {
+            "name": "HSR",
+            "nom": "HSR(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PusPublicationStatus",
+        "pk": 1,
+        "fields": {
+            "name": "In Approvals",
+            "nom": "In Approvals(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.PusPublicationStatus",
+        "pk": 2,
+        "fields": {
+            "name": "Submitted for Posting",
+            "nom": "Submitted for Posting(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MdfMeetingDocsRef",
+        "pk": 1,
+        "fields": {
+            "name": "SAR-AS (Science Advisory Report)",
+            "nom": "SAR-AS (Science Advisory Report)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MdfMeetingDocsRef",
+        "pk": 2,
+        "fields": {
+            "name": "SRR-RS (Science Response)",
+            "nom": "SRR-RS (Science Response)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MdfMeetingDocsRef",
+        "pk": 3,
+        "fields": {
+            "name": "RES (Research Document)",
+            "nom": "RES (Research Document)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MdfMeetingDocsRef",
+        "pk": 4,
+        "fields": {
+            "name": "PRO (Proceedings)",
+            "nom": "PRO (Proceedings)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MdfMeetingDocsRef",
+        "pk": 5,
+        "fields": {
+            "name": "Attendance List",
+            "nom": "Attendance List(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
+    },
+    {
+        "model": "csas.MdfMeetingDocsRef",
+        "pk": 6,
+        "fields": {
+            "name": "Briefing Note(s)",
+            "nom": "Briefing Note(s)(fr)",
+            "description_en": null,
+            "description_fr": null
+        }
     }
 ]

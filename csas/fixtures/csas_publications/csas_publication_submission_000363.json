@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 363,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Selection of silver hake (Merluccius bilinearis) in Kapron Codends - (A preliminary report)",
+            "pub_year": 1977,
+            "lead_author_2": "D. Clay",
+            "pub_num": "020",
+            "pages": 57,
+            "pdf_size": 975,
+            "description": ""
+        }
+    }
+]

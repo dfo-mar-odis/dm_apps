@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4401,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Status Report on Canary rockfish Sebastes pinniger",
+            "title_fr": "Rapport sur l'état du sébaste canari, Sebastes pinniger",
+            "pub_year": 2005,
+            "lead_author_2": "Stanley, R.D., P. Starr, N. Olsen, K. Rutherford, S.S. Wallace.",
+            "pub_num": "089",
+            "pages": 113,
+            "pdf_size": 1574,
+            "description": ""
+        }
+    }
+]

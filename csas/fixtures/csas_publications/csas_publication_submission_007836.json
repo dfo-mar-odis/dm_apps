@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7836,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Fine-scale population genetics of Eastern Beaufort Sea belugas (Delphinapterus leucas)",
+            "lead_author_2": "L. Postma",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3501,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update on Stock Status of American Lobster, Homarus americanus, Lobster Fishing Areas 34",
+            "title_fr": "Le point sur l'état du stock de homard d'Amérique, Homarus americanus, de la zone de pêche du homard 34",
+            "pub_year": 2001,
+            "lead_author_2": "D.S. Pezzack, C.F. Frail, P. Lawton, D.A. Robichaud, M.B. Strong",
+            "pub_num": "156",
+            "pages": 67,
+            "pdf_size": 4650,
+            "description": ""
+        }
+    }
+]

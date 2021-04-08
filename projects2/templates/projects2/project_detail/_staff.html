@@ -7,7 +7,7 @@
 <div class="mb-5">
 
   <div class="mb-2 neighbours">
-    <h2>{% trans "Staff" %}</h2>
+    <p class="lead">{% trans "Staff" %}</p>
   </div>
 
   <div class="mb-3 neighbours btn-group">
@@ -85,8 +85,8 @@
           {% endif %}
         {% endfor %}
         <td class="to-the-right" v-if="canModify">
-          <button @click="openStaffModal(s)" class="no-print"><span class="mdi mdi-pencil"></span></button>
-          <button @click="deleteStaffMember(s)" class="no-print"><span class="mdi mdi-delete"></span></button>
+          <button @click="openStaffModal(s)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-pencil"></span></button>
+          <button @click="deleteStaffMember(s)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-delete"></span></button>
         </td>
       </tr>
       </tbody>

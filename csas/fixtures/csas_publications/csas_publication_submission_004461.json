@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4461,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "A review of longspine thornyhead Sebastolobus altivelis along the Pacific coast of Canada: biology, distribution, and abundance trends",
+            "title_fr": "Examen du sébastolobe à longues épines (Sebastolobus altivelis) dans les eaux de la côte canadienne du Pacifique : biologie, répartition et tendances en matière d'abondance",
+            "pub_year": 2005,
+            "lead_author_2": "Haigh, R., Olsen, N., Starr, P.",
+            "pub_num": "097",
+            "pages": 44,
+            "pdf_size": 867,
+            "description": ""
+        }
+    }
+]

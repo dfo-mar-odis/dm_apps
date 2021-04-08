@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5134,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Assessment of Threehorn Wartyback (Obliquaria reflexa) in Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'obliquaire à trois cornes (Obliquaria reflexa) au Canada",
+            "pub_year": 2014,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "014",
+            "pages": 22,
+            "pdf_size": 962,
+            "description": ""
+        }
+    }
+]

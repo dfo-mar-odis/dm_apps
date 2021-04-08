@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1328,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Fluctuations in mating, reproduction and recruitment of the snow crab populaton in Bonne Bay: Implications to fisheries management",
+            "pub_year": 1989,
+            "lead_author_2": "M. Comeau; G.Y. Conan; D.A. Jones",
+            "pub_num": "079",
+            "pages": 38,
+            "pdf_size": 1654,
+            "description": ""
+        }
+    }
+]

@@ -14,10 +14,10 @@
 {% block content %}
   <div id="app">
 
-    <div id="mySidebar" class="sidebar">
+    <div id="mySidebar" :class="{'sidebar-opened':showSidebar,'sidebar-closed':!showSidebar}">
       {% include "projects2/explore_projects/_console.html" %}
     </div>
-    <div id="main" class="">
+    <div :class="{'main-opened':showSidebar, 'main-closed':!showSidebar}">
 
       <div class="row container-fluid bg-light curvy">
         <div class="col">
@@ -65,9 +65,13 @@
                 {#            @click="goProjectDetail(p)"#}
               >
                 <td>${p.project.id}</td>
-                <td>${p.project.title}</td>
+                <td>
+                  <a class="text-primary pointy" @click="goProjectDetail(p)">
+                    ${p.project.title}
+                  </a>
+                </td>
                 <td>${p.display_name}</td>
-                <td v-html="p.formatted_status"></td>
+                <td :class="p.status_class">${p.status_display}</td>
                 {#            <td>${p.project.section}</td>#}
                 <td>${p.project.default_funding_source}</td>
                 <td>${p.project.functional_group}</td>
@@ -76,11 +80,11 @@
                   <span v-if="p.project.is_hidden" class="highlight">{% trans "Yes" %}</span>
                   <span v-else>{% trans "No" %}</span>
                 </td>
-                <td>
-                  <button @click="goProjectDetail(p)" data-toggle="tooltip" title="{% trans "Open in separate window" %}">
-                    <span class="mdi mdi-arrow-top-right"></span>
-                  </button>
-                </td>
+                {#                <td>#}
+                {#                  <button @click="goProjectDetail(p)" data-toggle="tooltip" title="{% trans "Open in separate window" %}">#}
+                {#                    <span class="mdi mdi-arrow-top-right"></span>#}
+                {#                  </button>#}
+                {#                </td>#}
               </tr>
               </tbody>
             </table>
@@ -113,7 +117,7 @@
 {% block body_js %}
   {{ block.super }}
 
-  <script src="{% static '/projects2/mainExploreProjects.js' %}?version=1.0" type="application/javascript"></script>
+  <script src="{% static '/projects2/mainExploreProjects.js' %}?version=1.1" type="application/javascript"></script>
   <script type="application/javascript">
   //reload other scripts that we care about
   </script>

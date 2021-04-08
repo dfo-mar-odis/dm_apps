@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1179,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Eastern grey seal (Halichoerus gryplus) research report and 1980 stock assessment",
+            "pub_year": 1981,
+            "lead_author_2": "K. Zwanenburg; B. Beck; S.J. Smith",
+            "pub_num": "081",
+            "pages": 38,
+            "pdf_size": 12009,
+            "description": ""
+        }
+    }
+]

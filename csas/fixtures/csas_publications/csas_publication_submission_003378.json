@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3378,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the status of 4VWX/5 White Hake, 2001",
+            "title_fr": "Évaluation de l'état du stock de merluche blanche dans 4VWX/5 en 2001",
+            "pub_year": 2001,
+            "lead_author_2": "A. Bundy, M. Fowler, W. MacEachern, P. Fanning",
+            "pub_num": "104",
+            "pages": 106,
+            "pdf_size": 5610,
+            "description": ""
+        }
+    }
+]

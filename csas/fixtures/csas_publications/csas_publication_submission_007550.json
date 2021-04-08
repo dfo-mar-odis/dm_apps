@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7550,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Lobster (Homarus americanus) in Lobster Fishing Area 41 (4X + 5Zc): 2015 Stock Status Update",
+            "title_fr": "Homard (Homarus americanus) de la zone de pêche du homard 41 (4X + 5Zc) : Mise à jour sur l'état du stock de 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Brad Hubley",
+            "pub_num": "004",
+            "pages": 6,
+            "pdf_size": 292,
+            "description": ""
+        }
+    }
+]

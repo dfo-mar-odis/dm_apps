@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8205,
+        "fields": {
+            "series": 3,
+            "lead_region": [4, 5],
+            "title_en": "Review of international protocols and recommended mitigation for the use of autonomous unmanned vehicles (AUVs) in the study of marine mammals",
+            "lead_author_2": "J. Lawson and A.L. Kowenbuerg",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5280,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic Halibut on the Scotian Shelf and Southern Grand Banks (NAFO divisions 3NOPs4VWX5Zc)",
+            "title_fr": "Évaluation du flétan de l'Atlantique du plateau néo-écossais et du sud des Grands Bancs (Divisions 3NOPs4VWX5Zc de l'OPANO)",
+            "pub_year": 2009,
+            "lead_author_2": "Armsworthy, S.",
+            "pub_num": "036",
+            "pages": 12,
+            "pdf_size": 236,
+            "description": ""
+        }
+    }
+]

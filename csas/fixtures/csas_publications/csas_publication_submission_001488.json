@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1488,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "White hake (Urophycis tenuis, Mitchill) status during 1983 in the southern Gulf of St. Lawrence",
+            "pub_year": 1984,
+            "lead_author_2": "D. Clay; T. Hurlbut; L. Currie; H. Clay",
+            "pub_num": "082",
+            "pages": 9,
+            "pdf_size": 637,
+            "description": ""
+        }
+    }
+]

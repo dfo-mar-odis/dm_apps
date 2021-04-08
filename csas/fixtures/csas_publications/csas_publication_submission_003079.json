@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3079,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Baffin Bay Narwhal",
+            "title_fr": "Narval de la baie de Baffin",
+            "pub_year": 1998,
+            "lead_author_2": "Pierre Richard",
+            "pub_num": "E5-43",
+            "pages": 5,
+            "pdf_size": 240,
+            "description": ""
+        }
+    }
+]

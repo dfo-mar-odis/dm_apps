@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8413,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the national peer review of ballast water exchange plus treatment protocol.",
+            "title_fr": "Compte rendu de l’examen national par les pairs du protocole d’échange et de traitement combinés des eaux de ballast.",
+            "pub_year": 2019,
+            "lead_author_2": "Dawson Ogilvie and Sarah Bailey",
+            "pub_num": "023",
+            "pages": 14,
+            "pdf_size": 545,
+            "description": ""
+        }
+    }
+]

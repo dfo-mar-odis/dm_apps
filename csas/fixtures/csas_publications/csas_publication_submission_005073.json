@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5073,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 7],
+            "title_en": "Advice on selective hunting of Eastern Canadian Arctic-West Greenland bowhead whales",
+            "title_fr": "Avis sur la chasse sélective à la baleine boréale dans l'est de l'Arctique canadien et à l'ouest du Groenland",
+            "pub_year": 2008,
+            "lead_author_2": "P. Richard",
+            "pub_num": "057",
+            "pages": 5,
+            "pdf_size": 510,
+            "description": ""
+        }
+    }
+]

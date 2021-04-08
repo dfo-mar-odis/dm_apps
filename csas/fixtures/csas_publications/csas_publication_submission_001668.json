@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1668,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Overview of Biology for Deep-Sea Red Crab, Geryon quinquedens, in the Northwest Atlantic",
+            "pub_year": 1986,
+            "lead_author_2": "R.W. Elner",
+            "pub_num": "082",
+            "pages": 11,
+            "pdf_size": 741,
+            "description": ""
+        }
+    }
+]

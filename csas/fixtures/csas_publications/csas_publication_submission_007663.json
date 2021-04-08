@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7663,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The spatial association of blue whales (Balaenoptera musculus) with krill patches (Thysanoessa spp. and Meganyctiphanes norvegica) in the estuary and northwestern Gulf of St. Lawrence",
+            "title_fr": "Association spatiale des baleines bleues (Balaenoptera musculus) avec des taches de krill (Thysanoessa spp. et Meganyctiphanes norvegica) dans l'estuaire et le nord-ouest du golfe du Saint-Laurent",
+            "pub_year": 2016,
+            "lead_author_2": "McQuinn, I.H., Gosselin, J.-F., Bourassa, M.-N., Mosnier, A., St-Pierre, J.-F., Plourde, S., Lesage, V., Raymond, A.",
+            "pub_num": "104",
+            "pages": 23,
+            "pdf_size": 1339,
+            "description": ""
+        }
+    }
+]

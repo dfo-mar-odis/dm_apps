@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4430,
+        "fields": {
+            "series": 4,
+            "lead_region": [6, 8],
+            "title_en": "Peer Review videoconference of a document on population status of Sea Otter in British Columbia; November 23, 2005",
+            "title_fr": "Examen par des pairs (par vidéoconférence) d'un document portant sur l'état de la population de loutres de mer en Colombie-Britannique; le 23 novembre 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Simon, P., E. Couture.",
+            "pub_num": "028",
+            "pages": 17,
+            "pdf_size": 93,
+            "description": ""
+        }
+    }
+]

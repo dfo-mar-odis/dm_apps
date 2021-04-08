@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3536,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Northern (2J + 3KL) Cod",
+            "pub_year": 2001,
+            "lead_author_2": "George Lilly",
+            "pub_num": "A2-01",
+            "pages": 16,
+            "description": ""
+        }
+    }
+]

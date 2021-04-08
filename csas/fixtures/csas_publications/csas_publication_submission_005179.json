@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5179,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review of Candidate Limit Reference Points for Pacific Herring in British Columbia using a Closed-loop Simulation Modelling Approach; May 27-28, 2015",
+            "title_fr": "Compte rendu de l'examen par les pairs régional du Pacifique sur les Points de références limite possibles pour hareng du Pacifique en Colombie-Britannique en suivant l'approche du modèle de simulation en boucle fermée; du 27 au 28 mai 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Lesley MacDougall",
+            "pub_num": "016",
+            "pages": 26,
+            "pdf_size": 234,
+            "description": ""
+        }
+    }
+]

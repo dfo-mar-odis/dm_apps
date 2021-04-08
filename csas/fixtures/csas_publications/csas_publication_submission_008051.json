@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8051,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Reassessment of Ecologically and Biologically Significant Areas in the Northern Shelf Bioregion, BC",
+            "lead_author_2": "Nadja Steiner",
+            "description": ""
+        }
+    }
+]

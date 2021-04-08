@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4146,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Relative Strength of the 2001 and 2002 Year-Classes, From Nearshore Surveys Of Demersal Age 0 and 1 Atlantic Cod (Gadus morhua) in NAFO Division 3KL and in Newman Sound, Bonavista Bay",
+            "title_fr": "Effectif relatif des classes d'âge de 2001 et de 2002 d'après les relevés côtiers de la morue (Gadus morhua) démersale âgée de 0 et 1 an dans la division 3KL de l'OPANO et le bras Newman (baie de Bonavista)",
+            "pub_year": 2004,
+            "lead_author_2": "Gregory, R.S., B.J. Laurel, J.E. Linehan, D.W. Ings, D.C. Schneider.",
+            "pub_num": "124",
+            "pages": 19,
+            "pdf_size": 1218,
+            "description": ""
+        }
+    }
+]

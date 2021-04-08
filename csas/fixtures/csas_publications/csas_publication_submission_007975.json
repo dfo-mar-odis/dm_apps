@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7975,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Assessment of nearshore features in the Northern Shelf Bioregion against criteria for determining Ecologically and Biologically Significant Areas (EBSAs)",
+            "title_fr": "Évaluation des caractéristiques semi-côtières en fonction des critères visant à désigner les zones d’importance écologique et biologique (ZIEB) dans la biorégion du plateau Nord.",
+            "pub_year": 2020,
+            "lead_author_2": "Nadja Steiner",
+            "pub_num": "030",
+            "pages": 44,
+            "pdf_size": 1520,
+            "description": ""
+        }
+    }
+]

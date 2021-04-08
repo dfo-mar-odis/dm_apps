@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6440,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Probability of spot prawn (Pandalus platyceros) stocks in fall survey areas in British Columbia being below spawner index reference points during the spawning period",
+            "title_fr": "Probabilité que les stocks de crevette tachetée (Pandalus platyceros) se trouvant dans les zones de la Colombie-Britannique visées par les relevés d'automne se situent sous les points de référence de l'indice de géniteurs pendant la période de frai",
+            "pub_year": 2012,
+            "lead_author_2": "Nicholas Duprey",
+            "pub_num": "041",
+            "pages": 6,
+            "pdf_size": 54,
+            "description": ""
+        }
+    }
+]

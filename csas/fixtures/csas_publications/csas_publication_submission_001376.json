@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1376,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Rocky River stock of Atlantic salmon (Salmo salar L.) in 1993",
+            "pub_year": 1994,
+            "lead_author_2": "C.E. Bourgeois; J.P. Davis; J. O'Brien",
+            "pub_num": "074",
+            "pages": 9,
+            "pdf_size": 260,
+            "description": ""
+        }
+    }
+]

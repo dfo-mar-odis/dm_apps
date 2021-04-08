@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2210,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An overview of capelin in SA2 + Div. 3K and Div. 3L during 1991",
+            "pub_year": 1992,
+            "lead_author_2": "J. Carscadden",
+            "pub_num": "062",
+            "pages": 25,
+            "description": ""
+        }
+    }
+]

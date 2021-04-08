@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2296,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the American plaice stock in NAFO Subarea 2 + Div. 3K",
+            "pub_year": 1993,
+            "lead_author_2": "W.B. Brodie; D. Power; W.R. Bowering",
+            "pub_num": "023",
+            "pages": 28,
+            "pdf_size": 1649,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5025,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Review of Current Studies on Scallop Rake Modifications to Reduce Groundfish Bycatch in the Canadian Offshore Scallop Fishery on Georges Bank",
+            "title_fr": "Revue des études actuelles consacrées à la modification des dragues à pétoncles en vue de réduire les prises accessoires de poissons de fond dans la pêche hauturière du pétoncle sur le banc Georges, au Canada",
+            "pub_year": 2008,
+            "lead_author_2": "S.J. Walsh",
+            "pub_num": "050",
+            "pages": 87,
+            "pdf_size": 2270,
+            "description": ""
+        }
+    }
+]

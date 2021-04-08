@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4942,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Review of Potential Risks and Best Management Practices Associated With Conservation Stocking of American Eels; March 27-28, 2007",
+            "title_fr": "Examen des risques potentiels et des pratiques de gestion exemplaires concernant l'ensemencement d'anguilles d'Amérique à des fins de préservation; les 27 et 28 mars 2007",
+            "pub_year": 2009,
+            "lead_author_2": "Pratt, T., Threader, R., Dumont, P., Mathers, A., Dettmers, J., O’Connor, L.",
+            "pub_num": "031",
+            "pages": 188,
+            "pdf_size": 821,
+            "description": ""
+        }
+    }
+]

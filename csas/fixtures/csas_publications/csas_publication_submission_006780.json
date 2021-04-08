@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6780,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Assessment of Silver Chub (Macrhybopsis storeriana) in Ontario",
+            "title_fr": "Évaluation du potentiel de rétablissement du méné à grandes écailles (Macrhybopsis storeriana) en Ontario",
+            "pub_year": 2013,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "019",
+            "pages": 21,
+            "pdf_size": 499,
+            "description": ""
+        }
+    }
+]

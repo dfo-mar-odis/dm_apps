@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 979,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Cod Zonal Assessment Process, Rimouski, Quebec; 1-12 March 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Denis Rivard, Chairperson",
+            "pub_num": "005",
+            "pages": 141,
+            "pdf_size": 3,
+            "description": ""
+        }
+    }
+]

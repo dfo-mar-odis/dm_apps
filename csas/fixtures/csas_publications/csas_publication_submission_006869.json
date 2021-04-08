@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6869,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings on the National Peer Review of Science guidance for Fisheries Protection Policy: Advice on Offsetting Techniques Managing the Productivity of Freshwater Fisheries; June 4-6, 2013",
+            "title_fr": "Compte rendu de la réunion nationale d’examen par les pairs sur les Lignes directrices scientifiques relatives à la politique sur la protection des pêches : avis sur les techniques de compensation concernant la gestion de la productivité des pêches en eau douce; du 4 au 6 juin 2013",
+            "pub_year": 2017,
+            "lead_author_2": "Erika Thorleifson",
+            "pub_num": "040",
+            "pdf_size": 84,
+            "description": ""
+        }
+    }
+]

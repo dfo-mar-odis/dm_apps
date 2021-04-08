@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5801,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Investigating Changes in Pacific Herring Spawn Density (layers) ",
+            "title_fr": "Étude des changements de la densité du frai du hareng du Pacifique (couches) ",
+            "pub_year": 2011,
+            "lead_author_2": "Doug Hay",
+            "pub_num": "064",
+            "pages": 95,
+            "pdf_size": 1342,
+            "description": ""
+        }
+    }
+]

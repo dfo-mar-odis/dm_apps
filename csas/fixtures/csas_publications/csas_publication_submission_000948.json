@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 948,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Herring Subcommittee Meeting September 3-5, 1997 and the Steering Committee Meeting September 24, 1997",
+            "pub_year": 1997,
+            "lead_author_2": "M. Stocker, Chair",
+            "pub_num": "024",
+            "description": ""
+        }
+    }
+]

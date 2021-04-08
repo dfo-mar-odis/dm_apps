@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1900,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Evaluation of the gaspereau fishery in the Miramichi River and Estuary, 1988",
+            "pub_year": 1989,
+            "lead_author_2": "G.J. Chaput; C.H. LeBlanc",
+            "pub_num": "028",
+            "pages": 39,
+            "pdf_size": 1579,
+            "description": ""
+        }
+    }
+]

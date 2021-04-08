@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1802,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the Nain unit Arctic charr population in 1987",
+            "pub_year": 1988,
+            "lead_author_2": "J.B. Dempson",
+            "pub_num": "006",
+            "pages": 19,
+            "pdf_size": 1040,
+            "description": ""
+        }
+    }
+]

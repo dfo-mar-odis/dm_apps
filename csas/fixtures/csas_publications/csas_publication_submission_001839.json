@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1839,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the Redfish in NAFO Division 3P",
+            "pub_year": 1988,
+            "lead_author_2": "D.B. Atkinson; D. Power",
+            "pub_num": "043",
+            "pages": 49,
+            "pdf_size": 2398,
+            "description": ""
+        }
+    }
+]

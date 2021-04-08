@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3394,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical oceanography of Southern Gulf of St. Lawrence and Sydney Bight Areas of Coastal Cape Breton",
+            "pub_year": 2001,
+            "lead_author_2": "Joël Chassé",
+            "pub_num": "113",
+            "pages": 21,
+            "pdf_size": 3190,
+            "description": ""
+        }
+    }
+]

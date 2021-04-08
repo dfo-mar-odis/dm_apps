@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 659,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Estimation of cod (Gadus morhua) growth in NAFO Subdiv. 3Ps and Divs. 3KL in 1997-1999 from tagging experiments",
+            "pub_year": 2000,
+            "lead_author_2": "Cadigan, N., Brattey, J.",
+            "pub_num": "074",
+            "pages": 49,
+            "pdf_size": 734,
+            "description": ""
+        }
+    }
+]

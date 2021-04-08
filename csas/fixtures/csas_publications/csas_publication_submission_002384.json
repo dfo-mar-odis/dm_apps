@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2384,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) stocks of SFAs 1-11, Newfoundland Region, 1993",
+            "pub_year": 1994,
+            "lead_author_2": "M.F. O'Connell; J.B. Dempson; D.G. Reddin; E.G.M. Ash; N.M. Cochrane",
+            "pub_num": "049",
+            "pages": 79,
+            "pdf_size": 3084,
+            "description": ""
+        }
+    }
+]

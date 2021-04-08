@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1266,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the 4R herring stock in 1982",
+            "pub_year": 1983,
+            "lead_author_2": "D. Tremblay; H. Powles; J. Moores",
+            "pub_num": "033",
+            "pages": 40,
+            "pdf_size": 1813,
+            "description": ""
+        }
+    }
+]

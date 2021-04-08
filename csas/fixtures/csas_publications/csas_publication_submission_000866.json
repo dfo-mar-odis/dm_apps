@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 866,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Some characteristics of winter concentrations of redfish in the southern Gulf of St. Lawrence and Cabot Strait areas",
+            "pub_year": 1978,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch; E.M. LeGrow",
+            "pub_num": "010",
+            "pages": 6,
+            "pdf_size": 1088,
+            "description": ""
+        }
+    }
+]

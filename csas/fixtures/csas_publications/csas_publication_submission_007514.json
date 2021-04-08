@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7514,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of zonal peer review meeting of the development of reference points for Atlantic Salmon that conform to the Precautionary Approach",
+            "lead_author_2": "Geoff Veinott",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 889,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Research on harp seals in 1978",
+            "pub_year": 1978,
+            "lead_author_2": "D.E. Sergeant",
+            "pub_num": "033",
+            "pages": 15,
+            "pdf_size": 672,
+            "description": ""
+        }
+    }
+]

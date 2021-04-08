@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1285,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Influence of variations in freshwater growth on yield of Atlantic Salmon",
+            "pub_year": 1983,
+            "lead_author_2": "E.M.P. Chadwick; G.T. Evans",
+            "pub_num": "052",
+            "pages": 8,
+            "pdf_size": 343,
+            "description": ""
+        }
+    }
+]

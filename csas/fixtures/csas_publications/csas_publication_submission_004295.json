@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4295,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Estimates of a Biologically-Based Spawning Goal and Biological Benchmarks for the Canadian-Origin Taku River Coho Stock Aggregate; November 3-4, 2014",
+            "title_fr": "Compte rendu d'un examen par les pairs de la région du Pacifique sur l'élaboration d'un objectif en matière d'échappées fondé sur des données biologiques sur le saumon coho de la rivière Taku; les 3 et 4 novembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Jeffrey Lemieux",
+            "pub_num": "021",
+            "pages": 26,
+            "pdf_size": 186,
+            "description": ""
+        }
+    }
+]

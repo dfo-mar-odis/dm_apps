@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6992,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Interim Advice for the Development of Sea Cucumber (Parastichopus californicus) Aquaculture in British Columbia",
+            "title_fr": "Avis provisoire concernant le développement de l'aquaculture de l'holothurie du Pacifique (Parastichopus californicus) en Colombie-Britannique",
+            "pub_year": 2014,
+            "pub_num": "005",
+            "pages": 12,
+            "pdf_size": 368,
+            "description": ""
+        }
+    }
+]

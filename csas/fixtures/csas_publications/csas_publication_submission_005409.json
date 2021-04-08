@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5409,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the west coast of Newfoundland herring stocks in 1985",
+            "pub_year": 1986,
+            "lead_author_2": "McQuinn, I.H.",
+            "pub_num": "068",
+            "pages": 41,
+            "pdf_size": 2103,
+            "description": ""
+        }
+    }
+]

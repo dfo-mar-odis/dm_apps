@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5779,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Recent findings on the life history and catches of wolffish (Anarhichas sp.) in research surveys and in the Sentinel Fisheries and Observer Program for the Estuary and Gulf of St-Lawrence",
+            "title_fr": "Nouvelles données sur la biologie et les captures de loups (Anarhichas sp.) dans les relevés de recherche, et dans les Pêches sentinelles et le Programme des observateurs pour l'estuaire et le golfe du Saint-Laurent",
+            "pub_year": 2010,
+            "lead_author_2": "Jean-Denis Dutil",
+            "pub_num": "126",
+            "pages": 81,
+            "pdf_size": 2827,
+            "description": ""
+        }
+    }
+]

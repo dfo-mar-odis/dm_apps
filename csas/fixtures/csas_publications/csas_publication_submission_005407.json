@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5407,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Timing of grey seal pupping on Hay Island",
+            "title_fr": "Période de mise bas chez les phoques gris de l'île Hay",
+            "pub_year": 2009,
+            "lead_author_2": "Hammill, M. O., Bowen, W.D., Blanchard, W.",
+            "pub_num": "091",
+            "pages": 15,
+            "pdf_size": 183,
+            "description": ""
+        }
+    }
+]

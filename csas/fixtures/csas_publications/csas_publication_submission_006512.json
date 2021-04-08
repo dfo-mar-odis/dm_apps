@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6512,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Nova Scotia (4VWX) Snow Crab",
+            "title_fr": "Évaluation du crabe des neiges de la Nouvelle-Écosse (4VWX)",
+            "pub_year": 2012,
+            "lead_author_2": "Jae Choi",
+            "pub_num": "050",
+            "pages": 26,
+            "pdf_size": 1813,
+            "description": ""
+        }
+    }
+]

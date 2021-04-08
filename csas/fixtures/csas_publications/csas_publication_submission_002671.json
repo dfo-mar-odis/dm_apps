@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2671,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Status of anadromous Dolly Varden (Salvelinus malma) of the Rat River, Northwest Territories, as assessed through community-based sampling of the subsistence fishery, August-September 1989-2000",
+            "pub_year": 2001,
+            "lead_author_2": "L.A. Harwood",
+            "pub_num": "090",
+            "pages": 31,
+            "pdf_size": 1280,
+            "description": ""
+        }
+    }
+]

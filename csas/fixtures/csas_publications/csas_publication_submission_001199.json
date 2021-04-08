@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1199,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Summary of discarding and estimates of total removals by Canadian trawlers during the 1981 Divisions 3LNO American plaice fishery",
+            "pub_year": 1982,
+            "lead_author_2": "S.C. Stevenson",
+            "pub_num": "019",
+            "pages": 9,
+            "pdf_size": 420,
+            "description": ""
+        }
+    }
+]

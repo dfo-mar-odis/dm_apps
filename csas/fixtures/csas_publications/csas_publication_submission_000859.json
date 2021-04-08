@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 859,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Recent trends in stock size recruitment and biological characteristics of southern Gulf herring",
+            "pub_year": 1978,
+            "lead_author_2": "G.H Winters",
+            "pub_num": "003",
+            "pages": 17,
+            "pdf_size": 869,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1497,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Southeast coast Newfoundland herring - 1983 assessment",
+            "pub_year": 1984,
+            "lead_author_2": "J.P. Wheeler; E.L. Dalley",
+            "pub_num": "091",
+            "pages": 45,
+            "pdf_size": 1815,
+            "description": ""
+        }
+    }
+]

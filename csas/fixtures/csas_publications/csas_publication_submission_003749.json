@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3749,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Gulf of St. Lawrence (4RST) Greenland Halibut in 2002",
+            "title_fr": "Flétan du Groenland du golfe du Saint-Laurent (4RST) en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Morin, Bernard",
+            "pub_num": "007",
+            "pages": 13,
+            "description": ""
+        }
+    }
+]

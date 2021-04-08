@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5607,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Science Review of an Environmental Effects and Surface Water Compliance Monitoring Report for the Marine Baseline Monitoring Program at Sydney Harbour, Nova Scotia",
+            "title_fr": "Examen scientifique d'un rapport de surveillance des effets sur l'environnement et de la conformité de l'eau de surface pour le Marine Baseline Monitoring Program dans le port de Sydney (Nouvelle-Écosse)",
+            "pub_year": 2010,
+            "lead_author_2": "L. Bennett, E. Kennedy, M. Wong, B. Law",
+            "pub_num": "006",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5888,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Lake Utopia Rainbow Smelt (Osmerus mordax) Designatable Units",
+            "title_fr": "Évaluation du potentiel de rétablissement des unités désignables d'éperlans arc en ciel du lac Utopia (Osmerus mordax) ",
+            "pub_year": 2011,
+            "lead_author_2": "Rod Bradford / Tara McIntyre / Valerie Myra",
+            "pub_num": "004",
+            "pages": 18,
+            "pdf_size": 170,
+            "description": ""
+        }
+    }
+]

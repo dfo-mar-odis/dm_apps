@@ -1,0 +1,108 @@
+{% extends "shared_models/generic_form_with_help_text.html" %}
+{% load static %}
+{% load project_filters %}
+{% load i18n %}
+{% load bootstrap4 %}
+
+{% block bug_create %}
+  {% include "edna/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+  {% include "edna/base/_app_title.html" %}
+  {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block header %}
+  {{ block.super }}
+  {% include "edna/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+  {{ block.super }}
+{% endblock body %}
+
+{% block left_auth %}
+  {% include "edna/base/_nav_left_auth.html" %}
+{% endblock left_auth %}
+
+
+{% block form_field %}
+  {% trans "Degrees (DD)" as deg %}
+  {% trans "Minutes (MM.mmmmm)" as min %}
+  <div class="{{ field.name }}_div">
+    {% if "latitude_d" in field.name %}
+      {% bootstrap_label field.label.upper %}
+      <table class="table table-sm table-bordered" style="width: auto">
+        <tr>
+          <th>{{ deg }}</th>
+          <td>
+            {% if "start" in field.name %}
+              {{ form.start_latitude_d }}
+            {% elif "end" in field.name %}
+              {{ form.end_latitude_d }}
+            {% else %}
+              {{ form.latitude_d }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <th>{{ min }}</th>
+          <td>
+            {% if "start" in field.name %}
+              {{ form.start_latitude_mm }}
+            {% elif "end" in field.name %}
+              {{ form.end_latitude_mm }}
+            {% else %}
+              {{ form.latitude_mm }}
+            {% endif %}
+          </td>
+
+        </tr>
+      </table>
+
+    {% elif "latitude_mm" in field.name %}
+      {# do nothing #}
+
+
+      {% elif "longitude_d" in field.name %}
+      {% bootstrap_label field.label.upper %}
+      <table class="table table-sm table-bordered" style="width: auto">
+        <tr>
+          <th>{{ deg }}</th>
+          <td>
+            {% if "start" in field.name %}
+              {{ form.start_longitude_d }}
+            {% elif "end" in field.name %}
+              {{ form.end_longitude_d }}
+            {% else %}
+              {{ form.longitude_d }}
+            {% endif %}
+          </td>
+        </tr>
+        <tr>
+          <th>{{ min }}</th>
+          <td>
+            {% if "start" in field.name %}
+              {{ form.start_longitude_mm }}
+            {% elif "end" in field.name %}
+              {{ form.end_longitude_mm }}
+            {% else %}
+              {{ form.longitude_mm }}
+            {% endif %}
+          </td>
+
+        </tr>
+      </table>
+
+    {% elif "longitude_mm" in field.name %}
+      {# do nothing #}
+
+
+    {% else %}
+      {% bootstrap_field field placeholder="" %}
+
+    {% endif %}
+
+  </div>
+{% endblock %}

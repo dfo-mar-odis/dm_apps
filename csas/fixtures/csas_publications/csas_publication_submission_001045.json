@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1045,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the National Marine Mammal Review Committee; Feb. 27- March 2, 2001",
+            "pub_year": 2001,
+            "lead_author_2": "John D. Neilson, Chairperson",
+            "pub_num": "007",
+            "pages": 28,
+            "description": ""
+        }
+    }
+]

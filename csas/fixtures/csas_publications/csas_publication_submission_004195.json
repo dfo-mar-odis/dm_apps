@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4195,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Sablefish (Anoplopoma fimbria) in British Columbia, Canada: Stock Assessment Update for 2004 and Advice to Managers for 2005",
+            "title_fr": "La morue charbonnière (Anoplopoma fimbria) en Colombie-Britannique (Canada) : mise à jour de l'évaluation de l'état du stock en 2004 et avis aux gestionnaires pour 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Haist, V., A.R. Kronlund, M.R. Wyeth.",
+            "pub_num": "031",
+            "pages": 182,
+            "pdf_size": 14599,
+            "description": ""
+        }
+    }
+]

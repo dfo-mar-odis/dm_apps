@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8434,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Updated indices of abundance to 2019 for Winter Flounder from NAFO Div. 4T, Witch Flounder from NAFO Divs. 4RST and White Hake from NAFO Div. 4T",
+            "title_fr": "Mise à jour des indices d’abondance jusqu’en 2019 pour les stocks de Plie Rouge de la Div. 4T de l’OPANO, de Plie Grise des Divs. 4RST de l’OPANO et de Merluche Blanche de la Div. 4T de l’OPANO",
+            "pub_year": 2020,
+            "pub_num": "008",
+            "pages": 10,
+            "pdf_size": 974,
+            "description": ""
+        }
+    }
+]

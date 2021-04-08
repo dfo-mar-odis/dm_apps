@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 803,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Atlantic salmon (Salmo salar) stocks of Lomond River, Torrent River, and Western Arm Brook, Newfoundland, 2000.",
+            "title_fr": "État des stocks de saumon atlantique (Salmo salar) des rivières Lomond et Torrent ainsi que dans le ruisseau Western Arm, à Terre-Neuve, en 2000.",
+            "pub_year": 2001,
+            "lead_author_2": "Mullins, C.C., D. Caines",
+            "pub_num": "039",
+            "pages": 57,
+            "pdf_size": 2860,
+            "description": ""
+        }
+    }
+]

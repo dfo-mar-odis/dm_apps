@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2515,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The status of redfish in Unit 1 (Gulf of St. Lawrence)",
+            "title_fr": "L'état du stock de sébaste de l'unité 1 (golfe du Saint-Laurent)",
+            "pub_year": 1995,
+            "lead_author_2": "B. Morin; B. Bernier; A. Fréchet",
+            "pub_num": "109",
+            "pages": 49,
+            "pdf_size": 2382,
+            "description": ""
+        }
+    }
+]

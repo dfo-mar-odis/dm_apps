@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8035,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of White Hake (Urophycis tenuis) in NAFO Subdivision 3Ps",
+            "title_fr": "Évaluation de la merluche blanche (Urophycis tenuis) dans la sous-division 3PS de l’OPANO",
+            "pub_year": 2018,
+            "lead_author_2": "Mark Simpson",
+            "pub_num": "005",
+            "pages": 14,
+            "pdf_size": 913,
+            "description": ""
+        }
+    }
+]

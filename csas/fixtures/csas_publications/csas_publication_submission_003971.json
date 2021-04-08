@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3971,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Yellowtail Flounder in the Southern Gulf Of St. Lawrence",
+            "title_fr": "Limande à queue jaune du sud du golfe du St. Laurent (div. 4T)",
+            "pub_year": 2004,
+            "lead_author_2": "Poirier, Gloria",
+            "pub_num": "006",
+            "pages": 5,
+            "pdf_size": 310,
+            "description": ""
+        }
+    }
+]

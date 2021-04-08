@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3156,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Capelin in the Estuary and Gulf of St. Lawrence",
+            "title_fr": "Capelan de l'estuaire et du golfe du Saint-Laurent",
+            "pub_year": 1997,
+            "lead_author_2": "Francois Grégoire",
+            "pub_num": "B4-03",
+            "pages": 7,
+            "pdf_size": 325,
+            "description": ""
+        }
+    }
+]

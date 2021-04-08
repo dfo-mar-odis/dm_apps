@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7676,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessing primary indicators and epifaunal communities on mixed and rock wall substrates in association with aquaculture operations in British Columbia",
+            "lead_author_2": "Terri Sutherland (Erika Throleifson)",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6644,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Population assessment: California Sea Lion (Zalophus californianus) (SAR_9b)",
+            "lead_author_2": "Region & Author?",
+            "description": ""
+        }
+    }
+]

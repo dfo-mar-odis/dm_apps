@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4474,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Cumulative and Far-Field Fish Habitat Effects",
+            "title_fr": "Effets cumulatifs et à très grande distance sur l'habitat du poisson",
+            "pub_year": 2006,
+            "lead_author_2": "Anderson, M.R., P.J. Cranford, C.W. McKindsey, P. Strain, B.T. Hargrave, W.K.W. Li, W.G. Harrison.",
+            "pub_num": "037",
+            "pages": 35,
+            "pdf_size": 1527,
+            "description": ""
+        }
+    }
+]

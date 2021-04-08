@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6229,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Zonal Advisory Process Pre-COSEWIC Peer Review Meeting of White Hake (Urophycis tenuis); November 1 and 2, 2011",
+            "title_fr": "Processus d'évaluation zonale - Réunion pré-COSEPAC d'examen par les pairs par rapport à la merluche blanche (Urophycis tenuis) ; les 1 et 2 novembre 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "037",
+            "pages": 36,
+            "pdf_size": 242,
+            "description": ""
+        }
+    }
+]

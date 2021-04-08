@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6765,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Examination of monitoring protocol to establish baseline conditions for primary productivity in the marine and estuarine environment of the Romaine River",
+            "title_fr": "Examen du protocole de suivi pour effectuer l'état de référence de la productivité primaire dans le milieu marin et estuarien de la rivière Romaine",
+            "pub_year": 2013,
+            "lead_author_2": "Michael Scarratt",
+            "pub_num": "007",
+            "pages": 3,
+            "pdf_size": 136,
+            "description": ""
+        }
+    }
+]

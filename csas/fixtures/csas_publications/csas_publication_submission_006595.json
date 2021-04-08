@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6595,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review Meeting on Sea Lice Monitoring and Non Chemical Control Measures; September 25-27, 2012",
+            "title_fr": "Compte rendu de la réunion nationale d'examen par les pairs du suivi sur le pou du poisson et mesures sur les moyens non chimiques; du 25 au 27 septembre 2012",
+            "pub_year": 2015,
+            "lead_author_2": "Parsons, Jay",
+            "pub_num": "004",
+            "pages": 34,
+            "pdf_size": 244,
+            "description": ""
+        }
+    }
+]

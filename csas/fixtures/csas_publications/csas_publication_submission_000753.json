@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 753,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Quota options for the geoduck clam (Panopea abrupta) fishery in british columbia for 2001 and 2002",
+            "pub_year": 2000,
+            "lead_author_2": "Hand, C.M., Bureau, D.",
+            "pub_num": "163",
+            "pages": 52,
+            "pdf_size": 982,
+            "description": ""
+        }
+    }
+]

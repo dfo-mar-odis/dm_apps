@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5826,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Temporal variation in a population biomass index for Cambridge Bay Arctic Char, Salvelinus alpinus (L.), in relation to large-scale climate variables",
+            "title_fr": "Variation temporelle dans un indice de biomasse de population pour l'omble chevalier, Salvelinus alpinus (L.), de Cambridge Bay, relativement à des changements climatiques à grande échelle",
+            "pub_year": 2014,
+            "lead_author_2": "Xinhua Zhu, A. Chris Day, Theresa J. Carmichael, and Ross F. Tallman",
+            "pub_num": "095",
+            "pages": 33,
+            "pdf_size": 1197,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2192,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of pollock (Pollachius virens) in Divisions 4VWX and Subdivision 5Zc for 1991",
+            "pub_year": 1992,
+            "lead_author_2": "C. Annand; D. Beanlands",
+            "pub_num": "044",
+            "pages": 44,
+            "description": ""
+        }
+    }
+]

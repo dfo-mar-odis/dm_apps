@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 828,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "A preliminary discussion of the relationship between population energetics and the management of southern Gulf of St. Lawrence cod",
+            "pub_year": 1977,
+            "lead_author_2": "P.F. Lett",
+            "pub_num": "008",
+            "pages": 46,
+            "pdf_size": 1926,
+            "description": ""
+        }
+    }
+]

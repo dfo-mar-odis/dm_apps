@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6085,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Science Technical Review of the draft Environmental Impact Statement (EIS) for Baffinland's Mary River Project ",
+            "title_fr": "Examen scientifique de l'ébauche d'étude d'impact environnemental (EIE) du projet de Mary River soumis par Baffinland",
+            "pub_year": 2011,
+            "lead_author_2": "R.E.A. Stewart, V. Lesage, J. Lawson, H. Cleator and K.A. Martin",
+            "pub_num": "086",
+            "pages": 68,
+            "pdf_size": 529,
+            "description": ""
+        }
+    }
+]

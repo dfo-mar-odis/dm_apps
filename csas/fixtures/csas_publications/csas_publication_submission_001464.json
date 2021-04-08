@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1464,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biological aspects of the spring breeding migration of snow crabs (Chionoecetes opilio) in Bonne Bay, Newfoundland (Canada)",
+            "pub_year": 1984,
+            "lead_author_2": "D.M. Taylor; R.G. Hooper; G.P. Ennis",
+            "pub_num": "058",
+            "pages": 11,
+            "pdf_size": 638,
+            "description": ""
+        }
+    }
+]

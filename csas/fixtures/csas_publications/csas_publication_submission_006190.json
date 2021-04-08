@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6190,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Pre-COSEWIC Assessment for Lake Utopia Rainbow Smelt (Osmerus mordax) Small-bodied and Large-bodied Populations",
+            "title_fr": "Examen pré-COSEPAC concernant les populations d’éperlans arc-en-ciel (Osmerus mordax) de petite taille et de grande taille du lac Utopia",
+            "pub_year": 2018,
+            "lead_author_2": "Themelis, D.",
+            "pub_num": "025",
+            "pages": 32,
+            "pdf_size": 907,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 327,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Tabusintac River in 1993",
+            "pub_year": 1994,
+            "lead_author_2": "G. Atkinson; R.R. Claytor",
+            "pub_num": "005",
+            "pages": 32,
+            "pdf_size": 1027,
+            "description": ""
+        }
+    }
+]

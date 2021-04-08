@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5677,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Modelling of Channel Darter (Percina copelandi) in Canada ",
+            "title_fr": "Modélisation du potentiel de rétablissement du fouille-roche gris (Percina copelandi) au Canada",
+            "pub_year": 2010,
+            "lead_author_2": "P.A. Venturelli, L. A. Vélez-Espino, and M. A. Koops",
+            "pub_num": "096",
+            "pages": 40,
+            "pdf_size": 284,
+            "description": ""
+        }
+    }
+]

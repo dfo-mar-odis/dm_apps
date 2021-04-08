@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7855,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Stock assessment of Witch Flounder (Glyptocephalus cynoglossus) in the Gulf of St. Lawrence (NAFO Divs. 4RST) to 2016",
+            "title_fr": "Évaluation du stock de plie grise (Glyptocephalus cynoglossus) dans le golfe du Saint-Laurent (Divisions 4RST de l'OPANO) jusqu'en 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "036",
+            "pages": 24,
+            "pdf_size": 2971,
+            "description": ""
+        }
+    }
+]

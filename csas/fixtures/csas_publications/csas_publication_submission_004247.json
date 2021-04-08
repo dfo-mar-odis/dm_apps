@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4247,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Musquash Estuary: A Proposed Monitoring Framework for the Marine Protected Area and Intertidal Area Administered by Fisheries and Oceans Canada",
+            "title_fr": "Estuaire de la Musquash : Proposition de cadre de surveillance de la zone de protection marine et de la zone intertidale administrée par Pêches et Océans Canada",
+            "pub_year": 2011,
+            "lead_author_2": "E. Kennedy / E. Kennedy / V. Myra",
+            "pub_num": "040",
+            "pages": 16,
+            "pdf_size": 160,
+            "description": ""
+        }
+    }
+]

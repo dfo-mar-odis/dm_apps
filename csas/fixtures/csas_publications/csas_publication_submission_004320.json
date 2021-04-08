@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4320,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Final Report of the Fisheries Oceanography Committee, 2005 Annual Meeting; March 22-24, 2005",
+            "title_fr": "Rapport final de la réunion annuelle de 2005 du Comité sur l'océanographie des pêches; 22-24 mars 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Ouellet, Patrick",
+            "pub_num": "015",
+            "pages": 69,
+            "pdf_size": 626,
+            "description": ""
+        }
+    }
+]

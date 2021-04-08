@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7315,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review of Science Guidance for Fisheries Protection Policy: Advice on Developing and Reviewing Offsetting Requirements; November 25-26, 2014",
+            "title_fr": "Compte rendu de la réunion nationale d’examen par les pairs sur les Lignes directrices scientifiques relatives à la politique sur la protection des pêches : avis sur l’élaboration et l’examen des exigences en matière de compensation ; du 25 au 26 novembre 2014",
+            "pub_year": 2017,
+            "lead_author_2": "Jim Kristmanson",
+            "pub_num": "009",
+            "pages": 15,
+            "pdf_size": 257,
+            "description": ""
+        }
+    }
+]

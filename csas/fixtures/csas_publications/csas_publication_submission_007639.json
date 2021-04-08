@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7639,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Fish and marine mammal harvest survey results for Ulukhaktok, Northwest Territories, 2004-2015, with a focus on anadromous Arctic Char (Salvelinus alpinus)",
+            "lead_author_2": "Lea, E.",
+            "description": ""
+        }
+    }
+]

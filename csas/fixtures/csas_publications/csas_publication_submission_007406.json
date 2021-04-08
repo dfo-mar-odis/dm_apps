@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7406,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "2015 Assessment of 4VWX Herring",
+            "title_fr": "Évaluation du hareng de 4VWX de 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Rabindra Singh, Ph. 506-529-5881",
+            "pub_num": "040",
+            "description": ""
+        }
+    }
+]

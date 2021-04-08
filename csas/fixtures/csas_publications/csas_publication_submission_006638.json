@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6638,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Ringed seal SAR (SAR_3)",
+            "lead_author_2": "Gosselin, J.-F.",
+            "description": ""
+        }
+    }
+]

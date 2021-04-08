@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7099,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Methods and geophysical attributes for the Fisheries Risk Assessment Tool",
+            "title_fr": "Méthodes et caractéristiques géophysiques utilisés pour l'outil d'évaluation des risques liés aux pêches",
+            "pub_year": 2014,
+            "lead_author_2": "Porter, M., and N.J. Mochnacz",
+            "pub_num": "030",
+            "pages": 21,
+            "pdf_size": 152,
+            "description": ""
+        }
+    }
+]

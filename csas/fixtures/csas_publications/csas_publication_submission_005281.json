@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5281,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Advisory Process to Develop a Framework for Monitoring of Contaminants in the Gully Marine Protected Area: Part 1 - Data Inputs; 11 December 2007",
+            "title_fr": "Compte rendu d'une réunion du Processus consultatif scientifique des Maritimes en vue d'élaborer un cadre de surveillance des contaminants dans la zone de protection marine du Gully : Partie 1 - présentation des données ; le 11 décembre 2007",
+            "pub_year": 2009,
+            "lead_author_2": "Worcester, Tana",
+            "pub_num": "018",
+            "pages": 24,
+            "pdf_size": 134,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1063,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Fecundity of the lobster, Homarus americanus, in Newfoundland waters",
+            "pub_year": 1980,
+            "lead_author_2": "G.P. Ennis",
+            "pub_num": "017",
+            "pages": 9,
+            "pdf_size": 574,
+            "description": ""
+        }
+    }
+]

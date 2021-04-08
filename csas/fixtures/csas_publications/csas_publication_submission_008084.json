@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8084,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of the projections for Atlantic Mackerel (Subareas 3 and 4)",
+            "title_fr": "Mise à jour des projections relatives au maquereau (sous-régions 3 et 4)",
+            "pub_year": 2018,
+            "lead_author_2": "Elizabeth Van Beveren",
+            "pub_num": "024",
+            "pages": 8,
+            "pdf_size": 441,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2721,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Coastal exposure as a first-order predictor of the productive capacity of near shore habitat in the Great Lakes",
+            "title_fr": "Le fetch comme variable explicative de premier ordre de la capacité de production d'habitats littoraux des Grands Lacs",
+            "pub_year": 2004,
+            "lead_author_2": "Randall, R.G., Minns, C.K., Brousseau, C.M.",
+            "pub_num": "087",
+            "pages": 35,
+            "pdf_size": 537,
+            "description": ""
+        }
+    }
+]

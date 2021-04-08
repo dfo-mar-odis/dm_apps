@@ -1,0 +1,51 @@
+{% extends "csas/csas_base.html" %}
+{% load bootstrap4 %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% bootstrap_css %}
+
+{% block body %}
+	<div class="container pt-5 text-center">
+	    <div class="jumbotron border border-dark">
+		    {% trans "<h1>CSAS Tracking Tool: New Publication Type</h1>" %}
+		</div>
+	</div>
+
+    <div class="container pt-3">
+        <div class="jumbotron border border-dark">
+        <hr>    <!-- add a line -->
+            {# if the user is in csas-users group and has permissions to input New Requests #}
+            {% if auth %}
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>Science Advisory Reports</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_2'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>Research Documents</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>Proceedings</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_2'%}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+                <div class="row mb-2">
+                    <div class="col-2"> </div>
+                    <div class="col-7">{% trans "<h3>Science Responses</h3>" %}</div>
+                    <div class="col-3"><a class="btn btn-secondary btn-lg"
+                                          href="{% url 'csas:create_pub_2' %}">{% trans "+" %}</a></div>
+                </div><hr/>
+
+            {% endif %}
+        </div>
+    </div>
+{% endblock body %}

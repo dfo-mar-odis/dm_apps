@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 907,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Prognosis of abundance and yield of eastern Newfoundland herring stocks",
+            "pub_year": 1979,
+            "lead_author_2": "G.H. Winters; J.A. Moores",
+            "pub_num": "016",
+            "pages": 34,
+            "pdf_size": 1556,
+            "description": ""
+        }
+    }
+]

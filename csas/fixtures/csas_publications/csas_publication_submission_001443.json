@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1443,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Analyse des déplacements du homard (Homarus americanus) sur les côtes des Îles-de-la-Madeleine, à partir des données de marquage et de recaptures, de 1978 à 1983",
+            "pub_year": 1984,
+            "lead_author_2": "P. Dubé",
+            "pub_num": "037",
+            "description": ""
+        }
+    }
+]

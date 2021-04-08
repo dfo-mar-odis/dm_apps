@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4361,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Year Eight of the NAFO Subdivision 3Ps Fall GEAC Surveys: Catch Results for Atlantic Cod (Gadus morhua), American Plaice (Hippoglossoides platessoides F.), Witch Flounder (Glyptosephalus synoglossus L.), and Haddock (Melanogrammus aeglefinus)",
+            "title_fr": "Huitième année des relevés d'automne du GEAC dans la sous-division 3Ps de l'OPANO : Résultats concernant les prises de morue (Gadus morhua), de plie canadienne (Hippoglossoides platessoides F.), de plie grise (Glyptosephalus synoglossus L.) et d'aiglefin (Melanogrammus aeglefinus)",
+            "pub_year": 2005,
+            "lead_author_2": "McClintock, J.",
+            "pub_num": "072",
+            "pages": 74,
+            "pdf_size": 4153,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5197,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of Atlantic Cod (Gadus morhua) in the southern Gulf of St. Lawrence (NAFO Div. 4T-4Vn (Nov. – April)) to 2018",
+            "title_fr": "Évaluation de la morue franche (Gadus morhua) du sud du golfe du Saint-Laurent (Div. de l’OPANO 4T-4Vn (nov. – avril)) jusqu’en 2018",
+            "pub_year": 2019,
+            "lead_author_2": "G. Chaput",
+            "pub_num": "021",
+            "pages": 20,
+            "pdf_size": 1860,
+            "description": ""
+        }
+    }
+]

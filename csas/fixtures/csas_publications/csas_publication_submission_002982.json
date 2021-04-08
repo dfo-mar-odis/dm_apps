@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2982,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Chemical and Biological Oceanographic Conditions 1998 and 1999 Newfoundland Region",
+            "pub_year": 2000,
+            "lead_author_2": "Pierre Pepin",
+            "pub_num": "G2-02",
+            "pages": 7,
+            "pdf_size": 540,
+            "description": ""
+        }
+    }
+]

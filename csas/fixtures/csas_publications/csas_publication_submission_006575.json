@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6575,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Modelling of Silver Shiner (Notropis photogenis) in Canada",
+            "title_fr": "Modélisation du potentiel de rétablissement du méné miroir (Notropis photogenis) au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Jennifer Young",
+            "pub_num": "131",
+            "pages": 33,
+            "pdf_size": 449,
+            "description": ""
+        }
+    }
+]

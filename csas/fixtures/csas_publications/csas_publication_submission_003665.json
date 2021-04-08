@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3665,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Relative strength of the 1999 and 2000 year-classes, from nearshore surveys of demersal age 0 & 1 Atlantic cod in 3KL and in Newman Sound, Bonavista Bay",
+            "title_fr": "Importance relative des classes d'âge de 1999 et de 2000, d'après des relevés côtiers de la morue démersale de 0 et 1 an dans 3KL et dans le bras Newman (baie de Bonavista)",
+            "pub_year": 2002,
+            "lead_author_2": "Robert S. Gregory, Benjamin J. Laurel, Dan W. Ings and David C. Schneider",
+            "pub_num": "087",
+            "pages": 21,
+            "pdf_size": 890,
+            "description": ""
+        }
+    }
+]

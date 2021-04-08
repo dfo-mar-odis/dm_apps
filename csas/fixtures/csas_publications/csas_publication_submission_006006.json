@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6006,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment (RPA) for the Southern Designatable Unit (NAFO Divs. 4X5Yb and 5Zjm) of Atlantic Cod (Gadus morhua)",
+            "title_fr": "Évaluation du potentiel de rétablissement (EPR) de la morue franche (Gadus morhua) de l'unité désignable du Sud (divisions 4X5Yb et 5Zjm de l'OPANO)",
+            "pub_year": 2011,
+            "pub_num": "034",
+            "pages": 25,
+            "pdf_size": 810,
+            "description": ""
+        }
+    }
+]

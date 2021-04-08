@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2693,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Quebec North Shore Herring (Division 4S)",
+            "title_fr": "Hareng de la Côte-Nord du Québec (Division 4S)",
+            "pub_year": 2002,
+            "lead_author_2": "François Grégoire",
+            "pub_num": "B4-02",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

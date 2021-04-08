@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 727,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Background information on the southern Gulf of St. Lawrence cod stock for the Fisheries Oceanography Committee workshop on the cod recruitment dilemma",
+            "pub_year": 2000,
+            "lead_author_2": "Swain, D.P., Chouinard, G.A.",
+            "pub_num": "142",
+            "pages": 11,
+            "pdf_size": 92,
+            "description": ""
+        }
+    }
+]

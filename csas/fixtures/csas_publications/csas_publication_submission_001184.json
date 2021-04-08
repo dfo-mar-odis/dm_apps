@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1184,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A two-dimensional systematic survey of the Iceland Scallop, Chlamys islandica, in the Strait of Belle Isle",
+            "pub_year": 1982,
+            "lead_author_2": "K.S. Naidu; S.J. Smith",
+            "pub_num": "004",
+            "pages": 24,
+            "pdf_size": 940,
+            "description": ""
+        }
+    }
+]

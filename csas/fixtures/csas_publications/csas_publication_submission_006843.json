@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6843,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Comparison of Scales, Pectoral Fin Rays, and Otoliths for Estimating Age, Growth, and Mortality of Lake Whitefish, Coregonus clupeaformis, in Great Slave Lake",
+            "title_fr": "Comparaison des écailles, rayons des nageoires pectorales et otolithes dans l'estimation de l'âge, la croissance et la mortalité du grand corégone (Coregonus clupeaformis) dans le Grand lac des Esclaves",
+            "pub_year": 2016,
+            "lead_author_2": "Zhu, X., Wastle, R., Leonard, D., Howland, K., Carmichael, T.J., and Tallman, R.F.",
+            "pub_num": "115",
+            "pages": 33,
+            "pdf_size": 946,
+            "description": ""
+        }
+    }
+]

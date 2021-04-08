@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4408,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Standardizing the southern Gulf of St. Lawrence bottom trawl survey time series: Results of the 2004-2005 comparative fishing experiments and other recommendations for the analysis of the survey data",
+            "title_fr": "Normalisation de la série chronologique des relevés au chalut de fond effectués dans le sud du golfe du Saint-Laurent : résultats d'études de pêche comparatives de 2004-2005 et autres recommandations pour l'analyse des données des relevés",
+            "pub_year": 2006,
+            "lead_author_2": "Benoît, H.P.",
+            "pub_num": "008",
+            "pages": 133,
+            "pdf_size": 1437,
+            "description": ""
+        }
+    }
+]

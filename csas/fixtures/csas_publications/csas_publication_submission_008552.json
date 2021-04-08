@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8552,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Environmental and Indirect Human Health Risk Assessment of GloFish® Cosmic Blue® and Galactic Purple® Danios (Danio rerio): Transgenic Ornamental Fish",
+            "title_fr": "Évaluation des risques pour l’environnement et des risques indirects pour la santé humaine posés par le danio (Danio rerio) GlofishMD Cosmic BlueMD et Galactic PurpleMD : poissons d’ornement transgéniques",
+            "pub_year": 2020,
+            "lead_author_2": "Colin McGowan",
+            "pub_num": "016",
+            "pages": 24,
+            "pdf_size": 987,
+            "description": ""
+        }
+    }
+]

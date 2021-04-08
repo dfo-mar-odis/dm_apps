@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5938,
+        "fields": {
+            "series": 5,
+            "lead_region": [4, 5],
+            "title_en": "Recovery Potential Assessment for Laurentian North Designatable Units (3Pn, 4RS and 3Ps) of Atlantic Cod (Gadus morhua)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la morue franche (Gadus morhua) de l'unité désignable du Nord Laurentien (3Pn, 4RS et 3Ps)",
+            "pub_year": 2011,
+            "lead_author_2": "Alain Fréchet, Brian Healey",
+            "pub_num": "026",
+            "pages": 27,
+            "pdf_size": 432,
+            "description": ""
+        }
+    }
+]

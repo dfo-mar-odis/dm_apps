@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3752,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Atlantic Mackerel of the Northwest Atlantic in 2002",
+            "title_fr": "Maquereau bleu du nord-ouest de l'Atlantique en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "010",
+            "pages": 11,
+            "pdf_size": 449,
+            "description": ""
+        }
+    }
+]

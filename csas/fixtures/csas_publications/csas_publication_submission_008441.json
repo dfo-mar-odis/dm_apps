@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8441,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the Northern Cod (Gadus morhua) stock in NAFO Divisions 2J3KL",
+            "lead_author_2": "Dwyer et al.",
+            "description": ""
+        }
+    }
+]

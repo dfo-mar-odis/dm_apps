@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5703,
+        "fields": {
+            "series": 4,
+            "lead_region": [6, 4, 1],
+            "title_en": "Proceedings of the Zonal Advisory Process on the Pre-COSEWIC Review and Evaluation of Progress on Management Objectives for the American Eel; August 31 to September 3, 2010",
+            "title_fr": "Compte rendu de la réunion du processus consultatif zonal portant sur l'examen pré-COSEPAC et l'évaluation des progrès dans l'atteinte des objectifs de gestion pour l'anguille d'Amérique ; du 31 août au 3 septembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Martin Castonguay (Que)",
+            "pub_num": "028",
+            "pages": 63,
+            "pdf_size": 513,
+            "description": ""
+        }
+    }
+]

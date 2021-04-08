@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 417,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the status of the Newfoundland west coast herring stock",
+            "pub_year": 1980,
+            "lead_author_2": "J.P. Wheeler; G.H. Winters",
+            "pub_num": "051",
+            "pages": 46,
+            "pdf_size": 1110,
+            "description": ""
+        }
+    }
+]

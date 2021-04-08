@@ -1,0 +1,84 @@
+{% extends "edna/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% block content %}
+
+  <br>
+  {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
+  <div class="container">
+    <div class="jumbotron">
+      <h2>
+        {% trans "Please select a report" %}
+      </h2>
+      <hr>
+      <form method="post" style="width: auto">
+
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="{{ field.name }}_div">
+            {% bootstrap_field field layout="horizontal" %}
+          </div>
+        {% endfor %}
+
+        <div class="mt-3">
+          <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
+        </div>
+
+
+      </form>
+
+      <div class="loader hidden"></div>
+    </div>
+  </div>
+
+  <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
+  <script type="application/javascript">
+
+  function hideAll() {
+    $(".year_div").addClass("gone");
+    $("#id_year").prop("required", false);
+  }
+
+  function configureForm() {
+    var reportChoice = $("#id_report")[0].value;
+    // cfts report
+    if (reportChoice === "1") {
+      $(".year_div").removeClass("gone");
+      $("#id_year").prop("required", false);
+
+    }
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    hideAll();
+    configureForm();
+  });
+
+
+  $("#id_report").change(function () {
+    hideAll();
+    configureForm();
+  });
+
+  $("form").submit(function () {
+    var reportChoice = $("#id_report")[0].value;
+    // species count report
+
+    if (reportChoice != 4) {
+      $(this).addClass("hidden");
+      $(".loader").removeClass("hidden");
+      window.setTimeout(closeLoader, 5000)
+    }
+  });
+
+  function closeLoader() {
+    $("form").removeClass("hidden");
+    $(".loader").addClass("hidden");
+  }
+
+
+  </script>
+
+{% endblock content %}

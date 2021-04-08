@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7341,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of Capelin in Subarea 2 and Divisions 3KL in 2015",
+            "title_fr": "Évaluation de la population de capelans dans la sous-zone 2 et dans les divisions 3KL en 2015",
+            "pub_year": 2015,
+            "lead_author_2": "F. Mowbray",
+            "pub_num": "036",
+            "description": ""
+        }
+    }
+]

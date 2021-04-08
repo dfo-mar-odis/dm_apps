@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8654,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Guidance on the identification of Critical Habitat in the riparian zone for freshwater species at risk",
+            "title_fr": "Lignes directrices sur la désignation de l’habitat essentiel dans la zone riveraine des espèces d’eau douce en péril",
+            "pub_year": 2020,
+            "lead_author_2": "Karine Robert",
+            "pub_num": "040",
+            "pages": 23,
+            "pdf_size": 1132,
+            "description": ""
+        }
+    }
+]

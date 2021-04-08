@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3181,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Miramichi striped bass stock (Morone saxatilis)",
+            "title_fr": "Stock de bar de la Miramichi (Morone Saxatilis)",
+            "pub_year": 1996,
+            "pub_num": "012",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

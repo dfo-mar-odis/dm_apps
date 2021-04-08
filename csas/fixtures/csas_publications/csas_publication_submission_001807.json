@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1807,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1987 fishery for snow crab, Chionoecetes opilio, around the Atlantic coast of Cape Breton Island",
+            "pub_year": 1988,
+            "lead_author_2": "R.W. Elner; R.E. Semple; E.M. Lachance",
+            "pub_num": "011",
+            "pages": 37,
+            "pdf_size": 1724,
+            "description": ""
+        }
+    }
+]

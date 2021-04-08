@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3625,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Trends in stratification on the Inner Newfoundland Shelf",
+            "title_fr": "Tendances de la stratification dans la partie intérieure du plateau de Terre-Neuve",
+            "pub_year": 2002,
+            "lead_author_2": "J. D. C. Craig and / et E. B. Colbourne",
+            "pub_num": "071",
+            "pages": 15,
+            "pdf_size": 370,
+            "description": ""
+        }
+    }
+]

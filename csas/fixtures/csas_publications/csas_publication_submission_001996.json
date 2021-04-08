@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1996,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the workshop on the development of research priorities for the northwest Atlantic blue whale population; 20-21 November 2002",
+            "title_fr": "Compte-rendu de l'atelier sur le développement de priorités de recherche pour la population de rorquals bleus de l'Atlantique nord-ouest; 20-21 novembre 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Lesage, V., Hammill, O.",
+            "pub_num": "031",
+            "pages": 42,
+            "pdf_size": 481,
+            "description": ""
+        }
+    }
+]

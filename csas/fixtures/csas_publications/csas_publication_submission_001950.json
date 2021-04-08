@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1950,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Rock Crab of the Inshore Waters of Quebec in 1999",
+            "title_fr": "Le Crabe commun des eaux côtières du Québec en 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Jean Lambert",
+            "pub_num": "C4-02",
+            "pages": 9,
+            "pdf_size": 211,
+            "description": ""
+        }
+    }
+]

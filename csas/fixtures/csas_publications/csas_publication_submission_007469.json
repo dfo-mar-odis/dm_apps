@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7469,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Development of risk-based indicators for the Endeavour Hydrothermal Vents Marine Protected Area",
+            "title_fr": "Élaboration d’indicateurs fondés sur les risques pour la zone de protection marine du champ hydrothermal Endeavour",
+            "pub_year": 2016,
+            "lead_author_2": "Kate Thornborough",
+            "pub_num": "028",
+            "pages": 131,
+            "pdf_size": 1008,
+            "description": ""
+        }
+    }
+]

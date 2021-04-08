@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1031,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Habitat Subcommittee Meeting; December 12-13, 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Stocker, M., Pringle, J.D.",
+            "pub_num": "029",
+            "pages": 17,
+            "pdf_size": 485,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8166,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the Regional Peer Review of the Assessment of the West Coast of Newfoundland (NAFO 4R division) herring stocks in 2017; May 2, 2018",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l'évaluation des stocks de hareng de la côte ouest de Terre-Neuve (division 4R de l’OPANO) en 2017; le 2 mai 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Virginie Christopherson",
+            "pub_num": "015",
+            "pages": 11,
+            "pdf_size": 142,
+            "description": ""
+        }
+    }
+]

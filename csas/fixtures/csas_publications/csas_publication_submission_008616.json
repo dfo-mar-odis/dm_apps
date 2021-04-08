@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8616,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Newfoundland and Labrador Snow Crab (Chionoecetes opilio) in 2019",
+            "lead_author_2": "K. Baker",
+            "description": ""
+        }
+    }
+]

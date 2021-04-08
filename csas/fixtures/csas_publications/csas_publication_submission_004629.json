@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4629,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary Results from the September 2006 Bottom-trawl Survey of the Southern Gulf of St. Lawrence",
+            "title_fr": "Résultats préliminaires du relevé au chalut de fond de septembre 2006 dans le Sud du golfe du Saint-Laurent",
+            "pub_year": 2007,
+            "lead_author_2": "Hurlbut, T., G.A. Poirier, D.P. Swain, R. Morin, C. LeBlanc.",
+            "pub_num": "001",
+            "pages": 54,
+            "pdf_size": 2861,
+            "description": ""
+        }
+    }
+]

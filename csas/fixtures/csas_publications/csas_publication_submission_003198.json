@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3198,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "4RST Witch flounder (Glyptocephalus cynoglossus)",
+            "title_fr": "Plie grise - 4RST (Glyptocephalus cynoglossus)",
+            "pub_year": 1996,
+            "lead_author_2": "Morin, R.",
+            "pub_num": "056",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

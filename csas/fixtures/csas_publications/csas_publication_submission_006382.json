@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6382,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Critical review and analysis of existing risk-based techniques for determining sustainable mortality levels of bycatch species",
+            "title_fr": "Examen et analyse critiques des techniques existantes fondées sur le risque pour déterminer les niveaux de mortalité durables des espèces faisant l'objet de prises accessoires",
+            "pub_year": 2012,
+            "lead_author_2": "Sebastián A. Pardo, Nicholas K. Dulvy and Andrew B. Cooper",
+            "pub_num": "014",
+            "pages": 34,
+            "pdf_size": 563,
+            "description": ""
+        }
+    }
+]

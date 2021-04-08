@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6359,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Centre for Science Advice, Pacific Region: Assessment of Fraser River Sockeye Salmon and Forecast for 2012",
+            "lead_author_2": "Gayle Brown",
+            "description": ""
+        }
+    }
+]

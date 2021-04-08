@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2652,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "German Bank scallop",
+            "title_fr": "Pétoncle du Banc German",
+            "pub_year": 1996,
+            "lead_author_2": "Robert, G.",
+            "pub_num": "028",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

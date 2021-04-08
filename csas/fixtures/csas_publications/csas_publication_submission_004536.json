@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4536,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Review of 2005 WCVI Chinook Salmon Returns and Forecast Abundance for Stamp River / Robertson Creek Hatchery Indicator Stock in 2006",
+            "title_fr": "Examen de la remonte de saumons quinnats de la côte ouest de l'île de Vancouver en 2005 et prévisions concernant l'abondance des stocks indicateurs de la rivière Stamp et de l'écloserie du ruisseau Robertson en 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Arlene Tompkins",
+            "pub_num": "036",
+            "pages": 8,
+            "pdf_size": 112,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 541,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Catch rate data from logbooks for the less-than-35ft sector",
+            "pub_year": 2000,
+            "lead_author_2": "Shelton, P.A., Murphy, E.F.",
+            "pub_num": "088",
+            "pages": 16,
+            "pdf_size": 196,
+            "description": ""
+        }
+    }
+]

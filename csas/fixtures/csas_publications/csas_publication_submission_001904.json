@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1904,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Methods employed by the Canadian offshore fleet as a means to limit the size of catches in the 2J3KL cod fishery",
+            "pub_year": 1989,
+            "lead_author_2": "D.W. Kulka",
+            "pub_num": "032",
+            "pages": 28,
+            "pdf_size": 1903,
+            "description": ""
+        }
+    }
+]

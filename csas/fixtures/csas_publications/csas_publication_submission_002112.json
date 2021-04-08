@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2112,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Haddock on the eastern Scotian Shelf 1991",
+            "pub_year": 1991,
+            "lead_author_2": "K. Zwanenburg; P. Comeau",
+            "pub_num": "047",
+            "pages": 43,
+            "pdf_size": 1612,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5006,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Risk Assessment for European green crab (Carcinus maenas) in Canadian Waters",
+            "title_fr": "Évaluation des risques représentés par le crabe européen (Carcinus maenas) dans les eaux canadiennes",
+            "pub_year": 2008,
+            "lead_author_2": "T.W. Therriault, L-M. Herborg, A. Locke, C.W. McKindsey.",
+            "pub_num": "042",
+            "pages": 44,
+            "pdf_size": 2337,
+            "description": ""
+        }
+    }
+]

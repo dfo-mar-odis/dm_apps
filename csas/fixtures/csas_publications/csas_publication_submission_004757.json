@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4757,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Crustaceans Stock Assessments of the 2005 fishing season in the Quebec Region; January 24 to February 2, 2006",
+            "title_fr": "Évaluations des stocks de crustacés de la région du Québec suivant la saison de pêche 2005; 24 janvier au 2 février 2006",
+            "pub_year": 2008,
+            "lead_author_2": "Cyr, C.",
+            "pub_num": "006",
+            "pages": 53,
+            "description": ""
+        }
+    }
+]

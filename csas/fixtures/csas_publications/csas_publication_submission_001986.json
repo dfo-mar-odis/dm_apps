@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1986,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern and South Shore Nova Scotia Lobster LFAs 31-33",
+            "title_fr": "Homard des côtes est et sud de la Nouvelle-Écosse ZPH 31-33",
+            "pub_year": 1996,
+            "lead_author_2": "Miller, R.J.;Duggan, R.E.;Nolan, S.C.",
+            "pub_num": "117",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

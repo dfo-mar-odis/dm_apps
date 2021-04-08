@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4790,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the meeting on Identification of biological and physical criteria for the definition of snow crab production areas in the Estuary and Northern Gulf of St-Lawrence; April 6, 2004",
+            "title_fr": "Compte rendu de la réunion sur l'identification des critères biologiques et physiques pour la définition d'unités de production du crabe des neiges dans l'estuaire et le nord du golfe du Saint-Laurent; le 6 avril 2004",
+            "pub_year": 2010,
+            "lead_author_2": "Hugo Bourdages",
+            "pub_num": "039",
+            "pages": 9,
+            "description": ""
+        }
+    }
+]

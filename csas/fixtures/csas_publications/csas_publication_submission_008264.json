@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8264,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Environmental and Indirect Human Health Risk Assessment of the GloFish® Tetras (Gymnocorymbus ternetzi): Five Lines of Transgenic Ornamental Fish",
+            "title_fr": "Évaluation des risques pour l’environnement et des risques indirects pour la santé humaine posés par les tétras glofishmd (gymnocorymbus ternetzi) : cinq lignées de poissons d’ornement transgéniques",
+            "pub_year": 2019,
+            "lead_author_2": "Colin McGowan, Sherry Walker",
+            "pub_num": "002",
+            "pages": 26,
+            "pdf_size": 542,
+            "description": ""
+        }
+    }
+]

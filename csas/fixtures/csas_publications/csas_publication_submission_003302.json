@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3302,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process to Review the Indicators, Protocols, and Strategies for the Gully Marine Protected Area (MPA).",
+            "lead_author_2": "Worcester, T.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8006,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of Haddock (Melanogrammus aeglefinus) in NAFO Divisions 4X5Y",
+            "title_fr": "Mise à jour de l’état du stock d’aiglefin (Melanogrammus aeglefinus) dans les divisions 4X5Y de l’OPANO",
+            "pub_year": 2018,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "028",
+            "pages": 11,
+            "pdf_size": 1565,
+            "description": ""
+        }
+    }
+]

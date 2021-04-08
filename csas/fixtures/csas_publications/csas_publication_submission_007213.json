@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7213,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Stock status and sustainable harvest levels for Arctic Char in Ikaluit Lake (Robert Peel Inlet), Cumberland Sound Area, Nunavut",
+            "lead_author_2": "Contact Z. Martin",
+            "description": ""
+        }
+    }
+]

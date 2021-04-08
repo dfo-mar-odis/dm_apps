@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4141,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Cod in the Southern Gulf of St. Lawrence",
+            "title_fr": "Morue du sud du golfe du St-Laurent",
+            "pub_year": 2005,
+            "lead_author_2": "Chouinard, G.",
+            "pub_num": "007",
+            "pages": 9,
+            "pdf_size": 377,
+            "description": ""
+        }
+    }
+]

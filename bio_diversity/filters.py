@@ -77,7 +77,7 @@ class CupFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Cup
-        fields = ["name", "nom", "facic_id", ]
+        fields = ["name", "nom", "draw_id", ]
 
 
 class CupdFilter(django_filters.FilterSet):
@@ -91,7 +91,7 @@ class DrawFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Drawer
-        fields = ["name", "nom", "facic_id", ]
+        fields = ["name", "nom", "heat_id", ]
 
 
 class EnvFilter(django_filters.FilterSet):
@@ -150,6 +150,20 @@ class EvntcFilter(django_filters.FilterSet):
         fields = ["name", "nom", "description_en", "description_fr", ]
 
 
+class EvntfFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.EventFile
+        fields = ["evnt_id", ]
+
+
+class EvntfcFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = models.EventFileCode
+        fields = ["name", "nom", ]
+
+
 class FacicFilter(django_filters.FilterSet):
 
     class Meta:
@@ -196,7 +210,7 @@ class GrpdFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.GroupDet
-        fields = ["anix_id", "anidc_id", ]
+        fields = ["anidc_id", ]
 
 
 class HeatFilter(django_filters.FilterSet):
@@ -241,7 +255,7 @@ class IndvdFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.IndividualDet
-        fields = ["anix_id", "anidc_id", ]
+        fields = ["anidc_id", ]
 
 
 class IndvtFilter(django_filters.FilterSet):
@@ -298,13 +312,6 @@ class LoccFilter(django_filters.FilterSet):
     class Meta:
         model = models.LocCode
         fields = ["name", "nom", ]
-
-
-class MatpFilter(django_filters.FilterSet):
-
-    class Meta:
-        model = models.MatingPlan
-        fields = ["evnt_id", ]
 
 
 class OrgaFilter(django_filters.FilterSet):
@@ -496,7 +503,7 @@ class TrayFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.Tray
-        fields = ["name", "nom", "facic_id",]
+        fields = ["name", "nom", "trof_id" ]
 
 
 class TraydFilter(django_filters.FilterSet):

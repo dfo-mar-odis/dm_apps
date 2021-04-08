@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1939,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "An assessment of the west coast of Newfoundland (NAFO Division 4R) herring resource in 1988",
+            "pub_year": 1989,
+            "lead_author_2": "I.H. McQuinn",
+            "pub_num": "067",
+            "pages": 38,
+            "pdf_size": 2093,
+            "description": ""
+        }
+    }
+]

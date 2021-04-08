@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1644,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the Voisey assessment unit Arctic charr population in 1985",
+            "pub_year": 1986,
+            "lead_author_2": "J.B. Dempson; L.J. LeDrew",
+            "pub_num": "027",
+            "pages": 12,
+            "pdf_size": 656,
+            "description": ""
+        }
+    }
+]

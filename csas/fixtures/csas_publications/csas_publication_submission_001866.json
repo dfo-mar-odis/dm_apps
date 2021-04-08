@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1866,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Atlantic salmon, Salmo salar, population of Conne River, Newfoundland, 1988",
+            "pub_year": 1988,
+            "lead_author_2": "J.B. Dempson",
+            "pub_num": "070",
+            "pages": 18,
+            "pdf_size": 941,
+            "description": ""
+        }
+    }
+]

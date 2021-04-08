@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7743,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Technical review of the M/V Marathassa fuel spill environmental impact assessment report",
+            "title_fr": "Examen technique du rapport de l’étude d’impact sur l’environnement du déversement d’hydrocarbures du navire à moteur Marathassa",
+            "pub_year": 2017,
+            "lead_author_2": "MacDougall, Lesley",
+            "pub_num": "006",
+            "pages": 15,
+            "pdf_size": 311,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6463,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Exploratory analysis of the NFT ADAPT SPA model for the west coast of Newfoundland herring stocks, 2000-2011",
+            "title_fr": "Analyse exploratoire du modèle ADAPT ASP NFT pour les stocks de hareng de la côte ouest de Terre-Neuve, 2000-2011 ",
+            "pub_year": 2012,
+            "lead_author_2": "François Grégoire, Jean-Louis Beaulieu",
+            "pub_num": "120",
+            "pages": 70,
+            "pdf_size": 1619,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3323,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "National Workshop on Modelling Tools for Ecosystem Approaches to Management; 22-25 October 2007",
+            "title_fr": "Atelier national sur les outils de modélisation pour les approches de gestion écosystémiques; du 22 au 25 octobre 2007",
+            "pub_year": 2008,
+            "pub_num": "007",
+            "pages": 98,
+            "pdf_size": 800,
+            "description": ""
+        }
+    }
+]

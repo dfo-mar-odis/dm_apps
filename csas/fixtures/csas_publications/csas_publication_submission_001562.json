@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1562,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of American plaice in NAFO Subarea 2 and Division 3K",
+            "pub_year": 1985,
+            "lead_author_2": "W.B. Brodie",
+            "pub_num": "055",
+            "pages": 15,
+            "pdf_size": 1143,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7100,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Interim Report on Scotian Shelf Silver Hake (NAFO Divs. 4VWX) Stock Status",
+            "title_fr": "Rapport provisoire sur l'état du stock de merlu argenté de plateau néo-écossais (Div. 4VWX de l'OPANO)",
+            "pub_year": 2014,
+            "lead_author_2": "Mark Showell",
+            "pub_num": "024",
+            "pages": 9,
+            "pdf_size": 189,
+            "description": ""
+        }
+    }
+]

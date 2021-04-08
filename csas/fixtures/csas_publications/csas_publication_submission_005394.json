@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5394,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Oceanographic conditions in the Estuary and the Gulf of St. Lawrence during 2008: zooplankton",
+            "title_fr": "Conditions océanographiques dans l'estuaire et le golfe du Saint-Laurent en 2008 : zooplancton",
+            "pub_year": 2009,
+            "lead_author_2": "Harvey, M., Devine, L.",
+            "pub_num": "083",
+            "pages": 60,
+            "pdf_size": 996,
+            "description": ""
+        }
+    }
+]

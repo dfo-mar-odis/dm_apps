@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5603,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Science Advice from a Risk Assessment of Largemouth Bass (Micropterus salmoides) in British Columbia",
+            "title_fr": "Avis scientifique suivant l'évaluation des risques posés par l'achigan à grande bouche (Micropterus salmoides) en Colombie-Britannique",
+            "pub_year": 2010,
+            "lead_author_2": "Cudmore, B, Bradford, M.",
+            "pub_num": "082",
+            "pages": 11,
+            "pdf_size": 246,
+            "description": ""
+        }
+    }
+]

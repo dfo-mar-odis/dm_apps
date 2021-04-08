@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2440,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the American plaice stock in NAFO Subidiv. 3Ps",
+            "pub_year": 1995,
+            "lead_author_2": "M.J. Morgan; W.B. Brodie; G.T. Evans",
+            "pub_num": "036",
+            "pages": 25,
+            "pdf_size": 873,
+            "description": ""
+        }
+    }
+]

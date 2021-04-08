@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1467,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Growth of the sea scallop (Placopecten magellanicus) on the Tormentine Bed, Northumberland Strait",
+            "pub_year": 1984,
+            "lead_author_2": "G.A. Chouinard",
+            "pub_num": "061",
+            "pages": 17,
+            "pdf_size": 958,
+            "description": ""
+        }
+    }
+]

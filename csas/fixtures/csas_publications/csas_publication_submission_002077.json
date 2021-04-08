@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2077,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A review of the west coast of Newfoundland (NAFO Division 4R) herring fishery and biological trends in 1989",
+            "pub_year": 1990,
+            "lead_author_2": "I.H. McQuinn; J. Lambert",
+            "pub_num": "076",
+            "pages": 20,
+            "pdf_size": 1433,
+            "description": ""
+        }
+    }
+]

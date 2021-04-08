@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1845,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Miramichi River, 1987",
+            "pub_year": 1988,
+            "lead_author_2": "R.G. Randall; E.J. Schofield",
+            "pub_num": "049",
+            "pages": 37,
+            "pdf_size": 1708,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6823,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Relative strength of the 2010, 2011 and 2012 year-classes, from nearshore surveys of demersal age 0 and 1 Atlantic cod in Newman Sound, Bonavista Bay",
+            "title_fr": "Importance relative des classes d’âge de 2010, de 2011 et de 2012 d’après les relevés côtiers de la morue franche démersale de 0 et 1 an dans le bras Newman, baie de Bonavista",
+            "pub_year": 2016,
+            "lead_author_2": "R. Gregory, C. Morris, B. Newton, and P. Sargent",
+            "pub_num": "081",
+            "pages": 14,
+            "pdf_size": 340,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8715,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of Development of a Monitoring Framework for the Establishment of a Commercial Whelk Fishery in the Maritimes Region (4Vs and 4W)",
+            "lead_author_2": "M. Greenlaw",
+            "description": ""
+        }
+    }
+]

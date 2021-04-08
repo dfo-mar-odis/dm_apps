@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7533,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Testing estimators of walrus abundance: insights from simulations of haul-out behaviour",
+            "title_fr": "Méthodes d’estimation de l’abondance des morses : Leçons tirées de simulations du comportement sur les échoueries",
+            "pub_year": 2016,
+            "lead_author_2": "T. Doniol-Valcroze, A. Mosnier, M.O. Hammill and J.-F. Gosselin",
+            "pub_num": "040",
+            "pages": 23,
+            "pdf_size": 746,
+            "description": ""
+        }
+    }
+]

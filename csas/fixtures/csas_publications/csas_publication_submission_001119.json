@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1119,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Recent changes in length and age composition and length-at-age in herring from purse seine and gillnet fisheries in the southern Gulf of St. Lawrence",
+            "pub_year": 1981,
+            "lead_author_2": "L. Cleary; C. Trudeau",
+            "pub_num": "021",
+            "pages": 23,
+            "pdf_size": 8365,
+            "description": ""
+        }
+    }
+]

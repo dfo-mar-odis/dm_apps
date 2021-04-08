@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8463,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment for Endangered Cultus Lake Sockeye Salmon (Oncorhynchus nerka)",
+            "lead_author_2": "Dan Selbie",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1762,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4VsW cod",
+            "pub_year": 1987,
+            "lead_author_2": "A. Sinclair; S.J. Smith",
+            "pub_num": "072",
+            "pages": 62,
+            "pdf_size": 2262,
+            "description": ""
+        }
+    }
+]

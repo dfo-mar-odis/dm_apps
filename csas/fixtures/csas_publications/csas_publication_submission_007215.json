@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7215,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Estimating Regional Distributions of Freshwater Stock Productivity, Carrying Capacity, and Sustainable Harvest Rates for Coho Salmon Using a Hierarchical Bayesian Modelling",
+            "title_fr": "Estimation des répartitions régionales de la productivité des stocks en eau douce, de la capacité de charge et des taux de prélèvement durables du saumon coho en fonction d'une méthode de modélisation bayésienne hiérarchique",
+            "pub_year": 2014,
+            "lead_author_2": "Josh Korman1 and Arlene Tompkins2",
+            "pub_num": "089",
+            "pages": 61,
+            "pdf_size": 1568,
+            "description": ""
+        }
+    }
+]

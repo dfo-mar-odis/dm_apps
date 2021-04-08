@@ -36,10 +36,10 @@
         <div class="card-text" id="id_channels">
             <table class="table">
                 <thead>
-                <tr><th>{% trans 'Name' %}</th><th>{% trans 'Size (Gb)' %}</th><th>{% trans 'Gain' %}</th><th>{% trans 'Volts' %}</th></tr></thead>
+                <tr><th>{% trans 'Name' %}</th><th>{% trans 'Size (Gb)' %}</th><th>{% trans 'Gain' %}</th><th>{% trans 'Volts' %}</th><th></th></tr></thead>
                 <tbody>
             {% for rci in rec.channels.all %}
-            <tr><td>{{rci.rci_name}}</td><td>{{rci.rci_size}}</td><td>{{rci.rci_gain}}</td><td>{{rci.rci_volts}}</td></tr>
+            <tr><td>{{rci.rci_name}}</td><td>{{rci.rci_size}}</td><td>{{rci.rci_gain}}</td><td>{{rci.rci_volts}}</td><td><a class="btn btn-danger" href="{% url 'whalesdb:delete_rci' rci.pk %}" >X</a></td></tr>
             {% endfor %}
                 </tbody>
             </table>

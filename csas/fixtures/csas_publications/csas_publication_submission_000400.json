@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 400,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Données sur la pêche, la biologie et l'abondance du flétan du Groenland (Reinhardtius hippoglossoides) dans le golfe du Saint-Laurent",
+            "pub_year": 1980,
+            "lead_author_2": "C. Tremblay; F. Axelsen",
+            "pub_num": "034",
+            "description": ""
+        }
+    }
+]

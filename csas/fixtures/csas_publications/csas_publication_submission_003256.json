@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3256,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 2001,
+            "lead_author_2": "Kronlund, A.R.",
+            "pub_num": "153",
+            "description": ""
+        }
+    }
+]

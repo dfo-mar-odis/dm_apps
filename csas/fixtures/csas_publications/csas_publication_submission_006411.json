@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6411,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Study of the importance of factors used during biomass estimates for snow crab, Chionoecetes opilio, stock in the southern Gulf of St. Lawrence",
+            "lead_author_2": "Elmer Wade (Gulf Region)",
+            "description": ""
+        }
+    }
+]

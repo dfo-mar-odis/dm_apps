@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7854,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of the Winter Flounder (Pseudopleuronectes americanus) stock of the southern Gulf of St. Lawrence (NAFO Div. 4T) to 2016 and advice for the May 2017 to May 2022 fisheries",
+            "title_fr": "Évaluation du stock de plie rouge (Pseudopleuronectes americanus) du sud du golfe du Saint-Laurent (division 4T de l’OPANO) pour l’année 2016 et avis pour la pêche de mai 2017 à mai 2022",
+            "pub_year": 2019,
+            "lead_author_2": "Tobie Surette, Nicolas Rolland",
+            "pub_num": "026",
+            "pages": 104,
+            "pdf_size": 10710,
+            "description": ""
+        }
+    }
+]

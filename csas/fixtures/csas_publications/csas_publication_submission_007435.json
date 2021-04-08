@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7435,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Atlantic Salmon (Salmo Salar) Stock Status Update in Newfoundland and Labrador for 2014",
+            "title_fr": "Mise à jour de l'état des stocks de saumon de l'Atlantique (Salmo salar) à Terre-Neuve-et-Labrador pour 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Robertson, Martha",
+            "pub_num": "023",
+            "description": ""
+        }
+    }
+]

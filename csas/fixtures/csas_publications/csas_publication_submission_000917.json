@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 917,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Small redfish by-catch in the shrimp fishery at Port au Choix, Newfoundland",
+            "pub_year": 1979,
+            "lead_author_2": "B. Atkinson",
+            "pub_num": "025",
+            "pages": 21,
+            "pdf_size": 793,
+            "description": ""
+        }
+    }
+]

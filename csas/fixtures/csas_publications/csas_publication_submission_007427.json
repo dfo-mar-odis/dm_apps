@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7427,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of the State of Knowledge of the Oceanography and Water Exchange on the South Coast of Newfoundland to Support the Development of Bay Management Areas for Finfish Aquaculture; March 25-26, 2015",
+            "title_fr": "Compte rendu de l’examen régional par les pairs sur l’état des connaissances sur l’océanographie et l’échange des eaux sur la côte sud de Terre-Neuve à l’appui de l’établissement de zones de gestion des baies pour l’aquaculture de poissons à nageoires",
+            "pub_year": 2017,
+            "lead_author_2": "Dale RIchards / Emilie Novaczek",
+            "pub_num": "043",
+            "pages": 36,
+            "pdf_size": 1810,
+            "description": ""
+        }
+    }
+]

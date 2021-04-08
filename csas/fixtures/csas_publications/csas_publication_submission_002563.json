@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2563,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Regional interim review of the status of northern shrimp (Pandalus borealis) resources in areas off Newfoundland and Labrador (Divisions OB to 3K)",
+            "pub_year": 1996,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch",
+            "pub_num": "016",
+            "pages": 20,
+            "pdf_size": 1019,
+            "description": ""
+        }
+    }
+]

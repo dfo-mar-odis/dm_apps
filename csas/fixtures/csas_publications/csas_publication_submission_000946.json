@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 946,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Invertebrate Subcommittee Meeting July 7-10, 1997 and the Steering Committee Meeting August 19, 1997",
+            "pub_year": 1997,
+            "lead_author_2": "M. Stocker, Chair",
+            "pub_num": "022",
+            "description": ""
+        }
+    }
+]

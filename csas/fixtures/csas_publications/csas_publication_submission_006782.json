@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6782,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science Advice for Screening-Level Risk Assessment Protocols for Nonindigenous Freshwater Organisms in Trade in Canada",
+            "title_fr": "Avis scientifique sur les protocoles d'évaluation préalable des risques relatifs aux organismes non indigènes d'eau douce apparaissant dans le commerce au canada",
+            "pub_year": 2014,
+            "lead_author_2": "Sophie Foster",
+            "pub_num": "009",
+            "pages": 18,
+            "pdf_size": 562,
+            "description": ""
+        }
+    }
+]

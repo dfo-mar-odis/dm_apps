@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3702,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Population structure of herring (Clupea pallasi) in British Columbia determined by microsatellites, with comparisons to southeast Alaska and California",
+            "title_fr": "Structure des populations de hareng (Clupea pallasi) de la Colombie-Britannique d'après des microsatellites et comparaisons à des populations du sud-est de l'Alaska et de la Californie",
+            "pub_year": 2002,
+            "lead_author_2": "T.D. Beacham, J.F. Schweigert, C. MacConnachie, K.D. Le, K. Labaree, K.M. Miller",
+            "pub_num": "109",
+            "pages": 37,
+            "pdf_size": 890,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6379,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Identification of Ecologically and Biologically Significant Areas in the Strait of Georgia and off the West Coast of Vancouver Island: Phase I - Identification of Important Areas",
+            "title_fr": "Désignation des zones d'importance écologique et biologique dans le détroit de Georgie et sur la côte Ouest de l'île de Vancouver : Phase I - Désignation des zones d'importance",
+            "pub_year": 2014,
+            "lead_author_2": "Glen Jamieson and Chantel Levesque",
+            "pub_num": "100",
+            "pages": 76,
+            "pdf_size": 2571,
+            "description": ""
+        }
+    }
+]

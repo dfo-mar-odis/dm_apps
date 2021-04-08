@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7051,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on the Assessment of Southern British Columbia Chinook Salmon Conservation Units, Benchmarks and Status; February 4-6, 2014",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région du Pacifique sur l’évaluation des unités de conservation, des points de référence et de l'état du saumon quinnat du sud de la Colombie-Britannique; du 4 au 6 février 2014",
+            "pub_year": 2016,
+            "lead_author_2": "Bruce Patten",
+            "pub_num": "029",
+            "pages": 48,
+            "pdf_size": 1154,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 981,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Peer Review of Snow Crab in the Southern Gulf of St. Lawrence; 22-23 January 1998 and 23 April 1998",
+            "title_fr": "Procès-verbaux des séances d’examen par les pairs pour le crabe des neiges; du 22 au 23 janvier 1998 et le 23 avril 1998du sud du Golfe St-Laurent, du 22 au 23 janvier 1998 et du 23 avril 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Michael Chadwick, Chariperson",
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

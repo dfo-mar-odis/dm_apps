@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3324,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scotian Shelf Northern Quahaug",
+            "title_fr": "Parlourde américaine du plateau néo-écossais",
+            "pub_year": 1996,
+            "lead_author_2": "Duggan, R.E.",
+            "pub_num": "121",
+            "pages": 2,
+            "description": ""
+        }
+    }
+]

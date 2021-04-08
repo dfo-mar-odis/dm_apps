@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7829,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Northern Shrimp off Labrador and Northeastern Newfoundland and of Striped Shrimp off Northern Labrador",
+            "lead_author_2": "Katherine Skanes",
+            "description": ""
+        }
+    }
+]

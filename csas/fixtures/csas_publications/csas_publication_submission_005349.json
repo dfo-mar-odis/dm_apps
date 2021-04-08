@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5349,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Scientific Advice Review Committee (PSARC) meeting for the assessment of scientific information in support of a Recovery Potential Assessment for the Misty Lake stickleback pair and the Salish Sucker; April 8, 2008",
+            "title_fr": "Compte rendu de la réunion du Comité d'examen des évaluations scientifiques du Pacifique (CEESP) sur l'analyse de l'information scientifique à l'appui de l'évaluation du potentiel de rétablissement de la paire d'espèces d'épinoches du lac Misty et du meunier de Salish; le 8 avril 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Cass, A.",
+            "pub_num": "032",
+            "pages": 24,
+            "pdf_size": 98,
+            "description": ""
+        }
+    }
+]

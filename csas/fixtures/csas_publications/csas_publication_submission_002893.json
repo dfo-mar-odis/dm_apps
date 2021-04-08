@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2893,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Queen Charlotte Islands herring carrying capacity and sustainable harvest rates in different climate regimes.",
+            "pub_year": 1997,
+            "lead_author_2": "Ware, D.",
+            "pub_num": "139",
+            "pages": 16,
+            "pdf_size": 755,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7485,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of Indicators of the Status of the Estuary and Gulf of St. Lawrence (Divisions 4RST) Capelin Stock in 2014",
+            "title_fr": "Mise à jour des indicateurs de l'état du stock de capelan de l'estuaire et du golfe du Saint-Laurent (divisions 4RST) en 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Benoît Légaré",
+            "pub_num": "032",
+            "pages": 7,
+            "pdf_size": 297,
+            "description": ""
+        }
+    }
+]

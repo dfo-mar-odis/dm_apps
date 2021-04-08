@@ -1,0 +1,439 @@
+{% extends 'edna/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block title_area %}{% endblock %}
+
+{% block subcontent %}
+  <div id="app" class="mt-5">
+    <div v-if="!focalPCR">
+      <div class="mb-3">
+        <h1>{{ h1|safe }}</h1>
+      </div>
+      <div class="btns mb-3">
+        <a href="{% url 'edna:pcr_batch_edit' object.id %}" class="btn btn-warning btn-sm">{% trans "Edit" %}</a>
+        <a href="{% url 'edna:pcr_batch_delete' object.id %}" class="btn btn-danger btn-sm">{% trans "Delete" %}</a>
+      </div>
+      <table class="table table-sm">
+        {% for field in field_list %}
+          {% verbose_td_display object field th_width="200px" %}
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="mb-3" v-if="!focalPCR">
+      <p class="h3">{% trans "Samples" %}</p>
+      <button @click="addPCR(null)" class="btn btn-sm btn-primary">{% trans "Add a Sample" %}</button>
+      <button @click="addAllPCRs()" class="btn btn-sm btn-warning">{% trans "Import all non-processed extractions" %}</button>
+    </div>
+
+    <div class="row mb-3 px-1 py-1" style="width: 75%" v-if="!focalPCR">
+      <div class="col">
+        <label for="">{% trans "Default plate ID" %}</label>
+        <input type="text" class="form-control form-control-sm" v-model="default_plate_id">
+      </div>
+      <div class="col">
+        <label for="">{% trans "Default IPC added" %}</label>
+        <input type="text" class="form-control form-control-sm" v-model="default_ipc_added">
+      </div>
+      <div class="col">
+        <label for="">{% trans "Default PCR number prefix" %}</label>
+        <input type="text" class="form-control form-control-sm" v-model="default_pcr_number_prefix">
+      </div>
+      <div class="col">
+        <label for="">{% trans "Starting PCR number suffix" %}</label>
+        <input type="number" class="form-control form-control-sm" v-model="lastPCRNumber">
+      </div>
+    </div>
+
+    <div v-if="loading" class="loading mb-3 mt-3 mt-5">
+      <div class="spinner-border mb-3" style="width: 5rem; height: 5rem;" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+    <div v-else-if="!pcrs.length">
+      <em>{% trans "No PCRs have been added to this batch." %}</em>
+    </div>
+    <div v-else>
+      <div v-if="!focalPCR">
+
+        <div class="alert alert-danger" role="alert" v-if="pcrErrorMsg">
+          <p class="mb-0 lead" v-html="pcrErrorMsg"></p>
+        </div>
+        <table :class="{'unsaved-borders':unsavedChanges, 'saved-borders':!unsavedChanges}" style="width: 100%">
+          <thead>
+          <tr>
+            <th class="px-1 py-1" style="width: 25px">#</th>
+            <th class="px-1 py-1" style="width: 75px">{% trans "PCR number" %}</th>
+            <th class="px-1 py-1" style="width: 75px">${labels.extract}</th>
+            <th class="px-1 py-1" style="width: 170px">${labels.start_datetime}<br> (yyyy-mm-dd HH:MM:SS)</th>
+            <th class="px-1 py-1" style="width: 75px">${labels.pcr_number_prefix}</th>
+            <th class="px-1 py-1" style="width: 75px">${labels.pcr_number_suffix}</th>
+            <th class="px-1 py-1" style="width: 75px">${labels.plate_id}</th>
+            <th class="px-1 py-1" style="width: 75px">${labels.position}</th>
+            <th class="px-1 py-1" style="width: 75px">${labels.ipc_added}</th>
+            <th class="px-1 py-1" style="width: 75px">${labels.qpcr_ipc}</th>
+            <th class="px-1 py-1">${labels.comments}</th>
+            <th class="px-1 py-1" style="width: 75px">{% trans "Species<br>tested" %}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="(pcr, index) in pcrs" :key="pcr.id">
+            <td class="px-0 py-0 text-muted" tabindex="-1">${index+1}</td>
+            <td class="px-0  py-0 text-muted" tabindex="-1">${pcr.pcr_number_prefix}:${pcr.pcr_number_suffix}</td>
+            <td class="px-0 py-0">
+              <select v-model="pcr.extract" class="no-borders" @change="updatePCR(pcr)">
+                <option value="">{% trans "Blank" %}</option>
+                <option v-for="(obj, index) in extractChoices" :value="obj.value">${obj.text}</option>
+              </select>
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.start_datetime" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.pcr_number_prefix" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.pcr_number_suffix" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.plate_id" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.position" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.ipc_added" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.qpcr_ipc" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="pcr.comments" @change="updatePCR(pcr)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="pr-2 py-0 text-muted" tabindex="-1">${pcr.observations.length}</td>
+
+            <td class="px-0 py-0">
+              <button class="btn py-0 px-0" @click="manageSpeciesObservations(pcr)" data-toggle="tooltip" title="Manage species observations">
+                <span v-if="pcr.observations.length" class="h5 mdi mdi-fish text-primary"></span>
+                <span v-else class="h5 mdi mdi-fish"></span>
+              </button>
+              <button class="btn py-0 px-0" @click="deletePCR(pcr)"><span class="h5 mdi mdi-delete"></span></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {# FOCAL PCR #}
+      <div v-else>
+        <div class="">
+          <h1>${focalPCR.pcr_number}</h1>
+        </div>
+        <div class="">
+          <h3>{% trans "Species Observations" %}</h3>
+        </div>
+
+        <div class="alert alert-danger" role="alert" v-if="obsErrorMsg">
+          <p class="mb-0 lead" v-html="obsErrorMsg"></p>
+        </div>
+
+        <div v-if="!focalPCR.observations.length">
+          <em>{% trans "No species observations have been recorded." %}</em>
+        </div>
+        <table v-else :class="{'unsaved-borders':unsavedChanges, 'saved-borders':!unsavedChanges}" style="width: 100%">
+          <thead>
+          <tr>
+            <th class="px-1 py-1" style="width: 25px">#</th>
+            <th class="px-1 py-1" style="width: 350px">${obsLabels.species}</th>
+            <th class="px-1 py-1" style="width: 175px">${obsLabels.ct}</th>
+            <th class="px-1 py-1" style="width: 200px">${obsLabels.edna_conc}</th>
+            <th class="px-1 py-1" style="width: 110px">${obsLabels.is_undetermined}</th>
+            <th class="px-1 py-1">${obsLabels.comments}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="(obs, index) in focalPCR.observations" :key="obs.id">
+            <td class="px-0 py-0 text-muted" tabindex="-1">${index+1}</td>
+            <td class="px-0 py-0">
+              <select v-model="obs.species" class="no-borders" @change="updateSpeciesObservation(obs)">
+                <option value="">{% trans "----" %}</option>
+                <option v-for="(obj, index) in speciesChoices" :value="obj.value">${obj.text}</option>
+              </select>
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" :disabled="obs.is_undetermined" v-model="obs.ct" @change="updateSpeciesObservation(obs)"
+                     @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" :disabled="obs.is_undetermined" v-model="obs.edna_conc" @change="updateSpeciesObservation(obs)"
+                     @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="checkbox" class="ml-3" v-model="obs.is_undetermined" @change="updateSpeciesObservation(obs)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <input type="text" class="no-borders" v-model="obs.comments" @change="updateSpeciesObservation(obs)" @keypress="unsavedChanges=true">
+            </td>
+            <td class="px-0 py-0">
+              <button class="btn py-0 px-0" @click="deleteSpeciesObservation(obs)"><span class="h5 mdi mdi-delete"></span></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="mt-3">
+          <button class="btn btn-success" @click="addSpeciesObservation">{% trans "Add New Species Observation" %}</button>
+          <button class="btn btn-primary" @click="clearFocalPCR">{% trans "Done" %}</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block body_js %}
+
+  {{ block.super }}
+  <script type="application/javascript">
+  let pcrBatchId = {{ object.id }};
+  var app = new Vue({
+    el: '#app',
+    delimiters: ["${", "}"],
+    data: {
+      currentUser: null,
+      default_ipc_added: "",
+      default_pcr_number_prefix: "",
+      default_plate_id: "",
+      extractChoices: [],
+      speciesChoices: [],
+      labels: [],
+      obsLabels: [],
+      lastPCRNumber: 0,
+      loading: false,
+      pcrErrorMsg: null,
+      obsErrorMsg: null,
+      pcrs: [],
+      unsavedChanges: false,
+      focalPCR: null,
+    },
+    methods: {
+      addSpeciesObservation() {
+        this.unsavedChanges = true;
+        this.focalPCR.observations.push(
+            {
+              pcr: this.focalPCR.id,
+              species: "",
+              ct: 0,
+              edna_conc: 0,
+              is_undetermined: false,
+              comments: null,
+            }
+        )
+      },
+      manageSpeciesObservations(pcr) {
+        this.focalPCR = pcr;
+        if(!this.focalPCR.observations.length) {
+            this.$nextTick(()=>{
+              this.addSpeciesObservation();
+            })
+        }
+      },
+      clearFocalPCR() {
+        this.unsavedChanges = false;
+        this.focalPCR = null;
+        this.obsErrorMsg = null;
+        this.getPCRs()
+      },
+      addPCR(howMany) {
+        if (!howMany) howMany = Number(prompt("{% trans 'How many tubes do you want to add?' %}"));
+        if (howMany) {
+          for (let i = 0; i < howMany; i++) {
+            this.newPCR();
+          }
+        }
+      },
+      addAllPCRs(howMany) {
+        howMany = 0;
+        for (var i = 0; i < this.extractChoices.length; i++) {
+          if (!this.extractChoices[i].has_pcr) {
+            howMany += 1;
+          }
+        }
+        if (howMany) {
+          extractArray = this.getQueuedFilters(howMany);
+          for (let i = 0; i < extractArray.length; i++) {
+            this.newPCR(extractArray[i]);
+          }
+        }
+      },
+      deletePCR(pcr) {
+        userInput = confirm("{% trans 'Are you sure you want to delete this tube?' %}");
+        if (userInput) {
+          let endpoint = `/api/edna/pcrs/${pcr.id}/`;
+          apiService(endpoint, "DELETE")
+              .then(response => {
+                this.$delete(this.pcrs, this.pcrs.indexOf(pcr))
+              })
+        }
+      },
+      deleteSpeciesObservation(obs) {
+        userInput = confirm("{% trans 'Are you sure you want to delete this observation?' %}");
+        if (userInput) {
+          if (obs.id) {
+            let endpoint = `/api/edna/observations/${obs.id}/`;
+            apiService(endpoint, "DELETE")
+                .then(response => {
+                  this.$delete(this.focalPCR.observations, this.focalPCR.observations.indexOf(obs));
+                })
+          } else {
+            this.$delete(this.focalPCR.observations, this.focalPCR.observations.indexOf(obs));
+            this.unsavedChanges = false;
+          }
+        }
+      },
+      getPCRNumberPrefix() {
+        let now = new Date(Date.now());
+        this.default_pcr_number_prefix = `r${String(now.getFullYear()).slice(2)}`
+      },
+      getBlankPCR(extract) {
+        let now = new Date(Date.now());
+        let next_number = Number(this.lastPCRNumber) + 1;
+        this.lastPCRNumber = next_number;
+        return {
+          pcr_batch: pcrBatchId,
+          extract: extract,
+          plate_id: this.default_plate_id,
+          ipc_added: this.default_ipc_added,
+          start_datetime: `${now.getFullYear()}-${now.getMonth()}-${now.getDay()} ${now.getHours()}:${now.getMinutes()}`,
+          pcr_number_prefix: this.default_pcr_number_prefix,
+          pcr_number_suffix: next_number,
+          position: null,
+          qpcr_ipc: null,
+          comments: null,
+        }
+      },
+      getCurrentUser() {
+        let endpoint = `/api/edna/user/`;
+        apiService(endpoint)
+            .then(response => {
+              this.currentUser = response;
+            })
+      },
+      getPCRMetadata() {
+        let endpoint = `/api/edna/meta/models/pcr/`;
+        apiService(endpoint).then(data => {
+          this.labels = data.labels;
+          this.extractChoices = data.extract_choices;
+          this.lastPCRNumber = data.last_pcr_number;
+        });
+      },
+      getSpeciesObservationMetadata() {
+        let endpoint = `/api/edna/meta/models/species-observation/`;
+        apiService(endpoint).then(data => {
+          this.obsLabels = data.labels;
+          this.speciesChoices = data.species_choices;
+        });
+      },
+      getPCRs() {
+        this.loading = true;
+        endpoint = `/api/edna/pcrs/?batch=${pcrBatchId}`;
+        apiService(endpoint)
+            .then(response => {
+              this.loading = false;
+              if (response.length && response[0].id) {
+                for (var i = 0; i < response.length; i++) {
+                  response[i].start_datetime = response[i].start_datetime.replace("T", " ").replace("Z", "")
+                  if (!response[i].extract) response[i].extract = "";
+
+                }
+                this.pcrs = response;
+              }
+            })
+      },
+      getQueuedFilters(howMany) {
+        let extracts = [...this.extractChoices];
+        myArray = []
+        let result;
+        for (let i = 0; i < howMany; i++) {
+          result = "";
+          for (let j = 0; j < extracts.length; j++) {
+            let extract = extracts[j];
+            if (!extract.has_pcr) {
+              let index = extracts.indexOf(extract);
+              result = extracts.splice(index, 1)[0].value;
+              break;
+            }
+          }
+          myArray.push(result);
+        }
+        // return the results array
+        return myArray;
+      },
+      groomJSON(json) {
+        return JSON.stringify(json).replaceAll("{", "").replaceAll("}", "").replaceAll("[", " ").replaceAll("]", " ").replaceAll('"', "").replaceAll("non_field_errors:", "")
+      },
+      newPCR(extract) {
+        let endpoint = `/api/edna/pcrs/`;
+        let data = this.getBlankPCR(extract);
+        let original_pcr_number = data.pcr_number_suffix;
+        let reps;
+        if (extract) reps = 3;
+        else reps = 1;
+        for (var i = 0; i < reps; i++) {
+          // we cannot get the data 3 times, otherwise it will return different extract ids
+          // but we also want to augment the pcr number
+          data.pcr_number_suffix = original_pcr_number + i;
+          // if we are issuing a new pcr number, we have to bump up the pcr number counter
+          if (i > 0) this.lastPCRNumber += 1;
+          apiService(endpoint, "POST", data)
+              .then(response => {
+                if (response.id) {
+                  response.start_datetime = response.start_datetime.replace("T", " ").replace("Z", "")
+                  if (!response.extract) response.extract = "";
+                  this.pcrs.push(response)
+                  // refresh the extract choices
+                  this.getPCRMetadata();
+                }
+              })
+        }
+      },
+      updatePCR(pcr) {
+        this.pcrErrorMsg = null;
+        endpoint = `/api/edna/pcrs/${pcr.id}/`;
+        apiService(endpoint, "PUT", pcr)
+            .then(response => {
+              if (!response.id) this.pcrErrorMsg = this.groomJSON(response);
+              else this.unsavedChanges = false;
+            })
+      },
+      updateSpeciesObservation(obs) {
+        this.obsErrorMsg = null;
+        let endpoint;
+        let method;
+        if (obs.id) {
+          endpoint = `/api/edna/observations/${obs.id}/`;
+          method = "PUT";
+        } else {
+          endpoint = `/api/edna/observations/`;
+          method = "POST";
+        }
+        apiService(endpoint, method, obs)
+            .then(response => {
+              if (!response.id) this.obsErrorMsg = this.groomJSON(response);
+              else this.unsavedChanges = false;
+            })
+      },
+    },
+    created() {
+      this.getPCRNumberPrefix();
+      this.getCurrentUser();
+      this.getPCRMetadata();
+      this.getSpeciesObservationMetadata();
+      this.getPCRs();
+    },
+  });
+  </script>
+
+{% endblock %}

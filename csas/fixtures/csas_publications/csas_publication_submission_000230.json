@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 230,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the scallop stock in scallop production Area 1, Bay of Fundy for 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Roddick, D., Lundy, M.J., Butler, M., Smith, S.J.",
+            "pub_num": "062",
+            "pages": 35,
+            "pdf_size": 2,
+            "description": ""
+        }
+    }
+]

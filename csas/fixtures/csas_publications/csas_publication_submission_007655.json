@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7655,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the 2016 National Marine Mammal Peer Review Committee (NMMPRC): Part II; February 23-26, 2016",
+            "title_fr": "Compte rendu du Comité national d’examen par les pairs sur les mammifères marins (CNEPMM) de 2016 : partie II; du 23 au 26 février 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Gary Stenson",
+            "pub_num": "025",
+            "pages": 28,
+            "pdf_size": 248,
+            "description": ""
+        }
+    }
+]

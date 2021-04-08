@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6701,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A Simultaneous Stock Assessment of Five Rockfishes in British Columbia Waters: Splitnose Rockfish, Greenstriped Rockfish, Redstripe Rockfish, Harlequin Rockfish, Sharpchin Rockfish",
+            "lead_author_2": "Taylor, Nathan",
+            "description": ""
+        }
+    }
+]

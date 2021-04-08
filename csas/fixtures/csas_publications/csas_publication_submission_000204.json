@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 204,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Options for controlling disease and improving health in farmed salmon, as a means of reducing risks posed by escapees",
+            "pub_year": 1998,
+            "lead_author_2": "McVicar, A.H.",
+            "pub_num": "167",
+            "description": ""
+        }
+    }
+]

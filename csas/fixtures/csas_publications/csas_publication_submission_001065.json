@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1065,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An analysis of white hake (Urophycis tenuis) groundfish, ichthyoplankton, and commercial sampling data in the southern Gulf of St. Lawrence",
+            "pub_year": 1980,
+            "lead_author_2": "T.D. Beacham; J. Schweigert",
+            "pub_num": "019",
+            "pages": 27,
+            "pdf_size": 1007,
+            "description": ""
+        }
+    }
+]

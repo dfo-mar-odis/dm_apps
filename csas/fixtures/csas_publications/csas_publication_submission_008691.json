@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8691,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery Potential Assessment for Westslope Cutthroat Trout, Oncorhynchus clarkii lewisi, Saskatchewan-Nelson River populations (DU 1)",
+            "title_fr": "Évaluation du potentiel de rétablissement pour la truite fardée versant de l’ouest (Oncorhynchus clarkii lewisi) : populations de la rivière Saskatchewan et du fleuve Nelson (UD 1)",
+            "pub_year": 2020,
+            "lead_author_2": "Adam van der Lee",
+            "pub_num": "052",
+            "pages": 7,
+            "pdf_size": 471,
+            "description": ""
+        }
+    }
+]

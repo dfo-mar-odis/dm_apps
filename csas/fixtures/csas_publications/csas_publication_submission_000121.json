@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 121,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1997 assessment of snow crab Chionoecetes opilio stock in the southern Gulf of St. Lawrence (Areas 12-25/26, 18, 19, and zones E and F)",
+            "pub_year": 1998,
+            "lead_author_2": "M.E. Hébert, E. Wade, P. DeGrâce, A. Hébert, M. Biron, M. Moriyasu",
+            "pub_num": "095",
+            "description": ""
+        }
+    }
+]

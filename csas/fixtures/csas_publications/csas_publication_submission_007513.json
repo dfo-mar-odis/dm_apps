@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7513,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A subtidal ecological classification system to represent species diversity and distribution patterns in the Maritimes Region",
+            "lead_author_2": "Michelle Greenlaw",
+            "description": ""
+        }
+    }
+]

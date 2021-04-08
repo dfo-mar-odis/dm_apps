@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6242,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the CSAS Peer Review of the binational ecological risk assessment of bigheaded carps (Hypophthalmichthys spp.) for the Great Lakes basin; November 8-10, 2011",
+            "title_fr": "Compte rendu de la réunion d'évaluation par les pairs du SCCS de l'évaluation binationale des risques écologiques posés par les carpes à grosse tête (Hypophthalmichthys spp.) pour le bassin des Grands Lacs ; du 8 au 10 novembre 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Becky Cudmore",
+            "pub_num": "060",
+            "pages": 35,
+            "pdf_size": 148,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2637,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "4VWX + 5ZC white hake 1996 stock assessment",
+            "pub_year": 1996,
+            "lead_author_2": "M. Fowler; J. Black; R. Mohn; M. Sinclair",
+            "pub_num": "103",
+            "pages": 79,
+            "pdf_size": 7016,
+            "description": ""
+        }
+    }
+]

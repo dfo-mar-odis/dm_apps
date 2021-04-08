@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 185,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Medium-to-Long Term Sustainability Threatened in the 4R Fishery for the Iceland Scallop",
+            "pub_year": 1998,
+            "lead_author_2": "K. S. Naidu, F.M. Cahill, E.M. Seward",
+            "pub_num": "148",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1131,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Separation of North River, Cape Breton Island Atlantic salmon (Salmo salar L.) stocks in a mixed stock fishery using multivariate analysis techniques",
+            "pub_year": 1981,
+            "lead_author_2": "D.G. Reddin; R.K. Mirsa",
+            "pub_num": "033",
+            "pages": 9,
+            "pdf_size": 582,
+            "description": ""
+        }
+    }
+]

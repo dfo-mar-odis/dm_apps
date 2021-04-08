@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7823,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Regional Peer Review on the Selection and Role of Limit Reference Points for Pacific Herring (Clupea pallasii) in British Columbia, Canada; February 7-8, 2017",
+            "lead_author_2": "Linnea Flostrand",
+            "description": ""
+        }
+    }
+]

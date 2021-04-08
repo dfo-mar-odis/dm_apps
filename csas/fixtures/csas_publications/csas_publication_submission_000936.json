@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 936,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Report of Maritimes Region Herring Workshop; 18-19 February 1997",
+            "title_fr": "Rapport de l'atelier sur le hareng de la Région des Maritimes; 18 et 19 février 1997",
+            "pub_year": 1997,
+            "pub_num": "012",
+            "description": ""
+        }
+    }
+]

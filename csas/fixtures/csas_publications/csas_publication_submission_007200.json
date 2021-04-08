@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7200,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment on Subdivision 3Ps Haddock (Melanogrammus aeglefinus)",
+            "title_fr": "Évaluation du stock d'aiglefin dans la sous-division 3Ps (Melanogrammus aeglefinus)",
+            "pub_year": 2014,
+            "lead_author_2": "Karen Dwyer",
+            "pub_num": "044",
+            "description": ""
+        }
+    }
+]

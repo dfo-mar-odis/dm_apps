@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3422,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Fall Groundfish Assessment Meetings Regional Advisory Process, Maritimes Region; 9-10 October 2001- 24 October 2001- 31 October-2 November 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Campana, S.E.",
+            "pub_num": "040",
+            "pages": 39,
+            "pdf_size": 260,
+            "description": ""
+        }
+    }
+]

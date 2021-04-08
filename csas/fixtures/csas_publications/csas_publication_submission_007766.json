@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7766,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of American Lobster (Homarus americanus) stock status in Newfoundland (LFAs 3-14C)",
+            "title_fr": "Évaluation de l’état du stock de homard d’Amérique (Homarus americanus) à Terre-Neuve-et-Labrador (ZPH 3-14C)",
+            "pub_year": 2019,
+            "lead_author_2": "Coughlan, E., Evans, G., Pantin, J., Coffey, W., and D. Stansbury",
+            "pub_num": "054",
+            "pages": 53,
+            "pdf_size": 2942,
+            "description": ""
+        }
+    }
+]

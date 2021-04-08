@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5805,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) stocks of the Newfoundland and Labrador Region (SFAs 1-14A), 2010",
+            "title_fr": "État des stocks de saumon atlantique (Salmo salar L.) dans la région de Terre-Neuve-et-Labrador (ZPS 1-14A) en 2010",
+            "pub_year": 2011,
+            "lead_author_2": "C.E. Bourgeois, J.B. Dempson, D.G. Reddin, G. I. Veinott, M. J. Robertson, R. Poole, and N. M. Cochrane",
+            "pub_num": "117",
+            "pages": 62,
+            "pdf_size": 440,
+            "description": ""
+        }
+    }
+]

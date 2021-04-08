@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7907,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of the Assessment of Arctic Surfclam (Mactromeris polynyma) Stock on Banquereau; April 20-21, 2017",
+            "title_fr": "Compte rendu de l'examen régional par les pairs de l'évaluation du stock de mactre de Stimpson (Mactromeris polynyma) sur le Banquereau; du 20 au 21 avril 2017",
+            "pub_year": 2017,
+            "lead_author_2": "Tana Worcester",
+            "pub_num": "046",
+            "pages": 18,
+            "pdf_size": 161,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 306,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The effects of using a gonadosomatic index as a method of spawning-group assignment on the catch-at-age matrices for 4T herring",
+            "pub_year": 1991,
+            "lead_author_2": "H.M.C. Dupuis",
+            "pub_num": "007",
+            "pages": 29,
+            "pdf_size": 1214,
+            "description": ""
+        }
+    }
+]

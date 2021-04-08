@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5174,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Redbanded Rockfish (Sebastes babcocki) stock assessment for the Pacific coast of Canada in 2014",
+            "title_fr": "Évaluation du stock de sébaste à bandes rouges (Sebastes babcocki) le long de la côte canadienne du Pacifique en 2014",
+            "pub_year": 2017,
+            "lead_author_2": "Edwards, A.M., Haigh, R., and Starr, P.J.",
+            "pub_num": "058",
+            "pages": 187,
+            "pdf_size": 21400,
+            "description": ""
+        }
+    }
+]

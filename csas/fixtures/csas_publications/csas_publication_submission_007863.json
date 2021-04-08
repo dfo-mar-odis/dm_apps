@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7863,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Glass Sponge Reefs in the Strait of Georgia and Howe Sound: Status assessment and ecological monitoring advice",
+            "title_fr": "Récifs d’éponges siliceuses dans le détroit de Georgie et la baie Howe : évaluation de la situation et conseils sur la surveillance",
+            "pub_year": 2017,
+            "lead_author_2": "Mary Thiess",
+            "pub_num": "026",
+            "pages": 13,
+            "pdf_size": 868,
+            "description": ""
+        }
+    }
+]

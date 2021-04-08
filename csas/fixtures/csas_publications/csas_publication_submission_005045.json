@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5045,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Potential Effects of Seismic Energy on Fish and Shellfish: An Update Since 2003",
+            "title_fr": "Effets possibles de l'énergie sismique sur les poissons, les mollusques et les crustacés : mise à jour depuis 2003",
+            "pub_year": 2008,
+            "lead_author_2": "J.F. Payne, C. Andrews, L. Fancey,  D.W. White, J. Christian",
+            "pub_num": "060",
+            "pages": 20,
+            "pdf_size": 113,
+            "description": ""
+        }
+    }
+]

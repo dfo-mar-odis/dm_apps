@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6204,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Zonal Science Advisory Process on Recovery Potential Assessment of the Maritime Designatable Unit of American Plaice (Hippoglossoides platessoides); March 24 and 25, 2011",
+            "title_fr": "Compte-rendu du processus zonal de consultation scientifique sur l'évaluation du potentiel de rétablissement de la plie canadienne (Hippoglossoides platessoides) de l'unité désignable des Maritimes ; les 24 et 25 mars 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Claude LeBlanc",
+            "pub_num": "050",
+            "pages": 37,
+            "pdf_size": 188,
+            "description": ""
+        }
+    }
+]

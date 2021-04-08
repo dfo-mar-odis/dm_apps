@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8666,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Spatial density models of cetaceans in Canadian Pacific waters",
+            "lead_author_2": "B Wright, L Nichol and T Doniol-Valcroze",
+            "description": ""
+        }
+    }
+]

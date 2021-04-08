@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6416,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Note on Ordinary Kriging and Kriging with external drift in the context of snow crab direct estimation",
+            "lead_author_2": "Gérald Chaput (for Nicolas Bez) (Gulf region)",
+            "description": ""
+        }
+    }
+]

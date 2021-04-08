@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6436,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Knowledge of fish physiology used to set water temperature thresholds for in-season closures of Atlantic salmon (Salmo salar) recreational fisheries",
+            "title_fr": "Connaissances de la physiologie des poisons servant à définir des seuils de températures de l'eau pour déclencher des fermetures durant la saison de pêches récréatives du saumon atlantique (Salmo salar)",
+            "pub_year": 2012,
+            "lead_author_2": "Cindy Breau",
+            "pub_num": "163",
+            "pages": 27,
+            "pdf_size": 403,
+            "description": ""
+        }
+    }
+]

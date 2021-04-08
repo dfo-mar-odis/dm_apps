@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5899,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a recovery potential assessment of Rocky Mountain Sculpin (Cottus sp.), Eastslope populations, in Alberta",
+            "title_fr": "Information à l'appui d'une évaluation du potentiel de rétablissement du chabot des montagnes Rocheuses (Cottus sp.) (populations du versant est) en Alberta",
+            "pub_year": 2013,
+            "lead_author_2": "Watkinson, Doug",
+            "pub_num": "062",
+            "pages": 37,
+            "pdf_size": 420,
+            "description": ""
+        }
+    }
+]

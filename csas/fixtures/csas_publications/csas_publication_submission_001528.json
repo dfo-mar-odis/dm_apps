@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1528,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Mortality associated with tagging in the sea scallop, Placopecten magellanicus (Gmelin)",
+            "pub_year": 1985,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill",
+            "pub_num": "021",
+            "pages": 10,
+            "pdf_size": 604,
+            "description": ""
+        }
+    }
+]

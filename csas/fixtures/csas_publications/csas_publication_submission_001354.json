@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1354,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Scotian Shelf shrimp (Pandalus borealis) fishery 1993",
+            "pub_year": 1994,
+            "lead_author_2": "D. Roddick; B. Bradford; W. Scott",
+            "pub_num": "052",
+            "pages": 26,
+            "pdf_size": 1024,
+            "description": ""
+        }
+    }
+]

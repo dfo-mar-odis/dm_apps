@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2308,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "État des principales pêcheries de homard du Québec: les Iles-de-la-Madeleine et la Gaspésie",
+            "pub_year": 1993,
+            "lead_author_2": "J.-P. Dallaire",
+            "pub_num": "035",
+            "description": ""
+        }
+    }
+]

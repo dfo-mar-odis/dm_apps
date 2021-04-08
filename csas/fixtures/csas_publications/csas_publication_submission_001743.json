@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1743,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Further work on nonparametric prediction of recruitment of 2J3KL cod from stock and environmental influences",
+            "pub_year": 1987,
+            "lead_author_2": "J.C. Rice",
+            "pub_num": "054",
+            "pages": 11,
+            "pdf_size": 761,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6293,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Limit Reference Point for Southwest Nova Scotia / Bay of Fundy Spawning Component of Atlantic Herring, (Clupea harengus) (German Bank and Scots Bay)",
+            "title_fr": "Point de référence limite pour la composante de reproducteurs du hareng de l'Atlantique, (Clupea harengus), dans le sud-ouest de la Nouvelle-Écosse et dans la baie de Fundy (banc German et baie Scots)",
+            "pub_year": 2012,
+            "lead_author_2": "Clark, D.S., Clark, K.J., Claytor, R., Leslie, S., Melvin, G.D., Porter, J.M., Power, M.J., Stone, H.H., Waters, C.",
+            "pub_num": "025",
+            "pages": 17,
+            "pdf_size": 162,
+            "description": ""
+        }
+    }
+]

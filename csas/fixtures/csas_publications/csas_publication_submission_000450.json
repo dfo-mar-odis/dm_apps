@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 450,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Reconstruction of B.C. sablefish stocks, 1996-1998 and catch projections for 1999, using an integrated catch-age recapture model with area and depth movement",
+            "pub_year": 1999,
+            "lead_author_2": "Haist, V., Fournier, D., Saunders, M.W.",
+            "pub_num": "079",
+            "pages": 48,
+            "pdf_size": 3845,
+            "description": ""
+        }
+    }
+]

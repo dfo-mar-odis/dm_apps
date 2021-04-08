@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2429,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of redfish in Subarea 2 + Division 3K",
+            "pub_year": 1995,
+            "lead_author_2": "D. Power",
+            "pub_num": "025",
+            "pages": 25,
+            "pdf_size": 823,
+            "description": ""
+        }
+    }
+]

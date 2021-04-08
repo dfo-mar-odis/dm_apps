@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8372,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review for Science advice on operational guidance on functional monitoring: Surrogate metrics of fish productivity to assess the effectiveness of mitigation and offsetting measures; February 26-28, 2018",
+            "title_fr": "Compte rendu de l’examen par les pairs national pour l’avis scientifique sur les directives opérationnelles en matière de surveillance fonctionnelle – Paramètres de remplacement de mesure de la productivité du poisson afin d’évaluer l’efficacité des mesures d’atténuation et de compensation; du 26 au 28 février 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Karen Smokorowski",
+            "pub_num": "018",
+            "pages": 15,
+            "description": ""
+        }
+    }
+]

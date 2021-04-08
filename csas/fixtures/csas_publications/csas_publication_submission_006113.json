@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6113,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Advisory Process to Review Reference Points Consistent with the Precautionary Approach for a Variety of Stocks in the Maritimes Region.",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

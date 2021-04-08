@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1747,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Similarities in annual recruitment for Atlantic salmon to sport fisheries of inner Bay of Fundy rivers and stock forecasts for 1987",
+            "pub_year": 1987,
+            "lead_author_2": "P.G. Amiro",
+            "pub_num": "058",
+            "pages": 17,
+            "pdf_size": 1105,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3258,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Updated estimates of exploitation rates and biomass for cod (Gadus morhua) in NAFO Divisions 3KL and Subdivision 3Ps during 1997-2000 from tagging experiments in these years",
+            "title_fr": "Mise à jour des estimations des taux d'exploitation et de la biomasse de morue (Gadus morhua) dans les divisions 3KL et la sous-division 3Ps de l'OPANO pour 1997-2000 d'après les résultats d'expériences d'étiquetage",
+            "pub_year": 2002,
+            "lead_author_2": "Noel Cadigan and John Brattey",
+            "pub_num": "021",
+            "pages": 26,
+            "pdf_size": 685,
+            "description": ""
+        }
+    }
+]

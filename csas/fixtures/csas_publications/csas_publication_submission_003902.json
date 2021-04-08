@@ -1,0 +1,20 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3902,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of Greenland Halibut (Reinhardtius hippoglossoides) in the Gulf of St. Lawrence (4RST) in 2002",
+            "title_fr": "Évaluation du flétan du Groenland (Reinhardtius hippoglossoides) du golfe du Saint-laurent (4RST) en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Morin, B. & Bernier, B.
+
+Réviseurs : François Grégoire & Louise Savard",
+            "pub_num": "088",
+            "pages": 76,
+            "pdf_size": 1287,
+            "description": ""
+        }
+    }
+]

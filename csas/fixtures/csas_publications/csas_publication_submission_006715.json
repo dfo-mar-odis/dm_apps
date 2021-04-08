@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6715,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Risk-based assessment of climate change impacts and risks on the biological systems and infrastructure within Fisheries and Oceans Canada's mandate - Arctic Large Aquatic Basin",
+            "title_fr": "Évaluation fondée sur les risques des impacts et des menaces que les changements climatiques présentent pour l'infrastructure et les systèmes biologiques qui relèvent du mandat de Pêches et Océans Canada - grand bassin aquatique de l'Arctique",
+            "pub_year": 2012,
+            "lead_author_2": "Marie-Claude Fortin",
+            "pub_num": "042",
+            "pages": 39,
+            "pdf_size": 987,
+            "description": ""
+        }
+    }
+]

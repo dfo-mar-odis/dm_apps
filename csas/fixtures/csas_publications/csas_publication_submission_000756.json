@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 756,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Hydrological Conditions for Atlantic Salmon Rivers in 2000",
+            "pub_year": 2001,
+            "lead_author_2": "D. Caissie",
+            "pub_num": "010",
+            "pages": 25,
+            "pdf_size": 508,
+            "description": ""
+        }
+    }
+]

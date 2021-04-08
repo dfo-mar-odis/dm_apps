@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3388,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Pelagic Subcommittee Meeting; November 19-20, 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Stocker, M., King, J.",
+            "pub_num": "031",
+            "pages": 22,
+            "pdf_size": 137,
+            "description": ""
+        }
+    }
+]

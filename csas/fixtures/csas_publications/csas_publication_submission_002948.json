@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2948,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scallops in Production Areas (SPA's) in the Bay of Fundy",
+            "title_fr": "Pétoncle des zones de production de pétoncle (ZPP) de la baie de Fundy",
+            "pub_year": 1999,
+            "lead_author_2": "Stephen Smith, Mark Lundy, Dale Roddick, Maureen Butler",
+            "pub_num": "C3-56",
+            "pages": 17,
+            "pdf_size": 2,
+            "description": ""
+        }
+    }
+]

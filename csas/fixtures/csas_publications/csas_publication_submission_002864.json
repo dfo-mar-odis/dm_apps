@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2864,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of cod in Division 4X in 1997 .",
+            "pub_year": 1997,
+            "lead_author_2": "Clark, D.S.",
+            "pub_num": "110",
+            "pages": 59,
+            "pdf_size": 2649,
+            "description": ""
+        }
+    }
+]

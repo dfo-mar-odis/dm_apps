@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1049,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Assessments of Gaspereau and Striped Bass Stocks of the maritime Provinces, 2000 - Proceedings of the Diadromous Subcommittee, Regional Advisory Process, Gulf and Maritime Regions; March 19-21, 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Kimberly A. Robichaud-LeBlanc and Peter G. Amiro (Editors)",
+            "pub_num": "011",
+            "pages": 25,
+            "description": ""
+        }
+    }
+]

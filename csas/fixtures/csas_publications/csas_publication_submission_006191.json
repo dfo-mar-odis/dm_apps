@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6191,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Updated Estimate of Lake Utopia Rainbow Smelt (Osmerus mordax), Large-bodied Population, Spawner Abundance and Allowable Harm",
+            "title_fr": "Mise à jour sur l’estimation de l’abondance des populations de grande taille d’éperlans arc-en-ciel (Osmerus mordax) géniteurs du lac Utopia et des dommages admissibles",
+            "pub_year": 2018,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "019",
+            "pages": 15,
+            "pdf_size": 327,
+            "description": ""
+        }
+    }
+]

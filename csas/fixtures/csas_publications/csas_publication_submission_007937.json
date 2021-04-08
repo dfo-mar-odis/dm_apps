@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7937,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Recommended Design Strategies for the Development of a Marine Protected Area Network in the Newfoundland and Labrador Shelves Bioregion",
+            "lead_author_2": "Nadine Wells et al.",
+            "description": ""
+        }
+    }
+]

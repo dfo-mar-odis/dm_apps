@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5246,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on whelk in the Quebec's inshore waters; March 3, 2009",
+            "title_fr": "Évaluation des stocks de buccin des eaux côtières du Québec; 3 mars 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Lambert, J., Dubé, S.",
+            "pub_num": "011",
+            "pages": 20,
+            "description": ""
+        }
+    }
+]

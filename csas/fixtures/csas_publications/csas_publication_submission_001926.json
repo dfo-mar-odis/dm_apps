@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1926,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An analysis of the day versus night catches of the southern Gulf of St. Lawrence groundfish cruises 1985-1988",
+            "pub_year": 1989,
+            "lead_author_2": "Gloria Nielsen",
+            "pub_num": "054",
+            "pages": 19,
+            "pdf_size": 700,
+            "description": ""
+        }
+    }
+]

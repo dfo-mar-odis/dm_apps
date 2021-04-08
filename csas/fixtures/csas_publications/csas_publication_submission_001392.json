@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1392,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of five enhanced Atlantic salmon (salmo salar L.) stocks of the Newfoundland Region in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "C.E. Bourgeois; J.P. Davis; J. Murray; V. Mercer",
+            "pub_num": "088",
+            "pages": 23,
+            "pdf_size": 716,
+            "description": ""
+        }
+    }
+]

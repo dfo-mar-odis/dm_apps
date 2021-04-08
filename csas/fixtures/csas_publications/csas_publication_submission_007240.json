@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7240,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Short-Term Stock Prospects for Cod, Crab and Shrimp in the Newfoundland and Labrador Region (Divisions 2J3KL)",
+            "title_fr": "Perspectives à court terme pour les stocks de morue, de crabe et de crevette dans la région de Terre-Neuve et du Labrador (divisions 2J3KL)",
+            "pub_year": 2014,
+            "lead_author_2": "James Meade",
+            "pub_num": "049",
+            "pages": 18,
+            "pdf_size": 1248,
+            "description": ""
+        }
+    }
+]

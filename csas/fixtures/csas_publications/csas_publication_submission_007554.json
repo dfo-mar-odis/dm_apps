@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7554,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluating Models to Forecast Return Timing and Diversion Rate of Fraser Sockeye Salmon",
+            "title_fr": "Évaluation des modèles de prévision de la période de montaison et du taux de déviation du saumon rouge du fleuve Fraser",
+            "pub_year": 2017,
+            "lead_author_2": "Folkes, M.J.P., Thomson, R.E., and Hourston, R.A.S.",
+            "pub_num": "021",
+            "pages": 226,
+            "pdf_size": 19369,
+            "description": ""
+        }
+    }
+]

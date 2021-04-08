@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6443,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment of Eulachon (Thaleichthys pacificus) in Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'eulakane (Thaleichthys pacificus) au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Jake Schweigert",
+            "pub_num": "098",
+            "pages": 128,
+            "pdf_size": 2390,
+            "description": ""
+        }
+    }
+]

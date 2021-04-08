@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1407,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Rendements comparatifs et sélectivité de trois types de casiers à crabes des neiges",
+            "pub_year": 1984,
+            "lead_author_2": "R. Dufour",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

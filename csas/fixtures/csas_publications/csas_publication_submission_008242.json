@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8242,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Assessment of American Eel in the Maritimes Region, September 5-7, 2018",
+            "lead_author_2": "Ford, Jennifer",
+            "description": ""
+        }
+    }
+]

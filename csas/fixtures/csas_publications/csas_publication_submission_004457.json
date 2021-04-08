@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4457,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritime Provinces Regional Advisory Process on Scallops in SFA 29; 12 May 2005",
+            "title_fr": "Compte rendu des réunions du Processus consultatif régional sur les pétoncles de la ZPP 29; le 12 mai 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Claytor, Ross",
+            "pub_num": "029",
+            "pages": 15,
+            "pdf_size": 86,
+            "description": ""
+        }
+    }
+]

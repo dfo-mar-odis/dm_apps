@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 77,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4VsW cod in 1997 incorporating additional sources of mortality",
+            "pub_year": 1998,
+            "lead_author_2": "Mohn, R.K., Fanning, L.P., MacEachern, W.J.",
+            "pub_num": "078",
+            "description": ""
+        }
+    }
+]

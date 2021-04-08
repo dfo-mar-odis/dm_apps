@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5438,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Aquaculture-related physical alterations of habitat structure as ecosystem stressors ",
+            "title_fr": "La modification physique de l'habitat par l'aquaculture comme facteur de stress écosystémique ",
+            "pub_year": 2010,
+            "lead_author_2": "McKindsey, C.",
+            "pub_num": "024",
+            "pages": 159,
+            "pdf_size": 3615,
+            "description": ""
+        }
+    }
+]

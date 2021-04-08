@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4083,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biology, fishery and status of the 2GH and 2J3KL (northern) cod stocks: information supporting an assessment of allowable harm under the Species at Risk Act for the COSEWIC-defined Newfoundland and Labrador population of Atlantic cod (Gadus morhua)",
+            "title_fr": "Biologie, pêche et état des stocks de morue du Nord de 2GH et de 2J3KL : information à l'appui d'une évaluation des dommages admissibles en vertu de la Loi sur les espèces en péril pour la population de morue (Gadus morhua) de Terre-Neuve-et-Labrador définie par le COSEPAC",
+            "pub_year": 2004,
+            "lead_author_2": "Lilly, G.R., E.F. Murphy",
+            "pub_num": "102",
+            "pages": 113,
+            "pdf_size": 2375,
+            "description": ""
+        }
+    }
+]

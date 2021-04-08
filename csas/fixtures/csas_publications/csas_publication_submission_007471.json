@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7471,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Development of risk-based indicators for SGaan Kinghlas-Bowie Seamount Marine Protected Area using the ecological risk assessment framework",
+            "title_fr": "Élaboration d'indicateurs fondés sur les risques pour la zone de protection marine du mont sous-marin Bowie (SGaan Kinghlas) à l'aide du cadre d'évaluation du risque écologique",
+            "pub_year": 2015,
+            "lead_author_2": "John Holmes",
+            "pub_num": "054",
+            "pages": 23,
+            "pdf_size": 305,
+            "description": ""
+        }
+    }
+]

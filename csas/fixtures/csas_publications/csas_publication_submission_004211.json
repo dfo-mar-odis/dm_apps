@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4211,
+        "fields": {
+            "series": 5,
+            "lead_region": [2, 1],
+            "title_en": "Framework and Assessment for Lobster (Homarus americanus) in the Southern Gulf of St. Lawrence Lobster Fishing Areas 23, 24, 25, 26A and 26B",
+            "title_fr": "Évaluation-cadre du homard (Homarus americanus) des zones de pêche du homard 23, 24, 25, 26A et 26B",
+            "pub_year": 2007,
+            "lead_author_2": "Comeau, M., A. Rondeau",
+            "pub_num": "035",
+            "pages": 12,
+            "pdf_size": 129,
+            "description": ""
+        }
+    }
+]

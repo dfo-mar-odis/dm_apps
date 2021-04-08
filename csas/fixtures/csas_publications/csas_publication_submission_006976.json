@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6976,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment of Offshore Killer Whales off the Pacific Coast of Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement des épaulards hauturiers au large de la côte du pacifique du Canada",
+            "pub_year": 2014,
+            "lead_author_2": "John Ford",
+            "pub_num": "047",
+            "description": ""
+        }
+    }
+]

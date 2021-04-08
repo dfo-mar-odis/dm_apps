@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3760,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "The Northern Gulf of St. Lawrence (3Pn, 4RS) cod in 2002",
+            "title_fr": "La morue du nord du golfe du Saint-Laurent (3Pn, 4RS) en 2002",
+            "pub_year": 2003,
+            "pub_num": "017",
+            "pages": 13,
+            "description": ""
+        }
+    }
+]

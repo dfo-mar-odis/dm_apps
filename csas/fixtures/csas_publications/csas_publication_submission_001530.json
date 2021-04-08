@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1530,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Variation spatio-temporelle des larves de homard (Homarus americanus) des Iles-de-la-Madeline, Québec",
+            "pub_year": 1985,
+            "lead_author_2": "C. Hudon; P. Fradette",
+            "pub_num": "023",
+            "description": ""
+        }
+    }
+]

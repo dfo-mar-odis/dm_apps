@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3598,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "The 1998 Fraser Sockeye Cycle",
+            "pub_year": 1999,
+            "lead_author_2": "Alan Cass",
+            "pub_num": "D6-01",
+            "pages": 6,
+            "description": ""
+        }
+    }
+]

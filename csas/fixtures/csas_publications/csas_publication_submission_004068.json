@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4068,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Coastal Time Series (CTS): A Database of Coastal Temperature Time Series for the Canadian East Coast",
+            "title_fr": "Séries Chronologiques Côtières (CTS) : Base de données sur les séries chronologiques de la température de la côte est du Canada",
+            "pub_year": 2004,
+            "lead_author_2": "Gregory, D.N.",
+            "pub_num": "096",
+            "pages": 10,
+            "pdf_size": 124,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2221,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Results of the 1991-92 herring acoustic surveys in NAFO Div. 4WX",
+            "pub_year": 1992,
+            "lead_author_2": "U. Buerkle",
+            "pub_num": "073",
+            "pages": 23,
+            "description": ""
+        }
+    }
+]

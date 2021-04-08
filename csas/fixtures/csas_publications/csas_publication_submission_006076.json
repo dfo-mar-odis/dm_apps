@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6076,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Atlantic Bluefin Tuna (Thunnus thynnus) Recovery Potential Assessment Science Peer Review; 13-15 July, 2011",
+            "title_fr": "Processus de consultation scientifique - Évaluation du potentiel de rétablissement du thon rouge de l'Atlantique (Thunnus thynnus) ; du 13 au 15 juillet 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Julie Porter",
+            "pub_num": "049",
+            "pages": 31,
+            "pdf_size": 166,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6351,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional science advisory process for the assessment of and recommended sustainable harvest level for Dolly Varden from the Big Fish River, Northwest Territories; February 29, 2012",
+            "title_fr": "Compte rendu du processus d'avis scientifique régional concernant l'évaluation et la recommandation de niveaux de prises durables pour le Dolly Varden dans la rivière Big Fish, aux Territoires du Nord-Ouest ; le 29 février 2012",
+            "pub_year": 2012,
+            "lead_author_2": "Kristen Adair",
+            "pub_num": "046",
+            "pages": 14,
+            "pdf_size": 100,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6261,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Modelling Spread, Establishment and Impact of Bighead and Silver Carps in the Great Lakes",
+            "title_fr": "Modélisation de la propagation, l'établissement et l'impact des carpes à grosse tête et argenté dans les Grands Lacs",
+            "pub_year": 2011,
+            "lead_author_2": "W.J.S. Currie, K. Cuddington, T.J. Steward, H. Zhang and M.A. Koops",
+            "pub_num": "113",
+            "pages": 80,
+            "pdf_size": 2929,
+            "description": ""
+        }
+    }
+]

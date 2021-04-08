@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5087,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish Catch Results from the Summer 2007 Survey in Unit 2",
+            "title_fr": "Résultats des captures du sébaste à l'issue des relevés de l'été 2007 dans l'unité 2",
+            "pub_year": 2009,
+            "lead_author_2": "J. McClintock, M. Teasdale",
+            "pub_num": "094",
+            "description": ""
+        }
+    }
+]

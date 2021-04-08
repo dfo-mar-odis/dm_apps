@@ -42,7 +42,11 @@
           {% elif "activity" in field %}
             <td class="w150">${ item.{{ field }} | nz}</td>
           {% elif "notes" in field %}
-            <td v-html="item.notes_html"></td>
+            <td v-if="item.notes_html" v-html="item.notes_html"></td>
+            <td v-else>---</td>
+          {% elif "meta" in field %}
+            <td v-if="item.metadata" v-html="item.metadata"></td>
+            <td v-else>---</td>
           {% else %}
             <td>${ item.{{ field }} | nz}</td>
           {% endif %}

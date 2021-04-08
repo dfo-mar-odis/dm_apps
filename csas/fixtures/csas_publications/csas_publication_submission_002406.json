@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2406,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Justification for, and status of, American eel elver fisheries in Scotia-Fundy Region",
+            "pub_year": 1995,
+            "lead_author_2": "B.M. Jessop",
+            "pub_num": "002",
+            "pages": 10,
+            "pdf_size": 694,
+            "description": ""
+        }
+    }
+]

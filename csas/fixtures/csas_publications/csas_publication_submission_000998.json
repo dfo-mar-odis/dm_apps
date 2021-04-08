@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 998,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the 1999 Newfoundland Region Salmonid Stock Assessment Meeting",
+            "pub_year": 1999,
+            "lead_author_2": "D. Reddin, Editor",
+            "pub_num": "024",
+            "description": ""
+        }
+    }
+]

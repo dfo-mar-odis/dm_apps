@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1281,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The effect of temporal trends in size-at-age on F0.1 for 4VW haddock",
+            "pub_year": 1983,
+            "lead_author_2": "R. Mahon; G.N. White, II",
+            "pub_num": "048",
+            "pages": 21,
+            "pdf_size": 1053,
+            "description": ""
+        }
+    }
+]

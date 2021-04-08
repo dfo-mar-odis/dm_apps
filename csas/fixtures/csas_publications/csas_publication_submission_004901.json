@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4901,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Groundfish Stock Assessments of the 2005 fishing season in the Quebec Region; February 6-10, 2006",
+            "title_fr": "Évaluations des stocks de poisson de fonds de la région du Québec suivant la saison de pêche 2005; du 6 au 10 février 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Cyr, C., D. Gascon",
+            "pub_num": "054",
+            "pages": 40,
+            "pdf_size": 200,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2380,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Preliminary estimates of biomass of commercially important species eaten by Atlantic cod (Gadus morhua) in the southern Gulf of St. Lawrence, 1992 and 1993",
+            "pub_year": 1994,
+            "lead_author_2": "J.M. Hanson",
+            "pub_num": "045",
+            "pages": 16,
+            "pdf_size": 863,
+            "description": ""
+        }
+    }
+]

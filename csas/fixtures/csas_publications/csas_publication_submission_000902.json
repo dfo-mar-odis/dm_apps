@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 902,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An acoustic estimate of juvenile Arctic cod (Boreogadus saida) abundance in ICNAF Divisions 2J and 3K, 1978",
+            "pub_year": 1979,
+            "lead_author_2": "D.S. Miller",
+            "pub_num": "012",
+            "pages": 11,
+            "pdf_size": 553,
+            "description": ""
+        }
+    }
+]

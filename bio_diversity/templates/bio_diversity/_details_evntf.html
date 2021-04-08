@@ -1,0 +1,17 @@
+{% load verbose_names %}
+
+<div class="container" >
+    <div class="row">
+        <div class="col-sm">
+            <div><span class="font-weight-bold">{% get_verbose_label evntf 'evnt_id' %} : </span><span>{% get_field_value evntf 'evnt_id' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evntf 'evntfc_id' %} : </span><span>{% get_field_value evntf 'evntfc_id' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evntf 'stok_id' %} : </span><span>{% get_field_value evntf 'stok_id' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evntf 'evntf_xls' %} : </span><span>{% if evntf.evntf_xls %}
+                <a href="{{ MEDIA_URL }}{{evntf.evntf_xls.url}}">Event File</a>
+            {% endif %} </span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evntf 'comments' %} : </span><span>{% get_field_value evntf 'comments' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evntf 'created_by' %} : </span><span>{% get_field_value evntf 'created_by' %}</span></div>
+            <div><span class="font-weight-bold">{% get_verbose_label evntf 'created_date' %} : </span><span>{% get_field_value evntf 'created_date' %}</span></div>
+        </div>
+    </div>
+</div>

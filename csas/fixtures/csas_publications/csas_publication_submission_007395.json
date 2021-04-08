@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7395,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the national peer review on Providing science advice to management in the interim years for multi-year stock assessments (Technical Expertise on Stock Assessments); March 10-12, 2015",
+            "title_fr": "Compte rendu de la réunion d'examen national par les pairs visant à Fournir un avis scientifique pour la gestion des années intermédiaires entre les évaluations pluriannuelles des stocks (Expertise technique en évaluation des stocks); du 10 au 12 mars 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Nicholas Duprey",
+            "pub_num": "032",
+            "pages": 17,
+            "pdf_size": 141,
+            "description": ""
+        }
+    }
+]

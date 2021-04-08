@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5267,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "State of physical, biological, and selected fishery resources of Pacific Canadian marine ecosystems",
+            "title_fr": "État des ressources physiques et biologiques et de certaines ressources halieutiques des écosystèmes des eaux canadiennes du Pacifique",
+            "pub_year": 2009,
+            "lead_author_2": "Crawford, B., Irvine, J.",
+            "pub_num": "022",
+            "description": ""
+        }
+    }
+]

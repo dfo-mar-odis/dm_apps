@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8200,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Protocols and recommended mitigation for the use of drones in the study of Marine Mammals",
+            "lead_author_2": "Meade, Jim",
+            "description": ""
+        }
+    }
+]

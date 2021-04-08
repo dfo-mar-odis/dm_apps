@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6487,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Results of narwhal (Monodon monoceros) aerial surveys in northern Hudson Bay, August 2011",
+            "title_fr": "Résultats des relevés aériens du narval (Monodon monoceros) dans le nord de la baie d'Hudson, août 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Natalie Asselin, Steven Ferguson, Pierre Richard and David Barber",
+            "pub_num": "037",
+            "pages": 26,
+            "pdf_size": 672,
+            "description": ""
+        }
+    }
+]

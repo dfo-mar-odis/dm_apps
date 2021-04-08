@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4258,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Science Advisory Process to Assess the Arctic Surfclam (Mactromeris polynyma) Stock on Grand Bank; September 7-8, 2010",
+            "title_fr": "Compte rendu de la réunion tenue dans le cadre du Processus consultatif scientifique de la Région des Maritimes pour évaluer le stock de mactre de Stimpson (Mactromeris polynyma) du Grand Banc ; les 7 et 8 septembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Ross Claytor / Lottie Bennett / Valerie Myra",
+            "pub_num": "010",
+            "pages": 19,
+            "pdf_size": 84,
+            "description": ""
+        }
+    }
+]

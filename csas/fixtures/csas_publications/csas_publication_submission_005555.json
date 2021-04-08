@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5555,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "State of physical, biological, and selected fishery resources of Pacific Canadian marine ecosystems",
+            "lead_author_2": "Irvine, J.",
+            "description": ""
+        }
+    }
+]

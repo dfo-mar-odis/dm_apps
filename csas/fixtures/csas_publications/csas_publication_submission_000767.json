@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 767,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Beluga in Northern Quebec: Impact of harvesting on population trends of beluga in eastern Hudson Bay",
+            "title_fr": "Le béluga du Nord québécois : impacts de l'exploitation sur les tendances démographiques des bélugas de l'est de la baie d'Hudson",
+            "pub_year": 2001,
+            "lead_author_2": "Hammill, M. O.",
+            "pub_num": "025",
+            "pages": 19,
+            "pdf_size": 313,
+            "description": ""
+        }
+    }
+]

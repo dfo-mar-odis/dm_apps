@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7209,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Regional Peer Review on the Characterization of Fishery Effects on Valued Species, Habitat and Ecosystem Components of the Proposed Scott Islands Marine National Wildlife Area; August 6-7, 2014",
+            "title_fr": "Compte rendu de l'examen régional par des pairs de la région du Pacifique par le sur la Caractérisation des effets des pêches sur les espèces valorisées, l'habitat et les composantes de l'écosystème de la réserve nationale marine de faune proposée aux îles Scott; les 6 et 7 août 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Mary Thiess",
+            "pub_num": "007",
+            "pages": 27,
+            "pdf_size": 226,
+            "description": ""
+        }
+    }
+]

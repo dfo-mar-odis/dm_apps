@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1633,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "État des stocks de crabe des neiges de l'estuaire et du nord du golfe Saint-Laurent en 1985",
+            "pub_year": 1986,
+            "lead_author_2": "R. Dufour",
+            "pub_num": "016",
+            "description": ""
+        }
+    }
+]

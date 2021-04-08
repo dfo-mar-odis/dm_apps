@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 461,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status of the coastal Pacific hake/whiting stock in U.S. and Canada in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "M.W. Dorn, M.W. Saunders, C.D. Wilson, M.A. Guttormsen, K. Cooke, R. Kieser, M.E. Wilkins",
+            "pub_num": "090",
+            "pages": 104,
+            "pdf_size": 1308,
+            "description": ""
+        }
+    }
+]

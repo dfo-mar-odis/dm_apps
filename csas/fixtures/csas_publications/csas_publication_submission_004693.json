@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4693,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Comparison of photographic and visual abundance indices of belugas in the St. Lawrence Estuary in 2003 and 2005",
+            "title_fr": "Comparaison des indices d'abondance photographique et visuels des bélugas de l'estuaire du Saint-Laurent en 2003 et 2005",
+            "pub_year": 2007,
+            "lead_author_2": "Gosselin, J.-F., M.O. Hammill, V. Lesage.",
+            "pub_num": "025",
+            "pages": 31,
+            "pdf_size": 840,
+            "description": ""
+        }
+    }
+]

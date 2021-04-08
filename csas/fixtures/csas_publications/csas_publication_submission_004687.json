@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4687,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Impacts of constructing a methane port at Gros-Cacouna on marine mammals",
+            "title_fr": "Impacts de la construction d'un port méthanier à Gros-Cacouna sur les mammifères marins",
+            "pub_year": 2007,
+            "lead_author_2": "Simard, Y., C. Cyr.",
+            "pub_num": "010",
+            "pages": 7,
+            "pdf_size": 43,
+            "description": ""
+        }
+    }
+]

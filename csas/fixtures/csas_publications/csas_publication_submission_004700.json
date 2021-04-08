@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4700,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Expert Panel on National Containment Standards for Facilities Handling Aquatic Animal Pathogens; April 18, 2006",
+            "title_fr": "Compte rendu de la réunion des experts sur les normes nationales pour les installations qui manipulent les pathogènes des animaux aquatiques; 18 avril 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Rice, J., N. House.",
+            "pub_num": "023",
+            "pages": 39,
+            "pdf_size": 188,
+            "description": ""
+        }
+    }
+]

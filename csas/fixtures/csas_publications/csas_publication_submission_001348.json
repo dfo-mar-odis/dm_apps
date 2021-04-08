@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1348,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Margaree gaspereau fishery, 1989",
+            "pub_year": 1990,
+            "lead_author_2": "Gérald J. Chaput; Claude H. LeBlanc",
+            "pub_num": "033",
+            "pages": 38,
+            "pdf_size": 1754,
+            "description": ""
+        }
+    }
+]

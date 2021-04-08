@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1637,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Research data on the distribution and abundance of shrimp (Pandalus borealis) in the Cartwright Channel and Division 3K",
+            "pub_year": 1986,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch",
+            "pub_num": "020",
+            "pages": 15,
+            "pdf_size": 863,
+            "description": ""
+        }
+    }
+]

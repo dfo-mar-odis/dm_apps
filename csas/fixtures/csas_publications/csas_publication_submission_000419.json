@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 419,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "American plaice in Subdivision 3Ps an assessment update",
+            "pub_year": 1980,
+            "lead_author_2": "T.K. Pitt",
+            "pub_num": "053",
+            "pages": 25,
+            "pdf_size": 1515,
+            "description": ""
+        }
+    }
+]

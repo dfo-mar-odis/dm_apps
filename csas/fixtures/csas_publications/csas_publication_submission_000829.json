@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 829,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Pollock in Divisions 4VWX and Subarea 5",
+            "pub_year": 1977,
+            "lead_author_2": "S. Clark; T. Burns; R.G. Halliday",
+            "pub_num": "009",
+            "pages": 13,
+            "pdf_size": 905,
+            "description": ""
+        }
+    }
+]

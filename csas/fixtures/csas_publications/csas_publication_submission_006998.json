@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6998,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science Advice for Managing Risk and Uncertainty in Operational Decisions of the Fisheries Protection Program",
+            "title_fr": "Avis scientifique concernant la gestion des risques et de l'incertitude lors de la prise de décisions opérationnelles relatives au Programme de protection des pêches",
+            "pub_year": 2014,
+            "lead_author_2": "Roger Wysocki",
+            "pub_num": "015",
+            "description": ""
+        }
+    }
+]

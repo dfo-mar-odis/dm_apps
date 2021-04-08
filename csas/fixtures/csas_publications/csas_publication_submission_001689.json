@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1689,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Identification of developmental stages in hooded seals (Cystophora cristata) pups",
+            "pub_year": 1986,
+            "lead_author_2": "G.B. Stenson; R.A. Myers",
+            "pub_num": "103",
+            "pages": 18,
+            "pdf_size": 877,
+            "description": ""
+        }
+    }
+]

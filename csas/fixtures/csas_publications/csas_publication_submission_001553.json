@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1553,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Two phase sampling of the herring fishery in NAFO Division 4T",
+            "pub_year": 1985,
+            "lead_author_2": "M. Ahrens",
+            "pub_num": "046",
+            "pages": 18,
+            "pdf_size": 820,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8215,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Stock Status Update for Green Sea Urchin (Strongylocentrotus droebachiensis) in British Columbia and Harvest Options for the Fishery in 2018 to 2021",
+            "title_fr": "Mise à jour sur l’état du stock d’oursins verts (Strongylocentrotus droebachiensis) en Colombie-Britannique et options de prélèvement pour la pêche de 2018 à 2021",
+            "pub_year": 2018,
+            "lead_author_2": "Janet Lochead",
+            "pub_num": "054",
+            "pages": 21,
+            "pdf_size": 2857,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 723,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic Wolffish (Anarhichas lupus) in the Maritimes (NAFO Sub-area 4 and Division 5Yze)",
+            "pub_year": 2000,
+            "lead_author_2": "Mcruer, J., Hurlbut, T., Morin, B.",
+            "pub_num": "138",
+            "pages": 55,
+            "pdf_size": 7551,
+            "description": ""
+        }
+    }
+]

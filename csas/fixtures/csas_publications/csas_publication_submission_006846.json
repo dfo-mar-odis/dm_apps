@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6846,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Recovery potential assessment for Smooth Skate (Malacoraja senta) Funk Island Deep designatable unit",
+            "title_fr": "Évaluation du potentiel de rétablissement de la raie à queue de velours (Malacoraja senta) de l'unité désignable de la fosse de l'île Funk",
+            "pub_year": 2013,
+            "lead_author_2": "Mark Simpson",
+            "pub_num": "035",
+            "pages": 13,
+            "pdf_size": 1075,
+            "description": ""
+        }
+    }
+]

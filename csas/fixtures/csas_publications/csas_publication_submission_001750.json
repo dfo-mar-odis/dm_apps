@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1750,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Newfoundland east and southeast coast herring - 1986 assessment",
+            "pub_year": 1987,
+            "lead_author_2": "J.P. Wheeler; R. Chaulk",
+            "pub_num": "060",
+            "pages": 92,
+            "pdf_size": 3731,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3748,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Atlantic Halibut in the Gulf of St. Lawrence (4RST) ' Update 2002",
+            "title_fr": "Flétan atlantique du golfe du Saint-Laurent (4RST) - Mise à jour 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Archambault, D.",
+            "pub_num": "006",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

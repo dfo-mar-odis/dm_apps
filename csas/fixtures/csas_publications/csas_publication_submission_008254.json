@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8254,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Mitigation Buffer Zones for Atlantic Walrus (Odobenus rosmarus rosmarus) in the Nunavut Settlement Area",
+            "title_fr": "Zones tampons d’atténuation pour le morse de l’atlantique (Odobenus rosmarus rosmarus) dans la région du Nunavut",
+            "pub_year": 2018,
+            "lead_author_2": "Joclyn Paulic",
+            "pub_num": "055",
+            "pages": 27,
+            "pdf_size": 1257,
+            "description": ""
+        }
+    }
+]

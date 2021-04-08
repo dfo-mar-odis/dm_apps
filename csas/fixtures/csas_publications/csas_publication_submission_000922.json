@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 922,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Meetings to review assessments of groundfish stocks in the Newfoundland Region; May and August 1996",
+            "pub_year": 1996,
+            "lead_author_2": "G.T. Evans (editor)",
+            "pub_num": "007",
+            "description": ""
+        }
+    }
+]

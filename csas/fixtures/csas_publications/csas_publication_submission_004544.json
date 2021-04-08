@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4544,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Abundance of Northwest Atlantic hooded seals (1960 - 2005)",
+            "title_fr": "Abondance des phoques à capuchon dans l'Atlantique Nord-Ouest (1960 - 2005)",
+            "pub_year": 2006,
+            "lead_author_2": "Hammill, M.O., G.B. Stenson.",
+            "pub_num": "068",
+            "pages": 23,
+            "pdf_size": 137,
+            "description": ""
+        }
+    }
+]

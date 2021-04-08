@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6058,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Optical, Chemical, and Biological Oceanographic Conditions in the Maritimes Region in 2009 and 2010",
+            "title_fr": "Propriétés optiques, chimiques et biologiques de l'océan dans la région des Maritimes, en 2009 et 2010",
+            "pub_year": 2012,
+            "lead_author_2": "Johnson, C., G. Harrison, E. Head, J. Spry, K. Pauley, H. Maass, M. Kennedy, C. Porter, I. Yashayaeva, and B. Casault",
+            "pub_num": "012",
+            "pages": 68,
+            "pdf_size": 9362,
+            "description": ""
+        }
+    }
+]

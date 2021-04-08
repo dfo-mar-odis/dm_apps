@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5970,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Hierarchical Bayesian Model to Estimate the Spawning Stock of Striped Bass (Morone saxatilis) in the Northwest Miramichi River, 1994 to 2010",
+            "title_fr": "Modèle bayésien hierarchique pour l'estimation d'abondance des géniteurs de bar rayé (Morone saxatilis) de la rivière Miramichi nord-ouest, 1994 à 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Chaput, G., Douglas, S.",
+            "pub_num": "081",
+            "pages": 55,
+            "pdf_size": 196,
+            "description": ""
+        }
+    }
+]

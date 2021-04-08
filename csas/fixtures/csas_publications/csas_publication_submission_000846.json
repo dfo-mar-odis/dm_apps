@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 846,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Evidence for the underestimation of the proportion of North American salmon in the West Greenland feeding aggregate",
+            "pub_year": 1979,
+            "lead_author_2": "D.J. Fairbairn",
+            "pub_num": "026",
+            "pages": 16,
+            "pdf_size": 938,
+            "description": ""
+        }
+    }
+]

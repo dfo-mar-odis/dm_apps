@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8495,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the American Lobster Assessment",
+            "lead_author_2": "Roanne Collins",
+            "description": ""
+        }
+    }
+]

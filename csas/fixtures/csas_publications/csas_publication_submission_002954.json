@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2954,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Cod in the Northern Gulf of St. Lawrence",
+            "title_fr": "La morue du nord du golfe du Saint-Laurent",
+            "pub_year": 1999,
+            "lead_author_2": "Alain Fréchet",
+            "pub_num": "A4-01",
+            "pages": 9,
+            "pdf_size": 187,
+            "description": ""
+        }
+    }
+]

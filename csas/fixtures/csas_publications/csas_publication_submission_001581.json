@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1581,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Catch rates and total removals in the 4WX herring purse seine fisheries",
+            "pub_year": 1985,
+            "lead_author_2": "P.M. Mace",
+            "pub_num": "074",
+            "pages": 31,
+            "pdf_size": 1760,
+            "description": ""
+        }
+    }
+]

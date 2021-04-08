@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3615,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution and abundance of Barndoor skate (Dipturus laevis) in the Canadian Atlantic based upon research vessel surveys and industry/science surveys",
+            "title_fr": "Distribution et abondance de la grande raie Dipturus laevis dans l'Atlantique canadien basées sur des relevés de navire de recherche et des relevés de l'industrie/science",
+            "pub_year": 2002,
+            "lead_author_2": "J.E. Simon, K.T. Frank, D.W. Kulka",
+            "pub_num": "070",
+            "pages": 68,
+            "pdf_size": 2980,
+            "description": ""
+        }
+    }
+]

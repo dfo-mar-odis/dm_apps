@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7225,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Support for Delineation of Inner Bay of Fundy Salmon Marine Critical Habitat Boundaries in Minas Basin and Chignecto Bay",
+            "title_fr": "Soutien pour définir les limites de l’habitat marin essentiel du saumon de l’intérieur de la baie de Fundy dans le bassin Minas et la baie Chignecto",
+            "pub_year": 2015,
+            "lead_author_2": "Michelle Greenlaw",
+            "pub_num": "035",
+            "pages": 22,
+            "pdf_size": 984,
+            "description": ""
+        }
+    }
+]

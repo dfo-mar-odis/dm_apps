@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2262,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A review of stock status - 3Ps pollock",
+            "pub_year": 1992,
+            "lead_author_2": "C.A. Bishop; E.F. Murphy",
+            "pub_num": "114",
+            "pages": 10,
+            "pdf_size": 499,
+            "description": ""
+        }
+    }
+]

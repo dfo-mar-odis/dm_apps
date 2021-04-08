@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8248,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of Pacific regional peer review on Recovery Potential Assessment – Chilcotin River and Thompson River Steelhead Trout (Onchorhyncus mykiss) Designatable Units",
+            "lead_author_2": "Sean MacConnachie",
+            "description": ""
+        }
+    }
+]

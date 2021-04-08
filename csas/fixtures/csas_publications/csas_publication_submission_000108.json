@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 108,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment for the British Columbia Herring in 1998 and Forecasts of the Potential Catch in 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Schwigert, J., Fort, C., Tanasichuk, R.",
+            "pub_num": "021",
+            "pages": 69,
+            "pdf_size": 3039,
+            "description": ""
+        }
+    }
+]

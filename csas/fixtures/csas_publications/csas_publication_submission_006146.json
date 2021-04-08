@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6146,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic Sturgeon (Acipenser oxyrinchus oxyrinchus) in the Saint John River, New Brunswick",
+            "title_fr": "État de la population d'esturgeon noir (Acipenser oxyrinchus oxyrinchus) dans le fleuve Saint-Jean, au Nouveau-Brunswick",
+            "pub_year": 2016,
+            "lead_author_2": "Bradford, R.G., Bentzen, P., Ceappa, C., Cook, A.M., Curry, A., and LeBlanc, P.",
+            "pub_num": "072",
+            "pages": 60,
+            "pdf_size": 2842,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8376,
+        "fields": {
+            "series": 6,
+            "lead_region": [1],
+            "title_en": "Review of elements of proponent application to use rotenone for the purpose of eradicating Smallmouth Bass (Micropterus dolomieu) from Miramichi Lake, New Brunswick",
+            "title_fr": "Examen des éléments de la demande du promoteur d’utiliser de la roténone dans le but d’éradiquer l’achigan à petite bouche (Micropterus dolomieu) dans le lac Miramichi (Nouveau-Brunswick)",
+            "pub_year": 2019,
+            "lead_author_2": "Gerald Chaput",
+            "pub_num": "040",
+            "pages": 17,
+            "pdf_size": 489,
+            "description": ""
+        }
+    }
+]

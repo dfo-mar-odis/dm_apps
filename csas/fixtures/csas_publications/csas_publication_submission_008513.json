@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8513,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of American Lobster in Newfoundland",
+            "lead_author_2": "E. Coughlin",
+            "description": ""
+        }
+    }
+]

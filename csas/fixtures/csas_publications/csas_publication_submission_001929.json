@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1929,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status of 4VsW cod in 1988",
+            "pub_year": 1989,
+            "lead_author_2": "L.P. Fanning; W.J. MacEachern",
+            "pub_num": "057",
+            "pages": 72,
+            "pdf_size": 2646,
+            "description": ""
+        }
+    }
+]

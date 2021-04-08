@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2716,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Influence of Recreational and Commercial Fishing on the Blue Shark (Prionace Glauca) Population in Atlantic Canadian Waters",
+            "title_fr": "Incidence de la pêche récréative et commerciale sur la population de requin bleu (Prionace glauca) des eaux canadiennes de l'Atlantique",
+            "pub_year": 2004,
+            "lead_author_2": "Campana, S.E., Marks, L., Joyce, W., Kohler, N.",
+            "pub_num": "069",
+            "pages": 72,
+            "pdf_size": 5002,
+            "description": ""
+        }
+    }
+]

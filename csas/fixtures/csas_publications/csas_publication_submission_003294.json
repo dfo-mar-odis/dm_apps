@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3294,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Pacific Cod in Hecate Strait (5CD) and Queen Charlotte Sound (5AB), January, 2005",
+            "title_fr": "Évaluation de la morue du Pacifique dans le détroit d'Hécate (5CD) et dans le détroit de la Reine Charlotte (5AB) en janvier 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Sinclair, A.F., Starr, P.J.",
+            "pub_num": "026",
+            "pages": 97,
+            "pdf_size": 2037,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7619,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Peer Review of the Arctic Surfclam (Mactromeris polynyma) Framework: 2016; June 28-29, 2016",
+            "title_fr": "Compte rendu de l’examen par les pairs de la région des Maritimes de l’évaluation du Cadre pour la mactre de Stimpson (Mactromeris polynyma): 2016; du 28 au 29 juin 2016",
+            "pub_year": 2016,
+            "lead_author_2": "John Neilson",
+            "pub_num": "043",
+            "pages": 20,
+            "pdf_size": 309,
+            "description": ""
+        }
+    }
+]

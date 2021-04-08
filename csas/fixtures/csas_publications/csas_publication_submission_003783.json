@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3783,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution and abundance of winter skate, Leucoraja ocellata, in the Canadian Atlantic",
+            "title_fr": "Distribution et abondance de la raie tachetée, Leucoraja ocellata, dans l'Atlantique canadien",
+            "pub_year": 2003,
+            "lead_author_2": "Simon, J.E., Harris, L.E., Johnston, T.L.",
+            "pub_num": "028",
+            "pages": 71,
+            "pdf_size": 1086,
+            "description": ""
+        }
+    }
+]

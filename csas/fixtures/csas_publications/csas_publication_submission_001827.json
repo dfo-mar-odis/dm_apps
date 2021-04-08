@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1827,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Prince Edward Island snow crab, Chionoecetes opilio, fishery stock assessment for 1987",
+            "pub_year": 1988,
+            "lead_author_2": "Michel Comeau; Yvon Chiasson; Mikio Moriyasu",
+            "pub_num": "031",
+            "pages": 17,
+            "pdf_size": 935,
+            "description": ""
+        }
+    }
+]

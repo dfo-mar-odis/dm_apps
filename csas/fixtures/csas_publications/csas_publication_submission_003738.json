@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3738,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of the 2002 Snow crab (Chionoecetes opilio) fishery off eastern Nova Scotia (Areas 20 to 24)",
+            "title_fr": "Évaluation du crabe des neiges (Chionoecetes opilio) pour la saison de pêche 2002 au large de l'est de la Nouvelle-Écosse (zones 20 à 24)",
+            "pub_year": 2003,
+            "lead_author_2": "Biron, M., Savoie, L., Sabean, C., Wade E., Moriyasu, M.",
+            "pub_num": "012",
+            "pages": 77,
+            "pdf_size": 6583,
+            "description": ""
+        }
+    }
+]

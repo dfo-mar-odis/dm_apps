@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3253,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Results of surveys of intertidal razor clams (Siliqua patula) on beaches near Massett, Haida Gwaii and recommendations on fishery management",
+            "title_fr": "Résultats des relevés intertidaux du couteau (Siliqua patula) sur les plages près de Massett, Haïda Gwaii et recommandations pour la gestion de la pêche",
+            "pub_year": 2001,
+            "lead_author_2": "R. Jones, C. Schwarz, B. DeFreitas and L. Lee",
+            "pub_num": "152",
+            "pages": 41,
+            "pdf_size": 266,
+            "description": ""
+        }
+    }
+]

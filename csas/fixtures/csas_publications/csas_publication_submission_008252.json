@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8252,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Technical review: potential effectiveness of mitigation measures to reduce impacts from project-related marine vessels on Southern Resident Killer Whale",
+            "title_fr": "Examen technique : efficacité potentielle des mesures d’atténuation pour réduire les impacts des navires du projet sur l’Epaulard Résident du Sud",
+            "pub_year": 2018,
+            "pub_num": "050",
+            "pages": 23,
+            "pdf_size": 890,
+            "description": ""
+        }
+    }
+]

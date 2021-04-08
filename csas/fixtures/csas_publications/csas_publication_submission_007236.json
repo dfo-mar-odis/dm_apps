@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7236,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock assessment and management advice for British Columbia Pacific Herring: 2014 status and 2015 forecast",
+            "title_fr": "Évaluation et gestion des stocks de hareng du Pacifique en Colombie-Britannique : état en 2014 et prévisions pour 2015",
+            "pub_year": 2014,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "060",
+            "pages": 21,
+            "pdf_size": 596,
+            "description": ""
+        }
+    }
+]

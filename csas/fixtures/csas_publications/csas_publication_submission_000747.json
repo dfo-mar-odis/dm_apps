@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 747,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update on the status of striped bass (Morone saxatilis) in eastern Canada in 1998.",
+            "pub_year": 2001,
+            "lead_author_2": "Bradford, R.G., Cairns, D., Jessop B.",
+            "pub_num": "007",
+            "pages": 16,
+            "pdf_size": 169,
+            "description": ""
+        }
+    }
+]

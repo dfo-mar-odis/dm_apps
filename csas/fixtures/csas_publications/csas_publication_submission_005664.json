@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5664,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery potential assessment of Lake Sturgeon: Nelson River populations (Designatable Unit 3)",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'esturgeon jaune : Populations de l'ouest du fleuve Nelson (unité désignable 3)",
+            "pub_year": 2010,
+            "lead_author_2": "T.C. Pratt",
+            "pub_num": "050",
+            "pages": 24,
+            "pdf_size": 397,
+            "description": ""
+        }
+    }
+]

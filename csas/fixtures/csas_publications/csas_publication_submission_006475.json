@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6475,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Physical Oceanographic Conditions in the Gulf of St. Lawrence in 2011",
+            "title_fr": "Conditions océanographiques physiques dans le golfe du Saint-Laurent en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Peter Galbraith, J. Chassé, D. Gilbert, P. Larouche, D. Brickman, B. Pettigrew, L. Devine, A. Gosselin, R.G. Pettipas, C. Lafleur",
+            "pub_num": "023",
+            "pages": 88,
+            "pdf_size": 13340,
+            "description": ""
+        }
+    }
+]

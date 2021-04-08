@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6055,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Reconstruction of the Tadoussac and Baie-Ste-Catherine, Quebec, landing docks - Impacts on marine mammals",
+            "title_fr": "Réfection des embarcadères de Tadoussac et Baie Ste-Catherine, Québec - Effets sur les mammifères marins",
+            "pub_year": 2011,
+            "lead_author_2": "Véronique Lesage",
+            "pub_num": "009",
+            "pages": 13,
+            "pdf_size": 87,
+            "description": ""
+        }
+    }
+]

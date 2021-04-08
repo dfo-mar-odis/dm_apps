@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4364,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Risk Assessment for Northern Snakehead (Channa argus) in Canada",
+            "title_fr": "Évaluation des risques posés par le poisson à tête de serpent (Channa argus) au Canada",
+            "pub_year": 2005,
+            "lead_author_2": "Cudmore, B., N.E. Mandrak.",
+            "pub_num": "075",
+            "pages": 24,
+            "pdf_size": 677,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8081,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Science Peer Review of the Inner Bay of Fundy Atlantic Salmon Science Associated with the Live Gene Bank; June 13-16, 2017",
+            "title_fr": "Compte rendu de la réunion régionale d’examen scientifique par les pairs de la banque de gènes vivants pour le saumon de l’intérieur de la baie de Fundy; du 13 au 16 juin 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Kent Smedbol",
+            "pub_num": "008",
+            "pages": 41,
+            "pdf_size": 500,
+            "description": ""
+        }
+    }
+]

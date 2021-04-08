@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4291,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the regional peer review of the 3Ps Cod Stock Assessment",
+            "lead_author_2": "J. Meade",
+            "description": ""
+        }
+    }
+]

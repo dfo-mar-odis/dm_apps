@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4147,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Abundance of Eastern Hudson Bay belugas",
+            "title_fr": "Évaluation de l'abondance des belugas de l'est de la Baie d'Hudson",
+            "pub_year": 2005,
+            "lead_author_2": "Hammill, M.O., V. Lesage, J.-F. Gosselin.",
+            "pub_num": "010",
+            "pages": 21,
+            "pdf_size": 156,
+            "description": ""
+        }
+    }
+]

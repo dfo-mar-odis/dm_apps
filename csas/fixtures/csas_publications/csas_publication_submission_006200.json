@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6200,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Evaluation of methods for estimating bowhead whale abundance; September 28 and 29, 2011",
+            "title_fr": "Évaluation des méthodes d'estimation de l'abondance de baleines boréales ; les 28 et 29 septembre 2011",
+            "pub_year": 2011,
+            "lead_author_2": "E. Chmelnitsky, Contact K. Martin",
+            "pub_num": "054",
+            "pages": 29,
+            "pdf_size": 151,
+            "description": ""
+        }
+    }
+]

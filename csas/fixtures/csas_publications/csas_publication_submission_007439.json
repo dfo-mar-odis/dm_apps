@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7439,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Recovery Potential Assessment (RPA) for White Sturgeon, Lower Fraser Designatable Unit",
+            "lead_author_2": "Sean MacConnachie",
+            "description": ""
+        }
+    }
+]

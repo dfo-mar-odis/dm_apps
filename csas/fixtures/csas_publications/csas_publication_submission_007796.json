@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7796,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Background and data inputs for models evaluated as part of the 2015 southern Gulf of St. Lawrence fall-spawning herring assessment framework review",
+            "title_fr": "Renseignements de base et données d'entrées pour les modèles évalués lors de l'examen de 2015 du cadre d'évaluation du stock de harengs reproducteurs d'automne du sud du golfe du Saint-Laurent",
+            "pub_year": 2016,
+            "lead_author_2": "Hugues Benoît",
+            "pub_num": "063",
+            "pages": 58,
+            "pdf_size": 2427,
+            "description": ""
+        }
+    }
+]

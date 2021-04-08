@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7073,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of Update on Recovery Potential Assessment for Cusk (Brosme brosme)",
+            "lead_author_2": "Christie Whelan",
+            "description": ""
+        }
+    }
+]

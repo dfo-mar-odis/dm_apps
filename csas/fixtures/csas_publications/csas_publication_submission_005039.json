@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5039,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A review of darkblotched rockfish Sebastes crameri along the Pacific coast of Canada: biology, distribution, and abundance trends",
+            "title_fr": "Examen du sébaste tacheté Le Sebastes crameri le long de la côte du Pacifique du Canada : biologie, distribution et tendances relatives de l'abondance",
+            "pub_year": 2008,
+            "lead_author_2": "R. Haigh, P.Starr",
+            "pub_num": "056",
+            "pages": 96,
+            "pdf_size": 3310,
+            "description": ""
+        }
+    }
+]

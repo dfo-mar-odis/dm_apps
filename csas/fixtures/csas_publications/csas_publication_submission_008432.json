@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8432,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Estimates of a Biologically-Based Spawning Goal and Management Benchmarks for the Canadian-Origin Taku River Sockeye Salmon Stock Aggregate",
+            "title_fr": "Estimations de points de référence aux fins de gestion et d’un objectif d’échappée de géniteurs reposant sur des données biologiques pour le stock de saumon rouge de la rivière Taku d’origine canadienne",
+            "pub_year": 2020,
+            "lead_author_2": "Miller, S. E., and Pestal, G.",
+            "pub_num": "035",
+            "pages": 80,
+            "pdf_size": 5126,
+            "description": ""
+        }
+    }
+]

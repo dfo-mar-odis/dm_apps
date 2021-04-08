@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2924,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Northern shrimp (Pandalus borealis) resources from Division 0B to 3K - an interim review",
+            "pub_year": 1999,
+            "lead_author_2": "David Orr",
+            "pub_num": "C2-05",
+            "pages": 3,
+            "pdf_size": 288,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1733,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish in NAFO Division 3O",
+            "pub_year": 1987,
+            "lead_author_2": "D.B. Atkinson; D. Power",
+            "pub_num": "044",
+            "pages": 12,
+            "pdf_size": 811,
+            "description": ""
+        }
+    }
+]

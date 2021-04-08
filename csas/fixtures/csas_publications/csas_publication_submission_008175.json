@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8175,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the 20th Annual meeting of the Atlantic Zone Monitoring Program",
+            "lead_author_2": "Pierre Pepin et al.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2597,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Biological characteristics of Atlantic cod (Gadus morhua) from three inshore areas of western Trinity Bay, Newfoundland",
+            "pub_year": 1996,
+            "lead_author_2": "J. Brattey",
+            "pub_num": "050",
+            "pages": 24,
+            "pdf_size": 992,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4236,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process to assess whether upstream passage is needed for Lake Sturgeon at the Pointe du Bois generating station (Winnipeg River); 22 October, 2009",
+            "title_fr": "Compte rendu du processus de consultation scientifique régional du Centre et de l'Arctique sur la nécessité, pour l'esturgeon jaune, d'un passage vers l'amont à la centrale de Pointe-du-Bois (rivière Winnipeg); le 22 octobre 2009",
+            "pub_year": 2009,
+            "lead_author_2": "T. Pratt (Chair)",
+            "pub_num": "059",
+            "pages": 25,
+            "pdf_size": 5940,
+            "description": ""
+        }
+    }
+]

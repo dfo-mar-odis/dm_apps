@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4201,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Abundance of Northwest Atlantic grey seals in the Gulf of St. Lawrence and along the Nova Scotia Eastern Shore",
+            "title_fr": "Abondance des phoques gris du Nord Ouest de l'Atlantique dans le golfe du Saint Laurent et le long de la côte Est de la Nouvelle-Écosse",
+            "pub_year": 2005,
+            "lead_author_2": "Hammill, M.O.",
+            "pub_num": "036",
+            "pages": 15,
+            "pdf_size": 325,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7486,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Estimating abundance and total allowable removals for walrus in Foxe Basin",
+            "title_fr": "Estimation de l'abondance et prélèvements totaux autorisés de morses dans le bassin Foxe",
+            "pub_year": 2016,
+            "lead_author_2": "M.O. Hammill, Blanchfield, P., Higdon, J.W., D.B. Stewart, S.H. Ferguson",
+            "pub_num": "014",
+            "pages": 24,
+            "pdf_size": 967,
+            "description": ""
+        }
+    }
+]

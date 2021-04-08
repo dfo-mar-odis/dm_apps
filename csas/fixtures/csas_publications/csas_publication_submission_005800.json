@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5800,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Biological Sampling Of BC Herring: Analysis Of Sampling Requirements For Characterizing Age Structure And Other Biological Characteristics Of Fisheries And Spawning Populations",
+            "title_fr": "Échantillonnage biologique du hareng dans les eaux de la C.-B. - analyse des exigences en matière d'échantillonnage pour la caractérisation de la structure des âges et des autres caractéristiques biologiques des pêches et des populations reproductrices",
+            "pub_year": 2011,
+            "lead_author_2": "Vivian Haist",
+            "pub_num": "118",
+            "pages": 89,
+            "pdf_size": 916,
+            "description": ""
+        }
+    }
+]

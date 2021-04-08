@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1756,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "New maturity cycle charts for the herring stocks along the west coast of Newfoundland (NAFO Division 4R) and the north shore of Quebec (NAFO Division 4S)",
+            "pub_year": 1987,
+            "lead_author_2": "I.H. McQuinn",
+            "pub_num": "066",
+            "pages": 11,
+            "pdf_size": 967,
+            "description": ""
+        }
+    }
+]

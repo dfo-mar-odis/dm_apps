@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4446,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Atlantic salmon (Salmo salar) overview for eastern Cape Breton, Eastern Shore, Southwest Nova Scotia and inner Bay of Fundy rivers (SFA 19 to 22) in 2005",
+            "title_fr": "Aperçu de la situation du saumon atlantique (Salmo salar) de l'est du Cap Breton, de la côte est et du sud-ouest de la Nouvelle-Écosse, ainsi que des cours d'eau du fond de la baie de Fundy (ZPS 19 à 22) en 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Amiro, P.G., A.J.F. Gibson, H.D. Bowlby.",
+            "pub_num": "024",
+            "pages": 59,
+            "pdf_size": 3093,
+            "description": ""
+        }
+    }
+]

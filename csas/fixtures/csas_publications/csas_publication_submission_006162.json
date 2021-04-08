@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6162,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of commercial fishing indicators for Greenland Halibut in the Gulf of St. Lawrence in 2013",
+            "title_fr": "Mise à jour des indicateurs de la pêche commerciale du flétan du Groenland du golfe du Saint-Laurent en 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Hugo Bourdages",
+            "pub_num": "013",
+            "description": ""
+        }
+    }
+]

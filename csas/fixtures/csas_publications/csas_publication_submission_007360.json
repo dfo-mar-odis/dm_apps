@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7360,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of the Net Environmental Benefit Analysis Support for the Shelburne Basin Venture Exploration Drilling Project",
+            "title_fr": "Examen de l'analyse des avantages environnementaux nets à l'appui de projet de forage exploratoire dans le bassin Shelburne",
+            "pub_year": 2015,
+            "lead_author_2": "Thomas King, Ph. 902-426-4172",
+            "pub_num": "019",
+            "description": ""
+        }
+    }
+]

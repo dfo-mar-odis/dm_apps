@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5560,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional workshop for the Lake Ontario Ecosystem Research Initiative (ERI); March 30-31, 2009",
+            "title_fr": "Compte rendu de l'atelier régional sur l'Initiative de recherche écosystémique (IRE) du lac Ontario; du 30 au 31 mars 2009",
+            "pub_year": 2014,
+            "lead_author_2": "Koops, M, Randall, B.",
+            "pub_num": "043",
+            "pages": 42,
+            "pdf_size": 258,
+            "description": ""
+        }
+    }
+]

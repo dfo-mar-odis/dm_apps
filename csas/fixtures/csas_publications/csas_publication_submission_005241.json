@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5241,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An Assessment of the Potential for Recovery of Humpback Whales off the Pacific Coast of Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement des rorquals à bosse au large de la côte canadienne du Pacifique",
+            "pub_year": 2009,
+            "lead_author_2": "Ford, J.K.B., A.L. Rambeau, R.M. Abernethy, M. D. Boogaards, L.M. Nichol, L.D. Spaven",
+            "pub_num": "015",
+            "pages": 37,
+            "pdf_size": 831,
+            "description": ""
+        }
+    }
+]

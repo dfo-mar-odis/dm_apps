@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7498,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Key physical and chemical drivers of fisheries productivity (flow, nutrient and thermal regimes) across rivers in various Canadian regions: lessons learned from NSERC’s HydroNet 2010-2015",
+            "title_fr": "Principaux facteurs physiques et chimiques de la productivité des pêches (débit, nutriments et régimes thermiques) dans des cours d'eau de diverses régions canadiennes : leçons tirées du réseau HydroNet du CRSNG 2010-2015",
+            "pub_year": 2016,
+            "lead_author_2": "Lapointe, M., Rasmussen, J.B., Maheu, A., Kwak, J.A., Beaupré, L., St-Hilaire, A.",
+            "pub_num": "047",
+            "pages": 61,
+            "pdf_size": 2320,
+            "description": ""
+        }
+    }
+]

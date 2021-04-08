@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 312,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Restigouche River in 1990",
+            "pub_year": 1991,
+            "lead_author_2": "S.C. Courtenay; G. Landry; A. Madden; R. Pickard",
+            "pub_num": "013",
+            "pages": 40,
+            "pdf_size": 1679,
+            "description": ""
+        }
+    }
+]

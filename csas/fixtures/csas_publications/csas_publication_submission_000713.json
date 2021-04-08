@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 713,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Development of a Fishery for Tanner Crab (Chionoecetes tanneri) off the Coast of British Columbia",
+            "pub_year": 2000,
+            "lead_author_2": "Workman, G.D., Phillips, A.C., Scurrah, F.E., Boutillier, J.A.",
+            "pub_num": "169",
+            "pages": 71,
+            "pdf_size": 2137,
+            "description": ""
+        }
+    }
+]

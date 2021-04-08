@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2603,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Revue des données historiques de pêche du flétan atlantique du golfe du St. Laurent (Divisions de l'OPANO 4RST) (1893-1995)",
+            "pub_year": 1996,
+            "lead_author_2": "D. Archambault; F. Grégoire",
+            "pub_num": "056",
+            "pages": 43,
+            "pdf_size": 2305,
+            "description": ""
+        }
+    }
+]

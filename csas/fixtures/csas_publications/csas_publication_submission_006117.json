@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6117,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Reference Points for Cusk (Brosme brosme) in NAFO Divisions 4VWX5Z Under the Precautionary Approach Framework",
+            "title_fr": "Points de référence pour le brosme (Brosme brosme) dans les divisions 4V, 4W, 4X et 5Z de l'Organisation des pêches de l'Atlantique Nord-Ouest en vertu du cadre de l'approche de précaution",
+            "pub_year": 2012,
+            "lead_author_2": "Lei Harris",
+            "pub_num": "026",
+            "pages": 13,
+            "pdf_size": 645,
+            "description": ""
+        }
+    }
+]

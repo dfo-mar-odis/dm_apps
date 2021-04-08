@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3684,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subdivision 3Ps Pollock",
+            "title_fr": "Goberge de la subdivision 3Ps",
+            "pub_year": 2002,
+            "lead_author_2": "Murphy, E.",
+            "pub_num": "A2-07",
+            "pages": 4,
+            "pdf_size": 200,
+            "description": ""
+        }
+    }
+]

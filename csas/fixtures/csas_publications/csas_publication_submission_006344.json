@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6344,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Monitoring protocols and strategies for selected indicators in the Tarium Niryutait Marine Protected Area (MPA)",
+            "title_fr": "Protocoles et stratégies de surveillance pour les indicateurs sélectionnés dans la zone de protection marine (ZPM) Tarium Niryutait",
+            "pub_year": 2012,
+            "lead_author_2": "Kevin Hedges/Joclyn Paulic",
+            "pub_num": "061",
+            "pages": 12,
+            "pdf_size": 115,
+            "description": ""
+        }
+    }
+]

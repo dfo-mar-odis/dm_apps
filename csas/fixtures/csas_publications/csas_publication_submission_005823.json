@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5823,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Precautionary reference points consistent with the Fishery Decision-Making Framework for Arctic Char (Salvelinus Alpinus) in Cambridge Bay, Nunavut",
+            "title_fr": "Points de référence de précaution pour l'omble chevalier de la baie Cambridge (Salvelinus alpinus), au Nunavut, conformément au cadre décisionnel pour les pêches",
+            "pub_year": 2014,
+            "lead_author_2": "Ross F. Tallman and Xinhua Zhu",
+            "pub_num": "051",
+            "description": ""
+        }
+    }
+]

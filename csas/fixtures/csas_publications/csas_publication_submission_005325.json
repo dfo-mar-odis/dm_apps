@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5325,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National peer review on Alternate Ballast Water Exchange Zones for vessel traffic to Newfoundland and the Arctic; January 13-14, 2009",
+            "title_fr": "Compte rendu de l'examen national par les pairs de zones alternatives de renouvellement de l'eau de ballast pour le trafic maritime dans les régions de Terre-Neuve et de l'Arctique; les 13 et 14 janvier 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Simon, P.",
+            "pub_num": "054",
+            "description": ""
+        }
+    }
+]

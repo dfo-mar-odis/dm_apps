@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5745,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of ExxonMobil Canada's 2009 Offshore Environmental Effects Monitoring Report",
+            "title_fr": "Examen du rapport de 2009 d'ExxonMobil Canada concernant le suivi des effets de son projet sur l'environnement extracôtier",
+            "pub_year": 2010,
+            "lead_author_2": "Tana Worcester",
+            "pub_num": "012",
+            "pages": 5,
+            "pdf_size": 38,
+            "description": ""
+        }
+    }
+]

@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from django.contrib.auth.models import User
 from django.db.models import Q
 from pandas import date_range
@@ -11,6 +13,7 @@ from rest_framework.views import APIView
 
 from dm_apps.utils import custom_send_mail
 from shared_models import models as shared_models
+from shared_models.utils import get_labels
 from . import permissions, pagination
 from . import serializers
 from .. import models, stat_holidays, emails
@@ -417,6 +420,40 @@ class ActivityRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
         obj = serializer.save()
         obj.project_year.update_modified_by(self.request.user)
 
+    def post(self, request, pk):
+        # we only allow this method when we are changing statuses
+        qp = request.GET
+        action = qp.get("action")
+        clone = qp.get("clone")
+        if action == "complete" or action == "incomplete":
+            activity = get_object_or_404(models.Activity, pk=pk)
+            # get or create a status report
+            qs = models.StatusReport.objects.filter(project_year=activity.project_year)
+            if qs:
+                status_report = qs.order_by("id").last()
+            else:
+                status_report = models.StatusReport.objects.create(project_year=activity.project_year)
+            # now we get or create the activity update
+            update, create = models.ActivityUpdate.objects.get_or_create(
+                status_report=status_report,
+                activity=activity,
+            )
+            if action == "complete":
+                update.status = 8
+            else:
+                update.status = 7
+            update.notes = request.data
+            update.save()
+            # if all the
+
+            return Response(serializers.ActivitySerializer(activity).data, status=status.HTTP_200_OK)
+        elif clone:
+            old_activity = get_object_or_404(models.Activity, pk=pk)
+            new_activity = deepcopy(old_activity)
+            new_activity.pk = None
+            new_activity.save()
+            return Response(serializers.ActivitySerializer(new_activity).data, status=status.HTTP_200_OK)
+        raise ValidationError("sorry, I am missing the query param for 'action' or 'clone'")
 
 # COLLABORATION
 ##############
@@ -564,7 +601,7 @@ class ActivityUpdateRetrieveUpdateAPIView(RetrieveUpdateAPIView):
 
     def perform_update(self, serializer):
         obj = serializer.save()
-        obj.project_year.update_modified_by(self.request.user)
+        obj.status_report.project_year.update_modified_by(self.request.user)
 
 
 # FILES / Supporting Resources
@@ -796,3 +833,28 @@ class ReviewRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 
         if self.request.data.get("review_email_update"):
             my_review.send_review_email(self.request)
+
+
+class ActivityModelMetaAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    model = models.Activity
+
+    def get(self, request):
+        data = dict()
+        data['labels'] = get_labels(self.model)
+        data['type_choices'] = [dict(text=item[1], value=item[0]) for item in models.Activity.type_choices]
+        data['likelihood_choices'] = [dict(text=item[1], value=item[0]) for item in models.Activity.likelihood_choices]
+        data['impact_choices'] = [dict(text=item[1], value=item[0]) for item in models.Activity.impact_choices]
+        data['risk_rating_choices'] = [dict(text=item[1], value=item[0]) for item in models.Activity.risk_rating_choices]
+        return Response(data)
+
+
+class OMCostModelMetaAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    model = models.OMCost
+
+    def get(self, request):
+        data = dict()
+        data['labels'] = get_labels(self.model)
+        data['om_category_choices'] = [dict(text=item.id, value=str(item)) for item in models.OMCategory.objects.all()]
+        return Response(data)

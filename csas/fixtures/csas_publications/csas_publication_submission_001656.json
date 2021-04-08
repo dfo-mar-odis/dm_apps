@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1656,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Subdivision 4Vn cod (May-December): status review for the 1985 fishing year",
+            "pub_year": 1986,
+            "lead_author_2": "S.J. Smith; A.F. Sinclair",
+            "pub_num": "039",
+            "pages": 27,
+            "pdf_size": 1242,
+            "description": ""
+        }
+    }
+]

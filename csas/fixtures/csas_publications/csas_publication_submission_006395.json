@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6395,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review on the Development of Technical Guidelines for the Provision of Scientific Advice on the Various Elements of Fisheries and Oceans Canada Precautionary Approach Framework; February 28 to March 1, 2012",
+            "title_fr": "Compte rendu de l'examen national par les pairs sur l’Élaboration des directives techniques pour la prestation d'un avis scientifique portant sur les divers éléments du cadre de l'approche de précaution de Pêches et Océans Canada; du 28 février au 1er mars 2012.",
+            "pub_year": 2015,
+            "lead_author_2": "Martha Krohn",
+            "pub_num": "005",
+            "pages": 100,
+            "pdf_size": 659,
+            "description": ""
+        }
+    }
+]

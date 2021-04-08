@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1171,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An overview of catch and effort trends of the shrimp fishery in the Gulf of St. Lawrence and Scotian Shelf, 1977-80",
+            "pub_year": 1981,
+            "lead_author_2": "R.J. Cormier",
+            "pub_num": "073",
+            "pages": 14,
+            "pdf_size": 4930,
+            "description": ""
+        }
+    }
+]

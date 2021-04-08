@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6795,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review of impacts of agricultural drain maintenance in Beaver Creek on Grass Pickerel (Esox americanus vermiculatus), a fish species at risk; October 4–5, 2016",
+            "title_fr": "Compte rendu de l’examen par des pairs régional sur les Répercussions de l'entretien des drains agricoles sur le brochet vermiculé (Esox americanus vermiculatus), une espèce de poisson en péril, du ruisseau Beaver; du 4 au 5 octobre 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "027",
+            "pages": 31,
+            "pdf_size": 405,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4399,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Winter Skate on the Eastern Scotian Shelf (NAFO Division 4VW)",
+            "title_fr": "Évaluation du potentiel de rétablissement de la raie tachetée de l'est du plateau néo-écossais (divisions 4VW de l'OPANO)",
+            "pub_year": 2005,
+            "lead_author_2": "Lei E. Harris, James E. Simon",
+            "pub_num": "062",
+            "pages": 12,
+            "pdf_size": 144,
+            "description": ""
+        }
+    }
+]

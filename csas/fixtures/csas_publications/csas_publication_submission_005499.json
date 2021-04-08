@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5499,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "A Review of the Taxonomic Structure within Dolly Varden, (Salvelinus malma (Walbaum 1792)), of North America ",
+            "title_fr": "Examen de la structure taxonomique du Dolly Varden (Salvelinus malma) (Walbaum, 1792) en Amérique du Nord",
+            "pub_year": 2010,
+            "lead_author_2": "Kowalchuk, M.W., Sawatzky, C.D., Reist, J.D.",
+            "pub_num": "013",
+            "pages": 22,
+            "pdf_size": 496,
+            "description": ""
+        }
+    }
+]

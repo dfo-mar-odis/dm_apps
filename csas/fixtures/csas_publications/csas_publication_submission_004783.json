@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4783,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment framework and review of Newfoundland east and south coast herring stocks to the spring of 2009",
+            "title_fr": "Un cadre d'évaluation et un examen des stocks de harengs des côtes est et sud de Terre-Neuve jusqu'au printemps 2009",
+            "pub_year": 2010,
+            "lead_author_2": "Wheeler, J.",
+            "pub_num": "020",
+            "pages": 136,
+            "pdf_size": 1937,
+            "description": ""
+        }
+    }
+]

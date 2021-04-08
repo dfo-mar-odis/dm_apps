@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3953,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Status of Wild Chum Salmon (Oncorhynchus keta Walbaum) Returning to British Columbia's Central Coast and Johnstone and Georgia Straits (excluding the Fraser River)",
+            "title_fr": "État du stock de saumon kéta sauvage (Oncorhynchus keta Walbaum) retournant vers la Côte Centrale de la Colombie-Britannique et les détroits de Georgia et de Johnstone (à l'exception du fleuve Fraser)",
+            "pub_year": 2004,
+            "lead_author_2": "Godbout, L., Irvine, J.R., Bailey, D., Van Will, P., McConnell, C.",
+            "pub_num": "007",
+            "pages": 53,
+            "pdf_size": 5030,
+            "description": ""
+        }
+    }
+]

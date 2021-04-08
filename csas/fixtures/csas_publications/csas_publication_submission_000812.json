@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 812,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Analytical Assessment of the Porbeagle Shark (Lamna nasus) Population in the Northwest Atlantic, with Estimates of Long-term Sustainable Yield.",
+            "title_fr": "Évaluation analytique de la population de requin-taupe commun (Lamna nasus) de l'Atlantique nord-ouest et estimations du rendement durable à long terme.",
+            "pub_year": 2001,
+            "lead_author_2": "Campana, S., Marks, L., Joyce, W., Harley, S.",
+            "pub_num": "067",
+            "pages": 60,
+            "pdf_size": 15335,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6312,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Evaluating streams and fish habitat following dam removals",
+            "lead_author_2": "Marie Clément, Daniel Caissie and François Plante",
+            "description": ""
+        }
+    }
+]

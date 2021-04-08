@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3180,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Silversides of Prince Edward Island (Menidia menidia)",
+            "title_fr": "Capucette de l'Île-du-Prince-Édouard (Menidia menidia)",
+            "pub_year": 1996,
+            "lead_author_2": "Cairns, D.",
+            "pub_num": "011",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

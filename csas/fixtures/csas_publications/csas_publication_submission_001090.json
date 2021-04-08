@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1090,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Lobster growth profiles",
+            "pub_year": 1980,
+            "lead_author_2": "S.L. Waddy; D.E. Aiken",
+            "pub_num": "074",
+            "pages": 8,
+            "pdf_size": 479,
+            "description": ""
+        }
+    }
+]

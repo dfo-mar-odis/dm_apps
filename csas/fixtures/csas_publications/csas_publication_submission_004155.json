@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4155,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "West Coast of Newfoundland Atlantic Herring (Division 4R) in 2004",
+            "title_fr": "Hareng de la côte ouest de Terre-Neuve (Division 4R) en 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "016",
+            "pages": 9,
+            "pdf_size": 925,
+            "description": ""
+        }
+    }
+]

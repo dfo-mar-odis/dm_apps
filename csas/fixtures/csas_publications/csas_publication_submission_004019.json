@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4019,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Analyses of survey catchability and fishery selectivity in the SPA for the Northern Gulf of St. Lawrence (3Pn, 4RS) cod stock",
+            "title_fr": "Analyse de la capturabilité et la sélectivité de pêche des relevés avec l'ASP pour le stock de la morue du nord du golfe du Saint-Laurent (3Pn, 4RS)",
+            "pub_year": 2004,
+            "lead_author_2": "Cadigan, N.",
+            "pub_num": "041",
+            "pages": 25,
+            "pdf_size": 366,
+            "description": ""
+        }
+    }
+]

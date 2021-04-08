@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2540,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1994 NAFO Division 4T Herring Gillnet Telephone Survey",
+            "title_fr": "Sondage téléphonique 1994 auprès des pêcheurs de hareng aux filets maillants de la zone 4T de l'OPANO",
+            "pub_year": 1995,
+            "lead_author_2": "C. LeBlanc; L. LeBlanc",
+            "pub_num": "134",
+            "pages": 38,
+            "pdf_size": 1761,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 223,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Mixed-stock analysis of Atlantic cod (Gadus morhua) in the Cabot Strait approaches to the Gulf of St. Lawrence: a microsatellite DNA application",
+            "pub_year": 1999,
+            "lead_author_2": "Ruzzante, D.E., Taggart, C.T., Lang, S., Cook, D.",
+            "pub_num": "055",
+            "pages": 33,
+            "pdf_size": 2236,
+            "description": ""
+        }
+    }
+]

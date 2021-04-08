@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 999,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Interaction between wild and artificially reared striped bass in the Maritime provinces; December 9-11, 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Bradford, R., Cairns, D., Robichaud-Leblanc, K., Ritter, J.",
+            "pub_num": "025",
+            "description": ""
+        }
+    }
+]

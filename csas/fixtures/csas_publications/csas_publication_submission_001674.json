@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1674,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 4TVn (Jan-Apr) cod stock for 1986",
+            "pub_year": 1986,
+            "lead_author_2": "G.A. Chouinard; G.A. Nielsen",
+            "pub_num": "088",
+            "pages": 55,
+            "pdf_size": 2077,
+            "description": ""
+        }
+    }
+]

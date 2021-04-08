@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3347,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Report on the status of groundfish stocks in the Canadian Northwest Atlantic",
+            "title_fr": "Rapport sur l'état des stocks de poissons de fond canadiens dans l'Atlantique nord-ouest",
+            "pub_year": 1994,
+            "pub_num": "004",
+            "pages": 177,
+            "description": ""
+        }
+    }
+]

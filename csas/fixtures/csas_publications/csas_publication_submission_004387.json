@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4387,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A preliminary examination of spawning suppression in relation to recruitment in NAFO Subdivision 3Ps cod (Gadus morhua)",
+            "title_fr": "Examen préliminaire de la diminution de l'activité reproductrice par rapport au recrutement chez la morue (Gadus morhua) de la sous-division 3Ps de l'OPANO",
+            "pub_year": 2005,
+            "lead_author_2": "Morgan, M.J., R.M. Rideout.",
+            "pub_num": "085",
+            "pages": 10,
+            "pdf_size": 61,
+            "description": ""
+        }
+    }
+]

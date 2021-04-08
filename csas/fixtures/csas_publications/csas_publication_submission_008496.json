@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8496,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Stock Assessment of Northwest Atlantic Spiny Dogfish, December 11, 2018, and February 13, 2019",
+            "lead_author_2": "Jennifer Ford",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5348,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Evaluation of interim harvest strategies for sablefish (Anoplopoma fimbria) in British Columbia, Canada for 2008/09",
+            "title_fr": "Évaluation de stratégies de pêche provisoires pour la morue charbonnière (Anoplopoma fimbria) en Colombie-Britannique, Canada, pour 2008-2009",
+            "pub_year": 2009,
+            "lead_author_2": "Kronlund, R.",
+            "pub_num": "060",
+            "pages": 6,
+            "pdf_size": 91,
+            "description": ""
+        }
+    }
+]

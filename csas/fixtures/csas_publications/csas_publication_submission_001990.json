@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1990,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Skeena River Sockeye Salmon",
+            "title_fr": "Saumon rouge de la rivière Skeena (mise à jour)",
+            "pub_year": 2003,
+            "lead_author_2": "Cox-Rogers, S., J. Hume, K. Shortreed",
+            "pub_num": "047",
+            "pages": 9,
+            "pdf_size": 1908,
+            "description": ""
+        }
+    }
+]

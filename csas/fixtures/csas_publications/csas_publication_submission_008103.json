@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8103,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of Iceland Scallop on St. Pierre Bank (Subdivision 3Ps)",
+            "lead_author_2": "E. Coughlan",
+            "description": ""
+        }
+    }
+]

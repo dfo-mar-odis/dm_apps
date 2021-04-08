@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5248,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on Northern Shrimp in the Estuary and Gulf of St. Lawrence in 2008; January 27th and 28th, 2009",
+            "title_fr": "Évaluation des stocks de crevette du golfe et de l'estuaire du Saint-Laurent en 2008; 27 et 28 janvier 2009",
+            "pub_year": 2009,
+            "lead_author_2": "H. Bourdages",
+            "pub_num": "013",
+            "pages": 22,
+            "pdf_size": 119,
+            "description": ""
+        }
+    }
+]

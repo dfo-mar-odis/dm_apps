@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5474,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the biological characteristics and population assessment of Walleye, (Sander vitreus), from Tathlina Lake, Northwest Territories; February 16, 2010",
+            "title_fr": "Compte rendu du processus de consultation scientifique régionale de la Région du Centre et de l'Arctique sur les caractéristiques biologiques du doré jaune (Sander vitreus) et sur l'évaluation de la population du lac Tathlina dans les Territoires du Nord-Ouest; le 16 février 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Colin Gallagher",
+            "pub_num": "020",
+            "pages": 11,
+            "pdf_size": 100,
+            "description": ""
+        }
+    }
+]

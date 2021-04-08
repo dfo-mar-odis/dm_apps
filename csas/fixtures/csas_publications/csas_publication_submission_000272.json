@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 272,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Invertebrate Subcommittee Meeting; June 19-22, 2000",
+            "pub_year": 2000,
+            "lead_author_2": "M. Stocker and I Perry (Editors)",
+            "pub_num": "011",
+            "pages": 42,
+            "pdf_size": 305,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1240,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Evaluation of the 1982 commercial Arctic charr, Salvelinus alpinus, fishery in Hebron Fiord, Northern Labrador",
+            "pub_year": 1983,
+            "lead_author_2": "J.B. Dempson",
+            "pub_num": "007",
+            "pages": 11,
+            "pdf_size": 1543,
+            "description": ""
+        }
+    }
+]

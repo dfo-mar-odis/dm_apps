@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4735,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of the Ocean Quahog (Arctica islandica) Stocks on Sable Bank and St. Mary's Bay, and the Arctic Surfclam (Mactromeris polynyma) Stock on Banquereau",
+            "title_fr": "Évaluation des stocks de quahog nordique (Arctica islandica) du banc de l'île de Sable et de la baie St. Mary's, et du stock de mactre de Stimpson (Mactromeris polynyma) du Banquereau (révisé)",
+            "pub_year": 2007,
+            "lead_author_2": "Roddick, D.",
+            "pub_num": "034",
+            "pages": 17,
+            "pdf_size": 749,
+            "description": ""
+        }
+    }
+]

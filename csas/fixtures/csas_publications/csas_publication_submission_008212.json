@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8212,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of the Inner Bay of Fundy Atlantic Salmon (Salmo salar) Monitoring Activities Associated with the Live Gene Bank",
+            "title_fr": "Examen des activités de surveillance du saumon atlantique (Salmo salar) de l’intérieur de la baie de Fundy associées à la banque de gènes vivants",
+            "pub_year": 2018,
+            "lead_author_2": "Ross Jones",
+            "pub_num": "043",
+            "pages": 135,
+            "pdf_size": 4971,
+            "description": ""
+        }
+    }
+]

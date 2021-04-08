@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7429,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Coast of Bays seawater vertical and horizontal structure (2009-13): Hydrographic structure, spatial variability and seasonality based on the Program for Aquaculture Regulatory Research (PARR) 2009-13 oceanographic surveys",
+            "title_fr": "Structure verticale et horizontale de l'eau de mer de la Coast of Bays (2009-13): Structure hydrographique, variabilité spatiale et saisonnalité basée sur les levés océanographiques du Programme de recherche sur la réglementation de l'aquaculture (PRRA) 2009-13",
+            "pub_year": 2017,
+            "lead_author_2": "Donnet, S., Cross, S., Goulet, P., and Ratsimandresy, A.W.",
+            "pub_num": "077",
+            "pages": 263,
+            "pdf_size": 97498,
+            "description": ""
+        }
+    }
+]

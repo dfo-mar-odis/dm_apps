@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3046,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Georges Bank Scallop",
+            "title_fr": "Pétoncle du banc Georges",
+            "pub_year": 1998,
+            "lead_author_2": "Ginette Robert",
+            "pub_num": "C3-17",
+            "pages": 5,
+            "pdf_size": 112,
+            "description": ""
+        }
+    }
+]

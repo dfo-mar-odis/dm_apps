@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2511,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the Rocky and Little River Atlantic salmon (Salmo salar L.) stocks in 1994",
+            "pub_year": 1995,
+            "lead_author_2": "C. Bourgeois; J. P. Davis",
+            "pub_num": "105",
+            "pages": 15,
+            "pdf_size": 824,
+            "description": ""
+        }
+    }
+]

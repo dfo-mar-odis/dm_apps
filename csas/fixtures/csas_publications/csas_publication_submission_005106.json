@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5106,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2008 Assessment of Pollock in 4VWX+5",
+            "title_fr": "Évaluation de la goberge de 4VWX+5 en 2008",
+            "pub_year": 2009,
+            "lead_author_2": "H. Stone, C. Nelson, D. Clark, A. Cook",
+            "pub_num": "001",
+            "pages": 87,
+            "pdf_size": 2353,
+            "description": ""
+        }
+    }
+]

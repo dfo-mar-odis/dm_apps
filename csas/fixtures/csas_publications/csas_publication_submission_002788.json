@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2788,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock status of Atlantic salmon (Salmo salar) in the Miramichi River, 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Chaput, G., Moore, D., Hayward, J., Dube, B., Hambrook, M.,",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2822,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The status of white hake (Urophycis tenuis Mitchell) in the southern Gulf of St. Lawrence (NAFO Division 4T) in 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Hurlbut, T., Swain, D., Poirer, G., Chouinard, G.A.",
+            "pub_num": "068",
+            "pages": 32,
+            "pdf_size": 3241,
+            "description": ""
+        }
+    }
+]

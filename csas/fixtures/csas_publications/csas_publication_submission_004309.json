@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4309,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "An eel manager's toolbox for the southern Gulf of St. Lawrence",
+            "title_fr": "Une boîte à outils pour les gestionnaires des stocks d'anguille dans le sud du golfe du Saint Laurent",
+            "pub_year": 2005,
+            "lead_author_2": "Cairns, D.K.",
+            "pub_num": "046",
+            "pages": 19,
+            "pdf_size": 95,
+            "description": ""
+        }
+    }
+]

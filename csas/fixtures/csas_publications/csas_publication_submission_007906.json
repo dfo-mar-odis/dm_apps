@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7906,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of Atlantic Salmon in Salmon Fishing Areas (SFAs) 19-21 and 23",
+            "title_fr": "Mise à jour de l’état du stock des populations de saumon de l’Atlantique des ZPS 19 à 21 et 23",
+            "pub_year": 2017,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "020",
+            "pages": 20,
+            "pdf_size": 642,
+            "description": ""
+        }
+    }
+]

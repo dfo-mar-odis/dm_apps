@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 718,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Pacific Cod in Hecate Strait, Nov. 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Sinclair, A.F.",
+            "pub_num": "170",
+            "pages": 56,
+            "pdf_size": 4614,
+            "description": ""
+        }
+    }
+]

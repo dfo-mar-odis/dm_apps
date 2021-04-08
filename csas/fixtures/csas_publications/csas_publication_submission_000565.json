@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 565,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Compilation of available information regarding the Scotian Shelf herring spawning component",
+            "pub_year": 1999,
+            "lead_author_2": "Harris, L.E., Stephenson, R.L.",
+            "pub_num": "181",
+            "pages": 30,
+            "pdf_size": 2666,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1476,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Estimating partial recruitment from catches and a research survey index: a Monte-Carlo simulation",
+            "pub_year": 1984,
+            "lead_author_2": "D. Rivard",
+            "pub_num": "070",
+            "pages": 12,
+            "pdf_size": 637,
+            "description": ""
+        }
+    }
+]

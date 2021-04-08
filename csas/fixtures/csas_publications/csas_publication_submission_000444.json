@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 444,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Georges Bank scallop stock assessment - 1989",
+            "pub_year": 1990,
+            "lead_author_2": "G. Robert; G.A.P. Black",
+            "pub_num": "019",
+            "pages": 30,
+            "pdf_size": 1486,
+            "description": ""
+        }
+    }
+]

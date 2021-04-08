@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3523,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Temperature conditions on the Scotian Shelf and in the southern Gulf of St. Lawrence during 2001 relevant to snow crab",
+            "title_fr": "Conditions de température sur la plate-forme Scotian et dans le sud du golfe du Saint-Laurent en 2001 en regard du crabe des neiges",
+            "pub_year": 2002,
+            "lead_author_2": "K.F. Drinkwater, R.G. Pettipas and / et W.M. Petrie",
+            "pub_num": "043",
+            "pages": 41,
+            "pdf_size": 1050,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4635,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Science Workshop: Development of a Nationally Consistent Approach to Conservation Objectives; 10-11 January 2007",
+            "title_fr": "Atelier national des Sciences - Élaboration d'une approche nationale uniforme pour l'élaboration des objectifs de conservation; les 10 et 11 janvier 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Rice, J. (Chair), Peramaki, L (Editor)",
+            "pub_num": "001",
+            "pages": 24,
+            "pdf_size": 150,
+            "description": ""
+        }
+    }
+]

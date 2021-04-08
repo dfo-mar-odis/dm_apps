@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7604,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A revised operating model for Sablefish (Anoplopoma fimbria) in British Columbia, Canada",
+            "lead_author_2": "Rob Kronlund",
+            "description": ""
+        }
+    }
+]

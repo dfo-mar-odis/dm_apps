@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3377,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Canadian Research Survey Data Conversions for Redfish in SA2 + Div. 3K based on Comparative Fishing Trials between an Engel 145 Otter Trawl and a Campelen 1800 Shrimp Trawl",
+            "title_fr": "Conversion de données sur le sébaste de la sous-zone 2 et de la division 3K issues de relevés de recherche canadiens reposant sur des essais de pêche comparée d'un chalut à panneaux Engel 145 et d'un chalut à crevettes Campelen 1800",
+            "pub_year": 2001,
+            "lead_author_2": "D. Power and D. C. Orr",
+            "pub_num": "103",
+            "pages": 16,
+            "pdf_size": 970,
+            "description": ""
+        }
+    }
+]

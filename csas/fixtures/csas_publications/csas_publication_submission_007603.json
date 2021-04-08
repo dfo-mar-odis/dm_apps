@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7603,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "A revised operating model for Sablefish (Anoplopoma fimbria) in British Columbia, Canada",
+            "title_fr": "Élaboration du modèle d'exploitation de la morue charbonnière (Anoplopoma fimbria) en Colombie-Britannique, au Canada",
+            "pub_year": 2016,
+            "lead_author_2": "John Holmes and Julia Bradshaw",
+            "pub_num": "015",
+            "pages": 12,
+            "pdf_size": 276,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7500,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Mesoscale modelling of fisheries productivity metrics in reservoirs: lessons learned from NSERC’s HydroNet 2010-2015",
+            "title_fr": "Modélisation à moyenne échelle des mesures de la productivité des pêches dans les réservoirs : enseignements tirés du réseau HydroNet du Conseil de recherches en sciences naturelles et en génie du Canada (CRSNG) 2010-2015",
+            "pub_year": 2016,
+            "lead_author_2": "Boisclair, D., Rose, G. A., and Bourque, G.",
+            "pub_num": "053",
+            "pages": 45,
+            "pdf_size": 1280,
+            "description": ""
+        }
+    }
+]

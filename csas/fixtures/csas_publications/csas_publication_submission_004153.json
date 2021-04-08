@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4153,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the RAP Meeting on Kipisa Arctic Char; March 23-24, 2005",
+            "title_fr": "Compte rendu de la réunion du PCR sur l'omble chevalier de Kipisa; 23-24 mars 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "002",
+            "pages": 45,
+            "pdf_size": 233,
+            "description": ""
+        }
+    }
+]

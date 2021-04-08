@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1742,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An overview of catch, effort and biological trends for the 1986 snow crab, Chionoecetes opilio, fisheries in Areas 18 and 19, western Cape Breton Island",
+            "pub_year": 1987,
+            "lead_author_2": "K.G. Davidson; M. Comeau",
+            "pub_num": "053",
+            "pages": 35,
+            "pdf_size": 2125,
+            "description": ""
+        }
+    }
+]

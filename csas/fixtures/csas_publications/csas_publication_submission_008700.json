@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8700,
+        "fields": {
+            "series": 6,
+            "title_en": "A framework for the assessment of snow crab (Chionoe-cetes opilio) in Maritimes Region (NAFO Div 4VWX)",
+            "lead_author_2": "Jae Choi",
+            "description": ""
+        }
+    }
+]

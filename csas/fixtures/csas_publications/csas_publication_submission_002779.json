@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2779,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Duration of pelage stages of grey seal, Halichoerus grypus, pups.",
+            "pub_year": 1997,
+            "lead_author_2": "Myers, R.",
+            "pub_num": "011",
+            "description": ""
+        }
+    }
+]

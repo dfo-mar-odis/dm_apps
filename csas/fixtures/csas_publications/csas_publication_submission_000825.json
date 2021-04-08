@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 825,
+        "fields": {
+            "series": 3,
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 1977,
+            "pub_num": "005",
+            "description": ""
+        }
+    }
+]

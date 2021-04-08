@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1623,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the Atlantic salmon stock of Conne River, Newfoundland",
+            "pub_year": 1986,
+            "lead_author_2": "T.R. Porter",
+            "pub_num": "006",
+            "pages": 12,
+            "pdf_size": 692,
+            "description": ""
+        }
+    }
+]

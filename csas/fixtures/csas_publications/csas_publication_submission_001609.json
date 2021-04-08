@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1609,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An estimate of yields for oceanic Nova Scotia lobster grounds",
+            "pub_year": 1985,
+            "lead_author_2": "J.D. Pringle; R.E. Duggan",
+            "pub_num": "102",
+            "pages": 16,
+            "pdf_size": 997,
+            "description": ""
+        }
+    }
+]

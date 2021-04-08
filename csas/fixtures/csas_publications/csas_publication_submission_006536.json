@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6536,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Physiographic Coastline Classification of the Scotian Shelf Bioregion and Environs: The Nova Scotia Coastline and the New Brunswick Fundy Shore",
+            "title_fr": "Une classification côtière physiographique pour la biorégion du plateau néo-écossais et des environs : la côte néo-écossaise et la côte du Nouveau-Brunswick de la baie de Fundy",
+            "pub_year": 2012,
+            "lead_author_2": "Greenlaw, M.",
+            "pub_num": "051",
+            "pages": 43,
+            "pdf_size": 667,
+            "description": ""
+        }
+    }
+]

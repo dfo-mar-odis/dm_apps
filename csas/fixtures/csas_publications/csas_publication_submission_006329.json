@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6329,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Recovery Potential Assessment for the South Newfoundland Atlantic Salmon (Salmo salar) Designatable Unit",
+            "title_fr": "Évaluation du potentiel de rétablissement (EPR) de l'unité désignable du saumon de l'Atlantique du sud de Terre-Neuve (Salmo salar)",
+            "pub_year": 2012,
+            "lead_author_2": "Ben Davis (Chair)",
+            "pub_num": "007",
+            "pages": 43,
+            "pdf_size": 668,
+            "description": ""
+        }
+    }
+]

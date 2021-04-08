@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3542,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Petrale Sole British Columbia (Areas 3C-5D)",
+            "pub_year": 1999,
+            "lead_author_2": "Jeff Fargo",
+            "pub_num": "A6-06",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

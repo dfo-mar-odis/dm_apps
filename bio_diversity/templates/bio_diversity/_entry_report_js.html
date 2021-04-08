@@ -1,0 +1,31 @@
+<script type="application/javascript">
+
+    window.onload = function() {
+      setReportFields();
+    };
+
+    $("#id_report").change(function (e) {
+        setReportFields();
+    })
+
+    function setReportFields() {
+        var e = document.getElementById("id_report");
+        var reportType =e.value;
+        console.log(reportType)
+        if ( reportType==0 ) {
+            $("#id_stok_id").parent().hide();
+            $("#id_on_date").parent().hide();
+            $("#id_facic_id").parent().hide();
+        }
+        else if ( reportType==1 ) {
+            $("#id_stok_id").parent().hide();
+            $("#id_on_date").parent().hide();
+            $("#id_facic_id").parent().show();
+        }
+        else if (reportType==2) {
+            $("#id_facic_id").parent().hide();
+            $("#id_stok_id").parent().show();
+            $("#id_on_date").parent().show();
+        }
+    }
+</script>

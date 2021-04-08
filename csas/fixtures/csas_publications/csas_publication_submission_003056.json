@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3056,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southwest Nova Scotia Lobster (LFA 34)",
+            "title_fr": "Homard du sud-ouest de la Nouvelle-Écosse (ZPH 34)",
+            "pub_year": 1998,
+            "lead_author_2": "Douglas Pezzack [and] David R. Duggan",
+            "pub_num": "C3-62",
+            "pages": 10,
+            "pdf_size": 236,
+            "description": ""
+        }
+    }
+]

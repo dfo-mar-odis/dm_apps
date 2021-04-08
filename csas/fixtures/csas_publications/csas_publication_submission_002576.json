@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2576,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1996 update on Georges Bank 5Z herring stock",
+            "pub_year": 1996,
+            "lead_author_2": "F. J. Fife; J. B. Sochasky; D. G. Melvin; M. J. Power; R. L. Stephenson",
+            "pub_num": "029",
+            "pages": 54,
+            "pdf_size": 4677,
+            "description": ""
+        }
+    }
+]

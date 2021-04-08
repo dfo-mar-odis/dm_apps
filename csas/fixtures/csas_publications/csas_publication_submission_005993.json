@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5993,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Depth Distribution of Herring in Acoustic Surveys on German Bank and Scots Bay for 2003-2010",
+            "lead_author_2": "Gary Melvin",
+            "description": ""
+        }
+    }
+]

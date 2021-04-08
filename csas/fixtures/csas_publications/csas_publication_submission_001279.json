@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1279,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "An assessment of the cod stock in NAFO Division 4RS 3Pn",
+            "pub_year": 1983,
+            "lead_author_2": "D. Gascon",
+            "pub_num": "046",
+            "pages": 30,
+            "pdf_size": 1364,
+            "description": ""
+        }
+    }
+]

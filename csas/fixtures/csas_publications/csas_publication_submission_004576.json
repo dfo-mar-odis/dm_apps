@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4576,
+        "fields": {
+            "series": 6,
+            "lead_region": [4, 1],
+            "title_en": "A qualitative review of the compliance of the TAC Decision Rules for cod in the southern Gulf of St. Lawrence cod (March 7, 2005) and in the northern Gulf of St. Lawrence (January 28, 2005) to the Precautionary Approach",
+            "title_fr": "Examen qualitatif de la conformité des règles de décision relatives au TAC de la morue du sud du Golfe du Saint-Laurent (7 mars 2005) et du nord du Golfe du Saint-Laurent (28 janvier 2005) avec l'approche de précaution",
+            "pub_year": 2006,
+            "lead_author_2": "Rivard, D., Chouinard, G.",
+            "pub_num": "001",
+            "pages": 20,
+            "pdf_size": 243,
+            "description": ""
+        }
+    }
+]

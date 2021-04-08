@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 764,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Harvest statistics for beluga whales in Nunavik, 1974-2000.",
+            "title_fr": "Statistiques de chasse du béluga du Nunavik, 1974-2000.",
+            "pub_year": 2001,
+            "lead_author_2": "Lesage, V., Doidge, D.W., Fibich, R.",
+            "pub_num": "022",
+            "pages": 36,
+            "pdf_size": 256,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7921,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Regional Peer Review for the Recovery Potential Assessment – Sakinaw Sockeye",
+            "lead_author_2": "Christie Whelan",
+            "description": ""
+        }
+    }
+]

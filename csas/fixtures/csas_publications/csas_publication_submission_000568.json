@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 568,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An update on the status of Atlantic salmon on Prince Edward Island in 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Cairns, D.K., Murray, M., MacLean, F., Angus, R.",
+            "pub_num": "013",
+            "pages": 24,
+            "pdf_size": 197,
+            "description": ""
+        }
+    }
+]

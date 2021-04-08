@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6954,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Status of Northwest Atlantic harp seals, Pagophilus groenlandicus",
+            "title_fr": "État de la population de phoques du Groenland (Pagophilus groenlandicus) du Nord-Ouest de l'Atlantique",
+            "pub_year": 2014,
+            "lead_author_2": "Gary Stenson",
+            "pub_num": "011",
+            "pages": 15,
+            "pdf_size": 743,
+            "description": ""
+        }
+    }
+]

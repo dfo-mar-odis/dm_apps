@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4681,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status of Birkenhead River Chinook salmon (Oncorhynchus tshawytscha)",
+            "title_fr": "État du saumon quinnat de la rivière Birkenhead (Oncorhynchus tshawytscha)",
+            "pub_year": 2007,
+            "lead_author_2": "Schubert, N.D., J.R. Candy,.R. Cook, J. Greenbank, D. Lofthouse, R. McNicol, C.K. Parken, D. Sneddon, J.A. Tadey, K.H. Wilson.",
+            "pub_num": "019",
+            "pages": 90,
+            "pdf_size": 815,
+            "description": ""
+        }
+    }
+]

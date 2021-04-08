@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 534,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Surplus production analysis of St. Pierre Bank American plaice (NAFO subdiv. 3Ps)",
+            "pub_year": 1999,
+            "lead_author_2": "Walsh, S.J.",
+            "pub_num": "146",
+            "pages": 22,
+            "pdf_size": 1543,
+            "description": ""
+        }
+    }
+]

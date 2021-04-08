@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7587,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Overland Spread of Aquatic Invasive Species among Freshwater Ecosystems due to Recreational Boating in Canada",
+            "title_fr": "Propagation par voie terrestre d'espèces aquatiques envahissantes entre des écosystèmes d'eau douce par l'intermédiaire de la navigation de plaisance au Canada",
+            "pub_year": 2017,
+            "lead_author_2": "Drake, D.A.R",
+            "pub_num": "031",
+            "pages": 44,
+            "pdf_size": 773,
+            "description": ""
+        }
+    }
+]

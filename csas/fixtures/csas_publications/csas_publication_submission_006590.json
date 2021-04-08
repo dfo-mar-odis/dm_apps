@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6590,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "International Approaches to Characterizing Marine Seascapes to Achieve Representativity in MPA Network Design",
+            "title_fr": "Approches internationales en matière de caractérisation des paysages marins afin d'assurer la représentativité dans le conception des réseaux d'AMP",
+            "pub_year": 2013,
+            "lead_author_2": "Victoria Sheppard / Sherry Walker",
+            "pub_num": "048",
+            "pages": 25,
+            "pdf_size": 409,
+            "description": ""
+        }
+    }
+]

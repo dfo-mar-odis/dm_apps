@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8459,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of northern shrimp stocks in the Estuary and Gulf of St. Lawrence in 2019: commercial fishery and research survey data",
+            "title_fr": "Évaluation des stocks de crevette nordique de l’estuaire et du golfe du Saint-Laurent en 2019 : données de la pêche commerciale et du relevé de recherche",
+            "pub_year": 2020,
+            "lead_author_2": "Bourdages, H., Marquis, M.C., Ouellette-Plante, J., Chabot, D., Galbraith, P., and Isabel, L",
+            "pub_num": "012",
+            "pages": 168,
+            "pdf_size": 1324,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1944,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Hydroacoustic survey methodologies for pelagic fish as recommended by CAFSAC",
+            "pub_year": 1989,
+            "lead_author_2": "R.N. O'Boyle; D.B. Atkinson",
+            "pub_num": "072",
+            "pages": 12,
+            "pdf_size": 689,
+            "description": ""
+        }
+    }
+]

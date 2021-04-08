@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3601,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "West Coast Vancouver Island Sockeye",
+            "pub_year": 1999,
+            "lead_author_2": "Kim Hyatt
+Wilf Luedke",
+            "pub_num": "D6-05",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

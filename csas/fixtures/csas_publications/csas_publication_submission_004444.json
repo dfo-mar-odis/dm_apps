@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4444,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Using Harvest, Growth and Age to Assess the Efficacy of Bag Limits as a Management Option for Lake Trout, Salvelinus namaycush for Labrador, Canada",
+            "title_fr": "Utilisation des données sur les prises, la croissance et l'âge pour évaluer l'efficacité de la limite de prises comme méthode de gestion du touladi, Salvelinus namaycush, pour le Labrador, Canada",
+            "pub_year": 2006,
+            "lead_author_2": "Perry, R.C.",
+            "pub_num": "022",
+            "pages": 37,
+            "pdf_size": 1619,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7004,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Update of Stock Status Indicators for Northern Shrimp, Pandalus borealis, and Striped Shrimp, Pandalus montagui, in the Western and Eastern Assessment Zones",
+            "title_fr": "Mise à jour des indicateurs de l'état des stocks des crevettes nordiques, Pandalus borealis, et les crevettes ésopes, Pandalus montagui, dans les zones d'évaluation ouest et est",
+            "pub_year": 2014,
+            "lead_author_2": "T. Siferd",
+            "pub_num": "003",
+            "pages": 18,
+            "pdf_size": 348,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6549,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the Green Sea Urchin Fishery in the Estuary and the Gulf of St. Lawrence in 2011",
+            "title_fr": "Évaluation de la pêche à l'oursin vert dans l'estuaire et le nord du golfe du Saint-Laurent en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Jean-Paul Dallaire",
+            "pub_num": "055",
+            "pages": 16,
+            "pdf_size": 967,
+            "description": ""
+        }
+    }
+]

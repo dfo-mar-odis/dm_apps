@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2676,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Ocean Activities and Ecosystem Issues on the Eastern Scotian Shelf:An Assessment of Current Capabilities to Address Ecosystem Objectives",
+            "pub_year": 2001,
+            "lead_author_2": "S. Coffen-Smout, R.G. Halliday, G. Herbert, T. Potter, N. Witherspoon",
+            "pub_num": "095",
+            "pages": 45,
+            "pdf_size": 706,
+            "description": ""
+        }
+    }
+]

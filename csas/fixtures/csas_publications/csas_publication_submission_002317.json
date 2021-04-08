@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2317,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Commercial fishery based estimate of cod abundance in NAFO Division 4X",
+            "pub_year": 1993,
+            "lead_author_2": "A.R. Hanke",
+            "pub_num": "044",
+            "pages": 7,
+            "pdf_size": 475,
+            "description": ""
+        }
+    }
+]

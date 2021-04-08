@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5018,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Northern cod (Gadus morhua) 16 years after the moratorium: new information from tagging and acoustic telemetry",
+            "title_fr": "La morue du Nord (Gadus morhua), 16 ans après le moratoire : nouvelles données provenant du marquage et de la télémétrie acoustique",
+            "pub_year": 2008,
+            "lead_author_2": "J. Brattey, B. Healey, D. Porter",
+            "pub_num": "047",
+            "pages": 29,
+            "pdf_size": 2640,
+            "description": ""
+        }
+    }
+]

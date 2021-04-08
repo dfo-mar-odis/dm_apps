@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5897,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Recovery potential assessment of Carmine Shiner (Notropis percobromus) in Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement de tête carminée (Notropis percobromus) au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Martin, Kathleen",
+            "pub_num": "015",
+            "pages": 13,
+            "pdf_size": 518,
+            "description": ""
+        }
+    }
+]

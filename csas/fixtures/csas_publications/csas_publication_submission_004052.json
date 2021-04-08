@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4052,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Review of the structure, the abundance and distribution of Sebastes mentella and S. fasciatus in Atlantic Canada in a species-at-risk context",
+            "title_fr": "Revue de la structure, de l'abondance et de la répartition de Sebastes mentella et S. fasciatus dans le Canada atlantique dans le contexte des espèces en péril",
+            "pub_year": 2004,
+            "lead_author_2": "Morin, B., Methot, R., Sevigny, J.-M., Power, D., Branton, B., McIntyre, T.",
+            "pub_num": "058",
+            "pages": 96,
+            "pdf_size": 2352,
+            "description": ""
+        }
+    }
+]

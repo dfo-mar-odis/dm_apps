@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4665,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Review of the protocol for the detection and relocation of freshwater mussel species at risk in Ontario Great Lakes Area (OGLA); May 11th, 2007",
+            "title_fr": "Examen du protocole pour la détection et la relocalisation des espèces de moules d'eau douce en péril dans la région des Grands Lacs de l'Ontario (RGLO); le 11 mai 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Martin, K., Morris, T.",
+            "pub_num": "010",
+            "pages": 22,
+            "pdf_size": 109,
+            "description": ""
+        }
+    }
+]

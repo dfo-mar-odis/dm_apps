@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1209,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Capelin (Mallotus villosus) biology and history of the fishery in the Northern Gulf of St. Lawrence, Div. 4RS",
+            "pub_year": 1982,
+            "lead_author_2": "B.S. Nakashima; J.E Carscadden; G.R. Lilly",
+            "pub_num": "029",
+            "pages": 32,
+            "pdf_size": 1810,
+            "description": ""
+        }
+    }
+]

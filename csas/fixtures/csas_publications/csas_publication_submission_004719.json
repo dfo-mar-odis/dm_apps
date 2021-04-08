@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4719,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Assessing marine fish species: relating approaches based on reference points with approaches based on risk-of-extinction criteria; March 20-22, 2007",
+            "title_fr": "Évaluation des espèces de poissons marins : Rapprochement des approches fondées sur des points de référence et des approches fondées sur des critères associés au risque d'extinction; du 20 au 22 mars 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Powles, H., Rice, J.",
+            "pub_num": "024",
+            "pages": 71,
+            "pdf_size": 536,
+            "description": ""
+        }
+    }
+]

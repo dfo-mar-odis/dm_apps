@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5098,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Commecial fishery, by-catches and biology of capelin (Mallotus villosus) in the Estuary and Gulf of St. Lawrence (NAFO Divisions 4RST) for the 1960-2007 period",
+            "title_fr": "Pêche commerciale, prises accessoires et biologie du capelan (Mallotus villosus) de l'estuaire et du golfe du Saint-Laurent (divisions 4RST de l'OPANO) pour la période de 1960 à 2007",
+            "pub_year": 2008,
+            "lead_author_2": "F. Grégoire, J. Gauthier, C. Savenkoff, C. Lévesque, J.-L. Beaulieu, M.-H. Gendron",
+            "pub_num": "084",
+            "pages": 95,
+            "pdf_size": 11641,
+            "description": ""
+        }
+    }
+]

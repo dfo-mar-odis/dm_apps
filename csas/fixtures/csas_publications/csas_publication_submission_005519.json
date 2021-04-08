@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5519,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a Recovery Potential Assessment of Channel Darter (Percina copelandi) in Ontario ",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement du fouille-roche gris (Percina copelandi) en Ontario",
+            "pub_year": 2010,
+            "lead_author_2": "Lynn D. Bouvier and Nicholas E. Mandrak",
+            "pub_num": "029",
+            "pages": 45,
+            "pdf_size": 416,
+            "description": ""
+        }
+    }
+]

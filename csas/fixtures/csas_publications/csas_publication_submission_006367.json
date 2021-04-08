@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6367,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Stock Assessment Update of Northern (2J3KL) Cod",
+            "title_fr": "Mise à jour de l'évaluation du stock de morue du Nord (2J3KL)",
+            "pub_year": 2012,
+            "pub_num": "009",
+            "pages": 13,
+            "pdf_size": 162,
+            "description": ""
+        }
+    }
+]

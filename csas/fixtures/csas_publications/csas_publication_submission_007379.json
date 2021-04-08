@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7379,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Application of an ecological risk assessment framework to inform ecosystem-based management for SGaan Kinghlas-Bowie Seamount and Endeavour Hydrothermal Vents Marine Protected Areas",
+            "title_fr": "Application d'un cadre d'analyse du risque écologique visant à guider la gestion écosystémique des zones de protection marine du mont sous-marin Bowie (SGaan Kinghlas) et du champ hydrothermal Endeavour",
+            "pub_year": 2015,
+            "lead_author_2": "John Holmes",
+            "pub_num": "037",
+            "description": ""
+        }
+    }
+]

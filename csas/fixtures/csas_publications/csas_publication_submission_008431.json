@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8431,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Estimates of a biologically-based spawning goal and management benchmarks for the Canadian-origin Taku River Sockeye salmon stock aggregate",
+            "title_fr": "Estimations de points de référence aux fins de gestion et d’un objectif d’échappée de géniteurs reposant sur des données biologiques pour le stock de saumon rouge de la rivière Taku d’origine Canadienne",
+            "pub_year": 2020,
+            "lead_author_2": "John Candy",
+            "pub_num": "006",
+            "pages": 19,
+            "pdf_size": 1207,
+            "description": ""
+        }
+    }
+]

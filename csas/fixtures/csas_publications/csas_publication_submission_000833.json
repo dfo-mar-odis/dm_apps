@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 833,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A new assessment for the American plaice in ICNAF Subdivision 3Ps",
+            "pub_year": 1977,
+            "lead_author_2": "T.K. Pitt",
+            "pub_num": "013",
+            "pages": 10,
+            "pdf_size": 651,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4823,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a Recovery Potential Assessment of Lake Chubsucker (Erimyzon sucetta) in Canada",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement du sucet de lac (Erimyzon sucetta) au Canada",
+            "pub_year": 2011,
+            "lead_author_2": "Lynn Bouvier and Nicholas Mandrak",
+            "pub_num": "048",
+            "pages": 29,
+            "pdf_size": 245,
+            "description": ""
+        }
+    }
+]

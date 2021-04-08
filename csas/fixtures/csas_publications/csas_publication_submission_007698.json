@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7698,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Population modelling results for the assessment of Atlantic herring (Clupea harengus) stocks in the southern Gulf of St. Lawrence (NAFO Division 4T) to 2015",
+            "title_fr": "Résultats de la modélisation de la population pour l'évaluation des stocks de hareng de l'Atlantique (Clupea harengus) dans le sud du golfe du Saint-Laurent (division 4T de l'OPANO) en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Doug Swain",
+            "pub_num": "061",
+            "pages": 64,
+            "pdf_size": 3957,
+            "description": ""
+        }
+    }
+]

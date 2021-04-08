@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6767,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of a Maritimes Regional Peer Review of the Recovery Potential Assessment for Atlantic Sturgeon - Maritimes population.",
+            "lead_author_2": "R. Bradford (Worcerster, Tana)",
+            "description": ""
+        }
+    }
+]

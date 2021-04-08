@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4416,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock assessment report on Strait of Georgia Pacific Herring",
+            "title_fr": "Évaluation du stock de hareng du Pacifique du détroit de Georgia",
+            "pub_year": 2005,
+            "lead_author_2": "Schweigert, J.",
+            "pub_num": "068",
+            "pages": 5,
+            "pdf_size": 337,
+            "description": ""
+        }
+    }
+]

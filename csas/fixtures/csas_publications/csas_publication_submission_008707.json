@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8707,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "TBD",
+            "lead_author_2": "Eugene Lee",
+            "description": ""
+        }
+    }
+]

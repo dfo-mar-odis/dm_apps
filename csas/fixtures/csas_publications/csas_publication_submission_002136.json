@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2136,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évaluation des concentrations de crevettes nordiques (Pandalus borealis) du nord du golfe du Saint-Laurent (divisions 4RST de l'OPANO)",
+            "pub_year": 1991,
+            "lead_author_2": "L. Savard; S. Hurtubise",
+            "pub_num": "071",
+            "pages": 35,
+            "pdf_size": 1707,
+            "description": ""
+        }
+    }
+]

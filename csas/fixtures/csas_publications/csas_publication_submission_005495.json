@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5495,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Maritimes Summer Research Vessel Survey Trends",
+            "title_fr": "Tendances dans les relevés d'été par navire scientifique dans la Région des Maritimes",
+            "pub_year": 2010,
+            "lead_author_2": "D. Clark",
+            "pub_num": "013",
+            "pages": 12,
+            "pdf_size": 197,
+            "description": ""
+        }
+    }
+]

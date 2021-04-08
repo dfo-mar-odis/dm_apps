@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7710,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Recovery Potential Assessment for Winter Skate (Leucoraja ocellata): Eastern Scotian Shelf and Newfoundland Population",
+            "title_fr": "Évaluation du potentiel de rétablissement de la raie tachetée (Leucoraja ocellata) : population de l'est du plateau néo-écossais et de Terre-Neuve",
+            "pub_year": 2017,
+            "lead_author_2": "Chaput, Gérald",
+            "pub_num": "014",
+            "pages": 43,
+            "pdf_size": 3155,
+            "description": ""
+        }
+    }
+]

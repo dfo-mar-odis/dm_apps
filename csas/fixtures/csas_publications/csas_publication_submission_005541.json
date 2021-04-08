@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5541,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process on the Assessment of 4VWX Herring.",
+            "lead_author_2": "Worcester, Tana",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6491,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Zonal Advisory Process for Smooth Skate and Thorny Skate Pre-COSEWIC meeting; January 11-13, 2011",
+            "title_fr": "Compte rendu du processus d'évaluation zonale pour la réunion pré-COSEPAC concernant la raie épineuse et la raie à queue de velours ; du 11 au 13 janvier 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Fran Mowbray/Vanessa Sutton-Pande",
+            "pub_num": "035",
+            "pages": 45,
+            "pdf_size": 409,
+            "description": ""
+        }
+    }
+]

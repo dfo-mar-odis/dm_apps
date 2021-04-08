@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7172,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of Atlantic herring in the southern Gulf of St. Lawrence (NAFO Div. 4T) to 2013",
+            "title_fr": "Évaluation du hareng de l'atlantique dans le sud du golfe du Saint-Laurent (Div. 4t de l'OPANO) jusqu'à 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Claude LeBlanc",
+            "pub_num": "040",
+            "pages": 20,
+            "pdf_size": 564,
+            "description": ""
+        }
+    }
+]

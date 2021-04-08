@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1291,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Diagnosis for the multiplicative model",
+            "pub_year": 1983,
+            "lead_author_2": "G.N. White; S. Gavaris",
+            "pub_num": "058",
+            "pages": 27,
+            "pdf_size": 892,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4977,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Reporting rates from cod tagging studies in NAFO Divisions 2J3KL and Subdivision 3Ps",
+            "title_fr": "Taux de déclaration obtenus à partir des expériences de marquage de la morue dans les divisions 2J3KL et la sous-division 3Ps de l'OPANO",
+            "pub_year": 2008,
+            "lead_author_2": "Cadigan, N., J. Brattey.",
+            "pub_num": "031",
+            "pages": 29,
+            "pdf_size": 169,
+            "description": ""
+        }
+    }
+]

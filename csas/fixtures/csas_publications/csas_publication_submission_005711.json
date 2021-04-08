@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5711,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 2],
+            "title_en": "Estimating the Impact of Grey Seals on the Eastern Scotian Shelf Cod Population to 2009",
+            "title_fr": "Estimation de l'impact du phoque gris sur les populations de morue des parties orientale du plateau néo-écossais jusqu'en 2009",
+            "pub_year": 2011,
+            "lead_author_2": "Trzcinski, K., Mohn, R. K., Bowen, W. D.",
+            "pub_num": "078",
+            "pages": 26,
+            "pdf_size": 174,
+            "description": ""
+        }
+    }
+]

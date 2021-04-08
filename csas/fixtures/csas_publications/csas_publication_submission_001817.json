@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1817,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The Grand Manan area scallop stock assessment - 1987",
+            "pub_year": 1988,
+            "lead_author_2": "G. Robert; M.J. Lundy",
+            "pub_num": "021",
+            "pages": 31,
+            "pdf_size": 1266,
+            "description": ""
+        }
+    }
+]

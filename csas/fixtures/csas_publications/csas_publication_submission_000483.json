@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 483,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of the Fishery and assessment of the green sea urchin stocks in British Columbia, with Quota recommendations for 2000",
+            "pub_year": 1999,
+            "lead_author_2": "Perry, R.I., Waddell, B.J.",
+            "pub_num": "113",
+            "pages": 43,
+            "pdf_size": 698,
+            "description": ""
+        }
+    }
+]

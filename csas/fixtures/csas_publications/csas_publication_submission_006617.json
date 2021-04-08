@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6617,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Variation in morphology, life history and ecology of cisco in Great Bear Lake, Northwest Territories, Canada",
+            "title_fr": "Variation de la morphologie, du cycle biologique et de l'écologie du cisco dans le Grand lac de l'Ours aux Territoires du Nord-Ouest, Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Howland, K., Gallagher, C., Boguski, D., Chavarie, L., Reist, J., Rosenburg, B., and Wiley, S.",
+            "pub_num": "106",
+            "pages": 45,
+            "pdf_size": 967,
+            "description": ""
+        }
+    }
+]

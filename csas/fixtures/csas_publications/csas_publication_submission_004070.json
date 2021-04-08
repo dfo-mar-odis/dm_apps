@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4070,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Scientific advice for input to the Allowable Harm Assessment for Bocaccio",
+            "title_fr": "Avis scientifiques pour l'évaluation des dommages acceptables concernant le bocaccio",
+            "pub_year": 2004,
+            "lead_author_2": "Stanley, R., P. Starr.",
+            "pub_num": "098",
+            "pages": 32,
+            "pdf_size": 178,
+            "description": ""
+        }
+    }
+]

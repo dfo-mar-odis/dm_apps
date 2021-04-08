@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1406,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the 1982 4WX herring fishery",
+            "pub_year": 1983,
+            "lead_author_2": "T.D. Iles; J. Simon",
+            "pub_num": "089",
+            "pages": 37,
+            "pdf_size": 1299,
+            "description": ""
+        }
+    }
+]

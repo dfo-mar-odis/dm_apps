@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8203,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Seasonal distribution and abundance of St Lawrence Estuary beluga (Delphinapterus leucas)",
+            "lead_author_2": "V. Harvey, J.F. Gosselin, A. Mosnier, V. Lesage, M.O. Hammill",
+            "description": ""
+        }
+    }
+]

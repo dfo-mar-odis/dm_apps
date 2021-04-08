@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 399,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Eco-physiological approach for estimating the food consumption of cod and the maximal possible contribution of various fish species in the diet of the cod population inhabiting the southern Gulf of St. Lawrence",
+            "pub_year": 1980,
+            "lead_author_2": "J. Majkowski; K.G. Waiwood",
+            "pub_num": "033",
+            "pages": 28,
+            "pdf_size": 1401,
+            "description": ""
+        }
+    }
+]

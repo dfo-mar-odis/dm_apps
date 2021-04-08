@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7327,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review of the re-evaluation of Ecologically and Biologically Significant Areas (EBSAs) in the Eastern Arctic Biogeographic Region of the Canadian Arctic; January 27-29, 2015",
+            "title_fr": "Compte rendu de l'examen régional par des pairs sur le réévaluation des zones d’importance écologique et biologique (ZIEB) dans la région biogéographique de l'est de l'Arctique canadien; Du 27 au 29 janvier 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "042",
+            "pages": 28,
+            "pdf_size": 281,
+            "description": ""
+        }
+    }
+]

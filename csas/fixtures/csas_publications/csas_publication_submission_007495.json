@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7495,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Shrimp Trawl Fishery off the West Coast of Canada",
+            "pub_year": 1999,
+            "lead_author_2": "J.A. Boutillier",
+            "pub_num": "C6-08",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

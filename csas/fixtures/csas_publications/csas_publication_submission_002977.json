@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2977,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Northern Shrimp (Pandalus borealis) - Div. 0B to 3K",
+            "pub_year": 2000,
+            "lead_author_2": "Don Parsons",
+            "pub_num": "C2-05",
+            "pages": 15,
+            "pdf_size": 417,
+            "description": ""
+        }
+    }
+]

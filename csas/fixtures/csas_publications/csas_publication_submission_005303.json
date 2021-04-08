@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5303,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Georges Bank 'a' Scallop (Placopecten magellanicus) Framework Assessment: Data Inputs and Population Models",
+            "title_fr": "Cadre d'évaluation du stock de pétoncles « a » du banc Georges (Placopecten magellanicus) : Saisie de données et modèles de population",
+            "pub_year": 2009,
+            "lead_author_2": "I.D. Jonsen, A. Glass, B. Hubley, J. Sameto",
+            "pub_num": "034",
+            "pages": 80,
+            "pdf_size": 1868,
+            "description": ""
+        }
+    }
+]

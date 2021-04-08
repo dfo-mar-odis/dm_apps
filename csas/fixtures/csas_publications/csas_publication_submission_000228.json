@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 228,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop stock update for SPA 6, Grand Manan and Southwest New Brunswick - 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Butler, M.A.E.",
+            "pub_num": "060",
+            "pages": 28,
+            "pdf_size": 2125,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6469,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The Atlantic mackerel (Scomber scombrus L.) in NAFO Subareas 3 and 4 in 2011",
+            "title_fr": "Le maquereau bleu (Scomber scombrus L.) des sous-régions 3-4 de l'OPANO en 2011",
+            "pub_year": 2013,
+            "lead_author_2": "François Grégoire, Jean-Louis Beaulieu, Marie-Hélène Gendron et Isabelle Lévesque",
+            "pub_num": "049",
+            "pages": 136,
+            "pdf_size": 30946,
+            "description": ""
+        }
+    }
+]

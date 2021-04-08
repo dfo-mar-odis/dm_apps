@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2579,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An update of the status of 4VW flatfish stocks",
+            "pub_year": 1996,
+            "lead_author_2": "C. Annand; D. Beanlands",
+            "pub_num": "032",
+            "pages": 55,
+            "pdf_size": 2623,
+            "description": ""
+        }
+    }
+]

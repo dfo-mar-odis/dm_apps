@@ -286,7 +286,7 @@ var app = new Vue({
     editableReviewers() {
       myArray = []
       for (var i = 0; i < this.trip.reviewers.length; i++) {
-        if (this.trip.reviewers[i].status === 23 || this.request.reviewers[i].status === 24) {
+        if (this.trip.reviewers[i].status === 23 || this.trip.reviewers[i].status === 24) {
           myArray.push(this.trip.reviewers[i]);
         }
       }

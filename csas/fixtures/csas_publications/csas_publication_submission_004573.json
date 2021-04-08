@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4573,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Tagging of Lumpfish (Cyclopterus lumpus) in the Northern Gulf of St. Lawrence from 2004 to 2006",
+            "title_fr": "Marquage de la lompe (Cyclopterus lumpus) dans le nord du golfe du Saint-Laurent de 2004 à 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Fréchet, A., J. Gauthier, P. Schwab, F. Collier, J. Spingle.",
+            "pub_num": "084",
+            "pages": 19,
+            "pdf_size": 300,
+            "description": ""
+        }
+    }
+]

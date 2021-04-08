@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 224,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The effect of water temperature on angling catch of Atlantic salmon in the Upsalquitch river",
+            "pub_year": 1999,
+            "lead_author_2": "Mowbray, F., Locke, A.",
+            "pub_num": "056",
+            "pages": 17,
+            "pdf_size": 680,
+            "description": ""
+        }
+    }
+]

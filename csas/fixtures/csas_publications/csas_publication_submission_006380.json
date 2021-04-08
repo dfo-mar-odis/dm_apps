@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6380,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review Meeting on Guidance Related to Bycatch and Discards in Canadian Commercial Fisheries; March 5-7, 2012",
+            "title_fr": "Compte rendu de la réunion d'examen par les pairs nationale sur les Orientations sur les prises accessoires et les rejets en mer des pêches commerciales canadiennes ; du 5 au 7 mars 2012",
+            "pub_year": 2012,
+            "lead_author_2": "J. Rice & A. White / E. Thorleifson",
+            "pub_num": "054",
+            "pages": 22,
+            "pdf_size": 369,
+            "description": ""
+        }
+    }
+]

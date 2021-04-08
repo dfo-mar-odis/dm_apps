@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2577,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4X haddock stock",
+            "pub_year": 1996,
+            "lead_author_2": "P.C.F. Hurley; G. Black; R.K. Mohn; P. Comeau",
+            "pub_num": "030",
+            "pages": 66,
+            "pdf_size": 3090,
+            "description": ""
+        }
+    }
+]

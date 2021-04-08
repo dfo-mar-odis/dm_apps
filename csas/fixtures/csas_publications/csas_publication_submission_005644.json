@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5644,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings from the National Peer Review Technical Expertise in Stock Assessment (TESA) Workshop on Stock Assessment Methods for Data Poor Species in Canada; 11-12 May, 2010",
+            "title_fr": "Compte rendu du processus de consultation scientifique national sur l'Expertise technique en évaluation des stocks (ETES) : Atelier sur les méthodes d'évaluation des stocks d'espèces peu documentées au Canada ; les 11 et 12 mai 2010",
+            "pub_year": 2011,
+            "lead_author_2": "R.F. Tallman and A. Cass",
+            "pub_num": "063",
+            "pages": 32,
+            "pdf_size": 128,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2255,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A review of hydroacoustic surveys conducted during winter for 2J3KL cod, 1987-1992",
+            "pub_year": 1992,
+            "lead_author_2": "J.W. Baird; C.R. Stevens; E.F. Murphy",
+            "pub_num": "107",
+            "pages": 14,
+            "pdf_size": 935,
+            "description": ""
+        }
+    }
+]

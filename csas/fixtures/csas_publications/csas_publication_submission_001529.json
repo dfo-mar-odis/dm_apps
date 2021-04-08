@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1529,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Growth of the Northern shrimp (Pandalus borealis) in NAFO Division 3K",
+            "pub_year": 1985,
+            "lead_author_2": "D.G. Parsons; G.R. Lilly; G.J. Chaput",
+            "pub_num": "022",
+            "pages": 22,
+            "pdf_size": 1045,
+            "description": ""
+        }
+    }
+]

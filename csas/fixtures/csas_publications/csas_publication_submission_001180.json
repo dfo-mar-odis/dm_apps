@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1180,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Preliminary estimation of total mortality for shrimp (P. borealis) in the Anticosti Channel",
+            "pub_year": 1981,
+            "lead_author_2": "J. Fréchette; D.G. Parsons",
+            "pub_num": "082",
+            "pages": 10,
+            "pdf_size": 313,
+            "description": ""
+        }
+    }
+]

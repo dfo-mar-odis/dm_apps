@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5547,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Overlap of predicted cold-water coral habitat and bottom-contact fisheries in British Columbia ",
+            "title_fr": "Chevauchement des prédictions concernant les habitats coralliens en eaux froides et la pêche de fond en Colombie-Britannique",
+            "pub_year": 2010,
+            "lead_author_2": "Finney, J.",
+            "pub_num": "067",
+            "pages": 32,
+            "pdf_size": 867,
+            "description": ""
+        }
+    }
+]

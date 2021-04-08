@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2805,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The status of the Atlantic salmon (Salmo salar L.) stock of the Humber River, Newfoundland, 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Mullins, C.C.",
+            "pub_num": "037",
+            "pages": 64,
+            "pdf_size": 2134,
+            "description": ""
+        }
+    }
+]

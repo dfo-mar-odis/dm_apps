@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2054,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Logbook analysis for the 4WX herring purse seine fishery, 1985-89",
+            "pub_year": 1990,
+            "lead_author_2": "M.J. Power; R.L. Stephenson",
+            "pub_num": "053",
+            "pages": 34,
+            "pdf_size": 1514,
+            "description": ""
+        }
+    }
+]

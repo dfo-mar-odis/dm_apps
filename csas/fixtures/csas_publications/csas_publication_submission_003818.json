@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3818,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "The Efficacy of video-based electronic monitoring for the halibut longline fishery",
+            "title_fr": "Efficacité de la surveillance électronique basée sur la technologie vidéo pour la pêche du flétan à la palangre",
+            "pub_year": 2003,
+            "lead_author_2": "McElderry, H., Schrader, J., Illingworth, J.",
+            "pub_num": "042",
+            "pages": 80,
+            "pdf_size": 714,
+            "description": ""
+        }
+    }
+]

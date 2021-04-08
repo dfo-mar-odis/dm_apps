@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4647,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Re-evaluation of sponge reef complex occurrences and their protection in Pacific Canada",
+            "title_fr": "Réévaluation des occurrences de complexes de récifs d'éponges et protection de ceux-ci dans le Pacifique canadien",
+            "pub_year": 2007,
+            "lead_author_2": "Jamieson, G., K. Conway, J. Vaughn Barrie",
+            "pub_num": "010",
+            "pages": 29,
+            "pdf_size": 978,
+            "description": ""
+        }
+    }
+]

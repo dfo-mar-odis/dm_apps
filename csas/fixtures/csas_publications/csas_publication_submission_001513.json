@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1513,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The Scotian Shelf fisheries for Jonah crab Cancer borealis, and deep-sea red crab, Geryon quinquedens, 1984",
+            "pub_year": 1985,
+            "lead_author_2": "R.W. Elner; D.A. Robichaud",
+            "pub_num": "006",
+            "pages": 23,
+            "pdf_size": 1166,
+            "description": ""
+        }
+    }
+]

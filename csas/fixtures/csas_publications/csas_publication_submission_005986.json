@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5986,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Integrated report of the Ecosystem Research Initiative (ERI) in the Quebec Region for the project: Forage species responsible for the presence of rorqual whales in the St. Lawrence Lower Estuary",
+            "title_fr": "Rapport intégré de l'initiative de recherche écosystémique (IRÉ) de la région du Québec pour le projet : les espèces fourragères responsables de la présence des rorquals dans l'estuaire maritime du Saint-Laurent",
+            "pub_year": 2013,
+            "lead_author_2": "Gagné, J.A., Ouellet, P., Savenkoff, C., Galbraith, P.S., Bui, A.O.V. et Bourassa, M.-N. Éd.",
+            "pub_num": "086",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7620,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Northern Shrimp stocks in the Estuary and Gulf of St. Lawrence in 2015",
+            "title_fr": "Évaluation des stocks de crevette nordique de l’estuaire et du golfe du Saint-Laurent en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Bourdages, Hugo",
+            "pub_num": "012",
+            "pages": 16,
+            "pdf_size": 3090,
+            "description": ""
+        }
+    }
+]

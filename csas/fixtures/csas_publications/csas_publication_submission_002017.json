@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2017,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock assessment for British Columbia herring in 2004 and forecasts of the potential catch in 2005",
+            "title_fr": "Évaluation de 2004 des stocks de hareng de la Colombie-Britannique et prévisions des prises en 2005",
+            "pub_year": 2004,
+            "lead_author_2": "Schweigert, J.F.",
+            "pub_num": "081",
+            "pages": 95,
+            "pdf_size": 1053,
+            "description": ""
+        }
+    }
+]

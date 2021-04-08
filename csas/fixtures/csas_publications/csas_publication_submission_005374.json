@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5374,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the Assessment of Information Required for the Identification of Critical Habitat for Pugnose Shiner, Spotted Gar, Lake Chubsucker and Northern Madtom; 29 May, 2008",
+            "title_fr": "Compte rendu du processus consultatif régional du Centre et de l'Arctique sur l'évaluation de l'Information requise pour la désignation de l'habitat essentiel du méné camus, du lépisosté tacheté,du sucet de lac et du chat-fou du Nord; le 29 mai 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Mandrak, N.E., Martin, K.A.",
+            "pub_num": "042",
+            "pages": 33,
+            "pdf_size": 131,
+            "description": ""
+        }
+    }
+]

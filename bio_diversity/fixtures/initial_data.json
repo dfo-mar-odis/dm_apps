@@ -1,0 +1,2147 @@
+[
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 1,
+    "fields": {
+        "name": "Number of Fish",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "min_val": "0.00000",
+        "max_val": "99999.00000",
+        "unit_id": 3,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 2,
+    "fields": {
+        "name": "Length",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "min_val": "0.00000",
+        "max_val": "500.00000",
+        "unit_id": 5,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 3,
+    "fields": {
+        "name": "Weight",
+        "nom": null,
+        "description_en": "how much does a thing weigh",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-15",
+        "min_val": "0.00000",
+        "max_val": "50000.00000",
+        "unit_id": 6,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 6,
+    "fields": {
+        "name": "Gender",
+        "nom": null,
+        "description_en": "Gender of a fish, Male, Female, Immature",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 7,
+    "fields": {
+        "name": "Animal Health",
+        "nom": null,
+        "description_en": "Catch all code to collect animal health features",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 8,
+    "fields": {
+        "name": "Electrofishing Seconds",
+        "nom": null,
+        "description_en": "amount of time spent electrofishing",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-01",
+        "min_val": "0.00000",
+        "max_val": "360000.00000",
+        "unit_id": 7,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 9,
+    "fields": {
+        "name": "Voltage",
+        "nom": null,
+        "description_en": "Voltage used to electrofish",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-01",
+        "min_val": "0.00000",
+        "max_val": "2000.00000",
+        "unit_id": 8,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 10,
+    "fields": {
+        "name": "Vial",
+        "nom": null,
+        "description_en": "Vial animals pit tag came from",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-01",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 11,
+    "fields": {
+        "name": "Box",
+        "nom": null,
+        "description_en": "Box animal's pit code vial came out of",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-01",
+        "min_val": "0.00000",
+        "max_val": "10000.00000",
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 12,
+    "fields": {
+        "name": "Box Location",
+        "nom": null,
+        "description_en": "Location of vial used in tagging in it box",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-10",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 13,
+    "fields": {
+        "name": "Precocity",
+        "nom": null,
+        "description_en": "Indicates if the fish looks like it has potential",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-10",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 14,
+    "fields": {
+        "name": "Mortality Observation",
+        "nom": null,
+        "description_en": "Details about an individual observed upon death.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-03",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
+    "pk": 15,
+    "fields": {
+        "name": "Scale Envelope",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-15",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 2,
+    "fields": {
+        "name": "Male",
+        "nom": null,
+        "description_en": "Male fish",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "anidc_id": 6
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 3,
+    "fields": {
+        "name": "Female",
+        "nom": null,
+        "description_en": "Female fish",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "anidc_id": 6
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 4,
+    "fields": {
+        "name": "Immature",
+        "nom": null,
+        "description_en": "Gender not known yet",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "anidc_id": 6
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 5,
+    "fields": {
+        "name": "Bad Shape",
+        "nom": null,
+        "description_en": "Fish is not doing well",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "anidc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 6,
+    "fields": {
+        "name": "Albino",
+        "nom": null,
+        "description_en": "Fish is an albino",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-01",
+        "anidc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 7,
+    "fields": {
+        "name": "Skinny",
+        "nom": null,
+        "description_en": "Fish in need of some extra food and relaxation time",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-02",
+        "anidc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 8,
+    "fields": {
+        "name": "Precocity",
+        "nom": null,
+        "description_en": "Indicates that a fish looks like it has good potential",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-10",
+        "anidc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 9,
+    "fields": {
+        "name": "Fungus",
+        "nom": null,
+        "description_en": "Fungal growth observed upon death",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-03",
+        "anidc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 10,
+    "fields": {
+        "name": "V-Notch",
+        "nom": null,
+        "description_en": "V-notch feature on fish",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-03",
+        "anidc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 11,
+    "fields": {
+        "name": "Jumper/Predator",
+        "nom": null,
+        "description_en": "Mortality recorded on fish found outside of tank",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-03",
+        "anidc_id": 14
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 12,
+    "fields": {
+        "name": "Pale Inside",
+        "nom": null,
+        "description_en": "Deceased fish looked pale inside.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-03",
+        "anidc_id": 14
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 13,
+    "fields": {
+        "name": "Bloody Eye",
+        "nom": null,
+        "description_en": "Fish has at least one bloody eye.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-03",
+        "anidc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 14,
+    "fields": {
+        "name": "Tissue Sample",
+        "nom": null,
+        "description_en": "Tissue sample collected from individual.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-15",
+        "anidc_id": 15
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 15,
+    "fields": {
+        "name": "Scale Envelope",
+        "nom": null,
+        "description_en": "Code of the envelope where scales collected upon mortality are stored",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-15",
+        "anidc_id": 15
+    }
+},
+{
+    "model": "bio_diversity.collection",
+    "pk": 20,
+    "fields": {
+        "name": "Wild Parr (WP)",
+        "nom": null,
+        "description_en": "Wild parr",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.collection",
+    "pk": 21,
+    "fields": {
+        "name": "Fall Parr (FP)",
+        "nom": null,
+        "description_en": "A fall collection of wild exposed parr (1+).",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.collection",
+    "pk": 22,
+    "fields": {
+        "name": "Wild Smolts (WS)",
+        "nom": null,
+        "description_en": "A collection of emigrating wild exposed fish that have undergone smoltification, usually in the third year.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.collection",
+    "pk": 23,
+    "fields": {
+        "name": "F1",
+        "nom": null,
+        "description_en": "Hatched at a facility",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.commentkeywords",
+    "pk": 1,
+    "fields": {
+        "keyword": "Skinny",
+        "adsc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.commentkeywords",
+    "pk": 2,
+    "fields": {
+        "keyword": "Bad Shape",
+        "adsc_id": 5
+    }
+},
+{
+    "model": "bio_diversity.commentkeywords",
+    "pk": 3,
+    "fields": {
+        "keyword": "V-Notch",
+        "adsc_id": 10
+    }
+},
+{
+    "model": "bio_diversity.commentkeywords",
+    "pk": 4,
+    "fields": {
+        "keyword": "Thin",
+        "adsc_id": 7
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 1,
+    "fields": {
+        "name": "Fish Caught",
+        "nom": null,
+        "description_en": "Fish Caught at site",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-15"
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 2,
+    "fields": {
+        "name": "Fish Observed",
+        "nom": null,
+        "description_en": "Fish observed at a sight",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-02"
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 3,
+    "fields": {
+        "name": "Fish in Container",
+        "nom": null,
+        "description_en": "Number of fish counted inside a container",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-05"
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 4,
+    "fields": {
+        "name": "Mortality",
+        "nom": null,
+        "description_en": "Count related a number of mortality events.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-05"
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 5,
+    "fields": {
+        "name": "Pit Tagged",
+        "nom": null,
+        "description_en": "Count related to a number of fish changing groups due to pit tagging.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-05"
+    }
+},
+{
+    "model": "bio_diversity.cup",
+    "pk": 1,
+    "fields": {
+        "nom": null,
+        "description_en": "Test Cup in drawer in heath unit",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-17",
+        "name": "C1",
+        "draw_id": 1,
+        "start_date": "2021-03-17",
+        "end_date": null
+    }
+},
+{
+    "model": "bio_diversity.drawer",
+    "pk": 1,
+    "fields": {
+        "nom": null,
+        "description_en": "First drawer in heat unit",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-17",
+        "name": "D1",
+        "heat_id": 1
+    }
+},
+{
+    "model": "bio_diversity.envcode",
+    "pk": 1,
+    "fields": {
+        "name": "Temperature",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "min_val": "-273.00000",
+        "max_val": "6500.00000",
+        "unit_id": 2,
+        "env_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.envcode",
+    "pk": 2,
+    "fields": {
+        "name": "Oxygen Level",
+        "nom": null,
+        "description_en": "how much oxygen is a tank",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "min_val": "0.00000",
+        "max_val": "100.00000",
+        "unit_id": 10,
+        "env_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.envcode",
+    "pk": 3,
+    "fields": {
+        "name": "pH",
+        "nom": null,
+        "description_en": "Acidity of water",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "min_val": "4.00000",
+        "max_val": "10.00000",
+        "unit_id": null,
+        "env_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.envcode",
+    "pk": 4,
+    "fields": {
+        "name": "Dissolved Nitrogen",
+        "nom": null,
+        "description_en": "how much nitrogen is in the water",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "min_val": "0.00000",
+        "max_val": "200.00000",
+        "unit_id": 10,
+        "env_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.envcode",
+    "pk": 5,
+    "fields": {
+        "name": "Water Level",
+        "nom": null,
+        "description_en": "Height of water in a tank",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "min_val": "0.00000",
+        "max_val": "100.00000",
+        "unit_id": null,
+        "env_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.envtreatcode",
+    "pk": 1,
+    "fields": {
+        "name": "Increased PH",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "rec_dose": "0.1 Ph units",
+        "manufacturer": "Ph up"
+    }
+},
+{
+    "model": "bio_diversity.envtreatcode",
+    "pk": 2,
+    "fields": {
+        "name": "Salt",
+        "nom": null,
+        "description_en": "Added salt to the water",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "rec_dose": "1.5%",
+        "manufacturer": "Ocean?"
+    }
+},
+{
+    "model": "bio_diversity.envtreatcode",
+    "pk": 3,
+    "fields": {
+        "name": "Formaldehyde",
+        "nom": null,
+        "description_en": "Add formaldehyde to tanks and troughs",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "rec_dose": "1:3000",
+        "manufacturer": "Formaldehyde"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 1,
+    "fields": {
+        "name": "Electrofishing",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 2,
+    "fields": {
+        "name": "PIT Tagging",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 3,
+    "fields": {
+        "name": "Spawning",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 4,
+    "fields": {
+        "name": "Feeding",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 5,
+    "fields": {
+        "name": "Measuring",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 6,
+    "fields": {
+        "name": "Egg Development",
+        "nom": null,
+        "description_en": "Egg development in troughs",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-26"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 7,
+    "fields": {
+        "name": "Movement",
+        "nom": null,
+        "description_en": "Movement event to log a fish or group leaving one container for another, generated automatically on data entry.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "1972-02-25"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 8,
+    "fields": {
+        "name": "Treatment",
+        "nom": null,
+        "description_en": "Treat the water in a container",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "1985-08-18"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 9,
+    "fields": {
+        "name": "Mortality",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2009-12-19"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 10,
+    "fields": {
+        "name": "Maturity Sorting",
+        "nom": null,
+        "description_en": "Sort fish based on their gender",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29"
+    }
+},
+{
+    "model": "bio_diversity.eventcode",
+    "pk": 11,
+    "fields": {
+        "name": "Water Quality Record",
+        "nom": null,
+        "description_en": "Daily log of all the water quality in the ponds",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15"
+    }
+},
+{
+    "model": "bio_diversity.eventfilecode",
+    "pk": 1,
+    "fields": {
+        "name": "Mating Plan",
+        "nom": null,
+        "description_en": "File that holds information on spawning event including pairings list.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-16"
+    }
+},
+{
+    "model": "bio_diversity.eventfilecode",
+    "pk": 2,
+    "fields": {
+        "name": "OSH Electrofishing Form",
+        "nom": null,
+        "description_en": "Form required for electrofishing.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-16"
+    }
+},
+{
+    "model": "bio_diversity.facilitycode",
+    "pk": 1,
+    "fields": {
+        "name": "Coldbrook",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.facilitycode",
+    "pk": 2,
+    "fields": {
+        "name": "Mactaquac",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.heathunit",
+    "pk": 1,
+    "fields": {
+        "nom": null,
+        "description_en": "A heathunit",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-17",
+        "name": "HU1",
+        "facic_id": 2,
+        "manufacturer": "Heath Unit Inc.",
+        "inservice_date": "2021-03-17",
+        "serial_number": "123456"
+    }
+},
+{
+    "model": "bio_diversity.helptext",
+    "pk": 3,
+    "fields": {
+        "field_name": "prot_id",
+        "eng_text": "Links to the Protocols table to identify which protocol the document describes.",
+        "fra_text": "",
+        "model": "Protofile"
+    }
+},
+{
+    "model": "bio_diversity.helptext",
+    "pk": 4,
+    "fields": {
+        "field_name": "prog_id",
+        "eng_text": "Links to the Programs table to describe the program which the protocol is a part of.",
+        "fra_text": "",
+        "model": "Protocol"
+    }
+},
+{
+    "model": "bio_diversity.helptext",
+    "pk": 5,
+    "fields": {
+        "field_name": "evntc_id",
+        "eng_text": "Links to the EventCode table which describe the type of event or activity which the protocol applies to, if required. Should match the protocol code if possible.",
+        "fra_text": "",
+        "model": "Protocol"
+    }
+},
+{
+    "model": "bio_diversity.helptext",
+    "pk": 6,
+    "fields": {
+        "field_name": "protc_id",
+        "eng_text": "Links to the ProtocolCode table which describe the type of event or activity which the protocol applies to, if required.",
+        "fra_text": "",
+        "model": "Protocol"
+    }
+},
+{
+    "model": "bio_diversity.helptext",
+    "pk": 7,
+    "fields": {
+        "field_name": "facic_id",
+        "eng_text": "Links to the FacilityCode table which describe the facility associated with the event.",
+        "fra_text": "",
+        "model": "Event"
+    }
+},
+{
+    "model": "bio_diversity.helptext",
+    "pk": 8,
+    "fields": {
+        "field_name": "evntc_id",
+        "eng_text": "Links to the EventCode table which describe the type of event being recorded.",
+        "fra_text": "",
+        "model": "Event"
+    }
+},
+{
+    "model": "bio_diversity.imagecode",
+    "pk": 1,
+    "fields": {
+        "name": "Image Record",
+        "nom": null,
+        "description_en": "Image that records some detail.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-12"
+    }
+},
+{
+    "model": "bio_diversity.instrument",
+    "pk": 1,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "instc_id": 1,
+        "serial_number": "TestTherm",
+        "comments": null
+    }
+},
+{
+    "model": "bio_diversity.instrumentcode",
+    "pk": 1,
+    "fields": {
+        "name": "Thermometer",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14"
+    }
+},
+{
+    "model": "bio_diversity.instdetcode",
+    "pk": 1,
+    "fields": {
+        "name": "Calibrated",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14"
+    }
+},
+{
+    "model": "bio_diversity.loccode",
+    "pk": 6,
+    "fields": {
+        "name": "Electrofishing Site",
+        "nom": null,
+        "description_en": "Where to electrofish",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.organization",
+    "pk": 6,
+    "fields": {
+        "name": "DFO",
+        "nom": "MPO",
+        "description_en": "Department of Fisheries and Oceans",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.personnelcode",
+    "pk": 8,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "perc_last_name": "Stoyel",
+        "perc_first_name": "Quentin",
+        "initials": "QCS",
+        "perc_valid": true
+    }
+},
+{
+    "model": "bio_diversity.personnelcode",
+    "pk": 9,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18",
+        "perc_last_name": "MacDonnell",
+        "perc_first_name": "Anna",
+        "initials": null,
+        "perc_valid": true
+    }
+},
+{
+    "model": "bio_diversity.personnelcode",
+    "pk": 10,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18",
+        "perc_last_name": "Bond",
+        "perc_first_name": "Shelley",
+        "initials": null,
+        "perc_valid": true
+    }
+},
+{
+    "model": "bio_diversity.personnelcode",
+    "pk": 11,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18",
+        "perc_last_name": "Hawthorne",
+        "perc_first_name": "Cynthia",
+        "initials": null,
+        "perc_valid": true
+    }
+},
+{
+    "model": "bio_diversity.personnelcode",
+    "pk": 12,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18",
+        "perc_last_name": "MacFarlane",
+        "perc_first_name": "Alanna",
+        "initials": null,
+        "perc_valid": true
+    }
+},
+{
+    "model": "bio_diversity.personnelcode",
+    "pk": 13,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18",
+        "perc_last_name": "Jenkins",
+        "perc_first_name": "Jesse",
+        "initials": null,
+        "perc_valid": true
+    }
+},
+{
+    "model": "bio_diversity.prioritycode",
+    "pk": 1,
+    "fields": {
+        "name": "High",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.prioritycode",
+    "pk": 2,
+    "fields": {
+        "name": "Normal",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.prioritycode",
+    "pk": 3,
+    "fields": {
+        "name": "Low",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.program",
+    "pk": 5,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "start_date": "2021-02-25",
+        "end_date": "2022-02-24",
+        "valid": true,
+        "comments": null,
+        "prog_name": "Test Data Program",
+        "prog_desc": "Get some test into the db",
+        "proga_id": 5,
+        "orga_id": 6
+    }
+},
+{
+    "model": "bio_diversity.progauthority",
+    "pk": 5,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "proga_last_name": "Stoyel",
+        "proga_first_name": "Quentin"
+    }
+},
+{
+    "model": "bio_diversity.protocol",
+    "pk": 2,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-12",
+        "start_date": "2021-03-12",
+        "end_date": null,
+        "valid": true,
+        "comments": null,
+        "prog_id": 5,
+        "protc_id": 1,
+        "facic_id": 2,
+        "evntc_id": 1,
+        "name": "Electrofishing",
+        "prot_desc": "This is how we electrofish"
+    }
+},
+{
+    "model": "bio_diversity.protocol",
+    "pk": 3,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18",
+        "start_date": "2021-03-18",
+        "end_date": "2021-03-19",
+        "valid": true,
+        "comments": null,
+        "prog_id": 5,
+        "protc_id": 4,
+        "facic_id": 2,
+        "evntc_id": 8,
+        "name": "Salt Treatment",
+        "prot_desc": "Particulate salt is dissolved into tanks until salinity stabilizes to target level."
+    }
+},
+{
+    "model": "bio_diversity.protocol",
+    "pk": 4,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18",
+        "start_date": "2021-03-18",
+        "end_date": "2021-03-19",
+        "valid": true,
+        "comments": null,
+        "prog_id": 5,
+        "protc_id": 4,
+        "facic_id": 2,
+        "evntc_id": 8,
+        "name": "Formaldehyde Treatment",
+        "prot_desc": "Formaldehyde is dissolved to the desired concentration and then poured into tanks in set doses."
+    }
+},
+{
+    "model": "bio_diversity.protocode",
+    "pk": 1,
+    "fields": {
+        "name": "Electrofishing",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.protocode",
+    "pk": 2,
+    "fields": {
+        "name": "PIT Tagging",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.protocode",
+    "pk": 3,
+    "fields": {
+        "name": "Sampling",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.protocode",
+    "pk": 4,
+    "fields": {
+        "name": "Treatment",
+        "nom": null,
+        "description_en": "Water treatment protocols",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-18"
+    }
+},
+{
+    "model": "bio_diversity.qualcode",
+    "pk": 1,
+    "fields": {
+        "name": "Good",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.qualcode",
+    "pk": 2,
+    "fields": {
+        "name": "Okay",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.qualcode",
+    "pk": 3,
+    "fields": {
+        "name": "Bad",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.qualcode",
+    "pk": 4,
+    "fields": {
+        "name": "Calculated",
+        "nom": null,
+        "description_en": "Value was calculated, not measured",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2002-12-16"
+    }
+},
+{
+    "model": "bio_diversity.releasesitecode",
+    "pk": 1,
+    "fields": {
+        "name": "below Chisholm falls (PEQU site)",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "rive_id": 3,
+        "trib_id": null,
+        "subr_id": null,
+        "min_lat": null,
+        "max_lat": null,
+        "min_lon": null,
+        "max_lon": null
+    }
+},
+{
+    "model": "bio_diversity.releasesitecode",
+    "pk": 2,
+    "fields": {
+        "name": "between Chisholm falls (PEQU site)",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "rive_id": 3,
+        "trib_id": null,
+        "subr_id": null,
+        "min_lat": null,
+        "max_lat": null,
+        "min_lon": null,
+        "max_lon": null
+    }
+},
+{
+    "model": "bio_diversity.releasesitecode",
+    "pk": 3,
+    "fields": {
+        "name": "Indian Man",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "rive_id": 3,
+        "trib_id": null,
+        "subr_id": null,
+        "min_lat": null,
+        "max_lat": null,
+        "min_lon": null,
+        "max_lon": null
+    }
+},
+{
+    "model": "bio_diversity.releasesitecode",
+    "pk": 4,
+    "fields": {
+        "name": "Black Brook (EQU site)",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "rive_id": 3,
+        "trib_id": null,
+        "subr_id": null,
+        "min_lat": null,
+        "max_lat": null,
+        "min_lon": null,
+        "max_lon": null
+    }
+},
+{
+    "model": "bio_diversity.releasesitecode",
+    "pk": 5,
+    "fields": {
+        "name": "Bonnell Brook",
+        "nom": "Bonnell Brook",
+        "description_en": "Bonnell Brook",
+        "description_fr": "Bonnell Brook",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2015-08-31",
+        "rive_id": 1,
+        "trib_id": null,
+        "subr_id": null,
+        "min_lat": null,
+        "max_lat": null,
+        "min_lon": null,
+        "max_lon": null
+    }
+},
+{
+    "model": "bio_diversity.releasesitecode",
+    "pk": 6,
+    "fields": {
+        "name": "Falls Brook",
+        "nom": "Falls Brook",
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2001-01-12",
+        "rive_id": 1,
+        "trib_id": null,
+        "subr_id": null,
+        "min_lat": null,
+        "max_lat": null,
+        "min_lon": null,
+        "max_lon": null
+    }
+},
+{
+    "model": "bio_diversity.rivercode",
+    "pk": 1,
+    "fields": {
+        "name": "BSR",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.rivercode",
+    "pk": 2,
+    "fields": {
+        "name": "GAK",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.rivercode",
+    "pk": 3,
+    "fields": {
+        "name": "SMA",
+        "nom": null,
+        "description_en": "St. Mary's River",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.rivercode",
+    "pk": 4,
+    "fields": {
+        "name": "LSR",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.rivercode",
+    "pk": 29,
+    "fields": {
+        "name": "TOB",
+        "nom": null,
+        "description_en": "Tobique  River",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.rivercode",
+    "pk": 30,
+    "fields": {
+        "name": "PET",
+        "nom": null,
+        "description_en": "Petticodiac River",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.rivercode",
+    "pk": 31,
+    "fields": {
+        "name": "PWR",
+        "nom": null,
+        "description_en": "Point Wolf River",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.spawndetcode",
+    "pk": 1,
+    "fields": {
+        "name": "Fecundity",
+        "nom": null,
+        "description_en": "how many eggs a dam layed",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-24",
+        "min_val": "0.00000",
+        "max_val": "100000.00000",
+        "unit_id": 11,
+        "spwn_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.spawndetcode",
+    "pk": 2,
+    "fields": {
+        "name": "Dud",
+        "nom": null,
+        "description_en": "Pairing had a dud individual involved at one of the lower choices values.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-15",
+        "min_val": null,
+        "max_val": null,
+        "unit_id": null,
+        "spwn_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.speciescode",
+    "pk": 13,
+    "fields": {
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "name": "Salmon",
+        "species": "Salmo salar",
+        "com_name": "Salmon"
+    }
+},
+{
+    "model": "bio_diversity.stockcode",
+    "pk": 2,
+    "fields": {
+        "name": "GAK",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14"
+    }
+},
+{
+    "model": "bio_diversity.stockcode",
+    "pk": 3,
+    "fields": {
+        "name": "BSR",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14"
+    }
+},
+{
+    "model": "bio_diversity.stockcode",
+    "pk": 4,
+    "fields": {
+        "name": "LSR",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14"
+    }
+},
+{
+    "model": "bio_diversity.stockcode",
+    "pk": 13,
+    "fields": {
+        "name": "TOB",
+        "nom": null,
+        "description_en": "Stock from Tobique River",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "1992-12-10"
+    }
+},
+{
+    "model": "bio_diversity.stockcode",
+    "pk": 15,
+    "fields": {
+        "name": "SMA",
+        "nom": null,
+        "description_en": "Stock from St. Mary's River",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.subrivercode",
+    "pk": 1,
+    "fields": {
+        "name": "East",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "rive_id": 3,
+        "trib_id": null
+    }
+},
+{
+    "model": "bio_diversity.subrivercode",
+    "pk": 2,
+    "fields": {
+        "name": "West",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14",
+        "rive_id": 3,
+        "trib_id": null
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 1,
+    "fields": {
+        "nom": null,
+        "description_en": "Tank 21",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-19",
+        "name": "21",
+        "facic_id": 1
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 2,
+    "fields": {
+        "nom": null,
+        "description_en": "Tank 13 in tagging event",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-20",
+        "name": "13",
+        "facic_id": 1
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 3,
+    "fields": {
+        "nom": null,
+        "description_en": "The 9th tank",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-20",
+        "name": "9",
+        "facic_id": 1
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 4,
+    "fields": {
+        "nom": null,
+        "description_en": "The 23rd tank at the facility",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-21",
+        "name": "23",
+        "facic_id": 1
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 5,
+    "fields": {
+        "nom": null,
+        "description_en": "The 24th tank",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-21",
+        "name": "24",
+        "facic_id": 1
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 6,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "name": "LP29",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 7,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-29",
+        "name": "LP30",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 8,
+    "fields": {
+        "nom": null,
+        "description_en": "Tank SP20 at Mactaquac",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-01",
+        "name": "SP20",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 9,
+    "fields": {
+        "nom": null,
+        "description_en": "Mactaquac tank",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-09",
+        "name": "SP22B",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 10,
+    "fields": {
+        "nom": "LP13",
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "LP13",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 11,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "SP8",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 12,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "LP21",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 13,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "LP27",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 14,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "SP23",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 15,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "LP12",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 16,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "SP3",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 17,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "SP4",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 18,
+    "fields": {
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15",
+        "name": "LP14",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 19,
+    "fields": {
+        "nom": "SP6",
+        "description_en": "Small pond",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "name": "SP6",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 20,
+    "fields": {
+        "nom": null,
+        "description_en": "small pond",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "name": "SP7",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 21,
+    "fields": {
+        "nom": null,
+        "description_en": "Large pond",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "name": "LP25",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 22,
+    "fields": {
+        "nom": null,
+        "description_en": "Large pond",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "name": "LP26",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tank",
+    "pk": 23,
+    "fields": {
+        "nom": null,
+        "description_en": "Large pond",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25",
+        "name": "LP18",
+        "facic_id": 2
+    }
+},
+{
+    "model": "bio_diversity.tray",
+    "pk": 1,
+    "fields": {
+        "nom": null,
+        "description_en": "tray with cross number one in it.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-10",
+        "name": "1",
+        "trof_id": 1,
+        "start_date": "2020-03-10",
+        "end_date": null
+    }
+},
+{
+    "model": "bio_diversity.tray",
+    "pk": 2,
+    "fields": {
+        "nom": "2",
+        "description_en": "A second test tray",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-11",
+        "name": "2",
+        "trof_id": 1,
+        "start_date": "2020-11-05",
+        "end_date": null
+    }
+},
+{
+    "model": "bio_diversity.tray",
+    "pk": 3,
+    "fields": {
+        "nom": null,
+        "description_en": "third tray",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-17",
+        "name": "3",
+        "trof_id": 1,
+        "start_date": "2021-03-17",
+        "end_date": "2021-04-21"
+    }
+},
+{
+    "model": "bio_diversity.trough",
+    "pk": 1,
+    "fields": {
+        "nom": null,
+        "description_en": "Trough 9",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-26",
+        "name": "9",
+        "facic_id": 1
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 1,
+    "fields": {
+        "name": "Meters (m)",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 2,
+    "fields": {
+        "name": "Celsius (C)",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 3,
+    "fields": {
+        "name": "Number of Fish",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 4,
+    "fields": {
+        "name": "Kilograms (Kgs)",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-13"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 5,
+    "fields": {
+        "name": "Centimeters (cm)",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-14"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 6,
+    "fields": {
+        "name": "Grams (g)",
+        "nom": null,
+        "description_en": "Unit of mass",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-15"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 7,
+    "fields": {
+        "name": "Seconds (s)",
+        "nom": null,
+        "description_en": "Unit of time",
+        "description_fr": "",
+        "created_by": "Olivia Johnson",
+        "created_date": "1998-07-25"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 8,
+    "fields": {
+        "name": "Volts (V)",
+        "nom": null,
+        "description_en": "Unit of electric potential",
+        "description_fr": "",
+        "created_by": "Brandon Hansen",
+        "created_date": "2012-04-10"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 9,
+    "fields": {
+        "name": "Millimeters (mm)",
+        "nom": null,
+        "description_en": "Unit of length",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-03"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 10,
+    "fields": {
+        "name": "Percentage",
+        "nom": null,
+        "description_en": "percentage out of 100.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-15"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 11,
+    "fields": {
+        "name": "Number of Eggs",
+        "nom": null,
+        "description_en": "",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-24"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 12,
+    "fields": {
+        "name": "Inches",
+        "nom": null,
+        "description_en": "unit of length",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 13,
+    "fields": {
+        "name": "Gallons",
+        "nom": null,
+        "description_en": "Unit of volume",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+},
+{
+    "model": "bio_diversity.unitcode",
+    "pk": 14,
+    "fields": {
+        "name": "Milliliters (ml)",
+        "nom": null,
+        "description_en": "Unit of volume",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-02-25"
+    }
+}
+]

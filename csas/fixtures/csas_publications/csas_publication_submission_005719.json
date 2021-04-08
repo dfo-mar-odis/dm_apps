@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5719,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 1],
+            "title_en": "Can poor fish condition explain the elevated natural mortality of cod and other marine fish in the southern Gulf of St. Lawrence?",
+            "title_fr": "La mauvaise condition des poissons peut-elle expliquer la mortalité naturelle élevée chez la morue et chez d'autres poissons marins dans le sud du golfe du Saint-Laurent?",
+            "pub_year": 2011,
+            "lead_author_2": "Swain, D.P., H. P. Benoît, L. Savoie, and T. Surette.",
+            "pub_num": "037",
+            "pages": 30,
+            "pdf_size": 720,
+            "description": ""
+        }
+    }
+]

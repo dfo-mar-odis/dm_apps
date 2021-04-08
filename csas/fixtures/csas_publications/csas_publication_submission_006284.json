@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6284,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Impact of stock-recruit and natural mortality process errors on MSY reference points",
+            "title_fr": "Incidence des erreurs dues au processus d'évaluation des stocks-recrues et de la mortalité naturelle sur les points de référence en matière de rendement maximal soutemu (RMS)",
+            "pub_year": 2012,
+            "lead_author_2": "Noel Cadigan",
+            "pub_num": "075",
+            "pages": 22,
+            "pdf_size": 299,
+            "description": ""
+        }
+    }
+]

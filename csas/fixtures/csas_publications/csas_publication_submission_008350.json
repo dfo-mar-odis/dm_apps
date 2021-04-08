@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8350,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Characterization of Yersinia ruckeri and enteric redmouth disease (ERM) to inform pathogen transfer risk assessments in British Columbia",
+            "title_fr": "Caractérisation de la bactérie Yersinia ruckeri et de la maladie bactérienne de la bouche rouge pour informer les évaluations des risques de transfert d’agents pathogènes en Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Wade, J.",
+            "pub_num": "022",
+            "pages": 32,
+            "pdf_size": 985,
+            "description": ""
+        }
+    }
+]

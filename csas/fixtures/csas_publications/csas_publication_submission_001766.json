@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1766,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Herring of the outer Scotian Shelf and Georges Bank: History of the fisheries, recent developments and management considerations",
+            "pub_year": 1987,
+            "lead_author_2": "R.L. Stephenson; D.J. Gordon; M.J. Power",
+            "pub_num": "076",
+            "pages": 23,
+            "pdf_size": 1218,
+            "description": ""
+        }
+    }
+]

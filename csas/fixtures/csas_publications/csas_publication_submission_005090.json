@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5090,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Pelagic Subcommittee Meeting; september 3, 2008",
+            "title_fr": "Compte rendu de la réunion du sous comité du CEESP sur les poissons pélagiques; le 3 septembre 2008",
+            "pub_year": 2008,
+            "lead_author_2": "Flostrand, L.",
+            "pub_num": "029",
+            "pages": 26,
+            "pdf_size": 112,
+            "description": ""
+        }
+    }
+]

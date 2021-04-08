@@ -45,11 +45,12 @@ def callback(request):
 
     # Get the user's profile
     user = get_user(token)
-    my_email = user.get("mail")
+    my_email = user.get("mail") if user.get("mail") else user.get("userPrincipalName")
     my_first_name = user.get("givenName")
     my_last_name = user.get("surname")
     my_job = user.get("jobTitle")
     my_phone = user.get("businessPhones")
+
     try:
         my_user = User.objects.get(email__iexact=my_email)
         my_user.first_name = my_first_name
@@ -221,7 +222,6 @@ def signup(request):
     if request.method == 'POST':
         form = forms.SignupForm(request.POST)
         if form.is_valid():
-            print(123)
             user = form.save(commit=False)
             user.username = user.email
             user.is_active = False

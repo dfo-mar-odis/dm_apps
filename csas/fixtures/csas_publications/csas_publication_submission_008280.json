@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8280,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Scallop Fishery Assessment of the Southern Gulf of St. Lawrence in 2018: Commercial Fishery and Survey Data",
+            "lead_author_2": "Monique Niles",
+            "description": ""
+        }
+    }
+]

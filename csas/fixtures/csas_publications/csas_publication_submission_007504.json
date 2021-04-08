@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7504,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Determining regional benchmarks of fish productivity using existing electrofishing data from rivers: proof of concept",
+            "title_fr": "Déterminer les points de référence régionaux pour la productivité du poisson au moyen de données existantes sur la pêche à l'électricité dans les rivières : validation de principe",
+            "pub_year": 2017,
+            "lead_author_2": "Randall, R.G., Bradford, M.J., de Kerckhove, D.T., and van der Lee, A.",
+            "pub_num": "018",
+            "pages": 55,
+            "pdf_size": 1654,
+            "description": ""
+        }
+    }
+]

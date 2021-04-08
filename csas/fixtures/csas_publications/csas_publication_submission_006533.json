@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6533,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Marine Protected Area Network Planning in the Scotian Shelf Bioregion: Objectives, Data, and Methods",
+            "title_fr": "Planification du réseau d'aires marines protégées dans la biorégion du plateau néo-écossais : objectifs, données et méthodes",
+            "pub_year": 2012,
+            "lead_author_2": "Worcester, T.",
+            "pub_num": "064",
+            "pages": 19,
+            "pdf_size": 628,
+            "description": ""
+        }
+    }
+]

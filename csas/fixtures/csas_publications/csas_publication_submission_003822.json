@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3822,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock Structure of Pollock in NAFO Divs. 4VWX5Zc",
+            "title_fr": "Structure du stock de goberge des divisions 4VWX5Zc de l'OPANO",
+            "pub_year": 2003,
+            "lead_author_2": "Neilson, J.D., Perley, P., Carruthers, E.H., Stobo, W., Clark, D.",
+            "pub_num": "045",
+            "pages": 57,
+            "pdf_size": 7222,
+            "description": ""
+        }
+    }
+]

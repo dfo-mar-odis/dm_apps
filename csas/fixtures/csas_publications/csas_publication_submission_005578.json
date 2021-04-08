@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5578,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Utilizing the Albion Test Fishery as an In season Predictor of Run Size of the Fraser River Spring and Summer Age 52 Chinook Aggregate",
+            "title_fr": "Recours à la pêche expérimentale à Albion comme indice, en cours de saison, de la taille de montaison des populations en comigration de saumon quinnat âgées de 52 ans dans le fleuve Fraser au printemps et en été",
+            "pub_year": 2012,
+            "lead_author_2": "M.W. Chamberlain1 and C. Parken2",
+            "pub_num": "150",
+            "pages": 45,
+            "pdf_size": 892,
+            "description": ""
+        }
+    }
+]

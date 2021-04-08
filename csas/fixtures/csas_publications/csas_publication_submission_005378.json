@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5378,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Total Removals of Northwest Atlantic Harp Seals (Pagophilus groenlandicus) 1952-2009",
+            "title_fr": "Total des captures de phoques du Groenland de l'Atlantique Nord-Ouest (Pagophilus groenlandicus) de 1952 à 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Stenson, G.B.",
+            "pub_num": "112",
+            "pages": 34,
+            "pdf_size": 212,
+            "description": ""
+        }
+    }
+]

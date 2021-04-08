@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6120,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review for Science Advice to Support Development of a Fisheries Protection Policy for Canada; August 29-31, 2012",
+            "title_fr": "Compte rendu de l'examen national par les pairs de l'avis scientifique pour guider l'élaboration d'une politique sur la protection des pêches au Canada; du 29 au 31 août 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Thorleifson, E.",
+            "pub_num": "034",
+            "pages": 23,
+            "pdf_size": 280,
+            "description": ""
+        }
+    }
+]

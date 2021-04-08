@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3272,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic Salmon (Salmo salar L.) Stocks of Insular Newfoundland (SFAs 3-14A), 2002",
+            "title_fr": "État des stocks de saumon atlantique (Salmo salar L.) à l'île de Terre-Neuve (ZPS 3-14A) en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "O'Connell, M.F., Dempson, J.B., Mullins, C.C., Reddin, D.G., Bourgeois, C.E., Porter, T.R., Cochran, N.M., Caines, D.",
+            "pub_num": "002",
+            "pages": 65,
+            "pdf_size": 735,
+            "description": ""
+        }
+    }
+]

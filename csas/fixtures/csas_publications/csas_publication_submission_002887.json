@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2887,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Inshore rockfish stock assessment for the West coast of Canada in 1997 and recommended yield options for 1998.",
+            "pub_year": 1997,
+            "lead_author_2": "Yamanaka, K.L., Kronlund, A.R.",
+            "pub_num": "133",
+            "pages": 38,
+            "pdf_size": 1772,
+            "description": ""
+        }
+    }
+]

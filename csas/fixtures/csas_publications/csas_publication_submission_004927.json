@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4927,
+        "fields": {
+            "series": 5,
+            "lead_region": [7, 5],
+            "title_en": "Assessment of Divisions 2G-3K Northern Shrimp",
+            "title_fr": "Évaluation des stocks de crevette nordique des divisions 2G-3K",
+            "pub_year": 2008,
+            "lead_author_2": "Orr, D.",
+            "pub_num": "008",
+            "pages": 22,
+            "pdf_size": 601,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8309,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Sentinel Surveys 1995-2018 – Catch rates and biological information on Atlantic Cod (Gadus morhua) in NAFO Subdivision 3Ps",
+            "title_fr": "Relevés de pêche sentinelle 1995 2018 – Taux de prises et données biologiques pour la morue franche (Gadus morhua) dans la sous-division 3Ps de l’OPANO",
+            "pub_year": 2019,
+            "lead_author_2": "Mello, L.G.S., Maddock Parsons, D., and M.R. Simpson",
+            "pub_num": "053",
+            "pages": 32,
+            "pdf_size": 1912,
+            "description": ""
+        }
+    }
+]

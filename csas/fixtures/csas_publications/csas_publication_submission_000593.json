@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 593,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The Atlantic mackerel (Scomber scombus L.) of NAFO Subareas 3-4",
+            "title_fr": "Le maquereau bleu (Scomber scombrus L.) des sous-régions 3 et 4 de l'OPANO",
+            "pub_year": 2000,
+            "lead_author_2": "Grégoire, F. (Éditeur / Editor)",
+            "pub_num": "021",
+            "pages": 473,
+            "pdf_size": 86900,
+            "description": ""
+        }
+    }
+]

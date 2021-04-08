@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5956,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Pre-COSEWIC Review of Atlantic Halibut (Hippoglossus hippoglossus) on the Scotian Shelf and Southern Grand Banks (Divs. 3NOPs4VWX5Zc), Gulf of St. Lawrence (Divs. 4RST), Newfoundland and Labrador, and Central and Arctic",
+            "title_fr": "Examen préalable à l'évaluation du COSEPAC sur le flétan de l'Atlantique (Hippoglossus hippoglossus) du plateau néo-écossais et du sud des Grands Bancs (div. 3NOPs4VWX5Zc) ainsi que du golfe du Saint-Laurent, dans la Régions de Terre-Neuve-et-Labrador, et dans celle du Centre et de l'Arctique",
+            "pub_year": 2011,
+            "lead_author_2": "M.K. Trzcinski, C. den Heyer, S. Armsworthy, S. Whoriskey, D. Archambault, M. Treble, M. Simpson, and J. Mossman / T. McIntyre / V. Myra",
+            "pub_num": "030",
+            "pages": 83,
+            "pdf_size": 5510,
+            "description": ""
+        }
+    }
+]

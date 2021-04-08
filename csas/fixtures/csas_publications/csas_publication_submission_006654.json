@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6654,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Estimating total allowable removals for walrus (Odobenus rosmarus rosmarus) in Nunavut using the potential biological removal approach",
+            "title_fr": "Estimation du total autorisé de prélèvements de morses (Odobenus rosmarus rosmarus) au Nunavut à l'aide de la méthode du prélèvement biologique potentiel",
+            "pub_year": 2013,
+            "lead_author_2": "Stewart, R., and J. Hamilton",
+            "pub_num": "031",
+            "pages": 17,
+            "pdf_size": 325,
+            "description": ""
+        }
+    }
+]

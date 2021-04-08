@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5930,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Allowable harm assessment of Striped Bass (Morone saxatilis) in the southern Gulf of St. Lawrence",
+            "title_fr": "Évaluation des dommages admissibles pour le bar rayé (Morone saxatilis) dans le sud du golfe du Saint-Laurent",
+            "pub_year": 2011,
+            "lead_author_2": "Scott Douglas",
+            "pub_num": "014",
+            "pages": 17,
+            "pdf_size": 284,
+            "description": ""
+        }
+    }
+]

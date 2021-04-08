@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4010,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Estimates of 3Ps Bycatch of Cod in Otter Trawl Fishery",
+            "title_fr": "Estimations des prises accessoires de morue dans les pêches au chalut à panneaux de 3Ps",
+            "pub_year": 2004,
+            "lead_author_2": "Chen, N.Y.",
+            "pub_num": "035",
+            "pages": 20,
+            "pdf_size": 514,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4636,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Newfoundland East and South Coast Herring Stocks to the Spring of 2006",
+            "title_fr": "Évaluation des stocks de hareng des côtes est et sud de Terre-Neuve jusqu'au printemps 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Wheeler, J.P., B. Squires, P. Williams.",
+            "pub_num": "101",
+            "pages": 92,
+            "pdf_size": 1665,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8618,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of Sea Scallop in the Atlantic Fisheries Organization (NAFO) Subdivision 3Ps",
+            "lead_author_2": "E. Coughlan",
+            "description": ""
+        }
+    }
+]

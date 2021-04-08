@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1502,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_fr": "Reconnaissance aérienne de l'effort de pêche pour la pêcherie de homards dans la partie nord du détroit de Northumberland - variations annuelles et variations saisonnières de la distribution spatiale de l'effort de pêche",
+            "pub_year": 1984,
+            "lead_author_2": "G.Y. Conan; D.R. Maynard",
+            "pub_num": "096",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6872,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review on the Risk Assessment for ship-mediated introductions of aquatic nonindigenous species to Canada (Part 1 and 2); March 25-27, 2013 (Part 1) and June 19-21, 2013 (Part 2)",
+            "title_fr": "Compte rendu de l'examen national par les pairs sur l'évaluation du risque d’introduction d'espèces aquatiques non indigènes par les navires au Canada (parties 1 et 2); du 25 au 27 mars 2013 (partie 1) et du 19 au 21 juin 2013 (partie 2)",
+            "pub_year": 2014,
+            "lead_author_2": "Bethany Schroeder",
+            "pub_num": "017",
+            "pages": 31,
+            "pdf_size": 178,
+            "description": ""
+        }
+    }
+]

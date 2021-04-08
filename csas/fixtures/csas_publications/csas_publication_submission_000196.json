@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 196,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of potential impacts on wild salmon stocks from fish diseases attributed to farmed salmon operations",
+            "pub_year": 1998,
+            "lead_author_2": "G. Olivier, A.-M. MacKinnon",
+            "pub_num": "159",
+            "description": ""
+        }
+    }
+]

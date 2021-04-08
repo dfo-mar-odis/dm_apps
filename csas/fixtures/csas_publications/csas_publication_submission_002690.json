@@ -1,0 +1,19 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2690,
+        "fields": {
+            "series": 7,
+            "lead_region": [1],
+            "title_en": "Southwestern Nova Scotia Snow Crab",
+            "title_fr": "Crabe des neiges du sud-ouest de la Nouvelle-Écosse",
+            "pub_year": 2002,
+            "lead_author_2": "Michel Biron
+Mikio Moriyasu",
+            "pub_num": "C3-65",
+            "pages": 5,
+            "pdf_size": 275,
+            "description": ""
+        }
+    }
+]

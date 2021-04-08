@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2427,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Genetic differentiation between inshore and offshore Atlantic cod (Gadus morhua L.) off Newfoundland: microsatellite DNA variation and antifreeze level",
+            "pub_year": 1995,
+            "lead_author_2": "D.E. Ruzzante; C.T. Taggart; D. Cook; S. Goddard",
+            "pub_num": "023",
+            "pages": 26,
+            "pdf_size": 1384,
+            "description": ""
+        }
+    }
+]

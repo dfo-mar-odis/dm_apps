@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4337,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Criteria and Proposition for the Definition of Snow Crab (Chionoecetes opilio) Production Units in the Estuary and Northern Gulf of St. Lawrence",
+            "title_fr": "Critères et proposition pour une définition des unités de production du crabe des neiges (Chionoecetes opilio) dans l'estuaire et le nord du golfe du Saint-Laurent",
+            "pub_year": 2005,
+            "lead_author_2": "Sainte-Marie, B., R. Dufour, L. Bourassa, D. Chabot, M. Dionne, D. Gilbert, A. Rondeau, J.-M. Sévigny.",
+            "pub_num": "059",
+            "pages": 26,
+            "pdf_size": 659,
+            "description": ""
+        }
+    }
+]

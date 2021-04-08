@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7164,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Science Review of the Eastern Newfoundland Strategic Environmental Assessment (SEA)",
+            "title_fr": "Examen scientifique de l'évaluation environnementale stratégique de l'Est de Terre-Neuve",
+            "pub_year": 2014,
+            "lead_author_2": "Nadine Templeman",
+            "pub_num": "035",
+            "description": ""
+        }
+    }
+]

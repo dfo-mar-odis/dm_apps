@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 231,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Proposed acoustic survey design for the 4WX herring spawning components",
+            "pub_year": 1999,
+            "lead_author_2": "Melvin, G., Power, M.",
+            "pub_num": "063",
+            "pages": 15,
+            "pdf_size": 1321,
+            "description": ""
+        }
+    }
+]

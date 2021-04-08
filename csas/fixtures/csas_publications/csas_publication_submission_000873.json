@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 873,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An interpretation of biological factors important in the management of the Northwestern Atlantic mackerel stock",
+            "pub_year": 1978,
+            "lead_author_2": "P.F. Lett; W.H. Marshall",
+            "pub_num": "017",
+            "pages": 37,
+            "pdf_size": 1655,
+            "description": ""
+        }
+    }
+]

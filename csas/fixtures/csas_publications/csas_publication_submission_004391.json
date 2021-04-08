@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4391,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Progressing to a scientifically-based assessment and management system for renewed commercial pink and spiny scallop fisheries off the British Columbia Coast",
+            "title_fr": "Vers un système d'évaluation et de gestion fondé sur la recherche scientifique pour le renouvellement de la pêche commerciale au pétoncle rose et au pétoncle épineux au large de la Colombie-Britannique",
+            "pub_year": 2005,
+            "lead_author_2": "Lauzier, R.B., L.C. Walthers, W. Hajas, J. Lessard, E. Wylie.",
+            "pub_num": "087",
+            "pages": 47,
+            "pdf_size": 304,
+            "description": ""
+        }
+    }
+]

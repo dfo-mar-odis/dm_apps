@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 365,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "A new approach to estimating Harp seal production",
+            "pub_year": 1977,
+            "lead_author_2": "D.E. Sergeant",
+            "pub_num": "022",
+            "pages": 13,
+            "pdf_size": 403,
+            "description": ""
+        }
+    }
+]

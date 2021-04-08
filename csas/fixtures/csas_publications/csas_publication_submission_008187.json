@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8187,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Gulf of St. Lawrence (4RST) Greenland Halibut Stock Status in 2018: Commercial Fishery and Research Survey Data",
+            "title_fr": "L’état du stock de flétan du Groenland du golfe du Saint-Laurent (4RST) en 2018 : données de la pêche commerciale et des relevés de recherche",
+            "pub_year": 2020,
+            "lead_author_2": "Gauthier, J., Marquis, M.-C., Bourdages, H., Ouellette-Plante, J. and Nozères, C.",
+            "pub_num": "016",
+            "pages": 132,
+            "pdf_size": 12144,
+            "description": ""
+        }
+    }
+]

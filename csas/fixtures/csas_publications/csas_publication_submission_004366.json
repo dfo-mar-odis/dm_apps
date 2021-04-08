@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4366,
+        "fields": {
+            "series": 4,
+            "lead_region": [6, 8],
+            "title_en": "National Science Peer Review of Five Species of Pacific Rockfish prior to Assessment by COSEWIC; 1-2 November, 2005",
+            "title_fr": "Examen scientifique national par les pairs de cinq espèces de sébastes du Pacifique préalable à l'évaluation du COSEPAC; les 1er et 2 novembre 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Sinclair, A.",
+            "pub_num": "020",
+            "pages": 40,
+            "pdf_size": 197,
+            "description": ""
+        }
+    }
+]

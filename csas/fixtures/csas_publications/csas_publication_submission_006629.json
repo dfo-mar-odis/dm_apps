@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6629,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Science response to information requests submitted to the Enbridge Pipeline Project environmental impact assessment hearings respecting northern abalone",
+            "title_fr": "Réponse du secteur des Sciences aux demandes d'information présentées lors des audiences sur l'étude d'impact sur l'environnement du projet d'oléoduc de la pétrolière Enbridge concernant les ormeau nordique",
+            "pub_year": 2012,
+            "pub_num": "023",
+            "pages": 8,
+            "pdf_size": 427,
+            "description": ""
+        }
+    }
+]

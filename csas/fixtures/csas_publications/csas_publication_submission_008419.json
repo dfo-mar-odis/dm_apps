@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8419,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "2019 Assessment of Newfoundland East and South Coast Atlantic Herring (Clupea harengus) Stock Complexes",
+            "lead_author_2": "Bourne et al.",
+            "description": ""
+        }
+    }
+]

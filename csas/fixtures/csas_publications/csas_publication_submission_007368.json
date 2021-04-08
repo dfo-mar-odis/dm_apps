@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7368,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Dolly Varden from the Babbage River, Yukon Territory 2010–2014",
+            "title_fr": "Évaluation du Dolly Varden de la Rivière Babbage, au Territoire du Yukon 2010–2014",
+            "pub_year": 2016,
+            "lead_author_2": "Colin Gallagher",
+            "pub_num": "055",
+            "pages": 13,
+            "pdf_size": 493,
+            "description": ""
+        }
+    }
+]

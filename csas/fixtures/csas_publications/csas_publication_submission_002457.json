@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2457,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Evaluation of the utility of summer trawl surveys (1990 to 1994) in the Shediac Valley and NAFO Unit Area 4T1 as an index of pre-recruit abundance for southern Gulf of St. Lawrence cod",
+            "pub_year": 1995,
+            "lead_author_2": "J.M. Hansen",
+            "pub_num": "051",
+            "pages": 19,
+            "pdf_size": 825,
+            "description": ""
+        }
+    }
+]

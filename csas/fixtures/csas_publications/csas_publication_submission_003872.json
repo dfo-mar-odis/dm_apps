@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3872,
+        "fields": {
+            "series": 8,
+            "lead_region": [6],
+            "title_en": "A Framework to Assist DFO Consideration of Requests for Review of Seismic Testing Proposals",
+            "title_fr": "Un cadre pour aider le MPO à évaluer les demandes portant sur l'examen de propositions de prospection sismique",
+            "pub_year": 2003,
+            "lead_author_2": "Rice, J.",
+            "pub_num": "001",
+            "pages": 14,
+            "description": ""
+        }
+    }
+]

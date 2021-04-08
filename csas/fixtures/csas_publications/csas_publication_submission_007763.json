@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7763,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "2015 Stock Status Update of Lobster (Homarus americanus) off Southwest Nova Scotia (Lobster Fishing Area 34)",
+            "title_fr": "Mise à jour de 2015 sur l’état du stock de homard (Homarus americanus) au large du sud-ouest de la Nouvelle-Écosse (zone de pêche du homard 34)",
+            "pub_year": 2016,
+            "lead_author_2": "David Keith",
+            "pub_num": "037",
+            "pages": 6,
+            "pdf_size": 467,
+            "description": ""
+        }
+    }
+]

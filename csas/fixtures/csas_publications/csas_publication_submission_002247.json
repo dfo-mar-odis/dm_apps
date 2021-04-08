@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2247,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Genetic variation in Greenland halibut, Reinhardtius hippoglossoides, from the St. Lawrence system and the northwest Atlantic",
+            "pub_year": 1992,
+            "lead_author_2": "J.M. Sevigny; G. Ross; D. Archambault; E. Parent",
+            "pub_num": "099",
+            "pages": 21,
+            "pdf_size": 1331,
+            "description": ""
+        }
+    }
+]

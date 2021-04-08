@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8157,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Unit 1&2 Redfish Management Strategy Evaluation (titre provisoire)",
+            "lead_author_2": "Murdoch K. McAllister et al.",
+            "description": ""
+        }
+    }
+]

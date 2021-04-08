@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5168,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Witch Flounder (Glyptocephalus cynoglossus) in NAFO Subdivision 3Ps: Catch and Survey Information Updated for 2005-2013",
+            "title_fr": "Plie grise (Glyptocephalus cynoglossus) de la sous-division 3Ps de l'OPANO: Mise à jour des données sur les prises et les relevés pour 2005-2013",
+            "pub_year": 2014,
+            "lead_author_2": "D. Maddock Parsons and R. Rideout",
+            "pub_num": "012",
+            "pages": 28,
+            "pdf_size": 792,
+            "description": ""
+        }
+    }
+]

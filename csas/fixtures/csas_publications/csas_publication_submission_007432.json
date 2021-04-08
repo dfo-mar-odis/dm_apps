@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7432,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Pacific Cod (Gadus macrocephalus) Assessment for Queen Charlotte Sound (5AB), British Columbia in 2013; December 8, 2014",
+            "title_fr": "Compte rendu de l'examen par les pairs de la Région du Pacifique sur l’évaluation de la morue du Pacifique (Gadus macrocephalus) du bassin de la Reine Charlotte (la zone 5AB), Colombie-Britannique en 2013 ; Le 8 décembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Rowan Haigh",
+            "pub_num": "050",
+            "pages": 23,
+            "pdf_size": 199,
+            "description": ""
+        }
+    }
+]

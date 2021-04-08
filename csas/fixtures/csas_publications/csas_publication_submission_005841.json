@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5841,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Browns Bank 'North' Scallop (Placopecten magellanicus) Stock Assessment",
+            "title_fr": "Évaluation du stock de pétoncle (Placopecten magellanicus) du secteur nord du banc de Brown",
+            "pub_year": 2011,
+            "lead_author_2": "B. Hubley, A. Glass, A. Reeves, J. Sameoto, S. Smith",
+            "pub_num": "042",
+            "pages": 69,
+            "pdf_size": 1949,
+            "description": ""
+        }
+    }
+]

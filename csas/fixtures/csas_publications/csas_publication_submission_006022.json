@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6022,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Mortality reference points for the American Eel (Anguilla rostrata) and an application for evaluating cumulative impacts of anthropogenic activities",
+            "title_fr": "Niveaux de référence pour la mortalité de l'anguille d'Amérique (Anguilla rostrata) et application pour l'évaluation des répercussions cumulatives des activités anthropogéniques",
+            "pub_year": 2011,
+            "lead_author_2": "Gerald Chaput and David Cairns",
+            "pub_num": "053",
+            "pages": 32,
+            "pdf_size": 179,
+            "description": ""
+        }
+    }
+]

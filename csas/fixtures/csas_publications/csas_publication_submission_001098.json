@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1098,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Report on the November-December 1979 4T cod fishery",
+            "pub_year": 1980,
+            "lead_author_2": "A.F. Sinclair",
+            "pub_num": "082",
+            "pages": 7,
+            "pdf_size": 416,
+            "description": ""
+        }
+    }
+]

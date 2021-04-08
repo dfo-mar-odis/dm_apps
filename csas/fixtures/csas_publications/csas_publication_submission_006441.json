@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6441,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings on the Pacific Regional Peer Review on the recovery potential assessment of Eulachon (Thaleichthys pacificus) Fraser, Central and Nass-Skeena designatable units",
+            "lead_author_2": "Sean MacConnachie",
+            "description": ""
+        }
+    }
+]

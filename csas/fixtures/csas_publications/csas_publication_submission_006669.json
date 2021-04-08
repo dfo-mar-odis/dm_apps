@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6669,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Important Marine and Estuarine Habitat of Inner Bay of Fundy Atlantic Salmon",
+            "title_fr": "Habitat marin et estuarien important pour le saumon de l'Atlantique de l'intérieur de la baie de Fundy",
+            "pub_year": 2013,
+            "lead_author_2": "T. Worcester",
+            "pub_num": "054",
+            "pages": 27,
+            "pdf_size": 943,
+            "description": ""
+        }
+    }
+]

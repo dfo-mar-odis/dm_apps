@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8382,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Relationship between the 4R NAFO division (West coast of Newfoundland) capelin (Mallotus spp.) fishery performance index and environmental conditions in the Gulf of St. Lawrence",
+            "title_fr": "Relations entre l’indice de performance de la pêche commerciale au capelan (Mallotus spp.) de la division 4R de l’OPANO (côte ouest de Terre-Neuve) et les conditions environnementales dans le golfe du Saint-Laurent",
+            "pub_year": 2019,
+            "lead_author_2": "Jean-Martin Chamberland, Andrew Smith, Martin Castonguay and Stéphane Plourde",
+            "pub_num": "047",
+            "pages": 31,
+            "pdf_size": 3590,
+            "description": ""
+        }
+    }
+]

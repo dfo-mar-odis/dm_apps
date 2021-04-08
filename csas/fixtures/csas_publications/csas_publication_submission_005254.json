@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5254,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Zonal Advisory Process for Atlantic Cod for 2009; February 24 - March 6, 2009",
+            "title_fr": "Compte rendu du processus de consultation scientifique zonal sur la morue franche en 2009; du 24 février au 6 mars 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Rice, J., Cadigan, N.",
+            "pub_num": "050",
+            "pages": 302,
+            "pdf_size": 1434,
+            "description": ""
+        }
+    }
+]

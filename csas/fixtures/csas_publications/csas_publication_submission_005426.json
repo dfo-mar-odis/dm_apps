@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5426,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Information relevant to the documentation of habitat use by St. Lawrence beluga (Delphinapterus leucas), and quantification of habitat quality",
+            "title_fr": "Information pertinente à la documentation de l'utilisation de l'habitat par le béluga du St-Laurent (Delphinapterus leucas) et à la quantification de la qualité de l'habitat",
+            "pub_year": 2009,
+            "lead_author_2": "Arnaud Mosnier",
+            "pub_num": "098",
+            "pages": 39,
+            "pdf_size": 767,
+            "description": ""
+        }
+    }
+]

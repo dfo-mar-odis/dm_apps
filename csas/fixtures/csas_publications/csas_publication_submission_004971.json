@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4971,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Further Guidance on the Formulation, Prioritization, and Use of Conservation Objectives in an Ecosystem Approach to Integrated Management of Human Activities in Aquatic Ecosystems",
+            "title_fr": "Autres directives sur la formulation, la priorisation et l'utilisation des objectifs de conservation pour la gestion écosystémique intégrée des activités humaines dans les écosystèmes aquatiques",
+            "pub_year": 2008,
+            "lead_author_2": "Rice, J.",
+            "pub_num": "029",
+            "pages": 12,
+            "pdf_size": 85,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6641,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Harvest advice for Nunavik beluga (Delphinapterus leucas)",
+            "title_fr": "Avis sur le prélèvement de bélugas (Delphinapterus leucas) du Nunavik",
+            "pub_year": 2012,
+            "pub_num": "076",
+            "pages": 14,
+            "pdf_size": 366,
+            "description": ""
+        }
+    }
+]

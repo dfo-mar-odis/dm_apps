@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4859,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 8],
+            "title_en": "Population Assessment: Steller Sea Lion (Eumetopias jubatus)",
+            "title_fr": "Évaluation des populations d'otaries de Steller (Eumetopias jubatus)",
+            "pub_year": 2008,
+            "lead_author_2": "Olesiuk, P.",
+            "pub_num": "047",
+            "pages": 11,
+            "pdf_size": 135,
+            "description": ""
+        }
+    }
+]

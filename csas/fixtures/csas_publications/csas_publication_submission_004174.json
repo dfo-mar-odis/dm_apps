@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4174,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Potential Effect of Seismic Surveys on Fish Eggs, Larvae and Zooplankton",
+            "title_fr": "Effets possibles de la prospection sismique sur le zooplancton et les oeufs et les larves de poisson",
+            "pub_year": 2004,
+            "lead_author_2": "Payne, J.F.",
+            "pub_num": "125",
+            "pages": 16,
+            "pdf_size": 86,
+            "description": ""
+        }
+    }
+]

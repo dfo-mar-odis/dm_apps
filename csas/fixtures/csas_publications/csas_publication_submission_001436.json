@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1436,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Problems in the collection of catch and effort data from the Newfoundland fixed gear herring fishery - A biologist's perspective",
+            "pub_year": 1984,
+            "lead_author_2": "J.P. Wheeler",
+            "pub_num": "030",
+            "pages": 11,
+            "pdf_size": 537,
+            "description": ""
+        }
+    }
+]

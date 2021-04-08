@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5710,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 1],
+            "title_en": "Estimated consumption of southern Gulf of St. Lawrence cod by grey seals: bias, uncertainty and two proposed approaches ",
+            "title_fr": "Estimation de la consommation de morue du sud du golfe du Saint-Laurent par les phoques gris : biais, incertitude et proposition de deux approches",
+            "pub_year": 2011,
+            "lead_author_2": "Benoît, Hammill and Swain.",
+            "pub_num": "041",
+            "pages": 33,
+            "pdf_size": 1967,
+            "description": ""
+        }
+    }
+]

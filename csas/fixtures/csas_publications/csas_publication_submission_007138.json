@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7138,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Assessment of Information Required for the Identification of Critical Habitat for Northern Madtom (Noturus stigmosus), Spotted Gar (Lepisosteus oculatus), Lake Chubsucker (Erimyzon sucetta) and Pugnose Shiner (Notropis anogenus) in Canada",
+            "title_fr": "Évaluation de l'information requise pour la désignation de l'habitat essentiel du chat-fou du nord (Noturus stigmosus), du lépisosté tacheté (Lepisosteus oculatus), du sucet de lac (Erimyzon sucetta) et du méné camus (Notropis anogenus) au Canada",
+            "pub_year": 2014,
+            "lead_author_2": "Nicholas E. Mandrak, Amy L. Boyko, and Shawn S. Staton",
+            "pub_num": "059",
+            "pages": 50,
+            "pdf_size": 2092,
+            "description": ""
+        }
+    }
+]

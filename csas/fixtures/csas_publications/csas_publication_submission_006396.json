@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6396,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Gillnet research survey in the Saguenay fjord, 2000 - 2016",
+            "title_fr": "Relevé de recherche aux filets maillants dans le fjord du Saguenay de 2000 à 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Gauthier, J., Marquis, M.-C. et St-Pierre, S.",
+            "pub_num": "028",
+            "description": ""
+        }
+    }
+]

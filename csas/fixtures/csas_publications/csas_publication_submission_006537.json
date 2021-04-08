@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6537,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Identification and Review of Ecologically and Biologically Significant Areas in the Bay of Fundy",
+            "title_fr": "Détermination et examen des zones d’importance écologique et biologique dans la baie de Fundy ",
+            "pub_year": 2013,
+            "lead_author_2": "Buzeta, M.",
+            "pub_num": "065",
+            "pages": 65,
+            "pdf_size": 1220,
+            "description": ""
+        }
+    }
+]

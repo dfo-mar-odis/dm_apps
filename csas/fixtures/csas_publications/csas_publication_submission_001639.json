@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1639,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Estimated spawning requirements and indices of stock status of Atlantic salmon in the St. Mary's River, Nova Scotia",
+            "pub_year": 1986,
+            "lead_author_2": "T.L. Marshall",
+            "pub_num": "022",
+            "pages": 19,
+            "pdf_size": 1067,
+            "description": ""
+        }
+    }
+]

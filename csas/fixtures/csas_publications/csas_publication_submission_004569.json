@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4569,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Exploitation of Atlantic cod (Gadus morhua) in NAFO Subdivision 3Ps: estimates from mark-recapture experiments for the October 2006 assessment",
+            "title_fr": "Exploitation de la morue franche (Gadus morhua) dans la sous-division 3Ps de l'OPANO : estimations des expériences de marquage-recapture pour l'évaluation d'octobre 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Brattey, J., B. Healey.",
+            "pub_num": "082",
+            "pages": 21,
+            "pdf_size": 4204,
+            "description": ""
+        }
+    }
+]

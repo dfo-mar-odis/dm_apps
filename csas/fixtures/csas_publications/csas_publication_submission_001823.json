@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1823,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Miramichi River fishery (1987) for alewife (Alosa pseudoharengus) and Blueback Herring (Alosa aestivalis)",
+            "pub_year": 1988,
+            "lead_author_2": "D.R. Alexander; A.H. Vromans",
+            "pub_num": "027",
+            "pages": 30,
+            "pdf_size": 1400,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1342,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Atlantic salmon (Salmo salar), in the Margaree River, 1989",
+            "pub_year": 1990,
+            "lead_author_2": "R.R. Claytor; R. Jones",
+            "pub_num": "027",
+            "pages": 22,
+            "pdf_size": 1053,
+            "description": ""
+        }
+    }
+]

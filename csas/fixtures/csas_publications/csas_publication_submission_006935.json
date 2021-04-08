@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6935,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Summer abundance indices of St. Lawrence Estuary beluga (Delphinapterus leucas) from a photographic survey in 2009 and 28 line transect surveys from 2001 to 2009",
+            "title_fr": "Indices d'abondance d'été du béluga (Delphinapterus leucas) de l'estuaire du Saint-Laurent obtenus à partir d'un relevé photographique en 2009 et de 28 relevés en ligne de 2001 à 2009",
+            "pub_year": 2014,
+            "lead_author_2": "Jean-François Gosselin, Mike Hammill and Arnaud Mosnier",
+            "pub_num": "021",
+            "pages": 55,
+            "pdf_size": 3305,
+            "description": ""
+        }
+    }
+]

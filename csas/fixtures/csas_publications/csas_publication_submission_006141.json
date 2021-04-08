@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6141,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A Monitoring Framework for the St. Anns Bank Area of Interest",
+            "title_fr": "Un cadre de surveillance pour la zone d'intérêt du Banc de Sainte-Anne",
+            "pub_year": 2013,
+            "lead_author_2": "Kenchington, T.J.",
+            "pub_num": "117",
+            "pages": 85,
+            "pdf_size": 1251,
+            "description": ""
+        }
+    }
+]

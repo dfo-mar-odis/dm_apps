@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1885,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of the snow crab (Chionoecetes opilio) resource in western Cape Breton Island (Areas 18 and 19) for 1988",
+            "pub_year": 1989,
+            "lead_author_2": "Yvon Chiasson; Pierre DeGrâce; Greg Roach; Mikio Moriyasu",
+            "pub_num": "013",
+            "pages": 30,
+            "pdf_size": 1423,
+            "description": ""
+        }
+    }
+]

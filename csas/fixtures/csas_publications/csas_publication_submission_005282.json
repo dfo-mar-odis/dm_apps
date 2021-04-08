@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5282,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Atlantic Halibut on the Scotian Shelf and Southern Grand Banks (NAFO Divisions 3NOPs4VWX5Zc) - Industry/DFO Longline Survey and Tagging Results to 2008",
+            "title_fr": "Flétan de l'Atlantique dans le plateau néo-écossais et au sud des Grands Bancs (divisions 3NOPs4VWX5Zc de l'OPANO) - Résultats de 2008 du relevé à la palangre réalisé par l'industrie et le MPO et du marquage",
+            "pub_year": 2009,
+            "lead_author_2": "Trzcinski, M.K.,  Armsworthy, S.L., Wilson, S., Mohn, R.K., Fowler, M., Campana, S.E.",
+            "pub_num": "026",
+            "pages": 49,
+            "pdf_size": 1064,
+            "description": ""
+        }
+    }
+]

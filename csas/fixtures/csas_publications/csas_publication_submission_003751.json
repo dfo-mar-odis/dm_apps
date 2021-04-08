@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3751,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Capelin in the estuary and the Gulf of St. Lawrence (4RST) in 2002",
+            "title_fr": "Capelan de l'estuaire et du Golfe du Saint-Laurent (4RST) en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Beaulieu, J.L.",
+            "pub_num": "009",
+            "pages": 12,
+            "pdf_size": 875,
+            "description": ""
+        }
+    }
+]

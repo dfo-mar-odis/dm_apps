@@ -206,7 +206,7 @@ class ProjectDetailView(LoginRequiredMixin, CommonDetailView):
     # parent_crumb = {"title": _("My Projects"), "url": reverse_lazy("projects2:my_project_list")}
 
     def get_active_page_name_crumb(self):
-        return str(self.get_object())
+        return "{} {}".format(_("Project"), self.get_object().id)
 
     def get_h1(self):
         mystr = str(self.get_object())
@@ -1052,7 +1052,7 @@ class StatusReportUpdateView(CanModifyProjectRequiredMixin, CommonUpdateView):
 class StatusReportReviewUpdateView(ManagerOrAdminRequiredMixin, StatusReportUpdateView):
     form_class = forms.StatusReportReviewForm
     h1 = gettext_lazy("Please provide review comments")
-    container_class = "container-fluid"
+    container_class = "container bg-light curvy"
 
 
 class StatusReportPrintDetailView(LoginRequiredMixin, CommonDetailView):
@@ -1097,6 +1097,7 @@ class ReportSearchFormView(AdminRequiredMixin, CommonFormView):
         report = int(form.cleaned_data["report"])
         year = nz(form.cleaned_data["year"], "None")
         region = nz(form.cleaned_data["region"], "None")
+        division = nz(form.cleaned_data["division"], "None")
         section = nz(form.cleaned_data["section"], "None")
 
         if report == 1:
@@ -1113,6 +1114,8 @@ class ReportSearchFormView(AdminRequiredMixin, CommonFormView):
             return HttpResponseRedirect(reverse("projects2:export_rsa") + f'?year={year};region={region}')
         elif report == 7:
             return HttpResponseRedirect(reverse("projects2:export_ppa") + f'?year={year};section={section};region={region}')
+        elif report == 8:
+            return HttpResponseRedirect(reverse("projects2:export_crc") + f'?year={year};section={section};division={division};region={region}')
         else:
             messages.error(self.request, "Report is not available. Please select another report.")
             return HttpResponseRedirect(reverse("projects2:reports"))
@@ -1349,6 +1352,49 @@ def export_project_position_allocation(request):
             for s in staff:
                 # sometimes people enter a persons name
                 writer.writerow([project.pk, project.title, '"' + leads + '"', s.smart_name, s.level, s.funding_source])
+
+    return response
+
+
+@login_required()
+def export_capital_request_costs(request):
+    year = request.GET.get("year")
+    region = request.GET.get("region")
+    division = request.GET.get("division")
+    section = request.GET.get("section")
+
+    region_name = None
+    if region:
+        region_name = shared_models.Region.objects.get(pk=region)
+
+    division_name = None
+    if division and division != 'None':
+        division_name = shared_models.Division.objects.get(pk=division)
+
+    section_name = None
+    if section and section != 'None':
+        section_name = shared_models.Section.objects.get(pk=section)
+
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="{}_{}_capital_request_costs.csv"'.format(year, region_name)
+
+    writer = csv.writer(response)
+    writer.writerow(['Project ID', 'Project Name', 'Region', 'Division', 'Section', 'Theme', 'Capital Cost', 'Amount'])
+
+    project_years = models.ProjectYear.objects.filter(fiscal_year_id=year,
+                                                      project__section__division__branch__region_id=region)
+    if division and division != 'None':
+        project_years = project_years.filter(project__section__division_id=division)
+
+    if section and section != 'None':
+        project_years = project_years.filter(project__section_id=section)
+
+    # Now filter down the projects to projects that have staff with staff levels, but no staff name.
+    for p in project_years:
+        for cost in p.capitalcost_set.all():
+            proj = p.project
+            writer.writerow([proj.pk, proj.title, proj.section.division.branch.region, proj.section.division, proj.section, proj.functional_group, cost, cost.amount])
 
     return response
 

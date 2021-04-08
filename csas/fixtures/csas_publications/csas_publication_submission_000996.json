@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 996,
+        "fields": {
+            "series": 4,
+            "lead_region": [4, 2],
+            "title_en": "Proceedings of the National Marine Mammal Review Committee and the Seal Consumption Workshop; 30 November to 4 December 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Jacques Gagne",
+            "pub_num": "022",
+            "pages": 16,
+            "pdf_size": 52,
+            "description": ""
+        }
+    }
+]

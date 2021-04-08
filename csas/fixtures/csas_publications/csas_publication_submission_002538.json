@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2538,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Estimates of Atlantic stock status on the Eastern Shore of Nova Scotia, Salmon Fishing Area 20 in 1994",
+            "pub_year": 1995,
+            "lead_author_2": "S.F. O'Neil; C.J. Harvie",
+            "pub_num": "132",
+            "pages": 36,
+            "pdf_size": 1534,
+            "description": ""
+        }
+    }
+]

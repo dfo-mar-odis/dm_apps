@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1777,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Comparison of three lobster (Homarus americanus) trap escape mechanisms and application of a theoretical retention curve for these devices in the southern Gulf of St. Lawrence lobster fishery",
+            "pub_year": 1987,
+            "lead_author_2": "D.R. Maynard; N. Branch; Y. Chiasson; G.Y. Conan",
+            "pub_num": "087",
+            "pages": 34,
+            "pdf_size": 1795,
+            "description": ""
+        }
+    }
+]

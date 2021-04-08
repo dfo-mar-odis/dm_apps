@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1431,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A comparison of the influence of stratification by depth zone and by individual strata on research vessel abundance estimates",
+            "pub_year": 1984,
+            "lead_author_2": "C.A. Bishop",
+            "pub_num": "025",
+            "pages": 19,
+            "pdf_size": 642,
+            "description": ""
+        }
+    }
+]

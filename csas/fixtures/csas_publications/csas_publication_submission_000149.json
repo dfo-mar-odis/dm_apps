@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 149,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The American Lobster, Homarus americanus, in the southern Gulf of St. Lawrence (Lobster Fishing Areas 23, 24, 25, 2A and 26B)",
+            "pub_year": 1998,
+            "lead_author_2": "M. Lanteigne, M. Comeau, M. Mallet, G. Robichaud, F. Savoie",
+            "pub_num": "123",
+            "pages": 32,
+            "pdf_size": 2500,
+            "description": ""
+        }
+    }
+]

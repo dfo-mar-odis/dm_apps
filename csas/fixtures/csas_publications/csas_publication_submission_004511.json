@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4511,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Scallops (Placopecten magellanicus) in Scallop Fishing Area (SFA) 29 West of Longitude 65°30'W",
+            "title_fr": "Évaluation du stock de pétoncle (Placopecten magellanicus) de la zone de pêche du pétoncle (ZPP) 29 à l'ouest de la longitude 65° 30' O",
+            "pub_year": 2006,
+            "lead_author_2": "Smith, S., Lundy, M., Rowe, S.",
+            "pub_num": "028",
+            "pages": 11,
+            "pdf_size": 365,
+            "description": ""
+        }
+    }
+]

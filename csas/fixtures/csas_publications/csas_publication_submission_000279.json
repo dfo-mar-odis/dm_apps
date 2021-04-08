@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 279,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of southern Gulf of St. Lawrence scallop stocks - 1982",
+            "pub_year": 1983,
+            "lead_author_2": "J.M. Worms; G.A. Chouinard",
+            "pub_num": "068",
+            "pages": 52,
+            "pdf_size": 1874,
+            "description": ""
+        }
+    }
+]

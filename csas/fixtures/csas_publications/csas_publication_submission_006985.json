@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6985,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Deepwater Redfish (Sebastes mentella) in NAFO subarea 0: addendum to the recovery potential assessment of Redfish in the northwest Atlantic",
+            "title_fr": "Sébaste atlantique (Sebastes mentella) du sous-secteur 0 de l'OPANO : Addenda de l'évaluation du potentiel de rétablissement du sébaste dans l'antique nord-ouest",
+            "pub_year": 2013,
+            "pub_num": "026",
+            "description": ""
+        }
+    }
+]

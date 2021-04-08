@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4392,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Changes in biological characteristics of the fisheries of the Gulf of St. Lawrence (NAFO Divisions 4RST) since 1960",
+            "title_fr": "Changements dans les caractéristiques biologiques des pêches du golfe du Saint-Laurent (Divisions 4RST de l'OPANO) depuis 1960",
+            "pub_year": 2005,
+            "lead_author_2": "Fréchet, A.",
+            "pub_num": "088",
+            "pages": 34,
+            "pdf_size": 400,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5057,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Status of NAFO Division 4T American plaice, February 2008",
+            "title_fr": "État de la plie canadienne de la division 4T de l'OPANO, février 2008",
+            "pub_year": 2008,
+            "lead_author_2": "R. Morin, S.G. LeBlanc, G.A. Chouinard, D. Swain",
+            "pub_num": "067",
+            "pages": 67,
+            "pdf_size": 2630,
+            "description": ""
+        }
+    }
+]

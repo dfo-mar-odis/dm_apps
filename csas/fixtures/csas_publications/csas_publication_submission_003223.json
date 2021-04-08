@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3223,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Report on the Status of Atlantic Salmon Stocks in Eastern Canada in 1995",
+            "title_fr": "Rapport sur l'état des stocks de saumon atlantique de l'est du Canada en 1995",
+            "pub_year": 1996,
+            "pub_num": "080",
+            "description": ""
+        }
+    }
+]

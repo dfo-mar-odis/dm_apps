@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5435,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8, 7, 4, 2],
+            "title_en": "Pathway of effects of escaped aquaculture organisms or their reproductive material on natural ecosystems in Canada ",
+            "title_fr": "Séquence des effets liés aux organismes d'élevage évadés ou à leur matériel de reproduction sur les écosystèmes naturels au Canada",
+            "pub_year": 2010,
+            "lead_author_2": "R.A. Leggatt, P.T. O’Reilly, P.J. Blanchfield, C.W. McKindsey, and R.H. Devlin",
+            "pub_num": "019",
+            "pages": 76,
+            "pdf_size": 1353,
+            "description": ""
+        }
+    }
+]

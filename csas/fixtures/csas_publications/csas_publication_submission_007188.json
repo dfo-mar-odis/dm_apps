@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7188,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Freshwater Cage Aquaculture: Ecosystems Impacts from Dissolved and Particulate Waste Phosphorus",
+            "title_fr": "Aquaculture en cage en eau douce : impacts écosystémiques des déchets de phosphore dissous et sous forme de particules",
+            "pub_year": 2017,
+            "lead_author_2": "Otu, M.K., Bureau, D.P., and Podemski, C.L.",
+            "pub_num": "059",
+            "pages": 60,
+            "pdf_size": 1691,
+            "description": ""
+        }
+    }
+]

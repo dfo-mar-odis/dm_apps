@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1245,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Observations on the abundance and distribution of predators of shrimp (Pandalus borealis) in the Cartwright and Hopedale Channels",
+            "pub_year": 1983,
+            "lead_author_2": "D.G. Parsons",
+            "pub_num": "012",
+            "pages": 15,
+            "pdf_size": 498,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1798,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Changes in size composition of male crabs (Chionoecetes opilio) participating in the annual breeding migration in Bonne Bay, Newfoundland",
+            "pub_year": 1988,
+            "lead_author_2": "G.P. Ennis; R.G. Hooper; D.M. Taylor",
+            "pub_num": "002",
+            "pages": 14,
+            "pdf_size": 878,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 892,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Results of tagging and branding of hooded seals, 1972-1978",
+            "pub_year": 1978,
+            "lead_author_2": "D.E. Sergeant",
+            "pub_num": "036",
+            "pages": 5,
+            "pdf_size": 260,
+            "description": ""
+        }
+    }
+]

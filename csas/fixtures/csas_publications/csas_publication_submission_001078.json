@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1078,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "3P redfish assessment",
+            "pub_year": 1980,
+            "lead_author_2": "D.B. Atkinson; W.D. McKone; W.E. Legge",
+            "pub_num": "062",
+            "pages": 29,
+            "pdf_size": 1613,
+            "description": ""
+        }
+    }
+]

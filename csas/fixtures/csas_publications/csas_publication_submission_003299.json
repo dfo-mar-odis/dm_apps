@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3299,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Newfoundland and Labrador Snow Crab (Chionoecetes opilio) in 2008",
+            "title_fr": "Évaluation du stock de crabe des neiges (Chionoecetes opilio) de Terre-Neuve et du Labrador en 2008",
+            "pub_year": 2010,
+            "lead_author_2": "Dawe, E., Mullowney, D., D. Stansbury, E. Hynick, P. Veitch, J. Drew, E. Colbourne, P. O’Keefe, D. Fiander, K. Skanes,  R. Stead, D. Maddock Parsons, P. Higdon, T. Paddle, B. Noseworthy, S. Kelland.",
+            "pub_num": "016",
+            "pages": 187,
+            "pdf_size": 4660,
+            "description": ""
+        }
+    }
+]

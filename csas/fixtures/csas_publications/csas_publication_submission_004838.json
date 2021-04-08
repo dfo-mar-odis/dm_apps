@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4838,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of Subdivision 3Ps cod",
+            "title_fr": "Évaluation du stock de morue de la sous-division 3Ps",
+            "pub_year": 2007,
+            "lead_author_2": "Brattey, J.",
+            "pub_num": "041",
+            "pages": 16,
+            "pdf_size": 188,
+            "description": ""
+        }
+    }
+]

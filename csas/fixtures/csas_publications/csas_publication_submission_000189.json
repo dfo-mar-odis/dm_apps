@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 189,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A description of the salmon aquaculture industry in Maine",
+            "pub_year": 1998,
+            "lead_author_2": "E. Baum",
+            "pub_num": "152",
+            "description": ""
+        }
+    }
+]

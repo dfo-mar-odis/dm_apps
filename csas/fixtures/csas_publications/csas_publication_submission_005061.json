@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5061,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Workshop for Industry-DFO Reconciliation on Scientific Monitoring of the Southern Gulf of St. Lawrence Cod Stock; October 15-16, 2008",
+            "title_fr": "Atelier pour le rapprochement entre l'industrie et le ministère sur le suivi scientifique du stock de morue de la zone sud du golfe du Saint-Laurent; 15 et 16 octobre 2008",
+            "pub_year": 2008,
+            "lead_author_2": "Paradis, S.",
+            "pub_num": "025",
+            "pages": 187,
+            "pdf_size": 4446,
+            "description": ""
+        }
+    }
+]

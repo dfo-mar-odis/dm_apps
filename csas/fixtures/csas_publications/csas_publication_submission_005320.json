@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5320,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Physical Oceanographic Conditions on the Scotian Shelf and in the Gulf of Maine during 2008",
+            "title_fr": "Conditions océanographiques physiques sur le plateau néo-écossais et dans le golfe du Maine en 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Petrie, B., Pettipas, R.G., Petrie, W.M., Soukhovtsev, V.V.",
+            "pub_num": "039",
+            "pages": 17,
+            "pdf_size": 1474,
+            "description": ""
+        }
+    }
+]

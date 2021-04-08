@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6593,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Modelling Tsunamis associated with recently identified slope failures in Douglas Channel",
+            "title_fr": "Modélisation des tsunamis associés aux récentes ruptures de talus dans le chenal de Douglas",
+            "pub_year": 2012,
+            "pub_num": "037",
+            "pages": 13,
+            "pdf_size": 1816,
+            "description": ""
+        }
+    }
+]

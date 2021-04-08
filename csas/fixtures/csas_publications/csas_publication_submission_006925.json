@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6925,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Recovery Potential for the Outer Bay of Fundy Population of Atlantic Salmon: Threats to Populations",
+            "title_fr": "Évaluation du potentiel de rétablissement de la population du saumon de l'Atlantique de l'extérieur de la baie de Fundy : Menaces à la population",
+            "pub_year": 2014,
+            "lead_author_2": "Clarke, C.N., Ratelle, S.M., and Jones, R.A.",
+            "pub_num": "006",
+            "pages": 106,
+            "pdf_size": 2760,
+            "description": ""
+        }
+    }
+]

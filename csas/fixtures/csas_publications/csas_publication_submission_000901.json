@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 901,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The interrelationships between herring stocks in the Canadian Atlantic fisheries as revealed by multivariate analyses of their meristic characters",
+            "pub_year": 1978,
+            "lead_author_2": "S.N. Messieh; J. Longmuir",
+            "pub_num": "045",
+            "pages": 24,
+            "pdf_size": 1092,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5698,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Workshop to Review the 2010 Georges Bank \"State of Knowledge\" Report",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

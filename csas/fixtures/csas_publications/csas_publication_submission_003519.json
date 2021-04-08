@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3519,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of year 2000 return of Barkley Sound sockeye salmon and forecasts for 2001",
+            "title_fr": "Bilan des remontes de saumon rouge dans la baie Barkley en 2000 et prévisions pour 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Hyatt, K., Luedke, W., Rankin, P., Till J., Lewis, D.",
+            "pub_num": "157",
+            "pages": 29,
+            "pdf_size": 260,
+            "description": ""
+        }
+    }
+]

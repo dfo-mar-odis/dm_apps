@@ -70,6 +70,9 @@
     </style>
 
     {# ----- Request Details ----- #}
+    <button class="collapsible">Request Details</button>
+    <div class="content">
+
     {# {% for field in fields %} #}
         {# <div class="row" > #}
             <div class="container">
@@ -91,7 +94,77 @@
 
     </div>
 
+    {# ----- Publication Status ----- #}
+    <br>
+    <button class="collapsible">Request Status Form</button>
+    <div class="content">
 
+        <div class="container card border border-dark text-left mt-2 pt-1">
+
+        <div class="card-header bg-transparent">
+            <div class="row">
+                <div class="col-lg text-center">
+                    <br>
+                    <h1>{% trans 'Request Status' %}</h1>
+                </div>
+
+                <div class="col-4 pt-1">
+                    {% if csas_admin %}
+                        <br>
+                        {% if object.req_status %}
+                            {# ----- this request status exists, put a Update button #}
+                            <a class="btn btn-secondary"
+                               href="#" onclick="return popitup('{% url ''|add:'csas:update_req_CSAS' object.req_status.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% else %}
+                            {# ----- this request status does not exist, put a Add New (+) button #}
+                            <a class="btn btn-secondary"
+                               href="#" onclick="return popitup('{% url 'csas:create_req_status' object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans '+' %}</a>
+                        {% endif %}
+                    {% endif %}
+                    {# ----- put a Request List button #}
+                    <a class="btn btn-secondary"
+                       href="{% url ''|add:'csas:list_req' %}">{% trans 'Request List' %}</a>
+                </div>
+            </div>
+        </div>
+
+        {% if object.req_status %}
+        <div class="card-header bg-transparent">
+            <div class="card-body bg-transparent">
+                <table class="table" style="background-color:#f2f2f2">
+                <tr><td style="color:black" class="font-weight-bold"> Request :</td>
+                    <td style="color:brown"> {{ object.req_status.request }}</td>
+                </tr>
+                <tr><td style="color:black" class="font-weight-bold"> Status :</td>
+                    <td style="color:brown"> {{ object.req_status.status }}</td>
+                </tr>
+                <tr>
+                    <td style="color:black" class="font-weight-bold"> Translated Title :</td>
+                    <td style="color:brown"> {{ object.req_status.trans_title }}</td>
+                </tr>
+                <tr>
+                    <td style="color:black" class="font-weight-bold"> Decision :</td>
+                    <td style="color:brown"> {{ object.req_status.decision }}</td>
+                </tr>
+                <tr>
+                    <td style="color:black" class="font-weight-bold"> Decision Explanation :</td>
+                    <td style="color:brown"> {{ object.req_status.decision_exp }}</td>
+                </tr>
+                <tr>
+                    <td style="color:black" class="font-weight-bold"> Rationale for Decision :</td>
+                    <td style="color:brown"> {{ object.req_status.rationale_for_decision }}</td>
+                </tr>
+                <tr>
+                    <td style="color:black" class="font-weight-bold"> Decision Date :</td>
+                    <td style="color:brown"> {{ object.req_status.decision_date }}</td>
+                </tr>
+            </table>
+        </div>
+        {% endif %}
+        </div>
+    </div>
 
     <script>
         var coll = document.getElementsByClassName("collapsible");

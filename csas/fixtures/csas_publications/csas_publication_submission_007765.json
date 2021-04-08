@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7765,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of the Assessment of American Lobster (Homarus americanus) in Newfoundland; May 10–11 and May 16, 2016",
+            "title_fr": "Compte rendu de l'examen régional par les pairs de l'évaluation du homard d'Amérique (Homarus americanus) à Terre-Neuve; du 10 au 11 mai et le 16 mai 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Chairperson: R. Collins ; Editor: J. Pantin",
+            "pub_num": "015",
+            "pages": 21,
+            "pdf_size": 291,
+            "description": ""
+        }
+    }
+]

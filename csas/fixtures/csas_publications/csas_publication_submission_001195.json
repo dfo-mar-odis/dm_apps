@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1195,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Profile of the Canadian offshore scallop fishery on Georges Bank, 1978 to 1981",
+            "pub_year": 1982,
+            "lead_author_2": "G. Robert; G.S. Jamieson; M.J. Lundy",
+            "pub_num": "015",
+            "pages": 48,
+            "pdf_size": 2062,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7208,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Regional Peer Review on  Moult timing of legal-sized male Dungeness Crabs in Crab Management Areas E, G, and H in British Columbia; July 9, 2014",
+            "description": ""
+        }
+    }
+]

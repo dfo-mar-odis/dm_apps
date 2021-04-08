@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2360,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Le stock de flétan du Groenland (Reinhardtius hippoglossoides) du golfe du Saint-Laurent (4RST): État de la ressource en 1993",
+            "pub_year": 1994,
+            "lead_author_2": "B. Morin; B. Bernier; L. Bourassa",
+            "pub_num": "025",
+            "description": ""
+        }
+    }
+]

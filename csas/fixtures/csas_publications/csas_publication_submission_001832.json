@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1832,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Abondance du homard américain (Homarus americanus) à l'Île d'Anticosti",
+            "pub_year": 1988,
+            "lead_author_2": "D. Gauthier",
+            "pub_num": "036",
+            "pages": 29,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4259,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Regional Science Advisory Process on the Pacific Review of Yelloweye Rockfish (Sebastes ruberrimus); September 22, 2010",
+            "title_fr": "Processus de consultation scientifique régional du Pacifique pour l'examen du sébaste aux yeux jaunes (Sebastes ruberrimus) ; le 22 septembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Andrew Edwards/Marilyn Joyce",
+            "pub_num": "011",
+            "pages": 24,
+            "pdf_size": 161,
+            "description": ""
+        }
+    }
+]

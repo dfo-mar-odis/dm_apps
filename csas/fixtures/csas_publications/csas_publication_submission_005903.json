@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5903,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information in support of a recovery potential assessment of Western Silvery Minnow (Hybognathus argyritis) in Canada",
+            "title_fr": "Information à l'appui de l'évaluation du potentiel de rétablissement du méné d'argent de l'Ouest (Hybognathus argyritis) au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Watkinson, D.",
+            "pub_num": "083",
+            "pages": 27,
+            "pdf_size": 398,
+            "description": ""
+        }
+    }
+]

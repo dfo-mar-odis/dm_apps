@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5058,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Review of the survey and analytical protocols used for estimating abundance indices of southern Gulf of St. Lawrence snow crab from 1988 to 2006",
+            "title_fr": "Revue du relevé au chalut et du protocole utilisé pour l'estimation des indices d'abondance de crabe des neiges dans le sud du golfe Saint-Laurent de 1988 à 2006",
+            "pub_year": 2008,
+            "lead_author_2": "M. Moriyasu, E. Wade, M. Hébert, M. Biron",
+            "pub_num": "069",
+            "pages": 39,
+            "pdf_size": 1701,
+            "description": ""
+        }
+    }
+]

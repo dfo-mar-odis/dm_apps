@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4608,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process of Scallop Stocks in Scallop Fishing Area 29; 27 March 2006",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif régional sur le stock de pétoncle de la zone de pêche du pétoncle 29; 27 mars 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Claytor, R.",
+            "pub_num": "044",
+            "pages": 30,
+            "description": ""
+        }
+    }
+]

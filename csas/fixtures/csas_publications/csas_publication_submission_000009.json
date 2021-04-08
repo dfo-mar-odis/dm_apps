@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 9,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of cod in the southern Gulf of St. Lawrence, January 1998",
+            "pub_year": 1998,
+            "lead_author_2": "A.F. Sinclair, G.A. Chouinard, L. Currie",
+            "pub_num": "008",
+            "pages": 63,
+            "description": ""
+        }
+    }
+]

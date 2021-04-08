@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5944,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Run Reconstruction and Escapement Goals for Alsek River Sockeye Salmon",
+            "title_fr": "Reconstitution de la montaison et buts relatifs aux échappées pour le saumon rouge de la rivière Alsek",
+            "pub_year": 2011,
+            "lead_author_2": "Michael Chamberlain / Marilyn Joyce",
+            "pub_num": "018",
+            "pages": 9,
+            "pdf_size": 166,
+            "description": ""
+        }
+    }
+]

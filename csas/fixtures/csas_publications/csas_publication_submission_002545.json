@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2545,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Browns Bank scallops fishery for 1994 - Outlook for 1995",
+            "pub_year": 1995,
+            "lead_author_2": "G. Robert; M.A.E. Butler",
+            "pub_num": "139",
+            "pages": 25,
+            "pdf_size": 1544,
+            "description": ""
+        }
+    }
+]

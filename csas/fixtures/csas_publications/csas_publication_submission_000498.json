@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 498,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "An assessment and risk projections of the West coast of Newfoundland (NAFO division 4R) herrings stocks (1965-2000)",
+            "pub_year": 1999,
+            "lead_author_2": "McQuinn, I.H., Hammill, M,. Lefebvre, L.",
+            "pub_num": "119",
+            "pages": 94,
+            "pdf_size": 5783,
+            "description": ""
+        }
+    }
+]

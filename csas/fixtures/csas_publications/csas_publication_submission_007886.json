@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7886,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update for Scallop (Placopecten magellanicus) in Scallop Fishing Area 29 West of Longitude 65°30’",
+            "title_fr": "Mise à jour de 2016 de l'état du stock de pétoncles (Placopecten magellanicus) de la zone de pêche du pétoncle (ZPP) 29 à l'ouest de la longitude 65° 30'",
+            "pub_year": 2017,
+            "lead_author_2": "L. Nasmith",
+            "pub_num": "019",
+            "pages": 13,
+            "pdf_size": 626,
+            "description": ""
+        }
+    }
+]

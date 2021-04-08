@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6802,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of potential environmental risks associated with the use of pesticides to treat Atlantic salmon against infestations of sea lice in Canada",
+            "title_fr": "Examen des risques environnementaux potentiels liés à l'utilisation de pesticides pour traiter le saumon de l'Atlantique contre les infestations de pou du poisson au Canada",
+            "pub_year": 2014,
+            "lead_author_2": "Les Burridge and Jordana VanGeest",
+            "pub_num": "002",
+            "pages": 42,
+            "pdf_size": 756,
+            "description": ""
+        }
+    }
+]

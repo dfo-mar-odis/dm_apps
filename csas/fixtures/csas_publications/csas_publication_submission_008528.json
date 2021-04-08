@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8528,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Review of Indicators and Reference Points for the Maritimes Region Sea Cucumber (Cucumaria frondosa), and Status of the southwest New Brunswick Sea Cucumber population",
+            "lead_author_2": "Tara McIntyre",
+            "description": ""
+        }
+    }
+]

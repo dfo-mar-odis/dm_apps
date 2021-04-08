@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3446,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Groundfish Subcommittee Meeting; January 29, 2002",
+            "title_fr": "Compte rendu de la réunion du Sous-comité du CEESP sur le poisson de fond ; le 29 janvier 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Cass, A.",
+            "pub_num": "001",
+            "pages": 17,
+            "pdf_size": 78,
+            "description": ""
+        }
+    }
+]

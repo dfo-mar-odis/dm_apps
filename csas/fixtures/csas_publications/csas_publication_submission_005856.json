@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5856,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the Assessment of the Gulf of St. Lawrence (4RST) Capelin Stock; February 17, 2011",
+            "title_fr": "Processus consultatif scientifique régional sur l'évaluation du stock de capelan du golfe du Saint-Laurent (4RST) ; le 17 février 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "016",
+            "pages": 20,
+            "pdf_size": 99,
+            "description": ""
+        }
+    }
+]

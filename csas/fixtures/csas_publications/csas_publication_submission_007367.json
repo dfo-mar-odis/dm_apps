@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7367,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review of the assessment of Dolly Varden from the Babbage River, Yukon Territory; February 9–10, 2015",
+            "title_fr": "Compte rendu de l'examen régional par les pairs sur l'évaluation de l'omble Dolly Varden de la rivière Babbage, au Territoire du Yukon; du 9 au 10 février 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Colin Gallagher",
+            "pub_num": "056",
+            "pages": 14,
+            "pdf_size": 137,
+            "description": ""
+        }
+    }
+]

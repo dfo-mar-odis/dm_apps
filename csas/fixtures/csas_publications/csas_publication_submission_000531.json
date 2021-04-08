@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 531,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update on the Status of Unit 3 Redfish, 1999",
+            "pub_year": 1999,
+            "lead_author_2": "Branton, R.",
+            "pub_num": "152",
+            "pages": 33,
+            "pdf_size": 390,
+            "description": ""
+        }
+    }
+]

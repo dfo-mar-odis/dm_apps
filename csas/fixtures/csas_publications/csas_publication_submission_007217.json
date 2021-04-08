@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7217,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Distinctiveness and Status of the Saint John River Population of Shortnose Sturgeon (Acipenser brevirostrum)",
+            "title_fr": "Distinction et situation de la population d'esturgeons à museau court (Acipenser brevirostrum) de la rivière Saint-Jean",
+            "pub_year": 2014,
+            "pub_num": "043",
+            "pages": 30,
+            "pdf_size": 995,
+            "description": ""
+        }
+    }
+]

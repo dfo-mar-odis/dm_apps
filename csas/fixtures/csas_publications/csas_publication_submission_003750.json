@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3750,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "West coast of Newfoundland Atlantic herring (4R) in 2002",
+            "title_fr": "Hareng de la côte ouest de Terre-Neuve (4R) en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Grégoire, F.",
+            "pub_num": "008",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

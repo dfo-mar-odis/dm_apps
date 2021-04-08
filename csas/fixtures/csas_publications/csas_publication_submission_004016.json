@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4016,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Meeting on Applying the Precautionary Approach in Fisheries Management; February 10-12, 2004",
+            "title_fr": "Compte rendu de la réunion nationale sur l'application du principe de précaution en gestion des pêches; du 10 au 12 février 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Vermette, M., Rice, Jake",
+            "pub_num": "003",
+            "pages": 48,
+            "pdf_size": 656,
+            "description": ""
+        }
+    }
+]

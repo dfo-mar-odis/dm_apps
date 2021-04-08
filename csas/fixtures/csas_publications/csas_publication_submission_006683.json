@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6683,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pre-season run size forecasts for Fraser River Sockeye (Oncorhynchus nerka) and Pink (O. gorbuscha) salmon in 2013",
+            "title_fr": "Prévisions d'avant­saison concernant le volume de la montaison du saumon rouge du fleuve Fraser (Oncorhynchus nerka) et du saumon rose (O. gorbuscha) en 2013",
+            "pub_year": 2012,
+            "lead_author_2": "Grant, Sue",
+            "pub_num": "145",
+            "pages": 48,
+            "pdf_size": 780,
+            "description": ""
+        }
+    }
+]

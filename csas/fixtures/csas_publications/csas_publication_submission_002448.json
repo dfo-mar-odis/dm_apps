@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2448,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The status of spiny dogfish (Squalus acanthias, Linnaeus) in the southern Gulf of St. Lawrence (NAFO Division 4T)",
+            "pub_year": 1995,
+            "lead_author_2": "T. Hurlbut; G. Nielsen; R. Hébert; D. Gillis",
+            "pub_num": "042",
+            "pages": 38,
+            "pdf_size": 1772,
+            "description": ""
+        }
+    }
+]

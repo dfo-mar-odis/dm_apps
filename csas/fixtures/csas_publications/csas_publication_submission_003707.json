@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3707,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "West Coast Vancouver Island Pacific Cod Assessment: 2002",
+            "title_fr": "Évaluation de la morue du Pacifique de la côte ouest de l'île de Vancouver en 2002",
+            "pub_year": 2002,
+            "lead_author_2": "P.J. Starr, A.S. Sinclair, J. Boutillier",
+            "pub_num": "113",
+            "pages": 29,
+            "pdf_size": 810,
+            "description": ""
+        }
+    }
+]

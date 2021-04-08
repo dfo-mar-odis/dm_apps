@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3172,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Nova Scotia Snow Crab",
+            "title_fr": "Crabe des neiges de l'est de la Nouvelle-Écosse",
+            "pub_year": 1996,
+            "pub_num": "002",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

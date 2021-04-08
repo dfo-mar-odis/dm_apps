@@ -1,0 +1,157 @@
+{% extends 'edna/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+  .my-btn {
+      font-size: small;
+  }
+
+  #map {
+      height: 300px; /* The height is 400 pixels */
+      width: 100%; /* The width is the width of the web page */
+  }
+  </style>
+
+
+
+  <div class="btns mb-3">
+    <a href="{% url 'edna:collection_edit' object.id %}" class="btn btn-warning btn-sm">{% trans "Edit" %}</a>
+    <a href="{% url 'edna:collection_delete' object.id %}" class="btn btn-danger btn-sm">{% trans "Delete" %}</a>
+    <a href="#" pop-href="{% url "edna:file_new" object.id %}" class="btn btn-primary btn-sm ml-3">{% trans "Add a File" %}</a>
+
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col">
+      <table class="table table-sm">
+        {% for field in field_list %}
+          {% verbose_td_display object field th_width="200px" %}
+        {% endfor %}
+
+        {# files #}
+        <tr>
+          <th>
+            {% trans "Associated Files" %}
+          </th>
+          <td>
+            {% if object.files.exists %}
+              <ul>
+                {% for file in object.files.all %}
+                  <li>
+                    <a href="{{ file.file.url }}">{{ file.caption }}</a> (uploaded on: {{ file.date_created|date:"F d Y" }})
+                    <a href="#" pop-href="{% url 'edna:file_edit' file.id %}" class="ml-3">
+                      <span class="mdi mdi-pencil" style="font-size: large"></span>
+                    </a>
+                    <a href="#" pop-href="{% url 'edna:file_delete' file.id %}">
+                      <span class="mdi mdi-delete" style="font-size: large"></span>
+                    </a>
+
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <em>{% trans "There are no files attached to this collection." %}</em>
+            {% endif %}
+          </td>
+        </tr>
+
+
+      </table>
+    </div>
+    <div class="col-4">
+      <div id="map">
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="float-right">
+      <a href="{% url 'edna:sample_new' object.id %}" class="btn btn-sm btn-success"> {% trans "New Sample" %}</a>
+      <a href="{% url 'edna:import_samples' object.id %}" class="btn btn-sm btn-dark"> {% trans "Import Samples from CSV" %}</a>
+    </div>
+    <h3>{% trans "Field Samples" %}</h3>
+
+    {% if object.samples.exists %}
+
+      <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+          {% for field in sample_field_list %}
+            {% if field == "comment" %}
+              <th style="width: 25%">
+                {% get_verbose_label object.samples.first field %}
+              </th>
+            {% else %}
+              <th>
+                {% get_verbose_label object.samples.first field %}
+              </th>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for sample in object.samples.all %}
+          <tr href="{% url 'edna:sample_detail' sample.id %}">
+            {% for field in sample_field_list %}
+              <td>
+                {% get_field_value sample field %}
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+    {% else %}
+
+      <em>{% trans "This collection has no samples." %}</em>
+
+    {% endif %}
+
+  </div>
+
+  <script type="application/javascript">
+  function initialize() {
+    {% if object.get_centroid %}
+      map = new L.Map("map", {
+        center: new L.LatLng({{ object.get_centroid.x }}, {{ object.get_centroid.y }}),
+        zoom: 14,
+      });
+    {% else %}
+      map = new L.Map("map", {
+        center: new L.LatLng(47.71949771358633, -64.10716523195102),
+        zoom: 6,
+      });
+    {% endif %}
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map)
+
+    lineCoords = [];
+    {% for sample in object.samples.all %}
+      {% if sample.get_point %}
+        lineCoords.push([ {{sample.get_point.x}}, {{ sample.get_point.y }} ])
+        L.marker([{{sample.get_point.x}}, {{ sample.get_point.y }}],
+            {
+              title: '{{sample}}',
+            }
+        ).addTo(map).bindPopup("<b>Bottle Id:</b> {{object}}");
+      {% endif %}
+    {% endfor %}
+    if (lineCoords.length) map.fitBounds(lineCoords);
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    initialize()
+
+  });
+  </script>
+
+{% endblock %}

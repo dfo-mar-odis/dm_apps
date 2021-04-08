@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4063,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Newfoundland & Labrador Atlantic Salmon Stock Status for 2004",
+            "title_fr": "Mise à jour sur l'état des stocks de saumon atlantique de Terre-Neuve et du Labrador en 2004",
+            "pub_year": 2004,
+            "lead_author_2": "C. Bourgeois",
+            "pub_num": "040",
+            "pages": 18,
+            "pdf_size": 266,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6014,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock assessment and recovery potential assessment for Yellowmouth Rockfish (Sebastes reedi) along the Pacific coast of Canada ",
+            "title_fr": "Évaluation du stock et évaluation du potentiel de rétablissement du sébaste à bouche jaune (Sebastes reedi) le long de la côte du Pacifique au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Edwards, A.M., R. Haigh, P.J. Starr",
+            "pub_num": "095",
+            "pages": 192,
+            "pdf_size": 11628,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2566,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Overview of meteorological and sea ice conditions off Eastern Canada in 1995",
+            "pub_year": 1996,
+            "lead_author_2": "K.F. Drinkwater; R.G. Pettipas; W.M. Petrie",
+            "pub_num": "019",
+            "pages": 28,
+            "pdf_size": 3020,
+            "description": ""
+        }
+    }
+]

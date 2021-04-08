@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5765,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Prey requirements and importance of salmon in the diet of Steller sea lions in British Columbia and Washington",
+            "title_fr": ">>>SEE TASK",
+            "lead_author_2": "Olesiuk, Jeffries, Lance et al.",
+            "description": ""
+        }
+    }
+]

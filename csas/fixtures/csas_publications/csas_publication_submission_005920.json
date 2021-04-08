@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5920,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Science Response Process for the Environmental and Indirect Human Health Risk Assessment of the AquAdvantage® Salmon; July 17-19, 2013",
+            "title_fr": "Compte rendu du processus national de réponse des Sciences sur l'évaluation des risques pour l'environnement et des risques indirects pour la santé humaine posés par le saumon AquAdvantage®; du 17 au 19 juillet 2013",
+            "pub_year": 2017,
+            "lead_author_2": "Stephen Stephen and Mark Hovorka",
+            "pub_num": "007",
+            "pages": 30,
+            "pdf_size": 407,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5808,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Effect of drain maintenance and reconstruction on the abundance and habitat of Grass Pickerel (Esox americanus vermiculatus) in Beaver Creek, Ontario",
+            "lead_author_2": "William Glass",
+            "description": ""
+        }
+    }
+]

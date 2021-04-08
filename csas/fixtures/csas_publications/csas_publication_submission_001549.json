@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1549,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of the status of the 4VWX flatfish stocks (exclusive of the halibuts)",
+            "pub_year": 1985,
+            "lead_author_2": "J.D. Neilson; P. Perley",
+            "pub_num": "042",
+            "pages": 32,
+            "pdf_size": 1281,
+            "description": ""
+        }
+    }
+]

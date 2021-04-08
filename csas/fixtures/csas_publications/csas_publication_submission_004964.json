@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4964,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment of 4VWX Cusk (Brosme brosme): Population Models",
+            "title_fr": "Évaluation du potentiel de rétablissement du brosme de 4VWX (Brosme brosme) : modèles de la population",
+            "pub_year": 2008,
+            "lead_author_2": "Davies, T.D., I.D. Jonsen.",
+            "pub_num": "028",
+            "pages": 39,
+            "pdf_size": 814,
+            "description": ""
+        }
+    }
+]

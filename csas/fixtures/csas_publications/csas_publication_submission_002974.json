@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2974,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Newfoundland Region Groundfish Overview",
+            "pub_year": 2000,
+            "lead_author_2": "Gary Stenson",
+            "pub_num": "A2-19",
+            "pages": 14,
+            "pdf_size": 131,
+            "description": ""
+        }
+    }
+]

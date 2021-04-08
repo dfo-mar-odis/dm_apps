@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6225,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the Precautionary approach reference points and Total Allowable Catch (TAC) adjustments rules for Northern Gulf of St. Lawrence shrimps (Pandalus borealis) Stocks; November 2, 2011",
+            "title_fr": "Processus consultatif scientifique régional portant sur les points de référence et règles d'ajustement du total autorisé des captures (TAC) conformes à une approche de précaution pour les stocks de crevette nordique (Pandalus borealis) du nord du golfe du Saint-Laurent ; le 2 novembre 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "059",
+            "pages": 23,
+            "pdf_size": 110,
+            "description": ""
+        }
+    }
+]

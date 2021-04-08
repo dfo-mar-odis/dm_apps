@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2089,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock assessment and fishery trends for the Prince Edward Island snow crab (Chionoecetes opilio) fishery - 1990",
+            "pub_year": 1991,
+            "lead_author_2": "Y. Chiasson; C. Gallant; P. DeGrâce; M. Moriyasu",
+            "pub_num": "024",
+            "pages": 15,
+            "pdf_size": 1036,
+            "description": ""
+        }
+    }
+]

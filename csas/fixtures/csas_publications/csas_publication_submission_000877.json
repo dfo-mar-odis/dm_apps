@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 877,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A multispecies simulation for the management of the southern Gulf of St. Lawrence cod stock",
+            "pub_year": 1978,
+            "lead_author_2": "P.F. Lett",
+            "pub_num": "021",
+            "pages": 51,
+            "pdf_size": 2321,
+            "description": ""
+        }
+    }
+]

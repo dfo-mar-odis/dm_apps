@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1147,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of the white hake, Urophycis tenuis, fishery in NAFO Division 4T",
+            "pub_year": 1981,
+            "lead_author_2": "K.I. Metuzals; A. Fullerton",
+            "pub_num": "049",
+            "pages": 15,
+            "pdf_size": 3774,
+            "description": ""
+        }
+    }
+]

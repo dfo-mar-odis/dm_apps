@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5170,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Cumulative Risk Framework to Quantify the potential impacts of Marine Mammal Development Projects on Marine Mammals and Turtles",
+            "lead_author_2": "Veronique Lesage, Jack Lawson",
+            "description": ""
+        }
+    }
+]

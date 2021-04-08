@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7586,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Ecological Risk Assessment of Recreational Boating as a Pathway for the Secondary Spread of Aquatic Invasive Species in the Great Lakes Basin",
+            "title_fr": "Évaluation des risques écologiques associés à la navigation de plaisance comme voie de propagation secondaire d'espèces aquatiques envahissantes dans le bassin des Grands Lacs",
+            "pub_year": 2017,
+            "lead_author_2": "Drake, D.A.R., Bailey, S.A., and Mandrak, N.E.",
+            "pub_num": "030",
+            "pages": 90,
+            "pdf_size": 2959,
+            "description": ""
+        }
+    }
+]

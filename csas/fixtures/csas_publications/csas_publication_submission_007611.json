@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7611,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the regional peer review meeting on the status of the snow crab stock from the southern Gulf of St. Lawrence and advice for the 2016 fishery",
+            "lead_author_2": "Gérald Chaput",
+            "description": ""
+        }
+    }
+]

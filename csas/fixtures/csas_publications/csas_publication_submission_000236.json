@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 236,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of 1997 Terminal Run of Somass River Chinook Salmon, and Terminal Run Forecast for 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Riddell, B., Luedke, W., Till, J.",
+            "pub_num": "068",
+            "pages": 24,
+            "pdf_size": 2106,
+            "description": ""
+        }
+    }
+]

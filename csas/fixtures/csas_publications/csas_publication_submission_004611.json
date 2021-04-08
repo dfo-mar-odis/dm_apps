@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4611,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of Witch Flounder in the Gulf of St. Lawrence (NAFO Div. 4RST)",
+            "title_fr": "Évaluation de la plie grise dans le golfe du Saint-Laurent (divisions 4RST de l'OPANO)",
+            "pub_year": 2007,
+            "lead_author_2": "Swain, D.",
+            "pub_num": "004",
+            "pages": 10,
+            "pdf_size": 214,
+            "description": ""
+        }
+    }
+]

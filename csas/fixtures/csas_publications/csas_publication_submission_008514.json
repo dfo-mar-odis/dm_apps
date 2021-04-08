@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8514,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the American Plaice Pre-COSEWIC Assessment",
+            "lead_author_2": "Karen Dwyer",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1397,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon stocks in Newfoundland and Labrador, 1983",
+            "pub_year": 1983,
+            "lead_author_2": "M.F. O'Connell; J.B. Dempson; D.G. Reddin; E.G.M. Ash",
+            "pub_num": "080",
+            "pages": 67,
+            "pdf_size": 2509,
+            "description": ""
+        }
+    }
+]

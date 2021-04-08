@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 523,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The northern Gulf of St. Lawrence cod stock ' background information on recruitment",
+            "pub_year": 2000,
+            "lead_author_2": "Castonguay, M.",
+            "pub_num": "106",
+            "pages": 8,
+            "pdf_size": 54,
+            "description": ""
+        }
+    }
+]

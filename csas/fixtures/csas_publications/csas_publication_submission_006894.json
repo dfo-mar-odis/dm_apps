@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6894,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A framework for assessing fisheries productivity for the Fisheries Protection Program",
+            "title_fr": "Cadre d'évaluation de la productivité des pêches destiné au Programme de protection des pêches correspondant",
+            "pub_year": 2013,
+            "lead_author_2": "M.J. Bradford, R.G. Randall, and K.S. Smokorowski, B.E. Keatley  and K.D. Clarke",
+            "pub_num": "067",
+            "pages": 37,
+            "pdf_size": 379,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5806,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Atlantic salmon returns to four rivers and harvests in various fisheries in Labrador for 2006-09",
+            "title_fr": "Remontes du saumon de l'Atlantique dans quatre rivières et récoltes de diverses pêches à l'échelle du Labrador de 2006 à 2009",
+            "pub_year": 2013,
+            "lead_author_2": "Rebecca Poole",
+            "pub_num": "105",
+            "pages": 31,
+            "pdf_size": 1331,
+            "description": ""
+        }
+    }
+]

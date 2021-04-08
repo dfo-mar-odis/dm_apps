@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5616,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Habitat Quality and Habitat Use by the Striped Bass (Morone saxatilis) Population of the St. Lawrence Estuary, Quebec",
+            "title_fr": "Évaluation de la qualité de l'habitat et de son utilisation par la population de bar rayé de l'estuaire du Saint-Laurent, Québec",
+            "pub_year": 2010,
+            "lead_author_2": "Beauchamp, J.",
+            "pub_num": "069",
+            "pages": 15,
+            "pdf_size": 1703,
+            "description": ""
+        }
+    }
+]

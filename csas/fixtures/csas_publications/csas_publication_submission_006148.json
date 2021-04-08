@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6148,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Eastern Cape Breton Atlantic Salmon",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon atlantique de l'est du Cap Breton",
+            "pub_year": 2013,
+            "lead_author_2": "J. Gibson",
+            "pub_num": "072",
+            "pages": 39,
+            "pdf_size": 813,
+            "description": ""
+        }
+    }
+]

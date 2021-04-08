@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1680,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Longliner-otter trawler interactions in cod fisheries on the Scotian Shelf: Implications of differences in partial recruitment",
+            "pub_year": 1986,
+            "lead_author_2": "A. Sinclair",
+            "pub_num": "094",
+            "pages": 27,
+            "pdf_size": 1276,
+            "description": ""
+        }
+    }
+]

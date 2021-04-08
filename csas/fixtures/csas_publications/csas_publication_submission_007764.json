@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7764,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of American Lobster in Newfoundland",
+            "title_fr": "Évaluation du homard d'Amérique à Terre-Neuve",
+            "pub_year": 2016,
+            "lead_author_2": "E. Coughlan",
+            "pub_num": "052",
+            "pages": 15,
+            "pdf_size": 622,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4792,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the Recovery Potential Assessment of Spotted Gar in Canada ; 23 June 2010",
+            "title_fr": "Compte rendu du Processus de consultation scientifique régional du Centre et de l'Arctique sur l'évaluation du potentiel de rétablissement du lépisosté tacheté au Canada; le 23 juin 2010",
+            "pub_year": 2010,
+            "lead_author_2": "L.Bouvier",
+            "pub_num": "033",
+            "pages": 23,
+            "pdf_size": 101,
+            "description": ""
+        }
+    }
+]

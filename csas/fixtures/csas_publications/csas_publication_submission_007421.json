@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7421,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Optical, chemical, and biological oceanographic conditions on the Scotian Shelf and in the eastern Gulf of Maine in 2014",
+            "title_fr": "Conditions océanographiques optiques, chimiques et biologiques sur le plateau néo‑écossais et dans l'est du golfe du Maine en 2014",
+            "pub_year": 2016,
+            "lead_author_2": "Johnson, C., Casault, B., Head, E., and Spry, J.",
+            "pub_num": "003",
+            "pages": 56,
+            "pdf_size": 9197,
+            "description": ""
+        }
+    }
+]

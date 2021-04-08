@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1460,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of the status of the 4VWX flatfish stocks",
+            "pub_year": 1984,
+            "lead_author_2": "J.D. Neilson; C.E. Dale",
+            "pub_num": "054",
+            "pages": 35,
+            "pdf_size": 1545,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5219,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the Recovery Potential Assessment of Redside Dace; 14 December 2007",
+            "title_fr": "Compte rendu du processus régional de consultation scientifique du Centre et de l'Arctique sur l'évaluation du potentiel de rétablissement du méné long; le 14 decembre 2007",
+            "pub_year": 2009,
+            "lead_author_2": "N. Mandrak",
+            "pub_num": "003",
+            "pages": 28,
+            "pdf_size": 131,
+            "description": ""
+        }
+    }
+]

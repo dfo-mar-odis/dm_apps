@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6901,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Indicators of Pelagic Habitat Status in the Northwest Atlantic",
+            "title_fr": "Indicateurs de l'état de l'habitat pélagique dans le nord-ouest de l'Atlantique",
+            "pub_year": 2014,
+            "lead_author_2": "Johnson, C., Pepin, P. Curtis, K.A., Lazin, G., Casault, B., Colbourne, E., Galbraith, P., Harvey, M., Maillet, G., Starr.",
+            "pub_num": "047",
+            "pages": 79,
+            "pdf_size": 9060,
+            "description": ""
+        }
+    }
+]

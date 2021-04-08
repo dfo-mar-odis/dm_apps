@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8613,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review for the Assessment of Northern Shrimp in Shrimp Fishing Areas (SFAs) 4, 5 and 6",
+            "lead_author_2": "Eugene Lee",
+            "description": ""
+        }
+    }
+]

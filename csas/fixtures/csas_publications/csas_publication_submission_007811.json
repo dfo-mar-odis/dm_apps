@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7811,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results of vessel calibration for redfish (Sebastes sp) from comparative fishing between the CCGS Teleost and the FV Nautical Legend",
+            "lead_author_2": "Konrad, C.",
+            "description": ""
+        }
+    }
+]

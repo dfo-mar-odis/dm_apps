@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6885,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Development of Spatially Referenced Data Layers for Use in the Identification and Delineation of Candidate Ecologically and Biologically Significant Areas in the Newfoundland and Labrador Shelves Bioregion",
+            "title_fr": "Élaboration de couches de données à référence spatiale à utiliser pour la désignation et la délimitation des zones candidates d'importance écologique et biologique dans la biorégion des plateaux de Terre-Neuve-et-Labrador",
+            "pub_year": 2017,
+            "lead_author_2": "Ollerhead, L.M.N., Gullage, M., Trip, N., and Wells, N.",
+            "pub_num": "036",
+            "pages": 43,
+            "pdf_size": 1893,
+            "description": ""
+        }
+    }
+]

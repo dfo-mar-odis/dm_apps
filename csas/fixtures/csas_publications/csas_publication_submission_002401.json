@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2401,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Overview of temperature and salinity conditions within the Scotia-Fundy Region, NAFO areas 4VWX and 5Z during 1993 groundfish research vessel surveys",
+            "pub_year": 1994,
+            "lead_author_2": "F. Page; R. Losier; J.M. McRuer",
+            "pub_num": "094",
+            "pages": 53,
+            "pdf_size": 2180,
+            "description": ""
+        }
+    }
+]

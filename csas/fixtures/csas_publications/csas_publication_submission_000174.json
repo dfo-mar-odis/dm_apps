@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 174,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Population structure of Atlantic cod (Gadus morhua) in the Newfoundland and Labrador area based on microsatellite variation",
+            "pub_year": 1999,
+            "lead_author_2": "Beacham, T.D., Brattey, J., Miller, K.M., Le, K.D., Withler, R.E",
+            "pub_num": "035",
+            "pages": 32,
+            "pdf_size": 338,
+            "description": ""
+        }
+    }
+]

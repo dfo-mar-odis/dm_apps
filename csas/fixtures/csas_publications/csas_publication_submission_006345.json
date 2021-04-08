@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6345,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Species inhabiting the Tarium Niryutait Marine Protected Area in the Canadian Beaufort Sea - Mackenzie Delta",
+            "title_fr": "Espèces vivant dans la zone de protection marine de Tarium Niryutait, dans la partie canadienne de la mer de Beaufort - delta du fleuve Mackenzie",
+            "pub_year": 2012,
+            "lead_author_2": "Stewart, D.B.",
+            "pub_num": "091",
+            "pages": 86,
+            "pdf_size": 1079,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5562,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Ecologically and biologically significant areas (EBSA) in northern Foxe Basin: identification and delineation",
+            "title_fr": "Zones d'importance écologique et biologique (ZIEB) dans le nord du bassin Foxe : désignation et délimitation",
+            "pub_year": 2014,
+            "lead_author_2": "Paulic, J.E., Cleator, H., and Martin, K.A.",
+            "pub_num": "042",
+            "pages": 45,
+            "pdf_size": 3392,
+            "description": ""
+        }
+    }
+]

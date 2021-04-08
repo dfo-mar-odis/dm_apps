@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7307,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Pre-season run size forecasts for Fraser River Sockeye (Oncorhynchus nerka) and Pink (O. gorbuscha) salmon in 2015",
+            "title_fr": "Prévisions d'avant-saison concernant le volume de la montaison du saumon rouge (Oncorhynchus nerka) et du saumon rose (O. gorbuscha) du fleuve Fraser en 2015",
+            "pub_year": 2015,
+            "pub_num": "014",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4889,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Atlantic mackerel (Scomber scombrus L.) fishery and biology for NAFO Subareas 3 and 4 in 2006",
+            "title_fr": "Pêche et biologie du maquereau bleu (Scomber scombrus L.) des sous-régions 3 et 4 de l'OPANO en 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Grégoire, F., Lévesque, C., Beaulieu, J.-L., Méthot, C., Gendron, M.-H.",
+            "pub_num": "067",
+            "pages": 136,
+            "description": ""
+        }
+    }
+]

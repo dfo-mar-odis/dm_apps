@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4358,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of American plaice in Subdivision 3Ps",
+            "title_fr": "Évaluation de la plie canadienne de la sous-division 3Ps de l'OPANO",
+            "pub_year": 2005,
+            "lead_author_2": "Morgan, M.J., W.B. Brodie, P.A. Shelton.",
+            "pub_num": "069",
+            "pages": 44,
+            "pdf_size": 742,
+            "description": ""
+        }
+    }
+]

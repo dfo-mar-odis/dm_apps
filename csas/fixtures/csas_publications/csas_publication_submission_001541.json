@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1541,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Witch flounder on St. Pierre Bank (NAFO Subdivision 3Ps)",
+            "pub_year": 1985,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "034",
+            "pages": 8,
+            "pdf_size": 346,
+            "description": ""
+        }
+    }
+]

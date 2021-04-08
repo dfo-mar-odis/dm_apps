@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3183,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eel fisheries in the Maritimes (Anguilla rostrata)",
+            "title_fr": "Pêche de l'anguille dans les Maritimes (Anguilla rostrata)",
+            "pub_year": 1996,
+            "lead_author_2": "Jessop, B.",
+            "pub_num": "014",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

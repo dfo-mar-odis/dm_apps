@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5488,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Update of the 2009 Summer Scotian Shelf and Bay of Fundy Research Vessel Survey",
+            "title_fr": "Mise à jour sur le relevé d'été de 2009 effectué par un navire de recherche sur le plateau néo-écossais et dans la baie de Fundy",
+            "pub_year": 2010,
+            "lead_author_2": "Donald Clark, Jamie Emberley, Cairistiona Clark, and Brittany Peppard",
+            "pub_num": "008",
+            "pages": 78,
+            "pdf_size": 3259,
+            "description": ""
+        }
+    }
+]

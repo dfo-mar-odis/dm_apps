@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1976,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Stock Status Report Lobster",
+            "pub_year": 1998,
+            "lead_author_2": "G.P. Ennis",
+            "pub_num": "C2-03",
+            "pages": 7,
+            "pdf_size": 536,
+            "description": ""
+        }
+    }
+]

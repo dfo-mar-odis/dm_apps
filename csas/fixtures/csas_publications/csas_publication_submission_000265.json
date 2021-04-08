@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 265,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Report of the Joint Science - Fisheries Management Policy Workshop on the Precautionary Approach; 27-28 September 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Bruce Atkinson",
+            "pub_num": "004",
+            "pages": 42,
+            "pdf_size": 241,
+            "description": ""
+        }
+    }
+]

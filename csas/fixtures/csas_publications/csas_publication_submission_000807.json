@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 807,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Northern shrimp (Pandalus borealis) off Baffin Island, Labrador and northeastern Newfoundland - first interim review.",
+            "pub_year": 2001,
+            "lead_author_2": "Orr, D., D.G. Parsons, P.J. Veitch, and D.J. Sullivan",
+            "pub_num": "043",
+            "pages": 46,
+            "pdf_size": 1907,
+            "description": ""
+        }
+    }
+]

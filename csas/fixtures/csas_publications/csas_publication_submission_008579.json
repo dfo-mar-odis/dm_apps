@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8579,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Total abundance of harp seals in the northwest Atlantic, 1950-2019",
+            "lead_author_2": "MO Hammill, GB Stenson, A Mosnier",
+            "description": ""
+        }
+    }
+]

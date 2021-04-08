@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7680,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Delineation of Coral and Sponge Significant Benthic Areas in Eastern Canada Using kernel Density Analyses and Species Distribution Models",
+            "title_fr": "Délimitation des zones benthiques importantes de coraux et d’éponges dans l’est du Canada à l’aide des analyses des noyaux de densité et des modèles de répartition des espèces",
+            "pub_year": 2016,
+            "lead_author_2": "Kenchington, E., L. Beazley, C. Lirette, F.J. Murillo, J. Guijarro, V. Wareham, K. Gilkinson, M. Koen-Alonso, H. Benoît, H. Bourdages, B. Sainte-Marie, M. Treble, and T. Siferd.",
+            "pub_num": "093",
+            "pages": 184,
+            "pdf_size": 14500,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6711,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Update of Stock Status Indicators for Northern Shrimp in the Estuary and Gulf of St. Lawrence",
+            "title_fr": "Mise à jour des indicateurs de l'état des stocks de crevette nordique de l'estuaire et du golfe du Saint-Laurent",
+            "pub_year": 2013,
+            "pub_num": "001",
+            "pages": 7,
+            "pdf_size": 424,
+            "description": ""
+        }
+    }
+]

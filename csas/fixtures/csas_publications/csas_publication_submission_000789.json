@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 789,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Modelling the Drift of Lobster Larvae off Southwest Nova Scotia.",
+            "title_fr": "Modélisation de la dérive des larves de homard sur la côte sud-ouest de la Nouvelle-Écosse.",
+            "pub_year": 2001,
+            "lead_author_2": "Drinkwater, K., Hannah, C., Loder, J., Harding, G., Shore, J.",
+            "pub_num": "051",
+            "pages": 32,
+            "pdf_size": 5810,
+            "description": ""
+        }
+    }
+]

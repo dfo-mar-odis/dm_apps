@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4462,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 8],
+            "title_en": "Modeling approaches to assess the potential effects of shellfish aquaculture on the marine environment",
+            "title_fr": "Approches de modélisation pour évaluer les effets potentiels de la conchyliculture sur le milieu marin",
+            "pub_year": 2006,
+            "lead_author_2": "Chamberlain, J., A.M. Weise, M. Dowd, J. Grant",
+            "pub_num": "032",
+            "pages": 54,
+            "pdf_size": 2204,
+            "description": ""
+        }
+    }
+]

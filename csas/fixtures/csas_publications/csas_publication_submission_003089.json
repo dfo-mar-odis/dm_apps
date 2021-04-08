@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3089,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Strait of Georgia Herring",
+            "pub_year": 1998,
+            "lead_author_2": "Jake Schweigert",
+            "pub_num": "B6-05",
+            "pages": 3,
+            "pdf_size": 65,
+            "description": ""
+        }
+    }
+]

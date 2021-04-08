@@ -1,0 +1,20 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1991,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "State of phytoplankton in the Estuary and Gulf of St. Lawrence during 2002",
+            "title_fr": "État du phytoplancton dans l'estuaire et le golfe du St-Laurent en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Starr, M., St-Amand, L., Devine, L., Bérard-Therriault, L.
+
+Réviseurs: 	Glen Harisson & Garry Mallet",
+            "pub_num": "103",
+            "pages": 33,
+            "pdf_size": 1888,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1745,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Exploitation du flétan du Groenland (Reinhardtius hippoglossoides) du golfe du Saint-Laurent en 1986",
+            "pub_year": 1987,
+            "lead_author_2": "A. Fréchet",
+            "pub_num": "056",
+            "pages": 23,
+            "pdf_size": 1308,
+            "description": ""
+        }
+    }
+]

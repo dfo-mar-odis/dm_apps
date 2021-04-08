@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5198,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of the southern Gulf of St. Lawrence Atlantic Cod (Gadus morhua) stock of NAFO Div. 4T and 4Vn (November to April), March 2019",
+            "title_fr": "Évaluation du stock de morue franche (Gadus morhua) du sud du golfe du Saint-Laurent, divisions 4T et 4Vn (novembre à avril) de l’OPANO, mars 2019",
+            "pub_year": 2019,
+            "lead_author_2": "Swain, D.P., Ricard, D., Rolland, N., and Aubry, É.",
+            "pub_num": "038",
+            "pages": 109,
+            "pdf_size": 7910,
+            "description": ""
+        }
+    }
+]

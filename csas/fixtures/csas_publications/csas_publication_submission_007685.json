@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7685,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Assessments on Atlantic surf clam stocks from Magdalen Islands; February 23, 2015",
+            "title_fr": "Compte rendu de l’examen régional par des pairs portant sur l’évaluation des stocks de mactre de l’Atlantique des Îles-de-la-Madeleine; 23 février 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Charley Cyr (président)",
+            "pub_num": "012",
+            "pages": 11,
+            "description": ""
+        }
+    }
+]

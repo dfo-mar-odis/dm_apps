@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3653,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Georges Bank Scallop",
+            "title_fr": "Pétoncle du banc Georges",
+            "pub_year": 2002,
+            "pub_num": "C3-17",
+            "pages": 11,
+            "pdf_size": 1100,
+            "description": ""
+        }
+    }
+]

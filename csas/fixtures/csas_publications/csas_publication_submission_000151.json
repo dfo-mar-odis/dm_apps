@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 151,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Framework for a Tanner Crab (Chionoecetes tanneri and C. angulatus) fishery in waters off the West Coast of Canada",
+            "pub_year": 1998,
+            "lead_author_2": "J.A. Boutillier, R.B. Lauzier, A.C. Phillips, L. Barton",
+            "pub_num": "125",
+            "description": ""
+        }
+    }
+]

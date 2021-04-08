@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3764,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Scotian Shelf Cod",
+            "title_fr": "Morue de l'est du plateau néo-écossais",
+            "pub_year": 2003,
+            "lead_author_2": "Fanning, P.",
+            "pub_num": "020",
+            "pages": 9,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5595,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information to support the assessment of Arctic Char (Salvelinus alpinus), from the Isuituq River system, Nunavut",
+            "title_fr": "Informations à l'appui de l'évaluation de l'omble chevalier (Salvelinus alpinus) dans le réseau hydrographique de la rivière Isuituq, au Nunavut",
+            "pub_year": 2010,
+            "lead_author_2": "Les N. Harris and Ross F. Tallman",
+            "pub_num": "063",
+            "pages": 43,
+            "pdf_size": 526,
+            "description": ""
+        }
+    }
+]

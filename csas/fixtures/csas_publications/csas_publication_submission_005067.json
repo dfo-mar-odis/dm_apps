@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5067,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Biological Risk Assessment for Northern Pike (Esox lucius),Pumpkinseed (Lepomis gibbosus), and Walleye (Sander vitreus) in British Columbia",
+            "title_fr": "Évaluation du risque biologique posé par le grand brochet (Esox lucius), le crapet-soleil (Lepomis gibbosus) et ledoré jaune (Sander vitreus) en Colombie-Britannique",
+            "pub_year": 2008,
+            "lead_author_2": "M. Bradford, C. Tovey, L-M. Herborg",
+            "pub_num": "074",
+            "pages": 53,
+            "pdf_size": 1010,
+            "description": ""
+        }
+    }
+]

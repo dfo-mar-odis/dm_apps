@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3231,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Status of Redfish Stocks in the Northwest Atlantic: Redfish in Units 1, 2, and 3, and in Division 3O",
+            "title_fr": "État des stocks de sébaste dans l'atlantique du nord-ouest: sébaste dans les unités 1, 2, et dans la division 3O",
+            "pub_year": 1996,
+            "lead_author_2": "Morin, B.;Power, D.;Branton, R.",
+            "pub_num": "088",
+            "description": ""
+        }
+    }
+]

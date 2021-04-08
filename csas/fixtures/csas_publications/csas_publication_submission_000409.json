@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 409,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Determining size at maturity and predicting egg extrusion from cement gland development in Homarus americanus",
+            "pub_year": 1980,
+            "lead_author_2": "S.L. Waddy; D.E. Aiken",
+            "pub_num": "043",
+            "pages": 9,
+            "pdf_size": 695,
+            "description": ""
+        }
+    }
+]

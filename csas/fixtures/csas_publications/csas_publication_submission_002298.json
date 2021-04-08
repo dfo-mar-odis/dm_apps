@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2298,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The timing of the winter migration of 4T cod into 4Vn",
+            "pub_year": 1993,
+            "lead_author_2": "T.C. Lambert",
+            "pub_num": "025",
+            "pages": 25,
+            "pdf_size": 1703,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3584,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Subdivision 3Ps Pollock",
+            "pub_year": 1999,
+            "lead_author_2": "Eugene Murphy",
+            "pub_num": "A2-07",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

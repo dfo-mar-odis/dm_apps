@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5390,
+        "fields": {
+            "series": 5,
+            "lead_region": [6, 7],
+            "title_en": "Stock definition of Belugas and Narwhals in Nunavut",
+            "title_fr": "Définition des stocks de bélugas et de narvals du Nunavut",
+            "pub_year": 2009,
+            "lead_author_2": "Richard, P.",
+            "pub_num": "079",
+            "pages": 5,
+            "pdf_size": 143,
+            "description": ""
+        }
+    }
+]

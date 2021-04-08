@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2647,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Stock Status Report Capelin in Subarea 2 + Div. 3KL",
+            "pub_year": 1996,
+            "pub_num": "023",
+            "description": ""
+        }
+    }
+]

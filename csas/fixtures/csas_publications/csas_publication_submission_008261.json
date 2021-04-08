@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8261,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "A Science-based Framework for Assessing the Impact of Development Activities under Section 73 of Canada’s Species at Risk Act",
+            "lead_author_2": "Karine Robert, A. Darke, A. Van der Lee, M. Koops",
+            "description": ""
+        }
+    }
+]

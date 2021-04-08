@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6890,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Georges Bank 'a' and Browns Bank 'North' Scallop (Placopecten magellanicus) Stock Assessment",
+            "title_fr": "Évaluation du stock de pétoncles (Placopecten magellanicus) de la zone « a » du banc de Georges et du secteur « nord » du banc de Brown",
+            "pub_year": 2013,
+            "lead_author_2": "B. Hubley",
+            "pub_num": "079",
+            "pages": 64,
+            "pdf_size": 3811,
+            "description": ""
+        }
+    }
+]

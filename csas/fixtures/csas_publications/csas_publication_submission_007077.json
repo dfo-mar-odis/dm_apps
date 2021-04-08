@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7077,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Summary of the pelagic fish projects carried out within the framework of the Larocque Scientific Program in 2012–2013",
+            "title_fr": "Résumé des projets sur les poissons pélagiques réalisés dans le cadre du programme scientifique Larocque en 2012-2013",
+            "pub_year": 2014,
+            "lead_author_2": "F. Grégoire, L. Girard et J.-L. Beaulieu",
+            "pub_num": "027",
+            "pages": 8,
+            "pdf_size": 69,
+            "description": ""
+        }
+    }
+]

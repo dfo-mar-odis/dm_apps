@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6067,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Considerations for the Estimation of Incidental Catch in the Eastern Canadian Swordfish/Other Tunas Longline Fishery",
+            "title_fr": "Points à considérer dans l'estimation des captures accessoires de la pêche de l'espadon et des autres thonidés à la palangre dans l'est du Canada",
+            "pub_year": 2011,
+            "lead_author_2": "J. Neilson / K. Clark / V. Myra",
+            "pub_num": "057",
+            "pages": 11,
+            "pdf_size": 207,
+            "description": ""
+        }
+    }
+]

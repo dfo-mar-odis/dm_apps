@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 73,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Quality of Newfoundland Region cod age determination",
+            "pub_year": 1998,
+            "lead_author_2": "H.F. Hicks, R. Ennis, C. Cossitt, C. Hiscock",
+            "pub_num": "074",
+            "description": ""
+        }
+    }
+]

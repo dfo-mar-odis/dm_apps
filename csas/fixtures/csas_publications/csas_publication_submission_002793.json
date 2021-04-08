@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2793,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in Salmon Fishing Area 21, in 1996, with emphasis on the upper LaHave River, Lunenburg Co., Nova Scotia.",
+            "pub_year": 1997,
+            "lead_author_2": "Amiro, P.G., Jefferson, E.G.",
+            "pub_num": "025",
+            "description": ""
+        }
+    }
+]

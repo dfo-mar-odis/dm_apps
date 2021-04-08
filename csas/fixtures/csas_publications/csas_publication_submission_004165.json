@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4165,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "An estimate of the Western Hudson Bay beluga population size in 2004",
+            "title_fr": "Estimation du nombre de bélugas de l'ouest de la baie d'Hudson en 2004",
+            "pub_year": 2005,
+            "lead_author_2": "Richard, P.R.",
+            "pub_num": "017",
+            "pages": 33,
+            "pdf_size": 973,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2133,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Capelin in NAFO Div. 2J3K and Div. 3L",
+            "pub_year": 1991,
+            "lead_author_2": "J. Carscadden; B.S. Nakashima; D.S. Miller",
+            "pub_num": "068",
+            "pages": 25,
+            "pdf_size": 1138,
+            "description": ""
+        }
+    }
+]

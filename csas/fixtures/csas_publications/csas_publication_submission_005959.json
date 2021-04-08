@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5959,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock Assessment Framework for the British Columbia Geoduck Fishery, 2008",
+            "title_fr": "Cadre d'évaluation des stocks pour la pêche à la panope du Pacifique en Colombie-Britannique, 2008",
+            "pub_year": 2011,
+            "lead_author_2": "D. Bureau, C. Hand, W. Haj",
+            "pub_num": "121",
+            "pages": 87,
+            "pdf_size": 705,
+            "description": ""
+        }
+    }
+]

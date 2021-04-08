@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5649,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Update for Scallop Fishery Area/Time Closure to Reduce Yellowtail Flounder By-Catch on Georges Bank in 2010",
+            "title_fr": "Le point pour 2010 sur la fermeture spatiotemporelle de la pêche du pétoncle destinée à réduire les captures accessoires de pétoncle sur le banc Georges",
+            "pub_year": 2010,
+            "lead_author_2": "Amy Glass, Jessica Sameoto, Lou Van Eeckhaute",
+            "pub_num": "010",
+            "pages": 15,
+            "pdf_size": 611,
+            "description": ""
+        }
+    }
+]

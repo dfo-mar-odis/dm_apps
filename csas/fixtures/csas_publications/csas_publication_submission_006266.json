@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6266,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Developing a Screening-Level Risk Assessment Prioritization Protocol for Aquatic Non-Indigenous Species in Canada: Review of Existing Protocols",
+            "title_fr": "Élaboration d'un protocole de filtrage et de priorisation pour l'évaluation des risques relatifs aux espèces aquatiques non indigènes au Canada : Examen des protocoles existants",
+            "pub_year": 2012,
+            "lead_author_2": "Becky Cudmore, Nick Mandrak",
+            "pub_num": "097",
+            "pages": 82,
+            "pdf_size": 810,
+            "description": ""
+        }
+    }
+]

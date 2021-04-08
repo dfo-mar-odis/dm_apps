@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6180,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Evaluation of Scope for Harm for White Shark (Carcharodon carcharias) in Atlantic Canada",
+            "title_fr": "Évaluation de l’étendue des dommages admissibles pour le grand requin blanc (Carcharodon carcharias) dans le Canada atlantique",
+            "pub_year": 2017,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "025",
+            "pages": 28,
+            "pdf_size": 704,
+            "description": ""
+        }
+    }
+]

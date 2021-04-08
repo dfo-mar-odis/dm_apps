@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7345,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Lingcod Assessment (Ophiodon elongatus) for the Strait of Georgia (Area 4B), British Columbia in 2014 ; December 10 – 11, 2014",
+            "title_fr": "Compte rendu de l'examen par les pairs de la Région du Pacifique sur l’Évaluation de la morue-linge (Ophiodon elongatus) du détroit de Georgia (zone 4B), Colombie-Britannique en 2014 ; Du 10 au 11 décembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Kate Rutherford",
+            "pub_num": "043",
+            "pages": 27,
+            "pdf_size": 176,
+            "description": ""
+        }
+    }
+]

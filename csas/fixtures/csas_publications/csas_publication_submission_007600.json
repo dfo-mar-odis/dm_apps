@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7600,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Effects of water flow management regimes in the Trent River on Channel Darter, Percina copelandi, spawning activities",
+            "title_fr": "Effets des régimes de gestion des débits d'eau dans la rivière Trent sur les activités de frai du fouille-roche gris (Percina copelandi)",
+            "pub_year": 2016,
+            "lead_author_2": "McNichols-O'Rourke, Kelly",
+            "pub_num": "019",
+            "pages": 15,
+            "pdf_size": 1256,
+            "description": ""
+        }
+    }
+]

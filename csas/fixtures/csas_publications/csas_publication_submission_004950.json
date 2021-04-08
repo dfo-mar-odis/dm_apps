@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4950,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Assessment of the rock crab (Cancer irroratus) fishery in the Southern Gulf of St. Lawrence Lobster Fishing Areas (LFA's) 23, 24, 25, 26A & 26B for 2000 to 2006",
+            "title_fr": "Évaluation de la pêche du crabe commun (Cancer irroratus) dans les zones de pêche du homard (ZPH) 23, 24, 25, 26A et 26B, dans le sud du golfe du Saint-Laurent, pour 2000 à 2006",
+            "pub_year": 2008,
+            "lead_author_2": "Rondeau, A.",
+            "pub_num": "022",
+            "pages": 9,
+            "pdf_size": 190,
+            "description": ""
+        }
+    }
+]

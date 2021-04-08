@@ -55,7 +55,7 @@ var app = new Vue({
       let myStr = 'px-1 py-1 ';
       if (days) {
         if (days > 45) myStr += 'bg-success text-light';
-        else if (days >= 15) myStr +=  'bg-warning';
+        else if (days >= 15) myStr += 'bg-warning';
         else myStr += 'bg-danger text-light';
       }
       return myStr;
@@ -103,6 +103,9 @@ var app = new Vue({
       let win;
       if (this.pageType.search("verification") > -1) {
         url = `/travel-plans/trips/${trip.id}/verify/?${this.pageType}=true`;
+        win = window.open(url, '_blank');
+      } else if (this.pageType.search("all") > -1) {
+        url = `/travel-plans/trips/${trip.id}/view/?${window.location.search.substring(1)}`;
         win = window.open(url, '_blank');
       } else {
         url = `/travel-plans/trips/${trip.id}/view/?${window.location.search.substring(1)}`;

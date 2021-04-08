@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4886,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_fr": "Comptes rendus du Processus Régional de Revue des Évaluations de Stocks de la Région Laurentienne suivant les activités de pêche de la saison 1999; 18 janvier au 18 février 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Bernier, D.",
+            "pub_num": "037",
+            "description": ""
+        }
+    }
+]

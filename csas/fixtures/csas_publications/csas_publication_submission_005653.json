@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5653,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Risk assessment of smallmouth bass (Micropterus dolomieu) introductions to rivers of Gulf Region with special consideration to the Miramichi River (N.B.)",
+            "title_fr": "Évaluation des risques de l'introduction de l'achigan à petite bouche (Micropterus dolomieu) dans les rivières de la Région du Golfe et en particulier pour la rivière Miramichi (N.-B.)",
+            "pub_year": 2010,
+            "lead_author_2": "Chaput, G., Caissie, D.",
+            "pub_num": "065",
+            "pages": 45,
+            "pdf_size": 515,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8486,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Peer Review for the Assessment of Northwest Atlantic Fisheries Organization (NAFO) Subdivision 3Ps Atlantic Cod and 3Ps American Plaice",
+            "lead_author_2": "E. Lee",
+            "description": ""
+        }
+    }
+]

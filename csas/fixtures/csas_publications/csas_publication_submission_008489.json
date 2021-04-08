@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8489,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the American Plaice (Hippoglossoides platessoides) stock in NAFO Subdivision 3Ps in 2019",
+            "title_fr": "Évaluation de 2019 du stock de plie canadienne (Hippoglossoides platessoides) dans la sous-division 3Ps de l’OPANO",
+            "pub_year": 2020,
+            "lead_author_2": "Morgan, M.J., Rogers, R., Ings, D. and Wheeland, L.",
+            "pub_num": "019",
+            "pages": 21,
+            "pdf_size": 1452,
+            "description": ""
+        }
+    }
+]

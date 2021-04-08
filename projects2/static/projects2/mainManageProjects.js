@@ -3,6 +3,7 @@ var app = new Vue({
   el: '#app',
   delimiters: ["${", "}"],
   data: {
+    showSidebar: true,
     currentUser: {},
     isAdminOrMgmt: false,
     hover: false,
@@ -87,13 +88,13 @@ var app = new Vue({
 
       apiService(`/api/project-planning/regions/${query}`).then(response => this.regions = response)
 
-      if (this.filter_region && this.filter_region !== "") query += `;region=${this.filter_region}`
+      if (this.filter_region && this.filter_region !== "") query += `&region=${this.filter_region}`
       apiService(`/api/project-planning/divisions/${query}`).then(response => this.divisions = response)
 
-      if (this.filter_division && this.filter_division !== "") query += `;division=${this.filter_division}`
+      if (this.filter_division && this.filter_division !== "") query += `&division=${this.filter_division}`
       apiService(`/api/project-planning/sections/${query}`).then(response => this.sections = response)
 
-      if (this.filter_section && this.filter_section !== "") query += `;section=${this.filter_section}`
+      if (this.filter_section && this.filter_section !== "") query += `&section=${this.filter_section}`
       apiService(`/api/project-planning/functional-groups/${query}`).then(response => this.functionalGroups = response)
 
     },
@@ -101,19 +102,19 @@ var app = new Vue({
     getProjectYearsEndpoint(pageSize = 45) {
       endpoint = `/api/project-planning/project-years/`;
       // apply filters
-      endpoint += `?page_size=${pageSize};user=true;` +
-          `id=${this.filter_id};` +
-          `title=${this.filter_title};` +
-          `staff=${this.filter_staff};` +
-          `fiscal_year=${this.filter_fiscal_year};` +
-          `tag=${this.filter_tag};` +
-          `theme=${this.filter_theme};` +
-          `functional_group=${this.filter_functional_group};` +
-          `funding_source=${this.filter_funding_source};` +
-          `region=${this.filter_region};` +
-          `division=${this.filter_division};` +
-          `section=${this.filter_section};` +
-          `status=${this.filter_status};`
+      endpoint += `?page_size=${pageSize}&user=true&` +
+          `id=${this.filter_id}&` +
+          `title=${this.filter_title}&` +
+          `staff=${this.filter_staff}&` +
+          `fiscal_year=${this.filter_fiscal_year}&` +
+          `tag=${this.filter_tag}&` +
+          `theme=${this.filter_theme}&` +
+          `functional_group=${this.filter_functional_group}&` +
+          `funding_source=${this.filter_funding_source}&` +
+          `region=${this.filter_region}&` +
+          `division=${this.filter_division}&` +
+          `section=${this.filter_section}&` +
+          `status=${this.filter_status}&`
       return endpoint
 
     },
@@ -174,7 +175,7 @@ var app = new Vue({
                     pyIds.push(response.results[i].id)
                   }
 
-                  let endpoint2 = `/api/project-planning/fte-breakdown/?year=${this.filter_fiscal_year};ids=${pyIds}`;
+                  let endpoint2 = `/api/project-planning/fte-breakdown/?year=${this.filter_fiscal_year}&ids=${pyIds}`;
                   apiService(endpoint2)
                       .then(response => {
                         this.staff_loading = false;

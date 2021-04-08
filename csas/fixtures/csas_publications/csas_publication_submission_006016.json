@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6016,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Regional Advisory Process on stock assessments and recovery potential assessments for yellowmouth rockfish and quillback rockfish along the Pacific coast of Canada",
+            "lead_author_2": "Andrew Edwards",
+            "description": ""
+        }
+    }
+]

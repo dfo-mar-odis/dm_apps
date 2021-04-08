@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6947,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Abundance Estimates of Northwest Atlantic Harp seals and Management advice for 2014",
+            "title_fr": "Estimation de l'abondance des phoques du Groenland de l'Atlantique nord-ouest et conseil de gestion pour 2014",
+            "pub_year": 2014,
+            "lead_author_2": "M.O. Hammill  G.B. Stenson, A. Mosnier and T. Doniol-Valcroze",
+            "pub_num": "022",
+            "pages": 38,
+            "pdf_size": 764,
+            "description": ""
+        }
+    }
+]

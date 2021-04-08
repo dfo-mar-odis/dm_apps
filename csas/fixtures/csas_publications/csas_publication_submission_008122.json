@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8122,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Science information to support consultations on BC Chinook Salmon fishery management measures in 2018",
+            "title_fr": "Information scientifique à l’appui des consultations sur les mesures de gestion des pêches au saumon quinnat de la Colombie-Britannique (2018)",
+            "pub_year": 2018,
+            "lead_author_2": "Mary Thiess",
+            "pub_num": "035",
+            "pages": 26,
+            "pdf_size": 1333,
+            "description": ""
+        }
+    }
+]

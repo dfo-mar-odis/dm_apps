@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1638,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of northern shrimp, Pandalus borealis, in Hopedale Channel using a revised stratification scheme",
+            "pub_year": 1986,
+            "lead_author_2": "D.G. Parsons; P.J. Veitch",
+            "pub_num": "021",
+            "pages": 15,
+            "pdf_size": 1347,
+            "description": ""
+        }
+    }
+]

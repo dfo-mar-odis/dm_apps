@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3704,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Meeting of the Maritimes Regional Advisory Process SPA 1, 3,4, 6 Scallop and Scallop Fishing Area 29; 13-15 February 2002",
+            "title_fr": "Réunion du Processus consultatif régional des provinces Maritimes Pétoncle des ZPP 1, 3, 4, 6 et de la zone de pêches à la pétoncle # 29; du 13 au 15 février 2002",
+            "pub_year": 2002,
+            "lead_author_2": "Lavoie, R.",
+            "pub_num": "031",
+            "pages": 24,
+            "pdf_size": 185,
+            "description": ""
+        }
+    }
+]

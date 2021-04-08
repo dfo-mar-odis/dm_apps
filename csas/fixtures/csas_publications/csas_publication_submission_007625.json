@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7625,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Estimating Lake Utopia Rainbow Smelt (Osmerus mordax) Spawner Abundance and Allowable Harm",
+            "title_fr": "Estimation de l’abondance des éperlans arc-en-ciel (Osmerus mordax) géniteurs du lac Utopia et des dommages admissibles",
+            "pub_year": 2016,
+            "lead_author_2": "Lei Harris",
+            "pub_num": "024",
+            "pages": 11,
+            "pdf_size": 289,
+            "description": ""
+        }
+    }
+]

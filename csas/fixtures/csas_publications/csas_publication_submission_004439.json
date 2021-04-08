@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4439,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A synthesis of fresh water habitat requirements and status for Atlantic salmon (Salmo salar) in Canada",
+            "title_fr": "Synthèse de la situation de l'habitat d'eau douce et des besoins du saumon atlantique (Salmo salar) au Canada",
+            "pub_year": 2006,
+            "lead_author_2": "Amiro, P.G.",
+            "pub_num": "017",
+            "pages": 43,
+            "pdf_size": 299,
+            "description": ""
+        }
+    }
+]

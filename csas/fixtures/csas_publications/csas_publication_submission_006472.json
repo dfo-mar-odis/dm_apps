@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6472,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Reference points for American Plaice (Hippoglossoides platessoides) in NAFO Subarea 2 + Division 3K and Subdivison 3Ps",
+            "title_fr": "Points de référence pour la plie canadienne (Hippoglossoides platessoides) dans la sous-zone 2 + division 3K et la sous-division 3Ps de l'OPANO",
+            "pub_year": 2012,
+            "lead_author_2": "Joanne Morgan",
+            "pub_num": "025",
+            "pages": 16,
+            "pdf_size": 275,
+            "description": ""
+        }
+    }
+]

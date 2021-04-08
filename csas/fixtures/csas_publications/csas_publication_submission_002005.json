@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2005,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process of the Eastern Scotian Shelf Snow Crab; 23-24 March 2004",
+            "title_fr": "Compte rendu du Processus consultatif régional des Maritimes concernant le crabe des neiges de l'est du plateau néo-écossais; du 23 au 24 mars 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Lavoie, R.",
+            "pub_num": "023",
+            "pages": 38,
+            "pdf_size": 178,
+            "description": ""
+        }
+    }
+]

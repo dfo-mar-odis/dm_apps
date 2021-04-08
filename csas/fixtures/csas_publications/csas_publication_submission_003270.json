@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3270,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the cod (Gadus morhua) stock in NAFO Subdivision 3Ps in October 2002",
+            "title_fr": "Évaluation du stock de morue (Gadus morhua) dans la sous-division 3Ps de l'OPANO en octobre 2002",
+            "pub_year": 2002,
+            "lead_author_2": "J. Brattey, N.G. Cadigan, B.P. Healey, G.R. Lilly, E.F. Murphy, P.A. Shelton, D.E. Stansbury, J.-C. Mahé",
+            "pub_num": "096",
+            "pages": 103,
+            "pdf_size": 2230,
+            "description": ""
+        }
+    }
+]

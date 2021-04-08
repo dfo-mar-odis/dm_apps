@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4539,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Catch-age models for Pacific herring: Evaluation of alternative assumptions about fishery and stock dynamics and alternative error distributions",
+            "title_fr": "Modèle des prises selon l'âge pour le hareng du Pacifique : évaluation d'autres hypothèses à propos de la pêche et de la dynamique des stocks et d'autres distributions de l'erreur",
+            "pub_year": 2006,
+            "lead_author_2": "Haist, V., J. Schweigert.",
+            "pub_num": "064",
+            "pages": 59,
+            "pdf_size": 582,
+            "description": ""
+        }
+    }
+]

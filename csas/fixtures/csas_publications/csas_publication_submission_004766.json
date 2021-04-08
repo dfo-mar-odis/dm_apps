@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4766,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Scientific information in support of a Recovery Potential Assessment for the salish sucker (Catostomus sp.) in Canada",
+            "title_fr": "Information scientifique à l'appui de l'évaluation du potentiel de rétablissement du meunier de salish (Catostomus sp.) au Canada",
+            "pub_year": 2009,
+            "lead_author_2": "Harvey, B.",
+            "pub_num": "067",
+            "pages": 24,
+            "pdf_size": 105,
+            "description": ""
+        }
+    }
+]

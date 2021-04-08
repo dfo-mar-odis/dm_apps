@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1206,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Update of Division 3O redfish assessment",
+            "pub_year": 1982,
+            "lead_author_2": "C.A. Gavaris",
+            "pub_num": "026",
+            "pages": 8,
+            "pdf_size": 616,
+            "description": ""
+        }
+    }
+]

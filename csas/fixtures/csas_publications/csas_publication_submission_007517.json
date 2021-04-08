@@ -1,0 +1,19 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7517,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Hierarchical Bayesian modelling of Atlantic Salmon egg to smolt time series from monitored rivers of eastern Canada to define and transport reference points",
+            "title_fr": "Considérations pour la définition de points de référence pour le saumon de l'Atlantique conformes à l'approche de précaution",
+            "pub_year": 2015,
+            "lead_author_2": "Chaput, G., Prévost, E., Dempson, J.B., Dionne, M., Jones, R., Levy, A., Robertson, M., and
+Veinott, G.",
+            "pub_num": "075",
+            "pages": 89,
+            "pdf_size": 9760,
+            "description": ""
+        }
+    }
+]

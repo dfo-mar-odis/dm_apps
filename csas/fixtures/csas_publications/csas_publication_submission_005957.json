@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5957,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Zonal Advisory Meeting of the National Marine Mammal Peer Review Committee (NMMPRC): Advice on a community allocations model for harvesting Baffin Bay Narwhal; May 6, 2011",
+            "title_fr": "Réunion de consultation scientifique zonale du Comité national d'examen par des pairs sur les mammifères marins (CNEPMM) : Avis sur un modèle d'attribution des prélèvements aux communautés afin de répartir les prises de narvals de la baie de Baffin; le 6 mai 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Christine Abraham",
+            "pub_num": "025",
+            "pages": 32,
+            "pdf_size": 152,
+            "description": ""
+        }
+    }
+]

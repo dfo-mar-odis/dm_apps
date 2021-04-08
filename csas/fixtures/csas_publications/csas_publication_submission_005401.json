@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5401,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Temperature conditions in the southern Gulf of St. Lawrence during 2008 relevant to snow crab",
+            "title_fr": "Conditions de température dans le sud du golfe du Saint-Laurent en 2008 relativement au crabe des neiges",
+            "pub_year": 2009,
+            "lead_author_2": "J. Chassé and R.G. Pettipas",
+            "pub_num": "087",
+            "pages": 30,
+            "pdf_size": 941,
+            "description": ""
+        }
+    }
+]

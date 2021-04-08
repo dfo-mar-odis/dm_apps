@@ -1,0 +1,14 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 964,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Invertebrate Subcommittee Meeting June 16-17, 1998 and the Steering Committee Meeting July 10, 1998",
+            "pub_year": 1998,
+            "pub_num": "012",
+            "description": ""
+        }
+    }
+]

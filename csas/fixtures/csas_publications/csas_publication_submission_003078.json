@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3078,
+        "fields": {
+            "series": 7,
+            "lead_region": [7],
+            "title_en": "Mackenzie River Inconnu",
+            "title_fr": "L'inconnu du Mackenzie",
+            "pub_year": 1998,
+            "lead_author_2": "Chris Day",
+            "pub_num": "D5-04",
+            "pages": 9,
+            "pdf_size": 359,
+            "description": ""
+        }
+    }
+]

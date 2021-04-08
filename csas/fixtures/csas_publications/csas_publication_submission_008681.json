@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8681,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biophysical and Ecological Overview of the Fundian Channel-Browns Bank Area of Interest (AOI)",
+            "lead_author_2": "Nick Jeffrey",
+            "description": ""
+        }
+    }
+]

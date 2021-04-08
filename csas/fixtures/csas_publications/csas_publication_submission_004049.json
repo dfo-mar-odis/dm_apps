@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4049,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Peer Review of Snow Crab Stock in the Southern Gulf of St. Lawrence, Gulf Region; March 3-5, 2004",
+            "title_fr": "Compte rendu de l'examen par les pairs des stocks de crabe des neiges du sud du golfe du Saint-Laurent, Région du Golfe; du 3 au 5 mars 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Brêthes, J.C.",
+            "pub_num": "014",
+            "pages": 37,
+            "pdf_size": 293,
+            "description": ""
+        }
+    }
+]

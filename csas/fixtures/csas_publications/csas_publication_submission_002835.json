@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2835,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution and abundance of Atlantic cod from an acoustic survey of Bonavista Bay / Trinity Bay during the fall of 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Wheeler, J.P., Miller, D.S.",
+            "pub_num": "081",
+            "pages": 22,
+            "pdf_size": 2834,
+            "description": ""
+        }
+    }
+]

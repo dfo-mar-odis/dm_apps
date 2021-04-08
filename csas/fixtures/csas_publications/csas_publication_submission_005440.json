@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5440,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An acoustic-trawl survey of offshore over-wintering northern cod, February-March 2008",
+            "title_fr": "Relevé acoustique des voies migratoires hivernales de la morue franche, février et mars 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Mello, L.G.S., Rose, G.A.",
+            "pub_num": "099",
+            "pages": 31,
+            "pdf_size": 1435,
+            "description": ""
+        }
+    }
+]

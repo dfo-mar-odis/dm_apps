@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6018,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Revised population model for Atlantic cod (Gadus morhua) in the southern Gulf of St. Lawrence ",
+            "title_fr": "Révision d'un modèle de population de la morue franche (Gadus morhua) du sud du golfe du Saint-Laurent",
+            "pub_year": 2012,
+            "lead_author_2": "Doug Swain (Gulf)",
+            "pub_num": "034",
+            "pages": 42,
+            "pdf_size": 353,
+            "description": ""
+        }
+    }
+]

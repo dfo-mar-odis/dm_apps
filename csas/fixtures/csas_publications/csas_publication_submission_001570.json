@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1570,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "4Vn cod (May-December): Status review for 1984 fishing year",
+            "pub_year": 1985,
+            "lead_author_2": "S.J. Smith; A.F. Sinclair",
+            "pub_num": "063",
+            "pages": 28,
+            "pdf_size": 902,
+            "description": ""
+        }
+    }
+]

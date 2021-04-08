@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 172,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "An assessment of the status of harbour seals (Phoca vitulina) in British Columbia",
+            "pub_year": 1999,
+            "lead_author_2": "Olesiuk, P.",
+            "pub_num": "033",
+            "pages": 130,
+            "pdf_size": 17506,
+            "description": ""
+        }
+    }
+]

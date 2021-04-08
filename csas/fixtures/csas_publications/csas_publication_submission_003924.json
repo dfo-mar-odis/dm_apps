@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3924,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Analyses of juvenile surveys for recruitment prediction in the Strait of Georgia",
+            "title_fr": "Analyses de relevés du hareng juvénile pour prédire le recrutement dans le détroit de Georgia",
+            "pub_year": 2003,
+            "lead_author_2": "Hay, D.E., Schweigert, J.F., Thompson, M., Haegele, C.W. and Midgley, P.",
+            "pub_num": "107",
+            "pages": 32,
+            "pdf_size": 265,
+            "description": ""
+        }
+    }
+]

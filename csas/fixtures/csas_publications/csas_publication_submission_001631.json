@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1631,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scotia-Fundy shrimp stock status - 1985",
+            "pub_year": 1986,
+            "lead_author_2": "M.L. Etter; R.K. Mohn",
+            "pub_num": "014",
+            "pages": 23,
+            "pdf_size": 1058,
+            "description": ""
+        }
+    }
+]

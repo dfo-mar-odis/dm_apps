@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2842,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Decision rules for overwintering herring fisheries.",
+            "pub_year": 1997,
+            "lead_author_2": "Claytor, R.",
+            "pub_num": "088",
+            "pages": 16,
+            "pdf_size": 763,
+            "description": ""
+        }
+    }
+]

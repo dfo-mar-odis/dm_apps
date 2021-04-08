@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5927,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "A preliminary evaluation of the impacts of Grey Seal, (Halichoerus grypus), predation on the 4T ecosystem and possible effects of their removal on cod (Gadus morhua) recovery",
+            "title_fr": "Évaluation préliminaire des impacts de la prédation par le phoque gris, (Halichoerus grypus), sur l'écosystème 4T et des effets possible d'un abattage sur le rétablissement des stocks de morue (Gadus morhua)",
+            "pub_year": 2011,
+            "lead_author_2": "M. Hammill / L. Morissette",
+            "pub_num": "016",
+            "pages": 31,
+            "pdf_size": 4813,
+            "description": ""
+        }
+    }
+]

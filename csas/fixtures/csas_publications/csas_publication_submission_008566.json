@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8566,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Oceanographic Conditions in the Atlantic Zone in 2018",
+            "title_fr": "Conditions océanographiques dans la zone Atlantique en 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Peter Galbraith",
+            "pub_num": "034",
+            "pages": 34,
+            "pdf_size": 6820,
+            "description": ""
+        }
+    }
+]

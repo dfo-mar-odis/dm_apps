@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7234,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of Atlantic Salmon (Salmo salar) in Salmon Fishing Area 16 of the southern Gulf of St. Lawrence to 2013",
+            "title_fr": "Évaluation du saumon de l’Atlantique (Salmo salar) de la zone de pêche au saumon 16 du sud du golfe du Saint-Laurent, 2013",
+            "pub_year": 2015,
+            "lead_author_2": "Douglas, S.G., Chaput, G., Hayward, J., and Sheasgreen, J.",
+            "pub_num": "049",
+            "pages": 41,
+            "pdf_size": 2760,
+            "description": ""
+        }
+    }
+]

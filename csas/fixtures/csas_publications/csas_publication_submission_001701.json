@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1701,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Capelin in SA2 + Div. 3K",
+            "pub_year": 1987,
+            "lead_author_2": "J. Carscadden; D.S. Miller; B.S. Nakashima",
+            "pub_num": "012",
+            "pages": 37,
+            "pdf_size": 1635,
+            "description": ""
+        }
+    }
+]

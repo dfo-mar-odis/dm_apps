@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3610,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Scotian Shelf Cod",
+            "title_fr": "Morue de l'est du plateau néo-écossais",
+            "pub_year": 1998,
+            "lead_author_2": "L. Paul Fanning",
+            "pub_num": "A3-03",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

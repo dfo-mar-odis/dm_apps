@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6692,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Risk-based assessment of climate change impacts and risks on the biological systems and infrastructure within Fisheries and Oceans Canada's mandate - Atlantic Large Aquatic Basin",
+            "title_fr": "Évaluation fondée sur les risques des impacts et des menaces que les changements climatiques présentent pour l'infrastructure et les systèmes biologiques qui relèvent du mandat de Pêches et Océans Canada - Grand bassin aquatique de l'Atlantique",
+            "pub_year": 2012,
+            "pub_num": "044",
+            "pages": 40,
+            "pdf_size": 1082,
+            "description": ""
+        }
+    }
+]

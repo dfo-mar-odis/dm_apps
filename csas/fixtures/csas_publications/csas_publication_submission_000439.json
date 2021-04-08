@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 439,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A review of the Banquereau Bank fishery for Mactromeris polynyma for the 1986 to 1989 period",
+            "pub_year": 1990,
+            "lead_author_2": "D.L. Roddick; E. Kenchington",
+            "pub_num": "014",
+            "pages": 28,
+            "pdf_size": 1778,
+            "description": ""
+        }
+    }
+]

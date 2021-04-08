@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5490,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Regional Advisory Process on Stock Status and Catch Options for Spring and Fall Spawning Herring Components of NAFO Division 4T; March 9 and 10, 2010",
+            "title_fr": "Compte-rendu du processus de consultation régional sur l'État des Stocks et Niveaux d'Exploitation Potentiels des Harengs Reproducteurs de Printemps et d'Automne de la Zone 4T de l'OPANO; les 9 et 10 mars 2010",
+            "pub_year": 2010,
+            "lead_author_2": "R. Morin",
+            "pub_num": "043",
+            "pages": 26,
+            "pdf_size": 141,
+            "description": ""
+        }
+    }
+]

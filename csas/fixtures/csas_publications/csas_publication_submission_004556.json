@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4556,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Redfish Catch Results from Summer 2005 Survery in Unit 2",
+            "title_fr": "Résultats du relevé du sébaste effectué à l'été 2005 dans l'unité de gestion 2",
+            "pub_year": 2006,
+            "lead_author_2": "McClintock, J.",
+            "pub_num": "078",
+            "pages": 22,
+            "pdf_size": 1357,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7145,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Environmental Conditions in the Labrador Sea during 2013",
+            "title_fr": "Conditions environnementales de la mer du Labrador en 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Yashayaev, I., Head, E.J.H., Azetsu-Scott, K., Ringuette, M., Wang, Z., Anning, J., and Punshon, S.",
+            "pub_num": "105",
+            "pages": 40,
+            "pdf_size": 5517,
+            "description": ""
+        }
+    }
+]

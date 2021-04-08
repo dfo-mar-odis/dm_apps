@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 851,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "An outline of a method to back-calculate the mackerel spawning stock from egg abundance estimates",
+            "pub_year": 1979,
+            "lead_author_2": "J.J. Maguire",
+            "pub_num": "031",
+            "pages": 24,
+            "pdf_size": 1076,
+            "description": ""
+        }
+    }
+]

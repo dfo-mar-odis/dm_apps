@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1203,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Salmon-Capelin interactions here today gone tomorrow",
+            "pub_year": 1982,
+            "lead_author_2": "J.E. Carscadden; D.G. Reddin",
+            "pub_num": "023",
+            "pages": 10,
+            "pdf_size": 719,
+            "description": ""
+        }
+    }
+]

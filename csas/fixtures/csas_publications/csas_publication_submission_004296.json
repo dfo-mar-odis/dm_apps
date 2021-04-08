@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4296,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Estimates of a biologically-based spawning goal and biological benchmarks for the Canadian-origin Taku River Coho stock aggregate",
+            "title_fr": "Estimations d'un objectif de frai fondé sur des données biologiques et points de référence biologiques pour l'ensemble des stocks de saumon coho d'origine canadienne de la rivière Taku",
+            "pub_year": 2015,
+            "lead_author_2": "Jeffrey Lemieux",
+            "pub_num": "008",
+            "pages": 12,
+            "pdf_size": 272,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 410,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Abdomen width and carapace length, a maturity index for female lobsters, Homarus americanus",
+            "pub_year": 1980,
+            "lead_author_2": "S.L. Waddy; D.E. Aiken",
+            "pub_num": "044",
+            "pages": 11,
+            "pdf_size": 617,
+            "description": ""
+        }
+    }
+]

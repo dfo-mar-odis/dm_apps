@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6612,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Advice on taxonomic validity and designatable units of Shortjaw Cisco (Coregonus zenithicus) populations in Canada",
+            "title_fr": "Avis sur la validité de la taxonomie et les unités désignables des populations de cisco à mâchoires égales (Coregonus zenithicus) au Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Chantelle Sawatzky",
+            "pub_num": "044",
+            "pages": 15,
+            "pdf_size": 358,
+            "description": ""
+        }
+    }
+]

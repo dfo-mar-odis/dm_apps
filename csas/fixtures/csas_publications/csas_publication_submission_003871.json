@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3871,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Quality at landing in relation to gears used in the 3Pn,4R cod fishery, 2000-2002",
+            "title_fr": "Qualité au débarquement en fonction de l'engin utilisé dans la pêche à la morue de 3Pn, 4R de 2000 à 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Fréchet, A., Butler, R., Hussey, E., Kennedy, J., Rose, G., Réviseurs: Gillis, D., Gauthier, J.",
+            "pub_num": "066",
+            "pages": 14,
+            "pdf_size": 152,
+            "description": ""
+        }
+    }
+]

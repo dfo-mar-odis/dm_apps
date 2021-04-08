@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3489,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) populations in Crabbes and Robinsons Rivers, and Middle Barachois, Fischells and Flat Bay Brooks, Newfoundland, 2001",
+            "title_fr": "État des populations de saumon atlantique (Salmo salar L.) dans les rivières Crabbes et Robinsons ainsi que dans les ruisseaux Middle Barachois, Fischells et Flat Bay, à Terre-Neuve, en 2001",
+            "pub_year": 2002,
+            "lead_author_2": "Porter, T. R., G. Clarke, and J. Murray",
+            "pub_num": "029",
+            "pages": 39,
+            "pdf_size": 3128,
+            "description": ""
+        }
+    }
+]

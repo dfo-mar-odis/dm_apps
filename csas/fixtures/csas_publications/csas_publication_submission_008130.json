@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8130,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Updated herring spawning biomass estimates for German Bank and Scots Bay based on spawning ground turnover rates from tag returns",
+            "title_fr": "Mise à jour des estimations de la biomasse féconde pour le hareng du banc German et de la baie Scots selon les taux de renouvellement du hareng dans les frayères d’après les retours d’étiquettes",
+            "pub_year": 2020,
+            "lead_author_2": "Melvin, G.D., Singh, R, Martin, R., and Power, M.J.",
+            "pub_num": "008",
+            "pages": 28,
+            "pdf_size": 1442,
+            "description": ""
+        }
+    }
+]

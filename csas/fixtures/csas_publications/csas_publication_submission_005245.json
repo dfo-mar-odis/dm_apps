@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5245,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on Stimpson's Surfclam in the Quebec's inshore waters; January 30, 2009",
+            "title_fr": "Évaluation des stocks de mactre de Stimpson des eaux côtières du Québec; 30 janvier 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Gendron, L., Dubé, S.",
+            "pub_num": "010",
+            "pages": 14,
+            "description": ""
+        }
+    }
+]

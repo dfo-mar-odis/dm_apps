@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8209,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Fin whale continuous frequentation of St. Lawrence habitats detected from multi-year passive acoustic monitoring (PAM)",
+            "title_fr": "Fréquentations continues par les rorquals communs des habitats du Saint-Laurent détectées par la surveillance acoustique passive (SAP) pluriannuelle",
+            "pub_year": 2018,
+            "lead_author_2": "Nathalie Roy, Yvan Simard, Florian Aulanier and Samuel Giard",
+            "pub_num": "059",
+            "pages": 18,
+            "pdf_size": 1400,
+            "description": ""
+        }
+    }
+]

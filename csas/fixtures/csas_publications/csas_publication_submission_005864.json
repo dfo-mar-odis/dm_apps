@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5864,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the Assessment of Lumpfish in the Gulf of St. Lawrence (3Pn, 4RST); February 14, 2011",
+            "title_fr": "Processus consultatif scientifique régional sur l'évaluation de la lompe du golfe du Saint-Laurent (3Pn, 4RST) ; le 14 février 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "009",
+            "pages": 16,
+            "pdf_size": 81,
+            "description": ""
+        }
+    }
+]

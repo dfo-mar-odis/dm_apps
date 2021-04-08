@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7473,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Modelling walrus population dynamics: A direction for future assessments",
+            "title_fr": "Modélisation de la dynamique de population de morse : une voie pour les évaluations futures",
+            "pub_year": 2016,
+            "lead_author_2": "M.O. Hammill, T. Doniol-Valcroze, A.  Mosnier , J-F Gosselin",
+            "pub_num": "050",
+            "pages": 52,
+            "pdf_size": 1532,
+            "description": ""
+        }
+    }
+]

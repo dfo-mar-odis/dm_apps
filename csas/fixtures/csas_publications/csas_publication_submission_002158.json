@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2158,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Atlantic salmon (Salmo salar L.) target spawning requirement and status of the Rocky River stock 1983-1991",
+            "pub_year": 1992,
+            "lead_author_2": "C.E. Bourgeois; J.P. Davis; J. O'Brien",
+            "pub_num": "010",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

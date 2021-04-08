@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1948,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the Atlantic salmon population of Conne River, Newfoundland, in 1989",
+            "pub_year": 1989,
+            "lead_author_2": "J.B. Dempson",
+            "pub_num": "076",
+            "pages": 26,
+            "pdf_size": 1184,
+            "description": ""
+        }
+    }
+]

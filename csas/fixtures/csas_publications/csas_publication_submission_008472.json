@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8472,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Seasonal occurrence and distribution of four species of baleen whales vulnerable to ship strikes in the Saguenay-St. Lawrence Marine Park",
+            "lead_author_2": "Cristiane C. A. Martins, Samuel Turgeon, Robert Michaud and Nadia Ménard",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3527,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Oceanographic conditions in the Estuary and the Gulf of St. Lawrence during 2001 : zooplankton",
+            "title_fr": "Conditions océanographiques dans l'estuaire et le golfe du St-Laurent en 2001 : zooplancton",
+            "pub_year": 2002,
+            "lead_author_2": "M. Harvey, J.F. St-Pierre, Pierre Joly and / et G. Morrier",
+            "pub_num": "046",
+            "pages": 30,
+            "pdf_size": 405,
+            "description": ""
+        }
+    }
+]

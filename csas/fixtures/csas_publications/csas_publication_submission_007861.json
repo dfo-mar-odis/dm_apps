@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7861,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Assessment of Arctic Char (Salvelinus alpinus) in Naulinniarvik Lake, Nunavut",
+            "lead_author_2": "C. Lewis",
+            "description": ""
+        }
+    }
+]

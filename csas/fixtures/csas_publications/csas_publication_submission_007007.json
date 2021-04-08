@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7007,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the assessment of the southern Gulf of St. Lawrence snow crab resource in 2013 with advice for the 2014 fishery",
+            "lead_author_2": "Gérald Chaput",
+            "description": ""
+        }
+    }
+]

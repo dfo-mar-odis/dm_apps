@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 731,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Offshore herring biology and 2001 recruitment forecast for the West Coast Vancouver Island stock assessment region",
+            "pub_year": 2000,
+            "lead_author_2": "Tanasichuk, R.W.",
+            "pub_num": "146",
+            "pages": 29,
+            "pdf_size": 1495,
+            "description": ""
+        }
+    }
+]

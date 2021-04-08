@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5311,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Factors influencing the Effectiveness of Marine Mammal Observers on Seismic Vessels, with examples from the Canadian Beaufort Sea",
+            "title_fr": "Facteurs influençant l'efficacité des observateurs de mammifères marins sur les navires sismologiques, avec des exemples pour la mer de Beaufort canadienne",
+            "pub_year": 2009,
+            "lead_author_2": "Harwood, L.A., Joynt, A.",
+            "pub_num": "048",
+            "pages": 13,
+            "pdf_size": 73,
+            "description": ""
+        }
+    }
+]

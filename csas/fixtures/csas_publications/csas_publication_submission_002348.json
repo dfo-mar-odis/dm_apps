@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2348,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Population sizes of juvenile Atlantic salmon (Salmo salar L.) in lakes of the experimental ponds areas as a measure of stock recovery in the Gander River, Newfoundland",
+            "pub_year": 1994,
+            "lead_author_2": "P.M. Ryan; R. Knoechel; M.F. O'Connell",
+            "pub_num": "013",
+            "pages": 17,
+            "pdf_size": 745,
+            "description": ""
+        }
+    }
+]

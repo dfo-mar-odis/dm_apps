@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4815,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of Uncertainty in Fraser Sockeye (Oncorhynchus nerka) Wild Salmon Policy Status using Abundance and Trends in Abundance Metrics",
+            "title_fr": "Évaluation de l'incertitude de la situation de la Politique concernant le saumon sauvage à l'égard du saumon du Fraser (Oncorhynchus nerka) à l'aide de l'abondance et des tendances dans les paramètres d'abondance",
+            "pub_year": 2011,
+            "lead_author_2": "Grant, S.C.H. MacDonald, B.L. Cone, T.E. Holt, C.A. Cass, A. Porszt, E.J. Hume, J.M.B. & Pon, L.B.",
+            "pub_num": "087",
+            "pages": 191,
+            "pdf_size": 282,
+            "description": ""
+        }
+    }
+]

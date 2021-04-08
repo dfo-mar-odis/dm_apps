@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6747,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Assessment of Rock crab (Cancer irroratus) stock status in the coastal waters of Québec in 2012",
+            "title_fr": "Évaluation de l'état des stocks de crabe commun (Cancer irroratus) des eaux côtières du Québec en 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Gendron, L. et Savard, G",
+            "pub_num": "057",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1335,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon of the Stewiacke River, 1989",
+            "pub_year": 1990,
+            "lead_author_2": "P.G. Amiro",
+            "pub_num": "006",
+            "pages": 22,
+            "pdf_size": 1135,
+            "description": ""
+        }
+    }
+]

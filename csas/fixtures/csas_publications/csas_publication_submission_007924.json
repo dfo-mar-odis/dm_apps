@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7924,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "The Review of Methods for Measuring the Toxicity to Aquatic Organisms of the Water Accommodated Fraction (WAF) and Chemically-Enhanced Water Accommodated Fraction (CEWAF) of petroleum",
+            "lead_author_2": "Judith Leblanc",
+            "description": ""
+        }
+    }
+]

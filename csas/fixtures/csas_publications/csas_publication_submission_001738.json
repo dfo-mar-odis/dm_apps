@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1738,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Update of the Status of Redfish in NAFO Subarea 2 and Div. 3K",
+            "pub_year": 1987,
+            "lead_author_2": "D. Power; D.B. Atkinson",
+            "pub_num": "049",
+            "pages": 34,
+            "pdf_size": 1831,
+            "description": ""
+        }
+    }
+]

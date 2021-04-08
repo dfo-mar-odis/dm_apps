@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 93,
+        "fields": {
+            "series": 3,
+            "title_en": "Withdrawn",
+            "title_fr": "Retiré",
+            "pub_year": 1999,
+            "lead_author_2": "Harrell, R.",
+            "pub_num": "005",
+            "description": ""
+        }
+    }
+]

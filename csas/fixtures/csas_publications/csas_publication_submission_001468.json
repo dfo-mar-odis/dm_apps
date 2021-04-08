@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1468,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Quelques données sur le flétan du Groenland de 4RST",
+            "pub_year": 1984,
+            "lead_author_2": "A. Fréchet; G. Ouellet",
+            "pub_num": "062",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2072,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Striped bass (Morone saxatilis) from the Gulf of St. Lawrence",
+            "pub_year": 1990,
+            "lead_author_2": "G.J. Chaput; R.G. Randall",
+            "pub_num": "071",
+            "pages": 29,
+            "pdf_size": 1572,
+            "description": ""
+        }
+    }
+]

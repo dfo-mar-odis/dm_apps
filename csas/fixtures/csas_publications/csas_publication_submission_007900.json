@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7900,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update of 4VWX Herring",
+            "title_fr": "Mise à jour de l’état des stocks du hareng des divisions 4VWX",
+            "pub_year": 2017,
+            "lead_author_2": "R. Singh",
+            "pub_num": "037",
+            "pages": 14,
+            "pdf_size": 1897,
+            "description": ""
+        }
+    }
+]

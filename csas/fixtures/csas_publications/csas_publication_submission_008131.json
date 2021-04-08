@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8131,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Assessment Framework for 4X5Y Atlantic Cod: Part 1 – Review of Data Inputs, March 27-28, 2018",
+            "lead_author_2": "Jennifer Ford",
+            "description": ""
+        }
+    }
+]

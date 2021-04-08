@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8018,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Delineating Important Ecological Features of the Evangeline-Cape Blomidon-Minas Basin Ecologically and Biologically Significant Area (EBSA)",
+            "title_fr": "Délimitation des caractéristiques écologiques importantes de la zone d'importance écologique et biologique (ZIEB) Évangeline, cap Blomidon et bassin Minas",
+            "pub_year": 2018,
+            "lead_author_2": "Jennifer MacDonald",
+            "pub_num": "005",
+            "pages": 20,
+            "pdf_size": 542,
+            "description": ""
+        }
+    }
+]

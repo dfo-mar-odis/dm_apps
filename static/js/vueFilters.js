@@ -32,5 +32,10 @@ vueFiltersObject = {
   zero2NullMark: function (value) {
     if (!value || value === "0.00" || value == 0) return '---';
     return value
-  }
+  },
+  currencyFormat: function (value, precision = 2) {
+    if (value == null) return '';
+    value = accounting.formatNumber(value, precision);
+    return value
+  },
 }

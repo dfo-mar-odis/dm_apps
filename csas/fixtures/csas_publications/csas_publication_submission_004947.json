@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4947,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "On determining the Total Allowable Catch for Nunavut odontocete stocks",
+            "title_fr": "Sur la détermination des niveaux de capture totale permissibles des stocks d'odontocètes du Nunavut",
+            "pub_year": 2008,
+            "lead_author_2": "Richard, P.R.",
+            "pub_num": "022",
+            "pages": 16,
+            "pdf_size": 278,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6470,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Analytical assessment of Atlantic mackerel (Scomber scombrus L.) in NAFO Subareas 3 and 4 in 2011",
+            "title_fr": "Évaluation analytique du maquereau bleu (Scomber scombrus L.) des sous-régions 3-4 de l'OPANO en 2011",
+            "pub_year": 2013,
+            "lead_author_2": "Grégoire, F., Girard, L., et Beaulieu, J.-L.",
+            "pub_num": "137",
+            "pages": 36,
+            "pdf_size": 1273,
+            "description": ""
+        }
+    }
+]

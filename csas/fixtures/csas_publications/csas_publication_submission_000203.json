@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 203,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Use of triploid Atlantic salmon (Salmo salar) for aquaculture",
+            "pub_year": 1998,
+            "lead_author_2": "Benfey, T.",
+            "pub_num": "166",
+            "description": ""
+        }
+    }
+]

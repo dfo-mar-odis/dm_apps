@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8744,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Assessment of the stock delineation of the Baffin Bay narwhal (Monodon Monoceros) population",
+            "pub_year": 2020,
+            "lead_author_2": "Marcoux et al",
+            "pub_num": "067",
+            "description": ""
+        }
+    }
+]

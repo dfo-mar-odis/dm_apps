@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4318,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Second meeting of the Canadian Eel Science Working Group; 24-25 January 2005",
+            "title_fr": "Deuxième réunion du Groupe canadien de travail scientifique sur l'anguille; les 24 et 25 janvier 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Cairns, D., Casselman, J.",
+            "pub_num": "013",
+            "pages": 55,
+            "pdf_size": 341,
+            "description": ""
+        }
+    }
+]

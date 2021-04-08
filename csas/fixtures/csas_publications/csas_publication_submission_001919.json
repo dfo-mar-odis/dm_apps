@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1919,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Atlantic cod stock on Georges Bank in unit areas 5Zj and 5Zm 1978-88",
+            "pub_year": 1989,
+            "lead_author_2": "J.J. Hunt",
+            "pub_num": "047",
+            "pages": 26,
+            "pdf_size": 1514,
+            "description": ""
+        }
+    }
+]

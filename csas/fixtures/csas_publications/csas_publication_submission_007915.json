@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7915,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Fish Production Metrics From A Nursery Area In The Marine Coastal Zone Of Newfoundland",
+            "lead_author_2": "Robert S. Gregory",
+            "description": ""
+        }
+    }
+]

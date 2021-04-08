@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5787,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Assessment of Inshore Shrimp Stocks Along the Coast of British Columbia",
+            "title_fr": "Évaluation des stocks de crevettes le long de la côte de la Colombie-Britannique",
+            "pub_year": 2010,
+            "lead_author_2": "Dennis, Rutherford",
+            "pub_num": "079",
+            "pages": 12,
+            "pdf_size": 358,
+            "description": ""
+        }
+    }
+]

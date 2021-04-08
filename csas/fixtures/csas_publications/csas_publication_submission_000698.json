@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 698,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Saturation Index for longlines and gill nets in Sentinel Fisheries of cod in the Northern GSL",
+            "title_fr": "Indice de saturation de la palangre et du filet maillant dans les relevés des Pêches Sentinelles à la morue dans le nord du golfe du Saint-Laurent",
+            "pub_year": 2000,
+            "lead_author_2": "Brulotte, S., Fréchet, A.",
+            "pub_num": "118",
+            "pages": 34,
+            "pdf_size": 248,
+            "description": ""
+        }
+    }
+]

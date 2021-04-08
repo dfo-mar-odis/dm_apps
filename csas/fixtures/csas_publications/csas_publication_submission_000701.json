@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 701,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Forecast for northern British Columbia coho salmon in 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Holtby, B., Finnegan, B., Spilsted, B.",
+            "pub_num": "128",
+            "pages": 74,
+            "pdf_size": 531,
+            "description": ""
+        }
+    }
+]

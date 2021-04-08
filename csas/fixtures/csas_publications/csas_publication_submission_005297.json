@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5297,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An Assessment of the Eastern Scotian Shelf Shrimp Stock and Fishery in 2008 with an Outlook for 2009",
+            "title_fr": "Évaluation du stock et de la pêche en 2008 pour la crevette de l'est du plateau néo-écossais et perspectives pour 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Koeller, P., Covey, M., King, M.",
+            "pub_num": "030",
+            "pages": 52,
+            "pdf_size": 1201,
+            "description": ""
+        }
+    }
+]

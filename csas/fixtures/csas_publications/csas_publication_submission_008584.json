@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8584,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "An interim summary of north Atlantic right and blue whale calls detected recently in Newfoundland and Labrador",
+            "lead_author_2": "JF Lawson, L Sheppard, K Morissey, and Victoria Healy",
+            "description": ""
+        }
+    }
+]

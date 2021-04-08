@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8425,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review for the Development of a new Precautionary Approach Framework for Northern Shrimp in the Newfoundland and Labrador Region",
+            "lead_author_2": "P. Upward",
+            "description": ""
+        }
+    }
+]

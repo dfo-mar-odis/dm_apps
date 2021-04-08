@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5666,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Status of Division 4X5Y Haddock in 2009",
+            "title_fr": "Évaluation de l'état du stock d'aiglefin des divisions 4X5Y en 2009",
+            "pub_year": 2010,
+            "lead_author_2": "R.K. Mohn, M.K. Trzcinski, G.A.P. Black, S. Armsworthy, G.A. Young, P.A. Comeau, C.E. den Heyer",
+            "pub_num": "085",
+            "pages": 67,
+            "pdf_size": 575,
+            "description": ""
+        }
+    }
+]

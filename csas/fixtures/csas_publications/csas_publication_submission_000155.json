@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 155,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Evaluation of the possibility for effort increase in eastern Nova Scotia snow crab fishing Areas 23 and 24",
+            "pub_year": 1998,
+            "lead_author_2": "M. Biron, E. Wade, M. Moriyasu",
+            "pub_num": "129",
+            "pages": 20,
+            "pdf_size": 1673,
+            "description": ""
+        }
+    }
+]

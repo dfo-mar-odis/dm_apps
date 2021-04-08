@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7712,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Recovery potential assessment of the Gulf of St. Lawrence Designatable Unit of Winter Skate (Leucoraja ocellata Mitchill), January 2016",
+            "title_fr": "Évaluation du potentiel de rétablissement de la raie tachetée (Leucoraja ocellata Mitchill) de l'unité désignable du golfe du Saint-Laurent, janvier 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Swain, D.P. and Benoît, H.P.",
+            "pub_num": "119",
+            "pages": 149,
+            "pdf_size": 10156,
+            "description": ""
+        }
+    }
+]

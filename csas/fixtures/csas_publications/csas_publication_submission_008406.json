@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8406,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Compilation and review of monitoring activities in Basin Head Marine Protected Area in the context of their effectiveness in evaluating attainment of conservation objectives",
+            "lead_author_2": "Venitia Joseph",
+            "description": ""
+        }
+    }
+]

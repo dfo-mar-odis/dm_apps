@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5636,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Effects of pH, Temperature and Salinity on Age 0+ Atlantic Whitefish (Coregonus huntsmani) with Implications for Recovery Potential",
+            "title_fr": "Effets du pH, de la température et de la salinité de l'eau sur le corégone de l'Atlantique (Coregonus huntsmani) d'âge 0+ et incidences sur le potentiel de rétablissement",
+            "pub_year": 2010,
+            "lead_author_2": "A.M. Cook, R. Bradford, B. Hubley, and P. Bentzen",
+            "pub_num": "055",
+            "pages": 53,
+            "pdf_size": 626,
+            "description": ""
+        }
+    }
+]

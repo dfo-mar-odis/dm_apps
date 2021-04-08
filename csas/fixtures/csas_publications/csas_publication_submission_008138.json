@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8138,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of an Integrated Ecosystem Assessment Framework for Assessing the Proposed St. Anns Bank Marine Protected Area (MPA), Scotian Shelf; March 29-30, 2016",
+            "title_fr": "Compte rendu de la réunion d'examen par les pairs du cadre d'évaluation intégrée des écosystèmes aux fins d'évaluation de la zone de protection marine (ZPM) du banc de Sainte-Anne proposée sur le plateau néo-écossais; du 29 au 30 mars, 2016",
+            "pub_year": 2018,
+            "lead_author_2": "Tana Worcester",
+            "pub_num": "021",
+            "pages": 25,
+            "pdf_size": 463,
+            "description": ""
+        }
+    }
+]

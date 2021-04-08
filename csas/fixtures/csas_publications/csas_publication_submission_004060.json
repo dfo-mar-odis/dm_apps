@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4060,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Groundfish Subcommittee Meeting; May 18, 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Romaine, S.",
+            "pub_num": "015",
+            "pages": 21,
+            "pdf_size": 76,
+            "description": ""
+        }
+    }
+]

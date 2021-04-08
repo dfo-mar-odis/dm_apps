@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1567,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Capelin acoustic biomass survey of NAFO Division 2J3K September 29 - October 22, 1984",
+            "pub_year": 1985,
+            "lead_author_2": "D.S. Miller; J.E. Carscadden",
+            "pub_num": "060",
+            "pages": 8,
+            "pdf_size": 399,
+            "description": ""
+        }
+    }
+]

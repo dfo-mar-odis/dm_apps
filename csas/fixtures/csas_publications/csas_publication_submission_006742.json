@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6742,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "The Saguenay Fjord winter recreational groundfish fishery, 2011-2012",
+            "title_fr": "La pêche récréative hivernale au poisson de fond dans le fjord du Saguenay, 2011-2012",
+            "pub_year": 2012,
+            "lead_author_2": "Johanne Gauthier",
+            "pub_num": "079",
+            "pages": 15,
+            "pdf_size": 291,
+            "description": ""
+        }
+    }
+]

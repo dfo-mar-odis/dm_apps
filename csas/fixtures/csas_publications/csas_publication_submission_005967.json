@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5967,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Evaluation of the Pipelines and Associated Watercourse Crossings Fisheries Self-Assessment Tool",
+            "title_fr": "Évaluation de l'outil d'autoévaluation des traversées, par des pipelines, de cours d'eau où vivent des poissons visés par une pêche",
+            "pub_year": 2017,
+            "lead_author_2": "Sophie Foster and Mike Stoneman",
+            "pub_num": "007",
+            "pages": 17,
+            "pdf_size": 343,
+            "description": ""
+        }
+    }
+]

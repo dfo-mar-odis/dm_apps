@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1182,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status and assessment of the Iceland scallop, Chlamys islandica, in the northeastern Gulf of St. Lawrence",
+            "pub_year": 1982,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill; D.B. Lewis",
+            "pub_num": "002",
+            "pages": 66,
+            "pdf_size": 2722,
+            "description": ""
+        }
+    }
+]

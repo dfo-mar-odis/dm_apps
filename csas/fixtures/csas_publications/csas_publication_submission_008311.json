@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8311,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Zonal Peer Review for the Assessment of Northern Shrimp in Shrimp Fish",
+            "lead_author_2": "E. Parrill",
+            "description": ""
+        }
+    }
+]

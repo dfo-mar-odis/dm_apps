@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1938,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Female size-maturity relationships for offshore lobsters (Homarus americanus)",
+            "pub_year": 1989,
+            "lead_author_2": "D.S. Pezzack; D.R. Duggan",
+            "pub_num": "066",
+            "pages": 9,
+            "pdf_size": 699,
+            "description": ""
+        }
+    }
+]

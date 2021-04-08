@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1403,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Lecture comparative d'otolithes de hareng et utilisation des stades de maturité sexuelle pour l'attribution du groupe reproducteur",
+            "pub_year": 1983,
+            "lead_author_2": "L. Savard; M. Simoneau",
+            "pub_num": "086",
+            "description": ""
+        }
+    }
+]

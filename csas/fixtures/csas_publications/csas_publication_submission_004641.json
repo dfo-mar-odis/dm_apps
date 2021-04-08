@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4641,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "QBRAT v2 assessment: Codium fragile ssp. tomentosoides in the Gulf of St. Lawrence as a case study",
+            "title_fr": "Évaluation de QBRAT v2 : étude de cas pour Codium fragile ssp. tomentosoides dans le golfe du Saint-Laurent",
+            "pub_year": 2007,
+            "lead_author_2": "Drouin, A., C.W. McKindsey.",
+            "pub_num": "007",
+            "pages": 32,
+            "description": ""
+        }
+    }
+]

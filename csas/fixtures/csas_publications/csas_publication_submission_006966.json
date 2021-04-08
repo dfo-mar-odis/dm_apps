@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6966,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "West Coast Vancouver Island Chinook Salmon Escapement Estimation and Stock Aggregation Procedures",
+            "title_fr": "Procédures d'estimation des échappées de saumon quinnat de la côte ouest de l'île de Vancouver et de regroupement des stocks",
+            "pub_year": 2014,
+            "lead_author_2": "Diana Dobson",
+            "pub_num": "038",
+            "description": ""
+        }
+    }
+]

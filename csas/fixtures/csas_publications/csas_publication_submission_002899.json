@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2899,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Hecate Strait Pacific cod stock assessments for 1997 and recommended yield options for 1998.",
+            "pub_year": 1997,
+            "lead_author_2": "Haist, V., Fournier, D.",
+            "pub_num": "145",
+            "pages": 42,
+            "pdf_size": 2034,
+            "description": ""
+        }
+    }
+]

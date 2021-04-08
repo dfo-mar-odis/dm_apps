@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6589,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Science Guidance on how to Achieve Representativity in the Design of Marine Protected Area Networks",
+            "title_fr": "Lignes directrices scientifiques sur la manière d'assurer la représentativité dans la conception des réseaux d'aires marines protégées",
+            "pub_year": 2012,
+            "lead_author_2": "Eddy Kennedy",
+            "pub_num": "083",
+            "pages": 11,
+            "pdf_size": 180,
+            "description": ""
+        }
+    }
+]

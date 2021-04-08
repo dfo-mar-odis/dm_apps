@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3596,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Neon Flying Squid",
+            "pub_year": 1999,
+            "lead_author_2": "Graham E. Gillespie",
+            "pub_num": "C6-12",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

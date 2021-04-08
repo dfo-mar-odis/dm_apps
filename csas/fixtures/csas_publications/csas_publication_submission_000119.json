@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 119,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Estimating the percentage of hatchery-reared juvenile coho salmon in the Strait of Georgia in 1997",
+            "pub_year": 1998,
+            "lead_author_2": "R.J. Beamish, R. Sweeting, Z. Zhang",
+            "pub_num": "093",
+            "description": ""
+        }
+    }
+]

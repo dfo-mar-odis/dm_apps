@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7404,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Fishing Area 29: Stock Status and Update for 2015",
+            "title_fr": "Zone de pêche du pétoncle 29 : État du stock et mise au point pour 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Sameoto, J.A., Smith, S.J., Nasmith, L.E., Glass, A. and Denton, C.",
+            "pub_num": "067",
+            "pages": 74,
+            "pdf_size": 3030,
+            "description": ""
+        }
+    }
+]

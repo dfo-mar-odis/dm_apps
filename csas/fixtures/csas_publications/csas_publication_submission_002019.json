@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2019,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of site selection methodologies for use in marine protected area network design",
+            "title_fr": "Évaluation des méthodes de choix de sites pour la conception du réseau de zones de protection marines",
+            "pub_year": 2004,
+            "lead_author_2": "Evans, S.M.J., G. Jamieson, J. Ardron, M. Patterson, S. Jessen.",
+            "pub_num": "082",
+            "pages": 48,
+            "pdf_size": 523,
+            "description": ""
+        }
+    }
+]

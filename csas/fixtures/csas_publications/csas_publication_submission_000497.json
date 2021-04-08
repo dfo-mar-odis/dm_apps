@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 497,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status of the Olympia Oyster, Ostrea conchaphila, in Canada",
+            "pub_year": 1999,
+            "lead_author_2": "Gillespie, G.E.",
+            "pub_num": "150",
+            "pages": 36,
+            "pdf_size": 166,
+            "description": ""
+        }
+    }
+]

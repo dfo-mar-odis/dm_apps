@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 852,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution and movements of herring in the Bay of Fundy from juvenile surveys",
+            "pub_year": 1979,
+            "lead_author_2": "Koeller, P.A.",
+            "pub_num": "032",
+            "pages": 16,
+            "pdf_size": 759,
+            "description": ""
+        }
+    }
+]

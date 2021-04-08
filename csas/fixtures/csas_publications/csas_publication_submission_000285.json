@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 285,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Aerial photographic measurement of Atlantic salmon habitat of the Miramichi River, New Brunswick",
+            "pub_year": 1983,
+            "lead_author_2": "P.G. Amiro",
+            "pub_num": "074",
+            "pages": 31,
+            "pdf_size": 1352,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3833,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Feasibility of Multispecies Groundfish Bottom Trawl Surveys on the BC Coast",
+            "title_fr": "Faisabilité d'un relevé au chalut de plusieurs espèces de poisson de fond le long de la côte de la Colombie-Britannique",
+            "pub_year": 2003,
+            "lead_author_2": "Sinclair, A., Schnute, J., Haigh, R., Starr, P., Stanley, R., Fargo, J., Workman, G.",
+            "pub_num": "049",
+            "pages": 40,
+            "pdf_size": 2077,
+            "description": ""
+        }
+    }
+]

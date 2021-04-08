@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2113,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the 1990 cod fishery in 4X",
+            "pub_year": 1991,
+            "lead_author_2": "S. Campana; J. Hamel",
+            "pub_num": "048",
+            "pages": 48,
+            "pdf_size": 2178,
+            "description": ""
+        }
+    }
+]

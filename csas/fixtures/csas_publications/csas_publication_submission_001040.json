@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1040,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Newfoundland 2000 Shellfish RAP Proceedings; February 29 to March 2, 2000",
+            "pub_year": 2001,
+            "lead_author_2": "Ennis, G.P.",
+            "pub_num": "002",
+            "pages": 29,
+            "description": ""
+        }
+    }
+]

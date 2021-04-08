@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5251,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on Snow Crab in the Estuary and Northern Gulf of St-Lawrence; February 2 to 4, 2009",
+            "title_fr": "Évaluation des stocks de crabe des neiges de l'estuaire et du nord du golfe du Saint-Laurent; 2 au 4 février 2009",
+            "pub_year": 2009,
+            "lead_author_2": "J.-J. Maguire, S. Dubé",
+            "pub_num": "016",
+            "pages": 29,
+            "description": ""
+        }
+    }
+]

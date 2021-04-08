@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8587,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the zonal peer review of the Twenty-second Annual Meeting of the Atlantic Zone Monitoring Program (AZMP)",
+            "title_fr": "Compte rendu de l’évaluation zonale par des pairs de la Vingt-deuxième réunion annuelle du Programme de monitorage de la zone Atlantique (PMZA)",
+            "pub_year": 2020,
+            "lead_author_2": "Peter Galbraith",
+            "pub_num": "019",
+            "pages": 13,
+            "pdf_size": 310,
+            "description": ""
+        }
+    }
+]

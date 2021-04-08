@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8762,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Stock-wide assessment framework for American eel: review of trends and approaches to assessment",
+            "lead_author_2": "Cornic M., Zhu X., Cairns D.K.",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2589,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Comparison of research survey population estimates of cod in 4T, 4Vn and 4Vs",
+            "pub_year": 1996,
+            "lead_author_2": "A. F. Sinclair",
+            "pub_num": "042",
+            "pages": 20,
+            "pdf_size": 1052,
+            "description": ""
+        }
+    }
+]

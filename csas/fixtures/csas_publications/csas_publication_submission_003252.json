@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3252,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Updates on Selected Scotian Shelf Groundfish Stocks in 2001",
+            "title_fr": "Mises à jour de l'état de certains stocks de poisson de fond du plateau néo-écossais en 2001",
+            "pub_year": 2001,
+            "lead_author_2": "Hurley, P., Neilson, J., Showell, M., Branton, R., McRuer, J., Fowler, M., Comeau, P., Beanlands, D., Simon, J.",
+            "pub_num": "A3-35",
+            "pages": 49,
+            "description": ""
+        }
+    }
+]

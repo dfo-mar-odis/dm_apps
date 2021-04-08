@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4874,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Determination of Geoduck Harvest Rates Using Age-structured Projection Modelling",
+            "title_fr": "Détermination des taux de capture de la panope du Pacifique à l'aide d'un modèle de projection structuré en fonction de l'âge",
+            "pub_year": 2007,
+            "lead_author_2": "Zhang, Z., C. Hand.",
+            "pub_num": "064",
+            "pages": 51,
+            "pdf_size": 627,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4827,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock Assessment for the inside population of Yelloweye Rockfish (Sebastes ruberrimus) In British Columbia, Canada for 2010",
+            "title_fr": "Évaluation du stock de sébastes aux yeux jaunes (sebastes reberrimus) des eaux intérieures de la Colombie-Britannique, au Canada, 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Kae Lynne Yamanaka",
+            "pub_num": "084",
+            "pages": 13,
+            "pdf_size": 187,
+            "description": ""
+        }
+    }
+]

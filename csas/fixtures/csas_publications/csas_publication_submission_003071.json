@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3071,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Snow Crab of the Estuary and Northern Gulf of St. Lawrence (Areas 13 to 17)",
+            "title_fr": "Crabe des neiges de l'estuaire et du nord du golfe du Saint-Laurent",
+            "pub_year": 1998,
+            "lead_author_2": "Réjean Dufour, Bernard Sainte-Marie",
+            "pub_num": "C4-01",
+            "pages": 13,
+            "pdf_size": 240,
+            "description": ""
+        }
+    }
+]

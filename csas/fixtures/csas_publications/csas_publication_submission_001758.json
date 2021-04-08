@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1758,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Revisions to the 4R herring catch-at-age matrices",
+            "pub_year": 1987,
+            "lead_author_2": "I.H. McQuinn",
+            "pub_num": "068",
+            "pages": 24,
+            "pdf_size": 1214,
+            "description": ""
+        }
+    }
+]

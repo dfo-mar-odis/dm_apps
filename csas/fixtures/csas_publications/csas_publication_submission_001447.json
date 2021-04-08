@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1447,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results of comparative fishing between the A.T. Cameron and the Wilfred Templeman during July - August 1983",
+            "pub_year": 1984,
+            "lead_author_2": "S. Gavaris; W.B. Brodie",
+            "pub_num": "041",
+            "pages": 16,
+            "pdf_size": 809,
+            "description": ""
+        }
+    }
+]

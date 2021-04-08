@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5212,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Southwest New Brunswick Sea Cucumber (Cucumaria frondosa) Exploratory Fishery Assessment",
+            "title_fr": "Évaluation de la pêche exploratoire de l'holothurie (Cucumaria frondosa) dans le sud-ouest du Nouveau-Brunswick",
+            "pub_year": 2009,
+            "lead_author_2": "S. Rowe",
+            "pub_num": "014",
+            "pages": 13,
+            "pdf_size": 186,
+            "description": ""
+        }
+    }
+]

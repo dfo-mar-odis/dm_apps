@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5721,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 2],
+            "title_en": "Management strategy evaluation of cod recovery: capturing uncertainty in cod dynamics and grey seal predation (WP28)",
+            "lead_author_2": "Mohn, R. K.",
+            "description": ""
+        }
+    }
+]

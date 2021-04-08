@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7206,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Pollock (Pollachius virens) in NAFO Subdivision 3Ps",
+            "title_fr": "La goberge (Pollachius virens) dans la sous-division 3Ps de l'OPANO",
+            "pub_year": 2015,
+            "lead_author_2": "Lee, E. M., Rideout, R., Ings, D.",
+            "pub_num": "016",
+            "pages": 24,
+            "pdf_size": 1642,
+            "description": ""
+        }
+    }
+]

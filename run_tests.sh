@@ -171,3 +171,33 @@ printf "########################################################################
 printf "\n"
 python3.8 manage.py test -b publications.test
 echo "FINISHED RUNNING TESTS FOR: publications"
+
+
+
+printf "\n"
+printf "\n"
+printf "\n"
+printf "\n"
+printf "#############################################################################################################################"
+printf "\n"
+echo "RUNNING TESTS FOR: eDNA"
+printf "\n"
+printf "#############################################################################################################################"
+printf "\n"
+python3.8 manage.py test -b edna.test
+echo "FINISHED RUNNING TESTS FOR: eDNA"
+
+
+
+printf "\n"
+printf "\n"
+printf "\n"
+printf "\n"
+printf "#############################################################################################################################"
+printf "\n"
+echo "RUNNING TESTS FOR: fisheriescape"
+printf "\n"
+printf "#############################################################################################################################"
+printf "\n"
+python3.8 manage.py test -b fisheriescape.test
+echo "FINISHED RUNNING TESTS FOR: fisheriescape"

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5785,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Assessment update of Manila Clams in Area 7 of the Central Coast of British Columbia and Evaluation of the Manila Clam Fisheries Management Strategy",
+            "title_fr": "Mise à jour de l'évaluation des stocks de palourde japonaise dans le secteur 7 de la côte centrale de la Colombie-Britannique et évaluation de la stratégie de gestion de la pêche à la palourde japonaise",
+            "pub_year": 2010,
+            "lead_author_2": "Tammy, Norgaard",
+            "pub_num": "077",
+            "pages": 9,
+            "pdf_size": 231,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2584,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A preliminary look at conservation factors for the offshore clam fishery",
+            "pub_year": 1996,
+            "lead_author_2": "D. Roddick",
+            "pub_num": "037",
+            "pages": 8,
+            "pdf_size": 414,
+            "description": ""
+        }
+    }
+]

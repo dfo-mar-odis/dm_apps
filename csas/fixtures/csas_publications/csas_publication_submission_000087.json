@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 87,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A review of the biology and fisheries of horse clams (Tresus capax and Tresus nuttallii)",
+            "pub_year": 1998,
+            "lead_author_2": "R. B. Lauzier, C. M. Hand, A. Campbell, S.Heizer",
+            "pub_num": "088",
+            "description": ""
+        }
+    }
+]

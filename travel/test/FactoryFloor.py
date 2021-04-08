@@ -48,6 +48,7 @@ class TripFactory(factory.django.DjangoModelFactory):
     trip_subcategory = factory.lazy_attribute(lambda o: models.TripSubcategory.objects.all()[faker.random_int(0, models.TripSubcategory.objects.count() - 1)])
     name = factory.lazy_attribute(lambda o: faker.catch_phrase())
     location = factory.lazy_attribute(lambda o: faker.catch_phrase())
+    is_adm_approval_required = factory.lazy_attribute(lambda o: faker.pybool())
     start_date = factory.lazy_attribute(lambda o: faker.date_time_this_year(tzinfo=timezone.get_current_timezone()))
     end_date = factory.lazy_attribute(lambda o: o.start_date + datetime.timedelta(days=faker.random_int(1, 10)))
     lead = factory.SubFactory(RegionFactory)
@@ -84,6 +85,7 @@ class TripRequestFactory(factory.django.DjangoModelFactory):
             'trip': TripFactory().id,
             "section": SectionFactory().id,
             "created_by": UserFactory().id,
+            "late_justification": faker.text()
         }
         return valid_data
 
@@ -126,7 +128,7 @@ class ReviewerFactory(factory.django.DjangoModelFactory):
     user = factory.SubFactory(UserFactory)
     role = factory.lazy_attribute(lambda o: models.Reviewer.role_choices[faker.random_int(0, len(models.Reviewer.role_choices) - 1)][0])
     status = factory.lazy_attribute(lambda o: models.Reviewer.status_choices[faker.random_int(0, len(models.Reviewer.status_choices) - 1)][0])
-    order = factory.lazy_attribute(lambda o: faker.pyint(1,10))
+    order = factory.lazy_attribute(lambda o: faker.pyint(1, 10))
 
     @staticmethod
     def get_valid_data():
@@ -135,6 +137,7 @@ class ReviewerFactory(factory.django.DjangoModelFactory):
             'user': UserFactory().id,
             'role': models.Reviewer.role_choices[faker.random_int(0, len(models.Reviewer.role_choices) - 1)][0],
             'status': models.Reviewer.status_choices[faker.random_int(0, len(models.Reviewer.status_choices) - 1)][0],
+            'order': faker.pyint(1, 10),
         }
 
 
@@ -144,12 +147,18 @@ class TripReviewerFactory(factory.django.DjangoModelFactory):
 
     trip = factory.SubFactory(TripFactory)
     role = factory.lazy_attribute(lambda o: models.TripReviewer.role_choices[faker.random_int(0, len(models.TripReviewer.role_choices) - 1)][0])
+    status = factory.lazy_attribute(lambda o: models.TripReviewer.status_choices[faker.random_int(0, len(models.TripReviewer.status_choices) - 1)][0])
     user = factory.SubFactory(UserFactory)
+    order = factory.lazy_attribute(lambda o: faker.pyint(1, 10))
 
     @staticmethod
     def get_valid_data():
         return {
-            'comments': faker.catch_phrase(),
+            'trip': TripFactory().id,
+            'user': UserFactory().id,
+            'role': models.TripReviewer.role_choices[faker.random_int(0, len(models.TripReviewer.role_choices) - 1)][0],
+            'status': models.TripReviewer.status_choices[faker.random_int(0, len(models.TripReviewer.status_choices) - 1)][0],
+            'order': faker.pyint(1, 10),
         }
 
 
@@ -157,5 +166,91 @@ class FileFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = models.File
 
-    trip_request = factory.SubFactory(TripRequestFactory)
-    name = factory.lazy_attribute(lambda o: faker.word())
+    request = factory.SubFactory(TripRequestFactory)
+    name = factory.lazy_attribute(lambda o: faker.catch_phrase())
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'request': TripRequestFactory().id,
+            'name': faker.catch_phrase(),
+        }
+
+
+class ProcessStepFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.ProcessStep
+
+    name = factory.lazy_attribute(lambda o: faker.catch_phrase())
+    description_en = factory.lazy_attribute(lambda o: faker.text())
+    stage = factory.lazy_attribute(lambda o: faker.pyint(0, 2))
+    is_visible = factory.lazy_attribute(lambda o: faker.pybool())
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'name': faker.catch_phrase(),
+            'description_en': faker.text(),
+            'stage': faker.pyint(1, 100),
+            'is_visible': faker.pybool(),
+        }
+
+
+class FAQFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.FAQ
+
+    question_en = factory.lazy_attribute(lambda o: faker.text())
+    answer_en = factory.lazy_attribute(lambda o: faker.text())
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'question_en': faker.text(),
+            'answer_en': faker.text(),
+        }
+
+
+class RoleFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.Role
+
+    name = factory.lazy_attribute(lambda o: faker.catch_phrase())
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'name': faker.catch_phrase(),
+        }
+
+
+class TravellerCostFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.TravellerCost
+
+    traveller = factory.SubFactory(TravellerFactory)
+    cost = factory.lazy_attribute(lambda o: models.Cost.objects.all()[faker.random_int(0, models.Cost.objects.count() - 1)])
+    amount_cad = factory.lazy_attribute(lambda o: faker.pyint(1000, 5000))
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'traveller': TravellerFactory().id,
+            'cost': models.Cost.objects.all()[faker.random_int(0, models.Cost.objects.count() - 1)].id,
+            'amount_cad': faker.pyint(1000, 5000),
+        }
+
+
+class HelpTextFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = models.HelpText
+
+    field_name = factory.lazy_attribute(lambda o: faker.word())
+    eng_text = factory.lazy_attribute(lambda o: faker.text())
+
+    @staticmethod
+    def get_valid_data():
+        return {
+            'field_name': faker.word(),
+            'eng_text': faker.text(),
+        }

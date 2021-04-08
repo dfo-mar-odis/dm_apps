@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6037,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Western Component (4Xopqrs5) Pollock Management Strategy Evaluation",
+            "title_fr": "Évaluation de la stratégie de gestion de la goberge de la composante Ouest (4Xopqrs5)",
+            "pub_year": 2011,
+            "lead_author_2": "Heath Stone and Stephan Leslie",
+            "pub_num": "054",
+            "pages": 15,
+            "pdf_size": 520,
+            "description": ""
+        }
+    }
+]

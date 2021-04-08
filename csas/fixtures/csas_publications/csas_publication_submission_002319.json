@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2319,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "New estimates of commercial harvest and by-catch of Saint John River Atlantic salmon, 1981-1983",
+            "pub_year": 1993,
+            "lead_author_2": "T.L. Marshall",
+            "pub_num": "046",
+            "pages": 10,
+            "pdf_size": 812,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2509,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Spatial and temporal variation in cod length frequencies and length at 50% maturity in divisions 3Pn, 4Rs and 3Ps.",
+            "title_fr": "Variation spatiale et temporelle des fréquences-longueurs et de la longueur a 50% de maturité des morues dans les divisions 3Pn, 4RS et 3Ps.",
+            "pub_year": 1995,
+            "lead_author_2": "C. Rollet; J-C Brêthes; A. Fréchet",
+            "pub_num": "103",
+            "pages": 17,
+            "pdf_size": 1011,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3244,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Southern Gulf Soft Shell Clam",
+            "title_fr": "Mye du sud du golfe",
+            "pub_year": 1996,
+            "lead_author_2": "Thomas Landry",
+            "pub_num": "101",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

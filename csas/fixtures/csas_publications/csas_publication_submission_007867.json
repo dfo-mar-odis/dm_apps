@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7867,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of a Stock Framework for 4X5Y Haddock (Melanogrammus aeglefinus): Part 2 – Model",
+            "description": ""
+        }
+    }
+]

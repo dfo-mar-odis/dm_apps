@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4128,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Molecular genetic relationships among bowhead whales (Balaena mysticetus) in Eastern Canadian Arctic and Western Greenland waters",
+            "title_fr": "Comparaison de la génétique moléculaire des baleines boréales (Balaena mysticetus) des eaux de l'est de l'Arctique canadien et de l'ouest du Groenland",
+            "pub_year": 2005,
+            "lead_author_2": "Postma, L.D., L.P. Dueck, M.P. Heide-Jørgensen, B.G.E. de March and S.E. Cosens.",
+            "pub_num": "004",
+            "pages": 29,
+            "pdf_size": 751,
+            "description": ""
+        }
+    }
+]

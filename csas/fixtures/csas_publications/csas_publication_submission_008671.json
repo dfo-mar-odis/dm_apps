@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8671,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Application of NOAA's Technical Guidelines for Assessing the Effects of Anthropogenic Sound on Marine Mammal Hearing in Canadian Waters",
+            "lead_author_2": "A. Wright and H. Moors-Murphy",
+            "description": ""
+        }
+    }
+]

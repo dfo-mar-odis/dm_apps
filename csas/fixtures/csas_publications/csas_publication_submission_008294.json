@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8294,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Inner Bay of Fundy (IBOF) Returning Adult Atlantic Salmon  Population Abundance Estimate",
+            "title_fr": "Estimation de l’abondance de la population adulte du saumon atlantique revenant frayer à l’intérieur de la baie de Fundy (IBF)",
+            "pub_year": 2020,
+            "lead_author_2": "Lottie Bennett",
+            "pub_num": "027",
+            "pages": 22,
+            "pdf_size": 964,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6814,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "2013 Evaluation of Northwest Atlantic Fisheries Organization (NAFO) Divisions 4VWX Herring",
+            "title_fr": "Évaluation des stocks de hareng des divisions 4VWX de l'Organisation des pêches de l'Atlantique Nord-Ouest (OPANO) en 2013",
+            "pub_year": 2014,
+            "lead_author_2": "R. Singh",
+            "pub_num": "056",
+            "pages": 114,
+            "pdf_size": 4389,
+            "description": ""
+        }
+    }
+]

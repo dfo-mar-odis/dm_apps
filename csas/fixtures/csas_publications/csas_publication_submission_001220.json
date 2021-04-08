@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1220,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1982 assessment of the eastern Scotian Shelf (4VsW) cod stock complex",
+            "pub_year": 1982,
+            "lead_author_2": "J.J. Maguire; G.A. Young; A.F. Sinclair",
+            "pub_num": "040",
+            "pages": 43,
+            "pdf_size": 1928,
+            "description": ""
+        }
+    }
+]

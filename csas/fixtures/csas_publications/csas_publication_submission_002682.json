@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2682,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A study of the catchability of snow crab by the Campelen 1800 survey trawl",
+            "title_fr": "Étude de la capturabilité du crabe des neiges par le chalut de relevé Campelen 1800",
+            "pub_year": 2002,
+            "lead_author_2": "Dawe, E.G., B.R. McCallum, S.J. Walsh, P.C. Beck, H.J. Drew, E.M. Seward.",
+            "pub_num": "051",
+            "pages": 16,
+            "pdf_size": 755,
+            "description": ""
+        }
+    }
+]

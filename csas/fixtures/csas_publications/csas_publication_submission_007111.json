@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7111,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the regional peer review of the update on the status of Atlantic Salmon in Newfoundland and Labrador - 2013; December 3-4, 2013",
+            "title_fr": "Compte rendu de l'examen régional par les pairs sur la mise à jour de la situation du saumon de l'Atlantique à Terre-Neuve-et-Labrador - 2013; les 3 et 4 décembre 2013",
+            "pub_year": 2014,
+            "lead_author_2": "K. Clarke and E. Parrill",
+            "pub_num": "015",
+            "pages": 22,
+            "pdf_size": 166,
+            "description": ""
+        }
+    }
+]

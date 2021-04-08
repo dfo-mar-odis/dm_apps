@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3901,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Incorporating Uncertainty in Population Assessments",
+            "title_fr": "Incorporation de l'incertitude dans l'évaluation des populations",
+            "pub_year": 2003,
+            "lead_author_2": "Richard, P.R.",
+            "pub_num": "087",
+            "pages": 17,
+            "pdf_size": 200,
+            "description": ""
+        }
+    }
+]

@@ -6,11 +6,13 @@ import decimal
 import os
 from collections import Counter
 
+import pytz
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.dispatch import receiver
 from django.utils import timezone
 
+from bio_diversity.utils import naive_to_aware
 from shared_models import models as shared_models
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -129,6 +131,8 @@ class BioLookup(shared_models.Lookup):
 
 
 class BioCont(BioLookup):
+    key = None
+
     class Meta:
         abstract = True
 
@@ -136,22 +140,35 @@ class BioCont(BioLookup):
     name = models.CharField(max_length=255, verbose_name=_("name (en)"))
     facic_id = models.ForeignKey('FacilityCode', on_delete=models.CASCADE, verbose_name=_("Facility"))
 
-    def fish_in_cont(self, at_date=datetime.datetime.now(timezone.get_current_timezone())):
+    def fish_in_cont(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC), select_fields=[]):
         indv_list = []
         grp_list = []
 
-        contx_set = self.contxs.filter(anixs__isnull=False)
-        anix_indv_sets = [contx.anixs.filter(final_contx_flag=True, indv_id__indv_valid=True) for contx in contx_set]
-        anix_grp_sets = [contx.anixs.filter(final_contx_flag=True, grp_id__grp_valid=True) for contx in contx_set]
-        indv_in_list = list(dict.fromkeys([anix.indv_id for anix_set in anix_indv_sets for anix in anix_set]))
-        grp_in_list = list(dict.fromkeys([anix.grp_id for anix_set in anix_grp_sets for anix in anix_set]))
+        filter_arg = "contx_id__{}_id".format(self.key)
 
-        for indv in indv_in_list:
-            if self in indv.current_tank(at_date=at_date):
+        anix_set = AniDetailXref.objects.filter(**{filter_arg: self},
+                                                final_contx_flag__isnull=False,
+                                                evnt_id__start_datetime__lte=at_date).select_related("indv_id", "grp_id", *select_fields)
+        anix_indv_in_set = anix_set.filter(final_contx_flag=True, indv_id__indv_valid=True)
+        anix_indv_out_set = anix_set.filter(final_contx_flag=False, indv_id__indv_valid=True)
+        anix_grp_in_set = anix_set.filter(final_contx_flag=True, grp_id__grp_valid=True)
+        anix_grp_out_set = anix_set.filter(final_contx_flag=False, grp_id__grp_valid=True)
+
+        indv_in_set = Counter([anix.indv_id for anix in anix_indv_in_set])
+        indv_out_set = Counter([anix.indv_id for anix in anix_indv_out_set])
+        grp_in_set = Counter([anix.grp_id for anix in anix_grp_in_set])
+        grp_out_set = Counter([anix.grp_id for anix in anix_grp_out_set])
+
+        for indv, in_count in indv_in_set.items():
+            if indv not in indv_out_set:
                 indv_list.append(indv)
-        for grp in grp_in_list:
-            if self in grp.current_tank(at_date=at_date):
+            elif in_count > indv_out_set[indv]:
+                indv_list.append(indv)
+        for grp, in_count in grp_in_set.items():
+            if grp not in grp_out_set:
                 grp_list.append(grp)
+            elif in_count > grp_out_set[grp]:
+                indv_list.append(grp)
         return indv_list, grp_list
 
 
@@ -224,16 +241,16 @@ class AniDetailXref(BioModel):
     # anix tag
     evnt_id = models.ForeignKey("Event", on_delete=models.CASCADE, verbose_name=_("Event"),
                                 related_name="animal_details")
-    contx_id = models.ForeignKey("ContainerXRef", on_delete=models.CASCADE, null=True, blank=True, related_name="anixs",
+    contx_id = models.ForeignKey("ContainerXRef", on_delete=models.CASCADE, null=True, blank=True, related_name="animal_details",
                                  verbose_name=_("Container Cross Reference"))
     final_contx_flag = models.BooleanField(verbose_name=_("Final Container in movement"), default=None, blank=True, null=True)
     loc_id = models.ForeignKey("Location", on_delete=models.CASCADE, null=True, blank=True,
-                               verbose_name=_("Location"))
-    indvt_id = models.ForeignKey("IndTreatment", on_delete=models.CASCADE, null=True, blank=True,
+                               related_name="animal_details", verbose_name=_("Location"))
+    indvt_id = models.ForeignKey("IndTreatment", on_delete=models.CASCADE, null=True, blank=True, related_name="animal_details",
                                  verbose_name=_("Individual Treatment"))
     indv_id = models.ForeignKey("Individual", on_delete=models.CASCADE, null=True, blank=True,
                                 related_name="animal_details", verbose_name=_("Individual"))
-    pair_id = models.ForeignKey("Pairing", on_delete=models.CASCADE, null=True, blank=True,
+    pair_id = models.ForeignKey("Pairing", on_delete=models.CASCADE, null=True, blank=True, related_name="animal_details",
                                 verbose_name=_("Pairing"))
     grp_id = models.ForeignKey("Group", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Group"),
                                related_name="animal_details")
@@ -321,9 +338,9 @@ class ContainerXRef(BioModel):
 
 class Count(BioModel):
     # cnt tag
-    loc_id = models.ForeignKey("Location", on_delete=models.CASCADE, verbose_name=_("Location"),
+    loc_id = models.ForeignKey("Location", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Location"),
                                related_name="counts")
-    contx_id = models.ForeignKey("ContainerXRef", on_delete=models.CASCADE, null=True, blank=True,
+    contx_id = models.ForeignKey("ContainerXRef", on_delete=models.CASCADE, null=True, blank=True, related_name="counts",
                                  verbose_name=_("Container Cross Reference"))
     cntc_id = models.ForeignKey("CountCode", on_delete=models.CASCADE, verbose_name=_("Count Code"))
     spec_id = models.ForeignKey("SpeciesCode", on_delete=models.CASCADE, verbose_name=_("Species"))
@@ -372,11 +389,23 @@ class CountDet(BioDet):
 
 class Cup(BioCont):
     # cup tag
+    key = "cup"
+
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['name', 'facic_id'], name='cup_uniqueness')
+            models.UniqueConstraint(fields=['name', 'draw_id', 'start_date'], name='cup_uniqueness')
         ]
-        ordering = ['facic_id', 'name']
+        ordering = ['draw_id', 'name']
+
+    # Make name not unique, is unique together with drawer.
+    name = models.CharField(max_length=255, verbose_name=_("name (en)"))
+    draw_id = models.ForeignKey('Drawer', on_delete=models.CASCADE, related_name="cups", verbose_name=_("Drawer"))
+    facic_id = None
+    start_date = models.DateField(verbose_name=_("Start Date"))
+    end_date = models.DateField(null=True, blank=True, verbose_name=_("End Date"))
+
+    def __str__(self):
+        return "{}-{}".format(self.name, self.draw_id.__str__())
 
 
 class CupDet(BioContainerDet):
@@ -405,10 +434,21 @@ class DataLoader(BioModel):
 
 class Drawer(BioCont):
     # draw tag
+    key = "draw"
+
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['name', 'facic_id'], name='draw_uniqueness')
+            models.UniqueConstraint(fields=['name', 'heat_id'], name='draw_uniqueness')
         ]
+        ordering = ['heat_id', 'name']
+
+    # Make name not unique, is unique together with drawer.
+    name = models.CharField(max_length=255, verbose_name=_("name (en)"))
+    heat_id = models.ForeignKey('HeathUnit', on_delete=models.CASCADE, related_name="draws", verbose_name=_("Heath Unit"))
+    facic_id = None
+
+    def __str__(self):
+        return "{}-{}".format(self.name, self.heat_id.__str__())
 
 
 class EnvCode(BioLookup):
@@ -543,7 +583,7 @@ class EnvTreatment(BioModel):
     @property
     def concentration_str(self):
         if self.concentration:
-            return "1:{}  |  {:.3}%".format(int(1/self.concentration), 100 * self.concentration)
+            return "1:{}  |  {:.3}%".format(int(decimal.Decimal(1.0)/self.concentration), decimal.Decimal(100) * self.concentration)
         else:
             return None
     concentration_str.fget.short_description = "Concentration"
@@ -563,7 +603,7 @@ class Event(BioTimeModel):
 
     @property
     def is_current(self):
-        if self.evnt_end and self.evnt_end < datetime.now(tz=timezone.get_current_timezone()):
+        if self.evnt_end and self.evnt_end < datetime.datetime.now(tz=timezone.get_current_timezone()):
             return True
         elif not self.evnt_end:
             return True
@@ -578,12 +618,71 @@ class Event(BioTimeModel):
             models.UniqueConstraint(fields=['facic_id', 'evntc_id', 'prog_id', 'start_datetime', 'end_datetime'],
                                     name='Event_Uniqueness')
         ]
+        ordering = ['-start_datetime']
 
 
 class EventCode(BioLookup):
     # evntc tag
     class Meta:
         ordering = ['name']
+
+
+def evntf_directory_path(instance, filename):
+    return 'bio_diversity/event_files/{}'.format(filename)
+
+
+def matp_directory_path(instance, filename):
+    return 'bio_diversity/event_files/{}'.format(filename)
+
+
+class EventFile(BioModel):
+    # evntf tag
+    evnt_id = models.ForeignKey('Event', on_delete=models.CASCADE, verbose_name=_("Event"), related_name="event_files")
+    evntfc_id = models.ForeignKey('EventFileCode', on_delete=models.CASCADE, verbose_name=_("Event File Code"), related_name="event_files")
+    evntf_xls = models.FileField(upload_to=evntf_directory_path, null=True, blank=True, verbose_name=_("Event File"))
+    stok_id = models.ForeignKey('StockCode', on_delete=models.CASCADE, blank=True, null=True,
+                                verbose_name=_("Stock Code"), related_name="event_files")
+    comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=["evnt_id", "stok_id"], name='Event_File_Uniqueness')
+        ]
+
+
+@receiver(models.signals.post_delete, sender=EventFile)
+def auto_delete_file_on_delete(sender, instance, **kwargs):
+    """
+    Deletes file from filesystem
+    when corresponding `MediaFile` object is deleted.
+    """
+    if instance.evntf_xls:
+        if os.path.isfile(instance.evntf_xls.path):
+            os.remove(instance.evntf_xls.path)
+
+
+@receiver(models.signals.pre_save, sender=EventFile)
+def auto_delete_file_on_change(sender, instance, **kwargs):
+    """
+    Deletes old file from filesystem
+    when corresponding `MediaFile` object is updated
+    with new file.
+    """
+    if not instance.pk:
+        return False
+    try:
+        old_file = EventFile.objects.get(pk=instance.pk).evntf_xls
+    except EventFile.DoesNotExist:
+        return False
+    new_file = instance.evntf_xls
+    if old_file and not old_file == new_file:
+        if os.path.isfile(old_file.path):
+            os.remove(old_file.path)
+
+
+class EventFileCode(BioLookup):
+    # evntfc tag
+    pass
 
 
 class FacilityCode(BioLookup):
@@ -647,20 +746,62 @@ class Group(BioModel):
     def __str__(self):
         return "{}-{}-{}".format(self.stok_id.__str__(), self.grp_year, self.coll_id.__str__())
 
-    def current_tank(self, at_date=datetime.datetime.now(tz=timezone.get_current_timezone())):
+    def current_tank(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC)):
         cont = []
 
-        anix_in_set = self.animal_details.filter(final_contx_flag=True,evnt_id__start_datetime__lte=at_date)
-        tank_in_set = Counter([anix.contx_id.tank_id for anix in anix_in_set]).most_common()
-        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date)
-        tank_out_set = Counter([anix.contx_id.tank_id for anix in anix_out_set]).most_common()
+        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
+        tank_in_set = Counter([anix.contx_id.tank_id for anix in anix_in_set])
+        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
+        tank_out_set = Counter([anix.contx_id.tank_id for anix in anix_out_set])
 
-        for tank, in_count in tank_in_set:
+        for tank, in_count in tank_in_set.items():
             if tank not in tank_out_set:
                 cont.append(tank)
             elif in_count > tank_out_set[tank]:
                 cont.append(tank)
         return cont
+
+    def current_trof(self, at_date=datetime.datetime.now(tz=timezone.get_current_timezone())):
+        cont = []
+
+        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date)
+        trof_in_set = Counter([anix.contx_id.trof_id for anix in anix_in_set])
+        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date)
+        trof_out_set = Counter([anix.contx_id.trof_id for anix in anix_out_set])
+
+        for trof, in_count in trof_in_set.items():
+            if trof not in trof_out_set:
+                cont.append(trof)
+            elif in_count > trof_out_set[trof]:
+                cont.append(trof)
+        return cont
+
+    def count_fish_in_group(self, at_date=datetime.datetime.now(tz=timezone.get_current_timezone())):
+        fish_count = 0
+
+        cnt_set = Count.objects.filter(contx_id__animal_details__grp_id=self,
+                                       contx_id__evnt_id__start_datetime__lte=at_date).select_related("cntc_id").distinct()
+
+        add_codes = ["Fish in Container", ]
+        subtract_codes = ["Mortality", "Pit Tagged"]
+
+        for cnt in cnt_set:
+            if cnt.cntc_id.name in add_codes:
+                fish_count += cnt.cnt
+            elif cnt.cntc_id.name in subtract_codes:
+                fish_count -= cnt.cnt
+
+        return fish_count
+
+    def fish_in_cont(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC), select_fields=[], grp_select_fields=[]):
+        indv_set = Individual.objects.filter(grp_id=self).select_related(*select_fields)
+        # for consistancy with container version:
+        indv_list = [indv for indv in indv_set]
+
+        grpd_set = GroupDet.objects.filter(frm_grp_id=self).select_related("anix_id__grp_id", *grp_select_fields)
+        grp_list = [grpd.anix_id.grp_id for grpd in grpd_set]
+
+        return indv_list, grp_list
 
 
 class GroupDet(BioDet):
@@ -731,6 +872,8 @@ class GroupDet(BioDet):
 
 class HeathUnit(BioCont):
     # heat tag
+    key = "heat"
+
     manufacturer = models.CharField(max_length=35, verbose_name=_("Maufacturer"))
     inservice_date = models.DateField(verbose_name=_("Date unit was put into service"))
     serial_number = models.CharField(max_length=50, verbose_name=_("Serial Number"))
@@ -783,29 +926,29 @@ def img_directory_path(instance, filename):
 class Image(BioModel):
     # img tag
     imgc_id = models.ForeignKey("ImageCode", on_delete=models.CASCADE, verbose_name=_("Image Code"))
-    loc_id = models.ForeignKey("Location", on_delete=models.CASCADE, null=True, blank=True,
+    loc_id = models.ForeignKey("Location", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                verbose_name=_("Location"))
-    cntd_id = models.ForeignKey("CountDet", on_delete=models.CASCADE, null=True, blank=True,
+    cntd_id = models.ForeignKey("CountDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                 verbose_name=_("Count Detail"))
-    grpd_id = models.ForeignKey("GroupDet", on_delete=models.CASCADE, null=True, blank=True,
+    grpd_id = models.ForeignKey("GroupDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                 verbose_name=_("Group Detail"))
-    sampd_id = models.ForeignKey("SampleDet", on_delete=models.CASCADE, null=True, blank=True,
+    sampd_id = models.ForeignKey("SampleDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                  verbose_name=_("Sample Detail"))
-    indvd_id = models.ForeignKey("IndividualDet", on_delete=models.CASCADE, null=True, blank=True,
+    indvd_id = models.ForeignKey("IndividualDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                  verbose_name=_("Individual Detail"))
-    spwnd_id = models.ForeignKey("SpawnDet", on_delete=models.CASCADE, null=True, blank=True,
+    spwnd_id = models.ForeignKey("SpawnDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                  verbose_name=_("Spawn Detail"))
-    tankd_id = models.ForeignKey("TankDet", on_delete=models.CASCADE, null=True, blank=True,
+    tankd_id = models.ForeignKey("TankDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                  verbose_name=_("Tank Detail"))
-    heatd_id = models.ForeignKey("HeathUnitDet", on_delete=models.CASCADE, null=True, blank=True,
+    heatd_id = models.ForeignKey("HeathUnitDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                  verbose_name=_("Heath Unit Detail"))
-    draw_id = models.ForeignKey("Drawer", on_delete=models.CASCADE, null=True, blank=True,
+    draw_id = models.ForeignKey("Drawer", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                 verbose_name=_("Drawer"))
-    trofd_id = models.ForeignKey("TroughDet", on_delete=models.CASCADE, null=True, blank=True,
+    trofd_id = models.ForeignKey("TroughDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                  verbose_name=_("Trough Detail"))
-    trayd_id = models.ForeignKey("TrayDet", on_delete=models.CASCADE, null=True, blank=True,
+    trayd_id = models.ForeignKey("TrayDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                  verbose_name=_("Tray Detail"))
-    cupd_id = models.ForeignKey("CupDet", on_delete=models.CASCADE, null=True, blank=True,
+    cupd_id = models.ForeignKey("CupDet", on_delete=models.CASCADE, null=True, blank=True, related_name="images",
                                 verbose_name=_("Cup Detail"))
     img_png = models.FileField(upload_to=img_directory_path, null=True, blank=True, verbose_name=_("Image File"))
     comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
@@ -874,17 +1017,23 @@ class Individual(BioModel):
     comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
 
     def __str__(self):
+        if self.pit_tag:
+            return "{}-{}-{}-{}".format(self.stok_id.__str__(), self.indv_year, self.coll_id.__str__(), self.pit_tag)
+        else:
+            return "{}-{}-{}".format(self.stok_id.__str__(), self.indv_year, self.coll_id.__str__())
+
+    def stok_year_coll_str(self):
         return "{}-{}-{}".format(self.stok_id.__str__(), self.indv_year, self.coll_id.__str__())
 
-    def current_tank(self, at_date=datetime.datetime.now(tz=timezone.get_current_timezone())):
+    def current_tank(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC)):
         cont = []
 
-        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date)
-        tank_in_set = Counter([anix.contx_id.tank_id for anix in anix_in_set]).most_common()
-        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date)
-        tank_out_set = Counter([anix.contx_id.tank_id for anix in anix_out_set]).most_common()
+        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
+        tank_in_set = Counter([anix.contx_id.tank_id for anix in anix_in_set])
+        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
+        tank_out_set = Counter([anix.contx_id.tank_id for anix in anix_out_set])
 
-        for tank, in_count in tank_in_set:
+        for tank, in_count in tank_in_set.items():
             if tank not in tank_out_set:
                 cont.append(tank)
             elif in_count > tank_out_set[tank]:
@@ -1058,54 +1207,6 @@ class LocCode(BioLookup):
     pass
 
 
-def matp_directory_path(instance, filename):
-    return 'bio_diversity/mating_plans/{}'.format(filename)
-
-
-class MatingPlan(BioModel):
-    # matp tag
-    evnt_id = models.ForeignKey('Event', on_delete=models.CASCADE, verbose_name=_("Event"), related_name="mating_plan")
-    matp_xls = models.FileField(upload_to=matp_directory_path, null=True, blank=True, verbose_name=_("Mating Plan File"))
-    stok_id = models.ForeignKey('StockCode', on_delete=models.CASCADE, blank=True, null=True,
-                                verbose_name=_("Stock Code"), related_name="mating_plan")
-    comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=["evnt_id", "stok_id"], name='Mating_Plan_Uniqueness')
-        ]
-
-
-@receiver(models.signals.post_delete, sender=MatingPlan)
-def auto_delete_file_on_delete(sender, instance, **kwargs):
-    """
-    Deletes file from filesystem
-    when corresponding `MediaFile` object is deleted.
-    """
-    if instance.matp_xls:
-        if os.path.isfile(instance.matp_xls.path):
-            os.remove(instance.matp_xls.path)
-
-
-@receiver(models.signals.pre_save, sender=MatingPlan)
-def auto_delete_file_on_change(sender, instance, **kwargs):
-    """
-    Deletes old file from filesystem
-    when corresponding `MediaFile` object is updated
-    with new file.
-    """
-    if not instance.pk:
-        return False
-    try:
-        old_file = MatingPlan.objects.get(pk=instance.pk).matp_xls
-    except MatingPlan.DoesNotExist:
-        return False
-    new_file = instance.matp_xls
-    if old_file and not old_file == new_file:
-        if os.path.isfile(old_file.path):
-            os.remove(old_file.path)
-
-
 class Organization(BioLookup):
     # orga tag
     pass
@@ -1115,10 +1216,12 @@ class Pairing(BioDateModel):
     # pair tag
     indv_id = models.ForeignKey('Individual',  on_delete=models.CASCADE, verbose_name=_("Dam"),
                                 limit_choices_to={'pit_tag__isnull': False, 'indv_valid': True}, related_name="pairings")
-    prio_id = models.ForeignKey('PriorityCode', on_delete=models.CASCADE, verbose_name=_("Priority"))
+    prio_id = models.ForeignKey('PriorityCode', on_delete=models.CASCADE, verbose_name=_("Priority of Female"), related_name="female_priorities")
+    pair_prio_id = models.ForeignKey('PriorityCode', on_delete=models.CASCADE, verbose_name=_("Priority of Pair"), related_name="pair_priorities")
+    cross = models.IntegerField(verbose_name=_("Cross"))
 
     def __str__(self):
-        return "Pair: {}-{}".format(self.indv_id.__str__(), self.start_date)
+        return "{}".format(self.indv_id.__str__())
 
     class Meta:
         constraints = [
@@ -1140,6 +1243,7 @@ class PersonnelCode(BioModel):
         constraints = [
             models.UniqueConstraint(fields=['perc_first_name', 'perc_last_name'], name='Personnel_Code_Uniqueness')
         ]
+        ordering = ["perc_last_name", "perc_first_name"]
 
 
 class PriorityCode(BioLookup):
@@ -1174,20 +1278,22 @@ class ProgAuthority(BioModel):
 
 class Protocol(BioDateModel):
     # prot tag
+
     prog_id = models.ForeignKey('Program', on_delete=models.CASCADE, verbose_name=_("Program"),
                                 limit_choices_to={'valid': True}, related_name="protocols")
     protc_id = models.ForeignKey('ProtoCode', on_delete=models.CASCADE, verbose_name=_("Protocol Code"))
     facic_id = models.ForeignKey('FacilityCode', on_delete=models.CASCADE, verbose_name=_("Facility"))
     evntc_id = models.ForeignKey('EventCode', blank=True, null=True, on_delete=models.CASCADE,
                                  verbose_name=_("Event Code"))
+    name = models.CharField(max_length=25, verbose_name=_("Protocol Name"))
     prot_desc = models.CharField(max_length=4000, verbose_name=_("Protocol Description"))
 
     def __str__(self):
-        return "{}, {}".format(self.protc_id.__str__(), self.prog_id.__str__())
+        return self.name
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['prog_id', 'protc_id', 'start_date'], name='Protocol_Uniqueness')
+            models.UniqueConstraint(fields=['name', 'prog_id', 'protc_id', 'start_date'], name='Protocol_Uniqueness')
         ]
 
 
@@ -1325,7 +1431,7 @@ class Sire(BioModel):
     prio_id = models.ForeignKey('PriorityCode', on_delete=models.CASCADE, verbose_name=_("Priority"))
     pair_id = models.ForeignKey('Pairing', on_delete=models.CASCADE, verbose_name=_("Pairing"), related_name="sires",
                                 limit_choices_to={'valid': True})
-    indv_id = models.ForeignKey('Individual', on_delete=models.CASCADE, verbose_name=_("Sire UFID"),
+    indv_id = models.ForeignKey('Individual', on_delete=models.CASCADE, verbose_name=_("Sire"),
                                 limit_choices_to={'pit_tag__isnull':  False, 'indv_valid': True}, related_name="sires")
     choice = models.IntegerField(verbose_name=_("Choice"))
     comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
@@ -1366,8 +1472,8 @@ class SpawnDet(BioDet):
 
 class SpawnDetCode(BioLookup):
     # spwndc tag
-    min_val = models.DecimalField(max_digits=11, decimal_places=5, verbose_name=_("Minimum Value"))
-    max_val = models.DecimalField(max_digits=11, decimal_places=5, verbose_name=_("Maximum Value"))
+    min_val = models.DecimalField(blank=True, null=True, max_digits=11, decimal_places=5, verbose_name=_("Minimum Value"))
+    max_val = models.DecimalField(blank=True, null=True, max_digits=11, decimal_places=5, verbose_name=_("Maximum Value"))
     unit_id = models.ForeignKey("UnitCode", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Units"))
     spwn_subj_flag = models.BooleanField(verbose_name=_("Subjective?"))
 
@@ -1401,12 +1507,13 @@ class SubRiverCode(BioLookup):
 
 class Tank(BioCont):
     # tank tag
+    key = "tank"
+
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['name', 'facic_id'], name='tank_uniqueness')
         ]
         ordering = ['facic_id', 'name']
-
 
 
 class TankDet(BioContainerDet):
@@ -1436,11 +1543,31 @@ class Team(BioModel):
 
 class Tray(BioCont):
     # tray tag
+    key = "tray"
+
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['name', 'facic_id'], name='tray_uniqueness')
+            models.UniqueConstraint(fields=['name', 'trof_id', 'start_date'], name='tray_uniqueness')
         ]
-        ordering = ['facic_id', 'name']
+        ordering = ['trof_id', 'name']
+
+    # Make name not unique, is unique together with trough code.
+    name = models.CharField(max_length=255, verbose_name=_("name (en)"))
+    trof_id = models.ForeignKey('Trough', on_delete=models.CASCADE, related_name="trays", verbose_name=_("Trough"))
+    facic_id = None
+    start_date = models.DateField(verbose_name=_("Start Date"))
+    end_date = models.DateField(null=True, blank=True, verbose_name=_("End Date"))
+
+    @property
+    def degree_days(self):
+        if self.end_date:
+            degree_days = self.trof_id.degree_days(self.start_date, self.end_date)
+        else:
+            degree_days = self.trof_id.degree_days(self.start_date, datetime.datetime.today().date())
+        return round(sum(degree_days), 3)
+
+    def __str__(self):
+        return "{}-{}".format(self.name, self.trof_id.__str__())
 
 
 class TrayDet(BioContainerDet):
@@ -1463,11 +1590,32 @@ class Tributary(BioLookup):
 
 class Trough(BioCont):
     # trof tag
+    key = "trof"
+
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['name', 'facic_id'], name='trof_uniqueness')
         ]
         ordering = ['facic_id', 'name']
+
+    def degree_days(self, start_date, end_date):
+        env_qs = EnvCondition.objects.filter(contx_id__trof_id=self,
+                                             start_datetime__gte=naive_to_aware(start_date),
+                                             start_datetime__lte=naive_to_aware(end_date),
+                                             envc_id__name="Temperature")
+
+        delta = end_date - start_date
+        temp_list = []
+        for i in range(delta.days + 1):
+            day = start_date + datetime.timedelta(days=i)
+            day_temps = []
+            for env in env_qs:
+                if env.start_datetime.date() == day:
+                    day_temps.append(env.env_val)
+            if day_temps:
+                temp_list.append(sum(day_temps) / len(day_temps))
+
+        return temp_list
 
 
 class TroughDet(BioContainerDet):

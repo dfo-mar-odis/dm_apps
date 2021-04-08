@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1494,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Estimation de la biomasse exploitable du crabe des neiges du sud-ouest du golfe du Saint-Laurent pour l'année 1984: utilisation de l'aire efficace de pêche d'un casier",
+            "pub_year": 1984,
+            "lead_author_2": "F. Coulombe",
+            "pub_num": "088",
+            "description": ""
+        }
+    }
+]

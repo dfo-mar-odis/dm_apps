@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2612,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Condition of cod in Divisions 2J+3KL during the autumns of 1978-1995",
+            "pub_year": 1996,
+            "lead_author_2": "G. R. Lilly",
+            "pub_num": "065",
+            "pages": 17,
+            "pdf_size": 859,
+            "description": ""
+        }
+    }
+]

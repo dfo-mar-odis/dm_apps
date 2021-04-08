@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 137,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Analysis of the Results of the License Stub Return System in the Newfoundland Region, 1994-97",
+            "pub_year": 1998,
+            "lead_author_2": "O'Connell, M. F., N.M. Cochrane, C.C. Mullins",
+            "pub_num": "111",
+            "pages": 67,
+            "pdf_size": 2785,
+            "description": ""
+        }
+    }
+]

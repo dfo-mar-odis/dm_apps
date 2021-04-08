@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7198,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Supplement to the pre-season return forecasts for Fraser River Sockeye Salmon in 2014",
+            "title_fr": "Supplément aux prévisions d'avant-saison concernant les montaisons du saumon rouge du fleuve Fraser en 2014",
+            "pub_year": 2014,
+            "lead_author_2": "Grant, Sue",
+            "pub_num": "041",
+            "pages": 57,
+            "pdf_size": 3948,
+            "description": ""
+        }
+    }
+]

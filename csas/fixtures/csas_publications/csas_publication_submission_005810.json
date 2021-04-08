@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5810,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Information to support the Qasigiyat Arctic Char Assessment",
+            "title_fr": "Renseignements à l'appui de l'évaluation de l'omble chevalier de Qasigiyat",
+            "pub_year": 2013,
+            "lead_author_2": "Martin, Z., Tallman, R.F.",
+            "pub_num": "018",
+            "pages": 30,
+            "pdf_size": 931,
+            "description": ""
+        }
+    }
+]

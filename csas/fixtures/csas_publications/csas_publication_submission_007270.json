@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7270,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional peer review of the pre-COSEWIC assessment of River Darter; December 8, 2014",
+            "title_fr": "Compte rendu de l'examen régional par les pairs de l'examen pré-COSEPAC concernant le dard de rivière ; le 8 décembre 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Kathleen Martin",
+            "pub_num": "008",
+            "pages": 17,
+            "pdf_size": 148,
+            "description": ""
+        }
+    }
+]

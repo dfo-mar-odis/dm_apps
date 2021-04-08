@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7196,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "2014 Maritimes Winter Research Vessel Survey Trends on Georges Bank",
+            "title_fr": "Tendances dans les relevés d’hiver 2014 par navire scientifique dans la région des Maritimes – banc Georges",
+            "pub_year": 2014,
+            "lead_author_2": "Tara McIntyre",
+            "pub_num": "045",
+            "pages": 24,
+            "pdf_size": 1006,
+            "description": ""
+        }
+    }
+]

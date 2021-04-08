@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2541,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Results of the December juvenile herring surveys from 1991 to 1994, and an overview of some other juvenile indices",
+            "pub_year": 1995,
+            "lead_author_2": "C. LeBlanc; L. Mello; H. Dupuis; J. Dale",
+            "pub_num": "135",
+            "pages": 32,
+            "pdf_size": 1268,
+            "description": ""
+        }
+    }
+]

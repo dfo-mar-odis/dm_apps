@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7979,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Vulnerability assessment of biological components of the St. Lawrence to ship-source oil spills",
+            "title_fr": "Évaluation de la vulnérabilité de composantes biologiques du Saint-Laurent aux déversements d’hydrocarbures provenant de navires",
+            "pub_year": 2018,
+            "lead_author_2": "Desjardins, C., Hamel, D., Landry, L., Scallon-Chouinard, P.-M. et Chalut, K.",
+            "pub_num": "003",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7506,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Fish exclusion options for aquatic species at risk for drainage activities in Little Bear Creek, Ontario",
+            "title_fr": "Options d'ouvrages visant à empêcher les espèces de poissons en péril d'avoir accès à des tronçons du ruisseau Little Bear, en Ontario, aux fins d'activités de drainage",
+            "pub_year": 2015,
+            "pub_num": "036",
+            "pages": 17,
+            "pdf_size": 2550,
+            "description": ""
+        }
+    }
+]

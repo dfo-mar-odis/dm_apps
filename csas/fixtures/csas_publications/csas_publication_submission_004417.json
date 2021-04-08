@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4417,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock assessment report on West Coast Vancouver Island Pacific Herring",
+            "title_fr": "Évaluation du stock de hareng du Pacifique de la côte ouest de l'île de Vancouver",
+            "pub_year": 2005,
+            "lead_author_2": "Schweigert, J.",
+            "pub_num": "069",
+            "pages": 5,
+            "pdf_size": 350,
+            "description": ""
+        }
+    }
+]

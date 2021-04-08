@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4816,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status of Nass River Sockeye Salmon (Oncorhynchus nerka)",
+            "lead_author_2": "Peter Hall",
+            "description": ""
+        }
+    }
+]

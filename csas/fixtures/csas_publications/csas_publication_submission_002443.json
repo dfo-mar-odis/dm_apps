@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2443,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Stock status update of witch flounder in NAFO Div. 2J and 3KL",
+            "pub_year": 1995,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "037",
+            "pages": 14,
+            "pdf_size": 501,
+            "description": ""
+        }
+    }
+]

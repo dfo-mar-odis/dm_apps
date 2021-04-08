@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1964,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Chemical and Biological Oceanographic Conditions 2000 - Newfoundland Region",
+            "pub_year": 2001,
+            "lead_author_2": "Dr. Pepin, Pierre",
+            "pub_num": "G2-02",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

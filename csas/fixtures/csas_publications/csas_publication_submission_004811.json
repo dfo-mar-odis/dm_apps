@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4811,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Fraser Sockeye (Oncorhynchus nerka) Wild Salmon Policy Evaluation of Stock Status",
+            "lead_author_2": "Michael Chamberlain",
+            "description": ""
+        }
+    }
+]

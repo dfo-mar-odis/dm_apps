@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3881,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Optical, chemical and biological oceanographic conditions in the Maritimes/Gulf Regions in 2002",
+            "title_fr": "Condition océanographiques optiques, chimiques et biologiques dans les régions du Golfe et des Maritimes en 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Harrison, G., Sameoto, D., Spry, J., Pauley, K., Maass, H. and Soukhovtsev, V.",
+            "pub_num": "072",
+            "pages": 49,
+            "pdf_size": 10445,
+            "description": ""
+        }
+    }
+]

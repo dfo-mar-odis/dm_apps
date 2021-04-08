@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7414,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the northern Gulf of St. Lawrence (3Pn, 4RS) cod stock in 2014",
+            "title_fr": "Évaluation du stock de morue du nord du golfe du Saint-Laurent (3Pn, 4RS) en 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Claude Brassard",
+            "pub_num": "041",
+            "pages": 13,
+            "pdf_size": 696,
+            "description": ""
+        }
+    }
+]

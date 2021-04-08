@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1500,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Length-weight relationship for lobster (Homarus americanus) in the three areas of the northern Northumberland Strait",
+            "pub_year": 1984,
+            "lead_author_2": "M. Moriyasu",
+            "pub_num": "094",
+            "pages": 12,
+            "pdf_size": 847,
+            "description": ""
+        }
+    }
+]

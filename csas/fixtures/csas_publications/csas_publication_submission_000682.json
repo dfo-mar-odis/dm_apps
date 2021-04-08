@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 682,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Forecast for southern British Columbia coho salmon in 2000",
+            "pub_year": 2000,
+            "lead_author_2": "Holtby, L.B., Simpson, K., Tanasichuk, R.W., Irvine, J.R.",
+            "pub_num": "127",
+            "pages": 43,
+            "pdf_size": 488,
+            "description": ""
+        }
+    }
+]

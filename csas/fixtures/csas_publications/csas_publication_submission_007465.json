@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7465,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on Coastwide Assessment of Arrowtooth Flounder (Atheresthes stomias) in 2014 and recommendations for 2015; May 12-13, 2015",
+            "title_fr": "Compte rendu du processus d'examen par les pairs de la Région du Pacifique sur l'évaluation du stock de plie à grande bouche (Atheresthes stomias) sur toute la côte en 2014 et recommandations pour 2015 ; Le 12 au 13 mai 2015",
+            "pub_year": 2015,
+            "lead_author_2": "Rowan Haigh",
+            "pub_num": "051",
+            "pages": 32,
+            "pdf_size": 665,
+            "description": ""
+        }
+    }
+]

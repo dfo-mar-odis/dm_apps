@@ -46,6 +46,10 @@ if settings.INSTALLED_APPS.count("scuba"):
     urlpatterns.append(
         path('api/', include('scuba.api.urls')),
     )
+if settings.INSTALLED_APPS.count("edna"):
+    urlpatterns.append(
+        path('api/', include('edna.api.urls')),
+    )
 if settings.INSTALLED_APPS.count("bio_diversity"):
     urlpatterns.append(
         path('api/', include('bio_diversity.api.urls')),
@@ -54,7 +58,10 @@ if settings.INSTALLED_APPS.count("publications"):
     urlpatterns.append(
         path('api/', include('publications.api.urls')),
     )
-
+if settings.INSTALLED_APPS.count("ihub"):
+    urlpatterns.append(
+        path('api/', include('ihub.api.urls')),
+    )
 if settings.INSTALLED_APPS.count("events"):
     urlpatterns.extend([
         path('events/', include('events.urls')),
@@ -62,7 +69,6 @@ if settings.INSTALLED_APPS.count("events"):
     ])
 else:
     print("not connecting events app")
-
 
 urlpatterns += i18n_patterns(
     path('', views.IndexView.as_view(), name="index"),
@@ -109,7 +115,12 @@ else:
 if settings.INSTALLED_APPS.count("scuba"):
     urlpatterns += i18n_patterns(path('scuba/', include('scuba.urls')), prefix_default_language=True)
 else:
-    print("not connecting camp app")
+    print("not connecting Scuba app")
+
+if settings.INSTALLED_APPS.count("edna"):
+    urlpatterns += i18n_patterns(path('edna/', include('edna.urls')), prefix_default_language=True)
+else:
+    print("not connecting eDNA app")
 
 if settings.INSTALLED_APPS.count("diets"):
     urlpatterns += i18n_patterns(path('diets/', include('diets.urls')), prefix_default_language=True)
@@ -210,6 +221,12 @@ if settings.INSTALLED_APPS.count("bio_diversity"):
     urlpatterns += i18n_patterns(path('bio_diversity/', include('bio_diversity.urls')), prefix_default_language=True)
 else:
     print("not connecting bio_diversity app")
+
+if settings.INSTALLED_APPS.count("fisheriescape"):
+    urlpatterns += i18n_patterns(path('fisheriescape/', include('fisheriescape.urls')),
+                                 prefix_default_language=True)
+else:
+    print("not connecting fisheriescape app")
 
 if settings.AZURE_STORAGE_ACCOUNT_NAME == "":
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,

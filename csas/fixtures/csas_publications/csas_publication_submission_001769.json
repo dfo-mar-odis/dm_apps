@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1769,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Canadian offshore lobster fishery, 1985-86, and assessment of the potential for future increase in catch",
+            "pub_year": 1987,
+            "lead_author_2": "D.S. Pezzaxk; D.R. Duggan",
+            "pub_num": "079",
+            "pages": 25,
+            "pdf_size": 1545,
+            "description": ""
+        }
+    }
+]

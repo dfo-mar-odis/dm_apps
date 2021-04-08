@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 648,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Summary of the 1999 herring acoustic surveys in NAFO Division 4VWX",
+            "pub_year": 2000,
+            "lead_author_2": "Melvin, G.D., Scheidl, T., Fife, F.J., Power, M.J., Clark, K.J., Stephenson, R.L., Waters, C.L., Arsenault, S.D.",
+            "pub_num": "066",
+            "pages": 40,
+            "pdf_size": 472,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 905,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biomass estimates from Canadian research vessel surveys, Div. 4VWX, 1970-78",
+            "pub_year": 1979,
+            "lead_author_2": "Koeller, P.A.",
+            "pub_num": "014",
+            "pages": 7,
+            "pdf_size": 390,
+            "description": ""
+        }
+    }
+]

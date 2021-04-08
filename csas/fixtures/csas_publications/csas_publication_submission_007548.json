@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7548,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of a Method for Identifying a Window of Principle Striped Bass (Morone saxatilis) Spawning in the Shubenacadie River Estuary",
+            "title_fr": "Examen d’une méthode permettant de déterminer les périodes principales de frai du bar rayé (Morone saxatilis) dans la rivière Shubenacadie",
+            "pub_year": 2016,
+            "lead_author_2": "Rod Bradford, Ph. 902-426-4555",
+            "pub_num": "026",
+            "pages": 8,
+            "pdf_size": 208,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4422,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the lobster stocks of the Gaspé Peninsula (LFAs 19, 20, and 21) in 2005",
+            "title_fr": "Évaluation des populations de homard de la Gaspésie (ZPH 19, 20 et 21) en 2005",
+            "pub_year": 2006,
+            "lead_author_2": "Gendron, L.",
+            "pub_num": "004",
+            "pages": 12,
+            "pdf_size": 232,
+            "description": ""
+        }
+    }
+]

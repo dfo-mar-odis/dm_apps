@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3652,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Northern Quebec (Nunavik) Beluga (Delphinapterus leucas)",
+            "title_fr": "Le béluga (Delphinapterus leucas) du Nord du Québec (Nunavik)",
+            "pub_year": 2002,
+            "pub_num": "E4-01",
+            "pages": 9,
+            "pdf_size": 220,
+            "description": ""
+        }
+    }
+]

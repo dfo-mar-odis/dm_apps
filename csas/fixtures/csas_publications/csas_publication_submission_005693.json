@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5693,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Science Advice on the information required to identify critical habitat for Pugnose Shiner, Spotted Gar, lake Chubsucker and Northern Madtom",
+            "lead_author_2": "K. Martin",
+            "description": ""
+        }
+    }
+]

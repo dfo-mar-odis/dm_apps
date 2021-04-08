@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1018,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Pelagic Subcommittee Meeting; August 28-31, 2000",
+            "pub_year": 2000,
+            "lead_author_2": "M. Stocker and D. Radford (Editors)",
+            "pub_num": "016",
+            "pages": 47,
+            "pdf_size": 420,
+            "description": ""
+        }
+    }
+]

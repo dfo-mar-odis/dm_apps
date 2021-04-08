@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1152,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Witch flounder of St. Pierre Bank - A by-catch fishery",
+            "pub_year": 1981,
+            "lead_author_2": "W.R. Bowering",
+            "pub_num": "054",
+            "pages": 12,
+            "pdf_size": 3713,
+            "description": ""
+        }
+    }
+]

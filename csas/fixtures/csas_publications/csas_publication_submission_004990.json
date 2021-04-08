@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4990,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Sampling Protocol for the Clyde River Winter Long-Line Fishery, Stage II Exploratory",
+            "title_fr": "Protocole d'échantillonnage pour la pêche d'hiver à la palangre à Clyde River - pêche exploratoire, phase II",
+            "pub_year": 2008,
+            "lead_author_2": "Treble, M.",
+            "pub_num": "009",
+            "pages": 3,
+            "pdf_size": 30,
+            "description": ""
+        }
+    }
+]

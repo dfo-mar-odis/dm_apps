@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 276,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The long-term effects of decreased fishing mortality on the age/size composition and variability of catch of Division 4VW haddock",
+            "pub_year": 1983,
+            "lead_author_2": "R. Mahon",
+            "pub_num": "065",
+            "pages": 12,
+            "pdf_size": 388,
+            "description": ""
+        }
+    }
+]

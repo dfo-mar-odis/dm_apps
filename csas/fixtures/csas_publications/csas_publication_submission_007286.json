@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7286,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Yellowtail Rockfish (Sebastes Flavidus) Stock Assessment for the Coast of British Columbia, Canada",
+            "title_fr": "Évaluation du stock de sébastes à queue jaune (Sebastes flavidus) pour le littoral de la Colombie-Britannique, au Canada",
+            "pub_year": 2015,
+            "lead_author_2": "Rowan Haigh",
+            "pub_num": "010",
+            "pages": 14,
+            "pdf_size": 777,
+            "description": ""
+        }
+    }
+]

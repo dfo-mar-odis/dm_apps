@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 111,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Results of sentinel surveys for cod in the southern Gulf of St. Lawrence in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Chouinard, G., Parent, B., Daigle, D., K. Robichaud- Leblanc,",
+            "pub_num": "024",
+            "pages": 56,
+            "pdf_size": 691,
+            "description": ""
+        }
+    }
+]

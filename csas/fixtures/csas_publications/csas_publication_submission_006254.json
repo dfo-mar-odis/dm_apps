@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6254,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Identification of critical habitat for Coastrange Sculpin (Cultus Population) (Cottus aleuticus)",
+            "title_fr": "Identification de l'habitat essentiel du chabot côtier (Cottus aleuticus) (population du lac Cultus)",
+            "pub_year": 2015,
+            "lead_author_2": "Chiang, E., Pon, L., Hume, J.M.B., Selbie, D.T., Velema, G., and Woodruff, P.",
+            "pub_num": "033",
+            "pages": 30,
+            "pdf_size": 783,
+            "description": ""
+        }
+    }
+]

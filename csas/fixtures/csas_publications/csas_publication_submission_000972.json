@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 972,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the Redfish Zonal Assessment; November 4-6, 1998",
+            "pub_year": 1998,
+            "lead_author_2": "Dr. J. Rice",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

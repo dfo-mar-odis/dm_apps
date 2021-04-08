@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2549,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Summary of biological oceanographic variables in the Newfoundland Region",
+            "pub_year": 1996,
+            "lead_author_2": "P. Pepin; M. A. Paranjape",
+            "pub_num": "002",
+            "pages": 29,
+            "pdf_size": 2405,
+            "description": ""
+        }
+    }
+]

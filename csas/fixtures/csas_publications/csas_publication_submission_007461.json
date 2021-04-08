@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7461,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Application of an Ecological Risk Assessment Framework (ERAF) for Arctic Ecosystem Based Oceans Management: a Case Study for the Risk Assessment of Vessel Activity in Lancaster Sound",
+            "lead_author_2": "Martin, K.",
+            "description": ""
+        }
+    }
+]

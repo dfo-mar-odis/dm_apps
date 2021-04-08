@@ -273,7 +273,7 @@ var app = new Vue({
               this.firstTravellerMsg = firstTravellerMsg;
               this.clean = false;
               this.$nextTick(()=>{this.$refs["travellers_head"].focus()})
-            }
+            } else this.clean = false;
 
             this.$nextTick(() => {
               // enable popovers everywhere

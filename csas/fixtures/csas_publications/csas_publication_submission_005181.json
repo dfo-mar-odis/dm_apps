@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5181,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Candidate Limit Reference Points as a basis for choosing among alternative Harvest Control Rules for Pacific Herring (Clupea pallasii) in British Columbia",
+            "title_fr": "Points de référence limites éventuels comme base pour choisir parmi les autres règles de contrôle des prises pour le hareng du Pacifique (Clupea pallasii) en Colombie-Britannique",
+            "pub_year": 2015,
+            "lead_author_2": "Nick Duprey",
+            "pub_num": "062",
+            "pages": 18,
+            "pdf_size": 629,
+            "description": ""
+        }
+    }
+]

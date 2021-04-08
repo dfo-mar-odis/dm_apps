@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1884,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The quest for Iceland scallops, Chlamys islandica (O.F. Muller) on the Grand Bank, NAFO Division 3LNO",
+            "pub_year": 1989,
+            "lead_author_2": "K.S. Naidu; F.M. Cahill",
+            "pub_num": "012",
+            "pages": 31,
+            "pdf_size": 2030,
+            "description": ""
+        }
+    }
+]

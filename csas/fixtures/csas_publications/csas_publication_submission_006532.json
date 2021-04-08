@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6532,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Recovery Potential Assessment for Southern Upland Atlantic Salmon: Habitat Requirements and Availability, Threats to Populations, and Feasibility of Habitat Restoration",
+            "title_fr": "Évaluation du potentiel de rétablissement du saumon de l'Atlantique des hautes terres du Sud : besoins en matière d'habitat et disponibilité, menaces pour les populations et faisabilité de la restauration de l'habitat",
+            "pub_year": 2013,
+            "lead_author_2": "Bowlby, H.D., Horsman, T., Mitchell, S.C., Gibson, A.J.F.",
+            "pub_num": "006",
+            "pages": 160,
+            "pdf_size": 7367,
+            "description": ""
+        }
+    }
+]

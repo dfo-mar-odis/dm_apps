@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5968,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Information on the Striped Bass (Morone saxatilis) population of the southern Gulf of St. Lawrence relevant to the development of a 2nd COSEWIC status report for the species",
+            "title_fr": "Information sur la population de bar rayé (Morone saxatilis) du sud du golfe du Saint-Laurent servant à l'élaboration du deuxième rapport de situation pour cette espèce par le COSEPAC",
+            "pub_year": 2011,
+            "lead_author_2": "Scott Douglas, Gerald Chaput",
+            "pub_num": "098",
+            "pages": 20,
+            "pdf_size": 137,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6868,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Greenland halibut in the Gulf of St. Lawrence (4RST) in 2012",
+            "title_fr": "Évaluation du flétan du Groenland du golfe Saint-Laurent (4RST) en 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Hugo Bourdages",
+            "pub_num": "039",
+            "pages": 10,
+            "pdf_size": 270,
+            "description": ""
+        }
+    }
+]

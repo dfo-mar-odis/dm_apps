@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2629,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results from the 1995 inshore sentinel survey for cod in NAFO Subdivision 3Ps",
+            "pub_year": 1996,
+            "lead_author_2": "M.B. Davis; H. Jarvis",
+            "pub_num": "095",
+            "pages": 26,
+            "pdf_size": 971,
+            "description": ""
+        }
+    }
+]

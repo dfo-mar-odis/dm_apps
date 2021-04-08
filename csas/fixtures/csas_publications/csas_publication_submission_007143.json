@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7143,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Sixteenth Annual meeting of the Atlantic Zone Monitoring Program (AZMP); 18-20 March, 2014",
+            "title_fr": "Compte rendu de la seizième réunion du Programme Zonal de Monitorage Atlantique; du 18 au 20 mars 2014",
+            "pub_year": 2014,
+            "lead_author_2": "P. Pepin",
+            "pub_num": "034",
+            "pages": 51,
+            "pdf_size": 2108,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6391,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Bycatch in the lobster fishery in the Gaspé (LFAs 19 and 20) and the Magdalen Islands (LFA 22), Quebec, in 2011",
+            "title_fr": "Prises accessoires de la pêche au homard en Gaspésie (ZPH 19 et 20) et aux Îles-de-la-Madeleine (ZPH 22), Québec, en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "Louise Gendron",
+            "pub_num": "100",
+            "pdf_size": 523,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7091,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of Updating Offshore Ecologically and Biologically Significant Areas in the Scotian Shelf Bioregion; February 18-20, 2014, and March 24, 2014",
+            "title_fr": "Compte rendu de l'examen régional par les pairs de la mise à jour sur les zones d'importance écologique et biologique au large des côtes de la biorégion du plateau néo-écossais; du 18 au 20 février 2014 et le 24 mars 2014",
+            "pub_year": 2016,
+            "lead_author_2": "Christie Whelan",
+            "pub_num": "006",
+            "pages": 25,
+            "pdf_size": 172,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7952,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock assessment for Pacific Ocean Perch (Sebastes alutus) in Queen Charlotte Sound, British Columbia in 2017",
+            "title_fr": "Évaluation du stock de sébaste à longue mâchoire (Sebastes alutus) dans le détroit de la Reine-Charlotte, en Colombie-Britannique, en 2017",
+            "pub_year": 2018,
+            "lead_author_2": "Rowan Haigh, Paul J. Star, Andrew M. Edwards, Jacquelynne R. King Jean-Baptiste Lecomte",
+            "pub_num": "038",
+            "pages": 232,
+            "pdf_size": 32970,
+            "description": ""
+        }
+    }
+]

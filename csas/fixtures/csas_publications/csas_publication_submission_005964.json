@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5964,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Scallop Fishery Assessment of the Southern Gulf of St. Lawrence in 2010: Commercial Fishery Data",
+            "title_fr": "Évaluation de la pêcherie de pétoncles dans le sud du golfe du Saint-Laurent en 2010 : données de la pêche commerciale",
+            "pub_year": 2012,
+            "lead_author_2": "L.-A. Davidson, M. Biron, M. Niles",
+            "pub_num": "007",
+            "pages": 46,
+            "pdf_size": 1228,
+            "description": ""
+        }
+    }
+]

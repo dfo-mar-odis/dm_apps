@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1851,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the southern Gulf of St. Lawrence giant scallop (Placopecten magellanicus) stock - 1987",
+            "pub_year": 1988,
+            "lead_author_2": "Marc Lanteigne; Leslie-Anne Davidson",
+            "pub_num": "055",
+            "pages": 39,
+            "pdf_size": 5136,
+            "description": ""
+        }
+    }
+]

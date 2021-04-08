@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 298,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Haddock on the eastern Scotian Shelf 1990",
+            "pub_year": 1990,
+            "lead_author_2": "K. Zwanenburg",
+            "pub_num": "092",
+            "pages": 37,
+            "pdf_size": 1604,
+            "description": ""
+        }
+    }
+]

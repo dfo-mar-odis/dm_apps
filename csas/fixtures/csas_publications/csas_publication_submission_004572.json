@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4572,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Identification of Ecologically Significant Species and Community Properties",
+            "title_fr": "Identification des espèces et des attributs des communautés d'importance écologique",
+            "pub_year": 2006,
+            "lead_author_2": "Jake Rice",
+            "pub_num": "041",
+            "pages": 24,
+            "pdf_size": 296,
+            "description": ""
+        }
+    }
+]

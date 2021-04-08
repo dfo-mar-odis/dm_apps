@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3036,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "4VsW Winter Skate",
+            "title_fr": "Raie tachetée de 4VsW",
+            "pub_year": 1998,
+            "lead_author_2": "Jim Simon",
+            "pub_num": "A3-29",
+            "pages": 6,
+            "pdf_size": 384,
+            "description": ""
+        }
+    }
+]

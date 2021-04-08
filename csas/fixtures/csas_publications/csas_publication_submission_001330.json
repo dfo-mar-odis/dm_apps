@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1330,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Growth per molt of male snow crab, Chionoecetes opilio, from Conception and Bonavista Bays, Newfoundland",
+            "pub_year": 1990,
+            "lead_author_2": "D.M. Taylor; J.M. Hoenig",
+            "pub_num": "001",
+            "pages": 17,
+            "pdf_size": 1139,
+            "description": ""
+        }
+    }
+]

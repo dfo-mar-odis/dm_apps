@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4728,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Ocean Quahog (Arctica islandica) Survey and Yield Estimates for Sable Bank",
+            "title_fr": "Relevé des stocks de quahog nordique (Arctica islandica) et estimation du rendement pour le banc de l'île de Sable",
+            "pub_year": 2007,
+            "lead_author_2": "Roddick, D., R. Kilada, K. Mombourquette.",
+            "pub_num": "036",
+            "pages": 39,
+            "pdf_size": 1238,
+            "description": ""
+        }
+    }
+]

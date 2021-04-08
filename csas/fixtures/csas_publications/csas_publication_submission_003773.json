@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3773,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the cod stock in NAFO Divisions 2J+3KL in February 2003",
+            "title_fr": "Évaluation de l'état du stock de morue des divisions 2J+3KL de l'OPANO en février 2003",
+            "pub_year": 2003,
+            "lead_author_2": "Lilly, G.R., Shelton, P.A., Brattey, J., Cadigan, N.G., Healey, B.P., Murphy, E.F., Stansbury, D.E., Chen, N.",
+            "pub_num": "023",
+            "pages": 161,
+            "pdf_size": 4722,
+            "description": ""
+        }
+    }
+]

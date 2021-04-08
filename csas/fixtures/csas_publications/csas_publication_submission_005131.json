@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5131,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Revised reference points for snow crab to account for the change in estimation area of the southern Gulf of St. Lawrence biological unit",
+            "title_fr": "Points de référence révisés tenant compte des changements de la surface d'estimation de l'unité biologique du crabe des neiges du sud du golfe du Saint-Laurent",
+            "pub_year": 2012,
+            "lead_author_2": "Marc Lanteigne, Gérald Chaput",
+            "pub_num": "002",
+            "pages": 7,
+            "pdf_size": 261,
+            "description": ""
+        }
+    }
+]

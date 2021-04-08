@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1806,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) stocks of the Newfoundland Region, 1987",
+            "pub_year": 1988,
+            "lead_author_2": "M.F. O'Connell; J.B. Dempson; E.G.M. Ash; N.M. Cochrane",
+            "pub_num": "010",
+            "pages": 69,
+            "pdf_size": 2627,
+            "description": ""
+        }
+    }
+]

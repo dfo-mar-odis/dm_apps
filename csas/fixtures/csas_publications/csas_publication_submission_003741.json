@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3741,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of Three Workshops to Investigate the Unpacking Process in Support of Ecosystem - Based Management; February - July 2002",
+            "title_fr": "Compte rendu de trois ateliers sur l'étude du processus de mise en oeuvre de la gestion écosystémique; février-juillet 2002",
+            "pub_year": 2003,
+            "lead_author_2": "O’Boyle, R., Keizer, P.",
+            "pub_num": "004",
+            "pages": 37,
+            "pdf_size": 250,
+            "description": ""
+        }
+    }
+]

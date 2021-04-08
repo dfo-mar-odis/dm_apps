@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6199,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Population viability analysis for northern fur seals (Callorhinus ursinus) in Canada",
+            "title_fr": "Analyse de la viabilité de la population d'otaries à fourrure du Nord (Callorhinus ursinus) au Canada",
+            "pub_year": 2012,
+            "lead_author_2": "Peter Olesiuk",
+            "pub_num": "041",
+            "pages": 40,
+            "pdf_size": 508,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5950,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Risk Assessment for ship-mediated introductions of aquatic nonindigenous species to the Great Lakes and freshwater St. Lawrence River ",
+            "title_fr": "Évaluation du risque d'introduction d'espèces aquatiques non indigènes par les navires dans les Grands Lacs et la partie d'eau douce du fleuve Saint-Laurent ",
+            "pub_year": 2011,
+            "lead_author_2": "S.A. Bailey, F. Chan, S.M. Ellis, J.E. Bronnenhuber, J.N. Bradie and N. Simard",
+            "pub_num": "104",
+            "pages": 230,
+            "pdf_size": 1997,
+            "description": ""
+        }
+    }
+]

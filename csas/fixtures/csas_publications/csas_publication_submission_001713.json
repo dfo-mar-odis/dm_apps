@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1713,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Exploitation du pétoncle Côte-Nord du Golfe St-Laurent et Gaspésie - 1986",
+            "pub_year": 1987,
+            "lead_author_2": "M. Giguère; B. Légaré",
+            "pub_num": "024",
+            "pages": 35,
+            "pdf_size": 1662,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2745,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Euphausiids the on eastern continental shelf",
+            "pub_year": 1996,
+            "lead_author_2": "D. Sameoto; N. Cochrane",
+            "pub_num": "119",
+            "pages": 12,
+            "pdf_size": 829,
+            "description": ""
+        }
+    }
+]

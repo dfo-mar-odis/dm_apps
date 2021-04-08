@@ -6,7 +6,7 @@
 
 <div class="mb-5">
   <div class="mb-2 neighbours">
-    <h2>{% trans "Collaborations" %}</h2>
+    <p class="lead">{% trans "Collaborations" %}</p>
   </div>
   <div v-if="!collaboration_loading" class="mb-2 neighbours">
     <button @click="openCollaborationModal()" class="{{ btn_class_1 }} no-print" v-if="canModify">
@@ -58,8 +58,8 @@
           {% endif %}
         {% endfor %}
         <td class="to-the-right" v-if="canModify">
-          <button @click="openCollaborationModal(item)" class="no-print"><span class="mdi mdi-pencil"></span></button>
-          <button @click="deleteCollaboration(item)" class="no-print"><span class="mdi mdi-delete"></span></button>
+          <button @click="openCollaborationModal(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-pencil"></span></button>
+          <button @click="deleteCollaboration(item)" class="{{ btn_class_2 }} no-print"><span class="mdi mdi-delete"></span></button>
         </td>
       </tr>
       </tbody>

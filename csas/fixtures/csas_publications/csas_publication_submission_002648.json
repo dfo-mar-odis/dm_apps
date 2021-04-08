@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2648,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Mackerel in the Northwest Atlantic",
+            "title_fr": "Maquereau bleu du nord-ouest de l'Atlantique",
+            "pub_year": 1996,
+            "lead_author_2": "Francois Grégoire",
+            "pub_num": "024",
+            "description": ""
+        }
+    }
+]

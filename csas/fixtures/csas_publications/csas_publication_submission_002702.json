@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2702,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Capelin in Subarea 2 + Div. 3 KL - Update",
+            "pub_year": 2001,
+            "lead_author_2": "Carscadden J.",
+            "pub_num": "B2-02",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

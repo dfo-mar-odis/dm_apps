@@ -33,7 +33,7 @@ from . import models
 from . import reports
 from . import utils
 from .mixins import TravelAccessRequiredMixin, CanModifyMixin, TravelAdminRequiredMixin, AdminOrApproverRequiredMixin, TravelADMAdminRequiredMixin
-from .utils import in_travel_admin_group, in_adm_admin_group, can_modify_request, is_approver, is_trip_approver, is_manager_or_assistant_or_admin
+from .utils import in_travel_admin_group, in_adm_admin_group, can_modify_request, is_approver, is_trip_approver, is_manager_or_assistant_or_admin, is_admin
 
 
 def get_file(request, file):
@@ -99,7 +99,7 @@ class IndexTemplateView(TravelAccessRequiredMixin, CommonTemplateView):
             models.ProcessStep.objects.filter(stage=2)
         ]
         context["information_sections"] = models.ProcessStep.objects.filter(stage=0, is_visible=True)
-        context["faqs"] = models.FAQ.objects.all()
+        # context["faqs"] = models.FAQ.objects.all()
         context["refs"] = models.ReferenceMaterial.objects.all()
         # context["region_tabs"] = [region.tname for region in shared_models.Region.objects.all()]
 
@@ -211,7 +211,7 @@ class TripRequestCreateView(TravelAccessRequiredMixin, CommonCreateView):
 
     def get_initial(self):
         if self.request.GET.get("trip"):
-            return dict(trip=self.request.GET.get("trip"))
+            return dict(trip=get_object_or_404(models.Trip, pk=self.request.GET.get("trip")))
 
     def form_valid(self, form):
         my_object = form.save(commit=False)
@@ -379,18 +379,7 @@ class TripRequestSubmitUpdateView(CanModifyMixin, CommonUpdateView):
                     reviewer.save()
 
             #  SUBMIT REQUEST
-            my_object.submitted = timezone.now()
-            # if there is not an original submission date, add one
-            if not my_object.original_submission_date:
-                my_object.original_submission_date = timezone.now()
-            # if the request is being resubmitted, this is a special case...
-            if my_object.status == 16:
-                my_object.status = 8  # it doesn't really matter what we set the status to. The approval_seeker func will handle this
-                my_object.save()
-            else:
-                # set all the reviewer statuses to 'queued'
-                utils.start_request_review_process(my_object)
-                # go and get approvals!!
+            my_object.submit()
 
             # clean up any unused cost categories
             for traveller in my_object.travellers.all():
@@ -398,7 +387,6 @@ class TripRequestSubmitUpdateView(CanModifyMixin, CommonUpdateView):
 
         # No matter what business was done, we will call this function to sort through reviewer and request statuses
         utils.approval_seeker(my_object, False, self.request)
-        my_object.save()
 
         return HttpResponseRedirect(reverse("travel:request_detail", kwargs=self.kwargs) + self.get_query_string())
 
@@ -487,11 +475,14 @@ class RequestReviewerUpdateView(AdminOrApproverRequiredMixin, CommonUpdateView):
 
     def get_h1(self):
         if self.request.GET.get("rdg"):
-            return _("Do you wish to approve on behalf of {user} ({role})".format(
+            return _("Do you wish to approve on behalf of {user}".format(
                 user=self.get_object().user,
-                role=self.get_object().get_role_display(),
             ))
         return _("Do you wish to approve the following request?")
+
+    def get_h2(self):
+        if self.request.GET.get("rdg"):
+            return f"<span class='highlight py-1 px-1'>{self.get_object().get_role_display()}</span>"
 
     def get_parent_crumb(self):
         return {"title": _("Requests Awaiting Review"), "url": reverse("travel:request_reviewer_list") + self.get_query_string()}
@@ -502,7 +493,7 @@ class RequestReviewerUpdateView(AdminOrApproverRequiredMixin, CommonUpdateView):
         my_user = self.request.user
         # if this is an rdg approval, then we make sure it is a travel admin
         if self.request.GET.get("rdg"):
-            return in_travel_admin_group(my_user) and reviewer.role == 6
+            return in_travel_admin_group(my_user) and reviewer.role == 7
         # otherwise we make sure that this person is the current reviewer
         else:
             return is_approver(my_user, my_trip_request)

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5788,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Skeena River Chum (Oncorhynchus keta) Stock Status",
+            "lead_author_2": "Dave Peacock",
+            "description": ""
+        }
+    }
+]

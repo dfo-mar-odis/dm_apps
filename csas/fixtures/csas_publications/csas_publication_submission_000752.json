@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 752,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Assessment of Rivers and Smith Inlet Sockeye Salmon, with Commentary on Small Sockeye Salmon Stocks in Statistical Area 8",
+            "pub_year": 2000,
+            "lead_author_2": "Rutherford, D., Wood, C.",
+            "pub_num": "162",
+            "pages": 57,
+            "pdf_size": 35000,
+            "description": ""
+        }
+    }
+]

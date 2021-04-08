@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 356,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Analysis of the status of the Newfoundland west coast herring stock",
+            "pub_year": 1979,
+            "lead_author_2": "J.A. Moores",
+            "pub_num": "005",
+            "pages": 18,
+            "pdf_size": 941,
+            "description": ""
+        }
+    }
+]

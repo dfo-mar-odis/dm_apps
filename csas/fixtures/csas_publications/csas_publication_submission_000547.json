@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 547,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Relative strength of the 1999 year-class, from nearshore surveys of demersal age 0 Atlantic cod in 3KL and in Newman Sound, Bonavista Bay",
+            "pub_year": 2000,
+            "lead_author_2": "Gregory, R.S., Methven, D.A., Wheeler, L.A., Schneider, D.C., Brown, J.A.",
+            "pub_num": "094",
+            "pages": 17,
+            "pdf_size": 515,
+            "description": ""
+        }
+    }
+]

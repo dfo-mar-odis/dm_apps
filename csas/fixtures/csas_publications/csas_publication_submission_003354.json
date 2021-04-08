@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3354,
+        "fields": {
+            "series": 7,
+            "lead_region": [4, 2, 1, 5],
+            "title_en": "Update on Groundfish Stock Status Report",
+            "title_fr": "Mise à jour sur l'état des stocks de poissons de fond",
+            "pub_year": 1993,
+            "pub_num": "003",
+            "pages": 24,
+            "description": ""
+        }
+    }
+]

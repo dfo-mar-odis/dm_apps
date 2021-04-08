@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5487,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Stock Assessments on scallop in the Quebec's inshore waters; January 26, 2010",
+            "title_fr": "Évaluation des stocks de pétoncle des eaux côtières du Québec; 26 janvier 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Chabot, D.",
+            "pub_num": "004",
+            "pages": 16,
+            "description": ""
+        }
+    }
+]

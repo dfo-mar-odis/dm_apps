@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 843,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the Labrador shrimp fishery",
+            "pub_year": 1979,
+            "lead_author_2": "D.G. Parsons; G.E. Tucker; P.J. Veitch",
+            "pub_num": "001",
+            "pages": 46,
+            "pdf_size": 1729,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 642,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Review of the fisheries and biology of the Pacific Hagfish (Eptatretus stoutii) in British Columbia, with recommendations for biological sampling in a developmental fishery",
+            "pub_year": 1999,
+            "lead_author_2": "Leask, K.D., Beamish, R.J.",
+            "pub_num": "205",
+            "pages": 47,
+            "pdf_size": 313,
+            "description": ""
+        }
+    }
+]

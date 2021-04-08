@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4508,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Assessment of Eastern Nova Scotia (4VW) Snow Crab",
+            "title_fr": "Évaluation du crabe des neiges de l'est de la Nouvelle-Écosse (4VW)",
+            "pub_year": 2006,
+            "lead_author_2": "Choi, J.S., Zisserson, B.M.",
+            "pub_num": "027",
+            "pages": 18,
+            "pdf_size": 980,
+            "description": ""
+        }
+    }
+]

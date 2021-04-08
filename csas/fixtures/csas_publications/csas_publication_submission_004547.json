@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4547,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Conservation Requirements for Atlantic salmon (Salmo salar L.) in Labrador rivers",
+            "title_fr": "Besoins de conservation du saumon atlantique (Salmo salar L.) dans les cours d'eau du Labrador",
+            "pub_year": 2006,
+            "lead_author_2": "Reddin, D.G., J.B. Dempson, P.G. Amiro",
+            "pub_num": "071",
+            "pages": 33,
+            "pdf_size": 294,
+            "description": ""
+        }
+    }
+]

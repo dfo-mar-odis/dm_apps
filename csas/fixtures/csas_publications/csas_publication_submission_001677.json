@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1677,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1986 stock assessment of American plaice in NAFO Division 4T",
+            "pub_year": 1986,
+            "lead_author_2": "T. Landry",
+            "pub_num": "091",
+            "pages": 32,
+            "pdf_size": 1520,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6734,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Wolffish in the Atlantic and Arctic regions",
+            "title_fr": "Le loup de mer dans les régions de l'Atlantique et de l'Arctique",
+            "pub_year": 2013,
+            "lead_author_2": "M.R. Simpson et al.",
+            "pub_num": "005",
+            "pages": 19,
+            "pdf_size": 689,
+            "description": ""
+        }
+    }
+]

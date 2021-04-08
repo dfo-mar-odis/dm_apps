@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2092,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_fr": "La pêche au crabe des neiges (Chionoecetes opilio) dans le sud-ouest du golfe du Saint-Laurent en 1990: État de la ressource et l'estimation de la biomasse",
+            "pub_year": 1991,
+            "lead_author_2": "Y. Chiasson; M. Hébert; E. Wade; C. Gallant; P. DeGrâce; P. Mallet; M. Moriyasu",
+            "pub_num": "027",
+            "description": ""
+        }
+    }
+]

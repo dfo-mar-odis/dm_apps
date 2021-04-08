@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2332,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the NAFO Division 4T Atlantic herring stock, 1992",
+            "title_fr": "Évaluation des stocks de hareng de l'Atlantique dans la division 4T de l'OPANO, 1992",
+            "pub_year": 1993,
+            "lead_author_2": "G. Chaput; F. Mowbray; H. Dupuis; C. Bourque; C. MacDougall; L. Mello",
+            "pub_num": "059",
+            "pages": 95,
+            "pdf_size": 4432,
+            "description": ""
+        }
+    }
+]

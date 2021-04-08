@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5577,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock assessment for Silvergray Rockfish (Sebastes brevispinis) along the Pacific coast of Canada",
+            "title_fr": "Évaluation du stock de sébaste argenté (Sebastes brevispinis) le long de la côte du Pacifique du Canada",
+            "pub_year": 2016,
+            "lead_author_2": "Paul Starr, Rowan Haigh, Chris Grandin",
+            "pub_num": "042",
+            "pages": 176,
+            "pdf_size": 12636,
+            "description": ""
+        }
+    }
+]

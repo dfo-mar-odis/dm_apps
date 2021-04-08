@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4149,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Harvest statistics for beluga whales in Nunavik, 1974-2004",
+            "title_fr": "Statistiques des captures du béluga au Nunavik, 1974-2004",
+            "pub_year": 2005,
+            "lead_author_2": "Lesage, V., D.W. Doidge",
+            "pub_num": "012",
+            "pages": 25,
+            "pdf_size": 1620,
+            "description": ""
+        }
+    }
+]

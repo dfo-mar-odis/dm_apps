@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1611,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Saint John River, N.B., Atlantic salmon in 1985 and forecast of returns in 1986",
+            "pub_year": 1985,
+            "lead_author_2": "T.L. Marshall",
+            "pub_num": "104",
+            "pages": 24,
+            "pdf_size": 1246,
+            "description": ""
+        }
+    }
+]

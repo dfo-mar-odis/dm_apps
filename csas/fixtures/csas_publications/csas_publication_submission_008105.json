@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8105,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Assessment of Capelin in SA2 and Divs. 3KL in 2017",
+            "title_fr": "Évaluation de la population de capelans dans la sous-zone 2 et dans les divisions 3KL en 2017",
+            "pub_year": 2018,
+            "lead_author_2": "F. Mowbrayy",
+            "pub_num": "030",
+            "pages": 24,
+            "pdf_size": 2610,
+            "description": ""
+        }
+    }
+]

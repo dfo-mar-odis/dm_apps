@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 214,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The status of yellowtail flounder in NAFO Division 4T in 1998",
+            "title_fr": "État de la limande à queue jaune dans la division 4T de l'OPANO en 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Poirier, G., Morin, R.",
+            "pub_num": "046",
+            "pages": 42,
+            "pdf_size": 3415,
+            "description": ""
+        }
+    }
+]

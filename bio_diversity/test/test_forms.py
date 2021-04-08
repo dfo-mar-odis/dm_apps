@@ -521,7 +521,9 @@ class TestSireForm(CommonTest):
     def test_invalid_indv(self):
         # cannot use invalid individual code
         invalid_data = self.data.copy()
-        non_valid_indv = BioFactoryFloor.IndvFactory(indv_valid=False)
+        non_valid_indv = BioFactoryFloor.IndvFactory()
+        non_valid_indv.indv_valid = False
+        non_valid_indv.save()
         invalid_data['indv_id'] = non_valid_indv.pk
         self.assert_form_invalid(self.Form, data=invalid_data)
 

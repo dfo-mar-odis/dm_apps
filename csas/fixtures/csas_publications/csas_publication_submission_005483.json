@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5483,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Exploratory Fishery Protocol - Nunavut and Northwest Territories Anadromous Arctic Charr",
+            "title_fr": "Protocole pour la pêche exploratoire à l'omble chevalier anadrome du Nunavut et des Territoires du Nord-Ouest",
+            "pub_year": 2010,
+            "lead_author_2": "Tallman, R.",
+            "pub_num": "022",
+            "pages": 9,
+            "pdf_size": 210,
+            "description": ""
+        }
+    }
+]

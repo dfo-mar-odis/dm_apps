@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3479,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Central Coast Herring",
+            "title_fr": "Hareng de la côte centrale",
+            "pub_year": 2002,
+            "lead_author_2": "Jake Schweigert",
+            "pub_num": "B6-02",
+            "pages": 4,
+            "pdf_size": 70,
+            "description": ""
+        }
+    }
+]

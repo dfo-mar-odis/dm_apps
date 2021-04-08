@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 229,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop production Area 3: Stock status update for 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Lundy, M.J., Smith, S.J.",
+            "pub_num": "061",
+            "pages": 29,
+            "pdf_size": 2290,
+            "description": ""
+        }
+    }
+]

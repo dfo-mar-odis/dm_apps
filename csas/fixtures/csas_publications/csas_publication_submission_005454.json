@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5454,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Potential impacts of fishing gears (excluding mobile bottom-contacting gears) on marine habitats and communities",
+            "title_fr": "Impacts potentiels des engins de pêche (à l'exception des engins mobiles entrant en contact avec le fond) sur les communautés et les habitats marins",
+            "pub_year": 2010,
+            "lead_author_2": "Jake Rice, and Andrea White",
+            "pub_num": "003",
+            "pages": 24,
+            "pdf_size": 108,
+            "description": ""
+        }
+    }
+]

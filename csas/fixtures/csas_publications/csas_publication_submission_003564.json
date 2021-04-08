@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3564,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The Status of White Hake (Urophycis tenuis), in NAFO Division 3L, 3N, 3O and Subdivision 3Ps",
+            "title_fr": "État de la merluche blanche (Urophycis tenuis) des divisions 3LNO et de la sous-division 3Ps de l'OPANO",
+            "pub_year": 2002,
+            "lead_author_2": "D.W. Kulka and M.R. Simpson",
+            "pub_num": "055",
+            "pages": 57,
+            "pdf_size": 11770,
+            "description": ""
+        }
+    }
+]

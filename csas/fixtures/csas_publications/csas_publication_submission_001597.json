@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1597,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "East coast Newfoundland herring 1984 assessment",
+            "pub_year": 1985,
+            "lead_author_2": "J.P. Wheeler; R. Chaulk; G.H. Winters",
+            "pub_num": "090",
+            "pages": 75,
+            "pdf_size": 2403,
+            "description": ""
+        }
+    }
+]

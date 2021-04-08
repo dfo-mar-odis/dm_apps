@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3762,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Meziadin Lake Biological Escapement Goal and Considerations for Increasing Yield of Sockeye Salmon (Oncorhynchus nerka)",
+            "title_fr": "Objectif biologique d'échappée et étude de la possibilité d'augmenter la production du stock de saumon rouge (Oncorhynchus nerka) dans le lac Meziadin",
+            "pub_year": 2002,
+            "lead_author_2": "Bocking, R.C., Link, M.R., Baxter, B., Nass, B., Jantz, L.",
+            "pub_num": "124",
+            "pages": 56,
+            "pdf_size": 448,
+            "description": ""
+        }
+    }
+]

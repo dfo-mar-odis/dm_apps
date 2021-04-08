@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1096,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of scallop stocks on Browns and German Banks - 1979",
+            "pub_year": 1980,
+            "lead_author_2": "G.S. Jamieson; G. Kerr; M.J. Lundy",
+            "pub_num": "080",
+            "pages": 24,
+            "pdf_size": 1006,
+            "description": ""
+        }
+    }
+]

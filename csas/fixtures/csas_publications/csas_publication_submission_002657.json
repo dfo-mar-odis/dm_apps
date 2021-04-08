@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2657,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Porbeagle shark",
+            "title_fr": "Le requin-taupe commun",
+            "pub_year": 1996,
+            "lead_author_2": "O'Boyle, B.",
+            "pub_num": "033",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

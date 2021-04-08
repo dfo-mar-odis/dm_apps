@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5406,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of Newfoundland and Labrador Atlantic Salmon - 2009",
+            "title_fr": "Évaluation du stock de saumon atlantique de Terre Neuve et du Labrador - 2009",
+            "pub_year": 2009,
+            "lead_author_2": "Chuck Bourgeois",
+            "pub_num": "068",
+            "pages": 21,
+            "pdf_size": 172,
+            "description": ""
+        }
+    }
+]

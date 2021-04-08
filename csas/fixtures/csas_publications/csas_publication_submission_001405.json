@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1405,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biological assessment of Atlantic salmon in the Restigouche River, 1983",
+            "pub_year": 1983,
+            "lead_author_2": "R.G. Randall; P.R. Pickard",
+            "pub_num": "088",
+            "pages": 18,
+            "pdf_size": 612,
+            "description": ""
+        }
+    }
+]

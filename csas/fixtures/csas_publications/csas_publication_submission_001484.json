@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1484,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1984 assessment of 4VsW cod: A completely revised procedure",
+            "pub_year": 1984,
+            "lead_author_2": "J.A. Gagné; A.F. Sinclair; C. Dale",
+            "pub_num": "078",
+            "pages": 60,
+            "pdf_size": 2990,
+            "description": ""
+        }
+    }
+]

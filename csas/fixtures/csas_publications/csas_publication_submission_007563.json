@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7563,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Production Areas in the Bay of Fundy: Stock Status for 2015 and Forecast for 2016",
+            "title_fr": "Zones de production de pétoncles dans la baie de Fundy : État du stock en 2015 et prévisions pour 2016",
+            "pub_year": 2016,
+            "lead_author_2": "Leslie Nasmith, Ph. 902-426-4315",
+            "pub_num": "021",
+            "pages": 146,
+            "pdf_size": 3751,
+            "description": ""
+        }
+    }
+]

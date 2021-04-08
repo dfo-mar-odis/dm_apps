@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1146,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Évolution des rendements chez les bateaux exploitant le crabe des neiges (Chionoecetes opilio) dans le sud-ouest du golfe du Saint-Laurent de 1974 à 1980",
+            "pub_year": 1981,
+            "lead_author_2": "P. Lamoureux",
+            "pub_num": "048",
+            "description": ""
+        }
+    }
+]

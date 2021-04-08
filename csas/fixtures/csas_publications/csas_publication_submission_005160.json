@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5160,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Summary of the Environmental and Indirect Human Health Risk Assessment of AquAdvantage® Salmon",
+            "title_fr": "Résumé de l'évaluation des risques pour l'environnement et des risques indirects pour la santé humaine posés par le saumon AquAdvantageMD",
+            "pub_year": 2013,
+            "pub_num": "023",
+            "pages": 26,
+            "pdf_size": 264,
+            "description": ""
+        }
+    }
+]

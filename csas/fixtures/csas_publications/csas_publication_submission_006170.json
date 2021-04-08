@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6170,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Overview of 2013 Bay of Fundy Striped Bass Biology and General Status",
+            "title_fr": "Aperçu de la biologie et de la situation générale du bar rayé de la baie de Fundy en 2013",
+            "pub_year": 2015,
+            "lead_author_2": "Rod Bradford",
+            "pub_num": "024",
+            "pages": 42,
+            "pdf_size": 2091,
+            "description": ""
+        }
+    }
+]

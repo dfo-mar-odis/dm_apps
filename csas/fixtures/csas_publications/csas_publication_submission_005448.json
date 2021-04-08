@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5448,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 5],
+            "title_en": "Ecosystem Status and Trends Report for the Newfoundland and Labrador Shelf",
+            "title_fr": "Rapport sur l'état de l'écosystème du plateau de Terre-Neuve et du Labrador et les tendances",
+            "pub_year": 2010,
+            "lead_author_2": "Templeman, N.",
+            "pub_num": "026",
+            "pages": 78,
+            "pdf_size": 4185,
+            "description": ""
+        }
+    }
+]

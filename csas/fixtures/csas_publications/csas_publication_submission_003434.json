@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3434,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Status in 2000 of Coho Stocks Adjacent to the Strait of Georgia",
+            "title_fr": "État des stocks de saumon coho dans le bassin de Géorgie en 2000",
+            "pub_year": 2001,
+            "lead_author_2": "Simpson, K., Dobson, D., Semple, R., Lehmann, S., Baillie S., Matthews, I.",
+            "pub_num": "144",
+            "pages": 92,
+            "pdf_size": 893,
+            "description": ""
+        }
+    }
+]

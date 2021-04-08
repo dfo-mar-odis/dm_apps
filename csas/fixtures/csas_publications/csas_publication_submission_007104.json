@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7104,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment of Striped Shrimp (Pandalus montagui) in SFA 4",
+            "lead_author_2": "Katherine Skanes",
+            "description": ""
+        }
+    }
+]

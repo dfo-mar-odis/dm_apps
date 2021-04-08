@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2484,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Factors affecting the returns of adult Atlantic salmon, Salmo salar, with emphasis on Conne River",
+            "pub_year": 1995,
+            "lead_author_2": "J.B. Dempson; D.G. Reddin",
+            "pub_num": "078",
+            "pages": 27,
+            "pdf_size": 1159,
+            "description": ""
+        }
+    }
+]

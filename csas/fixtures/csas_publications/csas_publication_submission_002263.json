@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2263,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Larval settlement patterns of the giant scallop (Placopecten magellanicus) in Passamaquoddy Bay, New Brunswick",
+            "pub_year": 1992,
+            "lead_author_2": "S.M.C. Robinson; J.D. Martin; R.A. Chandler; G.L. Parsons; C.Y. Couturier",
+            "pub_num": "115",
+            "pages": 26,
+            "pdf_size": 1425,
+            "description": ""
+        }
+    }
+]

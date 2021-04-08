@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2732,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) in eight rivers in the Newfoundland Region, 1995",
+            "pub_year": 1996,
+            "lead_author_2": "M.F. O'Connell; D.G. Reddin; C.C. Mullins",
+            "pub_num": "106",
+            "pages": 52,
+            "pdf_size": 2425,
+            "description": ""
+        }
+    }
+]

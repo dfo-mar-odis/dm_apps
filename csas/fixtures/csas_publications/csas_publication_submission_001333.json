@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1333,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon in the Miramichi River during 1989",
+            "pub_year": 1990,
+            "lead_author_2": "R.G. Randall; D.M. Moore; P.R. Pickard",
+            "pub_num": "004",
+            "pages": 36,
+            "pdf_size": 1629,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3722,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "2001 State of the Ocean: Chemical and Biological Oceanographic Conditions in the Estuary and Gulf of St. Lawrence",
+            "title_fr": "État de l'océan en 2001 : Les conditions chimiques et biologiques dans l'estuaire et le gulfe du Saint-Laurent",
+            "pub_year": 2002,
+            "lead_author_2": "Harvey, M., Starr, M.",
+            "pub_num": "G4-03",
+            "pages": 15,
+            "pdf_size": 1080,
+            "description": ""
+        }
+    }
+]

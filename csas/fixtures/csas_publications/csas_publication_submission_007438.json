@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7438,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment for the Salish Sucker In Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement du meunier de Salish au Canada",
+            "pub_year": 2015,
+            "lead_author_2": "Pearson, M.",
+            "pub_num": "077",
+            "pages": 50,
+            "pdf_size": 3697,
+            "description": ""
+        }
+    }
+]

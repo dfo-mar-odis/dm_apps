@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8249,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Assessment of British Columbia Pacific Cod for Areas 3CD, and 5ABCD in 2018",
+            "title_fr": "Évaluation de la morue du Pacifique de la Colombie-Britannique dans les zones 3CD et 5ABCD en 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Greg Workman",
+            "pub_num": "008",
+            "pages": 15,
+            "pdf_size": 546,
+            "description": ""
+        }
+    }
+]

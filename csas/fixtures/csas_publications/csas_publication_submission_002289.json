@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2289,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Towards a minimum meat weight regulation for the inshore sea scallop (Placopecten magellanicus) fishery",
+            "pub_year": 1993,
+            "lead_author_2": "E. Kenchington; M.J. Lundy",
+            "pub_num": "016",
+            "pages": 5,
+            "pdf_size": 362,
+            "description": ""
+        }
+    }
+]

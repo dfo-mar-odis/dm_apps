@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6304,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Review of the retained catch of Atlantic salmon as a result of the introduction of the River Classification System in the 1996 IFMP for insular Newfoundland (SFA's 3-14A)",
+            "title_fr": "Examen des prises conservées de saumon Atlantique après l'introduction du système de classification des rivières dans le PGIP de 1996 dans l'Île de Terre Neuve (ZPS 3-14A)",
+            "pub_year": 2011,
+            "lead_author_2": "C. Bourgeois/G. Veinott",
+            "pub_num": "139",
+            "pages": 14,
+            "pdf_size": 100,
+            "description": ""
+        }
+    }
+]

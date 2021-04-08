@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 865,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Length-weight relationships of cod in Subdivision 3Ps and area 3Pn4RS in winter, 1978",
+            "pub_year": 1978,
+            "lead_author_2": "R. Wells; G.H. Kean",
+            "pub_num": "009",
+            "pages": 18,
+            "pdf_size": 560,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2605,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An evaluation of the acoustic backscatter of western Newfoundland herring with a comparison of classical statistics and geostatistics for the estimation of variance",
+            "pub_year": 1996,
+            "lead_author_2": "I.H. McQuinn; L. Lefebvre",
+            "pub_num": "058",
+            "pages": 25,
+            "pdf_size": 1209,
+            "description": ""
+        }
+    }
+]

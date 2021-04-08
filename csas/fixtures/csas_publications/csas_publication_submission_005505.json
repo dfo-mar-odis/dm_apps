@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5505,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Regional Science Advisory Process on the Review of pre-season Fraser River Sockeye forecasts; March 9, 2010",
+            "title_fr": "Processus de consultation scientifique régional sur l'examen des prévisions d'avant-saison concernant le saumon rouge du fleuve Fraser; le 9 mars 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Chamberlain, M.",
+            "pub_num": "030",
+            "pages": 15,
+            "pdf_size": 92,
+            "description": ""
+        }
+    }
+]

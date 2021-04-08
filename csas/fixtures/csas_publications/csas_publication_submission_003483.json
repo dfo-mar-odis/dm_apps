@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3483,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Scotian Shelf Capelin",
+            "title_fr": "Capelan du plateau néo-écossais",
+            "pub_year": 1997,
+            "lead_author_2": "Ken Frank
+Rob Stephenson",
+            "pub_num": "B3-06",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

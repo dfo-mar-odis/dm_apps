@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7651,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Review of potential impacts of hydrated lime treatments associated with proposed expansion of mussel production in Malpeque Bay, PEI",
+            "title_fr": "Examen des incidences possibles des traitements à la chaux hydratée dans le contexte du projet d'expansion de la production de moules dans la baie Malpeque, à l'île-du-Prince-Édouard",
+            "pub_year": 2016,
+            "lead_author_2": "Darlene Smith",
+            "pub_num": "014",
+            "pages": 14,
+            "pdf_size": 635,
+            "description": ""
+        }
+    }
+]

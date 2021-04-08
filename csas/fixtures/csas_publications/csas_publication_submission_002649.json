@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2649,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Capelin in the Gulf of St. Lawrence",
+            "title_fr": "Capelan du golfe Saint-Laurent",
+            "pub_year": 1996,
+            "lead_author_2": "Francois Grégoire",
+            "pub_num": "025",
+            "description": ""
+        }
+    }
+]

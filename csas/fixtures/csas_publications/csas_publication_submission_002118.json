@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2118,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An assessment of the cod stock in NAFO Divisions 2J3KL",
+            "pub_year": 1991,
+            "lead_author_2": "J.W. Baird; C.A. Bishop; E.F. Murphy",
+            "pub_num": "053",
+            "pages": 84,
+            "pdf_size": 3417,
+            "description": ""
+        }
+    }
+]

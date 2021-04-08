@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7389,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Evaluation of Marine Recreational Coho Mark-Selective Fisheries",
+            "lead_author_2": "Dave  O’Brien",
+            "description": ""
+        }
+    }
+]

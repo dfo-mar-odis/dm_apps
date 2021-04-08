@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6334,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Transport of marine debris from the 2011 Tohoku tsunami to the west coast of Canada",
+            "title_fr": "Transport vers la côte Ouest du Canada de débris marins issus du tsunami de Tohoku de 2011",
+            "pub_year": 2012,
+            "lead_author_2": "DFO-MPO",
+            "pub_num": "006",
+            "pages": 12,
+            "pdf_size": 309,
+            "description": ""
+        }
+    }
+]

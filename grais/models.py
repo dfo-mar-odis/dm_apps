@@ -95,17 +95,28 @@ class Species(models.Model):
     last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
     green_crab_monitoring = models.BooleanField(default=False, verbose_name="targeted species in Green Crab Monitoring Program?")
 
-    def __str__(self):
+    @property
+    def tname(self):
         if self.common_name or self.common_name_fra:
             if getattr(self, str(_("common_name"))):
                 my_str = "{}".format(getattr(self, str(_("common_name"))))
             # if there is no translated term, just pull from the english field
             else:
                 my_str = "{}".format(self.common_name)
+            return my_str
 
-            return mark_safe(my_str + " (<em>" + self.scientific_name + "</em>)") if self.scientific_name else my_str
+    def __str__(self):
+        if self.common_name or self.common_name_fra:
+            return mark_safe(self.tname + " (<em>" + self.scientific_name + "</em>)") if self.scientific_name else self.tname
         else:
             return mark_safe("<em>" + self.scientific_name + "</em>")
+
+    @property
+    def name_plaintext(self):
+        if self.common_name or self.common_name_fra:
+            return f"{self.tname} ({self.scientific_name})" if self.scientific_name else self.tname
+        else:
+            return self.scientific_name
 
     class Meta:
         ordering = ['common_name']

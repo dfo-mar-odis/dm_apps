@@ -75,9 +75,10 @@ class Event(SimpleLookup):
 class Invitee(models.Model):
     # Choices for role
     role_choices = (
-        (1, 'Attendee'),
+        (1, 'Participant'),
         (2, 'Chair'),
         (3, 'Expert'),
+        (4, 'Steering Committee Member'),
     )
     status_choices = (
         (0, 'Invited'),

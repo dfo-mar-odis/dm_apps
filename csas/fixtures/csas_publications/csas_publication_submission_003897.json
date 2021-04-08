@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3897,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Georges Bank Haddock",
+            "title_fr": "Aiglefin de l'est du Banc Georges",
+            "pub_year": 2003,
+            "lead_author_2": "Lou Van Eeckhaute",
+            "pub_num": "041",
+            "pages": 6,
+            "description": ""
+        }
+    }
+]

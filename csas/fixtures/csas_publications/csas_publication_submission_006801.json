@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6801,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Transport and dispersal of sea lice bath therapeutants from salmon farm net-pens and well-boats",
+            "title_fr": "Transport et dispersion des agents thérapeutiques des bains contre le pou du poisson à partir des parcs en filet et des bateaux viviers des installations salmonicoles",
+            "pub_year": 2015,
+            "lead_author_2": "Page, F.H., Losier, R., Haigh, S., Bakker, J., Chang, B.D., McCurdy, P., Beattie, M., Haughn, K., Thorpe, B., Fife, J., Scouten, S., Greenberg, D., Ernst, W., Wong, D., and Bartlett, G.",
+            "pub_num": "064",
+            "pages": 166,
+            "pdf_size": 10630,
+            "description": ""
+        }
+    }
+]

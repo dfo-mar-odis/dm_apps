@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 314,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Forecasting preseason and inseason Atlantic salmon returns to the Miramichi River: Parametric and non-parametric approaches",
+            "pub_year": 1991,
+            "lead_author_2": "R.R. Claytor; R.G. Randall; G.J. Chaput",
+            "pub_num": "015",
+            "pages": 72,
+            "pdf_size": 2782,
+            "description": ""
+        }
+    }
+]

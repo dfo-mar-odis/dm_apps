@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4587,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process of Georges Bank Scallop Stock Status; 20 April 2006",
+            "title_fr": "Compte rendu des réunions du Processus consultatif régional des provinces Maritimes concernant l'état du stock de pétoncle du banc Georges; 20 avril 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Claytor, R.",
+            "pub_num": "032",
+            "pages": 23,
+            "pdf_size": 100,
+            "description": ""
+        }
+    }
+]

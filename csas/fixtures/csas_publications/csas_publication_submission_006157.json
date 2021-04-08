@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6157,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Report on the 2009-10 Study of Incidental Catch in the LFA 34 Lobster Fishery",
+            "lead_author_2": "D. Pezzack",
+            "description": ""
+        }
+    }
+]

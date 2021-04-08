@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6101,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "A Synthesis and Critical Review of the Traditional Ecological Knowledge Literature on Narwhal (Monodon monoceros) in the Eastern Canadian Arctic",
+            "title_fr": "Synthèse et revue critique de la littérature sur le savoir écologique traditionnel (SET) relative au narval (Monodon monoceros) dans l'est de l'Arctique canadien ",
+            "pub_year": 2011,
+            "lead_author_2": "Chris Furgal, Rodd Laing",
+            "pub_num": "131",
+            "pages": 51,
+            "pdf_size": 1060,
+            "description": ""
+        }
+    }
+]

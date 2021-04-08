@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8652,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Characterization of Tenacibaculum maritimum and mouthrot to inform pathogen transfer risk assessments in British Columbia",
+            "title_fr": "Caractérisation de la bactérie Tenacibaculum maritimum et de la pourriture de la bouche pour informer les évaluations des risques de transfert d’agents pathogènes en Colombie-Britannique",
+            "pub_year": 2020,
+            "lead_author_2": "Wade, J. and Weber, L.",
+            "pub_num": "061",
+            "pages": 38,
+            "pdf_size": 594,
+            "description": ""
+        }
+    }
+]

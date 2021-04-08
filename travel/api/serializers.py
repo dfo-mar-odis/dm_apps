@@ -20,6 +20,21 @@ class UserDisplaySerializer(serializers.ModelSerializer):
         fields = ["username"]
 
 
+class FAQSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.FAQ
+        fields = "__all__"
+
+    tquestion = serializers.SerializerMethodField()
+    tanswer = serializers.SerializerMethodField()
+
+    def get_tanswer(self, instance):
+        return instance.tanswer
+
+    def get_tquestion(self, instance):
+        return instance.tquestion
+
+
 class TripSerializerLITE(serializers.ModelSerializer):
     class Meta:
         model = models.Trip
@@ -575,4 +590,3 @@ class TripSerializer(serializers.ModelSerializer):
 
     def get_trip_review_ready(self, instance):
         return instance.trip_review_ready
-

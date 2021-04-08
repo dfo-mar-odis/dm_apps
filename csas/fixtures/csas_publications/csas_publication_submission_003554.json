@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3554,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "North Labrador Arctic Charr",
+            "pub_year": 2001,
+            "lead_author_2": "Dempson J.B.",
+            "pub_num": "D2-07",
+            "pages": 8,
+            "description": ""
+        }
+    }
+]

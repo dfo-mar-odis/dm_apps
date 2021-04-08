@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6937,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "An age-structured Bayesian population model for St. Lawrence Estuary beluga (Delphinapterus leucas)",
+            "title_fr": "Un modèle de population Bayésien structuré par âge pour le beluga (Delphinapterus leucas) de l'estuaire du Saint-Laurent",
+            "pub_year": 2013,
+            "lead_author_2": "Arnaud Mosnier, Thomas Doniol-Valcroze, Jean-François Gosselin, Véronique Lesage, Lena Measures, Mike Hammill",
+            "pub_num": "127",
+            "pages": 44,
+            "pdf_size": 906,
+            "description": ""
+        }
+    }
+]

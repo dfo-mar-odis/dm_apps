@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1532,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Acoustic estimates of fish abundance",
+            "pub_year": 1985,
+            "lead_author_2": "L.M. Dickie; P.R. Boudreau",
+            "pub_num": "025",
+            "pages": 33,
+            "pdf_size": 1182,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,188 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: test\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-15 21:31-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\tickets\forms.py:37 .\tickets\forms.py:84
+msgid "Application name (if applicable)"
+msgstr "Nom de l'application (le cas échéant)"
+
+#: .\tickets\forms.py:38 .\tickets\forms.py:87
+msgid "Assign ticket to"
+msgstr "Attribuer un ticket à"
+
+#: .\tickets\forms.py:85
+msgid "Description"
+msgstr "Description"
+
+#: .\tickets\forms.py:86
+msgid "Subject"
+msgstr "Sujet"
+
+#: .\tickets\forms.py:92 .\tickets\models.py:101
+msgid "Bug"
+msgstr "Bogue"
+
+#: .\tickets\forms.py:93 .\tickets\models.py:100
+msgid "App enhancement"
+msgstr "Amélioration de l'application"
+
+#: .\tickets\forms.py:94 .\tickets\models.py:88
+msgid "Process development"
+msgstr "Développement de processus"
+
+#: .\tickets\forms.py:95 .\tickets\models.py:91
+msgid "Permissions"
+msgstr "Autorisations"
+
+#: .\tickets\forms.py:96 .\tickets\models.py:98
+msgid "Report development"
+msgstr "Développement de rapport"
+
+#: .\tickets\forms.py:97 .\tickets\models.py:99
+msgid "Other"
+msgstr "Autre"
+
+#: .\tickets\models.py:53
+msgid "name (English)"
+msgstr "nom (anglais)"
+
+#: .\tickets\models.py:54
+msgid "Name (French)"
+msgstr "Nom (français)"
+
+#: .\tickets\models.py:59 .\tickets\models.py:60
+msgid "name"
+msgstr "nom"
+
+#: .\tickets\models.py:77
+msgid "High"
+msgstr "Élevé"
+
+#: .\tickets\models.py:78
+msgid "Medium"
+msgstr "Moyen"
+
+#: .\tickets\models.py:79
+msgid "Low"
+msgstr "Faible"
+
+#: .\tickets\models.py:80
+msgid "Wish List"
+msgstr "Liste de souhaits"
+
+#: .\tickets\models.py:81
+msgid "Urgent"
+msgstr "Urgent"
+
+#: .\tickets\models.py:84
+msgid "Software request / installation"
+msgstr "Demande / installation de logiciel"
+
+#: .\tickets\models.py:85
+msgid "System Adoption"
+msgstr ""
+
+#: .\tickets\models.py:86
+msgid "Database creation"
+msgstr ""
+
+#: .\tickets\models.py:87
+msgid "Data sharing / publication"
+msgstr ""
+
+#: .\tickets\models.py:89
+msgid "Hardware"
+msgstr ""
+
+#: .\tickets\models.py:90
+msgid "Data entry / digitization"
+msgstr ""
+
+#: .\tickets\models.py:92
+msgid "Database maintenance"
+msgstr ""
+
+#: .\tickets\models.py:93
+msgid "Software issue (licensing)"
+msgstr ""
+
+#: .\tickets\models.py:94
+msgid "Disk recovery"
+msgstr ""
+
+#: .\tickets\models.py:95
+msgid "Hardware and software"
+msgstr ""
+
+#: .\tickets\models.py:96
+#, fuzzy
+#| msgid "Description"
+msgid "Security exemption"
+msgstr "Description"
+
+#: .\tickets\models.py:97
+msgid "App development"
+msgstr ""
+
+#: .\tickets\models.py:102
+msgid "Quality control element"
+msgstr ""
+
+#: .\tickets\models.py:103
+msgid "Data transfer"
+msgstr ""
+
+#: .\tickets\models.py:104
+msgid "New Shiny App"
+msgstr ""
+
+#: .\tickets\models.py:109
+msgid "application name"
+msgstr "nom de l'application"
+
+#: .\tickets\models.py:111
+msgid "ticket assigned to"
+msgstr "ticket attribué à"
+
+#: .\tickets\models.py:113
+msgid "type of request"
+msgstr "type de demande"
+
+#: .\tickets\models.py:115
+msgid "priority level"
+msgstr "niveau de priorité"
+
+#: .\tickets\models.py:116
+msgid "description"
+msgstr "description"
+
+#: .\tickets\models.py:186
+msgid "follow up message"
+msgstr ""
+
+#: .\tickets\templates\tickets\base\_app_title.html:2
+msgid "Tickets"
+msgstr ""
+
+#: .\tickets\templates\tickets\ticket_form_popout.html:33
+msgid "Feedback / Bug Form"
+msgstr "Commentaires / Bugs"
+
+#: .\tickets\views.py:55
+msgid "DM Apps Tickets"
+msgstr "Tickets de Applis GD"
+
+#: .\tickets\views.py:291
+msgid "Log a Ticket"
+msgstr "Créer une demande"

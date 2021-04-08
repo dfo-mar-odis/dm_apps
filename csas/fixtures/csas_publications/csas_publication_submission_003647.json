@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3647,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the March 2002 Newfoundland Region Salmonid Stock Assessment Meeting; March 4-5, 2002",
+            "pub_year": 2002,
+            "lead_author_2": "J. B. Dempson",
+            "pub_num": "016",
+            "pages": 36,
+            "pdf_size": 420,
+            "description": ""
+        }
+    }
+]

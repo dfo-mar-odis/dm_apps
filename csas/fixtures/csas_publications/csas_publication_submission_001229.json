@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1229,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An examination of the status of the West Coast herring stock with a re-evaluation of the historical data base",
+            "pub_year": 1982,
+            "lead_author_2": "J.A. Moores; G.H. Winters; M.F. Dawson",
+            "pub_num": "049",
+            "pages": 47,
+            "pdf_size": 2213,
+            "description": ""
+        }
+    }
+]

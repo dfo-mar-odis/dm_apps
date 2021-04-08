@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8086,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Assessments on Atlantic surf clam stock from the Magdalen Islands; February 28, 2019",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l’évaluation du stock de mactre de l’Atlantique des Îles-de-la-Madeleine; 28 février 2019",
+            "pub_year": 2019,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "015",
+            "pages": 10,
+            "pdf_size": 275,
+            "description": ""
+        }
+    }
+]

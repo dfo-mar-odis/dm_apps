@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4207,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Salmon Subcommittee Meeting; March 3, 2005",
+            "title_fr": "Compte rendu de la réunion du sous-comité du saumon du CEESP; 3 mars 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Thomas, Greg",
+            "pub_num": "007",
+            "pages": 17,
+            "pdf_size": 175,
+            "description": ""
+        }
+    }
+]

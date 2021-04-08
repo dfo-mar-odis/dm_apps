@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6759,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Regional Assessment of Stressors, Impacts and Pathways of Effects for the Darnley Bay Area of Interest for Marine Protected Area Designation; February 6-7, 2013",
+            "title_fr": "Compte rendu de l'évaluation des agents de stress, des impacts et des séquences des effets dans la zone d'intérêt de la baie Darnley dans le cadre de la désignation des zones de protection marine; du 6 au 7 février 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Oksana Schimnowski / Margaret Treble",
+            "pub_num": "001",
+            "pages": 25,
+            "pdf_size": 232,
+            "description": ""
+        }
+    }
+]

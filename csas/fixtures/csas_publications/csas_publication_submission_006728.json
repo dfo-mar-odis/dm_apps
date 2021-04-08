@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6728,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Recent spring offshore acoustic survey results for capelin, Mallotus villosus, in NAFO Division 3L",
+            "title_fr": "Résultats des relevés acoustiques du capelan (Mallotus villosus) effectués au printemps, au large, dans la division 3L de l'OPANO",
+            "pub_year": 2013,
+            "lead_author_2": "F.K. Mowbray",
+            "pub_num": "040",
+            "pages": 30,
+            "pdf_size": 493,
+            "description": ""
+        }
+    }
+]

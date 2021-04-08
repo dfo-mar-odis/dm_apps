@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7785,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the National Peer Review on the Significance of Canadian Healthy Oceans Network (CHONe) Research to Marine Conservation within Fisheries and Oceans Canada; February 2-3, 2016",
+            "title_fr": "Compte rendu de l’examen national par les pairs sur l’importance des recherches du Réseau stratégique pour des océans canadiens en santé (CHONe) pour les efforts de conservation marine de Pêches et Océans Canada; du 2 au 3 février 2016",
+            "pub_year": 2017,
+            "lead_author_2": "Patrice Simon/Nadine Templeman",
+            "pub_num": "029",
+            "pages": 27,
+            "pdf_size": 1108,
+            "description": ""
+        }
+    }
+]

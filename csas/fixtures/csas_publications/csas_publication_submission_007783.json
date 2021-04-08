@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7783,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Guidance to Derive and Update Fishing-Related Incidental Mortality Rates for Pacific Salmon",
+            "title_fr": "Orientation pour calculer et mettre à jour les taux de mortalité accidentelle du saumon du Pacifique liée à la pêche",
+            "pub_year": 2017,
+            "lead_author_2": "Patterson, D.A., Robinson, K.A., Raby, G.D., Bass, A.L., Houtman, R., Hinch, S.G., and Cooke, S.J.",
+            "pub_num": "011",
+            "pages": 63,
+            "pdf_size": 1091,
+            "description": ""
+        }
+    }
+]

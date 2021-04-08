@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7845,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Screening of the Pacific Fishery Regulations (PFR) Schedule VIII Species for Risk of Invasiveness",
+            "title_fr": "Examen préalable des espèces visées par l’annexe VIII du Règlement de pêche du Pacifique pour établir le risque d’envahissement",
+            "pub_year": 2017,
+            "lead_author_2": "Therriault, T.",
+            "pub_num": "040",
+            "pages": 20,
+            "pdf_size": 668,
+            "description": ""
+        }
+    }
+]

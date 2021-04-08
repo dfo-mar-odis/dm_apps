@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6030,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Northwest Atlantic Spiny Dogfish Framework Review",
+            "lead_author_2": "Showell, Mark",
+            "description": ""
+        }
+    }
+]

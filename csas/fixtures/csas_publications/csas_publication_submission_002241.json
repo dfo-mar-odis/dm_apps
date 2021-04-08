@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2241,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The use of parasites for separating stocks of Greenland halibut (Reinhardtius hippoglossoides) in the Atlantic Ocean off Canada",
+            "pub_year": 1992,
+            "lead_author_2": "J.R. Arthur; E. Albert",
+            "pub_num": "093",
+            "pages": 21,
+            "description": ""
+        }
+    }
+]

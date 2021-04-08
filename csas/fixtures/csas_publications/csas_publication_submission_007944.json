@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7944,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Chemical and Biological Oceanographic Conditions in the Estuary and Gulf of St. Lawrence during 2016",
+            "title_fr": "Les conditions océanographiques chimiques et biologiques dans l’estuaire et le golfe du Saint-Laurent en 2016",
+            "pub_year": 2018,
+            "lead_author_2": "Blais, M., Devine, L., Lehoux, C., Galbraith, P.S., Michaud, S., Plourde, S., and Scarratt, M.",
+            "pub_num": "037",
+            "pages": 61,
+            "pdf_size": 8650,
+            "description": ""
+        }
+    }
+]

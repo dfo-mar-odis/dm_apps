@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3955,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "State of Knowledge of Marine Habitats of the Northern B.C. Coast in Oil and Gas Lease Areas",
+            "title_fr": "État des connaissances sur les habitats marins dans les concessions pétrolières et gazières du nord de la côte de la C.-B.",
+            "pub_year": 2004,
+            "lead_author_2": "Jamieson, G.S., Davies, H.",
+            "pub_num": "009",
+            "pages": 175,
+            "pdf_size": 2187,
+            "description": ""
+        }
+    }
+]

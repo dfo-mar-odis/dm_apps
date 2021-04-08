@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8274,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Gillnet scientific survey in the Saguenay fjord, 2000-2018",
+            "title_fr": "Relevé de recherche aux filets maillants dans le fjord du Saguenay de 2000 à 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Gauthier, J., Marquis, M.-C., Ouellette-Plante, J. and Nozères, C.",
+            "pub_num": "039",
+            "pages": 49,
+            "pdf_size": 3942,
+            "description": ""
+        }
+    }
+]

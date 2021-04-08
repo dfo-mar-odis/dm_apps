@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1768,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Offshore lobster stocks in NAFO Subarea 4W: Potential for a new fishery",
+            "pub_year": 1987,
+            "lead_author_2": "D.S. Pezzack",
+            "pub_num": "078",
+            "pages": 16,
+            "pdf_size": 1259,
+            "description": ""
+        }
+    }
+]

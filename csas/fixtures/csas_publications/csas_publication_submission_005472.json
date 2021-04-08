@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5472,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Rockfish Bycatch in the British Columbia Commercial Prawn Trap Fishery",
+            "title_fr": "Prises accessoires de sébastes dans les casiers à crevette des pêcheurs commerciaux en Colombie-Britannique",
+            "pub_year": 2009,
+            "lead_author_2": "D. T. Rutherford, K. Fong, and H. Nguyen",
+            "pub_num": "109",
+            "pages": 29,
+            "pdf_size": 225,
+            "description": ""
+        }
+    }
+]

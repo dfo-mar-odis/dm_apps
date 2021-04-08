@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5847,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Landings, Lifecycle, and Utilization of Habitat for Lobster in the Vicinity of two Proposed Finfish Aquaculture Sites in St. Mary's Bay, Nova Scotia",
+            "title_fr": "Information sur le homard aux alentours de deux sites piscicoles proposés dans la baie St. Mary's, en Nouvelle Écosse : débarquements, cycle biologique et utilisation de l'habitat",
+            "pub_year": 2011,
+            "lead_author_2": "J. Tremblay, D. Pezzack, C. Denton / K. Curran / V. Myra",
+            "pub_num": "002",
+            "pages": 9,
+            "pdf_size": 500,
+            "description": ""
+        }
+    }
+]

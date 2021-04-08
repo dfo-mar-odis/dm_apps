@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5758,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 7],
+            "title_en": "Aerial survey estimates of hauled-out Ringed Seal (Pusa hispida) density in western Hudson Bay, June 2009 and 2010",
+            "title_fr": "Estimations par relevé aérien des phoques annelés (Pusa hispida) hors de l'eau de la côte ouest de la baie d'Hudson, juin 2009 et 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Steven H. Ferguson and Brent G. Young",
+            "pub_num": "029",
+            "pages": 16,
+            "pdf_size": 594,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2312,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Biological update of Georges Bank cod in Unit areas 5Zj,m for 1978-92",
+            "pub_year": 1993,
+            "lead_author_2": "J.J. Hunt; M.-I. Buzeta",
+            "pub_num": "039",
+            "pages": 20,
+            "pdf_size": 1132,
+            "description": ""
+        }
+    }
+]

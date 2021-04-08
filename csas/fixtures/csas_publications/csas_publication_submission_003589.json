@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3589,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Opal Squid",
+            "pub_year": 1999,
+            "lead_author_2": "Graham Gillespie",
+            "pub_num": "C6-04",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

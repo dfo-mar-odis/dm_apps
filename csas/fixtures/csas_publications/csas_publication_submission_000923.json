@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 923,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_fr": "Revue régionale des évaluations de stocks: Compte rendu des réunions du printemps 1996, Région Laurentienne; 5-9 février 1996 et 12-15 mars 1996",
+            "pub_year": 1996,
+            "lead_author_2": "Bureau régional des évaluations de stocks",
+            "pub_num": "008",
+            "description": ""
+        }
+    }
+]

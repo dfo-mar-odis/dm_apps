@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 169,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Annual and decadal change in Atlantic salmon (Salmo salar) abundance in eastern Canada",
+            "pub_year": 1999,
+            "lead_author_2": "Chaput, G., Prévost, E.",
+            "pub_num": "030",
+            "pages": 45,
+            "pdf_size": 279,
+            "description": ""
+        }
+    }
+]

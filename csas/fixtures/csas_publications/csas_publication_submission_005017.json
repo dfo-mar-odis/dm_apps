@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5017,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Potential Impacts of, and mitigation strategies for, small-scale tidal generation projects on coastal marine ecosystems in the Bay of Fundy",
+            "title_fr": "Effets éventuels des petites centrales marémotrices sur les écosystèmes marins côtiers de la baie de Fundy et stratégies d'atténuation",
+            "pub_year": 2008,
+            "lead_author_2": "P. Smith, T. Milligan, E. Kennedy",
+            "pub_num": "013",
+            "pages": 10,
+            "pdf_size": 84,
+            "description": ""
+        }
+    }
+]

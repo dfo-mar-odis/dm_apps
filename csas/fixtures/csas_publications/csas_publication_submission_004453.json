@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4453,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Framework for Classification and Characterization of Scotia-Fundy Benthic Habitats",
+            "title_fr": "Cadre de classification et de caractérisation des habitats benthiques du secteur Scotia-Fundy",
+            "pub_year": 2005,
+            "lead_author_2": "Robert O'Boyle and Vladimir Kostylev",
+            "pub_num": "071",
+            "pages": 14,
+            "pdf_size": 247,
+            "description": ""
+        }
+    }
+]

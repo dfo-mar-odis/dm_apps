@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4600,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of the recovery potential assessment meeting for eastern Arctic bowhead whales (Balaena mysticetus); April 7, 2006",
+            "title_fr": "Compte rendu de l'évaluation du potentiel de rétablissement des baleines boréales de l'est de l'Arctique (Balaena mysticetus); le 7 avril 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Simon, Patrice",
+            "pub_num": "041",
+            "pages": 45,
+            "pdf_size": 291,
+            "description": ""
+        }
+    }
+]

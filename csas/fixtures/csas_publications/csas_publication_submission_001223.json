@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1223,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An update of the status of the inshore cod stock in Subdivision 4Vn (May-Dec) for 1981",
+            "pub_year": 1982,
+            "lead_author_2": "S.J. Smith; B.A. Charlton",
+            "pub_num": "043",
+            "pages": 30,
+            "pdf_size": 1170,
+            "description": ""
+        }
+    }
+]

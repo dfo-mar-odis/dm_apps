@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3865,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "In-season forecasting of North Coast coho salmon marine survival: a decision-analytic method and retrospective analysis",
+            "title_fr": "Prévision en saison de la survie en mer du saumon coho des zones côtières nordiques par une méthode analytique d'aide à la décision et une analyse rétrospective",
+            "pub_year": 2003,
+            "lead_author_2": "Cox, S. P., Sawada, J., de la Mare, W.",
+            "pub_num": "063",
+            "pages": 53,
+            "pdf_size": 1584,
+            "description": ""
+        }
+    }
+]

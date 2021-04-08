@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2049,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Modelling environmentally induced change in size at age for Atlantic Canada cod stocks",
+            "pub_year": 1990,
+            "lead_author_2": "R.B. Millar; R.A. Myers",
+            "pub_num": "048",
+            "pages": 14,
+            "pdf_size": 842,
+            "description": ""
+        }
+    }
+]

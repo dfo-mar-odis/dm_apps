@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4381,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of White Hake (Urophycis tenuis) in NAFO Divisions 4VWX and 5",
+            "title_fr": "Évaluation de l'état de la merluche blanche (Urophycis tenuis) dans les divisions 4VWX et 5",
+            "pub_year": 2005,
+            "lead_author_2": "Bundy, A., J. Simon.",
+            "pub_num": "081",
+            "pages": 50,
+            "pdf_size": 592,
+            "description": ""
+        }
+    }
+]

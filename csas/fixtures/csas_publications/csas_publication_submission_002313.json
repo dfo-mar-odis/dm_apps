@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2313,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The influence of depth and bottom type on area swept by groundtrawl, and consequences for survey indices and population estimates",
+            "pub_year": 1993,
+            "lead_author_2": "D.S. Clark",
+            "pub_num": "040",
+            "pages": 15,
+            "pdf_size": 946,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 235,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pandalus hypsinotus, Humpback Shrimp: A Review of the Biology and a Recommended Assessment Framework for a Directed Fishery",
+            "pub_year": 1999,
+            "lead_author_2": "Boutillier, J.A., Nguyen, H.",
+            "pub_num": "067",
+            "pages": 25,
+            "pdf_size": 258,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8344,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Characterization of Aeromonas salmonicida and furunculosis to inform pathogen transfer risk assessments in British Columbia",
+            "title_fr": "Caractérisation de la bactérie Aeromonas salmonicida et de la furonculose pour informer les évaluations des risques de transfert d’agents pathogènes en Colombie-Britannique",
+            "pub_year": 2019,
+            "lead_author_2": "Boily, F., Malcolm, G. and Johnson, S.C.",
+            "pub_num": "016",
+            "pages": 45,
+            "pdf_size": 1457,
+            "description": ""
+        }
+    }
+]

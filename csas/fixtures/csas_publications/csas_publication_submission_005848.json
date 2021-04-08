@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5848,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Regional Science Advisory Process on the Assessment of the Estuary and Gulf of St. Lawrence Shrimp Stocks; January 26, 2011",
+            "title_fr": "Processus consultatif scientifique régional sur l'évaluation des stocks de crevette de l'estuaire et du golfe du Saint-Laurent ; le 26 janvier 2011",
+            "pub_year": 2011,
+            "lead_author_2": "Dubé, Sonia",
+            "pub_num": "004",
+            "pages": 21,
+            "pdf_size": 106,
+            "description": ""
+        }
+    }
+]

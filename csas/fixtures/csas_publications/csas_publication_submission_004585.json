@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4585,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Background Scientific Information for Candidate Criteria for Considering Species and Community Properties to be Ecologically Significant",
+            "title_fr": "Information scientifique de base pour le choix des critères de détermination des espèces et des propriétés des communautés d'importance écologique",
+            "pub_year": 2006,
+            "lead_author_2": "Rice, Jake (Editor)",
+            "pub_num": "089",
+            "pages": 86,
+            "pdf_size": 2354,
+            "description": ""
+        }
+    }
+]

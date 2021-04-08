@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8401,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "PRO",
+            "lead_author_2": "Abraham, Christine",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 163,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Newfoundland and Labrador snow crab in 1997",
+            "pub_year": 1998,
+            "lead_author_2": "E.G. Dawe, D.W. Kulka, H.J. Drew, P.C. Beck, P.J. Veitch",
+            "pub_num": "137",
+            "description": ""
+        }
+    }
+]

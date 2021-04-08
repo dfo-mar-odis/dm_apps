@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4756,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Newfoundland and Labrador Regional Advisory Process for 2J3KL Cod, 2008; March 26-29, 2008",
+            "title_fr": "Compte rendu de la réunion du Processus de consultation scientifique régional de Terre-Neuve et du Labrador concernant la morue de 2J3KL en 2008; Du 26 au 29 mars 2008",
+            "pub_year": 2008,
+            "lead_author_2": "Cadigan, N.",
+            "pub_num": "005",
+            "pages": 67,
+            "pdf_size": 312,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3212,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Eastern Nova Scotia Flatfish",
+            "title_fr": "Les poissons plats de l'est de la Nouvelle-Écosse",
+            "pub_year": 1996,
+            "lead_author_2": "Annand, C.",
+            "pub_num": "070",
+            "pages": 7,
+            "description": ""
+        }
+    }
+]

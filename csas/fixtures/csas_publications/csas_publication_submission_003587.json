@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3587,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Dungeness Crab North Coast License Area A",
+            "pub_year": 1999,
+            "lead_author_2": "Antan C. Phillips",
+            "pub_num": "C6-01",
+            "pages": 4,
+            "description": ""
+        }
+    }
+]

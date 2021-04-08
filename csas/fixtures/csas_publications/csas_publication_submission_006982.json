@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6982,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Pre-COSEWIC review of southern British Columbia Chinook salmon (Oncorhynchus tshawytscha) conservation units, Part II: Data, analysis and synthesis",
+            "lead_author_2": "Gayle Brown",
+            "description": ""
+        }
+    }
+]

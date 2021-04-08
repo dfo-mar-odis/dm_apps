@@ -67,8 +67,8 @@
                                         </td><td>
                                             {% if att.dataset.all %}
                                                 {% for ds in att.dataset.all %}
-                                                    <a class="btn btn-primary" href="{% url 'whalesdb:details_rec' ds.id %}">{{ ds.rec_start_date }}</a>
-                                                    <a class="btn btn-danger" href="#" onclick="return pop('{% url 'whalesdb:delete_rec' ds.id 'pop' %}','id_attachments')">X</a><br />
+                                                    <a class="btn btn-primary my-1" href="{% url 'whalesdb:details_rec' ds.id %}">{{ ds.rec_start_date }}</a>
+                                                    <a class="btn btn-danger my-1" href="#" onclick="return pop('{% url 'whalesdb:delete_rec' ds.id 'pop' %}','id_attachments')">X</a><br />
                                                 {% endfor %}
                                             {% endif %}
                                             <a class="btn btn-primary my-1" href="{% url 'whalesdb:create_rec' att.pk %}">+</a>

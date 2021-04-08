@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5777,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Region Science Advisory Process on the Recovery Potential Assessment of Atlantic Mud-piddock (Barnea truncate); September 30 - 1 October 2010",
+            "title_fr": "Compte rendu de la réunion du Processus consultatif scientifique de la Région des Maritimes au sujet du potentiel de rétablissement de la pholade tronquée (Barnea truncate) ; du 30 septembre au 1 octobre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "T. Sephton / T. Sephton / V. Myra",
+            "pub_num": "038",
+            "pages": 18,
+            "pdf_size": 83,
+            "description": ""
+        }
+    }
+]

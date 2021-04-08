@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2145,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Comparison of Kriging estimates of northern shrimp biomass obtained from two different trawlers in the Sept-Iles fishing grounds in 1990",
+            "pub_year": 1991,
+            "lead_author_2": "Y. Simard",
+            "pub_num": "080",
+            "pages": 7,
+            "pdf_size": 378,
+            "description": ""
+        }
+    }
+]

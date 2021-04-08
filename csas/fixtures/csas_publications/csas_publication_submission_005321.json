@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5321,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Development of a Framework and Principles for the Biogeographic Classification of Canadian Marine Areas",
+            "title_fr": "Élaboration d'un cadre et de principes pour la classification biogéographique des zones marines canadiennes",
+            "pub_year": 2009,
+            "lead_author_2": "Rice, J., White, A.",
+            "pub_num": "056",
+            "pages": 17,
+            "pdf_size": 330,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4580,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "National Science Workshop: Development of Criteria to Identify Ecologically and Biologically Significant Species (EBSS); September 6-8, 2006",
+            "title_fr": "Atelier national des Sciences - Élaboration de critères pour désigner les espèces d'importance biologique et écologique; du 6 au 8 septembre 2006",
+            "pub_year": 2006,
+            "lead_author_2": "Rice, J. (chair) H. Lear (editor)",
+            "pub_num": "028",
+            "pages": 51,
+            "pdf_size": 271,
+            "description": ""
+        }
+    }
+]

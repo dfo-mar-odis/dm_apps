@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 183,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Quota options and recommendations for the 1999 and 2000 geoduck clam fisheries",
+            "pub_year": 1998,
+            "lead_author_2": "C.M. Hand, B.G. Vaughan, S. Heizer",
+            "pub_num": "146",
+            "description": ""
+        }
+    }
+]

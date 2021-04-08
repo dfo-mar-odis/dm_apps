@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 486,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Stock assessment and management frameworks for the proposed fishery for sea mussels (Mytilus califorianus) in British Columbia",
+            "pub_year": 1999,
+            "lead_author_2": "Gillespie, G.",
+            "pub_num": "116",
+            "pages": 46,
+            "pdf_size": 182,
+            "description": ""
+        }
+    }
+]

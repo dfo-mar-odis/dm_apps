@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6263,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of a Maritimes Regional Science Advisory Process on the 2011 Shrimp Assessment",
+            "lead_author_2": "Tana Worcester",
+            "description": ""
+        }
+    }
+]

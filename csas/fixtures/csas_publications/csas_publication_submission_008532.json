@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8532,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Stock Status Update for Scallop (Placopecten magellanicus) in Scallop Fishing Area 29 West of Longitude 65°30’",
+            "title_fr": "Mise à jour de l’état du stock de pétoncles (Placopecten magellanicus) de la zone de pêche du pétoncle 29 à l’ouest de la longitude 65° 30’",
+            "pub_year": 2019,
+            "lead_author_2": "Andrew Taylor",
+            "pub_num": "034",
+            "pages": 15,
+            "pdf_size": 874,
+            "description": ""
+        }
+    }
+]

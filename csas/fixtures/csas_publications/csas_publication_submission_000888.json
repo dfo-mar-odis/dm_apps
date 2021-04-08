@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 888,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Standardization of Canadian east coast statistical unit areas",
+            "pub_year": 1978,
+            "lead_author_2": "C. Jones",
+            "pub_num": "032",
+            "pages": 52,
+            "pdf_size": 1767,
+            "description": ""
+        }
+    }
+]

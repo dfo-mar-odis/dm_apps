@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4329,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Stock Assessment Report on NAFO Subareas 3 - 6 Porbeagle Shark",
+            "title_fr": "Évaluation du stock de maraîche des sous-zones 3 à 6 de l'OPANO",
+            "pub_year": 2005,
+            "lead_author_2": "Campana, S.",
+            "pub_num": "044",
+            "pages": 11,
+            "pdf_size": 561,
+            "description": ""
+        }
+    }
+]

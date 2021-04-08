@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 286,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Flatfish statistics in the Gulf of St. Lawrence, with a review of 4T white hake",
+            "pub_year": 1983,
+            "lead_author_2": "D. Clay; G. Nielsen",
+            "pub_num": "075",
+            "pages": 15,
+            "pdf_size": 652,
+            "description": ""
+        }
+    }
+]

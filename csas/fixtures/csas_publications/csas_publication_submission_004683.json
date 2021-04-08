@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4683,
+        "fields": {
+            "series": 4,
+            "lead_region": [2, 1],
+            "title_en": "Proceedings of the Workshop on the Role of the Continuous Plankton Recorder in Current and Future DFO Monitoring Programmes; 12 - 13 December 2006",
+            "title_fr": "Compte rendu de l'atelier sur le rôle de l'enregistreur continu de plancton dans les programmes de surveillance actuels et futurs du MPO; les 12 et 13 décembre 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Head, E., M. Chadwick.",
+            "pub_num": "017",
+            "pages": 60,
+            "pdf_size": 2709,
+            "description": ""
+        }
+    }
+]

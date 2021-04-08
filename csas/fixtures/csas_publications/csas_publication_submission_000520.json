@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 520,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Age classes of bowhead whales summering in northern Foxe Basin",
+            "pub_year": 1999,
+            "lead_author_2": "Cosens, S.E., Blouw, A.",
+            "pub_num": "135",
+            "pages": 20,
+            "pdf_size": 391,
+            "description": ""
+        }
+    }
+]

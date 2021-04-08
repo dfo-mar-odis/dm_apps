@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1287,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_fr": "Évaluation du stock de crabe des neiges exploité par le Nouveau-Brunswick dans le sud-ouest du Golfe Saint-Laurent",
+            "pub_year": 1983,
+            "lead_author_2": "R. Bailey; R. Cormier",
+            "pub_num": "054",
+            "description": ""
+        }
+    }
+]

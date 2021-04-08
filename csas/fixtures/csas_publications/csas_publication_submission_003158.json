@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3158,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "Lobster of the Inshore Waters of Quebec",
+            "title_fr": "Le homard des eaux côtières du Québec",
+            "pub_year": 1997,
+            "lead_author_2": "Louise Gendron",
+            "pub_num": "C4-05",
+            "pages": 9,
+            "pdf_size": 224,
+            "description": ""
+        }
+    }
+]

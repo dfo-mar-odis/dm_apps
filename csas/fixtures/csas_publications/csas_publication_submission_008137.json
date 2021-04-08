@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8137,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Framework Discussion on Marine Safety and Area Planning Data Products; March 16-17, 2016",
+            "title_fr": "Compte rendu des discussions sur le cadre régional relatif aux produits de données sur la sécurité maritime et la planification localisée; 16 et 17 mars 2016",
+            "pub_year": 2020,
+            "lead_author_2": "K. Curran",
+            "pub_num": "006",
+            "pages": 32,
+            "pdf_size": 947,
+            "description": ""
+        }
+    }
+]

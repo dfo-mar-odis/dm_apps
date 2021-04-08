@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5350,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Scientific Advice Review Committee (PSARC) meeting for the assessment of scientific information for a recovery potential assessment for bocaccio rockfish and basking shark and for the identification of critical habitat for stickleback pairs in British Columbia; October 22-24, 2008",
+            "title_fr": "Compte rendu de la réunion du Comité d'examen des évaluations scientifiques du Pacifique (CEESP) sur l'analyse de l'information scientifique à l'appui de l'évaluation du potentiel de rétablissement du bocaccio et du pèlerin ainsi que de la désignation de l'habitat essentiel de paires d'espèces d'épinoches en Colombie Britannique; 22-24 octobre 2008",
+            "pub_year": 2009,
+            "lead_author_2": "Cass, A.",
+            "pub_num": "033",
+            "pages": 35,
+            "pdf_size": 146,
+            "description": ""
+        }
+    }
+]

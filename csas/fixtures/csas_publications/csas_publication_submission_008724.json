@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8724,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings",
+            "description": ""
+        }
+    }
+]

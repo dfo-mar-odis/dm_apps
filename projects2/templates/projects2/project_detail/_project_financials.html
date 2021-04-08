@@ -4,66 +4,69 @@
 {% load static %}
 {% load bootstrap4 %}
 
-<div class="mb-5">
-  <div class="mb-2 neighbours">
-    <h2>{% trans "Project Financial Summary (All Years)" %}</h2>
-  </div>
+<div class="mb-3">
+  <div class="section-card">
+    <div class="mb-2 pointy" @click="collapseFinancials = !collapseFinancials">
+      <h4>{% trans "Financial Summary" %}</h4>
+    </div>
+    <div v-if="!collapseFinancials">
+      <div v-if="project_financials_loading">
+        <button class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span class="sr-only">Loading...</span>
+        </button>
+      </div>
 
-  <div v-if="project_financials_loading">
-    <button class="btn btn-primary" type="button" disabled>
-      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-      <span class="sr-only">Loading...</span>
-    </button>
-  </div>
+      <div v-else>
+        <table class="table table-sm" style="width: auto">
+          <thead>
 
-  <div v-else>
-    <table class="table table-sm" style="width: auto">
-      <thead>
+          <tr>
+            <th class="w150">
+              {% trans "Type" %}
+            </th>
+            <th class="w150">
+              {% trans "Funding source" %}
+            </th>
+            <th class="w150">
+              {% trans "Salary (excluding FTE)" %}
+            </th>
+            <th class="w150">
+              {% trans "O & M" %}
+            </th>
+            <th class="w150">
+              {% trans "Capital" %}
+            </th>
+            <th class="w150">
+              {% trans "Total" %}
+            </th>
+          </tr>
+          </thead>
 
-      <tr>
-        <th class="w150">
-          {% trans "Type" %}
-        </th>
-        <th class="w150">
-          {% trans "Funding source" %}
-        </th>
-        <th class="w150">
-          {% trans "Salary (excluding FTE)" %}
-        </th>
-        <th class="w150">
-          {% trans "O & M" %}
-        </th>
-        <th class="w150">
-          {% trans "Capital" %}
-        </th>
-        <th class="w150">
-          {% trans "Total" %}
-        </th>
-      </tr>
-      </thead>
+          <tbody>
+          <tr v-for="(fs, index) in project_financials" :class="fs.type.toLowerCase()">
+            <td>${fs.type}</td>
+            <td>${fs.name}</td>
+            <td>${fs.salary |currencyFormat|zero2NullMark}</td>
+            <td>${fs.om|currencyFormat|zero2NullMark}</td>
+            <td>${fs.capital|currencyFormat|zero2NullMark}</td>
+            <td>${fs.total|currencyFormat|zero2NullMark}</td>
+          </tr>
 
-      <tbody>
-      <tr v-for="(fs, index) in project_financials" :class="fs.type.toLowerCase()">
-        <td>${fs.type}</td>
-        <td>${fs.name}</td>
-        <td>${fs.salary |currencyFormat|zero2NullMark}</td>
-        <td>${fs.om|currencyFormat|zero2NullMark}</td>
-        <td>${fs.capital|currencyFormat|zero2NullMark}</td>
-        <td>${fs.total|currencyFormat|zero2NullMark}</td>
-      </tr>
+          <tr>
+            <td>{% trans "TOTAL" %}</td>
+            <td>---</td>
+            <td>${project_financial_totals.salary |currencyFormat|zero2NullMark}</td>
+            <td>${project_financial_totals.om|currencyFormat|zero2NullMark}</td>
+            <td>${project_financial_totals.capital|currencyFormat|zero2NullMark}</td>
+            <td>${project_financial_totals.total|currencyFormat|zero2NullMark}</td>
+          </tr>
 
-      <tr>
-        <td>{% trans "TOTAL" %}</td>
-        <td>---</td>
-        <td>${project_financial_totals.salary |currencyFormat|zero2NullMark}</td>
-        <td>${project_financial_totals.om|currencyFormat|zero2NullMark}</td>
-        <td>${project_financial_totals.capital|currencyFormat|zero2NullMark}</td>
-        <td>${project_financial_totals.total|currencyFormat|zero2NullMark}</td>
-      </tr>
+          </tbody>
+        </table>
 
-      </tbody>
-    </table>
-
+      </div>
+    </div>
   </div>
 
 </div>

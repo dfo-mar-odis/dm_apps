@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1201,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Quelques données de prises par unité d'effort et d'échantillonnage pour le sébaste de 4RST",
+            "pub_year": 1982,
+            "lead_author_2": "J.P. Lussiaa-Berdou",
+            "pub_num": "021",
+            "description": ""
+        }
+    }
+]

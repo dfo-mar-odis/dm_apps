@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5382,
+        "fields": {
+            "series": 3,
+            "lead_region": [6, 4],
+            "title_en": "Abundance of Northwest Atlantic harp seals (1952-2010)",
+            "title_fr": "Abondance du phoque du Groenland dans l'Atlantique Nord-Ouest (1952-2010)",
+            "pub_year": 2009,
+            "lead_author_2": "Hammill, M.O. and G.B. Stenson",
+            "pub_num": "114",
+            "pages": 16,
+            "pdf_size": 119,
+            "description": ""
+        }
+    }
+]

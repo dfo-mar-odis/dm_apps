@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 944,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Report of the PSARC Ad Hoc Subcommittee Meeting on Marine Environmental and Habitat Issues; March 10-11, 1997",
+            "pub_year": 1997,
+            "lead_author_2": "Dr. J. Rice, Chair",
+            "pub_num": "020",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8470,
+        "fields": {
+            "series": 5,
+            "lead_region": [6],
+            "title_en": "Large whales in SLE",
+            "description": ""
+        }
+    }
+]

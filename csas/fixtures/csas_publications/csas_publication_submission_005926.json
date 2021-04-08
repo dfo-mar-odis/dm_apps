@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5926,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Age determination of Atlantic cod (Gadus morhua): Results from an otolith exchange between Canada and France",
+            "title_fr": "Détermination de l'âge de la morue (Gadus morhua) : Résultats d'un échange d'otolithes entre le Canada et la France",
+            "pub_year": 2011,
+            "lead_author_2": "B.P. Healey, K. Mahé, G. Cossitt, J.-L. Dufour, J. Felix, H.F. Hicks, C. Hiscock and P. Schwab",
+            "pub_num": "015",
+            "pages": 21,
+            "pdf_size": 500,
+            "description": ""
+        }
+    }
+]

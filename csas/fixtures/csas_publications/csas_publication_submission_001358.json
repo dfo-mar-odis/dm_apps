@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1358,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of American plaice in NAFO Division 4T",
+            "pub_year": 1994,
+            "lead_author_2": "R. Morin; G. Chouinard; I. Forest-Gallant; R. Hébert; G. Nielsen; A. Sinclair; D. Swain",
+            "pub_num": "056",
+            "pages": 29,
+            "pdf_size": 1561,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5331,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Salmon Rivers of Newfoundland and Labrador",
+            "title_fr": "Rivières à saumon de Terre Neuve et Labrador",
+            "pub_year": 2009,
+            "lead_author_2": "Reddin, D.G., Poole, R.J., Clarke, G., Cochrane, N.",
+            "pub_num": "046",
+            "pages": 28,
+            "pdf_size": 557,
+            "description": ""
+        }
+    }
+]

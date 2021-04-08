@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 700,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Biological Reference Points for the Conservation and Management of Steelhead, Oncorhynchus mykiss",
+            "pub_year": 2000,
+            "lead_author_2": "Johnston, N.T., Parkinson, E.A., Tautz, A.F., Ward, B.R.",
+            "pub_num": "126",
+            "pages": 96,
+            "pdf_size": 946,
+            "description": ""
+        }
+    }
+]

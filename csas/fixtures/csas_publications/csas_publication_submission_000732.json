@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 732,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Ecosystem effects on pre-recruit survival of cod in the southern Gulf of St. Lawrence",
+            "pub_year": 2000,
+            "lead_author_2": "Swain, D.P., Sinclair, A.F., Chouinard, G.A., Drinkwater K.F.",
+            "pub_num": "147",
+            "pages": 23,
+            "pdf_size": 141,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6327,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Labrador - Island Transmission Link Project - Review of Species of Special Conservation Concern Component Study for the Environmental Assessment",
+            "title_fr": "Projet de ligne de transport d'énergie entre le Labrador et l'île de Terre-Neuve - examen de l'étude du composant des espèces préoccupantes sur le plan de la conservation",
+            "pub_year": 2012,
+            "pub_num": "007",
+            "pages": 9,
+            "pdf_size": 47,
+            "description": ""
+        }
+    }
+]

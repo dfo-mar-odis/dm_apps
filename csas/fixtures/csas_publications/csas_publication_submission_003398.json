@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3398,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Distribution and abundance of marine plants in the nearshore of Cape Breton in potential oil and gas exploration areas",
+            "title_fr": "La distribution et l'abondance de macro algue près des côtes dans région avec la possibilité de l'exploration d'huile et du gaz",
+            "pub_year": 2001,
+            "lead_author_2": "Glyn Sharp, Robert Semple, Bret Pilgrim",
+            "pub_num": "117",
+            "pages": 42,
+            "pdf_size": 7870,
+            "description": ""
+        }
+    }
+]

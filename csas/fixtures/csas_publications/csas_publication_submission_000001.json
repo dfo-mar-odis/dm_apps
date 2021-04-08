@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "The Status of Redfish in Unit 1 (Gulf of St. Lawrence) in 1998",
+            "title_fr": "L'état du stock de sébaste de l'unité 1 (Gulf of St. Lawrence) en 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Morin, B., Bernier, B., St-Hilaire, N.",
+            "pub_num": "132.0",
+            "pages": 38,
+            "pdf_size": 1015,
+            "description": ""
+        }
+    }
+]

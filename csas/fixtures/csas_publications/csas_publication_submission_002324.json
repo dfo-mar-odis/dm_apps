@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2324,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Miramichi River gaspereau fishery, 1991 and 1992",
+            "pub_year": 1993,
+            "lead_author_2": "F. Mowbray; G. Chaput; S. Courtenay",
+            "pub_num": "051",
+            "pages": 29,
+            "pdf_size": 1496,
+            "description": ""
+        }
+    }
+]

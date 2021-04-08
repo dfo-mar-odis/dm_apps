@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4270,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Recovery Potential Assessment for Atlantic Salmon Anticosti Island Population : Habitat and Threats",
+            "title_fr": "Évaluation du potentiel de rétablissement de la population de saumon atlantique de l'île d'Anticosti : habitat et menaces",
+            "pub_year": 2012,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "170",
+            "description": ""
+        }
+    }
+]

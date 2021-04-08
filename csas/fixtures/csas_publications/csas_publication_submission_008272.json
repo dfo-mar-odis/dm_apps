@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8272,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting on the Saguenay Fjord Winter Recreational Groundfish Fishery",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur la pêche récréative hivernale aux poissons de fond dans le fjord du Saguenay ; 21 novembre 2018",
+            "pub_year": 2019,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "004",
+            "pages": 10,
+            "pdf_size": 314,
+            "description": ""
+        }
+    }
+]

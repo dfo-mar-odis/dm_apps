@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8568,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Physical Oceanographic Conditions on the Newfoundland and Labrador Shelf during 2018",
+            "title_fr": "Conditions océanographiques physiques sur le plateau continental de Terre-Neuve et Labrador en 2018",
+            "pub_year": 2020,
+            "lead_author_2": "By Cyr, F., Colbourne, E., Galbraith, P.S., Gibb, O., Snook, S., Bishop, C., Chen, N., Han, G., and D. Senciall",
+            "pub_num": "018",
+            "pages": 52,
+            "pdf_size": 7473,
+            "description": ""
+        }
+    }
+]

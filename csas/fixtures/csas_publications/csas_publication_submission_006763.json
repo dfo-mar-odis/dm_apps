@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6763,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Recovery Potential Assessment for the American Eel (Anguilla rostrata) for eastern Canada: mitigation options",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'anguille d'Amérique (Anguilla rostrata) dans l'est du Canada : options d'atténuation",
+            "pub_year": 2013,
+            "lead_author_2": "Chaput, G., Cairns, D., Bastien-Daigle, S., LeBlanc, C., Robichaud, L., Turple, J., and Girard, C.",
+            "pub_num": "133",
+            "pages": 35,
+            "pdf_size": 266,
+            "description": ""
+        }
+    }
+]

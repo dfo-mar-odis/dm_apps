@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6871,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Recovery potential assessment of American Eel (Anguilla rostrata) in eastern Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement de l'anguille d'Amérique (Anguilla rostrata) dans l'est du Canada",
+            "pub_year": 2013,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "078",
+            "pages": 65,
+            "pdf_size": 2038,
+            "description": ""
+        }
+    }
+]

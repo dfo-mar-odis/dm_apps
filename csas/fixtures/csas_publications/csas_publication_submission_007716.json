@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7716,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of Lumpfish (Cyclopterus Lumpus) in the Gulf of St. Lawrence (3Pn, 4RS) in 2015",
+            "title_fr": "Évaluation de la lompe (Cyclopterus lumpus) du golfe du Saint-Laurent (3Pn, 4RS) en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Johanne Gauthier",
+            "pub_num": "021",
+            "pages": 12,
+            "pdf_size": 744,
+            "description": ""
+        }
+    }
+]

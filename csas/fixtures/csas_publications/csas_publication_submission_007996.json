@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7996,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Strategy for the Establishment of Self-sustaining Atlantic Whitefish Population(s) and Development of a Framework for the Evaluation of Suitable Lake Habitat",
+            "title_fr": "Stratégie d’établissement d’une ou de plusieurs populations autosuffisantes de corégones de l’Atlantique et création d’un cadre pour l’évaluation d’habitats lacustres propices",
+            "pub_year": 2018,
+            "lead_author_2": "Jeremy Broome",
+            "pub_num": "045",
+            "pages": 26,
+            "pdf_size": 525,
+            "description": ""
+        }
+    }
+]

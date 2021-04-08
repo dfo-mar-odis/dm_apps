@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8032,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Conservation value to assisting live-stranded neonates and entrapped juvenile beluga (Delphinapterus leucas) from the St. Lawrence Estuary population",
+            "title_fr": "Valeur d’assister des bélugas nouveau-nés échoués vivants et des juvéniles en difficulté pour la conservation de la population de bélugas (Delpinapterus leucas) du Saint-Laurent",
+            "pub_year": 2018,
+            "lead_author_2": "Hammill, M.O., and Lesage, V.",
+            "pub_num": "065",
+            "description": ""
+        }
+    }
+]

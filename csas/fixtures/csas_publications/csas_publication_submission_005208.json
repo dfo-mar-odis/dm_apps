@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5208,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Status of Divisions 4X5Y Haddock in 2005",
+            "title_fr": "Évaluation de l'état du stock d'aiglefin des divisions 4X et de 5Y en 2005",
+            "pub_year": 2009,
+            "lead_author_2": "Hurley, P.C.F.,  Black, G.A.P., Young, G.A., Mohn, R.K., Comeau, P.A.",
+            "pub_num": "024",
+            "pages": 92,
+            "pdf_size": 765,
+            "description": ""
+        }
+    }
+]

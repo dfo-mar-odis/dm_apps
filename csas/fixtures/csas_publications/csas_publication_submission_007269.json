@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7269,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Equivalent Adult and Production Foregone as metrics for FPP",
+            "lead_author_2": "M. Bradford, K. Clarke, B. Randall",
+            "description": ""
+        }
+    }
+]

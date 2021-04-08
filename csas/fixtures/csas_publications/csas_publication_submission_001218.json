@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1218,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Rationale for establishing a TAC in Hebron Fiord during 1982",
+            "pub_year": 1982,
+            "lead_author_2": "J.B. Dempson",
+            "pub_num": "038",
+            "pages": 12,
+            "pdf_size": 690,
+            "description": ""
+        }
+    }
+]

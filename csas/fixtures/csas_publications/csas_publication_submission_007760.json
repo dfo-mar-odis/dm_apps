@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7760,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "2015 Lobster stock assessment in the Magdalen Islands (LFA 22), Quebec area",
+            "title_fr": "Évaluation de l’état du stock de homard des Îles-de-la-Madeleine (ZPH 22), Québec, en 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Benoît Bruneau",
+            "pub_num": "045",
+            "pages": 12,
+            "pdf_size": 864,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4727,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Arctic surfclam (Mactromeris polynyma) stock on Banquereau, Nova Scotia, 2004",
+            "title_fr": "Évaluation du stock de mactres de Stimpson (Mactromeris polynyma) du banc Banquereau, Nouvelle-Écosse, en 2004",
+            "pub_year": 2007,
+            "lead_author_2": "Roddick, D., R. Kilada, K. Mombourquette.",
+            "pub_num": "035",
+            "pages": 39,
+            "pdf_size": 1026,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5592,
+        "fields": {
+            "series": 4,
+            "lead_region": [4, 5],
+            "title_en": "Zonal Workshop to Review Stock Assessment Models for Northern Shrimp; April 27-28, 2010",
+            "title_fr": "Atelier zonal d'examen des modèles d'évaluation des stocks de crevette nordique ; les 27 et 28 avril 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Katherine Skanes",
+            "pub_num": "052",
+            "pages": 77,
+            "pdf_size": 5894,
+            "description": ""
+        }
+    }
+]

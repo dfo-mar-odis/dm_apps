@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5736,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the Central and Arctic Regional Science Advisory Process on the Recovery Potential Assessment of Eastern Pondmussel (Ligumia nasuta), Fawnsfoot (Truncilla donaciformis), Mapleleaf (Quadrula quadrula) and Rainbow (Villosa iris); 19-20 October 2010",
+            "title_fr": "Compte rendu du Processus de consultation scientifique régional du Centre et de l'Arctique sur l'évaluation du potentiel de rétablissement de la ligumie pointue (Ligumia nasuta), du troncille pied-de-faon (Truncilla donaciformis), de la mulette feuille-d'érable (Quadrula quadrula) et de la villeuse irisée (Villosa iris); les 19-20 octobre 2010",
+            "pub_year": 2010,
+            "lead_author_2": "Lynn Bouvier",
+            "pub_num": "049",
+            "pages": 21,
+            "pdf_size": 92,
+            "description": ""
+        }
+    }
+]

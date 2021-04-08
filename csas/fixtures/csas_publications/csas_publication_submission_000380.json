@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 380,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Comparison of the Arctic cod (Boreogadus saida), the polar cod (Arctogadus glacialis), and the toothed cod (A. borisovi)",
+            "pub_year": 1979,
+            "lead_author_2": "J. Boulva",
+            "pub_num": "050",
+            "pages": 13,
+            "pdf_size": 915,
+            "description": ""
+        }
+    }
+]

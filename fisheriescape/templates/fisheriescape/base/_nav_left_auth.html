@@ -1,0 +1,63 @@
+{% load i18n %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'fisheriescape:index' %}">Fisheriescape Home</a></li>
+
+{# Fishery Landscape #}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        Fishery Landscape Tables
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+        <a class="dropdown-item" href="{% url 'fisheriescape:fishery_list' %}">Fishery List</a>
+        <a class="dropdown-item" href="{% url 'fisheriescape:species_list' %}">Species List</a>
+        <a class="dropdown-item" href="{% url 'fisheriescape:fishery_area_list' %}">Fishery Areas List</a>
+
+    </div>
+</li>
+
+{# MAP #}
+ <li class="nav-item"><a class="nav-link" href="{% url 'fisheriescape:map_view' %}">MAP</a></li>
+
+
+{# Thing Two #}
+{#<li class="nav-item dropdown">#}
+{#    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"#}
+{#       aria-haspopup="true" aria-expanded="false">#}
+{#        Thing two#}
+{#    </a>#}
+{#    <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{##}
+{#        <a class="dropdown-item" href="{% url 'fisheriescape:index' %}">placeholder</a>#}
+{##}
+{#    </div>#}
+{#</li>#}
+
+
+{# Thing three #}
+{#<li class="nav-item dropdown">#}
+{#    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"#}
+{#       aria-haspopup="true" aria-expanded="false">#}
+{#        Thing three#}
+{#    </a>#}
+{#    <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{##}
+{#        <a class="dropdown-item" href="{% url 'fisheriescape:index' %}">placeholder</a>#}
+{##}
+{#    </div>#}
+{#</li>#}
+
+{# Admin Settings #}
+{#<li class="nav-item dropdown">#}
+{#    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"#}
+{#       aria-haspopup="true" aria-expanded="false">#}
+{#        Admin Settings#}
+{#    </a>#}
+{#    <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{##}
+{#        <a class="dropdown-item" href="{% url 'vault:manage_instrument_type' %}">Manage Instrument Type</a>#}
+{##}
+{##}
+{#    </div>#}
+{#</li>#}

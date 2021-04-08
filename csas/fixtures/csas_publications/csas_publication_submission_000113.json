@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 113,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Catch Composition of British Columbia Shrimp Trawls and Preliminary estimates of bycatch - with empahsis on Eulachons",
+            "pub_year": 1999,
+            "lead_author_2": "Hay, D.E., Harbo, R., Southy, K., Clarke, J.R., Parker, G., McCarter, P.B.",
+            "pub_num": "026",
+            "pages": 45,
+            "pdf_size": 3391,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7192,
+        "fields": {
+            "series": 6,
+            "lead_region": [6],
+            "title_en": "Advice Related to the Sampling of Wild Fish Carcasses for the Proposed Aquaculture Activities Regulations Aquaculture Monitoring Standard",
+            "title_fr": "Avis relatif à l'échantillonnage de carcasses de poissons sauvages dans le cadre de la norme de surveillance de l'aquaculture du projet de Règlement sur les activités liées à l'aquaculture",
+            "pub_year": 2014,
+            "pub_num": "042",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6693,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on the review of the model and information needed to identify Critical Habitat for Leatherback Turtle – Pacific Population; December 5-6, 2012",
+            "title_fr": "Compte rendu de l'examen par les pairs de la Région du Pacifique du modèle et de l'information nécessaires pour désigner l'habitat essentiel de la tortue luth – Population du Pacifique ; les 5 et 6 décembre 2012",
+            "pub_year": 2015,
+            "lead_author_2": "MacConnachie, Sean",
+            "pub_num": "064",
+            "pages": 21,
+            "pdf_size": 171,
+            "description": ""
+        }
+    }
+]

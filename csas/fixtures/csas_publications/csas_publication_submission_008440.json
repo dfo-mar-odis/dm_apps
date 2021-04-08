@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8440,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review for the Assessment of Northern Cod (Division 2J3KL)",
+            "lead_author_2": "S. Zabihi-Seissan",
+            "description": ""
+        }
+    }
+]

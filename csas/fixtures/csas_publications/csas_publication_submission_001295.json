@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1295,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "A biological review of the status of the 4VWX flatfish stocks",
+            "pub_year": 1983,
+            "lead_author_2": "C.E. Dale; R.N. O'Boyle",
+            "pub_num": "062",
+            "pages": 22,
+            "pdf_size": 1209,
+            "description": ""
+        }
+    }
+]

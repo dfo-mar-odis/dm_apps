@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7890,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Oceanographic and environmental conditions in the Discovery Islands, British Columbia",
+            "title_fr": "Conditions océanographiques et environnementales de la région des îles Discovery de la Colombie-Britannique",
+            "pub_year": 2017,
+            "lead_author_2": "Chandler, P.C., Foreman, M.G.G., Ouellet, M., Mimeault, C., and Wade, J.",
+            "pub_num": "071",
+            "pages": 59,
+            "pdf_size": 4644,
+            "description": ""
+        }
+    }
+]

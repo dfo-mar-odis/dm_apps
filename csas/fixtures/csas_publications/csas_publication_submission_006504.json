@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6504,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Meteorological, Sea Ice and Physical Oceanographic Conditions on the Scotian Shelf and in the Gulf of Maine during 2011",
+            "title_fr": "Conditions météorologiques, de la glace de mer et océanographiques physiques sur le plateau néo-écossais et dans le golfe du Maine en 2011",
+            "pub_year": 2012,
+            "lead_author_2": "D. Hébert",
+            "pub_num": "055",
+            "pages": 46,
+            "pdf_size": 4800,
+            "description": ""
+        }
+    }
+]

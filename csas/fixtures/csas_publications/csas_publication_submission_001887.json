@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1887,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Exploitation du pétoncle côte-nord du Golfe Saint-Laurent et Gaspésie - 1988",
+            "pub_year": 1989,
+            "lead_author_2": "Michel Giguère; Benoît Légaré",
+            "pub_num": "015",
+            "description": ""
+        }
+    }
+]

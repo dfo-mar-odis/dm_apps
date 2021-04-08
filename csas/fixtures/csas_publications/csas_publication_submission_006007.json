@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6007,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Monitoring plan for benthic communities of the Manicouagan Marine Protected Area",
+            "title_fr": "Protocole de suivi des communautés benthiques de la zone de protection marine Manicouagan ",
+            "pub_year": 2011,
+            "lead_author_2": "Lizon Provencher et Claude Nozères",
+            "pub_num": "051",
+            "pages": 28,
+            "pdf_size": 3848,
+            "description": ""
+        }
+    }
+]

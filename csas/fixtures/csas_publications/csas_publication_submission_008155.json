@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8155,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Redfish (Sebastes mentella and S. fasciatus) stocks status in Unit 1 in 2017",
+            "title_fr": "L’état des stocks des sébastes (Sebastes mentella et S. fasciatus) de l’unité 1 en 2017",
+            "pub_year": 2019,
+            "lead_author_2": "Senay, C., Gauthier, J., Bourdages, H., Brassard, C., Duplisea, D., et Ouellette-Plante, J.",
+            "pub_num": "002",
+            "pages": 69,
+            "pdf_size": 7531,
+            "description": ""
+        }
+    }
+]

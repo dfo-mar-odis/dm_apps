@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1410,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Assessment of the Tikkoatokak - Nain Bay Arctic charr stock in 1983 and projections for 1984",
+            "pub_year": 1984,
+            "lead_author_2": "J.B. Dempson; L.J. LeDrew; R.A. Myers",
+            "pub_num": "004",
+            "pages": 20,
+            "pdf_size": 977,
+            "description": ""
+        }
+    }
+]

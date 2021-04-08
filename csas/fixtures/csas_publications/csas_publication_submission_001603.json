@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1603,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Estimation of pup production of hooded seal (Cystophora cristata) at Newfoundland during March 1985",
+            "pub_year": 1985,
+            "lead_author_2": "K. Hay; G.B. Stenson; D. Wakeham; R.A. Myers",
+            "pub_num": "096",
+            "pages": 10,
+            "pdf_size": 522,
+            "description": ""
+        }
+    }
+]

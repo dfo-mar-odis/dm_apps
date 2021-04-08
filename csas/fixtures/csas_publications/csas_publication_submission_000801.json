@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 801,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Gaspereau river alewife stock status report.",
+            "title_fr": "Rapport sur l'état du stock de gaspareau de la rivière Gaspereau.",
+            "pub_year": 2001,
+            "lead_author_2": "Gibson, A.J.F., R.A. Myers",
+            "pub_num": "061",
+            "pages": 43,
+            "pdf_size": 256,
+            "description": ""
+        }
+    }
+]

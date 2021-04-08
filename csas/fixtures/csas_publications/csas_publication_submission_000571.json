@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 571,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon (Salmo salar) in the Tabusintac River in 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Douglas,S. G., Swasson, D.",
+            "pub_num": "003",
+            "pages": 28,
+            "pdf_size": 1248,
+            "description": ""
+        }
+    }
+]

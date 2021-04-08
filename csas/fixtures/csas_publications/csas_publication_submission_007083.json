@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7083,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Results of the Atlantic Zone Monitoring Program-Atlantic mackerel (Scomber scombrus L.) surveys conducted in the southern Gulf of St. Lawrence in 2012 and 2013",
+            "title_fr": "Résultats des relevés du programme de monitorage zonal atlantique (PMZA)-maquereau bleu (Scomber scombrus L.) réalisés dans le sud du golfe du Saint-Laurent en 2012 et 2013",
+            "pub_year": 2014,
+            "lead_author_2": "Grégoire, F., Girard, L., et Boudreau, M.",
+            "pub_num": "075",
+            "description": ""
+        }
+    }
+]

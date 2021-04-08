@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3464,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Scallop Production Area 4 in the Bay of Fundy: Stock status and forecast",
+            "title_fr": "Zone de production du pétoncle 4 dans la baie de Fundy : état du stock et prévisions",
+            "pub_year": 2002,
+            "lead_author_2": "S.J. Smith, M.J. Lundy",
+            "pub_num": "018",
+            "pages": 90,
+            "pdf_size": 1030,
+            "description": ""
+        }
+    }
+]

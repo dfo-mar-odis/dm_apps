@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8087,
+        "fields": {
+            "series": 6,
+            "lead_region": [5],
+            "title_en": "Depositional Model Review - Wallace Cove Baseline Assessment Report",
+            "title_fr": "Examen du modèle de sédimentation – Rapport d’évaluation de base de Wallace Cove",
+            "pub_year": 2019,
+            "lead_author_2": "E. Parrill",
+            "pub_num": "024",
+            "pages": 5,
+            "pdf_size": 226,
+            "description": ""
+        }
+    }
+]

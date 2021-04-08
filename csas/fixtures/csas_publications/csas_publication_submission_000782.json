@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 782,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "The Status of the Atlantic salmon stock of the Northwest River, Bonivista bay (SFA 5), Newfoundland, 2000",
+            "title_fr": "État du stock de saumon atlantique de la rivière Northwest, baie de Bonavista (SPS 5), Terre-Neuve, en 2000",
+            "pub_year": 2001,
+            "lead_author_2": "J.M. Simpson, C.E. Bourgeois",
+            "pub_num": "038",
+            "pages": 14,
+            "pdf_size": 180,
+            "description": ""
+        }
+    }
+]

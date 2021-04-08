@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2827,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Year-class strength of northern cod (2J3KL) estimated from pelagic juvenile fish surveys in the Newfoundland Region, 1994, 1995, and 1996.",
+            "pub_year": 1997,
+            "lead_author_2": "Anderson, J.T., Dalley, E.L.",
+            "pub_num": "073",
+            "pages": 19,
+            "pdf_size": 995,
+            "description": ""
+        }
+    }
+]

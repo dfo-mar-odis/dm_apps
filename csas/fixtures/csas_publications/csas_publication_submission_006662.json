@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6662,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Updated stock-dynamic model for the Northern Hudson Bay narwhal population based on 1982-2011 aerial surveys",
+            "title_fr": "Mise à jour du modèle de dynamique de stock pour la population de narvals du nord de la baie d'Hudson selon les relevés aériens de 1982 à 2011",
+            "pub_year": 2013,
+            "lead_author_2": "Kingsley, M.C.S., N.C. Asselin, S.H. Ferguson",
+            "pub_num": "011",
+            "pages": 24,
+            "pdf_size": 333,
+            "description": ""
+        }
+    }
+]

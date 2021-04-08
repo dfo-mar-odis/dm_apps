@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8711,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of the Status of Subarea 2 and Divisions 3KL Capelin",
+            "lead_author_2": "Erika Parrill",
+            "description": ""
+        }
+    }
+]

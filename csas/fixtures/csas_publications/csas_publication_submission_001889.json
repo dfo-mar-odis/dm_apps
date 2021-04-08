@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1889,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Gear performance in the Bay of Fundy scallops fishery. II. - selectivity studies",
+            "pub_year": 1989,
+            "lead_author_2": "G. Robert; M.J. Lundy",
+            "pub_num": "017",
+            "pages": 33,
+            "pdf_size": 1576,
+            "description": ""
+        }
+    }
+]

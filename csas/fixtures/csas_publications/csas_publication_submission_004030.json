@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4030,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Stock and fishery status of the American Lobster, Homarus americanus, in the southern Gulf of St. Lawrence, for 2001 (Lobster Fishing Areas 23, 24, 25, 26A and 26B)",
+            "title_fr": "État des stocks et de la pêche du homard (Homarus americanus), du sud du golfe du Saint Laurent en 2001 (zones de pêche du homard 23, 24, 25, 26A et 26B)",
+            "pub_year": 2004,
+            "lead_author_2": "Lanteigne, M., Comeau, M., Mallet, M.",
+            "pub_num": "048",
+            "pages": 57,
+            "pdf_size": 2384,
+            "description": ""
+        }
+    }
+]

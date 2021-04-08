@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5902,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the recovery potential assessment of Western Silvery Minnow (Hybognathus argyritis); March 23-24, 2011",
+            "title_fr": "Compte rendu de l'évaluation du potentiel de rétablissement (ÉPR) à l'échelle régionale du méné d'argent de l'Ouest (Hybognathus argyritis) ; les 23 et 24 mars 2011",
+            "pub_year": 2013,
+            "lead_author_2": "Martin, Kathleen",
+            "pub_num": "036",
+            "pages": 22,
+            "pdf_size": 171,
+            "description": ""
+        }
+    }
+]

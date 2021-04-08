@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1785,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "1986 5Ze haddock age comparisons by two Canadian agers",
+            "pub_year": 1987,
+            "lead_author_2": "M. Strong",
+            "pub_num": "095",
+            "pages": 14,
+            "pdf_size": 589,
+            "description": ""
+        }
+    }
+]

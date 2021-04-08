@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6493,
+        "fields": {
+            "series": 3,
+            "lead_region": [4, 1],
+            "title_en": "Pre-COSEWIC Review of Smooth Skate Quebec Region",
+            "lead_author_2": "Brigitte Bernier",
+            "description": ""
+        }
+    }
+]

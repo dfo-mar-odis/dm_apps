@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3103,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Atlantic Salmon Insular Newfoundland, Northeast and East Coasts, Salmon Fishing Areas 3-8",
+            "pub_year": 1997,
+            "lead_author_2": "Rex Porter",
+            "pub_num": "D2-03",
+            "pages": 11,
+            "pdf_size": 157,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1930,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "An evaluation of the population dynamics of 4X haddock during 1962-88 with yield projected to 1990",
+            "pub_year": 1989,
+            "lead_author_2": "R.N. O'Boyle; K. Frank; J. Simon",
+            "pub_num": "058",
+            "pages": 59,
+            "pdf_size": 2589,
+            "description": ""
+        }
+    }
+]

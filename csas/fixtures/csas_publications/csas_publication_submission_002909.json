@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2909,
+        "fields": {
+            "series": 7,
+            "lead_region": [2, 1],
+            "title_en": "Gaspereau Maritime Provinces Overview",
+            "title_fr": "Survol des stocks de gaspareau des provinces Maritimes",
+            "pub_year": 2001,
+            "lead_author_2": "Brian Jessop, Gérald Chaput",
+            "pub_num": "D3-17",
+            "pages": 15,
+            "description": ""
+        }
+    }
+]

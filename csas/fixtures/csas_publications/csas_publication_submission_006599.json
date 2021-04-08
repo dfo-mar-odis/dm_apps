@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6599,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Population ecology and epidemiology of sea lice in Canadian waters",
+            "title_fr": "Épidémiologie et écologie des populations de pou du poisson dans les eaux canadiennes",
+            "pub_year": 2015,
+            "lead_author_2": "Saksida, S., Bricknell, I., Robinson, S. and Jones, S.",
+            "pub_num": "004",
+            "pages": 39,
+            "pdf_size": 809,
+            "description": ""
+        }
+    }
+]

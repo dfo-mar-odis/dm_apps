@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6645,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "A Discussion of the Precautionary Approach and its Application to Atlantic Seals",
+            "title_fr": "Discussion sur l'approche de précaution et son application aux phoques de l'Atlantique",
+            "pub_year": 2013,
+            "lead_author_2": "Hammill, M.O. and G.B. Stenson.",
+            "pub_num": "030",
+            "pages": 30,
+            "pdf_size": 1637,
+            "description": ""
+        }
+    }
+]

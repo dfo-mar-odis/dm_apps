@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 908,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Distribution, size and sexual maturity of Arctic cod (Boreogadus saida) in the Northwest Atlantic during 1959-1978",
+            "pub_year": 1979,
+            "lead_author_2": "W.H. Lear",
+            "pub_num": "017",
+            "pages": 40,
+            "pdf_size": 1943,
+            "description": ""
+        }
+    }
+]

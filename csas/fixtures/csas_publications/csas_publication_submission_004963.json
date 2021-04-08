@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4963,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Review of Melford International Terminal's Environmental Impact Statement",
+            "title_fr": "Examen de l'Énoncé des incidences environnementales du projet de Terminal International de Melford",
+            "pub_year": 2009,
+            "lead_author_2": "S. Prinsenberg, J. Simon, A. Silva, T. Milligan",
+            "pub_num": "003",
+            "pages": 8,
+            "pdf_size": 51,
+            "description": ""
+        }
+    }
+]

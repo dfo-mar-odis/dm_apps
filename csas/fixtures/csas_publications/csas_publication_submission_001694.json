@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1694,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Results of tagging adult salmon in Conne River estuary",
+            "pub_year": 1986,
+            "lead_author_2": "D.G. Reddin; P.B. Short; G. Furey",
+            "pub_num": "108",
+            "pages": 8,
+            "pdf_size": 452,
+            "description": ""
+        }
+    }
+]

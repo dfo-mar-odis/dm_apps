@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5999,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Science Advisory Process for the Assessment of Northern Shrimp on the Eastern Scotian Shelf; 17 December 2010",
+            "title_fr": "Compte rendu de la réunion tenue dans le cadre du Processus consultatif scientifique de la Région des Maritimes pour l'évaluation de la crevette nordique de l'est du plateau néo-écossais ; le 17 décembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Tara McIntyre",
+            "pub_num": "066",
+            "pages": 17,
+            "pdf_size": 84,
+            "description": ""
+        }
+    }
+]

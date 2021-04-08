@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2694,
+        "fields": {
+            "series": 7,
+            "lead_region": [2, 1],
+            "title_en": "Atlantic Salmon Maritime Provinces Overview for 2001",
+            "title_fr": "Survol des stocks de saumon atlantique des provinces Maritimes (2001)",
+            "pub_year": 2002,
+            "lead_author_2": "Gérald Chaput, Larry Marshall",
+            "pub_num": "D3-14",
+            "pages": 43,
+            "pdf_size": 965,
+            "description": ""
+        }
+    }
+]

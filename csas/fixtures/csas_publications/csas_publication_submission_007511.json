@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7511,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Evaluation of Hierarchical Marine Ecological Classification Systems for Pacific and Maritimes Regions",
+            "title_fr": "Évaluation des systèmes de classification hiérarchique de l'écologie marine pour les régions du Pacifique et des Maritimes",
+            "pub_year": 2016,
+            "lead_author_2": "John Holmes",
+            "pub_num": "003",
+            "pages": 19,
+            "pdf_size": 1089,
+            "description": ""
+        }
+    }
+]

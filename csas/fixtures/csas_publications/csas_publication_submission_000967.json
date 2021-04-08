@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 967,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process Fisheries Management Subcommittee; 26 February 1998",
+            "pub_year": 1998,
+            "lead_author_2": "G. Peacock and R. Vienneau",
+            "pub_num": "015",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5791,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific Region Science Advisory Process on Pacific ocean perch in Queen Charlotte Sound, British Columbia; November 24, 2010",
+            "title_fr": "Compte rendu du processus d'avis scientifique régional sur le sébaste du Pacifique au Détroit de la Reine-Charlotte, Colombie-Britannique ; 24 novembre 2010",
+            "pub_year": 2011,
+            "lead_author_2": "Greg Workman",
+            "pub_num": "074",
+            "pages": 21,
+            "pdf_size": 142,
+            "description": ""
+        }
+    }
+]

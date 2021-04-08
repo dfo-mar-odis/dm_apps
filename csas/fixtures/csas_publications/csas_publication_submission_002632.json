@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2632,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Non-traditional groundfish species on the Labrador Shelf and Grand Banks - Skate",
+            "pub_year": 1996,
+            "lead_author_2": "D.W. Kulka; E. DeBlois; B. Davis",
+            "pub_num": "098",
+            "pages": 29,
+            "pdf_size": 4444,
+            "description": ""
+        }
+    }
+]

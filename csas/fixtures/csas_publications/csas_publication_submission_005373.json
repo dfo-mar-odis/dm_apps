@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5373,
+        "fields": {
+            "series": 5,
+            "lead_region": [7],
+            "title_en": "Science Advice from a Risk Assessment of Smallmouth Bass (Micropterus dolomieu) in British Columbia",
+            "title_fr": "Avis scientifique suivant une évaluation des risques posés par l'achigan à petite bouche (Micropterus dolomieu) en Colombie-Britannique",
+            "pub_year": 2010,
+            "lead_author_2": "Cudmore, B., Bradford, M.",
+            "pub_num": "085",
+            "description": ""
+        }
+    }
+]

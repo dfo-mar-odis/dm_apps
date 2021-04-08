@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6921,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Framework for Estimating Quota Options for the Red Sea Urchin (Strongylocentrotus franciscanus) Fishery in British Columbia Using Shoreline Length and Linear Density Estimates",
+            "title_fr": "Cadre d'estimation des options de quotas pour la pêche à l'oursin rouge (Strongylocentrotus franciscanus) en Colombie-Britannique au moyen de la longueur du rivage et d'estimations de la densité linéaire",
+            "pub_year": 2013,
+            "lead_author_2": "Leus, D., Campbell, A., Merner, E., Hajas, W.C., and Barton, L.L.",
+            "pub_num": "094",
+            "pages": 74,
+            "pdf_size": 3381,
+            "description": ""
+        }
+    }
+]

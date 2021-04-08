@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4267,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Equilibrium estimates of Fmsy and Bmsy for 3Pn4RS cod",
+            "title_fr": "Estimations à l'équilibre de Frms et Brms pour la morue de 3Pn4RS",
+            "pub_year": 2012,
+            "lead_author_2": "Daniel Duplisea",
+            "pub_num": "171",
+            "pages": 24,
+            "pdf_size": 556,
+            "description": ""
+        }
+    }
+]

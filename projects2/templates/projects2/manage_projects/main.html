@@ -14,10 +14,10 @@
   <div id="app" @keydown.esc.prevent="closeModal()">
     {% include "projects2/manage_projects/_staff_projects_list.html" %}
 
-    <div id="mySidebar" class="sidebar">
+    <div id="mySidebar" :class="{'sidebar-opened':showSidebar,'sidebar-closed':!showSidebar}">
       {% include "projects2/manage_projects/_console.html" %}
     </div>
-    <div id="main">
+    <div :class="{'main-opened':showSidebar, 'main-closed':!showSidebar}">
       <div class="row container-fluid bg-light curvy">
 
 
@@ -68,11 +68,12 @@
   let submitMsg = "{% trans "Are certain you want to submit the following year of the project?" %} \n\n"
   let unsubmitMsg = "{% trans "Are certain you want to un-submit the following year of the project? The status of the project year will be reset!" %} \n\n"
   let deleteReviewMsg = "{% trans "Are certain you want to delete the review on this project?\n\nThis action is not reversible." %} \n\n"
-  let reviewRubric = {{review_score_rubric|safe}}
+  let reviewRubric =
+  {{review_score_rubric|safe}}
 
   </script>
 
-  <script src="{% static '/projects2/mainManageProjects.js' %}?version=1.6" type="application/javascript"></script>
+  <script src="{% static '/projects2/mainManageProjects.js' %}?version=1.7" type="application/javascript"></script>
   <script src="{% static '/projects2/mainManageProjectsReviewModal.js' %}?version=0.0.7" type="application/javascript"></script>
   <script src="{% static '/projects2/mainManageStaffProjectsModal.js' %}?version=0.0.1" type="application/javascript"></script>
 

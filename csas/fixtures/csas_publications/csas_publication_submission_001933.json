@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1933,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The 1988 4Vn herring fishery; Biological update",
+            "pub_year": 1989,
+            "lead_author_2": "R.L. Stephenson; M.J. Power",
+            "pub_num": "061",
+            "pages": 14,
+            "pdf_size": 541,
+            "description": ""
+        }
+    }
+]

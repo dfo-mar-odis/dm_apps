@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3890,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the PSARC Pelagic Subcommittee Meeting; September 3, 2003",
+            "title_fr": "Compte rendu de la réunion du souscomité des poissons pélagiques du CEESP; 3 septembre 2003",
+            "pub_year": 2003,
+            "lead_author_2": "King, J.",
+            "pub_num": "026",
+            "pages": 25,
+            "pdf_size": 97,
+            "description": ""
+        }
+    }
+]

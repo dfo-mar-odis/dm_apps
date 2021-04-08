@@ -1,0 +1,19 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3689,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Fishermen's Indicators: a Pilot Questionnaire Survey on Fishing Conditions in the Div.  4X Groundfish Fishery in 2001 and 2002",
+            "title_fr": "Indicateurs fondés sur les pêcheurs : enquête pilote par questionnaire sur les conditions de la pêche du poisson de fond dans la division 4X en 2001 et en 2002",
+            "pub_year": 2002,
+            "lead_author_2": "R. G. Halliday, R. M. Branton, J. West,
+P. A. Comeau and / et P. C. F. Hurley",
+            "pub_num": "103",
+            "pages": 25,
+            "pdf_size": 370,
+            "description": ""
+        }
+    }
+]

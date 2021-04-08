@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4707,
+        "fields": {
+            "series": 4,
+            "lead_region": [7, 4],
+            "title_en": "Pre-COSEWIC Assessment of Silver Lamprey (Ichthyomyzon unicuspis); March 5, 2007",
+            "title_fr": "Évaluation pré-COSEPAC sur la lamproie argentée (Ichthyomyzon unicuspis); le 5 mars 2007",
+            "pub_year": 2007,
+            "lead_author_2": "Mandrak, N.",
+            "pub_num": "020",
+            "pages": 46,
+            "pdf_size": 234,
+            "description": ""
+        }
+    }
+]

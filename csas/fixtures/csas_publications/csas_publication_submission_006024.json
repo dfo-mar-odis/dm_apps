@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6024,
+        "fields": {
+            "series": 6,
+            "lead_region": [4],
+            "title_en": "Identification of Atlantic surfclam fishing areas off Grosse-Île (Magdalen Islands, Quebec) to avoid impacting lobster habitat",
+            "title_fr": "Délimitation de zones de pêche à la mactre de l'atlantique au large de Grosse-Île (Îles-de-la-Madeleine, Québec) dans le but d'éviter les impacts sur l'habitat du homard",
+            "pub_year": 2011,
+            "lead_author_2": "Louise Gendron",
+            "pub_num": "006",
+            "pages": 50,
+            "pdf_size": 17729,
+            "description": ""
+        }
+    }
+]

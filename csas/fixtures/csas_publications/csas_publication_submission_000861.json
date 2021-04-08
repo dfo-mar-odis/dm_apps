@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 861,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "The decline of the herring fishery in northern Northumberland Strait and its possible causes",
+            "pub_year": 1978,
+            "lead_author_2": "S.N. Messieh",
+            "pub_num": "005",
+            "pages": 28,
+            "pdf_size": 1466,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8574,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Chemical, and Biological Oceanographic Conditions in the Labrador Sea",
+            "lead_author_2": "Marc Ringuette",
+            "description": ""
+        }
+    }
+]

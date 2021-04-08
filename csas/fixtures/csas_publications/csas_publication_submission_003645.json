@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3645,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "A comparison of the 1961-1990 and 1971-2000 means for selected oceanographic data sets in the Newfoundland Region",
+            "title_fr": "Comparaison des moyennes de certaines données océanographiques dans la région de Terre-Neuve entre les périodes 1961-1990 et 1971-2000",
+            "pub_year": 2002,
+            "lead_author_2": "E. Colbourne, C. Fitzpatrick and / et J. Craig",
+            "pub_num": "077",
+            "pages": 29,
+            "pdf_size": 1800,
+            "description": ""
+        }
+    }
+]

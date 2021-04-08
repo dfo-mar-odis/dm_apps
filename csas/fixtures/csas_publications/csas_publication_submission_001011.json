@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1011,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the RAP meeting on Hornaday River Arctic Charr, Inuvik, Nunavut; 3-4 June 1999",
+            "pub_year": 1999,
+            "lead_author_2": "R.F. Tallman",
+            "pub_num": "037",
+            "pages": 10,
+            "pdf_size": 47,
+            "description": ""
+        }
+    }
+]

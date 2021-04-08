@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4080,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of cod in Division 4X in 2004",
+            "title_fr": "Évaluation de la morue de la division 4X en 2004",
+            "pub_year": 2004,
+            "lead_author_2": "Clark, D., Hinze, J.M.",
+            "pub_num": "100",
+            "pages": 39,
+            "pdf_size": 920,
+            "description": ""
+        }
+    }
+]

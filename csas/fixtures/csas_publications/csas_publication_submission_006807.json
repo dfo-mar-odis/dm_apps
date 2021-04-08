@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6807,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the regional peer review of the Newfoundland and Labrador Snow Crab assessment; February 27 - March 6, 2013",
+            "title_fr": "Compte rendu de l'examen par des pairs de l'évaluation du stock de crabes des neiges de Terre-Neuve-et-Labrador ; du 27 février au 6 mars 2013",
+            "pub_year": 2013,
+            "lead_author_2": "D. Maddock Parsons",
+            "pub_num": "015",
+            "pages": 24,
+            "pdf_size": 191,
+            "description": ""
+        }
+    }
+]

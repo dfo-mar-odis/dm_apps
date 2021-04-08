@@ -158,6 +158,19 @@ def get_app_dict(request):
         pass
 
     try:
+        app_dict["edna"] = {
+            "title": _("eDNA Krabappel"),
+            "description": _("eDNA sample logging tool"),
+            "status": "dev",
+            "access": "login-required",
+            "url": reverse('edna:index'),
+            "icon_path": 'img/icons/dna.png',
+            "region": "regional",
+        }
+    except NoReverseMatch:
+        pass
+
+    try:
         app_dict["scifi"] = {
             "title": _("SciFi"),
             "description": _("Science finance tracking and reporting tool."),
@@ -403,6 +416,20 @@ def get_app_dict(request):
         }
     except NoReverseMatch:
         pass
+
+    try:
+        app_dict["fisheriescape"] = {
+            "title": _("Fisheries Landscape Tool"),
+            "description": _("Tool for mapping fisheries landscapes for marine species at risk"),
+            "status": "dev",
+            "access": "login-required",
+            "url": reverse('fisheriescape:index'),
+            "icon_path": 'img/icons/fisheriescape.svg',
+            "region": "regional",
+        }
+    except NoReverseMatch:
+        pass
+
     return OrderedDict(app_dict)
 
 

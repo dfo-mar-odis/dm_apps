@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 27,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Acoustic surveys for cod in the Trinity bay and Bonavista Bay (NAFO Div. 3L) during spring 1997",
+            "pub_year": 1998,
+            "lead_author_2": "D. R. Porter, J. Brattey, J. Anderson",
+            "pub_num": "027",
+            "pages": 36,
+            "description": ""
+        }
+    }
+]

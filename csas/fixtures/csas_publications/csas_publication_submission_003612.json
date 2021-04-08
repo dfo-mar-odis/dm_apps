@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3612,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Northern (2J+3KL) Cod Stock Status Update",
+            "title_fr": "Mise à jour de l'état du stock de morue du Nord (2J+3KL)",
+            "pub_year": 2002,
+            "lead_author_2": "Dr. Peter Shelton",
+            "pub_num": "A2-01",
+            "pages": 7,
+            "pdf_size": 375,
+            "description": ""
+        }
+    }
+]

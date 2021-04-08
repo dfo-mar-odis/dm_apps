@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 543,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An age-disaggregated index from the sentinel program for cod in 2J3KL",
+            "pub_year": 2000,
+            "lead_author_2": "Stansbury, D.E., Maddock Parsons, D., Shelton, P.A.",
+            "pub_num": "090",
+            "pages": 64,
+            "pdf_size": 9557,
+            "description": ""
+        }
+    }
+]

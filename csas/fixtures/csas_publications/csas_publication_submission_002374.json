@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2374,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4X haddock in 1993",
+            "pub_year": 1994,
+            "lead_author_2": "P.C.F. Hurley; P. Comeau; G.A.P. Black",
+            "pub_num": "039",
+            "pages": 42,
+            "pdf_size": 2075,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5974,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of a Regional Advisory Process Peer Review of Assessment of Snow Crab in the southern Gulf of St. Lawrence (Areas 12, 12E, 12F, 19)",
+            "lead_author_2": "Gerald Chaput",
+            "description": ""
+        }
+    }
+]

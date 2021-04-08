@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8641,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "NAFO 4T Atlantic herring population models: from Virtual Population Analysis to Statistical Catch-at-Age estimating natural mortality",
+            "lead_author_2": "Francois Turcotte",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3005,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Update on Selected Scallop Production Areas (SPA's) in the Bay of Fundy",
+            "title_fr": "Mise à jour sur l'état de certaines zones de production de pétoncles (ZPP) de la baie de Fundy",
+            "pub_year": 2000,
+            "lead_author_2": "Dale Roddick, Stephen Smith, Mark Lundy, Maureen Butler",
+            "pub_num": "C3-63",
+            "pages": 15,
+            "pdf_size": 634,
+            "description": ""
+        }
+    }
+]

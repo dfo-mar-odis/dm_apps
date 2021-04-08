@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6506,
+        "fields": {
+            "series": 6,
+            "lead_region": [7],
+            "title_en": "Effect of 2008 ice entrapment on the Eclipse Sound narwhal total allowable landed catch",
+            "title_fr": "Effet de l'emprisonnement des narvals pars les glaces dans le détroit d'éclipse en 2008 sur le total autorisé des captures débarquées",
+            "pub_year": 2012,
+            "lead_author_2": "Martin, K.",
+            "pub_num": "020",
+            "pages": 8,
+            "pdf_size": 126,
+            "description": ""
+        }
+    }
+]

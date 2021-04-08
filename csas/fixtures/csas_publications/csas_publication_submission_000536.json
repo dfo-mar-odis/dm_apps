@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 536,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of the Scotian Shelf silver hake population in 1998",
+            "pub_year": 1999,
+            "lead_author_2": "Showell, M.A., Fanning, L.P",
+            "pub_num": "148",
+            "pages": 42,
+            "pdf_size": 1538,
+            "description": ""
+        }
+    }
+]

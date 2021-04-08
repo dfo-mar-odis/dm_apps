@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 788,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Population index estimate for the beluga of the St Lawrence River Estuary in 2000.",
+            "pub_year": 2001,
+            "lead_author_2": "Gosselin, J.-F., Lesage, V., Robillard, A.",
+            "pub_num": "049",
+            "pages": 22,
+            "pdf_size": 700,
+            "description": ""
+        }
+    }
+]

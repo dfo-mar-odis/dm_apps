@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4032,
+        "fields": {
+            "series": 7,
+            "lead_region": [5],
+            "title_en": "Allowable Harm Assessment for Spotted and Northern Wolffish",
+            "title_fr": "Évaluation des dommages admissibles pour le loup tacheté et le loup à tête large",
+            "pub_year": 2004,
+            "lead_author_2": "Kulka, D.",
+            "pub_num": "031",
+            "pages": 5,
+            "description": ""
+        }
+    }
+]

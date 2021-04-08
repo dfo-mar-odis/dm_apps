@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1181,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Estimation des stocks de crevettes, Pandalus borealis, dans le nord-ouest du golfe du St.-Laurent et ses implications sur la gestion",
+            "pub_year": 1982,
+            "lead_author_2": "J. Fréchette",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

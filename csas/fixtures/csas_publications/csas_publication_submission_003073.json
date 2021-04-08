@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3073,
+        "fields": {
+            "series": 7,
+            "lead_region": [4],
+            "title_en": "St. Lawrence Estuary and Gulf Northern Stone Crab",
+            "title_fr": "Crabe épineux de l'estuaire et du golfe du Saint-Laurent",
+            "pub_year": 1998,
+            "lead_author_2": "Réjean Dufour",
+            "pub_num": "C4-04",
+            "pages": 8,
+            "pdf_size": 219,
+            "description": ""
+        }
+    }
+]

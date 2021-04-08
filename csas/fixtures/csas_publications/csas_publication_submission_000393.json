@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 393,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the cod stock in Divisions 3Pn 4RS",
+            "pub_year": 1980,
+            "lead_author_2": "C.A. Bishop",
+            "pub_num": "027",
+            "pages": 28,
+            "pdf_size": 876,
+            "description": ""
+        }
+    }
+]

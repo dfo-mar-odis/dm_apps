@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3808,
+        "fields": {
+            "series": 7,
+            "lead_region": [8],
+            "title_en": "Pacific Sardine",
+            "title_fr": "La Sardine du Pacifique",
+            "pub_year": 2002,
+            "lead_author_2": "Schweigert, J., McFarlane, S.",
+            "pub_num": "B6-07",
+            "pages": 6,
+            "description": ""
+        }
+    }
+]

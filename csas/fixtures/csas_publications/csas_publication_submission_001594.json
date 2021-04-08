@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1594,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of the Atlantic cod stock on Georges Bank, NAFO Division 5Z and Statistical Area 6, 1984",
+            "pub_year": 1985,
+            "lead_author_2": "J.J. Hunt; K.G. Waiwood",
+            "pub_num": "087",
+            "pages": 47,
+            "pdf_size": 1634,
+            "description": ""
+        }
+    }
+]

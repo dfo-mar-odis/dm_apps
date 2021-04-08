@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7956,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the 2017 Fraser Sockeye Salmon (Oncorhynchus nerka) Integrated Biological Status Re-Assessments Under the Wild Salmon Policy Using Standardized Metrics and Expert Judgment",
+            "lead_author_2": "Jeffrey Lemieux",
+            "description": ""
+        }
+    }
+]

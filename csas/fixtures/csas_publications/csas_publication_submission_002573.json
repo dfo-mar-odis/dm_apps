@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2573,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Observations on shortfin mako shark (Isurus oxyrinchus) in the North Atlantic",
+            "pub_year": 1996,
+            "lead_author_2": "R.N. O'Boyle; G.M. Fowler; P.C.F. Hurley; M. A. Showell; W.T. Stobo; C. Jones",
+            "pub_num": "026",
+            "pages": 16,
+            "pdf_size": 683,
+            "description": ""
+        }
+    }
+]

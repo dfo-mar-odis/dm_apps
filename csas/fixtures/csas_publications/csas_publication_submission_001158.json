@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1158,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An examination of the product form to whole weight conversion used by the foreign fleets in 1980 (Nfld. Observer Program)",
+            "pub_year": 1981,
+            "lead_author_2": "D.W. Kulka",
+            "pub_num": "060",
+            "pages": 38,
+            "pdf_size": 1122,
+            "description": ""
+        }
+    }
+]

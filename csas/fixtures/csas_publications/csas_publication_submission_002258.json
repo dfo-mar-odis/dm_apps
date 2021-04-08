@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2258,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Prince Edward Island (zone 25 and 26) snow crab (Chionoecetes opilio) stock for 1992",
+            "pub_year": 1992,
+            "lead_author_2": "Y. Chiasson; C. Gallant; P. DeGrâce; M. Moriyasu",
+            "pub_num": "110",
+            "pages": 18,
+            "pdf_size": 1095,
+            "description": ""
+        }
+    }
+]

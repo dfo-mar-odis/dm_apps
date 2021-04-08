@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1667,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of Gulf White Hake: NAFO Division 4T / 1986",
+            "pub_year": 1986,
+            "lead_author_2": "D. Clay; T. Hurlbut; L. Currie",
+            "pub_num": "081",
+            "pages": 46,
+            "pdf_size": 2157,
+            "description": ""
+        }
+    }
+]

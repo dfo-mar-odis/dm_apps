@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8629,
+        "fields": {
+            "series": 4,
+            "lead_region": [4],
+            "title_en": "Proceedings of the regional peer review meeting of the assessment of Quebec inshore waters Softshell clam; February 25, 2020",
+            "title_fr": "Compte rendu de l’examen régional par des pairs sur l’évaluation de la mye commune des eaux côtières du Québec ; le 25 février 2020",
+            "pub_year": 2020,
+            "lead_author_2": "Sonia Dubé",
+            "pub_num": "011",
+            "pages": 10,
+            "pdf_size": 11,
+            "description": ""
+        }
+    }
+]

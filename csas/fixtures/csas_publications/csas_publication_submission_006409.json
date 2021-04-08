@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6409,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Preliminary investigations into standardizing the 4T snow crab (Chionoecetes opilio) bottom-trawl survey index",
+            "title_fr": "Enquêtes préliminaires visant la normalisation de l'indice relatif au relevé au chalut de fond sur le crabe des neiges (Chionoecetes opilio) dans la division 4T",
+            "pub_year": 2012,
+            "lead_author_2": "Cadigan, N.",
+            "pub_num": "016",
+            "pages": 50,
+            "pdf_size": 2729,
+            "description": ""
+        }
+    }
+]

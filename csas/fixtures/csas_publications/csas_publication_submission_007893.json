@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7893,
+        "fields": {
+            "series": 3,
+            "lead_region": [6],
+            "title_en": "Summary of Fraser River Sockeye Salmon (Oncorhynchus nerka) ecology to inform pathogen transfer risk assessments in the Discovery Islands, BC",
+            "title_fr": "Résumé de l’écologie du saumon rouge du fleuve Fraser (Oncorhynchus nerka) visant à éclairer les évaluations du risque de transfert d'agents pathogènes dans les îles Discovery, Colombie-Britannique",
+            "pub_year": 2017,
+            "lead_author_2": "Grant, S.C.H., Holt, C., Wade, J., Mimeault, C., Burgetz, I. J., Johnson, S. and Trudel, M.",
+            "pub_num": "074",
+            "pages": 35,
+            "pdf_size": 891,
+            "description": ""
+        }
+    }
+]

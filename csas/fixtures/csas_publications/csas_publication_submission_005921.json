@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5921,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Estimating abundance of Northwest Atlantic harp seals, examining the impact of density dependence",
+            "title_fr": "Estimation de l'abondance des phoques du Groenland de l'Atlantique nord-ouest, examen de l'impact de la dépendance envers la densité",
+            "pub_year": 2011,
+            "lead_author_2": "Hammill, M. O. and Stenson, G. B.",
+            "pub_num": "011",
+            "pdf_size": 257,
+            "description": ""
+        }
+    }
+]

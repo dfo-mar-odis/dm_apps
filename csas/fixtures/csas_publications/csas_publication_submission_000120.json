@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 120,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Size-at-age and condition of cod in Subdivision 3Ps in 1972-1997",
+            "pub_year": 1998,
+            "lead_author_2": "Lilly, G.R.",
+            "pub_num": "094",
+            "pages": 29,
+            "pdf_size": 167,
+            "description": ""
+        }
+    }
+]

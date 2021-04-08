@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2825,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Evaluation de la biomasse du maquereau bleu (Scomber scrombrus L.) pour 1996 par la methode de la production totale d'oeufs.",
+            "pub_year": 1997,
+            "lead_author_2": "Grégoire, F., Lambert, J., Lévesque, C., Beaulieu, M.F.",
+            "pub_num": "071",
+            "pages": 29,
+            "pdf_size": 1473,
+            "description": ""
+        }
+    }
+]

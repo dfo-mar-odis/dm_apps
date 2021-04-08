@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8533,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Review of existing scientific literature pertaining to fish mortality and its population-level impacts at the Annapolis Tidal Generating Station, Annapolis Royal, Nova Scotia",
+            "title_fr": "Examen de la documentation scientifique existante sur la mortalité des poissons et ses répercussions sur la population à la centrale hydroélectrique marémotrice d’Annapolis, Annapolis Royal (Nouvelle-Écosse)",
+            "pub_year": 2019,
+            "lead_author_2": "Jamie Gibson",
+            "pub_num": "055",
+            "pages": 26,
+            "pdf_size": 785,
+            "description": ""
+        }
+    }
+]

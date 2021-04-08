@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2272,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock-recruit relationship for multi-sea-winter salmon from the Margaree River, N.S.",
+            "pub_year": 1992,
+            "lead_author_2": "G. Chaput; R. Jones",
+            "pub_num": "124",
+            "pages": 17,
+            "pdf_size": 1106,
+            "description": ""
+        }
+    }
+]

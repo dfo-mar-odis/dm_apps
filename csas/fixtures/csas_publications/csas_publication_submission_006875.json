@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6875,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Regional Peer Review of the Musquash Estuary Marine Protected Area (MPA) Monitoring Data: Part 2 - Assessment; June 25-27 and September 19, 2013",
+            "title_fr": "Compte rendu de la réunion d'examen par les pairs des données de surveillance de la zone de protection marine (ZPM) de l'estuaire Musquash : Partie 2 - Évaluation; 25-27 juin et 19 septembre 2013",
+            "pub_year": 2013,
+            "lead_author_2": "E. Kennedy",
+            "pub_num": "046",
+            "pages": 24,
+            "pdf_size": 155,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7466,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Arrowtooth Flounder (Atheresthes stomias) Stock Assessment for the West Coast of British Columbia",
+            "title_fr": "Évaluation du stock de plie à grande bouche (Atheresthes stomias) de la côte ouest de la Colombie-Britannique",
+            "pub_year": 2017,
+            "lead_author_2": "Grandin, C. and Forrest, R.",
+            "pub_num": "025",
+            "pages": 92,
+            "pdf_size": 1092,
+            "description": ""
+        }
+    }
+]

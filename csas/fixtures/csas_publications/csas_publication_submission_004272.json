@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4272,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on the Stock Assessment and Harvest Scenarios for Pacific Sardine (Sardinops sagax) in British Columbia Waters for the 2013 and 2014 Seasons; January  29-30th, 2013",
+            "title_fr": "Compte rendu de l'examen régional Pacifique de l'Évaluation du stock de sardines du Pacifique (Sardinops sagax) dans les eaux de la Colombie-Britannique pour les saisons 2013 et 2014; les 29 et 30 janvier 2013",
+            "pub_year": 2014,
+            "lead_author_2": "MacConnachie, Sean",
+            "pub_num": "048",
+            "pages": 28,
+            "pdf_size": 336,
+            "description": ""
+        }
+    }
+]

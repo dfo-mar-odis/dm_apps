@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3327,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Cape Breton American Oyster",
+            "title_fr": "Huître du Cap-Breton",
+            "pub_year": 1996,
+            "lead_author_2": "Bradford, B.",
+            "pub_num": "124",
+            "pages": 3,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6523,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the regional peer review of the updated assessment of Bocaccio Rockfish in British Columbia; May 29, 2012",
+            "title_fr": "Compte rendu de la réunion régionale d'examen par les pairs de l'évaluation mise à jour du bocaccio en Colombie-Britannique ; 29 mai 2012",
+            "pub_year": 2013,
+            "lead_author_2": "Andrew Edwards",
+            "pub_num": "037",
+            "pages": 23,
+            "pdf_size": 171,
+            "description": ""
+        }
+    }
+]

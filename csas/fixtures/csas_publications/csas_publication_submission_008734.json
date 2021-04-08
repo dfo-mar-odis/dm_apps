@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8734,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Proceedings of the Pacific regional peer review on the Evaluation of Management Procedures for the Inside Population of Yelloweye Rockfish Rebuilding Plan",
+            "lead_author_2": "Steve Schut",
+            "description": ""
+        }
+    }
+]

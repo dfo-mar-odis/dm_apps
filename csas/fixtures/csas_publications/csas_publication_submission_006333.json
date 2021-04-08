@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6333,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of Atlantic salmon (Salmo salar L.) Stocks of Newfoundland and Labrador Region (SFAs 1-14B), 2011",
+            "lead_author_2": "Chuck Bourgeois",
+            "description": ""
+        }
+    }
+]

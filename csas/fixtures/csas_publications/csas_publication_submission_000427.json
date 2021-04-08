@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 427,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_fr": "Regard sur l'état des stocks de crabe des neiges, Chionoecetes opilio, de l'estuaire et de la Côte-nord du golfe du Saint-Laurent en 1983",
+            "pub_year": 1986,
+            "lead_author_2": "F. Coulombe; R. Dufour; J.L. Beaulieu",
+            "pub_num": "115",
+            "description": ""
+        }
+    }
+]

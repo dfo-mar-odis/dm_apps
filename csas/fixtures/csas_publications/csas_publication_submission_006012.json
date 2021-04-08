@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6012,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Recovery Potential Assessment for Yellowmouth Rockfish (Sebastes reedi) along the Pacific Coast of Canada",
+            "title_fr": "Évaluation du potentiel de rétablissement du sébaste à bouche jaune (Sebastes reedi) dans les eaux côtières canadiennes du Pacifique",
+            "pub_year": 2011,
+            "lead_author_2": "Sean MacConnachie",
+            "pub_num": "060",
+            "pages": 20,
+            "pdf_size": 300,
+            "description": ""
+        }
+    }
+]

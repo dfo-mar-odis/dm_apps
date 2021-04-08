@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4220,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the Peer Review for the Southern Gulf of St. Lawrence Groundfish Stocks, Gulf Region; 21-23 February 2006",
+            "title_fr": "Compte rendu de l'examen par les pairs des stocks de poisson de fond du sud du golfe du Saint-Laurent, Région du Golfe; du 21 au 23 février 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Cairns, D.",
+            "pub_num": "029",
+            "pages": 43,
+            "pdf_size": 287,
+            "description": ""
+        }
+    }
+]

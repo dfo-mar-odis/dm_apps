@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4374,
+        "fields": {
+            "series": 5,
+            "lead_region": [2],
+            "title_en": "Pollock in Div. 4VWX and 5Zc",
+            "title_fr": "Goberge des divisions 4VWX et 5Zc",
+            "pub_year": 2005,
+            "lead_author_2": "John Neilson",
+            "pub_num": "055",
+            "pages": 8,
+            "pdf_size": 177,
+            "description": ""
+        }
+    }
+]

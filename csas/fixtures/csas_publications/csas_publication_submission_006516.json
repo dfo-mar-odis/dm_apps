@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6516,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the Regional Peer Review of the Ecosystem Research Initiative (ERI) – NEREUS Program",
+            "lead_author_2": "B. Brodie/N. Wells",
+            "description": ""
+        }
+    }
+]

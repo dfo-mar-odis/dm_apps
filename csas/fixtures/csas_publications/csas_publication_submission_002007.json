@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2007,
+        "fields": {
+            "series": 8,
+            "lead_region": [6],
+            "title_en": "Habitat Status Report on Ecosystem Objectives",
+            "title_fr": "Rapport sur l'état des habitats - Objectifs écosystémiques",
+            "pub_year": 2004,
+            "lead_author_2": "Rice, J.",
+            "pub_num": "001",
+            "pages": 11,
+            "pdf_size": 164,
+            "description": ""
+        }
+    }
+]

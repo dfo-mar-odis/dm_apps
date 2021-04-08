@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2574,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessment of 4VsW cod in 1995 with consideration of ecological indicators of stock status",
+            "pub_year": 1996,
+            "lead_author_2": "L.P. Fanning; R.K. Mohn; W.J. MacEachern",
+            "pub_num": "027",
+            "pages": 35,
+            "pdf_size": 1440,
+            "description": ""
+        }
+    }
+]

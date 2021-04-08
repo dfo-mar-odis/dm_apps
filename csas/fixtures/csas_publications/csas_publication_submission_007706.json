@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7706,
+        "fields": {
+            "series": 5,
+            "lead_region": [1],
+            "title_en": "Review of the exploratory fishery for Atlantic hagfish (Myxine glutinosa) in NAFO Div. 4T",
+            "title_fr": "Examen de la pêche exploratoire à la myxine du nord (Myxine glutinosa) dans la div. 4T de l’OPANO",
+            "pub_year": 2017,
+            "lead_author_2": "Gérald Chaput",
+            "pub_num": "008",
+            "pages": 12,
+            "pdf_size": 520,
+            "description": ""
+        }
+    }
+]

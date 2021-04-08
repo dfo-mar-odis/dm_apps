@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6730,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Incidental catches of Capelin (Mallotus villosus) in DFO bottom trawl surveys (1995-2012) and the offshore shrimp fishery (1995-2011)",
+            "lead_author_2": "F.K. Mowbray",
+            "description": ""
+        }
+    }
+]

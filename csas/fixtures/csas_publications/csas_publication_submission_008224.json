@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8224,
+        "fields": {
+            "series": 4,
+            "lead_region": [8],
+            "title_en": "Evaluation of Management Procedures for Pacific Herring (Clupea pallasii) in the Strait of Georgia and the West Coast of Vancouver Island Management Areas of British Columbia",
+            "pub_year": 2020,
+            "lead_author_2": "Bruce Patten",
+            "pub_num": "027",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7557,
+        "fields": {
+            "series": 4,
+            "lead_region": [1],
+            "title_en": "Proceedings of the regional advisory peer review meeting of the Assessment of Atlantic Cod (Gadus morhua) of the southern Gulf of St. Lawrence (NAFO Div. 4T-4Vn (Nov. – April)); March 12, 2015",
+            "title_fr": "Compte rendu de l'examen par des pairs régional sur l'évaluation de l'état du stock de morue franche (Gadus morhua) du sud du golfe du Saint-Laurent (division 4T-4Vn de l'OPANO (Nov. – Avril)) jusqu’en 2014; le 12 mars 2015",
+            "pub_year": 2016,
+            "lead_author_2": "Marc Lanteigne",
+            "pub_num": "008",
+            "pages": 14,
+            "pdf_size": 170,
+            "description": ""
+        }
+    }
+]

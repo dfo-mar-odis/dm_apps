@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2435,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Status of the cod stock in NAFO Subdivision 3Ps",
+            "pub_year": 1995,
+            "lead_author_2": "C.A. Bishop; E.F. Murphy; D.E. Stansbury",
+            "pub_num": "031",
+            "pages": 21,
+            "pdf_size": 1015,
+            "description": ""
+        }
+    }
+]

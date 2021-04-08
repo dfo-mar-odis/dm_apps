@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6824,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Acoustic-trawl survey: Bonavista Corridor spawning aggregation, May 28-June 1, 2012",
+            "lead_author_2": "G. Rose and S. Rowe",
+            "description": ""
+        }
+    }
+]

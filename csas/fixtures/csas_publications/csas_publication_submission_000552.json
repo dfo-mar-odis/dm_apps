@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 552,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "A Review of the Biology and Fisheries for Purple Sea Urchin (Strongylocentrotus purpuratus, Stimpson, 1857) and Discussion of the Assessment Needs for a Proposed Fishery",
+            "pub_year": 1999,
+            "lead_author_2": "Workman, G.",
+            "pub_num": "163",
+            "pages": 58,
+            "pdf_size": 1133,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1797,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Status of Atlantic salmon stocks, Gulf Region, Newfoundland and Labrador, 1987",
+            "pub_year": 1988,
+            "lead_author_2": "R.R. Claytor; C.C. Mullins",
+            "pub_num": "001",
+            "pages": 45,
+            "pdf_size": 1856,
+            "description": ""
+        }
+    }
+]

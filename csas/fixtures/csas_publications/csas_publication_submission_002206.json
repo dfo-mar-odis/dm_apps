@@ -1,0 +1,16 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2206,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Variability of trawl performance on Scotia-Fundy groundfish surveys",
+            "pub_year": 1992,
+            "lead_author_2": "M. Strong",
+            "pub_num": "058",
+            "pages": 24,
+            "description": ""
+        }
+    }
+]

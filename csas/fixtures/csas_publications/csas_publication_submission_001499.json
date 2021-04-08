@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1499,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_fr": "La perte de pince chez le homard (Homarus americanus) de l'estuaire de la rivière Bideford, Ile-du-Prince-Edouard",
+            "pub_year": 1984,
+            "lead_author_2": "M. Moriyasu",
+            "pub_num": "093",
+            "description": ""
+        }
+    }
+]

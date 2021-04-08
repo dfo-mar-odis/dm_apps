@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1235,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Conversion factors for silver hake on four Soviet trawlers fishing in 1981",
+            "pub_year": 1983,
+            "lead_author_2": "A. Sinclair; T. Hamor; R. Sciocchetti; G. Van Helvoort; D. Waldron",
+            "pub_num": "002",
+            "pages": 21,
+            "pdf_size": 626,
+            "description": ""
+        }
+    }
+]

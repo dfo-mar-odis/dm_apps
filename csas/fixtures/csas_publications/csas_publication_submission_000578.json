@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 578,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Assessments of Atlantic salmon stocks in southwest New Brunswick, 1999",
+            "pub_year": 2000,
+            "lead_author_2": "Marshall, T.L., Jones, R.A., Anderson, L.",
+            "pub_num": "010",
+            "pages": 29,
+            "pdf_size": 177,
+            "description": ""
+        }
+    }
+]

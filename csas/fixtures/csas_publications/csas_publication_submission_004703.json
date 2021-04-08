@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4703,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Exploitation and movements of Atlantic cod (Gadus morhua) in NAFO Division 3KL: tagging results from the reopened fishery in 2006",
+            "title_fr": "Exploitation et mouvements de la morue atlantique (Gadus morhua) dans la division 3KL de l'OPANO : résultats de marquage suite à la réouverture de la pêche en 2006",
+            "pub_year": 2007,
+            "lead_author_2": "Brattey, J., B.P. Healey.",
+            "pub_num": "027",
+            "pages": 47,
+            "pdf_size": 2655,
+            "description": ""
+        }
+    }
+]

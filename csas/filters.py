@@ -87,7 +87,8 @@ class PublicationFilter(django_filters.FilterSet):
 
     class Meta:
         model = models.PubPublication
-        fields = ['series', 'title_en', 'lead_region', 'lead_author', 'other_author', 'pub_year']
+        fields = ['series', 'title_en', 'lead_region', 'pub_year']
+        # fields = ['series', 'title_en', 'lead_region', 'lead_author', 'other_author', 'pub_year']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -109,11 +110,12 @@ class PublicationFilterReg(django_filters.FilterSet):
 
 class RequestFilter(django_filters.FilterSet):
     title = django_filters.CharFilter(field_name='title', lookup_expr='icontains')
-    client_name = django_filters.CharFilter(field_name='client_name', lookup_expr='icontains')
+    # client_name = django_filters.CharFilter(field_name='client_name', lookup_expr='icontains')
+    fiscal_year_text = django_filters.CharFilter(field_name='fiscal_year_text', lookup_expr='icontains')
 
     class Meta:
         model = models.ReqRequest
-        fields = ['title', 'region', 'client_sector', 'client_name', 'priority_id', 'funding']
+        fields = ['title', 'client_sector', 'client_name', 'fiscal_year_text']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

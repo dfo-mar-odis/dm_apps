@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 989,
+        "fields": {
+            "series": 4,
+            "lead_region": [2],
+            "title_en": "Proceedings of the Maritimes Regional Advisory Process of Sea Scallop and Stimpson's Surfclam; March 29-30 and April 21, 1999",
+            "title_fr": "Procès-verbaux du Processus consultatif régional des Maritimes sur le pétoncle et mactre de stimpson, du 29 au 30 mars et du 21 avril 1999",
+            "pub_year": 1999,
+            "pub_num": "015",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 6791,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the regional peer review of the update on the status of Atlantic Salmon in Newfoundland and Labrador - 2012; November 19-20, 2012",
+            "title_fr": "Compte rendu du processus de consultation régionale de Terre-Neuve-et-Labrador sur la situation du saumon de l'Atlantique; les 19 et 20 novembre 2012",
+            "pub_year": 2014,
+            "lead_author_2": "Chairperson: Ben Davis; Editors: Martha Robertson and Rebecca Poole",
+            "pub_num": "010",
+            "pages": 16,
+            "pdf_size": 124,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5691,
+        "fields": {
+            "series": 4,
+            "lead_region": [7],
+            "title_en": "Proceedings of the regional assessment for Dolly Varden (Salvelinus malma) in the Rat River, Northwest Territories; March 17-19, 2008",
+            "title_fr": "Compte rendu du évaluation régional du dolly varden (salvelinus malma) de la rivière rat, territoires du nord-ouest, de 2002 à 2007; du 17 au 19 mars 2008",
+            "pub_year": 2014,
+            "lead_author_2": "K. Martin",
+            "pub_num": "024",
+            "pages": 17,
+            "pdf_size": 128,
+            "description": ""
+        }
+    }
+]

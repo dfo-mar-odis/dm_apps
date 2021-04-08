@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1288,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Review of snow crab resources in western Cape Breton (Areas 1 and 7) for 1982",
+            "pub_year": 1983,
+            "lead_author_2": "R. Bailey; R. Cormier",
+            "pub_num": "055",
+            "pages": 16,
+            "pdf_size": 457,
+            "description": ""
+        }
+    }
+]

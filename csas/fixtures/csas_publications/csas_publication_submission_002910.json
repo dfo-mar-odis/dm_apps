@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2910,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Porbeagle Shark in NAFO Subareas 3-6",
+            "title_fr": "Requin-taupe commun des sous-zones 3-6 de l'OPANO",
+            "pub_year": 2001,
+            "lead_author_2": "Steven Campana",
+            "pub_num": "B3-09",
+            "pages": 9,
+            "description": ""
+        }
+    }
+]

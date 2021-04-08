@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2771,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Ratio of adults to experimental ponds area juveniles in a stock assessment of Atlantic salmon (Salmo salar L.) in the Gander River, Newfoundland with a projection of Adult Returns in 1997.",
+            "pub_year": 1997,
+            "lead_author_2": "Ryan, P.M., Knoechel, R., O'Connell, M.F., Ash, E.G.M.",
+            "pub_num": "003",
+            "description": ""
+        }
+    }
+]

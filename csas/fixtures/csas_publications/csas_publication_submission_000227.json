@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 227,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "American Plaice and Witch Flounder Catch Results from Surveys in NAFO Division 3Ps, Conducted by GEAC",
+            "pub_year": 1999,
+            "lead_author_2": "McClintock, J.",
+            "pub_num": "059",
+            "pages": 21,
+            "pdf_size": 1056,
+            "description": ""
+        }
+    }
+]

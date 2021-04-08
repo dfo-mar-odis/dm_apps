@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4810,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Recommendations for indicator selection for Endeavour Hydrothermal vents Marine Protected Area",
+            "title_fr": "Recommandations concernant la sélection d'indicateurs pour la zone de protection marine du champ hydrothermal Endeavour",
+            "pub_year": 2011,
+            "lead_author_2": "Sarah C. Davies, Miriam O, James A. Boutillier",
+            "pub_num": "068",
+            "pages": 30,
+            "pdf_size": 483,
+            "description": ""
+        }
+    }
+]

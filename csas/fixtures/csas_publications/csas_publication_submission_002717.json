@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2717,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Review and status of north Labrador Arctic charr, Salvelinus alpinus",
+            "title_fr": "Examen et état de la population d'omble chevalier du nord du Labrador, Salvelinus alpinus",
+            "pub_year": 2004,
+            "lead_author_2": "Dempson, J. B., Shears, M., Furey, G., Bloom, M.",
+            "pub_num": "070",
+            "pages": 50,
+            "pdf_size": 453,
+            "description": ""
+        }
+    }
+]

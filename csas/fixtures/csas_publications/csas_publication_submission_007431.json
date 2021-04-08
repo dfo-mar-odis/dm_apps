@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7431,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "Development of a circulation model for the Coast of Bays area and its application to identify geographic zones of influence associated with the surface transport of particiles: comparision with in-situ measurements",
+            "lead_author_2": "Andry Ratsimandresy",
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1632,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Ascophyllum harvesting and use of the intertidal by finfish",
+            "pub_year": 1986,
+            "lead_author_2": "R. Black; R.J. Miller",
+            "pub_num": "015",
+            "pages": 15,
+            "pdf_size": 845,
+            "description": ""
+        }
+    }
+]

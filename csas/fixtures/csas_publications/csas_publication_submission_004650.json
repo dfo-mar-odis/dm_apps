@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4650,
+        "fields": {
+            "series": 3,
+            "lead_region": [4],
+            "title_en": "Contribution to the identification of ecologically and biologically significant areas (EBSA) for the Estuary and the Gulf of St. Lawrence: The fish eggs and larvae and crustacean decapods larvae layer",
+            "title_fr": "Contribution à l'identification de zones d'importance écologique et biologique (ZIEB) pour l'estuaire et le golfe du Saint-Laurent : La couche des oeufs et des larves de poissons et de crustacés décapodes",
+            "pub_year": 2007,
+            "lead_author_2": "Ouellet, P.",
+            "pub_num": "011",
+            "pages": 70,
+            "pdf_size": 9340,
+            "description": ""
+        }
+    }
+]

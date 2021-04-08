@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5544,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Herring Ageing: Re-ageing of Atlantic Herring Otoliths and the Development of a Revised Catch at Age",
+            "title_fr": "Détermination de l'âge du hareng : Réévaluation de l'âge otolithique du hareng et modification des données sur les captures selon l'âge ",
+            "pub_year": 2010,
+            "lead_author_2": "Gary Melvin, M.J. Power, D. Knox, J. Porter",
+            "pub_num": "101",
+            "pages": 31,
+            "pdf_size": 248,
+            "description": ""
+        }
+    }
+]

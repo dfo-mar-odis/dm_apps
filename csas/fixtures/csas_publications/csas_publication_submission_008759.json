@@ -1,0 +1,15 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8759,
+        "fields": {
+            "series": 6,
+            "lead_region": [8],
+            "title_en": "Stock Status Update with application of Management Procedures for BC Pacific Herring: 2020 Status and 2021 Forecast",
+            "pub_year": 2021,
+            "lead_author_2": "Jaclyn Cleary",
+            "pub_num": "001",
+            "description": ""
+        }
+    }
+]

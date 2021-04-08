@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8677,
+        "fields": {
+            "series": 4,
+            "lead_region": [6],
+            "title_en": "Proceedings of Feb 2020 NMMPRC",
+            "lead_author_2": "Megan Out",
+            "description": ""
+        }
+    }
+]

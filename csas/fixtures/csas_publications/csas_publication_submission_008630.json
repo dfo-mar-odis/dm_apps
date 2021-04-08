@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8630,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of softshell clam stocks in Québec coastal waters",
+            "title_fr": "Évaluation des stocks de la mye commune des eaux côtières du Québec",
+            "pub_year": 2020,
+            "lead_author_2": "Sylvie Brulotte",
+            "pub_num": "032",
+            "pages": 14,
+            "pdf_size": 1292,
+            "description": ""
+        }
+    }
+]

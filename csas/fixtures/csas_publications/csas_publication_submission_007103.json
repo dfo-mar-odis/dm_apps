@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7103,
+        "fields": {
+            "series": 4,
+            "lead_region": [5],
+            "title_en": "Proceedings of the 2014 Regional Peer Review Meeting for the Assessment of Striped Shrimp (Pandalus montagui) in Shrimp Fishing Area 4 ; January 23, 2014",
+            "title_fr": "Compte rendu de la réunion régionale d’examen par les pairs de 2014 pour l’évaluation de la crevette ésope (Pandalus montagui) dans la ZPC 4 ; Le 23 janvier 2014",
+            "pub_year": 2015,
+            "lead_author_2": "Sjare, B.",
+            "pub_num": "045",
+            "pages": 12,
+            "pdf_size": 116,
+            "description": ""
+        }
+    }
+]

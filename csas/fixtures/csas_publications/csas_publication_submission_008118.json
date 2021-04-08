@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8118,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Redstripe Rockfish (Sebastes propiger) stock assessments for British Columbia in 2018",
+            "title_fr": "Evaluation du stock de Sébastes à raie rouge (sebastes proriger) pour la Colombie­Britannique en 2018",
+            "pub_year": 2018,
+            "lead_author_2": "Greg Workman",
+            "pub_num": "049",
+            "pages": 12,
+            "pdf_size": 748,
+            "description": ""
+        }
+    }
+]

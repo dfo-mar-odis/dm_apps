@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 8160,
+        "fields": {
+            "series": 5,
+            "lead_region": [5],
+            "title_en": "Stock Assessment of Witch Flounder (Glyptocephalus cynoglossus) in NAFO Divisions 2J3KL",
+            "title_fr": "Évaluation du stock de plie grise (Glyptocephalus cynoglossus) dans les divisions 2J3KL de l’OPANO",
+            "pub_year": 2018,
+            "lead_author_2": "L. Wheeland",
+            "pub_num": "053",
+            "pages": 15,
+            "pdf_size": 1330,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7287,
+        "fields": {
+            "series": 3,
+            "lead_region": [8],
+            "title_en": "Yellowtail Rockfish (Sebastes flavidus) Stock Assessment for the Coast of British Columbia, Canada",
+            "lead_author_2": "Rob Kronlund",
+            "description": ""
+        }
+    }
+]

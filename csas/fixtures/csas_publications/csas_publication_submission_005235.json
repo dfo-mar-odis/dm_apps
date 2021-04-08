@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5235,
+        "fields": {
+            "series": 5,
+            "lead_region": [4],
+            "title_en": "Assessment of the Greenland Halibut Stock in the Gulf of St. Lawrence (4RST) in 2008",
+            "title_fr": "Évaluation du stock de flétan du Groenland du golfe du Saint-Laurent (4RST) en 2008",
+            "pub_year": 2009,
+            "lead_author_2": "B. Bernier",
+            "pub_num": "020",
+            "pages": 16,
+            "pdf_size": 220,
+            "description": ""
+        }
+    }
+]

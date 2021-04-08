@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 1719,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Stock assessment for the 1986 cod population in 4X",
+            "pub_year": 1987,
+            "lead_author_2": "S. Campana; J. Simon",
+            "pub_num": "030",
+            "pages": 46,
+            "pdf_size": 2714,
+            "description": ""
+        }
+    }
+]

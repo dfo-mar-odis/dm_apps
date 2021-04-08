@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3900,
+        "fields": {
+            "series": 3,
+            "lead_region": [7],
+            "title_en": "Eastern Hudson Bay Beluga Precautionary Approach Case study: Risk analysis models for co-management",
+            "title_fr": "Étude de cas de l'approche de précaution sur les bélugas de l'est de la baie d'Hudson: modèles d'analyse de risque pour la cogestion",
+            "pub_year": 2003,
+            "lead_author_2": "Richard, P.R., Power, M., Hammill, M. and Doidge, W.",
+            "pub_num": "086",
+            "pages": 17,
+            "pdf_size": 224,
+            "description": ""
+        }
+    }
+]

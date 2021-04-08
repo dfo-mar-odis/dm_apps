@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 3925,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Abundance of Atlantic salmon (Salmo salar) in the Stewiacke River, NS, from 1965 to 2002",
+            "title_fr": "Abondance du saumon atlantique (Salmo salar) dans la rivière Stewiacke (N.-É.) entre 1965 et 2002",
+            "pub_year": 2003,
+            "lead_author_2": "Jamie, A., Gibson, F. and Amiro P.G.",
+            "pub_num": "108",
+            "pages": 42,
+            "pdf_size": 463,
+            "description": ""
+        }
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2527,
+        "fields": {
+            "series": 3,
+            "lead_region": [2],
+            "title_en": "Herring spawn volume at Fisherman's Bank, Prince Edward Island, in 1994",
+            "pub_year": 1995,
+            "lead_author_2": "D. Cairns",
+            "pub_num": "121",
+            "pages": 12,
+            "pdf_size": 557,
+            "description": ""
+        }
+    }
+]

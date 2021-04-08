@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4134,
+        "fields": {
+            "series": 3,
+            "lead_region": [1],
+            "title_en": "Assessment of the southern Gulf of St. Lawrence cod stock, February 2005",
+            "title_fr": "Évaluation du stock de morue du sud du golfe du Saint-Laurent, février 2005",
+            "pub_year": 2005,
+            "lead_author_2": "Chouinard, G.A., L. Currie, G. Poirier, D. Swain, H. Benoît,T. Hurlbut, D. Daigle, L. Savoie",
+            "pub_num": "007",
+            "pages": 98,
+            "pdf_size": 2233,
+            "description": ""
+        }
+    }
+]

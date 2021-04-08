@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 7308,
+        "fields": {
+            "series": 3,
+            "lead_region": [5],
+            "title_en": "An Assessment Framework and Review of Newfoundland east and south coast Atlantic Herring (Clupea harengus) stocks to the spring of 2013",
+            "title_fr": "Réunion sur le cadre d'évaluation et examen des stocks de harengs de l'Atlantique (Clupea harengus) des côtes est et sud de Terre-Neuve-et-Labrador jusqu'au printemps 2013",
+            "pub_year": 2015,
+            "lead_author_2": "Bourne C, Mowbray F, Squires B, Croft J.",
+            "pub_num": "029",
+            "pages": 112,
+            "pdf_size": 4528,
+            "description": ""
+        }
+    }
+]

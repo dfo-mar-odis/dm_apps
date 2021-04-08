@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4930,
+        "fields": {
+            "series": 5,
+            "lead_region": [8],
+            "title_en": "Stock Assessment Report on Prince Rupert District Pacific Herring",
+            "title_fr": "Évaluation du stock de hareng du Pacifique du district de Prince Rupert",
+            "pub_year": 2008,
+            "lead_author_2": "Schweigert, J.",
+            "pub_num": "011",
+            "pages": 5,
+            "pdf_size": 136,
+            "description": ""
+        }
+    }
+]

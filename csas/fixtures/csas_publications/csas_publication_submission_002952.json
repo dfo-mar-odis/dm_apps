@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 2952,
+        "fields": {
+            "series": 7,
+            "lead_region": [2],
+            "title_en": "Status of Wild Striped Bass (Morone saxatilis) and Interaction Between Wild and Cultured Striped Bass in the Maritime Provinces",
+            "title_fr": "État des stocks de bar rayé (Morone saxatillis) et interactions entre le bar rayé sauvage et le bar rayé d'élevage dans les provinces Maritimes",
+            "pub_year": 1999,
+            "lead_author_2": "Rod Bradford, Dave Meerburg, John Ritter",
+            "pub_num": "D3-22",
+            "pages": 15,
+            "pdf_size": 193,
+            "description": ""
+        }
+    }
+]

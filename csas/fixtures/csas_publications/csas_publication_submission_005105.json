@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 5105,
+        "fields": {
+            "series": 6,
+            "lead_region": [2],
+            "title_en": "Water currents, drifter trajectories and the potential for organic particles released from Little Musquash Cove to enter the Musquash MPA",
+            "title_fr": "Courants, trajectoires des bouées dérivantes et potentiel de pénétration dans la ZMP de Musquash des particules organiques rejetées dans l'anse Little Musquash",
+            "pub_year": 2009,
+            "lead_author_2": "F. Page, B. Chang, R. Losier, P. McCurdy",
+            "pub_num": "001",
+            "pages": 10,
+            "pdf_size": 346,
+            "description": ""
+        }
+    }
+]

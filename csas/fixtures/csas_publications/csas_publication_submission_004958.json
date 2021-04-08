@@ -1,0 +1,18 @@
+[
+    {
+        "model": "csas.pubpublication",
+        "pk": 4958,
+        "fields": {
+            "series": 5,
+            "lead_region": [4, 2, 1, 5],
+            "title_en": "State of the Ocean 2007: Physical Oceanographic Conditions on the Scotian Shelf, Bay of Fundy and Gulf of Maine",
+            "title_fr": "État de l'océan en 2007 : Conditions physiques de l'océan sur le plateau néo-écossais, dans la baie de Fundy et dans le golfe du Maine",
+            "pub_year": 2008,
+            "lead_author_2": "Petrie, B.",
+            "pub_num": "025",
+            "pages": 10,
+            "pdf_size": 4896,
+            "description": ""
+        }
+    }
+]
