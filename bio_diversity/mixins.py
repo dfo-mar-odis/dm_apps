@@ -371,6 +371,13 @@ class LoccMixin:
     admin_only = True
 
 
+class MapMixin:
+    key = "map"
+    form_class = forms.MapForm
+    title = _("Map")
+    admin_only = False
+
+
 class MortMixin:
     key = "mort"
     form_class = forms.MortForm

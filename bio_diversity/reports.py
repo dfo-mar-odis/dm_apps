@@ -101,14 +101,14 @@ def generate_stock_code_report(stok_id, at_date=datetime.now().replace(tzinfo=py
         ws_indv['A' + str(row_count)].value = item.pit_tag
         ws_indv['B' + str(row_count)].value = item.indv_year
         ws_indv['C' + str(row_count)].value = item.coll_id.name
-        ws_indv['D' + str(row_count)].value = ', '.join([cont.name for cont in item.current_tank(at_date)])
+        ws_indv['D' + str(row_count)].value = ', '.join([cont.__str__() for cont in item.current_tank(at_date)])
         row_count += 1
 
     row_count = 3
     for item in grp_qs:
         ws_grp['B' + str(row_count)].value = item.grp_year
         ws_grp['C' + str(row_count)].value = item.coll_id.name
-        ws_grp['D' + str(row_count)].value = ', '.join([cont.name for cont in item.current_tank(at_date)])
+        ws_grp['D' + str(row_count)].value = ', '.join([cont.__str__() for cont in item.current_cont(at_date)])
         ws_grp['E' + str(row_count)].value = item.count_fish_in_group(at_date)
 
         row_count += 1

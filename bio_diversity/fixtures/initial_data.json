@@ -49,6 +49,22 @@
 },
 {
     "model": "bio_diversity.animaldetcode",
+    "pk": 4,
+    "fields": {
+        "name": "Program Group",
+        "nom": null,
+        "description_en": "Program a groupd of fish belong to, eg EQU.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-01-15",
+        "min_val": "0.00000",
+        "max_val": "100000.00000",
+        "unit_id": 11,
+        "ani_subj_flag": false
+    }
+},
+{
+    "model": "bio_diversity.animaldetcode",
     "pk": 6,
     "fields": {
         "name": "Gender",
@@ -390,6 +406,32 @@
     }
 },
 {
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 16,
+    "fields": {
+        "name": "EQU",
+        "nom": null,
+        "description_en": "group is part of EQU",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-15",
+        "anidc_id": 4
+    }
+},
+{
+    "model": "bio_diversity.anidetsubjcode",
+    "pk": 17,
+    "fields": {
+        "name": "PEQU",
+        "nom": null,
+        "description_en": "group is part of PEQU",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-15",
+        "anidc_id": 4
+    }
+},
+{
     "model": "bio_diversity.collection",
     "pk": 20,
     "fields": {
@@ -524,6 +566,42 @@
         "name": "Pit Tagged",
         "nom": null,
         "description_en": "Count related to a number of fish changing groups due to pit tagging.",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-05"
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 6,
+    "fields": {
+        "name": "Eggs Added",
+        "nom": null,
+        "description_en": "Eggs added to a container",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-05"
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 7,
+    "fields": {
+        "name": "Eggs Removed",
+        "nom": null,
+        "description_en": "Eggs removed from a container",
+        "description_fr": "",
+        "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
+        "created_date": "2021-03-05"
+    }
+},
+{
+    "model": "bio_diversity.countcode",
+    "pk": 8,
+    "fields": {
+        "name": "Egg Count",
+        "nom": null,
+        "description_en": "Eggs in a container",
         "description_fr": "",
         "created_by": "quentin.stoyel@dfo-mpo.gc.ca",
         "created_date": "2021-03-05"

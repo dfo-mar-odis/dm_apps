@@ -17,8 +17,6 @@ urlpatterns = [
     path('update/anidc/<int:pk>/', views.AnidcUpdate.as_view(), name="update_anidc"),
     
     path('create/anix/', views.AnixCreate.as_view(), name="create_anix"),
-    path('create/anix/<int:evnt>/<str:pop>/', views.AnixCreate.as_view(), name="create_anix"),
-    path('create/anix/<int:evnt>/<str:visible>/<str:pop>/', views.AnixCreate.as_view(), name="create_anix"),
     path('details/anix/<int:pk>/', views.AnixDetails.as_view(), name="details_anix"),
     path('list/anix/', views.AnixList.as_view(), name="list_anix"),
     path('update/anix/<int:pk>/', views.AnixUpdate.as_view(), name="update_anix"),
@@ -61,10 +59,7 @@ urlpatterns = [
     path('update/contdc/<int:pk>/', views.ContdcUpdate.as_view(), name="update_contdc"),
 
     path('create/contx/', views.ContxCreate.as_view(), name="create_contx"),
-    path('create/contx/<int:evnt>/<str:pop>/', views.ContxCreate.as_view(), name="create_contx"),
-    path('create/contx/<int:evnt>/<str:visible>/<str:pop>/', views.ContxCreate.as_view(), name="create_contx"),
     path('details/contx/<int:pk>/', views.ContxDetails.as_view(), name="details_contx"),
-    path('details/contx/<str:back>/<int:back_id>/<int:pk>/', views.ContxDetails.as_view(), name="details_contx"),
     path('list/contx/', views.ContxList.as_view(), name="list_contx"),
     path('update/contx/<int:pk>/', views.ContxUpdate.as_view(), name="update_contx"),
 
@@ -273,6 +268,12 @@ urlpatterns = [
     path('list/locc/', views.LoccList.as_view(), name="list_locc"),
     path('update/locc/<int:pk>/', views.LoccUpdate.as_view(), name="update_locc"),
     
+    path('map/', views.LocMapTemplateView.as_view(), name="loc_map"),
+    path('map/n/<str:n>/s/<str:s>/e/<str:e>/w/<str:w>/', views.LocMapTemplateView.as_view(), name="loc_map"),
+    path('map/n/<str:n>/s/<str:s>/e/<str:e>/w/<str:w>/riv/<str:rive_id>/', views.LocMapTemplateView.as_view(), name="loc_map"),
+    path('map/n/<str:n>/s/<str:s>/e/<str:e>/w/<str:w>/start/<str:start>/end/<str:end>/', views.LocMapTemplateView.as_view(), name="loc_map"),
+    path('map/n/<str:n>/s/<str:s>/e/<str:e>/w/<str:w>/start/<str:start>/end/<str:end>/riv/<str:rive_id>/', views.LocMapTemplateView.as_view(), name="loc_map"),
+
     path('create/mort/<str:iorg>/<int:pk>/', views.MortFormView.as_view(), name="create_mort"),
     path('create/mort/<str:iorg>/<int:pk>/<str:pop>/', views.MortFormView.as_view(), name="create_mort"),
 
@@ -341,7 +342,9 @@ urlpatterns = [
     path('update/qual/<int:pk>/', views.QualUpdate.as_view(), name="update_qual"),
 
     path('create/relc/', views.RelcCreate.as_view(), name="create_relc"),
+    path('create/relc/n/<str:n>/s/<str:s>/e/<str:e>/w/<str:w>/', views.RelcCreate.as_view(), name="create_relc"),
     path('details/relc/<int:pk>/', views.RelcDetails.as_view(), name="details_relc"),
+    path('details/relc/<str:back>/<int:back_id>/<int:pk>/', views.RelcDetails.as_view(), name="details_relc"),
     path('list/relc/', views.RelcList.as_view(), name="list_relc"),
     path('update/relc/<int:pk>/', views.RelcUpdate.as_view(), name="update_relc"),
     

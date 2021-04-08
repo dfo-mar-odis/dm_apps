@@ -97,6 +97,9 @@
                 {% if not emm.eqt.pk == 4 %}
                     <th>{% trans 'Attached Hydrophones' %}</th>
                 {% endif %}
+                {% if not emm.eqt.pk == 4 %}
+                    <th>{% trans 'Manage Hydrophones' %}</th>
+                {% endif %}
                 </tr>
                 </thead>
                 <tbody>
@@ -109,14 +112,15 @@
                             {% for channel, hyd in channels.items %}
                                 {% if channel == ecp.ecp_channel_no %}
                                     {# This is to remove a connected hydrophone. #}
-                                    <a class="btn btn-danger" href="#" onclick="return pop('{% url 'whalesdb:remove_ehe' hyd.pk 'pop' %}','cha')"> X </a>
                                     {{hyd.ehe_date}} - {{hyd.hyd}}
                                 {% endif %}
                             {% endfor %}
-                        {% else %}
-                            <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_ehe' rec.pk ecp.ecp_channel_no 'pop' %}','cha')"> + </a>
                         {% endif %}
 
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:create_ehe' rec.pk ecp.ecp_channel_no 'pop' %}','cha')"> + </a>
+                        <a class="btn btn-primary" href="{% url 'whalesdb:managed_ehe' rec.pk ecp.ecp_channel_no %}" > * </a>
                     </td>
                 {% endif %}
 

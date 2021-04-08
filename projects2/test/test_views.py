@@ -560,7 +560,7 @@ class TestProjectListView(CommonTest):  # My Projects
 
     @tag("Project", "my_project_list", "view")
     def test_view_class(self):
-        self.assert_inheritance(views.MyProjectListView, CommonListView)
+        self.assert_inheritance(views.MyProjectListView, CommonFilterView)
 
     @tag("Project", "my_project_list", "access")
     def test_view(self):

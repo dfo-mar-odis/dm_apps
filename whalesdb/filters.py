@@ -18,6 +18,7 @@ class DepFilter(django_filters.FilterSet):
 class EcaFilter(django_filters.FilterSet):
 
     eca_hydrophone = django_filters.ModelChoiceFilter(queryset=models.EqpEquipment.objects.filter(emm__eqt_id=4))
+
     class Meta:
         model = models.EcaCalibrationEvent
         fields = ['eca_date', 'eca_attachment', 'eca_hydrophone']
@@ -66,7 +67,8 @@ class EtrFilter(django_filters.FilterSet):
         # using a custom filter for equipment so we can filter equipment types based on the eqt field
         # if the recorder choice field is set filter the eqp_f field
         eqp_qry = models.EqpEquipment.objects.all()
-        if kwargs['data'] is not None and 'recorder' in kwargs['data'].keys():
+        if kwargs['data'] is not None and 'recorder' in kwargs['data'].keys() and \
+                kwargs['data']['recorder'] is not None and kwargs['data']['recorder']!='':
             eqp_qry = eqp_qry.filter(emm__eqt_id=kwargs['data']['recorder'])
 
         eqp_choice = [(eqp.pk, str(eqp)) for eqp in eqp_qry]

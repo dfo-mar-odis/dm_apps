@@ -6,6 +6,14 @@ import shared_models.models as shared_models
 import inspect
 
 
+class ReportSearchForm(forms.Form):
+    REPORT_CHOICES = (
+        (None, "------"),
+        (1, "Deployment Summary Report (csv)"),
+    )
+    report = forms.ChoiceField(required=True, choices=REPORT_CHOICES)
+
+
 class CruForm(forms.ModelForm):
     class Meta:
         model = shared_models.Cruise
@@ -95,6 +103,24 @@ class EmmForm(forms.ModelForm):
         exclude = []
         widgets = {
         }
+
+
+class EheManagedForm(forms.ModelForm):
+
+    init_rec = None
+
+    class Meta:
+        model = models.EheHydrophoneEvent
+        exclude = []
+        widgets = {
+            'ehe_date': forms.DateInput(attrs={"placeholder": "Click to select a date..", "class": "fp-date"}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['hyd'].queryset = self.fields['hyd'].queryset.filter(emm__eqt=4)
+        self.fields['rec'].queryset = self.fields['rec'].queryset.exclude(emm__eqt=4)
 
 
 class EheForm(forms.ModelForm):
@@ -303,6 +329,7 @@ class LookupForm(forms.ModelForm):
         fields = ['name', 'nom', 'description_en', 'description_fr']
 
 
+EheFormset = modelformset_factory(model=models.EheHydrophoneEvent, form=EheManagedForm, extra=1)
 EqtFormset = modelformset_factory(model=models.EqtEquipmentTypeCode, form=LookupForm, extra=1, )
 ErtFormset = modelformset_factory(model=models.ErtRecorderType, form=LookupForm, extra=1, )
 PrmFormset = modelformset_factory(model=models.PrmParameterCode, form=LookupForm, extra=1, )

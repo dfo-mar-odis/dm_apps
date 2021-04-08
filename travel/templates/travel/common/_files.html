@@ -10,8 +10,8 @@
     </div>
     {% trans "File Attachments" %}
     <span @mouseover="enablePopovers" class="mdi mdi-help-circle-outline" data-toggle="popover"
-            data-trigger="hover" title="{% trans "File Attachments" %}"
-            :data-content="helpText.files_header"></span>
+          data-trigger="hover" title="{% trans "File Attachments" %}"
+          :data-content="helpText.files_header"></span>
   </h3>
   <div class="card-body">
     <div class="card-text">
@@ -57,12 +57,19 @@
                 </button>
               </div>
               <div v-else-if="file.editMode">
-                <button @click="updateFile(file)" class="btn btn-sm btn-primary py-0 px-1" data-toggle="tooltip" title="{% trans "Save" %}">
-                  <span class="mdi mdi-content-save text-light"></span>
-                </button>
-                <button @click="fileCloseEditMode(file)" class="btn btn-sm btn-secondary py-0 px-1" data-toggle="tooltip" title="{% trans "Cancel" %}">
-                  <span class="mdi mdi-close text-light"></span>
-                </button>
+                <div v-if="!loadingFile">
+                  <button @click="updateFile(file)" class="btn btn-sm btn-primary py-0 px-1" data-toggle="tooltip" title="{% trans "Save" %}">
+                    <span class="mdi mdi-content-save text-light"></span>
+                  </button>
+                  <button @click="fileCloseEditMode(file)" class="btn btn-sm btn-secondary py-0 px-1" data-toggle="tooltip" title="{% trans "Cancel" %}">
+                    <span class="mdi mdi-close text-light"></span>
+                  </button>
+                </div>
+                <div v-else class="loading">
+                  <div class="spinner-border mb-3" style="width: 1rem; height: 1rem;" role="status">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
               </div>
             </td>
           </tr>

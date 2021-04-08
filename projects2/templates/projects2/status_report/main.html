@@ -9,9 +9,7 @@
 
 
 {% block subcontent %}
-  <div
-    id="app"
-  >
+  <div v-cloak id="app">
 
     <div class="btns mb-5">
       <a v-if="canModify" href="{% url 'projects2:report_edit' object.id %}" class="btn btn-warning ">{% trans "Edit Report" %}</a>

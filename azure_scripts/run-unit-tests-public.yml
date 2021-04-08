@@ -92,7 +92,7 @@ steps:
     condition: succeededOrFailed()
     displayName: 'Tests for eDNA'
 
-  - script: |
-      python manage.py test -b fisheriescape.test
-    condition: succeededOrFailed()
-    displayName: 'Tests for fisheriescape'
+#  - script: |
+#      python manage.py test -b fisheriescape.test
+#    condition: succeededOrFailed()
+#    displayName: 'Tests for fisheriescape'

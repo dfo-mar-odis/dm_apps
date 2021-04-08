@@ -47,8 +47,23 @@ class FunctionalGroupFilter(django_filters.FilterSet):
                                                          widget=forms.TextInput())
 
 
-
-
 class UserFilter(django_filters.FilterSet):
     search_term = django_filters.CharFilter(field_name='search_term', label=_("Name contains"), lookup_expr='icontains',
                                             widget=forms.TextInput())
+
+
+class ProjectFilter(django_filters.FilterSet):
+    class Meta:
+        model = models.Project
+        fields = {
+            'fiscal_years': ['exact'],
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if kwargs.get("queryset"):
+            fy_ids = [py.fiscal_year_id for py in models.ProjectYear.objects.filter(project__in=kwargs.get("queryset"))]
+            fy_choices = [(fy.id, str(fy)) for fy in shared_models.FiscalYear.objects.filter(id__in=fy_ids)]
+        else:
+            fy_choices = [(fy.id, str(fy)) for fy in shared_models.FiscalYear.objects.all() if fy.projectyear_set.exists()]
+        self.filters['fiscal_years'] = django_filters.ChoiceFilter(field_name='fiscal_years', label=_("Fiscal year"), widget=forms.Select(), choices=fy_choices)

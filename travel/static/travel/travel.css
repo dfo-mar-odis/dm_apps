@@ -3,10 +3,6 @@
     background-color: #f8f8c6;
 }
 
-[v-cloak] {
-    display: none;
-}
-
 .approved {
     background-color: #a8ffb8;
 }

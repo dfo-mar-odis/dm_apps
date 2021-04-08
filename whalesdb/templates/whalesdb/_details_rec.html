@@ -60,17 +60,40 @@
     </div>
     <div class="card-body collapse" id="fs-list-events">
         <div class="card-text" id="id_events">
-            <ul>
             {% for ree in rec.events.all %}
-            <li>{{ree.ret_id.ret_name}} : <ul>
-                {% with ree.tea_id as tea %}
-                <li>{{tea.tea_last_name}}, {{tea.tea_first_name}}</li>
-                {% endwith %}
-                <li>{% trans "Date" %} :{{ree.ree_date}}</li>
-                <li>{% trans "Time" %} :{{ree.ree_time}}</li>
-            </ul></li>
+
+             <div class="card border border-dark my-1">
+                 <div class="card-body">
+               <div class="row align-items-center">
+                    <span class="col">
+                        <h3>{{ree.ret_id.ret_name}}</h3>
+                    </span>
+                    <span class="px-1">
+                        <a class="btn btn-primary" href="#" onclick="return pop('{% url 'whalesdb:update_ree' ree.pk 'pop' %}','id_events')">*</a>
+                    </span>
+                </div>
+                <table class="table" >
+                    <thead>
+                        <tr><th>{% trans 'Team Member' %}</th><th>{% trans "Date" %}</th><th>{% trans "Time" %}</th><th>{% trans "Timezone" %}</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% with ree.tea_id as tea %}
+                            <td>{% if tea.tea_last_name %}
+                                {{tea.tea_last_name}}, {{tea.tea_first_name}}
+                                {% else %}
+                                ---
+                            {% endif %}</td>
+                            <td>{{ree.ree_date}}</td>
+                            <td>{{ree.ree_time}}</td>
+                            <td>{{ree.rtt_id}}</td>
+                            {% endwith %}
+                        </tr>
+                    </tbody>
+                </table>
+                     </div>
+             </div>
             {% endfor %}
-            </ul>
         </div>
     </div>
 </div>

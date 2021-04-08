@@ -40,6 +40,7 @@ class TestDepList(CommonListTest, TestCase):
         self.assertEqual("whalesdb:create_dep", response.context['create_url'])
         self.assertEqual("whalesdb:details_dep", response.context['details_url'])
         self.assertEqual("whalesdb:update_dep", response.context['update_url'])
+        self.assertEqual("whalesdb:delete_dep", response.context['delete_url'])
 
 
 @tag('eca', 'filter')

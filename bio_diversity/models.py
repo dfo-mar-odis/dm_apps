@@ -11,7 +11,9 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.dispatch import receiver
 from django.utils import timezone
+from shapely.geometry import Point, box
 
+from bio_diversity import utils
 from bio_diversity.utils import naive_to_aware
 from shared_models import models as shared_models
 from django.db import models
@@ -83,6 +85,17 @@ class BioContainerDet(BioModel):
             })
 
 
+class BioDateModel(BioModel):
+    # model with start date/end date, still valid, created by and created date fields
+    class Meta:
+        abstract = True
+
+    start_date = models.DateField(verbose_name=_("Start Date"))
+    end_date = models.DateField(null=True, blank=True, verbose_name=_("End Date"))
+    valid = models.BooleanField(default="True", verbose_name=_("Detail still valid?"))
+    comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
+
+
 class BioDet(BioModel):
     class Meta:
         abstract = True
@@ -130,6 +143,41 @@ class BioLookup(shared_models.Lookup):
                     raise ValidationError(msg)
 
 
+class BioTimeModel(BioModel):
+    # model with start datetime/end datetime, created by and created date fields
+    class Meta:
+        abstract = True
+
+    start_datetime = models.DateTimeField(verbose_name=_("Start date"))
+    end_datetime = models.DateTimeField(null=True, blank=True, verbose_name=_("End date"))
+
+    @property
+    def start_date(self):
+        return self.start_datetime.date()
+
+    @property
+    def start_time(self):
+        if self.start_datetime.time() == datetime.datetime.min.time():
+            return None
+        return self.start_datetime.time().strftime("%H:%M")
+
+    @property
+    def end_date(self):
+        if self.end_datetime:
+            return self.end_datetime.date()
+        else:
+            return None
+
+    @property
+    def end_time(self):
+        if self.end_datetime:
+            if self.end_datetime.time() == datetime.datetime.min.time():
+                return None
+            return self.end_datetime.time().strftime("%H:%M")
+        else:
+            return None
+
+
 class BioCont(BioLookup):
     key = None
 
@@ -170,52 +218,6 @@ class BioCont(BioLookup):
             elif in_count > grp_out_set[grp]:
                 indv_list.append(grp)
         return indv_list, grp_list
-
-
-class BioDateModel(BioModel):
-    # model with start date/end date, still valid, created by and created date fields
-    class Meta:
-        abstract = True
-
-    start_date = models.DateField(verbose_name=_("Start Date"))
-    end_date = models.DateField(null=True, blank=True, verbose_name=_("End Date"))
-    valid = models.BooleanField(default="True", verbose_name=_("Detail still valid?"))
-    comments = models.CharField(null=True, blank=True, max_length=2000, verbose_name=_("Comments"))
-
-
-class BioTimeModel(BioModel):
-    # model with start datetime/end datetime, created by and created date fields
-    class Meta:
-        abstract = True
-
-    start_datetime = models.DateTimeField(verbose_name=_("Start date"))
-    end_datetime = models.DateTimeField(null=True, blank=True, verbose_name=_("End date"))
-
-    @property
-    def start_date(self):
-        return self.start_datetime.date()
-
-    @property
-    def start_time(self):
-        if self.start_datetime.time() == datetime.datetime.min.time():
-            return None
-        return self.start_datetime.time().strftime("%H:%M")
-
-    @property
-    def end_date(self):
-        if self.end_datetime:
-            return self.end_datetime.date()
-        else:
-            return None
-
-    @property
-    def end_time(self):
-        if self.end_datetime:
-            if self.end_datetime.time() == datetime.datetime.min.time():
-                return None
-            return self.end_datetime.time().strftime("%H:%M")
-        else:
-            return None
 
 
 class AnimalDetCode(BioLookup):
@@ -357,6 +359,14 @@ class Count(BioModel):
         return "{}-{}-{}".format(self.loc_id.__str__(), self.spec_id.__str__(), self.cntc_id.__str__())
 
 
+    @property
+    def date(self):
+        if self.contx_id:
+            return self.contx_id.evnt_id.start_date
+        else:
+            return None
+
+
 class CountCode(BioLookup):
     # cntc tag
     pass
@@ -379,7 +389,7 @@ class CountDet(BioDet):
 
     def clean(self):
         super(CountDet, self).clean()
-        if self.det_val:
+        if self.det_val and self.anidc_id.max_val and self.anidc_id.min_val:
             if self.det_val > self.anidc_id.max_val or self.det_val < self.anidc_id.min_val:
                 raise ValidationError({
                     "det_val": ValidationError("Value {} exceeds limits. Max: {}, Min: {}"
@@ -405,7 +415,7 @@ class Cup(BioCont):
     end_date = models.DateField(null=True, blank=True, verbose_name=_("End Date"))
 
     def __str__(self):
-        return "{}-{}".format(self.name, self.draw_id.__str__())
+        return "HU {}.{}.{}".format(self.draw_id.heat_id.__str__(), self.draw_id.name, self.name)
 
 
 class CupDet(BioContainerDet):
@@ -448,7 +458,7 @@ class Drawer(BioCont):
     facic_id = None
 
     def __str__(self):
-        return "{}-{}".format(self.name, self.heat_id.__str__())
+        return "HU {}.{}".format(self.heat_id.__str__(), self.name)
 
 
 class EnvCode(BioLookup):
@@ -747,50 +757,55 @@ class Group(BioModel):
         return "{}-{}-{}".format(self.stok_id.__str__(), self.grp_year, self.coll_id.__str__())
 
     def current_tank(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC)):
-        cont = []
+        return self.current_cont_by_key('tank', at_date)
 
-        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
-        tank_in_set = Counter([anix.contx_id.tank_id for anix in anix_in_set])
-        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
-        tank_out_set = Counter([anix.contx_id.tank_id for anix in anix_out_set])
+    def current_cont_by_key(self, cont_key, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC)):
+        cont_list = []
 
-        for tank, in_count in tank_in_set.items():
-            if tank not in tank_out_set:
-                cont.append(tank)
-            elif in_count > tank_out_set[tank]:
-                cont.append(tank)
-        return cont
+        anix_in_set = self.animal_details.filter(final_contx_flag=True,
+                                                 evnt_id__start_datetime__lte=at_date).select_related(
+            'contx_id__{}_id'.format(cont_key))
+        cont_in_set = Counter([utils.get_cont_from_anix(anix, cont_key) for anix in anix_in_set])
+        anix_out_set = self.animal_details.filter(final_contx_flag=False,
+                                                  evnt_id__start_datetime__lte=at_date).select_related(
+            'contx_id__{}_id'.format(cont_key))
+        cont_out_set = Counter([utils.get_cont_from_anix(anix, cont_key) for anix in anix_out_set])
+
+        for cont, in_count in cont_in_set.items():
+            if cont not in cont_out_set and cont:
+                cont_list.append(cont)
+            elif in_count > cont_out_set[cont] and cont:
+                cont_list.append(cont)
+        return cont_list
 
     def current_trof(self, at_date=datetime.datetime.now(tz=timezone.get_current_timezone())):
-        cont = []
+        return self.current_cont_by_key('trof', at_date)
 
-        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date)
-        trof_in_set = Counter([anix.contx_id.trof_id for anix in anix_in_set])
-        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date)
-        trof_out_set = Counter([anix.contx_id.trof_id for anix in anix_out_set])
-
-        for trof, in_count in trof_in_set.items():
-            if trof not in trof_out_set:
-                cont.append(trof)
-            elif in_count > trof_out_set[trof]:
-                cont.append(trof)
-        return cont
+    def current_cont(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC)):
+        current_cont_list = []
+        cont_type_list = ["tank", "tray", "trof", "cup", "heat", "draw"]
+        for cont_type in cont_type_list:
+            current_cont_list += self.current_cont_by_key(cont_type, at_date)
+        return current_cont_list
 
     def count_fish_in_group(self, at_date=datetime.datetime.now(tz=timezone.get_current_timezone())):
         fish_count = 0
 
+        # ordered oldest to newest
         cnt_set = Count.objects.filter(contx_id__animal_details__grp_id=self,
-                                       contx_id__evnt_id__start_datetime__lte=at_date).select_related("cntc_id").distinct()
+                                       contx_id__evnt_id__start_datetime__lte=at_date).select_related("cntc_id").distinct().order_by('contx_id__evnt_id__start_datetime')
 
-        add_codes = ["Fish in Container", ]
-        subtract_codes = ["Mortality", "Pit Tagged"]
+        absolute_codes = ["Egg Count", ]
+        add_codes = ["Fish in Container", "Counter Count", "Photo Count", "Eggs Added"]
+        subtract_codes = ["Mortality", "Pit Tagged", "Egg Picks", "Shock Loss", "Cleaning Loss", "Spawning Loss", "Eggs Removed", ]
 
         for cnt in cnt_set:
             if cnt.cntc_id.name in add_codes:
                 fish_count += cnt.cnt
             elif cnt.cntc_id.name in subtract_codes:
                 fish_count -= cnt.cnt
-
+            elif cnt.cntc_id.name in absolute_codes:
+                fish_count = cnt.cnt
         return fish_count
 
     def fish_in_cont(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC), select_fields=[], grp_select_fields=[]):
@@ -1026,19 +1041,22 @@ class Individual(BioModel):
         return "{}-{}-{}".format(self.stok_id.__str__(), self.indv_year, self.coll_id.__str__())
 
     def current_tank(self, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC)):
-        cont = []
+        return self.current_cont_by_key('tank', at_date)
 
-        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
-        tank_in_set = Counter([anix.contx_id.tank_id for anix in anix_in_set])
-        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date).select_related('contx_id__tank_id')
-        tank_out_set = Counter([anix.contx_id.tank_id for anix in anix_out_set])
+    def current_cont_by_key(self, cont_key, at_date=datetime.datetime.now().replace(tzinfo=pytz.UTC)):
+        cont_list = []
 
-        for tank, in_count in tank_in_set.items():
-            if tank not in tank_out_set:
-                cont.append(tank)
-            elif in_count > tank_out_set[tank]:
-                cont.append(tank)
-        return cont
+        anix_in_set = self.animal_details.filter(final_contx_flag=True, evnt_id__start_datetime__lte=at_date).select_related('contx_id__{}_id'.format(cont_key))
+        cont_in_set = Counter([utils.get_cont_from_anix(anix, cont_key) for anix in anix_in_set])
+        anix_out_set = self.animal_details.filter(final_contx_flag=False, evnt_id__start_datetime__lte=at_date).select_related('contx_id__{}_id'.format(cont_key))
+        cont_out_set = Counter([utils.get_cont_from_anix(anix, cont_key) for anix in anix_out_set])
+
+        for cont, in_count in cont_in_set.items():
+            if cont not in cont_out_set and cont:
+                cont_list.append(cont)
+            elif in_count > cont_out_set[cont] and cont:
+                cont_list.append(cont)
+        return cont_list
 
 
 class IndividualDet(BioDet):
@@ -1173,7 +1191,7 @@ class Location(BioModel):
     subr_id = models.ForeignKey('SubRiverCode', on_delete=models.CASCADE, null=True, blank=True,
                                 verbose_name=_("SubRiver Code"))
     relc_id = models.ForeignKey('ReleaseSiteCode', on_delete=models.CASCADE, null=True, blank=True,
-                                verbose_name=_("Site Code"))
+                                verbose_name=_("Site Code"), related_name="locations")
     loc_lat = models.DecimalField(max_digits=7, decimal_places=5, null=True, blank=True,
                                   verbose_name=_("Lattitude"))
     loc_lon = models.DecimalField(max_digits=8, decimal_places=5, null=True, blank=True,
@@ -1188,7 +1206,7 @@ class Location(BioModel):
 
     @property
     def start_time(self):
-        if self.loc_date.time() ==  datetime.datetime.min.time():
+        if self.loc_date.time() == datetime.datetime.min.time():
             return None
         return self.loc_date.time().strftime("%H:%M")
 
@@ -1200,6 +1218,13 @@ class Location(BioModel):
             models.UniqueConstraint(fields=["evnt_id", "locc_id", "rive_id", "trib_id", "subr_id", "relc_id", "loc_lat",
                                             "loc_lon", "loc_date"], name='Location_Uniqueness')
         ]
+
+    @property
+    def point(self):
+        if self.loc_lat and self.loc_lon:
+            return Point(self.loc_lat, self.loc_lon)
+        else:
+            return False
 
 
 class LocCode(BioLookup):
@@ -1355,7 +1380,7 @@ class QualCode(BioLookup):
 
 class ReleaseSiteCode(BioLookup):
     # relc tag
-    rive_id = models.ForeignKey('RiverCode', on_delete=models.CASCADE, verbose_name=_("River"))
+    rive_id = models.ForeignKey('RiverCode', on_delete=models.CASCADE, verbose_name=_("River"), related_name="sites")
     trib_id = models.ForeignKey('Tributary', on_delete=models.CASCADE, null=True, blank=True,
                                 verbose_name=_("Tributary"))
     subr_id = models.ForeignKey('SubRiverCode', on_delete=models.CASCADE, null=True, blank=True,
@@ -1368,6 +1393,16 @@ class ReleaseSiteCode(BioLookup):
                                   verbose_name=_("Min Longitude"))
     max_lon = models.DecimalField(max_digits=8, decimal_places=5, null=True, blank=True,
                                   verbose_name=_("Max Longitude"))
+
+    @property
+    def bbox(self):
+        bbox = box(
+                float(self.max_lat),
+                float(self.max_lon),
+                float(self.min_lat),
+                float(self.min_lon),
+            )
+        return bbox
 
 
 class RiverCode(BioLookup):
@@ -1567,7 +1602,7 @@ class Tray(BioCont):
         return round(sum(degree_days), 3)
 
     def __str__(self):
-        return "{}-{}".format(self.name, self.trof_id.__str__())
+        return "TR{}-{}".format(self.trof_id.__str__(), self.name)
 
 
 class TrayDet(BioContainerDet):

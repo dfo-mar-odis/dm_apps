@@ -6,6 +6,9 @@ app_name = 'whalesdb'
 urlpatterns = [
     path('', views.IndexView.as_view(), name="index"),
 
+    path('report/', views.ReportView.as_view(), name="report"),
+    path('report/deployment_summary/', views.report_deployment_summary, name="report_deployment_summary"),
+
     # CRUISES #
     ###########
     path('list/cru/', views.CruList.as_view(), name="list_cru"),
@@ -20,6 +23,7 @@ urlpatterns = [
     path('update/dep/<int:pk>/<str:pop>/', views.DepUpdate.as_view(), name="update_dep"),
     path('details/dep/<int:pk>/', views.DepDetails.as_view(), name="details_dep"),
     path('list/dep/', views.DepList.as_view(), name="list_dep"),
+    path('delete/dep/<int:pk>/', views.dep_delete, name="delete_dep"),
 
     path('list/eca/', views.EcaList.as_view(), name="list_eca"),
     path('create/eca/', views.EcaCreate.as_view(), name="create_eca"),
@@ -42,7 +46,7 @@ urlpatterns = [
     path('list/emm/', views.EmmList.as_view(), name="list_emm"),
 
     path('create/ehe/<int:rec>/<int:ecp_channel_no>/<str:pop>/', views.EheCreate.as_view(), name="create_ehe"),
-    path('remove/ehe/<int:pk>/<str:pop>/', views.EheUpdateRemove.as_view(), name="remove_ehe"),
+    path('managed/ehe/<int:rec>/<int:ecp_channel_no>/', views.EheMangedView.as_view(), name="managed_ehe"),
 
     path('create/eqh/<int:pk>/<str:pop>/', views.EqhCreate.as_view(), name="create_eqh"),
     path('update/eqh/<int:pk>/<str:pop>/', views.EqhUpdate.as_view(), name="update_eqh"),
@@ -117,6 +121,7 @@ urlpatterns = [
     path('delete/rci/<int:pk>/', views.rci_delete, name="delete_rci"),
 
     path('create/ree/<int:rec_id>/<str:pop>/', views.ReeCreate.as_view(), name="create_ree"),
+    path('update/ree/<int:pk>/<str:pop>/', views.ReeUpdate.as_view(), name="update_ree"),
 
     path('settings/help-texts/', views.HelpTextFormsetView.as_view(), name="manage_help_texts"),
     path('settings/help-text/<int:pk>/delete/', views.HelpTextHardDeleteView.as_view(), name="delete_help_text"),

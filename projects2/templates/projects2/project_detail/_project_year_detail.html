@@ -3,23 +3,23 @@
 {% load custom_tags %}
 {% load i18n %}
 
-{% echo "btn btn-sm btn-outline-secondary" as btn_class_1 %}
+{% echo "btn btn-sm btn-outline-secondary py-0" as btn_class_1 %}
 {% echo "btn btn-sm btn-outline-secondary px-1 py-0" as btn_class_2 %}
 
 <div v-if="canModify" class="mb-3 float-right">
-  <button class="btn btn-sm btn-outline-secondary no-print"
+  <button class="btn btn-sm btn-warning no-print"
           @click="goProjectYearEdit(projectYear.id)">
     <span class="mdi mdi-pencil"></span>
     {% trans "Edit" %}
   </button>
-  <button class="btn btn-sm btn-outline-secondary no-print"
+  <button class="btn btn-sm btn-danger no-print"
           @click="goProjectYearDelete(projectYear.id)">
-    <span class="mdi mdi-delete"></span>
+    <span class="mdi mdi-delete text-white"></span>
     {% trans "Delete" %}
   </button>
-  <button class="btn btn-sm btn-outline-secondary no-print"
+  <button class="btn btn-sm btn-primary no-print"
           @click="goProjectYearClone(projectYear.id)">
-    <span class="mdi mdi-content-copy"></span>
+    <span class="mdi mdi-content-copy text-white"></span>
     {% trans "Clone" %}
   </button>
 </div>

@@ -1,14 +1,11 @@
 from datetime import timedelta
 
-import pytz
 
 from django.test import tag
 from datetime import datetime
-from bio_diversity import forms
 from bio_diversity.test import BioFactoryFloor
-from shared_models.test.common_tests import CommonTest
+from bio_diversity.test.common_views import CommonTest
 from bio_diversity import models
-from django.utils import timezone
 
 
 @tag("Grpd", 'models')

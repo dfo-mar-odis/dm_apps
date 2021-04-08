@@ -78,15 +78,15 @@ var app = new Vue({
         else if (this.pageType === 'adm-hit-list') endpoint += 'adm-hit-list=true;'
         else if (this.pageType === 'adm-verification') endpoint += 'adm-verification=true;'
         else if (this.pageType === 'regional-verification') endpoint += 'regional-verification=true;'
-
-        // apply filters
-        endpoint += `search=${this.filter_search};` +
-            `lead=${this.filter_regional_lead};` +
-            `status=${this.filter_status};` +
-            `fiscal_year=${this.filter_fiscal_year};` +
-            `is_adm_approval_required=${this.filter_adm_approval};` +
-            `trip_subcategory=${this.filter_subcategory};`
       }
+
+      // apply filters
+      endpoint += `search=${this.filter_search}&` +
+          `lead=${this.filter_regional_lead}&` +
+          `status=${this.filter_status}&` +
+          `fiscal_year=${this.filter_fiscal_year}&` +
+          `is_adm_approval_required=${this.filter_adm_approval}&` +
+          `trip_subcategory=${this.filter_subcategory}&`
 
       apiService(endpoint)
           .then(response => {

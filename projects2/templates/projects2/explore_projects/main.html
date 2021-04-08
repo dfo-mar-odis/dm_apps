@@ -12,7 +12,7 @@
 
 
 {% block content %}
-  <div id="app">
+  <div id="app" v-cloak>
 
     <div id="mySidebar" :class="{'sidebar-opened':showSidebar,'sidebar-closed':!showSidebar}">
       {% include "projects2/explore_projects/_console.html" %}

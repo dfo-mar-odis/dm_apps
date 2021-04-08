@@ -127,7 +127,7 @@
                                     </thead>
                                     <tbody>
                                     {% for obj in dict.qs_open_data %}
-                                        <tr href="{% url 'inventory:resource_detail' obj.id %}">
+                                        <tr href="{% url 'inventory:resource_detail' obj.id %}" newtab>
 
                                             <td>{{ forloop.counter }}</td>
                                             {% for field in field_list %}

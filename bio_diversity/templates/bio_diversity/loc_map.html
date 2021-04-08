@@ -1,0 +1,234 @@
+{% extends "bio_diversity/bio_diversity_base.html" %}
+{% load static %}
+{% load verbose_names %}
+{% load i18n %}
+{% load l10n %}
+{% block content %}
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 700px;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 2.5%;
+            padding: 0;
+        }
+
+        #floating-panel {
+        {#position: absolute;#} top: 20px;
+            left: 25%;
+            z-index: 5;
+            background-color: #030303;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        label {
+            color: white;
+        }
+
+        .errorlist {
+            color: red;
+        }
+    </style>
+    <div class="row">
+        <div class="col">
+            <div id="map"></div>
+            <div id="floating-panel">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input class="btn btn-sm btn-primary" type="submit" value="Search bounding box" style="margin-left: 20px "></input>
+                    <a class="btn btn-sm btn-warning" style="margin-left: 20px" href="{% url 'bio_diversity:loc_map' %}">Reset</a>
+                </form>
+            </div>
+        </div>
+        <div class="col-3 card">
+            <h3>Location Report:</h3>
+
+            <h5>List of locations intersecting with bounding box:</h5>
+            <ul>
+                {% for loc in captured_locations_list %}
+                    <li>
+                        <a href="{% url 'bio_diversity:details_loc' loc.id%}" target="_blank">{{ loc.evnt_id.evntc_id }} at {{ loc.relc_id }}</a>
+                    </li>
+                {% empty %}
+                    <em>No locations to display...</em>
+                {% endfor %}
+            </ul>
+            <br>
+            <h3>Site Report:</h3>
+
+            <h5>List of sites intersecting with bounding box:</h5>
+            <ul>
+                {% for site in captured_site_list %}
+                    <li>
+                        <a href="{% url 'bio_diversity:details_relc' site.id%}" target="_blank">{{ site.name }} on {{ site.rive_id.name }}</a>
+                    </li>
+                {% empty %}
+                    <em>No locations to display...</em>
+                {% endfor %}
+            </ul>
+            <br>
+        </div>
+    </div>
+
+{% endblock content %}
+{% block body_js %}
+    {% localize off %}
+    <script>
+        function initialize() {
+
+            window.map = new google.maps.Map(document.getElementById('map'), {
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
+            });
+            var infowindow = new google.maps.InfoWindow();
+            var bounds = new google.maps.LatLngBounds();
+
+            {% for location in locations %}
+                var myInfoText{{ location.id }} = '<b>Location:</b> <a href="{% url 'bio_diversity:details_loc' location.id %}">{{location.relc_id.name}}</a><br><b>Event:</b> <a href="{% url 'bio_diversity:details_evnt' location.evnt_id.id %}">{{location.evnt_id.evntc_id.name}}</a><br><b>Date:</b>{{location.evnt_id.start_date}}'
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng({{location.loc_lat}}, {{location.loc_lon}}),
+                    map: map,
+                    //label: {text: "{{point.location.locc_id.name}}", color: "#ffffff"},
+                });
+                bounds.extend(marker.position);
+                google.maps.event.addListener(marker, 'click', (function (marker) {
+                    return function () {
+                        infowindow.setContent(myInfoText{{ location.id }});
+                        infowindow.open(map, marker);
+                    }
+                })(marker));
+            map.fitBounds(bounds);
+
+            {% endfor %}
+
+
+            {% for site in sites %}
+                var mySiteInfoText{{ site.id }} = '<b>Site:</b> <a href="{% url 'bio_diversity:details_relc' site.id %}">{{site.name}}</a><br><b>River:</b> <a href="{% url 'bio_diversity:details_rive' site.rive_id.id %}">{{site.rive_id.name}}</a>'
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng({{site.bbox.centroid.x}}, {{site.bbox.centroid.y}}),
+                    map: map,
+                    //label: {text: "{{site.name}}", color: "#ffffff"},
+                });
+                google.maps.event.addListener(marker, 'click', (function (marker) {
+                    return function () {
+                        infowindow.setContent(mySiteInfoText{{ site.id }});
+                        infowindow.open(map, marker);
+                    }
+                })(marker));
+
+                // extend bounds var
+                bounds.extend(marker.position);
+                {% for point in site.bbox.exterior.coords %}
+                    bounds.extend(new google.maps.LatLng({{point.0}}, {{ point.1 }}));
+                {% endfor %}
+
+                // Define the LatLng coordinates for the polygon's path.
+                var polygonCoords = [
+                    {% for point in site.bbox.exterior.coords %}
+                        {lat: {{point.0}}, lng: {{point.1}}},
+                    {% endfor %}
+                ];
+
+                // Construct the stratum.
+                var color = '#ea4544';
+                var myPolygon = new google.maps.Polygon({
+                    paths: polygonCoords,
+                    strokeColor: 'white',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: color,
+                    fillOpacity: 0.25
+                });
+                myPolygon.setMap(map);
+                {#bounds.extend(myPolygon.getBounds());#}
+
+                map.fitBounds(bounds);
+                // add a click event on the polygon
+            {% endfor %}
+
+
+            {% if view.kwargs.n %}
+                var newBounds = {
+                    north: {{view.kwargs.n}},
+                    south: {{view.kwargs.s}},
+                    east: {{view.kwargs.e}},
+                    west: {{view.kwargs.w}},
+                };
+                map.fitBounds(newBounds);
+            {% else %}
+                map.fitBounds(bounds);
+                var newBounds = {
+                    north: bounds.getNorthEast().lat(),
+                    south: bounds.getSouthWest().lat(),
+                    east: bounds.getNorthEast().lng(),
+                    west: bounds.getSouthWest().lng(),
+                };
+            {% endif %}
+
+            // Define a rectangle and set its editable property to true.
+            var rectangle = new google.maps.Rectangle({
+                bounds: newBounds,
+                editable: true,
+                draggable: true,
+                fillColor: '#43ea50',
+                fillOpacity: 0.35,
+
+            });
+            rectangle.setMap(map);
+            // Add an event listener on the rectangle.
+            rectangle.addListener('bounds_changed', showNewRect);
+
+            // Define an info window on the map.
+            infoWindow = new google.maps.InfoWindow()
+
+            // Show the new coordinates for the rectangle in an info window.
+
+            /** @this {google.maps.Rectangle} */
+            function showNewRect(event) {
+                var ne = rectangle.getBounds().getNorthEast();
+                var sw = rectangle.getBounds().getSouthWest();
+                var start_date =  $("#id_start_date").attr("value");
+                var end_date =  $("#id_end_date").attr("value");
+
+                var contentString = '<a href="{% url 'bio_diversity:loc_map' %}n/' + ne.lat() + '/s/' + sw.lat() + '/e/' + ne.lng() + '/w/' + sw.lng() + '/start/' + start_date + '/end/' + end_date + '" class="btn btn-small btn-primary">Search this area!</a>' +
+                    '<br>' +
+                    '<br>' +
+                    '<a href="{% url 'bio_diversity:create_relc' %}n/' + ne.lat() + '/s/' + sw.lat() + '/e/' + ne.lng() + '/w/' + sw.lng() + '" class="btn btn-small btn-secondary">Create New Site</a>' +
+                    '<br>' +
+                    '<br><b>start date:</b> ' + start_date +
+                    '<br><b>end date:</b> ' + end_date
+
+
+                // Set the info window's content and position.
+                infoWindow.setContent(contentString);
+                infoWindow.setPosition(ne);
+
+                infoWindow.open(map);
+
+            }
+        }
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initialize";
+            document.body.appendChild(script);
+
+        }
+
+        window.onload = loadScript();
+
+    </script>
+    {% endlocalize %}
+{% endblock %}

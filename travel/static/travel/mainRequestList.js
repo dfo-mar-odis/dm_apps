@@ -77,18 +77,16 @@ var app = new Vue({
         let uri = window.location.search.substring(1);
         let params = new URLSearchParams(uri);
         let typeParam = params.get("all");
-        if (typeParam) {
-          endpoint += 'all=true;'
-        }
-        // apply filters
-        endpoint += `search=${this.filter_search};` +
-            `status=${this.filter_status};` +
-            `fiscal_year=${this.filter_fiscal_year};` +
-            `section__division__branch__region=${this.filter_region};` +
-            `section__division=${this.filter_division};` +
-            `section=${this.filter_section};` +
-            `status=${this.filter_status};`
+        if (typeParam) endpoint += 'all=true&';
       }
+      // apply filters
+      endpoint += `search=${this.filter_search}&` +
+          `status=${this.filter_status}&` +
+          `fiscal_year=${this.filter_fiscal_year}&` +
+          `section__division__branch__region=${this.filter_region}&` +
+          `section__division=${this.filter_division}&` +
+          `section=${this.filter_section}&` +
+          `status=${this.filter_status}&`
       apiService(endpoint)
           .then(response => {
             if (response.results) {
@@ -103,8 +101,11 @@ var app = new Vue({
     goRequestDetail(request) {
       let params = window.location.search.substring(1);
       url = `/travel-plans/requests/${request.id}/view/?${params}`;
-      window.location.href = url;
-      // var win = window.open(url);
+      let win;
+      if (this.pageType.search("all") > -1) win = window.open(url, '_blank');
+      else window.location.href = url;
+
+
     },
     loadMoreResults() {
       if (this.next) {

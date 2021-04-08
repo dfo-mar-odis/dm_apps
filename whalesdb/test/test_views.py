@@ -1,8 +1,17 @@
+from datetime import timedelta, datetime
+
 from django.test import tag
 from django.urls import reverse_lazy
 from django.utils.translation import activate
+from django.utils import timezone
+
+from faker import Factory
+from lib.functions.custom_functions import fiscal_year
 
 from whalesdb.test.common_views import CommonTest
+from shared_models.test.common_tests import CommonTest as SharedCommonTest
+
+faker = Factory.create()
 
 
 ###########################################################################################
@@ -36,3 +45,16 @@ class TestIndexView(CommonTest):
 
         # expected to determine if the user is authorized to add content
         self.assertIn("auth", response.context)
+
+    @tag("Reports", "sar_workplan")
+    class TestSARWorkplanReportView(SharedCommonTest):
+        def setUp(self):
+            super().setUp()
+
+            date = datetime(year=faker.pyint(2000, 2030), month=4, day=1, tzinfo=timezone.get_current_timezone())
+            year = fiscal_year(date, sap_style=True)
+
+            # At a minimum a year is required
+            self.test_url = reverse_lazy('whalesdb:report_deployment_summary') + f'?year={year}'
+
+            self.user = self.get_and_login_user()

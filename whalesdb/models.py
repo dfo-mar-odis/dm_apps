@@ -63,7 +63,7 @@ class EccCalibrationValue(models.Model):
 class EdaEquipmentAttachment(models.Model):
     eqp = models.ForeignKey('EqpEquipment', on_delete=models.DO_NOTHING, verbose_name=_("Equipment"),
                             related_name='deployments')
-    dep = models.ForeignKey('DepDeployment', on_delete=models.DO_NOTHING, verbose_name=_("Deployment"),
+    dep = models.ForeignKey('DepDeployment', on_delete=models.CASCADE, verbose_name=_("Deployment"),
                             related_name='attachments')
 
     def __str__(self):
@@ -102,18 +102,18 @@ class EcpChannelProperty(models.Model):
 class EheHydrophoneEvent(models.Model):
     ehe_date = models.DateField(verbose_name=_("Attachment Date"))
 
-    hyd = models.ForeignKey('EqpEquipment', on_delete=models.DO_NOTHING,
+    # The hyd could be null if a hydrophone was being removed from a recorder and no replacement was being added.
+    hyd = models.ForeignKey('EqpEquipment', blank=True, null=True, on_delete=models.DO_NOTHING,
                             verbose_name=_("Hydrophone"), related_name="recorders")
 
-    # The hyd could be null if a hydrophone was being removed from a recorder and no replacement was being added.
-    # if removed ecp_channel_no should be set to zero as well.
     rec = models.ForeignKey('EqpEquipment', blank=True, null=True, on_delete=models.DO_NOTHING,
                             verbose_name=_("Recorder"), related_name="hydrophones")
 
+    # if removed ecp_channel_no should be set to zero as well.
     ecp_channel_no = models.IntegerField(blank=True, null=True, verbose_name=_("Channel"))
 
     class Meta:
-        ordering = ["-ehe_date"]
+        ordering = ["ehe_date", "pk"]
 
 
 class EprEquipmentParameter(models.Model):
@@ -269,7 +269,7 @@ class SetStationEventCode(shared_models.Lookup):
 
 
 class SteStationEvent(models.Model):
-    dep = models.ForeignKey(DepDeployment, on_delete=models.DO_NOTHING, related_name='station_events',
+    dep = models.ForeignKey(DepDeployment, on_delete=models.CASCADE, related_name='station_events',
                             verbose_name=_("Deployment"))
     set_type = models.ForeignKey('SetStationEventCode', on_delete=models.DO_NOTHING, db_column='set_type',
                                  verbose_name=_("Event Type"))

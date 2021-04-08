@@ -31,6 +31,10 @@ class URLTest(TestCase):
         # Test the resolved URL points to the proper view
         self.assertEqual(found.func.__name__, view.__name__)
 
+    @tag('report', 'url', 'report')
+    def test_url_report_view(self):
+        self.basic_en_url_test('whalesdb:report', 'whalesdb/report/', views.ReportView)
+
     @tag('cru', 'url', 'create')
     def test_url_create_cru_view(self):
         self.basic_en_url_test('whalesdb:create_cru', 'whalesdb/create/cru/', views.CruCreate)
@@ -70,6 +74,10 @@ class URLTest(TestCase):
     @tag('dep', 'url', 'update', 'pop')
     def test_url_update_pop_dep_view(self):
         self.basic_en_url_test('whalesdb:update_dep', 'whalesdb/update/dep/1/pop/', views.DepUpdate, [1, 'pop'])
+
+    @tag('dep', 'url', 'delete')
+    def test_url_delete_dep_view(self):
+        self.basic_en_url_test('whalesdb:delete_dep', 'whalesdb/delete/dep/1/', views.dep_delete, [1])
 
     @tag('dep', 'url', 'list')
     def test_url_list_dep_view(self):
@@ -143,9 +151,9 @@ class URLTest(TestCase):
     def test_url_create_pop_ehe_view(self):
         self.basic_en_url_test('whalesdb:create_ehe', 'whalesdb/create/ehe/1/1/pop/', views.EheCreate, [1, 1, 'pop'])
 
-    @tag('ehe', 'url', 'update')
-    def test_url_update_pop_ehe_view(self):
-        self.basic_en_url_test('whalesdb:remove_ehe', 'whalesdb/remove/ehe/1/pop/', views.EheUpdateRemove, [1, 'pop'])
+    @tag('ehe', 'url', 'manage')
+    def test_url_update_ehe_view(self):
+        self.basic_en_url_test('whalesdb:managed_ehe', 'whalesdb/managed/ehe/1/1/', views.EheMangedView, [1, 1])
 
     @tag('eqh', 'url', 'create')
     def test_url_create_pop_eqh_view(self):
@@ -266,6 +274,10 @@ class URLTest(TestCase):
     @tag('prm', 'url', 'managed')
     def test_url_managed_prm_view(self):
         self.basic_en_url_test('whalesdb:managed_prm', 'whalesdb/settings/managed-prm/', views.PrmMangedView)
+
+    @tag('ree', 'url', 'pop', 'update')
+    def test_url_update_ree_pop_view(self):
+        self.basic_en_url_test('whalesdb:update_ree', 'whalesdb/update/ree/1/pop/', views.ReeUpdate, [1, 'pop'])
 
     @tag('rsc', 'url', 'create')
     def test_url_create_rsc_view(self):

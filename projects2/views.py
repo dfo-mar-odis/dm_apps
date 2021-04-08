@@ -117,8 +117,9 @@ class ManageProjectsTemplateView(ManagerOrAdminRequiredMixin, CommonTemplateView
         return context
 
 
-class MyProjectListView(LoginRequiredMixin, CommonListView):
+class MyProjectListView(LoginRequiredMixin, CommonFilterView):
     template_name = 'projects2/my_project_list.html'
+    filterset_class = filters.ProjectFilter
     h1 = gettext_lazy("My Projects")
     home_url_name = "projects2:index"
     container_class = "container-fluid bg-light curvy"
@@ -130,7 +131,7 @@ class MyProjectListView(LoginRequiredMixin, CommonListView):
         {"name": 'title', "class": "", "width": ""},
         {"name": 'start_date', "class": "", "width": "150px"},
         {"name": 'lead_staff', "class": "", "width": ""},
-        {"name": 'fiscal_years|{}'.format(_("fiscal years")), "class": "", "width": ""},
+        {"name": 'fiscal_years_display|{}'.format(_("fiscal years")), "class": "", "width": ""},
         {"name": 'has_unsubmitted_years|{}'.format("has unsubmitted years?"), "class": "", "width": ""},
         {"name": 'is_hidden|{}'.format(_("hidden?")), "class": "", "width": ""},
         {"name": 'updated_at', "class": "", "width": "150px"},

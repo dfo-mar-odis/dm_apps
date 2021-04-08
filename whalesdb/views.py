@@ -1,6 +1,9 @@
+import csv
+import datetime
+
 from django.views.generic import TemplateView, DetailView, DeleteView
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.conf import settings
 
 from django.urls import reverse_lazy
@@ -9,7 +12,7 @@ from django.utils.translation import gettext_lazy as _
 from whalesdb import forms, models, filters, utils
 from django.contrib.auth.mixins import UserPassesTestMixin
 from shared_models.views import CommonTemplateView, CommonAuthCreateView, CommonAuthUpdateView, CommonAuthFilterView, \
-    CommonHardDeleteView, CommonFormsetView
+    CommonHardDeleteView, CommonFormsetView, CommonFormView
 
 import json
 import shared_models.models as shared_models
@@ -37,6 +40,16 @@ def eda_delete(request, pk):
         return HttpResponseRedirect(reverse_lazy('accounts:denied_access'))
 
 
+def dep_delete(request, pk):
+    dep = models.DepDeployment.objects.get(pk=pk)
+    if utils.whales_authorized(request.user):
+        dep.delete()
+        messages.success(request, _("The deployment has been successfully deleted."))
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    else:
+        return HttpResponseRedirect(reverse_lazy('accounts:denied_access'))
+
+
 def rst_delete(request, pk):
     rst = models.RstRecordingStage.objects.get(pk=pk)
     if utils.whales_authorized(request.user):
@@ -55,6 +68,62 @@ def rci_delete(request, pk):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         return HttpResponseRedirect(reverse_lazy('accounts:denied_access'))
+
+
+def report_deployment_summary(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="deployment_summary.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['EDA_ID', 'Deployment', 'station', 'Latitude', 'Longitude', 'Depth_m', 'Equipment make_model_serial',
+                     'Hydrophone make_model_serial', 'Dataset timezone', 'Recording schedule', 'In-water_start',
+                     'In-water_end', 'Dataset notes'])
+
+    edas = models.EdaEquipmentAttachment.objects.all()
+
+    for eda in edas:
+        deployment = eda.dep
+        eqp = eda.eqp
+
+        datasets = eda.dataset.all()
+
+        for dataset in datasets:
+            staion_events = deployment.station_events.filter(set_type=1)  # set_type=1 is the deployment event
+            for dep_evt in staion_events:
+                lat = dep_evt.ste_lat_mcal if dep_evt.ste_lat_mcal else dep_evt.ste_lat_ship
+                lon = dep_evt.ste_lon_mcal if dep_evt.ste_lon_mcal else dep_evt.ste_lon_ship
+                depth = dep_evt.ste_depth_mcal if dep_evt.ste_depth_mcal else dep_evt.ste_lon_ship
+
+                in_start_date = dataset.rec_start_date
+                in_start_time = dataset.rec_start_time
+                in_start = "{} {}".format(in_start_date, in_start_time)
+
+                in_end_date = dataset.rec_end_date
+                in_end_time = dataset.rec_end_time
+                in_end = "{} {}".format(in_end_date, in_end_time)
+
+                hydro = eda.eqp.hydrophones.filter(ehe_date__lte=in_start_date).order_by("ehe_date").last()
+                hyd = hydro.hyd if hydro else "----"
+                writer.writerow([eda.pk, dep_evt.dep.dep_name, dep_evt.dep.stn, lat, lon, depth, eqp,
+                                hyd, dataset.rtt_dataset, dataset.rsc_id, in_start,
+                                in_end, dataset.rec_notes])
+
+    return response
+
+
+class ReportView(AdminRequiredMixin, CommonFormView):
+    nav_menu = 'whalesdb/base/whales_nav_menu.html'
+    site_css = 'whalesdb/base/whales_css.css'
+    title = _("Whale Equipment Metadata Database Reports")
+    form_class = forms.ReportSearchForm
+    template_name = 'whalesdb/whales_reports.html'
+
+    def form_valid(self, form):
+        report = int(form.cleaned_data["report"])
+
+        if report == 1:
+            return HttpResponseRedirect(reverse_lazy("whalesdb:report_deployment_summary"))
 
 
 class IndexView(CommonTemplateView):
@@ -178,6 +247,7 @@ class EheCreate(mixins.EheMixin, CommonCreate):
         initial = super().get_initial()
         initial['rec'] = self.kwargs['rec']
         initial['ecp_channel_no'] = self.kwargs['ecp_channel_no']
+        initial['ehe_date'] = datetime.date.today()
 
         return initial
 
@@ -365,24 +435,10 @@ class EcaUpdate(mixins.EcaMixin, CommonUpdate):
         return reverse_lazy("whalesdb:details_eca", args=(self.kwargs['pk'],))
 
 
-class EheUpdateRemove(mixins.EheMixin, CommonUpdate):
-
-    def get_initial(self):
-        initial = super().get_initial()
-
-        initial['rec'] = None
-        initial['ecp_channel_no'] = 0
-        return initial
-
-
 class EmmUpdate(mixins.EmmMixin, CommonUpdate):
 
     def get_success_url(self):
         return reverse_lazy("whalesdb:list_emm")
-
-
-class EqhUpdate(mixins.EheMixin, CommonUpdate):
-    pass
 
 
 class EqhUpdate(mixins.EqhMixin, CommonUpdate):
@@ -418,6 +474,10 @@ class RecUpdate(mixins.RecMixin, CommonUpdate):
 
     def get_success_url(self):
         return reverse_lazy("whalesdb:details_rec", args=(self.kwargs['pk'],))
+
+
+class ReeUpdate(mixins.ReeMixin, CommonUpdate):
+    pass
 
 
 class RetUpdate(mixins.RetMixin, CommonUpdate):
@@ -660,6 +720,8 @@ class DepList(mixins.DepMixin, CommonList):
     fields = ['dep_name', 'dep_year', 'dep_month', 'stn', 'prj', 'mor']
     creation_form_height = 600
 
+    delete_url = "whalesdb:delete_dep"
+
     def get_context_data(self, *args, object_list=None, **kwargs):
         context = super().get_context_data(*args, object_list=object_list, **kwargs)
         context['editable'] = False
@@ -814,6 +876,27 @@ class ManagedFormsetViewMixin(AdminRequiredMixin, CommonFormsetView):
         context['key'] = self.key
 
         return context
+
+
+class EheMangedView(ManagedFormsetViewMixin):
+    key = 'ehe'
+    h1 = "Manage Equipment Channel History"
+    queryset = models.EheHydrophoneEvent.objects.all()
+    formset_class = forms.EheFormset
+    success_url = reverse_lazy("whalesdb:managed_ehe")
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        if self.kwargs and self.kwargs['rec']:
+            qs = qs.filter(rec=self.kwargs['rec'])
+
+        if self.kwargs and self.kwargs['ecp_channel_no']:
+            qs = qs.filter(ecp_channel_no=self.kwargs['ecp_channel_no'])
+
+        return qs
+
+    def get_success_url(self):
+        return reverse_lazy("whalesdb:managed_ehe", kwargs=self.kwargs)
 
 
 class EqtMangedView(ManagedFormsetViewMixin):

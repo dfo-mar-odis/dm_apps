@@ -3,10 +3,13 @@
 {% load i18n %}
 {% load custom_filters %}
 {% load static %}
+{% load bootstrap4 %}
+
+{% block filter %}{% endblock %}
 
 {% block pre_table %}
 
-  <div id="app">
+  <div id="app" v-cloak>
     <div class="row mb-5">
       <div class="col-5">
         <h3>
@@ -37,27 +40,47 @@
     </div>
   </div>
 
+  <form class="form" action="." method="get" id="filter-form" style="width: 30%">
+    <div class="row">
+      {% for field in filter.form %}
+        <div class="col">
+          {% bootstrap_field field placeholder="" size="small" %}
+        </div>
+      {% endfor %}
+      <div class="col">
+        <br>
+        <input type="submit" value="{% trans "Filter" %}" class="btn btn-warning btn-sm">
+        <a href="." class="btn btn-secondary btn-sm">{% trans "Clear" %}</a>
+      </div>
+    </div>
+  </form>
 
 {% endblock %}
 
-{% block table_td %}
-  {% if "unsubmitted" in field.name %}
 
-    {% get_field_value object field.name as my_val %}
-    {% if my_val %}
-      <span class="py-1 px-1 highlight">{{ my_val|yesno }}</span>
-    {% else %}
-      <span>{{ my_val|yesno }}</span>
-    {% endif %}
-  {% else %}
-    {% get_field_value object field.name safe=True %}
-  {% endif %}
+{% block table_tr %}
+  {% url row_object_url_name object.id as my_url %}
+  <tr {% if row_object_url_name %}newtab href="{{ my_url }}"{% endif %}>
+    {% for field in field_list %}
+      <td class="{{ field.class }}">
+        {% if "unsubmitted" in field.name %}
+          {% get_field_value object field.name as my_val %}
+          {% if my_val %}
+            <span class="py-1 px-1 highlight">{{ my_val|yesno }}</span>
+          {% else %}
+            <span>{{ my_val|yesno }}</span>
+          {% endif %}
+        {% else %}
+          {% get_field_value object field.name safe=True %}
+        {% endif %}
+      </td>
+    {% endfor %}
+  </tr>
 {% endblock %}
-
 
 {% block table_body_1 %}
   {% for project in orphens %}
-    <tr href="{% url "projects2:project_detail" project.id %}" class="text-muted">
+    <tr newtab href="{% url "projects2:project_detail" project.id %}" class="text-muted">
       {% for field in field_list %}
         <td class="{{ field.class }}">
           {% get_field_value project field.name safe=True %}
@@ -69,5 +92,5 @@
 
 {% block body_js %}
   {{ block.super }}
-  <script src="{% static '/projects2/mainMyProjectList.js' %}?version=0.0.0" type="application/javascript"></script>
+  <script src="{% static '/projects2/mainMyProjectList.js' %}?version=0.1" type="application/javascript"></script>
 {% endblock %}

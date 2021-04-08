@@ -5,7 +5,7 @@ var app = new Vue({
   data: {
     showSidebar: false,
     showOverview: true,
-    collapseOverview: true,
+    collapseOverview: false,
     collapseFinancials: true,
     collapseSubmit: true,
     currentUser: null,

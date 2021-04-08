@@ -54,7 +54,7 @@ function pop(url, tag) {
     child = window.open(url, tag,'toolbar=0,status=0,height=500,width=600');
     child.onbeforeunload = function() {
         if(child.refresh && $('.is-invalid').length <= 0) {
-            refreshTag(tag);
+            refreshTag("#" + tag);
         }
     }
 
@@ -62,15 +62,17 @@ function pop(url, tag) {
 }
 
 function refreshTag(tag) {
-    if( tag == "all" ) {
+    if( tag == "#all" ) {
         interval = setInterval( function() {
             location.reload(true);
             clearInterval(interval);
-        }, 1000);
+        }, 500);
     } else {
         console.log("refresh called on: '" + tag + "'");
-        var id_tag = "#"+tag;
-        $(id_tag).load("# "+id_tag+">*");
+        interval = setInterval( function() {
+            $(tag).load("# " + tag + ">*");
+            clearInterval(interval);
+        }, 500);
     }
 }
 </script>

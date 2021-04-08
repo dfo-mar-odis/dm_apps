@@ -24,6 +24,7 @@ var app = new Vue({
     loading_reviewers: false,
     loading_user: false,
     loadingDMAppsUsers: false,
+    loadingFile: false,
     orgChoices: [],
     request: {},
     requestLabels: {},
@@ -272,7 +273,9 @@ var app = new Vue({
               this.travellerToEdit = this.request.travellers[0];
               this.firstTravellerMsg = firstTravellerMsg;
               this.clean = false;
-              this.$nextTick(()=>{this.$refs["travellers_head"].focus()})
+              this.$nextTick(() => {
+                this.$refs["travellers_head"].focus()
+              })
             } else this.clean = false;
 
             this.$nextTick(() => {
@@ -409,14 +412,15 @@ var app = new Vue({
       }
       apiService(endpoint1, method1, file).then(response => {
         if (response.id) {
+          this.inFileEditMode = false;
+          this.loadingFile = true;
           let endpoint2 = `/api/travel/request-files/${response.id}/`;
           fileApiService(endpoint2, "PATCH", "file", this.fileToUpload).then(response => {
             this.fileToUpload = null
+            this.getRequest();
+            this.loadingFile = false;
           })
         } else console.log(response)
-        // regardless, refresh everything!!
-        this.getRequest();
-        this.inFileEditMode = false;
       })
     },
     updateRequestAdminNotes() {

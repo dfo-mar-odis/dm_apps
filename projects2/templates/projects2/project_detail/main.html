@@ -19,40 +19,38 @@
 {% endblock %}
 
 {% block subcontent %}
-  <div
-    id="app"
-    @keydown.esc.prevent="closeModals()"
-  >
+  <div id="app" @keydown.esc.prevent="closeModals()" v-cloak>
 
     <div id="mySidebar" :class="{'sidebar-opened':showSidebar,'sidebar-closed':!showSidebar, 'no-print':true}">
       {% include "projects2/project_detail/_console.html" %}
     </div>
 
     <div :class="{'main-opened':showSidebar, 'main-closed':!showSidebar, 'no-print':true}">
-      {% include "shared_models/_generic_breadcrumbs.html" %}
+      <div style="padding-left: 30px">
+        {% include "shared_models/_generic_breadcrumbs.html" %}
 
-      <div class="mb-3">
-        <h2 class="">{{ h1|safe }}</h2>
-        <p class="lead text-muted mt-1 mb-0">{% trans "Project ID:" %} {{ object.id }}</p>
+        <div class="mb-3">
+          <h2 class="">{{ h1|safe }}</h2>
+          <p class="lead text-muted mt-1 mb-0">{% trans "Project ID:" %} {{ object.id }}</p>
+        </div>
+
+
+        {% bootstrap_messages %}
+        <div v-if="canModify" class="alert alert-primary no-print" role="alert" style="width: 60%">
+          <p class="mb-0">
+            <span class="h5 mdi mdi-information-outline mr-3"></span> <span class="h6">${currentUser.reason}</span>
+          </p>
+        </div>
       </div>
 
-
-      {% bootstrap_messages %}
-      <div v-if="canModify" class="alert alert-primary no-print" role="alert" style="width: 60%">
-        <p class="mb-0">
-          <span class="h5 mdi mdi-information-outline mr-3"></span> <span class="h6">${currentUser.reason}</span>
-        </p>
-      </div>
       <div class="row container-fluid bg-light curvy">
-
-
         <div class="col">
           <div v-if="showOverview">
             <div class="mb-3">
               <div class="section-card">
                 <div class="pointy" @click="collapseOverview = !collapseOverview">
                   <div v-if="canModify" class="mb-3 float-right">
-                    <button class="btn btn-sm btn-outline-secondary no-print" @click="goProjectEdit(project.id)">
+                    <button class="btn btn-sm btn-warning no-print" @click="goProjectEdit(project.id)">
                       <span class="mdi mdi-pencil"></span> {% trans "Edit" %}
                     </button>
                   </div>
@@ -290,7 +288,7 @@
 
   </script>
 
-  <script src="{% static '/projects2/mainProjectDetail.js' %}?version=1.10" type="application/javascript"></script>
+  <script src="{% static '/projects2/mainProjectDetail.js' %}?version=1.11" type="application/javascript"></script>
   <script src="{% static '/projects2/mainProjectDetailModal.js' %}?version=1.0" type="application/javascript"></script>
 
   {% if request.GET.project_year %}

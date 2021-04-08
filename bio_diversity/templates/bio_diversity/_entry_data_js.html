@@ -1,0 +1,22 @@
+<script type="application/javascript">
+
+    window.onload = function() {
+      setDataFields();
+    };
+
+    $("#id_egg_data_type").change(function (e) {
+        setDataFields();
+    })
+
+    function setDataFields() {
+        var e = document.getElementById("id_egg_data_type");
+        var dataType = e.value;
+        console.log(dataType)
+        if ( dataType=="Temperature" ) {
+            $("#id_trof_id").parent().show();
+        }
+        else  {
+            $("#id_trof_id").parent().hide();
+        }
+    }
+</script>
