@@ -1,0 +1,65 @@
+{% extends "grais/grais_base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block header %}
+    <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen"
+          type="text/css">
+{% endblock %}
+
+{% block content %}
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'grais:index' %}"> Home </a></li>
+            <li class="breadcrumb-item"><a href="{% url 'grais:ir_list' %}"> All Incidental Reports </a></li>
+            {% if object.id %}
+                <li class="breadcrumb-item"><a href="{% url 'grais:ir_detail' object.id %}"> {{ object }} </a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Edit</li>
+            {% else %}
+                <li class="breadcrumb-item active" aria-current="page">New</li>
+            {% endif %}
+
+        </ol>
+    </nav>
+
+
+    <div class="container">
+
+
+        {% if object.id %}
+            <h1>Report #{{ object.id }}</h1><br>
+        {% else %}
+            <h1>NEW INCIDENTAL REPORT</h1>
+        {% endif %}
+
+        <form method="post" class="form">
+            {% csrf_token %}
+            {% for field in form %}
+
+                {% bootstrap_field field placeholder="" %}
+            {% endfor %}
+
+
+            {% buttons %}
+                <button type="submit" class="btn btn-success">Submit</button>
+                {% if object.id %}
+                    <a class="btn btn-secondary" href="{% url 'grais:ir_detail' object.id %}">Back</a>
+                {% else %}
+                    <a class="btn btn-secondary" href="{% url 'grais:ir_list' %}">Cancel</a>
+                {% endif %}
+
+            {% endbuttons %}
+        </form>
+    </div>
+    </div>
+
+    {# TODO: create a tool for importing lat long based on map #}
+
+    <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
+    <script type="application/javascript">
+        $("#id_species").multiSelect()
+    </script>
+
+{% endblock content %}

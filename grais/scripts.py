@@ -6,6 +6,78 @@ from django.utils.translation import activate
 from . import models
 
 
+def fix_metadata():
+    # species
+    for obj in models.Species.objects.all():
+        obj.created_by = obj.last_modified_by
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # stations
+    for obj in models.Station.objects.all():
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # samples
+    for obj in models.Sample.objects.all():
+        obj.created_at = obj.last_modified
+        obj.updated_at = obj.last_modified
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # sample notes
+    for obj in models.SampleNote.objects.all():
+        obj.created_at = obj.date
+        obj.updated_at = obj.date
+        obj.created_by = obj.author
+        obj.updated_by = obj.author
+        obj.save()
+
+    # lines
+    for obj in models.Line.objects.all():
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # surfaces
+    for obj in models.Surface.objects.all():
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # surfacespp
+    for obj in models.SurfaceSpecies.objects.all():
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # incidental reports
+    for obj in models.IncidentalReport.objects.all():
+        obj.created_at = obj.date_last_modified
+        obj.updated_at = obj.date_last_modified
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # gc samples
+    for obj in models.GCSample.objects.all():
+        obj.created_at = obj.last_modified
+        obj.updated_at = obj.last_modified
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+    # catch
+    for obj in models.GCSample.objects.all():
+        obj.created_by = obj.last_modified_by
+        obj.updated_by = obj.last_modified_by
+        obj.save()
+
+
+
 def fix_categories():
     '''
     for years 2006 to 2016, the assigned percentages on surfacespecies needs to be fixed.

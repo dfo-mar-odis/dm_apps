@@ -46,7 +46,7 @@
     </tr>
     <tr>
         <td><b>Region:</b></td>
-        <td>{{ object.region }}</td>
+        <td>{{ object.get_region_display }}</td>
     </tr>
         <tr>
         <td><b>Species:</b></td>
@@ -54,15 +54,15 @@
     </tr>
         <tr>
         <td><b>Sex:</b></td>
-        <td>{{ object.sex }}</td>
+        <td>{{ object.get_sex_display }}</td>
     </tr>
         <tr>
         <td><b>Age group:</b></td>
-        <td>{{ object.age_group }}</td>
+        <td>{{ object.get_age_group_display }}</td>
     </tr>
         <tr>
         <td><b>Incident type:</b></td>
-        <td>{{ object.incident_type }}</td>
+        <td>{{ object.get_incident_type_display }}</td>
     </tr>
         <tr>
         <td><b>Gear presence:</b></td>
@@ -96,10 +96,10 @@
         <td><b>Comments:</b></td>
         <td>{{ object.comments }}</td>
 </table>
-<!--<p>-->
-<!--    At any point, more information about this incident can be viewed -->
-<!--    <a href="{{SITE_FULL_URL}}{% url 'whalebrary:incident_detail' object.id %}">HERE</a>.-->
-<!--</p>-->
+
+At any point, more information about this incident and photos can be viewed
+<a href="{{SITE_FULL_URL}}{% url 'whalebrary:incident_detail' object.id %}">HERE</a>.
+</p>
 
 <hr>
 <br>
@@ -147,7 +147,7 @@
     </tr>
     <tr>
         <td><b>Région:</b></td>
-        <td>{{ object.region }}</td>
+        <td>{{ object.get_region_display }}</td>
     </tr>
         <tr>
         <td><b>Espèce:</b></td>
@@ -155,15 +155,15 @@
     </tr>
         <tr>
         <td><b>Sexe:</b></td>
-        <td>{{ object.sex }}</td>
+        <td>{{ object.get_sex_display }}</td>
     </tr>
         <tr>
         <td><b>Cohorte:</b></td>
-        <td>{{ object.age_group }}</td>
+        <td>{{ object.get_age_group_display }}</td>
     </tr>
         <tr>
         <td><b>Genre d'incident:</b></td>
-        <td>{{ object.incident_type }}</td>
+        <td>{{ object.get_incident_type_display }}</td>
     </tr>
         <tr>
         <td><b>Présence de matériel de pêche:</b></td>
@@ -198,10 +198,10 @@
         <td>{{ object.comments }}</td>
     </tr>
 </table>
-<!--<p>-->
-<!--A tout moment, plus d'informations sur cet incident peuvent être consultées-->
-<!--    <a href="{{SITE_FULL_URL}}{% url 'whalebrary:incident_detail' object.id %}">ICI</a>.-->
-<!--</p>-->
+
+A tout moment, plus d'informations sur cet incident et les photos peuvent être consultées
+<a href="{{SITE_FULL_URL}}{% url 'whalebrary:incident_detail' object.id %}">ICI</a>.
+</p>
 
 <style media="screen">
     table, td {

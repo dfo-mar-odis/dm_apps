@@ -200,19 +200,19 @@ class OrganisationFormsetView(VaultAdminAccessRequired, CommonFormsetView):
 ## PLATFORM TYPE ##
 
 
-class ObservationPlatformTypeHardDeleteView(VaultAdminAccessRequired, CommonHardDeleteView):
-    model = models.ObservationPlatformType
-    success_url = reverse_lazy("vault:manage_platform_type")
-
-
-class ObservationPlatformTypeFormsetView(VaultAdminAccessRequired, CommonFormsetView):
-    template_name = 'vault/formset.html'
-    h1 = "Manage Platform Type"
-    queryset = models.ObservationPlatformType.objects.all()
-    formset_class = forms.ObservationPlatformTypeFormset
-    success_url = reverse_lazy("vault:manage_platform_type")
-    home_url_name = "vault:index"
-    delete_url_name = "vault:delete_platform_type"
+# class ObservationPlatformTypeHardDeleteView(VaultAdminAccessRequired, CommonHardDeleteView):
+#     model = models.ObservationPlatformType
+#     success_url = reverse_lazy("vault:manage_platform_type")
+#
+#
+# class ObservationPlatformTypeFormsetView(VaultAdminAccessRequired, CommonFormsetView):
+#     template_name = 'vault/formset.html'
+#     h1 = "Manage Platform Type"
+#     queryset = models.ObservationPlatformType.objects.all()
+#     formset_class = forms.ObservationPlatformTypeFormset
+#     success_url = reverse_lazy("vault:manage_platform_type")
+#     home_url_name = "vault:index"
+#     delete_url_name = "vault:delete_platform_type"
 
 
 ## PLATFORM ##
@@ -391,7 +391,7 @@ class OutingListView(VaultAccessRequired, CommonFilterView):
     new_btn_text = "New Outing"
 
     queryset = models.Outing.objects.annotate(
-        search_term=Concat('id', 'observation_platform__longname', 'region', 'purpose', 'identifier_string',
+        search_term=Concat('id', 'observation_platform__longname', 'identifier_string',
                            output_field=TextField()))
 
     field_list = [
@@ -400,10 +400,10 @@ class OutingListView(VaultAccessRequired, CommonFilterView):
         {"name": 'region', "class": "", "width": ""},
         {"name": 'purpose', "class": "", "width": ""},
         {"name": 'start_date', "class": "", "width": ""},
-        {"name": 'start_time', "class": "", "width": ""},
-        {"name": 'end_time', "class": "red-font", "width": ""},
-        {"name": 'duration', "class": "", "width": ""},
+        {"name": 'end_date', "class": "", "width": ""},
+        {"name": 'outing_duration|{}'.format(gettext_lazy("outing duration")), "class": "", "width": ""},
         {"name": 'identifier_string', "class": "", "width": ""},
+        {"name": 'created_by', "class": "", "width": ""},
 
     ]
 
@@ -419,19 +419,38 @@ class OutingDetailView(VaultAdminAccessRequired, CommonDetailView):
         'region',
         'purpose',
         'start_date',
-        'start_time',
-        'end_time',
-        'duration',
+        'end_date',
+        'outing_duration',
         'identifier_string',
+        'created_by',
+        'created_at',
+        'verified_by',
+        'verified_at',
     ]
     home_url_name = "vault:index"
     parent_crumb = {"title": gettext_lazy("Outing List"), "url": reverse_lazy("vault:outing_list")}
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # contexts for _observation.html file
+        context["random_observation"] = models.Observation.objects.first()
+        context["observation_field_list"] = [
+            'instrument',
+            'datetime',
+            'longitude',
+            'latitude',
+            'observer',
+            'opportunistic',
+        ]
+
+        return context
 
 
 class OutingUpdateView(VaultAdminAccessRequired, CommonUpdateView):
     model = models.Outing
     form_class = forms.OutingForm
-    template_name = 'vault/form.html'
+    template_name = 'vault/outing_form.html'
     cancel_text = _("Cancel")
     home_url_name = "vault:index"
 
@@ -460,7 +479,7 @@ class OutingUpdateView(VaultAdminAccessRequired, CommonUpdateView):
 class OutingCreateView(VaultAdminAccessRequired, CommonCreateView):
     model = models.Outing
     form_class = forms.OutingForm
-    template_name = 'vault/form.html'
+    template_name = 'vault/outing_form.html'
     home_url_name = "vault:index"
     h1 = gettext_lazy("Add New Outing")
     parent_crumb = {"title": gettext_lazy("Outing List"), "url": reverse_lazy("vault:outing_list")}
@@ -469,6 +488,9 @@ class OutingCreateView(VaultAdminAccessRequired, CommonCreateView):
         my_object = form.save()
         messages.success(self.request, _(f"Outing record successfully created for : {my_object}"))
         return super().form_valid(form)
+
+    def get_initial(self):
+        return {'created_by': self.request.user}
 
 
 class OutingDeleteView(VaultAdminAccessRequired, CommonDeleteView):
@@ -481,3 +503,136 @@ class OutingDeleteView(VaultAdminAccessRequired, CommonDeleteView):
 
     def get_parent_crumb(self):
         return {"title": self.get_object(), "url": reverse_lazy("vault:outing_detail", kwargs=self.kwargs)}
+
+
+# #
+# # # OBSERVATION #
+# # ###########
+# #
+#
+
+
+class ObservationListView(VaultAccessRequired, CommonFilterView):
+    template_name = "vault/list.html"
+    filterset_class = filters.ObservationFilter
+    h1 = "Observation List"
+    home_url_name = "vault:index"
+    row_object_url_name = "vault:observation_detail"
+    new_btn_text = "New Observation"
+
+    queryset = models.Observation.objects.annotate(
+        search_term=Concat('id', 'outing__observation_platform', 'instrument__name',
+                           output_field=TextField()))
+
+    field_list = [
+        {"name": 'id', "class": "", "width": ""},
+        {"name": 'outing', "class": "", "width": ""},
+        {"name": 'instrument', "class": "", "width": ""},
+        {"name": 'datetime', "class": "", "width": ""},
+        {"name": 'longitude', "class": "", "width": ""},
+        {"name": 'latitude', "class": "", "width": ""},
+        {"name": 'observer', "class": "", "width": ""},
+        {"name": 'opportunistic', "class": "", "width": ""},
+
+    ]
+
+    def get_new_object_url(self):
+        return reverse("vault:observation_new", kwargs=self.kwargs)
+
+
+class ObservationDetailView(VaultAdminAccessRequired, CommonDetailView):
+    model = models.Observation
+    field_list = [
+        'id',
+        'outing',
+        'instrument',
+        'datetime',
+        'longitude',
+        'latitude',
+        'observer',
+        'metadata',
+        'opportunistic',
+
+    ]
+    home_url_name = "vault:index"
+    parent_crumb = {"title": gettext_lazy("Observation List"), "url": reverse_lazy("vault:observation_list")}
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # contexts for _obsighting.html file
+        context["random_obsighting"] = models.ObservationSighting.objects.first()
+        context["obsighting_field_list"] = [
+            'species',
+            'quantity',
+            'certainty',
+            'health_status',
+            'calf',
+            'verified',
+            'known_individual',
+        ]
+
+        # contexts for _media.html file
+        context["random_media"] = models.OriginalMediafile.objects.first()
+        context["media_field_list"] = [
+            'filename',
+            'file_path',
+            'metadata',
+
+        ]
+
+        return context
+
+class ObservationUpdateView(VaultAdminAccessRequired, CommonUpdateView):
+    model = models.Observation
+    form_class = forms.ObservationForm
+    template_name = 'vault/form.html'
+    cancel_text = _("Cancel")
+    home_url_name = "vault:index"
+
+    def form_valid(self, form):
+        my_object = form.save()
+        messages.success(self.request, _(f"Observation record successfully updated for : {my_object}"))
+        return HttpResponseRedirect(reverse("vault:observation_detail", kwargs=self.kwargs))
+
+    def get_active_page_name_crumb(self):
+        my_object = self.get_object()
+        return my_object
+
+    def get_h1(self):
+        my_object = self.get_object()
+        return my_object
+
+    def get_parent_crumb(self):
+        return {"title": str(self.get_object()), "url": reverse_lazy("vault:observation_detail", kwargs=self.kwargs)}
+
+    def get_grandparent_crumb(self):
+        kwargs = deepcopy(self.kwargs)
+        del kwargs["pk"]
+        return {"title": _("Observation List"), "url": reverse("vault:observation_list", kwargs=kwargs)}
+
+
+class ObservationCreateView(VaultAdminAccessRequired, CommonCreateView):
+    model = models.Observation
+    form_class = forms.ObservationForm
+    template_name = 'vault/form.html'
+    home_url_name = "vault:index"
+    h1 = gettext_lazy("Add New Observation")
+    parent_crumb = {"title": gettext_lazy("Observation List"), "url": reverse_lazy("vault:observation_list")}
+
+    def form_valid(self, form):
+        my_object = form.save()
+        messages.success(self.request, _(f"Observation record successfully created for : {my_object}"))
+        return super().form_valid(form)
+
+
+class ObservationDeleteView(VaultAdminAccessRequired, CommonDeleteView):
+    model = models.Observation
+    permission_required = "__all__"
+    success_url = reverse_lazy('vault:observation_list')
+    template_name = 'vault/confirm_delete.html'
+    home_url_name = "vault:index"
+    grandparent_crumb = {"title": gettext_lazy("Observation List"), "url": reverse_lazy("vault:observation_list")}
+
+    def get_parent_crumb(self):
+        return {"title": self.get_object(), "url": reverse_lazy("vault:observation_detail", kwargs=self.kwargs)}

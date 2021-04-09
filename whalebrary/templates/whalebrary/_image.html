@@ -61,7 +61,7 @@
 {# Display all the images uploaded #}
 
 {% for obj in object.images.all %}
-    <img src="{{ obj.image.url}}" data-toggle="tooltip" title="{{ obj.title }}" style="max-height:300px; margin:10px 0px">
+    <img src="{{ obj.image.url}}" data-toggle="tooltip" title="{{ obj.title }}" style="max-height:300px; margin:10px 10px">
 {% endfor %}
 
 <br>

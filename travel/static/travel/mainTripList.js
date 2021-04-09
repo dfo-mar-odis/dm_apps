@@ -74,10 +74,10 @@ var app = new Vue({
       this.trips_loading = true;
       if (!endpoint) {
         endpoint = `/api/travel/trips/?`;
-        if (this.pageType === 'all') endpoint += 'all=true;'
-        else if (this.pageType === 'adm-hit-list') endpoint += 'adm-hit-list=true;'
-        else if (this.pageType === 'adm-verification') endpoint += 'adm-verification=true;'
-        else if (this.pageType === 'regional-verification') endpoint += 'regional-verification=true;'
+        if (this.pageType === 'all') endpoint += 'all=true&'
+        else if (this.pageType === 'adm-hit-list') endpoint += 'adm-hit-list=true&'
+        else if (this.pageType === 'adm-verification') endpoint += 'adm-verification=true&'
+        else if (this.pageType === 'regional-verification') endpoint += 'regional-verification=true&'
       }
 
       // apply filters

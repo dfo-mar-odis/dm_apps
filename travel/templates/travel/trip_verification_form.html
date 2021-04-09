@@ -234,18 +234,17 @@
         <div v-if="allConfirmed">
           <form method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn btn-success">
+            <button type="submit" class="btn btn-success mb-3">
               {% trans "Trip looks good!" %}
             </button>
-            <a href="#" pop-href="{% url 'travel:trip_edit' object.id %}?pop=true" class="btn btn-info">
-              {% trans "Make some changes" %}
-            </a>
           </form>
         </div>
         <button v-else @click='confirmCurrentQuestion' type="button" class="btn btn-primary" {% if not object.trip_subcategory %}disabled{% endif %}>
           {% trans "Next Question!" %}
         </button>
-
+        <button class="btn btn-info" @click="openEditPopout('{% url 'travel:trip_edit' object.id %}?pop=true')">
+          {% trans "Make some changes" %}
+        </button>
       </div>
 
       <div class="">
@@ -295,6 +294,9 @@
             break;
           }
         }
+      },
+      openEditPopout(url) {
+        popitup(url, 'popoutWindow'  + Date.now());
       },
       enablePopovers() {
         $('[data-toggle="popover"]').popover({html: true});

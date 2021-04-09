@@ -1,0 +1,147 @@
+{% extends "grais/base.html" %}
+{% load static %}
+{% load verbose_names %}
+
+{% block header %}
+  {{ block.super }}
+  <style>
+  /* Set the size of the div element that contains the map */
+  #map {
+      height: 300px; /* The height is 400 pixels */
+      width: 100%; /* The width is the width of the web page */
+  }
+  </style>
+{% endblock header %}
+
+
+{% block subcontent %}
+
+  <div class="mb-3">
+    <a class="btn btn-warning" href="{% url 'grais:station_edit' object.id %}">Edit</a>
+    {% if object.samples.count == 0 %}
+      <a class="btn btn-danger" href="{% url 'grais:station_delete' object.id %}">Delete</a>
+    {% else %}
+      <a class="btn btn-danger disabled" href="{% url 'grais:station_delete' object.id %}">Delete</a>
+    {% endif %}
+  </div>
+
+  <div class="row mb-5">
+    <div class="col">
+      <table class="table table-sm">
+        {% for field in field_list %}
+          {% verbose_td_display object field %}
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="col">
+      <div id="map"></div>
+    </div>
+  </div>
+
+
+  <div class="">
+    <h4>
+      Sample History:
+    </h4>
+    {% if object.samples.exists %}
+      <table class="table table-sm table-hover" style="width: 25%">
+        <thead class="full-table">
+        <tr>
+          {% for field in sample_field_list %}
+            <th>{% get_verbose_label object.samples.first field %}</th>
+          {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for sample in object.samples.all %}
+          <tr href="{% url 'grais:sample_detail' sample.id %}">
+            {% for field in sample_field_list %}
+              <td>{% get_field_value sample field %}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <p>
+        <b>TOTAL: {{ object.probe_data.count }}</b>
+      </p>
+    {% else %}
+      <em>This station has no associated samples</em>
+    {% endif %}
+
+
+  </div>
+
+
+{% endblock %}
+
+
+{% block body_js %}
+
+
+
+  <script type="application/javascript">
+
+  function initialize() {
+    {% if object.get_point %}
+      map = new L.Map("map", {
+        center: new L.LatLng({{ object.get_point.x }}, {{ object.get_point.y }}),
+        zoom: 14,
+      });
+    {% else %}
+      map = new L.Map("map", {
+        center: new L.LatLng(46.13845952180798, -64.7906431818189),
+        zoom: 6,
+      });
+    {% endif %}
+
+    L.marker(
+        [{{object.get_point.x}}, {{ object.get_point.y }}],
+        {
+          title: '{{object}}',
+        }
+    ).addTo(map).bindPopup("<b>Station:</b> {{object}}");
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/satellite-streets-v10',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: '{{mapbox_api_key}}'
+    }).addTo(map);
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    initialize()
+
+  });
+  </script>
+
+
+
+  {#  <script>#}
+  {##}
+  {#  // Initialize and add the map#}
+  {#  function initMap() {#}
+  {#    // The location of Uluru#}
+  {#    var uluru = {lat: {{object.latitude}}, lng: {{object.longitude}}};#}
+  {#    // The map, centered at Uluru#}
+  {#    var map = new google.maps.Map(#}
+  {#        document.getElementById('map'), {zoom: 10, center: uluru});#}
+  {#    // The marker, positioned at Uluru#}
+  {#    var marker = new google.maps.Marker({position: uluru, map: map});#}
+  {#  }#}
+  {#  </script>#}
+  {#  <!--Load the API from the specified URL#}
+  {#  * The async attribute allows the browser to render the page while the API loads#}
+  {#  * The key parameter will contain your own API key (which is not needed for this tutorial)#}
+  {#  * The callback parameter executes the initMap() function#}
+  {#  -->#}
+  {#  <script async defer#}
+  {#          src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&callback=initMap">#}
+  {#  </script>#}
+
+{% endblock %}

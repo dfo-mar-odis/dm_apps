@@ -29,10 +29,13 @@
           {% trans "Cancel" as default_cancel_text %}
           {% echo request.META.HTTP_REFERER as default_cancel_url %}
           <span data-toggle="tooltip" title="{% block submit_btn_tip_text %}{% endblock %}">
-                <input type="submit" class="btn btn-lg {% block submit_btn_class %}{{ submit_btn_class|nz:"btn-warning" }}{% endblock %}"
-                  {% block submit_btn_props %}{% endblock %}
-                       value="{{ submit_text|nz:default_submit_text }}">
-                </span>
+            <input type="submit" class="btn btn-lg {% block submit_btn_class %}{{ submit_btn_class|nz:"btn-warning" }}{% endblock %}" id="submit-btn"
+              {% block submit_btn_props %}{% endblock %}
+                   value="{{ submit_text|nz:default_submit_text }}">
+            <a class="gone disabled btn btn-lg btn-warning" id="thinking-btn">
+              <div class="spinner-border spinner-border-sm" role="status"><span class="sr-only">Loading...</span></div>
+            </a>
+          </span>
           {% if delete_url %}
             <a class="btn btn-lg btn-danger" href="{{ delete_url }}">
               {% trans "Delete" %}
@@ -52,6 +55,12 @@
     {% block post_form_div %}{% endblock %}
   </div>
 
+  <script type="application/javascript">
+  $("#submit-btn").click(function () {
+    $(this).addClass("gone")
+    $("#thinking-btn").removeClass("gone")
+  })
+  </script>
 
 {% endblock %}
 

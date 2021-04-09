@@ -225,6 +225,7 @@ WSGI_APPLICATION = 'dm_apps.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 # DATABASE_ROUTERS = ['dm_apps.routers.WhaleDatabaseRouter', ]
 DATABASES = local_conf.DATABASES
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # This variable will describe the type of database we are connecting to (e.g PROD, DEV, TEST...)
 try:

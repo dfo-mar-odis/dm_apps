@@ -202,6 +202,8 @@ class TestIncidentDetailView(CommonTest):
             "field_list",
             "random_image",
             "image_field_list",
+            "all_incidents",
+            "mapbox_api_key",
         ]
         self.assert_presence_of_context_vars(self.test_url, context_vars, user=self.user)
 

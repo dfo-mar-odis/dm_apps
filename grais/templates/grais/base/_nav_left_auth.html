@@ -1,0 +1,41 @@
+{% load i18n %}
+
+<li class="nav-item"><a class="nav-link" href="{% url 'grais:index' %}">
+  {% trans "Home" %}
+</a></li>
+
+{% if is_admin %}
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'grais:reports' %}">
+      {% trans "Reports" %}
+    </a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+      {% trans "Settings" %}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="{% url 'grais:species_list' %}">
+        {% trans "Species" %}
+      </a>
+      <a class="dropdown-item" href="{% url 'grais:station_list' %}">
+        {% trans "Biofouling Stations" %}
+      </a>
+{#      <a class="dropdown-item" href="{% url 'grais:estuary_list' %}">#}
+{#        {% trans "Green Crab Estuaries" %}#}
+{#      </a>#}
+      <a class="dropdown-item" href="{% url 'grais:manage_probes' %}">
+        {% trans "Probes" %}
+      </a>
+      <a class="dropdown-item" href="{% url 'grais:manage_samplers' %}">
+        {% trans "Samplers" %}
+      </a>
+    </div>
+  </li>
+{% endif %}
+
+
+
+
+

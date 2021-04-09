@@ -25,6 +25,8 @@ urlpatterns = [
     path('settings/organisation/<int:pk>/delete/', views.OrganisationHardDeleteView.as_view(), name="delete_organisation"),
     path('settings/trainings/', views.TrainingFormsetView.as_view(), name="manage_trainings"),
     path('settings/training/<int:pk>/delete/', views.TrainingHardDeleteView.as_view(), name="delete_training"),
+    path('settings/species/', views.SpeciesFormsetView.as_view(), name="manage_species"),
+    path('settings/species/<int:pk>/delete/', views.SpeciesHardDeleteView.as_view(), name="delete_species"),
 
     # ADMIN USERS #
     path('settings/users/', views.UserListView.as_view(), name='user_list'),

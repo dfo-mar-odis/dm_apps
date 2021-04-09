@@ -1,0 +1,61 @@
+{% load verbose_names %}
+
+<div class="neighbours mx-3">
+  <div class="card pointy" style="width: 18rem;" data-toggle="modal" data-target="#surfaces">
+    <div class="card-body text-center">
+      <h5 class="card-title"> Surfaces ({{ object.surfaces.count }})</h5>
+      <span class="mdi mdi-currency-eth h1"></span>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="surfaces" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 82% !important">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"> Surfaces </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if not object.surfaces.exists %}
+          <em>No surfaces have been added to this line.</em>
+        {% else %}
+          <table class="table table-hover table-sm">
+            <thead>
+            <tr>
+              <th>#</th>
+              {% for field in surface_field_list %}
+                <th>{% get_verbose_label object.surfaces.first field %}</th>
+              {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in object.surfaces.all %}
+              <tr href="{% url 'grais:surface_detail' obj.id %}">
+                <td>{{ forloop.counter }}</td>
+                {% for field in surface_field_list %}
+                  {% if 'lost' in field %}
+                    <td class="{% if obj.is_lost %}bad{% endif %}">{% get_field_value obj field %}</td>
+                  {% elif 'type' in field %}
+                    <td class="{{ obj.get_surface_type_display|slugify }}">{% get_field_value obj field %}</td>
+                  {% else %}
+                    <td>{% get_field_value obj field %}</td>
+                  {% endif %}
+
+                {% endfor %}
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        {% endif %}
+
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" href="{% url 'grais:surface_new' object.id %}"> New Surface </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,9 +21,6 @@ class StationForm(forms.ModelForm):
             'site_desc': "Site description",
             'depth': "Depth (m)",
         }
-        widgets = {
-            'last_modified_by': forms.HiddenInput(),
-        }
 
 
 class EstuaryForm(forms.ModelForm):
@@ -49,9 +46,6 @@ class SpeciesForm(forms.ModelForm):
     class Meta:
         model = models.Species
         fields = "__all__"
-        widgets = {
-            'last_modified_by': forms.HiddenInput(),
-        }
 
 
 class GCSampleForm(forms.ModelForm):
@@ -90,7 +84,6 @@ class SampleNoteForm(forms.ModelForm):
         fields = "__all__"
         widgets = {
             'author': forms.HiddenInput(),
-            'sample': forms.HiddenInput(),
 
         }
 
@@ -118,12 +111,11 @@ class FollowUpForm(forms.ModelForm):
 
 class ProbeMeasurementForm(forms.ModelForm):
     class Meta:
-        fields = ("__all__")
+        fields = "__all__"
         model = models.ProbeMeasurement
 
         widgets = {
             'last_modified_by': forms.HiddenInput(),
-            'sample': forms.HiddenInput(),
             # metadata fields
             'time_date': forms.DateTimeInput(attrs=attr_fp_date_time_metadata),
             'probe': forms.Select(attrs=attr_metadata),
@@ -136,7 +128,7 @@ class ProbeMeasurementForm(forms.ModelForm):
 
 class GCProbeMeasurementForm(forms.ModelForm):
     class Meta:
-        fields = ("__all__")
+        fields = "__all__"
         model = models.GCProbeMeasurement
         widgets = {
             'last_modified_by': forms.HiddenInput(),
@@ -188,19 +180,15 @@ class SurfaceForm(forms.ModelForm):
         model = models.Surface
         fields = "__all__"
         exclude = ['species']
-        widgets = {
-            'line': forms.HiddenInput(),
-            'last_modified_by': forms.HiddenInput(),
-        }
 
 
 class SurfaceImageForm(forms.ModelForm):
     class Meta:
         model = models.Surface
-        fields = ('image', 'last_modified_by')
-        widgets = {
-            'last_modified_by': forms.HiddenInput(),
-        }
+        fields = ('image',)
+        # widgets = {
+        #     'last_modified_by': forms.HiddenInput(),
+        # }
 
 
 class SurfaceSpeciesForm(forms.ModelForm):
@@ -387,5 +375,18 @@ class ProbeForm(forms.ModelForm):
 ProbeFormset = modelformset_factory(
     model=models.Probe,
     form=ProbeForm,
+    extra=1,
+)
+
+
+class SamplerForm(forms.ModelForm):
+    class Meta:
+        model = models.Sampler
+        fields = "__all__"
+
+
+SamplerFormset = modelformset_factory(
+    model=models.Sampler,
+    form=SamplerForm,
     extra=1,
 )

@@ -4,30 +4,46 @@
 
 {% block subcontent %}
 
-    <div class="mb-4">
-        <div class="btn-group">
-            <a class="btn btn-warning" href="{% url 'whalebrary:incident_edit' object.id %}">Edit</a>
-            <a class="btn btn-danger" href="{% url 'whalebrary:incident_delete' object.id %}">Delete</a>
-            <a class="btn btn-dark" href="{{ request.META.HTTP_REFERER }}" >Back</a>
-        </div>
+  <div class="mb-4">
+    <div class="btn-group">
+      <a class="btn btn-warning" href="{% url 'whalebrary:incident_edit' object.id %}">Edit</a>
+      <a class="btn btn-danger" href="{% url 'whalebrary:incident_delete' object.id %}">Delete</a>
+      <a class="btn btn-dark" href="{{ request.META.HTTP_REFERER }}">Back</a>
     </div>
-        <p>
-            <a href="{% url 'whalebrary:incident_email' object.id %}" class="btn btn-sm btn-primary">Email Incident</a>
-            <a class="btn btn-sm btn-secondary" href="#" pop-href="{% url 'whalebrary:image_new' object.id %}">Upload Image</a>
-        </p>
+  </div>
+  <p>
+    <a href="{% url 'whalebrary:incident_email' object.id %}" class="btn btn-sm btn-primary">Email Incident</a>
+    <a class="btn btn-sm btn-secondary" href="#" pop-href="{% url 'whalebrary:image_new' object.id %}">Upload Image</a>
+  </p>
 
-    <div class="row">
-        <div class="col-4">
-            <table class="table table-sm table-striped">
-            {% for field in field_list %}
-                {% verbose_td_display object field %}
-            {% endfor %}
-            </table>
-        </div>
-
-        <div class="col-6">
-            {% include "whalebrary/_image.html" %}
-        </div>
+  <div class="row">
+    <div class="col-4">
+      <table class="table table-sm table-striped">
+        {% for field in field_list %}
+          {% verbose_td_display object field %}
+        {% endfor %}
+      </table>
     </div>
+    <div class="col-6">
+        <div id="map3"></div>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="col-12">
+    {% include "whalebrary/_image.html" %}
+  </div>
+{% endblock %}
+
+{% block body_js %}
+  {{ block.super }}
+  <script>
+
+  let pointObj = {{ object.get_leaflet_dict | safe }};
+  let allPointObj = {{ all_incidents | safe }};
+  let mapboxApiKey = '{{ mapbox_api_key }}';
+
+  </script>
+
+  <script src="{% static 'whalebrary/map3.js' %}?version=1.3"></script>
 
 {% endblock %}

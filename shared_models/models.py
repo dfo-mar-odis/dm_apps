@@ -6,8 +6,9 @@ from django.template.defaultfilters import default_if_none
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
+from shapely.geometry import Point
 
-from shared_models.utils import get_metadata_string
+from shared_models.utils import get_metadata_string, format_coordinates
 
 
 class UnilingualSimpleLookup(models.Model):
@@ -122,6 +123,32 @@ class MetadataFields(models.Model):
             self.updated_at,
             self.updated_by,
         )
+
+    def save(self, *args, **kwargs):
+        if self.updated_by and not self.created_by:
+            self.created_by = self.updated_by
+        super().save(*args, **kwargs)
+
+
+class LatLongFields(models.Model):
+    # metadata
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        abstract = True
+
+    def get_point(self):
+        if self.latitude and self.longitude:
+            return Point(self.latitude, self.longitude)
+
+    @property
+    def coordinates(self):
+        my_str = "---"
+        point = self.get_point()
+        if point:
+            my_str = format_coordinates(point.x, point.y, output_format="dd", sep="|")
+        return mark_safe(my_str)
 
 
 # CONNECTED APPS: tickets, travel, projects, sci_fi

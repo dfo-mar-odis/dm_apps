@@ -50,6 +50,10 @@ if settings.INSTALLED_APPS.count("edna"):
     urlpatterns.append(
         path('api/', include('edna.api.urls')),
     )
+if settings.INSTALLED_APPS.count("grais"):
+    urlpatterns.append(
+        path('api/', include('grais.api.urls')),
+    )
 if settings.INSTALLED_APPS.count("bio_diversity"):
     urlpatterns.append(
         path('api/', include('bio_diversity.api.urls')),

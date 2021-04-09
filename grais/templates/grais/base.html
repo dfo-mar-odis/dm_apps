@@ -1,0 +1,42 @@
+{% extends "shared_models/generic_base.html" %}
+
+{% load i18n %}
+{% load static %}
+
+{% block bug_create %}
+  {% include "grais/base/_bug_url.html" %}
+{% endblock bug_create %}
+
+{% block title %}
+  {% include "grais/base/_app_title.html" %}
+  {% block subtitle %} - {{ subtitle }}{% endblock %}
+{% endblock title %}
+
+{% block header %}
+  {{ block.super }}
+  {% include "grais/base/_style.html" %}
+{% endblock %}
+
+{% block body %}
+  {{ block.super }}
+{% endblock body %}
+
+{% block left_auth %}
+  {% include "grais/base/_nav_left_auth.html" %}
+{% endblock left_auth %}
+
+{% block subcontent %}
+{% endblock %}
+
+{% block body_js %}
+  {% include "_vuejs_import.html" %}
+{% endblock %}
+
+{% block leaflet %}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+          crossorigin=""></script>
+{% endblock %}

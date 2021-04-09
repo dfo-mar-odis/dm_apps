@@ -1,0 +1,23 @@
+{% load static %}
+
+<script type="application/javascript">
+
+let stnIcon = L.icon({
+  iconUrl: '{% static "/grais/station_marker.png" %}',
+  iconAnchor: [9.9, 33.9], // point of the icon which will correspond to marker's location
+  popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+});
+
+let lineIcon = L.icon({
+  iconUrl: '{% static "/grais/line_marker.png" %}',
+  iconAnchor: [9.9, 33.9], // point of the icon which will correspond to marker's location
+  popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+});
+
+let greenLineIcon = L.icon({
+  iconUrl: '{% static "/grais/green_line_marker.png" %}',
+  iconAnchor: [9.9, 33.9], // point of the icon which will correspond to marker's location
+  popupAnchor: [0, -32] // point from which the popup should open relative to the iconAnchor
+});
+
+</script>

@@ -19,12 +19,14 @@ class TestAllFormsets(CommonTest):
         self.test_url_names = [
             "manage_locations",
             "manage_tags",
+            "manage_species",
         ]
 
         self.test_urls = [reverse_lazy("whalebrary:" + name) for name in self.test_url_names]
         self.test_views = [
             views.LocationFormsetView,
             views.TagFormsetView,
+            views.SpeciesFormsetView,
         ]
         self.expected_template = 'whalebrary/formset.html'
         self.user = self.get_and_login_user(in_group="whalebrary_admin")
@@ -54,6 +56,7 @@ class TestAllHardDeleteViews(CommonTest):
         self.starter_dicts = [
             {"model": models.Location, "url_name": "delete_location", "view": views.LocationHardDeleteView},
             {"model": models.Tag, "url_name": "delete_tag", "view": views.TagHardDeleteView},
+            {"model": models.Species, "url_name": "delete_species", "view": views.SpeciesHardDeleteView},
         ]
         self.test_dicts = list()
 
@@ -65,6 +68,8 @@ class TestAllHardDeleteViews(CommonTest):
                 obj = m.objects.create(location=faker.catch_phrase(), bin_id=faker.catch_phrase())
             elif m == models.Tag:
                 obj = m.objects.create(tag=faker.catch_phrase())
+            elif m == models.Species:
+                obj = m.objects.create(name=faker.catch_phrase())
             else:
                 obj = m.objects.create(name=faker.catch_phrase())
             new_d["obj"] = obj

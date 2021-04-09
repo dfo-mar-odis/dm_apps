@@ -32,9 +32,9 @@ urlpatterns = [
     path('settings/organisation/', views.OrganisationFormsetView.as_view(), name="manage_organisation"),
     path('settings/organisation/<int:pk>/delete/', views.OrganisationHardDeleteView.as_view(),
          name="delete_organisation"),
-    path('settings/platform_type/', views.ObservationPlatformTypeFormsetView.as_view(), name="manage_platform_type"),
-    path('settings/platform_type/<int:pk>/delete/', views.ObservationPlatformTypeHardDeleteView.as_view(),
-         name="delete_platform_type"),
+    # path('settings/platform_type/', views.ObservationPlatformTypeFormsetView.as_view(), name="manage_platform_type"),
+    # path('settings/platform_type/<int:pk>/delete/', views.ObservationPlatformTypeHardDeleteView.as_view(),
+    #      name="delete_platform_type"),
     path('settings/platform/', views.ObservationPlatformFormsetView.as_view(), name="manage_platform"),
     path('settings/platform/<int:pk>/delete/', views.ObservationPlatformHardDeleteView.as_view(),
          name="delete_platform"),
@@ -65,4 +65,11 @@ urlpatterns = [
     path('outing/<int:pk>/edit/', views.OutingUpdateView.as_view(), name="outing_edit"),
     path('outing/<int:pk>/delete/', views.OutingDeleteView.as_view(), name="outing_delete"),
 
+    # OBSERVATION #
+
+    path('observation-list/', views.ObservationListView.as_view(), name="observation_list"),
+    path('observation/new/', views.ObservationCreateView.as_view(), name="observation_new"),
+    path('observation/<int:pk>/view/', views.ObservationDetailView.as_view(), name="observation_detail"),
+    path('observation/<int:pk>/edit/', views.ObservationUpdateView.as_view(), name="observation_edit"),
+    path('observation/<int:pk>/delete/', views.ObservationDeleteView.as_view(), name="observation_delete"),
 ]

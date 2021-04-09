@@ -173,6 +173,19 @@ TrainingFormset = modelformset_factory(
 )
 
 
+class SpeciesForm(forms.ModelForm):
+    class Meta:
+        model = models.Species
+        fields = "__all__"
+
+
+SpeciesFormset = modelformset_factory(
+    model=models.Species,
+    form=SpeciesForm,
+    extra=1,
+)
+
+
 class PersonnelForm(forms.ModelForm):
     class Meta:
         model = models.Personnel

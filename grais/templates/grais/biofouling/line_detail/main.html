@@ -1,0 +1,105 @@
+{% extends "grais/base.html" %}
+{% load static %}
+{% load verbose_names %}
+
+{% block header %}
+  {{ block.super }}
+  <style>
+  /* Set the size of the div element that contains the map */
+  #map {
+      height: 300px; /* The height is 400 pixels */
+      width: 100%; /* The width is the width of the web page */
+  }
+  </style>
+{% endblock header %}
+
+{% block subcontent %}
+  <div id="app">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <a class="btn btn-warning" href="{% url 'grais:line_edit' object.id %}">Edit</a>
+          <a class="btn btn-danger" href="{% url 'grais:line_delete' object.id %}">Delete</a>
+        </div>
+        <div class="row mb-5">
+          <div class="col-4">
+            <table class="table table-sm">
+              {% for field in field_list %}
+                {% verbose_td_display object field %}
+              {% endfor %}
+            </table>
+          </div>
+          <div class="col">
+            <div id="map"></div>
+          </div>
+        </div>
+        <div class="">
+          {% include "grais/line_detail/_surfaces.html" %}
+          {% include "grais/line_detail/_species.html" %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block body_js %}
+
+  {{ block.super }}
+  {% include "grais/_map_icons.html" %}
+  <script type="application/javascript">
+  function initialize() {
+    let coords = [];
+    map = new L.Map("map", {
+      center: new L.LatLng(46.13845952180798, -64.7906431818189),
+      zoom: 6,
+    });
+
+    {#    {% if object.sample.station.get_point %}#}
+    {#      latLong = [{{object.sample.station.get_point.x}}, {{ object.sample.station.get_point.y }}]#}
+    {#      coords.push(latLong)#}
+    {#      L.marker(#}
+    {#          latLong, {#}
+    {#            title: '{{object.station}}',#}
+    {#            icon: stnIcon,#}
+    {##}
+    {#          }#}
+    {#      ).addTo(map).bindPopup("<a href='{% url 'grais:station_detail' object.sample.station.id %}'>Station {{object.sample.station}}</a>");#}
+    {#    {% endif %}#}
+
+    {% if object.sample.lines.exists %}
+      {% for line in object.sample.lines.all %}
+        {% if line.get_point %}
+          latLong = [{{line.get_point.x}}, {{ line.get_point.y }}]
+          coords.push(latLong)
+          L.marker(
+              latLong, {
+                title: '{{object.line}}',
+                icon: {% if line.id == object.id %}greenLineIcon{% else %}lineIcon{% endif %},
+              }
+          ).addTo(map).bindPopup('<a href="{% url 'grais:line_detail' line.id %}">{{line}}</a>');
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/satellite-streets-v10',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: '{{mapbox_api_key}}'
+    }).addTo(map);
+
+    map.fitBounds(coords);
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    initialize()
+
+  });
+  </script>
+
+
+{% endblock %}

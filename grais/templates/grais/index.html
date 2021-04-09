@@ -1,72 +1,85 @@
-{% extends "grais/grais_base.html" %}
+{% extends "grais/base.html" %}
 {% load bootstrap4 %}
 {% load static %}
 
 {% block content %}
-
-    <div class="container">
+  <div class="container">
+    <div class="jumbotron py-3">
+      <div class="float-right">
+        <img src="{% static "/grais/greencrab.png" %}" class="rounded" width="200px" alt="...">
+      </div>
+      <div style="width: 75%">
+        <h1 class="three-em">grAIS</h1>
+        <hr>
+        <h3>Gulf Region Aquatic Invasive Species Application</h3>
         <br>
-        <div class="container">
-            <div class="jumbotron">
-                <h1 class="three-em">grAIS</h1>
-                <hr>
-                <h3>Gulf Region Aquatic Invasive Species Application</h3>
-                {% if user.is_authenticated %}
-                    <br>
-                    <p>Welcome back, {{ user.first_name }}!</p>
-                {% else %}
-                    <br>
-                    <p>You must be
-                        <a href="{% url 'accounts:login' %}?next={% url 'grais:index' %}">signed in</a>
-                        to use this application.</p>
-                {% endif %}
-            </div>
+        <p>Welcome back, {{ user.first_name }}!</p>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Biofouling Monitoring</h5>
+            <p class="card-text">Data entry and access portal for the Gulf Region Biofouling Monitoring dataset.</p>
+            <a href="{% url 'grais:sample_list' %}" class="btn btn-primary">Go</a>
+          </div>
         </div>
+      </div>
 
-        {% if user.is_authenticated %}
-            <div class="row">
-                <div class="col-4">
-                    <div class="">
-                        <br><br>
-                        <h3>Please select a dataset:</h3>
-                        <h4>
-                            <ul>
-                                <li>
-                                    <a href="{% url 'grais:sample_list' %}">Biofouling Monitoring</a><br>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Greencrab Monitoring</h5>
+            <p class="card-text">Data entry and access portal for the Gulf Region Greencrab Monitoring dataset.</p>
+            <a href="#" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+      </div>
 
-                                </li>
-                                <li>
-
-                                    <a href="{% url 'grais:gcsample_list' %}">Greencrab Monitoring</a><br>
-                                </li>
-                                <li>
-
-                                    <a href="{% url 'grais:report_list' %}">Incidental Reports</a><br>
-                                </li>
-
-
-                            </ul>
-                        </h4>
-
-                    </div>
-                </div>
-                <div class="col">
-
-                    <div align="">
-                        <img src="{% static "/grais/img4.JPG" %}" class="rounded" width="500px" alt="...">
-                    </div>
-
-                </div>
-            </div>
-
-        {% else %}
-            <div align="center">
-                <img src="{% static "/grais/img4.JPG" %}" class="rounded" width="500px" alt="...">
-            </div>
-        {% endif %}
-
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Incidental Reports</h5>
+            <p class="card-text">Data entry and access portal for the Gulf Region AIS Incidental Report dataset.</p>
+            <a href="{% url 'grais:ir_list'  %}" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+      </div>
 
     </div>
 
-{% endblock content %}
+    <div class="text-center" style="margin-top: 150px">
+      <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#modal_id"> Data Flow Diagram </a>
+    </div>
+
+    {#<!-- modal_label MODAL -->#}
+    <div class="modal fade" id="modal_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle"> Data Flow Diagram </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div align="center">
+              <a href="{% static "/grais/dataflow_AIS.svg" %}">
+                <img src="{% static "/grais/dataflow_AIS.svg" %}" class="rounded" width="100%" alt="...">
+              </a>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a class="btn btn-warning" href="#" target="_blank">Edit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

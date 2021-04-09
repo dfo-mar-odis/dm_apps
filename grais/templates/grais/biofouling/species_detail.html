@@ -1,0 +1,62 @@
+{% extends 'grais/base.html' %}
+{% load verbose_names %}
+{% load i18n %}
+
+{% block subcontent %}
+
+  <div class="btns mb-3">
+    <a href="{% url 'grais:species_edit' object.id %}" class="btn btn-warning btn-sm">{% trans "Edit" %}</a>
+    <a href="{% url 'grais:species_delete' object.id %}" class="btn btn-danger btn-sm">{% trans "Delete" %}</a>
+  </div>
+
+  <table class="table table-sm" style="width: 100%">
+    {% for field in field_list %}
+      {% if "tsn" in field %}
+        <tr>
+          <th> ITIS Taxonomic Serial No. (<a href="https://www.itis.gov">www.itis.gov</a>)</th>
+          <td>
+            <a href="https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value={{ object.tsn }}#null">{{ object.tsn }}</a>
+          </td>
+        </tr>
+      {% elif "aphia" in field %}
+        <tr>
+          <th> Aphia ID (<a href="http://www.marinespecies.org/">www.marinespecies.org</a>)</th>
+          <td>
+            <a href="http://www.marinespecies.org/aphia.php?p=taxdetails&id={{ object.aphia_id }}">{{ object.aphia_id }}</a>
+          </td>
+        </tr>
+      {% elif "occurrences" in field %}
+        <tr>
+          <th> Occurrences in grAIS database</th>
+          <td>
+            {% if not object.surface_spp.exists and not object.sample_spp.exists and not object.line_spp.exists and not object.bycatch_set.exists and not object.crab_set.exists and not object.incidentalreport_set.exists %}
+              <em>This species is not present in the database.</em>
+            {% else %}
+              <ul>
+                <li>
+                  This species has occurred {{ object.sample_spp.count }} time{{ object.sample_spp.count|pluralize }} on biofouling samples.
+                </li>
+                <li>
+                  This species has occurred {{ object.line_spp.count }} time{{ object.line_spp.count|pluralize }} on biofouling lines.
+                </li>
+                <li>
+                  This species has occurred {{ object.surface_spp.count }} time{{ object.surface_spp.count|pluralize }} on biofouling collector surfaces.
+                </li>
+                <li>
+                  This species has occurred {{ object.catch_set.count }} time{{ object.catch_set.count|pluralize }} in the Green Crab Monitoring dataset.
+                </li>
+                <li>
+                  This species has occurred {{ object.incidentalreport_set.count }} time{{ object.incidentalreport_set.count|pluralize }} in the Incidental
+                  Reports dataset.
+                </li>
+              </ul>
+            {% endif %}
+          </td>
+        </tr>
+      {% else %}
+        {% verbose_td_display object field %}
+      {% endif %}
+    {% endfor %}
+  </table>
+
+{% endblock %}

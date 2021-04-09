@@ -1,0 +1,153 @@
+{% extends "grais/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block content %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="{% static 'lou-multi-select-e052211/css/multi-select.css' %}" media="screen"
+          type="text/css">
+    <style>
+        .ms-container {
+            width: 700px;
+        }
+    </style>
+
+    {# <img src="{% static 'glf_data_management/img/data.jpg' %}" class="img-fluid max-width" alt="file not found"> #}
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Please enter the Report Details:</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <form method="post">
+
+            {% csrf_token %}
+            {% for field in form %}
+
+                {% if field.name == "species" %}
+                    <div class="species_div">
+                        {% bootstrap_field field %}
+
+                    </div>
+                {% elif field.name == "site" %}
+                    <div class="site_div">
+                        {% bootstrap_field field %}
+
+                    </div>
+                {% elif field.name == "year" %}
+                    <div class="year_div">
+                        {% bootstrap_field field placeholder="" %}
+                    </div>
+
+                {% else %}
+                    {% bootstrap_field field %}
+                {% endif %}
+            {% endfor %}
+            <input id="submit" type="submit" class="btn btn-primary animated bounceOutLeft" value="Generate"><br><br>
+
+
+        </form>
+        <br>
+        <p>
+        </p>
+
+        <div class="loader hidden"></div>
+    </div>
+
+    <script src="{% static 'lou-multi-select-e052211/js/jquery.multi-select.js' %}" type="text/javascript"></script>
+    <script type="application/javascript">
+
+        function hideAll() {
+            $(".species_div").addClass("gone");
+            $(".site_div").addClass("gone");
+            $(".year_div").addClass("gone");
+
+            $("#id_report").prop('required', true);
+            $("#id_species").prop('required', false);
+            $("#id_year").prop('required', false);
+            $("#id_site").prop('required', false);
+
+        }
+
+        function configureForm() {
+            var reportChoice = $("#id_report").val();
+            // species count report
+            if (reportChoice == 1) {
+                $(".species_div").removeClass("gone");
+                $("#id_species").prop('required', true);
+                $("#id_species").multiSelect();
+
+            } else if (reportChoice == 2|| reportChoice == 9 ) {
+                $(".year_div").removeClass("gone");
+                alert("Please note that running this report for all years will take several minutes to complete.");
+            } else if (reportChoice == 4 || reportChoice == 5 || reportChoice == 6 || reportChoice == 7) {
+                $(".year_div").removeClass("gone");
+                $("#id_year").prop('required', true);
+            }
+
+
+        }
+
+        $(document).ready(function () {
+            // Stuff to do as soon as the DOM is ready
+            hideAll();
+            configureForm();
+        });
+
+        $("#id_report").change(function () {
+            hideAll();
+            configureForm();
+        })
+
+        $("form").submit(function () {
+            var reportChoice = $("#id_report")[0].value;
+            // species count report
+            if (reportChoice != 4) {
+                $(this).addClass("hidden");
+                $(".loader").removeClass("hidden");
+                window.setTimeout(closeLoader, 5000);
+            }
+        });
+
+        function closeLoader() {
+            $("form").removeClass("hidden");
+            $(".loader").addClass("hidden");
+        }
+
+    </script>
+
+{% endblock content %}

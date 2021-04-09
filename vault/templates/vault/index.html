@@ -119,11 +119,13 @@
 
     {% url 'vault:species_list' as species_list %}
     {% url 'vault:outing_list' as outing_list %}
+    {% url 'vault:observation_list' as observation_list %}
+    {% url 'vault:outing_new' as outing_new %}
 
     {% url 'vault:manage_instrument_type' as manage_instrument_type %}
     {% url 'vault:manage_instrument' as manage_instrument %}
     {% url 'vault:manage_organisation' as manage_organisation %}
-    {% url 'vault:manage_platform_type' as manage_platform_type %}
+{#    {% url 'vault:manage_platform_type' as manage_platform_type %}#}
     {% url 'vault:manage_platform' as manage_platform %}
     {% url 'vault:manage_role' as manage_role %}
     {% url 'vault:manage_person' as manage_person %}
@@ -153,10 +155,10 @@
           {# User Pane #}
           <div id="user" class="container tab-pane fade active show"><br>
 
-            <div class="btns mb-3 center-col">
+            <div class="btns mb-3 left">
 
-              <a href="{{ species_list }}" class="btn btn-lg btn-outline-primary mx-3">
-                {% trans "Test Action Button" %}
+              <a href="{{ outing_new }}" class="btn btn-lg btn-outline-primary mx-3">
+                {% trans "Log New Outing" %}
               </a>
 
               {% if test_url > 0 %}
@@ -199,9 +201,9 @@
                 </a>
                 <br>
                 <br>
-                <a href="{{ manage_platform_type }}" class="btn btn-lg btn-outline-primary mx-3">
-                    {% trans "Manage Platform Type" %}
-                </a>
+{#                <a href="{{ manage_platform_type }}" class="btn btn-lg btn-outline-primary mx-3">#}
+{#                    {% trans "Manage Platform Type" %}#}
+{#                </a>#}
 
                 <a href="{{ manage_platform }}" class="btn btn-lg btn-outline-primary mx-3">
                     {% trans "Manage Platform" %}
@@ -266,6 +268,7 @@
                     <div class="btns">
                         <a href="{% url 'vault:species_list' %}" class="btn my-btn btn btn-primary">Species List</a>
                         <a href="{% url 'vault:outing_list' %}" class="btn my-btn btn btn-primary">Outing List</a>
+                        <a href="{% url 'vault:observation_list' %}" class="btn my-btn btn btn-primary">Observation List</a>
                     </div>
                     <br>
                 </div>

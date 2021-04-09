@@ -1,0 +1,38 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+{% load verbose_names %}
+
+<div class="">
+    <h3>
+        {% trans "Media Files:" %}
+    </h3>
+</div>
+
+{% if object.original_mediafiles.count == 0 %}
+    <em>
+        {% trans "No media files have been added to this observation" %}
+    </em><br>
+{% else %}
+
+    <table class="table table-hover table-sm" style="width: 100%">
+        <tr>
+            {% for field in media_field_list %}
+            <th>
+                {% get_verbose_label random_media field %}
+            </th>
+            {% endfor %}
+        </tr>
+        <tbody>
+        {% for obj in object.original_mediafiles.all %}
+            <tr>
+            {% for field in media_field_list %}
+                <td>
+                  {% get_field_value obj field %}
+                </td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

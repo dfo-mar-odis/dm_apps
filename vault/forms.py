@@ -2,9 +2,10 @@ from django import forms
 from django.forms import modelformset_factory
 
 from . import models
-from shared_models import models as shared_models
 
 attr_fp_date_time = {"class": "fp-date-time-with-seconds", "placeholder": "Select Date and Time.."}
+chosen_js = {"class": "chosen-select-contains"}
+multi_select_js = {"class": "multi-select"}
 
 
 class SpeciesForm(forms.ModelForm):
@@ -26,17 +27,17 @@ ObservationPlatformFormset = modelformset_factory(
 )
 
 
-class ObservationPlatformTypeForm(forms.ModelForm):
-    class Meta:
-        model = models.ObservationPlatformType
-        fields = "__all__"
-
-
-ObservationPlatformTypeFormset = modelformset_factory(
-    model=models.ObservationPlatformType,
-    form=ObservationPlatformTypeForm,
-    extra=1,
-)
+# class ObservationPlatformTypeForm(forms.ModelForm):
+#     class Meta:
+#         model = models.ObservationPlatformType
+#         fields = "__all__"
+#
+#
+# ObservationPlatformTypeFormset = modelformset_factory(
+#     model=models.ObservationPlatformType,
+#     form=ObservationPlatformTypeForm,
+#     extra=1,
+# )
 
 
 class InstrumentForm(forms.ModelForm):
@@ -70,7 +71,12 @@ class OutingForm(forms.ModelForm):
         model = models.Outing
         fields = "__all__"
         widgets = {
-            "start_date": forms.TextInput(attrs=attr_fp_date_time)
+            "region": forms.SelectMultiple(attrs=chosen_js),
+            "purpose": forms.SelectMultiple(attrs=chosen_js),
+            "start_date": forms.TextInput(attrs=attr_fp_date_time),
+            "end_date": forms.TextInput(attrs=attr_fp_date_time),
+            # "created_by": forms.HiddenInput(),
+            # "verified_by": forms.HiddenInput(),
         }
 
 
@@ -91,6 +97,10 @@ class ObservationForm(forms.ModelForm):
     class Meta:
         model = models.Observation
         fields = "__all__"
+        widgets = {
+            "datetime": forms.TextInput(attrs=attr_fp_date_time),
+            "metadata": forms.SelectMultiple(attrs=chosen_js),
+        }
 
 
 class OrganisationForm(forms.ModelForm):

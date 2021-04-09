@@ -1,0 +1,65 @@
+{% load verbose_names %}
+
+<div class="neighbours mx-3">
+  <div class="card pointy" style="width: 18rem;" data-toggle="modal" data-target="#probes">
+    <div class="card-body text-center">
+      <h5 class="card-title"> Environmental Data ({{ object.probe_data.count }})</h5>
+      <span class="mdi mdi-coolant-temperature h1"></span>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="probes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 90% !important">
+    <div class="modal-content" style="width: 100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"> Environmental Data </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% if not object.probe_data.exists %}
+          <em>No probe measurements have been recorded.</em>
+        {% else %}
+          <table class="table table-bordered table-sm">
+            <thead>
+            <tr>
+              {% for field in probe_field_list %}
+                <th style="width: 110px">{% get_verbose_label object.probe_data.first field %}</th>
+              {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for obj in object.probe_data.all %}
+              <tr>
+                {% for field in probe_field_list %}
+                  <td>
+                    {% get_field_value obj field display_time=True %}
+                  </td>
+                {% endfor %}
+                <td style="width: 150px">
+                  <button class="btn btn-sm btn-outline-dark">
+                    <span class="mdi mdi-information-outline h5" data-toggle="popover" title="Metadata" data-content="{{ obj.metadata }}"
+                          data-trigger="click"></span>
+                  </button>
+                  <a href="" pop-href="{% url 'grais:measurement_edit' obj.id %}" class="btn btn-sm btn-outline-dark">
+                    <span class="mdi mdi-pencil h5"></span>
+                  </a>
+                  <a href="" pop-href="{% url 'grais:measurement_delete' obj.id %}" class="btn btn-sm btn-outline-dark">
+                    <span class="mdi mdi-delete h5"></span>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-primary" href="" pop-href="{% url 'grais:measurement_new' object.id %}"> New Data </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -176,6 +176,8 @@ def get_field_value(instance, field_name, format=None, display_time=False, hyper
             field_value = '${:,.2f}'.format(float(field_value))
         except:
             pass
+    if isinstance(field_value, bool):
+        field_value = yesno(field_value, "Yes,No,Unknown")
     try:
         field_value = markdown.markdown(field_value) if "html" in str(format).lower() else field_value
         field_value = mark_safe(field_value) if safe else field_value

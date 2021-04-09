@@ -1,41 +1,31 @@
 import csv
-
 from copy import deepcopy
 from datetime import date
-from io import StringIO
 
+from django.conf import settings
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User, Group
+from django.db.models import TextField, Value
+from django.db.models.functions import Concat
+from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy, reverse
+from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.translation import gettext as _
 from django.utils.translation.trans_null import gettext_lazy
-from idna import unicode
-from unicodecsv import UnicodeWriter
+from django.views.generic import TemplateView
 
 from dm_apps.utils import custom_send_mail
-from lib.functions.custom_functions import listrify
-from shared_models import models as shared_models
-from django.utils.safestring import mark_safe
-from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.decorators import login_required, user_passes_test, permission_required
-from django.templatetags.static import static
-from django.db.models import Count, TextField, F, Sum, Value
-from django.db.models.functions import Concat, datetime
-from django.http import HttpResponseRedirect, HttpResponse, Http404
-from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy, reverse
-from django.views.generic import ListView, UpdateView, DeleteView, CreateView, DetailView, TemplateView, FormView
-from django_filters.views import FilterView
-from django.utils import timezone
 from shared_models.views import CommonPopoutFormView, CommonListView, CommonFilterView, CommonDetailView, \
     CommonDeleteView, CommonCreateView, CommonUpdateView, CommonPopoutUpdateView, CommonPopoutDeleteView, \
     CommonFormView, CommonHardDeleteView, CommonFormsetView
-from . import models, admin, emails
-from . import forms
 from . import filters
-from . import reports
-from .models import TransactionCategory, Location, Tag
-from django.contrib.auth.models import User as AuthUser
-from django.contrib.auth.models import User, Group
+from . import forms
+from . import models, emails
+from .models import TransactionCategory, Location
 
 
 class CloserTemplateView(TemplateView):
@@ -176,7 +166,7 @@ class LocationFormsetView(WhalebraryAdminAccessRequired, CommonFormsetView):
     home_url_name = "whalebrary:index"
     delete_url_name = "whalebrary:delete_location"
 
-    ## TAG ##
+## TAG ##
 
 
 class TagHardDeleteView(WhalebraryAdminAccessRequired, CommonHardDeleteView):
@@ -193,7 +183,7 @@ class TagFormsetView(WhalebraryAdminAccessRequired, CommonFormsetView):
     home_url_name = "whalebrary:index"
     delete_url_name = "whalebrary:delete_tag"
 
-    ## OWNER ##
+## OWNER ##
 
 
 class OwnerHardDeleteView(WhalebraryAdminAccessRequired, CommonHardDeleteView):
@@ -210,7 +200,7 @@ class OwnerFormsetView(WhalebraryAdminAccessRequired, CommonFormsetView):
     home_url_name = "whalebrary:index"
     delete_url_name = "whalebrary:delete_owner"
 
-    ## SIZE ##
+## SIZE ##
 
 
 class SizeHardDeleteView(WhalebraryAdminAccessRequired, CommonHardDeleteView):
@@ -227,7 +217,7 @@ class SizeFormsetView(WhalebraryAdminAccessRequired, CommonFormsetView):
     home_url_name = "whalebrary:index"
     delete_url_name = "whalebrary:delete_size"
 
-    ## ORGANISATION ##
+## ORGANISATION ##
 
 
 class OrganisationHardDeleteView(WhalebraryAdminAccessRequired, CommonHardDeleteView):
@@ -244,7 +234,7 @@ class OrganisationFormsetView(WhalebraryAdminAccessRequired, CommonFormsetView):
     home_url_name = "whalebrary:index"
     delete_url_name = "whalebrary:delete_organisation"
 
-    ## TRAINING ##
+## TRAINING ##
 
 
 class TrainingHardDeleteView(WhalebraryAdminAccessRequired, CommonHardDeleteView):
@@ -261,6 +251,22 @@ class TrainingFormsetView(WhalebraryAdminAccessRequired, CommonFormsetView):
     home_url_name = "whalebrary:index"
     delete_url_name = "whalebrary:delete_training"
 
+
+## SPECIES ##
+
+class SpeciesHardDeleteView(WhalebraryAdminAccessRequired, CommonHardDeleteView):
+    model = models.Species
+    success_url = reverse_lazy("whalebrary:manage_species")
+
+
+class SpeciesFormsetView(WhalebraryAdminAccessRequired, CommonFormsetView):
+    template_name = 'whalebrary/formset.html'
+    h1 = "Manage Species"
+    queryset = models.Species.objects.all()
+    formset_class = forms.SpeciesFormset
+    success_url = reverse_lazy("whalebrary:manage_species")
+    home_url_name = "whalebrary:index"
+    delete_url_name = "whalebrary:delete_species"
 
 # #
 # # ITEM #
@@ -1368,8 +1374,7 @@ class IncidentDetailView(WhalebraryAccessRequired, CommonDetailView):
         'species_count',
         'submitted',
         'first_report',
-        'lat',
-        'long',
+        'coordinates',
         'location',
         'region',
         'species',
@@ -1399,6 +1404,10 @@ class IncidentDetailView(WhalebraryAccessRequired, CommonDetailView):
             'title',
             'date_uploaded',
         ]
+
+        # contexts for incident_detail maps
+        context["all_incidents"] = [i.get_leaflet_dict() for i in models.Incident.objects.filter(latitude__isnull=False, longitude__isnull=False)]
+        context["mapbox_api_key"] = settings.MAPBOX_API_KEY
 
         return context
 

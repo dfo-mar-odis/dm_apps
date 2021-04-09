@@ -8,7 +8,10 @@ from django.utils import timezone
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
+from lib.functions.custom_functions import listrify
+from lib.templatetags.custom_filters import percentage
 from shared_models import models as shared_models
+from shared_models.models import MetadataFields, LatLongFields
 
 YES_NO_CHOICES = (
     (True, "Yes"),
@@ -44,22 +47,12 @@ class Sampler(models.Model):
         return "{} {}".format(self.first_name, self.last_name)
 
 
-# class Province(models.Model):
-#     province = models.CharField(max_length=255, blank=True, null=True)
-#     abbrev = models.CharField(max_length=10, blank=True, null=True)
-#
-#     def __str__(self):
-#         return "{} ({})".format(self.province, self.abbrev)
-
-
-class Station(models.Model):
-    station_name = models.CharField(max_length=255, blank=True, null=True)
+class Station(MetadataFields, LatLongFields):
+    station_name = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name"))
     province = models.ForeignKey(shared_models.Province, on_delete=models.DO_NOTHING, related_name='stations')
-    latitude_n = models.FloatField(blank=True, null=True)
-    longitude_w = models.FloatField(blank=True, null=True)
-    depth = models.FloatField(blank=True, null=True)
-    site_desc = models.TextField(blank=True, null=True)
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    depth = models.FloatField(blank=True, null=True, verbose_name=_("depth (m)"))
+    site_desc = models.TextField(blank=True, null=True, verbose_name=_("site description"))
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
 
     def __str__(self):
         return "{}, {}".format(self.station_name, self.province.abbrev_eng)
@@ -70,8 +63,12 @@ class Station(models.Model):
     class Meta:
         ordering = ['station_name']
 
+    @property
+    def sample_count(self):
+        return self.samples.count()
 
-class Species(models.Model):
+
+class Species(MetadataFields):
     # choices for epibiont_type
     UNK = None
     SES = 'ses'
@@ -92,8 +89,12 @@ class Species(models.Model):
     color_morph = models.BooleanField(verbose_name="Has color morph")
     invasive = models.BooleanField(verbose_name="is invasive?")
     # biofouling = models.BooleanField()
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
     green_crab_monitoring = models.BooleanField(default=False, verbose_name="targeted species in Green Crab Monitoring Program?")
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
+
+    @property
+    def choice_display(self):
+        return f"{self.common_name} / {self.common_name_fra} / {self.scientific_name}"
 
     @property
     def tname(self):
@@ -105,12 +106,6 @@ class Species(models.Model):
                 my_str = "{}".format(self.common_name)
             return my_str
 
-    def __str__(self):
-        if self.common_name or self.common_name_fra:
-            return mark_safe(self.tname + " (<em>" + self.scientific_name + "</em>)") if self.scientific_name else self.tname
-        else:
-            return mark_safe("<em>" + self.scientific_name + "</em>")
-
     @property
     def name_plaintext(self):
         if self.common_name or self.common_name_fra:
@@ -120,12 +115,34 @@ class Species(models.Model):
 
     class Meta:
         ordering = ['common_name']
+        verbose_name_plural = _("Species")
 
     def get_absolute_url(self):
         return reverse('grais:species_detail', kwargs={'pk': self.id})
 
+    @property
+    def tcommon(self):
+        # check to see if a french value is given
+        if getattr(self, str(_("common_name"))):
+            my_str = f'{getattr(self, str(_("common_name")))}'
+        # if there is no translated term, just pull from the english field
+        else:
+            my_str = self.common_name
+        return my_str
 
-class Sample(models.Model):
+    def __str__(self):
+        return self.tcommon
+
+    @property
+    def full_name(self):
+        return "{} (<em>{}</em>)".format(self.common_name, self.scientific_name)
+
+    @property
+    def formatted_scientific(self):
+        return f"<em>{self.scientific_name}</em>"
+
+
+class Sample(MetadataFields):
     # Choices for sample_type
     FIRST = 'first'
     SECOND = 'second'
@@ -141,12 +158,12 @@ class Sample(models.Model):
     date_deployed = models.DateTimeField()
     date_retrieved = models.DateTimeField(blank=True, null=True)
     days_deployed = models.IntegerField(blank=True, null=True)
-    samplers = models.ManyToManyField(Sampler)
+    samplers = models.ManyToManyField(Sampler, verbose_name=_("sampler(s)"))
     old_substn_id = models.IntegerField(blank=True, null=True)
     species = models.ManyToManyField(Species, through='SampleSpecies')
     season = models.IntegerField(null=True, blank=True)
-    last_modified = models.DateTimeField(blank=True, null=True)
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    last_modified = models.DateTimeField(blank=True, null=True, editable=False)
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
 
     def save(self, *args, **kwargs):
         self.season = self.date_deployed.year
@@ -160,7 +177,7 @@ class Sample(models.Model):
         return reverse('grais:sample_detail', kwargs={'pk': self.id})
 
     def __str__(self):
-        return "Sample {}".format(self.id)
+        return f"Sample {self.id} ({self.get_sample_type_display()})"
 
     @property
     def weeks_deployed(self):
@@ -179,22 +196,32 @@ class Sample(models.Model):
                 return True
         return False
 
+    @property
+    def line_count(self):
+        return self.lines.count()
 
-class SampleSpecies(models.Model):
+    @property
+    def species_count(self):
+        return SurfaceSpecies.objects.filter(surface__line__sample=self).count()
+
+
+class SampleSpecies(MetadataFields):
     species = models.ForeignKey(Species, on_delete=models.CASCADE, related_name="sample_spp")
     sample = models.ForeignKey(Sample, on_delete=models.CASCADE, related_name="sample_spp")
-    observation_date = models.DateTimeField()
+    observation_date = models.DateTimeField(verbose_name=_("observation date"))
     notes = models.TextField(blank=True, null=True)
 
     class Meta:
         unique_together = (('species', 'sample'),)
+        verbose_name_plural = _("Sample Species")
 
 
-class SampleNote(models.Model):
-    sample = models.ForeignKey(Sample, related_name='notes', on_delete=models.CASCADE)
+class SampleNote(MetadataFields):
+    sample = models.ForeignKey(Sample, related_name='notes', on_delete=models.CASCADE, editable=False)
+    note = models.TextField()
+
     date = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
-    note = models.TextField()
 
     def __str__(self):
         return str(self.id)
@@ -206,15 +233,13 @@ class SampleNote(models.Model):
         ordering = ["-date"]
 
 
-class Line(models.Model):
-    sample = models.ForeignKey(Sample, related_name='lines', on_delete=models.CASCADE)
+class Line(MetadataFields, LatLongFields):
+    sample = models.ForeignKey(Sample, related_name='lines', on_delete=models.CASCADE, editable=False)
     collector = models.CharField(max_length=56, blank=True, null=True)
-    latitude_n = models.FloatField(blank=True, null=True)
-    longitude_w = models.FloatField(blank=True, null=True)
     is_lost = models.BooleanField(default=False, choices=YES_NO_CHOICES, verbose_name="Was the line lost?")
     notes = models.TextField(blank=True, null=True)
     species = models.ManyToManyField(Species, through='LineSpecies')
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
 
     def save(self, *args, **kwargs):
         # if the line was lost, set all surfaces to be lost as well
@@ -241,15 +266,20 @@ class Line(models.Model):
         return reverse('grais:line_detail', kwargs={'pk': self.id})
 
     @property
+    def surface_count(self):
+        return self.surfaces.count()
+
+    @property
     def surface_species_count(self):
-        return sum([s.species.count() for s in self.surfaces.all()])
+        return SurfaceSpecies.objects.filter(surface__line=self).count()
 
     @property
     def has_invasive_spp(self):
-        for surface in self.surfaces.all():
-            if surface.has_invasive_spp:
-                return True
-        return False
+        return SurfaceSpecies.objects.filter(surface__line=self, species__invasive=True).exists()
+
+    @property
+    def species_list(self):
+        return mark_safe(listrify(Species.objects.filter(surface_spp__surface__line=self).distinct(), "<br>"))
 
 
 def img_file_name(instance, filename):
@@ -257,7 +287,7 @@ def img_file_name(instance, filename):
     return img_name
 
 
-class LineSpecies(models.Model):
+class LineSpecies(MetadataFields):
     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING, related_name="line_spp")
     line = models.ForeignKey(Line, on_delete=models.CASCADE, related_name="line_spp")
     observation_date = models.DateTimeField()
@@ -265,9 +295,10 @@ class LineSpecies(models.Model):
 
     class Meta:
         unique_together = (('species', 'line'),)
+        verbose_name_plural = _("Line Species")
 
 
-class Surface(models.Model):
+class Surface(MetadataFields):
     # Choices for surface_type
     PETRI = 'pe'
     PLATE = 'pl'
@@ -276,14 +307,14 @@ class Surface(models.Model):
         (PLATE, 'Plate'),
     )
 
-    line = models.ForeignKey(Line, related_name='surfaces', on_delete=models.CASCADE)
+    line = models.ForeignKey(Line, related_name='surfaces', on_delete=models.CASCADE, editable=False)
     surface_type = models.CharField(max_length=2, choices=SURFACE_TYPE_CHOICES)
     label = models.CharField(max_length=255)
     image = models.ImageField(blank=True, null=True, upload_to=img_file_name)
     is_lost = models.BooleanField(default=False, choices=YES_NO_CHOICES, verbose_name="Was the surface lost?")
     notes = models.TextField(blank=True, null=True)
     species = models.ManyToManyField(Species, through='SurfaceSpecies')
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
     old_plateheader_id = models.IntegerField(blank=True, null=True)
 
     def get_absolute_url(self):
@@ -291,54 +322,72 @@ class Surface(models.Model):
             'pk': self.id
         })
 
-    def __str__(self):
-        if self.label:
-            my_str = "{}".format(self.label)
-        else:
-            my_str = "Surface {} (missing label)".format(self.id)
+    @property
+    def display(self):
+        return f"{self.label}" if self.label else f"Surface {self.id} (missing label)"
 
-        return my_str
+    def __str__(self):
+        return self.display
 
     class Meta:
         ordering = ['line', 'surface_type', 'label']
 
     @property
     def has_invasive_spp(self):
-        for sp in self.species.all():
-            if sp.invasive:
-                return True
-        return False
+        return self.species.filter(invasive=True).exists()
+
+    @property
+    def species_count(self):
+        return self.species.count()
+
+    @property
+    def species_list(self):
+        return mark_safe(listrify(self.species.all(), "<br>"))
 
     @property
     def total_coverage(self):
         return self.surface_spp.all().aggregate(dsum=Sum("percent_coverage"))["dsum"] if self.surface_spp.exists() else 0
 
+    @property
+    def total_coverage_display(self):
+        return percentage(self.total_coverage)
 
-class SurfaceSpecies(models.Model):
+    @property
+    def thumbnail(self):
+        if self.image:
+            return mark_safe(f'<img src="{self.image.url}" alt="Image not found..." width="150 em">')
+
+
+class SurfaceSpecies(MetadataFields):
     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING, related_name="surface_spp")
     surface = models.ForeignKey(Surface, on_delete=models.CASCADE, related_name="surface_spp")
     percent_coverage = models.FloatField(validators=[MinValueValidator(0), MaxValueValidator(1)])
     notes = models.TextField(blank=True, null=True)
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
 
     class Meta:
         unique_together = (('species', 'surface'),)
+        verbose_name_plural = _("Surface Species")
 
     def get_absolute_url(self):
         return reverse('grais:surface_spp_detail_pop', kwargs={
             'pk': self.id,
         })
 
+    @property
+    def coverage_display(self):
+        return percentage(self.percent_coverage)
+
 
 class Probe(models.Model):
     probe_name = models.CharField(max_length=255)
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
 
     def __str__(self):
         return self.probe_name
 
 
-class ProbeMeasurement(models.Model):
+class ProbeMeasurement(MetadataFields):
     # Choices for timezone
     AST = 'AST'
     ADT = 'ADT'
@@ -349,83 +398,57 @@ class ProbeMeasurement(models.Model):
         (UTC, 'UTC'),
     )
 
-    sample = models.ForeignKey(Sample, on_delete=models.CASCADE, related_name="probe_data")
+    sample = models.ForeignKey(Sample, on_delete=models.CASCADE, related_name="probe_data", editable=False)
     probe = models.ForeignKey(Probe, on_delete=models.DO_NOTHING, verbose_name="Probe name")
     time_date = models.DateTimeField(blank=True, null=True, verbose_name="Date / Time (yyyy-mm-dd hh:mm)")
-    timezone = models.CharField(max_length=5, choices=TIMEZONE_CHOICES, blank=True, null=True)
+    timezone = models.CharField(max_length=5, choices=TIMEZONE_CHOICES, blank=True, null=True, default="ADT")
     probe_depth = models.FloatField(blank=True, null=True, verbose_name="Probe depth (m)")
-    cloud_cover = models.IntegerField(blank=True, null=True, verbose_name="% cloud cover",
-                                      validators=[MinValueValidator(0), MaxValueValidator(100)])
+    cloud_cover = models.IntegerField(blank=True, null=True, verbose_name="cloud cover (%)", validators=[MinValueValidator(0), MaxValueValidator(100)])
+    weather_notes = models.CharField(max_length=1000, blank=True, null=True)
     temp_c = models.FloatField(blank=True, null=True, verbose_name="Temp (°C)")
     sal_ppt = models.FloatField(blank=True, null=True, verbose_name="Salinity (ppt)")
     o2_percent = models.FloatField(blank=True, null=True, verbose_name="Dissolved oxygen (%)")
     o2_mgl = models.FloatField(blank=True, null=True, verbose_name="Dissolved oxygen (mg/l)")
     sp_cond_ms = models.FloatField(blank=True, null=True, verbose_name="Specific conductance (mS)")
     spc_ms = models.FloatField(blank=True, null=True, verbose_name="Conductivity (mS)")
-    ph = models.FloatField(blank=True, null=True, verbose_name="pH")
+    ph = models.FloatField(blank=True, null=True, verbose_name=" pH")
     turbidity = models.FloatField(blank=True, null=True)
-    weather_notes = models.CharField(max_length=1000, blank=True, null=True)
+
+    @property
+    def dt(self):
+        return f"{self.time_date.strftime('%Y-%m-%d %H:%M')} ({self.timezone})"
 
     def __str__(self):
         return "Probe measurement {}".format(self.id)
 
-    def get_absolute_url(self):
-        return reverse("grais:probe_measurement_detail", kwargs={"pk": self.id})
 
-
-# def img_file_name(instance, filename):
-#     file_ext = str(filename).split(".")[1]
-#     img_name = 'sample_{sample}/surface_{id}.{file_ext}'.format(
-#         sample=instance.sample.id,
-#         id=instance.id,
-#         file_ext=file_ext
-#         )
-#     fullname = os.path.join(settings.MEDIA_ROOT, img_name)
-#     if os.path.exists(fullname):
-#         os.remove(fullname)
-#     return img_name
-
-class IncidentalReport(models.Model):
+class IncidentalReport(MetadataFields, LatLongFields):
     # Choices for report_source
-    PHONE = 1
-    INVADERS_EMAIL = 2
-    PERS_EMAIL = 3
-
     REPORT_SOURCE_CHOICES = (
-        (PHONE, 'Gulf AIS Hotline'),
-        (INVADERS_EMAIL, 'Gulf Invaders E-mail'),
-        (PERS_EMAIL, 'Personal E-mail'),
+        (1, 'Gulf AIS Hotline'),
+        (2, 'Gulf Invaders E-mail'),
+        (3, 'Personal E-mail'),
     )
 
     # Choices for language
-    ENG = 1
-    FRE = 2
     LANGUAGE_CHOICES = (
-        (ENG, 'English'),
-        (FRE, 'French'),
+        (1, 'English'),
+        (2, 'French'),
     )
 
     # Choices for observation_type
-    SINGLE = 1
-    ONGOING = 2
     OBSERVATION_TYPE_CHOICES = (
-        (SINGLE, 'Single observation'),
-        (ONGOING, 'Ongoing presence'),
+        (1, 'Single observation'),
+        (2, 'Ongoing presence'),
     )
 
     # Choices for requestor
-
-    PUB = 1
-    ACAD = 2
-    PRIV = 3
-    PROV = 4
-    FED = 5
     REQUESTOR_TYPE_CHOICES = (
-        (PUB, "public"),
-        (ACAD, "academia"),
-        (PRIV, "private sector"),
-        (PROV, "provincial government"),
-        (FED, "federal government"),
+        (1, "Public"),
+        (2, "Academia"),
+        (3, "Private sector"),
+        (4, "Provincial government"),
+        (5, "Federal government"),
     )
 
     # basic details
@@ -435,33 +458,28 @@ class IncidentalReport(models.Model):
     requestor_name = models.CharField(max_length=150)
     requestor_type = models.IntegerField(choices=REQUESTOR_TYPE_CHOICES, blank=True, null=True)
     report_source = models.IntegerField(choices=REPORT_SOURCE_CHOICES)
-    species_confirmation = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
-    gulf_ais_confirmed = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
-    seeking_general_info_ais = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
-    seeking_general_info_non_ais = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
-    management_related = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
-    dfo_it_related = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
-    incorrect_region = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
+    species_confirmation = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("Was there a species confirmation?"))
+    gulf_ais_confirmed = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("Confirmed by Gulf AIS team?"))
+    seeking_general_info_ais = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("Seeking general information about AIS?"))
+    seeking_general_info_non_ais = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("Seeking general information about non-AIS?"))
+    management_related = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("Management related?"))
+    dfo_it_related = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("DFO IT related?"))
+    incorrect_region = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("Incorrect region?"))
 
     # sighting details
     call_answered_by = models.CharField(max_length=150, null=True, blank=True)
     call_returned_by = models.CharField(max_length=150, null=True, blank=True)
-    location_description = models.CharField(max_length=500, null=True, blank=True)
-    latitude_n = models.FloatField(blank=True, null=True)
-    longitude_w = models.FloatField(blank=True, null=True)
-    specimens_retained = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES)
-    sighting_description = models.TextField(null=True, blank=True)
-    identified_by = models.CharField(max_length=150, null=True, blank=True)
+    location_description = models.CharField(max_length=500, null=True, blank=True, verbose_name=_("description of location"))
+    specimens_retained = models.IntegerField(blank=True, null=True, choices=NULL_YES_NO_CHOICES, verbose_name=_("were specimens retained?"))
+    sighting_description = models.TextField(null=True, blank=True, verbose_name=_("description of sighting"))
+    identified_by = models.CharField(max_length=150, null=True, blank=True, verbose_name=_("name of identifier"))
     date_of_occurrence = models.DateTimeField()
-    observation_type = models.IntegerField(choices=OBSERVATION_TYPE_CHOICES)
+    observation_type = models.IntegerField(choices=OBSERVATION_TYPE_CHOICES, verbose_name=_("type of observation"))
     phone1 = models.CharField(max_length=50, null=True, blank=True, verbose_name="phone 1")
     phone2 = models.CharField(max_length=50, null=True, blank=True, verbose_name="phone 2")
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(null=True, blank=True, verbose_name=_("email address"))
     notes = models.TextField(null=True, blank=True)
-    season = models.IntegerField()
-
-    date_last_modified = models.DateTimeField(blank=True, null=True)
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    season = models.IntegerField(editable=False)
 
     def save(self):
         self.season = self.report_date.year
@@ -469,7 +487,7 @@ class IncidentalReport(models.Model):
         return super().save()
 
     def get_absolute_url(self):
-        return reverse("grais:report_detail", kwargs={"pk": self.pk})
+        return reverse("grais:ir_detail", kwargs={"pk": self.pk})
 
     def __str__(self):
         return "Incidental Report #{}".format(self.id)
@@ -508,12 +526,10 @@ class Estuary(models.Model):
         ordering = ['name', ]
 
 
-class Site(models.Model):
+class Site(LatLongFields):
     estuary = models.ForeignKey(Estuary, on_delete=models.DO_NOTHING, related_name='sites', blank=True, null=True)
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=100)
-    latitude_n = models.FloatField(blank=True, null=True)
-    longitude_w = models.FloatField(blank=True, null=True)
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -523,7 +539,7 @@ class Site(models.Model):
         ordering = ['code', ]
 
 
-class GCSample(models.Model):
+class GCSample(MetadataFields):
     # Choices for sediment
     SAND = 1
     MUD = 2
@@ -550,8 +566,8 @@ class GCSample(models.Model):
     season = models.IntegerField(null=True, blank=True)
     notes = models.TextField(blank=True, null=True)
 
-    last_modified = models.DateTimeField(blank=True, null=True)
-    last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    last_modified = models.DateTimeField(blank=True, null=True, editable=False)
+    last_modified_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
 
     # dropdown for spp [epi alg, ulva, green alg, brown alg, eelg, algae]
     # sediment
@@ -575,7 +591,7 @@ class WeatherConditions(models.Model):
         return "{}".format(self.name)
 
 
-class GCProbeMeasurement(models.Model):
+class GCProbeMeasurement(MetadataFields):
     # choice for tide_state
     LOW = 'l'
     MID = 'm'
@@ -637,7 +653,7 @@ class GCProbeMeasurement(models.Model):
         return "Probe measurement {}".format(self.id)
 
 
-class Trap(models.Model):
+class Trap(MetadataFields, LatLongFields):
     # Choices for trap_type
     FUKUI = 1
     MINNOW = 2
@@ -655,8 +671,6 @@ class Trap(models.Model):
     trap_type = models.IntegerField(default=1, choices=TRAP_TYPE_CHOICES)
     bait_type = models.IntegerField(default=1, choices=BAIT_TYPE_CHOICES)
     depth_at_set_m = models.FloatField(blank=True, null=True, verbose_name="depth at set (m)")
-    latitude_n = models.FloatField(blank=True, null=True)
-    longitude_w = models.FloatField(blank=True, null=True)
     gps_waypoint = models.IntegerField(blank=True, null=True, verbose_name="GPS waypoint")
     notes = models.TextField(blank=True, null=True)
     total_green_crab_wt_kg = models.FloatField(blank=True, null=True, verbose_name="Total weight of green crabs (kg)")
@@ -680,55 +694,7 @@ class Trap(models.Model):
         return self.catch_spp.filter(species__green_crab_monitoring=True, species__invasive=False)
 
 
-# class Crab(models.Model):
-#     # Choices for sex
-#     MALE = 1
-#     FEMALE = 2
-#     UNK = 9
-#     SEX_CHOICES = (
-#         (MALE, 'Male'),
-#         (FEMALE, 'Female'),
-#         (UNK, 'Unknown'),
-#     )
-#     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
-#     trap = models.ForeignKey(Trap, on_delete=models.DO_NOTHING, related_name="crabs")
-#     width = models.FloatField(blank=True, null=True)
-#     sex = models.IntegerField(blank=True, null=True, choices=SEX_CHOICES)
-#     carapace_color = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(1), MaxValueValidator(4)])
-#     abdomen_color = models.IntegerField(blank=True, null=True, validators=[MinValueValidator(1), MaxValueValidator(4)])
-#     egg_color = models.CharField(max_length=25, blank=True, null=True)
-#     notes = models.TextField(blank=True, null=True)
-#     last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
-#
-#     # class Meta:
-#     #     unique_together = (('species', 'trap'),)
-#
-#     def __str__(self):
-#         return "{}".format(self.species)
-#
-#     class Meta:
-#         ordering = ['trap', 'species', 'id']
-
-
-# class Bycatch(models.Model):
-#     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
-#     trap = models.ForeignKey(Trap, on_delete=models.DO_NOTHING, related_name="bycatch")
-#     count = models.IntegerField(blank=True, null=True)
-#     notes = models.TextField(blank=True, null=True)
-#     last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
-#
-#     class Meta:
-#         unique_together = (('species', 'trap'),)
-#
-#     def __str__(self):
-#         return "{}".format(self.species)
-#
-#     class Meta:
-#         ordering = ['trap', 'species', 'id']
-#         unique_together = ['trap', 'species']
-
-
-class Catch(models.Model):
+class Catch(MetadataFields):
     # Choices for sex
     MALE = 1
     FEMALE = 2
@@ -747,7 +713,7 @@ class Catch(models.Model):
     egg_color = models.CharField(max_length=25, blank=True, null=True)
     count = models.IntegerField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
-    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True)
+    last_modified_by = models.ForeignKey(auth.models.User, on_delete=models.DO_NOTHING, blank=True, null=True, editable=False)
 
     # class Meta:
     #     unique_together = (('species', 'trap'),)

@@ -1,17 +1,15 @@
-from datetime import datetime
+import os
 
 from django.contrib.auth.models import User
+from django.contrib.auth.models import User as AuthUser
 from django.core.validators import MinValueValidator
 from django.db import models
-from django.db.models import Sum, Q, Count
+from django.dispatch import receiver
 from django.urls import reverse
 from django.utils import timezone
-from django.dispatch import receiver
 from django.utils.translation import gettext_lazy as _
-from shared_models import models as shared_models
-from lib.functions.custom_functions import nz
-import os
-from django.contrib.auth.models import User as AuthUser
+
+from shared_models.models import LatLongFields, SimpleLookup
 
 
 class Category(models.Model):
@@ -339,47 +337,50 @@ class Personnel(models.Model):
         return reverse("whalebrary:personnel_detail", kwargs={"pk": self.id})
 
 
-BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
-
-REGION_CHOICES = (
-    ("Gulf", "Gulf"),
-    ("Mar", "Maritimes"),
-    ("NL", "Newfoundland"),
-    ("QC", "Quebec"),
-)
-
-SEX_CHOICES = (
-    ("M", "Male"),
-    ("F", "Female"),
-    ("UnK", "Unknown"),
-)
-
-AGE_CHOICES = (
-    ("J", "Juvenile"),
-    ("YA", "Young Adult"),
-    ("A", "Adult"),
-)
-
-INCIDENT_CHOICES = (
-    ("E", "Entangled"),
-    ("DF", "DEAD - Floating"),
-    ("DB", "DEAD - Beached"),
-    ("N", "Necropsy"),
-)
+class Species(SimpleLookup):
+    name_latin = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("name (latin)"))
 
 
-class Incident(models.Model):
+class Incident(LatLongFields):
+    BOOL_CHOICES = ((True, 'Yes'), (False, 'No'))
+
+    REGION_CHOICES = (
+        ("Gulf", "Gulf"),
+        ("Mar", "Maritimes"),
+        ("NL", "Newfoundland"),
+        ("QC", "Quebec"),
+    )
+
+    SEX_CHOICES = (
+        ("M", "Male"),
+        ("F", "Female"),
+        ("UnK", "Unknown"),
+    )
+
+    AGE_CHOICES = (
+        ("J", "Juvenile"),
+        ("YA", "Young Adult"),
+        ("A", "Adult"),
+    )
+
+    INCIDENT_CHOICES = (
+        ("E", "Entangled"),
+        ("DF", "DEAD - Floating"),
+        ("DB", "DEAD - Beached"),
+        ("N", "Necropsy"),
+        ("LS", "LIVE - Stranded"),
+        ("DS", "DEAD - Stranded"),
+    )
+
     name = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("incident name"))
     species_count = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("species count"))
     submitted = models.BooleanField(choices=BOOL_CHOICES, blank=True, null=True,
                                     verbose_name=_("incident report submitted by Gulf?"))
     first_report = models.DateTimeField(blank=True, null=True, help_text="Format: YYYY-MM-DD HH:mm:ss",
                                         verbose_name=_("date and time first reported"))
-    lat = models.FloatField(blank=True, null=True, verbose_name=_("latitude (DD)"))
-    long = models.FloatField(blank=True, null=True, verbose_name=_("longitude (DD)"))
     location = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("location"))
     region = models.CharField(max_length=255, null=True, blank=True, choices=REGION_CHOICES, verbose_name=_("region"))
-    species = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("species"))
+    species = models.ForeignKey(Species, on_delete=models.DO_NOTHING, related_name="incidents", verbose_name=_("species"))
     sex = models.CharField(max_length=255, blank=True, null=True, choices=SEX_CHOICES, verbose_name=_("sex"))
     age_group = models.CharField(max_length=255, blank=True, null=True, choices=AGE_CHOICES,
                                  verbose_name=_("age group"))
@@ -397,6 +398,14 @@ class Incident(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_leaflet_dict(self):
+        json_dict = dict(
+            type='Feature',
+            properties=dict(name=self.name, pk=self.pk),
+            geometry=dict(type='Point', coordinates=list([self.longitude, self.latitude]))
+        )
+        return json_dict
 
     def get_absolute_url(self):
         return reverse("whalebrary:incident_detail", kwargs={"pk": self.id})

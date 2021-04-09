@@ -1,0 +1,114 @@
+{% extends "grais/base.html" %}
+{% load static %}
+{% load verbose_names %}
+
+{% block header %}
+  {{ block.super }}
+  <style>
+  /* Set the size of the div element that contains the map */
+  #map {
+      height: 300px; /* The height is 400 pixels */
+      width: 100%; /* The width is the width of the web page */
+  }
+  </style>
+{% endblock header %}
+
+{% block subcontent %}
+  <div id="app">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <a class="btn btn-warning" href="{% url 'grais:sample_edit' object.id %}">Edit</a>
+          <a class="btn btn-danger" href="{% url 'grais:sample_delete' object.id %}">Delete</a>
+          {% if not object.notes.exists %}
+            <a class="btn btn-outline-primary float-right" href="" pop-href="{% url 'grais:sample_note_new' object.id %}">New Note</a>
+          {% endif %}
+        </div>
+        <div class="row mb-5">
+          <div class="col-4">
+            <table class="table table-sm">
+              {% for field in field_list %}
+                {% verbose_td_display object field %}
+              {% endfor %}
+            </table>
+          </div>
+          <div class="col">
+            <div id="map"></div>
+          </div>
+        </div>
+        <div class="">
+          {% include "grais/sample_detail/_lines.html" %}
+          {% include "grais/sample_detail/_probe_measurements.html" %}
+          {% include "grais/sample_detail/_species.html" %}
+        </div>
+      </div>
+      {% if object.notes.exists %}
+        <div class="col-3">
+          {% include "grais/sample_detail/_notes.html" %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block body_js %}
+
+  {{ block.super }}
+  {% include "grais/_map_icons.html" %}
+  <script type="application/javascript">
+  function initialize() {
+    let coords = [];
+    map = new L.Map("map", {
+      center: new L.LatLng(46.13845952180798, -64.7906431818189),
+      zoom: 6,
+    });
+
+    {% if object.station.get_point %}
+      latLong = [{{object.station.get_point.x}}, {{ object.station.get_point.y }}]
+      coords.push(latLong)
+      L.marker(
+          latLong, {
+            title: '{{object.station}}',
+            icon: stnIcon,
+
+          }
+      ).addTo(map).bindPopup("<a href='{% url 'grais:station_detail' object.station.id %}'>Station {{object.station}}</a>");
+    {% endif %}
+
+    {% if object.lines.exists %}
+      {% for line in object.lines.all %}
+        {% if line.get_point %}
+          latLong = [{{line.get_point.x}}, {{ line.get_point.y }}]
+          coords.push(latLong)
+          L.marker(
+              latLong, {
+                title: '{{object.line}}',
+                icon: lineIcon,
+              }
+          ).addTo(map).bindPopup('<a href="{% url 'grais:line_detail' line.id %}">{{line}}</a>');
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/satellite-streets-v10',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: '{{mapbox_api_key}}'
+    }).addTo(map);
+
+    map.fitBounds(coords);
+  }
+
+  $(document).ready(function () {
+    // Stuff to do as soon as the DOM is ready
+    initialize()
+
+  });
+  </script>
+
+
+{% endblock %}

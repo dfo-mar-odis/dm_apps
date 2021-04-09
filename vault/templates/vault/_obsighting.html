@@ -1,0 +1,38 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+{% load verbose_names %}
+
+<div class="">
+    <h3>
+        {% trans "Observation Sightings:" %}
+    </h3>
+</div>
+
+{% if object.observation_sightings.count == 0 %}
+    <em>
+        {% trans "No observation sightings have been added to this observation" %}
+    </em><br>
+{% else %}
+
+    <table class="table table-hover table-sm" style="width: 100%">
+        <tr>
+            {% for field in obsighting_field_list %}
+            <th>
+                {% get_verbose_label random_obsighting field %}
+            </th>
+            {% endfor %}
+        </tr>
+        <tbody>
+        {% for obj in object.observation_sightings.all %}
+            <tr>
+            {% for field in obsighting_field_list %}
+                <td>
+                  {% get_field_value obj field %}
+                </td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}

@@ -1,0 +1,217 @@
+{% extends "grais/base.html" %}
+{% load static %}
+{% load verbose_names %}
+
+{% block subcontent %}
+  <div id="app">
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <a class="btn btn-warning" href="{% url 'grais:surface_edit' object.id %}">Edit</a>
+          <a class="btn btn-danger" href="{% url 'grais:surface_delete' object.id %}">Delete</a>
+        </div>
+        <div class="row mb-5">
+          <div class="col-4">
+            <table class="table table-sm">
+              {% for field in field_list %}
+                {% verbose_td_display object field %}
+              {% endfor %}
+            </table>
+          </div>
+          <div class="col">
+            {% if object.image %}
+              <a href="{{ object.image.url }}">
+                <img src="{{ object.image.url }}" alt="problem locating surface image {{ object.image.url }}" class="img-thumbnail" width="400 em">
+              </a>
+            {% else %}
+              <em> No image has been added. </em>
+            {% endif %}
+          </div>
+        </div>
+        <div class="">
+          {% include "grais/surface_detail/_species.html" %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+
+{##}
+{#{% block content %}#}
+{##}
+{#    <nav aria-label="breadcrumb">#}
+{#        <ol class="breadcrumb">#}
+{#            <li class="breadcrumb-item"><a href="{% url 'grais:index' %}"> Home </a></li>#}
+{#            <li class="breadcrumb-item"><a href="{% url 'grais:sample_list' %}"> All samples </a></li>#}
+{#            <li class="breadcrumb-item"><a href="{% url 'grais:sample_detail' object.line.sample.id %}"> {{ object.line.sample }} </a></li>#}
+{#            <li class="breadcrumb-item"><a href="{% url 'grais:line_detail' object.line.id %}"> {{ object.line }} </a></li>#}
+{#            <li class="breadcrumb-item active" aria-current="page">{{ object }}</li>#}
+{#        </ol>#}
+{#    </nav>#}
+{##}
+{##}
+{##}
+{#    <div class="container">#}
+{#        <h1>{{ object }}</h1>#}
+{##}
+{#        <p>#}
+{#        <div class="btn-group">#}
+{#            <a class="btn btn-warning" href="{% url 'grais:surface_edit' object.id %}">Edit</a>#}
+{#            <a class="btn btn-danger" href="{% url 'grais:surface_delete' object.id %}">Delete</a>#}
+{#        </div>#}
+{#        <div class="btn-group">#}
+{#            <a class="btn btn-outline-primary" href="{% url "grais:surface_spp_insert" object.id %}"> Add Species</a>#}
+{#            <a href="#" class="btn btn-outline-primary" data-toggle="modal" data-target="#add_image">Add Image</a>#}
+{##}
+{#<!-- Add Image MODAL -->#}
+{#            <div class="modal fade" id="add_image" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"#}
+{#                 aria-hidden="true">#}
+{#                <div class="modal-dialog modal-dialog-centered" role="document">#}
+{#                    <div class="modal-content">#}
+{#                        <div class="modal-header">#}
+{#                            <h5 class="modal-title" id="exampleModalLongTitle">Add Surface Image </h5>#}
+{#                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                                <span aria-hidden="true">&times;</span>#}
+{#                            </button>#}
+{#                        </div>#}
+{#                        <div class="modal-body">#}
+{#                            {% include "grais/_surface_image_form.html" %}#}
+{##}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{##}
+{#        </p>#}
+{##}
+{##}
+{#        <br>#}
+{#        <div class="row">#}
+{#            <div class="col">#}
+{# Detail about the sample #}
+{##}
+{##}
+{#                <p>#}
+{#                    <b>Surface type:</b><br>#}
+{#                    {{ object.get_surface_type_display }}#}
+{#                </p>#}
+{#                <p>#}
+{#                    <b>Was the surface lost?</b><br>#}
+{#                    {{ object.is_lost|yesno }}#}
+{#                </p>#}
+{#                <p>#}
+{#                    <b>Notes:</b><br>#}
+{#                    {{ object.notes }}#}
+{#                </p>#}
+{#                <p>#}
+{#                    <b>Last modified by:</b><br>#}
+{#                    {% if object.last_modified_by %}#}
+{#                        {{ object.last_modified_by }}#}
+{#                    {% else %}#}
+{#                        n/a#}
+{#                    {% endif %}#}
+{#                </p>#}
+{#            </div>#}
+{#            <div class="col">#}
+{##}
+{##}
+
+{##}
+{#            </div>#}
+{#        </div>#}
+{#        <br><br>#}
+{#  SPECIES OBSERVED #}
+{#        <h3>#}
+{#            Species Observations:#}
+{# <a class="btn btn-sm btn-light" onclick="return popitup('{% url "grais:surface_spp_insert" object.line.sample.id object.line.id object.id %}','sppInsert')"> <i class="material-icons">add</i></a> #}
+{# <a class="btn btn-sm btn-light" href="{% url "grais:surface_spp_insert" object.line.sample.id object.line.id object.id %}"> <i class="material-icons">add</i></a> #}
+{#        </h3>#}
+{#        <table class="table table-sm table-hover ">#}
+{#            <thead class="full-table">#}
+{#            <th>#</th>#}
+{#            <th style="width: 30%">Species</th>#}
+{#            <th>Epibiont type</th>#}
+{#            <th>Invasive</th>#}
+{#            <th>Coverage (%)</th>#}
+{#            <th style="width: 40%">Notes</th>#}
+{#            </thead>#}
+{#            <tbody>#}
+{#            {% for s in object.surface_spp.all %}#}
+{#                <tr href="{% url 'grais:surface_spp_edit_pop' s.id %}" pop>#}
+{#                    <td>{{ forloop.counter }}</td>#}
+{##}
+{#                    <td>#}
+{#                        <a href="{% url 'grais:species_detail' s.species.id %}" class="stop-blank">#}
+{#                            {{ s.species }}#}
+{#                        </a>#}
+{#                    </td>#}
+{#                    <td><em>{{ s.species.scientific_name }}</em></td>#}
+{#                    <td>{{ s.species.get_epibiont_type_display }}</td>#}
+{#                    {% if s.species.invasive == True %}#}
+{#                        <td class="bad">#}
+{#                            {% else %}#}
+{#                        <td>#}
+{#                    {% endif %}#}
+{##}
+{#                    {{ s.species.invasive|yesno }}</td>#}
+{##}
+{##}
+{##}
+{#                    <td>{{ s.percent_coverage|percentage }}</td>#}
+{#                    <td>{{ s.notes }}</td>#}
+{##}
+{#                    <td>#}
+{#                        <a class="delete-me" href="#" val="{{ s.id }}">#}
+{#                            <img src="{% static "/admin/img/icon-deletelink.svg" %}" data-toggle="tooltip"#}
+{#                                 title="Delete">#}
+{#                        </a>#}
+{#                        <a id="secrect-delete-btn-{{ s.id }}" href="{% url 'grais:surface_spp_delete' s.id "detail" %}"#}
+{#                           class="hidden"></a>#}
+{#                    </td>#}
+{##}
+{#                </tr>#}
+{#            {% empty %}#}
+{# empty #}
+{#            {% endfor %}#}
+{##}
+{#            </tbody>#}
+{##}
+{#        </table>#}
+{#        <p class="lead">#}
+{#          <b>Total Coverage: </b>#}
+{#          {% if object.total_coverage > 1%}#}
+{#            <span class="bad py-1 px-1">{{ object.total_coverage|percentage:0 }}</span>#}
+{#          {% else %}#}
+{#            <span class="good py-1 px-1">{{ object.total_coverage|percentage:0 }}</span>#}
+{#          {% endif %}#}
+{#        </p>#}
+{#    </div>#}
+{##}
+{##}
+{##}
+{##}
+{#    <script type="application/javascript">#}
+{#        $(".delete-me").click(function (e) {#}
+{#            e.stopImmediatePropagation();#}
+{#            var objectId = $(this)[0].getAttribute("val");#}
+{##}
+{#            var userInput = "";#}
+{#            while (userInput !== "n" && userInput !== "y") {#}
+{#                userInput = prompt("Are you sure you want to delete this species from the surface? \n\n Please respond with 'y' for yes and 'n' for no.").toLocaleLowerCase();#}
+{##}
+{#            }#}
+{#            if (userInput === "y") {#}
+{#                window.location.href = $("#secrect-delete-btn-" + objectId).attr("href");#}
+{#            }#}
+{#        })#}
+{#    </script>#}
+{##}
+{#{% endblock content %}#}

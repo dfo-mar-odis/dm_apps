@@ -13,6 +13,7 @@ from django.utils.translation import gettext as _
 from msrestazure.azure_active_directory import MSIAuthentication
 
 from shared_models import models as shared_models
+from shared_models.models import Region, Branch, Division, Section
 from . import emails
 from . import models
 
@@ -774,3 +775,21 @@ def get_trip_field_list(trip=None):
 
     while None in my_list: my_list.remove(None)
     return my_list
+
+
+def get_all_admins():
+    to_list = list()
+    region_admins = [obj.admin.email for obj in Region.objects.filter(admin__isnull=False, admin__email__isnull=False)]
+    branch_admins = [obj.admin.email for obj in Branch.objects.filter(admin__isnull=False, admin__email__isnull=False)]
+    division_admins = [obj.admin.email for obj in Division.objects.filter(admin__isnull=False, admin__email__isnull=False)]
+    section_admins = [obj.admin.email for obj in Section.objects.filter(admin__isnull=False, admin__email__isnull=False)]
+    # now we have to add special reviewers (but only in the reviewer role)
+    special_reviewers = [obj.user.email for obj in models.DefaultReviewer.objects.filter(
+        Q(sections__isnull=False) | Q(divisions__isnull=False) | Q(branches__isnull=False)
+    ).distinct()]
+    to_list.extend(region_admins)
+    to_list.extend(branch_admins)
+    to_list.extend(division_admins)
+    to_list.extend(section_admins)
+    to_list.extend(special_reviewers)
+    return set(to_list)

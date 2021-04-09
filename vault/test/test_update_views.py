@@ -49,7 +49,7 @@ class TestOutingUpdateView(CommonTest):
         super().setUp()
         self.instance = FactoryFloor.OutingFactory()
         self.test_url = reverse_lazy('vault:outing_edit', args=[self.instance.pk, ])
-        self.expected_template = 'vault/form.html'
+        self.expected_template = 'vault/outing_form.html'
         self.user = self.get_and_login_user(in_group="vault_admin")
 
     @tag("Outing", "outing_edit", "view")
