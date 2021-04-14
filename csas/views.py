@@ -9,7 +9,10 @@ from django.urls import reverse_lazy
 from csas import models, forms, filters, utils
 from django.utils.translation import gettext_lazy as _
 
+from django.views.generic import ListView
+
 from shared_models import views as shared_view
+from shared_models.views import CommonFilterView
 from . import mixins
 
 
@@ -596,6 +599,8 @@ class RequestList(CsasListCommon):
     title = _('Request List')
     model = models.ReqRequest
     filterset_class = filters.RequestFilter
+    paginate_by = 10
+
     # fields = ['id', 'assigned_req_id', 'title', 'region', 'client_sector', 'client_name', 'client_email', 'funding']
     # fields = ['id', 'assigned_req_id', 'title', 'region', 'client_sector', 'client_name', 'funding']
     fields = ['id', 'title', 'client_name']
@@ -676,6 +681,7 @@ class RequestListPC(CsasListCommon):
     title = _('Pacific Region Request List')
     model = models.ReqRequest
     filterset_class = filters.RequestFilterReg
+    paginate_by = 10
     template_name = "csas/csas_filter_pacific.html"
 
     fields = ['id', 'assigned_req_id', 'title', 'client_sector', 'client_name', 'client_email', 'funding']
@@ -1374,6 +1380,7 @@ class PublicationList(CsasListCommon):
     title = _('Publication List')
     model = models.PubPublication
     filterset_class = filters.PublicationFilter
+    paginate_by = 30
 
     fields = ['id', 'series', 'title_en', 'lead_region', 'pub_year']
     # fields = ['id', 'series', 'title_en', 'lead_region', 'lead_author', 'other_author', 'pub_year']

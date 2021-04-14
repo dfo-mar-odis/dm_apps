@@ -3,6 +3,7 @@
 {% load static %}
 {% load verbose_names %}
 {% load i18n %}
+{% load el_pagination_tags %}
 {% bootstrap_css %}
 
 {% block title %}
@@ -16,6 +17,9 @@
     {#     background-color: #dddddd; #}
     {# } #}
 </style>
+    {% if paginate_by %}
+      {% paginate paginate_by filter.qs as filter_list %}
+    {% endif %}
 
 <div class="container-fluid mt-1" >
     <div class="row mt-2 pt-1">
@@ -92,7 +96,7 @@
                     {% endfor %}
                     {% if details_url %}
                         {% if key == 'req' %}
-                            <th style="width:400px"></th>
+                            <th style="width:550px"></th>
                         {% elif key == 'met' %}
                             <th style="width:620px"></th>
                         {% elif key == 'pub' %}
@@ -260,14 +264,27 @@
                                             <a class="btn btn-outline-primary btn-sm"> {% trans 'Status' %} </a>
                                         {% endif %}
 
-                                        {% for req_meeting in obj.req_meeting.all %}
-                                            <a class="btn btn-secondary btn-sm" href="#"
-                                               onclick="return popitup('{% url ''|add:'csas:details_met' req_meeting.pk %}','popoutWindow')"
-                                               title="{% trans 'Add' %}">{% trans 'Go To Meeting ' %}</a>
-                                        {% endfor %}
-                                        {% if not obj.req_meeting.all %}
+                                        {#% if not obj.req_meeting.all %#}
                                             <a class="btn btn-secondary btn-sm"
                                                href="{% url ''|add:'csas:create_met' %}">{% trans 'Create Meeting' %}</a>
+                                        {#% endif %#}
+
+                                        {% if obj.req_meeting.all %}
+                                            {% if obj.req_meeting.all|length > 1 %}
+                                                {% for req_meeting in obj.req_meeting.all %}
+                                                    <a class="btn btn-secondary btn-sm" href="#"
+                                                       onclick="return popitup('{% url ''|add:'csas:details_met' req_meeting.pk %}','popoutWindow')"
+                                                       title="{% trans 'Add' %}">{% trans 'Go To Meeting '%}{{req_meeting.pk}}</a>
+                                                {% endfor %}
+                                            {% else %}
+                                                {% for req_meeting in obj.req_meeting.all %}
+                                                    <a class="btn btn-secondary btn-sm" href="#"
+                                                       onclick="return popitup('{% url ''|add:'csas:details_met' req_meeting.pk %}','popoutWindow')"
+                                                       title="{% trans 'Add' %}">{% trans 'Go To Meeting '%}</a>
+                                                {% endfor %}
+                                            {% endif %}
+                                        {% else %}
+                                            <a class="btn btn-outline-primary btn-sm"> {% trans 'Go To Meeting' %} </a>
                                         {% endif %}
 
                                         {# --- <a class="btn btn-secondary btn-sm" --- #}

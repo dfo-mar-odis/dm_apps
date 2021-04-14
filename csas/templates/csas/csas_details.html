@@ -20,7 +20,7 @@
                     <h1>{% trans title %}</h1>
                 </div>
 
-                <div class="col-5 pt-1">
+                <div class="col-7 pt-1">
 
                     {% if key == 'pub' or key == 'pub_status' or key == 'pub_trans_info' or key == 'pub_doc_location' or key == 'pub_OM_costs' or key == 'pub_com_results' %}
                         {% if csas_admin %}
@@ -69,15 +69,28 @@
                             <a class="btn btn-secondary" href="#"
                                onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
                                title="{% trans 'Add' %}">{% trans 'Update' %}</a>
-                            {% for req_meeting in object.req_meeting.all %}
-                                <a class="btn btn-secondary" href="#"
-                                   onclick="return popitup('{% url ''|add:'csas:details_met' req_meeting.pk %}','popoutWindow')"
-                                   title="{% trans 'Add' %}">{% trans 'Go To Meeting ' %}</a>
-                            {% endfor %}
-                            {% if not object.req_meeting.all %}
+
+                            {#% if not object.req_meeting.all %#}
                                 <a class="btn btn-secondary"
                                    href="{% url ''|add:'csas:create_met' %}">{% trans 'Create Meeting' %}</a>
+                            {#% endif %#}
+
+                            {% if object.req_meeting.all %}
+                                {% for req_meeting in object.req_meeting.all %}
+                                    {% if object.req_meeting.all|length > 1 %}
+                                        <a class="btn btn-secondary" href="#"
+                                           onclick="return popitup('{% url ''|add:'csas:details_met' req_meeting.pk %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Go To Meeting ' %}{{req_meeting.pk}}</a>
+                                    {% else %}
+                                        <a class="btn btn-secondary" href="#"
+                                           onclick="return popitup('{% url ''|add:'csas:details_met' req_meeting.pk %}','popoutWindow')"
+                                           title="{% trans 'Add' %}">{% trans 'Go To Meeting ' %}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                <a class="btn btn-outline-primary btn-me"> {% trans 'Go To Meeting' %} </a>
                             {% endif %}
+
                             <a class="btn btn-secondary" href="#"
                                onclick="return popitup('{% url ''|add:'csas:confirm_delete_req_fr_details' object.pk %}','popoutWindow')"
                                title="{% trans 'Add' %}">{% trans 'Delete' %}</a>
