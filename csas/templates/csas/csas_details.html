@@ -33,7 +33,41 @@
                         <a class="btn btn-secondary"
                            href="{% url ''|add:'csas:list_pub' %}">{% trans 'Publication List' %}</a>
 
-                    {% elif key == 'met' or key == 'met_doc' or key == 'met_OM_costs' or key == 'met_media' %}
+                    {% elif key == 'met' %}
+                        {% if csas_admin %}
+                            {# <a class="btn btn-secondary" #}
+                            {#    href="{% url ''|add:'csas:index_met' %}">{% trans 'New Meeting Entry' %}</a> #}
+                            <a class="btn btn-secondary" href="#"
+                               onclick="return popitup('{% url ''|add:update_url object.pk 'pop' %}','popoutWindow')"
+                               title="{% trans 'Add' %}">{% trans 'Update' %}</a>
+                        {% endif %}
+                        <a class="btn btn-secondary"
+                           href="{% url ''|add:'csas:list_met' %}">{% trans 'Meeting List' %}</a>
+                        {#<h1>{{object.request.all}}</h1>#}
+                        {#<h1>AAAAAAAAAAAAAAAAAAAAAAAA</h1>#}
+
+                        {#% if not object.req_meeting.all %#}
+                            <a class="btn btn-secondary"
+                               href="{% url ''|add:'csas:create_pub' %}">{% trans 'Create Publication' %}</a>
+                        {#% endif %#}
+
+                        {% if object.met_publication.all %}
+                            {% for met_publication in object.met_publication.all %}
+                                {% if object.met_publication.all|length > 1 %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url ''|add:'csas:details_pub' met_publication.pk %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans 'Go To Publication ' %}{{met_publication.pk}}</a>
+                                {% else %}
+                                    <a class="btn btn-secondary" href="#"
+                                       onclick="return popitup('{% url ''|add:'csas:details_pub' met_publication.pk %}','popoutWindow')"
+                                       title="{% trans 'Add' %}">{% trans 'Go To Publication ' %}</a>
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <a class="btn btn-outline-primary btn-me"> {% trans 'Go To Publication' %} </a>
+                        {% endif %}
+
+                    {% elif ke == key == 'met_doc' or key == 'met_OM_costs' or key == 'met_media' %}
                         {% if csas_admin %}
                             <a class="btn btn-secondary"
                                href="{% url ''|add:'csas:index_met' %}">{% trans 'New Meeting Entry' %}</a>
@@ -43,7 +77,6 @@
                         {% endif %}
                         <a class="btn btn-secondary"
                            href="{% url ''|add:'csas:list_met' %}">{% trans 'Meeting List' %}</a>
-
                     {% elif key == 'met_DFO_pars' %}
                         <a class="btn btn-secondary"
                            href="{% url ''|add:'csas:list_met_DFO_pars' %}">{% trans 'DFO Participants List' %}</a>

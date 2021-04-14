@@ -508,6 +508,7 @@ class PccPublicationComResultsCategory(Lookup):
 
 
 class PubPublication(models.Model):
+    meeting = models.ManyToManyField(MetMeeting, blank=True, related_name="met_publication", verbose_name=_("Meeting"))
     series = models.ForeignKey(PsePublicationSeries, null=True, blank=True, on_delete=models.DO_NOTHING,
                                verbose_name=_("Series"))
     lead_region = models.ManyToManyField(shared_models.Region, blank=True, verbose_name=_("Lead Region"))

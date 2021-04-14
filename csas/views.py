@@ -1472,7 +1472,7 @@ class PublicationDetails(DetailsCommon):
     model = models.PubPublication
     template_name = "csas/csas_details_pub.html"
 
-    fields = ['id', 'series', 'lead_region', 'title_en', 'title_fr',  'title_in', 'pub_year',
+    fields = ['id', 'meeting', 'series', 'lead_region', 'title_en', 'title_fr',  'title_in', 'pub_year',
               'lead_author', 'other_author', 'pub_num', 'pages', 'keywords', 'citation', 'client',
               'description']
 
